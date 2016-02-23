@@ -27,15 +27,15 @@ namespace Model
 {
 namespace IPSetDescriptorTypeMapper
 {
+
+
 IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == IPV4_HASH)
   {
-    return IPSetDescriptorType::IPV4;
+     return IPSetDescriptorType::IPV4;
   }
-
   return IPSetDescriptorType::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace BucketLogsPermissionMapper
 {
+
+
 BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == FULL_CONTROL_HASH)
   {
-    return BucketLogsPermission::FULL_CONTROL;
+     return BucketLogsPermission::FULL_CONTROL;
   }
   else if (hashCode == READ_HASH)
   {
-    return BucketLogsPermission::READ;
+     return BucketLogsPermission::READ;
   }
   else if (hashCode == WRITE_HASH)
   {
-    return BucketLogsPermission::WRITE;
+     return BucketLogsPermission::WRITE;
   }
-
   return BucketLogsPermission::NOT_SET;
 }
 

@@ -45,87 +45,87 @@ namespace Model
 {
 namespace ResourceTypeMapper
 {
+
+
 ResourceType GetResourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AWS_EC2_CustomerGateway_HASH)
   {
-    return ResourceType::AWS_EC2_CustomerGateway;
+     return ResourceType::AWS_EC2_CustomerGateway;
   }
   else if (hashCode == AWS_EC2_EIP_HASH)
   {
-    return ResourceType::AWS_EC2_EIP;
+     return ResourceType::AWS_EC2_EIP;
   }
   else if (hashCode == AWS_EC2_Host_HASH)
   {
-    return ResourceType::AWS_EC2_Host;
+     return ResourceType::AWS_EC2_Host;
   }
   else if (hashCode == AWS_EC2_Instance_HASH)
   {
-    return ResourceType::AWS_EC2_Instance;
+     return ResourceType::AWS_EC2_Instance;
   }
   else if (hashCode == AWS_EC2_InternetGateway_HASH)
   {
-    return ResourceType::AWS_EC2_InternetGateway;
+     return ResourceType::AWS_EC2_InternetGateway;
   }
   else if (hashCode == AWS_EC2_NetworkAcl_HASH)
   {
-    return ResourceType::AWS_EC2_NetworkAcl;
+     return ResourceType::AWS_EC2_NetworkAcl;
   }
   else if (hashCode == AWS_EC2_NetworkInterface_HASH)
   {
-    return ResourceType::AWS_EC2_NetworkInterface;
+     return ResourceType::AWS_EC2_NetworkInterface;
   }
   else if (hashCode == AWS_EC2_RouteTable_HASH)
   {
-    return ResourceType::AWS_EC2_RouteTable;
+     return ResourceType::AWS_EC2_RouteTable;
   }
   else if (hashCode == AWS_EC2_SecurityGroup_HASH)
   {
-    return ResourceType::AWS_EC2_SecurityGroup;
+     return ResourceType::AWS_EC2_SecurityGroup;
   }
   else if (hashCode == AWS_EC2_Subnet_HASH)
   {
-    return ResourceType::AWS_EC2_Subnet;
+     return ResourceType::AWS_EC2_Subnet;
   }
   else if (hashCode == AWS_CloudTrail_Trail_HASH)
   {
-    return ResourceType::AWS_CloudTrail_Trail;
+     return ResourceType::AWS_CloudTrail_Trail;
   }
   else if (hashCode == AWS_EC2_Volume_HASH)
   {
-    return ResourceType::AWS_EC2_Volume;
+     return ResourceType::AWS_EC2_Volume;
   }
   else if (hashCode == AWS_EC2_VPC_HASH)
   {
-    return ResourceType::AWS_EC2_VPC;
+     return ResourceType::AWS_EC2_VPC;
   }
   else if (hashCode == AWS_EC2_VPNConnection_HASH)
   {
-    return ResourceType::AWS_EC2_VPNConnection;
+     return ResourceType::AWS_EC2_VPNConnection;
   }
   else if (hashCode == AWS_EC2_VPNGateway_HASH)
   {
-    return ResourceType::AWS_EC2_VPNGateway;
+     return ResourceType::AWS_EC2_VPNGateway;
   }
   else if (hashCode == AWS_IAM_Group_HASH)
   {
-    return ResourceType::AWS_IAM_Group;
+     return ResourceType::AWS_IAM_Group;
   }
   else if (hashCode == AWS_IAM_Policy_HASH)
   {
-    return ResourceType::AWS_IAM_Policy;
+     return ResourceType::AWS_IAM_Policy;
   }
   else if (hashCode == AWS_IAM_Role_HASH)
   {
-    return ResourceType::AWS_IAM_Role;
+     return ResourceType::AWS_IAM_Role;
   }
   else if (hashCode == AWS_IAM_User_HASH)
   {
-    return ResourceType::AWS_IAM_User;
+     return ResourceType::AWS_IAM_User;
   }
-
   return ResourceType::NOT_SET;
 }
 

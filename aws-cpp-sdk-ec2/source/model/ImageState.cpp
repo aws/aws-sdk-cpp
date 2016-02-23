@@ -33,39 +33,39 @@ namespace Model
 {
 namespace ImageStateMapper
 {
+
+
 ImageState GetImageStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return ImageState::pending;
+     return ImageState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return ImageState::available;
+     return ImageState::available;
   }
   else if (hashCode == invalid_HASH)
   {
-    return ImageState::invalid;
+     return ImageState::invalid;
   }
   else if (hashCode == deregistered_HASH)
   {
-    return ImageState::deregistered;
+     return ImageState::deregistered;
   }
   else if (hashCode == transient_HASH)
   {
-    return ImageState::transient;
+     return ImageState::transient;
   }
   else if (hashCode == failed_HASH)
   {
-    return ImageState::failed;
+     return ImageState::failed;
   }
   else if (hashCode == error_HASH)
   {
-    return ImageState::error;
+     return ImageState::error;
   }
-
   return ImageState::NOT_SET;
 }
 

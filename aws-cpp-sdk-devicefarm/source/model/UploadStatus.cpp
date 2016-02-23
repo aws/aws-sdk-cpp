@@ -30,27 +30,27 @@ namespace Model
 {
 namespace UploadStatusMapper
 {
+
+
 UploadStatus GetUploadStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INITIALIZED_HASH)
   {
-    return UploadStatus::INITIALIZED;
+     return UploadStatus::INITIALIZED;
   }
   else if (hashCode == PROCESSING_HASH)
   {
-    return UploadStatus::PROCESSING;
+     return UploadStatus::PROCESSING;
   }
   else if (hashCode == SUCCEEDED_HASH)
   {
-    return UploadStatus::SUCCEEDED;
+     return UploadStatus::SUCCEEDED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return UploadStatus::FAILED;
+     return UploadStatus::FAILED;
   }
-
   return UploadStatus::NOT_SET;
 }
 

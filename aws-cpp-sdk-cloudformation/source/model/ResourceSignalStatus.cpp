@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ResourceSignalStatusMapper
 {
+
+
 ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SUCCESS_HASH)
   {
-    return ResourceSignalStatus::SUCCESS;
+     return ResourceSignalStatus::SUCCESS;
   }
   else if (hashCode == FAILURE_HASH)
   {
-    return ResourceSignalStatus::FAILURE;
+     return ResourceSignalStatus::FAILURE;
   }
-
   return ResourceSignalStatus::NOT_SET;
 }
 

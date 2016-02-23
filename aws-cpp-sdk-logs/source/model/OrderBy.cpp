@@ -28,19 +28,19 @@ namespace Model
 {
 namespace OrderByMapper
 {
+
+
 OrderBy GetOrderByForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == LogStreamName_HASH)
   {
-    return OrderBy::LogStreamName;
+     return OrderBy::LogStreamName;
   }
   else if (hashCode == LastEventTime_HASH)
   {
-    return OrderBy::LastEventTime;
+     return OrderBy::LastEventTime;
   }
-
   return OrderBy::NOT_SET;
 }
 

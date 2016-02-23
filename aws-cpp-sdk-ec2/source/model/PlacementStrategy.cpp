@@ -27,15 +27,15 @@ namespace Model
 {
 namespace PlacementStrategyMapper
 {
+
+
 PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == cluster_HASH)
   {
-    return PlacementStrategy::cluster;
+     return PlacementStrategy::cluster;
   }
-
   return PlacementStrategy::NOT_SET;
 }
 

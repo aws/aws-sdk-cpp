@@ -29,23 +29,23 @@ namespace Model
 {
 namespace IntegrationTypeMapper
 {
+
+
 IntegrationType GetIntegrationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == HTTP_HASH)
   {
-    return IntegrationType::HTTP;
+     return IntegrationType::HTTP;
   }
   else if (hashCode == AWS_HASH)
   {
-    return IntegrationType::AWS;
+     return IntegrationType::AWS;
   }
   else if (hashCode == MOCK_HASH)
   {
-    return IntegrationType::MOCK;
+     return IntegrationType::MOCK;
   }
-
   return IntegrationType::NOT_SET;
 }
 

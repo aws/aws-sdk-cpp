@@ -29,23 +29,23 @@ namespace Model
 {
 namespace FlowLogsResourceTypeMapper
 {
+
+
 FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == VPC_HASH)
   {
-    return FlowLogsResourceType::VPC;
+     return FlowLogsResourceType::VPC;
   }
   else if (hashCode == Subnet_HASH)
   {
-    return FlowLogsResourceType::Subnet;
+     return FlowLogsResourceType::Subnet;
   }
   else if (hashCode == NetworkInterface_HASH)
   {
-    return FlowLogsResourceType::NetworkInterface;
+     return FlowLogsResourceType::NetworkInterface;
   }
-
   return FlowLogsResourceType::NOT_SET;
 }
 

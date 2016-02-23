@@ -37,55 +37,55 @@ namespace Model
 {
 namespace DirectoryStageMapper
 {
+
+
 DirectoryStage GetDirectoryStageForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Requested_HASH)
   {
-    return DirectoryStage::Requested;
+     return DirectoryStage::Requested;
   }
   else if (hashCode == Creating_HASH)
   {
-    return DirectoryStage::Creating;
+     return DirectoryStage::Creating;
   }
   else if (hashCode == Created_HASH)
   {
-    return DirectoryStage::Created;
+     return DirectoryStage::Created;
   }
   else if (hashCode == Active_HASH)
   {
-    return DirectoryStage::Active;
+     return DirectoryStage::Active;
   }
   else if (hashCode == Inoperable_HASH)
   {
-    return DirectoryStage::Inoperable;
+     return DirectoryStage::Inoperable;
   }
   else if (hashCode == Impaired_HASH)
   {
-    return DirectoryStage::Impaired;
+     return DirectoryStage::Impaired;
   }
   else if (hashCode == Restoring_HASH)
   {
-    return DirectoryStage::Restoring;
+     return DirectoryStage::Restoring;
   }
   else if (hashCode == RestoreFailed_HASH)
   {
-    return DirectoryStage::RestoreFailed;
+     return DirectoryStage::RestoreFailed;
   }
   else if (hashCode == Deleting_HASH)
   {
-    return DirectoryStage::Deleting;
+     return DirectoryStage::Deleting;
   }
   else if (hashCode == Deleted_HASH)
   {
-    return DirectoryStage::Deleted;
+     return DirectoryStage::Deleted;
   }
   else if (hashCode == Failed_HASH)
   {
-    return DirectoryStage::Failed;
+     return DirectoryStage::Failed;
   }
-
   return DirectoryStage::NOT_SET;
 }
 

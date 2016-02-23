@@ -27,15 +27,15 @@ namespace Model
 {
 namespace StartLambdaFunctionFailedCauseMapper
 {
+
+
 StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ASSUME_ROLE_FAILED_HASH)
   {
-    return StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED;
+     return StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED;
   }
-
   return StartLambdaFunctionFailedCause::NOT_SET;
 }
 

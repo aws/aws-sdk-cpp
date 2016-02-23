@@ -31,31 +31,31 @@ namespace Model
 {
 namespace ContactTypeMapper
 {
+
+
 ContactType GetContactTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PERSON_HASH)
   {
-    return ContactType::PERSON;
+     return ContactType::PERSON;
   }
   else if (hashCode == COMPANY_HASH)
   {
-    return ContactType::COMPANY;
+     return ContactType::COMPANY;
   }
   else if (hashCode == ASSOCIATION_HASH)
   {
-    return ContactType::ASSOCIATION;
+     return ContactType::ASSOCIATION;
   }
   else if (hashCode == PUBLIC_BODY_HASH)
   {
-    return ContactType::PUBLIC_BODY;
+     return ContactType::PUBLIC_BODY;
   }
   else if (hashCode == RESELLER_HASH)
   {
-    return ContactType::RESELLER;
+     return ContactType::RESELLER;
   }
-
   return ContactType::NOT_SET;
 }
 

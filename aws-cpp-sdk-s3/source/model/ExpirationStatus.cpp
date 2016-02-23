@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ExpirationStatusMapper
 {
+
+
 ExpirationStatus GetExpirationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return ExpirationStatus::Enabled;
+     return ExpirationStatus::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return ExpirationStatus::Disabled;
+     return ExpirationStatus::Disabled;
   }
-
   return ExpirationStatus::NOT_SET;
 }
 

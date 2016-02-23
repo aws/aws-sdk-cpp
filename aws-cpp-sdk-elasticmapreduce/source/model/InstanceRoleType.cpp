@@ -29,23 +29,23 @@ namespace Model
 {
 namespace InstanceRoleTypeMapper
 {
+
+
 InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == MASTER_HASH)
   {
-    return InstanceRoleType::MASTER;
+     return InstanceRoleType::MASTER;
   }
   else if (hashCode == CORE_HASH)
   {
-    return InstanceRoleType::CORE;
+     return InstanceRoleType::CORE;
   }
   else if (hashCode == TASK_HASH)
   {
-    return InstanceRoleType::TASK;
+     return InstanceRoleType::TASK;
   }
-
   return InstanceRoleType::NOT_SET;
 }
 

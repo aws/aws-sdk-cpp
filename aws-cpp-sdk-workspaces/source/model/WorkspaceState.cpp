@@ -36,51 +36,51 @@ namespace Model
 {
 namespace WorkspaceStateMapper
 {
+
+
 WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return WorkspaceState::PENDING;
+     return WorkspaceState::PENDING;
   }
   else if (hashCode == AVAILABLE_HASH)
   {
-    return WorkspaceState::AVAILABLE;
+     return WorkspaceState::AVAILABLE;
   }
   else if (hashCode == IMPAIRED_HASH)
   {
-    return WorkspaceState::IMPAIRED;
+     return WorkspaceState::IMPAIRED;
   }
   else if (hashCode == UNHEALTHY_HASH)
   {
-    return WorkspaceState::UNHEALTHY;
+     return WorkspaceState::UNHEALTHY;
   }
   else if (hashCode == REBOOTING_HASH)
   {
-    return WorkspaceState::REBOOTING;
+     return WorkspaceState::REBOOTING;
   }
   else if (hashCode == REBUILDING_HASH)
   {
-    return WorkspaceState::REBUILDING;
+     return WorkspaceState::REBUILDING;
   }
   else if (hashCode == TERMINATING_HASH)
   {
-    return WorkspaceState::TERMINATING;
+     return WorkspaceState::TERMINATING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return WorkspaceState::TERMINATED;
+     return WorkspaceState::TERMINATED;
   }
   else if (hashCode == SUSPENDED_HASH)
   {
-    return WorkspaceState::SUSPENDED;
+     return WorkspaceState::SUSPENDED;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return WorkspaceState::ERROR_;
+     return WorkspaceState::ERROR_;
   }
-
   return WorkspaceState::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace JobTypeMapper
 {
+
+
 JobType GetJobTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Import_HASH)
   {
-    return JobType::Import;
+     return JobType::Import;
   }
   else if (hashCode == Export_HASH)
   {
-    return JobType::Export;
+     return JobType::Export;
   }
-
   return JobType::NOT_SET;
 }
 

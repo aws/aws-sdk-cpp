@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ArtifactStoreTypeMapper
 {
+
+
 ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == S3_HASH)
   {
-    return ArtifactStoreType::S3;
+     return ArtifactStoreType::S3;
   }
-
   return ArtifactStoreType::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace LifeCycleStateMapper
 {
+
+
 LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == creating_HASH)
   {
-    return LifeCycleState::creating;
+     return LifeCycleState::creating;
   }
   else if (hashCode == available_HASH)
   {
-    return LifeCycleState::available;
+     return LifeCycleState::available;
   }
   else if (hashCode == deleting_HASH)
   {
-    return LifeCycleState::deleting;
+     return LifeCycleState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return LifeCycleState::deleted;
+     return LifeCycleState::deleted;
   }
-
   return LifeCycleState::NOT_SET;
 }
 

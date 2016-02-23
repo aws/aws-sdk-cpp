@@ -32,35 +32,35 @@ namespace Model
 {
 namespace AgentUpdateStatusMapper
 {
+
+
 AgentUpdateStatus GetAgentUpdateStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return AgentUpdateStatus::PENDING;
+     return AgentUpdateStatus::PENDING;
   }
   else if (hashCode == STAGING_HASH)
   {
-    return AgentUpdateStatus::STAGING;
+     return AgentUpdateStatus::STAGING;
   }
   else if (hashCode == STAGED_HASH)
   {
-    return AgentUpdateStatus::STAGED;
+     return AgentUpdateStatus::STAGED;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return AgentUpdateStatus::UPDATING;
+     return AgentUpdateStatus::UPDATING;
   }
   else if (hashCode == UPDATED_HASH)
   {
-    return AgentUpdateStatus::UPDATED;
+     return AgentUpdateStatus::UPDATED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return AgentUpdateStatus::FAILED;
+     return AgentUpdateStatus::FAILED;
   }
-
   return AgentUpdateStatus::NOT_SET;
 }
 

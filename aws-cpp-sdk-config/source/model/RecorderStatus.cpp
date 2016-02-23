@@ -29,23 +29,23 @@ namespace Model
 {
 namespace RecorderStatusMapper
 {
+
+
 RecorderStatus GetRecorderStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return RecorderStatus::Pending;
+     return RecorderStatus::Pending;
   }
   else if (hashCode == Success_HASH)
   {
-    return RecorderStatus::Success;
+     return RecorderStatus::Success;
   }
   else if (hashCode == Failure_HASH)
   {
-    return RecorderStatus::Failure;
+     return RecorderStatus::Failure;
   }
-
   return RecorderStatus::NOT_SET;
 }
 

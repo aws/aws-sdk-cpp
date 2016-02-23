@@ -28,19 +28,19 @@ namespace Model
 {
 namespace StageTransitionTypeMapper
 {
+
+
 StageTransitionType GetStageTransitionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Inbound_HASH)
   {
-    return StageTransitionType::Inbound;
+     return StageTransitionType::Inbound;
   }
   else if (hashCode == Outbound_HASH)
   {
-    return StageTransitionType::Outbound;
+     return StageTransitionType::Outbound;
   }
-
   return StageTransitionType::NOT_SET;
 }
 

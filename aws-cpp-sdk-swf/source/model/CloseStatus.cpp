@@ -32,35 +32,35 @@ namespace Model
 {
 namespace CloseStatusMapper
 {
+
+
 CloseStatus GetCloseStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == COMPLETED_HASH)
   {
-    return CloseStatus::COMPLETED;
+     return CloseStatus::COMPLETED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return CloseStatus::FAILED;
+     return CloseStatus::FAILED;
   }
   else if (hashCode == CANCELED_HASH)
   {
-    return CloseStatus::CANCELED;
+     return CloseStatus::CANCELED;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return CloseStatus::TERMINATED;
+     return CloseStatus::TERMINATED;
   }
   else if (hashCode == CONTINUED_AS_NEW_HASH)
   {
-    return CloseStatus::CONTINUED_AS_NEW;
+     return CloseStatus::CONTINUED_AS_NEW;
   }
   else if (hashCode == TIMED_OUT_HASH)
   {
-    return CloseStatus::TIMED_OUT;
+     return CloseStatus::TIMED_OUT;
   }
-
   return CloseStatus::NOT_SET;
 }
 

@@ -33,39 +33,39 @@ namespace Model
 {
 namespace HsmStatusMapper
 {
+
+
 HsmStatus GetHsmStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return HsmStatus::PENDING;
+     return HsmStatus::PENDING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return HsmStatus::RUNNING;
+     return HsmStatus::RUNNING;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return HsmStatus::UPDATING;
+     return HsmStatus::UPDATING;
   }
   else if (hashCode == SUSPENDED_HASH)
   {
-    return HsmStatus::SUSPENDED;
+     return HsmStatus::SUSPENDED;
   }
   else if (hashCode == TERMINATING_HASH)
   {
-    return HsmStatus::TERMINATING;
+     return HsmStatus::TERMINATING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return HsmStatus::TERMINATED;
+     return HsmStatus::TERMINATED;
   }
   else if (hashCode == DEGRADED_HASH)
   {
-    return HsmStatus::DEGRADED;
+     return HsmStatus::DEGRADED;
   }
-
   return HsmStatus::NOT_SET;
 }
 

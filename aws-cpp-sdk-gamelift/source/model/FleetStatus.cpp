@@ -35,47 +35,47 @@ namespace Model
 {
 namespace FleetStatusMapper
 {
+
+
 FleetStatus GetFleetStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NEW__HASH)
   {
-    return FleetStatus::NEW_;
+     return FleetStatus::NEW_;
   }
   else if (hashCode == DOWNLOADING_HASH)
   {
-    return FleetStatus::DOWNLOADING;
+     return FleetStatus::DOWNLOADING;
   }
   else if (hashCode == VALIDATING_HASH)
   {
-    return FleetStatus::VALIDATING;
+     return FleetStatus::VALIDATING;
   }
   else if (hashCode == BUILDING_HASH)
   {
-    return FleetStatus::BUILDING;
+     return FleetStatus::BUILDING;
   }
   else if (hashCode == ACTIVATING_HASH)
   {
-    return FleetStatus::ACTIVATING;
+     return FleetStatus::ACTIVATING;
   }
   else if (hashCode == ACTIVE_HASH)
   {
-    return FleetStatus::ACTIVE;
+     return FleetStatus::ACTIVE;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return FleetStatus::DELETING;
+     return FleetStatus::DELETING;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return FleetStatus::ERROR_;
+     return FleetStatus::ERROR_;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return FleetStatus::TERMINATED;
+     return FleetStatus::TERMINATED;
   }
-
   return FleetStatus::NOT_SET;
 }
 

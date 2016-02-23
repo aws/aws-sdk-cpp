@@ -28,19 +28,19 @@ namespace Model
 {
 namespace MFADeleteStatusMapper
 {
+
+
 MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return MFADeleteStatus::Enabled;
+     return MFADeleteStatus::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return MFADeleteStatus::Disabled;
+     return MFADeleteStatus::Disabled;
   }
-
   return MFADeleteStatus::NOT_SET;
 }
 

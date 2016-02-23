@@ -33,39 +33,39 @@ namespace Model
 {
 namespace VirtualInterfaceStateMapper
 {
+
+
 VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == confirming_HASH)
   {
-    return VirtualInterfaceState::confirming;
+     return VirtualInterfaceState::confirming;
   }
   else if (hashCode == verifying_HASH)
   {
-    return VirtualInterfaceState::verifying;
+     return VirtualInterfaceState::verifying;
   }
   else if (hashCode == pending_HASH)
   {
-    return VirtualInterfaceState::pending;
+     return VirtualInterfaceState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return VirtualInterfaceState::available;
+     return VirtualInterfaceState::available;
   }
   else if (hashCode == deleting_HASH)
   {
-    return VirtualInterfaceState::deleting;
+     return VirtualInterfaceState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return VirtualInterfaceState::deleted;
+     return VirtualInterfaceState::deleted;
   }
   else if (hashCode == rejected_HASH)
   {
-    return VirtualInterfaceState::rejected;
+     return VirtualInterfaceState::rejected;
   }
-
   return VirtualInterfaceState::NOT_SET;
 }
 

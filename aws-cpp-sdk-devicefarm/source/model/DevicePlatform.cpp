@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DevicePlatformMapper
 {
+
+
 DevicePlatform GetDevicePlatformForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ANDROID_HASH)
   {
-    return DevicePlatform::ANDROID;
+     return DevicePlatform::ANDROID;
   }
   else if (hashCode == IOS_HASH)
   {
-    return DevicePlatform::IOS;
+     return DevicePlatform::IOS;
   }
-
   return DevicePlatform::NOT_SET;
 }
 

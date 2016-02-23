@@ -28,19 +28,19 @@ namespace Model
 {
 namespace VolumeStatusNameMapper
 {
+
+
 VolumeStatusName GetVolumeStatusNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == io_enabled_HASH)
   {
-    return VolumeStatusName::io_enabled;
+     return VolumeStatusName::io_enabled;
   }
   else if (hashCode == io_performance_HASH)
   {
-    return VolumeStatusName::io_performance;
+     return VolumeStatusName::io_performance;
   }
-
   return VolumeStatusName::NOT_SET;
 }
 

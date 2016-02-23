@@ -29,23 +29,23 @@ namespace Model
 {
 namespace TrustDirectionMapper
 {
+
+
 TrustDirection GetTrustDirectionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == One_Way_Outgoing_HASH)
   {
-    return TrustDirection::One_Way_Outgoing;
+     return TrustDirection::One_Way_Outgoing;
   }
   else if (hashCode == One_Way_Incoming_HASH)
   {
-    return TrustDirection::One_Way_Incoming;
+     return TrustDirection::One_Way_Incoming;
   }
   else if (hashCode == Two_Way_HASH)
   {
-    return TrustDirection::Two_Way;
+     return TrustDirection::Two_Way;
   }
-
   return TrustDirection::NOT_SET;
 }
 

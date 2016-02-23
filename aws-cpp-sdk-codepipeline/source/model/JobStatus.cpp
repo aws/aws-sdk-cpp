@@ -33,39 +33,39 @@ namespace Model
 {
 namespace JobStatusMapper
 {
+
+
 JobStatus GetJobStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Created_HASH)
   {
-    return JobStatus::Created;
+     return JobStatus::Created;
   }
   else if (hashCode == Queued_HASH)
   {
-    return JobStatus::Queued;
+     return JobStatus::Queued;
   }
   else if (hashCode == Dispatched_HASH)
   {
-    return JobStatus::Dispatched;
+     return JobStatus::Dispatched;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return JobStatus::InProgress;
+     return JobStatus::InProgress;
   }
   else if (hashCode == TimedOut_HASH)
   {
-    return JobStatus::TimedOut;
+     return JobStatus::TimedOut;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return JobStatus::Succeeded;
+     return JobStatus::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return JobStatus::Failed;
+     return JobStatus::Failed;
   }
-
   return JobStatus::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace ReturnValueMapper
 {
+
+
 ReturnValue GetReturnValueForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NONE_HASH)
   {
-    return ReturnValue::NONE;
+     return ReturnValue::NONE;
   }
   else if (hashCode == ALL_OLD_HASH)
   {
-    return ReturnValue::ALL_OLD;
+     return ReturnValue::ALL_OLD;
   }
   else if (hashCode == UPDATED_OLD_HASH)
   {
-    return ReturnValue::UPDATED_OLD;
+     return ReturnValue::UPDATED_OLD;
   }
   else if (hashCode == ALL_NEW_HASH)
   {
-    return ReturnValue::ALL_NEW;
+     return ReturnValue::ALL_NEW;
   }
   else if (hashCode == UPDATED_NEW_HASH)
   {
-    return ReturnValue::UPDATED_NEW;
+     return ReturnValue::UPDATED_NEW;
   }
-
   return ReturnValue::NOT_SET;
 }
 

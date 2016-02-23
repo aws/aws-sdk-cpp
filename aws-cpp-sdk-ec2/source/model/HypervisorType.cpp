@@ -28,19 +28,19 @@ namespace Model
 {
 namespace HypervisorTypeMapper
 {
+
+
 HypervisorType GetHypervisorTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ovm_HASH)
   {
-    return HypervisorType::ovm;
+     return HypervisorType::ovm;
   }
   else if (hashCode == xen_HASH)
   {
-    return HypervisorType::xen;
+     return HypervisorType::xen;
   }
-
   return HypervisorType::NOT_SET;
 }
 

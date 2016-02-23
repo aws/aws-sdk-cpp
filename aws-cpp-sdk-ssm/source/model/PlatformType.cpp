@@ -28,19 +28,19 @@ namespace Model
 {
 namespace PlatformTypeMapper
 {
+
+
 PlatformType GetPlatformTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Windows_HASH)
   {
-    return PlatformType::Windows;
+     return PlatformType::Windows;
   }
   else if (hashCode == Linux_HASH)
   {
-    return PlatformType::Linux;
+     return PlatformType::Linux;
   }
-
   return PlatformType::NOT_SET;
 }
 

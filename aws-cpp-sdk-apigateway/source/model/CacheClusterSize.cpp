@@ -34,43 +34,43 @@ namespace Model
 {
 namespace CacheClusterSizeMapper
 {
+
+
 CacheClusterSize GetCacheClusterSizeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == _0_5_HASH)
   {
-    return CacheClusterSize::_0_5;
+     return CacheClusterSize::_0_5;
   }
   else if (hashCode == _1_6_HASH)
   {
-    return CacheClusterSize::_1_6;
+     return CacheClusterSize::_1_6;
   }
   else if (hashCode == _6_1_HASH)
   {
-    return CacheClusterSize::_6_1;
+     return CacheClusterSize::_6_1;
   }
   else if (hashCode == _13_5_HASH)
   {
-    return CacheClusterSize::_13_5;
+     return CacheClusterSize::_13_5;
   }
   else if (hashCode == _28_4_HASH)
   {
-    return CacheClusterSize::_28_4;
+     return CacheClusterSize::_28_4;
   }
   else if (hashCode == _58_2_HASH)
   {
-    return CacheClusterSize::_58_2;
+     return CacheClusterSize::_58_2;
   }
   else if (hashCode == _118_HASH)
   {
-    return CacheClusterSize::_118;
+     return CacheClusterSize::_118;
   }
   else if (hashCode == _237_HASH)
   {
-    return CacheClusterSize::_237;
+     return CacheClusterSize::_237;
   }
-
   return CacheClusterSize::NOT_SET;
 }
 

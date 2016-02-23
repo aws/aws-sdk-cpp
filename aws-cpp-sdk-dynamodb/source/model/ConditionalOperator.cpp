@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ConditionalOperatorMapper
 {
+
+
 ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AND_HASH)
   {
-    return ConditionalOperator::AND;
+     return ConditionalOperator::AND;
   }
   else if (hashCode == OR_HASH)
   {
-    return ConditionalOperator::OR;
+     return ConditionalOperator::OR;
   }
-
   return ConditionalOperator::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace SourceTypeMapper
 {
+
+
 SourceType GetSourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == cache_cluster_HASH)
   {
-    return SourceType::cache_cluster;
+     return SourceType::cache_cluster;
   }
   else if (hashCode == cache_parameter_group_HASH)
   {
-    return SourceType::cache_parameter_group;
+     return SourceType::cache_parameter_group;
   }
   else if (hashCode == cache_security_group_HASH)
   {
-    return SourceType::cache_security_group;
+     return SourceType::cache_security_group;
   }
   else if (hashCode == cache_subnet_group_HASH)
   {
-    return SourceType::cache_subnet_group;
+     return SourceType::cache_subnet_group;
   }
-
   return SourceType::NOT_SET;
 }
 

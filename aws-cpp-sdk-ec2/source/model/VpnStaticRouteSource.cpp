@@ -27,15 +27,15 @@ namespace Model
 {
 namespace VpnStaticRouteSourceMapper
 {
+
+
 VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Static_HASH)
   {
-    return VpnStaticRouteSource::Static;
+     return VpnStaticRouteSource::Static;
   }
-
   return VpnStaticRouteSource::NOT_SET;
 }
 

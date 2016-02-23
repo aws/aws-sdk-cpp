@@ -36,51 +36,51 @@ namespace Model
 {
 namespace RRTypeMapper
 {
+
+
 RRType GetRRTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SOA_HASH)
   {
-    return RRType::SOA;
+     return RRType::SOA;
   }
   else if (hashCode == A_HASH)
   {
-    return RRType::A;
+     return RRType::A;
   }
   else if (hashCode == TXT_HASH)
   {
-    return RRType::TXT;
+     return RRType::TXT;
   }
   else if (hashCode == NS_HASH)
   {
-    return RRType::NS;
+     return RRType::NS;
   }
   else if (hashCode == CNAME_HASH)
   {
-    return RRType::CNAME;
+     return RRType::CNAME;
   }
   else if (hashCode == MX_HASH)
   {
-    return RRType::MX;
+     return RRType::MX;
   }
   else if (hashCode == PTR_HASH)
   {
-    return RRType::PTR;
+     return RRType::PTR;
   }
   else if (hashCode == SRV_HASH)
   {
-    return RRType::SRV;
+     return RRType::SRV;
   }
   else if (hashCode == SPF_HASH)
   {
-    return RRType::SPF;
+     return RRType::SPF;
   }
   else if (hashCode == AAAA_HASH)
   {
-    return RRType::AAAA;
+     return RRType::AAAA;
   }
-
   return RRType::NOT_SET;
 }
 

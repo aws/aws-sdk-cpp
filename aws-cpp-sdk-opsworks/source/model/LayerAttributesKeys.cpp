@@ -51,111 +51,111 @@ namespace Model
 {
 namespace LayerAttributesKeysMapper
 {
+
+
 LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EcsClusterArn_HASH)
   {
-    return LayerAttributesKeys::EcsClusterArn;
+     return LayerAttributesKeys::EcsClusterArn;
   }
   else if (hashCode == EnableHaproxyStats_HASH)
   {
-    return LayerAttributesKeys::EnableHaproxyStats;
+     return LayerAttributesKeys::EnableHaproxyStats;
   }
   else if (hashCode == HaproxyStatsUrl_HASH)
   {
-    return LayerAttributesKeys::HaproxyStatsUrl;
+     return LayerAttributesKeys::HaproxyStatsUrl;
   }
   else if (hashCode == HaproxyStatsUser_HASH)
   {
-    return LayerAttributesKeys::HaproxyStatsUser;
+     return LayerAttributesKeys::HaproxyStatsUser;
   }
   else if (hashCode == HaproxyStatsPassword_HASH)
   {
-    return LayerAttributesKeys::HaproxyStatsPassword;
+     return LayerAttributesKeys::HaproxyStatsPassword;
   }
   else if (hashCode == HaproxyHealthCheckUrl_HASH)
   {
-    return LayerAttributesKeys::HaproxyHealthCheckUrl;
+     return LayerAttributesKeys::HaproxyHealthCheckUrl;
   }
   else if (hashCode == HaproxyHealthCheckMethod_HASH)
   {
-    return LayerAttributesKeys::HaproxyHealthCheckMethod;
+     return LayerAttributesKeys::HaproxyHealthCheckMethod;
   }
   else if (hashCode == MysqlRootPassword_HASH)
   {
-    return LayerAttributesKeys::MysqlRootPassword;
+     return LayerAttributesKeys::MysqlRootPassword;
   }
   else if (hashCode == MysqlRootPasswordUbiquitous_HASH)
   {
-    return LayerAttributesKeys::MysqlRootPasswordUbiquitous;
+     return LayerAttributesKeys::MysqlRootPasswordUbiquitous;
   }
   else if (hashCode == GangliaUrl_HASH)
   {
-    return LayerAttributesKeys::GangliaUrl;
+     return LayerAttributesKeys::GangliaUrl;
   }
   else if (hashCode == GangliaUser_HASH)
   {
-    return LayerAttributesKeys::GangliaUser;
+     return LayerAttributesKeys::GangliaUser;
   }
   else if (hashCode == GangliaPassword_HASH)
   {
-    return LayerAttributesKeys::GangliaPassword;
+     return LayerAttributesKeys::GangliaPassword;
   }
   else if (hashCode == MemcachedMemory_HASH)
   {
-    return LayerAttributesKeys::MemcachedMemory;
+     return LayerAttributesKeys::MemcachedMemory;
   }
   else if (hashCode == NodejsVersion_HASH)
   {
-    return LayerAttributesKeys::NodejsVersion;
+     return LayerAttributesKeys::NodejsVersion;
   }
   else if (hashCode == RubyVersion_HASH)
   {
-    return LayerAttributesKeys::RubyVersion;
+     return LayerAttributesKeys::RubyVersion;
   }
   else if (hashCode == RubygemsVersion_HASH)
   {
-    return LayerAttributesKeys::RubygemsVersion;
+     return LayerAttributesKeys::RubygemsVersion;
   }
   else if (hashCode == ManageBundler_HASH)
   {
-    return LayerAttributesKeys::ManageBundler;
+     return LayerAttributesKeys::ManageBundler;
   }
   else if (hashCode == BundlerVersion_HASH)
   {
-    return LayerAttributesKeys::BundlerVersion;
+     return LayerAttributesKeys::BundlerVersion;
   }
   else if (hashCode == RailsStack_HASH)
   {
-    return LayerAttributesKeys::RailsStack;
+     return LayerAttributesKeys::RailsStack;
   }
   else if (hashCode == PassengerVersion_HASH)
   {
-    return LayerAttributesKeys::PassengerVersion;
+     return LayerAttributesKeys::PassengerVersion;
   }
   else if (hashCode == Jvm_HASH)
   {
-    return LayerAttributesKeys::Jvm;
+     return LayerAttributesKeys::Jvm;
   }
   else if (hashCode == JvmVersion_HASH)
   {
-    return LayerAttributesKeys::JvmVersion;
+     return LayerAttributesKeys::JvmVersion;
   }
   else if (hashCode == JvmOptions_HASH)
   {
-    return LayerAttributesKeys::JvmOptions;
+     return LayerAttributesKeys::JvmOptions;
   }
   else if (hashCode == JavaAppServer_HASH)
   {
-    return LayerAttributesKeys::JavaAppServer;
+     return LayerAttributesKeys::JavaAppServer;
   }
   else if (hashCode == JavaAppServerVersion_HASH)
   {
-    return LayerAttributesKeys::JavaAppServerVersion;
+     return LayerAttributesKeys::JavaAppServerVersion;
   }
-
   return LayerAttributesKeys::NOT_SET;
 }
 

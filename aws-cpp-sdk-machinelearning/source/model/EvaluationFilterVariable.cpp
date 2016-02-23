@@ -34,43 +34,43 @@ namespace Model
 {
 namespace EvaluationFilterVariableMapper
 {
+
+
 EvaluationFilterVariable GetEvaluationFilterVariableForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CreatedAt_HASH)
   {
-    return EvaluationFilterVariable::CreatedAt;
+     return EvaluationFilterVariable::CreatedAt;
   }
   else if (hashCode == LastUpdatedAt_HASH)
   {
-    return EvaluationFilterVariable::LastUpdatedAt;
+     return EvaluationFilterVariable::LastUpdatedAt;
   }
   else if (hashCode == Status_HASH)
   {
-    return EvaluationFilterVariable::Status;
+     return EvaluationFilterVariable::Status;
   }
   else if (hashCode == Name_HASH)
   {
-    return EvaluationFilterVariable::Name;
+     return EvaluationFilterVariable::Name;
   }
   else if (hashCode == IAMUser_HASH)
   {
-    return EvaluationFilterVariable::IAMUser;
+     return EvaluationFilterVariable::IAMUser;
   }
   else if (hashCode == MLModelId_HASH)
   {
-    return EvaluationFilterVariable::MLModelId;
+     return EvaluationFilterVariable::MLModelId;
   }
   else if (hashCode == DataSourceId_HASH)
   {
-    return EvaluationFilterVariable::DataSourceId;
+     return EvaluationFilterVariable::DataSourceId;
   }
   else if (hashCode == DataURI_HASH)
   {
-    return EvaluationFilterVariable::DataURI;
+     return EvaluationFilterVariable::DataURI;
   }
-
   return EvaluationFilterVariable::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ArtifactCategoryMapper
 {
+
+
 ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SCREENSHOT_HASH)
   {
-    return ArtifactCategory::SCREENSHOT;
+     return ArtifactCategory::SCREENSHOT;
   }
   else if (hashCode == FILE_HASH)
   {
-    return ArtifactCategory::FILE;
+     return ArtifactCategory::FILE;
   }
   else if (hashCode == LOG_HASH)
   {
-    return ArtifactCategory::LOG;
+     return ArtifactCategory::LOG;
   }
-
   return ArtifactCategory::NOT_SET;
 }
 

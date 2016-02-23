@@ -28,19 +28,19 @@ namespace Model
 {
 namespace PayerMapper
 {
+
+
 Payer GetPayerForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Requester_HASH)
   {
-    return Payer::Requester;
+     return Payer::Requester;
   }
   else if (hashCode == BucketOwner_HASH)
   {
-    return Payer::BucketOwner;
+     return Payer::BucketOwner;
   }
-
   return Payer::NOT_SET;
 }
 

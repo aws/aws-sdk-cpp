@@ -30,27 +30,27 @@ namespace Model
 {
 namespace RadiusAuthenticationProtocolMapper
 {
+
+
 RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PAP_HASH)
   {
-    return RadiusAuthenticationProtocol::PAP;
+     return RadiusAuthenticationProtocol::PAP;
   }
   else if (hashCode == CHAP_HASH)
   {
-    return RadiusAuthenticationProtocol::CHAP;
+     return RadiusAuthenticationProtocol::CHAP;
   }
   else if (hashCode == MS_CHAPv1_HASH)
   {
-    return RadiusAuthenticationProtocol::MS_CHAPv1;
+     return RadiusAuthenticationProtocol::MS_CHAPv1;
   }
   else if (hashCode == MS_CHAPv2_HASH)
   {
-    return RadiusAuthenticationProtocol::MS_CHAPv2;
+     return RadiusAuthenticationProtocol::MS_CHAPv2;
   }
-
   return RadiusAuthenticationProtocol::NOT_SET;
 }
 

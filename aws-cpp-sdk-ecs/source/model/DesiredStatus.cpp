@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DesiredStatusMapper
 {
+
+
 DesiredStatus GetDesiredStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == RUNNING_HASH)
   {
-    return DesiredStatus::RUNNING;
+     return DesiredStatus::RUNNING;
   }
   else if (hashCode == PENDING_HASH)
   {
-    return DesiredStatus::PENDING;
+     return DesiredStatus::PENDING;
   }
   else if (hashCode == STOPPED_HASH)
   {
-    return DesiredStatus::STOPPED;
+     return DesiredStatus::STOPPED;
   }
-
   return DesiredStatus::NOT_SET;
 }
 

@@ -27,15 +27,15 @@ namespace Model
 {
 namespace EventSourceMapper
 {
+
+
 EventSource GetEventSourceForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == aws_config_HASH)
   {
-    return EventSource::aws_config;
+     return EventSource::aws_config;
   }
-
   return EventSource::NOT_SET;
 }
 

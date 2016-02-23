@@ -29,23 +29,23 @@ namespace Model
 {
 namespace GeoRestrictionTypeMapper
 {
+
+
 GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == blacklist_HASH)
   {
-    return GeoRestrictionType::blacklist;
+     return GeoRestrictionType::blacklist;
   }
   else if (hashCode == whitelist_HASH)
   {
-    return GeoRestrictionType::whitelist;
+     return GeoRestrictionType::whitelist;
   }
   else if (hashCode == none_HASH)
   {
-    return GeoRestrictionType::none;
+     return GeoRestrictionType::none;
   }
-
   return GeoRestrictionType::NOT_SET;
 }
 

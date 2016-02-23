@@ -31,31 +31,31 @@ namespace Model
 {
 namespace WorkspaceDirectoryStateMapper
 {
+
+
 WorkspaceDirectoryState GetWorkspaceDirectoryStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == REGISTERING_HASH)
   {
-    return WorkspaceDirectoryState::REGISTERING;
+     return WorkspaceDirectoryState::REGISTERING;
   }
   else if (hashCode == REGISTERED_HASH)
   {
-    return WorkspaceDirectoryState::REGISTERED;
+     return WorkspaceDirectoryState::REGISTERED;
   }
   else if (hashCode == DEREGISTERING_HASH)
   {
-    return WorkspaceDirectoryState::DEREGISTERING;
+     return WorkspaceDirectoryState::DEREGISTERING;
   }
   else if (hashCode == DEREGISTERED_HASH)
   {
-    return WorkspaceDirectoryState::DEREGISTERED;
+     return WorkspaceDirectoryState::DEREGISTERED;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return WorkspaceDirectoryState::ERROR_;
+     return WorkspaceDirectoryState::ERROR_;
   }
-
   return WorkspaceDirectoryState::NOT_SET;
 }
 

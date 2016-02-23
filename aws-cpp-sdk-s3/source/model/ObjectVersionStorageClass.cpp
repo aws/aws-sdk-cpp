@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ObjectVersionStorageClassMapper
 {
+
+
 ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STANDARD_HASH)
   {
-    return ObjectVersionStorageClass::STANDARD;
+     return ObjectVersionStorageClass::STANDARD;
   }
-
   return ObjectVersionStorageClass::NOT_SET;
 }
 

@@ -33,39 +33,39 @@ namespace Model
 {
 namespace CommandStatusMapper
 {
+
+
 CommandStatus GetCommandStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return CommandStatus::Pending;
+     return CommandStatus::Pending;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return CommandStatus::InProgress;
+     return CommandStatus::InProgress;
   }
   else if (hashCode == Cancelling_HASH)
   {
-    return CommandStatus::Cancelling;
+     return CommandStatus::Cancelling;
   }
   else if (hashCode == Success_HASH)
   {
-    return CommandStatus::Success;
+     return CommandStatus::Success;
   }
   else if (hashCode == TimedOut_HASH)
   {
-    return CommandStatus::TimedOut;
+     return CommandStatus::TimedOut;
   }
   else if (hashCode == Cancelled_HASH)
   {
-    return CommandStatus::Cancelled;
+     return CommandStatus::Cancelled;
   }
   else if (hashCode == Failed_HASH)
   {
-    return CommandStatus::Failed;
+     return CommandStatus::Failed;
   }
-
   return CommandStatus::NOT_SET;
 }
 

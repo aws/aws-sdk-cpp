@@ -36,51 +36,51 @@ namespace Model
 {
 namespace InstanceGroupStateMapper
 {
+
+
 InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PROVISIONING_HASH)
   {
-    return InstanceGroupState::PROVISIONING;
+     return InstanceGroupState::PROVISIONING;
   }
   else if (hashCode == BOOTSTRAPPING_HASH)
   {
-    return InstanceGroupState::BOOTSTRAPPING;
+     return InstanceGroupState::BOOTSTRAPPING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return InstanceGroupState::RUNNING;
+     return InstanceGroupState::RUNNING;
   }
   else if (hashCode == RESIZING_HASH)
   {
-    return InstanceGroupState::RESIZING;
+     return InstanceGroupState::RESIZING;
   }
   else if (hashCode == SUSPENDED_HASH)
   {
-    return InstanceGroupState::SUSPENDED;
+     return InstanceGroupState::SUSPENDED;
   }
   else if (hashCode == TERMINATING_HASH)
   {
-    return InstanceGroupState::TERMINATING;
+     return InstanceGroupState::TERMINATING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return InstanceGroupState::TERMINATED;
+     return InstanceGroupState::TERMINATED;
   }
   else if (hashCode == ARRESTED_HASH)
   {
-    return InstanceGroupState::ARRESTED;
+     return InstanceGroupState::ARRESTED;
   }
   else if (hashCode == SHUTTING_DOWN_HASH)
   {
-    return InstanceGroupState::SHUTTING_DOWN;
+     return InstanceGroupState::SHUTTING_DOWN;
   }
   else if (hashCode == ENDED_HASH)
   {
-    return InstanceGroupState::ENDED;
+     return InstanceGroupState::ENDED;
   }
-
   return InstanceGroupState::NOT_SET;
 }
 

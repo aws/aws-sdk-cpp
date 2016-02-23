@@ -29,23 +29,23 @@ namespace Model
 {
 namespace TypeMapper
 {
+
+
 Type GetTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CanonicalUser_HASH)
   {
-    return Type::CanonicalUser;
+     return Type::CanonicalUser;
   }
   else if (hashCode == AmazonCustomerByEmail_HASH)
   {
-    return Type::AmazonCustomerByEmail;
+     return Type::AmazonCustomerByEmail;
   }
   else if (hashCode == Group_HASH)
   {
-    return Type::Group;
+     return Type::Group;
   }
-
   return Type::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ApplicationRevisionSortByMapper
 {
+
+
 ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == registerTime_HASH)
   {
-    return ApplicationRevisionSortBy::registerTime;
+     return ApplicationRevisionSortBy::registerTime;
   }
   else if (hashCode == firstUsedTime_HASH)
   {
-    return ApplicationRevisionSortBy::firstUsedTime;
+     return ApplicationRevisionSortBy::firstUsedTime;
   }
   else if (hashCode == lastUsedTime_HASH)
   {
-    return ApplicationRevisionSortBy::lastUsedTime;
+     return ApplicationRevisionSortBy::lastUsedTime;
   }
-
   return ApplicationRevisionSortBy::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace RadiusStatusMapper
 {
+
+
 RadiusStatus GetRadiusStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Creating_HASH)
   {
-    return RadiusStatus::Creating;
+     return RadiusStatus::Creating;
   }
   else if (hashCode == Completed_HASH)
   {
-    return RadiusStatus::Completed;
+     return RadiusStatus::Completed;
   }
   else if (hashCode == Failed_HASH)
   {
-    return RadiusStatus::Failed;
+     return RadiusStatus::Failed;
   }
-
   return RadiusStatus::NOT_SET;
 }
 

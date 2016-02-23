@@ -27,15 +27,15 @@ namespace Model
 {
 namespace EncryptionKeyTypeMapper
 {
+
+
 EncryptionKeyType GetEncryptionKeyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == KMS_HASH)
   {
-    return EncryptionKeyType::KMS;
+     return EncryptionKeyType::KMS;
   }
-
   return EncryptionKeyType::NOT_SET;
 }
 

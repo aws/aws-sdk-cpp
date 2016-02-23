@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ExportTaskStateMapper
 {
+
+
 ExportTaskState GetExportTaskStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == active_HASH)
   {
-    return ExportTaskState::active;
+     return ExportTaskState::active;
   }
   else if (hashCode == cancelling_HASH)
   {
-    return ExportTaskState::cancelling;
+     return ExportTaskState::cancelling;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return ExportTaskState::cancelled;
+     return ExportTaskState::cancelled;
   }
   else if (hashCode == completed_HASH)
   {
-    return ExportTaskState::completed;
+     return ExportTaskState::completed;
   }
-
   return ExportTaskState::NOT_SET;
 }
 

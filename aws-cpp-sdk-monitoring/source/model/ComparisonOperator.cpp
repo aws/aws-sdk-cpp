@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ComparisonOperatorMapper
 {
+
+
 ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == GreaterThanOrEqualToThreshold_HASH)
   {
-    return ComparisonOperator::GreaterThanOrEqualToThreshold;
+     return ComparisonOperator::GreaterThanOrEqualToThreshold;
   }
   else if (hashCode == GreaterThanThreshold_HASH)
   {
-    return ComparisonOperator::GreaterThanThreshold;
+     return ComparisonOperator::GreaterThanThreshold;
   }
   else if (hashCode == LessThanThreshold_HASH)
   {
-    return ComparisonOperator::LessThanThreshold;
+     return ComparisonOperator::LessThanThreshold;
   }
   else if (hashCode == LessThanOrEqualToThreshold_HASH)
   {
-    return ComparisonOperator::LessThanOrEqualToThreshold;
+     return ComparisonOperator::LessThanOrEqualToThreshold;
   }
-
   return ComparisonOperator::NOT_SET;
 }
 

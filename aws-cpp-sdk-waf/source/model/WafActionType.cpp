@@ -29,23 +29,23 @@ namespace Model
 {
 namespace WafActionTypeMapper
 {
+
+
 WafActionType GetWafActionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == BLOCK_HASH)
   {
-    return WafActionType::BLOCK;
+     return WafActionType::BLOCK;
   }
   else if (hashCode == ALLOW_HASH)
   {
-    return WafActionType::ALLOW;
+     return WafActionType::ALLOW;
   }
   else if (hashCode == COUNT_HASH)
   {
-    return WafActionType::COUNT;
+     return WafActionType::COUNT;
   }
-
   return WafActionType::NOT_SET;
 }
 

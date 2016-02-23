@@ -29,23 +29,23 @@ namespace Model
 {
 namespace AttributeActionMapper
 {
+
+
 AttributeAction GetAttributeActionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ADD_HASH)
   {
-    return AttributeAction::ADD;
+     return AttributeAction::ADD;
   }
   else if (hashCode == PUT_HASH)
   {
-    return AttributeAction::PUT;
+     return AttributeAction::PUT;
   }
   else if (hashCode == DELETE__HASH)
   {
-    return AttributeAction::DELETE_;
+     return AttributeAction::DELETE_;
   }
-
   return AttributeAction::NOT_SET;
 }
 

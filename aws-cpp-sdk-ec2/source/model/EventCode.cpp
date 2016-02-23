@@ -31,31 +31,31 @@ namespace Model
 {
 namespace EventCodeMapper
 {
+
+
 EventCode GetEventCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == instance_reboot_HASH)
   {
-    return EventCode::instance_reboot;
+     return EventCode::instance_reboot;
   }
   else if (hashCode == system_reboot_HASH)
   {
-    return EventCode::system_reboot;
+     return EventCode::system_reboot;
   }
   else if (hashCode == system_maintenance_HASH)
   {
-    return EventCode::system_maintenance;
+     return EventCode::system_maintenance;
   }
   else if (hashCode == instance_retirement_HASH)
   {
-    return EventCode::instance_retirement;
+     return EventCode::instance_retirement;
   }
   else if (hashCode == instance_stop_HASH)
   {
-    return EventCode::instance_stop;
+     return EventCode::instance_stop;
   }
-
   return EventCode::NOT_SET;
 }
 

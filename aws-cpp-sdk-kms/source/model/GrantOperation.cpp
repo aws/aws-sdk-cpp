@@ -35,47 +35,47 @@ namespace Model
 {
 namespace GrantOperationMapper
 {
+
+
 GrantOperation GetGrantOperationForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Decrypt_HASH)
   {
-    return GrantOperation::Decrypt;
+     return GrantOperation::Decrypt;
   }
   else if (hashCode == Encrypt_HASH)
   {
-    return GrantOperation::Encrypt;
+     return GrantOperation::Encrypt;
   }
   else if (hashCode == GenerateDataKey_HASH)
   {
-    return GrantOperation::GenerateDataKey;
+     return GrantOperation::GenerateDataKey;
   }
   else if (hashCode == GenerateDataKeyWithoutPlaintext_HASH)
   {
-    return GrantOperation::GenerateDataKeyWithoutPlaintext;
+     return GrantOperation::GenerateDataKeyWithoutPlaintext;
   }
   else if (hashCode == ReEncryptFrom_HASH)
   {
-    return GrantOperation::ReEncryptFrom;
+     return GrantOperation::ReEncryptFrom;
   }
   else if (hashCode == ReEncryptTo_HASH)
   {
-    return GrantOperation::ReEncryptTo;
+     return GrantOperation::ReEncryptTo;
   }
   else if (hashCode == CreateGrant_HASH)
   {
-    return GrantOperation::CreateGrant;
+     return GrantOperation::CreateGrant;
   }
   else if (hashCode == RetireGrant_HASH)
   {
-    return GrantOperation::RetireGrant;
+     return GrantOperation::RetireGrant;
   }
   else if (hashCode == DescribeKey_HASH)
   {
-    return GrantOperation::DescribeKey;
+     return GrantOperation::DescribeKey;
   }
-
   return GrantOperation::NOT_SET;
 }
 

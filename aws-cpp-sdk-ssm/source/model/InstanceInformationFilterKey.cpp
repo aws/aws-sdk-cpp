@@ -30,27 +30,27 @@ namespace Model
 {
 namespace InstanceInformationFilterKeyMapper
 {
+
+
 InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InstanceIds_HASH)
   {
-    return InstanceInformationFilterKey::InstanceIds;
+     return InstanceInformationFilterKey::InstanceIds;
   }
   else if (hashCode == AgentVersion_HASH)
   {
-    return InstanceInformationFilterKey::AgentVersion;
+     return InstanceInformationFilterKey::AgentVersion;
   }
   else if (hashCode == PingStatus_HASH)
   {
-    return InstanceInformationFilterKey::PingStatus;
+     return InstanceInformationFilterKey::PingStatus;
   }
   else if (hashCode == PlatformTypes_HASH)
   {
-    return InstanceInformationFilterKey::PlatformTypes;
+     return InstanceInformationFilterKey::PlatformTypes;
   }
-
   return InstanceInformationFilterKey::NOT_SET;
 }
 

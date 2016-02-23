@@ -27,15 +27,15 @@ namespace Model
 {
 namespace TrustTypeMapper
 {
+
+
 TrustType GetTrustTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Forest_HASH)
   {
-    return TrustType::Forest;
+     return TrustType::Forest;
   }
-
   return TrustType::NOT_SET;
 }
 

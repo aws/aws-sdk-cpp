@@ -32,35 +32,35 @@ namespace Model
 {
 namespace InterconnectStateMapper
 {
+
+
 InterconnectState GetInterconnectStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == requested_HASH)
   {
-    return InterconnectState::requested;
+     return InterconnectState::requested;
   }
   else if (hashCode == pending_HASH)
   {
-    return InterconnectState::pending;
+     return InterconnectState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return InterconnectState::available;
+     return InterconnectState::available;
   }
   else if (hashCode == down_HASH)
   {
-    return InterconnectState::down;
+     return InterconnectState::down;
   }
   else if (hashCode == deleting_HASH)
   {
-    return InterconnectState::deleting;
+     return InterconnectState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return InterconnectState::deleted;
+     return InterconnectState::deleted;
   }
-
   return InterconnectState::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace PlayerSessionCreationPolicyMapper
 {
+
+
 PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACCEPT_ALL_HASH)
   {
-    return PlayerSessionCreationPolicy::ACCEPT_ALL;
+     return PlayerSessionCreationPolicy::ACCEPT_ALL;
   }
   else if (hashCode == DENY_ALL_HASH)
   {
-    return PlayerSessionCreationPolicy::DENY_ALL;
+     return PlayerSessionCreationPolicy::DENY_ALL;
   }
-
   return PlayerSessionCreationPolicy::NOT_SET;
 }
 

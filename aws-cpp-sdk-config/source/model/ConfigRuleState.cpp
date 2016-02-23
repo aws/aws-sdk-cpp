@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ConfigRuleStateMapper
 {
+
+
 ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVE_HASH)
   {
-    return ConfigRuleState::ACTIVE;
+     return ConfigRuleState::ACTIVE;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return ConfigRuleState::DELETING;
+     return ConfigRuleState::DELETING;
   }
-
   return ConfigRuleState::NOT_SET;
 }
 

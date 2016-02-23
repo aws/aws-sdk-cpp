@@ -29,23 +29,23 @@ namespace Model
 {
 namespace OriginProtocolPolicyMapper
 {
+
+
 OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == http_only_HASH)
   {
-    return OriginProtocolPolicy::http_only;
+     return OriginProtocolPolicy::http_only;
   }
   else if (hashCode == match_viewer_HASH)
   {
-    return OriginProtocolPolicy::match_viewer;
+     return OriginProtocolPolicy::match_viewer;
   }
   else if (hashCode == https_only_HASH)
   {
-    return OriginProtocolPolicy::https_only;
+     return OriginProtocolPolicy::https_only;
   }
-
   return OriginProtocolPolicy::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace StatusCodeMapper
 {
+
+
 StatusCode GetStatusCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InProgress_HASH)
   {
-    return StatusCode::InProgress;
+     return StatusCode::InProgress;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return StatusCode::Succeeded;
+     return StatusCode::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return StatusCode::Failed;
+     return StatusCode::Failed;
   }
-
   return StatusCode::NOT_SET;
 }
 

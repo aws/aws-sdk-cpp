@@ -29,23 +29,23 @@ namespace Model
 {
 namespace EC2TagFilterTypeMapper
 {
+
+
 EC2TagFilterType GetEC2TagFilterTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == KEY_ONLY_HASH)
   {
-    return EC2TagFilterType::KEY_ONLY;
+     return EC2TagFilterType::KEY_ONLY;
   }
   else if (hashCode == VALUE_ONLY_HASH)
   {
-    return EC2TagFilterType::VALUE_ONLY;
+     return EC2TagFilterType::VALUE_ONLY;
   }
   else if (hashCode == KEY_AND_VALUE_HASH)
   {
-    return EC2TagFilterType::KEY_AND_VALUE;
+     return EC2TagFilterType::KEY_AND_VALUE;
   }
-
   return EC2TagFilterType::NOT_SET;
 }
 

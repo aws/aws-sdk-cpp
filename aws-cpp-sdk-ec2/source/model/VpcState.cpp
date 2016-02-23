@@ -28,19 +28,19 @@ namespace Model
 {
 namespace VpcStateMapper
 {
+
+
 VpcState GetVpcStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return VpcState::pending;
+     return VpcState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return VpcState::available;
+     return VpcState::available;
   }
-
   return VpcState::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace NetworkInterfaceStatusMapper
 {
+
+
 NetworkInterfaceStatus GetNetworkInterfaceStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == available_HASH)
   {
-    return NetworkInterfaceStatus::available;
+     return NetworkInterfaceStatus::available;
   }
   else if (hashCode == attaching_HASH)
   {
-    return NetworkInterfaceStatus::attaching;
+     return NetworkInterfaceStatus::attaching;
   }
   else if (hashCode == in_use_HASH)
   {
-    return NetworkInterfaceStatus::in_use;
+     return NetworkInterfaceStatus::in_use;
   }
   else if (hashCode == detaching_HASH)
   {
-    return NetworkInterfaceStatus::detaching;
+     return NetworkInterfaceStatus::detaching;
   }
-
   return NetworkInterfaceStatus::NOT_SET;
 }
 

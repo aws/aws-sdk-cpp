@@ -30,27 +30,27 @@ namespace Model
 {
 namespace QueryParserMapper
 {
+
+
 QueryParser GetQueryParserForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == simple_HASH)
   {
-    return QueryParser::simple;
+     return QueryParser::simple;
   }
   else if (hashCode == structured_HASH)
   {
-    return QueryParser::structured;
+     return QueryParser::structured;
   }
   else if (hashCode == lucene_HASH)
   {
-    return QueryParser::lucene;
+     return QueryParser::lucene;
   }
   else if (hashCode == dismax_HASH)
   {
-    return QueryParser::dismax;
+     return QueryParser::dismax;
   }
-
   return QueryParser::NOT_SET;
 }
 

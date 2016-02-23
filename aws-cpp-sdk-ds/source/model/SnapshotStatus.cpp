@@ -29,23 +29,23 @@ namespace Model
 {
 namespace SnapshotStatusMapper
 {
+
+
 SnapshotStatus GetSnapshotStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Creating_HASH)
   {
-    return SnapshotStatus::Creating;
+     return SnapshotStatus::Creating;
   }
   else if (hashCode == Completed_HASH)
   {
-    return SnapshotStatus::Completed;
+     return SnapshotStatus::Completed;
   }
   else if (hashCode == Failed_HASH)
   {
-    return SnapshotStatus::Failed;
+     return SnapshotStatus::Failed;
   }
-
   return SnapshotStatus::NOT_SET;
 }
 

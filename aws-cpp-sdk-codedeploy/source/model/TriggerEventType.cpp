@@ -33,39 +33,39 @@ namespace Model
 {
 namespace TriggerEventTypeMapper
 {
+
+
 TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DeploymentStart_HASH)
   {
-    return TriggerEventType::DeploymentStart;
+     return TriggerEventType::DeploymentStart;
   }
   else if (hashCode == DeploymentSuccess_HASH)
   {
-    return TriggerEventType::DeploymentSuccess;
+     return TriggerEventType::DeploymentSuccess;
   }
   else if (hashCode == DeploymentFailure_HASH)
   {
-    return TriggerEventType::DeploymentFailure;
+     return TriggerEventType::DeploymentFailure;
   }
   else if (hashCode == DeploymentStop_HASH)
   {
-    return TriggerEventType::DeploymentStop;
+     return TriggerEventType::DeploymentStop;
   }
   else if (hashCode == InstanceStart_HASH)
   {
-    return TriggerEventType::InstanceStart;
+     return TriggerEventType::InstanceStart;
   }
   else if (hashCode == InstanceSuccess_HASH)
   {
-    return TriggerEventType::InstanceSuccess;
+     return TriggerEventType::InstanceSuccess;
   }
   else if (hashCode == InstanceFailure_HASH)
   {
-    return TriggerEventType::InstanceFailure;
+     return TriggerEventType::InstanceFailure;
   }
-
   return TriggerEventType::NOT_SET;
 }
 

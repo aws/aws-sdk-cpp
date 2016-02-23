@@ -34,43 +34,43 @@ namespace Model
 {
 namespace EnvironmentHealthAttributeMapper
 {
+
+
 EnvironmentHealthAttribute GetEnvironmentHealthAttributeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Status_HASH)
   {
-    return EnvironmentHealthAttribute::Status;
+     return EnvironmentHealthAttribute::Status;
   }
   else if (hashCode == Color_HASH)
   {
-    return EnvironmentHealthAttribute::Color;
+     return EnvironmentHealthAttribute::Color;
   }
   else if (hashCode == Causes_HASH)
   {
-    return EnvironmentHealthAttribute::Causes;
+     return EnvironmentHealthAttribute::Causes;
   }
   else if (hashCode == ApplicationMetrics_HASH)
   {
-    return EnvironmentHealthAttribute::ApplicationMetrics;
+     return EnvironmentHealthAttribute::ApplicationMetrics;
   }
   else if (hashCode == InstancesHealth_HASH)
   {
-    return EnvironmentHealthAttribute::InstancesHealth;
+     return EnvironmentHealthAttribute::InstancesHealth;
   }
   else if (hashCode == All_HASH)
   {
-    return EnvironmentHealthAttribute::All;
+     return EnvironmentHealthAttribute::All;
   }
   else if (hashCode == HealthStatus_HASH)
   {
-    return EnvironmentHealthAttribute::HealthStatus;
+     return EnvironmentHealthAttribute::HealthStatus;
   }
   else if (hashCode == RefreshedAt_HASH)
   {
-    return EnvironmentHealthAttribute::RefreshedAt;
+     return EnvironmentHealthAttribute::RefreshedAt;
   }
-
   return EnvironmentHealthAttribute::NOT_SET;
 }
 

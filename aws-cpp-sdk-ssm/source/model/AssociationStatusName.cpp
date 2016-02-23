@@ -29,23 +29,23 @@ namespace Model
 {
 namespace AssociationStatusNameMapper
 {
+
+
 AssociationStatusName GetAssociationStatusNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return AssociationStatusName::Pending;
+     return AssociationStatusName::Pending;
   }
   else if (hashCode == Success_HASH)
   {
-    return AssociationStatusName::Success;
+     return AssociationStatusName::Success;
   }
   else if (hashCode == Failed_HASH)
   {
-    return AssociationStatusName::Failed;
+     return AssociationStatusName::Failed;
   }
-
   return AssociationStatusName::NOT_SET;
 }
 

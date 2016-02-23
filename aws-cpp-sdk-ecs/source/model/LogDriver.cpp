@@ -31,31 +31,31 @@ namespace Model
 {
 namespace LogDriverMapper
 {
+
+
 LogDriver GetLogDriverForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == json_file_HASH)
   {
-    return LogDriver::json_file;
+     return LogDriver::json_file;
   }
   else if (hashCode == syslog_HASH)
   {
-    return LogDriver::syslog;
+     return LogDriver::syslog;
   }
   else if (hashCode == journald_HASH)
   {
-    return LogDriver::journald;
+     return LogDriver::journald;
   }
   else if (hashCode == gelf_HASH)
   {
-    return LogDriver::gelf;
+     return LogDriver::gelf;
   }
   else if (hashCode == fluentd_HASH)
   {
-    return LogDriver::fluentd;
+     return LogDriver::fluentd;
   }
-
   return LogDriver::NOT_SET;
 }
 

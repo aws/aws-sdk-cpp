@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RootDeviceTypeMapper
 {
+
+
 RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ebs_HASH)
   {
-    return RootDeviceType::ebs;
+     return RootDeviceType::ebs;
   }
   else if (hashCode == instance_store_HASH)
   {
-    return RootDeviceType::instance_store;
+     return RootDeviceType::instance_store;
   }
-
   return RootDeviceType::NOT_SET;
 }
 

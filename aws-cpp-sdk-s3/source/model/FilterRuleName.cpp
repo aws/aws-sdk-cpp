@@ -28,19 +28,19 @@ namespace Model
 {
 namespace FilterRuleNameMapper
 {
+
+
 FilterRuleName GetFilterRuleNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == prefix_HASH)
   {
-    return FilterRuleName::prefix;
+     return FilterRuleName::prefix;
   }
   else if (hashCode == suffix_HASH)
   {
-    return FilterRuleName::suffix;
+     return FilterRuleName::suffix;
   }
-
   return FilterRuleName::NOT_SET;
 }
 

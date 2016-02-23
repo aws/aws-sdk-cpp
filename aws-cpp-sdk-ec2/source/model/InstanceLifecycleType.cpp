@@ -27,15 +27,15 @@ namespace Model
 {
 namespace InstanceLifecycleTypeMapper
 {
+
+
 InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == spot_HASH)
   {
-    return InstanceLifecycleType::spot;
+     return InstanceLifecycleType::spot;
   }
-
   return InstanceLifecycleType::NOT_SET;
 }
 

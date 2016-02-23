@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DeliveryStreamStatusMapper
 {
+
+
 DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATING_HASH)
   {
-    return DeliveryStreamStatus::CREATING;
+     return DeliveryStreamStatus::CREATING;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return DeliveryStreamStatus::DELETING;
+     return DeliveryStreamStatus::DELETING;
   }
   else if (hashCode == ACTIVE_HASH)
   {
-    return DeliveryStreamStatus::ACTIVE;
+     return DeliveryStreamStatus::ACTIVE;
   }
-
   return DeliveryStreamStatus::NOT_SET;
 }
 

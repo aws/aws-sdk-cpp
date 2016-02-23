@@ -29,23 +29,23 @@ namespace Model
 {
 namespace StorageClassMapper
 {
+
+
 StorageClass GetStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STANDARD_HASH)
   {
-    return StorageClass::STANDARD;
+     return StorageClass::STANDARD;
   }
   else if (hashCode == REDUCED_REDUNDANCY_HASH)
   {
-    return StorageClass::REDUCED_REDUNDANCY;
+     return StorageClass::REDUCED_REDUNDANCY;
   }
   else if (hashCode == STANDARD_IA_HASH)
   {
-    return StorageClass::STANDARD_IA;
+     return StorageClass::STANDARD_IA;
   }
-
   return StorageClass::NOT_SET;
 }
 

@@ -27,15 +27,15 @@ namespace Model
 {
 namespace RecurringChargeFrequencyMapper
 {
+
+
 RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Hourly_HASH)
   {
-    return RecurringChargeFrequency::Hourly;
+     return RecurringChargeFrequency::Hourly;
   }
-
   return RecurringChargeFrequency::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace AssociationFilterKeyMapper
 {
+
+
 AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InstanceId_HASH)
   {
-    return AssociationFilterKey::InstanceId;
+     return AssociationFilterKey::InstanceId;
   }
   else if (hashCode == Name_HASH)
   {
-    return AssociationFilterKey::Name;
+     return AssociationFilterKey::Name;
   }
-
   return AssociationFilterKey::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace InvocationTypeMapper
 {
+
+
 InvocationType GetInvocationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Event_HASH)
   {
-    return InvocationType::Event;
+     return InvocationType::Event;
   }
   else if (hashCode == RequestResponse_HASH)
   {
-    return InvocationType::RequestResponse;
+     return InvocationType::RequestResponse;
   }
-
   return InvocationType::NOT_SET;
 }
 

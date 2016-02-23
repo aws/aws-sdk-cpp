@@ -36,51 +36,51 @@ namespace Model
 {
 namespace RevocationReasonMapper
 {
+
+
 RevocationReason GetRevocationReasonForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNSPECIFIED_HASH)
   {
-    return RevocationReason::UNSPECIFIED;
+     return RevocationReason::UNSPECIFIED;
   }
   else if (hashCode == KEY_COMPROMISE_HASH)
   {
-    return RevocationReason::KEY_COMPROMISE;
+     return RevocationReason::KEY_COMPROMISE;
   }
   else if (hashCode == CA_COMPROMISE_HASH)
   {
-    return RevocationReason::CA_COMPROMISE;
+     return RevocationReason::CA_COMPROMISE;
   }
   else if (hashCode == AFFILIATION_CHANGED_HASH)
   {
-    return RevocationReason::AFFILIATION_CHANGED;
+     return RevocationReason::AFFILIATION_CHANGED;
   }
   else if (hashCode == SUPERCEDED_HASH)
   {
-    return RevocationReason::SUPERCEDED;
+     return RevocationReason::SUPERCEDED;
   }
   else if (hashCode == CESSATION_OF_OPERATION_HASH)
   {
-    return RevocationReason::CESSATION_OF_OPERATION;
+     return RevocationReason::CESSATION_OF_OPERATION;
   }
   else if (hashCode == CERTIFICATE_HOLD_HASH)
   {
-    return RevocationReason::CERTIFICATE_HOLD;
+     return RevocationReason::CERTIFICATE_HOLD;
   }
   else if (hashCode == REMOVE_FROM_CRL_HASH)
   {
-    return RevocationReason::REMOVE_FROM_CRL;
+     return RevocationReason::REMOVE_FROM_CRL;
   }
   else if (hashCode == PRIVILEGE_WITHDRAWN_HASH)
   {
-    return RevocationReason::PRIVILEGE_WITHDRAWN;
+     return RevocationReason::PRIVILEGE_WITHDRAWN;
   }
   else if (hashCode == A_A_COMPROMISE_HASH)
   {
-    return RevocationReason::A_A_COMPROMISE;
+     return RevocationReason::A_A_COMPROMISE;
   }
-
   return RevocationReason::NOT_SET;
 }
 

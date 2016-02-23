@@ -28,19 +28,19 @@ namespace Model
 {
 namespace AffinityMapper
 {
+
+
 Affinity GetAffinityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == default__HASH)
   {
-    return Affinity::default_;
+     return Affinity::default_;
   }
   else if (hashCode == host_HASH)
   {
-    return Affinity::host;
+     return Affinity::host;
   }
-
   return Affinity::NOT_SET;
 }
 

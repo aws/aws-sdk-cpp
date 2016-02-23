@@ -28,19 +28,19 @@ namespace Model
 {
 namespace TagResourceTypeMapper
 {
+
+
 TagResourceType GetTagResourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == healthcheck_HASH)
   {
-    return TagResourceType::healthcheck;
+     return TagResourceType::healthcheck;
   }
   else if (hashCode == hostedzone_HASH)
   {
-    return TagResourceType::hostedzone;
+     return TagResourceType::hostedzone;
   }
-
   return TagResourceType::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace AssignmentStatusTypeMapper
 {
+
+
 AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Assigned_HASH)
   {
-    return AssignmentStatusType::Assigned;
+     return AssignmentStatusType::Assigned;
   }
   else if (hashCode == Unassigned_HASH)
   {
-    return AssignmentStatusType::Unassigned;
+     return AssignmentStatusType::Unassigned;
   }
   else if (hashCode == Any_HASH)
   {
-    return AssignmentStatusType::Any;
+     return AssignmentStatusType::Any;
   }
-
   return AssignmentStatusType::NOT_SET;
 }
 

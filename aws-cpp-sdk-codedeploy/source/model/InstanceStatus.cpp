@@ -32,35 +32,35 @@ namespace Model
 {
 namespace InstanceStatusMapper
 {
+
+
 InstanceStatus GetInstanceStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return InstanceStatus::Pending;
+     return InstanceStatus::Pending;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return InstanceStatus::InProgress;
+     return InstanceStatus::InProgress;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return InstanceStatus::Succeeded;
+     return InstanceStatus::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return InstanceStatus::Failed;
+     return InstanceStatus::Failed;
   }
   else if (hashCode == Skipped_HASH)
   {
-    return InstanceStatus::Skipped;
+     return InstanceStatus::Skipped;
   }
   else if (hashCode == Unknown_HASH)
   {
-    return InstanceStatus::Unknown;
+     return InstanceStatus::Unknown;
   }
-
   return InstanceStatus::NOT_SET;
 }
 

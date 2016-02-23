@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RevisionLocationTypeMapper
 {
+
+
 RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == S3_HASH)
   {
-    return RevisionLocationType::S3;
+     return RevisionLocationType::S3;
   }
   else if (hashCode == GitHub_HASH)
   {
-    return RevisionLocationType::GitHub;
+     return RevisionLocationType::GitHub;
   }
-
   return RevisionLocationType::NOT_SET;
 }
 

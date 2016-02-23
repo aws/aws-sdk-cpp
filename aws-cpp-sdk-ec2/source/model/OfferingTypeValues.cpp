@@ -32,35 +32,35 @@ namespace Model
 {
 namespace OfferingTypeValuesMapper
 {
+
+
 OfferingTypeValues GetOfferingTypeValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Heavy_Utilization_HASH)
   {
-    return OfferingTypeValues::Heavy_Utilization;
+     return OfferingTypeValues::Heavy_Utilization;
   }
   else if (hashCode == Medium_Utilization_HASH)
   {
-    return OfferingTypeValues::Medium_Utilization;
+     return OfferingTypeValues::Medium_Utilization;
   }
   else if (hashCode == Light_Utilization_HASH)
   {
-    return OfferingTypeValues::Light_Utilization;
+     return OfferingTypeValues::Light_Utilization;
   }
   else if (hashCode == No_Upfront_HASH)
   {
-    return OfferingTypeValues::No_Upfront;
+     return OfferingTypeValues::No_Upfront;
   }
   else if (hashCode == Partial_Upfront_HASH)
   {
-    return OfferingTypeValues::Partial_Upfront;
+     return OfferingTypeValues::Partial_Upfront;
   }
   else if (hashCode == All_Upfront_HASH)
   {
-    return OfferingTypeValues::All_Upfront;
+     return OfferingTypeValues::All_Upfront;
   }
-
   return OfferingTypeValues::NOT_SET;
 }
 

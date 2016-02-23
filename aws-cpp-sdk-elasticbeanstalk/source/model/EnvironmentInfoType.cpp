@@ -28,19 +28,19 @@ namespace Model
 {
 namespace EnvironmentInfoTypeMapper
 {
+
+
 EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == tail_HASH)
   {
-    return EnvironmentInfoType::tail;
+     return EnvironmentInfoType::tail;
   }
   else if (hashCode == bundle_HASH)
   {
-    return EnvironmentInfoType::bundle;
+     return EnvironmentInfoType::bundle;
   }
-
   return EnvironmentInfoType::NOT_SET;
 }
 

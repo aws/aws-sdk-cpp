@@ -33,39 +33,39 @@ namespace Model
 {
 namespace BatchStateMapper
 {
+
+
 BatchState GetBatchStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == submitted_HASH)
   {
-    return BatchState::submitted;
+     return BatchState::submitted;
   }
   else if (hashCode == active_HASH)
   {
-    return BatchState::active;
+     return BatchState::active;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return BatchState::cancelled;
+     return BatchState::cancelled;
   }
   else if (hashCode == failed_HASH)
   {
-    return BatchState::failed;
+     return BatchState::failed;
   }
   else if (hashCode == cancelled_running_HASH)
   {
-    return BatchState::cancelled_running;
+     return BatchState::cancelled_running;
   }
   else if (hashCode == cancelled_terminating_HASH)
   {
-    return BatchState::cancelled_terminating;
+     return BatchState::cancelled_terminating;
   }
   else if (hashCode == modifying_HASH)
   {
-    return BatchState::modifying;
+     return BatchState::modifying;
   }
-
   return BatchState::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace AppAttributesKeysMapper
 {
+
+
 AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DocumentRoot_HASH)
   {
-    return AppAttributesKeys::DocumentRoot;
+     return AppAttributesKeys::DocumentRoot;
   }
   else if (hashCode == RailsEnv_HASH)
   {
-    return AppAttributesKeys::RailsEnv;
+     return AppAttributesKeys::RailsEnv;
   }
   else if (hashCode == AutoBundleOnDeploy_HASH)
   {
-    return AppAttributesKeys::AutoBundleOnDeploy;
+     return AppAttributesKeys::AutoBundleOnDeploy;
   }
   else if (hashCode == AwsFlowRubySettings_HASH)
   {
-    return AppAttributesKeys::AwsFlowRubySettings;
+     return AppAttributesKeys::AwsFlowRubySettings;
   }
-
   return AppAttributesKeys::NOT_SET;
 }
 

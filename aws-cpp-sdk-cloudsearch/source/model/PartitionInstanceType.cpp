@@ -34,43 +34,43 @@ namespace Model
 {
 namespace PartitionInstanceTypeMapper
 {
+
+
 PartitionInstanceType GetPartitionInstanceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == search_m1_small_HASH)
   {
-    return PartitionInstanceType::search_m1_small;
+     return PartitionInstanceType::search_m1_small;
   }
   else if (hashCode == search_m1_large_HASH)
   {
-    return PartitionInstanceType::search_m1_large;
+     return PartitionInstanceType::search_m1_large;
   }
   else if (hashCode == search_m2_xlarge_HASH)
   {
-    return PartitionInstanceType::search_m2_xlarge;
+     return PartitionInstanceType::search_m2_xlarge;
   }
   else if (hashCode == search_m2_2xlarge_HASH)
   {
-    return PartitionInstanceType::search_m2_2xlarge;
+     return PartitionInstanceType::search_m2_2xlarge;
   }
   else if (hashCode == search_m3_medium_HASH)
   {
-    return PartitionInstanceType::search_m3_medium;
+     return PartitionInstanceType::search_m3_medium;
   }
   else if (hashCode == search_m3_large_HASH)
   {
-    return PartitionInstanceType::search_m3_large;
+     return PartitionInstanceType::search_m3_large;
   }
   else if (hashCode == search_m3_xlarge_HASH)
   {
-    return PartitionInstanceType::search_m3_xlarge;
+     return PartitionInstanceType::search_m3_xlarge;
   }
   else if (hashCode == search_m3_2xlarge_HASH)
   {
-    return PartitionInstanceType::search_m3_2xlarge;
+     return PartitionInstanceType::search_m3_2xlarge;
   }
-
   return PartitionInstanceType::NOT_SET;
 }
 

@@ -27,15 +27,15 @@ namespace Model
 {
 namespace NoEncryptionConfigMapper
 {
+
+
 NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NoEncryption_HASH)
   {
-    return NoEncryptionConfig::NoEncryption;
+     return NoEncryptionConfig::NoEncryption;
   }
-
   return NoEncryptionConfig::NOT_SET;
 }
 

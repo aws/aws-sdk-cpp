@@ -28,19 +28,19 @@ namespace Model
 {
 namespace VpcAttributeNameMapper
 {
+
+
 VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == enableDnsSupport_HASH)
   {
-    return VpcAttributeName::enableDnsSupport;
+     return VpcAttributeName::enableDnsSupport;
   }
   else if (hashCode == enableDnsHostnames_HASH)
   {
-    return VpcAttributeName::enableDnsHostnames;
+     return VpcAttributeName::enableDnsHostnames;
   }
-
   return VpcAttributeName::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ConfigurationOptionValueTypeMapper
 {
+
+
 ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Scalar_HASH)
   {
-    return ConfigurationOptionValueType::Scalar;
+     return ConfigurationOptionValueType::Scalar;
   }
   else if (hashCode == List_HASH)
   {
-    return ConfigurationOptionValueType::List;
+     return ConfigurationOptionValueType::List;
   }
-
   return ConfigurationOptionValueType::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace RouteOriginMapper
 {
+
+
 RouteOrigin GetRouteOriginForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CreateRouteTable_HASH)
   {
-    return RouteOrigin::CreateRouteTable;
+     return RouteOrigin::CreateRouteTable;
   }
   else if (hashCode == CreateRoute_HASH)
   {
-    return RouteOrigin::CreateRoute;
+     return RouteOrigin::CreateRoute;
   }
   else if (hashCode == EnableVgwRoutePropagation_HASH)
   {
-    return RouteOrigin::EnableVgwRoutePropagation;
+     return RouteOrigin::EnableVgwRoutePropagation;
   }
-
   return RouteOrigin::NOT_SET;
 }
 

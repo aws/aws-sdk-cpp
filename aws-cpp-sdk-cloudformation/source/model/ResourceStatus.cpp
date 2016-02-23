@@ -36,51 +36,51 @@ namespace Model
 {
 namespace ResourceStatusMapper
 {
+
+
 ResourceStatus GetResourceStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATE_IN_PROGRESS_HASH)
   {
-    return ResourceStatus::CREATE_IN_PROGRESS;
+     return ResourceStatus::CREATE_IN_PROGRESS;
   }
   else if (hashCode == CREATE_FAILED_HASH)
   {
-    return ResourceStatus::CREATE_FAILED;
+     return ResourceStatus::CREATE_FAILED;
   }
   else if (hashCode == CREATE_COMPLETE_HASH)
   {
-    return ResourceStatus::CREATE_COMPLETE;
+     return ResourceStatus::CREATE_COMPLETE;
   }
   else if (hashCode == DELETE_IN_PROGRESS_HASH)
   {
-    return ResourceStatus::DELETE_IN_PROGRESS;
+     return ResourceStatus::DELETE_IN_PROGRESS;
   }
   else if (hashCode == DELETE_FAILED_HASH)
   {
-    return ResourceStatus::DELETE_FAILED;
+     return ResourceStatus::DELETE_FAILED;
   }
   else if (hashCode == DELETE_COMPLETE_HASH)
   {
-    return ResourceStatus::DELETE_COMPLETE;
+     return ResourceStatus::DELETE_COMPLETE;
   }
   else if (hashCode == DELETE_SKIPPED_HASH)
   {
-    return ResourceStatus::DELETE_SKIPPED;
+     return ResourceStatus::DELETE_SKIPPED;
   }
   else if (hashCode == UPDATE_IN_PROGRESS_HASH)
   {
-    return ResourceStatus::UPDATE_IN_PROGRESS;
+     return ResourceStatus::UPDATE_IN_PROGRESS;
   }
   else if (hashCode == UPDATE_FAILED_HASH)
   {
-    return ResourceStatus::UPDATE_FAILED;
+     return ResourceStatus::UPDATE_FAILED;
   }
   else if (hashCode == UPDATE_COMPLETE_HASH)
   {
-    return ResourceStatus::UPDATE_COMPLETE;
+     return ResourceStatus::UPDATE_COMPLETE;
   }
-
   return ResourceStatus::NOT_SET;
 }
 

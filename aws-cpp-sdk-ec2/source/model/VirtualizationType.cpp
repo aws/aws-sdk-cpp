@@ -28,19 +28,19 @@ namespace Model
 {
 namespace VirtualizationTypeMapper
 {
+
+
 VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == hvm_HASH)
   {
-    return VirtualizationType::hvm;
+     return VirtualizationType::hvm;
   }
   else if (hashCode == paravirtual_HASH)
   {
-    return VirtualizationType::paravirtual;
+     return VirtualizationType::paravirtual;
   }
-
   return VirtualizationType::NOT_SET;
 }
 

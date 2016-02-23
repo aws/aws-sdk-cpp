@@ -28,19 +28,19 @@ namespace Model
 {
 namespace CompleteWorkflowExecutionFailedCauseMapper
 {
+
+
 CompleteWorkflowExecutionFailedCause GetCompleteWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNHANDLED_DECISION_HASH)
   {
-    return CompleteWorkflowExecutionFailedCause::UNHANDLED_DECISION;
+     return CompleteWorkflowExecutionFailedCause::UNHANDLED_DECISION;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return CompleteWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return CompleteWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return CompleteWorkflowExecutionFailedCause::NOT_SET;
 }
 

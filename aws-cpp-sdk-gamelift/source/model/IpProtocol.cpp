@@ -28,19 +28,19 @@ namespace Model
 {
 namespace IpProtocolMapper
 {
+
+
 IpProtocol GetIpProtocolForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TCP_HASH)
   {
-    return IpProtocol::TCP;
+     return IpProtocol::TCP;
   }
   else if (hashCode == UDP_HASH)
   {
-    return IpProtocol::UDP;
+     return IpProtocol::UDP;
   }
-
   return IpProtocol::NOT_SET;
 }
 

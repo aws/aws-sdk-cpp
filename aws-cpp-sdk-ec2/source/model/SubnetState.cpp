@@ -28,19 +28,19 @@ namespace Model
 {
 namespace SubnetStateMapper
 {
+
+
 SubnetState GetSubnetStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return SubnetState::pending;
+     return SubnetState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return SubnetState::available;
+     return SubnetState::available;
   }
-
   return SubnetState::NOT_SET;
 }
 

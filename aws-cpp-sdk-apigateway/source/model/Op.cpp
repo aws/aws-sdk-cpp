@@ -32,35 +32,35 @@ namespace Model
 {
 namespace OpMapper
 {
+
+
 Op GetOpForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == add_HASH)
   {
-    return Op::add;
+     return Op::add;
   }
   else if (hashCode == remove_HASH)
   {
-    return Op::remove;
+     return Op::remove;
   }
   else if (hashCode == replace_HASH)
   {
-    return Op::replace;
+     return Op::replace;
   }
   else if (hashCode == move_HASH)
   {
-    return Op::move;
+     return Op::move;
   }
   else if (hashCode == copy_HASH)
   {
-    return Op::copy;
+     return Op::copy;
   }
   else if (hashCode == test_HASH)
   {
-    return Op::test;
+     return Op::test;
   }
-
   return Op::NOT_SET;
 }
 

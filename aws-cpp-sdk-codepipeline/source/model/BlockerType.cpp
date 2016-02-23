@@ -27,15 +27,15 @@ namespace Model
 {
 namespace BlockerTypeMapper
 {
+
+
 BlockerType GetBlockerTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Schedule_HASH)
   {
-    return BlockerType::Schedule;
+     return BlockerType::Schedule;
   }
-
   return BlockerType::NOT_SET;
 }
 

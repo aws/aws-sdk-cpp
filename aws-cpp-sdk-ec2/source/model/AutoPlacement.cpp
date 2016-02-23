@@ -28,19 +28,19 @@ namespace Model
 {
 namespace AutoPlacementMapper
 {
+
+
 AutoPlacement GetAutoPlacementForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == on_HASH)
   {
-    return AutoPlacement::on;
+     return AutoPlacement::on;
   }
   else if (hashCode == off_HASH)
   {
-    return AutoPlacement::off;
+     return AutoPlacement::off;
   }
-
   return AutoPlacement::NOT_SET;
 }
 

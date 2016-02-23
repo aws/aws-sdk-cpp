@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ConfigurationItemStatusMapper
 {
+
+
 ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Ok_HASH)
   {
-    return ConfigurationItemStatus::Ok;
+     return ConfigurationItemStatus::Ok;
   }
   else if (hashCode == Failed_HASH)
   {
-    return ConfigurationItemStatus::Failed;
+     return ConfigurationItemStatus::Failed;
   }
   else if (hashCode == Discovered_HASH)
   {
-    return ConfigurationItemStatus::Discovered;
+     return ConfigurationItemStatus::Discovered;
   }
   else if (hashCode == Deleted_HASH)
   {
-    return ConfigurationItemStatus::Deleted;
+     return ConfigurationItemStatus::Deleted;
   }
-
   return ConfigurationItemStatus::NOT_SET;
 }
 

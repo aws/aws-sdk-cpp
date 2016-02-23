@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ContentTypeMapper
 {
+
+
 ContentType GetContentTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == application_json_HASH)
   {
-    return ContentType::application_json;
+     return ContentType::application_json;
   }
   else if (hashCode == application_xml_HASH)
   {
-    return ContentType::application_xml;
+     return ContentType::application_xml;
   }
-
   return ContentType::NOT_SET;
 }
 

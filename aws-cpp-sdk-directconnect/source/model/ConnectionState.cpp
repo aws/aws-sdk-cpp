@@ -34,43 +34,43 @@ namespace Model
 {
 namespace ConnectionStateMapper
 {
+
+
 ConnectionState GetConnectionStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ordering_HASH)
   {
-    return ConnectionState::ordering;
+     return ConnectionState::ordering;
   }
   else if (hashCode == requested_HASH)
   {
-    return ConnectionState::requested;
+     return ConnectionState::requested;
   }
   else if (hashCode == pending_HASH)
   {
-    return ConnectionState::pending;
+     return ConnectionState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return ConnectionState::available;
+     return ConnectionState::available;
   }
   else if (hashCode == down_HASH)
   {
-    return ConnectionState::down;
+     return ConnectionState::down;
   }
   else if (hashCode == deleting_HASH)
   {
-    return ConnectionState::deleting;
+     return ConnectionState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return ConnectionState::deleted;
+     return ConnectionState::deleted;
   }
   else if (hashCode == rejected_HASH)
   {
-    return ConnectionState::rejected;
+     return ConnectionState::rejected;
   }
-
   return ConnectionState::NOT_SET;
 }
 

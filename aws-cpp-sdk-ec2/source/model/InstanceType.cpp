@@ -80,227 +80,227 @@ namespace Model
 {
 namespace InstanceTypeMapper
 {
+
+
 InstanceType GetInstanceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == t1_micro_HASH)
   {
-    return InstanceType::t1_micro;
+     return InstanceType::t1_micro;
   }
   else if (hashCode == m1_small_HASH)
   {
-    return InstanceType::m1_small;
+     return InstanceType::m1_small;
   }
   else if (hashCode == m1_medium_HASH)
   {
-    return InstanceType::m1_medium;
+     return InstanceType::m1_medium;
   }
   else if (hashCode == m1_large_HASH)
   {
-    return InstanceType::m1_large;
+     return InstanceType::m1_large;
   }
   else if (hashCode == m1_xlarge_HASH)
   {
-    return InstanceType::m1_xlarge;
+     return InstanceType::m1_xlarge;
   }
   else if (hashCode == m3_medium_HASH)
   {
-    return InstanceType::m3_medium;
+     return InstanceType::m3_medium;
   }
   else if (hashCode == m3_large_HASH)
   {
-    return InstanceType::m3_large;
+     return InstanceType::m3_large;
   }
   else if (hashCode == m3_xlarge_HASH)
   {
-    return InstanceType::m3_xlarge;
+     return InstanceType::m3_xlarge;
   }
   else if (hashCode == m3_2xlarge_HASH)
   {
-    return InstanceType::m3_2xlarge;
+     return InstanceType::m3_2xlarge;
   }
   else if (hashCode == m4_large_HASH)
   {
-    return InstanceType::m4_large;
+     return InstanceType::m4_large;
   }
   else if (hashCode == m4_xlarge_HASH)
   {
-    return InstanceType::m4_xlarge;
+     return InstanceType::m4_xlarge;
   }
   else if (hashCode == m4_2xlarge_HASH)
   {
-    return InstanceType::m4_2xlarge;
+     return InstanceType::m4_2xlarge;
   }
   else if (hashCode == m4_4xlarge_HASH)
   {
-    return InstanceType::m4_4xlarge;
+     return InstanceType::m4_4xlarge;
   }
   else if (hashCode == m4_10xlarge_HASH)
   {
-    return InstanceType::m4_10xlarge;
+     return InstanceType::m4_10xlarge;
   }
   else if (hashCode == t2_nano_HASH)
   {
-    return InstanceType::t2_nano;
+     return InstanceType::t2_nano;
   }
   else if (hashCode == t2_micro_HASH)
   {
-    return InstanceType::t2_micro;
+     return InstanceType::t2_micro;
   }
   else if (hashCode == t2_small_HASH)
   {
-    return InstanceType::t2_small;
+     return InstanceType::t2_small;
   }
   else if (hashCode == t2_medium_HASH)
   {
-    return InstanceType::t2_medium;
+     return InstanceType::t2_medium;
   }
   else if (hashCode == t2_large_HASH)
   {
-    return InstanceType::t2_large;
+     return InstanceType::t2_large;
   }
   else if (hashCode == m2_xlarge_HASH)
   {
-    return InstanceType::m2_xlarge;
+     return InstanceType::m2_xlarge;
   }
   else if (hashCode == m2_2xlarge_HASH)
   {
-    return InstanceType::m2_2xlarge;
+     return InstanceType::m2_2xlarge;
   }
   else if (hashCode == m2_4xlarge_HASH)
   {
-    return InstanceType::m2_4xlarge;
+     return InstanceType::m2_4xlarge;
   }
   else if (hashCode == cr1_8xlarge_HASH)
   {
-    return InstanceType::cr1_8xlarge;
+     return InstanceType::cr1_8xlarge;
   }
   else if (hashCode == i2_xlarge_HASH)
   {
-    return InstanceType::i2_xlarge;
+     return InstanceType::i2_xlarge;
   }
   else if (hashCode == i2_2xlarge_HASH)
   {
-    return InstanceType::i2_2xlarge;
+     return InstanceType::i2_2xlarge;
   }
   else if (hashCode == i2_4xlarge_HASH)
   {
-    return InstanceType::i2_4xlarge;
+     return InstanceType::i2_4xlarge;
   }
   else if (hashCode == i2_8xlarge_HASH)
   {
-    return InstanceType::i2_8xlarge;
+     return InstanceType::i2_8xlarge;
   }
   else if (hashCode == hi1_4xlarge_HASH)
   {
-    return InstanceType::hi1_4xlarge;
+     return InstanceType::hi1_4xlarge;
   }
   else if (hashCode == hs1_8xlarge_HASH)
   {
-    return InstanceType::hs1_8xlarge;
+     return InstanceType::hs1_8xlarge;
   }
   else if (hashCode == c1_medium_HASH)
   {
-    return InstanceType::c1_medium;
+     return InstanceType::c1_medium;
   }
   else if (hashCode == c1_xlarge_HASH)
   {
-    return InstanceType::c1_xlarge;
+     return InstanceType::c1_xlarge;
   }
   else if (hashCode == c3_large_HASH)
   {
-    return InstanceType::c3_large;
+     return InstanceType::c3_large;
   }
   else if (hashCode == c3_xlarge_HASH)
   {
-    return InstanceType::c3_xlarge;
+     return InstanceType::c3_xlarge;
   }
   else if (hashCode == c3_2xlarge_HASH)
   {
-    return InstanceType::c3_2xlarge;
+     return InstanceType::c3_2xlarge;
   }
   else if (hashCode == c3_4xlarge_HASH)
   {
-    return InstanceType::c3_4xlarge;
+     return InstanceType::c3_4xlarge;
   }
   else if (hashCode == c3_8xlarge_HASH)
   {
-    return InstanceType::c3_8xlarge;
+     return InstanceType::c3_8xlarge;
   }
   else if (hashCode == c4_large_HASH)
   {
-    return InstanceType::c4_large;
+     return InstanceType::c4_large;
   }
   else if (hashCode == c4_xlarge_HASH)
   {
-    return InstanceType::c4_xlarge;
+     return InstanceType::c4_xlarge;
   }
   else if (hashCode == c4_2xlarge_HASH)
   {
-    return InstanceType::c4_2xlarge;
+     return InstanceType::c4_2xlarge;
   }
   else if (hashCode == c4_4xlarge_HASH)
   {
-    return InstanceType::c4_4xlarge;
+     return InstanceType::c4_4xlarge;
   }
   else if (hashCode == c4_8xlarge_HASH)
   {
-    return InstanceType::c4_8xlarge;
+     return InstanceType::c4_8xlarge;
   }
   else if (hashCode == cc1_4xlarge_HASH)
   {
-    return InstanceType::cc1_4xlarge;
+     return InstanceType::cc1_4xlarge;
   }
   else if (hashCode == cc2_8xlarge_HASH)
   {
-    return InstanceType::cc2_8xlarge;
+     return InstanceType::cc2_8xlarge;
   }
   else if (hashCode == g2_2xlarge_HASH)
   {
-    return InstanceType::g2_2xlarge;
+     return InstanceType::g2_2xlarge;
   }
   else if (hashCode == cg1_4xlarge_HASH)
   {
-    return InstanceType::cg1_4xlarge;
+     return InstanceType::cg1_4xlarge;
   }
   else if (hashCode == r3_large_HASH)
   {
-    return InstanceType::r3_large;
+     return InstanceType::r3_large;
   }
   else if (hashCode == r3_xlarge_HASH)
   {
-    return InstanceType::r3_xlarge;
+     return InstanceType::r3_xlarge;
   }
   else if (hashCode == r3_2xlarge_HASH)
   {
-    return InstanceType::r3_2xlarge;
+     return InstanceType::r3_2xlarge;
   }
   else if (hashCode == r3_4xlarge_HASH)
   {
-    return InstanceType::r3_4xlarge;
+     return InstanceType::r3_4xlarge;
   }
   else if (hashCode == r3_8xlarge_HASH)
   {
-    return InstanceType::r3_8xlarge;
+     return InstanceType::r3_8xlarge;
   }
   else if (hashCode == d2_xlarge_HASH)
   {
-    return InstanceType::d2_xlarge;
+     return InstanceType::d2_xlarge;
   }
   else if (hashCode == d2_2xlarge_HASH)
   {
-    return InstanceType::d2_2xlarge;
+     return InstanceType::d2_2xlarge;
   }
   else if (hashCode == d2_4xlarge_HASH)
   {
-    return InstanceType::d2_4xlarge;
+     return InstanceType::d2_4xlarge;
   }
   else if (hashCode == d2_8xlarge_HASH)
   {
-    return InstanceType::d2_8xlarge;
+     return InstanceType::d2_8xlarge;
   }
-
   return InstanceType::NOT_SET;
 }
 

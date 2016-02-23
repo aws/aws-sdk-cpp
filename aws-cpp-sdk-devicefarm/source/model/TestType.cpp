@@ -39,63 +39,63 @@ namespace Model
 {
 namespace TestTypeMapper
 {
+
+
 TestType GetTestTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == BUILTIN_FUZZ_HASH)
   {
-    return TestType::BUILTIN_FUZZ;
+     return TestType::BUILTIN_FUZZ;
   }
   else if (hashCode == BUILTIN_EXPLORER_HASH)
   {
-    return TestType::BUILTIN_EXPLORER;
+     return TestType::BUILTIN_EXPLORER;
   }
   else if (hashCode == APPIUM_JAVA_JUNIT_HASH)
   {
-    return TestType::APPIUM_JAVA_JUNIT;
+     return TestType::APPIUM_JAVA_JUNIT;
   }
   else if (hashCode == APPIUM_JAVA_TESTNG_HASH)
   {
-    return TestType::APPIUM_JAVA_TESTNG;
+     return TestType::APPIUM_JAVA_TESTNG;
   }
   else if (hashCode == APPIUM_PYTHON_HASH)
   {
-    return TestType::APPIUM_PYTHON;
+     return TestType::APPIUM_PYTHON;
   }
   else if (hashCode == APPIUM_WEB_JAVA_JUNIT_HASH)
   {
-    return TestType::APPIUM_WEB_JAVA_JUNIT;
+     return TestType::APPIUM_WEB_JAVA_JUNIT;
   }
   else if (hashCode == APPIUM_WEB_JAVA_TESTNG_HASH)
   {
-    return TestType::APPIUM_WEB_JAVA_TESTNG;
+     return TestType::APPIUM_WEB_JAVA_TESTNG;
   }
   else if (hashCode == APPIUM_WEB_PYTHON_HASH)
   {
-    return TestType::APPIUM_WEB_PYTHON;
+     return TestType::APPIUM_WEB_PYTHON;
   }
   else if (hashCode == CALABASH_HASH)
   {
-    return TestType::CALABASH;
+     return TestType::CALABASH;
   }
   else if (hashCode == INSTRUMENTATION_HASH)
   {
-    return TestType::INSTRUMENTATION;
+     return TestType::INSTRUMENTATION;
   }
   else if (hashCode == UIAUTOMATION_HASH)
   {
-    return TestType::UIAUTOMATION;
+     return TestType::UIAUTOMATION;
   }
   else if (hashCode == UIAUTOMATOR_HASH)
   {
-    return TestType::UIAUTOMATOR;
+     return TestType::UIAUTOMATOR;
   }
   else if (hashCode == XCTEST_HASH)
   {
-    return TestType::XCTEST;
+     return TestType::XCTEST;
   }
-
   return TestType::NOT_SET;
 }
 

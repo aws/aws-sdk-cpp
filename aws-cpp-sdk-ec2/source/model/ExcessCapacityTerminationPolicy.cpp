@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ExcessCapacityTerminationPolicyMapper
 {
+
+
 ExcessCapacityTerminationPolicy GetExcessCapacityTerminationPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == noTermination_HASH)
   {
-    return ExcessCapacityTerminationPolicy::noTermination;
+     return ExcessCapacityTerminationPolicy::noTermination;
   }
   else if (hashCode == default__HASH)
   {
-    return ExcessCapacityTerminationPolicy::default_;
+     return ExcessCapacityTerminationPolicy::default_;
   }
-
   return ExcessCapacityTerminationPolicy::NOT_SET;
 }
 

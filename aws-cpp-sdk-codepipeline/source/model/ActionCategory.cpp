@@ -31,31 +31,31 @@ namespace Model
 {
 namespace ActionCategoryMapper
 {
+
+
 ActionCategory GetActionCategoryForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Source_HASH)
   {
-    return ActionCategory::Source;
+     return ActionCategory::Source;
   }
   else if (hashCode == Build_HASH)
   {
-    return ActionCategory::Build;
+     return ActionCategory::Build;
   }
   else if (hashCode == Deploy_HASH)
   {
-    return ActionCategory::Deploy;
+     return ActionCategory::Deploy;
   }
   else if (hashCode == Test_HASH)
   {
-    return ActionCategory::Test;
+     return ActionCategory::Test;
   }
   else if (hashCode == Invoke_HASH)
   {
-    return ActionCategory::Invoke;
+     return ActionCategory::Invoke;
   }
-
   return ActionCategory::NOT_SET;
 }
 

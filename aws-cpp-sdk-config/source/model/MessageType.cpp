@@ -28,19 +28,19 @@ namespace Model
 {
 namespace MessageTypeMapper
 {
+
+
 MessageType GetMessageTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ConfigurationItemChangeNotification_HASH)
   {
-    return MessageType::ConfigurationItemChangeNotification;
+     return MessageType::ConfigurationItemChangeNotification;
   }
   else if (hashCode == ConfigurationSnapshotDeliveryCompleted_HASH)
   {
-    return MessageType::ConfigurationSnapshotDeliveryCompleted;
+     return MessageType::ConfigurationSnapshotDeliveryCompleted;
   }
-
   return MessageType::NOT_SET;
 }
 

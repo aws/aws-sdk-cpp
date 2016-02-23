@@ -42,75 +42,75 @@ namespace Model
 {
 namespace StackStatusMapper
 {
+
+
 StackStatus GetStackStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATE_IN_PROGRESS_HASH)
   {
-    return StackStatus::CREATE_IN_PROGRESS;
+     return StackStatus::CREATE_IN_PROGRESS;
   }
   else if (hashCode == CREATE_FAILED_HASH)
   {
-    return StackStatus::CREATE_FAILED;
+     return StackStatus::CREATE_FAILED;
   }
   else if (hashCode == CREATE_COMPLETE_HASH)
   {
-    return StackStatus::CREATE_COMPLETE;
+     return StackStatus::CREATE_COMPLETE;
   }
   else if (hashCode == ROLLBACK_IN_PROGRESS_HASH)
   {
-    return StackStatus::ROLLBACK_IN_PROGRESS;
+     return StackStatus::ROLLBACK_IN_PROGRESS;
   }
   else if (hashCode == ROLLBACK_FAILED_HASH)
   {
-    return StackStatus::ROLLBACK_FAILED;
+     return StackStatus::ROLLBACK_FAILED;
   }
   else if (hashCode == ROLLBACK_COMPLETE_HASH)
   {
-    return StackStatus::ROLLBACK_COMPLETE;
+     return StackStatus::ROLLBACK_COMPLETE;
   }
   else if (hashCode == DELETE_IN_PROGRESS_HASH)
   {
-    return StackStatus::DELETE_IN_PROGRESS;
+     return StackStatus::DELETE_IN_PROGRESS;
   }
   else if (hashCode == DELETE_FAILED_HASH)
   {
-    return StackStatus::DELETE_FAILED;
+     return StackStatus::DELETE_FAILED;
   }
   else if (hashCode == DELETE_COMPLETE_HASH)
   {
-    return StackStatus::DELETE_COMPLETE;
+     return StackStatus::DELETE_COMPLETE;
   }
   else if (hashCode == UPDATE_IN_PROGRESS_HASH)
   {
-    return StackStatus::UPDATE_IN_PROGRESS;
+     return StackStatus::UPDATE_IN_PROGRESS;
   }
   else if (hashCode == UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH)
   {
-    return StackStatus::UPDATE_COMPLETE_CLEANUP_IN_PROGRESS;
+     return StackStatus::UPDATE_COMPLETE_CLEANUP_IN_PROGRESS;
   }
   else if (hashCode == UPDATE_COMPLETE_HASH)
   {
-    return StackStatus::UPDATE_COMPLETE;
+     return StackStatus::UPDATE_COMPLETE;
   }
   else if (hashCode == UPDATE_ROLLBACK_IN_PROGRESS_HASH)
   {
-    return StackStatus::UPDATE_ROLLBACK_IN_PROGRESS;
+     return StackStatus::UPDATE_ROLLBACK_IN_PROGRESS;
   }
   else if (hashCode == UPDATE_ROLLBACK_FAILED_HASH)
   {
-    return StackStatus::UPDATE_ROLLBACK_FAILED;
+     return StackStatus::UPDATE_ROLLBACK_FAILED;
   }
   else if (hashCode == UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH)
   {
-    return StackStatus::UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS;
+     return StackStatus::UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS;
   }
   else if (hashCode == UPDATE_ROLLBACK_COMPLETE_HASH)
   {
-    return StackStatus::UPDATE_ROLLBACK_COMPLETE;
+     return StackStatus::UPDATE_ROLLBACK_COMPLETE;
   }
-
   return StackStatus::NOT_SET;
 }
 

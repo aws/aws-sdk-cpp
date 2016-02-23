@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ConversionTaskStateMapper
 {
+
+
 ConversionTaskState GetConversionTaskStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == active_HASH)
   {
-    return ConversionTaskState::active;
+     return ConversionTaskState::active;
   }
   else if (hashCode == cancelling_HASH)
   {
-    return ConversionTaskState::cancelling;
+     return ConversionTaskState::cancelling;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return ConversionTaskState::cancelled;
+     return ConversionTaskState::cancelled;
   }
   else if (hashCode == completed_HASH)
   {
-    return ConversionTaskState::completed;
+     return ConversionTaskState::completed;
   }
-
   return ConversionTaskState::NOT_SET;
 }
 

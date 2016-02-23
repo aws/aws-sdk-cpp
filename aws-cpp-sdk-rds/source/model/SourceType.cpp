@@ -32,35 +32,35 @@ namespace Model
 {
 namespace SourceTypeMapper
 {
+
+
 SourceType GetSourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == db_instance_HASH)
   {
-    return SourceType::db_instance;
+     return SourceType::db_instance;
   }
   else if (hashCode == db_parameter_group_HASH)
   {
-    return SourceType::db_parameter_group;
+     return SourceType::db_parameter_group;
   }
   else if (hashCode == db_security_group_HASH)
   {
-    return SourceType::db_security_group;
+     return SourceType::db_security_group;
   }
   else if (hashCode == db_snapshot_HASH)
   {
-    return SourceType::db_snapshot;
+     return SourceType::db_snapshot;
   }
   else if (hashCode == db_cluster_HASH)
   {
-    return SourceType::db_cluster;
+     return SourceType::db_cluster;
   }
   else if (hashCode == db_cluster_snapshot_HASH)
   {
-    return SourceType::db_cluster_snapshot;
+     return SourceType::db_cluster_snapshot;
   }
-
   return SourceType::NOT_SET;
 }
 

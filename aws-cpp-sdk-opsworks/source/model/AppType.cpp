@@ -33,39 +33,39 @@ namespace Model
 {
 namespace AppTypeMapper
 {
+
+
 AppType GetAppTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == aws_flow_ruby_HASH)
   {
-    return AppType::aws_flow_ruby;
+     return AppType::aws_flow_ruby;
   }
   else if (hashCode == java_HASH)
   {
-    return AppType::java;
+     return AppType::java;
   }
   else if (hashCode == rails_HASH)
   {
-    return AppType::rails;
+     return AppType::rails;
   }
   else if (hashCode == php_HASH)
   {
-    return AppType::php;
+     return AppType::php;
   }
   else if (hashCode == nodejs_HASH)
   {
-    return AppType::nodejs;
+     return AppType::nodejs;
   }
   else if (hashCode == static__HASH)
   {
-    return AppType::static_;
+     return AppType::static_;
   }
   else if (hashCode == other_HASH)
   {
-    return AppType::other;
+     return AppType::other;
   }
-
   return AppType::NOT_SET;
 }
 

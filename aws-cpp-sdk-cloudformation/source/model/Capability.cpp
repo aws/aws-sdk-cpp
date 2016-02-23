@@ -27,15 +27,15 @@ namespace Model
 {
 namespace CapabilityMapper
 {
+
+
 Capability GetCapabilityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CAPABILITY_IAM_HASH)
   {
-    return Capability::CAPABILITY_IAM;
+     return Capability::CAPABILITY_IAM;
   }
-
   return Capability::NOT_SET;
 }
 

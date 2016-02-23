@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DirectorySizeMapper
 {
+
+
 DirectorySize GetDirectorySizeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Small_HASH)
   {
-    return DirectorySize::Small;
+     return DirectorySize::Small;
   }
   else if (hashCode == Large_HASH)
   {
-    return DirectorySize::Large;
+     return DirectorySize::Large;
   }
-
   return DirectorySize::NOT_SET;
 }
 

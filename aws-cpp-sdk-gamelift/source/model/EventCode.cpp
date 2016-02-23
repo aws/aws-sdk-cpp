@@ -43,79 +43,79 @@ namespace Model
 {
 namespace EventCodeMapper
 {
+
+
 EventCode GetEventCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == GENERIC_EVENT_HASH)
   {
-    return EventCode::GENERIC_EVENT;
+     return EventCode::GENERIC_EVENT;
   }
   else if (hashCode == FLEET_CREATED_HASH)
   {
-    return EventCode::FLEET_CREATED;
+     return EventCode::FLEET_CREATED;
   }
   else if (hashCode == FLEET_DELETED_HASH)
   {
-    return EventCode::FLEET_DELETED;
+     return EventCode::FLEET_DELETED;
   }
   else if (hashCode == FLEET_SCALING_EVENT_HASH)
   {
-    return EventCode::FLEET_SCALING_EVENT;
+     return EventCode::FLEET_SCALING_EVENT;
   }
   else if (hashCode == FLEET_STATE_DOWNLOADING_HASH)
   {
-    return EventCode::FLEET_STATE_DOWNLOADING;
+     return EventCode::FLEET_STATE_DOWNLOADING;
   }
   else if (hashCode == FLEET_STATE_VALIDATING_HASH)
   {
-    return EventCode::FLEET_STATE_VALIDATING;
+     return EventCode::FLEET_STATE_VALIDATING;
   }
   else if (hashCode == FLEET_STATE_BUILDING_HASH)
   {
-    return EventCode::FLEET_STATE_BUILDING;
+     return EventCode::FLEET_STATE_BUILDING;
   }
   else if (hashCode == FLEET_STATE_ACTIVATING_HASH)
   {
-    return EventCode::FLEET_STATE_ACTIVATING;
+     return EventCode::FLEET_STATE_ACTIVATING;
   }
   else if (hashCode == FLEET_STATE_ACTIVE_HASH)
   {
-    return EventCode::FLEET_STATE_ACTIVE;
+     return EventCode::FLEET_STATE_ACTIVE;
   }
   else if (hashCode == FLEET_STATE_ERROR_HASH)
   {
-    return EventCode::FLEET_STATE_ERROR;
+     return EventCode::FLEET_STATE_ERROR;
   }
   else if (hashCode == FLEET_INITIALIZATION_FAILED_HASH)
   {
-    return EventCode::FLEET_INITIALIZATION_FAILED;
+     return EventCode::FLEET_INITIALIZATION_FAILED;
   }
   else if (hashCode == FLEET_BINARY_DOWNLOAD_FAILED_HASH)
   {
-    return EventCode::FLEET_BINARY_DOWNLOAD_FAILED;
+     return EventCode::FLEET_BINARY_DOWNLOAD_FAILED;
   }
   else if (hashCode == FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH)
   {
-    return EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND;
+     return EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND;
   }
   else if (hashCode == FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH)
   {
-    return EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE;
+     return EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE;
   }
   else if (hashCode == FLEET_VALIDATION_TIMED_OUT_HASH)
   {
-    return EventCode::FLEET_VALIDATION_TIMED_OUT;
+     return EventCode::FLEET_VALIDATION_TIMED_OUT;
   }
   else if (hashCode == FLEET_ACTIVATION_FAILED_HASH)
   {
-    return EventCode::FLEET_ACTIVATION_FAILED;
+     return EventCode::FLEET_ACTIVATION_FAILED;
   }
   else if (hashCode == FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH)
   {
-    return EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES;
+     return EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES;
   }
-
   return EventCode::NOT_SET;
 }
 

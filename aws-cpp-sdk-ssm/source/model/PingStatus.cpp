@@ -29,23 +29,23 @@ namespace Model
 {
 namespace PingStatusMapper
 {
+
+
 PingStatus GetPingStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Online_HASH)
   {
-    return PingStatus::Online;
+     return PingStatus::Online;
   }
   else if (hashCode == ConnectionLost_HASH)
   {
-    return PingStatus::ConnectionLost;
+     return PingStatus::ConnectionLost;
   }
   else if (hashCode == Inactive_HASH)
   {
-    return PingStatus::Inactive;
+     return PingStatus::Inactive;
   }
-
   return PingStatus::NOT_SET;
 }
 

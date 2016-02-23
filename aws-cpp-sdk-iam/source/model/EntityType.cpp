@@ -31,31 +31,31 @@ namespace Model
 {
 namespace EntityTypeMapper
 {
+
+
 EntityType GetEntityTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == User_HASH)
   {
-    return EntityType::User;
+     return EntityType::User;
   }
   else if (hashCode == Role_HASH)
   {
-    return EntityType::Role;
+     return EntityType::Role;
   }
   else if (hashCode == Group_HASH)
   {
-    return EntityType::Group;
+     return EntityType::Group;
   }
   else if (hashCode == LocalManagedPolicy_HASH)
   {
-    return EntityType::LocalManagedPolicy;
+     return EntityType::LocalManagedPolicy;
   }
   else if (hashCode == AWSManagedPolicy_HASH)
   {
-    return EntityType::AWSManagedPolicy;
+     return EntityType::AWSManagedPolicy;
   }
-
   return EntityType::NOT_SET;
 }
 

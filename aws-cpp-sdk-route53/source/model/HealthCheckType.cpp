@@ -32,35 +32,35 @@ namespace Model
 {
 namespace HealthCheckTypeMapper
 {
+
+
 HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == HTTP_HASH)
   {
-    return HealthCheckType::HTTP;
+     return HealthCheckType::HTTP;
   }
   else if (hashCode == HTTPS_HASH)
   {
-    return HealthCheckType::HTTPS;
+     return HealthCheckType::HTTPS;
   }
   else if (hashCode == HTTP_STR_MATCH_HASH)
   {
-    return HealthCheckType::HTTP_STR_MATCH;
+     return HealthCheckType::HTTP_STR_MATCH;
   }
   else if (hashCode == HTTPS_STR_MATCH_HASH)
   {
-    return HealthCheckType::HTTPS_STR_MATCH;
+     return HealthCheckType::HTTPS_STR_MATCH;
   }
   else if (hashCode == TCP_HASH)
   {
-    return HealthCheckType::TCP;
+     return HealthCheckType::TCP;
   }
   else if (hashCode == CALCULATED_HASH)
   {
-    return HealthCheckType::CALCULATED;
+     return HealthCheckType::CALCULATED;
   }
-
   return HealthCheckType::NOT_SET;
 }
 

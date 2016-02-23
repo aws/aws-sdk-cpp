@@ -28,19 +28,19 @@ namespace Model
 {
 namespace TelemetryStatusMapper
 {
+
+
 TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UP_HASH)
   {
-    return TelemetryStatus::UP;
+     return TelemetryStatus::UP;
   }
   else if (hashCode == DOWN_HASH)
   {
-    return TelemetryStatus::DOWN;
+     return TelemetryStatus::DOWN;
   }
-
   return TelemetryStatus::NOT_SET;
 }
 

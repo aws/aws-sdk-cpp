@@ -29,23 +29,23 @@ namespace Model
 {
 namespace RequestCancelExternalWorkflowExecutionFailedCauseMapper
 {
+
+
 RequestCancelExternalWorkflowExecutionFailedCause GetRequestCancelExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
   {
-    return RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
+     return RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
   }
   else if (hashCode == REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
   {
-    return RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+     return RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET;
 }
 

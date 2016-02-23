@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DocumentParameterTypeMapper
 {
+
+
 DocumentParameterType GetDocumentParameterTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == String_HASH)
   {
-    return DocumentParameterType::String;
+     return DocumentParameterType::String;
   }
   else if (hashCode == StringList_HASH)
   {
-    return DocumentParameterType::StringList;
+     return DocumentParameterType::StringList;
   }
-
   return DocumentParameterType::NOT_SET;
 }
 

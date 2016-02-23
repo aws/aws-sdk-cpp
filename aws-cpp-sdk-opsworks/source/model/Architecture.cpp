@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ArchitectureMapper
 {
+
+
 Architecture GetArchitectureForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == x86_64_HASH)
   {
-    return Architecture::x86_64;
+     return Architecture::x86_64;
   }
   else if (hashCode == i386_HASH)
   {
-    return Architecture::i386;
+     return Architecture::i386;
   }
-
   return Architecture::NOT_SET;
 }
 

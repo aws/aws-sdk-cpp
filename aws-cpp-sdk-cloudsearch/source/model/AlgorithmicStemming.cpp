@@ -30,27 +30,27 @@ namespace Model
 {
 namespace AlgorithmicStemmingMapper
 {
+
+
 AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == none_HASH)
   {
-    return AlgorithmicStemming::none;
+     return AlgorithmicStemming::none;
   }
   else if (hashCode == minimal_HASH)
   {
-    return AlgorithmicStemming::minimal;
+     return AlgorithmicStemming::minimal;
   }
   else if (hashCode == light_HASH)
   {
-    return AlgorithmicStemming::light;
+     return AlgorithmicStemming::light;
   }
   else if (hashCode == full_HASH)
   {
-    return AlgorithmicStemming::full;
+     return AlgorithmicStemming::full;
   }
-
   return AlgorithmicStemming::NOT_SET;
 }
 

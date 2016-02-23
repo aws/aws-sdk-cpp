@@ -28,19 +28,19 @@ namespace Model
 {
 namespace TaskDefinitionStatusMapper
 {
+
+
 TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVE_HASH)
   {
-    return TaskDefinitionStatus::ACTIVE;
+     return TaskDefinitionStatus::ACTIVE;
   }
   else if (hashCode == INACTIVE_HASH)
   {
-    return TaskDefinitionStatus::INACTIVE;
+     return TaskDefinitionStatus::INACTIVE;
   }
-
   return TaskDefinitionStatus::NOT_SET;
 }
 

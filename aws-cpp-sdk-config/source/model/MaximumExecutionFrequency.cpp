@@ -31,31 +31,31 @@ namespace Model
 {
 namespace MaximumExecutionFrequencyMapper
 {
+
+
 MaximumExecutionFrequency GetMaximumExecutionFrequencyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == One_Hour_HASH)
   {
-    return MaximumExecutionFrequency::One_Hour;
+     return MaximumExecutionFrequency::One_Hour;
   }
   else if (hashCode == Three_Hours_HASH)
   {
-    return MaximumExecutionFrequency::Three_Hours;
+     return MaximumExecutionFrequency::Three_Hours;
   }
   else if (hashCode == Six_Hours_HASH)
   {
-    return MaximumExecutionFrequency::Six_Hours;
+     return MaximumExecutionFrequency::Six_Hours;
   }
   else if (hashCode == Twelve_Hours_HASH)
   {
-    return MaximumExecutionFrequency::Twelve_Hours;
+     return MaximumExecutionFrequency::Twelve_Hours;
   }
   else if (hashCode == TwentyFour_Hours_HASH)
   {
-    return MaximumExecutionFrequency::TwentyFour_Hours;
+     return MaximumExecutionFrequency::TwentyFour_Hours;
   }
-
   return MaximumExecutionFrequency::NOT_SET;
 }
 

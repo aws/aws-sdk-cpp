@@ -27,15 +27,15 @@ namespace Model
 {
 namespace StepStateChangeReasonCodeMapper
 {
+
+
 StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NONE_HASH)
   {
-    return StepStateChangeReasonCode::NONE;
+     return StepStateChangeReasonCode::NONE;
   }
-
   return StepStateChangeReasonCode::NOT_SET;
 }
 

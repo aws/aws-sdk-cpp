@@ -33,39 +33,39 @@ namespace Model
 {
 namespace PolicySourceTypeMapper
 {
+
+
 PolicySourceType GetPolicySourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == user_HASH)
   {
-    return PolicySourceType::user;
+     return PolicySourceType::user;
   }
   else if (hashCode == group_HASH)
   {
-    return PolicySourceType::group;
+     return PolicySourceType::group;
   }
   else if (hashCode == role_HASH)
   {
-    return PolicySourceType::role;
+     return PolicySourceType::role;
   }
   else if (hashCode == aws_managed_HASH)
   {
-    return PolicySourceType::aws_managed;
+     return PolicySourceType::aws_managed;
   }
   else if (hashCode == user_managed_HASH)
   {
-    return PolicySourceType::user_managed;
+     return PolicySourceType::user_managed;
   }
   else if (hashCode == resource_HASH)
   {
-    return PolicySourceType::resource;
+     return PolicySourceType::resource;
   }
   else if (hashCode == none_HASH)
   {
-    return PolicySourceType::none;
+     return PolicySourceType::none;
   }
-
   return PolicySourceType::NOT_SET;
 }
 

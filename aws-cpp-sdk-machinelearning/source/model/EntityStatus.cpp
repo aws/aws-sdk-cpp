@@ -31,31 +31,31 @@ namespace Model
 {
 namespace EntityStatusMapper
 {
+
+
 EntityStatus GetEntityStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return EntityStatus::PENDING;
+     return EntityStatus::PENDING;
   }
   else if (hashCode == INPROGRESS_HASH)
   {
-    return EntityStatus::INPROGRESS;
+     return EntityStatus::INPROGRESS;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return EntityStatus::FAILED;
+     return EntityStatus::FAILED;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return EntityStatus::COMPLETED;
+     return EntityStatus::COMPLETED;
   }
   else if (hashCode == DELETED_HASH)
   {
-    return EntityStatus::DELETED;
+     return EntityStatus::DELETED;
   }
-
   return EntityStatus::NOT_SET;
 }
 

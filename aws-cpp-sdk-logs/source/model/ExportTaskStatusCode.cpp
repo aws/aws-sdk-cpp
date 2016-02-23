@@ -32,35 +32,35 @@ namespace Model
 {
 namespace ExportTaskStatusCodeMapper
 {
+
+
 ExportTaskStatusCode GetExportTaskStatusCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CANCELLED_HASH)
   {
-    return ExportTaskStatusCode::CANCELLED;
+     return ExportTaskStatusCode::CANCELLED;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return ExportTaskStatusCode::COMPLETED;
+     return ExportTaskStatusCode::COMPLETED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return ExportTaskStatusCode::FAILED;
+     return ExportTaskStatusCode::FAILED;
   }
   else if (hashCode == PENDING_HASH)
   {
-    return ExportTaskStatusCode::PENDING;
+     return ExportTaskStatusCode::PENDING;
   }
   else if (hashCode == PENDING_CANCEL_HASH)
   {
-    return ExportTaskStatusCode::PENDING_CANCEL;
+     return ExportTaskStatusCode::PENDING_CANCEL;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return ExportTaskStatusCode::RUNNING;
+     return ExportTaskStatusCode::RUNNING;
   }
-
   return ExportTaskStatusCode::NOT_SET;
 }
 

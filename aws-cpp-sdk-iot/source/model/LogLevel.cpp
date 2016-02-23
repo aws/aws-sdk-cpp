@@ -31,31 +31,31 @@ namespace Model
 {
 namespace LogLevelMapper
 {
+
+
 LogLevel GetLogLevelForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DEBUG_HASH)
   {
-    return LogLevel::DEBUG;
+     return LogLevel::DEBUG;
   }
   else if (hashCode == INFO_HASH)
   {
-    return LogLevel::INFO;
+     return LogLevel::INFO;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return LogLevel::ERROR_;
+     return LogLevel::ERROR_;
   }
   else if (hashCode == WARN_HASH)
   {
-    return LogLevel::WARN;
+     return LogLevel::WARN;
   }
   else if (hashCode == DISABLED_HASH)
   {
-    return LogLevel::DISABLED;
+     return LogLevel::DISABLED;
   }
-
   return LogLevel::NOT_SET;
 }
 

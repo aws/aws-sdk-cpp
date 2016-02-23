@@ -34,43 +34,43 @@ namespace Model
 {
 namespace BatchPredictionFilterVariableMapper
 {
+
+
 BatchPredictionFilterVariable GetBatchPredictionFilterVariableForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CreatedAt_HASH)
   {
-    return BatchPredictionFilterVariable::CreatedAt;
+     return BatchPredictionFilterVariable::CreatedAt;
   }
   else if (hashCode == LastUpdatedAt_HASH)
   {
-    return BatchPredictionFilterVariable::LastUpdatedAt;
+     return BatchPredictionFilterVariable::LastUpdatedAt;
   }
   else if (hashCode == Status_HASH)
   {
-    return BatchPredictionFilterVariable::Status;
+     return BatchPredictionFilterVariable::Status;
   }
   else if (hashCode == Name_HASH)
   {
-    return BatchPredictionFilterVariable::Name;
+     return BatchPredictionFilterVariable::Name;
   }
   else if (hashCode == IAMUser_HASH)
   {
-    return BatchPredictionFilterVariable::IAMUser;
+     return BatchPredictionFilterVariable::IAMUser;
   }
   else if (hashCode == MLModelId_HASH)
   {
-    return BatchPredictionFilterVariable::MLModelId;
+     return BatchPredictionFilterVariable::MLModelId;
   }
   else if (hashCode == DataSourceId_HASH)
   {
-    return BatchPredictionFilterVariable::DataSourceId;
+     return BatchPredictionFilterVariable::DataSourceId;
   }
   else if (hashCode == DataURI_HASH)
   {
-    return BatchPredictionFilterVariable::DataURI;
+     return BatchPredictionFilterVariable::DataURI;
   }
-
   return BatchPredictionFilterVariable::NOT_SET;
 }
 

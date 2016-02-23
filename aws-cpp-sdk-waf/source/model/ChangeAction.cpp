@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ChangeActionMapper
 {
+
+
 ChangeAction GetChangeActionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INSERT_HASH)
   {
-    return ChangeAction::INSERT;
+     return ChangeAction::INSERT;
   }
   else if (hashCode == DELETE__HASH)
   {
-    return ChangeAction::DELETE_;
+     return ChangeAction::DELETE_;
   }
-
   return ChangeAction::NOT_SET;
 }
 

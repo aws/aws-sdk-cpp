@@ -28,19 +28,19 @@ namespace Model
 {
 namespace SnapshotAttributeNameMapper
 {
+
+
 SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == productCodes_HASH)
   {
-    return SnapshotAttributeName::productCodes;
+     return SnapshotAttributeName::productCodes;
   }
   else if (hashCode == createVolumePermission_HASH)
   {
-    return SnapshotAttributeName::createVolumePermission;
+     return SnapshotAttributeName::createVolumePermission;
   }
-
   return SnapshotAttributeName::NOT_SET;
 }
 

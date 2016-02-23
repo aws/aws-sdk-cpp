@@ -31,31 +31,31 @@ namespace Model
 {
 namespace CancelSpotInstanceRequestStateMapper
 {
+
+
 CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == active_HASH)
   {
-    return CancelSpotInstanceRequestState::active;
+     return CancelSpotInstanceRequestState::active;
   }
   else if (hashCode == open_HASH)
   {
-    return CancelSpotInstanceRequestState::open;
+     return CancelSpotInstanceRequestState::open;
   }
   else if (hashCode == closed_HASH)
   {
-    return CancelSpotInstanceRequestState::closed;
+     return CancelSpotInstanceRequestState::closed;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return CancelSpotInstanceRequestState::cancelled;
+     return CancelSpotInstanceRequestState::cancelled;
   }
   else if (hashCode == completed_HASH)
   {
-    return CancelSpotInstanceRequestState::completed;
+     return CancelSpotInstanceRequestState::completed;
   }
-
   return CancelSpotInstanceRequestState::NOT_SET;
 }
 

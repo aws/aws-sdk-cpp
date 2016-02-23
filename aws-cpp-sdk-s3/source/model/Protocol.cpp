@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ProtocolMapper
 {
+
+
 Protocol GetProtocolForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == http_HASH)
   {
-    return Protocol::http;
+     return Protocol::http;
   }
   else if (hashCode == https_HASH)
   {
-    return Protocol::https;
+     return Protocol::https;
   }
-
   return Protocol::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace CertificateStatusMapper
 {
+
+
 CertificateStatus GetCertificateStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVE_HASH)
   {
-    return CertificateStatus::ACTIVE;
+     return CertificateStatus::ACTIVE;
   }
   else if (hashCode == INACTIVE_HASH)
   {
-    return CertificateStatus::INACTIVE;
+     return CertificateStatus::INACTIVE;
   }
   else if (hashCode == REVOKED_HASH)
   {
-    return CertificateStatus::REVOKED;
+     return CertificateStatus::REVOKED;
   }
   else if (hashCode == PENDING_TRANSFER_HASH)
   {
-    return CertificateStatus::PENDING_TRANSFER;
+     return CertificateStatus::PENDING_TRANSFER;
   }
-
   return CertificateStatus::NOT_SET;
 }
 

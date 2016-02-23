@@ -27,15 +27,15 @@ namespace Model
 {
 namespace AuthorizerTypeMapper
 {
+
+
 AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TOKEN_HASH)
   {
-    return AuthorizerType::TOKEN;
+     return AuthorizerType::TOKEN;
   }
-
   return AuthorizerType::NOT_SET;
 }
 

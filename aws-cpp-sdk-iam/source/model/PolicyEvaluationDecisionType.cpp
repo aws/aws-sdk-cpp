@@ -29,23 +29,23 @@ namespace Model
 {
 namespace PolicyEvaluationDecisionTypeMapper
 {
+
+
 PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == allowed_HASH)
   {
-    return PolicyEvaluationDecisionType::allowed;
+     return PolicyEvaluationDecisionType::allowed;
   }
   else if (hashCode == explicitDeny_HASH)
   {
-    return PolicyEvaluationDecisionType::explicitDeny;
+     return PolicyEvaluationDecisionType::explicitDeny;
   }
   else if (hashCode == implicitDeny_HASH)
   {
-    return PolicyEvaluationDecisionType::implicitDeny;
+     return PolicyEvaluationDecisionType::implicitDeny;
   }
-
   return PolicyEvaluationDecisionType::NOT_SET;
 }
 

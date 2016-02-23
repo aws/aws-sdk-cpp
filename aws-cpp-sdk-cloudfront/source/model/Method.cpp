@@ -33,39 +33,39 @@ namespace Model
 {
 namespace MethodMapper
 {
+
+
 Method GetMethodForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == GET__HASH)
   {
-    return Method::GET_;
+     return Method::GET_;
   }
   else if (hashCode == HEAD_HASH)
   {
-    return Method::HEAD;
+     return Method::HEAD;
   }
   else if (hashCode == POST_HASH)
   {
-    return Method::POST;
+     return Method::POST;
   }
   else if (hashCode == PUT_HASH)
   {
-    return Method::PUT;
+     return Method::PUT;
   }
   else if (hashCode == PATCH_HASH)
   {
-    return Method::PATCH;
+     return Method::PATCH;
   }
   else if (hashCode == OPTIONS_HASH)
   {
-    return Method::OPTIONS;
+     return Method::OPTIONS;
   }
   else if (hashCode == DELETE__HASH)
   {
-    return Method::DELETE_;
+     return Method::DELETE_;
   }
-
   return Method::NOT_SET;
 }
 

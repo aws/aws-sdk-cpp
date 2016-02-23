@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ChronologicalOrderMapper
 {
+
+
 ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Reverse_HASH)
   {
-    return ChronologicalOrder::Reverse;
+     return ChronologicalOrder::Reverse;
   }
   else if (hashCode == Forward_HASH)
   {
-    return ChronologicalOrder::Forward;
+     return ChronologicalOrder::Forward;
   }
-
   return ChronologicalOrder::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace AllocationStateMapper
 {
+
+
 AllocationState GetAllocationStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == available_HASH)
   {
-    return AllocationState::available;
+     return AllocationState::available;
   }
   else if (hashCode == under_assessment_HASH)
   {
-    return AllocationState::under_assessment;
+     return AllocationState::under_assessment;
   }
   else if (hashCode == permanent_failure_HASH)
   {
-    return AllocationState::permanent_failure;
+     return AllocationState::permanent_failure;
   }
   else if (hashCode == released_HASH)
   {
-    return AllocationState::released;
+     return AllocationState::released;
   }
   else if (hashCode == released_permanent_failure_HASH)
   {
-    return AllocationState::released_permanent_failure;
+     return AllocationState::released_permanent_failure;
   }
-
   return AllocationState::NOT_SET;
 }
 

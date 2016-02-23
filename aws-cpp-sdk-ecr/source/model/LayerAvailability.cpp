@@ -28,19 +28,19 @@ namespace Model
 {
 namespace LayerAvailabilityMapper
 {
+
+
 LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AVAILABLE_HASH)
   {
-    return LayerAvailability::AVAILABLE;
+     return LayerAvailability::AVAILABLE;
   }
   else if (hashCode == UNAVAILABLE_HASH)
   {
-    return LayerAvailability::UNAVAILABLE;
+     return LayerAvailability::UNAVAILABLE;
   }
-
   return LayerAvailability::NOT_SET;
 }
 

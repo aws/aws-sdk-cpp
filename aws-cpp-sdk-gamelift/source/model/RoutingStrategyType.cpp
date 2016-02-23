@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RoutingStrategyTypeMapper
 {
+
+
 RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SIMPLE_HASH)
   {
-    return RoutingStrategyType::SIMPLE;
+     return RoutingStrategyType::SIMPLE;
   }
   else if (hashCode == TERMINAL_HASH)
   {
-    return RoutingStrategyType::TERMINAL;
+     return RoutingStrategyType::TERMINAL;
   }
-
   return RoutingStrategyType::NOT_SET;
 }
 

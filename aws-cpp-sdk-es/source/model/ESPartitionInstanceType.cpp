@@ -40,67 +40,67 @@ namespace Model
 {
 namespace ESPartitionInstanceTypeMapper
 {
+
+
 ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == m3_medium_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::m3_medium_elasticsearch;
+     return ESPartitionInstanceType::m3_medium_elasticsearch;
   }
   else if (hashCode == m3_large_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::m3_large_elasticsearch;
+     return ESPartitionInstanceType::m3_large_elasticsearch;
   }
   else if (hashCode == m3_xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::m3_xlarge_elasticsearch;
+     return ESPartitionInstanceType::m3_xlarge_elasticsearch;
   }
   else if (hashCode == m3_2xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::m3_2xlarge_elasticsearch;
+     return ESPartitionInstanceType::m3_2xlarge_elasticsearch;
   }
   else if (hashCode == t2_micro_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::t2_micro_elasticsearch;
+     return ESPartitionInstanceType::t2_micro_elasticsearch;
   }
   else if (hashCode == t2_small_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::t2_small_elasticsearch;
+     return ESPartitionInstanceType::t2_small_elasticsearch;
   }
   else if (hashCode == t2_medium_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::t2_medium_elasticsearch;
+     return ESPartitionInstanceType::t2_medium_elasticsearch;
   }
   else if (hashCode == r3_large_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::r3_large_elasticsearch;
+     return ESPartitionInstanceType::r3_large_elasticsearch;
   }
   else if (hashCode == r3_xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::r3_xlarge_elasticsearch;
+     return ESPartitionInstanceType::r3_xlarge_elasticsearch;
   }
   else if (hashCode == r3_2xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::r3_2xlarge_elasticsearch;
+     return ESPartitionInstanceType::r3_2xlarge_elasticsearch;
   }
   else if (hashCode == r3_4xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::r3_4xlarge_elasticsearch;
+     return ESPartitionInstanceType::r3_4xlarge_elasticsearch;
   }
   else if (hashCode == r3_8xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::r3_8xlarge_elasticsearch;
+     return ESPartitionInstanceType::r3_8xlarge_elasticsearch;
   }
   else if (hashCode == i2_xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::i2_xlarge_elasticsearch;
+     return ESPartitionInstanceType::i2_xlarge_elasticsearch;
   }
   else if (hashCode == i2_2xlarge_elasticsearch_HASH)
   {
-    return ESPartitionInstanceType::i2_2xlarge_elasticsearch;
+     return ESPartitionInstanceType::i2_2xlarge_elasticsearch;
   }
-
   return ESPartitionInstanceType::NOT_SET;
 }
 

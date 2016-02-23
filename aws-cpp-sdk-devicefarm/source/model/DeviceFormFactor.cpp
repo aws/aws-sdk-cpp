@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DeviceFormFactorMapper
 {
+
+
 DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PHONE_HASH)
   {
-    return DeviceFormFactor::PHONE;
+     return DeviceFormFactor::PHONE;
   }
   else if (hashCode == TABLET_HASH)
   {
-    return DeviceFormFactor::TABLET;
+     return DeviceFormFactor::TABLET;
   }
-
   return DeviceFormFactor::NOT_SET;
 }
 

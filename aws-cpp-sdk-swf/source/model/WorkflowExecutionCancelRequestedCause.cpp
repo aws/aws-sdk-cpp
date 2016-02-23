@@ -27,15 +27,15 @@ namespace Model
 {
 namespace WorkflowExecutionCancelRequestedCauseMapper
 {
+
+
 WorkflowExecutionCancelRequestedCause GetWorkflowExecutionCancelRequestedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CHILD_POLICY_APPLIED_HASH)
   {
-    return WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED;
+     return WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED;
   }
-
   return WorkflowExecutionCancelRequestedCause::NOT_SET;
 }
 

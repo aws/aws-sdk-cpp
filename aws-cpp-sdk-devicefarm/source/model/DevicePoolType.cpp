@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DevicePoolTypeMapper
 {
+
+
 DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CURATED_HASH)
   {
-    return DevicePoolType::CURATED;
+     return DevicePoolType::CURATED;
   }
   else if (hashCode == PRIVATE__HASH)
   {
-    return DevicePoolType::PRIVATE_;
+     return DevicePoolType::PRIVATE_;
   }
-
   return DevicePoolType::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace LayerFailureCodeMapper
 {
+
+
 LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InvalidLayerDigest_HASH)
   {
-    return LayerFailureCode::InvalidLayerDigest;
+     return LayerFailureCode::InvalidLayerDigest;
   }
   else if (hashCode == MissingLayerDigest_HASH)
   {
-    return LayerFailureCode::MissingLayerDigest;
+     return LayerFailureCode::MissingLayerDigest;
   }
-
   return LayerFailureCode::NOT_SET;
 }
 

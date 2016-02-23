@@ -29,23 +29,23 @@ namespace Model
 {
 namespace RuntimeMapper
 {
+
+
 Runtime GetRuntimeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == nodejs_HASH)
   {
-    return Runtime::nodejs;
+     return Runtime::nodejs;
   }
   else if (hashCode == java8_HASH)
   {
-    return Runtime::java8;
+     return Runtime::java8;
   }
   else if (hashCode == python2_7_HASH)
   {
-    return Runtime::python2_7;
+     return Runtime::python2_7;
   }
-
   return Runtime::NOT_SET;
 }
 

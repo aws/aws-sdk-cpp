@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ObjectStorageClassMapper
 {
+
+
 ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STANDARD_HASH)
   {
-    return ObjectStorageClass::STANDARD;
+     return ObjectStorageClass::STANDARD;
   }
   else if (hashCode == REDUCED_REDUNDANCY_HASH)
   {
-    return ObjectStorageClass::REDUCED_REDUNDANCY;
+     return ObjectStorageClass::REDUCED_REDUNDANCY;
   }
   else if (hashCode == GLACIER_HASH)
   {
-    return ObjectStorageClass::GLACIER;
+     return ObjectStorageClass::GLACIER;
   }
-
   return ObjectStorageClass::NOT_SET;
 }
 

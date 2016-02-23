@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ArtifactLocationTypeMapper
 {
+
+
 ArtifactLocationType GetArtifactLocationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == S3_HASH)
   {
-    return ArtifactLocationType::S3;
+     return ArtifactLocationType::S3;
   }
-
   return ArtifactLocationType::NOT_SET;
 }
 

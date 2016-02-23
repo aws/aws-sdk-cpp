@@ -27,15 +27,15 @@ namespace Model
 {
 namespace SubscriptionTypeMapper
 {
+
+
 SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PRODUCTION_HASH)
   {
-    return SubscriptionType::PRODUCTION;
+     return SubscriptionType::PRODUCTION;
   }
-
   return SubscriptionType::NOT_SET;
 }
 

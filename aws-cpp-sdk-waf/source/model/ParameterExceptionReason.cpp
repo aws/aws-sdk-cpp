@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ParameterExceptionReasonMapper
 {
+
+
 ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INVALID_OPTION_HASH)
   {
-    return ParameterExceptionReason::INVALID_OPTION;
+     return ParameterExceptionReason::INVALID_OPTION;
   }
   else if (hashCode == ILLEGAL_COMBINATION_HASH)
   {
-    return ParameterExceptionReason::ILLEGAL_COMBINATION;
+     return ParameterExceptionReason::ILLEGAL_COMBINATION;
   }
-
   return ParameterExceptionReason::NOT_SET;
 }
 

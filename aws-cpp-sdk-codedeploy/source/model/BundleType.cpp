@@ -29,23 +29,23 @@ namespace Model
 {
 namespace BundleTypeMapper
 {
+
+
 BundleType GetBundleTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == tar_HASH)
   {
-    return BundleType::tar;
+     return BundleType::tar;
   }
   else if (hashCode == tgz_HASH)
   {
-    return BundleType::tgz;
+     return BundleType::tgz;
   }
   else if (hashCode == zip_HASH)
   {
-    return BundleType::zip;
+     return BundleType::zip;
   }
-
   return BundleType::NOT_SET;
 }
 

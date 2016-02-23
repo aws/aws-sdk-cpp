@@ -30,27 +30,27 @@ namespace Model
 {
 namespace AvailabilityZoneStateMapper
 {
+
+
 AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == available_HASH)
   {
-    return AvailabilityZoneState::available;
+     return AvailabilityZoneState::available;
   }
   else if (hashCode == information_HASH)
   {
-    return AvailabilityZoneState::information;
+     return AvailabilityZoneState::information;
   }
   else if (hashCode == impaired_HASH)
   {
-    return AvailabilityZoneState::impaired;
+     return AvailabilityZoneState::impaired;
   }
   else if (hashCode == unavailable_HASH)
   {
-    return AvailabilityZoneState::unavailable;
+     return AvailabilityZoneState::unavailable;
   }
-
   return AvailabilityZoneState::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace SnapshotTypeMapper
 {
+
+
 SnapshotType GetSnapshotTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Auto_HASH)
   {
-    return SnapshotType::Auto;
+     return SnapshotType::Auto;
   }
   else if (hashCode == Manual_HASH)
   {
-    return SnapshotType::Manual;
+     return SnapshotType::Manual;
   }
-
   return SnapshotType::NOT_SET;
 }
 

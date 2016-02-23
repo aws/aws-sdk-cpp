@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ActionOwnerMapper
 {
+
+
 ActionOwner GetActionOwnerForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AWS_HASH)
   {
-    return ActionOwner::AWS;
+     return ActionOwner::AWS;
   }
   else if (hashCode == ThirdParty_HASH)
   {
-    return ActionOwner::ThirdParty;
+     return ActionOwner::ThirdParty;
   }
   else if (hashCode == Custom_HASH)
   {
-    return ActionOwner::Custom;
+     return ActionOwner::Custom;
   }
-
   return ActionOwner::NOT_SET;
 }
 

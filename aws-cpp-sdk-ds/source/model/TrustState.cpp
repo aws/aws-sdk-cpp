@@ -34,43 +34,43 @@ namespace Model
 {
 namespace TrustStateMapper
 {
+
+
 TrustState GetTrustStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Creating_HASH)
   {
-    return TrustState::Creating;
+     return TrustState::Creating;
   }
   else if (hashCode == Created_HASH)
   {
-    return TrustState::Created;
+     return TrustState::Created;
   }
   else if (hashCode == Verifying_HASH)
   {
-    return TrustState::Verifying;
+     return TrustState::Verifying;
   }
   else if (hashCode == VerifyFailed_HASH)
   {
-    return TrustState::VerifyFailed;
+     return TrustState::VerifyFailed;
   }
   else if (hashCode == Verified_HASH)
   {
-    return TrustState::Verified;
+     return TrustState::Verified;
   }
   else if (hashCode == Deleting_HASH)
   {
-    return TrustState::Deleting;
+     return TrustState::Deleting;
   }
   else if (hashCode == Deleted_HASH)
   {
-    return TrustState::Deleted;
+     return TrustState::Deleted;
   }
   else if (hashCode == Failed_HASH)
   {
-    return TrustState::Failed;
+     return TrustState::Failed;
   }
-
   return TrustState::NOT_SET;
 }
 

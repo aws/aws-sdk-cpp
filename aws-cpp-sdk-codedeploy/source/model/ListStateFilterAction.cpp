@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ListStateFilterActionMapper
 {
+
+
 ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == include_HASH)
   {
-    return ListStateFilterAction::include;
+     return ListStateFilterAction::include;
   }
   else if (hashCode == exclude_HASH)
   {
-    return ListStateFilterAction::exclude;
+     return ListStateFilterAction::exclude;
   }
   else if (hashCode == ignore_HASH)
   {
-    return ListStateFilterAction::ignore;
+     return ListStateFilterAction::ignore;
   }
-
   return ListStateFilterAction::NOT_SET;
 }
 

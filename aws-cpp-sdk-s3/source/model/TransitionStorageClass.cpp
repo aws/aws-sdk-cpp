@@ -28,19 +28,19 @@ namespace Model
 {
 namespace TransitionStorageClassMapper
 {
+
+
 TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == GLACIER_HASH)
   {
-    return TransitionStorageClass::GLACIER;
+     return TransitionStorageClass::GLACIER;
   }
   else if (hashCode == STANDARD_IA_HASH)
   {
-    return TransitionStorageClass::STANDARD_IA;
+     return TransitionStorageClass::STANDARD_IA;
   }
-
   return TransitionStorageClass::NOT_SET;
 }
 

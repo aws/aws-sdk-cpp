@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ResetImageAttributeNameMapper
 {
+
+
 ResetImageAttributeName GetResetImageAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == launchPermission_HASH)
   {
-    return ResetImageAttributeName::launchPermission;
+     return ResetImageAttributeName::launchPermission;
   }
-
   return ResetImageAttributeName::NOT_SET;
 }
 

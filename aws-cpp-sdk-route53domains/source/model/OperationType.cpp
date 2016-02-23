@@ -33,39 +33,39 @@ namespace Model
 {
 namespace OperationTypeMapper
 {
+
+
 OperationType GetOperationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == REGISTER_DOMAIN_HASH)
   {
-    return OperationType::REGISTER_DOMAIN;
+     return OperationType::REGISTER_DOMAIN;
   }
   else if (hashCode == DELETE_DOMAIN_HASH)
   {
-    return OperationType::DELETE_DOMAIN;
+     return OperationType::DELETE_DOMAIN;
   }
   else if (hashCode == TRANSFER_IN_DOMAIN_HASH)
   {
-    return OperationType::TRANSFER_IN_DOMAIN;
+     return OperationType::TRANSFER_IN_DOMAIN;
   }
   else if (hashCode == UPDATE_DOMAIN_CONTACT_HASH)
   {
-    return OperationType::UPDATE_DOMAIN_CONTACT;
+     return OperationType::UPDATE_DOMAIN_CONTACT;
   }
   else if (hashCode == UPDATE_NAMESERVER_HASH)
   {
-    return OperationType::UPDATE_NAMESERVER;
+     return OperationType::UPDATE_NAMESERVER;
   }
   else if (hashCode == CHANGE_PRIVACY_PROTECTION_HASH)
   {
-    return OperationType::CHANGE_PRIVACY_PROTECTION;
+     return OperationType::CHANGE_PRIVACY_PROTECTION;
   }
   else if (hashCode == DOMAIN_LOCK_HASH)
   {
-    return OperationType::DOMAIN_LOCK;
+     return OperationType::DOMAIN_LOCK;
   }
-
   return OperationType::NOT_SET;
 }
 

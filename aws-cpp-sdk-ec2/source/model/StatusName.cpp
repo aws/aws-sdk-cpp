@@ -27,15 +27,15 @@ namespace Model
 {
 namespace StatusNameMapper
 {
+
+
 StatusName GetStatusNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == reachability_HASH)
   {
-    return StatusName::reachability;
+     return StatusName::reachability;
   }
-
   return StatusName::NOT_SET;
 }
 

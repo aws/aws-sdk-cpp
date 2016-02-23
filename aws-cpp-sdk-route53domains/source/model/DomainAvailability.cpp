@@ -34,43 +34,43 @@ namespace Model
 {
 namespace DomainAvailabilityMapper
 {
+
+
 DomainAvailability GetDomainAvailabilityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AVAILABLE_HASH)
   {
-    return DomainAvailability::AVAILABLE;
+     return DomainAvailability::AVAILABLE;
   }
   else if (hashCode == AVAILABLE_RESERVED_HASH)
   {
-    return DomainAvailability::AVAILABLE_RESERVED;
+     return DomainAvailability::AVAILABLE_RESERVED;
   }
   else if (hashCode == AVAILABLE_PREORDER_HASH)
   {
-    return DomainAvailability::AVAILABLE_PREORDER;
+     return DomainAvailability::AVAILABLE_PREORDER;
   }
   else if (hashCode == UNAVAILABLE_HASH)
   {
-    return DomainAvailability::UNAVAILABLE;
+     return DomainAvailability::UNAVAILABLE;
   }
   else if (hashCode == UNAVAILABLE_PREMIUM_HASH)
   {
-    return DomainAvailability::UNAVAILABLE_PREMIUM;
+     return DomainAvailability::UNAVAILABLE_PREMIUM;
   }
   else if (hashCode == UNAVAILABLE_RESTRICTED_HASH)
   {
-    return DomainAvailability::UNAVAILABLE_RESTRICTED;
+     return DomainAvailability::UNAVAILABLE_RESTRICTED;
   }
   else if (hashCode == RESERVED_HASH)
   {
-    return DomainAvailability::RESERVED;
+     return DomainAvailability::RESERVED;
   }
   else if (hashCode == DONT_KNOW_HASH)
   {
-    return DomainAvailability::DONT_KNOW;
+     return DomainAvailability::DONT_KNOW;
   }
-
   return DomainAvailability::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace HistoryItemTypeMapper
 {
+
+
 HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ConfigurationUpdate_HASH)
   {
-    return HistoryItemType::ConfigurationUpdate;
+     return HistoryItemType::ConfigurationUpdate;
   }
   else if (hashCode == StateUpdate_HASH)
   {
-    return HistoryItemType::StateUpdate;
+     return HistoryItemType::StateUpdate;
   }
   else if (hashCode == Action_HASH)
   {
-    return HistoryItemType::Action;
+     return HistoryItemType::Action;
   }
-
   return HistoryItemType::NOT_SET;
 }
 

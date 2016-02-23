@@ -33,39 +33,39 @@ namespace Model
 {
 namespace BundleTaskStateMapper
 {
+
+
 BundleTaskState GetBundleTaskStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return BundleTaskState::pending;
+     return BundleTaskState::pending;
   }
   else if (hashCode == waiting_for_shutdown_HASH)
   {
-    return BundleTaskState::waiting_for_shutdown;
+     return BundleTaskState::waiting_for_shutdown;
   }
   else if (hashCode == bundling_HASH)
   {
-    return BundleTaskState::bundling;
+     return BundleTaskState::bundling;
   }
   else if (hashCode == storing_HASH)
   {
-    return BundleTaskState::storing;
+     return BundleTaskState::storing;
   }
   else if (hashCode == cancelling_HASH)
   {
-    return BundleTaskState::cancelling;
+     return BundleTaskState::cancelling;
   }
   else if (hashCode == complete_HASH)
   {
-    return BundleTaskState::complete;
+     return BundleTaskState::complete;
   }
   else if (hashCode == failed_HASH)
   {
-    return BundleTaskState::failed;
+     return BundleTaskState::failed;
   }
-
   return BundleTaskState::NOT_SET;
 }
 

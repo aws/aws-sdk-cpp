@@ -27,15 +27,15 @@ namespace Model
 {
 namespace GatewayTypeMapper
 {
+
+
 GatewayType GetGatewayTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ipsec_1_HASH)
   {
-    return GatewayType::ipsec_1;
+     return GatewayType::ipsec_1;
   }
-
   return GatewayType::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace StatusMapper
 {
+
+
 Status GetStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == MoveInProgress_HASH)
   {
-    return Status::MoveInProgress;
+     return Status::MoveInProgress;
   }
   else if (hashCode == InVpc_HASH)
   {
-    return Status::InVpc;
+     return Status::InVpc;
   }
   else if (hashCode == InClassic_HASH)
   {
-    return Status::InClassic;
+     return Status::InClassic;
   }
-
   return Status::NOT_SET;
 }
 

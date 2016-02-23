@@ -28,19 +28,19 @@ namespace Model
 {
 namespace NetworkInterfaceTypeMapper
 {
+
+
 NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == interface_HASH)
   {
-    return NetworkInterfaceType::interface;
+     return NetworkInterfaceType::interface;
   }
   else if (hashCode == natGateway_HASH)
   {
-    return NetworkInterfaceType::natGateway;
+     return NetworkInterfaceType::natGateway;
   }
-
   return NetworkInterfaceType::NOT_SET;
 }
 

@@ -27,15 +27,15 @@ namespace Model
 {
 namespace StopScopeMapper
 {
+
+
 StopScope GetStopScopeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == RuleSet_HASH)
   {
-    return StopScope::RuleSet;
+     return StopScope::RuleSet;
   }
-
   return StopScope::NOT_SET;
 }
 

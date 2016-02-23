@@ -29,23 +29,23 @@ namespace Model
 {
 namespace CloudHsmObjectStateMapper
 {
+
+
 CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == READY_HASH)
   {
-    return CloudHsmObjectState::READY;
+     return CloudHsmObjectState::READY;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return CloudHsmObjectState::UPDATING;
+     return CloudHsmObjectState::UPDATING;
   }
   else if (hashCode == DEGRADED_HASH)
   {
-    return CloudHsmObjectState::DEGRADED;
+     return CloudHsmObjectState::DEGRADED;
   }
-
   return CloudHsmObjectState::NOT_SET;
 }
 

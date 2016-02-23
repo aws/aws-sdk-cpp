@@ -28,19 +28,19 @@ namespace Model
 {
 namespace StreamingStatusMapper
 {
+
+
 StreamingStatus GetStreamingStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ENABLED_HASH)
   {
-    return StreamingStatus::ENABLED;
+     return StreamingStatus::ENABLED;
   }
   else if (hashCode == DISABLED_HASH)
   {
-    return StreamingStatus::DISABLED;
+     return StreamingStatus::DISABLED;
   }
-
   return StreamingStatus::NOT_SET;
 }
 

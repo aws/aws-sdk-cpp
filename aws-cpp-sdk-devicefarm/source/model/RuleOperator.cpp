@@ -31,31 +31,31 @@ namespace Model
 {
 namespace RuleOperatorMapper
 {
+
+
 RuleOperator GetRuleOperatorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EQUALS_HASH)
   {
-    return RuleOperator::EQUALS;
+     return RuleOperator::EQUALS;
   }
   else if (hashCode == LESS_THAN_HASH)
   {
-    return RuleOperator::LESS_THAN;
+     return RuleOperator::LESS_THAN;
   }
   else if (hashCode == GREATER_THAN_HASH)
   {
-    return RuleOperator::GREATER_THAN;
+     return RuleOperator::GREATER_THAN;
   }
   else if (hashCode == IN_HASH)
   {
-    return RuleOperator::IN;
+     return RuleOperator::IN;
   }
   else if (hashCode == NOT_IN_HASH)
   {
-    return RuleOperator::NOT_IN;
+     return RuleOperator::NOT_IN;
   }
-
   return RuleOperator::NOT_SET;
 }
 

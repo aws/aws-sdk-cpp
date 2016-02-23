@@ -41,71 +41,71 @@ namespace Model
 {
 namespace UploadTypeMapper
 {
+
+
 UploadType GetUploadTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ANDROID_APP_HASH)
   {
-    return UploadType::ANDROID_APP;
+     return UploadType::ANDROID_APP;
   }
   else if (hashCode == IOS_APP_HASH)
   {
-    return UploadType::IOS_APP;
+     return UploadType::IOS_APP;
   }
   else if (hashCode == WEB_APP_HASH)
   {
-    return UploadType::WEB_APP;
+     return UploadType::WEB_APP;
   }
   else if (hashCode == EXTERNAL_DATA_HASH)
   {
-    return UploadType::EXTERNAL_DATA;
+     return UploadType::EXTERNAL_DATA;
   }
   else if (hashCode == APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_JAVA_JUNIT_TEST_PACKAGE;
+     return UploadType::APPIUM_JAVA_JUNIT_TEST_PACKAGE;
   }
   else if (hashCode == APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_JAVA_TESTNG_TEST_PACKAGE;
+     return UploadType::APPIUM_JAVA_TESTNG_TEST_PACKAGE;
   }
   else if (hashCode == APPIUM_PYTHON_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_PYTHON_TEST_PACKAGE;
+     return UploadType::APPIUM_PYTHON_TEST_PACKAGE;
   }
   else if (hashCode == APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE;
+     return UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE;
   }
   else if (hashCode == APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE;
+     return UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE;
   }
   else if (hashCode == APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH)
   {
-    return UploadType::APPIUM_WEB_PYTHON_TEST_PACKAGE;
+     return UploadType::APPIUM_WEB_PYTHON_TEST_PACKAGE;
   }
   else if (hashCode == CALABASH_TEST_PACKAGE_HASH)
   {
-    return UploadType::CALABASH_TEST_PACKAGE;
+     return UploadType::CALABASH_TEST_PACKAGE;
   }
   else if (hashCode == INSTRUMENTATION_TEST_PACKAGE_HASH)
   {
-    return UploadType::INSTRUMENTATION_TEST_PACKAGE;
+     return UploadType::INSTRUMENTATION_TEST_PACKAGE;
   }
   else if (hashCode == UIAUTOMATION_TEST_PACKAGE_HASH)
   {
-    return UploadType::UIAUTOMATION_TEST_PACKAGE;
+     return UploadType::UIAUTOMATION_TEST_PACKAGE;
   }
   else if (hashCode == UIAUTOMATOR_TEST_PACKAGE_HASH)
   {
-    return UploadType::UIAUTOMATOR_TEST_PACKAGE;
+     return UploadType::UIAUTOMATOR_TEST_PACKAGE;
   }
   else if (hashCode == XCTEST_TEST_PACKAGE_HASH)
   {
-    return UploadType::XCTEST_TEST_PACKAGE;
+     return UploadType::XCTEST_TEST_PACKAGE;
   }
-
   return UploadType::NOT_SET;
 }
 

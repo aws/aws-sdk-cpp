@@ -30,27 +30,27 @@ namespace Model
 {
 namespace IndexStatusMapper
 {
+
+
 IndexStatus GetIndexStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATING_HASH)
   {
-    return IndexStatus::CREATING;
+     return IndexStatus::CREATING;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return IndexStatus::UPDATING;
+     return IndexStatus::UPDATING;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return IndexStatus::DELETING;
+     return IndexStatus::DELETING;
   }
   else if (hashCode == ACTIVE_HASH)
   {
-    return IndexStatus::ACTIVE;
+     return IndexStatus::ACTIVE;
   }
-
   return IndexStatus::NOT_SET;
 }
 

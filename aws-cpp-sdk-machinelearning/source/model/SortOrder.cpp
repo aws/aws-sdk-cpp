@@ -28,19 +28,19 @@ namespace Model
 {
 namespace SortOrderMapper
 {
+
+
 SortOrder GetSortOrderForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == asc_HASH)
   {
-    return SortOrder::asc;
+     return SortOrder::asc;
   }
   else if (hashCode == dsc_HASH)
   {
-    return SortOrder::dsc;
+     return SortOrder::dsc;
   }
-
   return SortOrder::NOT_SET;
 }
 

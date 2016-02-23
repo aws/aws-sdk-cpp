@@ -61,151 +61,151 @@ namespace Model
 {
 namespace AnalysisSchemeLanguageMapper
 {
+
+
 AnalysisSchemeLanguage GetAnalysisSchemeLanguageForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ar_HASH)
   {
-    return AnalysisSchemeLanguage::ar;
+     return AnalysisSchemeLanguage::ar;
   }
   else if (hashCode == bg_HASH)
   {
-    return AnalysisSchemeLanguage::bg;
+     return AnalysisSchemeLanguage::bg;
   }
   else if (hashCode == ca_HASH)
   {
-    return AnalysisSchemeLanguage::ca;
+     return AnalysisSchemeLanguage::ca;
   }
   else if (hashCode == cs_HASH)
   {
-    return AnalysisSchemeLanguage::cs;
+     return AnalysisSchemeLanguage::cs;
   }
   else if (hashCode == da_HASH)
   {
-    return AnalysisSchemeLanguage::da;
+     return AnalysisSchemeLanguage::da;
   }
   else if (hashCode == de_HASH)
   {
-    return AnalysisSchemeLanguage::de;
+     return AnalysisSchemeLanguage::de;
   }
   else if (hashCode == el_HASH)
   {
-    return AnalysisSchemeLanguage::el;
+     return AnalysisSchemeLanguage::el;
   }
   else if (hashCode == en_HASH)
   {
-    return AnalysisSchemeLanguage::en;
+     return AnalysisSchemeLanguage::en;
   }
   else if (hashCode == es_HASH)
   {
-    return AnalysisSchemeLanguage::es;
+     return AnalysisSchemeLanguage::es;
   }
   else if (hashCode == eu_HASH)
   {
-    return AnalysisSchemeLanguage::eu;
+     return AnalysisSchemeLanguage::eu;
   }
   else if (hashCode == fa_HASH)
   {
-    return AnalysisSchemeLanguage::fa;
+     return AnalysisSchemeLanguage::fa;
   }
   else if (hashCode == fi_HASH)
   {
-    return AnalysisSchemeLanguage::fi;
+     return AnalysisSchemeLanguage::fi;
   }
   else if (hashCode == fr_HASH)
   {
-    return AnalysisSchemeLanguage::fr;
+     return AnalysisSchemeLanguage::fr;
   }
   else if (hashCode == ga_HASH)
   {
-    return AnalysisSchemeLanguage::ga;
+     return AnalysisSchemeLanguage::ga;
   }
   else if (hashCode == gl_HASH)
   {
-    return AnalysisSchemeLanguage::gl;
+     return AnalysisSchemeLanguage::gl;
   }
   else if (hashCode == he_HASH)
   {
-    return AnalysisSchemeLanguage::he;
+     return AnalysisSchemeLanguage::he;
   }
   else if (hashCode == hi_HASH)
   {
-    return AnalysisSchemeLanguage::hi;
+     return AnalysisSchemeLanguage::hi;
   }
   else if (hashCode == hu_HASH)
   {
-    return AnalysisSchemeLanguage::hu;
+     return AnalysisSchemeLanguage::hu;
   }
   else if (hashCode == hy_HASH)
   {
-    return AnalysisSchemeLanguage::hy;
+     return AnalysisSchemeLanguage::hy;
   }
   else if (hashCode == id_HASH)
   {
-    return AnalysisSchemeLanguage::id;
+     return AnalysisSchemeLanguage::id;
   }
   else if (hashCode == it_HASH)
   {
-    return AnalysisSchemeLanguage::it;
+     return AnalysisSchemeLanguage::it;
   }
   else if (hashCode == ja_HASH)
   {
-    return AnalysisSchemeLanguage::ja;
+     return AnalysisSchemeLanguage::ja;
   }
   else if (hashCode == ko_HASH)
   {
-    return AnalysisSchemeLanguage::ko;
+     return AnalysisSchemeLanguage::ko;
   }
   else if (hashCode == lv_HASH)
   {
-    return AnalysisSchemeLanguage::lv;
+     return AnalysisSchemeLanguage::lv;
   }
   else if (hashCode == mul_HASH)
   {
-    return AnalysisSchemeLanguage::mul;
+     return AnalysisSchemeLanguage::mul;
   }
   else if (hashCode == nl_HASH)
   {
-    return AnalysisSchemeLanguage::nl;
+     return AnalysisSchemeLanguage::nl;
   }
   else if (hashCode == no_HASH)
   {
-    return AnalysisSchemeLanguage::no;
+     return AnalysisSchemeLanguage::no;
   }
   else if (hashCode == pt_HASH)
   {
-    return AnalysisSchemeLanguage::pt;
+     return AnalysisSchemeLanguage::pt;
   }
   else if (hashCode == ro_HASH)
   {
-    return AnalysisSchemeLanguage::ro;
+     return AnalysisSchemeLanguage::ro;
   }
   else if (hashCode == ru_HASH)
   {
-    return AnalysisSchemeLanguage::ru;
+     return AnalysisSchemeLanguage::ru;
   }
   else if (hashCode == sv_HASH)
   {
-    return AnalysisSchemeLanguage::sv;
+     return AnalysisSchemeLanguage::sv;
   }
   else if (hashCode == th_HASH)
   {
-    return AnalysisSchemeLanguage::th;
+     return AnalysisSchemeLanguage::th;
   }
   else if (hashCode == tr_HASH)
   {
-    return AnalysisSchemeLanguage::tr;
+     return AnalysisSchemeLanguage::tr;
   }
   else if (hashCode == zh_Hans_HASH)
   {
-    return AnalysisSchemeLanguage::zh_Hans;
+     return AnalysisSchemeLanguage::zh_Hans;
   }
   else if (hashCode == zh_Hant_HASH)
   {
-    return AnalysisSchemeLanguage::zh_Hant;
+     return AnalysisSchemeLanguage::zh_Hant;
   }
-
   return AnalysisSchemeLanguage::NOT_SET;
 }
 

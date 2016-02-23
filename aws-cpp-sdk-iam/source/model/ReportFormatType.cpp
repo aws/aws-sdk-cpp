@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ReportFormatTypeMapper
 {
+
+
 ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == text_csv_HASH)
   {
-    return ReportFormatType::text_csv;
+     return ReportFormatType::text_csv;
   }
-
   return ReportFormatType::NOT_SET;
 }
 

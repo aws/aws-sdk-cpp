@@ -29,23 +29,23 @@ namespace Model
 {
 namespace PriceClassMapper
 {
+
+
 PriceClass GetPriceClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PriceClass_100_HASH)
   {
-    return PriceClass::PriceClass_100;
+     return PriceClass::PriceClass_100;
   }
   else if (hashCode == PriceClass_200_HASH)
   {
-    return PriceClass::PriceClass_200;
+     return PriceClass::PriceClass_200;
   }
   else if (hashCode == PriceClass_All_HASH)
   {
-    return PriceClass::PriceClass_All;
+     return PriceClass::PriceClass_All;
   }
-
   return PriceClass::NOT_SET;
 }
 

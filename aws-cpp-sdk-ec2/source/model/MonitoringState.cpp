@@ -30,27 +30,27 @@ namespace Model
 {
 namespace MonitoringStateMapper
 {
+
+
 MonitoringState GetMonitoringStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == disabled_HASH)
   {
-    return MonitoringState::disabled;
+     return MonitoringState::disabled;
   }
   else if (hashCode == disabling_HASH)
   {
-    return MonitoringState::disabling;
+     return MonitoringState::disabling;
   }
   else if (hashCode == enabled_HASH)
   {
-    return MonitoringState::enabled;
+     return MonitoringState::enabled;
   }
   else if (hashCode == pending_HASH)
   {
-    return MonitoringState::pending;
+     return MonitoringState::pending;
   }
-
   return MonitoringState::NOT_SET;
 }
 

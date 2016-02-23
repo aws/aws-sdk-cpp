@@ -27,15 +27,15 @@ namespace Model
 {
 namespace RequestPayerMapper
 {
+
+
 RequestPayer GetRequestPayerForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == requester_HASH)
   {
-    return RequestPayer::requester;
+     return RequestPayer::requester;
   }
-
   return RequestPayer::NOT_SET;
 }
 

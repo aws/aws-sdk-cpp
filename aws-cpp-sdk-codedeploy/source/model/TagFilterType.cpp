@@ -29,23 +29,23 @@ namespace Model
 {
 namespace TagFilterTypeMapper
 {
+
+
 TagFilterType GetTagFilterTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == KEY_ONLY_HASH)
   {
-    return TagFilterType::KEY_ONLY;
+     return TagFilterType::KEY_ONLY;
   }
   else if (hashCode == VALUE_ONLY_HASH)
   {
-    return TagFilterType::VALUE_ONLY;
+     return TagFilterType::VALUE_ONLY;
   }
   else if (hashCode == KEY_AND_VALUE_HASH)
   {
-    return TagFilterType::KEY_AND_VALUE;
+     return TagFilterType::KEY_AND_VALUE;
   }
-
   return TagFilterType::NOT_SET;
 }
 

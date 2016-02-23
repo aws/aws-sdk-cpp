@@ -28,19 +28,19 @@ namespace Model
 {
 namespace KeyAlgorithmMapper
 {
+
+
 KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == RSA_2048_HASH)
   {
-    return KeyAlgorithm::RSA_2048;
+     return KeyAlgorithm::RSA_2048;
   }
   else if (hashCode == EC_prime256v1_HASH)
   {
-    return KeyAlgorithm::EC_prime256v1;
+     return KeyAlgorithm::EC_prime256v1;
   }
-
   return KeyAlgorithm::NOT_SET;
 }
 

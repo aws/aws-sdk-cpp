@@ -29,23 +29,23 @@ namespace Model
 {
 namespace WorkflowExecutionTerminatedCauseMapper
 {
+
+
 WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CHILD_POLICY_APPLIED_HASH)
   {
-    return WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED;
+     return WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED;
   }
   else if (hashCode == EVENT_LIMIT_EXCEEDED_HASH)
   {
-    return WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED;
+     return WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED;
   }
   else if (hashCode == OPERATOR_INITIATED_HASH)
   {
-    return WorkflowExecutionTerminatedCause::OPERATOR_INITIATED;
+     return WorkflowExecutionTerminatedCause::OPERATOR_INITIATED;
   }
-
   return WorkflowExecutionTerminatedCause::NOT_SET;
 }
 

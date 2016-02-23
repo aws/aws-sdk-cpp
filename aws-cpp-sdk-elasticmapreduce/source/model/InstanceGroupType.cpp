@@ -29,23 +29,23 @@ namespace Model
 {
 namespace InstanceGroupTypeMapper
 {
+
+
 InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == MASTER_HASH)
   {
-    return InstanceGroupType::MASTER;
+     return InstanceGroupType::MASTER;
   }
   else if (hashCode == CORE_HASH)
   {
-    return InstanceGroupType::CORE;
+     return InstanceGroupType::CORE;
   }
   else if (hashCode == TASK_HASH)
   {
-    return InstanceGroupType::TASK;
+     return InstanceGroupType::TASK;
   }
-
   return InstanceGroupType::NOT_SET;
 }
 

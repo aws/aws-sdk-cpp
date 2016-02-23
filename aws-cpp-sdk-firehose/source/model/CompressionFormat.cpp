@@ -30,27 +30,27 @@ namespace Model
 {
 namespace CompressionFormatMapper
 {
+
+
 CompressionFormat GetCompressionFormatForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNCOMPRESSED_HASH)
   {
-    return CompressionFormat::UNCOMPRESSED;
+     return CompressionFormat::UNCOMPRESSED;
   }
   else if (hashCode == GZIP_HASH)
   {
-    return CompressionFormat::GZIP;
+     return CompressionFormat::GZIP;
   }
   else if (hashCode == ZIP_HASH)
   {
-    return CompressionFormat::ZIP;
+     return CompressionFormat::ZIP;
   }
   else if (hashCode == Snappy_HASH)
   {
-    return CompressionFormat::Snappy;
+     return CompressionFormat::Snappy;
   }
-
   return CompressionFormat::NOT_SET;
 }
 

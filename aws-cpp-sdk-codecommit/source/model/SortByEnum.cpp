@@ -28,19 +28,19 @@ namespace Model
 {
 namespace SortByEnumMapper
 {
+
+
 SortByEnum GetSortByEnumForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == repositoryName_HASH)
   {
-    return SortByEnum::repositoryName;
+     return SortByEnum::repositoryName;
   }
   else if (hashCode == lastModifiedDate_HASH)
   {
-    return SortByEnum::lastModifiedDate;
+     return SortByEnum::lastModifiedDate;
   }
-
   return SortByEnum::NOT_SET;
 }
 

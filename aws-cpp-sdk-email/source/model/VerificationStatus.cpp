@@ -31,31 +31,31 @@ namespace Model
 {
 namespace VerificationStatusMapper
 {
+
+
 VerificationStatus GetVerificationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return VerificationStatus::Pending;
+     return VerificationStatus::Pending;
   }
   else if (hashCode == Success_HASH)
   {
-    return VerificationStatus::Success;
+     return VerificationStatus::Success;
   }
   else if (hashCode == Failed_HASH)
   {
-    return VerificationStatus::Failed;
+     return VerificationStatus::Failed;
   }
   else if (hashCode == TemporaryFailure_HASH)
   {
-    return VerificationStatus::TemporaryFailure;
+     return VerificationStatus::TemporaryFailure;
   }
   else if (hashCode == NotStarted_HASH)
   {
-    return VerificationStatus::NotStarted;
+     return VerificationStatus::NotStarted;
   }
-
   return VerificationStatus::NOT_SET;
 }
 

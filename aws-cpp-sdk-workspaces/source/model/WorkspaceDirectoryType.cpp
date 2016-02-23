@@ -28,19 +28,19 @@ namespace Model
 {
 namespace WorkspaceDirectoryTypeMapper
 {
+
+
 WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SIMPLE_AD_HASH)
   {
-    return WorkspaceDirectoryType::SIMPLE_AD;
+     return WorkspaceDirectoryType::SIMPLE_AD;
   }
   else if (hashCode == AD_CONNECTOR_HASH)
   {
-    return WorkspaceDirectoryType::AD_CONNECTOR;
+     return WorkspaceDirectoryType::AD_CONNECTOR;
   }
-
   return WorkspaceDirectoryType::NOT_SET;
 }
 

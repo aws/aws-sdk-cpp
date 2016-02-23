@@ -31,31 +31,31 @@ namespace Model
 {
 namespace LookupAttributeKeyMapper
 {
+
+
 LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EventId_HASH)
   {
-    return LookupAttributeKey::EventId;
+     return LookupAttributeKey::EventId;
   }
   else if (hashCode == EventName_HASH)
   {
-    return LookupAttributeKey::EventName;
+     return LookupAttributeKey::EventName;
   }
   else if (hashCode == Username_HASH)
   {
-    return LookupAttributeKey::Username;
+     return LookupAttributeKey::Username;
   }
   else if (hashCode == ResourceType_HASH)
   {
-    return LookupAttributeKey::ResourceType;
+     return LookupAttributeKey::ResourceType;
   }
   else if (hashCode == ResourceName_HASH)
   {
-    return LookupAttributeKey::ResourceName;
+     return LookupAttributeKey::ResourceName;
   }
-
   return LookupAttributeKey::NOT_SET;
 }
 

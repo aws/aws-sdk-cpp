@@ -31,31 +31,31 @@ namespace Model
 {
 namespace ExecutionStatusMapper
 {
+
+
 ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return ExecutionStatus::PENDING;
+     return ExecutionStatus::PENDING;
   }
   else if (hashCode == PROCESSING_HASH)
   {
-    return ExecutionStatus::PROCESSING;
+     return ExecutionStatus::PROCESSING;
   }
   else if (hashCode == SCHEDULING_HASH)
   {
-    return ExecutionStatus::SCHEDULING;
+     return ExecutionStatus::SCHEDULING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return ExecutionStatus::RUNNING;
+     return ExecutionStatus::RUNNING;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return ExecutionStatus::COMPLETED;
+     return ExecutionStatus::COMPLETED;
   }
-
   return ExecutionStatus::NOT_SET;
 }
 

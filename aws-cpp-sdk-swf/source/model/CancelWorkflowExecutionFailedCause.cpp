@@ -28,19 +28,19 @@ namespace Model
 {
 namespace CancelWorkflowExecutionFailedCauseMapper
 {
+
+
 CancelWorkflowExecutionFailedCause GetCancelWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNHANDLED_DECISION_HASH)
   {
-    return CancelWorkflowExecutionFailedCause::UNHANDLED_DECISION;
+     return CancelWorkflowExecutionFailedCause::UNHANDLED_DECISION;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return CancelWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return CancelWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return CancelWorkflowExecutionFailedCause::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ExecutionStatusMapper
 {
+
+
 ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == OPEN_HASH)
   {
-    return ExecutionStatus::OPEN;
+     return ExecutionStatus::OPEN;
   }
   else if (hashCode == CLOSED_HASH)
   {
-    return ExecutionStatus::CLOSED;
+     return ExecutionStatus::CLOSED;
   }
-
   return ExecutionStatus::NOT_SET;
 }
 

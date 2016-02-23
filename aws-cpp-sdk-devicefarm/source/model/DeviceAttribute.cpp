@@ -30,27 +30,27 @@ namespace Model
 {
 namespace DeviceAttributeMapper
 {
+
+
 DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ARN_HASH)
   {
-    return DeviceAttribute::ARN;
+     return DeviceAttribute::ARN;
   }
   else if (hashCode == PLATFORM_HASH)
   {
-    return DeviceAttribute::PLATFORM;
+     return DeviceAttribute::PLATFORM;
   }
   else if (hashCode == FORM_FACTOR_HASH)
   {
-    return DeviceAttribute::FORM_FACTOR;
+     return DeviceAttribute::FORM_FACTOR;
   }
   else if (hashCode == MANUFACTURER_HASH)
   {
-    return DeviceAttribute::MANUFACTURER;
+     return DeviceAttribute::MANUFACTURER;
   }
-
   return DeviceAttribute::NOT_SET;
 }
 

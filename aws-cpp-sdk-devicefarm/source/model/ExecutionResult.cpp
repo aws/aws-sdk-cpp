@@ -33,39 +33,39 @@ namespace Model
 {
 namespace ExecutionResultMapper
 {
+
+
 ExecutionResult GetExecutionResultForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return ExecutionResult::PENDING;
+     return ExecutionResult::PENDING;
   }
   else if (hashCode == PASSED_HASH)
   {
-    return ExecutionResult::PASSED;
+     return ExecutionResult::PASSED;
   }
   else if (hashCode == WARNED_HASH)
   {
-    return ExecutionResult::WARNED;
+     return ExecutionResult::WARNED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return ExecutionResult::FAILED;
+     return ExecutionResult::FAILED;
   }
   else if (hashCode == SKIPPED_HASH)
   {
-    return ExecutionResult::SKIPPED;
+     return ExecutionResult::SKIPPED;
   }
   else if (hashCode == ERRORED_HASH)
   {
-    return ExecutionResult::ERRORED;
+     return ExecutionResult::ERRORED;
   }
   else if (hashCode == STOPPED_HASH)
   {
-    return ExecutionResult::STOPPED;
+     return ExecutionResult::STOPPED;
   }
-
   return ExecutionResult::NOT_SET;
 }
 

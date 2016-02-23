@@ -30,27 +30,27 @@ namespace Model
 {
 namespace SslProtocolMapper
 {
+
+
 SslProtocol GetSslProtocolForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SSLv3_HASH)
   {
-    return SslProtocol::SSLv3;
+     return SslProtocol::SSLv3;
   }
   else if (hashCode == TLSv1_HASH)
   {
-    return SslProtocol::TLSv1;
+     return SslProtocol::TLSv1;
   }
   else if (hashCode == TLSv1_1_HASH)
   {
-    return SslProtocol::TLSv1_1;
+     return SslProtocol::TLSv1_1;
   }
   else if (hashCode == TLSv1_2_HASH)
   {
-    return SslProtocol::TLSv1_2;
+     return SslProtocol::TLSv1_2;
   }
-
   return SslProtocol::NOT_SET;
 }
 

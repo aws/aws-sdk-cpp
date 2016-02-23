@@ -28,19 +28,19 @@ namespace Model
 {
 namespace BucketVersioningStatusMapper
 {
+
+
 BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return BucketVersioningStatus::Enabled;
+     return BucketVersioningStatus::Enabled;
   }
   else if (hashCode == Suspended_HASH)
   {
-    return BucketVersioningStatus::Suspended;
+     return BucketVersioningStatus::Suspended;
   }
-
   return BucketVersioningStatus::NOT_SET;
 }
 

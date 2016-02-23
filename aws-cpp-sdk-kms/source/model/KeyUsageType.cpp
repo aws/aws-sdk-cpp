@@ -27,15 +27,15 @@ namespace Model
 {
 namespace KeyUsageTypeMapper
 {
+
+
 KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ENCRYPT_DECRYPT_HASH)
   {
-    return KeyUsageType::ENCRYPT_DECRYPT;
+     return KeyUsageType::ENCRYPT_DECRYPT;
   }
-
   return KeyUsageType::NOT_SET;
 }
 

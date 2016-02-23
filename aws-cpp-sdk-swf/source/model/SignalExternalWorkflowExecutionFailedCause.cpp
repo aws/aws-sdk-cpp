@@ -29,23 +29,23 @@ namespace Model
 {
 namespace SignalExternalWorkflowExecutionFailedCauseMapper
 {
+
+
 SignalExternalWorkflowExecutionFailedCause GetSignalExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
   {
-    return SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
+     return SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
   }
   else if (hashCode == SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
   {
-    return SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+     return SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return SignalExternalWorkflowExecutionFailedCause::NOT_SET;
 }
 

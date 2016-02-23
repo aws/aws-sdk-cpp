@@ -28,19 +28,19 @@ namespace Model
 {
 namespace AllocationStrategyMapper
 {
+
+
 AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == lowestPrice_HASH)
   {
-    return AllocationStrategy::lowestPrice;
+     return AllocationStrategy::lowestPrice;
   }
   else if (hashCode == diversified_HASH)
   {
-    return AllocationStrategy::diversified;
+     return AllocationStrategy::diversified;
   }
-
   return AllocationStrategy::NOT_SET;
 }
 

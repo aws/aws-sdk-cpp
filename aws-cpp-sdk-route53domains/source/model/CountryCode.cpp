@@ -255,1395 +255,1897 @@ namespace Model
 {
 namespace CountryCodeMapper
 {
-CountryCode GetCountryCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
 
+/*
+The if-else chains in this file are converted into a jump table by the compiler,
+which allows constant time lookup. The chain has been broken into helper functions
+because MSVC has a maximum of 122 chained if-else blocks.
+*/
+
+static bool GetEnumForNameHelper0(int hashCode, CountryCode& enumValue)
+{
   if (hashCode == AD_HASH)
   {
-    return CountryCode::AD;
+    enumValue = CountryCode::AD;
+    return true;
   }
   else if (hashCode == AE_HASH)
   {
-    return CountryCode::AE;
+    enumValue = CountryCode::AE;
+    return true;
   }
   else if (hashCode == AF_HASH)
   {
-    return CountryCode::AF;
+    enumValue = CountryCode::AF;
+    return true;
   }
   else if (hashCode == AG_HASH)
   {
-    return CountryCode::AG;
+    enumValue = CountryCode::AG;
+    return true;
   }
   else if (hashCode == AI_HASH)
   {
-    return CountryCode::AI;
+    enumValue = CountryCode::AI;
+    return true;
   }
   else if (hashCode == AL_HASH)
   {
-    return CountryCode::AL;
+    enumValue = CountryCode::AL;
+    return true;
   }
   else if (hashCode == AM_HASH)
   {
-    return CountryCode::AM;
+    enumValue = CountryCode::AM;
+    return true;
   }
   else if (hashCode == AN_HASH)
   {
-    return CountryCode::AN;
+    enumValue = CountryCode::AN;
+    return true;
   }
   else if (hashCode == AO_HASH)
   {
-    return CountryCode::AO;
+    enumValue = CountryCode::AO;
+    return true;
   }
   else if (hashCode == AQ_HASH)
   {
-    return CountryCode::AQ;
+    enumValue = CountryCode::AQ;
+    return true;
   }
   else if (hashCode == AR_HASH)
   {
-    return CountryCode::AR;
+    enumValue = CountryCode::AR;
+    return true;
   }
   else if (hashCode == AS_HASH)
   {
-    return CountryCode::AS;
+    enumValue = CountryCode::AS;
+    return true;
   }
   else if (hashCode == AT_HASH)
   {
-    return CountryCode::AT;
+    enumValue = CountryCode::AT;
+    return true;
   }
   else if (hashCode == AU_HASH)
   {
-    return CountryCode::AU;
+    enumValue = CountryCode::AU;
+    return true;
   }
   else if (hashCode == AW_HASH)
   {
-    return CountryCode::AW;
+    enumValue = CountryCode::AW;
+    return true;
   }
   else if (hashCode == AZ_HASH)
   {
-    return CountryCode::AZ;
+    enumValue = CountryCode::AZ;
+    return true;
   }
   else if (hashCode == BA_HASH)
   {
-    return CountryCode::BA;
+    enumValue = CountryCode::BA;
+    return true;
   }
   else if (hashCode == BB_HASH)
   {
-    return CountryCode::BB;
+    enumValue = CountryCode::BB;
+    return true;
   }
   else if (hashCode == BD_HASH)
   {
-    return CountryCode::BD;
+    enumValue = CountryCode::BD;
+    return true;
   }
   else if (hashCode == BE_HASH)
   {
-    return CountryCode::BE;
+    enumValue = CountryCode::BE;
+    return true;
   }
   else if (hashCode == BF_HASH)
   {
-    return CountryCode::BF;
+    enumValue = CountryCode::BF;
+    return true;
   }
   else if (hashCode == BG_HASH)
   {
-    return CountryCode::BG;
+    enumValue = CountryCode::BG;
+    return true;
   }
   else if (hashCode == BH_HASH)
   {
-    return CountryCode::BH;
+    enumValue = CountryCode::BH;
+    return true;
   }
   else if (hashCode == BI_HASH)
   {
-    return CountryCode::BI;
+    enumValue = CountryCode::BI;
+    return true;
   }
   else if (hashCode == BJ_HASH)
   {
-    return CountryCode::BJ;
+    enumValue = CountryCode::BJ;
+    return true;
   }
   else if (hashCode == BL_HASH)
   {
-    return CountryCode::BL;
+    enumValue = CountryCode::BL;
+    return true;
   }
   else if (hashCode == BM_HASH)
   {
-    return CountryCode::BM;
+    enumValue = CountryCode::BM;
+    return true;
   }
   else if (hashCode == BN_HASH)
   {
-    return CountryCode::BN;
+    enumValue = CountryCode::BN;
+    return true;
   }
   else if (hashCode == BO_HASH)
   {
-    return CountryCode::BO;
+    enumValue = CountryCode::BO;
+    return true;
   }
   else if (hashCode == BR_HASH)
   {
-    return CountryCode::BR;
+    enumValue = CountryCode::BR;
+    return true;
   }
   else if (hashCode == BS_HASH)
   {
-    return CountryCode::BS;
+    enumValue = CountryCode::BS;
+    return true;
   }
   else if (hashCode == BT_HASH)
   {
-    return CountryCode::BT;
+    enumValue = CountryCode::BT;
+    return true;
   }
   else if (hashCode == BW_HASH)
   {
-    return CountryCode::BW;
+    enumValue = CountryCode::BW;
+    return true;
   }
   else if (hashCode == BY_HASH)
   {
-    return CountryCode::BY;
+    enumValue = CountryCode::BY;
+    return true;
   }
   else if (hashCode == BZ_HASH)
   {
-    return CountryCode::BZ;
+    enumValue = CountryCode::BZ;
+    return true;
   }
   else if (hashCode == CA_HASH)
   {
-    return CountryCode::CA;
+    enumValue = CountryCode::CA;
+    return true;
   }
   else if (hashCode == CC_HASH)
   {
-    return CountryCode::CC;
+    enumValue = CountryCode::CC;
+    return true;
   }
   else if (hashCode == CD_HASH)
   {
-    return CountryCode::CD;
+    enumValue = CountryCode::CD;
+    return true;
   }
   else if (hashCode == CF_HASH)
   {
-    return CountryCode::CF;
+    enumValue = CountryCode::CF;
+    return true;
   }
   else if (hashCode == CG_HASH)
   {
-    return CountryCode::CG;
+    enumValue = CountryCode::CG;
+    return true;
   }
   else if (hashCode == CH_HASH)
   {
-    return CountryCode::CH;
+    enumValue = CountryCode::CH;
+    return true;
   }
   else if (hashCode == CI_HASH)
   {
-    return CountryCode::CI;
+    enumValue = CountryCode::CI;
+    return true;
   }
   else if (hashCode == CK_HASH)
   {
-    return CountryCode::CK;
+    enumValue = CountryCode::CK;
+    return true;
   }
   else if (hashCode == CL_HASH)
   {
-    return CountryCode::CL;
+    enumValue = CountryCode::CL;
+    return true;
   }
   else if (hashCode == CM_HASH)
   {
-    return CountryCode::CM;
+    enumValue = CountryCode::CM;
+    return true;
   }
   else if (hashCode == CN_HASH)
   {
-    return CountryCode::CN;
+    enumValue = CountryCode::CN;
+    return true;
   }
   else if (hashCode == CO_HASH)
   {
-    return CountryCode::CO;
+    enumValue = CountryCode::CO;
+    return true;
   }
   else if (hashCode == CR_HASH)
   {
-    return CountryCode::CR;
+    enumValue = CountryCode::CR;
+    return true;
   }
   else if (hashCode == CU_HASH)
   {
-    return CountryCode::CU;
+    enumValue = CountryCode::CU;
+    return true;
   }
   else if (hashCode == CV_HASH)
   {
-    return CountryCode::CV;
+    enumValue = CountryCode::CV;
+    return true;
   }
   else if (hashCode == CX_HASH)
   {
-    return CountryCode::CX;
+    enumValue = CountryCode::CX;
+    return true;
   }
   else if (hashCode == CY_HASH)
   {
-    return CountryCode::CY;
+    enumValue = CountryCode::CY;
+    return true;
   }
   else if (hashCode == CZ_HASH)
   {
-    return CountryCode::CZ;
+    enumValue = CountryCode::CZ;
+    return true;
   }
   else if (hashCode == DE_HASH)
   {
-    return CountryCode::DE;
+    enumValue = CountryCode::DE;
+    return true;
   }
   else if (hashCode == DJ_HASH)
   {
-    return CountryCode::DJ;
+    enumValue = CountryCode::DJ;
+    return true;
   }
   else if (hashCode == DK_HASH)
   {
-    return CountryCode::DK;
+    enumValue = CountryCode::DK;
+    return true;
   }
   else if (hashCode == DM_HASH)
   {
-    return CountryCode::DM;
+    enumValue = CountryCode::DM;
+    return true;
   }
   else if (hashCode == DO_HASH)
   {
-    return CountryCode::DO;
+    enumValue = CountryCode::DO;
+    return true;
   }
   else if (hashCode == DZ_HASH)
   {
-    return CountryCode::DZ;
+    enumValue = CountryCode::DZ;
+    return true;
   }
   else if (hashCode == EC_HASH)
   {
-    return CountryCode::EC;
+    enumValue = CountryCode::EC;
+    return true;
   }
   else if (hashCode == EE_HASH)
   {
-    return CountryCode::EE;
+    enumValue = CountryCode::EE;
+    return true;
   }
   else if (hashCode == EG_HASH)
   {
-    return CountryCode::EG;
+    enumValue = CountryCode::EG;
+    return true;
   }
   else if (hashCode == ER_HASH)
   {
-    return CountryCode::ER;
+    enumValue = CountryCode::ER;
+    return true;
   }
   else if (hashCode == ES_HASH)
   {
-    return CountryCode::ES;
+    enumValue = CountryCode::ES;
+    return true;
   }
   else if (hashCode == ET_HASH)
   {
-    return CountryCode::ET;
+    enumValue = CountryCode::ET;
+    return true;
   }
   else if (hashCode == FI_HASH)
   {
-    return CountryCode::FI;
+    enumValue = CountryCode::FI;
+    return true;
   }
   else if (hashCode == FJ_HASH)
   {
-    return CountryCode::FJ;
+    enumValue = CountryCode::FJ;
+    return true;
   }
   else if (hashCode == FK_HASH)
   {
-    return CountryCode::FK;
+    enumValue = CountryCode::FK;
+    return true;
   }
   else if (hashCode == FM_HASH)
   {
-    return CountryCode::FM;
+    enumValue = CountryCode::FM;
+    return true;
   }
   else if (hashCode == FO_HASH)
   {
-    return CountryCode::FO;
+    enumValue = CountryCode::FO;
+    return true;
   }
   else if (hashCode == FR_HASH)
   {
-    return CountryCode::FR;
+    enumValue = CountryCode::FR;
+    return true;
   }
   else if (hashCode == GA_HASH)
   {
-    return CountryCode::GA;
+    enumValue = CountryCode::GA;
+    return true;
   }
   else if (hashCode == GB_HASH)
   {
-    return CountryCode::GB;
+    enumValue = CountryCode::GB;
+    return true;
   }
   else if (hashCode == GD_HASH)
   {
-    return CountryCode::GD;
+    enumValue = CountryCode::GD;
+    return true;
   }
   else if (hashCode == GE_HASH)
   {
-    return CountryCode::GE;
+    enumValue = CountryCode::GE;
+    return true;
   }
   else if (hashCode == GH_HASH)
   {
-    return CountryCode::GH;
+    enumValue = CountryCode::GH;
+    return true;
   }
   else if (hashCode == GI_HASH)
   {
-    return CountryCode::GI;
+    enumValue = CountryCode::GI;
+    return true;
   }
   else if (hashCode == GL_HASH)
   {
-    return CountryCode::GL;
+    enumValue = CountryCode::GL;
+    return true;
   }
   else if (hashCode == GM_HASH)
   {
-    return CountryCode::GM;
+    enumValue = CountryCode::GM;
+    return true;
   }
   else if (hashCode == GN_HASH)
   {
-    return CountryCode::GN;
+    enumValue = CountryCode::GN;
+    return true;
   }
   else if (hashCode == GQ_HASH)
   {
-    return CountryCode::GQ;
+    enumValue = CountryCode::GQ;
+    return true;
   }
   else if (hashCode == GR_HASH)
   {
-    return CountryCode::GR;
+    enumValue = CountryCode::GR;
+    return true;
   }
   else if (hashCode == GT_HASH)
   {
-    return CountryCode::GT;
+    enumValue = CountryCode::GT;
+    return true;
   }
   else if (hashCode == GU_HASH)
   {
-    return CountryCode::GU;
+    enumValue = CountryCode::GU;
+    return true;
   }
   else if (hashCode == GW_HASH)
   {
-    return CountryCode::GW;
+    enumValue = CountryCode::GW;
+    return true;
   }
   else if (hashCode == GY_HASH)
   {
-    return CountryCode::GY;
+    enumValue = CountryCode::GY;
+    return true;
   }
   else if (hashCode == HK_HASH)
   {
-    return CountryCode::HK;
+    enumValue = CountryCode::HK;
+    return true;
   }
   else if (hashCode == HN_HASH)
   {
-    return CountryCode::HN;
+    enumValue = CountryCode::HN;
+    return true;
   }
   else if (hashCode == HR_HASH)
   {
-    return CountryCode::HR;
+    enumValue = CountryCode::HR;
+    return true;
   }
   else if (hashCode == HT_HASH)
   {
-    return CountryCode::HT;
+    enumValue = CountryCode::HT;
+    return true;
   }
   else if (hashCode == HU_HASH)
   {
-    return CountryCode::HU;
+    enumValue = CountryCode::HU;
+    return true;
   }
   else if (hashCode == ID_HASH)
   {
-    return CountryCode::ID;
+    enumValue = CountryCode::ID;
+    return true;
   }
   else if (hashCode == IE_HASH)
   {
-    return CountryCode::IE;
+    enumValue = CountryCode::IE;
+    return true;
   }
   else if (hashCode == IL_HASH)
   {
-    return CountryCode::IL;
+    enumValue = CountryCode::IL;
+    return true;
   }
   else if (hashCode == IM_HASH)
   {
-    return CountryCode::IM;
+    enumValue = CountryCode::IM;
+    return true;
   }
   else if (hashCode == IN_HASH)
   {
-    return CountryCode::IN;
+    enumValue = CountryCode::IN;
+    return true;
   }
   else if (hashCode == IQ_HASH)
   {
-    return CountryCode::IQ;
+    enumValue = CountryCode::IQ;
+    return true;
   }
   else if (hashCode == IR_HASH)
   {
-    return CountryCode::IR;
+    enumValue = CountryCode::IR;
+    return true;
   }
   else if (hashCode == IS_HASH)
   {
-    return CountryCode::IS;
+    enumValue = CountryCode::IS;
+    return true;
   }
   else if (hashCode == IT_HASH)
   {
-    return CountryCode::IT;
+    enumValue = CountryCode::IT;
+    return true;
   }
   else if (hashCode == JM_HASH)
   {
-    return CountryCode::JM;
+    enumValue = CountryCode::JM;
+    return true;
   }
   else if (hashCode == JO_HASH)
   {
-    return CountryCode::JO;
+    enumValue = CountryCode::JO;
+    return true;
   }
   else if (hashCode == JP_HASH)
   {
-    return CountryCode::JP;
+    enumValue = CountryCode::JP;
+    return true;
   }
   else if (hashCode == KE_HASH)
   {
-    return CountryCode::KE;
+    enumValue = CountryCode::KE;
+    return true;
   }
   else if (hashCode == KG_HASH)
   {
-    return CountryCode::KG;
+    enumValue = CountryCode::KG;
+    return true;
   }
   else if (hashCode == KH_HASH)
   {
-    return CountryCode::KH;
+    enumValue = CountryCode::KH;
+    return true;
   }
   else if (hashCode == KI_HASH)
   {
-    return CountryCode::KI;
+    enumValue = CountryCode::KI;
+    return true;
   }
   else if (hashCode == KM_HASH)
   {
-    return CountryCode::KM;
+    enumValue = CountryCode::KM;
+    return true;
   }
   else if (hashCode == KN_HASH)
   {
-    return CountryCode::KN;
+    enumValue = CountryCode::KN;
+    return true;
   }
   else if (hashCode == KP_HASH)
   {
-    return CountryCode::KP;
+    enumValue = CountryCode::KP;
+    return true;
   }
   else if (hashCode == KR_HASH)
   {
-    return CountryCode::KR;
+    enumValue = CountryCode::KR;
+    return true;
   }
   else if (hashCode == KW_HASH)
   {
-    return CountryCode::KW;
+    enumValue = CountryCode::KW;
+    return true;
   }
   else if (hashCode == KY_HASH)
   {
-    return CountryCode::KY;
+    enumValue = CountryCode::KY;
+    return true;
   }
   else if (hashCode == KZ_HASH)
   {
-    return CountryCode::KZ;
+    enumValue = CountryCode::KZ;
+    return true;
   }
   else if (hashCode == LA_HASH)
   {
-    return CountryCode::LA;
+    enumValue = CountryCode::LA;
+    return true;
   }
   else if (hashCode == LB_HASH)
   {
-    return CountryCode::LB;
+    enumValue = CountryCode::LB;
+    return true;
   }
   else if (hashCode == LC_HASH)
   {
-    return CountryCode::LC;
+    enumValue = CountryCode::LC;
+    return true;
   }
   else if (hashCode == LI_HASH)
   {
-    return CountryCode::LI;
+    enumValue = CountryCode::LI;
+    return true;
   }
   else if (hashCode == LK_HASH)
   {
-    return CountryCode::LK;
+    enumValue = CountryCode::LK;
+    return true;
   }
   else if (hashCode == LR_HASH)
   {
-    return CountryCode::LR;
+    enumValue = CountryCode::LR;
+    return true;
   }
   else if (hashCode == LS_HASH)
   {
-    return CountryCode::LS;
+    enumValue = CountryCode::LS;
+    return true;
   }
   else if (hashCode == LT_HASH)
   {
-    return CountryCode::LT;
+    enumValue = CountryCode::LT;
+    return true;
   }
-  else if (hashCode == LU_HASH)
+  return false;
+}
+
+static bool GetEnumForNameHelper1(int hashCode, CountryCode& enumValue)
+{
+  if (hashCode == LU_HASH)
   {
-    return CountryCode::LU;
+    enumValue = CountryCode::LU;
+    return true;
   }
   else if (hashCode == LV_HASH)
   {
-    return CountryCode::LV;
+    enumValue = CountryCode::LV;
+    return true;
   }
   else if (hashCode == LY_HASH)
   {
-    return CountryCode::LY;
+    enumValue = CountryCode::LY;
+    return true;
   }
   else if (hashCode == MA_HASH)
   {
-    return CountryCode::MA;
+    enumValue = CountryCode::MA;
+    return true;
   }
   else if (hashCode == MC_HASH)
   {
-    return CountryCode::MC;
+    enumValue = CountryCode::MC;
+    return true;
   }
   else if (hashCode == MD_HASH)
   {
-    return CountryCode::MD;
+    enumValue = CountryCode::MD;
+    return true;
   }
   else if (hashCode == ME_HASH)
   {
-    return CountryCode::ME;
+    enumValue = CountryCode::ME;
+    return true;
   }
   else if (hashCode == MF_HASH)
   {
-    return CountryCode::MF;
+    enumValue = CountryCode::MF;
+    return true;
   }
   else if (hashCode == MG_HASH)
   {
-    return CountryCode::MG;
+    enumValue = CountryCode::MG;
+    return true;
   }
   else if (hashCode == MH_HASH)
   {
-    return CountryCode::MH;
+    enumValue = CountryCode::MH;
+    return true;
   }
   else if (hashCode == MK_HASH)
   {
-    return CountryCode::MK;
+    enumValue = CountryCode::MK;
+    return true;
   }
   else if (hashCode == ML_HASH)
   {
-    return CountryCode::ML;
+    enumValue = CountryCode::ML;
+    return true;
   }
   else if (hashCode == MM_HASH)
   {
-    return CountryCode::MM;
+    enumValue = CountryCode::MM;
+    return true;
   }
   else if (hashCode == MN_HASH)
   {
-    return CountryCode::MN;
+    enumValue = CountryCode::MN;
+    return true;
   }
   else if (hashCode == MO_HASH)
   {
-    return CountryCode::MO;
+    enumValue = CountryCode::MO;
+    return true;
   }
   else if (hashCode == MP_HASH)
   {
-    return CountryCode::MP;
+    enumValue = CountryCode::MP;
+    return true;
   }
   else if (hashCode == MR_HASH)
   {
-    return CountryCode::MR;
+    enumValue = CountryCode::MR;
+    return true;
   }
   else if (hashCode == MS_HASH)
   {
-    return CountryCode::MS;
+    enumValue = CountryCode::MS;
+    return true;
   }
   else if (hashCode == MT_HASH)
   {
-    return CountryCode::MT;
+    enumValue = CountryCode::MT;
+    return true;
   }
   else if (hashCode == MU_HASH)
   {
-    return CountryCode::MU;
+    enumValue = CountryCode::MU;
+    return true;
   }
   else if (hashCode == MV_HASH)
   {
-    return CountryCode::MV;
+    enumValue = CountryCode::MV;
+    return true;
   }
   else if (hashCode == MW_HASH)
   {
-    return CountryCode::MW;
+    enumValue = CountryCode::MW;
+    return true;
   }
   else if (hashCode == MX_HASH)
   {
-    return CountryCode::MX;
+    enumValue = CountryCode::MX;
+    return true;
   }
   else if (hashCode == MY_HASH)
   {
-    return CountryCode::MY;
+    enumValue = CountryCode::MY;
+    return true;
   }
   else if (hashCode == MZ_HASH)
   {
-    return CountryCode::MZ;
+    enumValue = CountryCode::MZ;
+    return true;
   }
   else if (hashCode == NA_HASH)
   {
-    return CountryCode::NA;
+    enumValue = CountryCode::NA;
+    return true;
   }
   else if (hashCode == NC_HASH)
   {
-    return CountryCode::NC;
+    enumValue = CountryCode::NC;
+    return true;
   }
   else if (hashCode == NE_HASH)
   {
-    return CountryCode::NE;
+    enumValue = CountryCode::NE;
+    return true;
   }
   else if (hashCode == NG_HASH)
   {
-    return CountryCode::NG;
+    enumValue = CountryCode::NG;
+    return true;
   }
   else if (hashCode == NI_HASH)
   {
-    return CountryCode::NI;
+    enumValue = CountryCode::NI;
+    return true;
   }
   else if (hashCode == NL_HASH)
   {
-    return CountryCode::NL;
+    enumValue = CountryCode::NL;
+    return true;
   }
   else if (hashCode == NO_HASH)
   {
-    return CountryCode::NO;
+    enumValue = CountryCode::NO;
+    return true;
   }
   else if (hashCode == NP_HASH)
   {
-    return CountryCode::NP;
+    enumValue = CountryCode::NP;
+    return true;
   }
   else if (hashCode == NR_HASH)
   {
-    return CountryCode::NR;
+    enumValue = CountryCode::NR;
+    return true;
   }
   else if (hashCode == NU_HASH)
   {
-    return CountryCode::NU;
+    enumValue = CountryCode::NU;
+    return true;
   }
   else if (hashCode == NZ_HASH)
   {
-    return CountryCode::NZ;
+    enumValue = CountryCode::NZ;
+    return true;
   }
   else if (hashCode == OM_HASH)
   {
-    return CountryCode::OM;
+    enumValue = CountryCode::OM;
+    return true;
   }
   else if (hashCode == PA_HASH)
   {
-    return CountryCode::PA;
+    enumValue = CountryCode::PA;
+    return true;
   }
   else if (hashCode == PE_HASH)
   {
-    return CountryCode::PE;
+    enumValue = CountryCode::PE;
+    return true;
   }
   else if (hashCode == PF_HASH)
   {
-    return CountryCode::PF;
+    enumValue = CountryCode::PF;
+    return true;
   }
   else if (hashCode == PG_HASH)
   {
-    return CountryCode::PG;
+    enumValue = CountryCode::PG;
+    return true;
   }
   else if (hashCode == PH_HASH)
   {
-    return CountryCode::PH;
+    enumValue = CountryCode::PH;
+    return true;
   }
   else if (hashCode == PK_HASH)
   {
-    return CountryCode::PK;
+    enumValue = CountryCode::PK;
+    return true;
   }
   else if (hashCode == PL_HASH)
   {
-    return CountryCode::PL;
+    enumValue = CountryCode::PL;
+    return true;
   }
   else if (hashCode == PM_HASH)
   {
-    return CountryCode::PM;
+    enumValue = CountryCode::PM;
+    return true;
   }
   else if (hashCode == PN_HASH)
   {
-    return CountryCode::PN;
+    enumValue = CountryCode::PN;
+    return true;
   }
   else if (hashCode == PR_HASH)
   {
-    return CountryCode::PR;
+    enumValue = CountryCode::PR;
+    return true;
   }
   else if (hashCode == PT_HASH)
   {
-    return CountryCode::PT;
+    enumValue = CountryCode::PT;
+    return true;
   }
   else if (hashCode == PW_HASH)
   {
-    return CountryCode::PW;
+    enumValue = CountryCode::PW;
+    return true;
   }
   else if (hashCode == PY_HASH)
   {
-    return CountryCode::PY;
+    enumValue = CountryCode::PY;
+    return true;
   }
   else if (hashCode == QA_HASH)
   {
-    return CountryCode::QA;
+    enumValue = CountryCode::QA;
+    return true;
   }
   else if (hashCode == RO_HASH)
   {
-    return CountryCode::RO;
+    enumValue = CountryCode::RO;
+    return true;
   }
   else if (hashCode == RS_HASH)
   {
-    return CountryCode::RS;
+    enumValue = CountryCode::RS;
+    return true;
   }
   else if (hashCode == RU_HASH)
   {
-    return CountryCode::RU;
+    enumValue = CountryCode::RU;
+    return true;
   }
   else if (hashCode == RW_HASH)
   {
-    return CountryCode::RW;
+    enumValue = CountryCode::RW;
+    return true;
   }
   else if (hashCode == SA_HASH)
   {
-    return CountryCode::SA;
+    enumValue = CountryCode::SA;
+    return true;
   }
   else if (hashCode == SB_HASH)
   {
-    return CountryCode::SB;
+    enumValue = CountryCode::SB;
+    return true;
   }
   else if (hashCode == SC_HASH)
   {
-    return CountryCode::SC;
+    enumValue = CountryCode::SC;
+    return true;
   }
   else if (hashCode == SD_HASH)
   {
-    return CountryCode::SD;
+    enumValue = CountryCode::SD;
+    return true;
   }
   else if (hashCode == SE_HASH)
   {
-    return CountryCode::SE;
+    enumValue = CountryCode::SE;
+    return true;
   }
   else if (hashCode == SG_HASH)
   {
-    return CountryCode::SG;
+    enumValue = CountryCode::SG;
+    return true;
   }
   else if (hashCode == SH_HASH)
   {
-    return CountryCode::SH;
+    enumValue = CountryCode::SH;
+    return true;
   }
   else if (hashCode == SI_HASH)
   {
-    return CountryCode::SI;
+    enumValue = CountryCode::SI;
+    return true;
   }
   else if (hashCode == SK_HASH)
   {
-    return CountryCode::SK;
+    enumValue = CountryCode::SK;
+    return true;
   }
   else if (hashCode == SL_HASH)
   {
-    return CountryCode::SL;
+    enumValue = CountryCode::SL;
+    return true;
   }
   else if (hashCode == SM_HASH)
   {
-    return CountryCode::SM;
+    enumValue = CountryCode::SM;
+    return true;
   }
   else if (hashCode == SN_HASH)
   {
-    return CountryCode::SN;
+    enumValue = CountryCode::SN;
+    return true;
   }
   else if (hashCode == SO_HASH)
   {
-    return CountryCode::SO;
+    enumValue = CountryCode::SO;
+    return true;
   }
   else if (hashCode == SR_HASH)
   {
-    return CountryCode::SR;
+    enumValue = CountryCode::SR;
+    return true;
   }
   else if (hashCode == ST_HASH)
   {
-    return CountryCode::ST;
+    enumValue = CountryCode::ST;
+    return true;
   }
   else if (hashCode == SV_HASH)
   {
-    return CountryCode::SV;
+    enumValue = CountryCode::SV;
+    return true;
   }
   else if (hashCode == SY_HASH)
   {
-    return CountryCode::SY;
+    enumValue = CountryCode::SY;
+    return true;
   }
   else if (hashCode == SZ_HASH)
   {
-    return CountryCode::SZ;
+    enumValue = CountryCode::SZ;
+    return true;
   }
   else if (hashCode == TC_HASH)
   {
-    return CountryCode::TC;
+    enumValue = CountryCode::TC;
+    return true;
   }
   else if (hashCode == TD_HASH)
   {
-    return CountryCode::TD;
+    enumValue = CountryCode::TD;
+    return true;
   }
   else if (hashCode == TG_HASH)
   {
-    return CountryCode::TG;
+    enumValue = CountryCode::TG;
+    return true;
   }
   else if (hashCode == TH_HASH)
   {
-    return CountryCode::TH;
+    enumValue = CountryCode::TH;
+    return true;
   }
   else if (hashCode == TJ_HASH)
   {
-    return CountryCode::TJ;
+    enumValue = CountryCode::TJ;
+    return true;
   }
   else if (hashCode == TK_HASH)
   {
-    return CountryCode::TK;
+    enumValue = CountryCode::TK;
+    return true;
   }
   else if (hashCode == TL_HASH)
   {
-    return CountryCode::TL;
+    enumValue = CountryCode::TL;
+    return true;
   }
   else if (hashCode == TM_HASH)
   {
-    return CountryCode::TM;
+    enumValue = CountryCode::TM;
+    return true;
   }
   else if (hashCode == TN_HASH)
   {
-    return CountryCode::TN;
+    enumValue = CountryCode::TN;
+    return true;
   }
   else if (hashCode == TO_HASH)
   {
-    return CountryCode::TO;
+    enumValue = CountryCode::TO;
+    return true;
   }
   else if (hashCode == TR_HASH)
   {
-    return CountryCode::TR;
+    enumValue = CountryCode::TR;
+    return true;
   }
   else if (hashCode == TT_HASH)
   {
-    return CountryCode::TT;
+    enumValue = CountryCode::TT;
+    return true;
   }
   else if (hashCode == TV_HASH)
   {
-    return CountryCode::TV;
+    enumValue = CountryCode::TV;
+    return true;
   }
   else if (hashCode == TW_HASH)
   {
-    return CountryCode::TW;
+    enumValue = CountryCode::TW;
+    return true;
   }
   else if (hashCode == TZ_HASH)
   {
-    return CountryCode::TZ;
+    enumValue = CountryCode::TZ;
+    return true;
   }
   else if (hashCode == UA_HASH)
   {
-    return CountryCode::UA;
+    enumValue = CountryCode::UA;
+    return true;
   }
   else if (hashCode == UG_HASH)
   {
-    return CountryCode::UG;
+    enumValue = CountryCode::UG;
+    return true;
   }
   else if (hashCode == US_HASH)
   {
-    return CountryCode::US;
+    enumValue = CountryCode::US;
+    return true;
   }
   else if (hashCode == UY_HASH)
   {
-    return CountryCode::UY;
+    enumValue = CountryCode::UY;
+    return true;
   }
   else if (hashCode == UZ_HASH)
   {
-    return CountryCode::UZ;
+    enumValue = CountryCode::UZ;
+    return true;
   }
   else if (hashCode == VA_HASH)
   {
-    return CountryCode::VA;
+    enumValue = CountryCode::VA;
+    return true;
   }
   else if (hashCode == VC_HASH)
   {
-    return CountryCode::VC;
+    enumValue = CountryCode::VC;
+    return true;
   }
   else if (hashCode == VE_HASH)
   {
-    return CountryCode::VE;
+    enumValue = CountryCode::VE;
+    return true;
   }
   else if (hashCode == VG_HASH)
   {
-    return CountryCode::VG;
+    enumValue = CountryCode::VG;
+    return true;
   }
   else if (hashCode == VI_HASH)
   {
-    return CountryCode::VI;
+    enumValue = CountryCode::VI;
+    return true;
   }
   else if (hashCode == VN_HASH)
   {
-    return CountryCode::VN;
+    enumValue = CountryCode::VN;
+    return true;
   }
   else if (hashCode == VU_HASH)
   {
-    return CountryCode::VU;
+    enumValue = CountryCode::VU;
+    return true;
   }
   else if (hashCode == WF_HASH)
   {
-    return CountryCode::WF;
+    enumValue = CountryCode::WF;
+    return true;
   }
   else if (hashCode == WS_HASH)
   {
-    return CountryCode::WS;
+    enumValue = CountryCode::WS;
+    return true;
   }
   else if (hashCode == YE_HASH)
   {
-    return CountryCode::YE;
+    enumValue = CountryCode::YE;
+    return true;
   }
   else if (hashCode == YT_HASH)
   {
-    return CountryCode::YT;
+    enumValue = CountryCode::YT;
+    return true;
   }
   else if (hashCode == ZA_HASH)
   {
-    return CountryCode::ZA;
+    enumValue = CountryCode::ZA;
+    return true;
   }
   else if (hashCode == ZM_HASH)
   {
-    return CountryCode::ZM;
+    enumValue = CountryCode::ZM;
+    return true;
   }
   else if (hashCode == ZW_HASH)
   {
-    return CountryCode::ZW;
+    enumValue = CountryCode::ZW;
+    return true;
   }
+  return false;
+}
 
-  return CountryCode::NOT_SET;
+static bool GetNameForEnumHelper0(CountryCode enumValue, Aws::String& value)
+{
+  switch(enumValue)
+  {
+  case CountryCode::AD:
+    value = "AD";
+    return true;
+  case CountryCode::AE:
+    value = "AE";
+    return true;
+  case CountryCode::AF:
+    value = "AF";
+    return true;
+  case CountryCode::AG:
+    value = "AG";
+    return true;
+  case CountryCode::AI:
+    value = "AI";
+    return true;
+  case CountryCode::AL:
+    value = "AL";
+    return true;
+  case CountryCode::AM:
+    value = "AM";
+    return true;
+  case CountryCode::AN:
+    value = "AN";
+    return true;
+  case CountryCode::AO:
+    value = "AO";
+    return true;
+  case CountryCode::AQ:
+    value = "AQ";
+    return true;
+  case CountryCode::AR:
+    value = "AR";
+    return true;
+  case CountryCode::AS:
+    value = "AS";
+    return true;
+  case CountryCode::AT:
+    value = "AT";
+    return true;
+  case CountryCode::AU:
+    value = "AU";
+    return true;
+  case CountryCode::AW:
+    value = "AW";
+    return true;
+  case CountryCode::AZ:
+    value = "AZ";
+    return true;
+  case CountryCode::BA:
+    value = "BA";
+    return true;
+  case CountryCode::BB:
+    value = "BB";
+    return true;
+  case CountryCode::BD:
+    value = "BD";
+    return true;
+  case CountryCode::BE:
+    value = "BE";
+    return true;
+  case CountryCode::BF:
+    value = "BF";
+    return true;
+  case CountryCode::BG:
+    value = "BG";
+    return true;
+  case CountryCode::BH:
+    value = "BH";
+    return true;
+  case CountryCode::BI:
+    value = "BI";
+    return true;
+  case CountryCode::BJ:
+    value = "BJ";
+    return true;
+  case CountryCode::BL:
+    value = "BL";
+    return true;
+  case CountryCode::BM:
+    value = "BM";
+    return true;
+  case CountryCode::BN:
+    value = "BN";
+    return true;
+  case CountryCode::BO:
+    value = "BO";
+    return true;
+  case CountryCode::BR:
+    value = "BR";
+    return true;
+  case CountryCode::BS:
+    value = "BS";
+    return true;
+  case CountryCode::BT:
+    value = "BT";
+    return true;
+  case CountryCode::BW:
+    value = "BW";
+    return true;
+  case CountryCode::BY:
+    value = "BY";
+    return true;
+  case CountryCode::BZ:
+    value = "BZ";
+    return true;
+  case CountryCode::CA:
+    value = "CA";
+    return true;
+  case CountryCode::CC:
+    value = "CC";
+    return true;
+  case CountryCode::CD:
+    value = "CD";
+    return true;
+  case CountryCode::CF:
+    value = "CF";
+    return true;
+  case CountryCode::CG:
+    value = "CG";
+    return true;
+  case CountryCode::CH:
+    value = "CH";
+    return true;
+  case CountryCode::CI:
+    value = "CI";
+    return true;
+  case CountryCode::CK:
+    value = "CK";
+    return true;
+  case CountryCode::CL:
+    value = "CL";
+    return true;
+  case CountryCode::CM:
+    value = "CM";
+    return true;
+  case CountryCode::CN:
+    value = "CN";
+    return true;
+  case CountryCode::CO:
+    value = "CO";
+    return true;
+  case CountryCode::CR:
+    value = "CR";
+    return true;
+  case CountryCode::CU:
+    value = "CU";
+    return true;
+  case CountryCode::CV:
+    value = "CV";
+    return true;
+  case CountryCode::CX:
+    value = "CX";
+    return true;
+  case CountryCode::CY:
+    value = "CY";
+    return true;
+  case CountryCode::CZ:
+    value = "CZ";
+    return true;
+  case CountryCode::DE:
+    value = "DE";
+    return true;
+  case CountryCode::DJ:
+    value = "DJ";
+    return true;
+  case CountryCode::DK:
+    value = "DK";
+    return true;
+  case CountryCode::DM:
+    value = "DM";
+    return true;
+  case CountryCode::DO:
+    value = "DO";
+    return true;
+  case CountryCode::DZ:
+    value = "DZ";
+    return true;
+  case CountryCode::EC:
+    value = "EC";
+    return true;
+  case CountryCode::EE:
+    value = "EE";
+    return true;
+  case CountryCode::EG:
+    value = "EG";
+    return true;
+  case CountryCode::ER:
+    value = "ER";
+    return true;
+  case CountryCode::ES:
+    value = "ES";
+    return true;
+  case CountryCode::ET:
+    value = "ET";
+    return true;
+  case CountryCode::FI:
+    value = "FI";
+    return true;
+  case CountryCode::FJ:
+    value = "FJ";
+    return true;
+  case CountryCode::FK:
+    value = "FK";
+    return true;
+  case CountryCode::FM:
+    value = "FM";
+    return true;
+  case CountryCode::FO:
+    value = "FO";
+    return true;
+  case CountryCode::FR:
+    value = "FR";
+    return true;
+  case CountryCode::GA:
+    value = "GA";
+    return true;
+  case CountryCode::GB:
+    value = "GB";
+    return true;
+  case CountryCode::GD:
+    value = "GD";
+    return true;
+  case CountryCode::GE:
+    value = "GE";
+    return true;
+  case CountryCode::GH:
+    value = "GH";
+    return true;
+  case CountryCode::GI:
+    value = "GI";
+    return true;
+  case CountryCode::GL:
+    value = "GL";
+    return true;
+  case CountryCode::GM:
+    value = "GM";
+    return true;
+  case CountryCode::GN:
+    value = "GN";
+    return true;
+  case CountryCode::GQ:
+    value = "GQ";
+    return true;
+  case CountryCode::GR:
+    value = "GR";
+    return true;
+  case CountryCode::GT:
+    value = "GT";
+    return true;
+  case CountryCode::GU:
+    value = "GU";
+    return true;
+  case CountryCode::GW:
+    value = "GW";
+    return true;
+  case CountryCode::GY:
+    value = "GY";
+    return true;
+  case CountryCode::HK:
+    value = "HK";
+    return true;
+  case CountryCode::HN:
+    value = "HN";
+    return true;
+  case CountryCode::HR:
+    value = "HR";
+    return true;
+  case CountryCode::HT:
+    value = "HT";
+    return true;
+  case CountryCode::HU:
+    value = "HU";
+    return true;
+  case CountryCode::ID:
+    value = "ID";
+    return true;
+  case CountryCode::IE:
+    value = "IE";
+    return true;
+  case CountryCode::IL:
+    value = "IL";
+    return true;
+  case CountryCode::IM:
+    value = "IM";
+    return true;
+  case CountryCode::IN:
+    value = "IN";
+    return true;
+  case CountryCode::IQ:
+    value = "IQ";
+    return true;
+  case CountryCode::IR:
+    value = "IR";
+    return true;
+  case CountryCode::IS:
+    value = "IS";
+    return true;
+  case CountryCode::IT:
+    value = "IT";
+    return true;
+  case CountryCode::JM:
+    value = "JM";
+    return true;
+  case CountryCode::JO:
+    value = "JO";
+    return true;
+  case CountryCode::JP:
+    value = "JP";
+    return true;
+  case CountryCode::KE:
+    value = "KE";
+    return true;
+  case CountryCode::KG:
+    value = "KG";
+    return true;
+  case CountryCode::KH:
+    value = "KH";
+    return true;
+  case CountryCode::KI:
+    value = "KI";
+    return true;
+  case CountryCode::KM:
+    value = "KM";
+    return true;
+  case CountryCode::KN:
+    value = "KN";
+    return true;
+  case CountryCode::KP:
+    value = "KP";
+    return true;
+  case CountryCode::KR:
+    value = "KR";
+    return true;
+  case CountryCode::KW:
+    value = "KW";
+    return true;
+  case CountryCode::KY:
+    value = "KY";
+    return true;
+  case CountryCode::KZ:
+    value = "KZ";
+    return true;
+  case CountryCode::LA:
+    value = "LA";
+    return true;
+  case CountryCode::LB:
+    value = "LB";
+    return true;
+  case CountryCode::LC:
+    value = "LC";
+    return true;
+  case CountryCode::LI:
+    value = "LI";
+    return true;
+  case CountryCode::LK:
+    value = "LK";
+    return true;
+  case CountryCode::LR:
+    value = "LR";
+    return true;
+  case CountryCode::LS:
+    value = "LS";
+    return true;
+  case CountryCode::LT:
+    value = "LT";
+    return true;
+  default:
+    return false;
+}
+static bool GetNameForEnumHelper1(CountryCode enumValue, Aws::String& value)
+{
+  switch(enumValue)
+  {
+  case CountryCode::LU:
+    value = "LU";
+    return true;
+  case CountryCode::LV:
+    value = "LV";
+    return true;
+  case CountryCode::LY:
+    value = "LY";
+    return true;
+  case CountryCode::MA:
+    value = "MA";
+    return true;
+  case CountryCode::MC:
+    value = "MC";
+    return true;
+  case CountryCode::MD:
+    value = "MD";
+    return true;
+  case CountryCode::ME:
+    value = "ME";
+    return true;
+  case CountryCode::MF:
+    value = "MF";
+    return true;
+  case CountryCode::MG:
+    value = "MG";
+    return true;
+  case CountryCode::MH:
+    value = "MH";
+    return true;
+  case CountryCode::MK:
+    value = "MK";
+    return true;
+  case CountryCode::ML:
+    value = "ML";
+    return true;
+  case CountryCode::MM:
+    value = "MM";
+    return true;
+  case CountryCode::MN:
+    value = "MN";
+    return true;
+  case CountryCode::MO:
+    value = "MO";
+    return true;
+  case CountryCode::MP:
+    value = "MP";
+    return true;
+  case CountryCode::MR:
+    value = "MR";
+    return true;
+  case CountryCode::MS:
+    value = "MS";
+    return true;
+  case CountryCode::MT:
+    value = "MT";
+    return true;
+  case CountryCode::MU:
+    value = "MU";
+    return true;
+  case CountryCode::MV:
+    value = "MV";
+    return true;
+  case CountryCode::MW:
+    value = "MW";
+    return true;
+  case CountryCode::MX:
+    value = "MX";
+    return true;
+  case CountryCode::MY:
+    value = "MY";
+    return true;
+  case CountryCode::MZ:
+    value = "MZ";
+    return true;
+  case CountryCode::NA:
+    value = "NA";
+    return true;
+  case CountryCode::NC:
+    value = "NC";
+    return true;
+  case CountryCode::NE:
+    value = "NE";
+    return true;
+  case CountryCode::NG:
+    value = "NG";
+    return true;
+  case CountryCode::NI:
+    value = "NI";
+    return true;
+  case CountryCode::NL:
+    value = "NL";
+    return true;
+  case CountryCode::NO:
+    value = "NO";
+    return true;
+  case CountryCode::NP:
+    value = "NP";
+    return true;
+  case CountryCode::NR:
+    value = "NR";
+    return true;
+  case CountryCode::NU:
+    value = "NU";
+    return true;
+  case CountryCode::NZ:
+    value = "NZ";
+    return true;
+  case CountryCode::OM:
+    value = "OM";
+    return true;
+  case CountryCode::PA:
+    value = "PA";
+    return true;
+  case CountryCode::PE:
+    value = "PE";
+    return true;
+  case CountryCode::PF:
+    value = "PF";
+    return true;
+  case CountryCode::PG:
+    value = "PG";
+    return true;
+  case CountryCode::PH:
+    value = "PH";
+    return true;
+  case CountryCode::PK:
+    value = "PK";
+    return true;
+  case CountryCode::PL:
+    value = "PL";
+    return true;
+  case CountryCode::PM:
+    value = "PM";
+    return true;
+  case CountryCode::PN:
+    value = "PN";
+    return true;
+  case CountryCode::PR:
+    value = "PR";
+    return true;
+  case CountryCode::PT:
+    value = "PT";
+    return true;
+  case CountryCode::PW:
+    value = "PW";
+    return true;
+  case CountryCode::PY:
+    value = "PY";
+    return true;
+  case CountryCode::QA:
+    value = "QA";
+    return true;
+  case CountryCode::RO:
+    value = "RO";
+    return true;
+  case CountryCode::RS:
+    value = "RS";
+    return true;
+  case CountryCode::RU:
+    value = "RU";
+    return true;
+  case CountryCode::RW:
+    value = "RW";
+    return true;
+  case CountryCode::SA:
+    value = "SA";
+    return true;
+  case CountryCode::SB:
+    value = "SB";
+    return true;
+  case CountryCode::SC:
+    value = "SC";
+    return true;
+  case CountryCode::SD:
+    value = "SD";
+    return true;
+  case CountryCode::SE:
+    value = "SE";
+    return true;
+  case CountryCode::SG:
+    value = "SG";
+    return true;
+  case CountryCode::SH:
+    value = "SH";
+    return true;
+  case CountryCode::SI:
+    value = "SI";
+    return true;
+  case CountryCode::SK:
+    value = "SK";
+    return true;
+  case CountryCode::SL:
+    value = "SL";
+    return true;
+  case CountryCode::SM:
+    value = "SM";
+    return true;
+  case CountryCode::SN:
+    value = "SN";
+    return true;
+  case CountryCode::SO:
+    value = "SO";
+    return true;
+  case CountryCode::SR:
+    value = "SR";
+    return true;
+  case CountryCode::ST:
+    value = "ST";
+    return true;
+  case CountryCode::SV:
+    value = "SV";
+    return true;
+  case CountryCode::SY:
+    value = "SY";
+    return true;
+  case CountryCode::SZ:
+    value = "SZ";
+    return true;
+  case CountryCode::TC:
+    value = "TC";
+    return true;
+  case CountryCode::TD:
+    value = "TD";
+    return true;
+  case CountryCode::TG:
+    value = "TG";
+    return true;
+  case CountryCode::TH:
+    value = "TH";
+    return true;
+  case CountryCode::TJ:
+    value = "TJ";
+    return true;
+  case CountryCode::TK:
+    value = "TK";
+    return true;
+  case CountryCode::TL:
+    value = "TL";
+    return true;
+  case CountryCode::TM:
+    value = "TM";
+    return true;
+  case CountryCode::TN:
+    value = "TN";
+    return true;
+  case CountryCode::TO:
+    value = "TO";
+    return true;
+  case CountryCode::TR:
+    value = "TR";
+    return true;
+  case CountryCode::TT:
+    value = "TT";
+    return true;
+  case CountryCode::TV:
+    value = "TV";
+    return true;
+  case CountryCode::TW:
+    value = "TW";
+    return true;
+  case CountryCode::TZ:
+    value = "TZ";
+    return true;
+  case CountryCode::UA:
+    value = "UA";
+    return true;
+  case CountryCode::UG:
+    value = "UG";
+    return true;
+  case CountryCode::US:
+    value = "US";
+    return true;
+  case CountryCode::UY:
+    value = "UY";
+    return true;
+  case CountryCode::UZ:
+    value = "UZ";
+    return true;
+  case CountryCode::VA:
+    value = "VA";
+    return true;
+  case CountryCode::VC:
+    value = "VC";
+    return true;
+  case CountryCode::VE:
+    value = "VE";
+    return true;
+  case CountryCode::VG:
+    value = "VG";
+    return true;
+  case CountryCode::VI:
+    value = "VI";
+    return true;
+  case CountryCode::VN:
+    value = "VN";
+    return true;
+  case CountryCode::VU:
+    value = "VU";
+    return true;
+  case CountryCode::WF:
+    value = "WF";
+    return true;
+  case CountryCode::WS:
+    value = "WS";
+    return true;
+  case CountryCode::YE:
+    value = "YE";
+    return true;
+  case CountryCode::YT:
+    value = "YT";
+    return true;
+  case CountryCode::ZA:
+    value = "ZA";
+    return true;
+  case CountryCode::ZM:
+    value = "ZM";
+    return true;
+  case CountryCode::ZW:
+    value = "ZW";
+    return true;
+  default:
+    return false;
+}
+
+CountryCode GetCountryCodeForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+  CountryCode enumValue;
+  if (GetEnumForNameHelper0(hashCode, enumValue))
+  {
+     return enumValue;
+  }
+  else if (GetEnumForNameHelper1(hashCode, enumValue))
+  {
+     return enumValue;
+  }
+  return ${enumMember.name}::NOT_SET;
 }
 
 Aws::String GetNameForCountryCode(CountryCode value)
 {
-  switch(value)
+  Aws::String value;
+  if (GetNameForEnumHelper0(enum, value))
   {
-  case CountryCode::AD:
-    return "AD";
-  case CountryCode::AE:
-    return "AE";
-  case CountryCode::AF:
-    return "AF";
-  case CountryCode::AG:
-    return "AG";
-  case CountryCode::AI:
-    return "AI";
-  case CountryCode::AL:
-    return "AL";
-  case CountryCode::AM:
-    return "AM";
-  case CountryCode::AN:
-    return "AN";
-  case CountryCode::AO:
-    return "AO";
-  case CountryCode::AQ:
-    return "AQ";
-  case CountryCode::AR:
-    return "AR";
-  case CountryCode::AS:
-    return "AS";
-  case CountryCode::AT:
-    return "AT";
-  case CountryCode::AU:
-    return "AU";
-  case CountryCode::AW:
-    return "AW";
-  case CountryCode::AZ:
-    return "AZ";
-  case CountryCode::BA:
-    return "BA";
-  case CountryCode::BB:
-    return "BB";
-  case CountryCode::BD:
-    return "BD";
-  case CountryCode::BE:
-    return "BE";
-  case CountryCode::BF:
-    return "BF";
-  case CountryCode::BG:
-    return "BG";
-  case CountryCode::BH:
-    return "BH";
-  case CountryCode::BI:
-    return "BI";
-  case CountryCode::BJ:
-    return "BJ";
-  case CountryCode::BL:
-    return "BL";
-  case CountryCode::BM:
-    return "BM";
-  case CountryCode::BN:
-    return "BN";
-  case CountryCode::BO:
-    return "BO";
-  case CountryCode::BR:
-    return "BR";
-  case CountryCode::BS:
-    return "BS";
-  case CountryCode::BT:
-    return "BT";
-  case CountryCode::BW:
-    return "BW";
-  case CountryCode::BY:
-    return "BY";
-  case CountryCode::BZ:
-    return "BZ";
-  case CountryCode::CA:
-    return "CA";
-  case CountryCode::CC:
-    return "CC";
-  case CountryCode::CD:
-    return "CD";
-  case CountryCode::CF:
-    return "CF";
-  case CountryCode::CG:
-    return "CG";
-  case CountryCode::CH:
-    return "CH";
-  case CountryCode::CI:
-    return "CI";
-  case CountryCode::CK:
-    return "CK";
-  case CountryCode::CL:
-    return "CL";
-  case CountryCode::CM:
-    return "CM";
-  case CountryCode::CN:
-    return "CN";
-  case CountryCode::CO:
-    return "CO";
-  case CountryCode::CR:
-    return "CR";
-  case CountryCode::CU:
-    return "CU";
-  case CountryCode::CV:
-    return "CV";
-  case CountryCode::CX:
-    return "CX";
-  case CountryCode::CY:
-    return "CY";
-  case CountryCode::CZ:
-    return "CZ";
-  case CountryCode::DE:
-    return "DE";
-  case CountryCode::DJ:
-    return "DJ";
-  case CountryCode::DK:
-    return "DK";
-  case CountryCode::DM:
-    return "DM";
-  case CountryCode::DO:
-    return "DO";
-  case CountryCode::DZ:
-    return "DZ";
-  case CountryCode::EC:
-    return "EC";
-  case CountryCode::EE:
-    return "EE";
-  case CountryCode::EG:
-    return "EG";
-  case CountryCode::ER:
-    return "ER";
-  case CountryCode::ES:
-    return "ES";
-  case CountryCode::ET:
-    return "ET";
-  case CountryCode::FI:
-    return "FI";
-  case CountryCode::FJ:
-    return "FJ";
-  case CountryCode::FK:
-    return "FK";
-  case CountryCode::FM:
-    return "FM";
-  case CountryCode::FO:
-    return "FO";
-  case CountryCode::FR:
-    return "FR";
-  case CountryCode::GA:
-    return "GA";
-  case CountryCode::GB:
-    return "GB";
-  case CountryCode::GD:
-    return "GD";
-  case CountryCode::GE:
-    return "GE";
-  case CountryCode::GH:
-    return "GH";
-  case CountryCode::GI:
-    return "GI";
-  case CountryCode::GL:
-    return "GL";
-  case CountryCode::GM:
-    return "GM";
-  case CountryCode::GN:
-    return "GN";
-  case CountryCode::GQ:
-    return "GQ";
-  case CountryCode::GR:
-    return "GR";
-  case CountryCode::GT:
-    return "GT";
-  case CountryCode::GU:
-    return "GU";
-  case CountryCode::GW:
-    return "GW";
-  case CountryCode::GY:
-    return "GY";
-  case CountryCode::HK:
-    return "HK";
-  case CountryCode::HN:
-    return "HN";
-  case CountryCode::HR:
-    return "HR";
-  case CountryCode::HT:
-    return "HT";
-  case CountryCode::HU:
-    return "HU";
-  case CountryCode::ID:
-    return "ID";
-  case CountryCode::IE:
-    return "IE";
-  case CountryCode::IL:
-    return "IL";
-  case CountryCode::IM:
-    return "IM";
-  case CountryCode::IN:
-    return "IN";
-  case CountryCode::IQ:
-    return "IQ";
-  case CountryCode::IR:
-    return "IR";
-  case CountryCode::IS:
-    return "IS";
-  case CountryCode::IT:
-    return "IT";
-  case CountryCode::JM:
-    return "JM";
-  case CountryCode::JO:
-    return "JO";
-  case CountryCode::JP:
-    return "JP";
-  case CountryCode::KE:
-    return "KE";
-  case CountryCode::KG:
-    return "KG";
-  case CountryCode::KH:
-    return "KH";
-  case CountryCode::KI:
-    return "KI";
-  case CountryCode::KM:
-    return "KM";
-  case CountryCode::KN:
-    return "KN";
-  case CountryCode::KP:
-    return "KP";
-  case CountryCode::KR:
-    return "KR";
-  case CountryCode::KW:
-    return "KW";
-  case CountryCode::KY:
-    return "KY";
-  case CountryCode::KZ:
-    return "KZ";
-  case CountryCode::LA:
-    return "LA";
-  case CountryCode::LB:
-    return "LB";
-  case CountryCode::LC:
-    return "LC";
-  case CountryCode::LI:
-    return "LI";
-  case CountryCode::LK:
-    return "LK";
-  case CountryCode::LR:
-    return "LR";
-  case CountryCode::LS:
-    return "LS";
-  case CountryCode::LT:
-    return "LT";
-  case CountryCode::LU:
-    return "LU";
-  case CountryCode::LV:
-    return "LV";
-  case CountryCode::LY:
-    return "LY";
-  case CountryCode::MA:
-    return "MA";
-  case CountryCode::MC:
-    return "MC";
-  case CountryCode::MD:
-    return "MD";
-  case CountryCode::ME:
-    return "ME";
-  case CountryCode::MF:
-    return "MF";
-  case CountryCode::MG:
-    return "MG";
-  case CountryCode::MH:
-    return "MH";
-  case CountryCode::MK:
-    return "MK";
-  case CountryCode::ML:
-    return "ML";
-  case CountryCode::MM:
-    return "MM";
-  case CountryCode::MN:
-    return "MN";
-  case CountryCode::MO:
-    return "MO";
-  case CountryCode::MP:
-    return "MP";
-  case CountryCode::MR:
-    return "MR";
-  case CountryCode::MS:
-    return "MS";
-  case CountryCode::MT:
-    return "MT";
-  case CountryCode::MU:
-    return "MU";
-  case CountryCode::MV:
-    return "MV";
-  case CountryCode::MW:
-    return "MW";
-  case CountryCode::MX:
-    return "MX";
-  case CountryCode::MY:
-    return "MY";
-  case CountryCode::MZ:
-    return "MZ";
-  case CountryCode::NA:
-    return "NA";
-  case CountryCode::NC:
-    return "NC";
-  case CountryCode::NE:
-    return "NE";
-  case CountryCode::NG:
-    return "NG";
-  case CountryCode::NI:
-    return "NI";
-  case CountryCode::NL:
-    return "NL";
-  case CountryCode::NO:
-    return "NO";
-  case CountryCode::NP:
-    return "NP";
-  case CountryCode::NR:
-    return "NR";
-  case CountryCode::NU:
-    return "NU";
-  case CountryCode::NZ:
-    return "NZ";
-  case CountryCode::OM:
-    return "OM";
-  case CountryCode::PA:
-    return "PA";
-  case CountryCode::PE:
-    return "PE";
-  case CountryCode::PF:
-    return "PF";
-  case CountryCode::PG:
-    return "PG";
-  case CountryCode::PH:
-    return "PH";
-  case CountryCode::PK:
-    return "PK";
-  case CountryCode::PL:
-    return "PL";
-  case CountryCode::PM:
-    return "PM";
-  case CountryCode::PN:
-    return "PN";
-  case CountryCode::PR:
-    return "PR";
-  case CountryCode::PT:
-    return "PT";
-  case CountryCode::PW:
-    return "PW";
-  case CountryCode::PY:
-    return "PY";
-  case CountryCode::QA:
-    return "QA";
-  case CountryCode::RO:
-    return "RO";
-  case CountryCode::RS:
-    return "RS";
-  case CountryCode::RU:
-    return "RU";
-  case CountryCode::RW:
-    return "RW";
-  case CountryCode::SA:
-    return "SA";
-  case CountryCode::SB:
-    return "SB";
-  case CountryCode::SC:
-    return "SC";
-  case CountryCode::SD:
-    return "SD";
-  case CountryCode::SE:
-    return "SE";
-  case CountryCode::SG:
-    return "SG";
-  case CountryCode::SH:
-    return "SH";
-  case CountryCode::SI:
-    return "SI";
-  case CountryCode::SK:
-    return "SK";
-  case CountryCode::SL:
-    return "SL";
-  case CountryCode::SM:
-    return "SM";
-  case CountryCode::SN:
-    return "SN";
-  case CountryCode::SO:
-    return "SO";
-  case CountryCode::SR:
-    return "SR";
-  case CountryCode::ST:
-    return "ST";
-  case CountryCode::SV:
-    return "SV";
-  case CountryCode::SY:
-    return "SY";
-  case CountryCode::SZ:
-    return "SZ";
-  case CountryCode::TC:
-    return "TC";
-  case CountryCode::TD:
-    return "TD";
-  case CountryCode::TG:
-    return "TG";
-  case CountryCode::TH:
-    return "TH";
-  case CountryCode::TJ:
-    return "TJ";
-  case CountryCode::TK:
-    return "TK";
-  case CountryCode::TL:
-    return "TL";
-  case CountryCode::TM:
-    return "TM";
-  case CountryCode::TN:
-    return "TN";
-  case CountryCode::TO:
-    return "TO";
-  case CountryCode::TR:
-    return "TR";
-  case CountryCode::TT:
-    return "TT";
-  case CountryCode::TV:
-    return "TV";
-  case CountryCode::TW:
-    return "TW";
-  case CountryCode::TZ:
-    return "TZ";
-  case CountryCode::UA:
-    return "UA";
-  case CountryCode::UG:
-    return "UG";
-  case CountryCode::US:
-    return "US";
-  case CountryCode::UY:
-    return "UY";
-  case CountryCode::UZ:
-    return "UZ";
-  case CountryCode::VA:
-    return "VA";
-  case CountryCode::VC:
-    return "VC";
-  case CountryCode::VE:
-    return "VE";
-  case CountryCode::VG:
-    return "VG";
-  case CountryCode::VI:
-    return "VI";
-  case CountryCode::VN:
-    return "VN";
-  case CountryCode::VU:
-    return "VU";
-  case CountryCode::WF:
-    return "WF";
-  case CountryCode::WS:
-    return "WS";
-  case CountryCode::YE:
-    return "YE";
-  case CountryCode::YT:
-    return "YT";
-  case CountryCode::ZA:
-    return "ZA";
-  case CountryCode::ZM:
-    return "ZM";
-  case CountryCode::ZW:
-    return "ZW";
-  default:
-    return "";
+    return value;
   }
+  else if (GetNameForEnumHelper1(enum, value))
+  {
+    return value;
+  }
+  return "";
 }
 
 } // namespace CountryCodeMapper

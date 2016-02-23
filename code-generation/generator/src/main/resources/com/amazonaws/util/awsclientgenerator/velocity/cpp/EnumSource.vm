@@ -73,6 +73,7 @@ ${enumModel.name} Get${enumModel.name}ForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 #if($enumModel.members.size() > 0 && $enumModel.members.size() < 122)
+#set($elseText = "")
 #foreach($enumMember in $enumModel.members)
   ${elseText}if (hashCode == ${enumMember.memberName}_HASH)
   {

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ActionExecutionStatusMapper
 {
+
+
 ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InProgress_HASH)
   {
-    return ActionExecutionStatus::InProgress;
+     return ActionExecutionStatus::InProgress;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return ActionExecutionStatus::Succeeded;
+     return ActionExecutionStatus::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return ActionExecutionStatus::Failed;
+     return ActionExecutionStatus::Failed;
   }
-
   return ActionExecutionStatus::NOT_SET;
 }
 

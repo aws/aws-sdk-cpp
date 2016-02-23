@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DeliveryStatusMapper
 {
+
+
 DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Success_HASH)
   {
-    return DeliveryStatus::Success;
+     return DeliveryStatus::Success;
   }
   else if (hashCode == Failure_HASH)
   {
-    return DeliveryStatus::Failure;
+     return DeliveryStatus::Failure;
   }
   else if (hashCode == Not_Applicable_HASH)
   {
-    return DeliveryStatus::Not_Applicable;
+     return DeliveryStatus::Not_Applicable;
   }
-
   return DeliveryStatus::NOT_SET;
 }
 

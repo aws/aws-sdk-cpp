@@ -28,19 +28,19 @@ namespace Model
 {
 namespace OrderEnumMapper
 {
+
+
 OrderEnum GetOrderEnumForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ascending_HASH)
   {
-    return OrderEnum::ascending;
+     return OrderEnum::ascending;
   }
   else if (hashCode == descending_HASH)
   {
-    return OrderEnum::descending;
+     return OrderEnum::descending;
   }
-
   return OrderEnum::NOT_SET;
 }
 

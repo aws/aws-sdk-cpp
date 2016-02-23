@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DetailsAttributesMapper
 {
+
+
 DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PredictiveModelType_HASH)
   {
-    return DetailsAttributes::PredictiveModelType;
+     return DetailsAttributes::PredictiveModelType;
   }
   else if (hashCode == Algorithm_HASH)
   {
-    return DetailsAttributes::Algorithm;
+     return DetailsAttributes::Algorithm;
   }
-
   return DetailsAttributes::NOT_SET;
 }
 

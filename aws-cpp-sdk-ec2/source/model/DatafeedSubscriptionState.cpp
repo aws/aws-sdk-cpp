@@ -28,19 +28,19 @@ namespace Model
 {
 namespace DatafeedSubscriptionStateMapper
 {
+
+
 DatafeedSubscriptionState GetDatafeedSubscriptionStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Active_HASH)
   {
-    return DatafeedSubscriptionState::Active;
+     return DatafeedSubscriptionState::Active;
   }
   else if (hashCode == Inactive_HASH)
   {
-    return DatafeedSubscriptionState::Inactive;
+     return DatafeedSubscriptionState::Inactive;
   }
-
   return DatafeedSubscriptionState::NOT_SET;
 }
 

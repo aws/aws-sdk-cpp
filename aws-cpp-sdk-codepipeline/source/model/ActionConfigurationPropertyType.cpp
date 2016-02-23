@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ActionConfigurationPropertyTypeMapper
 {
+
+
 ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == String_HASH)
   {
-    return ActionConfigurationPropertyType::String;
+     return ActionConfigurationPropertyType::String;
   }
   else if (hashCode == Number_HASH)
   {
-    return ActionConfigurationPropertyType::Number;
+     return ActionConfigurationPropertyType::Number;
   }
   else if (hashCode == Boolean_HASH)
   {
-    return ActionConfigurationPropertyType::Boolean;
+     return ActionConfigurationPropertyType::Boolean;
   }
-
   return ActionConfigurationPropertyType::NOT_SET;
 }
 

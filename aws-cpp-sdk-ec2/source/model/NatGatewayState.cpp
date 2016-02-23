@@ -31,31 +31,31 @@ namespace Model
 {
 namespace NatGatewayStateMapper
 {
+
+
 NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return NatGatewayState::pending;
+     return NatGatewayState::pending;
   }
   else if (hashCode == failed_HASH)
   {
-    return NatGatewayState::failed;
+     return NatGatewayState::failed;
   }
   else if (hashCode == available_HASH)
   {
-    return NatGatewayState::available;
+     return NatGatewayState::available;
   }
   else if (hashCode == deleting_HASH)
   {
-    return NatGatewayState::deleting;
+     return NatGatewayState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return NatGatewayState::deleted;
+     return NatGatewayState::deleted;
   }
-
   return NatGatewayState::NOT_SET;
 }
 

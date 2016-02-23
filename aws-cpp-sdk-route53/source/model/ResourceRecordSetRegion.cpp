@@ -36,51 +36,51 @@ namespace Model
 {
 namespace ResourceRecordSetRegionMapper
 {
+
+
 ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == us_east_1_HASH)
   {
-    return ResourceRecordSetRegion::us_east_1;
+     return ResourceRecordSetRegion::us_east_1;
   }
   else if (hashCode == us_west_1_HASH)
   {
-    return ResourceRecordSetRegion::us_west_1;
+     return ResourceRecordSetRegion::us_west_1;
   }
   else if (hashCode == us_west_2_HASH)
   {
-    return ResourceRecordSetRegion::us_west_2;
+     return ResourceRecordSetRegion::us_west_2;
   }
   else if (hashCode == eu_west_1_HASH)
   {
-    return ResourceRecordSetRegion::eu_west_1;
+     return ResourceRecordSetRegion::eu_west_1;
   }
   else if (hashCode == eu_central_1_HASH)
   {
-    return ResourceRecordSetRegion::eu_central_1;
+     return ResourceRecordSetRegion::eu_central_1;
   }
   else if (hashCode == ap_southeast_1_HASH)
   {
-    return ResourceRecordSetRegion::ap_southeast_1;
+     return ResourceRecordSetRegion::ap_southeast_1;
   }
   else if (hashCode == ap_southeast_2_HASH)
   {
-    return ResourceRecordSetRegion::ap_southeast_2;
+     return ResourceRecordSetRegion::ap_southeast_2;
   }
   else if (hashCode == ap_northeast_1_HASH)
   {
-    return ResourceRecordSetRegion::ap_northeast_1;
+     return ResourceRecordSetRegion::ap_northeast_1;
   }
   else if (hashCode == sa_east_1_HASH)
   {
-    return ResourceRecordSetRegion::sa_east_1;
+     return ResourceRecordSetRegion::sa_east_1;
   }
   else if (hashCode == cn_north_1_HASH)
   {
-    return ResourceRecordSetRegion::cn_north_1;
+     return ResourceRecordSetRegion::cn_north_1;
   }
-
   return ResourceRecordSetRegion::NOT_SET;
 }
 

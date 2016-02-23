@@ -29,23 +29,23 @@ namespace Model
 {
 namespace FaultMapper
 {
+
+
 Fault GetFaultForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Client_HASH)
   {
-    return Fault::Client;
+     return Fault::Client;
   }
   else if (hashCode == Server_HASH)
   {
-    return Fault::Server;
+     return Fault::Server;
   }
   else if (hashCode == Unknown_HASH)
   {
-    return Fault::Unknown;
+     return Fault::Unknown;
   }
-
   return Fault::NOT_SET;
 }
 

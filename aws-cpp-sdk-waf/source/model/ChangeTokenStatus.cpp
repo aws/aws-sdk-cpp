@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ChangeTokenStatusMapper
 {
+
+
 ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PROVISIONED_HASH)
   {
-    return ChangeTokenStatus::PROVISIONED;
+     return ChangeTokenStatus::PROVISIONED;
   }
   else if (hashCode == PENDING_HASH)
   {
-    return ChangeTokenStatus::PENDING;
+     return ChangeTokenStatus::PENDING;
   }
   else if (hashCode == INSYNC_HASH)
   {
-    return ChangeTokenStatus::INSYNC;
+     return ChangeTokenStatus::INSYNC;
   }
-
   return ChangeTokenStatus::NOT_SET;
 }
 

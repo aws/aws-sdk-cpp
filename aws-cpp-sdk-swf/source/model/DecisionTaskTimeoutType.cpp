@@ -27,15 +27,15 @@ namespace Model
 {
 namespace DecisionTaskTimeoutTypeMapper
 {
+
+
 DecisionTaskTimeoutType GetDecisionTaskTimeoutTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == START_TO_CLOSE_HASH)
   {
-    return DecisionTaskTimeoutType::START_TO_CLOSE;
+     return DecisionTaskTimeoutType::START_TO_CLOSE;
   }
-
   return DecisionTaskTimeoutType::NOT_SET;
 }
 

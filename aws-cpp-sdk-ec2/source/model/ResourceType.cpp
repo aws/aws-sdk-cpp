@@ -43,79 +43,79 @@ namespace Model
 {
 namespace ResourceTypeMapper
 {
+
+
 ResourceType GetResourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == customer_gateway_HASH)
   {
-    return ResourceType::customer_gateway;
+     return ResourceType::customer_gateway;
   }
   else if (hashCode == dhcp_options_HASH)
   {
-    return ResourceType::dhcp_options;
+     return ResourceType::dhcp_options;
   }
   else if (hashCode == image_HASH)
   {
-    return ResourceType::image;
+     return ResourceType::image;
   }
   else if (hashCode == instance_HASH)
   {
-    return ResourceType::instance;
+     return ResourceType::instance;
   }
   else if (hashCode == internet_gateway_HASH)
   {
-    return ResourceType::internet_gateway;
+     return ResourceType::internet_gateway;
   }
   else if (hashCode == network_acl_HASH)
   {
-    return ResourceType::network_acl;
+     return ResourceType::network_acl;
   }
   else if (hashCode == network_interface_HASH)
   {
-    return ResourceType::network_interface;
+     return ResourceType::network_interface;
   }
   else if (hashCode == reserved_instances_HASH)
   {
-    return ResourceType::reserved_instances;
+     return ResourceType::reserved_instances;
   }
   else if (hashCode == route_table_HASH)
   {
-    return ResourceType::route_table;
+     return ResourceType::route_table;
   }
   else if (hashCode == snapshot_HASH)
   {
-    return ResourceType::snapshot;
+     return ResourceType::snapshot;
   }
   else if (hashCode == spot_instances_request_HASH)
   {
-    return ResourceType::spot_instances_request;
+     return ResourceType::spot_instances_request;
   }
   else if (hashCode == subnet_HASH)
   {
-    return ResourceType::subnet;
+     return ResourceType::subnet;
   }
   else if (hashCode == security_group_HASH)
   {
-    return ResourceType::security_group;
+     return ResourceType::security_group;
   }
   else if (hashCode == volume_HASH)
   {
-    return ResourceType::volume;
+     return ResourceType::volume;
   }
   else if (hashCode == vpc_HASH)
   {
-    return ResourceType::vpc;
+     return ResourceType::vpc;
   }
   else if (hashCode == vpn_connection_HASH)
   {
-    return ResourceType::vpn_connection;
+     return ResourceType::vpn_connection;
   }
   else if (hashCode == vpn_gateway_HASH)
   {
-    return ResourceType::vpn_gateway;
+     return ResourceType::vpn_gateway;
   }
-
   return ResourceType::NOT_SET;
 }
 

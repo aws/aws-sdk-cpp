@@ -31,31 +31,31 @@ namespace Model
 {
 namespace MatchFieldTypeMapper
 {
+
+
 MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == URI_HASH)
   {
-    return MatchFieldType::URI;
+     return MatchFieldType::URI;
   }
   else if (hashCode == QUERY_STRING_HASH)
   {
-    return MatchFieldType::QUERY_STRING;
+     return MatchFieldType::QUERY_STRING;
   }
   else if (hashCode == HEADER_HASH)
   {
-    return MatchFieldType::HEADER;
+     return MatchFieldType::HEADER;
   }
   else if (hashCode == METHOD_HASH)
   {
-    return MatchFieldType::METHOD;
+     return MatchFieldType::METHOD;
   }
   else if (hashCode == BODY_HASH)
   {
-    return MatchFieldType::BODY;
+     return MatchFieldType::BODY;
   }
-
   return MatchFieldType::NOT_SET;
 }
 

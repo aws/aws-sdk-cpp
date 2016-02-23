@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ApplicationVersionStatusMapper
 {
+
+
 ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Processed_HASH)
   {
-    return ApplicationVersionStatus::Processed;
+     return ApplicationVersionStatus::Processed;
   }
   else if (hashCode == Unprocessed_HASH)
   {
-    return ApplicationVersionStatus::Unprocessed;
+     return ApplicationVersionStatus::Unprocessed;
   }
   else if (hashCode == Failed_HASH)
   {
-    return ApplicationVersionStatus::Failed;
+     return ApplicationVersionStatus::Failed;
   }
   else if (hashCode == Processing_HASH)
   {
-    return ApplicationVersionStatus::Processing;
+     return ApplicationVersionStatus::Processing;
   }
-
   return ApplicationVersionStatus::NOT_SET;
 }
 

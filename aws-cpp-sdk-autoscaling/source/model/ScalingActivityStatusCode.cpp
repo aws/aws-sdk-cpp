@@ -38,59 +38,59 @@ namespace Model
 {
 namespace ScalingActivityStatusCodeMapper
 {
+
+
 ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PendingSpotBidPlacement_HASH)
   {
-    return ScalingActivityStatusCode::PendingSpotBidPlacement;
+     return ScalingActivityStatusCode::PendingSpotBidPlacement;
   }
   else if (hashCode == WaitingForSpotInstanceRequestId_HASH)
   {
-    return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
+     return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
   }
   else if (hashCode == WaitingForSpotInstanceId_HASH)
   {
-    return ScalingActivityStatusCode::WaitingForSpotInstanceId;
+     return ScalingActivityStatusCode::WaitingForSpotInstanceId;
   }
   else if (hashCode == WaitingForInstanceId_HASH)
   {
-    return ScalingActivityStatusCode::WaitingForInstanceId;
+     return ScalingActivityStatusCode::WaitingForInstanceId;
   }
   else if (hashCode == PreInService_HASH)
   {
-    return ScalingActivityStatusCode::PreInService;
+     return ScalingActivityStatusCode::PreInService;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return ScalingActivityStatusCode::InProgress;
+     return ScalingActivityStatusCode::InProgress;
   }
   else if (hashCode == WaitingForELBConnectionDraining_HASH)
   {
-    return ScalingActivityStatusCode::WaitingForELBConnectionDraining;
+     return ScalingActivityStatusCode::WaitingForELBConnectionDraining;
   }
   else if (hashCode == MidLifecycleAction_HASH)
   {
-    return ScalingActivityStatusCode::MidLifecycleAction;
+     return ScalingActivityStatusCode::MidLifecycleAction;
   }
   else if (hashCode == WaitingForInstanceWarmup_HASH)
   {
-    return ScalingActivityStatusCode::WaitingForInstanceWarmup;
+     return ScalingActivityStatusCode::WaitingForInstanceWarmup;
   }
   else if (hashCode == Successful_HASH)
   {
-    return ScalingActivityStatusCode::Successful;
+     return ScalingActivityStatusCode::Successful;
   }
   else if (hashCode == Failed_HASH)
   {
-    return ScalingActivityStatusCode::Failed;
+     return ScalingActivityStatusCode::Failed;
   }
   else if (hashCode == Cancelled_HASH)
   {
-    return ScalingActivityStatusCode::Cancelled;
+     return ScalingActivityStatusCode::Cancelled;
   }
-
   return ScalingActivityStatusCode::NOT_SET;
 }
 

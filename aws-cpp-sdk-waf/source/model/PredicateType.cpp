@@ -30,27 +30,27 @@ namespace Model
 {
 namespace PredicateTypeMapper
 {
+
+
 PredicateType GetPredicateTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == IPMatch_HASH)
   {
-    return PredicateType::IPMatch;
+     return PredicateType::IPMatch;
   }
   else if (hashCode == ByteMatch_HASH)
   {
-    return PredicateType::ByteMatch;
+     return PredicateType::ByteMatch;
   }
   else if (hashCode == SqlInjectionMatch_HASH)
   {
-    return PredicateType::SqlInjectionMatch;
+     return PredicateType::SqlInjectionMatch;
   }
   else if (hashCode == SizeConstraint_HASH)
   {
-    return PredicateType::SizeConstraint;
+     return PredicateType::SizeConstraint;
   }
-
   return PredicateType::NOT_SET;
 }
 

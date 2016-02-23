@@ -41,71 +41,71 @@ namespace Model
 {
 namespace UlimitNameMapper
 {
+
+
 UlimitName GetUlimitNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == core_HASH)
   {
-    return UlimitName::core;
+     return UlimitName::core;
   }
   else if (hashCode == cpu_HASH)
   {
-    return UlimitName::cpu;
+     return UlimitName::cpu;
   }
   else if (hashCode == data_HASH)
   {
-    return UlimitName::data;
+     return UlimitName::data;
   }
   else if (hashCode == fsize_HASH)
   {
-    return UlimitName::fsize;
+     return UlimitName::fsize;
   }
   else if (hashCode == locks_HASH)
   {
-    return UlimitName::locks;
+     return UlimitName::locks;
   }
   else if (hashCode == memlock_HASH)
   {
-    return UlimitName::memlock;
+     return UlimitName::memlock;
   }
   else if (hashCode == msgqueue_HASH)
   {
-    return UlimitName::msgqueue;
+     return UlimitName::msgqueue;
   }
   else if (hashCode == nice_HASH)
   {
-    return UlimitName::nice;
+     return UlimitName::nice;
   }
   else if (hashCode == nofile_HASH)
   {
-    return UlimitName::nofile;
+     return UlimitName::nofile;
   }
   else if (hashCode == nproc_HASH)
   {
-    return UlimitName::nproc;
+     return UlimitName::nproc;
   }
   else if (hashCode == rss_HASH)
   {
-    return UlimitName::rss;
+     return UlimitName::rss;
   }
   else if (hashCode == rtprio_HASH)
   {
-    return UlimitName::rtprio;
+     return UlimitName::rtprio;
   }
   else if (hashCode == rttime_HASH)
   {
-    return UlimitName::rttime;
+     return UlimitName::rttime;
   }
   else if (hashCode == sigpending_HASH)
   {
-    return UlimitName::sigpending;
+     return UlimitName::sigpending;
   }
   else if (hashCode == stack_HASH)
   {
-    return UlimitName::stack;
+     return UlimitName::stack;
   }
-
   return UlimitName::NOT_SET;
 }
 

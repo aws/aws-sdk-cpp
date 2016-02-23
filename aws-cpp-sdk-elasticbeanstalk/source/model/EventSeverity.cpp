@@ -32,35 +32,35 @@ namespace Model
 {
 namespace EventSeverityMapper
 {
+
+
 EventSeverity GetEventSeverityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TRACE_HASH)
   {
-    return EventSeverity::TRACE;
+     return EventSeverity::TRACE;
   }
   else if (hashCode == DEBUG_HASH)
   {
-    return EventSeverity::DEBUG;
+     return EventSeverity::DEBUG;
   }
   else if (hashCode == INFO_HASH)
   {
-    return EventSeverity::INFO;
+     return EventSeverity::INFO;
   }
   else if (hashCode == WARN_HASH)
   {
-    return EventSeverity::WARN;
+     return EventSeverity::WARN;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return EventSeverity::ERROR_;
+     return EventSeverity::ERROR_;
   }
   else if (hashCode == FATAL_HASH)
   {
-    return EventSeverity::FATAL;
+     return EventSeverity::FATAL;
   }
-
   return EventSeverity::NOT_SET;
 }
 

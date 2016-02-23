@@ -30,27 +30,27 @@ namespace Model
 {
 namespace EnvironmentHealthMapper
 {
+
+
 EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Green_HASH)
   {
-    return EnvironmentHealth::Green;
+     return EnvironmentHealth::Green;
   }
   else if (hashCode == Yellow_HASH)
   {
-    return EnvironmentHealth::Yellow;
+     return EnvironmentHealth::Yellow;
   }
   else if (hashCode == Red_HASH)
   {
-    return EnvironmentHealth::Red;
+     return EnvironmentHealth::Red;
   }
   else if (hashCode == Grey_HASH)
   {
-    return EnvironmentHealth::Grey;
+     return EnvironmentHealth::Grey;
   }
-
   return EnvironmentHealth::NOT_SET;
 }
 

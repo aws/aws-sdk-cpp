@@ -38,59 +38,59 @@ namespace Model
 {
 namespace ContextKeyTypeEnumMapper
 {
+
+
 ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == string_HASH)
   {
-    return ContextKeyTypeEnum::string;
+     return ContextKeyTypeEnum::string;
   }
   else if (hashCode == stringList_HASH)
   {
-    return ContextKeyTypeEnum::stringList;
+     return ContextKeyTypeEnum::stringList;
   }
   else if (hashCode == numeric_HASH)
   {
-    return ContextKeyTypeEnum::numeric;
+     return ContextKeyTypeEnum::numeric;
   }
   else if (hashCode == numericList_HASH)
   {
-    return ContextKeyTypeEnum::numericList;
+     return ContextKeyTypeEnum::numericList;
   }
   else if (hashCode == boolean_HASH)
   {
-    return ContextKeyTypeEnum::boolean;
+     return ContextKeyTypeEnum::boolean;
   }
   else if (hashCode == booleanList_HASH)
   {
-    return ContextKeyTypeEnum::booleanList;
+     return ContextKeyTypeEnum::booleanList;
   }
   else if (hashCode == ip_HASH)
   {
-    return ContextKeyTypeEnum::ip;
+     return ContextKeyTypeEnum::ip;
   }
   else if (hashCode == ipList_HASH)
   {
-    return ContextKeyTypeEnum::ipList;
+     return ContextKeyTypeEnum::ipList;
   }
   else if (hashCode == binary_HASH)
   {
-    return ContextKeyTypeEnum::binary;
+     return ContextKeyTypeEnum::binary;
   }
   else if (hashCode == binaryList_HASH)
   {
-    return ContextKeyTypeEnum::binaryList;
+     return ContextKeyTypeEnum::binaryList;
   }
   else if (hashCode == date_HASH)
   {
-    return ContextKeyTypeEnum::date;
+     return ContextKeyTypeEnum::date;
   }
   else if (hashCode == dateList_HASH)
   {
-    return ContextKeyTypeEnum::dateList;
+     return ContextKeyTypeEnum::dateList;
   }
-
   return ContextKeyTypeEnum::NOT_SET;
 }
 

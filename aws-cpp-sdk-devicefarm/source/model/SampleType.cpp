@@ -43,79 +43,79 @@ namespace Model
 {
 namespace SampleTypeMapper
 {
+
+
 SampleType GetSampleTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CPU_HASH)
   {
-    return SampleType::CPU;
+     return SampleType::CPU;
   }
   else if (hashCode == MEMORY_HASH)
   {
-    return SampleType::MEMORY;
+     return SampleType::MEMORY;
   }
   else if (hashCode == THREADS_HASH)
   {
-    return SampleType::THREADS;
+     return SampleType::THREADS;
   }
   else if (hashCode == RX_RATE_HASH)
   {
-    return SampleType::RX_RATE;
+     return SampleType::RX_RATE;
   }
   else if (hashCode == TX_RATE_HASH)
   {
-    return SampleType::TX_RATE;
+     return SampleType::TX_RATE;
   }
   else if (hashCode == RX_HASH)
   {
-    return SampleType::RX;
+     return SampleType::RX;
   }
   else if (hashCode == TX_HASH)
   {
-    return SampleType::TX;
+     return SampleType::TX;
   }
   else if (hashCode == NATIVE_FRAMES_HASH)
   {
-    return SampleType::NATIVE_FRAMES;
+     return SampleType::NATIVE_FRAMES;
   }
   else if (hashCode == NATIVE_FPS_HASH)
   {
-    return SampleType::NATIVE_FPS;
+     return SampleType::NATIVE_FPS;
   }
   else if (hashCode == NATIVE_MIN_DRAWTIME_HASH)
   {
-    return SampleType::NATIVE_MIN_DRAWTIME;
+     return SampleType::NATIVE_MIN_DRAWTIME;
   }
   else if (hashCode == NATIVE_AVG_DRAWTIME_HASH)
   {
-    return SampleType::NATIVE_AVG_DRAWTIME;
+     return SampleType::NATIVE_AVG_DRAWTIME;
   }
   else if (hashCode == NATIVE_MAX_DRAWTIME_HASH)
   {
-    return SampleType::NATIVE_MAX_DRAWTIME;
+     return SampleType::NATIVE_MAX_DRAWTIME;
   }
   else if (hashCode == OPENGL_FRAMES_HASH)
   {
-    return SampleType::OPENGL_FRAMES;
+     return SampleType::OPENGL_FRAMES;
   }
   else if (hashCode == OPENGL_FPS_HASH)
   {
-    return SampleType::OPENGL_FPS;
+     return SampleType::OPENGL_FPS;
   }
   else if (hashCode == OPENGL_MIN_DRAWTIME_HASH)
   {
-    return SampleType::OPENGL_MIN_DRAWTIME;
+     return SampleType::OPENGL_MIN_DRAWTIME;
   }
   else if (hashCode == OPENGL_AVG_DRAWTIME_HASH)
   {
-    return SampleType::OPENGL_AVG_DRAWTIME;
+     return SampleType::OPENGL_AVG_DRAWTIME;
   }
   else if (hashCode == OPENGL_MAX_DRAWTIME_HASH)
   {
-    return SampleType::OPENGL_MAX_DRAWTIME;
+     return SampleType::OPENGL_MAX_DRAWTIME;
   }
-
   return SampleType::NOT_SET;
 }
 

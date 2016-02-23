@@ -34,43 +34,43 @@ namespace Model
 {
 namespace InstancesHealthAttributeMapper
 {
+
+
 InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == HealthStatus_HASH)
   {
-    return InstancesHealthAttribute::HealthStatus;
+     return InstancesHealthAttribute::HealthStatus;
   }
   else if (hashCode == Color_HASH)
   {
-    return InstancesHealthAttribute::Color;
+     return InstancesHealthAttribute::Color;
   }
   else if (hashCode == Causes_HASH)
   {
-    return InstancesHealthAttribute::Causes;
+     return InstancesHealthAttribute::Causes;
   }
   else if (hashCode == ApplicationMetrics_HASH)
   {
-    return InstancesHealthAttribute::ApplicationMetrics;
+     return InstancesHealthAttribute::ApplicationMetrics;
   }
   else if (hashCode == RefreshedAt_HASH)
   {
-    return InstancesHealthAttribute::RefreshedAt;
+     return InstancesHealthAttribute::RefreshedAt;
   }
   else if (hashCode == LaunchedAt_HASH)
   {
-    return InstancesHealthAttribute::LaunchedAt;
+     return InstancesHealthAttribute::LaunchedAt;
   }
   else if (hashCode == System_HASH)
   {
-    return InstancesHealthAttribute::System;
+     return InstancesHealthAttribute::System;
   }
   else if (hashCode == All_HASH)
   {
-    return InstancesHealthAttribute::All;
+     return InstancesHealthAttribute::All;
   }
-
   return InstancesHealthAttribute::NOT_SET;
 }
 

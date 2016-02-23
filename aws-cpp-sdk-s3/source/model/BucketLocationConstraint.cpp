@@ -36,51 +36,51 @@ namespace Model
 {
 namespace BucketLocationConstraintMapper
 {
+
+
 BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EU_HASH)
   {
-    return BucketLocationConstraint::EU;
+     return BucketLocationConstraint::EU;
   }
   else if (hashCode == eu_west_1_HASH)
   {
-    return BucketLocationConstraint::eu_west_1;
+     return BucketLocationConstraint::eu_west_1;
   }
   else if (hashCode == us_west_1_HASH)
   {
-    return BucketLocationConstraint::us_west_1;
+     return BucketLocationConstraint::us_west_1;
   }
   else if (hashCode == us_west_2_HASH)
   {
-    return BucketLocationConstraint::us_west_2;
+     return BucketLocationConstraint::us_west_2;
   }
   else if (hashCode == ap_southeast_1_HASH)
   {
-    return BucketLocationConstraint::ap_southeast_1;
+     return BucketLocationConstraint::ap_southeast_1;
   }
   else if (hashCode == ap_southeast_2_HASH)
   {
-    return BucketLocationConstraint::ap_southeast_2;
+     return BucketLocationConstraint::ap_southeast_2;
   }
   else if (hashCode == ap_northeast_1_HASH)
   {
-    return BucketLocationConstraint::ap_northeast_1;
+     return BucketLocationConstraint::ap_northeast_1;
   }
   else if (hashCode == sa_east_1_HASH)
   {
-    return BucketLocationConstraint::sa_east_1;
+     return BucketLocationConstraint::sa_east_1;
   }
   else if (hashCode == cn_north_1_HASH)
   {
-    return BucketLocationConstraint::cn_north_1;
+     return BucketLocationConstraint::cn_north_1;
   }
   else if (hashCode == eu_central_1_HASH)
   {
-    return BucketLocationConstraint::eu_central_1;
+     return BucketLocationConstraint::eu_central_1;
   }
-
   return BucketLocationConstraint::NOT_SET;
 }
 

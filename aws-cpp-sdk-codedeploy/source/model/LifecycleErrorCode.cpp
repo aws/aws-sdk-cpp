@@ -32,35 +32,35 @@ namespace Model
 {
 namespace LifecycleErrorCodeMapper
 {
+
+
 LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Success_HASH)
   {
-    return LifecycleErrorCode::Success;
+     return LifecycleErrorCode::Success;
   }
   else if (hashCode == ScriptMissing_HASH)
   {
-    return LifecycleErrorCode::ScriptMissing;
+     return LifecycleErrorCode::ScriptMissing;
   }
   else if (hashCode == ScriptNotExecutable_HASH)
   {
-    return LifecycleErrorCode::ScriptNotExecutable;
+     return LifecycleErrorCode::ScriptNotExecutable;
   }
   else if (hashCode == ScriptTimedOut_HASH)
   {
-    return LifecycleErrorCode::ScriptTimedOut;
+     return LifecycleErrorCode::ScriptTimedOut;
   }
   else if (hashCode == ScriptFailed_HASH)
   {
-    return LifecycleErrorCode::ScriptFailed;
+     return LifecycleErrorCode::ScriptFailed;
   }
   else if (hashCode == UnknownError_HASH)
   {
-    return LifecycleErrorCode::UnknownError;
+     return LifecycleErrorCode::UnknownError;
   }
-
   return LifecycleErrorCode::NOT_SET;
 }
 

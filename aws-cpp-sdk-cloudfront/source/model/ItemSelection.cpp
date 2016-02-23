@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ItemSelectionMapper
 {
+
+
 ItemSelection GetItemSelectionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == none_HASH)
   {
-    return ItemSelection::none;
+     return ItemSelection::none;
   }
   else if (hashCode == whitelist_HASH)
   {
-    return ItemSelection::whitelist;
+     return ItemSelection::whitelist;
   }
   else if (hashCode == all_HASH)
   {
-    return ItemSelection::all;
+     return ItemSelection::all;
   }
-
   return ItemSelection::NOT_SET;
 }
 

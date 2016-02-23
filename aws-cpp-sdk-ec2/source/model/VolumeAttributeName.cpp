@@ -28,19 +28,19 @@ namespace Model
 {
 namespace VolumeAttributeNameMapper
 {
+
+
 VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == autoEnableIO_HASH)
   {
-    return VolumeAttributeName::autoEnableIO;
+     return VolumeAttributeName::autoEnableIO;
   }
   else if (hashCode == productCodes_HASH)
   {
-    return VolumeAttributeName::productCodes;
+     return VolumeAttributeName::productCodes;
   }
-
   return VolumeAttributeName::NOT_SET;
 }
 

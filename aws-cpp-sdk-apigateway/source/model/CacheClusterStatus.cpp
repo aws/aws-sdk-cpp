@@ -31,31 +31,31 @@ namespace Model
 {
 namespace CacheClusterStatusMapper
 {
+
+
 CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATE_IN_PROGRESS_HASH)
   {
-    return CacheClusterStatus::CREATE_IN_PROGRESS;
+     return CacheClusterStatus::CREATE_IN_PROGRESS;
   }
   else if (hashCode == AVAILABLE_HASH)
   {
-    return CacheClusterStatus::AVAILABLE;
+     return CacheClusterStatus::AVAILABLE;
   }
   else if (hashCode == DELETE_IN_PROGRESS_HASH)
   {
-    return CacheClusterStatus::DELETE_IN_PROGRESS;
+     return CacheClusterStatus::DELETE_IN_PROGRESS;
   }
   else if (hashCode == NOT_AVAILABLE_HASH)
   {
-    return CacheClusterStatus::NOT_AVAILABLE;
+     return CacheClusterStatus::NOT_AVAILABLE;
   }
   else if (hashCode == FLUSH_IN_PROGRESS_HASH)
   {
-    return CacheClusterStatus::FLUSH_IN_PROGRESS;
+     return CacheClusterStatus::FLUSH_IN_PROGRESS;
   }
-
   return CacheClusterStatus::NOT_SET;
 }
 

@@ -46,91 +46,91 @@ namespace Model
 {
 namespace ExtraParamNameMapper
 {
+
+
 ExtraParamName GetExtraParamNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DUNS_NUMBER_HASH)
   {
-    return ExtraParamName::DUNS_NUMBER;
+     return ExtraParamName::DUNS_NUMBER;
   }
   else if (hashCode == BRAND_NUMBER_HASH)
   {
-    return ExtraParamName::BRAND_NUMBER;
+     return ExtraParamName::BRAND_NUMBER;
   }
   else if (hashCode == BIRTH_DEPARTMENT_HASH)
   {
-    return ExtraParamName::BIRTH_DEPARTMENT;
+     return ExtraParamName::BIRTH_DEPARTMENT;
   }
   else if (hashCode == BIRTH_DATE_IN_YYYY_MM_DD_HASH)
   {
-    return ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD;
+     return ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD;
   }
   else if (hashCode == BIRTH_COUNTRY_HASH)
   {
-    return ExtraParamName::BIRTH_COUNTRY;
+     return ExtraParamName::BIRTH_COUNTRY;
   }
   else if (hashCode == BIRTH_CITY_HASH)
   {
-    return ExtraParamName::BIRTH_CITY;
+     return ExtraParamName::BIRTH_CITY;
   }
   else if (hashCode == DOCUMENT_NUMBER_HASH)
   {
-    return ExtraParamName::DOCUMENT_NUMBER;
+     return ExtraParamName::DOCUMENT_NUMBER;
   }
   else if (hashCode == AU_ID_NUMBER_HASH)
   {
-    return ExtraParamName::AU_ID_NUMBER;
+     return ExtraParamName::AU_ID_NUMBER;
   }
   else if (hashCode == AU_ID_TYPE_HASH)
   {
-    return ExtraParamName::AU_ID_TYPE;
+     return ExtraParamName::AU_ID_TYPE;
   }
   else if (hashCode == CA_LEGAL_TYPE_HASH)
   {
-    return ExtraParamName::CA_LEGAL_TYPE;
+     return ExtraParamName::CA_LEGAL_TYPE;
   }
   else if (hashCode == ES_IDENTIFICATION_HASH)
   {
-    return ExtraParamName::ES_IDENTIFICATION;
+     return ExtraParamName::ES_IDENTIFICATION;
   }
   else if (hashCode == ES_IDENTIFICATION_TYPE_HASH)
   {
-    return ExtraParamName::ES_IDENTIFICATION_TYPE;
+     return ExtraParamName::ES_IDENTIFICATION_TYPE;
   }
   else if (hashCode == ES_LEGAL_FORM_HASH)
   {
-    return ExtraParamName::ES_LEGAL_FORM;
+     return ExtraParamName::ES_LEGAL_FORM;
   }
   else if (hashCode == FI_BUSINESS_NUMBER_HASH)
   {
-    return ExtraParamName::FI_BUSINESS_NUMBER;
+     return ExtraParamName::FI_BUSINESS_NUMBER;
   }
   else if (hashCode == FI_ID_NUMBER_HASH)
   {
-    return ExtraParamName::FI_ID_NUMBER;
+     return ExtraParamName::FI_ID_NUMBER;
   }
   else if (hashCode == IT_PIN_HASH)
   {
-    return ExtraParamName::IT_PIN;
+     return ExtraParamName::IT_PIN;
   }
   else if (hashCode == RU_PASSPORT_DATA_HASH)
   {
-    return ExtraParamName::RU_PASSPORT_DATA;
+     return ExtraParamName::RU_PASSPORT_DATA;
   }
   else if (hashCode == SE_ID_NUMBER_HASH)
   {
-    return ExtraParamName::SE_ID_NUMBER;
+     return ExtraParamName::SE_ID_NUMBER;
   }
   else if (hashCode == SG_ID_NUMBER_HASH)
   {
-    return ExtraParamName::SG_ID_NUMBER;
+     return ExtraParamName::SG_ID_NUMBER;
   }
   else if (hashCode == VAT_NUMBER_HASH)
   {
-    return ExtraParamName::VAT_NUMBER;
+     return ExtraParamName::VAT_NUMBER;
   }
-
   return ExtraParamName::NOT_SET;
 }
 

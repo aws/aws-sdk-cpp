@@ -29,23 +29,23 @@ namespace Model
 {
 namespace VolumeTypeMapper
 {
+
+
 VolumeType GetVolumeTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == standard_HASH)
   {
-    return VolumeType::standard;
+     return VolumeType::standard;
   }
   else if (hashCode == io1_HASH)
   {
-    return VolumeType::io1;
+     return VolumeType::io1;
   }
   else if (hashCode == gp2_HASH)
   {
-    return VolumeType::gp2;
+     return VolumeType::gp2;
   }
-
   return VolumeType::NOT_SET;
 }
 

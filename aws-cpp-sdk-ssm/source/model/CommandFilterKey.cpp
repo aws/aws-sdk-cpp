@@ -29,23 +29,23 @@ namespace Model
 {
 namespace CommandFilterKeyMapper
 {
+
+
 CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InvokedAfter_HASH)
   {
-    return CommandFilterKey::InvokedAfter;
+     return CommandFilterKey::InvokedAfter;
   }
   else if (hashCode == InvokedBefore_HASH)
   {
-    return CommandFilterKey::InvokedBefore;
+     return CommandFilterKey::InvokedBefore;
   }
   else if (hashCode == Status_HASH)
   {
-    return CommandFilterKey::Status;
+     return CommandFilterKey::Status;
   }
-
   return CommandFilterKey::NOT_SET;
 }
 

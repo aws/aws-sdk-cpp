@@ -30,27 +30,27 @@ namespace Model
 {
 namespace VolumeAttachmentStateMapper
 {
+
+
 VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == attaching_HASH)
   {
-    return VolumeAttachmentState::attaching;
+     return VolumeAttachmentState::attaching;
   }
   else if (hashCode == attached_HASH)
   {
-    return VolumeAttachmentState::attached;
+     return VolumeAttachmentState::attached;
   }
   else if (hashCode == detaching_HASH)
   {
-    return VolumeAttachmentState::detaching;
+     return VolumeAttachmentState::detaching;
   }
   else if (hashCode == detached_HASH)
   {
-    return VolumeAttachmentState::detached;
+     return VolumeAttachmentState::detached;
   }
-
   return VolumeAttachmentState::NOT_SET;
 }
 

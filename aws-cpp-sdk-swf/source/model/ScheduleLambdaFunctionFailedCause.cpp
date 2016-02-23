@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ScheduleLambdaFunctionFailedCauseMapper
 {
+
+
 ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ID_ALREADY_IN_USE_HASH)
   {
-    return ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE;
+     return ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE;
   }
   else if (hashCode == OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED_HASH)
   {
-    return ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED;
+     return ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED;
   }
   else if (hashCode == LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED_HASH)
   {
-    return ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED;
+     return ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED;
   }
   else if (hashCode == LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH)
   {
-    return ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
+     return ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
   }
-
   return ScheduleLambdaFunctionFailedCause::NOT_SET;
 }
 

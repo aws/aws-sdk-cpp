@@ -29,23 +29,23 @@ namespace Model
 {
 namespace OptionStateMapper
 {
+
+
 OptionState GetOptionStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == RequiresIndexDocuments_HASH)
   {
-    return OptionState::RequiresIndexDocuments;
+     return OptionState::RequiresIndexDocuments;
   }
   else if (hashCode == Processing_HASH)
   {
-    return OptionState::Processing;
+     return OptionState::Processing;
   }
   else if (hashCode == Active_HASH)
   {
-    return OptionState::Active;
+     return OptionState::Active;
   }
-
   return OptionState::NOT_SET;
 }
 

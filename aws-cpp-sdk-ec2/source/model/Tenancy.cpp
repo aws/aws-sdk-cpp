@@ -29,23 +29,23 @@ namespace Model
 {
 namespace TenancyMapper
 {
+
+
 Tenancy GetTenancyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == default__HASH)
   {
-    return Tenancy::default_;
+     return Tenancy::default_;
   }
   else if (hashCode == dedicated_HASH)
   {
-    return Tenancy::dedicated;
+     return Tenancy::dedicated;
   }
   else if (hashCode == host_HASH)
   {
-    return Tenancy::host;
+     return Tenancy::host;
   }
-
   return Tenancy::NOT_SET;
 }
 

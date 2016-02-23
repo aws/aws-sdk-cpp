@@ -35,47 +35,47 @@ namespace Model
 {
 namespace ParameterExceptionFieldMapper
 {
+
+
 ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CHANGE_ACTION_HASH)
   {
-    return ParameterExceptionField::CHANGE_ACTION;
+     return ParameterExceptionField::CHANGE_ACTION;
   }
   else if (hashCode == WAF_ACTION_HASH)
   {
-    return ParameterExceptionField::WAF_ACTION;
+     return ParameterExceptionField::WAF_ACTION;
   }
   else if (hashCode == PREDICATE_TYPE_HASH)
   {
-    return ParameterExceptionField::PREDICATE_TYPE;
+     return ParameterExceptionField::PREDICATE_TYPE;
   }
   else if (hashCode == IPSET_TYPE_HASH)
   {
-    return ParameterExceptionField::IPSET_TYPE;
+     return ParameterExceptionField::IPSET_TYPE;
   }
   else if (hashCode == BYTE_MATCH_FIELD_TYPE_HASH)
   {
-    return ParameterExceptionField::BYTE_MATCH_FIELD_TYPE;
+     return ParameterExceptionField::BYTE_MATCH_FIELD_TYPE;
   }
   else if (hashCode == SQL_INJECTION_MATCH_FIELD_TYPE_HASH)
   {
-    return ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE;
+     return ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE;
   }
   else if (hashCode == BYTE_MATCH_TEXT_TRANSFORMATION_HASH)
   {
-    return ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION;
+     return ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION;
   }
   else if (hashCode == BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH)
   {
-    return ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT;
+     return ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT;
   }
   else if (hashCode == SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH)
   {
-    return ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR;
+     return ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR;
   }
-
   return ParameterExceptionField::NOT_SET;
 }
 

@@ -39,63 +39,63 @@ namespace Model
 {
 namespace InstanceAttributeNameMapper
 {
+
+
 InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == instanceType_HASH)
   {
-    return InstanceAttributeName::instanceType;
+     return InstanceAttributeName::instanceType;
   }
   else if (hashCode == kernel_HASH)
   {
-    return InstanceAttributeName::kernel;
+     return InstanceAttributeName::kernel;
   }
   else if (hashCode == ramdisk_HASH)
   {
-    return InstanceAttributeName::ramdisk;
+     return InstanceAttributeName::ramdisk;
   }
   else if (hashCode == userData_HASH)
   {
-    return InstanceAttributeName::userData;
+     return InstanceAttributeName::userData;
   }
   else if (hashCode == disableApiTermination_HASH)
   {
-    return InstanceAttributeName::disableApiTermination;
+     return InstanceAttributeName::disableApiTermination;
   }
   else if (hashCode == instanceInitiatedShutdownBehavior_HASH)
   {
-    return InstanceAttributeName::instanceInitiatedShutdownBehavior;
+     return InstanceAttributeName::instanceInitiatedShutdownBehavior;
   }
   else if (hashCode == rootDeviceName_HASH)
   {
-    return InstanceAttributeName::rootDeviceName;
+     return InstanceAttributeName::rootDeviceName;
   }
   else if (hashCode == blockDeviceMapping_HASH)
   {
-    return InstanceAttributeName::blockDeviceMapping;
+     return InstanceAttributeName::blockDeviceMapping;
   }
   else if (hashCode == productCodes_HASH)
   {
-    return InstanceAttributeName::productCodes;
+     return InstanceAttributeName::productCodes;
   }
   else if (hashCode == sourceDestCheck_HASH)
   {
-    return InstanceAttributeName::sourceDestCheck;
+     return InstanceAttributeName::sourceDestCheck;
   }
   else if (hashCode == groupSet_HASH)
   {
-    return InstanceAttributeName::groupSet;
+     return InstanceAttributeName::groupSet;
   }
   else if (hashCode == ebsOptimized_HASH)
   {
-    return InstanceAttributeName::ebsOptimized;
+     return InstanceAttributeName::ebsOptimized;
   }
   else if (hashCode == sriovNetSupport_HASH)
   {
-    return InstanceAttributeName::sriovNetSupport;
+     return InstanceAttributeName::sriovNetSupport;
   }
-
   return InstanceAttributeName::NOT_SET;
 }
 

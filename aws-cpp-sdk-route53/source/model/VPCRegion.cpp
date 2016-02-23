@@ -36,51 +36,51 @@ namespace Model
 {
 namespace VPCRegionMapper
 {
+
+
 VPCRegion GetVPCRegionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == us_east_1_HASH)
   {
-    return VPCRegion::us_east_1;
+     return VPCRegion::us_east_1;
   }
   else if (hashCode == us_west_1_HASH)
   {
-    return VPCRegion::us_west_1;
+     return VPCRegion::us_west_1;
   }
   else if (hashCode == us_west_2_HASH)
   {
-    return VPCRegion::us_west_2;
+     return VPCRegion::us_west_2;
   }
   else if (hashCode == eu_west_1_HASH)
   {
-    return VPCRegion::eu_west_1;
+     return VPCRegion::eu_west_1;
   }
   else if (hashCode == eu_central_1_HASH)
   {
-    return VPCRegion::eu_central_1;
+     return VPCRegion::eu_central_1;
   }
   else if (hashCode == ap_southeast_1_HASH)
   {
-    return VPCRegion::ap_southeast_1;
+     return VPCRegion::ap_southeast_1;
   }
   else if (hashCode == ap_southeast_2_HASH)
   {
-    return VPCRegion::ap_southeast_2;
+     return VPCRegion::ap_southeast_2;
   }
   else if (hashCode == ap_northeast_1_HASH)
   {
-    return VPCRegion::ap_northeast_1;
+     return VPCRegion::ap_northeast_1;
   }
   else if (hashCode == sa_east_1_HASH)
   {
-    return VPCRegion::sa_east_1;
+     return VPCRegion::sa_east_1;
   }
   else if (hashCode == cn_north_1_HASH)
   {
-    return VPCRegion::cn_north_1;
+     return VPCRegion::cn_north_1;
   }
-
   return VPCRegion::NOT_SET;
 }
 

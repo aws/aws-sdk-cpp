@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ComplianceTypeMapper
 {
+
+
 ComplianceType GetComplianceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == COMPLIANT_HASH)
   {
-    return ComplianceType::COMPLIANT;
+     return ComplianceType::COMPLIANT;
   }
   else if (hashCode == NON_COMPLIANT_HASH)
   {
-    return ComplianceType::NON_COMPLIANT;
+     return ComplianceType::NON_COMPLIANT;
   }
   else if (hashCode == NOT_APPLICABLE_HASH)
   {
-    return ComplianceType::NOT_APPLICABLE;
+     return ComplianceType::NOT_APPLICABLE;
   }
   else if (hashCode == INSUFFICIENT_DATA_HASH)
   {
-    return ComplianceType::INSUFFICIENT_DATA;
+     return ComplianceType::INSUFFICIENT_DATA;
   }
-
   return ComplianceType::NOT_SET;
 }
 

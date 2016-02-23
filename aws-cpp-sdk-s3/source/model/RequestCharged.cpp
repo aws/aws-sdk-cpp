@@ -27,15 +27,15 @@ namespace Model
 {
 namespace RequestChargedMapper
 {
+
+
 RequestCharged GetRequestChargedForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == requester_HASH)
   {
-    return RequestCharged::requester;
+     return RequestCharged::requester;
   }
-
   return RequestCharged::NOT_SET;
 }
 

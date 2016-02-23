@@ -30,27 +30,27 @@ namespace Model
 {
 namespace GameSessionStatusMapper
 {
+
+
 GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVE_HASH)
   {
-    return GameSessionStatus::ACTIVE;
+     return GameSessionStatus::ACTIVE;
   }
   else if (hashCode == ACTIVATING_HASH)
   {
-    return GameSessionStatus::ACTIVATING;
+     return GameSessionStatus::ACTIVATING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return GameSessionStatus::TERMINATED;
+     return GameSessionStatus::TERMINATED;
   }
   else if (hashCode == TERMINATING_HASH)
   {
-    return GameSessionStatus::TERMINATING;
+     return GameSessionStatus::TERMINATING;
   }
-
   return GameSessionStatus::NOT_SET;
 }
 

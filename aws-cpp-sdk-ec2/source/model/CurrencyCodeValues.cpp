@@ -27,15 +27,15 @@ namespace Model
 {
 namespace CurrencyCodeValuesMapper
 {
+
+
 CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == USD_HASH)
   {
-    return CurrencyCodeValues::USD;
+     return CurrencyCodeValues::USD;
   }
-
   return CurrencyCodeValues::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace MoveStatusMapper
 {
+
+
 MoveStatus GetMoveStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == movingToVpc_HASH)
   {
-    return MoveStatus::movingToVpc;
+     return MoveStatus::movingToVpc;
   }
   else if (hashCode == restoringToClassic_HASH)
   {
-    return MoveStatus::restoringToClassic;
+     return MoveStatus::restoringToClassic;
   }
-
   return MoveStatus::NOT_SET;
 }
 

@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DocumentFilterKeyMapper
 {
+
+
 DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Name_HASH)
   {
-    return DocumentFilterKey::Name;
+     return DocumentFilterKey::Name;
   }
   else if (hashCode == Owner_HASH)
   {
-    return DocumentFilterKey::Owner;
+     return DocumentFilterKey::Owner;
   }
   else if (hashCode == PlatformTypes_HASH)
   {
-    return DocumentFilterKey::PlatformTypes;
+     return DocumentFilterKey::PlatformTypes;
   }
-
   return DocumentFilterKey::NOT_SET;
 }
 

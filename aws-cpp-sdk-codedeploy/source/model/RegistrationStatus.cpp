@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RegistrationStatusMapper
 {
+
+
 RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Registered_HASH)
   {
-    return RegistrationStatus::Registered;
+     return RegistrationStatus::Registered;
   }
   else if (hashCode == Deregistered_HASH)
   {
-    return RegistrationStatus::Deregistered;
+     return RegistrationStatus::Deregistered;
   }
-
   return RegistrationStatus::NOT_SET;
 }
 

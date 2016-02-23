@@ -27,15 +27,15 @@ namespace Model
 {
 namespace StackAttributesKeysMapper
 {
+
+
 StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Color_HASH)
   {
-    return StackAttributesKeys::Color;
+     return StackAttributesKeys::Color;
   }
-
   return StackAttributesKeys::NOT_SET;
 }
 

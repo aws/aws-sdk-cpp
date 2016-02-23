@@ -33,39 +33,39 @@ namespace Model
 {
 namespace CertificateStatusMapper
 {
+
+
 CertificateStatus GetCertificateStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_VALIDATION_HASH)
   {
-    return CertificateStatus::PENDING_VALIDATION;
+     return CertificateStatus::PENDING_VALIDATION;
   }
   else if (hashCode == ISSUED_HASH)
   {
-    return CertificateStatus::ISSUED;
+     return CertificateStatus::ISSUED;
   }
   else if (hashCode == INACTIVE_HASH)
   {
-    return CertificateStatus::INACTIVE;
+     return CertificateStatus::INACTIVE;
   }
   else if (hashCode == EXPIRED_HASH)
   {
-    return CertificateStatus::EXPIRED;
+     return CertificateStatus::EXPIRED;
   }
   else if (hashCode == VALIDATION_TIMED_OUT_HASH)
   {
-    return CertificateStatus::VALIDATION_TIMED_OUT;
+     return CertificateStatus::VALIDATION_TIMED_OUT;
   }
   else if (hashCode == REVOKED_HASH)
   {
-    return CertificateStatus::REVOKED;
+     return CertificateStatus::REVOKED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return CertificateStatus::FAILED;
+     return CertificateStatus::FAILED;
   }
-
   return CertificateStatus::NOT_SET;
 }
 

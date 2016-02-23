@@ -29,23 +29,23 @@ namespace Model
 {
 namespace SuggesterFuzzyMatchingMapper
 {
+
+
 SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == none_HASH)
   {
-    return SuggesterFuzzyMatching::none;
+     return SuggesterFuzzyMatching::none;
   }
   else if (hashCode == low_HASH)
   {
-    return SuggesterFuzzyMatching::low;
+     return SuggesterFuzzyMatching::low;
   }
   else if (hashCode == high_HASH)
   {
-    return SuggesterFuzzyMatching::high;
+     return SuggesterFuzzyMatching::high;
   }
-
   return SuggesterFuzzyMatching::NOT_SET;
 }
 

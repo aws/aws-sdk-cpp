@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RuleActionMapper
 {
+
+
 RuleAction GetRuleActionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == allow_HASH)
   {
-    return RuleAction::allow;
+     return RuleAction::allow;
   }
   else if (hashCode == deny_HASH)
   {
-    return RuleAction::deny;
+     return RuleAction::deny;
   }
-
   return RuleAction::NOT_SET;
 }
 

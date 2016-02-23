@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DirectoryTypeMapper
 {
+
+
 DirectoryType GetDirectoryTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SimpleAD_HASH)
   {
-    return DirectoryType::SimpleAD;
+     return DirectoryType::SimpleAD;
   }
   else if (hashCode == ADConnector_HASH)
   {
-    return DirectoryType::ADConnector;
+     return DirectoryType::ADConnector;
   }
   else if (hashCode == MicrosoftAD_HASH)
   {
-    return DirectoryType::MicrosoftAD;
+     return DirectoryType::MicrosoftAD;
   }
-
   return DirectoryType::NOT_SET;
 }
 

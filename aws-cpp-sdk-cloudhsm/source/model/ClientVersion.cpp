@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ClientVersionMapper
 {
+
+
 ClientVersion GetClientVersionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == _5_1_HASH)
   {
-    return ClientVersion::_5_1;
+     return ClientVersion::_5_1;
   }
   else if (hashCode == _5_3_HASH)
   {
-    return ClientVersion::_5_3;
+     return ClientVersion::_5_3;
   }
-
   return ClientVersion::NOT_SET;
 }
 

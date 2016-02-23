@@ -87,255 +87,255 @@ namespace Model
 {
 namespace ErrorCodeMapper
 {
+
+
 ErrorCode GetErrorCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ActivationKeyExpired_HASH)
   {
-    return ErrorCode::ActivationKeyExpired;
+     return ErrorCode::ActivationKeyExpired;
   }
   else if (hashCode == ActivationKeyInvalid_HASH)
   {
-    return ErrorCode::ActivationKeyInvalid;
+     return ErrorCode::ActivationKeyInvalid;
   }
   else if (hashCode == ActivationKeyNotFound_HASH)
   {
-    return ErrorCode::ActivationKeyNotFound;
+     return ErrorCode::ActivationKeyNotFound;
   }
   else if (hashCode == GatewayInternalError_HASH)
   {
-    return ErrorCode::GatewayInternalError;
+     return ErrorCode::GatewayInternalError;
   }
   else if (hashCode == GatewayNotConnected_HASH)
   {
-    return ErrorCode::GatewayNotConnected;
+     return ErrorCode::GatewayNotConnected;
   }
   else if (hashCode == GatewayNotFound_HASH)
   {
-    return ErrorCode::GatewayNotFound;
+     return ErrorCode::GatewayNotFound;
   }
   else if (hashCode == GatewayProxyNetworkConnectionBusy_HASH)
   {
-    return ErrorCode::GatewayProxyNetworkConnectionBusy;
+     return ErrorCode::GatewayProxyNetworkConnectionBusy;
   }
   else if (hashCode == AuthenticationFailure_HASH)
   {
-    return ErrorCode::AuthenticationFailure;
+     return ErrorCode::AuthenticationFailure;
   }
   else if (hashCode == BandwidthThrottleScheduleNotFound_HASH)
   {
-    return ErrorCode::BandwidthThrottleScheduleNotFound;
+     return ErrorCode::BandwidthThrottleScheduleNotFound;
   }
   else if (hashCode == Blocked_HASH)
   {
-    return ErrorCode::Blocked;
+     return ErrorCode::Blocked;
   }
   else if (hashCode == CannotExportSnapshot_HASH)
   {
-    return ErrorCode::CannotExportSnapshot;
+     return ErrorCode::CannotExportSnapshot;
   }
   else if (hashCode == ChapCredentialNotFound_HASH)
   {
-    return ErrorCode::ChapCredentialNotFound;
+     return ErrorCode::ChapCredentialNotFound;
   }
   else if (hashCode == DiskAlreadyAllocated_HASH)
   {
-    return ErrorCode::DiskAlreadyAllocated;
+     return ErrorCode::DiskAlreadyAllocated;
   }
   else if (hashCode == DiskDoesNotExist_HASH)
   {
-    return ErrorCode::DiskDoesNotExist;
+     return ErrorCode::DiskDoesNotExist;
   }
   else if (hashCode == DiskSizeGreaterThanVolumeMaxSize_HASH)
   {
-    return ErrorCode::DiskSizeGreaterThanVolumeMaxSize;
+     return ErrorCode::DiskSizeGreaterThanVolumeMaxSize;
   }
   else if (hashCode == DiskSizeLessThanVolumeSize_HASH)
   {
-    return ErrorCode::DiskSizeLessThanVolumeSize;
+     return ErrorCode::DiskSizeLessThanVolumeSize;
   }
   else if (hashCode == DiskSizeNotGigAligned_HASH)
   {
-    return ErrorCode::DiskSizeNotGigAligned;
+     return ErrorCode::DiskSizeNotGigAligned;
   }
   else if (hashCode == DuplicateCertificateInfo_HASH)
   {
-    return ErrorCode::DuplicateCertificateInfo;
+     return ErrorCode::DuplicateCertificateInfo;
   }
   else if (hashCode == DuplicateSchedule_HASH)
   {
-    return ErrorCode::DuplicateSchedule;
+     return ErrorCode::DuplicateSchedule;
   }
   else if (hashCode == EndpointNotFound_HASH)
   {
-    return ErrorCode::EndpointNotFound;
+     return ErrorCode::EndpointNotFound;
   }
   else if (hashCode == IAMNotSupported_HASH)
   {
-    return ErrorCode::IAMNotSupported;
+     return ErrorCode::IAMNotSupported;
   }
   else if (hashCode == InitiatorInvalid_HASH)
   {
-    return ErrorCode::InitiatorInvalid;
+     return ErrorCode::InitiatorInvalid;
   }
   else if (hashCode == InitiatorNotFound_HASH)
   {
-    return ErrorCode::InitiatorNotFound;
+     return ErrorCode::InitiatorNotFound;
   }
   else if (hashCode == InternalError_HASH)
   {
-    return ErrorCode::InternalError;
+     return ErrorCode::InternalError;
   }
   else if (hashCode == InvalidGateway_HASH)
   {
-    return ErrorCode::InvalidGateway;
+     return ErrorCode::InvalidGateway;
   }
   else if (hashCode == InvalidEndpoint_HASH)
   {
-    return ErrorCode::InvalidEndpoint;
+     return ErrorCode::InvalidEndpoint;
   }
   else if (hashCode == InvalidParameters_HASH)
   {
-    return ErrorCode::InvalidParameters;
+     return ErrorCode::InvalidParameters;
   }
   else if (hashCode == InvalidSchedule_HASH)
   {
-    return ErrorCode::InvalidSchedule;
+     return ErrorCode::InvalidSchedule;
   }
   else if (hashCode == LocalStorageLimitExceeded_HASH)
   {
-    return ErrorCode::LocalStorageLimitExceeded;
+     return ErrorCode::LocalStorageLimitExceeded;
   }
   else if (hashCode == LunAlreadyAllocated_HASH)
   {
-    return ErrorCode::LunAlreadyAllocated;
+     return ErrorCode::LunAlreadyAllocated;
   }
   else if (hashCode == LunInvalid_HASH)
   {
-    return ErrorCode::LunInvalid;
+     return ErrorCode::LunInvalid;
   }
   else if (hashCode == MaximumContentLengthExceeded_HASH)
   {
-    return ErrorCode::MaximumContentLengthExceeded;
+     return ErrorCode::MaximumContentLengthExceeded;
   }
   else if (hashCode == MaximumTapeCartridgeCountExceeded_HASH)
   {
-    return ErrorCode::MaximumTapeCartridgeCountExceeded;
+     return ErrorCode::MaximumTapeCartridgeCountExceeded;
   }
   else if (hashCode == MaximumVolumeCountExceeded_HASH)
   {
-    return ErrorCode::MaximumVolumeCountExceeded;
+     return ErrorCode::MaximumVolumeCountExceeded;
   }
   else if (hashCode == NetworkConfigurationChanged_HASH)
   {
-    return ErrorCode::NetworkConfigurationChanged;
+     return ErrorCode::NetworkConfigurationChanged;
   }
   else if (hashCode == NoDisksAvailable_HASH)
   {
-    return ErrorCode::NoDisksAvailable;
+     return ErrorCode::NoDisksAvailable;
   }
   else if (hashCode == NotImplemented_HASH)
   {
-    return ErrorCode::NotImplemented;
+     return ErrorCode::NotImplemented;
   }
   else if (hashCode == NotSupported_HASH)
   {
-    return ErrorCode::NotSupported;
+     return ErrorCode::NotSupported;
   }
   else if (hashCode == OperationAborted_HASH)
   {
-    return ErrorCode::OperationAborted;
+     return ErrorCode::OperationAborted;
   }
   else if (hashCode == OutdatedGateway_HASH)
   {
-    return ErrorCode::OutdatedGateway;
+     return ErrorCode::OutdatedGateway;
   }
   else if (hashCode == ParametersNotImplemented_HASH)
   {
-    return ErrorCode::ParametersNotImplemented;
+     return ErrorCode::ParametersNotImplemented;
   }
   else if (hashCode == RegionInvalid_HASH)
   {
-    return ErrorCode::RegionInvalid;
+     return ErrorCode::RegionInvalid;
   }
   else if (hashCode == RequestTimeout_HASH)
   {
-    return ErrorCode::RequestTimeout;
+     return ErrorCode::RequestTimeout;
   }
   else if (hashCode == ServiceUnavailable_HASH)
   {
-    return ErrorCode::ServiceUnavailable;
+     return ErrorCode::ServiceUnavailable;
   }
   else if (hashCode == SnapshotDeleted_HASH)
   {
-    return ErrorCode::SnapshotDeleted;
+     return ErrorCode::SnapshotDeleted;
   }
   else if (hashCode == SnapshotIdInvalid_HASH)
   {
-    return ErrorCode::SnapshotIdInvalid;
+     return ErrorCode::SnapshotIdInvalid;
   }
   else if (hashCode == SnapshotInProgress_HASH)
   {
-    return ErrorCode::SnapshotInProgress;
+     return ErrorCode::SnapshotInProgress;
   }
   else if (hashCode == SnapshotNotFound_HASH)
   {
-    return ErrorCode::SnapshotNotFound;
+     return ErrorCode::SnapshotNotFound;
   }
   else if (hashCode == SnapshotScheduleNotFound_HASH)
   {
-    return ErrorCode::SnapshotScheduleNotFound;
+     return ErrorCode::SnapshotScheduleNotFound;
   }
   else if (hashCode == StagingAreaFull_HASH)
   {
-    return ErrorCode::StagingAreaFull;
+     return ErrorCode::StagingAreaFull;
   }
   else if (hashCode == StorageFailure_HASH)
   {
-    return ErrorCode::StorageFailure;
+     return ErrorCode::StorageFailure;
   }
   else if (hashCode == TapeCartridgeNotFound_HASH)
   {
-    return ErrorCode::TapeCartridgeNotFound;
+     return ErrorCode::TapeCartridgeNotFound;
   }
   else if (hashCode == TargetAlreadyExists_HASH)
   {
-    return ErrorCode::TargetAlreadyExists;
+     return ErrorCode::TargetAlreadyExists;
   }
   else if (hashCode == TargetInvalid_HASH)
   {
-    return ErrorCode::TargetInvalid;
+     return ErrorCode::TargetInvalid;
   }
   else if (hashCode == TargetNotFound_HASH)
   {
-    return ErrorCode::TargetNotFound;
+     return ErrorCode::TargetNotFound;
   }
   else if (hashCode == UnauthorizedOperation_HASH)
   {
-    return ErrorCode::UnauthorizedOperation;
+     return ErrorCode::UnauthorizedOperation;
   }
   else if (hashCode == VolumeAlreadyExists_HASH)
   {
-    return ErrorCode::VolumeAlreadyExists;
+     return ErrorCode::VolumeAlreadyExists;
   }
   else if (hashCode == VolumeIdInvalid_HASH)
   {
-    return ErrorCode::VolumeIdInvalid;
+     return ErrorCode::VolumeIdInvalid;
   }
   else if (hashCode == VolumeInUse_HASH)
   {
-    return ErrorCode::VolumeInUse;
+     return ErrorCode::VolumeInUse;
   }
   else if (hashCode == VolumeNotFound_HASH)
   {
-    return ErrorCode::VolumeNotFound;
+     return ErrorCode::VolumeNotFound;
   }
   else if (hashCode == VolumeNotReady_HASH)
   {
-    return ErrorCode::VolumeNotReady;
+     return ErrorCode::VolumeNotReady;
   }
-
   return ErrorCode::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace SpotInstanceStateMapper
 {
+
+
 SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == open_HASH)
   {
-    return SpotInstanceState::open;
+     return SpotInstanceState::open;
   }
   else if (hashCode == active_HASH)
   {
-    return SpotInstanceState::active;
+     return SpotInstanceState::active;
   }
   else if (hashCode == closed_HASH)
   {
-    return SpotInstanceState::closed;
+     return SpotInstanceState::closed;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return SpotInstanceState::cancelled;
+     return SpotInstanceState::cancelled;
   }
   else if (hashCode == failed_HASH)
   {
-    return SpotInstanceState::failed;
+     return SpotInstanceState::failed;
   }
-
   return SpotInstanceState::NOT_SET;
 }
 

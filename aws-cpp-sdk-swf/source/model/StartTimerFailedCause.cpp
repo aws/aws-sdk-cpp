@@ -30,27 +30,27 @@ namespace Model
 {
 namespace StartTimerFailedCauseMapper
 {
+
+
 StartTimerFailedCause GetStartTimerFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TIMER_ID_ALREADY_IN_USE_HASH)
   {
-    return StartTimerFailedCause::TIMER_ID_ALREADY_IN_USE;
+     return StartTimerFailedCause::TIMER_ID_ALREADY_IN_USE;
   }
   else if (hashCode == OPEN_TIMERS_LIMIT_EXCEEDED_HASH)
   {
-    return StartTimerFailedCause::OPEN_TIMERS_LIMIT_EXCEEDED;
+     return StartTimerFailedCause::OPEN_TIMERS_LIMIT_EXCEEDED;
   }
   else if (hashCode == TIMER_CREATION_RATE_EXCEEDED_HASH)
   {
-    return StartTimerFailedCause::TIMER_CREATION_RATE_EXCEEDED;
+     return StartTimerFailedCause::TIMER_CREATION_RATE_EXCEEDED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return StartTimerFailedCause::OPERATION_NOT_PERMITTED;
+     return StartTimerFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return StartTimerFailedCause::NOT_SET;
 }
 

@@ -27,15 +27,15 @@ namespace Model
 {
 namespace ContainerFormatMapper
 {
+
+
 ContainerFormat GetContainerFormatForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ova_HASH)
   {
-    return ContainerFormat::ova;
+     return ContainerFormat::ova;
   }
-
   return ContainerFormat::NOT_SET;
 }
 

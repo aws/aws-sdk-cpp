@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ReplicationRuleStatusMapper
 {
+
+
 ReplicationRuleStatus GetReplicationRuleStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return ReplicationRuleStatus::Enabled;
+     return ReplicationRuleStatus::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return ReplicationRuleStatus::Disabled;
+     return ReplicationRuleStatus::Disabled;
   }
-
   return ReplicationRuleStatus::NOT_SET;
 }
 

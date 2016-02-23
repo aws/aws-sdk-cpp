@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ScalarAttributeTypeMapper
 {
+
+
 ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == S_HASH)
   {
-    return ScalarAttributeType::S;
+     return ScalarAttributeType::S;
   }
   else if (hashCode == N_HASH)
   {
-    return ScalarAttributeType::N;
+     return ScalarAttributeType::N;
   }
   else if (hashCode == B_HASH)
   {
-    return ScalarAttributeType::B;
+     return ScalarAttributeType::B;
   }
-
   return ScalarAttributeType::NOT_SET;
 }
 

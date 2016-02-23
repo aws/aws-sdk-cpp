@@ -30,27 +30,27 @@ namespace Model
 {
 namespace PlacementGroupStateMapper
 {
+
+
 PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return PlacementGroupState::pending;
+     return PlacementGroupState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return PlacementGroupState::available;
+     return PlacementGroupState::available;
   }
   else if (hashCode == deleting_HASH)
   {
-    return PlacementGroupState::deleting;
+     return PlacementGroupState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return PlacementGroupState::deleted;
+     return PlacementGroupState::deleted;
   }
-
   return PlacementGroupState::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace OwnerMapper
 {
+
+
 Owner GetOwnerForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CUSTOM_LAMBDA_HASH)
   {
-    return Owner::CUSTOM_LAMBDA;
+     return Owner::CUSTOM_LAMBDA;
   }
   else if (hashCode == AWS_HASH)
   {
-    return Owner::AWS;
+     return Owner::AWS;
   }
-
   return Owner::NOT_SET;
 }
 

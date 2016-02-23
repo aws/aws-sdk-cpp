@@ -29,23 +29,23 @@ namespace Model
 {
 namespace TrafficTypeMapper
 {
+
+
 TrafficType GetTrafficTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACCEPT_HASH)
   {
-    return TrafficType::ACCEPT;
+     return TrafficType::ACCEPT;
   }
   else if (hashCode == REJECT_HASH)
   {
-    return TrafficType::REJECT;
+     return TrafficType::REJECT;
   }
   else if (hashCode == ALL_HASH)
   {
-    return TrafficType::ALL;
+     return TrafficType::ALL;
   }
-
   return TrafficType::NOT_SET;
 }
 

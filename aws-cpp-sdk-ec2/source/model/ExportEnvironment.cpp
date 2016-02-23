@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ExportEnvironmentMapper
 {
+
+
 ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == citrix_HASH)
   {
-    return ExportEnvironment::citrix;
+     return ExportEnvironment::citrix;
   }
   else if (hashCode == vmware_HASH)
   {
-    return ExportEnvironment::vmware;
+     return ExportEnvironment::vmware;
   }
   else if (hashCode == microsoft_HASH)
   {
-    return ExportEnvironment::microsoft;
+     return ExportEnvironment::microsoft;
   }
-
   return ExportEnvironment::NOT_SET;
 }
 

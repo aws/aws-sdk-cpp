@@ -35,47 +35,47 @@ namespace Model
 {
 namespace EventMapper
 {
+
+
 Event GetEventForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == s3_ReducedRedundancyLostObject_HASH)
   {
-    return Event::s3_ReducedRedundancyLostObject;
+     return Event::s3_ReducedRedundancyLostObject;
   }
   else if (hashCode == s3_ObjectCreated_HASH)
   {
-    return Event::s3_ObjectCreated;
+     return Event::s3_ObjectCreated;
   }
   else if (hashCode == s3_ObjectCreated_Put_HASH)
   {
-    return Event::s3_ObjectCreated_Put;
+     return Event::s3_ObjectCreated_Put;
   }
   else if (hashCode == s3_ObjectCreated_Post_HASH)
   {
-    return Event::s3_ObjectCreated_Post;
+     return Event::s3_ObjectCreated_Post;
   }
   else if (hashCode == s3_ObjectCreated_Copy_HASH)
   {
-    return Event::s3_ObjectCreated_Copy;
+     return Event::s3_ObjectCreated_Copy;
   }
   else if (hashCode == s3_ObjectCreated_CompleteMultipartUpload_HASH)
   {
-    return Event::s3_ObjectCreated_CompleteMultipartUpload;
+     return Event::s3_ObjectCreated_CompleteMultipartUpload;
   }
   else if (hashCode == s3_ObjectRemoved_HASH)
   {
-    return Event::s3_ObjectRemoved;
+     return Event::s3_ObjectRemoved;
   }
   else if (hashCode == s3_ObjectRemoved_Delete_HASH)
   {
-    return Event::s3_ObjectRemoved_Delete;
+     return Event::s3_ObjectRemoved_Delete;
   }
   else if (hashCode == s3_ObjectRemoved_DeleteMarkerCreated_HASH)
   {
-    return Event::s3_ObjectRemoved_DeleteMarkerCreated;
+     return Event::s3_ObjectRemoved_DeleteMarkerCreated;
   }
-
   return Event::NOT_SET;
 }
 

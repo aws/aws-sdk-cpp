@@ -29,23 +29,23 @@ namespace Model
 {
 namespace DocumentStatusMapper
 {
+
+
 DocumentStatus GetDocumentStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Creating_HASH)
   {
-    return DocumentStatus::Creating;
+     return DocumentStatus::Creating;
   }
   else if (hashCode == Active_HASH)
   {
-    return DocumentStatus::Active;
+     return DocumentStatus::Active;
   }
   else if (hashCode == Deleting_HASH)
   {
-    return DocumentStatus::Deleting;
+     return DocumentStatus::Deleting;
   }
-
   return DocumentStatus::NOT_SET;
 }
 

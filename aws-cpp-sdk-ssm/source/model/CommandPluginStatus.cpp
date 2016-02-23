@@ -32,35 +32,35 @@ namespace Model
 {
 namespace CommandPluginStatusMapper
 {
+
+
 CommandPluginStatus GetCommandPluginStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return CommandPluginStatus::Pending;
+     return CommandPluginStatus::Pending;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return CommandPluginStatus::InProgress;
+     return CommandPluginStatus::InProgress;
   }
   else if (hashCode == Success_HASH)
   {
-    return CommandPluginStatus::Success;
+     return CommandPluginStatus::Success;
   }
   else if (hashCode == TimedOut_HASH)
   {
-    return CommandPluginStatus::TimedOut;
+     return CommandPluginStatus::TimedOut;
   }
   else if (hashCode == Cancelled_HASH)
   {
-    return CommandPluginStatus::Cancelled;
+     return CommandPluginStatus::Cancelled;
   }
   else if (hashCode == Failed_HASH)
   {
-    return CommandPluginStatus::Failed;
+     return CommandPluginStatus::Failed;
   }
-
   return CommandPluginStatus::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace OperatorTypeMapper
 {
+
+
 OperatorType GetOperatorTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EQ_HASH)
   {
-    return OperatorType::EQ;
+     return OperatorType::EQ;
   }
   else if (hashCode == REF_EQ_HASH)
   {
-    return OperatorType::REF_EQ;
+     return OperatorType::REF_EQ;
   }
   else if (hashCode == LE_HASH)
   {
-    return OperatorType::LE;
+     return OperatorType::LE;
   }
   else if (hashCode == GE_HASH)
   {
-    return OperatorType::GE;
+     return OperatorType::GE;
   }
   else if (hashCode == BETWEEN_HASH)
   {
-    return OperatorType::BETWEEN;
+     return OperatorType::BETWEEN;
   }
-
   return OperatorType::NOT_SET;
 }
 

@@ -33,39 +33,39 @@ namespace Model
 {
 namespace ObjectCannedACLMapper
 {
+
+
 ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == private__HASH)
   {
-    return ObjectCannedACL::private_;
+     return ObjectCannedACL::private_;
   }
   else if (hashCode == public_read_HASH)
   {
-    return ObjectCannedACL::public_read;
+     return ObjectCannedACL::public_read;
   }
   else if (hashCode == public_read_write_HASH)
   {
-    return ObjectCannedACL::public_read_write;
+     return ObjectCannedACL::public_read_write;
   }
   else if (hashCode == authenticated_read_HASH)
   {
-    return ObjectCannedACL::authenticated_read;
+     return ObjectCannedACL::authenticated_read;
   }
   else if (hashCode == aws_exec_read_HASH)
   {
-    return ObjectCannedACL::aws_exec_read;
+     return ObjectCannedACL::aws_exec_read;
   }
   else if (hashCode == bucket_owner_read_HASH)
   {
-    return ObjectCannedACL::bucket_owner_read;
+     return ObjectCannedACL::bucket_owner_read;
   }
   else if (hashCode == bucket_owner_full_control_HASH)
   {
-    return ObjectCannedACL::bucket_owner_full_control;
+     return ObjectCannedACL::bucket_owner_full_control;
   }
-
   return ObjectCannedACL::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace OperationStatusMapper
 {
+
+
 OperationStatus GetOperationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SUBMITTED_HASH)
   {
-    return OperationStatus::SUBMITTED;
+     return OperationStatus::SUBMITTED;
   }
   else if (hashCode == IN_PROGRESS_HASH)
   {
-    return OperationStatus::IN_PROGRESS;
+     return OperationStatus::IN_PROGRESS;
   }
   else if (hashCode == ERROR__HASH)
   {
-    return OperationStatus::ERROR_;
+     return OperationStatus::ERROR_;
   }
   else if (hashCode == SUCCESSFUL_HASH)
   {
-    return OperationStatus::SUCCESSFUL;
+     return OperationStatus::SUCCESSFUL;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return OperationStatus::FAILED;
+     return OperationStatus::FAILED;
   }
-
   return OperationStatus::NOT_SET;
 }
 

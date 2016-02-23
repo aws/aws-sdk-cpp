@@ -27,15 +27,15 @@ namespace Model
 {
 namespace PlatformValuesMapper
 {
+
+
 PlatformValues GetPlatformValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Windows_HASH)
   {
-    return PlatformValues::Windows;
+     return PlatformValues::Windows;
   }
-
   return PlatformValues::NOT_SET;
 }
 

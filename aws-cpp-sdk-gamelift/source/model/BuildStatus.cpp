@@ -29,23 +29,23 @@ namespace Model
 {
 namespace BuildStatusMapper
 {
+
+
 BuildStatus GetBuildStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INITIALIZED_HASH)
   {
-    return BuildStatus::INITIALIZED;
+     return BuildStatus::INITIALIZED;
   }
   else if (hashCode == READY_HASH)
   {
-    return BuildStatus::READY;
+     return BuildStatus::READY;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return BuildStatus::FAILED;
+     return BuildStatus::FAILED;
   }
-
   return BuildStatus::NOT_SET;
 }
 

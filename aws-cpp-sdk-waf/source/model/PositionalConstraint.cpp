@@ -31,31 +31,31 @@ namespace Model
 {
 namespace PositionalConstraintMapper
 {
+
+
 PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EXACTLY_HASH)
   {
-    return PositionalConstraint::EXACTLY;
+     return PositionalConstraint::EXACTLY;
   }
   else if (hashCode == STARTS_WITH_HASH)
   {
-    return PositionalConstraint::STARTS_WITH;
+     return PositionalConstraint::STARTS_WITH;
   }
   else if (hashCode == ENDS_WITH_HASH)
   {
-    return PositionalConstraint::ENDS_WITH;
+     return PositionalConstraint::ENDS_WITH;
   }
   else if (hashCode == CONTAINS_HASH)
   {
-    return PositionalConstraint::CONTAINS;
+     return PositionalConstraint::CONTAINS;
   }
   else if (hashCode == CONTAINS_WORD_HASH)
   {
-    return PositionalConstraint::CONTAINS_WORD;
+     return PositionalConstraint::CONTAINS_WORD;
   }
-
   return PositionalConstraint::NOT_SET;
 }
 

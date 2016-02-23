@@ -27,15 +27,15 @@ namespace Model
 {
 namespace EncodingTypeMapper
 {
+
+
 EncodingType GetEncodingTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == url_HASH)
   {
-    return EncodingType::url;
+     return EncodingType::url;
   }
-
   return EncodingType::NOT_SET;
 }
 

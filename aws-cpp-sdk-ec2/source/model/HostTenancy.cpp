@@ -28,19 +28,19 @@ namespace Model
 {
 namespace HostTenancyMapper
 {
+
+
 HostTenancy GetHostTenancyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == dedicated_HASH)
   {
-    return HostTenancy::dedicated;
+     return HostTenancy::dedicated;
   }
   else if (hashCode == host_HASH)
   {
-    return HostTenancy::host;
+     return HostTenancy::host;
   }
-
   return HostTenancy::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace ImageFailureCodeMapper
 {
+
+
 ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == InvalidImageDigest_HASH)
   {
-    return ImageFailureCode::InvalidImageDigest;
+     return ImageFailureCode::InvalidImageDigest;
   }
   else if (hashCode == InvalidImageTag_HASH)
   {
-    return ImageFailureCode::InvalidImageTag;
+     return ImageFailureCode::InvalidImageTag;
   }
   else if (hashCode == ImageTagDoesNotMatchDigest_HASH)
   {
-    return ImageFailureCode::ImageTagDoesNotMatchDigest;
+     return ImageFailureCode::ImageTagDoesNotMatchDigest;
   }
   else if (hashCode == ImageNotFound_HASH)
   {
-    return ImageFailureCode::ImageNotFound;
+     return ImageFailureCode::ImageNotFound;
   }
   else if (hashCode == MissingDigestAndTag_HASH)
   {
-    return ImageFailureCode::MissingDigestAndTag;
+     return ImageFailureCode::MissingDigestAndTag;
   }
-
   return ImageFailureCode::NOT_SET;
 }
 

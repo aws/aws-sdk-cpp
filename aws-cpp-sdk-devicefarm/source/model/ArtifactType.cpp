@@ -48,99 +48,99 @@ namespace Model
 {
 namespace ArtifactTypeMapper
 {
+
+
 ArtifactType GetArtifactTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNKNOWN_HASH)
   {
-    return ArtifactType::UNKNOWN;
+     return ArtifactType::UNKNOWN;
   }
   else if (hashCode == SCREENSHOT_HASH)
   {
-    return ArtifactType::SCREENSHOT;
+     return ArtifactType::SCREENSHOT;
   }
   else if (hashCode == DEVICE_LOG_HASH)
   {
-    return ArtifactType::DEVICE_LOG;
+     return ArtifactType::DEVICE_LOG;
   }
   else if (hashCode == MESSAGE_LOG_HASH)
   {
-    return ArtifactType::MESSAGE_LOG;
+     return ArtifactType::MESSAGE_LOG;
   }
   else if (hashCode == RESULT_LOG_HASH)
   {
-    return ArtifactType::RESULT_LOG;
+     return ArtifactType::RESULT_LOG;
   }
   else if (hashCode == SERVICE_LOG_HASH)
   {
-    return ArtifactType::SERVICE_LOG;
+     return ArtifactType::SERVICE_LOG;
   }
   else if (hashCode == WEBKIT_LOG_HASH)
   {
-    return ArtifactType::WEBKIT_LOG;
+     return ArtifactType::WEBKIT_LOG;
   }
   else if (hashCode == INSTRUMENTATION_OUTPUT_HASH)
   {
-    return ArtifactType::INSTRUMENTATION_OUTPUT;
+     return ArtifactType::INSTRUMENTATION_OUTPUT;
   }
   else if (hashCode == EXERCISER_MONKEY_OUTPUT_HASH)
   {
-    return ArtifactType::EXERCISER_MONKEY_OUTPUT;
+     return ArtifactType::EXERCISER_MONKEY_OUTPUT;
   }
   else if (hashCode == CALABASH_JSON_OUTPUT_HASH)
   {
-    return ArtifactType::CALABASH_JSON_OUTPUT;
+     return ArtifactType::CALABASH_JSON_OUTPUT;
   }
   else if (hashCode == CALABASH_PRETTY_OUTPUT_HASH)
   {
-    return ArtifactType::CALABASH_PRETTY_OUTPUT;
+     return ArtifactType::CALABASH_PRETTY_OUTPUT;
   }
   else if (hashCode == CALABASH_STANDARD_OUTPUT_HASH)
   {
-    return ArtifactType::CALABASH_STANDARD_OUTPUT;
+     return ArtifactType::CALABASH_STANDARD_OUTPUT;
   }
   else if (hashCode == CALABASH_JAVA_XML_OUTPUT_HASH)
   {
-    return ArtifactType::CALABASH_JAVA_XML_OUTPUT;
+     return ArtifactType::CALABASH_JAVA_XML_OUTPUT;
   }
   else if (hashCode == AUTOMATION_OUTPUT_HASH)
   {
-    return ArtifactType::AUTOMATION_OUTPUT;
+     return ArtifactType::AUTOMATION_OUTPUT;
   }
   else if (hashCode == APPIUM_SERVER_OUTPUT_HASH)
   {
-    return ArtifactType::APPIUM_SERVER_OUTPUT;
+     return ArtifactType::APPIUM_SERVER_OUTPUT;
   }
   else if (hashCode == APPIUM_JAVA_OUTPUT_HASH)
   {
-    return ArtifactType::APPIUM_JAVA_OUTPUT;
+     return ArtifactType::APPIUM_JAVA_OUTPUT;
   }
   else if (hashCode == APPIUM_JAVA_XML_OUTPUT_HASH)
   {
-    return ArtifactType::APPIUM_JAVA_XML_OUTPUT;
+     return ArtifactType::APPIUM_JAVA_XML_OUTPUT;
   }
   else if (hashCode == APPIUM_PYTHON_OUTPUT_HASH)
   {
-    return ArtifactType::APPIUM_PYTHON_OUTPUT;
+     return ArtifactType::APPIUM_PYTHON_OUTPUT;
   }
   else if (hashCode == APPIUM_PYTHON_XML_OUTPUT_HASH)
   {
-    return ArtifactType::APPIUM_PYTHON_XML_OUTPUT;
+     return ArtifactType::APPIUM_PYTHON_XML_OUTPUT;
   }
   else if (hashCode == EXPLORER_EVENT_LOG_HASH)
   {
-    return ArtifactType::EXPLORER_EVENT_LOG;
+     return ArtifactType::EXPLORER_EVENT_LOG;
   }
   else if (hashCode == EXPLORER_SUMMARY_LOG_HASH)
   {
-    return ArtifactType::EXPLORER_SUMMARY_LOG;
+     return ArtifactType::EXPLORER_SUMMARY_LOG;
   }
   else if (hashCode == APPLICATION_CRASH_REPORT_HASH)
   {
-    return ArtifactType::APPLICATION_CRASH_REPORT;
+     return ArtifactType::APPLICATION_CRASH_REPORT;
   }
-
   return ArtifactType::NOT_SET;
 }
 

@@ -32,35 +32,35 @@ namespace Model
 {
 namespace TextTransformationMapper
 {
+
+
 TextTransformation GetTextTransformationForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NONE_HASH)
   {
-    return TextTransformation::NONE;
+     return TextTransformation::NONE;
   }
   else if (hashCode == COMPRESS_WHITE_SPACE_HASH)
   {
-    return TextTransformation::COMPRESS_WHITE_SPACE;
+     return TextTransformation::COMPRESS_WHITE_SPACE;
   }
   else if (hashCode == HTML_ENTITY_DECODE_HASH)
   {
-    return TextTransformation::HTML_ENTITY_DECODE;
+     return TextTransformation::HTML_ENTITY_DECODE;
   }
   else if (hashCode == LOWERCASE_HASH)
   {
-    return TextTransformation::LOWERCASE;
+     return TextTransformation::LOWERCASE;
   }
   else if (hashCode == CMD_LINE_HASH)
   {
-    return TextTransformation::CMD_LINE;
+     return TextTransformation::CMD_LINE;
   }
   else if (hashCode == URL_DECODE_HASH)
   {
-    return TextTransformation::URL_DECODE;
+     return TextTransformation::URL_DECODE;
   }
-
   return TextTransformation::NOT_SET;
 }
 

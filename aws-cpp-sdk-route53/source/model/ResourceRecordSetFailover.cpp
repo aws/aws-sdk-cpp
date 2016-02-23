@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ResourceRecordSetFailoverMapper
 {
+
+
 ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PRIMARY_HASH)
   {
-    return ResourceRecordSetFailover::PRIMARY;
+     return ResourceRecordSetFailover::PRIMARY;
   }
   else if (hashCode == SECONDARY_HASH)
   {
-    return ResourceRecordSetFailover::SECONDARY;
+     return ResourceRecordSetFailover::SECONDARY;
   }
-
   return ResourceRecordSetFailover::NOT_SET;
 }
 

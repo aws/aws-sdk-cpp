@@ -30,27 +30,27 @@ namespace Model
 {
 namespace StateMapper
 {
+
+
 State GetStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return State::Pending;
+     return State::Pending;
   }
   else if (hashCode == Available_HASH)
   {
-    return State::Available;
+     return State::Available;
   }
   else if (hashCode == Deleting_HASH)
   {
-    return State::Deleting;
+     return State::Deleting;
   }
   else if (hashCode == Deleted_HASH)
   {
-    return State::Deleted;
+     return State::Deleted;
   }
-
   return State::NOT_SET;
 }
 

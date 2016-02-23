@@ -28,19 +28,19 @@ namespace Model
 {
 namespace CancelTimerFailedCauseMapper
 {
+
+
 CancelTimerFailedCause GetCancelTimerFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TIMER_ID_UNKNOWN_HASH)
   {
-    return CancelTimerFailedCause::TIMER_ID_UNKNOWN;
+     return CancelTimerFailedCause::TIMER_ID_UNKNOWN;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return CancelTimerFailedCause::OPERATION_NOT_PERMITTED;
+     return CancelTimerFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return CancelTimerFailedCause::NOT_SET;
 }
 

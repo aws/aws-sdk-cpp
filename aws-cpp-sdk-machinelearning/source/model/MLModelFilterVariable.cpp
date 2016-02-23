@@ -36,51 +36,51 @@ namespace Model
 {
 namespace MLModelFilterVariableMapper
 {
+
+
 MLModelFilterVariable GetMLModelFilterVariableForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CreatedAt_HASH)
   {
-    return MLModelFilterVariable::CreatedAt;
+     return MLModelFilterVariable::CreatedAt;
   }
   else if (hashCode == LastUpdatedAt_HASH)
   {
-    return MLModelFilterVariable::LastUpdatedAt;
+     return MLModelFilterVariable::LastUpdatedAt;
   }
   else if (hashCode == Status_HASH)
   {
-    return MLModelFilterVariable::Status;
+     return MLModelFilterVariable::Status;
   }
   else if (hashCode == Name_HASH)
   {
-    return MLModelFilterVariable::Name;
+     return MLModelFilterVariable::Name;
   }
   else if (hashCode == IAMUser_HASH)
   {
-    return MLModelFilterVariable::IAMUser;
+     return MLModelFilterVariable::IAMUser;
   }
   else if (hashCode == TrainingDataSourceId_HASH)
   {
-    return MLModelFilterVariable::TrainingDataSourceId;
+     return MLModelFilterVariable::TrainingDataSourceId;
   }
   else if (hashCode == RealtimeEndpointStatus_HASH)
   {
-    return MLModelFilterVariable::RealtimeEndpointStatus;
+     return MLModelFilterVariable::RealtimeEndpointStatus;
   }
   else if (hashCode == MLModelType_HASH)
   {
-    return MLModelFilterVariable::MLModelType;
+     return MLModelFilterVariable::MLModelType;
   }
   else if (hashCode == Algorithm_HASH)
   {
-    return MLModelFilterVariable::Algorithm;
+     return MLModelFilterVariable::Algorithm;
   }
   else if (hashCode == TrainingDataURI_HASH)
   {
-    return MLModelFilterVariable::TrainingDataURI;
+     return MLModelFilterVariable::TrainingDataURI;
   }
-
   return MLModelFilterVariable::NOT_SET;
 }
 

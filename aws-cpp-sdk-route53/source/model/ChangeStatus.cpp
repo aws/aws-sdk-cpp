@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ChangeStatusMapper
 {
+
+
 ChangeStatus GetChangeStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return ChangeStatus::PENDING;
+     return ChangeStatus::PENDING;
   }
   else if (hashCode == INSYNC_HASH)
   {
-    return ChangeStatus::INSYNC;
+     return ChangeStatus::INSYNC;
   }
-
   return ChangeStatus::NOT_SET;
 }
 

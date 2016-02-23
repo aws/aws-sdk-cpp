@@ -32,35 +32,35 @@ namespace Model
 {
 namespace DataSourceFilterVariableMapper
 {
+
+
 DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CreatedAt_HASH)
   {
-    return DataSourceFilterVariable::CreatedAt;
+     return DataSourceFilterVariable::CreatedAt;
   }
   else if (hashCode == LastUpdatedAt_HASH)
   {
-    return DataSourceFilterVariable::LastUpdatedAt;
+     return DataSourceFilterVariable::LastUpdatedAt;
   }
   else if (hashCode == Status_HASH)
   {
-    return DataSourceFilterVariable::Status;
+     return DataSourceFilterVariable::Status;
   }
   else if (hashCode == Name_HASH)
   {
-    return DataSourceFilterVariable::Name;
+     return DataSourceFilterVariable::Name;
   }
   else if (hashCode == DataLocationS3_HASH)
   {
-    return DataSourceFilterVariable::DataLocationS3;
+     return DataSourceFilterVariable::DataLocationS3;
   }
   else if (hashCode == IAMUser_HASH)
   {
-    return DataSourceFilterVariable::IAMUser;
+     return DataSourceFilterVariable::IAMUser;
   }
-
   return DataSourceFilterVariable::NOT_SET;
 }
 

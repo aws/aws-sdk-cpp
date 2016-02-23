@@ -28,19 +28,19 @@ namespace Model
 {
 namespace ShutdownBehaviorMapper
 {
+
+
 ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == stop_HASH)
   {
-    return ShutdownBehavior::stop;
+     return ShutdownBehavior::stop;
   }
   else if (hashCode == terminate_HASH)
   {
-    return ShutdownBehavior::terminate;
+     return ShutdownBehavior::terminate;
   }
-
   return ShutdownBehavior::NOT_SET;
 }
 

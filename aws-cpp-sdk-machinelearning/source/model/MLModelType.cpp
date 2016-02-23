@@ -29,23 +29,23 @@ namespace Model
 {
 namespace MLModelTypeMapper
 {
+
+
 MLModelType GetMLModelTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == REGRESSION_HASH)
   {
-    return MLModelType::REGRESSION;
+     return MLModelType::REGRESSION;
   }
   else if (hashCode == BINARY_HASH)
   {
-    return MLModelType::BINARY;
+     return MLModelType::BINARY;
   }
   else if (hashCode == MULTICLASS_HASH)
   {
-    return MLModelType::MULTICLASS;
+     return MLModelType::MULTICLASS;
   }
-
   return MLModelType::NOT_SET;
 }
 

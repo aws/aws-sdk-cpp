@@ -27,15 +27,15 @@ namespace Model
 {
 namespace AlgorithmMapper
 {
+
+
 Algorithm GetAlgorithmForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == sgd_HASH)
   {
-    return Algorithm::sgd;
+     return Algorithm::sgd;
   }
-
   return Algorithm::NOT_SET;
 }
 

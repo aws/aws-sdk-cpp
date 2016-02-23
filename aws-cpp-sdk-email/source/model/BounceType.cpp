@@ -32,35 +32,35 @@ namespace Model
 {
 namespace BounceTypeMapper
 {
+
+
 BounceType GetBounceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DoesNotExist_HASH)
   {
-    return BounceType::DoesNotExist;
+     return BounceType::DoesNotExist;
   }
   else if (hashCode == MessageTooLarge_HASH)
   {
-    return BounceType::MessageTooLarge;
+     return BounceType::MessageTooLarge;
   }
   else if (hashCode == ExceededQuota_HASH)
   {
-    return BounceType::ExceededQuota;
+     return BounceType::ExceededQuota;
   }
   else if (hashCode == ContentRejected_HASH)
   {
-    return BounceType::ContentRejected;
+     return BounceType::ContentRejected;
   }
   else if (hashCode == Undefined_HASH)
   {
-    return BounceType::Undefined;
+     return BounceType::Undefined;
   }
   else if (hashCode == TemporaryFailure_HASH)
   {
-    return BounceType::TemporaryFailure;
+     return BounceType::TemporaryFailure;
   }
-
   return BounceType::NOT_SET;
 }
 

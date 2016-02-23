@@ -32,35 +32,35 @@ namespace Model
 {
 namespace FailureTypeMapper
 {
+
+
 FailureType GetFailureTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == JobFailed_HASH)
   {
-    return FailureType::JobFailed;
+     return FailureType::JobFailed;
   }
   else if (hashCode == ConfigurationError_HASH)
   {
-    return FailureType::ConfigurationError;
+     return FailureType::ConfigurationError;
   }
   else if (hashCode == PermissionError_HASH)
   {
-    return FailureType::PermissionError;
+     return FailureType::PermissionError;
   }
   else if (hashCode == RevisionOutOfSync_HASH)
   {
-    return FailureType::RevisionOutOfSync;
+     return FailureType::RevisionOutOfSync;
   }
   else if (hashCode == RevisionUnavailable_HASH)
   {
-    return FailureType::RevisionUnavailable;
+     return FailureType::RevisionUnavailable;
   }
   else if (hashCode == SystemUnavailable_HASH)
   {
-    return FailureType::SystemUnavailable;
+     return FailureType::SystemUnavailable;
   }
-
   return FailureType::NOT_SET;
 }
 

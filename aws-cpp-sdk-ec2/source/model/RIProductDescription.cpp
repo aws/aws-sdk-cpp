@@ -30,27 +30,27 @@ namespace Model
 {
 namespace RIProductDescriptionMapper
 {
+
+
 RIProductDescription GetRIProductDescriptionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Linux_UNIX_HASH)
   {
-    return RIProductDescription::Linux_UNIX;
+     return RIProductDescription::Linux_UNIX;
   }
   else if (hashCode == Linux_UNIX_Amazon_VPC_HASH)
   {
-    return RIProductDescription::Linux_UNIX_Amazon_VPC;
+     return RIProductDescription::Linux_UNIX_Amazon_VPC;
   }
   else if (hashCode == Windows_HASH)
   {
-    return RIProductDescription::Windows;
+     return RIProductDescription::Windows;
   }
   else if (hashCode == Windows_Amazon_VPC_HASH)
   {
-    return RIProductDescription::Windows_Amazon_VPC;
+     return RIProductDescription::Windows_Amazon_VPC;
   }
-
   return RIProductDescription::NOT_SET;
 }
 

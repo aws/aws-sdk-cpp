@@ -28,19 +28,19 @@ namespace Model
 {
 namespace BillingMethodMapper
 {
+
+
 BillingMethod GetBillingMethodForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == METERED_HASH)
   {
-    return BillingMethod::METERED;
+     return BillingMethod::METERED;
   }
   else if (hashCode == UNMETERED_HASH)
   {
-    return BillingMethod::UNMETERED;
+     return BillingMethod::UNMETERED;
   }
-
   return BillingMethod::NOT_SET;
 }
 

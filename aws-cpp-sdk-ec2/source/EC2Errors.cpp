@@ -207,7 +207,7 @@ which allows constant time lookup. The chain has been broken into helper functio
 because MSVC has a maximum of 122 chained if-else blocks.
 */
 
-bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_ROUTE_TABLE_I_D__NOT_FOUND_HASH)
   {
@@ -822,7 +822,7 @@ bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   return false;
 }
 
-bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
   {
@@ -1090,7 +1090,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return error;
   }
-  if (GetErrorForNameHelper1(hashCode, error))
+  else if (GetErrorForNameHelper1(hashCode, error))
   {
     return error;
   }

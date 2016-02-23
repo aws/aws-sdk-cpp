@@ -28,19 +28,19 @@ namespace Model
 {
 namespace RuleStateMapper
 {
+
+
 RuleState GetRuleStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ENABLED_HASH)
   {
-    return RuleState::ENABLED;
+     return RuleState::ENABLED;
   }
   else if (hashCode == DISABLED_HASH)
   {
-    return RuleState::DISABLED;
+     return RuleState::DISABLED;
   }
-
   return RuleState::NOT_SET;
 }
 

@@ -28,19 +28,19 @@ namespace Model
 {
 namespace IdentityTypeMapper
 {
+
+
 IdentityType GetIdentityTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EmailAddress_HASH)
   {
-    return IdentityType::EmailAddress;
+     return IdentityType::EmailAddress;
   }
   else if (hashCode == Domain_HASH)
   {
-    return IdentityType::Domain;
+     return IdentityType::Domain;
   }
-
   return IdentityType::NOT_SET;
 }
 

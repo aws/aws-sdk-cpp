@@ -30,27 +30,27 @@ namespace Model
 {
 namespace ListingStatusMapper
 {
+
+
 ListingStatus GetListingStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == active_HASH)
   {
-    return ListingStatus::active;
+     return ListingStatus::active;
   }
   else if (hashCode == pending_HASH)
   {
-    return ListingStatus::pending;
+     return ListingStatus::pending;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return ListingStatus::cancelled;
+     return ListingStatus::cancelled;
   }
   else if (hashCode == closed_HASH)
   {
-    return ListingStatus::closed;
+     return ListingStatus::closed;
   }
-
   return ListingStatus::NOT_SET;
 }
 

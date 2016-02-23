@@ -29,23 +29,23 @@ namespace Model
 {
 namespace ComputeMapper
 {
+
+
 Compute GetComputeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == VALUE_HASH)
   {
-    return Compute::VALUE;
+     return Compute::VALUE;
   }
   else if (hashCode == STANDARD_HASH)
   {
-    return Compute::STANDARD;
+     return Compute::STANDARD;
   }
   else if (hashCode == PERFORMANCE_HASH)
   {
-    return Compute::PERFORMANCE;
+     return Compute::PERFORMANCE;
   }
-
   return Compute::NOT_SET;
 }
 

@@ -31,31 +31,31 @@ namespace Model
 {
 namespace InstanceStateMapper
 {
+
+
 InstanceState GetInstanceStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AWAITING_FULFILLMENT_HASH)
   {
-    return InstanceState::AWAITING_FULFILLMENT;
+     return InstanceState::AWAITING_FULFILLMENT;
   }
   else if (hashCode == PROVISIONING_HASH)
   {
-    return InstanceState::PROVISIONING;
+     return InstanceState::PROVISIONING;
   }
   else if (hashCode == BOOTSTRAPPING_HASH)
   {
-    return InstanceState::BOOTSTRAPPING;
+     return InstanceState::BOOTSTRAPPING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return InstanceState::RUNNING;
+     return InstanceState::RUNNING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return InstanceState::TERMINATED;
+     return InstanceState::TERMINATED;
   }
-
   return InstanceState::NOT_SET;
 }
 

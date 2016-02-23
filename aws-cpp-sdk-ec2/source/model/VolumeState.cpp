@@ -32,35 +32,35 @@ namespace Model
 {
 namespace VolumeStateMapper
 {
+
+
 VolumeState GetVolumeStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == creating_HASH)
   {
-    return VolumeState::creating;
+     return VolumeState::creating;
   }
   else if (hashCode == available_HASH)
   {
-    return VolumeState::available;
+     return VolumeState::available;
   }
   else if (hashCode == in_use_HASH)
   {
-    return VolumeState::in_use;
+     return VolumeState::in_use;
   }
   else if (hashCode == deleting_HASH)
   {
-    return VolumeState::deleting;
+     return VolumeState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return VolumeState::deleted;
+     return VolumeState::deleted;
   }
   else if (hashCode == error_HASH)
   {
-    return VolumeState::error;
+     return VolumeState::error;
   }
-
   return VolumeState::NOT_SET;
 }
 

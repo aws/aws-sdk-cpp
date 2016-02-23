@@ -37,55 +37,55 @@ namespace Model
 {
 namespace IndexFieldTypeMapper
 {
+
+
 IndexFieldType GetIndexFieldTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == int__HASH)
   {
-    return IndexFieldType::int_;
+     return IndexFieldType::int_;
   }
   else if (hashCode == double__HASH)
   {
-    return IndexFieldType::double_;
+     return IndexFieldType::double_;
   }
   else if (hashCode == literal_HASH)
   {
-    return IndexFieldType::literal;
+     return IndexFieldType::literal;
   }
   else if (hashCode == text_HASH)
   {
-    return IndexFieldType::text;
+     return IndexFieldType::text;
   }
   else if (hashCode == date_HASH)
   {
-    return IndexFieldType::date;
+     return IndexFieldType::date;
   }
   else if (hashCode == latlon_HASH)
   {
-    return IndexFieldType::latlon;
+     return IndexFieldType::latlon;
   }
   else if (hashCode == int_array_HASH)
   {
-    return IndexFieldType::int_array;
+     return IndexFieldType::int_array;
   }
   else if (hashCode == double_array_HASH)
   {
-    return IndexFieldType::double_array;
+     return IndexFieldType::double_array;
   }
   else if (hashCode == literal_array_HASH)
   {
-    return IndexFieldType::literal_array;
+     return IndexFieldType::literal_array;
   }
   else if (hashCode == text_array_HASH)
   {
-    return IndexFieldType::text_array;
+     return IndexFieldType::text_array;
   }
   else if (hashCode == date_array_HASH)
   {
-    return IndexFieldType::date_array;
+     return IndexFieldType::date_array;
   }
-
   return IndexFieldType::NOT_SET;
 }
 

@@ -30,27 +30,27 @@ namespace Model
 {
 namespace RealtimeEndpointStatusMapper
 {
+
+
 RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NONE_HASH)
   {
-    return RealtimeEndpointStatus::NONE;
+     return RealtimeEndpointStatus::NONE;
   }
   else if (hashCode == READY_HASH)
   {
-    return RealtimeEndpointStatus::READY;
+     return RealtimeEndpointStatus::READY;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return RealtimeEndpointStatus::UPDATING;
+     return RealtimeEndpointStatus::UPDATING;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return RealtimeEndpointStatus::FAILED;
+     return RealtimeEndpointStatus::FAILED;
   }
-
   return RealtimeEndpointStatus::NOT_SET;
 }
 
