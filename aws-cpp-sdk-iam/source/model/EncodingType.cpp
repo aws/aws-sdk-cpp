@@ -44,7 +44,7 @@ EncodingType GetEncodingTypeForName(const Aws::String& name)
   return EncodingType::NOT_SET;
 }
 
-Aws::String GetNameForEncodingType(EncodingType value)
+Aws::String GetNameForEncodingType(EncodingType enumValue)
 {
   switch(value)
   {

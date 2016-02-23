@@ -44,7 +44,7 @@ JobType GetJobTypeForName(const Aws::String& name)
   return JobType::NOT_SET;
 }
 
-Aws::String GetNameForJobType(JobType value)
+Aws::String GetNameForJobType(JobType enumValue)
 {
   switch(value)
   {

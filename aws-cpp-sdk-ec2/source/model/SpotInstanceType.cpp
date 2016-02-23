@@ -44,7 +44,7 @@ SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name)
   return SpotInstanceType::NOT_SET;
 }
 
-Aws::String GetNameForSpotInstanceType(SpotInstanceType value)
+Aws::String GetNameForSpotInstanceType(SpotInstanceType enumValue)
 {
   switch(value)
   {

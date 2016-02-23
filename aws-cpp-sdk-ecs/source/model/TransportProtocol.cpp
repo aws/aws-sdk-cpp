@@ -44,7 +44,7 @@ TransportProtocol GetTransportProtocolForName(const Aws::String& name)
   return TransportProtocol::NOT_SET;
 }
 
-Aws::String GetNameForTransportProtocol(TransportProtocol value)
+Aws::String GetNameForTransportProtocol(TransportProtocol enumValue)
 {
   switch(value)
   {

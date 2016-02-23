@@ -44,7 +44,7 @@ CancelTimerFailedCause GetCancelTimerFailedCauseForName(const Aws::String& name)
   return CancelTimerFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForCancelTimerFailedCause(CancelTimerFailedCause value)
+Aws::String GetNameForCancelTimerFailedCause(CancelTimerFailedCause enumValue)
 {
   switch(value)
   {

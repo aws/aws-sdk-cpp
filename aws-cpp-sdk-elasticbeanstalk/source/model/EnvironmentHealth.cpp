@@ -54,7 +54,7 @@ EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)
   return EnvironmentHealth::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentHealth(EnvironmentHealth value)
+Aws::String GetNameForEnvironmentHealth(EnvironmentHealth enumValue)
 {
   switch(value)
   {

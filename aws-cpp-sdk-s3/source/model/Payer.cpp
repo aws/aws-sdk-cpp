@@ -44,7 +44,7 @@ Payer GetPayerForName(const Aws::String& name)
   return Payer::NOT_SET;
 }
 
-Aws::String GetNameForPayer(Payer value)
+Aws::String GetNameForPayer(Payer enumValue)
 {
   switch(value)
   {

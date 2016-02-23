@@ -44,7 +44,7 @@ ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
   return ValidationSeverity::NOT_SET;
 }
 
-Aws::String GetNameForValidationSeverity(ValidationSeverity value)
+Aws::String GetNameForValidationSeverity(ValidationSeverity enumValue)
 {
   switch(value)
   {

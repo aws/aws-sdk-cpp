@@ -69,7 +69,7 @@ CommandInvocationStatus GetCommandInvocationStatusForName(const Aws::String& nam
   return CommandInvocationStatus::NOT_SET;
 }
 
-Aws::String GetNameForCommandInvocationStatus(CommandInvocationStatus value)
+Aws::String GetNameForCommandInvocationStatus(CommandInvocationStatus enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
   return KeyAlgorithm::NOT_SET;
 }
 
-Aws::String GetNameForKeyAlgorithm(KeyAlgorithm value)
+Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue)
 {
   switch(value)
   {

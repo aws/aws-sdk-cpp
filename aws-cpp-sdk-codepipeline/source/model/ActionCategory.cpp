@@ -59,7 +59,7 @@ ActionCategory GetActionCategoryForName(const Aws::String& name)
   return ActionCategory::NOT_SET;
 }
 
-Aws::String GetNameForActionCategory(ActionCategory value)
+Aws::String GetNameForActionCategory(ActionCategory enumValue)
 {
   switch(value)
   {

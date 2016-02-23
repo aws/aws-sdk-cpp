@@ -49,7 +49,7 @@ ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const 
   return ActionConfigurationPropertyType::NOT_SET;
 }
 
-Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType value)
+Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType enumValue)
 {
   switch(value)
   {

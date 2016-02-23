@@ -59,7 +59,7 @@ OperatorType GetOperatorTypeForName(const Aws::String& name)
   return OperatorType::NOT_SET;
 }
 
-Aws::String GetNameForOperatorType(OperatorType value)
+Aws::String GetNameForOperatorType(OperatorType enumValue)
 {
   switch(value)
   {

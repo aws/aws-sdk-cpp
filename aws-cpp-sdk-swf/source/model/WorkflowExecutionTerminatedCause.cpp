@@ -49,7 +49,7 @@ WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(cons
   return WorkflowExecutionTerminatedCause::NOT_SET;
 }
 
-Aws::String GetNameForWorkflowExecutionTerminatedCause(WorkflowExecutionTerminatedCause value)
+Aws::String GetNameForWorkflowExecutionTerminatedCause(WorkflowExecutionTerminatedCause enumValue)
 {
   switch(value)
   {

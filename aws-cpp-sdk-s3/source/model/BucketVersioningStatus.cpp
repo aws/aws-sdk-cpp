@@ -44,7 +44,7 @@ BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
   return BucketVersioningStatus::NOT_SET;
 }
 
-Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus value)
+Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus enumValue)
 {
   switch(value)
   {

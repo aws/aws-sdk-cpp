@@ -44,7 +44,7 @@ TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)
   return TelemetryStatus::NOT_SET;
 }
 
-Aws::String GetNameForTelemetryStatus(TelemetryStatus value)
+Aws::String GetNameForTelemetryStatus(TelemetryStatus enumValue)
 {
   switch(value)
   {

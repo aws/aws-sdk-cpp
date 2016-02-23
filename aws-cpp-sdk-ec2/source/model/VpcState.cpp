@@ -44,7 +44,7 @@ VpcState GetVpcStateForName(const Aws::String& name)
   return VpcState::NOT_SET;
 }
 
-Aws::String GetNameForVpcState(VpcState value)
+Aws::String GetNameForVpcState(VpcState enumValue)
 {
   switch(value)
   {

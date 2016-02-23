@@ -44,7 +44,7 @@ MoveStatus GetMoveStatusForName(const Aws::String& name)
   return MoveStatus::NOT_SET;
 }
 
-Aws::String GetNameForMoveStatus(MoveStatus value)
+Aws::String GetNameForMoveStatus(MoveStatus enumValue)
 {
   switch(value)
   {

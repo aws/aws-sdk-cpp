@@ -109,7 +109,7 @@ UploadType GetUploadTypeForName(const Aws::String& name)
   return UploadType::NOT_SET;
 }
 
-Aws::String GetNameForUploadType(UploadType value)
+Aws::String GetNameForUploadType(UploadType enumValue)
 {
   switch(value)
   {

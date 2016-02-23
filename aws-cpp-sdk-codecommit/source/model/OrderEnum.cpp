@@ -44,7 +44,7 @@ OrderEnum GetOrderEnumForName(const Aws::String& name)
   return OrderEnum::NOT_SET;
 }
 
-Aws::String GetNameForOrderEnum(OrderEnum value)
+Aws::String GetNameForOrderEnum(OrderEnum enumValue)
 {
   switch(value)
   {

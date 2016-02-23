@@ -44,7 +44,7 @@ RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForN
   return RequestCancelActivityTaskFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause value)
+Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause enumValue)
 {
   switch(value)
   {

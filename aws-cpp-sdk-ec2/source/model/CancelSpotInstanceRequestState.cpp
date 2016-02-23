@@ -59,7 +59,7 @@ CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aw
   return CancelSpotInstanceRequestState::NOT_SET;
 }
 
-Aws::String GetNameForCancelSpotInstanceRequestState(CancelSpotInstanceRequestState value)
+Aws::String GetNameForCancelSpotInstanceRequestState(CancelSpotInstanceRequestState enumValue)
 {
   switch(value)
   {

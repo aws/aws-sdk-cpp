@@ -169,7 +169,7 @@ StandardUnit GetStandardUnitForName(const Aws::String& name)
   return StandardUnit::NOT_SET;
 }
 
-Aws::String GetNameForStandardUnit(StandardUnit value)
+Aws::String GetNameForStandardUnit(StandardUnit enumValue)
 {
   switch(value)
   {

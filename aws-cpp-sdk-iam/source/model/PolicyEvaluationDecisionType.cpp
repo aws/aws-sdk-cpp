@@ -49,7 +49,7 @@ PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::S
   return PolicyEvaluationDecisionType::NOT_SET;
 }
 
-Aws::String GetNameForPolicyEvaluationDecisionType(PolicyEvaluationDecisionType value)
+Aws::String GetNameForPolicyEvaluationDecisionType(PolicyEvaluationDecisionType enumValue)
 {
   switch(value)
   {

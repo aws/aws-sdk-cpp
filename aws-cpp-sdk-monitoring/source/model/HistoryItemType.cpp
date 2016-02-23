@@ -49,7 +49,7 @@ HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
   return HistoryItemType::NOT_SET;
 }
 
-Aws::String GetNameForHistoryItemType(HistoryItemType value)
+Aws::String GetNameForHistoryItemType(HistoryItemType enumValue)
 {
   switch(value)
   {

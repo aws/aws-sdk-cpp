@@ -44,7 +44,7 @@ ChangeStatus GetChangeStatusForName(const Aws::String& name)
   return ChangeStatus::NOT_SET;
 }
 
-Aws::String GetNameForChangeStatus(ChangeStatus value)
+Aws::String GetNameForChangeStatus(ChangeStatus enumValue)
 {
   switch(value)
   {

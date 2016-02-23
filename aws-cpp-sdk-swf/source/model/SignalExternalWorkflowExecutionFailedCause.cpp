@@ -49,7 +49,7 @@ SignalExternalWorkflowExecutionFailedCause GetSignalExternalWorkflowExecutionFai
   return SignalExternalWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForSignalExternalWorkflowExecutionFailedCause(SignalExternalWorkflowExecutionFailedCause value)
+Aws::String GetNameForSignalExternalWorkflowExecutionFailedCause(SignalExternalWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

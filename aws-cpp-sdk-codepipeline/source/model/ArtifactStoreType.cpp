@@ -39,7 +39,7 @@ ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name)
   return ArtifactStoreType::NOT_SET;
 }
 
-Aws::String GetNameForArtifactStoreType(ArtifactStoreType value)
+Aws::String GetNameForArtifactStoreType(ArtifactStoreType enumValue)
 {
   switch(value)
   {

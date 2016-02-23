@@ -39,7 +39,7 @@ PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
   return PlacementStrategy::NOT_SET;
 }
 
-Aws::String GetNameForPlacementStrategy(PlacementStrategy value)
+Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue)
 {
   switch(value)
   {

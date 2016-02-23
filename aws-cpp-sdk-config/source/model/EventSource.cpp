@@ -39,7 +39,7 @@ EventSource GetEventSourceForName(const Aws::String& name)
   return EventSource::NOT_SET;
 }
 
-Aws::String GetNameForEventSource(EventSource value)
+Aws::String GetNameForEventSource(EventSource enumValue)
 {
   switch(value)
   {

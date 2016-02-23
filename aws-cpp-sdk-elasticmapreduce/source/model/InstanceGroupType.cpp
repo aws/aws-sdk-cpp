@@ -49,7 +49,7 @@ InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name)
   return InstanceGroupType::NOT_SET;
 }
 
-Aws::String GetNameForInstanceGroupType(InstanceGroupType value)
+Aws::String GetNameForInstanceGroupType(InstanceGroupType enumValue)
 {
   switch(value)
   {

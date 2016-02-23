@@ -44,7 +44,7 @@ SnapshotType GetSnapshotTypeForName(const Aws::String& name)
   return SnapshotType::NOT_SET;
 }
 
-Aws::String GetNameForSnapshotType(SnapshotType value)
+Aws::String GetNameForSnapshotType(SnapshotType enumValue)
 {
   switch(value)
   {

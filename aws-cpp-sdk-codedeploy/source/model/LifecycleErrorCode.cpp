@@ -64,7 +64,7 @@ LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
   return LifecycleErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode value)
+Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode enumValue)
 {
   switch(value)
   {

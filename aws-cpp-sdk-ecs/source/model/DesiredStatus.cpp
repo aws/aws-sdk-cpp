@@ -49,7 +49,7 @@ DesiredStatus GetDesiredStatusForName(const Aws::String& name)
   return DesiredStatus::NOT_SET;
 }
 
-Aws::String GetNameForDesiredStatus(DesiredStatus value)
+Aws::String GetNameForDesiredStatus(DesiredStatus enumValue)
 {
   switch(value)
   {

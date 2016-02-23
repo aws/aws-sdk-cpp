@@ -54,7 +54,7 @@ ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name)
   return ReservedInstanceState::NOT_SET;
 }
 
-Aws::String GetNameForReservedInstanceState(ReservedInstanceState value)
+Aws::String GetNameForReservedInstanceState(ReservedInstanceState enumValue)
 {
   switch(value)
   {

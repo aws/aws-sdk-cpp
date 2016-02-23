@@ -49,7 +49,7 @@ TagFilterType GetTagFilterTypeForName(const Aws::String& name)
   return TagFilterType::NOT_SET;
 }
 
-Aws::String GetNameForTagFilterType(TagFilterType value)
+Aws::String GetNameForTagFilterType(TagFilterType enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ EntityType GetEntityTypeForName(const Aws::String& name)
   return EntityType::NOT_SET;
 }
 
-Aws::String GetNameForEntityType(EntityType value)
+Aws::String GetNameForEntityType(EntityType enumValue)
 {
   switch(value)
   {

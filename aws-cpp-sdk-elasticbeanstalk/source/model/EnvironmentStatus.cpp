@@ -59,7 +59,7 @@ EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
   return EnvironmentStatus::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentStatus(EnvironmentStatus value)
+Aws::String GetNameForEnvironmentStatus(EnvironmentStatus enumValue)
 {
   switch(value)
   {

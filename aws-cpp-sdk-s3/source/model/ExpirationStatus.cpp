@@ -44,7 +44,7 @@ ExpirationStatus GetExpirationStatusForName(const Aws::String& name)
   return ExpirationStatus::NOT_SET;
 }
 
-Aws::String GetNameForExpirationStatus(ExpirationStatus value)
+Aws::String GetNameForExpirationStatus(ExpirationStatus enumValue)
 {
   switch(value)
   {

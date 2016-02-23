@@ -99,7 +99,7 @@ TestType GetTestTypeForName(const Aws::String& name)
   return TestType::NOT_SET;
 }
 
-Aws::String GetNameForTestType(TestType value)
+Aws::String GetNameForTestType(TestType enumValue)
 {
   switch(value)
   {

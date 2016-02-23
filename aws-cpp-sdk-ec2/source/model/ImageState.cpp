@@ -69,7 +69,7 @@ ImageState GetImageStateForName(const Aws::String& name)
   return ImageState::NOT_SET;
 }
 
-Aws::String GetNameForImageState(ImageState value)
+Aws::String GetNameForImageState(ImageState enumValue)
 {
   switch(value)
   {

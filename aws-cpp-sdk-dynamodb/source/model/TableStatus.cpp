@@ -54,7 +54,7 @@ TableStatus GetTableStatusForName(const Aws::String& name)
   return TableStatus::NOT_SET;
 }
 
-Aws::String GetNameForTableStatus(TableStatus value)
+Aws::String GetNameForTableStatus(TableStatus enumValue)
 {
   switch(value)
   {

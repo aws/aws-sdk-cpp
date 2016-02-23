@@ -44,7 +44,7 @@ DevicePlatform GetDevicePlatformForName(const Aws::String& name)
   return DevicePlatform::NOT_SET;
 }
 
-Aws::String GetNameForDevicePlatform(DevicePlatform value)
+Aws::String GetNameForDevicePlatform(DevicePlatform enumValue)
 {
   switch(value)
   {

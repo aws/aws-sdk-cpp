@@ -44,7 +44,7 @@ ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::Str
   return ReturnItemCollectionMetrics::NOT_SET;
 }
 
-Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics value)
+Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
 {
   switch(value)
   {

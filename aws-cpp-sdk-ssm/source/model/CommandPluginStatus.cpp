@@ -64,7 +64,7 @@ CommandPluginStatus GetCommandPluginStatusForName(const Aws::String& name)
   return CommandPluginStatus::NOT_SET;
 }
 
-Aws::String GetNameForCommandPluginStatus(CommandPluginStatus value)
+Aws::String GetNameForCommandPluginStatus(CommandPluginStatus enumValue)
 {
   switch(value)
   {

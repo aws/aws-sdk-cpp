@@ -44,7 +44,7 @@ TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
   return TransitionStorageClass::NOT_SET;
 }
 
-Aws::String GetNameForTransitionStorageClass(TransitionStorageClass value)
+Aws::String GetNameForTransitionStorageClass(TransitionStorageClass enumValue)
 {
   switch(value)
   {

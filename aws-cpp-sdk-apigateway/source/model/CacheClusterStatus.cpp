@@ -59,7 +59,7 @@ CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
   return CacheClusterStatus::NOT_SET;
 }
 
-Aws::String GetNameForCacheClusterStatus(CacheClusterStatus value)
+Aws::String GetNameForCacheClusterStatus(CacheClusterStatus enumValue)
 {
   switch(value)
   {

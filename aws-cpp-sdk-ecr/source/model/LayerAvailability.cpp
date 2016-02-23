@@ -44,7 +44,7 @@ LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)
   return LayerAvailability::NOT_SET;
 }
 
-Aws::String GetNameForLayerAvailability(LayerAvailability value)
+Aws::String GetNameForLayerAvailability(LayerAvailability enumValue)
 {
   switch(value)
   {

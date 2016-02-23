@@ -39,7 +39,7 @@ Capability GetCapabilityForName(const Aws::String& name)
   return Capability::NOT_SET;
 }
 
-Aws::String GetNameForCapability(Capability value)
+Aws::String GetNameForCapability(Capability enumValue)
 {
   switch(value)
   {

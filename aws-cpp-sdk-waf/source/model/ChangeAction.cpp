@@ -44,7 +44,7 @@ ChangeAction GetChangeActionForName(const Aws::String& name)
   return ChangeAction::NOT_SET;
 }
 
-Aws::String GetNameForChangeAction(ChangeAction value)
+Aws::String GetNameForChangeAction(ChangeAction enumValue)
 {
   switch(value)
   {

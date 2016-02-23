@@ -119,7 +119,7 @@ SampleType GetSampleTypeForName(const Aws::String& name)
   return SampleType::NOT_SET;
 }
 
-Aws::String GetNameForSampleType(SampleType value)
+Aws::String GetNameForSampleType(SampleType enumValue)
 {
   switch(value)
   {

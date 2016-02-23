@@ -79,7 +79,7 @@ ContinueAsNewWorkflowExecutionFailedCause GetContinueAsNewWorkflowExecutionFaile
   return ContinueAsNewWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForContinueAsNewWorkflowExecutionFailedCause(ContinueAsNewWorkflowExecutionFailedCause value)
+Aws::String GetNameForContinueAsNewWorkflowExecutionFailedCause(ContinueAsNewWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

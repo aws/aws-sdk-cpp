@@ -64,7 +64,7 @@ VolumeState GetVolumeStateForName(const Aws::String& name)
   return VolumeState::NOT_SET;
 }
 
-Aws::String GetNameForVolumeState(VolumeState value)
+Aws::String GetNameForVolumeState(VolumeState enumValue)
 {
   switch(value)
   {

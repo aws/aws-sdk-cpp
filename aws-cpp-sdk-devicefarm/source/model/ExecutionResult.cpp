@@ -69,7 +69,7 @@ ExecutionResult GetExecutionResultForName(const Aws::String& name)
   return ExecutionResult::NOT_SET;
 }
 
-Aws::String GetNameForExecutionResult(ExecutionResult value)
+Aws::String GetNameForExecutionResult(ExecutionResult enumValue)
 {
   switch(value)
   {

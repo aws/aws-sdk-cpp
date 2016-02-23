@@ -39,7 +39,7 @@ ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String&
   return ObjectVersionStorageClass::NOT_SET;
 }
 
-Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass value)
+Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass enumValue)
 {
   switch(value)
   {

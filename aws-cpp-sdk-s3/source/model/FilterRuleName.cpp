@@ -44,7 +44,7 @@ FilterRuleName GetFilterRuleNameForName(const Aws::String& name)
   return FilterRuleName::NOT_SET;
 }
 
-Aws::String GetNameForFilterRuleName(FilterRuleName value)
+Aws::String GetNameForFilterRuleName(FilterRuleName enumValue)
 {
   switch(value)
   {

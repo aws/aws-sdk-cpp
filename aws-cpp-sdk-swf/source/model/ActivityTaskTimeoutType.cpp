@@ -54,7 +54,7 @@ ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& nam
   return ActivityTaskTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType value)
+Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType enumValue)
 {
   switch(value)
   {

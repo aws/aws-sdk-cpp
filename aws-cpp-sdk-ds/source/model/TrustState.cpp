@@ -74,7 +74,7 @@ TrustState GetTrustStateForName(const Aws::String& name)
   return TrustState::NOT_SET;
 }
 
-Aws::String GetNameForTrustState(TrustState value)
+Aws::String GetNameForTrustState(TrustState enumValue)
 {
   switch(value)
   {

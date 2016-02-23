@@ -44,7 +44,7 @@ VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)
   return VirtualizationType::NOT_SET;
 }
 
-Aws::String GetNameForVirtualizationType(VirtualizationType value)
+Aws::String GetNameForVirtualizationType(VirtualizationType enumValue)
 {
   switch(value)
   {

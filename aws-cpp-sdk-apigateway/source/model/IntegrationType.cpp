@@ -49,7 +49,7 @@ IntegrationType GetIntegrationTypeForName(const Aws::String& name)
   return IntegrationType::NOT_SET;
 }
 
-Aws::String GetNameForIntegrationType(IntegrationType value)
+Aws::String GetNameForIntegrationType(IntegrationType enumValue)
 {
   switch(value)
   {

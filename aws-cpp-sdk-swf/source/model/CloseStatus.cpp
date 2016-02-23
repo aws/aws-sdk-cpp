@@ -64,7 +64,7 @@ CloseStatus GetCloseStatusForName(const Aws::String& name)
   return CloseStatus::NOT_SET;
 }
 
-Aws::String GetNameForCloseStatus(CloseStatus value)
+Aws::String GetNameForCloseStatus(CloseStatus enumValue)
 {
   switch(value)
   {

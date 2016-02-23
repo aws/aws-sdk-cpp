@@ -84,7 +84,7 @@ ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& nam
   return ResourceRecordSetRegion::NOT_SET;
 }
 
-Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion value)
+Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion enumValue)
 {
   switch(value)
   {

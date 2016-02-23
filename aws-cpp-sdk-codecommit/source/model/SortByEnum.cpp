@@ -44,7 +44,7 @@ SortByEnum GetSortByEnumForName(const Aws::String& name)
   return SortByEnum::NOT_SET;
 }
 
-Aws::String GetNameForSortByEnum(SortByEnum value)
+Aws::String GetNameForSortByEnum(SortByEnum enumValue)
 {
   switch(value)
   {

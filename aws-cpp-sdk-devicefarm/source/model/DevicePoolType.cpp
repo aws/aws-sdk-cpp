@@ -44,7 +44,7 @@ DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
   return DevicePoolType::NOT_SET;
 }
 
-Aws::String GetNameForDevicePoolType(DevicePoolType value)
+Aws::String GetNameForDevicePoolType(DevicePoolType enumValue)
 {
   switch(value)
   {

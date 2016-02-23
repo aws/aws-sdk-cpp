@@ -44,7 +44,7 @@ VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
   return VolumeAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForVolumeAttributeName(VolumeAttributeName value)
+Aws::String GetNameForVolumeAttributeName(VolumeAttributeName enumValue)
 {
   switch(value)
   {

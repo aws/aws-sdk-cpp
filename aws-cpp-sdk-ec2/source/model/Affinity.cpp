@@ -44,7 +44,7 @@ Affinity GetAffinityForName(const Aws::String& name)
   return Affinity::NOT_SET;
 }
 
-Aws::String GetNameForAffinity(Affinity value)
+Aws::String GetNameForAffinity(Affinity enumValue)
 {
   switch(value)
   {

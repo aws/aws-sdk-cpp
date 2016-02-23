@@ -99,7 +99,7 @@ QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
   return QueueAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForQueueAttributeName(QueueAttributeName value)
+Aws::String GetNameForQueueAttributeName(QueueAttributeName enumValue)
 {
   switch(value)
   {

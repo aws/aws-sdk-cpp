@@ -44,7 +44,7 @@ Protocol GetProtocolForName(const Aws::String& name)
   return Protocol::NOT_SET;
 }
 
-Aws::String GetNameForProtocol(Protocol value)
+Aws::String GetNameForProtocol(Protocol enumValue)
 {
   switch(value)
   {

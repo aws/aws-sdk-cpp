@@ -44,7 +44,7 @@ ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
   return ChronologicalOrder::NOT_SET;
 }
 
-Aws::String GetNameForChronologicalOrder(ChronologicalOrder value)
+Aws::String GetNameForChronologicalOrder(ChronologicalOrder enumValue)
 {
   switch(value)
   {

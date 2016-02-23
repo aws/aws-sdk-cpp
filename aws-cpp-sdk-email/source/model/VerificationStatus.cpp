@@ -59,7 +59,7 @@ VerificationStatus GetVerificationStatusForName(const Aws::String& name)
   return VerificationStatus::NOT_SET;
 }
 
-Aws::String GetNameForVerificationStatus(VerificationStatus value)
+Aws::String GetNameForVerificationStatus(VerificationStatus enumValue)
 {
   switch(value)
   {

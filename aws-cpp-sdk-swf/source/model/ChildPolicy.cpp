@@ -49,7 +49,7 @@ ChildPolicy GetChildPolicyForName(const Aws::String& name)
   return ChildPolicy::NOT_SET;
 }
 
-Aws::String GetNameForChildPolicy(ChildPolicy value)
+Aws::String GetNameForChildPolicy(ChildPolicy enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
   return NatGatewayState::NOT_SET;
 }
 
-Aws::String GetNameForNatGatewayState(NatGatewayState value)
+Aws::String GetNameForNatGatewayState(NatGatewayState enumValue)
 {
   switch(value)
   {

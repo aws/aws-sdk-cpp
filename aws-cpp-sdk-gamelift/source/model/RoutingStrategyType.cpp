@@ -44,7 +44,7 @@ RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)
   return RoutingStrategyType::NOT_SET;
 }
 
-Aws::String GetNameForRoutingStrategyType(RoutingStrategyType value)
+Aws::String GetNameForRoutingStrategyType(RoutingStrategyType enumValue)
 {
   switch(value)
   {

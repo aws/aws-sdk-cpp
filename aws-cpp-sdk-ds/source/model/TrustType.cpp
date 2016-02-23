@@ -39,7 +39,7 @@ TrustType GetTrustTypeForName(const Aws::String& name)
   return TrustType::NOT_SET;
 }
 
-Aws::String GetNameForTrustType(TrustType value)
+Aws::String GetNameForTrustType(TrustType enumValue)
 {
   switch(value)
   {

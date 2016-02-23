@@ -39,7 +39,7 @@ KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
   return KeyUsageType::NOT_SET;
 }
 
-Aws::String GetNameForKeyUsageType(KeyUsageType value)
+Aws::String GetNameForKeyUsageType(KeyUsageType enumValue)
 {
   switch(value)
   {

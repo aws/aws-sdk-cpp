@@ -39,7 +39,7 @@ VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
   return VpnStaticRouteSource::NOT_SET;
 }
 
-Aws::String GetNameForVpnStaticRouteSource(VpnStaticRouteSource value)
+Aws::String GetNameForVpnStaticRouteSource(VpnStaticRouteSource enumValue)
 {
   switch(value)
   {

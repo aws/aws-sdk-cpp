@@ -49,7 +49,7 @@ StorageClass GetStorageClassForName(const Aws::String& name)
   return StorageClass::NOT_SET;
 }
 
-Aws::String GetNameForStorageClass(StorageClass value)
+Aws::String GetNameForStorageClass(StorageClass enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ ProjectionType GetProjectionTypeForName(const Aws::String& name)
   return ProjectionType::NOT_SET;
 }
 
-Aws::String GetNameForProjectionType(ProjectionType value)
+Aws::String GetNameForProjectionType(ProjectionType enumValue)
 {
   switch(value)
   {

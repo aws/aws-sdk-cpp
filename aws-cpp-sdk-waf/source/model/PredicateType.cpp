@@ -54,7 +54,7 @@ PredicateType GetPredicateTypeForName(const Aws::String& name)
   return PredicateType::NOT_SET;
 }
 
-Aws::String GetNameForPredicateType(PredicateType value)
+Aws::String GetNameForPredicateType(PredicateType enumValue)
 {
   switch(value)
   {

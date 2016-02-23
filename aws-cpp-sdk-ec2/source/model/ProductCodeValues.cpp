@@ -44,7 +44,7 @@ ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
   return ProductCodeValues::NOT_SET;
 }
 
-Aws::String GetNameForProductCodeValues(ProductCodeValues value)
+Aws::String GetNameForProductCodeValues(ProductCodeValues enumValue)
 {
   switch(value)
   {

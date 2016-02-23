@@ -49,7 +49,7 @@ CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
   return CommandFilterKey::NOT_SET;
 }
 
-Aws::String GetNameForCommandFilterKey(CommandFilterKey value)
+Aws::String GetNameForCommandFilterKey(CommandFilterKey enumValue)
 {
   switch(value)
   {

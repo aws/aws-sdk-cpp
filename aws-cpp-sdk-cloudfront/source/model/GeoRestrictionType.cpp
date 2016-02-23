@@ -49,7 +49,7 @@ GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)
   return GeoRestrictionType::NOT_SET;
 }
 
-Aws::String GetNameForGeoRestrictionType(GeoRestrictionType value)
+Aws::String GetNameForGeoRestrictionType(GeoRestrictionType enumValue)
 {
   switch(value)
   {

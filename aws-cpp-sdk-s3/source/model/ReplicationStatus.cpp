@@ -54,7 +54,7 @@ ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
   return ReplicationStatus::NOT_SET;
 }
 
-Aws::String GetNameForReplicationStatus(ReplicationStatus value)
+Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue)
 {
   switch(value)
   {

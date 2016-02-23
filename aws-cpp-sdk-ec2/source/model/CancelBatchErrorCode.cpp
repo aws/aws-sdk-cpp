@@ -54,7 +54,7 @@ CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
   return CancelBatchErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode value)
+Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode enumValue)
 {
   switch(value)
   {

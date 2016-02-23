@@ -49,7 +49,7 @@ TaskStatus GetTaskStatusForName(const Aws::String& name)
   return TaskStatus::NOT_SET;
 }
 
-Aws::String GetNameForTaskStatus(TaskStatus value)
+Aws::String GetNameForTaskStatus(TaskStatus enumValue)
 {
   switch(value)
   {

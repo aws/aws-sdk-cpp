@@ -49,7 +49,7 @@ AttributeAction GetAttributeActionForName(const Aws::String& name)
   return AttributeAction::NOT_SET;
 }
 
-Aws::String GetNameForAttributeAction(AttributeAction value)
+Aws::String GetNameForAttributeAction(AttributeAction enumValue)
 {
   switch(value)
   {

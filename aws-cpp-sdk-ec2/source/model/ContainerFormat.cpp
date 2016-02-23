@@ -39,7 +39,7 @@ ContainerFormat GetContainerFormatForName(const Aws::String& name)
   return ContainerFormat::NOT_SET;
 }
 
-Aws::String GetNameForContainerFormat(ContainerFormat value)
+Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
 {
   switch(value)
   {

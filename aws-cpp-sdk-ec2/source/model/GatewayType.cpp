@@ -39,7 +39,7 @@ GatewayType GetGatewayTypeForName(const Aws::String& name)
   return GatewayType::NOT_SET;
 }
 
-Aws::String GetNameForGatewayType(GatewayType value)
+Aws::String GetNameForGatewayType(GatewayType enumValue)
 {
   switch(value)
   {

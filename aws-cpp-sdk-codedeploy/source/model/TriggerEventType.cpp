@@ -69,7 +69,7 @@ TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
   return TriggerEventType::NOT_SET;
 }
 
-Aws::String GetNameForTriggerEventType(TriggerEventType value)
+Aws::String GetNameForTriggerEventType(TriggerEventType enumValue)
 {
   switch(value)
   {

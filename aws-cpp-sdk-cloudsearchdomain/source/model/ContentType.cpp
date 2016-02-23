@@ -44,7 +44,7 @@ ContentType GetContentTypeForName(const Aws::String& name)
   return ContentType::NOT_SET;
 }
 
-Aws::String GetNameForContentType(ContentType value)
+Aws::String GetNameForContentType(ContentType enumValue)
 {
   switch(value)
   {

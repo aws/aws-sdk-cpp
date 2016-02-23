@@ -59,7 +59,7 @@ AllocationState GetAllocationStateForName(const Aws::String& name)
   return AllocationState::NOT_SET;
 }
 
-Aws::String GetNameForAllocationState(AllocationState value)
+Aws::String GetNameForAllocationState(AllocationState enumValue)
 {
   switch(value)
   {

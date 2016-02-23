@@ -69,7 +69,7 @@ Method GetMethodForName(const Aws::String& name)
   return Method::NOT_SET;
 }
 
-Aws::String GetNameForMethod(Method value)
+Aws::String GetNameForMethod(Method enumValue)
 {
   switch(value)
   {

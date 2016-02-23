@@ -54,7 +54,7 @@ RIProductDescription GetRIProductDescriptionForName(const Aws::String& name)
   return RIProductDescription::NOT_SET;
 }
 
-Aws::String GetNameForRIProductDescription(RIProductDescription value)
+Aws::String GetNameForRIProductDescription(RIProductDescription enumValue)
 {
   switch(value)
   {

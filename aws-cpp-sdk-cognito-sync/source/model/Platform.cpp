@@ -54,7 +54,7 @@ Platform GetPlatformForName(const Aws::String& name)
   return Platform::NOT_SET;
 }
 
-Aws::String GetNameForPlatform(Platform value)
+Aws::String GetNameForPlatform(Platform enumValue)
 {
   switch(value)
   {

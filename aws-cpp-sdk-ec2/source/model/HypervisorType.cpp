@@ -44,7 +44,7 @@ HypervisorType GetHypervisorTypeForName(const Aws::String& name)
   return HypervisorType::NOT_SET;
 }
 
-Aws::String GetNameForHypervisorType(HypervisorType value)
+Aws::String GetNameForHypervisorType(HypervisorType enumValue)
 {
   switch(value)
   {

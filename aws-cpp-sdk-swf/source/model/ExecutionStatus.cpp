@@ -44,7 +44,7 @@ ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
   return ExecutionStatus::NOT_SET;
 }
 
-Aws::String GetNameForExecutionStatus(ExecutionStatus value)
+Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue)
 {
   switch(value)
   {

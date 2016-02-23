@@ -49,7 +49,7 @@ OptionState GetOptionStateForName(const Aws::String& name)
   return OptionState::NOT_SET;
 }
 
-Aws::String GetNameForOptionState(OptionState value)
+Aws::String GetNameForOptionState(OptionState enumValue)
 {
   switch(value)
   {

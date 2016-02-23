@@ -39,7 +39,7 @@ Algorithm GetAlgorithmForName(const Aws::String& name)
   return Algorithm::NOT_SET;
 }
 
-Aws::String GetNameForAlgorithm(Algorithm value)
+Aws::String GetNameForAlgorithm(Algorithm enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
   return PositionalConstraint::NOT_SET;
 }
 
-Aws::String GetNameForPositionalConstraint(PositionalConstraint value)
+Aws::String GetNameForPositionalConstraint(PositionalConstraint enumValue)
 {
   switch(value)
   {

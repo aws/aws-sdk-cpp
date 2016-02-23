@@ -64,7 +64,7 @@ EventSeverity GetEventSeverityForName(const Aws::String& name)
   return EventSeverity::NOT_SET;
 }
 
-Aws::String GetNameForEventSeverity(EventSeverity value)
+Aws::String GetNameForEventSeverity(EventSeverity enumValue)
 {
   switch(value)
   {

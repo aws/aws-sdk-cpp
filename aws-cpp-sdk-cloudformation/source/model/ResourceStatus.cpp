@@ -84,7 +84,7 @@ ResourceStatus GetResourceStatusForName(const Aws::String& name)
   return ResourceStatus::NOT_SET;
 }
 
-Aws::String GetNameForResourceStatus(ResourceStatus value)
+Aws::String GetNameForResourceStatus(ResourceStatus enumValue)
 {
   switch(value)
   {

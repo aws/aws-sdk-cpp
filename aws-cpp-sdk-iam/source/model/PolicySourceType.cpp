@@ -69,7 +69,7 @@ PolicySourceType GetPolicySourceTypeForName(const Aws::String& name)
   return PolicySourceType::NOT_SET;
 }
 
-Aws::String GetNameForPolicySourceType(PolicySourceType value)
+Aws::String GetNameForPolicySourceType(PolicySourceType enumValue)
 {
   switch(value)
   {

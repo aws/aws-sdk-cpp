@@ -84,7 +84,7 @@ WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
   return WorkspaceState::NOT_SET;
 }
 
-Aws::String GetNameForWorkspaceState(WorkspaceState value)
+Aws::String GetNameForWorkspaceState(WorkspaceState enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
   return DocumentFilterKey::NOT_SET;
 }
 
-Aws::String GetNameForDocumentFilterKey(DocumentFilterKey value)
+Aws::String GetNameForDocumentFilterKey(DocumentFilterKey enumValue)
 {
   switch(value)
   {

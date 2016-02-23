@@ -44,7 +44,7 @@ RouteState GetRouteStateForName(const Aws::String& name)
   return RouteState::NOT_SET;
 }
 
-Aws::String GetNameForRouteState(RouteState value)
+Aws::String GetNameForRouteState(RouteState enumValue)
 {
   switch(value)
   {

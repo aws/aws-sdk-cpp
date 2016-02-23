@@ -39,7 +39,7 @@ StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aw
   return StartLambdaFunctionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause value)
+Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause enumValue)
 {
   switch(value)
   {

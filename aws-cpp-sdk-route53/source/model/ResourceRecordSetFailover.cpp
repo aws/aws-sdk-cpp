@@ -44,7 +44,7 @@ ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String&
   return ResourceRecordSetFailover::NOT_SET;
 }
 
-Aws::String GetNameForResourceRecordSetFailover(ResourceRecordSetFailover value)
+Aws::String GetNameForResourceRecordSetFailover(ResourceRecordSetFailover enumValue)
 {
   switch(value)
   {

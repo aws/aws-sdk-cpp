@@ -114,7 +114,7 @@ StackStatus GetStackStatusForName(const Aws::String& name)
   return StackStatus::NOT_SET;
 }
 
-Aws::String GetNameForStackStatus(StackStatus value)
+Aws::String GetNameForStackStatus(StackStatus enumValue)
 {
   switch(value)
   {

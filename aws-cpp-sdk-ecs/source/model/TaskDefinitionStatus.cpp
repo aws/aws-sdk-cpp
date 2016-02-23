@@ -44,7 +44,7 @@ TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
   return TaskDefinitionStatus::NOT_SET;
 }
 
-Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus value)
+Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus enumValue)
 {
   switch(value)
   {

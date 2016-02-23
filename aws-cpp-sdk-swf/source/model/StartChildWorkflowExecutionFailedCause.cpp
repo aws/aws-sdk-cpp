@@ -89,7 +89,7 @@ StartChildWorkflowExecutionFailedCause GetStartChildWorkflowExecutionFailedCause
   return StartChildWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForStartChildWorkflowExecutionFailedCause(StartChildWorkflowExecutionFailedCause value)
+Aws::String GetNameForStartChildWorkflowExecutionFailedCause(StartChildWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

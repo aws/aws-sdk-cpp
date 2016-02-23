@@ -94,7 +94,7 @@ ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
   return ContextKeyTypeEnum::NOT_SET;
 }
 
-Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum value)
+Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name)
   return CurrencyCodeValues::NOT_SET;
 }
 
-Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues value)
+Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues enumValue)
 {
   switch(value)
   {

@@ -69,7 +69,7 @@ ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name)
   return ObjectCannedACL::NOT_SET;
 }
 
-Aws::String GetNameForObjectCannedACL(ObjectCannedACL value)
+Aws::String GetNameForObjectCannedACL(ObjectCannedACL enumValue)
 {
   switch(value)
   {

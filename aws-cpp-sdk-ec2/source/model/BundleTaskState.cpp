@@ -69,7 +69,7 @@ BundleTaskState GetBundleTaskStateForName(const Aws::String& name)
   return BundleTaskState::NOT_SET;
 }
 
-Aws::String GetNameForBundleTaskState(BundleTaskState value)
+Aws::String GetNameForBundleTaskState(BundleTaskState enumValue)
 {
   switch(value)
   {

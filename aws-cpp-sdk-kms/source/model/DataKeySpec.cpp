@@ -44,7 +44,7 @@ DataKeySpec GetDataKeySpecForName(const Aws::String& name)
   return DataKeySpec::NOT_SET;
 }
 
-Aws::String GetNameForDataKeySpec(DataKeySpec value)
+Aws::String GetNameForDataKeySpec(DataKeySpec enumValue)
 {
   switch(value)
   {

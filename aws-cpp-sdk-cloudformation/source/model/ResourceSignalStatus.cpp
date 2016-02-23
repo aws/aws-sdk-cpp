@@ -44,7 +44,7 @@ ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
   return ResourceSignalStatus::NOT_SET;
 }
 
-Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus value)
+Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus enumValue)
 {
   switch(value)
   {

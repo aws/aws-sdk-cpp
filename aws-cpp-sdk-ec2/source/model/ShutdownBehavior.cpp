@@ -44,7 +44,7 @@ ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
   return ShutdownBehavior::NOT_SET;
 }
 
-Aws::String GetNameForShutdownBehavior(ShutdownBehavior value)
+Aws::String GetNameForShutdownBehavior(ShutdownBehavior enumValue)
 {
   switch(value)
   {

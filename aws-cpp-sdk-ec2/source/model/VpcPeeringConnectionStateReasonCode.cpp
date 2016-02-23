@@ -79,7 +79,7 @@ VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForNam
   return VpcPeeringConnectionStateReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode value)
+Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode enumValue)
 {
   switch(value)
   {

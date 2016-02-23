@@ -159,7 +159,7 @@ LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
   return LayerAttributesKeys::NOT_SET;
 }
 
-Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys value)
+Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys enumValue)
 {
   switch(value)
   {

@@ -54,7 +54,7 @@ UploadStatus GetUploadStatusForName(const Aws::String& name)
   return UploadStatus::NOT_SET;
 }
 
-Aws::String GetNameForUploadStatus(UploadStatus value)
+Aws::String GetNameForUploadStatus(UploadStatus enumValue)
 {
   switch(value)
   {

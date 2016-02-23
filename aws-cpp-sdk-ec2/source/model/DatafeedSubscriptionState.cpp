@@ -44,7 +44,7 @@ DatafeedSubscriptionState GetDatafeedSubscriptionStateForName(const Aws::String&
   return DatafeedSubscriptionState::NOT_SET;
 }
 
-Aws::String GetNameForDatafeedSubscriptionState(DatafeedSubscriptionState value)
+Aws::String GetNameForDatafeedSubscriptionState(DatafeedSubscriptionState enumValue)
 {
   switch(value)
   {

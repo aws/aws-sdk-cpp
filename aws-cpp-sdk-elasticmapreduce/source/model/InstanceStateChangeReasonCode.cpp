@@ -59,7 +59,7 @@ InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws:
   return InstanceStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode value)
+Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode enumValue)
 {
   switch(value)
   {

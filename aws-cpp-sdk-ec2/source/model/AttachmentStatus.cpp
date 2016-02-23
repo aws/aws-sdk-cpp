@@ -54,7 +54,7 @@ AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
   return AttachmentStatus::NOT_SET;
 }
 
-Aws::String GetNameForAttachmentStatus(AttachmentStatus value)
+Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue)
 {
   switch(value)
   {

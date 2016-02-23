@@ -99,7 +99,7 @@ InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
   return InstanceAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForInstanceAttributeName(InstanceAttributeName value)
+Aws::String GetNameForInstanceAttributeName(InstanceAttributeName enumValue)
 {
   switch(value)
   {

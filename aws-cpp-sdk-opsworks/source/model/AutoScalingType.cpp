@@ -44,7 +44,7 @@ AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)
   return AutoScalingType::NOT_SET;
 }
 
-Aws::String GetNameForAutoScalingType(AutoScalingType value)
+Aws::String GetNameForAutoScalingType(AutoScalingType enumValue)
 {
   switch(value)
   {

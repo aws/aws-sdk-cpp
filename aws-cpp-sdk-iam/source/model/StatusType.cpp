@@ -44,7 +44,7 @@ StatusType GetStatusTypeForName(const Aws::String& name)
   return StatusType::NOT_SET;
 }
 
-Aws::String GetNameForStatusType(StatusType value)
+Aws::String GetNameForStatusType(StatusType enumValue)
 {
   switch(value)
   {

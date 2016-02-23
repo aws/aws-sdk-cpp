@@ -49,7 +49,7 @@ PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name)
   return PolicyScopeType::NOT_SET;
 }
 
-Aws::String GetNameForPolicyScopeType(PolicyScopeType value)
+Aws::String GetNameForPolicyScopeType(PolicyScopeType enumValue)
 {
   switch(value)
   {

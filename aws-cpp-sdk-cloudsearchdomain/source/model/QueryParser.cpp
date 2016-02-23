@@ -54,7 +54,7 @@ QueryParser GetQueryParserForName(const Aws::String& name)
   return QueryParser::NOT_SET;
 }
 
-Aws::String GetNameForQueryParser(QueryParser value)
+Aws::String GetNameForQueryParser(QueryParser enumValue)
 {
   switch(value)
   {

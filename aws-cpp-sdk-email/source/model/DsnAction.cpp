@@ -59,7 +59,7 @@ DsnAction GetDsnActionForName(const Aws::String& name)
   return DsnAction::NOT_SET;
 }
 
-Aws::String GetNameForDsnAction(DsnAction value)
+Aws::String GetNameForDsnAction(DsnAction enumValue)
 {
   switch(value)
   {

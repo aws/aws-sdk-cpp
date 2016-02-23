@@ -54,7 +54,7 @@ ComplianceType GetComplianceTypeForName(const Aws::String& name)
   return ComplianceType::NOT_SET;
 }
 
-Aws::String GetNameForComplianceType(ComplianceType value)
+Aws::String GetNameForComplianceType(ComplianceType enumValue)
 {
   switch(value)
   {

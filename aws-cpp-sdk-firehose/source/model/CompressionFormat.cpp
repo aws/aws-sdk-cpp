@@ -54,7 +54,7 @@ CompressionFormat GetCompressionFormatForName(const Aws::String& name)
   return CompressionFormat::NOT_SET;
 }
 
-Aws::String GetNameForCompressionFormat(CompressionFormat value)
+Aws::String GetNameForCompressionFormat(CompressionFormat enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ ReportStateType GetReportStateTypeForName(const Aws::String& name)
   return ReportStateType::NOT_SET;
 }
 
-Aws::String GetNameForReportStateType(ReportStateType value)
+Aws::String GetNameForReportStateType(ReportStateType enumValue)
 {
   switch(value)
   {

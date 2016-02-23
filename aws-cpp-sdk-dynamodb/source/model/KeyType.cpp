@@ -44,7 +44,7 @@ KeyType GetKeyTypeForName(const Aws::String& name)
   return KeyType::NOT_SET;
 }
 
-Aws::String GetNameForKeyType(KeyType value)
+Aws::String GetNameForKeyType(KeyType enumValue)
 {
   switch(value)
   {

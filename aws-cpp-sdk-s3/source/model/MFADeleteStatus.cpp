@@ -44,7 +44,7 @@ MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
   return MFADeleteStatus::NOT_SET;
 }
 
-Aws::String GetNameForMFADeleteStatus(MFADeleteStatus value)
+Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue)
 {
   switch(value)
   {

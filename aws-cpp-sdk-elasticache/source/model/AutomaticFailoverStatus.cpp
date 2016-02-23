@@ -54,7 +54,7 @@ AutomaticFailoverStatus GetAutomaticFailoverStatusForName(const Aws::String& nam
   return AutomaticFailoverStatus::NOT_SET;
 }
 
-Aws::String GetNameForAutomaticFailoverStatus(AutomaticFailoverStatus value)
+Aws::String GetNameForAutomaticFailoverStatus(AutomaticFailoverStatus enumValue)
 {
   switch(value)
   {

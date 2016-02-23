@@ -39,7 +39,7 @@ ArtifactLocationType GetArtifactLocationTypeForName(const Aws::String& name)
   return ArtifactLocationType::NOT_SET;
 }
 
-Aws::String GetNameForArtifactLocationType(ArtifactLocationType value)
+Aws::String GetNameForArtifactLocationType(ArtifactLocationType enumValue)
 {
   switch(value)
   {

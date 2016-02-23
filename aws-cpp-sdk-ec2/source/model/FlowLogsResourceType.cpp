@@ -49,7 +49,7 @@ FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
   return FlowLogsResourceType::NOT_SET;
 }
 
-Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType value)
+Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue)
 {
   switch(value)
   {

@@ -69,7 +69,7 @@ CommandStatus GetCommandStatusForName(const Aws::String& name)
   return CommandStatus::NOT_SET;
 }
 
-Aws::String GetNameForCommandStatus(CommandStatus value)
+Aws::String GetNameForCommandStatus(CommandStatus enumValue)
 {
   switch(value)
   {

@@ -99,7 +99,7 @@ DecisionType GetDecisionTypeForName(const Aws::String& name)
   return DecisionType::NOT_SET;
 }
 
-Aws::String GetNameForDecisionType(DecisionType value)
+Aws::String GetNameForDecisionType(DecisionType enumValue)
 {
   switch(value)
   {

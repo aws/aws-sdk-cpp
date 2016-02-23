@@ -44,7 +44,7 @@ SortOrder GetSortOrderForName(const Aws::String& name)
   return SortOrder::NOT_SET;
 }
 
-Aws::String GetNameForSortOrder(SortOrder value)
+Aws::String GetNameForSortOrder(SortOrder enumValue)
 {
   switch(value)
   {

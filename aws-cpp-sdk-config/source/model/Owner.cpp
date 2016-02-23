@@ -44,7 +44,7 @@ Owner GetOwnerForName(const Aws::String& name)
   return Owner::NOT_SET;
 }
 
-Aws::String GetNameForOwner(Owner value)
+Aws::String GetNameForOwner(Owner enumValue)
 {
   switch(value)
   {

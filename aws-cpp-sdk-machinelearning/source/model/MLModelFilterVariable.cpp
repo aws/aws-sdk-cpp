@@ -84,7 +84,7 @@ MLModelFilterVariable GetMLModelFilterVariableForName(const Aws::String& name)
   return MLModelFilterVariable::NOT_SET;
 }
 
-Aws::String GetNameForMLModelFilterVariable(MLModelFilterVariable value)
+Aws::String GetNameForMLModelFilterVariable(MLModelFilterVariable enumValue)
 {
   switch(value)
   {

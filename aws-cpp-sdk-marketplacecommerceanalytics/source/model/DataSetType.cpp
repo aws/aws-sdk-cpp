@@ -124,7 +124,7 @@ DataSetType GetDataSetTypeForName(const Aws::String& name)
   return DataSetType::NOT_SET;
 }
 
-Aws::String GetNameForDataSetType(DataSetType value)
+Aws::String GetNameForDataSetType(DataSetType enumValue)
 {
   switch(value)
   {

@@ -304,7 +304,7 @@ InstanceType GetInstanceTypeForName(const Aws::String& name)
   return InstanceType::NOT_SET;
 }
 
-Aws::String GetNameForInstanceType(InstanceType value)
+Aws::String GetNameForInstanceType(InstanceType enumValue)
 {
   switch(value)
   {

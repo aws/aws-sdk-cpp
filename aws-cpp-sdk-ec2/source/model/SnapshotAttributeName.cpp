@@ -44,7 +44,7 @@ SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
   return SnapshotAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForSnapshotAttributeName(SnapshotAttributeName value)
+Aws::String GetNameForSnapshotAttributeName(SnapshotAttributeName enumValue)
 {
   switch(value)
   {

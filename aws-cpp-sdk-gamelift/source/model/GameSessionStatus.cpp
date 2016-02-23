@@ -54,7 +54,7 @@ GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
   return GameSessionStatus::NOT_SET;
 }
 
-Aws::String GetNameForGameSessionStatus(GameSessionStatus value)
+Aws::String GetNameForGameSessionStatus(GameSessionStatus enumValue)
 {
   switch(value)
   {

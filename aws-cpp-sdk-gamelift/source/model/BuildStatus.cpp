@@ -49,7 +49,7 @@ BuildStatus GetBuildStatusForName(const Aws::String& name)
   return BuildStatus::NOT_SET;
 }
 
-Aws::String GetNameForBuildStatus(BuildStatus value)
+Aws::String GetNameForBuildStatus(BuildStatus enumValue)
 {
   switch(value)
   {

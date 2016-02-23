@@ -59,7 +59,7 @@ OperationStatus GetOperationStatusForName(const Aws::String& name)
   return OperationStatus::NOT_SET;
 }
 
-Aws::String GetNameForOperationStatus(OperationStatus value)
+Aws::String GetNameForOperationStatus(OperationStatus enumValue)
 {
   switch(value)
   {

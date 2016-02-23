@@ -174,7 +174,7 @@ EC2InstanceType GetEC2InstanceTypeForName(const Aws::String& name)
   return EC2InstanceType::NOT_SET;
 }
 
-Aws::String GetNameForEC2InstanceType(EC2InstanceType value)
+Aws::String GetNameForEC2InstanceType(EC2InstanceType enumValue)
 {
   switch(value)
   {

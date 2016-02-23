@@ -39,7 +39,7 @@ SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
   return SubscriptionType::NOT_SET;
 }
 
-Aws::String GetNameForSubscriptionType(SubscriptionType value)
+Aws::String GetNameForSubscriptionType(SubscriptionType enumValue)
 {
   switch(value)
   {

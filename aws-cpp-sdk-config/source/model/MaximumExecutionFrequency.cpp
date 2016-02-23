@@ -59,7 +59,7 @@ MaximumExecutionFrequency GetMaximumExecutionFrequencyForName(const Aws::String&
   return MaximumExecutionFrequency::NOT_SET;
 }
 
-Aws::String GetNameForMaximumExecutionFrequency(MaximumExecutionFrequency value)
+Aws::String GetNameForMaximumExecutionFrequency(MaximumExecutionFrequency enumValue)
 {
   switch(value)
   {

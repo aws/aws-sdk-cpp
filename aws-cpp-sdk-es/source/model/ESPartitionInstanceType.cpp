@@ -104,7 +104,7 @@ ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& nam
   return ESPartitionInstanceType::NOT_SET;
 }
 
-Aws::String GetNameForESPartitionInstanceType(ESPartitionInstanceType value)
+Aws::String GetNameForESPartitionInstanceType(ESPartitionInstanceType enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
   return ReturnConsumedCapacity::NOT_SET;
 }
 
-Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value)
+Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity enumValue)
 {
   switch(value)
   {

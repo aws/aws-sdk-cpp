@@ -49,7 +49,7 @@ WafActionType GetWafActionTypeForName(const Aws::String& name)
   return WafActionType::NOT_SET;
 }
 
-Aws::String GetNameForWafActionType(WafActionType value)
+Aws::String GetNameForWafActionType(WafActionType enumValue)
 {
   switch(value)
   {

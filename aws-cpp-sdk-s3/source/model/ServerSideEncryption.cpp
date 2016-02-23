@@ -44,7 +44,7 @@ ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)
   return ServerSideEncryption::NOT_SET;
 }
 
-Aws::String GetNameForServerSideEncryption(ServerSideEncryption value)
+Aws::String GetNameForServerSideEncryption(ServerSideEncryption enumValue)
 {
   switch(value)
   {

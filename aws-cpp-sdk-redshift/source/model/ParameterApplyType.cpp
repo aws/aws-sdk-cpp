@@ -44,7 +44,7 @@ ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
   return ParameterApplyType::NOT_SET;
 }
 
-Aws::String GetNameForParameterApplyType(ParameterApplyType value)
+Aws::String GetNameForParameterApplyType(ParameterApplyType enumValue)
 {
   switch(value)
   {

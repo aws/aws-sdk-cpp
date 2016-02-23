@@ -49,7 +49,7 @@ TrustDirection GetTrustDirectionForName(const Aws::String& name)
   return TrustDirection::NOT_SET;
 }
 
-Aws::String GetNameForTrustDirection(TrustDirection value)
+Aws::String GetNameForTrustDirection(TrustDirection enumValue)
 {
   switch(value)
   {

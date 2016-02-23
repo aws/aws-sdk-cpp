@@ -59,7 +59,7 @@ SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
   return SpotInstanceState::NOT_SET;
 }
 
-Aws::String GetNameForSpotInstanceState(SpotInstanceState value)
+Aws::String GetNameForSpotInstanceState(SpotInstanceState enumValue)
 {
   switch(value)
   {

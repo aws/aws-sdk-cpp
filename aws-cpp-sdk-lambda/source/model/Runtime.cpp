@@ -49,7 +49,7 @@ Runtime GetRuntimeForName(const Aws::String& name)
   return Runtime::NOT_SET;
 }
 
-Aws::String GetNameForRuntime(Runtime value)
+Aws::String GetNameForRuntime(Runtime enumValue)
 {
   switch(value)
   {

@@ -79,7 +79,7 @@ GrantOperation GetGrantOperationForName(const Aws::String& name)
   return GrantOperation::NOT_SET;
 }
 
-Aws::String GetNameForGrantOperation(GrantOperation value)
+Aws::String GetNameForGrantOperation(GrantOperation enumValue)
 {
   switch(value)
   {

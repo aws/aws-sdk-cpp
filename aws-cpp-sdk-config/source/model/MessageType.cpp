@@ -44,7 +44,7 @@ MessageType GetMessageTypeForName(const Aws::String& name)
   return MessageType::NOT_SET;
 }
 
-Aws::String GetNameForMessageType(MessageType value)
+Aws::String GetNameForMessageType(MessageType enumValue)
 {
   switch(value)
   {

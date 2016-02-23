@@ -44,7 +44,7 @@ AZMode GetAZModeForName(const Aws::String& name)
   return AZMode::NOT_SET;
 }
 
-Aws::String GetNameForAZMode(AZMode value)
+Aws::String GetNameForAZMode(AZMode enumValue)
 {
   switch(value)
   {

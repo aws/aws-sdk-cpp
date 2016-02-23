@@ -49,7 +49,7 @@ StatusCode GetStatusCodeForName(const Aws::String& name)
   return StatusCode::NOT_SET;
 }
 
-Aws::String GetNameForStatusCode(StatusCode value)
+Aws::String GetNameForStatusCode(StatusCode enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ EntityStatus GetEntityStatusForName(const Aws::String& name)
   return EntityStatus::NOT_SET;
 }
 
-Aws::String GetNameForEntityStatus(EntityStatus value)
+Aws::String GetNameForEntityStatus(EntityStatus enumValue)
 {
   switch(value)
   {

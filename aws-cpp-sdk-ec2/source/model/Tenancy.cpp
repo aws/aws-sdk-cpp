@@ -49,7 +49,7 @@ Tenancy GetTenancyForName(const Aws::String& name)
   return Tenancy::NOT_SET;
 }
 
-Aws::String GetNameForTenancy(Tenancy value)
+Aws::String GetNameForTenancy(Tenancy enumValue)
 {
   switch(value)
   {

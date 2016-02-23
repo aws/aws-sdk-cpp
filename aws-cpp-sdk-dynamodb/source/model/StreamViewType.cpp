@@ -54,7 +54,7 @@ StreamViewType GetStreamViewTypeForName(const Aws::String& name)
   return StreamViewType::NOT_SET;
 }
 
-Aws::String GetNameForStreamViewType(StreamViewType value)
+Aws::String GetNameForStreamViewType(StreamViewType enumValue)
 {
   switch(value)
   {

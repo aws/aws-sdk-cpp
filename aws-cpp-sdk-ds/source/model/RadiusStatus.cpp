@@ -49,7 +49,7 @@ RadiusStatus GetRadiusStatusForName(const Aws::String& name)
   return RadiusStatus::NOT_SET;
 }
 
-Aws::String GetNameForRadiusStatus(RadiusStatus value)
+Aws::String GetNameForRadiusStatus(RadiusStatus enumValue)
 {
   switch(value)
   {

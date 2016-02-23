@@ -39,7 +39,7 @@ BlockerType GetBlockerTypeForName(const Aws::String& name)
   return BlockerType::NOT_SET;
 }
 
-Aws::String GetNameForBlockerType(BlockerType value)
+Aws::String GetNameForBlockerType(BlockerType enumValue)
 {
   switch(value)
   {

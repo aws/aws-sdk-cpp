@@ -44,7 +44,7 @@ MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& nam
   return MinimumHealthyHostsType::NOT_SET;
 }
 
-Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType value)
+Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType enumValue)
 {
   switch(value)
   {

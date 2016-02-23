@@ -39,7 +39,7 @@ IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
   return IPSetDescriptorType::NOT_SET;
 }
 
-Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType value)
+Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType enumValue)
 {
   switch(value)
   {

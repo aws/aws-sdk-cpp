@@ -49,7 +49,7 @@ ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
   return ImageTypeValues::NOT_SET;
 }
 
-Aws::String GetNameForImageTypeValues(ImageTypeValues value)
+Aws::String GetNameForImageTypeValues(ImageTypeValues enumValue)
 {
   switch(value)
   {

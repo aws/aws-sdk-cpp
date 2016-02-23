@@ -54,7 +54,7 @@ State GetStateForName(const Aws::String& name)
   return State::NOT_SET;
 }
 
-Aws::String GetNameForState(State value)
+Aws::String GetNameForState(State enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
   return DeploymentCreator::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentCreator(DeploymentCreator value)
+Aws::String GetNameForDeploymentCreator(DeploymentCreator enumValue)
 {
   switch(value)
   {

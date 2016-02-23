@@ -39,7 +39,7 @@ RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& nam
   return RecordMarkerFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause value)
+Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause enumValue)
 {
   switch(value)
   {

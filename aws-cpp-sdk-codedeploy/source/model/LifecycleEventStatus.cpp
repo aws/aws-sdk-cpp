@@ -64,7 +64,7 @@ LifecycleEventStatus GetLifecycleEventStatusForName(const Aws::String& name)
   return LifecycleEventStatus::NOT_SET;
 }
 
-Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus value)
+Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus enumValue)
 {
   switch(value)
   {

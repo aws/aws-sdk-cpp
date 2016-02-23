@@ -54,7 +54,7 @@ ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(co
   return ScheduleLambdaFunctionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForScheduleLambdaFunctionFailedCause(ScheduleLambdaFunctionFailedCause value)
+Aws::String GetNameForScheduleLambdaFunctionFailedCause(ScheduleLambdaFunctionFailedCause enumValue)
 {
   switch(value)
   {

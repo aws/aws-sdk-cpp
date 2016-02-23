@@ -49,7 +49,7 @@ BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)
   return BucketLogsPermission::NOT_SET;
 }
 
-Aws::String GetNameForBucketLogsPermission(BucketLogsPermission value)
+Aws::String GetNameForBucketLogsPermission(BucketLogsPermission enumValue)
 {
   switch(value)
   {

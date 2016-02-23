@@ -49,7 +49,7 @@ RouteOrigin GetRouteOriginForName(const Aws::String& name)
   return RouteOrigin::NOT_SET;
 }
 
-Aws::String GetNameForRouteOrigin(RouteOrigin value)
+Aws::String GetNameForRouteOrigin(RouteOrigin enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ Type GetTypeForName(const Aws::String& name)
   return Type::NOT_SET;
 }
 
-Aws::String GetNameForType(Type value)
+Aws::String GetNameForType(Type enumValue)
 {
   switch(value)
   {

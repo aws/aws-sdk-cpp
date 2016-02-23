@@ -54,7 +54,7 @@ InstanceGroupStateChangeReasonCode GetInstanceGroupStateChangeReasonCodeForName(
   return InstanceGroupStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForInstanceGroupStateChangeReasonCode(InstanceGroupStateChangeReasonCode value)
+Aws::String GetNameForInstanceGroupStateChangeReasonCode(InstanceGroupStateChangeReasonCode enumValue)
 {
   switch(value)
   {

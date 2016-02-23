@@ -69,7 +69,7 @@ OperationType GetOperationTypeForName(const Aws::String& name)
   return OperationType::NOT_SET;
 }
 
-Aws::String GetNameForOperationType(OperationType value)
+Aws::String GetNameForOperationType(OperationType enumValue)
 {
   switch(value)
   {

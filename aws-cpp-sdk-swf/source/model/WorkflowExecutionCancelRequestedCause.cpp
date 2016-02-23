@@ -39,7 +39,7 @@ WorkflowExecutionCancelRequestedCause GetWorkflowExecutionCancelRequestedCauseFo
   return WorkflowExecutionCancelRequestedCause::NOT_SET;
 }
 
-Aws::String GetNameForWorkflowExecutionCancelRequestedCause(WorkflowExecutionCancelRequestedCause value)
+Aws::String GetNameForWorkflowExecutionCancelRequestedCause(WorkflowExecutionCancelRequestedCause enumValue)
 {
   switch(value)
   {

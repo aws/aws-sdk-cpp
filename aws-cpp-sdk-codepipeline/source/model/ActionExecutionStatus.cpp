@@ -49,7 +49,7 @@ ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
   return ActionExecutionStatus::NOT_SET;
 }
 
-Aws::String GetNameForActionExecutionStatus(ActionExecutionStatus value)
+Aws::String GetNameForActionExecutionStatus(ActionExecutionStatus enumValue)
 {
   switch(value)
   {

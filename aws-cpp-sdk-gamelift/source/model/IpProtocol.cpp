@@ -44,7 +44,7 @@ IpProtocol GetIpProtocolForName(const Aws::String& name)
   return IpProtocol::NOT_SET;
 }
 
-Aws::String GetNameForIpProtocol(IpProtocol value)
+Aws::String GetNameForIpProtocol(IpProtocol enumValue)
 {
   switch(value)
   {

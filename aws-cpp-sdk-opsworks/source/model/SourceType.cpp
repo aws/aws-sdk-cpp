@@ -54,7 +54,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
   return SourceType::NOT_SET;
 }
 
-Aws::String GetNameForSourceType(SourceType value)
+Aws::String GetNameForSourceType(SourceType enumValue)
 {
   switch(value)
   {

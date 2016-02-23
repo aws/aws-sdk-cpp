@@ -39,7 +39,7 @@ ResetImageAttributeName GetResetImageAttributeNameForName(const Aws::String& nam
   return ResetImageAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForResetImageAttributeName(ResetImageAttributeName value)
+Aws::String GetNameForResetImageAttributeName(ResetImageAttributeName enumValue)
 {
   switch(value)
   {

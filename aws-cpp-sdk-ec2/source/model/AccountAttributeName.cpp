@@ -44,7 +44,7 @@ AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
   return AccountAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForAccountAttributeName(AccountAttributeName value)
+Aws::String GetNameForAccountAttributeName(AccountAttributeName enumValue)
 {
   switch(value)
   {

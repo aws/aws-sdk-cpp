@@ -44,7 +44,7 @@ LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
   return LayerFailureCode::NOT_SET;
 }
 
-Aws::String GetNameForLayerFailureCode(LayerFailureCode value)
+Aws::String GetNameForLayerFailureCode(LayerFailureCode enumValue)
 {
   switch(value)
   {

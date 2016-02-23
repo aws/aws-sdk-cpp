@@ -39,7 +39,7 @@ NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
   return NoEncryptionConfig::NOT_SET;
 }
 
-Aws::String GetNameForNoEncryptionConfig(NoEncryptionConfig value)
+Aws::String GetNameForNoEncryptionConfig(NoEncryptionConfig enumValue)
 {
   switch(value)
   {

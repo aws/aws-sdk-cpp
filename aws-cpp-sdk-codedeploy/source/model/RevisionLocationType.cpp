@@ -44,7 +44,7 @@ RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
   return RevisionLocationType::NOT_SET;
 }
 
-Aws::String GetNameForRevisionLocationType(RevisionLocationType value)
+Aws::String GetNameForRevisionLocationType(RevisionLocationType enumValue)
 {
   switch(value)
   {

@@ -54,7 +54,7 @@ StartTimerFailedCause GetStartTimerFailedCauseForName(const Aws::String& name)
   return StartTimerFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForStartTimerFailedCause(StartTimerFailedCause value)
+Aws::String GetNameForStartTimerFailedCause(StartTimerFailedCause enumValue)
 {
   switch(value)
   {

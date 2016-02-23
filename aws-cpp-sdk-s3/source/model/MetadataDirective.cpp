@@ -44,7 +44,7 @@ MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
   return MetadataDirective::NOT_SET;
 }
 
-Aws::String GetNameForMetadataDirective(MetadataDirective value)
+Aws::String GetNameForMetadataDirective(MetadataDirective enumValue)
 {
   switch(value)
   {

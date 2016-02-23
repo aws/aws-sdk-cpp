@@ -79,7 +79,7 @@ FleetStatus GetFleetStatusForName(const Aws::String& name)
   return FleetStatus::NOT_SET;
 }
 
-Aws::String GetNameForFleetStatus(FleetStatus value)
+Aws::String GetNameForFleetStatus(FleetStatus enumValue)
 {
   switch(value)
   {

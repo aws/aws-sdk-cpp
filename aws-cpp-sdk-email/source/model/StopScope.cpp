@@ -39,7 +39,7 @@ StopScope GetStopScopeForName(const Aws::String& name)
   return StopScope::NOT_SET;
 }
 
-Aws::String GetNameForStopScope(StopScope value)
+Aws::String GetNameForStopScope(StopScope enumValue)
 {
   switch(value)
   {

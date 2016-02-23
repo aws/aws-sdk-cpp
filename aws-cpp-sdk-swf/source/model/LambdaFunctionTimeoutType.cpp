@@ -39,7 +39,7 @@ LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String&
   return LambdaFunctionTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType value)
+Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
 {
   switch(value)
   {

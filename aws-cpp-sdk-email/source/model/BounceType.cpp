@@ -64,7 +64,7 @@ BounceType GetBounceTypeForName(const Aws::String& name)
   return BounceType::NOT_SET;
 }
 
-Aws::String GetNameForBounceType(BounceType value)
+Aws::String GetNameForBounceType(BounceType enumValue)
 {
   switch(value)
   {

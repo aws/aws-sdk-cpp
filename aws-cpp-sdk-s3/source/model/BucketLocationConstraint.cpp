@@ -84,7 +84,7 @@ BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& n
   return BucketLocationConstraint::NOT_SET;
 }
 
-Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint value)
+Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint enumValue)
 {
   switch(value)
   {

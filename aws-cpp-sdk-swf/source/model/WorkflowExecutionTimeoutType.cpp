@@ -39,7 +39,7 @@ WorkflowExecutionTimeoutType GetWorkflowExecutionTimeoutTypeForName(const Aws::S
   return WorkflowExecutionTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForWorkflowExecutionTimeoutType(WorkflowExecutionTimeoutType value)
+Aws::String GetNameForWorkflowExecutionTimeoutType(WorkflowExecutionTimeoutType enumValue)
 {
   switch(value)
   {

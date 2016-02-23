@@ -144,7 +144,7 @@ ArtifactType GetArtifactTypeForName(const Aws::String& name)
   return ArtifactType::NOT_SET;
 }
 
-Aws::String GetNameForArtifactType(ArtifactType value)
+Aws::String GetNameForArtifactType(ArtifactType enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ InstanceState GetInstanceStateForName(const Aws::String& name)
   return InstanceState::NOT_SET;
 }
 
-Aws::String GetNameForInstanceState(InstanceState value)
+Aws::String GetNameForInstanceState(InstanceState enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ MLModelType GetMLModelTypeForName(const Aws::String& name)
   return MLModelType::NOT_SET;
 }
 
-Aws::String GetNameForMLModelType(MLModelType value)
+Aws::String GetNameForMLModelType(MLModelType enumValue)
 {
   switch(value)
   {

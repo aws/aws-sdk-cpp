@@ -69,7 +69,7 @@ JobStatus GetJobStatusForName(const Aws::String& name)
   return JobStatus::NOT_SET;
 }
 
-Aws::String GetNameForJobStatus(JobStatus value)
+Aws::String GetNameForJobStatus(JobStatus enumValue)
 {
   switch(value)
   {

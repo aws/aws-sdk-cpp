@@ -44,7 +44,7 @@ BillingMethod GetBillingMethodForName(const Aws::String& name)
   return BillingMethod::NOT_SET;
 }
 
-Aws::String GetNameForBillingMethod(BillingMethod value)
+Aws::String GetNameForBillingMethod(BillingMethod enumValue)
 {
   switch(value)
   {

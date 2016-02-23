@@ -44,7 +44,7 @@ TlsPolicy GetTlsPolicyForName(const Aws::String& name)
   return TlsPolicy::NOT_SET;
 }
 
-Aws::String GetNameForTlsPolicy(TlsPolicy value)
+Aws::String GetNameForTlsPolicy(TlsPolicy enumValue)
 {
   switch(value)
   {

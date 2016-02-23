@@ -31,7 +31,7 @@ because MSVC has a maximum of 122 chained if-else blocks.
 #set($elseText = "")
 #set ($helperIndex =  $enumCounter / 122)
 
-static bool GetEnumForNameHelper${helperIndex}(int hashCode, $enumModel.name& enumValue)
+static bool GetEnumForNameHelper${helperIndex}(int hashCode, ${enumModel.name}& enumValue)
 {
 #end
   ${elseText}if (hashCode == ${enum.memberName}_HASH)
@@ -52,7 +52,7 @@ static bool GetEnumForNameHelper${helperIndex}(int hashCode, $enumModel.name& en
 #if ($enumCounter % 122 == 0)
 #set($elseText = "")
 #set ($helperIndex =  $enumCounter / 122)
-static bool GetNameForEnumHelper${helperIndex}($enumModel.name enumValue, Aws::String& value)
+static bool GetNameForEnumHelper${helperIndex}(${enumModel.name} enumValue, Aws::String& value)
 {
   switch(enumValue)
   {
@@ -93,11 +93,11 @@ ${enumModel.name} Get${enumModel.name}ForName(const Aws::String& name)
   }
 #set($elseText = "else ")
 #end
-  return ${enumMember.name}::NOT_SET;
+  return ${enumModel.name}::NOT_SET;
 #end
 }
 
-Aws::String GetNameFor${enumModel.name}(${enumModel.name} value)
+Aws::String GetNameFor${enumModel.name}(${enumModel.name} enumValue)
 {
 #if($enumModel.members.size() > 0 && $enumModel.members.size() < 122)
   switch(value)
@@ -114,7 +114,7 @@ Aws::String GetNameFor${enumModel.name}(${enumModel.name} value)
   Aws::String value;
 #set($elseText = "")
 #foreach($helperIndex in [0..$maxHelperIndex])
-  ${elseText}if (GetNameForEnumHelper${helperIndex}(enum, value))
+  ${elseText}if (GetNameForEnumHelper${helperIndex}(enumValue, value))
   {
     return value;
   }

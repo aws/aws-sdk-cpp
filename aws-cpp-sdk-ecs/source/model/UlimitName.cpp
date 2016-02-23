@@ -109,7 +109,7 @@ UlimitName GetUlimitNameForName(const Aws::String& name)
   return UlimitName::NOT_SET;
 }
 
-Aws::String GetNameForUlimitName(UlimitName value)
+Aws::String GetNameForUlimitName(UlimitName enumValue)
 {
   switch(value)
   {

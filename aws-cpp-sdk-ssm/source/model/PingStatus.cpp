@@ -49,7 +49,7 @@ PingStatus GetPingStatusForName(const Aws::String& name)
   return PingStatus::NOT_SET;
 }
 
-Aws::String GetNameForPingStatus(PingStatus value)
+Aws::String GetNameForPingStatus(PingStatus enumValue)
 {
   switch(value)
   {

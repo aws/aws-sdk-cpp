@@ -49,7 +49,7 @@ ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
   return ViewerProtocolPolicy::NOT_SET;
 }
 
-Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy value)
+Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ MarketType GetMarketTypeForName(const Aws::String& name)
   return MarketType::NOT_SET;
 }
 
-Aws::String GetNameForMarketType(MarketType value)
+Aws::String GetNameForMarketType(MarketType enumValue)
 {
   switch(value)
   {

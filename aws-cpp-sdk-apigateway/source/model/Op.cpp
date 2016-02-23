@@ -64,7 +64,7 @@ Op GetOpForName(const Aws::String& name)
   return Op::NOT_SET;
 }
 
-Aws::String GetNameForOp(Op value)
+Aws::String GetNameForOp(Op enumValue)
 {
   switch(value)
   {

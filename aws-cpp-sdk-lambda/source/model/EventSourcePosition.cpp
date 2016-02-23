@@ -44,7 +44,7 @@ EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
   return EventSourcePosition::NOT_SET;
 }
 
-Aws::String GetNameForEventSourcePosition(EventSourcePosition value)
+Aws::String GetNameForEventSourcePosition(EventSourcePosition enumValue)
 {
   switch(value)
   {

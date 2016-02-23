@@ -44,7 +44,7 @@ PendingAutomaticFailoverStatus GetPendingAutomaticFailoverStatusForName(const Aw
   return PendingAutomaticFailoverStatus::NOT_SET;
 }
 
-Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus value)
+Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus enumValue)
 {
   switch(value)
   {

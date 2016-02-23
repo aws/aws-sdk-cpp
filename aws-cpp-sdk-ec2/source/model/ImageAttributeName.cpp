@@ -69,7 +69,7 @@ ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
   return ImageAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForImageAttributeName(ImageAttributeName value)
+Aws::String GetNameForImageAttributeName(ImageAttributeName enumValue)
 {
   switch(value)
   {

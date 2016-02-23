@@ -44,7 +44,7 @@ NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
   return NetworkInterfaceType::NOT_SET;
 }
 
-Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType value)
+Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType enumValue)
 {
   switch(value)
   {

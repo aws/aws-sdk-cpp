@@ -44,7 +44,7 @@ PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::Str
   return PlayerSessionCreationPolicy::NOT_SET;
 }
 
-Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy value)
+Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy enumValue)
 {
   switch(value)
   {

@@ -64,7 +64,7 @@ InterconnectState GetInterconnectStateForName(const Aws::String& name)
   return InterconnectState::NOT_SET;
 }
 
-Aws::String GetNameForInterconnectState(InterconnectState value)
+Aws::String GetNameForInterconnectState(InterconnectState enumValue)
 {
   switch(value)
   {

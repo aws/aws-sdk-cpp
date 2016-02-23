@@ -44,7 +44,7 @@ SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
   return SSLSupportMethod::NOT_SET;
 }
 
-Aws::String GetNameForSSLSupportMethod(SSLSupportMethod value)
+Aws::String GetNameForSSLSupportMethod(SSLSupportMethod enumValue)
 {
   switch(value)
   {

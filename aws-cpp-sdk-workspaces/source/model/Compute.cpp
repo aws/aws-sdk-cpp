@@ -49,7 +49,7 @@ Compute GetComputeForName(const Aws::String& name)
   return Compute::NOT_SET;
 }
 
-Aws::String GetNameForCompute(Compute value)
+Aws::String GetNameForCompute(Compute enumValue)
 {
   switch(value)
   {

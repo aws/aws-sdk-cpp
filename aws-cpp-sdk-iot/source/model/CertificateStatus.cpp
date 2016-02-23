@@ -54,7 +54,7 @@ CertificateStatus GetCertificateStatusForName(const Aws::String& name)
   return CertificateStatus::NOT_SET;
 }
 
-Aws::String GetNameForCertificateStatus(CertificateStatus value)
+Aws::String GetNameForCertificateStatus(CertificateStatus enumValue)
 {
   switch(value)
   {

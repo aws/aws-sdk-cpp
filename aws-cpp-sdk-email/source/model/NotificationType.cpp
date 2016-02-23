@@ -49,7 +49,7 @@ NotificationType GetNotificationTypeForName(const Aws::String& name)
   return NotificationType::NOT_SET;
 }
 
-Aws::String GetNameForNotificationType(NotificationType value)
+Aws::String GetNameForNotificationType(NotificationType enumValue)
 {
   switch(value)
   {

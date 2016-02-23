@@ -44,7 +44,7 @@ MFADelete GetMFADeleteForName(const Aws::String& name)
   return MFADelete::NOT_SET;
 }
 
-Aws::String GetNameForMFADelete(MFADelete value)
+Aws::String GetNameForMFADelete(MFADelete enumValue)
 {
   switch(value)
   {

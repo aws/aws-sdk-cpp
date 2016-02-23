@@ -44,7 +44,7 @@ ClientVersion GetClientVersionForName(const Aws::String& name)
   return ClientVersion::NOT_SET;
 }
 
-Aws::String GetNameForClientVersion(ClientVersion value)
+Aws::String GetNameForClientVersion(ClientVersion enumValue)
 {
   switch(value)
   {

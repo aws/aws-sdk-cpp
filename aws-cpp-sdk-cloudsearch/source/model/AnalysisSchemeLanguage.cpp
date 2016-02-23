@@ -209,7 +209,7 @@ AnalysisSchemeLanguage GetAnalysisSchemeLanguageForName(const Aws::String& name)
   return AnalysisSchemeLanguage::NOT_SET;
 }
 
-Aws::String GetNameForAnalysisSchemeLanguage(AnalysisSchemeLanguage value)
+Aws::String GetNameForAnalysisSchemeLanguage(AnalysisSchemeLanguage enumValue)
 {
   switch(value)
   {

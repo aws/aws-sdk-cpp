@@ -59,7 +59,7 @@ ContactType GetContactTypeForName(const Aws::String& name)
   return ContactType::NOT_SET;
 }
 
-Aws::String GetNameForContactType(ContactType value)
+Aws::String GetNameForContactType(ContactType enumValue)
 {
   switch(value)
   {

@@ -64,7 +64,7 @@ TextTransformation GetTextTransformationForName(const Aws::String& name)
   return TextTransformation::NOT_SET;
 }
 
-Aws::String GetNameForTextTransformation(TextTransformation value)
+Aws::String GetNameForTextTransformation(TextTransformation enumValue)
 {
   switch(value)
   {

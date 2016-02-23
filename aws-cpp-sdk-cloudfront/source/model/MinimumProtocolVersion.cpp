@@ -44,7 +44,7 @@ MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
   return MinimumProtocolVersion::NOT_SET;
 }
 
-Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion value)
+Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String&
   return StepStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode value)
+Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue)
 {
   switch(value)
   {

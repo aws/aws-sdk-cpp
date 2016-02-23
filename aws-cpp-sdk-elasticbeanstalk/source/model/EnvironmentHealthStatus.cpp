@@ -74,7 +74,7 @@ EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& nam
   return EnvironmentHealthStatus::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus value)
+Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus enumValue)
 {
   switch(value)
   {

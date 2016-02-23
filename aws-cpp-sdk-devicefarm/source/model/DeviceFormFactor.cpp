@@ -44,7 +44,7 @@ DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
   return DeviceFormFactor::NOT_SET;
 }
 
-Aws::String GetNameForDeviceFormFactor(DeviceFormFactor value)
+Aws::String GetNameForDeviceFormFactor(DeviceFormFactor enumValue)
 {
   switch(value)
   {

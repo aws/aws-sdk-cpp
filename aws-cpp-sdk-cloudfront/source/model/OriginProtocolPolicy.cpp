@@ -49,7 +49,7 @@ OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
   return OriginProtocolPolicy::NOT_SET;
 }
 
-Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy value)
+Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy enumValue)
 {
   switch(value)
   {

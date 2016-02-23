@@ -79,7 +79,7 @@ ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& nam
   return ParameterExceptionField::NOT_SET;
 }
 
-Aws::String GetNameForParameterExceptionField(ParameterExceptionField value)
+Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
   return InstanceLifecycleType::NOT_SET;
 }
 
-Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType value)
+Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue)
 {
   switch(value)
   {

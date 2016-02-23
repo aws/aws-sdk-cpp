@@ -74,7 +74,7 @@ PartitionInstanceType GetPartitionInstanceTypeForName(const Aws::String& name)
   return PartitionInstanceType::NOT_SET;
 }
 
-Aws::String GetNameForPartitionInstanceType(PartitionInstanceType value)
+Aws::String GetNameForPartitionInstanceType(PartitionInstanceType enumValue)
 {
   switch(value)
   {

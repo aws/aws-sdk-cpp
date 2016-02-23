@@ -119,7 +119,7 @@ ResourceType GetResourceTypeForName(const Aws::String& name)
   return ResourceType::NOT_SET;
 }
 
-Aws::String GetNameForResourceType(ResourceType value)
+Aws::String GetNameForResourceType(ResourceType enumValue)
 {
   switch(value)
   {

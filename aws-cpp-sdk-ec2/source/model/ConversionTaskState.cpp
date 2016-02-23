@@ -54,7 +54,7 @@ ConversionTaskState GetConversionTaskStateForName(const Aws::String& name)
   return ConversionTaskState::NOT_SET;
 }
 
-Aws::String GetNameForConversionTaskState(ConversionTaskState value)
+Aws::String GetNameForConversionTaskState(ConversionTaskState enumValue)
 {
   switch(value)
   {

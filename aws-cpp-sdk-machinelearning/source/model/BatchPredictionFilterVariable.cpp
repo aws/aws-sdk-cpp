@@ -74,7 +74,7 @@ BatchPredictionFilterVariable GetBatchPredictionFilterVariableForName(const Aws:
   return BatchPredictionFilterVariable::NOT_SET;
 }
 
-Aws::String GetNameForBatchPredictionFilterVariable(BatchPredictionFilterVariable value)
+Aws::String GetNameForBatchPredictionFilterVariable(BatchPredictionFilterVariable enumValue)
 {
   switch(value)
   {

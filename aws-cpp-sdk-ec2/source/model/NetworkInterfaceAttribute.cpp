@@ -54,7 +54,7 @@ NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String&
   return NetworkInterfaceAttribute::NOT_SET;
 }
 
-Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute value)
+Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute enumValue)
 {
   switch(value)
   {

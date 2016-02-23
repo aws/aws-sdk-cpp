@@ -49,7 +49,7 @@ KeyState GetKeyStateForName(const Aws::String& name)
   return KeyState::NOT_SET;
 }
 
-Aws::String GetNameForKeyState(KeyState value)
+Aws::String GetNameForKeyState(KeyState enumValue)
 {
   switch(value)
   {

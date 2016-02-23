@@ -54,7 +54,7 @@ SslProtocol GetSslProtocolForName(const Aws::String& name)
   return SslProtocol::NOT_SET;
 }
 
-Aws::String GetNameForSslProtocol(SslProtocol value)
+Aws::String GetNameForSslProtocol(SslProtocol enumValue)
 {
   switch(value)
   {

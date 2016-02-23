@@ -64,7 +64,7 @@ DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& n
   return DataSourceFilterVariable::NOT_SET;
 }
 
-Aws::String GetNameForDataSourceFilterVariable(DataSourceFilterVariable value)
+Aws::String GetNameForDataSourceFilterVariable(DataSourceFilterVariable enumValue)
 {
   switch(value)
   {

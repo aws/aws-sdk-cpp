@@ -49,7 +49,7 @@ DocumentStatus GetDocumentStatusForName(const Aws::String& name)
   return DocumentStatus::NOT_SET;
 }
 
-Aws::String GetNameForDocumentStatus(DocumentStatus value)
+Aws::String GetNameForDocumentStatus(DocumentStatus enumValue)
 {
   switch(value)
   {

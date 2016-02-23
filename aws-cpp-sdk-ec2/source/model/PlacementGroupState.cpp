@@ -54,7 +54,7 @@ PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)
   return PlacementGroupState::NOT_SET;
 }
 
-Aws::String GetNameForPlacementGroupState(PlacementGroupState value)
+Aws::String GetNameForPlacementGroupState(PlacementGroupState enumValue)
 {
   switch(value)
   {

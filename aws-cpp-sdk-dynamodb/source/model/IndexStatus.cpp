@@ -54,7 +54,7 @@ IndexStatus GetIndexStatusForName(const Aws::String& name)
   return IndexStatus::NOT_SET;
 }
 
-Aws::String GetNameForIndexStatus(IndexStatus value)
+Aws::String GetNameForIndexStatus(IndexStatus enumValue)
 {
   switch(value)
   {

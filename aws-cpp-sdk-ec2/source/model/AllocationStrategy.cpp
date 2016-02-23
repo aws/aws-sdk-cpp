@@ -44,7 +44,7 @@ AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
   return AllocationStrategy::NOT_SET;
 }
 
-Aws::String GetNameForAllocationStrategy(AllocationStrategy value)
+Aws::String GetNameForAllocationStrategy(AllocationStrategy enumValue)
 {
   switch(value)
   {

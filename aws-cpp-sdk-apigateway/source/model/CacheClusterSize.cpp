@@ -74,7 +74,7 @@ CacheClusterSize GetCacheClusterSizeForName(const Aws::String& name)
   return CacheClusterSize::NOT_SET;
 }
 
-Aws::String GetNameForCacheClusterSize(CacheClusterSize value)
+Aws::String GetNameForCacheClusterSize(CacheClusterSize enumValue)
 {
   switch(value)
   {

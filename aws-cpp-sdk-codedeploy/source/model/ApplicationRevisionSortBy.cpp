@@ -49,7 +49,7 @@ ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String&
   return ApplicationRevisionSortBy::NOT_SET;
 }
 
-Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy value)
+Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy enumValue)
 {
   switch(value)
   {

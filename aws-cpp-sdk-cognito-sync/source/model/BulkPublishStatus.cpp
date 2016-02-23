@@ -54,7 +54,7 @@ BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
   return BulkPublishStatus::NOT_SET;
 }
 
-Aws::String GetNameForBulkPublishStatus(BulkPublishStatus value)
+Aws::String GetNameForBulkPublishStatus(BulkPublishStatus enumValue)
 {
   switch(value)
   {

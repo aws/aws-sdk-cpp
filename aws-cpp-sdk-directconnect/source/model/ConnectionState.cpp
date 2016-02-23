@@ -74,7 +74,7 @@ ConnectionState GetConnectionStateForName(const Aws::String& name)
   return ConnectionState::NOT_SET;
 }
 
-Aws::String GetNameForConnectionState(ConnectionState value)
+Aws::String GetNameForConnectionState(ConnectionState enumValue)
 {
   switch(value)
   {

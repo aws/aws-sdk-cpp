@@ -49,7 +49,7 @@ ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
   return ObjectStorageClass::NOT_SET;
 }
 
-Aws::String GetNameForObjectStorageClass(ObjectStorageClass value)
+Aws::String GetNameForObjectStorageClass(ObjectStorageClass enumValue)
 {
   switch(value)
   {

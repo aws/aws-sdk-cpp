@@ -69,7 +69,7 @@ HsmStatus GetHsmStatusForName(const Aws::String& name)
   return HsmStatus::NOT_SET;
 }
 
-Aws::String GetNameForHsmStatus(HsmStatus value)
+Aws::String GetNameForHsmStatus(HsmStatus enumValue)
 {
   switch(value)
   {

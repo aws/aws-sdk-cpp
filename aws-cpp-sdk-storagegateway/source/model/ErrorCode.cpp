@@ -339,7 +339,7 @@ ErrorCode GetErrorCodeForName(const Aws::String& name)
   return ErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForErrorCode(ErrorCode value)
+Aws::String GetNameForErrorCode(ErrorCode enumValue)
 {
   switch(value)
   {

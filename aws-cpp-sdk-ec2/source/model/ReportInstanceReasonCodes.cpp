@@ -79,7 +79,7 @@ ReportInstanceReasonCodes GetReportInstanceReasonCodesForName(const Aws::String&
   return ReportInstanceReasonCodes::NOT_SET;
 }
 
-Aws::String GetNameForReportInstanceReasonCodes(ReportInstanceReasonCodes value)
+Aws::String GetNameForReportInstanceReasonCodes(ReportInstanceReasonCodes enumValue)
 {
   switch(value)
   {

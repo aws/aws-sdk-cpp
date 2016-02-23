@@ -44,7 +44,7 @@ SubnetState GetSubnetStateForName(const Aws::String& name)
   return SubnetState::NOT_SET;
 }
 
-Aws::String GetNameForSubnetState(SubnetState value)
+Aws::String GetNameForSubnetState(SubnetState enumValue)
 {
   switch(value)
   {

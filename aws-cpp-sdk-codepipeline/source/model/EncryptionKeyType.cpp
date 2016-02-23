@@ -39,7 +39,7 @@ EncryptionKeyType GetEncryptionKeyTypeForName(const Aws::String& name)
   return EncryptionKeyType::NOT_SET;
 }
 
-Aws::String GetNameForEncryptionKeyType(EncryptionKeyType value)
+Aws::String GetNameForEncryptionKeyType(EncryptionKeyType enumValue)
 {
   switch(value)
   {

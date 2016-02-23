@@ -54,7 +54,7 @@ AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
   return AvailabilityZoneState::NOT_SET;
 }
 
-Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState value)
+Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState enumValue)
 {
   switch(value)
   {

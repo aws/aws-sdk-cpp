@@ -99,7 +99,7 @@ LifecycleState GetLifecycleStateForName(const Aws::String& name)
   return LifecycleState::NOT_SET;
 }
 
-Aws::String GetNameForLifecycleState(LifecycleState value)
+Aws::String GetNameForLifecycleState(LifecycleState enumValue)
 {
   switch(value)
   {

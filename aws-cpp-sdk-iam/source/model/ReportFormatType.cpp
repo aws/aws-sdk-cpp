@@ -39,7 +39,7 @@ ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
   return ReportFormatType::NOT_SET;
 }
 
-Aws::String GetNameForReportFormatType(ReportFormatType value)
+Aws::String GetNameForReportFormatType(ReportFormatType enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ AutoPlacement GetAutoPlacementForName(const Aws::String& name)
   return AutoPlacement::NOT_SET;
 }
 
-Aws::String GetNameForAutoPlacement(AutoPlacement value)
+Aws::String GetNameForAutoPlacement(AutoPlacement enumValue)
 {
   switch(value)
   {

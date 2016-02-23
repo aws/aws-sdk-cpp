@@ -54,7 +54,7 @@ RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
   return RealtimeEndpointStatus::NOT_SET;
 }
 
-Aws::String GetNameForRealtimeEndpointStatus(RealtimeEndpointStatus value)
+Aws::String GetNameForRealtimeEndpointStatus(RealtimeEndpointStatus enumValue)
 {
   switch(value)
   {

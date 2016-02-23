@@ -39,7 +39,7 @@ RequestPayer GetRequestPayerForName(const Aws::String& name)
   return RequestPayer::NOT_SET;
 }
 
-Aws::String GetNameForRequestPayer(RequestPayer value)
+Aws::String GetNameForRequestPayer(RequestPayer enumValue)
 {
   switch(value)
   {

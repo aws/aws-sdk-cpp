@@ -54,7 +54,7 @@ BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
   return BucketCannedACL::NOT_SET;
 }
 
-Aws::String GetNameForBucketCannedACL(BucketCannedACL value)
+Aws::String GetNameForBucketCannedACL(BucketCannedACL enumValue)
 {
   switch(value)
   {

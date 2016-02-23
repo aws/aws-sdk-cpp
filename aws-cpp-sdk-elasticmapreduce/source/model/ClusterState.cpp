@@ -69,7 +69,7 @@ ClusterState GetClusterStateForName(const Aws::String& name)
   return ClusterState::NOT_SET;
 }
 
-Aws::String GetNameForClusterState(ClusterState value)
+Aws::String GetNameForClusterState(ClusterState enumValue)
 {
   switch(value)
   {

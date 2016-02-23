@@ -59,7 +59,7 @@ LogLevel GetLogLevelForName(const Aws::String& name)
   return LogLevel::NOT_SET;
 }
 
-Aws::String GetNameForLogLevel(LogLevel value)
+Aws::String GetNameForLogLevel(LogLevel enumValue)
 {
   switch(value)
   {

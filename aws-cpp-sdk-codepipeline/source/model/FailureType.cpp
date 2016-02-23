@@ -64,7 +64,7 @@ FailureType GetFailureTypeForName(const Aws::String& name)
   return FailureType::NOT_SET;
 }
 
-Aws::String GetNameForFailureType(FailureType value)
+Aws::String GetNameForFailureType(FailureType enumValue)
 {
   switch(value)
   {

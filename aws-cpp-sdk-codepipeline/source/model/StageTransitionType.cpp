@@ -44,7 +44,7 @@ StageTransitionType GetStageTransitionTypeForName(const Aws::String& name)
   return StageTransitionType::NOT_SET;
 }
 
-Aws::String GetNameForStageTransitionType(StageTransitionType value)
+Aws::String GetNameForStageTransitionType(StageTransitionType enumValue)
 {
   switch(value)
   {

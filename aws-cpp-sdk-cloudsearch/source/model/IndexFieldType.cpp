@@ -89,7 +89,7 @@ IndexFieldType GetIndexFieldTypeForName(const Aws::String& name)
   return IndexFieldType::NOT_SET;
 }
 
-Aws::String GetNameForIndexFieldType(IndexFieldType value)
+Aws::String GetNameForIndexFieldType(IndexFieldType enumValue)
 {
   switch(value)
   {

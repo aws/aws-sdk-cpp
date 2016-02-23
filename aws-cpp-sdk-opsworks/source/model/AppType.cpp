@@ -69,7 +69,7 @@ AppType GetAppTypeForName(const Aws::String& name)
   return AppType::NOT_SET;
 }
 
-Aws::String GetNameForAppType(AppType value)
+Aws::String GetNameForAppType(AppType enumValue)
 {
   switch(value)
   {

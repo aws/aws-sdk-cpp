@@ -94,7 +94,7 @@ DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
   return DeploymentCommandName::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentCommandName(DeploymentCommandName value)
+Aws::String GetNameForDeploymentCommandName(DeploymentCommandName enumValue)
 {
   switch(value)
   {

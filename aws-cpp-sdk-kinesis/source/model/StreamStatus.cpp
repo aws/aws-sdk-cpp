@@ -54,7 +54,7 @@ StreamStatus GetStreamStatusForName(const Aws::String& name)
   return StreamStatus::NOT_SET;
 }
 
-Aws::String GetNameForStreamStatus(StreamStatus value)
+Aws::String GetNameForStreamStatus(StreamStatus enumValue)
 {
   switch(value)
   {

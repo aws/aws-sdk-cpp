@@ -49,7 +49,7 @@ PriceClass GetPriceClassForName(const Aws::String& name)
   return PriceClass::NOT_SET;
 }
 
-Aws::String GetNameForPriceClass(PriceClass value)
+Aws::String GetNameForPriceClass(PriceClass enumValue)
 {
   switch(value)
   {

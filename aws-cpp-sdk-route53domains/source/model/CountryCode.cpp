@@ -2131,17 +2131,17 @@ CountryCode GetCountryCodeForName(const Aws::String& name)
   {
      return enumValue;
   }
-  return ${enumMember.name}::NOT_SET;
+  return CountryCode::NOT_SET;
 }
 
-Aws::String GetNameForCountryCode(CountryCode value)
+Aws::String GetNameForCountryCode(CountryCode enumValue)
 {
   Aws::String value;
-  if (GetNameForEnumHelper0(enum, value))
+  if (GetNameForEnumHelper0(enumValue, value))
   {
     return value;
   }
-  else if (GetNameForEnumHelper1(enum, value))
+  else if (GetNameForEnumHelper1(enumValue, value))
   {
     return value;
   }

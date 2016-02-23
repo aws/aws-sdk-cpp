@@ -44,7 +44,7 @@ DocumentParameterType GetDocumentParameterTypeForName(const Aws::String& name)
   return DocumentParameterType::NOT_SET;
 }
 
-Aws::String GetNameForDocumentParameterType(DocumentParameterType value)
+Aws::String GetNameForDocumentParameterType(DocumentParameterType enumValue)
 {
   switch(value)
   {

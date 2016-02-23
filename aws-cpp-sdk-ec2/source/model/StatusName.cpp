@@ -39,7 +39,7 @@ StatusName GetStatusNameForName(const Aws::String& name)
   return StatusName::NOT_SET;
 }
 
-Aws::String GetNameForStatusName(StatusName value)
+Aws::String GetNameForStatusName(StatusName enumValue)
 {
   switch(value)
   {

@@ -54,7 +54,7 @@ MonitoringState GetMonitoringStateForName(const Aws::String& name)
   return MonitoringState::NOT_SET;
 }
 
-Aws::String GetNameForMonitoringState(MonitoringState value)
+Aws::String GetNameForMonitoringState(MonitoringState enumValue)
 {
   switch(value)
   {

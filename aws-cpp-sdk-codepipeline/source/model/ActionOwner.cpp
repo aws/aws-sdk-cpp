@@ -49,7 +49,7 @@ ActionOwner GetActionOwnerForName(const Aws::String& name)
   return ActionOwner::NOT_SET;
 }
 
-Aws::String GetNameForActionOwner(ActionOwner value)
+Aws::String GetNameForActionOwner(ActionOwner enumValue)
 {
   switch(value)
   {

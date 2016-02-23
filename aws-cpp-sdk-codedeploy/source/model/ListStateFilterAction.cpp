@@ -49,7 +49,7 @@ ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
   return ListStateFilterAction::NOT_SET;
 }
 
-Aws::String GetNameForListStateFilterAction(ListStateFilterAction value)
+Aws::String GetNameForListStateFilterAction(ListStateFilterAction enumValue)
 {
   switch(value)
   {

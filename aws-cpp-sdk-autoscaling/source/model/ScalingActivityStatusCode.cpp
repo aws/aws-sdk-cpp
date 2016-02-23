@@ -94,7 +94,7 @@ ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String&
   return ScalingActivityStatusCode::NOT_SET;
 }
 
-Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode value)
+Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode enumValue)
 {
   switch(value)
   {

@@ -64,7 +64,7 @@ OfferingTypeValues GetOfferingTypeValuesForName(const Aws::String& name)
   return OfferingTypeValues::NOT_SET;
 }
 
-Aws::String GetNameForOfferingTypeValues(OfferingTypeValues value)
+Aws::String GetNameForOfferingTypeValues(OfferingTypeValues enumValue)
 {
   switch(value)
   {

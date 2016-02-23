@@ -54,7 +54,7 @@ InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::S
   return InstanceInformationFilterKey::NOT_SET;
 }
 
-Aws::String GetNameForInstanceInformationFilterKey(InstanceInformationFilterKey value)
+Aws::String GetNameForInstanceInformationFilterKey(InstanceInformationFilterKey enumValue)
 {
   switch(value)
   {

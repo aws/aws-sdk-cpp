@@ -64,7 +64,7 @@ HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
   return HealthCheckType::NOT_SET;
 }
 
-Aws::String GetNameForHealthCheckType(HealthCheckType value)
+Aws::String GetNameForHealthCheckType(HealthCheckType enumValue)
 {
   switch(value)
   {

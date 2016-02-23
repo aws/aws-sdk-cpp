@@ -49,7 +49,7 @@ CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
   return CloudHsmObjectState::NOT_SET;
 }
 
-Aws::String GetNameForCloudHsmObjectState(CloudHsmObjectState value)
+Aws::String GetNameForCloudHsmObjectState(CloudHsmObjectState enumValue)
 {
   switch(value)
   {

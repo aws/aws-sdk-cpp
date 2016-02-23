@@ -44,7 +44,7 @@ PlatformType GetPlatformTypeForName(const Aws::String& name)
   return PlatformType::NOT_SET;
 }
 
-Aws::String GetNameForPlatformType(PlatformType value)
+Aws::String GetNameForPlatformType(PlatformType enumValue)
 {
   switch(value)
   {

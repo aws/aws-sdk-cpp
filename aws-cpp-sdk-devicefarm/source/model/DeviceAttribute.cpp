@@ -54,7 +54,7 @@ DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
   return DeviceAttribute::NOT_SET;
 }
 
-Aws::String GetNameForDeviceAttribute(DeviceAttribute value)
+Aws::String GetNameForDeviceAttribute(DeviceAttribute enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
   return ReceiptFilterPolicy::NOT_SET;
 }
 
-Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy value)
+Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy enumValue)
 {
   switch(value)
   {

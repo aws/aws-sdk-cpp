@@ -59,7 +59,7 @@ LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
   return LookupAttributeKey::NOT_SET;
 }
 
-Aws::String GetNameForLookupAttributeKey(LookupAttributeKey value)
+Aws::String GetNameForLookupAttributeKey(LookupAttributeKey enumValue)
 {
   switch(value)
   {

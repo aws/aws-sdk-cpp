@@ -54,7 +54,7 @@ AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
   return AppAttributesKeys::NOT_SET;
 }
 
-Aws::String GetNameForAppAttributesKeys(AppAttributesKeys value)
+Aws::String GetNameForAppAttributesKeys(AppAttributesKeys enumValue)
 {
   switch(value)
   {

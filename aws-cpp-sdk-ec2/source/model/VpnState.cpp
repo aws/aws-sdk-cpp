@@ -54,7 +54,7 @@ VpnState GetVpnStateForName(const Aws::String& name)
   return VpnState::NOT_SET;
 }
 
-Aws::String GetNameForVpnState(VpnState value)
+Aws::String GetNameForVpnState(VpnState enumValue)
 {
   switch(value)
   {

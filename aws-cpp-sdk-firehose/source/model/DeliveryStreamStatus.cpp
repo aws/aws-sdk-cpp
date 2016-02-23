@@ -49,7 +49,7 @@ DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)
   return DeliveryStreamStatus::NOT_SET;
 }
 
-Aws::String GetNameForDeliveryStreamStatus(DeliveryStreamStatus value)
+Aws::String GetNameForDeliveryStreamStatus(DeliveryStreamStatus enumValue)
 {
   switch(value)
   {

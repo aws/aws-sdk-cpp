@@ -44,7 +44,7 @@ DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
   return DetailsAttributes::NOT_SET;
 }
 
-Aws::String GetNameForDetailsAttributes(DetailsAttributes value)
+Aws::String GetNameForDetailsAttributes(DetailsAttributes enumValue)
 {
   switch(value)
   {

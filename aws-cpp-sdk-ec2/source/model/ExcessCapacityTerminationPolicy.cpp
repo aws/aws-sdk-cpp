@@ -44,7 +44,7 @@ ExcessCapacityTerminationPolicy GetExcessCapacityTerminationPolicyForName(const 
   return ExcessCapacityTerminationPolicy::NOT_SET;
 }
 
-Aws::String GetNameForExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy value)
+Aws::String GetNameForExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
   return AuthorizerType::NOT_SET;
 }
 
-Aws::String GetNameForAuthorizerType(AuthorizerType value)
+Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ StreamingStatus GetStreamingStatusForName(const Aws::String& name)
   return StreamingStatus::NOT_SET;
 }
 
-Aws::String GetNameForStreamingStatus(StreamingStatus value)
+Aws::String GetNameForStreamingStatus(StreamingStatus enumValue)
 {
   switch(value)
   {

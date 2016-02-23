@@ -49,7 +49,7 @@ SnapshotStatus GetSnapshotStatusForName(const Aws::String& name)
   return SnapshotStatus::NOT_SET;
 }
 
-Aws::String GetNameForSnapshotStatus(SnapshotStatus value)
+Aws::String GetNameForSnapshotStatus(SnapshotStatus enumValue)
 {
   switch(value)
   {

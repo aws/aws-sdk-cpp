@@ -44,7 +44,7 @@ Operation GetOperationForName(const Aws::String& name)
   return Operation::NOT_SET;
 }
 
-Aws::String GetNameForOperation(Operation value)
+Aws::String GetNameForOperation(Operation enumValue)
 {
   switch(value)
   {

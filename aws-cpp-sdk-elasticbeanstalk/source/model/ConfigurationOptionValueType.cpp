@@ -44,7 +44,7 @@ ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::S
   return ConfigurationOptionValueType::NOT_SET;
 }
 
-Aws::String GetNameForConfigurationOptionValueType(ConfigurationOptionValueType value)
+Aws::String GetNameForConfigurationOptionValueType(ConfigurationOptionValueType enumValue)
 {
   switch(value)
   {

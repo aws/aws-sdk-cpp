@@ -74,7 +74,7 @@ InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& n
   return InstancesHealthAttribute::NOT_SET;
 }
 
-Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute value)
+Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute enumValue)
 {
   switch(value)
   {

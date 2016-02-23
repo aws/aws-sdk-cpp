@@ -39,7 +39,7 @@ PermissionGroup GetPermissionGroupForName(const Aws::String& name)
   return PermissionGroup::NOT_SET;
 }
 
-Aws::String GetNameForPermissionGroup(PermissionGroup value)
+Aws::String GetNameForPermissionGroup(PermissionGroup enumValue)
 {
   switch(value)
   {

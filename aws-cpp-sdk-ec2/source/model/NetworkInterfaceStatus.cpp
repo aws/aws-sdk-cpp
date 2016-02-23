@@ -54,7 +54,7 @@ NetworkInterfaceStatus GetNetworkInterfaceStatusForName(const Aws::String& name)
   return NetworkInterfaceStatus::NOT_SET;
 }
 
-Aws::String GetNameForNetworkInterfaceStatus(NetworkInterfaceStatus value)
+Aws::String GetNameForNetworkInterfaceStatus(NetworkInterfaceStatus enumValue)
 {
   switch(value)
   {

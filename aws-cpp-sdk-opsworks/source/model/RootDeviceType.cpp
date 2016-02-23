@@ -44,7 +44,7 @@ RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
   return RootDeviceType::NOT_SET;
 }
 
-Aws::String GetNameForRootDeviceType(RootDeviceType value)
+Aws::String GetNameForRootDeviceType(RootDeviceType enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ OrderBy GetOrderByForName(const Aws::String& name)
   return OrderBy::NOT_SET;
 }
 
-Aws::String GetNameForOrderBy(OrderBy value)
+Aws::String GetNameForOrderBy(OrderBy enumValue)
 {
   switch(value)
   {

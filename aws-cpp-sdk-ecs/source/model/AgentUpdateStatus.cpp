@@ -64,7 +64,7 @@ AgentUpdateStatus GetAgentUpdateStatusForName(const Aws::String& name)
   return AgentUpdateStatus::NOT_SET;
 }
 
-Aws::String GetNameForAgentUpdateStatus(AgentUpdateStatus value)
+Aws::String GetNameForAgentUpdateStatus(AgentUpdateStatus enumValue)
 {
   switch(value)
   {

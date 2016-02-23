@@ -59,7 +59,7 @@ Permission GetPermissionForName(const Aws::String& name)
   return Permission::NOT_SET;
 }
 
-Aws::String GetNameForPermission(Permission value)
+Aws::String GetNameForPermission(Permission enumValue)
 {
   switch(value)
   {

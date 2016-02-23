@@ -39,7 +39,7 @@ StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
   return StackAttributesKeys::NOT_SET;
 }
 
-Aws::String GetNameForStackAttributesKeys(StackAttributesKeys value)
+Aws::String GetNameForStackAttributesKeys(StackAttributesKeys enumValue)
 {
   switch(value)
   {

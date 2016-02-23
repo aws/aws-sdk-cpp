@@ -49,7 +49,7 @@ RequestCancelExternalWorkflowExecutionFailedCause GetRequestCancelExternalWorkfl
   return RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForRequestCancelExternalWorkflowExecutionFailedCause(RequestCancelExternalWorkflowExecutionFailedCause value)
+Aws::String GetNameForRequestCancelExternalWorkflowExecutionFailedCause(RequestCancelExternalWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

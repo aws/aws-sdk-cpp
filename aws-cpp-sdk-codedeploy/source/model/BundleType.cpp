@@ -49,7 +49,7 @@ BundleType GetBundleTypeForName(const Aws::String& name)
   return BundleType::NOT_SET;
 }
 
-Aws::String GetNameForBundleType(BundleType value)
+Aws::String GetNameForBundleType(BundleType enumValue)
 {
   switch(value)
   {

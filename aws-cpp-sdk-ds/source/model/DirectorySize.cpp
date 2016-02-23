@@ -44,7 +44,7 @@ DirectorySize GetDirectorySizeForName(const Aws::String& name)
   return DirectorySize::NOT_SET;
 }
 
-Aws::String GetNameForDirectorySize(DirectorySize value)
+Aws::String GetNameForDirectorySize(DirectorySize enumValue)
 {
   switch(value)
   {

@@ -54,7 +54,7 @@ ListingStatus GetListingStatusForName(const Aws::String& name)
   return ListingStatus::NOT_SET;
 }
 
-Aws::String GetNameForListingStatus(ListingStatus value)
+Aws::String GetNameForListingStatus(ListingStatus enumValue)
 {
   switch(value)
   {

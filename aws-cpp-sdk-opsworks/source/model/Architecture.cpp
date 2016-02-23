@@ -44,7 +44,7 @@ Architecture GetArchitectureForName(const Aws::String& name)
   return Architecture::NOT_SET;
 }
 
-Aws::String GetNameForArchitecture(Architecture value)
+Aws::String GetNameForArchitecture(Architecture enumValue)
 {
   switch(value)
   {

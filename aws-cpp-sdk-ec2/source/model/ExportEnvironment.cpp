@@ -49,7 +49,7 @@ ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
   return ExportEnvironment::NOT_SET;
 }
 
-Aws::String GetNameForExportEnvironment(ExportEnvironment value)
+Aws::String GetNameForExportEnvironment(ExportEnvironment enumValue)
 {
   switch(value)
   {

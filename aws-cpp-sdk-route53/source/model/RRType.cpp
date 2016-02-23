@@ -84,7 +84,7 @@ RRType GetRRTypeForName(const Aws::String& name)
   return RRType::NOT_SET;
 }
 
-Aws::String GetNameForRRType(RRType value)
+Aws::String GetNameForRRType(RRType enumValue)
 {
   switch(value)
   {

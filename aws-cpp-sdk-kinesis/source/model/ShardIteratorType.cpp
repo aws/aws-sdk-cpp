@@ -54,7 +54,7 @@ ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name)
   return ShardIteratorType::NOT_SET;
 }
 
-Aws::String GetNameForShardIteratorType(ShardIteratorType value)
+Aws::String GetNameForShardIteratorType(ShardIteratorType enumValue)
 {
   switch(value)
   {

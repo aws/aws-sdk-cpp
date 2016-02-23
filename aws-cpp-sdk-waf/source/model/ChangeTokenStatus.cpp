@@ -49,7 +49,7 @@ ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
   return ChangeTokenStatus::NOT_SET;
 }
 
-Aws::String GetNameForChangeTokenStatus(ChangeTokenStatus value)
+Aws::String GetNameForChangeTokenStatus(ChangeTokenStatus enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& n
   return RecurringChargeFrequency::NOT_SET;
 }
 
-Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency value)
+Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency enumValue)
 {
   switch(value)
   {

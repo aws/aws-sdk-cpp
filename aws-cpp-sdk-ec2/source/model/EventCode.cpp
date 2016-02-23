@@ -59,7 +59,7 @@ EventCode GetEventCodeForName(const Aws::String& name)
   return EventCode::NOT_SET;
 }
 
-Aws::String GetNameForEventCode(EventCode value)
+Aws::String GetNameForEventCode(EventCode enumValue)
 {
   switch(value)
   {

@@ -54,7 +54,7 @@ Select GetSelectForName(const Aws::String& name)
   return Select::NOT_SET;
 }
 
-Aws::String GetNameForSelect(Select value)
+Aws::String GetNameForSelect(Select enumValue)
 {
   switch(value)
   {

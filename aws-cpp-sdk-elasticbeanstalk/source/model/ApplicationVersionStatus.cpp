@@ -54,7 +54,7 @@ ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& n
   return ApplicationVersionStatus::NOT_SET;
 }
 
-Aws::String GetNameForApplicationVersionStatus(ApplicationVersionStatus value)
+Aws::String GetNameForApplicationVersionStatus(ApplicationVersionStatus enumValue)
 {
   switch(value)
   {

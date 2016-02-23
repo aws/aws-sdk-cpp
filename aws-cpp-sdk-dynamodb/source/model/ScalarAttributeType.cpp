@@ -49,7 +49,7 @@ ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
   return ScalarAttributeType::NOT_SET;
 }
 
-Aws::String GetNameForScalarAttributeType(ScalarAttributeType value)
+Aws::String GetNameForScalarAttributeType(ScalarAttributeType enumValue)
 {
   switch(value)
   {

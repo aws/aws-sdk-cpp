@@ -304,7 +304,7 @@ EventType GetEventTypeForName(const Aws::String& name)
   return EventType::NOT_SET;
 }
 
-Aws::String GetNameForEventType(EventType value)
+Aws::String GetNameForEventType(EventType enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ VolumeType GetVolumeTypeForName(const Aws::String& name)
   return VolumeType::NOT_SET;
 }
 
-Aws::String GetNameForVolumeType(VolumeType value)
+Aws::String GetNameForVolumeType(VolumeType enumValue)
 {
   switch(value)
   {

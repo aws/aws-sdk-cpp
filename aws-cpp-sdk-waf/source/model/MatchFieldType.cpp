@@ -59,7 +59,7 @@ MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
   return MatchFieldType::NOT_SET;
 }
 
-Aws::String GetNameForMatchFieldType(MatchFieldType value)
+Aws::String GetNameForMatchFieldType(MatchFieldType enumValue)
 {
   switch(value)
   {

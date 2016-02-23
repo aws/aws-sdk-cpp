@@ -69,7 +69,7 @@ StepExecutionState GetStepExecutionStateForName(const Aws::String& name)
   return StepExecutionState::NOT_SET;
 }
 
-Aws::String GetNameForStepExecutionState(StepExecutionState value)
+Aws::String GetNameForStepExecutionState(StepExecutionState enumValue)
 {
   switch(value)
   {

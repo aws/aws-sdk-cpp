@@ -44,7 +44,7 @@ RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
   return RegistrationStatus::NOT_SET;
 }
 
-Aws::String GetNameForRegistrationStatus(RegistrationStatus value)
+Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ StopStatus GetStopStatusForName(const Aws::String& name)
   return StopStatus::NOT_SET;
 }
 
-Aws::String GetNameForStopStatus(StopStatus value)
+Aws::String GetNameForStopStatus(StopStatus enumValue)
 {
   switch(value)
   {

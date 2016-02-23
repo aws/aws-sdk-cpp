@@ -39,7 +39,7 @@ DecisionTaskTimeoutType GetDecisionTaskTimeoutTypeForName(const Aws::String& nam
   return DecisionTaskTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForDecisionTaskTimeoutType(DecisionTaskTimeoutType value)
+Aws::String GetNameForDecisionTaskTimeoutType(DecisionTaskTimeoutType enumValue)
 {
   switch(value)
   {

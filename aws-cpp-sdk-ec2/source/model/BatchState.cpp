@@ -69,7 +69,7 @@ BatchState GetBatchStateForName(const Aws::String& name)
   return BatchState::NOT_SET;
 }
 
-Aws::String GetNameForBatchState(BatchState value)
+Aws::String GetNameForBatchState(BatchState enumValue)
 {
   switch(value)
   {

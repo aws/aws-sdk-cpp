@@ -59,7 +59,7 @@ ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
   return ImageFailureCode::NOT_SET;
 }
 
-Aws::String GetNameForImageFailureCode(ImageFailureCode value)
+Aws::String GetNameForImageFailureCode(ImageFailureCode enumValue)
 {
   switch(value)
   {

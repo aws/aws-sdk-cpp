@@ -74,7 +74,7 @@ DomainAvailability GetDomainAvailabilityForName(const Aws::String& name)
   return DomainAvailability::NOT_SET;
 }
 
-Aws::String GetNameForDomainAvailability(DomainAvailability value)
+Aws::String GetNameForDomainAvailability(DomainAvailability enumValue)
 {
   switch(value)
   {

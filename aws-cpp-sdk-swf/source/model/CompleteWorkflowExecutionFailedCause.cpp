@@ -44,7 +44,7 @@ CompleteWorkflowExecutionFailedCause GetCompleteWorkflowExecutionFailedCauseForN
   return CompleteWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForCompleteWorkflowExecutionFailedCause(CompleteWorkflowExecutionFailedCause value)
+Aws::String GetNameForCompleteWorkflowExecutionFailedCause(CompleteWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

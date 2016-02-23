@@ -44,7 +44,7 @@ DomainType GetDomainTypeForName(const Aws::String& name)
   return DomainType::NOT_SET;
 }
 
-Aws::String GetNameForDomainType(DomainType value)
+Aws::String GetNameForDomainType(DomainType enumValue)
 {
   switch(value)
   {

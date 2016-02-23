@@ -44,7 +44,7 @@ VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
   return VpcAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForVpcAttributeName(VpcAttributeName value)
+Aws::String GetNameForVpcAttributeName(VpcAttributeName enumValue)
 {
   switch(value)
   {

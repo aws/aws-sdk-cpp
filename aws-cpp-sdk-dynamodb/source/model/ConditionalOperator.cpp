@@ -44,7 +44,7 @@ ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
   return ConditionalOperator::NOT_SET;
 }
 
-Aws::String GetNameForConditionalOperator(ConditionalOperator value)
+Aws::String GetNameForConditionalOperator(ConditionalOperator enumValue)
 {
   switch(value)
   {

@@ -79,7 +79,7 @@ Event GetEventForName(const Aws::String& name)
   return Event::NOT_SET;
 }
 
-Aws::String GetNameForEvent(Event value)
+Aws::String GetNameForEvent(Event enumValue)
 {
   switch(value)
   {

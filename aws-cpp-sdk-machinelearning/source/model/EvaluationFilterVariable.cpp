@@ -74,7 +74,7 @@ EvaluationFilterVariable GetEvaluationFilterVariableForName(const Aws::String& n
   return EvaluationFilterVariable::NOT_SET;
 }
 
-Aws::String GetNameForEvaluationFilterVariable(EvaluationFilterVariable value)
+Aws::String GetNameForEvaluationFilterVariable(EvaluationFilterVariable enumValue)
 {
   switch(value)
   {

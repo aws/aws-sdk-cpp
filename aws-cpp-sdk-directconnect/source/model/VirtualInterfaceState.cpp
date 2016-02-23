@@ -69,7 +69,7 @@ VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
   return VirtualInterfaceState::NOT_SET;
 }
 
-Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState value)
+Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState enumValue)
 {
   switch(value)
   {

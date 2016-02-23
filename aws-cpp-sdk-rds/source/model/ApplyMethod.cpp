@@ -44,7 +44,7 @@ ApplyMethod GetApplyMethodForName(const Aws::String& name)
   return ApplyMethod::NOT_SET;
 }
 
-Aws::String GetNameForApplyMethod(ApplyMethod value)
+Aws::String GetNameForApplyMethod(ApplyMethod enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ ActionCode GetActionCodeForName(const Aws::String& name)
   return ActionCode::NOT_SET;
 }
 
-Aws::String GetNameForActionCode(ActionCode value)
+Aws::String GetNameForActionCode(ActionCode enumValue)
 {
   switch(value)
   {

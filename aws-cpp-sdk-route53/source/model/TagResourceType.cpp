@@ -44,7 +44,7 @@ TagResourceType GetTagResourceTypeForName(const Aws::String& name)
   return TagResourceType::NOT_SET;
 }
 
-Aws::String GetNameForTagResourceType(TagResourceType value)
+Aws::String GetNameForTagResourceType(TagResourceType enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ WorkspaceDirectoryState GetWorkspaceDirectoryStateForName(const Aws::String& nam
   return WorkspaceDirectoryState::NOT_SET;
 }
 
-Aws::String GetNameForWorkspaceDirectoryState(WorkspaceDirectoryState value)
+Aws::String GetNameForWorkspaceDirectoryState(WorkspaceDirectoryState enumValue)
 {
   switch(value)
   {

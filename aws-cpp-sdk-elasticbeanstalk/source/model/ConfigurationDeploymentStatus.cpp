@@ -49,7 +49,7 @@ ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws:
   return ConfigurationDeploymentStatus::NOT_SET;
 }
 
-Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus value)
+Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus enumValue)
 {
   switch(value)
   {

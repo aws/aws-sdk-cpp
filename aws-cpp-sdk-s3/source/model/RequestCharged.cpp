@@ -39,7 +39,7 @@ RequestCharged GetRequestChargedForName(const Aws::String& name)
   return RequestCharged::NOT_SET;
 }
 
-Aws::String GetNameForRequestCharged(RequestCharged value)
+Aws::String GetNameForRequestCharged(RequestCharged enumValue)
 {
   switch(value)
   {

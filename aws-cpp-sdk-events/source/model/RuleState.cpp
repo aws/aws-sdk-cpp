@@ -44,7 +44,7 @@ RuleState GetRuleStateForName(const Aws::String& name)
   return RuleState::NOT_SET;
 }
 
-Aws::String GetNameForRuleState(RuleState value)
+Aws::String GetNameForRuleState(RuleState enumValue)
 {
   switch(value)
   {

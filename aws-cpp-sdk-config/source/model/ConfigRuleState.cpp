@@ -44,7 +44,7 @@ ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)
   return ConfigRuleState::NOT_SET;
 }
 
-Aws::String GetNameForConfigRuleState(ConfigRuleState value)
+Aws::String GetNameForConfigRuleState(ConfigRuleState enumValue)
 {
   switch(value)
   {

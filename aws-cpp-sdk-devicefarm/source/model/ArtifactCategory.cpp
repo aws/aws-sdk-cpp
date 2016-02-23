@@ -49,7 +49,7 @@ ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
   return ArtifactCategory::NOT_SET;
 }
 
-Aws::String GetNameForArtifactCategory(ArtifactCategory value)
+Aws::String GetNameForArtifactCategory(ArtifactCategory enumValue)
 {
   switch(value)
   {

@@ -64,7 +64,7 @@ DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
   return DeploymentStatus::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentStatus(DeploymentStatus value)
+Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue)
 {
   switch(value)
   {

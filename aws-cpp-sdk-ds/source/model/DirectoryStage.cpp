@@ -89,7 +89,7 @@ DirectoryStage GetDirectoryStageForName(const Aws::String& name)
   return DirectoryStage::NOT_SET;
 }
 
-Aws::String GetNameForDirectoryStage(DirectoryStage value)
+Aws::String GetNameForDirectoryStage(DirectoryStage enumValue)
 {
   switch(value)
   {

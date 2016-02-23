@@ -99,7 +99,7 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
   return ComparisonOperator::NOT_SET;
 }
 
-Aws::String GetNameForComparisonOperator(ComparisonOperator value)
+Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue)
 {
   switch(value)
   {

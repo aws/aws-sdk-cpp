@@ -64,7 +64,7 @@ ExportTaskStatusCode GetExportTaskStatusCodeForName(const Aws::String& name)
   return ExportTaskStatusCode::NOT_SET;
 }
 
-Aws::String GetNameForExportTaskStatusCode(ExportTaskStatusCode value)
+Aws::String GetNameForExportTaskStatusCode(ExportTaskStatusCode enumValue)
 {
   switch(value)
   {

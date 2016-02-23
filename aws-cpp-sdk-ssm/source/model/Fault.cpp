@@ -49,7 +49,7 @@ Fault GetFaultForName(const Aws::String& name)
   return Fault::NOT_SET;
 }
 
-Aws::String GetNameForFault(Fault value)
+Aws::String GetNameForFault(Fault enumValue)
 {
   switch(value)
   {

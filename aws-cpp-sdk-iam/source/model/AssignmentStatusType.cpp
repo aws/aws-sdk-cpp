@@ -49,7 +49,7 @@ AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
   return AssignmentStatusType::NOT_SET;
 }
 
-Aws::String GetNameForAssignmentStatusType(AssignmentStatusType value)
+Aws::String GetNameForAssignmentStatusType(AssignmentStatusType enumValue)
 {
   switch(value)
   {

@@ -89,7 +89,7 @@ ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const 
   return ScheduleActivityTaskFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause value)
+Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause enumValue)
 {
   switch(value)
   {

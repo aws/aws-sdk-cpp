@@ -59,7 +59,7 @@ RuleOperator GetRuleOperatorForName(const Aws::String& name)
   return RuleOperator::NOT_SET;
 }
 
-Aws::String GetNameForRuleOperator(RuleOperator value)
+Aws::String GetNameForRuleOperator(RuleOperator enumValue)
 {
   switch(value)
   {

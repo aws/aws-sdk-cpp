@@ -54,7 +54,7 @@ AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
   return AlgorithmicStemming::NOT_SET;
 }
 
-Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming value)
+Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming enumValue)
 {
   switch(value)
   {

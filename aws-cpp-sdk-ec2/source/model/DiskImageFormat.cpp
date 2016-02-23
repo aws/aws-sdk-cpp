@@ -49,7 +49,7 @@ DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
   return DiskImageFormat::NOT_SET;
 }
 
-Aws::String GetNameForDiskImageFormat(DiskImageFormat value)
+Aws::String GetNameForDiskImageFormat(DiskImageFormat enumValue)
 {
   switch(value)
   {

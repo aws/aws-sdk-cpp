@@ -49,7 +49,7 @@ AssociationStatusName GetAssociationStatusNameForName(const Aws::String& name)
   return AssociationStatusName::NOT_SET;
 }
 
-Aws::String GetNameForAssociationStatusName(AssociationStatusName value)
+Aws::String GetNameForAssociationStatusName(AssociationStatusName enumValue)
 {
   switch(value)
   {

@@ -44,7 +44,7 @@ AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
   return AssociationFilterKey::NOT_SET;
 }
 
-Aws::String GetNameForAssociationFilterKey(AssociationFilterKey value)
+Aws::String GetNameForAssociationFilterKey(AssociationFilterKey enumValue)
 {
   switch(value)
   {

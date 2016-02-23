@@ -59,7 +59,7 @@ Statistic GetStatisticForName(const Aws::String& name)
   return Statistic::NOT_SET;
 }
 
-Aws::String GetNameForStatistic(Statistic value)
+Aws::String GetNameForStatistic(Statistic enumValue)
 {
   switch(value)
   {

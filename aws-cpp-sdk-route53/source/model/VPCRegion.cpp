@@ -84,7 +84,7 @@ VPCRegion GetVPCRegionForName(const Aws::String& name)
   return VPCRegion::NOT_SET;
 }
 
-Aws::String GetNameForVPCRegion(VPCRegion value)
+Aws::String GetNameForVPCRegion(VPCRegion enumValue)
 {
   switch(value)
   {

@@ -59,7 +59,7 @@ SummaryStatus GetSummaryStatusForName(const Aws::String& name)
   return SummaryStatus::NOT_SET;
 }
 
-Aws::String GetNameForSummaryStatus(SummaryStatus value)
+Aws::String GetNameForSummaryStatus(SummaryStatus enumValue)
 {
   switch(value)
   {

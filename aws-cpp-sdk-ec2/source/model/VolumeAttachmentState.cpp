@@ -54,7 +54,7 @@ VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
   return VolumeAttachmentState::NOT_SET;
 }
 
-Aws::String GetNameForVolumeAttachmentState(VolumeAttachmentState value)
+Aws::String GetNameForVolumeAttachmentState(VolumeAttachmentState enumValue)
 {
   switch(value)
   {

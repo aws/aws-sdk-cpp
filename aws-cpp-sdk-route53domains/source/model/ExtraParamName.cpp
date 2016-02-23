@@ -134,7 +134,7 @@ ExtraParamName GetExtraParamNameForName(const Aws::String& name)
   return ExtraParamName::NOT_SET;
 }
 
-Aws::String GetNameForExtraParamName(ExtraParamName value)
+Aws::String GetNameForExtraParamName(ExtraParamName enumValue)
 {
   switch(value)
   {

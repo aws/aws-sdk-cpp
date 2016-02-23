@@ -44,7 +44,7 @@ FailWorkflowExecutionFailedCause GetFailWorkflowExecutionFailedCauseForName(cons
   return FailWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause value)
+Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause enumValue)
 {
   switch(value)
   {

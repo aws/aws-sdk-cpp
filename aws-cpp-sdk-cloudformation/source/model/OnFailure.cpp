@@ -49,7 +49,7 @@ OnFailure GetOnFailureForName(const Aws::String& name)
   return OnFailure::NOT_SET;
 }
 
-Aws::String GetNameForOnFailure(OnFailure value)
+Aws::String GetNameForOnFailure(OnFailure enumValue)
 {
   switch(value)
   {

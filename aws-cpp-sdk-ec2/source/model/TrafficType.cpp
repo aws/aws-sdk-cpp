@@ -49,7 +49,7 @@ TrafficType GetTrafficTypeForName(const Aws::String& name)
   return TrafficType::NOT_SET;
 }
 
-Aws::String GetNameForTrafficType(TrafficType value)
+Aws::String GetNameForTrafficType(TrafficType enumValue)
 {
   switch(value)
   {

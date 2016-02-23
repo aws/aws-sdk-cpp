@@ -94,7 +94,7 @@ LayerType GetLayerTypeForName(const Aws::String& name)
   return LayerType::NOT_SET;
 }
 
-Aws::String GetNameForLayerType(LayerType value)
+Aws::String GetNameForLayerType(LayerType enumValue)
 {
   switch(value)
   {

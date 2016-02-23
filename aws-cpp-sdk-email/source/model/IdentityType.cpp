@@ -44,7 +44,7 @@ IdentityType GetIdentityTypeForName(const Aws::String& name)
   return IdentityType::NOT_SET;
 }
 
-Aws::String GetNameForIdentityType(IdentityType value)
+Aws::String GetNameForIdentityType(IdentityType enumValue)
 {
   switch(value)
   {

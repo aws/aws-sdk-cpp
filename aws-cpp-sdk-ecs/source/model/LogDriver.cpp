@@ -59,7 +59,7 @@ LogDriver GetLogDriverForName(const Aws::String& name)
   return LogDriver::NOT_SET;
 }
 
-Aws::String GetNameForLogDriver(LogDriver value)
+Aws::String GetNameForLogDriver(LogDriver enumValue)
 {
   switch(value)
   {

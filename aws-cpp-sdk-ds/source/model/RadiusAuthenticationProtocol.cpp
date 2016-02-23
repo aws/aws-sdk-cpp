@@ -54,7 +54,7 @@ RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::S
   return RadiusAuthenticationProtocol::NOT_SET;
 }
 
-Aws::String GetNameForRadiusAuthenticationProtocol(RadiusAuthenticationProtocol value)
+Aws::String GetNameForRadiusAuthenticationProtocol(RadiusAuthenticationProtocol enumValue)
 {
   switch(value)
   {

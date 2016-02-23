@@ -49,7 +49,7 @@ ItemSelection GetItemSelectionForName(const Aws::String& name)
   return ItemSelection::NOT_SET;
 }
 
-Aws::String GetNameForItemSelection(ItemSelection value)
+Aws::String GetNameForItemSelection(ItemSelection enumValue)
 {
   switch(value)
   {

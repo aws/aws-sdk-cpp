@@ -44,7 +44,7 @@ HostTenancy GetHostTenancyForName(const Aws::String& name)
   return HostTenancy::NOT_SET;
 }
 
-Aws::String GetNameForHostTenancy(HostTenancy value)
+Aws::String GetNameForHostTenancy(HostTenancy enumValue)
 {
   switch(value)
   {

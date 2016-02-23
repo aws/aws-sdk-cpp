@@ -54,7 +54,7 @@ ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
   return ActionOnFailure::NOT_SET;
 }
 
-Aws::String GetNameForActionOnFailure(ActionOnFailure value)
+Aws::String GetNameForActionOnFailure(ActionOnFailure enumValue)
 {
   switch(value)
   {

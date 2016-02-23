@@ -49,7 +49,7 @@ InvocationType GetInvocationTypeForName(const Aws::String& name)
   return InvocationType::NOT_SET;
 }
 
-Aws::String GetNameForInvocationType(InvocationType value)
+Aws::String GetNameForInvocationType(InvocationType enumValue)
 {
   switch(value)
   {

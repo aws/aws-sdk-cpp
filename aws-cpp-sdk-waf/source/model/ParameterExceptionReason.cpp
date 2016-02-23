@@ -44,7 +44,7 @@ ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& n
   return ParameterExceptionReason::NOT_SET;
 }
 
-Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason value)
+Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason enumValue)
 {
   switch(value)
   {

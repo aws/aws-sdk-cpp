@@ -44,7 +44,7 @@ EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
   return EnvironmentInfoType::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType value)
+Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType enumValue)
 {
   switch(value)
   {

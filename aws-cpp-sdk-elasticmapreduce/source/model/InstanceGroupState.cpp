@@ -84,7 +84,7 @@ InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
   return InstanceGroupState::NOT_SET;
 }
 
-Aws::String GetNameForInstanceGroupState(InstanceGroupState value)
+Aws::String GetNameForInstanceGroupState(InstanceGroupState enumValue)
 {
   switch(value)
   {

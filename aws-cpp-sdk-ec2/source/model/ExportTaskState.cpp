@@ -54,7 +54,7 @@ ExportTaskState GetExportTaskStateForName(const Aws::String& name)
   return ExportTaskState::NOT_SET;
 }
 
-Aws::String GetNameForExportTaskState(ExportTaskState value)
+Aws::String GetNameForExportTaskState(ExportTaskState enumValue)
 {
   switch(value)
   {

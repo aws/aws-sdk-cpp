@@ -54,7 +54,7 @@ ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& nam
   return ConfigurationItemStatus::NOT_SET;
 }
 
-Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus value)
+Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus enumValue)
 {
   switch(value)
   {

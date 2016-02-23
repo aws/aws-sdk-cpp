@@ -49,7 +49,7 @@ DirectoryType GetDirectoryTypeForName(const Aws::String& name)
   return DirectoryType::NOT_SET;
 }
 
-Aws::String GetNameForDirectoryType(DirectoryType value)
+Aws::String GetNameForDirectoryType(DirectoryType enumValue)
 {
   switch(value)
   {

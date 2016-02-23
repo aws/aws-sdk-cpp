@@ -49,7 +49,7 @@ RecorderStatus GetRecorderStatusForName(const Aws::String& name)
   return RecorderStatus::NOT_SET;
 }
 
-Aws::String GetNameForRecorderStatus(RecorderStatus value)
+Aws::String GetNameForRecorderStatus(RecorderStatus enumValue)
 {
   switch(value)
   {

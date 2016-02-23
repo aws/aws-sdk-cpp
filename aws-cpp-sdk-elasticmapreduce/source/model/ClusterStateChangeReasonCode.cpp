@@ -69,7 +69,7 @@ ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::S
   return ClusterStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode value)
+Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode enumValue)
 {
   switch(value)
   {

@@ -49,7 +49,7 @@ InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
   return InstanceRoleType::NOT_SET;
 }
 
-Aws::String GetNameForInstanceRoleType(InstanceRoleType value)
+Aws::String GetNameForInstanceRoleType(InstanceRoleType enumValue)
 {
   switch(value)
   {

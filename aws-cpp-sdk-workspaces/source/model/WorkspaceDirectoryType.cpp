@@ -44,7 +44,7 @@ WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)
   return WorkspaceDirectoryType::NOT_SET;
 }
 
-Aws::String GetNameForWorkspaceDirectoryType(WorkspaceDirectoryType value)
+Aws::String GetNameForWorkspaceDirectoryType(WorkspaceDirectoryType enumValue)
 {
   switch(value)
   {

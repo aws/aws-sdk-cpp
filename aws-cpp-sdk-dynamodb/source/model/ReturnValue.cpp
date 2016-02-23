@@ -59,7 +59,7 @@ ReturnValue GetReturnValueForName(const Aws::String& name)
   return ReturnValue::NOT_SET;
 }
 
-Aws::String GetNameForReturnValue(ReturnValue value)
+Aws::String GetNameForReturnValue(ReturnValue enumValue)
 {
   switch(value)
   {

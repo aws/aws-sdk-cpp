@@ -74,7 +74,7 @@ JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name)
   return JobFlowExecutionState::NOT_SET;
 }
 
-Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState value)
+Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState enumValue)
 {
   switch(value)
   {

@@ -39,7 +39,7 @@ PlatformValues GetPlatformValuesForName(const Aws::String& name)
   return PlatformValues::NOT_SET;
 }
 
-Aws::String GetNameForPlatformValues(PlatformValues value)
+Aws::String GetNameForPlatformValues(PlatformValues enumValue)
 {
   switch(value)
   {

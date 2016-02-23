@@ -84,7 +84,7 @@ RevocationReason GetRevocationReasonForName(const Aws::String& name)
   return RevocationReason::NOT_SET;
 }
 
-Aws::String GetNameForRevocationReason(RevocationReason value)
+Aws::String GetNameForRevocationReason(RevocationReason enumValue)
 {
   switch(value)
   {

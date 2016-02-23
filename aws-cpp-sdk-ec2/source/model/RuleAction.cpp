@@ -44,7 +44,7 @@ RuleAction GetRuleActionForName(const Aws::String& name)
   return RuleAction::NOT_SET;
 }
 
-Aws::String GetNameForRuleAction(RuleAction value)
+Aws::String GetNameForRuleAction(RuleAction enumValue)
 {
   switch(value)
   {

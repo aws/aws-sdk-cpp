@@ -49,7 +49,7 @@ SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
   return SuggesterFuzzyMatching::NOT_SET;
 }
 
-Aws::String GetNameForSuggesterFuzzyMatching(SuggesterFuzzyMatching value)
+Aws::String GetNameForSuggesterFuzzyMatching(SuggesterFuzzyMatching enumValue)
 {
   switch(value)
   {

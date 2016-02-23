@@ -44,7 +44,7 @@ LogType GetLogTypeForName(const Aws::String& name)
   return LogType::NOT_SET;
 }
 
-Aws::String GetNameForLogType(LogType value)
+Aws::String GetNameForLogType(LogType enumValue)
 {
   switch(value)
   {

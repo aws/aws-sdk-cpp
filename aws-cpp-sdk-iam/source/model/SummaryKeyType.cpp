@@ -159,7 +159,7 @@ SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)
   return SummaryKeyType::NOT_SET;
 }
 
-Aws::String GetNameForSummaryKeyType(SummaryKeyType value)
+Aws::String GetNameForSummaryKeyType(SummaryKeyType enumValue)
 {
   switch(value)
   {

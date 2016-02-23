@@ -44,7 +44,7 @@ ReportStatusType GetReportStatusTypeForName(const Aws::String& name)
   return ReportStatusType::NOT_SET;
 }
 
-Aws::String GetNameForReportStatusType(ReportStatusType value)
+Aws::String GetNameForReportStatusType(ReportStatusType enumValue)
 {
   switch(value)
   {
