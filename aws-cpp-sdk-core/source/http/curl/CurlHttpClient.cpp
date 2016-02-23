@@ -21,7 +21,7 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
-
+#include <cassert>
 #include <algorithm>
 
 
