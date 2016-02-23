@@ -64,6 +64,7 @@ static bool GetNameForEnumHelper${helperIndex}(${enumModel.name} enumValue, Aws:
 #if ($enumCounter % 122 == 0 || $enumCounter == $enumModel.members.size())
   default:
     return false;
+  }
 }
 #end
 #end

@@ -1789,6 +1789,7 @@ static bool GetNameForEnumHelper0(CountryCode enumValue, Aws::String& value)
     return true;
   default:
     return false;
+  }
 }
 static bool GetNameForEnumHelper1(CountryCode enumValue, Aws::String& value)
 {
@@ -2117,6 +2118,7 @@ static bool GetNameForEnumHelper1(CountryCode enumValue, Aws::String& value)
     return true;
   default:
     return false;
+  }
 }
 
 CountryCode GetCountryCodeForName(const Aws::String& name)
