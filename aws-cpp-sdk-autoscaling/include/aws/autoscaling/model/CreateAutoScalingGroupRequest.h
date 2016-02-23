@@ -277,8 +277,8 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p> <p>If this parameter is not specified,
-     * the default value is 300. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
@@ -286,8 +286,8 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p> <p>If this parameter is not specified,
-     * the default value is 300. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
@@ -295,8 +295,8 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p> <p>If this parameter is not specified,
-     * the default value is 300. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
      * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
@@ -420,7 +420,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
@@ -430,7 +430,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
@@ -440,7 +440,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
@@ -450,7 +450,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
@@ -460,7 +460,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
@@ -470,7 +470,7 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(value); return *this;}
 
@@ -480,49 +480,43 @@ namespace Model
      * Amazon EC2 instance status checks to determine the health of an instance. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-     * Checks</a>.</p>
+     * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The amount of time, in seconds, after an EC2 instance comes into service that
-     * Auto Scaling starts checking its health. During this time, any health check
-     * failures for the instance are ignored.</p> <p>This parameter is required if you
-     * are adding an <code>ELB</code> health check. Frequently, new instances need to
-     * warm up, briefly, before they can pass a health check. To provide ample warm-up
-     * time, set the health check grace period of the group to match the expected
-     * startup period of your application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-add-elb-healthcheck.html">Add
-     * an Elastic Load Balancing Health Check to Your Auto Scaling Group</a> in the
-     * <i>Auto Scaling Developer Guide</i>.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service. During this time,
+     * any health check failures for the instance are ignored. The default is 300.</p>
+     * <p>This parameter is required if you are adding an <code>ELB</code> health
+     * check.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks for Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline long GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, after an EC2 instance comes into service that
-     * Auto Scaling starts checking its health. During this time, any health check
-     * failures for the instance are ignored.</p> <p>This parameter is required if you
-     * are adding an <code>ELB</code> health check. Frequently, new instances need to
-     * warm up, briefly, before they can pass a health check. To provide ample warm-up
-     * time, set the health check grace period of the group to match the expected
-     * startup period of your application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-add-elb-healthcheck.html">Add
-     * an Elastic Load Balancing Health Check to Your Auto Scaling Group</a> in the
-     * <i>Auto Scaling Developer Guide</i>.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service. During this time,
+     * any health check failures for the instance are ignored. The default is 300.</p>
+     * <p>This parameter is required if you are adding an <code>ELB</code> health
+     * check.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks for Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckGracePeriod(long value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, after an EC2 instance comes into service that
-     * Auto Scaling starts checking its health. During this time, any health check
-     * failures for the instance are ignored.</p> <p>This parameter is required if you
-     * are adding an <code>ELB</code> health check. Frequently, new instances need to
-     * warm up, briefly, before they can pass a health check. To provide ample warm-up
-     * time, set the health check grace period of the group to match the expected
-     * startup period of your application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-add-elb-healthcheck.html">Add
-     * an Elastic Load Balancing Health Check to Your Auto Scaling Group</a> in the
-     * <i>Auto Scaling Developer Guide</i>.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service. During this time,
+     * any health check failures for the instance are ignored. The default is 300.</p>
+     * <p>This parameter is required if you are adding an <code>ELB</code> health
+     * check.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks for Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(long value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -740,6 +734,24 @@ namespace Model
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
+
+    /**
      * <p>The tag to be created or updated. Each tag should be defined by its resource
      * type, resource ID, key, value, and a propagate flag. Valid values:
      * key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>.
@@ -845,6 +857,8 @@ namespace Model
     bool m_vPCZoneIdentifierHasBeenSet;
     Aws::Vector<Aws::String> m_terminationPolicies;
     bool m_terminationPoliciesHasBeenSet;
+    bool m_newInstancesProtectedFromScaleIn;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

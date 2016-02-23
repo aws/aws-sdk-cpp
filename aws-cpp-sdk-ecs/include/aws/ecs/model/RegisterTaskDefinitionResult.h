@@ -39,19 +39,29 @@ namespace Model
     RegisterTaskDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RegisterTaskDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The full description of the registered task definition.</p>
+     */
     inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
 
-    
+    /**
+     * <p>The full description of the registered task definition.</p>
+     */
     inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
 
-    
+    /**
+     * <p>The full description of the registered task definition.</p>
+     */
     inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = value; }
 
-    
+    /**
+     * <p>The full description of the registered task definition.</p>
+     */
     inline RegisterTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
 
-    
+    /**
+     * <p>The full description of the registered task definition.</p>
+     */
     inline RegisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(value); return *this;}
 
   private:

@@ -69,7 +69,7 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

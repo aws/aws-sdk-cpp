@@ -47,7 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -59,7 +59,7 @@ namespace Model
     inline const Aws::String& GetProcessName() const{ return m_processName; }
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -71,7 +71,7 @@ namespace Model
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -83,7 +83,7 @@ namespace Model
     inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -95,7 +95,7 @@ namespace Model
     inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -107,7 +107,7 @@ namespace Model
     inline ProcessType& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>
@@ -119,7 +119,7 @@ namespace Model
     inline ProcessType& WithProcessName(Aws::String&& value) { SetProcessName(value); return *this;}
 
     /**
-     * <p>The name of the process.</p> <ul> <li><p><code>Launch</code></p></li>
+     * <p>One of the following processes:</p> <ul> <li><p><code>Launch</code></p></li>
      * <li><p><code>Terminate</code></p></li>
      * <li><p><code>AddToLoadBalancer</code></p></li>
      * <li><p><code>AlarmNotification</code></p></li>

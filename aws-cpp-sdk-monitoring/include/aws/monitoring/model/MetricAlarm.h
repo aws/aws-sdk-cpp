@@ -157,72 +157,37 @@ namespace Model
     inline MetricAlarm& WithAlarmDescription(const char* value) { SetAlarmDescription(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline const Aws::String& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline void SetAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline void SetAlarmConfigurationUpdatedTimestamp(const char* value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp.assign(value); }
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm configuration. Amazon
-     * CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
-     * which do not accommodate seasonal adjustments such as daylight savings time. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm configuration. </p>
      */
     inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const char* value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
@@ -247,208 +212,176 @@ namespace Model
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is specified as an
-     * Amazon Resource Number (ARN). Currently the only actions supported are
-     * publishing to an Amazon SNS topic and triggering an Auto Scaling policy. </p>
+     * Amazon Resource Name (ARN). </p>
      */
     inline MetricAlarm& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline MetricAlarm& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline MetricAlarm& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(value); return *this;}
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline MetricAlarm& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline MetricAlarm& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
     /**
      * <p> The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Number (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic or triggering an Auto Scaling
-     * policy. </p> <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * specified as an Amazon Resource Name (ARN). </p> <important>The current WSDL
+     * lists this attribute as <code>UnknownActions</code>.</important>
      */
     inline MetricAlarm& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -548,72 +481,37 @@ namespace Model
     inline MetricAlarm& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline const Aws::String& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline void SetStateUpdatedTimestamp(const Aws::String& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline void SetStateUpdatedTimestamp(Aws::String&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline void SetStateUpdatedTimestamp(const char* value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp.assign(value); }
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::String& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(Aws::String&& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp of the last update to the alarm's state. Amazon CloudWatch
-     * uses Coordinated Universal Time (UTC) when returning time stamps, which do not
-     * accommodate seasonal adjustments such as daylight savings time. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp of the last update to the alarm's state. </p>
      */
     inline MetricAlarm& WithStateUpdatedTimestamp(const char* value) { SetStateUpdatedTimestamp(value); return *this;}
 

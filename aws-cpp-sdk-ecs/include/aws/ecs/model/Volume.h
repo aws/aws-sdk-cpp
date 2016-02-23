@@ -43,86 +43,103 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the volume. This name is referenced in the
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The path on the host container instance that is presented to the containers
-     * which access the volume. If this parameter is empty, then the Docker daemon
-     * assigns a host path for you.</p>
+     * <p>The contents of the <code>host</code> parameter determine whether your data
+     * volume persists on the host container instance and where it is stored. If the
+     * host parameter is empty, then the Docker daemon assigns a host path for your
+     * data volume, but the data is not guaranteed to persist after the containers
+     * associated with it stop running.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
     /**
-     * <p>The path on the host container instance that is presented to the containers
-     * which access the volume. If this parameter is empty, then the Docker daemon
-     * assigns a host path for you.</p>
+     * <p>The contents of the <code>host</code> parameter determine whether your data
+     * volume persists on the host container instance and where it is stored. If the
+     * host parameter is empty, then the Docker daemon assigns a host path for your
+     * data volume, but the data is not guaranteed to persist after the containers
+     * associated with it stop running.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>The path on the host container instance that is presented to the containers
-     * which access the volume. If this parameter is empty, then the Docker daemon
-     * assigns a host path for you.</p>
+     * <p>The contents of the <code>host</code> parameter determine whether your data
+     * volume persists on the host container instance and where it is stored. If the
+     * host parameter is empty, then the Docker daemon assigns a host path for your
+     * data volume, but the data is not guaranteed to persist after the containers
+     * associated with it stop running.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>The path on the host container instance that is presented to the containers
-     * which access the volume. If this parameter is empty, then the Docker daemon
-     * assigns a host path for you.</p>
+     * <p>The contents of the <code>host</code> parameter determine whether your data
+     * volume persists on the host container instance and where it is stored. If the
+     * host parameter is empty, then the Docker daemon assigns a host path for your
+     * data volume, but the data is not guaranteed to persist after the containers
+     * associated with it stop running.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
     /**
-     * <p>The path on the host container instance that is presented to the containers
-     * which access the volume. If this parameter is empty, then the Docker daemon
-     * assigns a host path for you.</p>
+     * <p>The contents of the <code>host</code> parameter determine whether your data
+     * volume persists on the host container instance and where it is stored. If the
+     * host parameter is empty, then the Docker daemon assigns a host path for your
+     * data volume, but the data is not guaranteed to persist after the containers
+     * associated with it stop running.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(value); return *this;}
 

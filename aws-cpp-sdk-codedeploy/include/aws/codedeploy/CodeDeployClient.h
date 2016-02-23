@@ -20,7 +20,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/codedeploy/model/BatchGetApplicationRevisionsResult.h>
 #include <aws/codedeploy/model/BatchGetApplicationsResult.h>
+#include <aws/codedeploy/model/BatchGetDeploymentInstancesResult.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsResult.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesResult.h>
 #include <aws/codedeploy/model/CreateApplicationResult.h>
@@ -91,7 +93,9 @@ namespace CodeDeploy
 namespace Model
 {
         class AddTagsToOnPremisesInstancesRequest;
+        class BatchGetApplicationRevisionsRequest;
         class BatchGetApplicationsRequest;
+        class BatchGetDeploymentInstancesRequest;
         class BatchGetDeploymentsRequest;
         class BatchGetOnPremisesInstancesRequest;
         class CreateApplicationRequest;
@@ -124,7 +128,9 @@ namespace Model
         class UpdateDeploymentGroupRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodeDeployErrors>> AddTagsToOnPremisesInstancesOutcome;
+        typedef Aws::Utils::Outcome<BatchGetApplicationRevisionsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationRevisionsOutcome;
         typedef Aws::Utils::Outcome<BatchGetApplicationsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDeploymentInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentInstancesOutcome;
         typedef Aws::Utils::Outcome<BatchGetDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentsOutcome;
         typedef Aws::Utils::Outcome<BatchGetOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetOnPremisesInstancesOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<CodeDeployErrors>> CreateApplicationOutcome;
@@ -157,7 +163,9 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDeploymentGroupResult, Aws::Client::AWSError<CodeDeployErrors>> UpdateDeploymentGroupOutcome;
 
         typedef std::future<AddTagsToOnPremisesInstancesOutcome> AddTagsToOnPremisesInstancesOutcomeCallable;
+        typedef std::future<BatchGetApplicationRevisionsOutcome> BatchGetApplicationRevisionsOutcomeCallable;
         typedef std::future<BatchGetApplicationsOutcome> BatchGetApplicationsOutcomeCallable;
+        typedef std::future<BatchGetDeploymentInstancesOutcome> BatchGetDeploymentInstancesOutcomeCallable;
         typedef std::future<BatchGetDeploymentsOutcome> BatchGetDeploymentsOutcomeCallable;
         typedef std::future<BatchGetOnPremisesInstancesOutcome> BatchGetOnPremisesInstancesOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -193,7 +201,9 @@ namespace Model
   class CodeDeployClient;
 
     typedef std::function<void(const CodeDeployClient*, const Model::AddTagsToOnPremisesInstancesRequest&, const Model::AddTagsToOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToOnPremisesInstancesResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationRevisionsRequest&, const Model::BatchGetApplicationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationRevisionsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationsRequest&, const Model::BatchGetApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationsResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentInstancesRequest&, const Model::BatchGetDeploymentInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentInstancesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentsRequest&, const Model::BatchGetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetOnPremisesInstancesRequest&, const Model::BatchGetOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetOnPremisesInstancesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
@@ -308,6 +318,25 @@ namespace Model
         virtual void AddTagsToOnPremisesInstancesAsync(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about one or more application revisions.</p>
+         */
+        virtual Model::BatchGetApplicationRevisionsOutcome BatchGetApplicationRevisions(const Model::BatchGetApplicationRevisionsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more application revisions.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetApplicationRevisionsOutcomeCallable BatchGetApplicationRevisionsCallable(const Model::BatchGetApplicationRevisionsRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more application revisions.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetApplicationRevisionsAsync(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about one or more applications.</p>
          */
         virtual Model::BatchGetApplicationsOutcome BatchGetApplications(const Model::BatchGetApplicationsRequest& request) const;
@@ -325,6 +354,28 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about one or more instances that are part of a deployment
+         * group.</p>
+         */
+        virtual Model::BatchGetDeploymentInstancesOutcome BatchGetDeploymentInstances(const Model::BatchGetDeploymentInstancesRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more instances that are part of a deployment
+         * group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetDeploymentInstancesOutcomeCallable BatchGetDeploymentInstancesCallable(const Model::BatchGetDeploymentInstancesRequest& request) const;
+
+        /**
+         * <p>Gets information about one or more instances that are part of a deployment
+         * group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetDeploymentInstancesAsync(const Model::BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about one or more deployments.</p>
@@ -935,7 +986,9 @@ namespace Model
 
         /**Async helpers**/
         void AddTagsToOnPremisesInstancesAsyncHelper(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetApplicationRevisionsAsyncHelper(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetApplicationsAsyncHelper(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetDeploymentInstancesAsyncHelper(const Model::BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetDeploymentsAsyncHelper(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetOnPremisesInstancesAsyncHelper(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

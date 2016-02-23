@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for <a>CancelUpdateStack</a> action.</p>
+   * <p>The input for the <a>CancelUpdateStack</a> action.</p>
    */
   class AWS_CLOUDFORMATION_API CancelUpdateStackRequest : public CloudFormationRequest
   {

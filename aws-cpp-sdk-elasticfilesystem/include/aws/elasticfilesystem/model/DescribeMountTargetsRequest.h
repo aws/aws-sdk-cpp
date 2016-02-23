@@ -107,39 +107,102 @@ namespace Model
     inline DescribeMountTargetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>String. The ID of the file system whose mount targets you want to list.</p>
+     * <p>Optional. String. The ID of the file system whose mount targets you want to
+     * list. It must be included in your request if <code>MountTargetId</code> is not
+     * included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline DescribeMountTargetsRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline DescribeMountTargetsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
+
+    /**
+     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline DescribeMountTargetsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
   private:
     long m_maxItems;
@@ -148,6 +211,8 @@ namespace Model
     bool m_markerHasBeenSet;
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+    Aws::String m_mountTargetId;
+    bool m_mountTargetIdHasBeenSet;
   };
 
 } // namespace Model

@@ -37,6 +37,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
     m_ec2SubnetIdHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -58,6 +59,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig(const JsonValue& jsonValue) :
     m_ec2SubnetIdHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -151,6 +153,13 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(const JsonValue& json
     m_emrManagedSlaveSecurityGroup = jsonValue.GetString("EmrManagedSlaveSecurityGroup");
 
     m_emrManagedSlaveSecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceAccessSecurityGroup"))
+  {
+    m_serviceAccessSecurityGroup = jsonValue.GetString("ServiceAccessSecurityGroup");
+
+    m_serviceAccessSecurityGroupHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
@@ -254,6 +263,12 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
   if(m_emrManagedSlaveSecurityGroupHasBeenSet)
   {
    payload.WithString("EmrManagedSlaveSecurityGroup", m_emrManagedSlaveSecurityGroup);
+
+  }
+
+  if(m_serviceAccessSecurityGroupHasBeenSet)
+  {
+   payload.WithString("ServiceAccessSecurityGroup", m_serviceAccessSecurityGroup);
 
   }
 

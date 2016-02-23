@@ -78,43 +78,43 @@ namespace Model
     inline SubmitTaskStateChangeRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(Aws::String&& value) { SetTask(value); return *this;}
 
     /**
-     * <p>The task UUID or full Amazon Resource Name (ARN) of the task in the state
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
      * change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithTask(const char* value) { SetTask(value); return *this;}

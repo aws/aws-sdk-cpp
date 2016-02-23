@@ -69,43 +69,50 @@ namespace Model
     inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy being created. This name must be unique within the set
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
      * of policies for this load balancer.</p>
      */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}

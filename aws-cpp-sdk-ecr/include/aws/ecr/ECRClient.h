@@ -1,0 +1,620 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/ECRErrors.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/model/BatchCheckLayerAvailabilityResult.h>
+#include <aws/ecr/model/BatchDeleteImageResult.h>
+#include <aws/ecr/model/BatchGetImageResult.h>
+#include <aws/ecr/model/CompleteLayerUploadResult.h>
+#include <aws/ecr/model/CreateRepositoryResult.h>
+#include <aws/ecr/model/DeleteRepositoryResult.h>
+#include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
+#include <aws/ecr/model/DescribeRepositoriesResult.h>
+#include <aws/ecr/model/GetAuthorizationTokenResult.h>
+#include <aws/ecr/model/GetDownloadUrlForLayerResult.h>
+#include <aws/ecr/model/GetRepositoryPolicyResult.h>
+#include <aws/ecr/model/InitiateLayerUploadResult.h>
+#include <aws/ecr/model/ListImagesResult.h>
+#include <aws/ecr/model/PutImageResult.h>
+#include <aws/ecr/model/SetRepositoryPolicyResult.h>
+#include <aws/ecr/model/UploadLayerPartResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/http/HttpTypes.h>
+#include <future>
+#include <functional>
+
+namespace Aws
+{
+
+namespace Http
+{
+  class HttpClient;
+  class HttpClientFactory;
+} // namespace Http
+
+namespace Utils
+{
+  template< typename R, typename E> class Outcome;
+
+namespace Threading
+{
+  class Executor;
+} // namespace Threading
+
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+
+namespace Auth
+{
+  class AWSCredentials;
+  class AWSCredentialsProvider;
+} // namespace Auth
+
+namespace Client
+{
+  class RetryStrategy;
+} // namespace Client
+
+namespace ECR
+{
+
+namespace Model
+{
+        class BatchCheckLayerAvailabilityRequest;
+        class BatchDeleteImageRequest;
+        class BatchGetImageRequest;
+        class CompleteLayerUploadRequest;
+        class CreateRepositoryRequest;
+        class DeleteRepositoryRequest;
+        class DeleteRepositoryPolicyRequest;
+        class DescribeRepositoriesRequest;
+        class GetAuthorizationTokenRequest;
+        class GetDownloadUrlForLayerRequest;
+        class GetRepositoryPolicyRequest;
+        class InitiateLayerUploadRequest;
+        class ListImagesRequest;
+        class PutImageRequest;
+        class SetRepositoryPolicyRequest;
+        class UploadLayerPartRequest;
+
+        typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, Aws::Client::AWSError<ECRErrors>> BatchCheckLayerAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteImageResult, Aws::Client::AWSError<ECRErrors>> BatchDeleteImageOutcome;
+        typedef Aws::Utils::Outcome<BatchGetImageResult, Aws::Client::AWSError<ECRErrors>> BatchGetImageOutcome;
+        typedef Aws::Utils::Outcome<CompleteLayerUploadResult, Aws::Client::AWSError<ECRErrors>> CompleteLayerUploadOutcome;
+        typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<ECRErrors>> CreateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeRepositoriesResult, Aws::Client::AWSError<ECRErrors>> DescribeRepositoriesOutcome;
+        typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, Aws::Client::AWSError<ECRErrors>> GetAuthorizationTokenOutcome;
+        typedef Aws::Utils::Outcome<GetDownloadUrlForLayerResult, Aws::Client::AWSError<ECRErrors>> GetDownloadUrlForLayerOutcome;
+        typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> GetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<InitiateLayerUploadResult, Aws::Client::AWSError<ECRErrors>> InitiateLayerUploadOutcome;
+        typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ECRErrors>> ListImagesOutcome;
+        typedef Aws::Utils::Outcome<PutImageResult, Aws::Client::AWSError<ECRErrors>> PutImageOutcome;
+        typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> SetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<UploadLayerPartResult, Aws::Client::AWSError<ECRErrors>> UploadLayerPartOutcome;
+
+        typedef std::future<BatchCheckLayerAvailabilityOutcome> BatchCheckLayerAvailabilityOutcomeCallable;
+        typedef std::future<BatchDeleteImageOutcome> BatchDeleteImageOutcomeCallable;
+        typedef std::future<BatchGetImageOutcome> BatchGetImageOutcomeCallable;
+        typedef std::future<CompleteLayerUploadOutcome> CompleteLayerUploadOutcomeCallable;
+        typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
+        typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
+        typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
+        typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
+        typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
+        typedef std::future<GetDownloadUrlForLayerOutcome> GetDownloadUrlForLayerOutcomeCallable;
+        typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
+        typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
+        typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+        typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
+        typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
+        typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
+} // namespace Model
+
+  class ECRClient;
+
+    typedef std::function<void(const ECRClient*, const Model::BatchCheckLayerAvailabilityRequest&, const Model::BatchCheckLayerAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCheckLayerAvailabilityResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::BatchDeleteImageRequest&, const Model::BatchDeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::BatchGetImageRequest&, const Model::BatchGetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::CompleteLayerUploadRequest&, const Model::CompleteLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLayerUploadResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetDownloadUrlForLayerRequest&, const Model::GetDownloadUrlForLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDownloadUrlForLayerResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
+
+  /**
+   * <p>Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry
+   * service. Customers can use the familiar Docker CLI to push, pull, and manage
+   * images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
+   * ECR supports private Docker repositories with resource-based permissions using
+   * AWS IAM so that specific users or Amazon EC2 instances can access repositories
+   * and images. Developers can use the Docker CLI to author and manage images.</p>
+   */
+  class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient
+  {
+    public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
+
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ECRClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ECRClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ECRClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
+            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+
+        virtual ~ECRClient();
+
+        /**
+         * <p>Check the availability of multiple image layers in a specified registry and
+         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
+         * is not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         */
+        virtual Model::BatchCheckLayerAvailabilityOutcome BatchCheckLayerAvailability(const Model::BatchCheckLayerAvailabilityRequest& request) const;
+
+        /**
+         * <p>Check the availability of multiple image layers in a specified registry and
+         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
+         * is not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCheckLayerAvailabilityOutcomeCallable BatchCheckLayerAvailabilityCallable(const Model::BatchCheckLayerAvailabilityRequest& request) const;
+
+        /**
+         * <p>Check the availability of multiple image layers in a specified registry and
+         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
+         * is not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCheckLayerAvailabilityAsync(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a list of specified images within a specified repository. Images are
+         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
+         */
+        virtual Model::BatchDeleteImageOutcome BatchDeleteImage(const Model::BatchDeleteImageRequest& request) const;
+
+        /**
+         * <p>Deletes a list of specified images within a specified repository. Images are
+         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteImageOutcomeCallable BatchDeleteImageCallable(const Model::BatchDeleteImageRequest& request) const;
+
+        /**
+         * <p>Deletes a list of specified images within a specified repository. Images are
+         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteImageAsync(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets detailed information for specified images within a specified repository.
+         * Images are specified with either <code>imageTag</code> or
+         * <code>imageDigest</code>.</p>
+         */
+        virtual Model::BatchGetImageOutcome BatchGetImage(const Model::BatchGetImageRequest& request) const;
+
+        /**
+         * <p>Gets detailed information for specified images within a specified repository.
+         * Images are specified with either <code>imageTag</code> or
+         * <code>imageDigest</code>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetImageOutcomeCallable BatchGetImageCallable(const Model::BatchGetImageRequest& request) const;
+
+        /**
+         * <p>Gets detailed information for specified images within a specified repository.
+         * Images are specified with either <code>imageTag</code> or
+         * <code>imageDigest</code>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetImageAsync(const Model::BatchGetImageRequest& request, const BatchGetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
+         * repository name, and upload ID, has completed. You can optionally provide a
+         * <code>sha256</code> digest of the image layer for data validation purposes.</p>
+         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
+         * for general use by customers. Use the <code>docker</code> CLI to pull, tag, and
+         * push images.</p> </note>
+         */
+        virtual Model::CompleteLayerUploadOutcome CompleteLayerUpload(const Model::CompleteLayerUploadRequest& request) const;
+
+        /**
+         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
+         * repository name, and upload ID, has completed. You can optionally provide a
+         * <code>sha256</code> digest of the image layer for data validation purposes.</p>
+         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
+         * for general use by customers. Use the <code>docker</code> CLI to pull, tag, and
+         * push images.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CompleteLayerUploadOutcomeCallable CompleteLayerUploadCallable(const Model::CompleteLayerUploadRequest& request) const;
+
+        /**
+         * <p>Inform Amazon ECR that the image layer upload for a specified registry,
+         * repository name, and upload ID, has completed. You can optionally provide a
+         * <code>sha256</code> digest of the image layer for data validation purposes.</p>
+         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
+         * for general use by customers. Use the <code>docker</code> CLI to pull, tag, and
+         * push images.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CompleteLayerUploadAsync(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an image repository.</p>
+         */
+        virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
+
+        /**
+         * <p>Creates an image repository.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
+
+        /**
+         * <p>Creates an image repository.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing image repository. If a repository contains images, you
+         * must use the <code>force</code> option to delete it.</p>
+         */
+        virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
+
+        /**
+         * <p>Deletes an existing image repository. If a repository contains images, you
+         * must use the <code>force</code> option to delete it.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
+
+        /**
+         * <p>Deletes an existing image repository. If a repository contains images, you
+         * must use the <code>force</code> option to delete it.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the repository policy from a specified repository.</p>
+         */
+        virtual Model::DeleteRepositoryPolicyOutcome DeleteRepositoryPolicy(const Model::DeleteRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the repository policy from a specified repository.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRepositoryPolicyOutcomeCallable DeleteRepositoryPolicyCallable(const Model::DeleteRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the repository policy from a specified repository.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRepositoryPolicyAsync(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes image repositories in a registry.</p>
+         */
+        virtual Model::DescribeRepositoriesOutcome DescribeRepositories(const Model::DescribeRepositoriesRequest& request) const;
+
+        /**
+         * <p>Describes image repositories in a registry.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRepositoriesOutcomeCallable DescribeRepositoriesCallable(const Model::DescribeRepositoriesRequest& request) const;
+
+        /**
+         * <p>Describes image repositories in a registry.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRepositoriesAsync(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
+         * command allows you to use the <code>docker</code> CLI to push and pull images
+         * with Amazon ECR. If you do not specify a registry, the default registry is
+         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
+         * specified is a base64 encoded string that can be decoded and used in a
+         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
+         * offers an <code>aws ecr get-login</code> command that simplifies the login
+         * process.</p>
+         */
+        virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
+
+        /**
+         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
+         * command allows you to use the <code>docker</code> CLI to push and pull images
+         * with Amazon ECR. If you do not specify a registry, the default registry is
+         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
+         * specified is a base64 encoded string that can be decoded and used in a
+         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
+         * offers an <code>aws ecr get-login</code> command that simplifies the login
+         * process.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
+
+        /**
+         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
+         * command allows you to use the <code>docker</code> CLI to push and pull images
+         * with Amazon ECR. If you do not specify a registry, the default registry is
+         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
+         * specified is a base64 encoded string that can be decoded and used in a
+         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
+         * offers an <code>aws ecr get-login</code> command that simplifies the login
+         * process.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
+         * layer. You can only get URLs for image layers that are referenced in an
+         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
+         * not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         */
+        virtual Model::GetDownloadUrlForLayerOutcome GetDownloadUrlForLayer(const Model::GetDownloadUrlForLayerRequest& request) const;
+
+        /**
+         * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
+         * layer. You can only get URLs for image layers that are referenced in an
+         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
+         * not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDownloadUrlForLayerOutcomeCallable GetDownloadUrlForLayerCallable(const Model::GetDownloadUrlForLayerRequest& request) const;
+
+        /**
+         * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
+         * layer. You can only get URLs for image layers that are referenced in an
+         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
+         * not intended for general use by customers. Use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDownloadUrlForLayerAsync(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the repository policy for a specified repository.</p>
+         */
+        virtual Model::GetRepositoryPolicyOutcome GetRepositoryPolicy(const Model::GetRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the repository policy for a specified repository.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRepositoryPolicyOutcomeCallable GetRepositoryPolicyCallable(const Model::GetRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the repository policy for a specified repository.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRepositoryPolicyAsync(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         */
+        virtual Model::InitiateLayerUploadOutcome InitiateLayerUpload(const Model::InitiateLayerUploadRequest& request) const;
+
+        /**
+         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::InitiateLayerUploadOutcomeCallable InitiateLayerUploadCallable(const Model::InitiateLayerUploadRequest& request) const;
+
+        /**
+         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void InitiateLayerUploadAsync(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the image IDs for a given repository.</p>
+         */
+        virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
+
+        /**
+         * <p>Lists all the image IDs for a given repository.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
+
+        /**
+         * <p>Lists all the image IDs for a given repository.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates the image manifest associated with an image.</p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         */
+        virtual Model::PutImageOutcome PutImage(const Model::PutImageRequest& request) const;
+
+        /**
+         * <p>Creates or updates the image manifest associated with an image.</p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutImageOutcomeCallable PutImageCallable(const Model::PutImageRequest& request) const;
+
+        /**
+         * <p>Creates or updates the image manifest associated with an image.</p> <note>
+         * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
+         * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
+         * images.</p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies a repository policy on a specified repository to control access
+         * permissions.</p>
+         */
+        virtual Model::SetRepositoryPolicyOutcome SetRepositoryPolicy(const Model::SetRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Applies a repository policy on a specified repository to control access
+         * permissions.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetRepositoryPolicyOutcomeCallable SetRepositoryPolicyCallable(const Model::SetRepositoryPolicyRequest& request) const;
+
+        /**
+         * <p>Applies a repository policy on a specified repository to control access
+         * permissions.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
+         * used by the Amazon ECR proxy, and it is not intended for general use by
+         * customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p>
+         * </note>
+         */
+        virtual Model::UploadLayerPartOutcome UploadLayerPart(const Model::UploadLayerPartRequest& request) const;
+
+        /**
+         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
+         * used by the Amazon ECR proxy, and it is not intended for general use by
+         * customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p>
+         * </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UploadLayerPartOutcomeCallable UploadLayerPartCallable(const Model::UploadLayerPartRequest& request) const;
+
+        /**
+         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
+         * used by the Amazon ECR proxy, and it is not intended for general use by
+         * customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p>
+         * </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UploadLayerPartAsync(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+
+    private:
+      void init(const Client::ClientConfiguration& clientConfiguration);
+
+        /**Async helpers**/
+        void BatchCheckLayerAvailabilityAsyncHelper(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDeleteImageAsyncHelper(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetImageAsyncHelper(const Model::BatchGetImageRequest& request, const BatchGetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CompleteLayerUploadAsyncHelper(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRepositoryPolicyAsyncHelper(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRepositoriesAsyncHelper(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDownloadUrlForLayerAsyncHelper(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRepositoryPolicyAsyncHelper(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void InitiateLayerUploadAsyncHelper(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UploadLayerPartAsyncHelper(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+
+      Aws::String m_uri;
+      std::shared_ptr<Utils::Threading::Executor> m_executor;
+  };
+
+} // namespace ECR
+} // namespace Aws

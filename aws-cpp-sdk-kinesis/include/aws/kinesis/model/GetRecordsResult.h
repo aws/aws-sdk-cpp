@@ -45,37 +45,37 @@ namespace Model
     GetRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_records = value; }
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline void SetRecords(Aws::Vector<Record>&& value) { m_records = value; }
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline GetRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline GetRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(value); return *this;}
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline GetRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
 
     /**
-     * <P>The data records retrieved from the shard.</P>
+     * <p>The data records retrieved from the shard.</p>
      */
     inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(value); return *this; }
 

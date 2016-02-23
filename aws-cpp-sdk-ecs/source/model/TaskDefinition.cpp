@@ -28,7 +28,8 @@ TaskDefinition::TaskDefinition() :
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_requiresAttributesHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,8 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_requiresAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,16 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("requiresAttributes"))
+  {
+    Array<JsonValue> requiresAttributesJsonList = jsonValue.GetArray("requiresAttributes");
+    for(unsigned requiresAttributesIndex = 0; requiresAttributesIndex < requiresAttributesJsonList.GetLength(); ++requiresAttributesIndex)
+    {
+      m_requiresAttributes.push_back(requiresAttributesJsonList[requiresAttributesIndex].AsObject());
+    }
+    m_requiresAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +156,17 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", TaskDefinitionStatusMapper::GetNameForTaskDefinitionStatus(m_status));
+  }
+
+  if(m_requiresAttributesHasBeenSet)
+  {
+   Array<JsonValue> requiresAttributesJsonList(m_requiresAttributes.size());
+   for(unsigned requiresAttributesIndex = 0; requiresAttributesIndex < requiresAttributesJsonList.GetLength(); ++requiresAttributesIndex)
+   {
+     requiresAttributesJsonList[requiresAttributesIndex].AsObject(m_requiresAttributes[requiresAttributesIndex].Jsonize());
+   }
+   payload.WithArray("requiresAttributes", std::move(requiresAttributesJsonList));
+
   }
 
   return payload;

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_ELASTICBEANSTALK_API AbortEnvironmentUpdateRequest : public ElasticBeanstalkRequest
   {

@@ -1,0 +1,141 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/route53/Route53_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53/model/Change.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace Route53
+{
+namespace Model
+{
+
+  /**
+   * <p>A complex type that contains an optional comment and the changes that you
+   * want to make with a change batch request.</p>
+   */
+  class AWS_ROUTE53_API ChangeBatch
+  {
+  public:
+    ChangeBatch();
+    ChangeBatch(const Aws::Utils::Xml::XmlNode& xmlNode);
+    ChangeBatch& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline ChangeBatch& WithComment(const Aws::String& value) { SetComment(value); return *this;}
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline ChangeBatch& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+
+    /**
+     * <p><i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
+    inline ChangeBatch& WithComment(const char* value) { SetComment(value); return *this;}
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline const Aws::Vector<Change>& GetChanges() const{ return m_changes; }
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline void SetChanges(const Aws::Vector<Change>& value) { m_changesHasBeenSet = true; m_changes = value; }
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline void SetChanges(Aws::Vector<Change>&& value) { m_changesHasBeenSet = true; m_changes = value; }
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline ChangeBatch& WithChanges(const Aws::Vector<Change>& value) { SetChanges(value); return *this;}
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline ChangeBatch& WithChanges(Aws::Vector<Change>&& value) { SetChanges(value); return *this;}
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline ChangeBatch& AddChanges(const Change& value) { m_changesHasBeenSet = true; m_changes.push_back(value); return *this; }
+
+    /**
+     * <p>A complex type that contains one <code>Change</code> element for each
+     * resource record set that you want to create or delete.</p>
+     */
+    inline ChangeBatch& AddChanges(Change&& value) { m_changesHasBeenSet = true; m_changes.push_back(value); return *this; }
+
+  private:
+    Aws::String m_comment;
+    bool m_commentHasBeenSet;
+    Aws::Vector<Change> m_changes;
+    bool m_changesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Route53
+} // namespace Aws

@@ -43,7 +43,7 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
   {
     m_autoEnableIO.OutputToStream(ss, "AutoEnableIO.");
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

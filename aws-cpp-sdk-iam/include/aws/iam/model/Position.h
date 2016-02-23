@@ -30,6 +30,11 @@ namespace IAM
 namespace Model
 {
 
+  /**
+   * <p>Contains the row and column of a location of a <code>Statement</code> element
+   * in a policy document.</p> <p>This data type is used as a member of the
+   * <code><a>Statement</a></code> type.</p>
+   */
   class AWS_IAM_API Position
   {
   public:
@@ -40,22 +45,34 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
     inline long GetLine() const{ return m_line; }
 
-    
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
     inline void SetLine(long value) { m_lineHasBeenSet = true; m_line = value; }
 
-    
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
     inline Position& WithLine(long value) { SetLine(value); return *this;}
 
-    
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
     inline long GetColumn() const{ return m_column; }
 
-    
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
     inline void SetColumn(long value) { m_columnHasBeenSet = true; m_column = value; }
 
-    
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
     inline Position& WithColumn(long value) { SetColumn(value); return *this;}
 
   private:

@@ -23,6 +23,7 @@ static const int cancelled_HASH = HashingUtils::HashString("cancelled");
 static const int failed_HASH = HashingUtils::HashString("failed");
 static const int cancelled_running_HASH = HashingUtils::HashString("cancelled_running");
 static const int cancelled_terminating_HASH = HashingUtils::HashString("cancelled_terminating");
+static const int modifying_HASH = HashingUtils::HashString("modifying");
 
 namespace Aws
 {
@@ -60,6 +61,10 @@ BatchState GetBatchStateForName(const Aws::String& name)
   {
     return BatchState::cancelled_terminating;
   }
+  else if (hashCode == modifying_HASH)
+  {
+    return BatchState::modifying;
+  }
 
   return BatchState::NOT_SET;
 }
@@ -80,6 +85,8 @@ Aws::String GetNameForBatchState(BatchState value)
     return "cancelled_running";
   case BatchState::cancelled_terminating:
     return "cancelled_terminating";
+  case BatchState::modifying:
+    return "modifying";
   default:
     return "";
   }

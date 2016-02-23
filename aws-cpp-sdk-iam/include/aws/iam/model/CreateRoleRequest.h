@@ -125,37 +125,44 @@ namespace Model
     inline CreateRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline void SetAssumeRolePolicyDocument(const Aws::String& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline void SetAssumeRolePolicyDocument(const char* value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument.assign(value); }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const Aws::String& value) { SetAssumeRolePolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p>
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 

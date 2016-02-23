@@ -91,20 +91,23 @@ namespace Model
     inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The port on which the load balancer is listening. The supported ports are:
-     * 25, 80, 443, 465, 587, and 1024-65535.</p>
+     * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
+     * any port from the range 1-65535. On EC2-Classic, you can specify any port from
+     * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
     inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
 
     /**
-     * <p>The port on which the load balancer is listening. The supported ports are:
-     * 25, 80, 443, 465, 587, and 1024-65535.</p>
+     * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
+     * any port from the range 1-65535. On EC2-Classic, you can specify any port from
+     * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
     inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
-     * <p>The port on which the load balancer is listening. The supported ports are:
-     * 25, 80, 443, 465, 587, and 1024-65535.</p>
+     * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
+     * any port from the range 1-65535. On EC2-Classic, you can specify any port from
+     * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
     inline Listener& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
 

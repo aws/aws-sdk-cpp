@@ -54,7 +54,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

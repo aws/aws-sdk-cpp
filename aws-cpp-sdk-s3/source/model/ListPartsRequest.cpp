@@ -46,23 +46,23 @@ void ListPartsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_maxPartsHasBeenSet)
     {
-     ss << m_maxParts;
-     uri.AddQueryStringParameter("max-parts", ss.str());
-     ss.str("");
+      ss << m_maxParts;
+      uri.AddQueryStringParameter("max-parts", ss.str());
+      ss.str("");
     }
 
     if(m_partNumberMarkerHasBeenSet)
     {
-     ss << m_partNumberMarker;
-     uri.AddQueryStringParameter("part-number-marker", ss.str());
-     ss.str("");
+      ss << m_partNumberMarker;
+      uri.AddQueryStringParameter("part-number-marker", ss.str());
+      ss.str("");
     }
 
     if(m_uploadIdHasBeenSet)
     {
-     ss << m_uploadId;
-     uri.AddQueryStringParameter("uploadId", ss.str());
-     ss.str("");
+      ss << m_uploadId;
+      uri.AddQueryStringParameter("uploadId", ss.str());
+      ss.str("");
     }
 
 }

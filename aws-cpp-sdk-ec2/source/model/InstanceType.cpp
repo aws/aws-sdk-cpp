@@ -31,6 +31,7 @@ static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
 static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
 static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
 static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
+static const int t2_nano_HASH = HashingUtils::HashString("t2.nano");
 static const int t2_micro_HASH = HashingUtils::HashString("t2.micro");
 static const int t2_small_HASH = HashingUtils::HashString("t2.small");
 static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
@@ -138,6 +139,10 @@ InstanceType GetInstanceTypeForName(const Aws::String& name)
   else if (hashCode == m4_10xlarge_HASH)
   {
     return InstanceType::m4_10xlarge;
+  }
+  else if (hashCode == t2_nano_HASH)
+  {
+    return InstanceType::t2_nano;
   }
   else if (hashCode == t2_micro_HASH)
   {
@@ -331,6 +336,8 @@ Aws::String GetNameForInstanceType(InstanceType value)
     return "m4.4xlarge";
   case InstanceType::m4_10xlarge:
     return "m4.10xlarge";
+  case InstanceType::t2_nano:
+    return "t2.nano";
   case InstanceType::t2_micro:
     return "t2.micro";
   case InstanceType::t2_small:

@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -34,7 +36,7 @@ namespace Model
 
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -42,7 +44,7 @@ namespace Model
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -50,7 +52,7 @@ namespace Model
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -58,7 +60,7 @@ namespace Model
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -66,7 +68,7 @@ namespace Model
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -74,7 +76,7 @@ namespace Model
     inline DescribeDBParametersRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -82,7 +84,7 @@ namespace Model
     inline DescribeDBParametersRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of a specific DB Parameter Group to return details for. </p>
+     * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -132,75 +134,117 @@ namespace Model
     inline DescribeDBParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
     /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeDBParametersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeDBParametersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeDBParametersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeDBParametersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results may be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results may be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results may be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBParametersRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline DescribeDBParametersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline DescribeDBParametersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous DescribeDBParameters
-     * request. If this parameter is specified, the response includes only records
-     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBParameters</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
      */
     inline DescribeDBParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -209,6 +253,8 @@ namespace Model
     bool m_dBParameterGroupNameHasBeenSet;
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

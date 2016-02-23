@@ -27,6 +27,8 @@ static const int ip_HASH = HashingUtils::HashString("ip");
 static const int ipList_HASH = HashingUtils::HashString("ipList");
 static const int binary_HASH = HashingUtils::HashString("binary");
 static const int binaryList_HASH = HashingUtils::HashString("binaryList");
+static const int date_HASH = HashingUtils::HashString("date");
+static const int dateList_HASH = HashingUtils::HashString("dateList");
 
 namespace Aws
 {
@@ -80,6 +82,14 @@ ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
   {
     return ContextKeyTypeEnum::binaryList;
   }
+  else if (hashCode == date_HASH)
+  {
+    return ContextKeyTypeEnum::date;
+  }
+  else if (hashCode == dateList_HASH)
+  {
+    return ContextKeyTypeEnum::dateList;
+  }
 
   return ContextKeyTypeEnum::NOT_SET;
 }
@@ -108,6 +118,10 @@ Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum value)
     return "binary";
   case ContextKeyTypeEnum::binaryList:
     return "binaryList";
+  case ContextKeyTypeEnum::date:
+    return "date";
+  case ContextKeyTypeEnum::dateList:
+    return "dateList";
   default:
     return "";
   }

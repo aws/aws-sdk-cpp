@@ -31,6 +31,13 @@ namespace SES
 namespace Model
 {
 
+  /**
+   * <p>Additional X-headers to include in the Delivery Status Notification (DSN)
+   * when an email that Amazon SES receives on your behalf bounces.</p> <p>For
+   * information about receiving email through Amazon SES, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API ExtensionField
   {
   public:
@@ -41,46 +48,95 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline ExtensionField& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline ExtensionField& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline ExtensionField& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline ExtensionField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline ExtensionField& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
-    
+    /**
+     * <p>The value of the header to add. Must be less than 2048 characters, and must
+     * not contain newline characters ("\r" or "\n").</p>
+     */
     inline ExtensionField& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

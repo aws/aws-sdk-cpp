@@ -25,7 +25,9 @@ CreateApplicationVersionRequest::CreateApplicationVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_autoCreateApplication(false),
-    m_autoCreateApplicationHasBeenSet(false)
+    m_autoCreateApplicationHasBeenSet(false),
+    m_process(false),
+    m_processHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,10 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   if(m_autoCreateApplicationHasBeenSet)
   {
     ss << "AutoCreateApplication=" << m_autoCreateApplication << "&";
+  }
+  if(m_processHasBeenSet)
+  {
+    ss << "Process=" << m_process << "&";
   }
   ss << "Version=2010-12-01";
   return ss.str();

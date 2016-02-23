@@ -18,6 +18,9 @@
 using namespace Aws::Utils;
 
 static const int available_HASH = HashingUtils::HashString("available");
+static const int information_HASH = HashingUtils::HashString("information");
+static const int impaired_HASH = HashingUtils::HashString("impaired");
+static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 namespace Aws
 {
@@ -35,6 +38,18 @@ AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
   {
     return AvailabilityZoneState::available;
   }
+  else if (hashCode == information_HASH)
+  {
+    return AvailabilityZoneState::information;
+  }
+  else if (hashCode == impaired_HASH)
+  {
+    return AvailabilityZoneState::impaired;
+  }
+  else if (hashCode == unavailable_HASH)
+  {
+    return AvailabilityZoneState::unavailable;
+  }
 
   return AvailabilityZoneState::NOT_SET;
 }
@@ -45,6 +60,12 @@ Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState value)
   {
   case AvailabilityZoneState::available:
     return "available";
+  case AvailabilityZoneState::information:
+    return "information";
+  case AvailabilityZoneState::impaired:
+    return "impaired";
+  case AvailabilityZoneState::unavailable:
+    return "unavailable";
   default:
     return "";
   }

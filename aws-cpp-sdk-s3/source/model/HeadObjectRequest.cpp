@@ -52,9 +52,9 @@ void HeadObjectRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_versionIdHasBeenSet)
     {
-     ss << m_versionId;
-     uri.AddQueryStringParameter("versionId", ss.str());
-     ss.str("");
+      ss << m_versionId;
+      uri.AddQueryStringParameter("versionId", ss.str());
+      ss.str("");
     }
 
 }

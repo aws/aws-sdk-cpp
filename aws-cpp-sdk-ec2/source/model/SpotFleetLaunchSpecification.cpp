@@ -39,7 +39,10 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() :
     m_networkInterfacesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_weightedCapacity(0.0),
+    m_weightedCapacityHasBeenSet(false),
+    m_spotPriceHasBeenSet(false)
 {
 }
 
@@ -59,7 +62,10 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification(const XmlNode& xmlNod
     m_networkInterfacesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_weightedCapacity(0.0),
+    m_weightedCapacityHasBeenSet(false),
+    m_spotPriceHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -178,6 +184,18 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
       m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(ebsOptimizedNode.GetText().c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
     }
+    XmlNode weightedCapacityNode = resultNode.FirstChild("weightedCapacity");
+    if(!weightedCapacityNode.IsNull())
+    {
+      m_weightedCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(weightedCapacityNode.GetText().c_str()).c_str());
+      m_weightedCapacityHasBeenSet = true;
+    }
+    XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
+    if(!spotPriceNode.IsNull())
+    {
+      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPriceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -269,6 +287,14 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
   }
+  if(m_weightedCapacityHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+  }
+  if(m_spotPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
+  }
 }
 
 void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -356,5 +382,13 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
   if(m_ebsOptimizedHasBeenSet)
   {
       oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
+  }
+  if(m_weightedCapacityHasBeenSet)
+  {
+        oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+  }
+  if(m_spotPriceHasBeenSet)
+  {
+      oStream << location << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
 }

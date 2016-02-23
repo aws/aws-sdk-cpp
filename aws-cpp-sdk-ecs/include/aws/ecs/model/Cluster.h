@@ -108,37 +108,37 @@ namespace Model
     inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline Cluster& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline Cluster& WithClusterName(Aws::String&& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your cluster.</p>
+     * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline Cluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 

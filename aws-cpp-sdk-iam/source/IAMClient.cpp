@@ -74,7 +74,8 @@
 #include <aws/iam/model/GetAccountAuthorizationDetailsRequest.h>
 #include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/GetAccountSummaryRequest.h>
-#include <aws/iam/model/GetContextKeysForPolicyRequest.h>
+#include <aws/iam/model/GetContextKeysForCustomPolicyRequest.h>
+#include <aws/iam/model/GetContextKeysForPrincipalPolicyRequest.h>
 #include <aws/iam/model/GetCredentialReportRequest.h>
 #include <aws/iam/model/GetGroupRequest.h>
 #include <aws/iam/model/GetGroupPolicyRequest.h>
@@ -122,7 +123,8 @@
 #include <aws/iam/model/RemoveUserFromGroupRequest.h>
 #include <aws/iam/model/ResyncMFADeviceRequest.h>
 #include <aws/iam/model/SetDefaultPolicyVersionRequest.h>
-#include <aws/iam/model/SimulatePolicyRequest.h>
+#include <aws/iam/model/SimulateCustomPolicyRequest.h>
+#include <aws/iam/model/SimulatePrincipalPolicyRequest.h>
 #include <aws/iam/model/UpdateAccessKeyRequest.h>
 #include <aws/iam/model/UpdateAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/UpdateAssumeRolePolicyRequest.h>
@@ -1641,34 +1643,64 @@ void IAMClient::GetAccountSummaryAsyncHelper(const GetAccountSummaryRequest& req
   handler(this, request, GetAccountSummary(request), context);
 }
 
-GetContextKeysForPolicyOutcome IAMClient::GetContextKeysForPolicy(const GetContextKeysForPolicyRequest& request) const
+GetContextKeysForCustomPolicyOutcome IAMClient::GetContextKeysForCustomPolicy(const GetContextKeysForCustomPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return GetContextKeysForPolicyOutcome(GetContextKeysForPolicyResult(outcome.GetResult()));
+    return GetContextKeysForCustomPolicyOutcome(GetContextKeysForCustomPolicyResult(outcome.GetResult()));
   }
   else
   {
-    return GetContextKeysForPolicyOutcome(outcome.GetError());
+    return GetContextKeysForCustomPolicyOutcome(outcome.GetError());
   }
 }
 
-GetContextKeysForPolicyOutcomeCallable IAMClient::GetContextKeysForPolicyCallable(const GetContextKeysForPolicyRequest& request) const
+GetContextKeysForCustomPolicyOutcomeCallable IAMClient::GetContextKeysForCustomPolicyCallable(const GetContextKeysForCustomPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetContextKeysForPolicy, this, request);
+  return std::async(std::launch::async, &IAMClient::GetContextKeysForCustomPolicy, this, request);
 }
 
-void IAMClient::GetContextKeysForPolicyAsync(const GetContextKeysForPolicyRequest& request, const GetContextKeysForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IAMClient::GetContextKeysForCustomPolicyAsync(const GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetContextKeysForPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit(&IAMClient::GetContextKeysForCustomPolicyAsyncHelper, this, request, handler, context);
 }
 
-void IAMClient::GetContextKeysForPolicyAsyncHelper(const GetContextKeysForPolicyRequest& request, const GetContextKeysForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IAMClient::GetContextKeysForCustomPolicyAsyncHelper(const GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetContextKeysForPolicy(request), context);
+  handler(this, request, GetContextKeysForCustomPolicy(request), context);
+}
+
+GetContextKeysForPrincipalPolicyOutcome IAMClient::GetContextKeysForPrincipalPolicy(const GetContextKeysForPrincipalPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetContextKeysForPrincipalPolicyOutcome(GetContextKeysForPrincipalPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetContextKeysForPrincipalPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetContextKeysForPrincipalPolicyOutcomeCallable IAMClient::GetContextKeysForPrincipalPolicyCallable(const GetContextKeysForPrincipalPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &IAMClient::GetContextKeysForPrincipalPolicy, this, request);
+}
+
+void IAMClient::GetContextKeysForPrincipalPolicyAsync(const GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IAMClient::GetContextKeysForPrincipalPolicyAsyncHelper, this, request, handler, context);
+}
+
+void IAMClient::GetContextKeysForPrincipalPolicyAsyncHelper(const GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContextKeysForPrincipalPolicy(request), context);
 }
 
 GetCredentialReportOutcome IAMClient::GetCredentialReport(const GetCredentialReportRequest& request) const
@@ -3081,34 +3113,64 @@ void IAMClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersion
   handler(this, request, SetDefaultPolicyVersion(request), context);
 }
 
-SimulatePolicyOutcome IAMClient::SimulatePolicy(const SimulatePolicyRequest& request) const
+SimulateCustomPolicyOutcome IAMClient::SimulateCustomPolicy(const SimulateCustomPolicyRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return SimulatePolicyOutcome(SimulatePolicyResult(outcome.GetResult()));
+    return SimulateCustomPolicyOutcome(SimulateCustomPolicyResult(outcome.GetResult()));
   }
   else
   {
-    return SimulatePolicyOutcome(outcome.GetError());
+    return SimulateCustomPolicyOutcome(outcome.GetError());
   }
 }
 
-SimulatePolicyOutcomeCallable IAMClient::SimulatePolicyCallable(const SimulatePolicyRequest& request) const
+SimulateCustomPolicyOutcomeCallable IAMClient::SimulateCustomPolicyCallable(const SimulateCustomPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::SimulatePolicy, this, request);
+  return std::async(std::launch::async, &IAMClient::SimulateCustomPolicy, this, request);
 }
 
-void IAMClient::SimulatePolicyAsync(const SimulatePolicyRequest& request, const SimulatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IAMClient::SimulateCustomPolicyAsync(const SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::SimulatePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit(&IAMClient::SimulateCustomPolicyAsyncHelper, this, request, handler, context);
 }
 
-void IAMClient::SimulatePolicyAsyncHelper(const SimulatePolicyRequest& request, const SimulatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void IAMClient::SimulateCustomPolicyAsyncHelper(const SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, SimulatePolicy(request), context);
+  handler(this, request, SimulateCustomPolicy(request), context);
+}
+
+SimulatePrincipalPolicyOutcome IAMClient::SimulatePrincipalPolicy(const SimulatePrincipalPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SimulatePrincipalPolicyOutcome(SimulatePrincipalPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SimulatePrincipalPolicyOutcome(outcome.GetError());
+  }
+}
+
+SimulatePrincipalPolicyOutcomeCallable IAMClient::SimulatePrincipalPolicyCallable(const SimulatePrincipalPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &IAMClient::SimulatePrincipalPolicy, this, request);
+}
+
+void IAMClient::SimulatePrincipalPolicyAsync(const SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IAMClient::SimulatePrincipalPolicyAsyncHelper, this, request, handler, context);
+}
+
+void IAMClient::SimulatePrincipalPolicyAsyncHelper(const SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SimulatePrincipalPolicy(request), context);
 }
 
 UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& request) const

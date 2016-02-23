@@ -36,82 +36,78 @@ namespace Model
 
 
     /**
-     * <p>Specify this parameter only when paginating results to indicate the maximum
-     * number of keys you want listed in the response. If there are additional keys
-     * beyond the maximum you specify, the <code>Truncated</code> response element will
-     * be set to <code>true.</code> </p>
+     * <p>When paginating results, specify the maximum number of items to return in the
+     * response. If additional items exist beyond the number you specify, the
+     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
+     * If you do not include a value, it defaults to 100.</p>
      */
     inline long GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Specify this parameter only when paginating results to indicate the maximum
-     * number of keys you want listed in the response. If there are additional keys
-     * beyond the maximum you specify, the <code>Truncated</code> response element will
-     * be set to <code>true.</code> </p>
+     * <p>When paginating results, specify the maximum number of items to return in the
+     * response. If additional items exist beyond the number you specify, the
+     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
+     * If you do not include a value, it defaults to 100.</p>
      */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specify this parameter only when paginating results to indicate the maximum
-     * number of keys you want listed in the response. If there are additional keys
-     * beyond the maximum you specify, the <code>Truncated</code> response element will
-     * be set to <code>true.</code> </p>
+     * <p>When paginating results, specify the maximum number of items to return in the
+     * response. If additional items exist beyond the number you specify, the
+     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
+     * If you do not include a value, it defaults to 100.</p>
      */
     inline ListKeysRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListKeysRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListKeysRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are truncated. Set it
-     * to the value of the <code>NextMarker</code> in the response you just received.
-     * </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you've received a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListKeysRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

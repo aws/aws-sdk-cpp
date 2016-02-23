@@ -174,24 +174,54 @@ namespace Model
 
     /**
      * <p>For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.</p> <p>Valid values: Range is 100 to
-     * 4000.</p> <p>Default: None</p>
+     * second (IOPS) to provision for the volume.</p> <p>Default: None</p>
      */
     inline long GetIops() const{ return m_iops; }
 
     /**
      * <p>For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.</p> <p>Valid values: Range is 100 to
-     * 4000.</p> <p>Default: None</p>
+     * second (IOPS) to provision for the volume.</p> <p>Default: None</p>
      */
     inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>For Provisioned IOPS (SSD) volumes only. The number of I/O operations per
-     * second (IOPS) to provision for the volume.</p> <p>Valid values: Range is 100 to
-     * 4000.</p> <p>Default: None</p>
+     * second (IOPS) to provision for the volume.</p> <p>Default: None</p>
      */
     inline Ebs& WithIops(long value) { SetIops(value); return *this;}
+
+    /**
+     * <p>Indicates whether the volume should be encrypted. Encrypted EBS volumes must
+     * be attached to instances that support Amazon EBS encryption. Volumes that are
+     * created from encrypted snapshots are automatically encrypted. There is no way to
+     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
+     * from an encrypted snapshot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether the volume should be encrypted. Encrypted EBS volumes must
+     * be attached to instances that support Amazon EBS encryption. Volumes that are
+     * created from encrypted snapshots are automatically encrypted. There is no way to
+     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
+     * from an encrypted snapshot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether the volume should be encrypted. Encrypted EBS volumes must
+     * be attached to instances that support Amazon EBS encryption. Volumes that are
+     * created from encrypted snapshots are automatically encrypted. There is no way to
+     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
+     * from an encrypted snapshot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
   private:
     Aws::String m_snapshotId;
@@ -204,6 +234,8 @@ namespace Model
     bool m_deleteOnTerminationHasBeenSet;
     long m_iops;
     bool m_iopsHasBeenSet;
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
   };
 
 } // namespace Model

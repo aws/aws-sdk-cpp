@@ -281,7 +281,7 @@ namespace Model
          * target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
-         * it Works: Implementation Overview</a> </p> <p> Note that you can create mount
+         * it Works: Implementation Overview</a>. </p> <p> Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
          * target per Availability Zone. That is, if the file system already has one or
          * more mount targets created for it, the request to add another mount target must
@@ -320,14 +320,14 @@ namespace Model
          * Zone. For more information, go to <a href="http://aws.amazon.com/efs/">Amazon
          * EFS</a> product detail page. In addition, by always using a mount target local
          * to the instance's Availability Zone, you eliminate a partial failure scenario;
-         * if the Availablity Zone in which your mount target is created goes down, then
+         * if the Availability Zone in which your mount target is created goes down, then
          * you won't be able to access your file system through that mount target. </p>
          * <p>This operation requires permission for the following action on the file
-         * system:</p> <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul>
-         * <p>This operation also requires permission for the following Amazon EC2
-         * actions:</p> <ul> <li><code>ec2:DescribeSubnets</code></li>
-         * <li><code>ec2:DescribeNetworkInterfaces</code></li>
-         * <li><code>ec2:CreateNetworkInterface</code></li> </ul>
+         * system:</p> <ul> <li> <code>elasticfilesystem:CreateMountTarget</code> </li>
+         * </ul> <p>This operation also requires permission for the following Amazon EC2
+         * actions:</p> <ul> <li> <code>ec2:DescribeSubnets</code> </li> <li>
+         * <code>ec2:DescribeNetworkInterfaces</code> </li> <li>
+         * <code>ec2:CreateNetworkInterface</code> </li> </ul>
          */
         virtual Model::CreateMountTargetOutcome CreateMountTarget(const Model::CreateMountTargetRequest& request) const;
 
@@ -356,7 +356,7 @@ namespace Model
          * target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
-         * it Works: Implementation Overview</a> </p> <p> Note that you can create mount
+         * it Works: Implementation Overview</a>. </p> <p> Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
          * target per Availability Zone. That is, if the file system already has one or
          * more mount targets created for it, the request to add another mount target must
@@ -395,14 +395,14 @@ namespace Model
          * Zone. For more information, go to <a href="http://aws.amazon.com/efs/">Amazon
          * EFS</a> product detail page. In addition, by always using a mount target local
          * to the instance's Availability Zone, you eliminate a partial failure scenario;
-         * if the Availablity Zone in which your mount target is created goes down, then
+         * if the Availability Zone in which your mount target is created goes down, then
          * you won't be able to access your file system through that mount target. </p>
          * <p>This operation requires permission for the following action on the file
-         * system:</p> <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul>
-         * <p>This operation also requires permission for the following Amazon EC2
-         * actions:</p> <ul> <li><code>ec2:DescribeSubnets</code></li>
-         * <li><code>ec2:DescribeNetworkInterfaces</code></li>
-         * <li><code>ec2:CreateNetworkInterface</code></li> </ul>
+         * system:</p> <ul> <li> <code>elasticfilesystem:CreateMountTarget</code> </li>
+         * </ul> <p>This operation also requires permission for the following Amazon EC2
+         * actions:</p> <ul> <li> <code>ec2:DescribeSubnets</code> </li> <li>
+         * <code>ec2:DescribeNetworkInterfaces</code> </li> <li>
+         * <code>ec2:CreateNetworkInterface</code> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -433,7 +433,7 @@ namespace Model
          * target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
-         * it Works: Implementation Overview</a> </p> <p> Note that you can create mount
+         * it Works: Implementation Overview</a>. </p> <p> Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
          * target per Availability Zone. That is, if the file system already has one or
          * more mount targets created for it, the request to add another mount target must
@@ -472,14 +472,14 @@ namespace Model
          * Zone. For more information, go to <a href="http://aws.amazon.com/efs/">Amazon
          * EFS</a> product detail page. In addition, by always using a mount target local
          * to the instance's Availability Zone, you eliminate a partial failure scenario;
-         * if the Availablity Zone in which your mount target is created goes down, then
+         * if the Availability Zone in which your mount target is created goes down, then
          * you won't be able to access your file system through that mount target. </p>
          * <p>This operation requires permission for the following action on the file
-         * system:</p> <ul> <li><code>elasticfilesystem:CreateMountTarget</code></li> </ul>
-         * <p>This operation also requires permission for the following Amazon EC2
-         * actions:</p> <ul> <li><code>ec2:DescribeSubnets</code></li>
-         * <li><code>ec2:DescribeNetworkInterfaces</code></li>
-         * <li><code>ec2:CreateNetworkInterface</code></li> </ul>
+         * system:</p> <ul> <li> <code>elasticfilesystem:CreateMountTarget</code> </li>
+         * </ul> <p>This operation also requires permission for the following Amazon EC2
+         * actions:</p> <ul> <li> <code>ec2:DescribeSubnets</code> </li> <li>
+         * <code>ec2:DescribeNetworkInterfaces</code> </li> <li>
+         * <code>ec2:CreateNetworkInterface</code> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -584,14 +584,14 @@ namespace Model
          * this operation does not corrupt the file system itself. The file system you
          * created remains. You can mount an EC2 instance in your VPC using another mount
          * target. </p> <p> This operation requires permission for the following action on
-         * the file system: </p> <ul>
-         * <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The
-         * <code>DeleteMountTarget</code> call returns while the mount target state is
-         * still "deleting". You can check the mount target deletion by calling the
-         * <a>DescribeMountTargets</a> API, which returns a list of mount target
-         * descriptions for the given file system. </note> <p>The operation also requires
-         * permission for the following Amazon EC2 action on the mount target's network
-         * interface:</p> <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+         * the file system: </p> <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code>
+         * </li> </ul> <note>The <code>DeleteMountTarget</code> call returns while the
+         * mount target state is still "deleting". You can check the mount target deletion
+         * by calling the <a>DescribeMountTargets</a> API, which returns a list of mount
+         * target descriptions for the given file system. </note> <p>The operation also
+         * requires permission for the following Amazon EC2 action on the mount target's
+         * network interface:</p> <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li>
+         * </ul>
          */
         virtual Model::DeleteMountTargetOutcome DeleteMountTarget(const Model::DeleteMountTargetRequest& request) const;
 
@@ -605,14 +605,14 @@ namespace Model
          * this operation does not corrupt the file system itself. The file system you
          * created remains. You can mount an EC2 instance in your VPC using another mount
          * target. </p> <p> This operation requires permission for the following action on
-         * the file system: </p> <ul>
-         * <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The
-         * <code>DeleteMountTarget</code> call returns while the mount target state is
-         * still "deleting". You can check the mount target deletion by calling the
-         * <a>DescribeMountTargets</a> API, which returns a list of mount target
-         * descriptions for the given file system. </note> <p>The operation also requires
-         * permission for the following Amazon EC2 action on the mount target's network
-         * interface:</p> <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+         * the file system: </p> <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code>
+         * </li> </ul> <note>The <code>DeleteMountTarget</code> call returns while the
+         * mount target state is still "deleting". You can check the mount target deletion
+         * by calling the <a>DescribeMountTargets</a> API, which returns a list of mount
+         * target descriptions for the given file system. </note> <p>The operation also
+         * requires permission for the following Amazon EC2 action on the mount target's
+         * network interface:</p> <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li>
+         * </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -628,14 +628,14 @@ namespace Model
          * this operation does not corrupt the file system itself. The file system you
          * created remains. You can mount an EC2 instance in your VPC using another mount
          * target. </p> <p> This operation requires permission for the following action on
-         * the file system: </p> <ul>
-         * <li><code>elasticfilesystem:DeleteMountTarget</code></li> </ul> <note>The
-         * <code>DeleteMountTarget</code> call returns while the mount target state is
-         * still "deleting". You can check the mount target deletion by calling the
-         * <a>DescribeMountTargets</a> API, which returns a list of mount target
-         * descriptions for the given file system. </note> <p>The operation also requires
-         * permission for the following Amazon EC2 action on the mount target's network
-         * interface:</p> <ul> <li><code>ec2:DeleteNetworkInterface</code></li> </ul>
+         * the file system: </p> <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code>
+         * </li> </ul> <note>The <code>DeleteMountTarget</code> call returns while the
+         * mount target state is still "deleting". You can check the mount target deletion
+         * by calling the <a>DescribeMountTargets</a> API, which returns a list of mount
+         * target descriptions for the given file system. </note> <p>The operation also
+         * requires permission for the following Amazon EC2 action on the mount target's
+         * network interface:</p> <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li>
+         * </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -801,31 +801,37 @@ namespace Model
         virtual void DescribeMountTargetSecurityGroupsAsync(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the descriptions of the current mount targets for a file system. The
-         * order of mount targets returned in the response is unspecified.</p> <p> This
-         * operation requires permission for the
-         * <code>elasticfilesystem:DescribeMountTargets</code> action on the file system
-         * <code>FileSystemId</code>. </p>
+         * <p>Returns the descriptions of all the current mount targets, or a specific
+         * mount target, for a file system. When requesting all of the current mount
+         * targets, the order of mount targets returned in the response is unspecified.</p>
+         * <p>This operation requires permission for the
+         * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
+         * system id that you specify in <code>FileSystemId</code>, or on the file system
+         * of the mount target that you specify in <code>MountTargetId</code>.</p>
          */
         virtual Model::DescribeMountTargetsOutcome DescribeMountTargets(const Model::DescribeMountTargetsRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of the current mount targets for a file system. The
-         * order of mount targets returned in the response is unspecified.</p> <p> This
-         * operation requires permission for the
-         * <code>elasticfilesystem:DescribeMountTargets</code> action on the file system
-         * <code>FileSystemId</code>. </p>
+         * <p>Returns the descriptions of all the current mount targets, or a specific
+         * mount target, for a file system. When requesting all of the current mount
+         * targets, the order of mount targets returned in the response is unspecified.</p>
+         * <p>This operation requires permission for the
+         * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
+         * system id that you specify in <code>FileSystemId</code>, or on the file system
+         * of the mount target that you specify in <code>MountTargetId</code>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeMountTargetsOutcomeCallable DescribeMountTargetsCallable(const Model::DescribeMountTargetsRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of the current mount targets for a file system. The
-         * order of mount targets returned in the response is unspecified.</p> <p> This
-         * operation requires permission for the
-         * <code>elasticfilesystem:DescribeMountTargets</code> action on the file system
-         * <code>FileSystemId</code>. </p>
+         * <p>Returns the descriptions of all the current mount targets, or a specific
+         * mount target, for a file system. When requesting all of the current mount
+         * targets, the order of mount targets returned in the response is unspecified.</p>
+         * <p>This operation requires permission for the
+         * <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file
+         * system id that you specify in <code>FileSystemId</code>, or on the file system
+         * of the mount target that you specify in <code>MountTargetId</code>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -77,37 +77,44 @@ namespace Model
     inline LoadBalancer& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(Aws::String&& value) { SetContainerName(value); return *this;}
 
     /**
-     * <p>The name of the container to associate with the load balancer.</p>
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(const char* value) { SetContainerName(value); return *this;}
 

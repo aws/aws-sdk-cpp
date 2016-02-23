@@ -771,51 +771,58 @@ namespace Model
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline const Aws::String& GetJobFlowRole() const{ return m_jobFlowRole; }
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline void SetJobFlowRole(const Aws::String& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = value; }
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = value; }
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline void SetJobFlowRole(const char* value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole.assign(value); }
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline RunJobFlowRequest& WithJobFlowRole(const Aws::String& value) { SetJobFlowRole(value); return *this;}
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline RunJobFlowRequest& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(value); return *this;}
 
     /**
-     * <p>An IAM role for the job flow. The EC2 instances of the job flow assume this
-     * role. The default role is <code>EMRJobflowDefault</code>. In order to use the
-     * default role, you must have already created it using the CLI.</p>
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
      */
     inline RunJobFlowRequest& WithJobFlowRole(const char* value) { SetJobFlowRole(value); return *this;}
 

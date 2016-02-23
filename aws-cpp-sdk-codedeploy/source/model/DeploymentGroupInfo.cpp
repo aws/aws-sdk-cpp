@@ -30,7 +30,8 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
+    m_targetRevisionHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_targetRevisionHasBeenSet(false)
+    m_targetRevisionHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,16 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
     m_targetRevisionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("triggerConfigurations"))
+  {
+    Array<JsonValue> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
+    for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+    {
+      m_triggerConfigurations.push_back(triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject());
+    }
+    m_triggerConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -195,6 +207,17 @@ JsonValue DeploymentGroupInfo::Jsonize() const
   if(m_targetRevisionHasBeenSet)
   {
    payload.WithObject("targetRevision", m_targetRevision.Jsonize());
+
+  }
+
+  if(m_triggerConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+   {
+     triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
 
   }
 

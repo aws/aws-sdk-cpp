@@ -233,88 +233,116 @@ namespace Model
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline void SetEmrManagedMasterSecurityGroup(const char* value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the master node.</p>
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group (managed by Amazon Elastic
-     * MapReduce) for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline const Aws::String& GetServiceAccessSecurityGroup() const{ return m_serviceAccessSecurityGroup; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline void SetServiceAccessSecurityGroup(const Aws::String& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = value; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline void SetServiceAccessSecurityGroup(Aws::String&& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = value; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline void SetServiceAccessSecurityGroup(const char* value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(const Aws::String& value) { SetServiceAccessSecurityGroup(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(Aws::String&& value) { SetServiceAccessSecurityGroup(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
+    inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(const char* value) { SetServiceAccessSecurityGroup(value); return *this;}
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -409,6 +437,8 @@ namespace Model
     bool m_emrManagedMasterSecurityGroupHasBeenSet;
     Aws::String m_emrManagedSlaveSecurityGroup;
     bool m_emrManagedSlaveSecurityGroupHasBeenSet;
+    Aws::String m_serviceAccessSecurityGroup;
+    bool m_serviceAccessSecurityGroupHasBeenSet;
     Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
     bool m_additionalMasterSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;

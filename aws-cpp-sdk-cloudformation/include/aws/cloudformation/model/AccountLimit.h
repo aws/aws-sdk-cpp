@@ -31,6 +31,9 @@ namespace CloudFormation
 namespace Model
 {
 
+  /**
+   * <p>The AccountLimit data type.</p>
+   */
   class AWS_CLOUDFORMATION_API AccountLimit
   {
   public:
@@ -41,34 +44,61 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the account limit. Currently, the only account limit is
+     * <code>StackLimit</code>.</p>
+     */
     inline AccountLimit& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
     inline long GetValue() const{ return m_value; }
 
-    
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
     inline void SetValue(long value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p>The value that is associated with the account limit name.</p>
+     */
     inline AccountLimit& WithValue(long value) { SetValue(value); return *this;}
 
   private:

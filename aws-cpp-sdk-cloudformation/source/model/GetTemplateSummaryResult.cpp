@@ -79,6 +79,17 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebSe
     {
       m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
     }
+    XmlNode resourceTypesNode = resultNode.FirstChild("ResourceTypes");
+    if(!resourceTypesNode.IsNull())
+    {
+      XmlNode resourceTypesMember = resourceTypesNode.FirstChild("member");
+      while(!resourceTypesMember.IsNull())
+      {
+        m_resourceTypes.push_back(StringUtils::Trim(resourceTypesMember.GetText().c_str()));
+        resourceTypesMember = resourceTypesMember.NextNode("member");
+      }
+
+    }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {

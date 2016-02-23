@@ -25,7 +25,8 @@ namespace Model
   enum class TransitionStorageClass
   {
     NOT_SET,
-    GLACIER
+    GLACIER,
+    STANDARD_IA
   };
 
 namespace TransitionStorageClassMapper

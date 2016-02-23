@@ -34,7 +34,10 @@ FunctionConfiguration::FunctionConfiguration() :
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_codeSha256HasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -51,7 +54,10 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_codeSha256HasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +134,27 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
     m_lastModifiedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CodeSha256"))
+  {
+    m_codeSha256 = jsonValue.GetString("CodeSha256");
+
+    m_codeSha256HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +218,24 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_lastModifiedHasBeenSet)
   {
    payload.WithString("LastModified", m_lastModified);
+
+  }
+
+  if(m_codeSha256HasBeenSet)
+  {
+   payload.WithString("CodeSha256", m_codeSha256);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

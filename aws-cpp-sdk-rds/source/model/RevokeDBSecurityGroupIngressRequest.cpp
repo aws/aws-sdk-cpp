@@ -52,7 +52,7 @@ Aws::String RevokeDBSecurityGroupIngressRequest::SerializePayload() const
   {
     ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

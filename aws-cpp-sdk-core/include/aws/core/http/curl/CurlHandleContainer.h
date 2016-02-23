@@ -60,6 +60,7 @@ private:
     const CurlHandleContainer& operator = (const CurlHandleContainer&&) = delete;
 
     bool CheckAndGrowPool();
+    void SetDefaultOptionsOnHandle(void* handle);
 
     Aws::Stack<CURL*> m_handleContainer;
     std::mutex m_handleContainerMutex;

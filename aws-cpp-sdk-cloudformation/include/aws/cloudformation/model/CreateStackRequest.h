@@ -43,7 +43,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
@@ -51,7 +51,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
@@ -59,7 +59,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
@@ -67,7 +67,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline CreateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
@@ -83,7 +83,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline CreateStackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
 
@@ -91,7 +91,7 @@ namespace Model
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain
      * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 255 characters.</note>
+     * alphabetic character and cannot be longer than 128 characters.</note>
      */
     inline CreateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
@@ -167,8 +167,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -178,8 +178,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -189,8 +189,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -200,8 +200,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -211,8 +211,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -222,8 +222,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -233,8 +233,8 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template (max size: 460,800 bytes) located in an S3 bucket in the same region as
-     * the stack. For more information, go to the <a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to the <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -244,43 +244,57 @@ namespace Model
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline CreateStackRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline CreateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline CreateStackRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the stack.</p>
+     * the stack. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline CreateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
@@ -580,6 +594,158 @@ namespace Model
     inline CreateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline CreateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline CreateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline CreateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline CreateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * create stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
+     * following syntax to describe template resource types: <code>AWS::*</code> (for
+     * all AWS resource), <code>Custom::*</code> (for all custom resources),
+     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
+     * include a resource that you're creating, the stack creation fails. By default,
+     * AWS CloudFormation grants permissions to all resource types. AWS Identity and
+     * Access Management (IAM) uses this parameter for AWS CloudFormation-specific
+     * condition keys in IAM policies. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline CreateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
@@ -739,58 +905,51 @@ namespace Model
     inline CreateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline CreateStackRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline CreateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline CreateStackRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A set of user-defined <code>Tags</code> to associate with this stack,
-     * represented by key/value pairs. Tags defined for the stack are propagated to EC2
-     * resources that are created as part of the stack. A maximum number of 10 tags can
-     * be specified.</p>
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to the resources created in the stack. A maximum number of
+     * 10 tags can be specified.</p>
      */
     inline CreateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -811,6 +970,8 @@ namespace Model
     bool m_notificationARNsHasBeenSet;
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+    Aws::Vector<Aws::String> m_resourceTypes;
+    bool m_resourceTypesHasBeenSet;
     OnFailure m_onFailure;
     bool m_onFailureHasBeenSet;
     Aws::String m_stackPolicyBody;

@@ -71,37 +71,37 @@ namespace Model
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(value); return *this;}
 
     /**
-     * <p>One or more Reserved Instance Listing IDs.</p>
+     * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 

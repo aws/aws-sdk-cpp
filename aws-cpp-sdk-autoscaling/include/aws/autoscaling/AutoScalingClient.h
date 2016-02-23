@@ -47,6 +47,7 @@
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
+#include <aws/autoscaling/model/SetInstanceProtectionResult.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -139,6 +140,7 @@ namespace Model
         class ResumeProcessesRequest;
         class SetDesiredCapacityRequest;
         class SetInstanceHealthRequest;
+        class SetInstanceProtectionRequest;
         class SuspendProcessesRequest;
         class TerminateInstanceInAutoScalingGroupRequest;
         class UpdateAutoScalingGroupRequest;
@@ -188,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> ResumeProcessesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetDesiredCapacityOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceHealthOutcome;
+        typedef Aws::Utils::Outcome<SetInstanceProtectionResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceProtectionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> SuspendProcessesOutcome;
         typedef Aws::Utils::Outcome<TerminateInstanceInAutoScalingGroupResult, Aws::Client::AWSError<AutoScalingErrors>> TerminateInstanceInAutoScalingGroupOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> UpdateAutoScalingGroupOutcome;
@@ -237,6 +240,7 @@ namespace Model
         typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
         typedef std::future<SetDesiredCapacityOutcome> SetDesiredCapacityOutcomeCallable;
         typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
+        typedef std::future<SetInstanceProtectionOutcome> SetInstanceProtectionOutcomeCallable;
         typedef std::future<SuspendProcessesOutcome> SuspendProcessesOutcomeCallable;
         typedef std::future<TerminateInstanceInAutoScalingGroupOutcome> TerminateInstanceInAutoScalingGroupOutcomeCallable;
         typedef std::future<UpdateAutoScalingGroupOutcome> UpdateAutoScalingGroupOutcomeCallable;
@@ -289,6 +293,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeProcessesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDesiredCapacityResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceHealthResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceProtectionRequest&, const Model::SetInstanceProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceProtectionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SuspendProcessesRequest&, const Model::SuspendProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendProcessesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::TerminateInstanceInAutoScalingGroupRequest&, const Model::TerminateInstanceInAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstanceInAutoScalingGroupResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::UpdateAutoScalingGroupRequest&, const Model::UpdateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutoScalingGroupResponseReceivedHandler;
@@ -328,7 +333,10 @@ namespace Model
 
         /**
          * <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p>
-         * <p>For more information, see <a
+         * <p>When you attach instances, Auto Scaling increases the desired capacity of the
+         * group by the number of instances being attached. If the number of instances
+         * being attached plus the desired capacity of the group exceeds the maximum size
+         * of the group, the operation fails.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -337,7 +345,10 @@ namespace Model
 
         /**
          * <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p>
-         * <p>For more information, see <a
+         * <p>When you attach instances, Auto Scaling increases the desired capacity of the
+         * group by the number of instances being attached. If the number of instances
+         * being attached plus the desired capacity of the group exceeds the maximum size
+         * of the group, the operation fails.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -348,7 +359,10 @@ namespace Model
 
         /**
          * <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p>
-         * <p>For more information, see <a
+         * <p>When you attach instances, Auto Scaling increases the desired capacity of the
+         * group by the number of instances being attached. If the number of instances
+         * being attached plus the desired capacity of the group exceeds the maximum size
+         * of the group, the operation fails.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -403,8 +417,9 @@ namespace Model
          * Scaling to publish lifecycle notifications to the designated SQS queue or SNS
          * topic.</li> <li>Create the lifecycle hook. You can create a hook that acts when
          * instances launch or when instances terminate.</li> <li>If necessary, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>
-         * <b>Complete the lifecycle action</b>.</li> </ol> <p>For more information, see <a
+         * lifecycle action heartbeat to keep the instance in a pending state.</li>
+         * <li><b>Complete the lifecycle action</b>.</li> </ol> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
          * Scaling Pending State</a> and <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -421,8 +436,9 @@ namespace Model
          * Scaling to publish lifecycle notifications to the designated SQS queue or SNS
          * topic.</li> <li>Create the lifecycle hook. You can create a hook that acts when
          * instances launch or when instances terminate.</li> <li>If necessary, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>
-         * <b>Complete the lifecycle action</b>.</li> </ol> <p>For more information, see <a
+         * lifecycle action heartbeat to keep the instance in a pending state.</li>
+         * <li><b>Complete the lifecycle action</b>.</li> </ol> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
          * Scaling Pending State</a> and <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -441,8 +457,9 @@ namespace Model
          * Scaling to publish lifecycle notifications to the designated SQS queue or SNS
          * topic.</li> <li>Create the lifecycle hook. You can create a hook that acts when
          * instances launch or when instances terminate.</li> <li>If necessary, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>
-         * <b>Complete the lifecycle action</b>.</li> </ol> <p>For more information, see <a
+         * lifecycle action heartbeat to keep the instance in a pending state.</li>
+         * <li><b>Complete the lifecycle action</b>.</li> </ol> <p>For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html">Auto
          * Scaling Pending State</a> and <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html">Auto
@@ -573,31 +590,46 @@ namespace Model
         virtual void CreateOrUpdateTagsAsync(const Model::CreateOrUpdateTagsRequest& request, const CreateOrUpdateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no
-         * instances and no scaling activities in progress.</p> <p>To remove all instances
-         * before calling <code>DeleteAutoScalingGroup</code>, call
-         * <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto
-         * Scaling group to zero.</p>
+         * <p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances
+         * or scaling activities in progress, you must specify the option to force the
+         * deletion in order for it to succeed.</p> <p>If the group has policies, deleting
+         * the group deletes the policies, the underlying alarm actions, and any alarm that
+         * no longer has an associated action.</p> <p>To remove instances from the Auto
+         * Scaling group before deleting it, call <a>DetachInstances</a> with the list of
+         * instances and the option to decrement the desired capacity so that Auto Scaling
+         * does not launch replacement instances.</p> <p>To terminate all instances before
+         * deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the
+         * minimum size and desired capacity of the Auto Scaling group to zero.</p>
          */
         virtual Model::DeleteAutoScalingGroupOutcome DeleteAutoScalingGroup(const Model::DeleteAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no
-         * instances and no scaling activities in progress.</p> <p>To remove all instances
-         * before calling <code>DeleteAutoScalingGroup</code>, call
-         * <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto
-         * Scaling group to zero.</p>
+         * <p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances
+         * or scaling activities in progress, you must specify the option to force the
+         * deletion in order for it to succeed.</p> <p>If the group has policies, deleting
+         * the group deletes the policies, the underlying alarm actions, and any alarm that
+         * no longer has an associated action.</p> <p>To remove instances from the Auto
+         * Scaling group before deleting it, call <a>DetachInstances</a> with the list of
+         * instances and the option to decrement the desired capacity so that Auto Scaling
+         * does not launch replacement instances.</p> <p>To terminate all instances before
+         * deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the
+         * minimum size and desired capacity of the Auto Scaling group to zero.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAutoScalingGroupOutcomeCallable DeleteAutoScalingGroupCallable(const Model::DeleteAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling group.</p> <p>The group must have no
-         * instances and no scaling activities in progress.</p> <p>To remove all instances
-         * before calling <code>DeleteAutoScalingGroup</code>, call
-         * <a>UpdateAutoScalingGroup</a> to set the minimum and maximum size of the Auto
-         * Scaling group to zero.</p>
+         * <p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances
+         * or scaling activities in progress, you must specify the option to force the
+         * deletion in order for it to succeed.</p> <p>If the group has policies, deleting
+         * the group deletes the policies, the underlying alarm actions, and any alarm that
+         * no longer has an associated action.</p> <p>To remove instances from the Auto
+         * Scaling group before deleting it, call <a>DetachInstances</a> with the list of
+         * instances and the option to decrement the desired capacity so that Auto Scaling
+         * does not launch replacement instances.</p> <p>To terminate all instances before
+         * deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the
+         * minimum size and desired capacity of the Auto Scaling group to zero.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -673,19 +705,25 @@ namespace Model
         virtual void DeleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p>
+         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
+         * the underlying alarm action, but does not delete the alarm, even if it no longer
+         * has an associated action.</p>
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p>
+         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
+         * the underlying alarm action, but does not delete the alarm, even if it no longer
+         * has an associated action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p>
+         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
+         * the underlying alarm action, but does not delete the alarm, even if it no longer
+         * has an associated action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1122,9 +1160,11 @@ namespace Model
         virtual void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more instances from the specified Auto Scaling group. After
-         * the instances are detached, you can manage them independently from the rest of
-         * the Auto Scaling group.</p> <p>For more information, see <a
+         * <p>Removes one or more instances from the specified Auto Scaling group.</p>
+         * <p>After the instances are detached, you can manage them independently from the
+         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
+         * decrement the desired capacity, Auto Scaling launches instances to replace the
+         * ones that are detached.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -1132,9 +1172,11 @@ namespace Model
         virtual Model::DetachInstancesOutcome DetachInstances(const Model::DetachInstancesRequest& request) const;
 
         /**
-         * <p>Removes one or more instances from the specified Auto Scaling group. After
-         * the instances are detached, you can manage them independently from the rest of
-         * the Auto Scaling group.</p> <p>For more information, see <a
+         * <p>Removes one or more instances from the specified Auto Scaling group.</p>
+         * <p>After the instances are detached, you can manage them independently from the
+         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
+         * decrement the desired capacity, Auto Scaling launches instances to replace the
+         * ones that are detached.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -1144,9 +1186,11 @@ namespace Model
         virtual Model::DetachInstancesOutcomeCallable DetachInstancesCallable(const Model::DetachInstancesRequest& request) const;
 
         /**
-         * <p>Removes one or more instances from the specified Auto Scaling group. After
-         * the instances are detached, you can manage them independently from the rest of
-         * the Auto Scaling group.</p> <p>For more information, see <a
+         * <p>Removes one or more instances from the specified Auto Scaling group.</p>
+         * <p>After the instances are detached, you can manage them independently from the
+         * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
+         * decrement the desired capacity, Auto Scaling launches instances to replace the
+         * ones that are detached.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
          * Guide</i>.</p>
@@ -1662,6 +1706,34 @@ namespace Model
         virtual void SetInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the instance protection settings of the specified instances.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         */
+        virtual Model::SetInstanceProtectionOutcome SetInstanceProtection(const Model::SetInstanceProtectionRequest& request) const;
+
+        /**
+         * <p>Updates the instance protection settings of the specified instances.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetInstanceProtectionOutcomeCallable SetInstanceProtectionCallable(const Model::SetInstanceProtectionRequest& request) const;
+
+        /**
+         * <p>Updates the instance protection settings of the specified instances.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetInstanceProtectionAsync(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Suspends the specified Auto Scaling processes for the specified Auto Scaling
          * group. To suspend specific processes, use the <code>ScalingProcesses</code>
          * parameter. To suspend all processes, omit the <code>ScalingProcesses</code>
@@ -1709,14 +1781,14 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instances is not
+         * size.</p> <p>This call simply makes a termination request. The instance is not
          * terminated immediately.</p>
          */
         virtual Model::TerminateInstanceInAutoScalingGroupOutcome TerminateInstanceInAutoScalingGroup(const Model::TerminateInstanceInAutoScalingGroupRequest& request) const;
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instances is not
+         * size.</p> <p>This call simply makes a termination request. The instance is not
          * terminated immediately.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1725,7 +1797,7 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instances is not
+         * size.</p> <p>This call simply makes a termination request. The instance is not
          * terminated immediately.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1855,6 +1927,7 @@ namespace Model
         void ResumeProcessesAsyncHelper(const Model::ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetInstanceHealthAsyncHelper(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetInstanceProtectionAsyncHelper(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SuspendProcessesAsyncHelper(const Model::SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateInstanceInAutoScalingGroupAsyncHelper(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

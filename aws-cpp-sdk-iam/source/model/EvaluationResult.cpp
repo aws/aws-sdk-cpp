@@ -28,7 +28,9 @@ EvaluationResult::EvaluationResult() :
     m_evalResourceNameHasBeenSet(false),
     m_evalDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false)
+    m_missingContextValuesHasBeenSet(false),
+    m_evalDecisionDetailsHasBeenSet(false),
+    m_resourceSpecificResultsHasBeenSet(false)
 {
 }
 
@@ -37,7 +39,9 @@ EvaluationResult::EvaluationResult(const XmlNode& xmlNode) :
     m_evalResourceNameHasBeenSet(false),
     m_evalDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false)
+    m_missingContextValuesHasBeenSet(false),
+    m_evalDecisionDetailsHasBeenSet(false),
+    m_resourceSpecificResultsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -84,11 +88,39 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
       XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
       while(!missingContextValuesMember.IsNull())
       {
-        m_missingContextValues.push_back(missingContextValuesMember);
+        m_missingContextValues.push_back(StringUtils::Trim(missingContextValuesMember.GetText().c_str()));
         missingContextValuesMember = missingContextValuesMember.NextNode("member");
       }
 
       m_missingContextValuesHasBeenSet = true;
+    }
+    XmlNode evalDecisionDetailsNode = resultNode.FirstChild("EvalDecisionDetails");
+
+    if(!evalDecisionDetailsNode.IsNull())
+    {
+      XmlNode evalDecisionDetailsEntry = evalDecisionDetailsNode.FirstChild("entry");
+      while(!evalDecisionDetailsEntry.IsNull())
+      {
+        XmlNode keyNode = evalDecisionDetailsEntry.FirstChild("key");
+        XmlNode valueNode = evalDecisionDetailsEntry.FirstChild("value");
+        m_evalDecisionDetails[StringUtils::Trim(keyNode.GetText().c_str())] =
+            PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(valueNode.GetText().c_str()));
+        evalDecisionDetailsEntry = evalDecisionDetailsEntry.NextNode("entry");
+      }
+
+      m_evalDecisionDetailsHasBeenSet = true;
+    }
+    XmlNode resourceSpecificResultsNode = resultNode.FirstChild("ResourceSpecificResults");
+    if(!resourceSpecificResultsNode.IsNull())
+    {
+      XmlNode resourceSpecificResultsMember = resourceSpecificResultsNode.FirstChild("member");
+      while(!resourceSpecificResultsMember.IsNull())
+      {
+        m_resourceSpecificResults.push_back(resourceSpecificResultsMember);
+        resourceSpecificResultsMember = resourceSpecificResultsMember.NextNode("member");
+      }
+
+      m_resourceSpecificResultsHasBeenSet = true;
     }
   }
 
@@ -124,9 +156,20 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned missingContextValuesIdx = 1;
       for(auto& item : m_missingContextValues)
       {
-        Aws::StringStream missingContextValuesSs;
-        missingContextValuesSs << location << index << locationValue << ".MissingContextValues.member." << missingContextValuesIdx++;
-        item.OutputToStream(oStream, missingContextValuesSs.str().c_str());
+        oStream << location << index << locationValue << ".MissingContextValues.member." << missingContextValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_evalDecisionDetailsHasBeenSet)
+  {
+  }
+  if(m_resourceSpecificResultsHasBeenSet)
+  {
+      unsigned resourceSpecificResultsIdx = 1;
+      for(auto& item : m_resourceSpecificResults)
+      {
+        Aws::StringStream resourceSpecificResultsSs;
+        resourceSpecificResultsSs << location << index << locationValue << ".ResourceSpecificResults.member." << resourceSpecificResultsIdx++;
+        item.OutputToStream(oStream, resourceSpecificResultsSs.str().c_str());
       }
   }
 }
@@ -160,9 +203,20 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned missingContextValuesIdx = 1;
       for(auto& item : m_missingContextValues)
       {
-        Aws::StringStream missingContextValuesSs;
-        missingContextValuesSs << location <<  ".MissingContextValues.member." << missingContextValuesIdx++;
-        item.OutputToStream(oStream, missingContextValuesSs.str().c_str());
+        oStream << location << ".MissingContextValues.member." << missingContextValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_evalDecisionDetailsHasBeenSet)
+  {
+  }
+  if(m_resourceSpecificResultsHasBeenSet)
+  {
+      unsigned resourceSpecificResultsIdx = 1;
+      for(auto& item : m_resourceSpecificResults)
+      {
+        Aws::StringStream resourceSpecificResultsSs;
+        resourceSpecificResultsSs << location <<  ".ResourceSpecificResults.member." << resourceSpecificResultsIdx++;
+        item.OutputToStream(oStream, resourceSpecificResultsSs.str().c_str());
       }
   }
 }

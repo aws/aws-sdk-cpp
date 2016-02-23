@@ -88,6 +88,8 @@
     ${spaces}      valueNode;
 #elseif($member.shape.mapValue.shape.string)
     ${spaces}      StringUtils::Trim(valueNode.GetText().c_str());
+#elseif($member.shape.mapValue.shape.enum)
+    ${spaces}      ${member.shape.mapValue.shape.name}Mapper::Get${member.shape.mapValue.shape.name}ForName(StringUtils::Trim(valueNode.GetText().c_str()));
 #elseif($member.shape.mapValue.shape.primitive)
     ${spaces}     ${CppViewHelper.computeXmlConversionMethodName($member.shape.mapValue.shape)}(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
 #end

@@ -76,25 +76,39 @@ namespace Model
      */
     inline DescribeContainerInstancesResult& AddContainerInstances(ContainerInstance&& value) { m_containerInstances.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeContainerInstancesResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeContainerInstancesResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeContainerInstancesResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeContainerInstancesResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:

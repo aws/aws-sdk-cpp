@@ -693,20 +693,20 @@ namespace Model
     inline LaunchConfiguration& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Specifies whether the instances are associated with a public IP address
-     * (<code>true</code>) or not (<code>false</code>).</p>
+     * <p>[EC2-VPC] Indicates whether to assign a public IP address to each
+     * instance.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
     /**
-     * <p>Specifies whether the instances are associated with a public IP address
-     * (<code>true</code>) or not (<code>false</code>).</p>
+     * <p>[EC2-VPC] Indicates whether to assign a public IP address to each
+     * instance.</p>
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
-     * <p>Specifies whether the instances are associated with a public IP address
-     * (<code>true</code>) or not (<code>false</code>).</p>
+     * <p>[EC2-VPC] Indicates whether to assign a public IP address to each
+     * instance.</p>
      */
     inline LaunchConfiguration& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 

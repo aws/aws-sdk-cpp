@@ -26,12 +26,15 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_runtimeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_handlerHasBeenSet(false),
+    m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_publish(false),
+    m_publishHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,12 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
+  if(m_codeHasBeenSet)
+  {
+   payload.WithObject("Code", m_code.Jsonize());
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -80,9 +89,15 @@ Aws::String CreateFunctionRequest::SerializePayload() const
 
   }
 
-  if(m_codeHasBeenSet)
+  if(m_publishHasBeenSet)
   {
-   payload.WithObject("Code", m_code.Jsonize());
+   payload.WithBool("Publish", m_publish);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

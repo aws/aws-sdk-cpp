@@ -126,49 +126,49 @@ namespace Model
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline ModifyInstanceAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,
      * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>intanceInitiateShutdownBehavior</code> attribute.</p>
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
@@ -305,31 +305,36 @@ namespace Model
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * paramater for Spot Instances.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * paramater for Spot Instances.</p>
      */
     inline void SetDisableApiTermination(const AttributeBooleanValue& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * paramater for Spot Instances.</p>
      */
     inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * paramater for Spot Instances.</p>
      */
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
-     * Amazon EC2 console, CLI, or API; otherwise, you can.</p>
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * paramater for Spot Instances.</p>
      */
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(value); return *this;}
 

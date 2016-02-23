@@ -287,58 +287,58 @@ namespace Model
     inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline ReEncryptRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline ReEncryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline ReEncryptRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline ReEncryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a>. </p>
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline ReEncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 

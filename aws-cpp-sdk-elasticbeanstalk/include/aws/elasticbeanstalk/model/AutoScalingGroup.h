@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes an Auto Scaling launch configuration. </p>
+   * <p>Describes an Auto Scaling launch configuration. </p>
    */
   class AWS_ELASTICBEANSTALK_API AutoScalingGroup
   {
@@ -45,37 +45,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline AutoScalingGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline AutoScalingGroup& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the <code>AutoScalingGroup</code> . </p>
+     * <p>The name of the <code>AutoScalingGroup</code> . </p>
      */
     inline AutoScalingGroup& WithName(const char* value) { SetName(value); return *this;}
 

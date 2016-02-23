@@ -47,7 +47,7 @@ namespace Model
      * <p>Information about the policy version.</p> <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const PolicyVersion& GetPolicyVersion() const{ return m_policyVersion; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>Information about the policy version.</p> <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetPolicyVersion(const PolicyVersion& value) { m_policyVersion = value; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>Information about the policy version.</p> <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetPolicyVersion(PolicyVersion&& value) { m_policyVersion = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>Information about the policy version.</p> <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline GetPolicyVersionResult& WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>Information about the policy version.</p> <p>For more information about
      * managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline GetPolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(value); return *this;}
 

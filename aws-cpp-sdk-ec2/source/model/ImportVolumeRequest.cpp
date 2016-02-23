@@ -53,7 +53,7 @@ Aws::String ImportVolumeRequest::SerializePayload() const
   {
     m_volume.OutputToStream(ss, "Volume.");
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

@@ -74,7 +74,9 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p>
+     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * the DNS resolution and DNS hostnames attributes in the same request. Use
+     * separate requests for each attribute.</p>
      */
     inline const AttributeBooleanValue& GetEnableDnsSupport() const{ return m_enableDnsSupport; }
 
@@ -83,7 +85,9 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p>
+     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * the DNS resolution and DNS hostnames attributes in the same request. Use
+     * separate requests for each attribute.</p>
      */
     inline void SetEnableDnsSupport(const AttributeBooleanValue& value) { m_enableDnsSupportHasBeenSet = true; m_enableDnsSupport = value; }
 
@@ -92,7 +96,9 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p>
+     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * the DNS resolution and DNS hostnames attributes in the same request. Use
+     * separate requests for each attribute.</p>
      */
     inline void SetEnableDnsSupport(AttributeBooleanValue&& value) { m_enableDnsSupportHasBeenSet = true; m_enableDnsSupport = value; }
 
@@ -101,7 +107,9 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p>
+     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * the DNS resolution and DNS hostnames attributes in the same request. Use
+     * separate requests for each attribute.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(const AttributeBooleanValue& value) { SetEnableDnsSupport(value); return *this;}
 
@@ -110,42 +118,54 @@ namespace Model
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
      * the reserved IP address at the base of the VPC network range "plus two" will
      * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p>
+     * public DNS hostnames to IP addresses is not enabled. </p> <p>You cannot modify
+     * the DNS resolution and DNS hostnames attributes in the same request. Use
+     * separate requests for each attribute.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(value); return *this;}
 
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You can only enable DNS hostnames if you also enable DNS support.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
     inline const AttributeBooleanValue& GetEnableDnsHostnames() const{ return m_enableDnsHostnames; }
 
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You can only enable DNS hostnames if you also enable DNS support.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
     inline void SetEnableDnsHostnames(const AttributeBooleanValue& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = value; }
 
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You can only enable DNS hostnames if you also enable DNS support.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
     inline void SetEnableDnsHostnames(AttributeBooleanValue&& value) { m_enableDnsHostnamesHasBeenSet = true; m_enableDnsHostnames = value; }
 
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You can only enable DNS hostnames if you also enable DNS support.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(const AttributeBooleanValue& value) { SetEnableDnsHostnames(value); return *this;}
 
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-     * <p>You can only enable DNS hostnames if you also enable DNS support.</p>
+     * <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same
+     * request. Use separate requests for each attribute. You can only enable DNS
+     * hostnames if you've enabled DNS support.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(AttributeBooleanValue&& value) { SetEnableDnsHostnames(value); return *this;}
 

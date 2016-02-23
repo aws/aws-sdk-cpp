@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
+#include <aws/lambda/model/VpcConfig.h>
 
 namespace Aws
 {
@@ -36,130 +37,83 @@ namespace Model
 
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name you want to assign to the function you are uploading. You can
-     * specify an unqualified function name (for example, "Thumbnail") or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. The function names appear in the console and are returned in the
-     * <a>ListFunctions</a> API. Function names are used to specify functions to other
-     * AWS Lambda APIs, such as <a>Invoke</a>. </p>
+     * <p>The name you want to assign to the function you are uploading. The function
+     * names appear in the console and are returned in the <a>ListFunctions</a> API.
+     * Function names are used to specify functions to other AWS Lambda APIs, such as
+     * <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. Currently,
-     * Lambda supports "java" and "nodejs" as the runtime.</p>
+     * <p>The runtime environment for the Lambda function you are uploading. </p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. Currently,
-     * Lambda supports "java" and "nodejs" as the runtime.</p>
+     * <p>The runtime environment for the Lambda function you are uploading. </p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. Currently,
-     * Lambda supports "java" and "nodejs" as the runtime.</p>
+     * <p>The runtime environment for the Lambda function you are uploading. </p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. Currently,
-     * Lambda supports "java" and "nodejs" as the runtime.</p>
+     * <p>The runtime environment for the Lambda function you are uploading. </p>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. Currently,
-     * Lambda supports "java" and "nodejs" as the runtime.</p>
+     * <p>The runtime environment for the Lambda function you are uploading. </p>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
@@ -168,7 +122,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
@@ -177,7 +131,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -186,7 +140,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -195,7 +149,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
@@ -204,7 +158,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline CreateFunctionRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
@@ -213,7 +167,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline CreateFunctionRequest& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
@@ -222,7 +176,7 @@ namespace Model
      * executes your function to access any other Amazon Web Services (AWS) resources.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> </p>
+     * Lambda: How it Works</a>. </p>
      */
     inline CreateFunctionRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -295,6 +249,31 @@ namespace Model
      * Function Handler (Java)</a>. </p>
      */
     inline CreateFunctionRequest& WithHandler(const char* value) { SetHandler(value); return *this;}
+
+    /**
+     * <p>The code for the Lambda function. </p>
+     */
+    inline const FunctionCode& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The code for the Lambda function. </p>
+     */
+    inline void SetCode(const FunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>The code for the Lambda function. </p>
+     */
+    inline void SetCode(FunctionCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>The code for the Lambda function. </p>
+     */
+    inline CreateFunctionRequest& WithCode(const FunctionCode& value) { SetCode(value); return *this;}
+
+    /**
+     * <p>The code for the Lambda function. </p>
+     */
+    inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(value); return *this;}
 
     /**
      * <p>A short, user-defined function description. Lambda does not use this value.
@@ -390,29 +369,62 @@ namespace Model
     inline CreateFunctionRequest& WithMemorySize(long value) { SetMemorySize(value); return *this;}
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
+     * function and publish a version as an atomic operation. </p>
      */
-    inline const FunctionCode& GetCode() const{ return m_code; }
+    inline bool GetPublish() const{ return m_publish; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
+     * function and publish a version as an atomic operation. </p>
      */
-    inline void SetCode(const FunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
+     * function and publish a version as an atomic operation. </p>
      */
-    inline void SetCode(FunctionCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline CreateFunctionRequest& WithPublish(bool value) { SetPublish(value); return *this;}
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs. These must
+     * belong to the same VPC. You must provide at least one security group and one
+     * subnet ID.</p>
      */
-    inline CreateFunctionRequest& WithCode(const FunctionCode& value) { SetCode(value); return *this;}
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs. These must
+     * belong to the same VPC. You must provide at least one security group and one
+     * subnet ID.</p>
      */
-    inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(value); return *this;}
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs. These must
+     * belong to the same VPC. You must provide at least one security group and one
+     * subnet ID.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs. These must
+     * belong to the same VPC. You must provide at least one security group and one
+     * subnet ID.</p>
+     */
+    inline CreateFunctionRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>If your Lambda function accesses resources in a VPC, you provide this
+     * parameter identifying the list of security group IDs and subnet IDs. These must
+     * belong to the same VPC. You must provide at least one security group and one
+     * subnet ID.</p>
+     */
+    inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
   private:
     Aws::String m_functionName;
@@ -423,14 +435,18 @@ namespace Model
     bool m_roleHasBeenSet;
     Aws::String m_handler;
     bool m_handlerHasBeenSet;
+    FunctionCode m_code;
+    bool m_codeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     long m_timeout;
     bool m_timeoutHasBeenSet;
     long m_memorySize;
     bool m_memorySizeHasBeenSet;
-    FunctionCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_publish;
+    bool m_publishHasBeenSet;
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

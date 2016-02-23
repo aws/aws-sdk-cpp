@@ -20,7 +20,8 @@ using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
 DescribeEventCategoriesRequest::DescribeEventCategoriesRequest() : 
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,16 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

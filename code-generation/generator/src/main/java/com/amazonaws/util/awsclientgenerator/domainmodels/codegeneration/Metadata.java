@@ -26,6 +26,7 @@ public class Metadata {
     private String namespace;
     private String serviceFullName;
     private String signatureVersion;
+    private String signingName;
     private String targetPrefix;
     private String protocol;
     private String projectName;

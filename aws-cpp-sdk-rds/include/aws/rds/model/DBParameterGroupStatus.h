@@ -32,12 +32,11 @@ namespace Model
 {
 
   /**
-   * <p> The status of the DB Parameter Group. </p> <p>This data type is used as a
-   * response element in the following actions:</p> <ul>
-   * <li><a>CreateDBInstance</a></li> <li><a>CreateDBInstanceReadReplica</a></li>
-   * <li><a>DeleteDBInstance</a></li> <li><a>ModifyDBInstance</a></li>
-   * <li><a>RebootDBInstance</a></li> <li><a>RestoreDBInstanceFromDBSnapshot</a></li>
-   * </ul>
+   * <p> The status of the DB parameter group. </p> <p>This data type is used as a
+   * response element in the following actions:</p> <ul> <li> <a>CreateDBInstance</a>
+   * </li> <li> <a>CreateDBInstanceReadReplica</a> </li> <li> <a>DeleteDBInstance</a>
+   * </li> <li> <a>ModifyDBInstance</a> </li> <li> <a>RebootDBInstance</a> </li> <li>
+   * <a>RestoreDBInstanceFromDBSnapshot</a> </li> </ul>
    */
   class AWS_RDS_API DBParameterGroupStatus
   {
@@ -50,37 +49,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline DBParameterGroupStatus& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline DBParameterGroupStatus& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DP Parameter Group. </p>
+     * <p> The name of the DP parameter group. </p>
      */
     inline DBParameterGroupStatus& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 

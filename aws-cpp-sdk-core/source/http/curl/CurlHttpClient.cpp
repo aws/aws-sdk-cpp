@@ -95,8 +95,16 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             curl_easy_setopt(requestHandle, CURLOPT_HTTPGET, 1L);
             curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
             break;
-        default:
+        case HttpMethod::HTTP_PATCH:
+            curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PATCH");
+            break;
+        case HttpMethod::HTTP_DELETE:
             curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "DELETE");
+            curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
+            break;
+        default:
+            assert(0);
+            curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "GET");
             break;
     }
 }
@@ -247,7 +255,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
                 response->SetContentType(contentType);
                 AWS_LOGSTREAM_DEBUG(CurlTag, "Returned content type " << contentType);
             }
-            curl_easy_reset(connectionHandle);
+
             AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << connectionHandle);
         }
 

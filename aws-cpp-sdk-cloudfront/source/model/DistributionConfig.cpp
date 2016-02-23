@@ -37,7 +37,8 @@ DistributionConfig::DistributionConfig() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false)
+    m_restrictionsHasBeenSet(false),
+    m_webACLIdHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ DistributionConfig::DistributionConfig(const XmlNode& xmlNode) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false)
+    m_restrictionsHasBeenSet(false),
+    m_webACLIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -144,6 +146,12 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
       m_restrictions = restrictionsNode;
       m_restrictionsHasBeenSet = true;
     }
+    XmlNode webACLIdNode = resultNode.FirstChild("WebACLId");
+    if(!webACLIdNode.IsNull())
+    {
+      m_webACLId = StringUtils::Trim(webACLIdNode.GetText().c_str());
+      m_webACLIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -230,6 +238,12 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const
   {
    XmlNode restrictionsNode = parentNode.CreateChildElement("Restrictions");
    m_restrictions.AddToNode(restrictionsNode);
+  }
+
+  if(m_webACLIdHasBeenSet)
+  {
+   XmlNode webACLIdNode = parentNode.CreateChildElement("WebACLId");
+   webACLIdNode.SetText(m_webACLId);
   }
 
 }

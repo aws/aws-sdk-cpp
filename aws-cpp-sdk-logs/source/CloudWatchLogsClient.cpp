@@ -26,6 +26,8 @@
 #include <aws/logs/CloudWatchLogsClient.h>
 #include <aws/logs/CloudWatchLogsEndpoint.h>
 #include <aws/logs/CloudWatchLogsErrorMarshaller.h>
+#include <aws/logs/model/CancelExportTaskRequest.h>
+#include <aws/logs/model/CreateExportTaskRequest.h>
 #include <aws/logs/model/CreateLogGroupRequest.h>
 #include <aws/logs/model/CreateLogStreamRequest.h>
 #include <aws/logs/model/DeleteDestinationRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/logs/model/DeleteRetentionPolicyRequest.h>
 #include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
 #include <aws/logs/model/DescribeDestinationsRequest.h>
+#include <aws/logs/model/DescribeExportTasksRequest.h>
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
@@ -111,6 +114,68 @@ void CloudWatchLogsClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+CancelExportTaskOutcome CloudWatchLogsClient::CancelExportTask(const CancelExportTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CancelExportTaskOutcome(NoResult());
+  }
+  else
+  {
+    return CancelExportTaskOutcome(outcome.GetError());
+  }
+}
+
+CancelExportTaskOutcomeCallable CloudWatchLogsClient::CancelExportTaskCallable(const CancelExportTaskRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::CancelExportTask, this, request);
+}
+
+void CloudWatchLogsClient::CancelExportTaskAsync(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::CancelExportTaskAsyncHelper, this, request, handler, context);
+}
+
+void CloudWatchLogsClient::CancelExportTaskAsyncHelper(const CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelExportTask(request), context);
+}
+
+CreateExportTaskOutcome CloudWatchLogsClient::CreateExportTask(const CreateExportTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateExportTaskOutcome(CreateExportTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateExportTaskOutcome(outcome.GetError());
+  }
+}
+
+CreateExportTaskOutcomeCallable CloudWatchLogsClient::CreateExportTaskCallable(const CreateExportTaskRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::CreateExportTask, this, request);
+}
+
+void CloudWatchLogsClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::CreateExportTaskAsyncHelper, this, request, handler, context);
+}
+
+void CloudWatchLogsClient::CreateExportTaskAsyncHelper(const CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExportTask(request), context);
+}
+
 CreateLogGroupOutcome CloudWatchLogsClient::CreateLogGroup(const CreateLogGroupRequest& request) const
 {
   Aws::StringStream ss;
@@ -388,6 +453,37 @@ void CloudWatchLogsClient::DescribeDestinationsAsync(const DescribeDestinationsR
 void CloudWatchLogsClient::DescribeDestinationsAsyncHelper(const DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDestinations(request), context);
+}
+
+DescribeExportTasksOutcome CloudWatchLogsClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeExportTasksOutcome(DescribeExportTasksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeExportTasksOutcome(outcome.GetError());
+  }
+}
+
+DescribeExportTasksOutcomeCallable CloudWatchLogsClient::DescribeExportTasksCallable(const DescribeExportTasksRequest& request) const
+{
+  return std::async(std::launch::async, &CloudWatchLogsClient::DescribeExportTasks, this, request);
+}
+
+void CloudWatchLogsClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudWatchLogsClient::DescribeExportTasksAsyncHelper, this, request, handler, context);
+}
+
+void CloudWatchLogsClient::DescribeExportTasksAsyncHelper(const DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExportTasks(request), context);
 }
 
 DescribeLogGroupsOutcome CloudWatchLogsClient::DescribeLogGroups(const DescribeLogGroupsRequest& request) const

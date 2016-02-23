@@ -109,37 +109,37 @@ namespace Model
    * or for users that you authenticate (federated users). This guide provides
    * descriptions of the STS API. For more detailed information about using this
    * service, go to <a
-   * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html"
-   * target="_blank">Using Temporary Security Credentials</a>. </p> <note> As an
-   * alternative to using the API, you can use one of the AWS SDKs, which consist of
-   * libraries and sample code for various programming languages and platforms (Java,
-   * Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to create
-   * programmatic access to STS. For example, the SDKs take care of cryptographically
-   * signing requests, managing errors, and retrying requests automatically. For
-   * information about the AWS SDKs, including how to download and install them, see
-   * the <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services
-   * page</a>. </note> <p>For information about setting up signatures and
-   * authorization through the API, go to <a
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
+   * Security Credentials</a>. </p> <note> As an alternative to using the API, you
+   * can use one of the AWS SDKs, which consist of libraries and sample code for
+   * various programming languages and platforms (Java, Ruby, .NET, iOS, Android,
+   * etc.). The SDKs provide a convenient way to create programmatic access to STS.
+   * For example, the SDKs take care of cryptographically signing requests, managing
+   * errors, and retrying requests automatically. For information about the AWS SDKs,
+   * including how to download and install them, see the <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+   * </note> <p>For information about setting up signatures and authorization through
+   * the API, go to <a
    * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
    * target="_blank">Signing AWS API Requests</a> in the <i>AWS General
    * Reference</i>. For general information about the Query API, go to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
    * target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For information
    * about using security tokens with other AWS products, go to <a
-   * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html">Using
-   * Temporary Security Credentials to Access AWS</a> in <i>Using Temporary Security
-   * Credentials</i>. </p> <p>If you're new to AWS and need additional technical
-   * information about a specific AWS product, you can find the product's technical
-   * documentation at <a href="http://aws.amazon.com/documentation/"
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+   * Services That Work with IAM</a> in the <i>Using IAM</i>. </p> <p>If you're new
+   * to AWS and need additional technical information about a specific AWS product,
+   * you can find the product's technical documentation at <a
+   * href="http://aws.amazon.com/documentation/"
    * target="_blank">http://aws.amazon.com/documentation/</a>. </p> <p>
    * <b>Endpoints</b> </p> <p>The AWS Security Token Service (STS) has a default
    * endpoint of https://sts.amazonaws.com that maps to the US East (N. Virginia)
    * region. Additional regions are available, but must first be activated in the AWS
    * Management Console before you can use a different region's endpoint. For more
    * information about activating a region for STS see <a
-   * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-enableregions.html">Activating
-   * STS in a New Region</a> in the <i>Using Temporary Security Credentials</i>
-   * guide. </p> <p>For information about STS endpoints, see <a
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+   * STS in a New Region</a> in the <i>Using IAM</i>.</p> <p>For information about
+   * STS endpoints, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
    * and Endpoints</a> in the <i>AWS General Reference</i>.</p> <p> <b>Recording API
    * requests</b> </p> <p>STS supports AWS CloudTrail, which is a service that
@@ -194,7 +194,7 @@ namespace Model
          * temporary security credentials to access all the other accounts by assuming
          * roles in those accounts. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-         * Roles (Delegation and Federation)</a> in <i>Using IAM</i>. </p> <p>For
+         * Roles (Delegation and Federation)</a> in the <i>Using IAM</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS
          * Management Console. If you already have an identity and authentication system in
          * your corporate network, you don't have to recreate user identities in AWS in
@@ -203,49 +203,49 @@ namespace Model
          * the appropriate permissions) to get temporary security credentials for that
          * user. With those temporary security credentials, you construct a sign-in URL
          * that users can use to access the console. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
-         * for Granting Temporary Access</a> in <i>Using Temporary Security
-         * Credentials</i>. </p> <p>The temporary security credentials are valid for the
-         * duration that you specified when calling <code>AssumeRole</code>, which can be
-         * from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
-         * </p> <p>Optionally, you can pass an IAM access policy to this operation. If you
-         * choose not to pass a policy, the temporary security credentials that are
-         * returned by the operation have the permissions that are defined in the access
-         * policy of the role that is being assumed. If you pass a policy to this
-         * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i><b>and</b></i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-         * <i>Using Temporary Security Credentials</i>.</p> <p>To assume a role, your AWS
-         * account must be trusted by the role. The trust relationship is defined in the
-         * role's trust policy when the role is created. You must also have a policy that
-         * allows you to call <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with
-         * AssumeRole</b> </p> <p>You can optionally include multi-factor authentication
-         * (MFA) information when you call <code>AssumeRole</code>. This is useful for
-         * cross-account scenarios in which you want to make sure that the user who is
-         * assuming the role has been authenticated using an AWS MFA device. In that
-         * scenario, the trust policy of the role being assumed includes a condition that
-         * tests for MFA authentication; if the caller does not include valid MFA
-         * information, the request to assume the role is denied. The condition in a trust
-         * policy that tests for MFA authentication might look like the following
-         * example.</p> <p> <code>"Condition": {"Bool": {"aws:MultiFactorAuthPresent":
-         * true}}</code> </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
+         * Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.</p> <p>The
+         * temporary security credentials are valid for the duration that you specified
+         * when calling <code>AssumeRole</code>, which can be from 900 seconds (15 minutes)
+         * to 3600 seconds (1 hour). The default is 1 hour. </p> <p>Optionally, you can
+         * pass an IAM access policy to this operation. If you choose not to pass a policy,
+         * the temporary security credentials that are returned by the operation have the
+         * permissions that are defined in the access policy of the role that is being
+         * assumed. If you pass a policy to this operation, the temporary security
+         * credentials that are returned by the operation have the permissions that are
+         * allowed by both the access policy of the role that is being assumed,
+         * <i><b>and</b></i> the policy that you pass. This gives you a way to further
+         * restrict the permissions for the resulting temporary security credentials. You
+         * cannot use the passed policy to grant permissions that are in excess of those
+         * allowed by the access policy of the role that is being assumed. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>To assume a role, your AWS account must be trusted by
+         * the role. The trust relationship is defined in the role's trust policy when the
+         * role is created. You must also have a policy that allows you to call
+         * <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with AssumeRole</b> </p>
+         * <p>You can optionally include multi-factor authentication (MFA) information when
+         * you call <code>AssumeRole</code>. This is useful for cross-account scenarios in
+         * which you want to make sure that the user who is assuming the role has been
+         * authenticated using an AWS MFA device. In that scenario, the trust policy of the
+         * role being assumed includes a condition that tests for MFA authentication; if
+         * the caller does not include valid MFA information, the request to assume the
+         * role is denied. The condition in a trust policy that tests for MFA
+         * authentication might look like the following example.</p> <p> <code>"Condition":
+         * {"Bool": {"aws:MultiFactorAuthPresent": true}}</code> </p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
-         * MFA-Protected API Access</a> in <i>Using IAM</i> guide.</p> <p>To use MFA with
-         * <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code> and
-         * <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
+         * MFA-Protected API Access</a> in the <i>Using IAM</i> guide.</p> <p>To use MFA
+         * with <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code>
+         * and <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
          * identifies the user's hardware or virtual MFA device. The <code>TokenCode</code>
          * is the time-based one-time password (TOTP) that the MFA devices produces. </p>
-         * <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
-         * target="userNameType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member> <member name="ExternalId"
-         * target="externalIdType"></member>
+         * <member name="RoleArn" target="arnType"/> <member name="RoleSessionName"
+         * target="userNameType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/> <member name="ExternalId"
+         * target="externalIdType"/>
          */
         virtual Model::AssumeRoleOutcome AssumeRole(const Model::AssumeRoleRequest& request) const;
 
@@ -265,7 +265,7 @@ namespace Model
          * temporary security credentials to access all the other accounts by assuming
          * roles in those accounts. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-         * Roles (Delegation and Federation)</a> in <i>Using IAM</i>. </p> <p>For
+         * Roles (Delegation and Federation)</a> in the <i>Using IAM</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS
          * Management Console. If you already have an identity and authentication system in
          * your corporate network, you don't have to recreate user identities in AWS in
@@ -274,49 +274,49 @@ namespace Model
          * the appropriate permissions) to get temporary security credentials for that
          * user. With those temporary security credentials, you construct a sign-in URL
          * that users can use to access the console. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
-         * for Granting Temporary Access</a> in <i>Using Temporary Security
-         * Credentials</i>. </p> <p>The temporary security credentials are valid for the
-         * duration that you specified when calling <code>AssumeRole</code>, which can be
-         * from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
-         * </p> <p>Optionally, you can pass an IAM access policy to this operation. If you
-         * choose not to pass a policy, the temporary security credentials that are
-         * returned by the operation have the permissions that are defined in the access
-         * policy of the role that is being assumed. If you pass a policy to this
-         * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i><b>and</b></i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-         * <i>Using Temporary Security Credentials</i>.</p> <p>To assume a role, your AWS
-         * account must be trusted by the role. The trust relationship is defined in the
-         * role's trust policy when the role is created. You must also have a policy that
-         * allows you to call <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with
-         * AssumeRole</b> </p> <p>You can optionally include multi-factor authentication
-         * (MFA) information when you call <code>AssumeRole</code>. This is useful for
-         * cross-account scenarios in which you want to make sure that the user who is
-         * assuming the role has been authenticated using an AWS MFA device. In that
-         * scenario, the trust policy of the role being assumed includes a condition that
-         * tests for MFA authentication; if the caller does not include valid MFA
-         * information, the request to assume the role is denied. The condition in a trust
-         * policy that tests for MFA authentication might look like the following
-         * example.</p> <p> <code>"Condition": {"Bool": {"aws:MultiFactorAuthPresent":
-         * true}}</code> </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
+         * Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.</p> <p>The
+         * temporary security credentials are valid for the duration that you specified
+         * when calling <code>AssumeRole</code>, which can be from 900 seconds (15 minutes)
+         * to 3600 seconds (1 hour). The default is 1 hour. </p> <p>Optionally, you can
+         * pass an IAM access policy to this operation. If you choose not to pass a policy,
+         * the temporary security credentials that are returned by the operation have the
+         * permissions that are defined in the access policy of the role that is being
+         * assumed. If you pass a policy to this operation, the temporary security
+         * credentials that are returned by the operation have the permissions that are
+         * allowed by both the access policy of the role that is being assumed,
+         * <i><b>and</b></i> the policy that you pass. This gives you a way to further
+         * restrict the permissions for the resulting temporary security credentials. You
+         * cannot use the passed policy to grant permissions that are in excess of those
+         * allowed by the access policy of the role that is being assumed. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>To assume a role, your AWS account must be trusted by
+         * the role. The trust relationship is defined in the role's trust policy when the
+         * role is created. You must also have a policy that allows you to call
+         * <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with AssumeRole</b> </p>
+         * <p>You can optionally include multi-factor authentication (MFA) information when
+         * you call <code>AssumeRole</code>. This is useful for cross-account scenarios in
+         * which you want to make sure that the user who is assuming the role has been
+         * authenticated using an AWS MFA device. In that scenario, the trust policy of the
+         * role being assumed includes a condition that tests for MFA authentication; if
+         * the caller does not include valid MFA information, the request to assume the
+         * role is denied. The condition in a trust policy that tests for MFA
+         * authentication might look like the following example.</p> <p> <code>"Condition":
+         * {"Bool": {"aws:MultiFactorAuthPresent": true}}</code> </p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
-         * MFA-Protected API Access</a> in <i>Using IAM</i> guide.</p> <p>To use MFA with
-         * <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code> and
-         * <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
+         * MFA-Protected API Access</a> in the <i>Using IAM</i> guide.</p> <p>To use MFA
+         * with <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code>
+         * and <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
          * identifies the user's hardware or virtual MFA device. The <code>TokenCode</code>
          * is the time-based one-time password (TOTP) that the MFA devices produces. </p>
-         * <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
-         * target="userNameType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member> <member name="ExternalId"
-         * target="externalIdType"></member>
+         * <member name="RoleArn" target="arnType"/> <member name="RoleSessionName"
+         * target="userNameType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/> <member name="ExternalId"
+         * target="externalIdType"/>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -338,7 +338,7 @@ namespace Model
          * temporary security credentials to access all the other accounts by assuming
          * roles in those accounts. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-         * Roles (Delegation and Federation)</a> in <i>Using IAM</i>. </p> <p>For
+         * Roles (Delegation and Federation)</a> in the <i>Using IAM</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS
          * Management Console. If you already have an identity and authentication system in
          * your corporate network, you don't have to recreate user identities in AWS in
@@ -347,49 +347,49 @@ namespace Model
          * the appropriate permissions) to get temporary security credentials for that
          * user. With those temporary security credentials, you construct a sign-in URL
          * that users can use to access the console. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html">Scenarios
-         * for Granting Temporary Access</a> in <i>Using Temporary Security
-         * Credentials</i>. </p> <p>The temporary security credentials are valid for the
-         * duration that you specified when calling <code>AssumeRole</code>, which can be
-         * from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
-         * </p> <p>Optionally, you can pass an IAM access policy to this operation. If you
-         * choose not to pass a policy, the temporary security credentials that are
-         * returned by the operation have the permissions that are defined in the access
-         * policy of the role that is being assumed. If you pass a policy to this
-         * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i><b>and</b></i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-         * <i>Using Temporary Security Credentials</i>.</p> <p>To assume a role, your AWS
-         * account must be trusted by the role. The trust relationship is defined in the
-         * role's trust policy when the role is created. You must also have a policy that
-         * allows you to call <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with
-         * AssumeRole</b> </p> <p>You can optionally include multi-factor authentication
-         * (MFA) information when you call <code>AssumeRole</code>. This is useful for
-         * cross-account scenarios in which you want to make sure that the user who is
-         * assuming the role has been authenticated using an AWS MFA device. In that
-         * scenario, the trust policy of the role being assumed includes a condition that
-         * tests for MFA authentication; if the caller does not include valid MFA
-         * information, the request to assume the role is denied. The condition in a trust
-         * policy that tests for MFA authentication might look like the following
-         * example.</p> <p> <code>"Condition": {"Bool": {"aws:MultiFactorAuthPresent":
-         * true}}</code> </p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction">Common
+         * Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.</p> <p>The
+         * temporary security credentials are valid for the duration that you specified
+         * when calling <code>AssumeRole</code>, which can be from 900 seconds (15 minutes)
+         * to 3600 seconds (1 hour). The default is 1 hour. </p> <p>Optionally, you can
+         * pass an IAM access policy to this operation. If you choose not to pass a policy,
+         * the temporary security credentials that are returned by the operation have the
+         * permissions that are defined in the access policy of the role that is being
+         * assumed. If you pass a policy to this operation, the temporary security
+         * credentials that are returned by the operation have the permissions that are
+         * allowed by both the access policy of the role that is being assumed,
+         * <i><b>and</b></i> the policy that you pass. This gives you a way to further
+         * restrict the permissions for the resulting temporary security credentials. You
+         * cannot use the passed policy to grant permissions that are in excess of those
+         * allowed by the access policy of the role that is being assumed. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>To assume a role, your AWS account must be trusted by
+         * the role. The trust relationship is defined in the role's trust policy when the
+         * role is created. You must also have a policy that allows you to call
+         * <code>sts:AssumeRole</code>. </p> <p> <b>Using MFA with AssumeRole</b> </p>
+         * <p>You can optionally include multi-factor authentication (MFA) information when
+         * you call <code>AssumeRole</code>. This is useful for cross-account scenarios in
+         * which you want to make sure that the user who is assuming the role has been
+         * authenticated using an AWS MFA device. In that scenario, the trust policy of the
+         * role being assumed includes a condition that tests for MFA authentication; if
+         * the caller does not include valid MFA information, the request to assume the
+         * role is denied. The condition in a trust policy that tests for MFA
+         * authentication might look like the following example.</p> <p> <code>"Condition":
+         * {"Bool": {"aws:MultiFactorAuthPresent": true}}</code> </p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html">Configuring
-         * MFA-Protected API Access</a> in <i>Using IAM</i> guide.</p> <p>To use MFA with
-         * <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code> and
-         * <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
+         * MFA-Protected API Access</a> in the <i>Using IAM</i> guide.</p> <p>To use MFA
+         * with <code>AssumeRole</code>, you pass values for the <code>SerialNumber</code>
+         * and <code>TokenCode</code> parameters. The <code>SerialNumber</code> value
          * identifies the user's hardware or virtual MFA device. The <code>TokenCode</code>
          * is the time-based one-time password (TOTP) that the MFA devices produces. </p>
-         * <member name="RoleArn" target="arnType"></member> <member name="RoleSessionName"
-         * target="userNameType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member> <member name="ExternalId"
-         * target="externalIdType"></member>
+         * <member name="RoleArn" target="arnType"/> <member name="RoleSessionName"
+         * target="userNameType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/> <member name="ExternalId"
+         * target="externalIdType"/>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -420,30 +420,31 @@ namespace Model
          * cannot use the passed policy to grant permissions that are in excess of those
          * allowed by the access policy of the role that is being assumed. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithSAML</a> in <i>Using Temporary Security Credentials</i>.</p>
-         * <p>Before your application can call <code>AssumeRoleWithSAML</code>, you must
-         * configure your SAML identity provider (IdP) to issue the claims required by AWS.
-         * Additionally, you must use AWS Identity and Access Management (IAM) to create a
-         * SAML provider entity in your AWS account that represents your identity provider,
-         * and create an IAM role that specifies this SAML provider in its trust policy.
-         * </p> <p>Calling <code>AssumeRoleWithSAML</code> does not require the use of AWS
-         * security credentials. The identity of the caller is validated by using keys in
-         * the metadata document that is uploaded for the SAML provider entity for your
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
+         * <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
+         * (IdP) to issue the claims required by AWS. Additionally, you must use AWS
+         * Identity and Access Management (IAM) to create a SAML provider entity in your
+         * AWS account that represents your identity provider, and create an IAM role that
+         * specifies this SAML provider in its trust policy. </p> <p>Calling
+         * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
+         * credentials. The identity of the caller is validated by using keys in the
+         * metadata document that is uploaded for the SAML provider entity for your
          * identity provider. </p> <p>For more information, see the following
-         * resources:</p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-         * Temporary Security Credentials for SAML Federation</a>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html">SAML
-         * Providers</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
-         * a Relying Party and Claims</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html">Creating
-         * a Role for SAML-Based Federation</a> in <i>Using IAM</i>. </li> </ul> <member
-         * name="RoleArn" target="arnType"></member> <member name="SAMLAssertion"
-         * target="SAMLAssertionType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member>
+         * resources:</p> <ul> <li><a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+         * SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+         * SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+         * a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+         * a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member
+         * name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
+         * target="SAMLAssertionType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/>
          */
         virtual Model::AssumeRoleWithSAMLOutcome AssumeRoleWithSAML(const Model::AssumeRoleWithSAMLRequest& request) const;
 
@@ -472,30 +473,31 @@ namespace Model
          * cannot use the passed policy to grant permissions that are in excess of those
          * allowed by the access policy of the role that is being assumed. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithSAML</a> in <i>Using Temporary Security Credentials</i>.</p>
-         * <p>Before your application can call <code>AssumeRoleWithSAML</code>, you must
-         * configure your SAML identity provider (IdP) to issue the claims required by AWS.
-         * Additionally, you must use AWS Identity and Access Management (IAM) to create a
-         * SAML provider entity in your AWS account that represents your identity provider,
-         * and create an IAM role that specifies this SAML provider in its trust policy.
-         * </p> <p>Calling <code>AssumeRoleWithSAML</code> does not require the use of AWS
-         * security credentials. The identity of the caller is validated by using keys in
-         * the metadata document that is uploaded for the SAML provider entity for your
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
+         * <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
+         * (IdP) to issue the claims required by AWS. Additionally, you must use AWS
+         * Identity and Access Management (IAM) to create a SAML provider entity in your
+         * AWS account that represents your identity provider, and create an IAM role that
+         * specifies this SAML provider in its trust policy. </p> <p>Calling
+         * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
+         * credentials. The identity of the caller is validated by using keys in the
+         * metadata document that is uploaded for the SAML provider entity for your
          * identity provider. </p> <p>For more information, see the following
-         * resources:</p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-         * Temporary Security Credentials for SAML Federation</a>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html">SAML
-         * Providers</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
-         * a Relying Party and Claims</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html">Creating
-         * a Role for SAML-Based Federation</a> in <i>Using IAM</i>. </li> </ul> <member
-         * name="RoleArn" target="arnType"></member> <member name="SAMLAssertion"
-         * target="SAMLAssertionType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member>
+         * resources:</p> <ul> <li><a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+         * SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+         * SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+         * a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+         * a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member
+         * name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
+         * target="SAMLAssertionType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -526,30 +528,31 @@ namespace Model
          * cannot use the passed policy to grant permissions that are in excess of those
          * allowed by the access policy of the role that is being assumed. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithSAML</a> in <i>Using Temporary Security Credentials</i>.</p>
-         * <p>Before your application can call <code>AssumeRoleWithSAML</code>, you must
-         * configure your SAML identity provider (IdP) to issue the claims required by AWS.
-         * Additionally, you must use AWS Identity and Access Management (IAM) to create a
-         * SAML provider entity in your AWS account that represents your identity provider,
-         * and create an IAM role that specifies this SAML provider in its trust policy.
-         * </p> <p>Calling <code>AssumeRoleWithSAML</code> does not require the use of AWS
-         * security credentials. The identity of the caller is validated by using keys in
-         * the metadata document that is uploaded for the SAML provider entity for your
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
+         * <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
+         * (IdP) to issue the claims required by AWS. Additionally, you must use AWS
+         * Identity and Access Management (IAM) to create a SAML provider entity in your
+         * AWS account that represents your identity provider, and create an IAM role that
+         * specifies this SAML provider in its trust policy. </p> <p>Calling
+         * <code>AssumeRoleWithSAML</code> does not require the use of AWS security
+         * credentials. The identity of the caller is validated by using keys in the
+         * metadata document that is uploaded for the SAML provider entity for your
          * identity provider. </p> <p>For more information, see the following
-         * resources:</p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html">Creating
-         * Temporary Security Credentials for SAML Federation</a>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/idp-managing-identityproviders.html">SAML
-         * Providers</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring
-         * a Relying Party and Claims</a> in <i>Using IAM</i>. </li> <li> <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml.html">Creating
-         * a Role for SAML-Based Federation</a> in <i>Using IAM</i>. </li> </ul> <member
-         * name="RoleArn" target="arnType"></member> <member name="SAMLAssertion"
-         * target="SAMLAssertionType"></member> <member name="Policy"
-         * target="sessionPolicyDocumentType"></member> <member name="DurationSeconds"
-         * target="roleDurationSecondsType"></member>
+         * resources:</p> <ul> <li><a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+         * SAML 2.0-based Federation</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html">Creating
+         * SAML Identity Providers</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html">Configuring
+         * a Relying Party and Claims</a> in the <i>Using IAM</i>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html">Creating
+         * a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>. </li> </ul> <member
+         * name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
+         * target="SAMLAssertionType"/> <member name="Policy"
+         * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
+         * target="roleDurationSecondsType"/>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -593,8 +596,9 @@ namespace Model
          * resulting temporary security credentials. You cannot use the passed policy to
          * grant permissions that are in excess of those allowed by the access policy of
          * the role that is being assumed. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithWebIdentity</a>.</p> <p>Before your application can call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
          * <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
@@ -602,21 +606,20 @@ namespace Model
          * be specified in the role's trust policy. </p> <p>For more information about how
          * to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
          * API, see the following resources: </p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
-         * Creating a Mobile Application with Third-Party Sign-In</a> and <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating
-         * Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-         * Providers</a>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * Web Identity Federation APIs for Mobile Apps</a> and <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>. </li> <li><a
          * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
          * Web Identity Federation Playground</a>. This interactive website lets you walk
          * through the process of authenticating via Login with Amazon, Facebook, or
          * Google, getting temporary security credentials, and then using those credentials
-         * to make a request to AWS. </li> <li> <a
+         * to make a request to AWS. </li> <li><a
          * href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
          * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
          * toolkits contain sample apps that show how to invoke the identity providers, and
          * then how to use the information from these providers to get and use temporary
-         * security credentials. </li> <li> <a
+         * security credentials. </li> <li><a
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
@@ -662,8 +665,9 @@ namespace Model
          * resulting temporary security credentials. You cannot use the passed policy to
          * grant permissions that are in excess of those allowed by the access policy of
          * the role that is being assumed. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithWebIdentity</a>.</p> <p>Before your application can call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
          * <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
@@ -671,21 +675,20 @@ namespace Model
          * be specified in the role's trust policy. </p> <p>For more information about how
          * to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
          * API, see the following resources: </p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
-         * Creating a Mobile Application with Third-Party Sign-In</a> and <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating
-         * Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-         * Providers</a>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * Web Identity Federation APIs for Mobile Apps</a> and <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>. </li> <li><a
          * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
          * Web Identity Federation Playground</a>. This interactive website lets you walk
          * through the process of authenticating via Login with Amazon, Facebook, or
          * Google, getting temporary security credentials, and then using those credentials
-         * to make a request to AWS. </li> <li> <a
+         * to make a request to AWS. </li> <li><a
          * href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
          * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
          * toolkits contain sample apps that show how to invoke the identity providers, and
          * then how to use the information from these providers to get and use temporary
-         * security credentials. </li> <li> <a
+         * security credentials. </li> <li><a
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
@@ -733,8 +736,9 @@ namespace Model
          * resulting temporary security credentials. You cannot use the passed policy to
          * grant permissions that are in excess of those allowed by the access policy of
          * the role that is being assumed. For more information, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-         * for AssumeRoleWithWebIdentity</a>.</p> <p>Before your application can call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+         * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+         * <i>Using IAM</i>.</p> <p>Before your application can call
          * <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
          * supported identity provider and create a role that the application can assume.
          * The role that your application assumes must trust the identity provider that is
@@ -742,21 +746,20 @@ namespace Model
          * be specified in the role's trust policy. </p> <p>For more information about how
          * to use web identity federation and the <code>AssumeRoleWithWebIdentity</code>
          * API, see the following resources: </p> <ul> <li> <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider">
-         * Creating a Mobile Application with Third-Party Sign-In</a> and <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html"> Creating
-         * Temporary Security Credentials for Mobile Apps Using Third-Party Identity
-         * Providers</a>. </li> <li> <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+         * Web Identity Federation APIs for Mobile Apps</a> and <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>. </li> <li><a
          * href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
          * Web Identity Federation Playground</a>. This interactive website lets you walk
          * through the process of authenticating via Login with Amazon, Facebook, or
          * Google, getting temporary security credentials, and then using those credentials
-         * to make a request to AWS. </li> <li> <a
+         * to make a request to AWS. </li> <li><a
          * href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
          * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>. These
          * toolkits contain sample apps that show how to invoke the identity providers, and
          * then how to use the information from these providers to get and use temporary
-         * security credentials. </li> <li> <a
+         * security credentials. </li> <li><a
          * href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
          * with Mobile Applications</a>. This article discusses web identity federation and
          * shows an example of how to use web identity federation to get access to content
@@ -784,11 +787,11 @@ namespace Model
          * message includes the following type of information: </p> <ul> <li>Whether the
          * request was denied due to an explicit deny or due to the absence of an explicit
          * allow. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow">Determining
-         * Whether a Request is Allowed or Denied</a> in <i>Using IAM</i>. </li> <li>The
-         * principal who made the request.</li> <li>The requested action.</li> <li>The
-         * requested resource.</li> <li>The values of condition keys in the context of the
-         * user's request.</li> </ul>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
+         * Whether a Request is Allowed or Denied</a> in the <i>Using IAM</i>. </li>
+         * <li>The principal who made the request.</li> <li>The requested action.</li>
+         * <li>The requested resource.</li> <li>The values of condition keys in the context
+         * of the user's request.</li> </ul>
          */
         virtual Model::DecodeAuthorizationMessageOutcome DecodeAuthorizationMessage(const Model::DecodeAuthorizationMessageRequest& request) const;
 
@@ -810,11 +813,11 @@ namespace Model
          * message includes the following type of information: </p> <ul> <li>Whether the
          * request was denied due to an explicit deny or due to the absence of an explicit
          * allow. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow">Determining
-         * Whether a Request is Allowed or Denied</a> in <i>Using IAM</i>. </li> <li>The
-         * principal who made the request.</li> <li>The requested action.</li> <li>The
-         * requested resource.</li> <li>The values of condition keys in the context of the
-         * user's request.</li> </ul>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
+         * Whether a Request is Allowed or Denied</a> in the <i>Using IAM</i>. </li>
+         * <li>The principal who made the request.</li> <li>The requested action.</li>
+         * <li>The requested resource.</li> <li>The values of condition keys in the context
+         * of the user's request.</li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -838,11 +841,11 @@ namespace Model
          * message includes the following type of information: </p> <ul> <li>Whether the
          * request was denied due to an explicit deny or due to the absence of an explicit
          * allow. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow">Determining
-         * Whether a Request is Allowed or Denied</a> in <i>Using IAM</i>. </li> <li>The
-         * principal who made the request.</li> <li>The requested action.</li> <li>The
-         * requested resource.</li> <li>The values of condition keys in the context of the
-         * user's request.</li> </ul>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow">Determining
+         * Whether a Request is Allowed or Denied</a> in the <i>Using IAM</i>. </li>
+         * <li>The principal who made the request.</li> <li>The requested action.</li>
+         * <li>The requested resource.</li> <li>The values of condition keys in the context
+         * of the user's request.</li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -862,17 +865,17 @@ namespace Model
          * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
          * Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating
-         * Temporary Security Credentials for Mobile Apps Using Identity Providers</a>.</p>
-         * </note> <p>The <code>GetFederationToken</code> action must be called by using
-         * the long-term AWS security credentials of an IAM user. You can also call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>.</p> </note> <p>The
+         * <code>GetFederationToken</code> action must be called by using the long-term AWS
+         * security credentials of an IAM user. You can also call
          * <code>GetFederationToken</code> using the security credentials of an AWS account
          * (root), but this is not recommended. Instead, we recommend that you create an
          * IAM user for the purpose of the proxy application and then attach a policy to
          * the IAM user that limits federated users to only the actions and resources they
          * need access to. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-         * Best Practices</a> in <i>Using IAM</i>. </p> <p>The temporary security
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+         * Best Practices</a> in the <i>Using IAM</i>. </p> <p>The temporary security
          * credentials that are obtained by using the long-term credentials of an IAM user
          * are valid for the specified duration, between 900 seconds (15 minutes) and
          * 129600 seconds (36 hours). Temporary credentials that are obtained by using AWS
@@ -903,11 +906,11 @@ namespace Model
          * used to access a resource that has a resource-based policy that specifically
          * allows the federated user to access the resource. </p> <p>For more information
          * about how permissions work, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html">Creating
-         * Temporary Credentials to Enable Access for Federated Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * Through a Custom Identity Broker</a>. </p>
          */
         virtual Model::GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest& request) const;
 
@@ -925,17 +928,17 @@ namespace Model
          * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
          * Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating
-         * Temporary Security Credentials for Mobile Apps Using Identity Providers</a>.</p>
-         * </note> <p>The <code>GetFederationToken</code> action must be called by using
-         * the long-term AWS security credentials of an IAM user. You can also call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>.</p> </note> <p>The
+         * <code>GetFederationToken</code> action must be called by using the long-term AWS
+         * security credentials of an IAM user. You can also call
          * <code>GetFederationToken</code> using the security credentials of an AWS account
          * (root), but this is not recommended. Instead, we recommend that you create an
          * IAM user for the purpose of the proxy application and then attach a policy to
          * the IAM user that limits federated users to only the actions and resources they
          * need access to. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-         * Best Practices</a> in <i>Using IAM</i>. </p> <p>The temporary security
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+         * Best Practices</a> in the <i>Using IAM</i>. </p> <p>The temporary security
          * credentials that are obtained by using the long-term credentials of an IAM user
          * are valid for the specified duration, between 900 seconds (15 minutes) and
          * 129600 seconds (36 hours). Temporary credentials that are obtained by using AWS
@@ -966,11 +969,11 @@ namespace Model
          * used to access a resource that has a resource-based policy that specifically
          * allows the federated user to access the resource. </p> <p>For more information
          * about how permissions work, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html">Creating
-         * Temporary Credentials to Enable Access for Federated Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * Through a Custom Identity Broker</a>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -990,17 +993,17 @@ namespace Model
          * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
          * Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html">Creating
-         * Temporary Security Credentials for Mobile Apps Using Identity Providers</a>.</p>
-         * </note> <p>The <code>GetFederationToken</code> action must be called by using
-         * the long-term AWS security credentials of an IAM user. You can also call
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+         * Through a Web-based Identity Provider</a>.</p> </note> <p>The
+         * <code>GetFederationToken</code> action must be called by using the long-term AWS
+         * security credentials of an IAM user. You can also call
          * <code>GetFederationToken</code> using the security credentials of an AWS account
          * (root), but this is not recommended. Instead, we recommend that you create an
          * IAM user for the purpose of the proxy application and then attach a policy to
          * the IAM user that limits federated users to only the actions and resources they
          * need access to. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
-         * Best Practices</a> in <i>Using IAM</i>. </p> <p>The temporary security
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+         * Best Practices</a> in the <i>Using IAM</i>. </p> <p>The temporary security
          * credentials that are obtained by using the long-term credentials of an IAM user
          * are valid for the specified duration, between 900 seconds (15 minutes) and
          * 129600 seconds (36 hours). Temporary credentials that are obtained by using AWS
@@ -1031,11 +1034,11 @@ namespace Model
          * used to access a resource that has a resource-based policy that specifically
          * allows the federated user to access the resource. </p> <p>For more information
          * about how permissions work, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html">Creating
-         * Temporary Credentials to Enable Access for Federated Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * Through a Custom Identity Broker</a>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1050,15 +1053,16 @@ namespace Model
          * <code>GetSessionToken</code> and submit an MFA code that is associated with
          * their MFA device. Using the temporary security credentials that are returned
          * from the call, IAM users can then make programmatic calls to APIs that require
-         * MFA authentication. </p> <p>The <code>GetSessionToken</code> action must be
-         * called by using the long-term AWS security credentials of the AWS account or an
-         * IAM user. Credentials that are created by IAM users are valid for the duration
-         * that you specify, between 900 seconds (15 minutes) and 129600 seconds (36
-         * hours); credentials that are created by using account credentials have a maximum
-         * duration of 3600 seconds (1 hour). </p> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+         * MFA authentication. If you do not supply a correct MFA code, then the API
+         * returns an access denied error.</p> <p>The <code>GetSessionToken</code> action
+         * must be called by using the long-term AWS security credentials of the AWS
+         * account or an IAM user. Credentials that are created by IAM users are valid for
+         * the duration that you specify, between 900 seconds (15 minutes) and 129600
+         * seconds (36 hours); credentials that are created by using account credentials
+         * have a maximum duration of 3600 seconds (1 hour). </p> <note> <p>We recommend
+         * that you do not call <code>GetSessionToken</code> with root account credentials.
+         * Instead, follow our <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
          * <p>The permissions associated with the temporary security credentials returned
@@ -1070,9 +1074,9 @@ namespace Model
          * temporary credentials have the same permissions as the IAM user. </p> <p>For
          * more information about using <code>GetSessionToken</code> to create temporary
          * credentials, go to <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-         * target="_blank">Creating Temporary Credentials to Enable Access for IAM
-         * Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+         * Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>.
+         * </p>
          */
         virtual Model::GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest& request) const;
 
@@ -1085,15 +1089,16 @@ namespace Model
          * <code>GetSessionToken</code> and submit an MFA code that is associated with
          * their MFA device. Using the temporary security credentials that are returned
          * from the call, IAM users can then make programmatic calls to APIs that require
-         * MFA authentication. </p> <p>The <code>GetSessionToken</code> action must be
-         * called by using the long-term AWS security credentials of the AWS account or an
-         * IAM user. Credentials that are created by IAM users are valid for the duration
-         * that you specify, between 900 seconds (15 minutes) and 129600 seconds (36
-         * hours); credentials that are created by using account credentials have a maximum
-         * duration of 3600 seconds (1 hour). </p> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+         * MFA authentication. If you do not supply a correct MFA code, then the API
+         * returns an access denied error.</p> <p>The <code>GetSessionToken</code> action
+         * must be called by using the long-term AWS security credentials of the AWS
+         * account or an IAM user. Credentials that are created by IAM users are valid for
+         * the duration that you specify, between 900 seconds (15 minutes) and 129600
+         * seconds (36 hours); credentials that are created by using account credentials
+         * have a maximum duration of 3600 seconds (1 hour). </p> <note> <p>We recommend
+         * that you do not call <code>GetSessionToken</code> with root account credentials.
+         * Instead, follow our <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
          * <p>The permissions associated with the temporary security credentials returned
@@ -1105,9 +1110,9 @@ namespace Model
          * temporary credentials have the same permissions as the IAM user. </p> <p>For
          * more information about using <code>GetSessionToken</code> to create temporary
          * credentials, go to <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-         * target="_blank">Creating Temporary Credentials to Enable Access for IAM
-         * Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+         * Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>.
+         * </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1122,15 +1127,16 @@ namespace Model
          * <code>GetSessionToken</code> and submit an MFA code that is associated with
          * their MFA device. Using the temporary security credentials that are returned
          * from the call, IAM users can then make programmatic calls to APIs that require
-         * MFA authentication. </p> <p>The <code>GetSessionToken</code> action must be
-         * called by using the long-term AWS security credentials of the AWS account or an
-         * IAM user. Credentials that are created by IAM users are valid for the duration
-         * that you specify, between 900 seconds (15 minutes) and 129600 seconds (36
-         * hours); credentials that are created by using account credentials have a maximum
-         * duration of 3600 seconds (1 hour). </p> <note> <p>We recommend that you do not
-         * call <code>GetSessionToken</code> with root account credentials. Instead, follow
-         * our <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html#create-iam-users">best
+         * MFA authentication. If you do not supply a correct MFA code, then the API
+         * returns an access denied error.</p> <p>The <code>GetSessionToken</code> action
+         * must be called by using the long-term AWS security credentials of the AWS
+         * account or an IAM user. Credentials that are created by IAM users are valid for
+         * the duration that you specify, between 900 seconds (15 minutes) and 129600
+         * seconds (36 hours); credentials that are created by using account credentials
+         * have a maximum duration of 3600 seconds (1 hour). </p> <note> <p>We recommend
+         * that you do not call <code>GetSessionToken</code> with root account credentials.
+         * Instead, follow our <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users">best
          * practices</a> by creating one or more IAM users, giving them the necessary
          * permissions, and using IAM users for everyday interaction with AWS. </p> </note>
          * <p>The permissions associated with the temporary security credentials returned
@@ -1142,9 +1148,9 @@ namespace Model
          * temporary credentials have the same permissions as the IAM user. </p> <p>For
          * more information about using <code>GetSessionToken</code> to create temporary
          * credentials, go to <a
-         * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSessionTokens.html"
-         * target="_blank">Creating Temporary Credentials to Enable Access for IAM
-         * Users</a>. </p>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken">Temporary
+         * Credentials for Users in Untrusted Environments</a> in the <i>Using IAM</i>.
+         * </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

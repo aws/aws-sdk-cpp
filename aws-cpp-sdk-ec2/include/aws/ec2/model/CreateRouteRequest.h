@@ -288,6 +288,41 @@ namespace Model
      */
     inline CreateRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline CreateRouteRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline CreateRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline CreateRouteRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
@@ -303,6 +338,8 @@ namespace Model
     bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
+    Aws::String m_natGatewayId;
+    bool m_natGatewayIdHasBeenSet;
   };
 
 } // namespace Model

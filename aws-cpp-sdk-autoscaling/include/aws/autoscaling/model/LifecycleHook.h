@@ -327,47 +327,50 @@ namespace Model
     inline LifecycleHook& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
     /**
-     * <p>The amount of time that can elapse before the lifecycle hook times out. When
-     * the lifecycle hook times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The default is 3600 seconds (1 hour). When the lifecycle hook times out,
+     * Auto Scaling performs the action defined in the <code>DefaultResult</code>
+     * parameter. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline long GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
-     * <p>The amount of time that can elapse before the lifecycle hook times out. When
-     * the lifecycle hook times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The default is 3600 seconds (1 hour). When the lifecycle hook times out,
+     * Auto Scaling performs the action defined in the <code>DefaultResult</code>
+     * parameter. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline void SetHeartbeatTimeout(long value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
-     * <p>The amount of time that can elapse before the lifecycle hook times out. When
-     * the lifecycle hook times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. The default is 3600 seconds (1 hour). When the lifecycle hook times out,
+     * Auto Scaling performs the action defined in the <code>DefaultResult</code>
+     * parameter. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline LifecycleHook& WithHeartbeatTimeout(long value) { SetHeartbeatTimeout(value); return *this;}
 
     /**
-     * <p>The maximum length of time an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the
-     * maximum is set to 48 hours.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
+     * 172800 seconds (48 hours).</p>
      */
     inline long GetGlobalTimeout() const{ return m_globalTimeout; }
 
     /**
-     * <p>The maximum length of time an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the
-     * maximum is set to 48 hours.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
+     * 172800 seconds (48 hours).</p>
      */
     inline void SetGlobalTimeout(long value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
 
     /**
-     * <p>The maximum length of time an instance can remain in a
-     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. Currently, the
-     * maximum is set to 48 hours.</p>
+     * <p>The maximum time, in seconds, that an instance can remain in a
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
+     * 172800 seconds (48 hours).</p>
      */
     inline LifecycleHook& WithGlobalTimeout(long value) { SetGlobalTimeout(value); return *this;}
 

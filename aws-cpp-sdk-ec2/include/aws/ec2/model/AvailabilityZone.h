@@ -83,32 +83,27 @@ namespace Model
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
     /**
-     * <p>The state of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p>
+     * <p>The state of the Availability Zone.</p>
      */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p>
+     * <p>The state of the Availability Zone.</p>
      */
     inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p>
+     * <p>The state of the Availability Zone.</p>
      */
     inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p>
+     * <p>The state of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Availability Zone (<code>available</code> |
-     * <code>impaired</code> | <code>unavailable</code>).</p>
+     * <p>The state of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(value); return *this;}
 

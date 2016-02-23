@@ -40,19 +40,39 @@ namespace Model
     DescribeReceiptRuleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeReceiptRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>A data structure that contains the specified receipt rule's name, actions,
+     * recipients, domains, enabled status, scan status, and Transport Layer Security
+     * (TLS) policy.</p>
+     */
     inline const ReceiptRule& GetRule() const{ return m_rule; }
 
-    
+    /**
+     * <p>A data structure that contains the specified receipt rule's name, actions,
+     * recipients, domains, enabled status, scan status, and Transport Layer Security
+     * (TLS) policy.</p>
+     */
     inline void SetRule(const ReceiptRule& value) { m_rule = value; }
 
-    
+    /**
+     * <p>A data structure that contains the specified receipt rule's name, actions,
+     * recipients, domains, enabled status, scan status, and Transport Layer Security
+     * (TLS) policy.</p>
+     */
     inline void SetRule(ReceiptRule&& value) { m_rule = value; }
 
-    
+    /**
+     * <p>A data structure that contains the specified receipt rule's name, actions,
+     * recipients, domains, enabled status, scan status, and Transport Layer Security
+     * (TLS) policy.</p>
+     */
     inline DescribeReceiptRuleResult& WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
 
-    
+    /**
+     * <p>A data structure that contains the specified receipt rule's name, actions,
+     * recipients, domains, enabled status, scan status, and Transport Layer Security
+     * (TLS) policy.</p>
+     */
     inline DescribeReceiptRuleResult& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
 
     

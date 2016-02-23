@@ -54,9 +54,9 @@ void CompleteMultipartUploadRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_uploadIdHasBeenSet)
     {
-     ss << m_uploadId;
-     uri.AddQueryStringParameter("uploadId", ss.str());
-     ss.str("");
+      ss << m_uploadId;
+      uri.AddQueryStringParameter("uploadId", ss.str());
+      ss.str("");
     }
 
 }

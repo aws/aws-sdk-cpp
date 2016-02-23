@@ -42,49 +42,49 @@ namespace Model
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTaskDefinitionArns() const{ return m_taskDefinitionArns; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline void SetTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { m_taskDefinitionArns = value; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline void SetTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { m_taskDefinitionArns = value; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& WithTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { SetTaskDefinitionArns(value); return *this;}
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& WithTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { SetTaskDefinitionArns(value); return *this;}
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const Aws::String& value) { m_taskDefinitionArns.push_back(value); return *this; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(Aws::String&& value) { m_taskDefinitionArns.push_back(value); return *this; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefintions</code> request.</p>
+     * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const char* value) { m_taskDefinitionArns.push_back(value); return *this; }
 

@@ -81,127 +81,112 @@ namespace Model
     inline ValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p> An indication of the severity of this message: </p> <enumValues> <value
-     * name="error"> <p> error: This message indicates that this is not a valid setting
-     * for an option. </p> </value> <value name="warning"> <p> warning: This message is
-     * providing information you should take into account. </p> </value> </enumValues>
-     * <ul> <li> error: This message indicates that this is not a valid setting for an
-     * option. </li> <li> warning: This message is providing information you should
-     * take into account. </li> </ul>
+     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option. </li> <li> <code>warning</code>: This message is providing
+     * information you should take into account. </li> </ul>
      */
     inline const ValidationSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <enumValues> <value
-     * name="error"> <p> error: This message indicates that this is not a valid setting
-     * for an option. </p> </value> <value name="warning"> <p> warning: This message is
-     * providing information you should take into account. </p> </value> </enumValues>
-     * <ul> <li> error: This message indicates that this is not a valid setting for an
-     * option. </li> <li> warning: This message is providing information you should
-     * take into account. </li> </ul>
+     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option. </li> <li> <code>warning</code>: This message is providing
+     * information you should take into account. </li> </ul>
      */
     inline void SetSeverity(const ValidationSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <enumValues> <value
-     * name="error"> <p> error: This message indicates that this is not a valid setting
-     * for an option. </p> </value> <value name="warning"> <p> warning: This message is
-     * providing information you should take into account. </p> </value> </enumValues>
-     * <ul> <li> error: This message indicates that this is not a valid setting for an
-     * option. </li> <li> warning: This message is providing information you should
-     * take into account. </li> </ul>
+     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option. </li> <li> <code>warning</code>: This message is providing
+     * information you should take into account. </li> </ul>
      */
     inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> An indication of the severity of this message: </p> <enumValues> <value
-     * name="error"> <p> error: This message indicates that this is not a valid setting
-     * for an option. </p> </value> <value name="warning"> <p> warning: This message is
-     * providing information you should take into account. </p> </value> </enumValues>
-     * <ul> <li> error: This message indicates that this is not a valid setting for an
-     * option. </li> <li> warning: This message is providing information you should
-     * take into account. </li> </ul>
+     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option. </li> <li> <code>warning</code>: This message is providing
+     * information you should take into account. </li> </ul>
      */
     inline ValidationMessage& WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> An indication of the severity of this message: </p> <enumValues> <value
-     * name="error"> <p> error: This message indicates that this is not a valid setting
-     * for an option. </p> </value> <value name="warning"> <p> warning: This message is
-     * providing information you should take into account. </p> </value> </enumValues>
-     * <ul> <li> error: This message indicates that this is not a valid setting for an
-     * option. </li> <li> warning: This message is providing information you should
-     * take into account. </li> </ul>
+     * <p> An indication of the severity of this message: </p> <ul> <li>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option. </li> <li> <code>warning</code>: This message is providing
+     * information you should take into account. </li> </ul>
      */
     inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline ValidationMessage& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 

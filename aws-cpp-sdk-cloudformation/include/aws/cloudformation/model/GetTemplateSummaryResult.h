@@ -236,6 +236,62 @@ namespace Model
     inline GetTemplateSummaryResult& WithCapabilitiesReason(const char* value) { SetCapabilitiesReason(value); return *this;}
 
     /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypes = value; }
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypes = value; }
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline GetTemplateSummaryResult& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline GetTemplateSummaryResult& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline GetTemplateSummaryResult& AddResourceTypes(const Aws::String& value) { m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline GetTemplateSummaryResult& AddResourceTypes(Aws::String&& value) { m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of all the template resource types that are defined in the template,
+     * such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+     * <code>Custom::MyCustomInstance</code>.</p>
+     */
+    inline GetTemplateSummaryResult& AddResourceTypes(const char* value) { m_resourceTypes.push_back(value); return *this; }
+
+    /**
      * <p>The AWS template format version, which identifies the capabilities of the
      * template.</p>
      */
@@ -339,6 +395,7 @@ namespace Model
     Aws::String m_description;
     Aws::Vector<Capability> m_capabilities;
     Aws::String m_capabilitiesReason;
+    Aws::Vector<Aws::String> m_resourceTypes;
     Aws::String m_version;
     Aws::String m_metadata;
     ResponseMetadata m_responseMetadata;

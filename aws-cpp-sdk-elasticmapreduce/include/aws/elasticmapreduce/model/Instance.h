@@ -16,6 +16,8 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/InstanceStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/EbsVolume.h>
 
 namespace Aws
 {
@@ -277,6 +279,76 @@ namespace Model
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
 
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline void SetInstanceGroupId(const char* value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId.assign(value); }
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline Instance& WithInstanceGroupId(const Aws::String& value) { SetInstanceGroupId(value); return *this;}
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline Instance& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline Instance& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const{ return m_ebsVolumes; }
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline void SetEbsVolumes(const Aws::Vector<EbsVolume>& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline void SetEbsVolumes(Aws::Vector<EbsVolume>&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline Instance& WithEbsVolumes(const Aws::Vector<EbsVolume>& value) { SetEbsVolumes(value); return *this;}
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline Instance& WithEbsVolumes(Aws::Vector<EbsVolume>&& value) { SetEbsVolumes(value); return *this;}
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline Instance& AddEbsVolumes(const EbsVolume& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline Instance& AddEbsVolumes(EbsVolume&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -292,6 +364,10 @@ namespace Model
     bool m_privateIpAddressHasBeenSet;
     InstanceStatus m_status;
     bool m_statusHasBeenSet;
+    Aws::String m_instanceGroupId;
+    bool m_instanceGroupIdHasBeenSet;
+    Aws::Vector<EbsVolume> m_ebsVolumes;
+    bool m_ebsVolumesHasBeenSet;
   };
 
 } // namespace Model

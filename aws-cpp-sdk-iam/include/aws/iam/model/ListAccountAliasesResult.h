@@ -45,63 +45,83 @@ namespace Model
     ListAccountAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountAliases() const{ return m_accountAliases; }
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline void SetAccountAliases(const Aws::Vector<Aws::String>& value) { m_accountAliases = value; }
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline void SetAccountAliases(Aws::Vector<Aws::String>&& value) { m_accountAliases = value; }
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline ListAccountAliasesResult& WithAccountAliases(const Aws::Vector<Aws::String>& value) { SetAccountAliases(value); return *this;}
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline ListAccountAliasesResult& WithAccountAliases(Aws::Vector<Aws::String>&& value) { SetAccountAliases(value); return *this;}
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(const Aws::String& value) { m_accountAliases.push_back(value); return *this; }
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(Aws::String&& value) { m_accountAliases.push_back(value); return *this; }
 
     /**
-     * <p>A list of aliases associated with the account.</p>
+     * <p>A list of aliases associated with the account. AWS supports only one alias
+     * per account.</p>
      */
     inline ListAccountAliasesResult& AddAccountAliases(const char* value) { m_accountAliases.push_back(value); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline ListAccountAliasesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

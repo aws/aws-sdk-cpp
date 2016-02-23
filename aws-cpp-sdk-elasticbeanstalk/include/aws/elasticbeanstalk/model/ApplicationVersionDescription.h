@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
+#include <aws/elasticbeanstalk/model/ApplicationVersionStatus.h>
 
 namespace Aws
 {
@@ -212,6 +213,31 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
 
+    /**
+     * <p>The processing status of the application version.</p>
+     */
+    inline const ApplicationVersionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The processing status of the application version.</p>
+     */
+    inline void SetStatus(const ApplicationVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The processing status of the application version.</p>
+     */
+    inline void SetStatus(ApplicationVersionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The processing status of the application version.</p>
+     */
+    inline ApplicationVersionDescription& WithStatus(const ApplicationVersionStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The processing status of the application version.</p>
+     */
+    inline ApplicationVersionDescription& WithStatus(ApplicationVersionStatus&& value) { SetStatus(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -225,6 +251,8 @@ namespace Model
     bool m_dateCreatedHasBeenSet;
     double m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+    ApplicationVersionStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

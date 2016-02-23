@@ -33,6 +33,8 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_validUntilHasBeenSet(false),
     m_launchGroupHasBeenSet(false),
     m_availabilityZoneGroupHasBeenSet(false),
+    m_blockDurationMinutes(0),
+    m_blockDurationMinutesHasBeenSet(false),
     m_launchSpecificationHasBeenSet(false)
 {
 }
@@ -77,11 +79,15 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   {
     ss << "AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
+  if(m_blockDurationMinutesHasBeenSet)
+  {
+    ss << "BlockDurationMinutes=" << m_blockDurationMinutes << "&";
+  }
   if(m_launchSpecificationHasBeenSet)
   {
     m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

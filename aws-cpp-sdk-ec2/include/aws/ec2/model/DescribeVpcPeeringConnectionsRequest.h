@@ -115,7 +115,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -147,7 +147,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -179,7 +179,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -211,7 +211,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -243,7 +243,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -275,7 +275,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The
@@ -307,7 +307,7 @@ namespace Model
      * <p><code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.</p> </li>
      * <li> <p><code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p><code>requester-vpc-info.cidr-block</code>
-     * - The CIDR block of the requester's VPC.</p> </li> <li>
+     * - The CIDR block of the requester&apos;s VPC.</p> </li> <li>
      * <p><code>requester-vpc-info.owner-id</code> - The AWS account ID of the owner of
      * the requester VPC.</p> </li> <li> <p><code>requester-vpc-info.vpc-id</code> -
      * The ID of the requester VPC.</p> </li> <li> <p><code>status-code</code> - The

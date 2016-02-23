@@ -46,44 +46,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline void SetVirtualName(const char* value) { m_virtualNameHasBeenSet = true; m_virtualName.assign(value); }
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline BlockDeviceMapping& WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
 
     /**
-     * <p>The name of the virtual device, <code>ephemeral0</code> to
-     * <code>ephemeral3</code>.</p>
+     * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 

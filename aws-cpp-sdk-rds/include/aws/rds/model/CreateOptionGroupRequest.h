@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Tag.h>
 
 namespace Aws
 {
@@ -25,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API CreateOptionGroupRequest : public RDSRequest
   {
@@ -38,7 +40,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -46,7 +48,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -54,7 +56,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -62,7 +64,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -70,7 +72,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline CreateOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -78,7 +80,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline CreateOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
@@ -86,7 +88,7 @@ namespace Model
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First
      * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul> <p>Example: <code>myOptiongroup</code></p>
+     * consecutive hyphens</li> </ul> <p>Example: <code>myoptiongroup</code></p>
      */
     inline CreateOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -209,6 +211,27 @@ namespace Model
      */
     inline CreateOptionGroupRequest& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
 
+    
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline CreateOptionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline CreateOptionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+
+    
+    inline CreateOptionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline CreateOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
   private:
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -218,6 +241,8 @@ namespace Model
     bool m_majorEngineVersionHasBeenSet;
     Aws::String m_optionGroupDescription;
     bool m_optionGroupDescriptionHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

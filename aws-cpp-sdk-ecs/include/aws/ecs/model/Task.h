@@ -377,6 +377,101 @@ namespace Model
      */
     inline Task& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline const Aws::String& GetStoppedReason() const{ return m_stoppedReason; }
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline void SetStoppedReason(const Aws::String& value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason = value; }
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline void SetStoppedReason(Aws::String&& value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason = value; }
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline void SetStoppedReason(const char* value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason.assign(value); }
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline Task& WithStoppedReason(const Aws::String& value) { SetStoppedReason(value); return *this;}
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline Task& WithStoppedReason(Aws::String&& value) { SetStoppedReason(value); return *this;}
+
+    /**
+     * <p>The reason the task was stopped.</p>
+     */
+    inline Task& WithStoppedReason(const char* value) { SetStoppedReason(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was created (the task
+     * entered the <code>PENDING</code> state).</p>
+     */
+    inline double GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was created (the task
+     * entered the <code>PENDING</code> state).</p>
+     */
+    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was created (the task
+     * entered the <code>PENDING</code> state).</p>
+     */
+    inline Task& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was started (the task
+     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * state).</p>
+     */
+    inline double GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was started (the task
+     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * state).</p>
+     */
+    inline void SetStartedAt(double value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was started (the task
+     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+     * state).</p>
+     */
+    inline Task& WithStartedAt(double value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
+     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
+     * state).</p>
+     */
+    inline double GetStoppedAt() const{ return m_stoppedAt; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
+     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
+     * state).</p>
+     */
+    inline void SetStoppedAt(double value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
+     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
+     * state).</p>
+     */
+    inline Task& WithStoppedAt(double value) { SetStoppedAt(value); return *this;}
+
   private:
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
@@ -396,6 +491,14 @@ namespace Model
     bool m_containersHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+    Aws::String m_stoppedReason;
+    bool m_stoppedReasonHasBeenSet;
+    double m_createdAt;
+    bool m_createdAtHasBeenSet;
+    double m_startedAt;
+    bool m_startedAtHasBeenSet;
+    double m_stoppedAt;
+    bool m_stoppedAtHasBeenSet;
   };
 
 } // namespace Model

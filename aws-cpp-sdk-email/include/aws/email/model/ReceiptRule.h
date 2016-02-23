@@ -34,6 +34,16 @@ namespace SES
 namespace Model
 {
 
+  /**
+   * <p>Receipt rules enable you to specify which actions Amazon SES should take when
+   * it receives mail on behalf of one or more email addresses or domains that you
+   * own.</p> <p>Each receipt rule defines a set of email addresses or domains to
+   * which it applies. If the email addresses or domains match at least one recipient
+   * address of the message, Amazon SES executes all of the receipt rule's actions on
+   * the message.</p> <p>For information about setting up receipt rules, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API ReceiptRule
   {
   public:
@@ -44,136 +54,234 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptRule& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptRule& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
+     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptRule& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>If <code>true</code>, the receipt rule is active. The default value is
+     * true.</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    
+    /**
+     * <p>If <code>true</code>, the receipt rule is active. The default value is
+     * true.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    
+    /**
+     * <p>If <code>true</code>, the receipt rule is active. The default value is
+     * true.</p>
+     */
     inline ReceiptRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
-    
-    inline bool GetStop() const{ return m_stop; }
-
-    
-    inline void SetStop(bool value) { m_stopHasBeenSet = true; m_stop = value; }
-
-    
-    inline ReceiptRule& WithStop(bool value) { SetStop(value); return *this;}
-
-    
+    /**
+     * <p>Specifies whether Amazon SES should require that incoming email is delivered
+     * over a connection encrypted with Transport Layer Security (TLS). If this
+     * parameter is set to <code>Require</code>, Amazon SES will bounce emails that are
+     * not received over TLS. The default is <code>Optional</code>.</p>
+     */
     inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
 
-    
+    /**
+     * <p>Specifies whether Amazon SES should require that incoming email is delivered
+     * over a connection encrypted with Transport Layer Security (TLS). If this
+     * parameter is set to <code>Require</code>, Amazon SES will bounce emails that are
+     * not received over TLS. The default is <code>Optional</code>.</p>
+     */
     inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
 
-    
+    /**
+     * <p>Specifies whether Amazon SES should require that incoming email is delivered
+     * over a connection encrypted with Transport Layer Security (TLS). If this
+     * parameter is set to <code>Require</code>, Amazon SES will bounce emails that are
+     * not received over TLS. The default is <code>Optional</code>.</p>
+     */
     inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
 
-    
+    /**
+     * <p>Specifies whether Amazon SES should require that incoming email is delivered
+     * over a connection encrypted with Transport Layer Security (TLS). If this
+     * parameter is set to <code>Require</code>, Amazon SES will bounce emails that are
+     * not received over TLS. The default is <code>Optional</code>.</p>
+     */
     inline ReceiptRule& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
 
-    
+    /**
+     * <p>Specifies whether Amazon SES should require that incoming email is delivered
+     * over a connection encrypted with Transport Layer Security (TLS). If this
+     * parameter is set to <code>Require</code>, Amazon SES will bounce emails that are
+     * not received over TLS. The default is <code>Optional</code>.</p>
+     */
     inline ReceiptRule& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(value); return *this;}
 
-    
-    inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
-
-    
-    inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-
-    
-    inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = value; }
-
-    
-    inline ReceiptRule& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
-
-    
-    inline ReceiptRule& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(value); return *this;}
-
-    
-    inline ReceiptRule& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-
-    
-    inline ReceiptRule& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-
-    
-    inline ReceiptRule& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetRecipients() const{ return m_recipients; }
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline void SetRecipients(const Aws::Vector<Aws::String>& value) { m_recipientsHasBeenSet = true; m_recipients = value; }
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline void SetRecipients(Aws::Vector<Aws::String>&& value) { m_recipientsHasBeenSet = true; m_recipients = value; }
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline ReceiptRule& WithRecipients(const Aws::Vector<Aws::String>& value) { SetRecipients(value); return *this;}
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline ReceiptRule& WithRecipients(Aws::Vector<Aws::String>&& value) { SetRecipients(value); return *this;}
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline ReceiptRule& AddRecipients(const Aws::String& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline ReceiptRule& AddRecipients(Aws::String&& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The recipient domains and email addresses to which the receipt rule applies.
+     * If this field is not specified, this rule will match all recipients under all
+     * verified domains.</p>
+     */
     inline ReceiptRule& AddRecipients(const char* value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline const Aws::Vector<ReceiptAction>& GetActions() const{ return m_actions; }
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline void SetActions(const Aws::Vector<ReceiptAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline void SetActions(Aws::Vector<ReceiptAction>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline ReceiptRule& WithActions(const Aws::Vector<ReceiptAction>& value) { SetActions(value); return *this;}
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline ReceiptRule& WithActions(Aws::Vector<ReceiptAction>&& value) { SetActions(value); return *this;}
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline ReceiptRule& AddActions(const ReceiptAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An ordered list of actions to perform on messages that match at least one of
+     * the recipient email addresses or domains specified in the receipt rule.</p>
+     */
     inline ReceiptRule& AddActions(ReceiptAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>If <code>true</code>, then messages to which this receipt rule applies are
+     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     */
     inline bool GetScanEnabled() const{ return m_scanEnabled; }
 
-    
+    /**
+     * <p>If <code>true</code>, then messages to which this receipt rule applies are
+     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     */
     inline void SetScanEnabled(bool value) { m_scanEnabledHasBeenSet = true; m_scanEnabled = value; }
 
-    
+    /**
+     * <p>If <code>true</code>, then messages to which this receipt rule applies are
+     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     */
     inline ReceiptRule& WithScanEnabled(bool value) { SetScanEnabled(value); return *this;}
 
   private:
@@ -181,12 +289,8 @@ namespace Model
     bool m_nameHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    bool m_stop;
-    bool m_stopHasBeenSet;
     TlsPolicy m_tlsPolicy;
     bool m_tlsPolicyHasBeenSet;
-    Aws::Vector<Aws::String> m_domains;
-    bool m_domainsHasBeenSet;
     Aws::Vector<Aws::String> m_recipients;
     bool m_recipientsHasBeenSet;
     Aws::Vector<ReceiptAction> m_actions;

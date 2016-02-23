@@ -25,6 +25,7 @@ static const int ReEncryptFrom_HASH = HashingUtils::HashString("ReEncryptFrom");
 static const int ReEncryptTo_HASH = HashingUtils::HashString("ReEncryptTo");
 static const int CreateGrant_HASH = HashingUtils::HashString("CreateGrant");
 static const int RetireGrant_HASH = HashingUtils::HashString("RetireGrant");
+static const int DescribeKey_HASH = HashingUtils::HashString("DescribeKey");
 
 namespace Aws
 {
@@ -70,6 +71,10 @@ GrantOperation GetGrantOperationForName(const Aws::String& name)
   {
     return GrantOperation::RetireGrant;
   }
+  else if (hashCode == DescribeKey_HASH)
+  {
+    return GrantOperation::DescribeKey;
+  }
 
   return GrantOperation::NOT_SET;
 }
@@ -94,6 +99,8 @@ Aws::String GetNameForGrantOperation(GrantOperation value)
     return "CreateGrant";
   case GrantOperation::RetireGrant:
     return "RetireGrant";
+  case GrantOperation::DescribeKey:
+    return "DescribeKey";
   default:
     return "";
   }

@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     http_only,
-    match_viewer
+    match_viewer,
+    https_only
   };
 
 namespace OriginProtocolPolicyMapper

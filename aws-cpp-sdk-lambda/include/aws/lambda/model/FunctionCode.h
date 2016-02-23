@@ -43,40 +43,50 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A base64-encoded .zip file containing your deployment package. For more
-     * information about creating a .zip file, go to <a
+     * <p>A zip file containing your deployment package. If you are using the API
+     * directly, the zip file must be base64-encoded (if you are using the AWS SDKs or
+     * the AWS CLI, the SDKs or CLI will do the encoding for you). For more information
+     * about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
-     * <p>A base64-encoded .zip file containing your deployment package. For more
-     * information about creating a .zip file, go to <a
+     * <p>A zip file containing your deployment package. If you are using the API
+     * directly, the zip file must be base64-encoded (if you are using the AWS SDKs or
+     * the AWS CLI, the SDKs or CLI will do the encoding for you). For more information
+     * about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>A base64-encoded .zip file containing your deployment package. For more
-     * information about creating a .zip file, go to <a
+     * <p>A zip file containing your deployment package. If you are using the API
+     * directly, the zip file must be base64-encoded (if you are using the AWS SDKs or
+     * the AWS CLI, the SDKs or CLI will do the encoding for you). For more information
+     * about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>A base64-encoded .zip file containing your deployment package. For more
-     * information about creating a .zip file, go to <a
+     * <p>A zip file containing your deployment package. If you are using the API
+     * directly, the zip file must be base64-encoded (if you are using the AWS SDKs or
+     * the AWS CLI, the SDKs or CLI will do the encoding for you). For more information
+     * about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline FunctionCode& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
-     * <p>A base64-encoded .zip file containing your deployment package. For more
-     * information about creating a .zip file, go to <a
+     * <p>A zip file containing your deployment package. If you are using the API
+     * directly, the zip file must be base64-encoded (if you are using the AWS SDKs or
+     * the AWS CLI, the SDKs or CLI will do the encoding for you). For more information
+     * about creating a .zip file, go to <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */

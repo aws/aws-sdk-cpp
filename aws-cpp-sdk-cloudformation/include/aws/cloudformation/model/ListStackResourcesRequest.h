@@ -98,44 +98,44 @@ namespace Model
     inline ListStackResourcesRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline ListStackResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline ListStackResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of stack resource
-     * summaries, if there is one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stack resources that you want to
+     * retrieve.</p>
      */
     inline ListStackResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

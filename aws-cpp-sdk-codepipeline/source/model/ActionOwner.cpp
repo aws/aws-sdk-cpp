@@ -1,0 +1,70 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/codepipeline/model/ActionOwner.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+static const int AWS_HASH = HashingUtils::HashString("AWS");
+static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
+static const int Custom_HASH = HashingUtils::HashString("Custom");
+
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace Model
+{
+namespace ActionOwnerMapper
+{
+ActionOwner GetActionOwnerForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+
+  if (hashCode == AWS_HASH)
+  {
+    return ActionOwner::AWS;
+  }
+  else if (hashCode == ThirdParty_HASH)
+  {
+    return ActionOwner::ThirdParty;
+  }
+  else if (hashCode == Custom_HASH)
+  {
+    return ActionOwner::Custom;
+  }
+
+  return ActionOwner::NOT_SET;
+}
+
+Aws::String GetNameForActionOwner(ActionOwner value)
+{
+  switch(value)
+  {
+  case ActionOwner::AWS:
+    return "AWS";
+  case ActionOwner::ThirdParty:
+    return "ThirdParty";
+  case ActionOwner::Custom:
+    return "Custom";
+  default:
+    return "";
+  }
+}
+
+} // namespace ActionOwnerMapper
+} // namespace Model
+} // namespace CodePipeline
+} // namespace Aws

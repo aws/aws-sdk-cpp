@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API ModifyEventSubscriptionRequest : public RDSRequest
   {

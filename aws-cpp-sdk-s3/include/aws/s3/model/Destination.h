@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/model/StorageClass.h>
 
 namespace Aws
 {
@@ -81,9 +82,36 @@ namespace Model
      */
     inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+    /**
+     * The class of storage used to store the object.
+     */
+    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * The class of storage used to store the object.
+     */
+    inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /**
+     * The class of storage used to store the object.
+     */
+    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+
+    /**
+     * The class of storage used to store the object.
+     */
+    inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
+
+    /**
+     * The class of storage used to store the object.
+     */
+    inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
+
   private:
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+    StorageClass m_storageClass;
+    bool m_storageClassHasBeenSet;
   };
 
 } // namespace Model

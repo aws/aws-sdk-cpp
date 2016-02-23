@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_ELASTICBEANSTALK_API CreateEnvironmentRequest : public ElasticBeanstalkRequest
   {
@@ -171,6 +171,69 @@ namespace Model
      * application.</p>
      */
     inline CreateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline CreateEnvironmentRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name parameter. See <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline CreateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
      * <p>Describes this environment.</p>
@@ -464,7 +527,7 @@ namespace Model
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -475,7 +538,7 @@ namespace Model
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -486,7 +549,7 @@ namespace Model
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -497,7 +560,7 @@ namespace Model
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -508,7 +571,7 @@ namespace Model
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -519,7 +582,7 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -530,7 +593,7 @@ namespace Model
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p> This is an alternative to specifying a configuration name. If specified, AWS
+     * <p> This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack. </p> <p> Condition: You must specify either
      * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
@@ -643,6 +706,8 @@ namespace Model
     bool m_applicationNameHasBeenSet;
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::String m_cNAMEPrefix;

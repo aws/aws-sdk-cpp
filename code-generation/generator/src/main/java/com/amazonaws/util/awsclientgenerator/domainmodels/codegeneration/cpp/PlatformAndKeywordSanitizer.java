@@ -67,6 +67,8 @@ public class PlatformAndKeywordSanitizer {
         words.add("PUBLIC");
         words.add("static");
         words.add("STATIC");
+        words.add("double");
+        words.add("Double");
         words.add("*");
         //ok you get the idea... add them as you encounter them.
         FORBIDDEN_WORDS = Collections.unmodifiableSet(words);
@@ -97,6 +99,12 @@ public class PlatformAndKeywordSanitizer {
 
         if (FORBIDDEN_WORDS.contains(enumMemberName)) {
             enumMemberName += "_";
+        }
+
+        //replace starting number with underscore.
+        char firstChar = enumMemberName.charAt(0);
+        if(firstChar >= '0' && firstChar <= '9') {
+            enumMemberName = "_" + enumMemberName;
         }
 
         return enumMemberName;

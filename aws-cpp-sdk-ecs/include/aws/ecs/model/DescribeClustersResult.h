@@ -76,25 +76,39 @@ namespace Model
      */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any failures associated with the call.</p>
+     */
     inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 
   private:

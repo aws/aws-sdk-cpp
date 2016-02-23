@@ -120,38 +120,44 @@ namespace Model
     inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /**
-     * <p>A unix timestamp indicating the start time of the range for the request. If
-     * provided, events with a timestamp prior to this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are not
+     * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A unix timestamp indicating the start time of the range for the request. If
-     * provided, events with a timestamp prior to this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are not
+     * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A unix timestamp indicating the start time of the range for the request. If
-     * provided, events with a timestamp prior to this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp prior to this time are not
+     * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time are not
+     * returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time are not
+     * returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>A unix timestamp indicating the end time of the range for the request. If
-     * provided, events with a timestamp later than this time will not be returned.</p>
+     * <p>A point in time expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. If provided, events with a timestamp later than this time are not
+     * returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
 
@@ -199,43 +205,50 @@ namespace Model
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

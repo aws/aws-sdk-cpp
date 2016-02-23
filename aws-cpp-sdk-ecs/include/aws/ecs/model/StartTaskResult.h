@@ -43,78 +43,78 @@ namespace Model
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline const Aws::Vector<Task>& GetTasks() const{ return m_tasks; }
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline void SetTasks(const Aws::Vector<Task>& value) { m_tasks = value; }
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = value; }
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline StartTaskResult& WithTasks(const Aws::Vector<Task>& value) { SetTasks(value); return *this;}
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline StartTaskResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(value); return *this;}
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline StartTaskResult& AddTasks(const Task& value) { m_tasks.push_back(value); return *this; }
 
     /**
      * <p>A full description of the tasks that were started. Each task that was
-     * successfully placed on your container instances will be described here.</p>
+     * successfully placed on your container instances are described here.</p>
      */
     inline StartTaskResult& AddTasks(Task&& value) { m_tasks.push_back(value); return *this; }
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline StartTaskResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline StartTaskResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline StartTaskResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
 
     /**
-     * <p>Any failed tasks from your <code>StartTask</code> action are listed here.</p>
+     * <p>Any failures associated with the call.</p>
      */
     inline StartTaskResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
 

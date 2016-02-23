@@ -38,7 +38,7 @@ Aws::String DeleteNetworkAclRequest::SerializePayload() const
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

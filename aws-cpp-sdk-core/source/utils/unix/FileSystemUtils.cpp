@@ -57,7 +57,7 @@ Aws::String FileSystemUtils::GetHomeDirectory()
 
     AWS_LOGSTREAM_DEBUG(LOG_TAG, "Final Home Directory is " << retVal);
 
-    return std::move(retVal);
+    return retVal;
 }
 
 bool FileSystemUtils::CreateDirectoryIfNotExists(const char* path)

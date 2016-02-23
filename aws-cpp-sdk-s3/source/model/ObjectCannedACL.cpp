@@ -21,6 +21,7 @@ static const int private__HASH = HashingUtils::HashString("private");
 static const int public_read_HASH = HashingUtils::HashString("public-read");
 static const int public_read_write_HASH = HashingUtils::HashString("public-read-write");
 static const int authenticated_read_HASH = HashingUtils::HashString("authenticated-read");
+static const int aws_exec_read_HASH = HashingUtils::HashString("aws-exec-read");
 static const int bucket_owner_read_HASH = HashingUtils::HashString("bucket-owner-read");
 static const int bucket_owner_full_control_HASH = HashingUtils::HashString("bucket-owner-full-control");
 
@@ -52,6 +53,10 @@ ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name)
   {
     return ObjectCannedACL::authenticated_read;
   }
+  else if (hashCode == aws_exec_read_HASH)
+  {
+    return ObjectCannedACL::aws_exec_read;
+  }
   else if (hashCode == bucket_owner_read_HASH)
   {
     return ObjectCannedACL::bucket_owner_read;
@@ -76,6 +81,8 @@ Aws::String GetNameForObjectCannedACL(ObjectCannedACL value)
     return "public-read-write";
   case ObjectCannedACL::authenticated_read:
     return "authenticated-read";
+  case ObjectCannedACL::aws_exec_read:
+    return "aws-exec-read";
   case ObjectCannedACL::bucket_owner_read:
     return "bucket-owner-read";
   case ObjectCannedACL::bucket_owner_full_control:

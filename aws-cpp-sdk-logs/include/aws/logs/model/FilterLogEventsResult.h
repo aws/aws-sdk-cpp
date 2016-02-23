@@ -135,43 +135,50 @@ namespace Model
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token obtained from a <code class="code">FilterLogEvents</code>
-     * response to continue paginating the FilterLogEvents results.</p>
+     * response to continue paginating the FilterLogEvents results. This token is
+     * omitted from the response when there are no other events to display.</p>
      */
     inline FilterLogEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

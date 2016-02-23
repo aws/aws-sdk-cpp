@@ -81,37 +81,44 @@ namespace Model
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(value); return *this; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline DescribeStacksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline DescribeStacksResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * stacks. If no additional page exists, this value is null.</p>
      */
     inline DescribeStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

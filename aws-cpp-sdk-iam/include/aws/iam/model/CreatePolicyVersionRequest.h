@@ -96,7 +96,7 @@ namespace Model
      * groups, and roles that the policy is attached to.</p> <p>For more information
      * about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
 
@@ -107,7 +107,7 @@ namespace Model
      * groups, and roles that the policy is attached to.</p> <p>For more information
      * about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetSetAsDefault(bool value) { m_setAsDefaultHasBeenSet = true; m_setAsDefault = value; }
 
@@ -118,7 +118,7 @@ namespace Model
      * groups, and roles that the policy is attached to.</p> <p>For more information
      * about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 

@@ -80,6 +80,7 @@ public class C2jModelToGeneratorModelTransformer {
         Metadata metadata = new Metadata();
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
+        metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
         metadata.setProtocol(c2jMetadata.getProtocol());
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
@@ -341,6 +342,6 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     String sanitizeServiceAbbreviation(String serviceAbbreviation) {
-        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "");
+        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
 }

@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
     m_applicationNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cNAMEPrefixHasBeenSet(false),
     m_tierHasBeenSet(false),
@@ -45,6 +46,10 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
+  if(m_groupNameHasBeenSet)
+  {
+    ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

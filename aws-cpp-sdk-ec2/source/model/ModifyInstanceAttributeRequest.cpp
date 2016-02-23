@@ -114,7 +114,7 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
   {
     m_sriovNetSupport.OutputToStream(ss, "SriovNetSupport.");
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

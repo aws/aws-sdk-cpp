@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * Request object for sending a simple/complex bounce. It contains all of the
-   * information needed to generate a basic DSN or a fully-customized DSN.
+   * <p>Request object for sending a simple/complex bounce. It contains all of the
+   * information needed to generate a basic DSN or a fully-customized DSN.</p>
    */
   class AWS_SES_API SendBounceRequest : public SESRequest
   {
@@ -39,265 +39,277 @@ namespace Model
 
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline const Aws::String& GetOriginalMessageId() const{ return m_originalMessageId; }
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline void SetOriginalMessageId(const Aws::String& value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId = value; }
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline void SetOriginalMessageId(Aws::String&& value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId = value; }
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline void SetOriginalMessageId(const char* value) { m_originalMessageIdHasBeenSet = true; m_originalMessageId.assign(value); }
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline SendBounceRequest& WithOriginalMessageId(const Aws::String& value) { SetOriginalMessageId(value); return *this;}
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline SendBounceRequest& WithOriginalMessageId(Aws::String&& value) { SetOriginalMessageId(value); return *this;}
 
     /**
-     * Message id of the message received through SES Inbound that should be bounced.
-     * This is required and needs to be received by the same account as the caller of
-     * this API.
+     * <p>The message ID of the message to be bounced.</p>
      */
     inline SendBounceRequest& WithOriginalMessageId(const char* value) { SetOriginalMessageId(value); return *this;}
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline const Aws::String& GetBounceSender() const{ return m_bounceSender; }
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline void SetBounceSender(const Aws::String& value) { m_bounceSenderHasBeenSet = true; m_bounceSender = value; }
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline void SetBounceSender(Aws::String&& value) { m_bounceSenderHasBeenSet = true; m_bounceSender = value; }
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline void SetBounceSender(const char* value) { m_bounceSenderHasBeenSet = true; m_bounceSender.assign(value); }
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline SendBounceRequest& WithBounceSender(const Aws::String& value) { SetBounceSender(value); return *this;}
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline SendBounceRequest& WithBounceSender(Aws::String&& value) { SetBounceSender(value); return *this;}
 
     /**
-     * The address to use in the bounces From header. This is required and must use a
-     * verified identity.
+     * <p>The address to use in the "From" header of the bounce message. This must be
+     * an identity that you have verified with Amazon SES.</p>
      */
     inline SendBounceRequest& WithBounceSender(const char* value) { SetBounceSender(value); return *this;}
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline const Aws::String& GetExplanation() const{ return m_explanation; }
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline void SetExplanation(const Aws::String& value) { m_explanationHasBeenSet = true; m_explanation = value; }
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline void SetExplanation(Aws::String&& value) { m_explanationHasBeenSet = true; m_explanation = value; }
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline void SetExplanation(const char* value) { m_explanationHasBeenSet = true; m_explanation.assign(value); }
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline SendBounceRequest& WithExplanation(const Aws::String& value) { SetExplanation(value); return *this;}
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline SendBounceRequest& WithExplanation(Aws::String&& value) { SetExplanation(value); return *this;}
 
     /**
-     * Human-readable text for the bounce message to explain the failure. If not
-     * specified, one will be auto-generated based on the bounced recipients (and
-     * BounceTypes, if provided).
+     * <p>Human-readable text for the bounce message to explain the failure. If not
+     * specified, the text will be auto-generated based on the bounced recipient
+     * information.</p>
      */
     inline SendBounceRequest& WithExplanation(const char* value) { SetExplanation(value); return *this;}
 
     /**
-     * Message level DSN fields. If not specified, a reasonable default chosen.
+     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * values.</p>
      */
     inline const MessageDsn& GetMessageDsn() const{ return m_messageDsn; }
 
     /**
-     * Message level DSN fields. If not specified, a reasonable default chosen.
+     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * values.</p>
      */
     inline void SetMessageDsn(const MessageDsn& value) { m_messageDsnHasBeenSet = true; m_messageDsn = value; }
 
     /**
-     * Message level DSN fields. If not specified, a reasonable default chosen.
+     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * values.</p>
      */
     inline void SetMessageDsn(MessageDsn&& value) { m_messageDsnHasBeenSet = true; m_messageDsn = value; }
 
     /**
-     * Message level DSN fields. If not specified, a reasonable default chosen.
+     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * values.</p>
      */
     inline SendBounceRequest& WithMessageDsn(const MessageDsn& value) { SetMessageDsn(value); return *this;}
 
     /**
-     * Message level DSN fields. If not specified, a reasonable default chosen.
+     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * values.</p>
      */
     inline SendBounceRequest& WithMessageDsn(MessageDsn&& value) { SetMessageDsn(value); return *this;}
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline const Aws::Vector<BouncedRecipientInfo>& GetBouncedRecipientInfoList() const{ return m_bouncedRecipientInfoList; }
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline void SetBouncedRecipientInfoList(const Aws::Vector<BouncedRecipientInfo>& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList = value; }
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline void SetBouncedRecipientInfoList(Aws::Vector<BouncedRecipientInfo>&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList = value; }
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline SendBounceRequest& WithBouncedRecipientInfoList(const Aws::Vector<BouncedRecipientInfo>& value) { SetBouncedRecipientInfoList(value); return *this;}
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline SendBounceRequest& WithBouncedRecipientInfoList(Aws::Vector<BouncedRecipientInfo>&& value) { SetBouncedRecipientInfoList(value); return *this;}
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline SendBounceRequest& AddBouncedRecipientInfoList(const BouncedRecipientInfo& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.push_back(value); return *this; }
 
     /**
-     * Recipients of the original message that bounced and information about them
-     * needed to create their DSNs. This is a required field - you must have at least
-     * one BouncedRecipientInfo in the list.
+     * <p>A list of recipients of the bounced message, including the information
+     * required to create the Delivery Status Notifications (DSNs) for the recipients.
+     * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline SendBounceRequest& AddBouncedRecipientInfoList(BouncedRecipientInfo&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.push_back(value); return *this; }
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetBounceSenderArn() const{ return m_bounceSenderArn; }
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const Aws::String& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = value; }
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(Aws::String&& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = value; }
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const char* value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn.assign(value); }
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const Aws::String& value) { SetBounceSenderArn(value); return *this;}
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(Aws::String&& value) { SetBounceSenderArn(value); return *this;}
 
     /**
-     * The ARN for the identity of the address to use in the bounce's From header. This
-     * is only necessary if the caller's account doesn't own the identity and is using
-     * sending authorization policies to send on behalf of another account's identity.
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to use the address in the "From" header of the bounce. For more information
+     * about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const char* value) { SetBounceSenderArn(value); return *this;}
 

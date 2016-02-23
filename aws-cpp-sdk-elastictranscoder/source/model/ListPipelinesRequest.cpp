@@ -40,16 +40,16 @@ void ListPipelinesRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_ascendingHasBeenSet)
     {
-     ss << m_ascending;
-     uri.AddQueryStringParameter("Ascending", ss.str());
-     ss.str("");
+      ss << m_ascending;
+      uri.AddQueryStringParameter("Ascending", ss.str());
+      ss.str("");
     }
 
     if(m_pageTokenHasBeenSet)
     {
-     ss << m_pageToken;
-     uri.AddQueryStringParameter("PageToken", ss.str());
-     ss.str("");
+      ss << m_pageToken;
+      uri.AddQueryStringParameter("PageToken", ss.str());
+      ss.str("");
     }
 
 }

@@ -8,15 +8,24 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 #if(!$memberEntry.value.required)
     if($CppViewHelper.computeVariableHasBeenSetName($memberEntry.key))
     {
-#set($spaces = ' ')
+#set($spaces = '  ')
 #end
 #if($memberEntry.value.shape.enum)
     ${spaces}ss << ${memberEntry.value.shape.name}Mapper::GetNameFor${memberEntry.value.shape.name}(${memberVarName});
-#else
-    ${spaces}ss << ${memberVarName};
-#end
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
+#elseif($memberEntry.value.shape.map)
+    ${spaces}for(auto& item : ${memberVarName})
+    ${spaces}{
+      ${spaces}ss << item.second;
+      ${spaces}uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+      ${spaces}ss.str("");
+    ${spaces}}
+#else
+    ${spaces}ss << ${memberVarName};
+    ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
+    ${spaces}ss.str("");
+#end
 #if(!$memberEntry.value.required)
     }
 

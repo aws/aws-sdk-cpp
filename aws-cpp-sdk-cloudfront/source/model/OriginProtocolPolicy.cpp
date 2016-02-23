@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int http_only_HASH = HashingUtils::HashString("http-only");
 static const int match_viewer_HASH = HashingUtils::HashString("match-viewer");
+static const int https_only_HASH = HashingUtils::HashString("https-only");
 
 namespace Aws
 {
@@ -40,6 +41,10 @@ OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
   {
     return OriginProtocolPolicy::match_viewer;
   }
+  else if (hashCode == https_only_HASH)
+  {
+    return OriginProtocolPolicy::https_only;
+  }
 
   return OriginProtocolPolicy::NOT_SET;
 }
@@ -52,6 +57,8 @@ Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy value)
     return "http-only";
   case OriginProtocolPolicy::match_viewer:
     return "match-viewer";
+  case OriginProtocolPolicy::https_only:
+    return "https-only";
   default:
     return "";
   }

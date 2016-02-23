@@ -27,6 +27,7 @@ DescribeReservedDBInstancesOfferingsRequest::DescribeReservedDBInstancesOffering
     m_offeringTypeHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -61,6 +62,15 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
   {
     ss << "MultiAZ=" << m_multiAZ << "&";
   }
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
+  }
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
@@ -69,7 +79,7 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

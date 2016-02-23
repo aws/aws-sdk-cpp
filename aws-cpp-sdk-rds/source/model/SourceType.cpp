@@ -21,6 +21,8 @@ static const int db_instance_HASH = HashingUtils::HashString("db-instance");
 static const int db_parameter_group_HASH = HashingUtils::HashString("db-parameter-group");
 static const int db_security_group_HASH = HashingUtils::HashString("db-security-group");
 static const int db_snapshot_HASH = HashingUtils::HashString("db-snapshot");
+static const int db_cluster_HASH = HashingUtils::HashString("db-cluster");
+static const int db_cluster_snapshot_HASH = HashingUtils::HashString("db-cluster-snapshot");
 
 namespace Aws
 {
@@ -50,6 +52,14 @@ SourceType GetSourceTypeForName(const Aws::String& name)
   {
     return SourceType::db_snapshot;
   }
+  else if (hashCode == db_cluster_HASH)
+  {
+    return SourceType::db_cluster;
+  }
+  else if (hashCode == db_cluster_snapshot_HASH)
+  {
+    return SourceType::db_cluster_snapshot;
+  }
 
   return SourceType::NOT_SET;
 }
@@ -66,6 +76,10 @@ Aws::String GetNameForSourceType(SourceType value)
     return "db-security-group";
   case SourceType::db_snapshot:
     return "db-snapshot";
+  case SourceType::db_cluster:
+    return "db-cluster";
+  case SourceType::db_cluster_snapshot:
+    return "db-cluster-snapshot";
   default:
     return "";
   }

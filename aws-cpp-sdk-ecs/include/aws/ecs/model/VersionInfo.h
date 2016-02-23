@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The Docker and Amazon ECS container agent version information on a container
-   * instance.</p>
+   * <p>The Docker and Amazon ECS container agent version information about a
+   * container instance.</p>
    */
   class AWS_ECS_API VersionInfo
   {

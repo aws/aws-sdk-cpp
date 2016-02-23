@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
+#include <aws/cloudfront/model/OriginSslProtocols.h>
 
 namespace Aws
 {
@@ -97,6 +98,36 @@ namespace Model
      */
     inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(value); return *this;}
 
+    /**
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.
+     */
+    inline const OriginSslProtocols& GetOriginSslProtocols() const{ return m_originSslProtocols; }
+
+    /**
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.
+     */
+    inline void SetOriginSslProtocols(const OriginSslProtocols& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = value; }
+
+    /**
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.
+     */
+    inline void SetOriginSslProtocols(OriginSslProtocols&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = value; }
+
+    /**
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.
+     */
+    inline CustomOriginConfig& WithOriginSslProtocols(const OriginSslProtocols& value) { SetOriginSslProtocols(value); return *this;}
+
+    /**
+     * The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.
+     */
+    inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(value); return *this;}
+
   private:
     long m_hTTPPort;
     bool m_hTTPPortHasBeenSet;
@@ -104,6 +135,8 @@ namespace Model
     bool m_hTTPSPortHasBeenSet;
     OriginProtocolPolicy m_originProtocolPolicy;
     bool m_originProtocolPolicyHasBeenSet;
+    OriginSslProtocols m_originSslProtocols;
+    bool m_originSslProtocolsHasBeenSet;
   };
 
 } // namespace Model

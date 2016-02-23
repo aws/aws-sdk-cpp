@@ -27,7 +27,8 @@ RegisterContainerInstanceRequest::RegisterContainerInstanceRequest() :
     m_instanceIdentityDocumentSignatureHasBeenSet(false),
     m_totalResourcesHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false)
+    m_containerInstanceArnHasBeenSet(false),
+    m_attributesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,17 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
   if(m_containerInstanceArnHasBeenSet)
   {
    payload.WithString("containerInstanceArn", m_containerInstanceArn);
+
+  }
+
+  if(m_attributesHasBeenSet)
+  {
+   Array<JsonValue> attributesJsonList(m_attributes.size());
+   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
+   {
+     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+   }
+   payload.WithArray("attributes", std::move(attributesJsonList));
 
   }
 

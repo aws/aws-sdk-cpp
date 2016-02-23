@@ -43,7 +43,7 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

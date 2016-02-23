@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/AgentUpdateStatus.h>
 #include <aws/ecs/model/Resource.h>
+#include <aws/ecs/model/Attribute.h>
 
 namespace Aws
 {
@@ -35,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EC2 instance that is running the Amazon ECS agent and has been
-   * registered with a cluster.</p>
+   * <p>An EC2 instance that is running the Amazon ECS agent and has been registered
+   * with a cluster.</p>
    */
   class AWS_ECS_API ContainerInstance
   {
@@ -50,9 +51,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
 
@@ -60,9 +61,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
@@ -70,9 +71,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
@@ -80,9 +81,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
 
@@ -90,9 +91,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
 
@@ -100,9 +101,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
 
@@ -110,44 +111,44 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
      * instance, the AWS account ID of the container instance owner, the
-     * <code>container-instance</code> namespace, and then the container instance UUID.
+     * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_UUID</i>.</p>
+     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 instance ID of the container instance.</p>
+     * <p>The EC2 instance ID of the container instance.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
@@ -317,24 +318,24 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is actually connected
      * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped will return <code>false</code>, and instances without a connected agent
-     * cannot accept placement request.</p>
+     * stopped return <code>false</code>, and instances without a connected agent
+     * cannot accept placement requests.</p>
      */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is actually connected
      * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped will return <code>false</code>, and instances without a connected agent
-     * cannot accept placement request.</p>
+     * stopped return <code>false</code>, and instances without a connected agent
+     * cannot accept placement requests.</p>
      */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
 
     /**
      * <p>This parameter returns <code>true</code> if the agent is actually connected
      * to Amazon ECS. Registered instances with an agent that may be unhealthy or
-     * stopped will return <code>false</code>, and instances without a connected agent
-     * cannot accept placement request.</p>
+     * stopped return <code>false</code>, and instances without a connected agent
+     * cannot accept placement requests.</p>
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
 
@@ -404,6 +405,48 @@ namespace Model
      */
     inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(value); return *this;}
 
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline ContainerInstance& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline ContainerInstance& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline ContainerInstance& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+
+    /**
+     * <p>The attributes set for the container instance by the Amazon ECS container
+     * agent at instance registration.</p>
+     */
+    inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+
   private:
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
@@ -425,6 +468,8 @@ namespace Model
     bool m_pendingTasksCountHasBeenSet;
     AgentUpdateStatus m_agentUpdateStatus;
     bool m_agentUpdateStatusHasBeenSet;
+    Aws::Vector<Attribute> m_attributes;
+    bool m_attributesHasBeenSet;
   };
 
 } // namespace Model

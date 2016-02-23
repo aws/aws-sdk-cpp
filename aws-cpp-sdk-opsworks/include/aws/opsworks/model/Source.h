@@ -169,7 +169,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -193,7 +193,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -205,7 +205,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -217,7 +217,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -229,7 +229,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */
@@ -241,7 +241,7 @@ namespace Model
      * appropriate IAM secret access key.</li> <li>For HTTP bundles and Subversion
      * repositories, set <code>Password</code> to the password.</li> </ul> <p>For more
      * information on how to safely handle IAM credentials, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.</p>
      * <p>In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      * the actual value.</p>
      */

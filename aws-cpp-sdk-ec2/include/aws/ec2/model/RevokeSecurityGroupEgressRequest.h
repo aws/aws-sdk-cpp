@@ -193,142 +193,128 @@ namespace Model
     inline RevokeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
-     * or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     * <p>The IP protocol name or number. We recommend that you specify the protocol in
+     * a set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
-     * types.</p>
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline long GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
-     * types.</p>
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
-     * types.</p>
+     * number. We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithFromPort(long value) { SetFromPort(value); return *this;}
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
-     * ICMP type.</p>
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline long GetToPort() const{ return m_toPort; }
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
-     * ICMP type.</p>
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
-     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
-     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
-     * ICMP type.</p>
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
+     * We recommend that you specify the port range in a set of IP permissions
+     * instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithToPort(long value) { SetToPort(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(Aws::String&& value) { SetCidrIp(value); return *this;}
 
     /**
-     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
-     * source security group.</p>
+     * <p>The CIDR IP address range. We recommend that you specify the CIDR range in a
+     * set of IP permissions instead.</p>
      */
     inline RevokeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 

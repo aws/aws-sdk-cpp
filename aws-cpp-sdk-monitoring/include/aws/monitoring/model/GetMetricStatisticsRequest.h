@@ -145,10 +145,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -158,10 +159,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -171,10 +173,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -184,10 +187,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -197,10 +201,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -210,10 +215,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -223,10 +229,11 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the first datapoint to return. The
      * value specified is inclusive; results include datapoints with the time stamp
-     * specified. </p> <note> The specified start time is rounded down to the nearest
-     * value. Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not return
-     * datapoints for metrics that are older than two weeks. <p>Data that is
+     * specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p> <note> The specified start time is rounded down to
+     * the nearest value. Datapoints are returned for start times up to two weeks in
+     * the past. Specified start times that are more than two weeks in the past will
+     * not return datapoints for metrics that are older than two weeks. <p>Data that is
      * timestamped 24 hours or more in the past may take in excess of 48 hours to
      * become available from submission time using
      * <code>GetMetricStatistics</code>.</p> </note>
@@ -236,49 +243,56 @@ namespace Model
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(Aws::String&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> The time stamp to use for determining the last datapoint to return. The
      * value specified is exclusive; results will include datapoints up to the time
-     * stamp specified. </p>
+     * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
+     * 2014-09-03T23:00:00Z). </p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
@@ -305,64 +319,57 @@ namespace Model
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Statistic>& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline void SetStatistics(const Aws::Vector<Statistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline void SetStatistics(Aws::Vector<Statistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline GetMetricStatisticsRequest& WithStatistics(const Aws::Vector<Statistic>& value) { SetStatistics(value); return *this;}
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline GetMetricStatisticsRequest& WithStatistics(Aws::Vector<Statistic>&& value) { SetStatistics(value); return *this;}
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline GetMetricStatisticsRequest& AddStatistics(const Statistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
-     * returned by GetMetricStatistics, go to <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/index.html?CHAP_TerminologyandKeyConcepts.html#Statistic">Statistics</a>
-     * in the <i>Amazon CloudWatch Developer Guide</i>. </p> <p> Valid Values:
-     * <code>Average | Sum | SampleCount | Maximum | Minimum</code> </p>
+     * returned by GetMetricStatistics, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Statistic">Statistics</a>
+     * in the <i>Amazon CloudWatch Developer Guide</i>. </p>
      */
     inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 

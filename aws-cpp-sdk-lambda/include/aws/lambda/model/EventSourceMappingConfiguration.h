@@ -235,44 +235,51 @@ namespace Model
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const char* value) { SetLastProcessingResult(value); return *this;}
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline EventSourceMappingConfiguration& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline EventSourceMappingConfiguration& WithState(Aws::String&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the event source mapping. It can be "Creating", "Enabled",
-     * "Disabled", "Enabling", "Disabling", "Updating", or "Deleting".</p>
+     * <p>The state of the event source mapping. It can be <code>Creating</code>,
+     * <code>Enabled</code>, <code>Disabled</code>, <code>Enabling</code>,
+     * <code>Disabling</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
      */
     inline EventSourceMappingConfiguration& WithState(const char* value) { SetState(value); return *this;}
 

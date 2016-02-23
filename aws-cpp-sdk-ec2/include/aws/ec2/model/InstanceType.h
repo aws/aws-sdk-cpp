@@ -39,6 +39,7 @@ namespace Model
     m4_2xlarge,
     m4_4xlarge,
     m4_10xlarge,
+    t2_nano,
     t2_micro,
     t2_small,
     t2_medium,

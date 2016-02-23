@@ -20,11 +20,11 @@ using namespace Aws::Client;
 using namespace Aws::CloudWatch;
 using namespace Aws::Utils;
 
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
+static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormatFault");
+static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
-static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
-static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
+static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceededFault");
+static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceFault");
 
 namespace Aws
 {
@@ -37,7 +37,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
+  if (hashCode == INVALID_FORMAT_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INVALID_FORMAT_FAULT), false);
+  }
+  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::MISSING_REQUIRED_PARAMETER), false);
   }
@@ -48,10 +52,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED_FAULT), false);
-  }
-  else if (hashCode == INVALID_FORMAT_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INVALID_FORMAT_FAULT), false);
   }
   else if (hashCode == INTERNAL_SERVICE_FAULT_HASH)
   {

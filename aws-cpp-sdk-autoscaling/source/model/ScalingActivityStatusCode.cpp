@@ -17,6 +17,7 @@
 
 using namespace Aws::Utils;
 
+static const int PendingSpotBidPlacement_HASH = HashingUtils::HashString("PendingSpotBidPlacement");
 static const int WaitingForSpotInstanceRequestId_HASH = HashingUtils::HashString("WaitingForSpotInstanceRequestId");
 static const int WaitingForSpotInstanceId_HASH = HashingUtils::HashString("WaitingForSpotInstanceId");
 static const int WaitingForInstanceId_HASH = HashingUtils::HashString("WaitingForInstanceId");
@@ -41,7 +42,11 @@ ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String&
 {
   int hashCode = HashingUtils::HashString(name.c_str());
 
-  if (hashCode == WaitingForSpotInstanceRequestId_HASH)
+  if (hashCode == PendingSpotBidPlacement_HASH)
+  {
+    return ScalingActivityStatusCode::PendingSpotBidPlacement;
+  }
+  else if (hashCode == WaitingForSpotInstanceRequestId_HASH)
   {
     return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
   }
@@ -93,6 +98,8 @@ Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode value)
 {
   switch(value)
   {
+  case ScalingActivityStatusCode::PendingSpotBidPlacement:
+    return "PendingSpotBidPlacement";
   case ScalingActivityStatusCode::WaitingForSpotInstanceRequestId:
     return "WaitingForSpotInstanceRequestId";
   case ScalingActivityStatusCode::WaitingForSpotInstanceId:

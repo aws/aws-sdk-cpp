@@ -59,17 +59,17 @@ namespace Model
     inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
 
     /**
-     * <p>The number of instances available for the price.</p>
+     * <p>The number of reservations available for the price.</p>
      */
     inline long GetCount() const{ return m_count; }
 
     /**
-     * <p>The number of instances available for the price.</p>
+     * <p>The number of reservations available for the price.</p>
      */
     inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number of instances available for the price.</p>
+     * <p>The number of reservations available for the price.</p>
      */
     inline PricingDetail& WithCount(long value) { SetCount(value); return *this;}
 

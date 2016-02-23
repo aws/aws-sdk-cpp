@@ -46,37 +46,37 @@ namespace Model
     DescribeSpotPriceHistoryResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline const Aws::Vector<SpotPrice>& GetSpotPriceHistory() const{ return m_spotPriceHistory; }
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline void SetSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { m_spotPriceHistory = value; }
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline void SetSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { m_spotPriceHistory = value; }
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(const Aws::Vector<SpotPrice>& value) { SetSpotPriceHistory(value); return *this;}
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline DescribeSpotPriceHistoryResponse& WithSpotPriceHistory(Aws::Vector<SpotPrice>&& value) { SetSpotPriceHistory(value); return *this;}
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(const SpotPrice& value) { m_spotPriceHistory.push_back(value); return *this; }
 
     /**
-     * <p>The historical Spot Prices.</p>
+     * <p>The historical Spot prices.</p>
      */
     inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(value); return *this; }
 

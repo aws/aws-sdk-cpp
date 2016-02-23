@@ -34,7 +34,9 @@ namespace Model
     ip,
     ipList,
     binary,
-    binaryList
+    binaryList,
+    date,
+    dateList
   };
 
 namespace ContextKeyTypeEnumMapper

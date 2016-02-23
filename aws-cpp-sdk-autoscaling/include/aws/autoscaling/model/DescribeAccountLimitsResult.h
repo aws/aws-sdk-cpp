@@ -75,6 +75,36 @@ namespace Model
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(long value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 
+    /**
+     * <p>The current number of groups for your AWS account.</p>
+     */
+    inline long GetNumberOfAutoScalingGroups() const{ return m_numberOfAutoScalingGroups; }
+
+    /**
+     * <p>The current number of groups for your AWS account.</p>
+     */
+    inline void SetNumberOfAutoScalingGroups(long value) { m_numberOfAutoScalingGroups = value; }
+
+    /**
+     * <p>The current number of groups for your AWS account.</p>
+     */
+    inline DescribeAccountLimitsResult& WithNumberOfAutoScalingGroups(long value) { SetNumberOfAutoScalingGroups(value); return *this;}
+
+    /**
+     * <p>The current number of launch configurations for your AWS account.</p>
+     */
+    inline long GetNumberOfLaunchConfigurations() const{ return m_numberOfLaunchConfigurations; }
+
+    /**
+     * <p>The current number of launch configurations for your AWS account.</p>
+     */
+    inline void SetNumberOfLaunchConfigurations(long value) { m_numberOfLaunchConfigurations = value; }
+
+    /**
+     * <p>The current number of launch configurations for your AWS account.</p>
+     */
+    inline DescribeAccountLimitsResult& WithNumberOfLaunchConfigurations(long value) { SetNumberOfLaunchConfigurations(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -93,6 +123,8 @@ namespace Model
   private:
     long m_maxNumberOfAutoScalingGroups;
     long m_maxNumberOfLaunchConfigurations;
+    long m_numberOfAutoScalingGroups;
+    long m_numberOfLaunchConfigurations;
     ResponseMetadata m_responseMetadata;
   };
 

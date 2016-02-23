@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
 
 namespace Aws
@@ -38,51 +39,51 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline CreateServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline CreateServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your service on. If you do not specify a cluster, the default
-     * cluster is assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your service. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
      */
     inline CreateServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
@@ -145,56 +146,56 @@ namespace Model
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run in your service. If a <code>revision</code> is
-     * not specified, the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run in your service. If a <code>revision</code> is not specified,
+     * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -248,20 +249,20 @@ namespace Model
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>The number of instantiations of the specified task definition that you would
-     * like to place and keep running on your cluster.</p>
+     * <p>The number of instantiations of the specified task definition to place and
+     * keep running on your cluster.</p>
      */
     inline long GetDesiredCount() const{ return m_desiredCount; }
 
     /**
-     * <p>The number of instantiations of the specified task definition that you would
-     * like to place and keep running on your cluster.</p>
+     * <p>The number of instantiations of the specified task definition to place and
+     * keep running on your cluster.</p>
      */
     inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
-     * <p>The number of instantiations of the specified task definition that you would
-     * like to place and keep running on your cluster.</p>
+     * <p>The number of instantiations of the specified task definition to place and
+     * keep running on your cluster.</p>
      */
     inline CreateServiceRequest& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
 
@@ -363,6 +364,36 @@ namespace Model
      */
     inline CreateServiceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks. </p>
+     */
+    inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks. </p>
+     */
+    inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks. </p>
+     */
+    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks. </p>
+     */
+    inline CreateServiceRequest& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks. </p>
+     */
+    inline CreateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
+
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
@@ -378,6 +409,8 @@ namespace Model
     bool m_clientTokenHasBeenSet;
     Aws::String m_role;
     bool m_roleHasBeenSet;
+    DeploymentConfiguration m_deploymentConfiguration;
+    bool m_deploymentConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -1,0 +1,386 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/acm/ACM_EXPORTS.h>
+#include <aws/acm/ACMErrors.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/acm/model/DescribeCertificateResult.h>
+#include <aws/acm/model/GetCertificateResult.h>
+#include <aws/acm/model/ListCertificatesResult.h>
+#include <aws/acm/model/RequestCertificateResult.h>
+#include <aws/core/NoResult.h>
+#include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/http/HttpTypes.h>
+#include <future>
+#include <functional>
+
+namespace Aws
+{
+
+namespace Http
+{
+  class HttpClient;
+  class HttpClientFactory;
+} // namespace Http
+
+namespace Utils
+{
+  template< typename R, typename E> class Outcome;
+
+namespace Threading
+{
+  class Executor;
+} // namespace Threading
+
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+
+namespace Auth
+{
+  class AWSCredentials;
+  class AWSCredentialsProvider;
+} // namespace Auth
+
+namespace Client
+{
+  class RetryStrategy;
+} // namespace Client
+
+namespace ACM
+{
+
+namespace Model
+{
+        class DeleteCertificateRequest;
+        class DescribeCertificateRequest;
+        class GetCertificateRequest;
+        class ListCertificatesRequest;
+        class RequestCertificateRequest;
+        class ResendValidationEmailRequest;
+
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<ACMErrors>> DescribeCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMErrors>> GetCertificateOutcome;
+        typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<ACMErrors>> ListCertificatesOutcome;
+        typedef Aws::Utils::Outcome<RequestCertificateResult, Aws::Client::AWSError<ACMErrors>> RequestCertificateOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ACMErrors>> ResendValidationEmailOutcome;
+
+        typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
+        typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
+        typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
+        typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
+        typedef std::future<RequestCertificateOutcome> RequestCertificateOutcomeCallable;
+        typedef std::future<ResendValidationEmailOutcome> ResendValidationEmailOutcomeCallable;
+} // namespace Model
+
+  class ACMClient;
+
+    typedef std::function<void(const ACMClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::RequestCertificateRequest&, const Model::RequestCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::ResendValidationEmailRequest&, const Model::ResendValidationEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendValidationEmailResponseReceivedHandler;
+
+  /**
+   * <fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate
+   * Manager (ACM) Command Reference. This guide provides descriptions, syntax, and
+   * usage examples for each ACM command. You can use AWS Certificate Manager to
+   * request ACM Certificates for your AWS-based websites and applications. For
+   * general information about using ACM and for more information about using the
+   * console, see the <a
+   * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
+   * Certificate Manager User Guide</a>. For more information about using the ACM
+   * API, see the <a
+   * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
+   * Certificate Manager API Reference</a>. </p>
+   */
+  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
+  {
+    public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
+
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ACMClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
+            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+
+        virtual ~ACMClient();
+
+        /**
+         * <p> Deletes an ACM Certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list of ACM Certificates that
+         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
+         * by calling the <a>GetCertificate</a> action. The certificate will not be
+         * available for use by other AWS services.</p> <note>You cannot delete an ACM
+         * Certificate that is being used by another AWS service. To delete a certificate
+         * that is in use, the certificate association must first be removed. </note>
+         */
+        virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
+
+        /**
+         * <p> Deletes an ACM Certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list of ACM Certificates that
+         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
+         * by calling the <a>GetCertificate</a> action. The certificate will not be
+         * available for use by other AWS services.</p> <note>You cannot delete an ACM
+         * Certificate that is being used by another AWS service. To delete a certificate
+         * that is in use, the certificate association must first be removed. </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request) const;
+
+        /**
+         * <p> Deletes an ACM Certificate and its associated private key. If this action
+         * succeeds, the certificate no longer appears in the list of ACM Certificates that
+         * can be displayed by calling the <a>ListCertificates</a> action or be retrieved
+         * by calling the <a>GetCertificate</a> action. The certificate will not be
+         * available for use by other AWS services.</p> <note>You cannot delete an ACM
+         * Certificate that is being used by another AWS service. To delete a certificate
+         * that is in use, the certificate association must first be removed. </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of the fields contained in the specified ACM Certificate. For
+         * example, this action returns the certificate status, a flag that indicates
+         * whether the certificate is associated with any other AWS service, and the date
+         * at which the certificate request was created. The ACM Certificate is specified
+         * on input by its Amazon Resource Name (ARN). </p>
+         */
+        virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
+
+        /**
+         * <p> Returns a list of the fields contained in the specified ACM Certificate. For
+         * example, this action returns the certificate status, a flag that indicates
+         * whether the certificate is associated with any other AWS service, and the date
+         * at which the certificate request was created. The ACM Certificate is specified
+         * on input by its Amazon Resource Name (ARN). </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
+
+        /**
+         * <p> Returns a list of the fields contained in the specified ACM Certificate. For
+         * example, this action returns the certificate status, a flag that indicates
+         * whether the certificate is associated with any other AWS service, and the date
+         * at which the certificate request was created. The ACM Certificate is specified
+         * on input by its Amazon Resource Name (ARN). </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Retrieves an ACM Certificate and certificate chain for the certificate
+         * specified by an ARN. The chain is an ordered list of certificates that contains
+         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
+         * Certificate. The certificate and certificate chain are base64 encoded. If you
+         * want to decode the certificate chain to see the individual certificate fields,
+         * you can use OpenSSL. </p> <note> Currently, ACM Certificates can be used only
+         * with Elastic Load Balancing and Amazon CloudFront. </note>
+         */
+        virtual Model::GetCertificateOutcome GetCertificate(const Model::GetCertificateRequest& request) const;
+
+        /**
+         * <p> Retrieves an ACM Certificate and certificate chain for the certificate
+         * specified by an ARN. The chain is an ordered list of certificates that contains
+         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
+         * Certificate. The certificate and certificate chain are base64 encoded. If you
+         * want to decode the certificate chain to see the individual certificate fields,
+         * you can use OpenSSL. </p> <note> Currently, ACM Certificates can be used only
+         * with Elastic Load Balancing and Amazon CloudFront. </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCertificateOutcomeCallable GetCertificateCallable(const Model::GetCertificateRequest& request) const;
+
+        /**
+         * <p> Retrieves an ACM Certificate and certificate chain for the certificate
+         * specified by an ARN. The chain is an ordered list of certificates that contains
+         * the root certificate, intermediate certificates of subordinate CAs, and the ACM
+         * Certificate. The certificate and certificate chain are base64 encoded. If you
+         * want to decode the certificate chain to see the individual certificate fields,
+         * you can use OpenSSL. </p> <note> Currently, ACM Certificates can be used only
+         * with Elastic Load Balancing and Amazon CloudFront. </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Retrieves a list of the ACM Certificate ARNs, and the domain name for each
+         * ARN, owned by the calling account. You can filter the list based on the
+         * <code>CertificateStatuses</code> parameter, and you can display up to
+         * <code>MaxItems</code> certificates at one time. If you have more than
+         * <code>MaxItems</code> certificates, use the <code>NextToken</code> marker from
+         * the response object in your next call to the <code>ListCertificates</code>
+         * action to retrieve the next set of certificate ARNs. </p>
+         */
+        virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
+
+        /**
+         * <p> Retrieves a list of the ACM Certificate ARNs, and the domain name for each
+         * ARN, owned by the calling account. You can filter the list based on the
+         * <code>CertificateStatuses</code> parameter, and you can display up to
+         * <code>MaxItems</code> certificates at one time. If you have more than
+         * <code>MaxItems</code> certificates, use the <code>NextToken</code> marker from
+         * the response object in your next call to the <code>ListCertificates</code>
+         * action to retrieve the next set of certificate ARNs. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCertificatesOutcomeCallable ListCertificatesCallable(const Model::ListCertificatesRequest& request) const;
+
+        /**
+         * <p> Retrieves a list of the ACM Certificate ARNs, and the domain name for each
+         * ARN, owned by the calling account. You can filter the list based on the
+         * <code>CertificateStatuses</code> parameter, and you can display up to
+         * <code>MaxItems</code> certificates at one time. If you have more than
+         * <code>MaxItems</code> certificates, use the <code>NextToken</code> marker from
+         * the response object in your next call to the <code>ListCertificates</code>
+         * action to retrieve the next set of certificate ARNs. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCertificatesAsync(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Requests an ACM Certificate for use with other AWS services. To request an
+         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * your site. You can also specify additional FQDNs if users can reach your site by
+         * using other names. For each domain name you specify, email is sent to the domain
+         * owner to request approval to issue the certificate. After receiving approval
+         * from the domain owner, the ACM Certificate is issued. For more information, see
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html"> AWS
+         * Certificate Manager User Guide </a>. </p>
+         */
+        virtual Model::RequestCertificateOutcome RequestCertificate(const Model::RequestCertificateRequest& request) const;
+
+        /**
+         * <p> Requests an ACM Certificate for use with other AWS services. To request an
+         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * your site. You can also specify additional FQDNs if users can reach your site by
+         * using other names. For each domain name you specify, email is sent to the domain
+         * owner to request approval to issue the certificate. After receiving approval
+         * from the domain owner, the ACM Certificate is issued. For more information, see
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html"> AWS
+         * Certificate Manager User Guide </a>. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RequestCertificateOutcomeCallable RequestCertificateCallable(const Model::RequestCertificateRequest& request) const;
+
+        /**
+         * <p> Requests an ACM Certificate for use with other AWS services. To request an
+         * ACM Certificate, you must specify the fully qualified domain name (FQDN) for
+         * your site. You can also specify additional FQDNs if users can reach your site by
+         * using other names. For each domain name you specify, email is sent to the domain
+         * owner to request approval to issue the certificate. After receiving approval
+         * from the domain owner, the ACM Certificate is issued. For more information, see
+         * the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html"> AWS
+         * Certificate Manager User Guide </a>. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RequestCertificateAsync(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Resends the email that requests domain ownership validation. The domain
+         * owner or an authorized representative must approve the ACM Certificate before it
+         * can be issued. The certificate can be approved by clicking a link in the mail to
+         * navigate to the Amazon certificate approval website and then clicking <b>I
+         * Approve</b>. However, the validation email can be blocked by spam filters.
+         * Therefore, if you do not receive the original mail, you can request that the
+         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * 72 hours have elapsed since your original request or since your last attempt to
+         * resend validation mail, you must request a new certificate. </p>
+         */
+        virtual Model::ResendValidationEmailOutcome ResendValidationEmail(const Model::ResendValidationEmailRequest& request) const;
+
+        /**
+         * <p> Resends the email that requests domain ownership validation. The domain
+         * owner or an authorized representative must approve the ACM Certificate before it
+         * can be issued. The certificate can be approved by clicking a link in the mail to
+         * navigate to the Amazon certificate approval website and then clicking <b>I
+         * Approve</b>. However, the validation email can be blocked by spam filters.
+         * Therefore, if you do not receive the original mail, you can request that the
+         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * 72 hours have elapsed since your original request or since your last attempt to
+         * resend validation mail, you must request a new certificate. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResendValidationEmailOutcomeCallable ResendValidationEmailCallable(const Model::ResendValidationEmailRequest& request) const;
+
+        /**
+         * <p> Resends the email that requests domain ownership validation. The domain
+         * owner or an authorized representative must approve the ACM Certificate before it
+         * can be issued. The certificate can be approved by clicking a link in the mail to
+         * navigate to the Amazon certificate approval website and then clicking <b>I
+         * Approve</b>. However, the validation email can be blocked by spam filters.
+         * Therefore, if you do not receive the original mail, you can request that the
+         * mail be resent within 72 hours of requesting the ACM Certificate. If more than
+         * 72 hours have elapsed since your original request or since your last attempt to
+         * resend validation mail, you must request a new certificate. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResendValidationEmailAsync(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+
+    private:
+      void init(const Client::ClientConfiguration& clientConfiguration);
+
+        /**Async helpers**/
+        void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RequestCertificateAsyncHelper(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResendValidationEmailAsyncHelper(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+
+      Aws::String m_uri;
+      std::shared_ptr<Utils::Threading::Executor> m_executor;
+  };
+
+} // namespace ACM
+} // namespace Aws

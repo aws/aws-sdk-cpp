@@ -172,7 +172,9 @@ namespace Model
     inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -200,7 +202,9 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -228,7 +232,9 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -256,7 +262,9 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -284,7 +292,9 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -312,7 +322,9 @@ namespace Model
     inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>
@@ -340,7 +352,9 @@ namespace Model
     inline DescribeSecurityGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>description</code> - The
+     * <p>One or more filters. If using multiple filters for rules, the results include
+     * security groups for which any combination of rules - not necessarily a single
+     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
      * description of the security group.</p> </li> <li>
      * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
      * service to which the security group allows access.</p> </li> <li>

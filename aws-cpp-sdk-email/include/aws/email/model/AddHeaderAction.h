@@ -31,6 +31,13 @@ namespace SES
 namespace Model
 {
 
+  /**
+   * <p>When included in a receipt rule, this action adds a header to the received
+   * email.</p> <p>For information about adding a header using a receipt rule, see
+   * the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API AddHeaderAction
   {
   public:
@@ -41,46 +48,95 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline AddHeaderAction& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline AddHeaderAction& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline void SetHeaderValue(const Aws::String& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline void SetHeaderValue(const char* value) { m_headerValueHasBeenSet = true; m_headerValue.assign(value); }
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline AddHeaderAction& WithHeaderValue(const Aws::String& value) { SetHeaderValue(value); return *this;}
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(value); return *this;}
 
-    
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
     inline AddHeaderAction& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}
 
   private:

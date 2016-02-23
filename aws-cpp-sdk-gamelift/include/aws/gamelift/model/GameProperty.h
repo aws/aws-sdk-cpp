@@ -1,0 +1,99 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace GameLift
+{
+namespace Model
+{
+
+  /**
+   * <p>Set of key-value pairs containing information your game server requires to
+   * set up sessions. This object allows you to pass in any set of data needed for
+   * your game. For more information, see the <a
+   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+   * GameLift Developer Guide</a>.</p>
+   */
+  class AWS_GAMELIFT_API GameProperty
+  {
+  public:
+    GameProperty();
+    GameProperty(const Aws::Utils::Json::JsonValue& jsonValue);
+    GameProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    
+    inline const Aws::String& GetKey() const{ return m_key; }
+
+    
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+
+    
+    inline GameProperty& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    
+    inline GameProperty& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+
+    
+    inline GameProperty& WithKey(const char* value) { SetKey(value); return *this;}
+
+    
+    inline const Aws::String& GetValue() const{ return m_value; }
+
+    
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+
+    
+    inline GameProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    
+    inline GameProperty& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+
+    
+    inline GameProperty& WithValue(const char* value) { SetValue(value); return *this;}
+
+  private:
+    Aws::String m_key;
+    bool m_keyHasBeenSet;
+    Aws::String m_value;
+    bool m_valueHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

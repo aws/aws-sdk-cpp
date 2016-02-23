@@ -49,79 +49,65 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline IpPermission& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline IpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The protocol.</p> <p>When you call <a>DescribeSecurityGroups</a>, the
-     * protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
-     * value returned is the name (for example, <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>). For a list of protocol numbers, see <a
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>. (VPC only) When you call <a>AuthorizeSecurityGroupIngress</a>, you
-     * can use <code>-1</code> to specify all.</p>
+     * Numbers</a>). </p> <p>[EC2-VPC only] When you authorize or revoke security group
+     * rules, you can use <code>-1</code> to specify all.</p>
      */
     inline IpPermission& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 

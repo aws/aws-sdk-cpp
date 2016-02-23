@@ -604,7 +604,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -613,7 +613,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -622,7 +622,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -631,7 +631,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
@@ -640,7 +640,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
@@ -649,7 +649,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
@@ -658,7 +658,7 @@ namespace Model
      * <p> The instance type of the EC2 instance. For information about available
      * instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
-     * Available Instance Types</a> in the <i>Amazon Elastic Cloud Compute User
+     * Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide.</i> </p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}

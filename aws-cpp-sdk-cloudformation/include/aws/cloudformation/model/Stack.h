@@ -121,37 +121,37 @@ namespace Model
     inline Stack& WithStackName(const char* value) { SetStackName(value); return *this;}
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline Stack& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline Stack& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>User defined description associated with the stack.</p>
+     * <p>A user-defined description associated with the stack.</p>
      */
     inline Stack& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -191,17 +191,17 @@ namespace Model
     inline Stack& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>Time at which the stack was created.</p>
+     * <p>The time at which the stack was created.</p>
      */
     inline double GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time at which the stack was created.</p>
+     * <p>The time at which the stack was created.</p>
      */
     inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time at which the stack was created.</p>
+     * <p>The time at which the stack was created.</p>
      */
     inline Stack& WithCreationTime(double value) { SetCreationTime(value); return *this;}
 
@@ -285,22 +285,22 @@ namespace Model
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li> <code>true</code>: disable rollback</li> <li> <code>false</code>:
-     * enable rollback</li> </ul> </p>
+     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
+     * rollback</li> </ul> </p>
      */
     inline bool GetDisableRollback() const{ return m_disableRollback; }
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li> <code>true</code>: disable rollback</li> <li> <code>false</code>:
-     * enable rollback</li> </ul> </p>
+     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
+     * rollback</li> </ul> </p>
      */
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
 
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li> <code>true</code>: disable rollback</li> <li> <code>false</code>:
-     * enable rollback</li> </ul> </p>
+     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
+     * rollback</li> </ul> </p>
      */
     inline Stack& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 

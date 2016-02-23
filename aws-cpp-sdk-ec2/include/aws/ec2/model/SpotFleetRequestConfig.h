@@ -131,6 +131,21 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(value); return *this;}
 
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline double GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline SpotFleetRequestConfig& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+
   private:
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
@@ -138,6 +153,8 @@ namespace Model
     bool m_spotFleetRequestStateHasBeenSet;
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
     bool m_spotFleetRequestConfigHasBeenSet;
+    double m_createTime;
+    bool m_createTimeHasBeenSet;
   };
 
 } // namespace Model

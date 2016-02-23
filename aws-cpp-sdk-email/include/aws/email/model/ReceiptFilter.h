@@ -32,6 +32,13 @@ namespace SES
 namespace Model
 {
 
+  /**
+   * <p>A receipt IP address filter enables you to specify whether to accept or
+   * reject mail originating from an IP address or range of IP addresses.</p> <p>For
+   * information about setting up IP address filters, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+   * SES Developer Guide</a>.</p>
+   */
   class AWS_SES_API ReceiptFilter
   {
   public:
@@ -42,40 +49,90 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
+     * 64 characters.</li> </ul>
+     */
     inline ReceiptFilter& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
     inline const ReceiptIpFilter& GetIpFilter() const{ return m_ipFilter; }
 
-    
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
     inline void SetIpFilter(const ReceiptIpFilter& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
 
-    
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
     inline void SetIpFilter(ReceiptIpFilter&& value) { m_ipFilterHasBeenSet = true; m_ipFilter = value; }
 
-    
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
     inline ReceiptFilter& WithIpFilter(const ReceiptIpFilter& value) { SetIpFilter(value); return *this;}
 
-    
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
     inline ReceiptFilter& WithIpFilter(ReceiptIpFilter&& value) { SetIpFilter(value); return *this;}
 
   private:

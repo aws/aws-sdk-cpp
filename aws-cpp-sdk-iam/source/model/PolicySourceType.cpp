@@ -22,6 +22,7 @@ static const int group_HASH = HashingUtils::HashString("group");
 static const int role_HASH = HashingUtils::HashString("role");
 static const int aws_managed_HASH = HashingUtils::HashString("aws-managed");
 static const int user_managed_HASH = HashingUtils::HashString("user-managed");
+static const int resource_HASH = HashingUtils::HashString("resource");
 static const int none_HASH = HashingUtils::HashString("none");
 
 namespace Aws
@@ -56,6 +57,10 @@ PolicySourceType GetPolicySourceTypeForName(const Aws::String& name)
   {
     return PolicySourceType::user_managed;
   }
+  else if (hashCode == resource_HASH)
+  {
+    return PolicySourceType::resource;
+  }
   else if (hashCode == none_HASH)
   {
     return PolicySourceType::none;
@@ -78,6 +83,8 @@ Aws::String GetNameForPolicySourceType(PolicySourceType value)
     return "aws-managed";
   case PolicySourceType::user_managed:
     return "user-managed";
+  case PolicySourceType::resource:
+    return "resource";
   case PolicySourceType::none:
     return "none";
   default:

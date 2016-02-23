@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int default__HASH = HashingUtils::HashString("default");
 static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+static const int host_HASH = HashingUtils::HashString("host");
 
 namespace Aws
 {
@@ -40,6 +41,10 @@ Tenancy GetTenancyForName(const Aws::String& name)
   {
     return Tenancy::dedicated;
   }
+  else if (hashCode == host_HASH)
+  {
+    return Tenancy::host;
+  }
 
   return Tenancy::NOT_SET;
 }
@@ -52,6 +57,8 @@ Aws::String GetNameForTenancy(Tenancy value)
     return "default";
   case Tenancy::dedicated:
     return "dedicated";
+  case Tenancy::host:
+    return "host";
   default:
     return "";
   }

@@ -224,17 +224,17 @@ namespace Model
     inline ReservedInstances& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
     /**
-     * <p>The number of Reserved Instances purchased.</p>
+     * <p>The number of reservations purchased.</p>
      */
     inline long GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of Reserved Instances purchased.</p>
+     * <p>The number of reservations purchased.</p>
      */
     inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of Reserved Instances purchased.</p>
+     * <p>The number of reservations purchased.</p>
      */
     inline ReservedInstances& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
@@ -324,27 +324,27 @@ namespace Model
     inline ReservedInstances& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline ReservedInstances& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline ReservedInstances& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 

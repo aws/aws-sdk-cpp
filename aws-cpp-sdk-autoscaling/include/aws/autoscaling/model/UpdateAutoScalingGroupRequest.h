@@ -157,25 +157,28 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a>.</p>
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline long GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a>.</p>
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetDefaultCooldown(long value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. For more information, see <a
+     * another scaling activity can start. The default is 300.</p> <p>For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a>.</p>
+     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithDefaultCooldown(long value) { SetDefaultCooldown(value); return *this;}
 
@@ -220,75 +223,74 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The type of health check for the instances in the Auto Scaling group. The
-     * health check type can either be <code>EC2</code> for Amazon EC2 or
-     * <code>ELB</code> for Elastic Load Balancing. </p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an instance. The grace period begins when the instance passes
-     * the system status and instance status checks from Amazon EC2. For more
-     * information, see <a href=""></a>. </p>
+     * health status of an EC2 instance that has come into service. The default is
+     * 300.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks For Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline long GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an instance. The grace period begins when the instance passes
-     * the system status and instance status checks from Amazon EC2. For more
-     * information, see <a href=""></a>. </p>
+     * health status of an EC2 instance that has come into service. The default is
+     * 300.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks For Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckGracePeriod(long value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an instance. The grace period begins when the instance passes
-     * the system status and instance status checks from Amazon EC2. For more
-     * information, see <a href=""></a>. </p>
+     * health status of an EC2 instance that has come into service. The default is
+     * 300.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+     * Checks For Auto Scaling Instances</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(long value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -296,7 +298,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -304,7 +306,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -312,7 +314,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -320,7 +322,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -328,7 +330,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -336,7 +338,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(value); return *this;}
 
@@ -344,7 +346,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -353,10 +355,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
@@ -365,10 +367,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
@@ -377,10 +379,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
@@ -389,10 +391,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
@@ -401,10 +403,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
@@ -413,10 +415,10 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(value); return *this;}
 
@@ -425,17 +427,17 @@ namespace Model
      * several subnets in a comma-separated list.</p> <p>When you specify
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, ensure that
      * the subnets' Availability Zones match the values you specify for
-     * <code>AvailabilityZones</code>. </p> <p>For more information, see <a
+     * <code>AvailabilityZones</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
      * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -443,9 +445,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -453,9 +455,9 @@ namespace Model
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -463,9 +465,9 @@ namespace Model
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -473,9 +475,9 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -483,9 +485,9 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(value); return *this;}
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -493,9 +495,9 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
@@ -503,14 +505,32 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
     /**
-     * <p> A standalone termination policy or a list of termination policies used to
+     * <p>A standalone termination policy or a list of termination policies used to
      * select the instance to terminate. The policies are executed in the order that
-     * they are listed. </p> <p>For more information, see <a
+     * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Choosing
      * a Termination Policy for Your Auto Scaling Group</a> in the <i>Auto Scaling
      * Developer Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;
@@ -537,6 +557,8 @@ namespace Model
     bool m_vPCZoneIdentifierHasBeenSet;
     Aws::Vector<Aws::String> m_terminationPolicies;
     bool m_terminationPoliciesHasBeenSet;
+    bool m_newInstancesProtectedFromScaleIn;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet;
   };
 
 } // namespace Model

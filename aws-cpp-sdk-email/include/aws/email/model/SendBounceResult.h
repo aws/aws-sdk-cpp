@@ -40,25 +40,39 @@ namespace Model
     SendBounceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     SendBounceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
-    
+    /**
+     * <p>The message ID of the bounce message.</p>
+     */
     inline SendBounceResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
     

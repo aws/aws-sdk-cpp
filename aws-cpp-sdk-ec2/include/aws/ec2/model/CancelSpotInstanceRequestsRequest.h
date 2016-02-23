@@ -60,42 +60,42 @@ namespace Model
     inline CancelSpotInstanceRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotInstanceRequestIds() const{ return m_spotInstanceRequestIds; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline void SetSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = value; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline void SetSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = value; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline CancelSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotInstanceRequestIds(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline CancelSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotInstanceRequestIds(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const Aws::String& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(Aws::String&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>One or more Spot instance request IDs.</p>
      */
     inline CancelSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const char* value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 

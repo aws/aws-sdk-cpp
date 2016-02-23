@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -119,9 +120,67 @@ namespace Model
      */
     inline DescribeKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline DescribeKeyRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline DescribeKeyRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline DescribeKeyRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline DescribeKeyRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline DescribeKeyRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+
   private:
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+    Aws::Vector<Aws::String> m_grantTokens;
+    bool m_grantTokensHasBeenSet;
   };
 
 } // namespace Model

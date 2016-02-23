@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CreateDBSecurityGroupRequest::CreateDBSecurityGroupRequest() : 
     m_dBSecurityGroupNameHasBeenSet(false),
-    m_dBSecurityGroupDescriptionHasBeenSet(false)
+    m_dBSecurityGroupDescriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,16 @@ Aws::String CreateDBSecurityGroupRequest::SerializePayload() const
   {
     ss << "DBSecurityGroupDescription=" << StringUtils::URLEncode(m_dBSecurityGroupDescription.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

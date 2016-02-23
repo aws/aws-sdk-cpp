@@ -36,85 +36,85 @@ namespace Model
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline UpdateFunctionCodeRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline UpdateFunctionCodeRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
-     * can specify an unqualified function name (for example, "Thumbnail") or you can
+     * can specify a function name (for example, <code>Thumbnail</code>) or you can
      * specify Amazon Resource Name (ARN) of the function (for example,
-     * "arn:aws:lambda:us-west-2:account-id:function:ThumbNail"). AWS Lambda also
-     * allows you to specify only the account ID qualifier (for example,
-     * "account-id:Thumbnail"). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in
-     * length. </p>
+     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
+     * also allows you to specify a partial ARN (for example,
+     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
+     * to the ARN. If you specify only the function name, it is limited to 64 character
+     * in length. </p>
      */
     inline UpdateFunctionCodeRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -269,6 +269,24 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
 
+    /**
+     * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
+     * function and publish a version as an atomic operation. </p>
+     */
+    inline bool GetPublish() const{ return m_publish; }
+
+    /**
+     * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
+     * function and publish a version as an atomic operation. </p>
+     */
+    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
+
+    /**
+     * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
+     * function and publish a version as an atomic operation. </p>
+     */
+    inline UpdateFunctionCodeRequest& WithPublish(bool value) { SetPublish(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -280,6 +298,8 @@ namespace Model
     bool m_s3KeyHasBeenSet;
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
+    bool m_publish;
+    bool m_publishHasBeenSet;
   };
 
 } // namespace Model

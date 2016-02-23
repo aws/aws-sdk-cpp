@@ -42,7 +42,13 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_engineHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false)
+    m_optionGroupNameHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_tdeCredentialArnHasBeenSet(false),
+    m_tdeCredentialPasswordHasBeenSet(false)
 {
 }
 
@@ -114,7 +120,32 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_tdeCredentialArnHasBeenSet)
+  {
+    ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
+  }
+  if(m_tdeCredentialPasswordHasBeenSet)
+  {
+    ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
+  }
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

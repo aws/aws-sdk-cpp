@@ -41,6 +41,9 @@ SpotInstanceRequest::SpotInstanceRequest() :
     m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
+    m_blockDurationMinutes(0),
+    m_blockDurationMinutesHasBeenSet(false),
+    m_actualBlockHourlyPriceHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_launchedAvailabilityZoneHasBeenSet(false)
 {
@@ -64,6 +67,9 @@ SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode) :
     m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
+    m_blockDurationMinutes(0),
+    m_blockDurationMinutesHasBeenSet(false),
+    m_actualBlockHourlyPriceHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_launchedAvailabilityZoneHasBeenSet(false)
 {
@@ -160,6 +166,18 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
       m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(productDescriptionNode.GetText().c_str()).c_str());
       m_productDescriptionHasBeenSet = true;
     }
+    XmlNode blockDurationMinutesNode = resultNode.FirstChild("blockDurationMinutes");
+    if(!blockDurationMinutesNode.IsNull())
+    {
+      m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(blockDurationMinutesNode.GetText().c_str()).c_str());
+      m_blockDurationMinutesHasBeenSet = true;
+    }
+    XmlNode actualBlockHourlyPriceNode = resultNode.FirstChild("actualBlockHourlyPrice");
+    if(!actualBlockHourlyPriceNode.IsNull())
+    {
+      m_actualBlockHourlyPrice = StringUtils::Trim(actualBlockHourlyPriceNode.GetText().c_str());
+      m_actualBlockHourlyPriceHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -247,6 +265,14 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
   }
+  if(m_blockDurationMinutesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
+  }
+  if(m_actualBlockHourlyPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str()) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -326,6 +352,14 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_productDescriptionHasBeenSet)
   {
       oStream << location << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+  }
+  if(m_blockDurationMinutesHasBeenSet)
+  {
+      oStream << location << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
+  }
+  if(m_actualBlockHourlyPriceHasBeenSet)
+  {
+      oStream << location << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

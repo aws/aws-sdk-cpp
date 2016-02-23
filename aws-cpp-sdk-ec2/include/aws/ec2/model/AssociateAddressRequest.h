@@ -275,26 +275,35 @@ namespace Model
     inline AssociateAddressRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] Allows an Elastic IP address that is already associated with an
-     * instance or network interface to be re-associated with the specified instance or
-     * network interface. Otherwise, the operation fails.</p> <p>Default:
-     * <code>false</code></p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
     inline bool GetAllowReassociation() const{ return m_allowReassociation; }
 
     /**
-     * <p>[EC2-VPC] Allows an Elastic IP address that is already associated with an
-     * instance or network interface to be re-associated with the specified instance or
-     * network interface. Otherwise, the operation fails.</p> <p>Default:
-     * <code>false</code></p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
     inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
 
     /**
-     * <p>[EC2-VPC] Allows an Elastic IP address that is already associated with an
-     * instance or network interface to be re-associated with the specified instance or
-     * network interface. Otherwise, the operation fails.</p> <p>Default:
-     * <code>false</code></p>
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
      */
     inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
 

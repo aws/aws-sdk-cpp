@@ -23,7 +23,9 @@ TerminateEnvironmentRequest::TerminateEnvironmentRequest() :
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_terminateResources(false),
-    m_terminateResourcesHasBeenSet(false)
+    m_terminateResourcesHasBeenSet(false),
+    m_forceTerminate(false),
+    m_forceTerminateHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,10 @@ Aws::String TerminateEnvironmentRequest::SerializePayload() const
   if(m_terminateResourcesHasBeenSet)
   {
     ss << "TerminateResources=" << m_terminateResources << "&";
+  }
+  if(m_forceTerminateHasBeenSet)
+  {
+    ss << "ForceTerminate=" << m_forceTerminate << "&";
   }
   ss << "Version=2010-12-01";
   return ss.str();

@@ -28,6 +28,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>
 #include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
+#include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationRequest.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/CreateConfigurationTemplateRequest.h>
@@ -180,6 +181,36 @@ void ElasticBeanstalkClient::CheckDNSAvailabilityAsync(const CheckDNSAvailabilit
 void ElasticBeanstalkClient::CheckDNSAvailabilityAsyncHelper(const CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CheckDNSAvailability(request), context);
+}
+
+ComposeEnvironmentsOutcome ElasticBeanstalkClient::ComposeEnvironments(const ComposeEnvironmentsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ComposeEnvironmentsOutcome(ComposeEnvironmentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ComposeEnvironmentsOutcome(outcome.GetError());
+  }
+}
+
+ComposeEnvironmentsOutcomeCallable ElasticBeanstalkClient::ComposeEnvironmentsCallable(const ComposeEnvironmentsRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::ComposeEnvironments, this, request);
+}
+
+void ElasticBeanstalkClient::ComposeEnvironmentsAsync(const ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::ComposeEnvironmentsAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::ComposeEnvironmentsAsyncHelper(const ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ComposeEnvironments(request), context);
 }
 
 CreateApplicationOutcome ElasticBeanstalkClient::CreateApplication(const CreateApplicationRequest& request) const

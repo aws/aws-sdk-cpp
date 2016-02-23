@@ -33,25 +33,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline DeleteReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline DeleteReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to delete.</p>
+     */
     inline DeleteReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
   private:

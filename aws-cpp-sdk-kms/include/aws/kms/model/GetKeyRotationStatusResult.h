@@ -39,17 +39,17 @@ namespace Model
     GetKeyRotationStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * A Boolean value that specifies whether key rotation is enabled.
+     * <p>A Boolean value that specifies whether key rotation is enabled.</p>
      */
     inline bool GetKeyRotationEnabled() const{ return m_keyRotationEnabled; }
 
     /**
-     * A Boolean value that specifies whether key rotation is enabled.
+     * <p>A Boolean value that specifies whether key rotation is enabled.</p>
      */
     inline void SetKeyRotationEnabled(bool value) { m_keyRotationEnabled = value; }
 
     /**
-     * A Boolean value that specifies whether key rotation is enabled.
+     * <p>A Boolean value that specifies whether key rotation is enabled.</p>
      */
     inline GetKeyRotationStatusResult& WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
 

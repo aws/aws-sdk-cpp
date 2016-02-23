@@ -20,6 +20,7 @@
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
+#include <aws/codedeploy/model/TriggerConfig.h>
 
 namespace Aws
 {
@@ -356,6 +357,41 @@ namespace Model
      */
     inline DeploymentGroupInfo& WithTargetRevision(RevisionLocation&& value) { SetTargetRevision(value); return *this;}
 
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline DeploymentGroupInfo& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline DeploymentGroupInfo& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(value); return *this;}
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline DeploymentGroupInfo& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of associated triggers. </p>
+     */
+    inline DeploymentGroupInfo& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -375,6 +411,8 @@ namespace Model
     bool m_serviceRoleArnHasBeenSet;
     RevisionLocation m_targetRevision;
     bool m_targetRevisionHasBeenSet;
+    Aws::Vector<TriggerConfig> m_triggerConfigurations;
+    bool m_triggerConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,10 @@ CopyImageRequest::CopyImageRequest() :
     m_sourceImageIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -58,7 +61,15 @@ Aws::String CopyImageRequest::SerializePayload() const
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << m_encrypted << "&";
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

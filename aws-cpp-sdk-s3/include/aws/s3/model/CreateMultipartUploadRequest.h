@@ -655,7 +655,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
@@ -664,7 +664,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
@@ -673,7 +673,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
@@ -682,7 +682,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
@@ -691,7 +691,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline CreateMultipartUploadRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
@@ -700,7 +700,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline CreateMultipartUploadRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(value); return *this;}
 
@@ -709,7 +709,7 @@ namespace Model
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side&#x200B;-encryption&#x200B;-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.
      */
     inline CreateMultipartUploadRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 

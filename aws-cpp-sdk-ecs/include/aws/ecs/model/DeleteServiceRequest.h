@@ -36,72 +36,79 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline DeleteServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline DeleteServiceRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The name of the cluster that hosts the service you want to delete.</p>
+     * <p>The name of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.</p>
      */
     inline DeleteServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline DeleteServiceRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline DeleteServiceRequest& WithService(Aws::String&& value) { SetService(value); return *this;}
 
     /**
-     * <p>The name of the service you want to delete.</p>
+     * <p>The name of the service to delete.</p>
      */
     inline DeleteServiceRequest& WithService(const char* value) { SetService(value); return *this;}
 

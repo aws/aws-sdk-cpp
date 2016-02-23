@@ -43,7 +43,7 @@ Aws::String CreateVpcRequest::SerializePayload() const
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

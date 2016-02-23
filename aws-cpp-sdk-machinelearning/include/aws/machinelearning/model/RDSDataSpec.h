@@ -1,0 +1,696 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
+#include <aws/machinelearning/model/RDSDatabase.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/model/RDSDatabaseCredentials.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace MachineLearning
+{
+namespace Model
+{
+
+  /**
+   * <p>The data specification of an Amazon Relational Database Service (Amazon RDS)
+   * <code>DataSource</code>.</p>
+   */
+  class AWS_MACHINELEARNING_API RDSDataSpec
+  {
+  public:
+    RDSDataSpec();
+    RDSDataSpec(const Aws::Utils::Json::JsonValue& jsonValue);
+    RDSDataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
+     * of an an Amazon RDS database.</p>
+     */
+    inline const RDSDatabase& GetDatabaseInformation() const{ return m_databaseInformation; }
+
+    /**
+     * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
+     * of an an Amazon RDS database.</p>
+     */
+    inline void SetDatabaseInformation(const RDSDatabase& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
+
+    /**
+     * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
+     * of an an Amazon RDS database.</p>
+     */
+    inline void SetDatabaseInformation(RDSDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
+
+    /**
+     * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
+     * of an an Amazon RDS database.</p>
+     */
+    inline RDSDataSpec& WithDatabaseInformation(const RDSDatabase& value) { SetDatabaseInformation(value); return *this;}
+
+    /**
+     * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
+     * of an an Amazon RDS database.</p>
+     */
+    inline RDSDataSpec& WithDatabaseInformation(RDSDatabase&& value) { SetDatabaseInformation(value); return *this;}
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline const Aws::String& GetSelectSqlQuery() const{ return m_selectSqlQuery; }
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline void SetSelectSqlQuery(const Aws::String& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline void SetSelectSqlQuery(const char* value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery.assign(value); }
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline RDSDataSpec& WithSelectSqlQuery(const Aws::String& value) { SetSelectSqlQuery(value); return *this;}
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline RDSDataSpec& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(value); return *this;}
+
+    /**
+     * <p>The query that is used to retrieve the observation data for the
+     * <code>DataSource</code>.</p>
+     */
+    inline RDSDataSpec& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
+
+    /**
+     * <p>The AWS Identity and Access Management (IAM) credentials that are used
+     * connect to the Amazon RDS database.</p>
+     */
+    inline const RDSDatabaseCredentials& GetDatabaseCredentials() const{ return m_databaseCredentials; }
+
+    /**
+     * <p>The AWS Identity and Access Management (IAM) credentials that are used
+     * connect to the Amazon RDS database.</p>
+     */
+    inline void SetDatabaseCredentials(const RDSDatabaseCredentials& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = value; }
+
+    /**
+     * <p>The AWS Identity and Access Management (IAM) credentials that are used
+     * connect to the Amazon RDS database.</p>
+     */
+    inline void SetDatabaseCredentials(RDSDatabaseCredentials&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = value; }
+
+    /**
+     * <p>The AWS Identity and Access Management (IAM) credentials that are used
+     * connect to the Amazon RDS database.</p>
+     */
+    inline RDSDataSpec& WithDatabaseCredentials(const RDSDatabaseCredentials& value) { SetDatabaseCredentials(value); return *this;}
+
+    /**
+     * <p>The AWS Identity and Access Management (IAM) credentials that are used
+     * connect to the Amazon RDS database.</p>
+     */
+    inline RDSDataSpec& WithDatabaseCredentials(RDSDatabaseCredentials&& value) { SetDatabaseCredentials(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline const Aws::String& GetS3StagingLocation() const{ return m_s3StagingLocation; }
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline void SetS3StagingLocation(const Aws::String& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = value; }
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline void SetS3StagingLocation(Aws::String&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = value; }
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline void SetS3StagingLocation(const char* value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation.assign(value); }
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline RDSDataSpec& WithS3StagingLocation(const Aws::String& value) { SetS3StagingLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline RDSDataSpec& WithS3StagingLocation(Aws::String&& value) { SetS3StagingLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location for staging Amazon RDS data. The data retrieved from
+     * Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p>
+     */
+    inline RDSDataSpec& WithS3StagingLocation(const char* value) { SetS3StagingLocation(value); return *this;}
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline RDSDataSpec& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline RDSDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(value); return *this;}
+
+    /**
+     * <p>DataRearrangement - A JSON string that represents the splitting requirement
+     * of a <code>DataSource</code>. </p> <br> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
+     */
+    inline RDSDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline const Aws::String& GetDataSchema() const{ return m_dataSchema; }
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline void SetDataSchema(const Aws::String& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline void SetDataSchema(const char* value) { m_dataSchemaHasBeenSet = true; m_dataSchema.assign(value); }
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline RDSDataSpec& WithDataSchema(const Aws::String& value) { SetDataSchema(value); return *this;}
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline RDSDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(value); return *this;}
+
+    /**
+     * <p>A JSON string that represents the schema for an Amazon RDS
+     * <code>DataSource</code>. The <code>DataSchema</code> defines the structure of
+     * the observation data in the data file(s) referenced in the
+     * <code>DataSource</code>.</p> <p>A <code>DataSchema</code> is not required if you
+     * specify a <code>DataSchemaUri</code></p> <p>Define your <code>DataSchema</code>
+     * as a series of key-value pairs. <code>attributes</code> and
+     * <code>excludedVariableNames</code> have an array of key-value pairs for their
+     * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
+     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
+     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
+     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
+     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
+     * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
+     * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
+     * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
+     * "excludedVariableNames": [ "F6" ] } </p> <?oxy_insert_end>
+     */
+    inline RDSDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline const Aws::String& GetDataSchemaUri() const{ return m_dataSchemaUri; }
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline void SetDataSchemaUri(const Aws::String& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = value; }
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline void SetDataSchemaUri(Aws::String&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = value; }
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline void SetDataSchemaUri(const char* value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri.assign(value); }
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline RDSDataSpec& WithDataSchemaUri(const Aws::String& value) { SetDataSchemaUri(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline RDSDataSpec& WithDataSchemaUri(Aws::String&& value) { SetDataSchemaUri(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location of the <code>DataSchema</code>. </p>
+     */
+    inline RDSDataSpec& WithDataSchemaUri(const char* value) { SetDataSchemaUri(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithResourceRole(Aws::String&& value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic
+     * Compute Cloud (Amazon EC2) instance to carry out the copy operation from Amazon
+     * RDS to an Amazon S3 task. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to
+     * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     * templates</a> for data pipelines.</p>
+     */
+    inline RDSDataSpec& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline RDSDataSpec& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline RDSDataSpec& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The subnet ID to be used to access a VPC-based RDS DB instance. This
+     * attribute is used by Data Pipeline to carry out the copy task from Amazon RDS to
+     * Amazon S3.</p>
+     */
+    inline RDSDataSpec& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline RDSDataSpec& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline RDSDataSpec& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline RDSDataSpec& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline RDSDataSpec& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The security group IDs to be used to access a VPC-based RDS DB instance.
+     * Ensure that there are appropriate ingress rules set up to allow access to the
+     * RDS DB instance. This attribute is used by Data Pipeline to carry out the copy
+     * operation from Amazon RDS to an Amazon S3 task.</p>
+     */
+    inline RDSDataSpec& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+  private:
+    RDSDatabase m_databaseInformation;
+    bool m_databaseInformationHasBeenSet;
+    Aws::String m_selectSqlQuery;
+    bool m_selectSqlQueryHasBeenSet;
+    RDSDatabaseCredentials m_databaseCredentials;
+    bool m_databaseCredentialsHasBeenSet;
+    Aws::String m_s3StagingLocation;
+    bool m_s3StagingLocationHasBeenSet;
+    Aws::String m_dataRearrangement;
+    bool m_dataRearrangementHasBeenSet;
+    Aws::String m_dataSchema;
+    bool m_dataSchemaHasBeenSet;
+    Aws::String m_dataSchemaUri;
+    bool m_dataSchemaUriHasBeenSet;
+    Aws::String m_resourceRole;
+    bool m_resourceRoleHasBeenSet;
+    Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet;
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

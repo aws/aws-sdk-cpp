@@ -25,6 +25,7 @@ namespace Model
   enum class ScalingActivityStatusCode
   {
     NOT_SET,
+    PendingSpotBidPlacement,
     WaitingForSpotInstanceRequestId,
     WaitingForSpotInstanceId,
     WaitingForInstanceId,

@@ -25,7 +25,10 @@ namespace Model
   enum class AvailabilityZoneState
   {
     NOT_SET,
-    available
+    available,
+    information,
+    impaired,
+    unavailable
   };
 
 namespace AvailabilityZoneStateMapper

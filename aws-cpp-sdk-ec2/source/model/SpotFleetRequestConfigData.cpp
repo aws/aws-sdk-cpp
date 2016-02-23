@@ -35,7 +35,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false)
+    m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategyHasBeenSet(false)
 {
 }
 
@@ -51,7 +53,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
     m_iamFleetRoleHasBeenSet(false),
-    m_launchSpecificationsHasBeenSet(false)
+    m_launchSpecificationsHasBeenSet(false),
+    m_excessCapacityTerminationPolicyHasBeenSet(false),
+    m_allocationStrategyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -116,6 +120,18 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
 
       m_launchSpecificationsHasBeenSet = true;
     }
+    XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");
+    if(!excessCapacityTerminationPolicyNode.IsNull())
+    {
+      m_excessCapacityTerminationPolicy = ExcessCapacityTerminationPolicyMapper::GetExcessCapacityTerminationPolicyForName(StringUtils::Trim(excessCapacityTerminationPolicyNode.GetText().c_str()).c_str());
+      m_excessCapacityTerminationPolicyHasBeenSet = true;
+    }
+    XmlNode allocationStrategyNode = resultNode.FirstChild("allocationStrategy");
+    if(!allocationStrategyNode.IsNull())
+    {
+      m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
+      m_allocationStrategyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -161,6 +177,14 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
+  if(m_excessCapacityTerminationPolicyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+  if(m_allocationStrategyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+  }
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -202,5 +226,13 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
         launchSpecificationsSs << location <<  ".item." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
+  }
+  if(m_excessCapacityTerminationPolicyHasBeenSet)
+  {
+      oStream << location << ".ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
+  }
+  if(m_allocationStrategyHasBeenSet)
+  {
+      oStream << location << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
   }
 }

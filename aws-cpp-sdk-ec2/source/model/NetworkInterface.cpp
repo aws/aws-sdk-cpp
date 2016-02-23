@@ -43,7 +43,8 @@ NetworkInterface::NetworkInterface() :
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false)
 {
 }
 
@@ -67,7 +68,8 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_interfaceTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -204,6 +206,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
 
       m_privateIpAddressesHasBeenSet = true;
     }
+    XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
+    if(!interfaceTypeNode.IsNull())
+    {
+      m_interfaceType = NetworkInterfaceTypeMapper::GetNetworkInterfaceTypeForName(StringUtils::Trim(interfaceTypeNode.GetText().c_str()).c_str());
+      m_interfaceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -305,6 +313,10 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
+  }
 }
 
 void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -402,5 +414,9 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
         privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
+  }
+  if(m_interfaceTypeHasBeenSet)
+  {
+      oStream << location << ".InterfaceType=" << NetworkInterfaceTypeMapper::GetNameForNetworkInterfaceType(m_interfaceType) << "&";
   }
 }

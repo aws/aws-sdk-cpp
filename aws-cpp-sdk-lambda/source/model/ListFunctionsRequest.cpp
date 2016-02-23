@@ -41,16 +41,16 @@ void ListFunctionsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_markerHasBeenSet)
     {
-     ss << m_marker;
-     uri.AddQueryStringParameter("Marker", ss.str());
-     ss.str("");
+      ss << m_marker;
+      uri.AddQueryStringParameter("Marker", ss.str());
+      ss.str("");
     }
 
     if(m_maxItemsHasBeenSet)
     {
-     ss << m_maxItems;
-     uri.AddQueryStringParameter("MaxItems", ss.str());
-     ss.str("");
+      ss << m_maxItems;
+      uri.AddQueryStringParameter("MaxItems", ss.str());
+      ss.str("");
     }
 
 }

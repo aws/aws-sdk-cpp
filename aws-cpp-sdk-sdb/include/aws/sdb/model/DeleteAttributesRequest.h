@@ -18,7 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sdb/model/UpdateCondition.h>
-#include <aws/sdb/model/DeletableAttribute.h>
+#include <aws/sdb/model/Attribute.h>
 
 namespace Aws
 {
@@ -117,43 +117,43 @@ namespace Model
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline const Aws::Vector<DeletableAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline void SetAttributes(const Aws::Vector<DeletableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline void SetAttributes(Aws::Vector<DeletableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& WithAttributes(const Aws::Vector<DeletableAttribute>& value) { SetAttributes(value); return *this;}
+    inline DeleteAttributesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<DeletableAttribute>&& value) { SetAttributes(value); return *this;}
+    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& AddAttributes(const DeletableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeleteAttributesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
-    inline DeleteAttributesRequest& AddAttributes(DeletableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
      * The update condition which, if specified, determines whether the specified
@@ -195,7 +195,7 @@ namespace Model
     bool m_domainNameHasBeenSet;
     Aws::String m_itemName;
     bool m_itemNameHasBeenSet;
-    Aws::Vector<DeletableAttribute> m_attributes;
+    Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
     UpdateCondition m_expected;
     bool m_expectedHasBeenSet;

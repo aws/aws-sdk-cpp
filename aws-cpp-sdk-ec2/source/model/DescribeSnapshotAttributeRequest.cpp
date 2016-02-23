@@ -43,7 +43,7 @@ Aws::String DescribeSnapshotAttributeRequest::SerializePayload() const
   {
     ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

@@ -47,65 +47,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline Datapoint& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline Datapoint& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp used for the datapoint. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the datapoint. </p>
      */
     inline Datapoint& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 

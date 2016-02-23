@@ -160,91 +160,105 @@ namespace Model
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(value); return *this;}
 
     /**
      * <p>The private DNS name assigned to the instance. This DNS name can only be used
      * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state.</p>
+     * enters the <code>running</code> state. For EC2-VPC, this name is only available
+     * if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(value); return *this;}
 
     /**
      * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state.</p>
+     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
+     * is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
 
@@ -351,37 +365,37 @@ namespace Model
     inline Instance& WithAmiLaunchIndex(long value) { SetAmiLaunchIndex(value); return *this;}
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline Instance& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline Instance& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline Instance& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>The product codes attached to this instance.</p>
+     * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline Instance& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
 
@@ -426,97 +440,97 @@ namespace Model
     inline Instance& WithLaunchTime(double value) { SetLaunchTime(value); return *this;}
 
     /**
-     * <p>The location where the instance launched.</p>
+     * <p>The location where the instance launched, if applicable.</p>
      */
     inline const Placement& GetPlacement() const{ return m_placement; }
 
     /**
-     * <p>The location where the instance launched.</p>
+     * <p>The location where the instance launched, if applicable.</p>
      */
     inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
-     * <p>The location where the instance launched.</p>
+     * <p>The location where the instance launched, if applicable.</p>
      */
     inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
-     * <p>The location where the instance launched.</p>
+     * <p>The location where the instance launched, if applicable.</p>
      */
     inline Instance& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
 
     /**
-     * <p>The location where the instance launched.</p>
+     * <p>The location where the instance launched, if applicable.</p>
      */
     inline Instance& WithPlacement(Placement&& value) { SetPlacement(value); return *this;}
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline Instance& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline Instance& WithKernelId(Aws::String&& value) { SetKernelId(value); return *this;}
 
     /**
-     * <p>The kernel associated with this instance.</p>
+     * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline Instance& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline Instance& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline Instance& WithRamdiskId(Aws::String&& value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The RAM disk associated with this instance.</p>
+     * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline Instance& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
@@ -571,72 +585,72 @@ namespace Model
     inline Instance& WithMonitoring(Monitoring&& value) { SetMonitoring(value); return *this;}
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC in which the instance is running.</p>
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -676,37 +690,37 @@ namespace Model
     inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance.</p>
+     * <p>The public IP address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
 
@@ -893,97 +907,104 @@ namespace Model
     inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a Spot Instance.</p>
+     * <p>Indicates whether this is a Spot instance.</p>
      */
     inline const InstanceLifecycleType& GetInstanceLifecycle() const{ return m_instanceLifecycle; }
 
     /**
-     * <p>Indicates whether this is a Spot Instance.</p>
+     * <p>Indicates whether this is a Spot instance.</p>
      */
     inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
-     * <p>Indicates whether this is a Spot Instance.</p>
+     * <p>Indicates whether this is a Spot instance.</p>
      */
     inline void SetInstanceLifecycle(InstanceLifecycleType&& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
-     * <p>Indicates whether this is a Spot Instance.</p>
+     * <p>Indicates whether this is a Spot instance.</p>
      */
     inline Instance& WithInstanceLifecycle(const InstanceLifecycleType& value) { SetInstanceLifecycle(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a Spot Instance.</p>
+     * <p>Indicates whether this is a Spot instance.</p>
      */
     inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline Instance& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline Instance& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token you provided when you launched the instance.</p>
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
      */
     inline Instance& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -1151,27 +1172,27 @@ namespace Model
     inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The IAM instance profile associated with the instance.</p>
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
     inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM instance profile associated with the instance.</p>
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
     inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM instance profile associated with the instance.</p>
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
     inline void SetIamInstanceProfile(IamInstanceProfile&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM instance profile associated with the instance.</p>
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
     inline Instance& WithIamInstanceProfile(const IamInstanceProfile& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM instance profile associated with the instance.</p>
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
     inline Instance& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(value); return *this;}
 

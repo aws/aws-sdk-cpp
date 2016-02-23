@@ -1,0 +1,63 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/route53/model/TagResourceType.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+static const int healthcheck_HASH = HashingUtils::HashString("healthcheck");
+static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
+
+namespace Aws
+{
+namespace Route53
+{
+namespace Model
+{
+namespace TagResourceTypeMapper
+{
+TagResourceType GetTagResourceTypeForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+
+  if (hashCode == healthcheck_HASH)
+  {
+    return TagResourceType::healthcheck;
+  }
+  else if (hashCode == hostedzone_HASH)
+  {
+    return TagResourceType::hostedzone;
+  }
+
+  return TagResourceType::NOT_SET;
+}
+
+Aws::String GetNameForTagResourceType(TagResourceType value)
+{
+  switch(value)
+  {
+  case TagResourceType::healthcheck:
+    return "healthcheck";
+  case TagResourceType::hostedzone:
+    return "hostedzone";
+  default:
+    return "";
+  }
+}
+
+} // namespace TagResourceTypeMapper
+} // namespace Model
+} // namespace Route53
+} // namespace Aws

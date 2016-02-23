@@ -112,7 +112,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
@@ -122,7 +122,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline void SetLogins(const Aws::Map<Aws::String, Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
@@ -132,7 +132,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
@@ -142,7 +142,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
@@ -152,7 +152,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(value); return *this;}
@@ -162,7 +162,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -172,7 +172,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -182,7 +182,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -192,7 +192,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -202,7 +202,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -212,7 +212,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
@@ -222,7 +222,7 @@ namespace Model
      * tokens.</p> <p>The available provider names for <code>Logins</code> are as
      * follows: <ul> <li>Facebook: <code>graph.facebook.com</code> </li> <li>Google:
      * <code>accounts.google.com</code> </li> <li>Amazon: <code>www.amazon.com</code>
-     * </li> <li>Twitter: <code>www.twitter.com</code> </li> <li>Digits:
+     * </li> <li>Twitter: <code>api.twitter.com</code> </li> <li>Digits:
      * <code>www.digits.com</code> </li> </ul> </p>
      */
     inline GetIdRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }

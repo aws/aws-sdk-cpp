@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -93,15 +93,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -113,15 +114,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -133,15 +135,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -153,15 +156,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -173,15 +177,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline StateReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -193,15 +198,16 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline StateReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
      * <p>The message for the state change.</p> <ul>
-     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot Instance was
+     * <li><p><code>Server.SpotInstanceTermination</code>: A Spot instance was
      * terminated due to an increase in the market price.</p></li>
      * <li><p><code>Server.InternalError</code>: An internal error occurred during
      * instance launch, resulting in termination.</p></li>
@@ -213,8 +219,9 @@ namespace Model
      * using the <code>shutdown -h</code> command from the instance.</p></li>
      * <li><p><code>Client.UserInitiatedShutdown</code>: The instance was shut down
      * using the Amazon EC2 API.</p></li>
-     * <li><p><code>Client.VolumeLimitExceeded</code>: The volume limit was
-     * exceeded.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
+     * <li><p><code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS
+     * volumes or total storage was exceeded. Decrease usage or request an increase in
+     * your limits.</p></li> <li><p><code>Client.InvalidSnapshot.NotFound</code>: The
      * specified snapshot was not found.</p></li> </ul>
      */
     inline StateReason& WithMessage(const char* value) { SetMessage(value); return *this;}

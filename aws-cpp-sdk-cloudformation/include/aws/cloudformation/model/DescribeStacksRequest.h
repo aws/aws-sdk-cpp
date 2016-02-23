@@ -98,37 +98,44 @@ namespace Model
     inline DescribeStacksRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline DescribeStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline DescribeStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * String that identifies the start of the next list of stacks, if there is one.
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline DescribeStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

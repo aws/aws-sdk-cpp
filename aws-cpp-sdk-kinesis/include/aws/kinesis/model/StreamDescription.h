@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output for <code>DescribeStream</code>.</p>
+   * <p>Represents the output for <a>DescribeStream</a>.</p>
    */
   class AWS_KINESIS_API StreamDescription
   {
@@ -247,6 +247,21 @@ namespace Model
      */
     inline StreamDescription& WithHasMoreShards(bool value) { SetHasMoreShards(value); return *this;}
 
+    /**
+     * <p>The current retention period, in hours.</p>
+     */
+    inline long GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+
+    /**
+     * <p>The current retention period, in hours.</p>
+     */
+    inline void SetRetentionPeriodHours(long value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
+
+    /**
+     * <p>The current retention period, in hours.</p>
+     */
+    inline StreamDescription& WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
+
   private:
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
@@ -258,6 +273,8 @@ namespace Model
     bool m_shardsHasBeenSet;
     bool m_hasMoreShards;
     bool m_hasMoreShardsHasBeenSet;
+    long m_retentionPeriodHours;
+    bool m_retentionPeriodHoursHasBeenSet;
   };
 
 } // namespace Model

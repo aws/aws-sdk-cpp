@@ -108,43 +108,43 @@ namespace Model
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline const Aws::Vector<InstancesHealthAttribute>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline void SetAttributeNames(const Aws::Vector<InstancesHealthAttribute>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline void SetAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& WithAttributeNames(const Aws::Vector<InstancesHealthAttribute>& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& WithAttributeNames(Aws::Vector<InstancesHealthAttribute>&& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& AddAttributeNames(const InstancesHealthAttribute& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns a list of instances.</p>
      */
     inline DescribeInstancesHealthRequest& AddAttributeNames(InstancesHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 

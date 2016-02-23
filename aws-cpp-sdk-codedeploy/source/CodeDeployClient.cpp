@@ -27,7 +27,9 @@
 #include <aws/codedeploy/CodeDeployEndpoint.h>
 #include <aws/codedeploy/CodeDeployErrorMarshaller.h>
 #include <aws/codedeploy/model/AddTagsToOnPremisesInstancesRequest.h>
+#include <aws/codedeploy/model/BatchGetApplicationRevisionsRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationsRequest.h>
+#include <aws/codedeploy/model/BatchGetDeploymentInstancesRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsRequest.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/CreateApplicationRequest.h>
@@ -152,6 +154,37 @@ void CodeDeployClient::AddTagsToOnPremisesInstancesAsyncHelper(const AddTagsToOn
   handler(this, request, AddTagsToOnPremisesInstances(request), context);
 }
 
+BatchGetApplicationRevisionsOutcome CodeDeployClient::BatchGetApplicationRevisions(const BatchGetApplicationRevisionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetApplicationRevisionsOutcome(BatchGetApplicationRevisionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetApplicationRevisionsOutcome(outcome.GetError());
+  }
+}
+
+BatchGetApplicationRevisionsOutcomeCallable CodeDeployClient::BatchGetApplicationRevisionsCallable(const BatchGetApplicationRevisionsRequest& request) const
+{
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetApplicationRevisions, this, request);
+}
+
+void CodeDeployClient::BatchGetApplicationRevisionsAsync(const BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeDeployClient::BatchGetApplicationRevisionsAsyncHelper, this, request, handler, context);
+}
+
+void CodeDeployClient::BatchGetApplicationRevisionsAsyncHelper(const BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetApplicationRevisions(request), context);
+}
+
 BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
 {
   Aws::StringStream ss;
@@ -181,6 +214,37 @@ void CodeDeployClient::BatchGetApplicationsAsync(const BatchGetApplicationsReque
 void CodeDeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetApplications(request), context);
+}
+
+BatchGetDeploymentInstancesOutcome CodeDeployClient::BatchGetDeploymentInstances(const BatchGetDeploymentInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetDeploymentInstancesOutcome(BatchGetDeploymentInstancesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetDeploymentInstancesOutcome(outcome.GetError());
+  }
+}
+
+BatchGetDeploymentInstancesOutcomeCallable CodeDeployClient::BatchGetDeploymentInstancesCallable(const BatchGetDeploymentInstancesRequest& request) const
+{
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetDeploymentInstances, this, request);
+}
+
+void CodeDeployClient::BatchGetDeploymentInstancesAsync(const BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeDeployClient::BatchGetDeploymentInstancesAsyncHelper, this, request, handler, context);
+}
+
+void CodeDeployClient::BatchGetDeploymentInstancesAsyncHelper(const BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetDeploymentInstances(request), context);
 }
 
 BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const

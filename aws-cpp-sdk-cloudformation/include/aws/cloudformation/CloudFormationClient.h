@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/cloudformation/model/ContinueUpdateRollbackResult.h>
 #include <aws/cloudformation/model/CreateStackResult.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
@@ -81,6 +82,7 @@ namespace CloudFormation
 namespace Model
 {
         class CancelUpdateStackRequest;
+        class ContinueUpdateRollbackRequest;
         class CreateStackRequest;
         class DeleteStackRequest;
         class DescribeAccountLimitsRequest;
@@ -100,6 +102,7 @@ namespace Model
         class ValidateTemplateRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
+        typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, Aws::Client::AWSError<CloudFormationErrors>> ContinueUpdateRollbackOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
@@ -119,6 +122,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ValidateTemplateResult, Aws::Client::AWSError<CloudFormationErrors>> ValidateTemplateOutcome;
 
         typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
+        typedef std::future<ContinueUpdateRollbackOutcome> ContinueUpdateRollbackOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
@@ -141,6 +145,7 @@ namespace Model
   class CloudFormationClient;
 
     typedef std::function<void(const CloudFormationClient*, const Model::CancelUpdateStackRequest&, const Model::CancelUpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelUpdateStackResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ContinueUpdateRollbackRequest&, const Model::ContinueUpdateRollbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContinueUpdateRollbackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
@@ -175,7 +180,7 @@ namespace Model
    * Page</a>.</p> <p>Amazon CloudFormation makes use of other AWS products. If you
    * need additional technical information about a specific AWS product, you can find
    * the product's technical documentation at <a
-   * href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.</p>
+   * href="http://docs.aws.amazon.com/documentation/">http://docs.aws.amazon.com/documentation/</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
   {
@@ -206,17 +211,17 @@ namespace Model
 
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
-         * the stack will roll back the update and revert to the previous stack
-         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
-         * can be canceled.</note>
+         * the stack rolls back the update and reverts to the previous stack
+         * configuration.</p> <note>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</note>
          */
         virtual Model::CancelUpdateStackOutcome CancelUpdateStack(const Model::CancelUpdateStackRequest& request) const;
 
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
-         * the stack will roll back the update and revert to the previous stack
-         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
-         * can be canceled.</note>
+         * the stack rolls back the update and reverts to the previous stack
+         * configuration.</p> <note>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -224,13 +229,71 @@ namespace Model
 
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
-         * the stack will roll back the update and revert to the previous stack
-         * configuration.</p> <note>Only stacks that are in the UPDATE_IN_PROGRESS state
-         * can be canceled.</note>
+         * the stack rolls back the update and reverts to the previous stack
+         * configuration.</p> <note>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelUpdateStackAsync(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state. Depending on the cause of the failure, you can manually <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+         * fix the error</a> and continue the rollback. By continuing the rollback, you can
+         * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state), return the stack to its original settings, and then try to update the
+         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state when AWS CloudFormation cannot roll back all changes after a failed stack
+         * update. For example, you might have a stack that is rolling back to an old
+         * database instance that was deleted outside of AWS CloudFormation. Because AWS
+         * CloudFormation doesn't know the database was deleted, it assumes that the
+         * database instance still exists and attempts to roll back to it, causing the
+         * update rollback to fail.</p>
+         */
+        virtual Model::ContinueUpdateRollbackOutcome ContinueUpdateRollback(const Model::ContinueUpdateRollbackRequest& request) const;
+
+        /**
+         * <p>For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state. Depending on the cause of the failure, you can manually <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+         * fix the error</a> and continue the rollback. By continuing the rollback, you can
+         * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state), return the stack to its original settings, and then try to update the
+         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state when AWS CloudFormation cannot roll back all changes after a failed stack
+         * update. For example, you might have a stack that is rolling back to an old
+         * database instance that was deleted outside of AWS CloudFormation. Because AWS
+         * CloudFormation doesn't know the database was deleted, it assumes that the
+         * database instance still exists and attempts to roll back to it, causing the
+         * update rollback to fail.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ContinueUpdateRollbackOutcomeCallable ContinueUpdateRollbackCallable(const Model::ContinueUpdateRollbackRequest& request) const;
+
+        /**
+         * <p>For a specified stack that is in the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state. Depending on the cause of the failure, you can manually <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+         * fix the error</a> and continue the rollback. By continuing the rollback, you can
+         * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
+         * state), return the stack to its original settings, and then try to update the
+         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
+         * state when AWS CloudFormation cannot roll back all changes after a failed stack
+         * update. For example, you might have a stack that is rolling back to an old
+         * database instance that was deleted outside of AWS CloudFormation. Because AWS
+         * CloudFormation doesn't know the database was deleted, it assumes that the
+         * database instance still exists and attempts to roll back to it, causing the
+         * update rollback to fail.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ContinueUpdateRollbackAsync(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a stack as specified in the template. After the call completes
@@ -283,19 +346,22 @@ namespace Model
         virtual void DeleteStackAsync(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
+         * number of stacks that you can create in your account.</p>
          */
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
+         * number of stacks that you can create in your account.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * 
+         * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
+         * number of stacks that you can create in your account.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -374,7 +440,7 @@ namespace Model
          * <code>LogicalResourceId</code> to filter the returned result. For more
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
          * <code>PhysicalResourceId</code> in the same request.</note>
@@ -395,7 +461,7 @@ namespace Model
          * <code>LogicalResourceId</code> to filter the returned result. For more
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
          * <code>PhysicalResourceId</code> in the same request.</note>
@@ -418,7 +484,7 @@ namespace Model
          * <code>LogicalResourceId</code> to filter the returned result. For more
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
          * CloudFormation User Guide</a>.</p> <note>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
          * <code>PhysicalResourceId</code> in the same request.</note>
@@ -747,6 +813,7 @@ namespace Model
 
         /**Async helpers**/
         void CancelUpdateStackAsyncHelper(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ContinueUpdateRollbackAsyncHelper(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

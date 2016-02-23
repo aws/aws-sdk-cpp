@@ -30,6 +30,7 @@ namespace Model
     role,
     aws_managed,
     user_managed,
+    resource,
     none
   };
 

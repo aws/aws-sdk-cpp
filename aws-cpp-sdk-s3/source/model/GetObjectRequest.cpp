@@ -59,51 +59,51 @@ void GetObjectRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_responseCacheControlHasBeenSet)
     {
-     ss << m_responseCacheControl;
-     uri.AddQueryStringParameter("response-cache-control", ss.str());
-     ss.str("");
+      ss << m_responseCacheControl;
+      uri.AddQueryStringParameter("response-cache-control", ss.str());
+      ss.str("");
     }
 
     if(m_responseContentDispositionHasBeenSet)
     {
-     ss << m_responseContentDisposition;
-     uri.AddQueryStringParameter("response-content-disposition", ss.str());
-     ss.str("");
+      ss << m_responseContentDisposition;
+      uri.AddQueryStringParameter("response-content-disposition", ss.str());
+      ss.str("");
     }
 
     if(m_responseContentEncodingHasBeenSet)
     {
-     ss << m_responseContentEncoding;
-     uri.AddQueryStringParameter("response-content-encoding", ss.str());
-     ss.str("");
+      ss << m_responseContentEncoding;
+      uri.AddQueryStringParameter("response-content-encoding", ss.str());
+      ss.str("");
     }
 
     if(m_responseContentLanguageHasBeenSet)
     {
-     ss << m_responseContentLanguage;
-     uri.AddQueryStringParameter("response-content-language", ss.str());
-     ss.str("");
+      ss << m_responseContentLanguage;
+      uri.AddQueryStringParameter("response-content-language", ss.str());
+      ss.str("");
     }
 
     if(m_responseContentTypeHasBeenSet)
     {
-     ss << m_responseContentType;
-     uri.AddQueryStringParameter("response-content-type", ss.str());
-     ss.str("");
+      ss << m_responseContentType;
+      uri.AddQueryStringParameter("response-content-type", ss.str());
+      ss.str("");
     }
 
     if(m_responseExpiresHasBeenSet)
     {
-     ss << m_responseExpires;
-     uri.AddQueryStringParameter("response-expires", ss.str());
-     ss.str("");
+      ss << m_responseExpires;
+      uri.AddQueryStringParameter("response-expires", ss.str());
+      ss.str("");
     }
 
     if(m_versionIdHasBeenSet)
     {
-     ss << m_versionId;
-     uri.AddQueryStringParameter("versionId", ss.str());
-     ss.str("");
+      ss << m_versionId;
+      uri.AddQueryStringParameter("versionId", ss.str());
+      ss.str("");
     }
 
 }

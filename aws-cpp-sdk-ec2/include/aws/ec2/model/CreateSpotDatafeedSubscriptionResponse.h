@@ -44,27 +44,27 @@ namespace Model
     CreateSpotDatafeedSubscriptionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The Spot Instance data feed subscription.</p>
+     * <p>The Spot instance data feed subscription.</p>
      */
     inline const SpotDatafeedSubscription& GetSpotDatafeedSubscription() const{ return m_spotDatafeedSubscription; }
 
     /**
-     * <p>The Spot Instance data feed subscription.</p>
+     * <p>The Spot instance data feed subscription.</p>
      */
     inline void SetSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { m_spotDatafeedSubscription = value; }
 
     /**
-     * <p>The Spot Instance data feed subscription.</p>
+     * <p>The Spot instance data feed subscription.</p>
      */
     inline void SetSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { m_spotDatafeedSubscription = value; }
 
     /**
-     * <p>The Spot Instance data feed subscription.</p>
+     * <p>The Spot instance data feed subscription.</p>
      */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(const SpotDatafeedSubscription& value) { SetSpotDatafeedSubscription(value); return *this;}
 
     /**
-     * <p>The Spot Instance data feed subscription.</p>
+     * <p>The Spot instance data feed subscription.</p>
      */
     inline CreateSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { SetSpotDatafeedSubscription(value); return *this;}
 

@@ -27,6 +27,7 @@ Origin::Origin() :
     m_idHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
 {
@@ -36,6 +37,7 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_idHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_originPathHasBeenSet(false),
+    m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
     m_customOriginConfigHasBeenSet(false)
 {
@@ -65,6 +67,12 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     {
       m_originPath = StringUtils::Trim(originPathNode.GetText().c_str());
       m_originPathHasBeenSet = true;
+    }
+    XmlNode customHeadersNode = resultNode.FirstChild("CustomHeaders");
+    if(!customHeadersNode.IsNull())
+    {
+      m_customHeaders = customHeadersNode;
+      m_customHeadersHasBeenSet = true;
     }
     XmlNode s3OriginConfigNode = resultNode.FirstChild("S3OriginConfig");
     if(!s3OriginConfigNode.IsNull())
@@ -102,6 +110,12 @@ void Origin::AddToNode(XmlNode& parentNode) const
   {
    XmlNode originPathNode = parentNode.CreateChildElement("OriginPath");
    originPathNode.SetText(m_originPath);
+  }
+
+  if(m_customHeadersHasBeenSet)
+  {
+   XmlNode customHeadersNode = parentNode.CreateChildElement("CustomHeaders");
+   m_customHeaders.AddToNode(customHeadersNode);
   }
 
   if(m_s3OriginConfigHasBeenSet)

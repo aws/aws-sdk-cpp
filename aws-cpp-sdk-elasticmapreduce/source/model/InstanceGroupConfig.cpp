@@ -29,7 +29,8 @@ InstanceGroupConfig::InstanceGroupConfig() :
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_ebsConfigurationHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ InstanceGroupConfig::InstanceGroupConfig(const JsonValue& jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_configurationsHasBeenSet(false)
+    m_configurationsHasBeenSet(false),
+    m_ebsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ InstanceGroupConfig& InstanceGroupConfig::operator =(const JsonValue& jsonValue)
     m_configurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EbsConfiguration"))
+  {
+    m_ebsConfiguration = jsonValue.GetObject("EbsConfiguration");
+
+    m_ebsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue InstanceGroupConfig::Jsonize() const
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
    }
    payload.WithArray("Configurations", std::move(configurationsJsonList));
+
+  }
+
+  if(m_ebsConfigurationHasBeenSet)
+  {
+   payload.WithObject("EbsConfiguration", m_ebsConfiguration.Jsonize());
 
   }
 

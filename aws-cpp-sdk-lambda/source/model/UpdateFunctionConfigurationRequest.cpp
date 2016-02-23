@@ -29,7 +29,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
-    m_memorySizeHasBeenSet(false)
+    m_memorySizeHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_memorySizeHasBeenSet)
   {
    payload.WithInteger("MemorySize", m_memorySize);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 
