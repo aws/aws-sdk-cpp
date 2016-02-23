@@ -61,7 +61,7 @@ VerificationStatus GetVerificationStatusForName(const Aws::String& name)
 
 Aws::String GetNameForVerificationStatus(VerificationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VerificationStatus::Pending:
     return "Pending";

@@ -86,7 +86,7 @@ WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
 
 Aws::String GetNameForWorkspaceState(WorkspaceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkspaceState::PENDING:
     return "PENDING";

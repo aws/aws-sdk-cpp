@@ -46,7 +46,7 @@ TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
 
 Aws::String GetNameForTransitionStorageClass(TransitionStorageClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TransitionStorageClass::GLACIER:
     return "GLACIER";

@@ -51,7 +51,7 @@ PriceClass GetPriceClassForName(const Aws::String& name)
 
 Aws::String GetNameForPriceClass(PriceClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PriceClass::PriceClass_100:
     return "PriceClass_100";

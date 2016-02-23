@@ -86,7 +86,7 @@ RRType GetRRTypeForName(const Aws::String& name)
 
 Aws::String GetNameForRRType(RRType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RRType::SOA:
     return "SOA";

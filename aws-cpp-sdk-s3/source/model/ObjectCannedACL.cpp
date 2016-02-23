@@ -71,7 +71,7 @@ ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name)
 
 Aws::String GetNameForObjectCannedACL(ObjectCannedACL enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ObjectCannedACL::private_:
     return "private";

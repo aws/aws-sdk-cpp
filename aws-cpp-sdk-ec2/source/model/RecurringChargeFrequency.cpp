@@ -41,7 +41,7 @@ RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& n
 
 Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RecurringChargeFrequency::Hourly:
     return "Hourly";

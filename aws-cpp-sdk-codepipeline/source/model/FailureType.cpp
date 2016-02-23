@@ -66,7 +66,7 @@ FailureType GetFailureTypeForName(const Aws::String& name)
 
 Aws::String GetNameForFailureType(FailureType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FailureType::JobFailed:
     return "JobFailed";

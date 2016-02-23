@@ -46,7 +46,7 @@ VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeAttributeName(VolumeAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeAttributeName::autoEnableIO:
     return "autoEnableIO";

@@ -46,7 +46,7 @@ RuleAction GetRuleActionForName(const Aws::String& name)
 
 Aws::String GetNameForRuleAction(RuleAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RuleAction::allow:
     return "allow";

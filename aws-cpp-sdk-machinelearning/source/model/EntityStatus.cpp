@@ -61,7 +61,7 @@ EntityStatus GetEntityStatusForName(const Aws::String& name)
 
 Aws::String GetNameForEntityStatus(EntityStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EntityStatus::PENDING:
     return "PENDING";

@@ -51,7 +51,7 @@ ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
 
 Aws::String GetNameForChangeTokenStatus(ChangeTokenStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChangeTokenStatus::PROVISIONED:
     return "PROVISIONED";

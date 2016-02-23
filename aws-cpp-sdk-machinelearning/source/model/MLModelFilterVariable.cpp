@@ -86,7 +86,7 @@ MLModelFilterVariable GetMLModelFilterVariableForName(const Aws::String& name)
 
 Aws::String GetNameForMLModelFilterVariable(MLModelFilterVariable enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MLModelFilterVariable::CreatedAt:
     return "CreatedAt";

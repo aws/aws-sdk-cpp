@@ -41,7 +41,7 @@ StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aw
 
 Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED:
     return "ASSUME_ROLE_FAILED";

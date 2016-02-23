@@ -81,7 +81,7 @@ GrantOperation GetGrantOperationForName(const Aws::String& name)
 
 Aws::String GetNameForGrantOperation(GrantOperation enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case GrantOperation::Decrypt:
     return "Decrypt";

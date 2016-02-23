@@ -56,7 +56,7 @@ State GetStateForName(const Aws::String& name)
 
 Aws::String GetNameForState(State enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case State::Pending:
     return "Pending";

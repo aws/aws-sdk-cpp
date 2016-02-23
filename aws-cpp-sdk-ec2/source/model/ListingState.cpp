@@ -56,7 +56,7 @@ ListingState GetListingStateForName(const Aws::String& name)
 
 Aws::String GetNameForListingState(ListingState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ListingState::available:
     return "available";

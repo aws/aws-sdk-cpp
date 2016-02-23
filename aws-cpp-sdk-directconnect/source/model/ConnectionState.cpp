@@ -76,7 +76,7 @@ ConnectionState GetConnectionStateForName(const Aws::String& name)
 
 Aws::String GetNameForConnectionState(ConnectionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConnectionState::ordering:
     return "ordering";

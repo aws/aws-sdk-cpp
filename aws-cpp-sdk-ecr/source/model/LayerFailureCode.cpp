@@ -46,7 +46,7 @@ LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
 
 Aws::String GetNameForLayerFailureCode(LayerFailureCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LayerFailureCode::InvalidLayerDigest:
     return "InvalidLayerDigest";

@@ -41,7 +41,7 @@ VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)
 
 Aws::String GetNameForVpnStaticRouteSource(VpnStaticRouteSource enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpnStaticRouteSource::Static:
     return "Static";

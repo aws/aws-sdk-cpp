@@ -41,7 +41,7 @@ TrustType GetTrustTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTrustType(TrustType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TrustType::Forest:
     return "Forest";

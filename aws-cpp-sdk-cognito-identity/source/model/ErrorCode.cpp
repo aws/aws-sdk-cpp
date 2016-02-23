@@ -46,7 +46,7 @@ ErrorCode GetErrorCodeForName(const Aws::String& name)
 
 Aws::String GetNameForErrorCode(ErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ErrorCode::AccessDenied:
     return "AccessDenied";

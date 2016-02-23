@@ -61,7 +61,7 @@ ContactType GetContactTypeForName(const Aws::String& name)
 
 Aws::String GetNameForContactType(ContactType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContactType::PERSON:
     return "PERSON";

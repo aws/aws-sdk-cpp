@@ -56,7 +56,7 @@ Select GetSelectForName(const Aws::String& name)
 
 Aws::String GetNameForSelect(Select enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Select::ALL_ATTRIBUTES:
     return "ALL_ATTRIBUTES";

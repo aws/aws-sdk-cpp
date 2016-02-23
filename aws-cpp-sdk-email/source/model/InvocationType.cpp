@@ -46,7 +46,7 @@ InvocationType GetInvocationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForInvocationType(InvocationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InvocationType::Event:
     return "Event";

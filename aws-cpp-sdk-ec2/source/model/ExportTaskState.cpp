@@ -56,7 +56,7 @@ ExportTaskState GetExportTaskStateForName(const Aws::String& name)
 
 Aws::String GetNameForExportTaskState(ExportTaskState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExportTaskState::active:
     return "active";

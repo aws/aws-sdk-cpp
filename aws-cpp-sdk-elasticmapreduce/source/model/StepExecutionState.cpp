@@ -71,7 +71,7 @@ StepExecutionState GetStepExecutionStateForName(const Aws::String& name)
 
 Aws::String GetNameForStepExecutionState(StepExecutionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StepExecutionState::PENDING:
     return "PENDING";

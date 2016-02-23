@@ -56,7 +56,7 @@ ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name)
 
 Aws::String GetNameForReservedInstanceState(ReservedInstanceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReservedInstanceState::payment_pending:
     return "payment-pending";

@@ -51,7 +51,7 @@ Status GetStatusForName(const Aws::String& name)
 
 Aws::String GetNameForStatus(Status enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Status::MoveInProgress:
     return "MoveInProgress";

@@ -46,7 +46,7 @@ KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
 
 Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyAlgorithm::RSA_2048:
     return "RSA_2048";

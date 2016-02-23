@@ -51,7 +51,7 @@ ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
 
 Aws::String GetNameForArtifactCategory(ArtifactCategory enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ArtifactCategory::SCREENSHOT:
     return "SCREENSHOT";

@@ -71,7 +71,7 @@ ExecutionResult GetExecutionResultForName(const Aws::String& name)
 
 Aws::String GetNameForExecutionResult(ExecutionResult enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExecutionResult::PENDING:
     return "PENDING";

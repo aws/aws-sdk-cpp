@@ -306,7 +306,7 @@ InstanceType GetInstanceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceType(InstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceType::t1_micro:
     return "t1.micro";

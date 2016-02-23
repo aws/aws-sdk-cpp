@@ -51,7 +51,7 @@ DesiredStatus GetDesiredStatusForName(const Aws::String& name)
 
 Aws::String GetNameForDesiredStatus(DesiredStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DesiredStatus::RUNNING:
     return "RUNNING";

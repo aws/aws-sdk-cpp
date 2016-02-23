@@ -101,7 +101,7 @@ QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForQueueAttributeName(QueueAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case QueueAttributeName::Policy:
     return "Policy";

@@ -51,7 +51,7 @@ VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeStatusInfoStatus::ok:
     return "ok";

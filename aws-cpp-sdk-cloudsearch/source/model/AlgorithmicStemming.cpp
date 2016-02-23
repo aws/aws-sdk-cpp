@@ -56,7 +56,7 @@ AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
 
 Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AlgorithmicStemming::none:
     return "none";

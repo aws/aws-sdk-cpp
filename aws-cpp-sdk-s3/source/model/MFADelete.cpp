@@ -46,7 +46,7 @@ MFADelete GetMFADeleteForName(const Aws::String& name)
 
 Aws::String GetNameForMFADelete(MFADelete enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MFADelete::Enabled:
     return "Enabled";

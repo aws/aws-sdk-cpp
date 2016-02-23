@@ -101,7 +101,7 @@ TestType GetTestTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTestType(TestType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TestType::BUILTIN_FUZZ:
     return "BUILTIN_FUZZ";

@@ -51,7 +51,7 @@ TagFilterType GetTagFilterTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTagFilterType(TagFilterType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TagFilterType::KEY_ONLY:
     return "KEY_ONLY";

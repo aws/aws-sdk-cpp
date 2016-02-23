@@ -46,7 +46,7 @@ ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
 
 Aws::String GetNameForProductCodeValues(ProductCodeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ProductCodeValues::devpay:
     return "devpay";

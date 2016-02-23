@@ -46,7 +46,7 @@ IpProtocol GetIpProtocolForName(const Aws::String& name)
 
 Aws::String GetNameForIpProtocol(IpProtocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IpProtocol::TCP:
     return "TCP";

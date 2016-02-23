@@ -56,7 +56,7 @@ Platform GetPlatformForName(const Aws::String& name)
 
 Aws::String GetNameForPlatform(Platform enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Platform::APNS:
     return "APNS";

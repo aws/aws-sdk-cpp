@@ -51,7 +51,7 @@ OptionState GetOptionStateForName(const Aws::String& name)
 
 Aws::String GetNameForOptionState(OptionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OptionState::RequiresIndexDocuments:
     return "RequiresIndexDocuments";

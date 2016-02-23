@@ -51,7 +51,7 @@ TrustDirection GetTrustDirectionForName(const Aws::String& name)
 
 Aws::String GetNameForTrustDirection(TrustDirection enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TrustDirection::One_Way_Outgoing:
     return "One-Way: Outgoing";

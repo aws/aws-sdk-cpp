@@ -46,7 +46,7 @@ ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)
 
 Aws::String GetNameForConfigRuleState(ConfigRuleState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConfigRuleState::ACTIVE:
     return "ACTIVE";

@@ -106,7 +106,7 @@ ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& nam
 
 Aws::String GetNameForESPartitionInstanceType(ESPartitionInstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ESPartitionInstanceType::m3_medium_elasticsearch:
     return "m3.medium.elasticsearch";

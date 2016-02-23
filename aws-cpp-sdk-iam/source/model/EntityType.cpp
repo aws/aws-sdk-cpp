@@ -61,7 +61,7 @@ EntityType GetEntityTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEntityType(EntityType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EntityType::User:
     return "User";

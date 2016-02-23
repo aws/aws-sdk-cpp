@@ -46,7 +46,7 @@ NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForNetworkInterfaceType(NetworkInterfaceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NetworkInterfaceType::interface:
     return "interface";

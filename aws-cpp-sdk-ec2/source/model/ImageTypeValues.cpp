@@ -51,7 +51,7 @@ ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
 
 Aws::String GetNameForImageTypeValues(ImageTypeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageTypeValues::machine:
     return "machine";

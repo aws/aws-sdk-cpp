@@ -46,7 +46,7 @@ Affinity GetAffinityForName(const Aws::String& name)
 
 Aws::String GetNameForAffinity(Affinity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Affinity::default_:
     return "default";

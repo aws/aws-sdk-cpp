@@ -51,7 +51,7 @@ Fault GetFaultForName(const Aws::String& name)
 
 Aws::String GetNameForFault(Fault enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Fault::Client:
     return "Client";

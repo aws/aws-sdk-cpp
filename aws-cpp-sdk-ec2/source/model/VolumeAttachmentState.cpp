@@ -56,7 +56,7 @@ VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeAttachmentState(VolumeAttachmentState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeAttachmentState::attaching:
     return "attaching";

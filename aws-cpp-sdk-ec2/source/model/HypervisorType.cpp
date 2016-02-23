@@ -46,7 +46,7 @@ HypervisorType GetHypervisorTypeForName(const Aws::String& name)
 
 Aws::String GetNameForHypervisorType(HypervisorType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case HypervisorType::ovm:
     return "ovm";

@@ -41,7 +41,7 @@ ContainerFormat GetContainerFormatForName(const Aws::String& name)
 
 Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContainerFormat::ova:
     return "ova";

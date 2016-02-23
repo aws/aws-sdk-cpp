@@ -126,7 +126,7 @@ DataSetType GetDataSetTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDataSetType(DataSetType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DataSetType::customer_subscriber_hourly_monthly_subscriptions:
     return "customer_subscriber_hourly_monthly_subscriptions";

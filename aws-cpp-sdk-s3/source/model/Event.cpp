@@ -81,7 +81,7 @@ Event GetEventForName(const Aws::String& name)
 
 Aws::String GetNameForEvent(Event enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Event::s3_ReducedRedundancyLostObject:
     return "s3:ReducedRedundancyLostObject";

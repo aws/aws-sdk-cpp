@@ -46,7 +46,7 @@ RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)
 
 Aws::String GetNameForRoutingStrategyType(RoutingStrategyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RoutingStrategyType::SIMPLE:
     return "SIMPLE";

@@ -66,7 +66,7 @@ VolumeState GetVolumeStateForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeState(VolumeState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeState::creating:
     return "creating";

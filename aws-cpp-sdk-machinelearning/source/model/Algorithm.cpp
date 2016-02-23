@@ -41,7 +41,7 @@ Algorithm GetAlgorithmForName(const Aws::String& name)
 
 Aws::String GetNameForAlgorithm(Algorithm enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Algorithm::sgd:
     return "sgd";

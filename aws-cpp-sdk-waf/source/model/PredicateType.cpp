@@ -56,7 +56,7 @@ PredicateType GetPredicateTypeForName(const Aws::String& name)
 
 Aws::String GetNameForPredicateType(PredicateType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PredicateType::IPMatch:
     return "IPMatch";

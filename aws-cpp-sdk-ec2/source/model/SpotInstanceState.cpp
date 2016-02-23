@@ -61,7 +61,7 @@ SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
 
 Aws::String GetNameForSpotInstanceState(SpotInstanceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SpotInstanceState::open:
     return "open";

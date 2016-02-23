@@ -61,7 +61,7 @@ ActionCategory GetActionCategoryForName(const Aws::String& name)
 
 Aws::String GetNameForActionCategory(ActionCategory enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionCategory::Source:
     return "Source";

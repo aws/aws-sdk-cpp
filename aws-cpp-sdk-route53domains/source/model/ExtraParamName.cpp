@@ -136,7 +136,7 @@ ExtraParamName GetExtraParamNameForName(const Aws::String& name)
 
 Aws::String GetNameForExtraParamName(ExtraParamName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExtraParamName::DUNS_NUMBER:
     return "DUNS_NUMBER";

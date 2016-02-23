@@ -46,7 +46,7 @@ TlsPolicy GetTlsPolicyForName(const Aws::String& name)
 
 Aws::String GetNameForTlsPolicy(TlsPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TlsPolicy::Require:
     return "Require";

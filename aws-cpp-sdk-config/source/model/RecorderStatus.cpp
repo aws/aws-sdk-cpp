@@ -51,7 +51,7 @@ RecorderStatus GetRecorderStatusForName(const Aws::String& name)
 
 Aws::String GetNameForRecorderStatus(RecorderStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RecorderStatus::Pending:
     return "Pending";

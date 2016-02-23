@@ -51,7 +51,7 @@ BundleType GetBundleTypeForName(const Aws::String& name)
 
 Aws::String GetNameForBundleType(BundleType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BundleType::tar:
     return "tar";

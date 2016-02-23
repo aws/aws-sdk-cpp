@@ -61,7 +61,7 @@ CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aw
 
 Aws::String GetNameForCancelSpotInstanceRequestState(CancelSpotInstanceRequestState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CancelSpotInstanceRequestState::active:
     return "active";

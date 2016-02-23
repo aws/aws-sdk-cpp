@@ -81,7 +81,7 @@ FleetStatus GetFleetStatusForName(const Aws::String& name)
 
 Aws::String GetNameForFleetStatus(FleetStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FleetStatus::NEW_:
     return "NEW";

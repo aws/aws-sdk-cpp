@@ -56,7 +56,7 @@ ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
 
 Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReplicationStatus::COMPLETE:
     return "COMPLETE";

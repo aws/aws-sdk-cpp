@@ -61,7 +61,7 @@ ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
 
 Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExecutionStatus::PENDING:
     return "PENDING";

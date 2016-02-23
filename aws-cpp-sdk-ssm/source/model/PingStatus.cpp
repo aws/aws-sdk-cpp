@@ -51,7 +51,7 @@ PingStatus GetPingStatusForName(const Aws::String& name)
 
 Aws::String GetNameForPingStatus(PingStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PingStatus::Online:
     return "Online";

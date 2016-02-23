@@ -51,7 +51,7 @@ ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
 
 Aws::String GetNameForExportEnvironment(ExportEnvironment enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExportEnvironment::citrix:
     return "citrix";

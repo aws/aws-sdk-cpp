@@ -46,7 +46,7 @@ DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
 
 Aws::String GetNameForDetailsAttributes(DetailsAttributes enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DetailsAttributes::PredictiveModelType:
     return "PredictiveModelType";

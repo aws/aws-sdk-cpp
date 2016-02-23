@@ -71,7 +71,7 @@ ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::S
 
 Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ClusterStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

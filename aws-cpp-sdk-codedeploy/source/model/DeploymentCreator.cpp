@@ -46,7 +46,7 @@ DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
 
 Aws::String GetNameForDeploymentCreator(DeploymentCreator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentCreator::user:
     return "user";

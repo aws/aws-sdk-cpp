@@ -46,7 +46,7 @@ StageTransitionType GetStageTransitionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForStageTransitionType(StageTransitionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StageTransitionType::Inbound:
     return "Inbound";

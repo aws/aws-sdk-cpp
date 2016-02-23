@@ -46,7 +46,7 @@ RouteState GetRouteStateForName(const Aws::String& name)
 
 Aws::String GetNameForRouteState(RouteState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RouteState::active:
     return "active";

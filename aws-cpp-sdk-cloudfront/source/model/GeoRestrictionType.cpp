@@ -51,7 +51,7 @@ GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForGeoRestrictionType(GeoRestrictionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case GeoRestrictionType::blacklist:
     return "blacklist";

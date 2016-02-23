@@ -66,7 +66,7 @@ InstanceStatus GetInstanceStatusForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceStatus(InstanceStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceStatus::Pending:
     return "Pending";

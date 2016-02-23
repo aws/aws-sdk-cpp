@@ -41,7 +41,7 @@ StatusName GetStatusNameForName(const Aws::String& name)
 
 Aws::String GetNameForStatusName(StatusName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusName::reachability:
     return "reachability";

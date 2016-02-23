@@ -41,7 +41,7 @@ GatewayType GetGatewayTypeForName(const Aws::String& name)
 
 Aws::String GetNameForGatewayType(GatewayType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case GatewayType::ipsec_1:
     return "ipsec.1";

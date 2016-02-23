@@ -61,7 +61,7 @@ SummaryStatus GetSummaryStatusForName(const Aws::String& name)
 
 Aws::String GetNameForSummaryStatus(SummaryStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SummaryStatus::ok:
     return "ok";

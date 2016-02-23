@@ -41,7 +41,7 @@ PermissionGroup GetPermissionGroupForName(const Aws::String& name)
 
 Aws::String GetNameForPermissionGroup(PermissionGroup enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PermissionGroup::all:
     return "all";

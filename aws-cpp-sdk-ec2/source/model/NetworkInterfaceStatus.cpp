@@ -56,7 +56,7 @@ NetworkInterfaceStatus GetNetworkInterfaceStatusForName(const Aws::String& name)
 
 Aws::String GetNameForNetworkInterfaceStatus(NetworkInterfaceStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NetworkInterfaceStatus::available:
     return "available";

@@ -56,7 +56,7 @@ EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)
 
 Aws::String GetNameForEnvironmentHealth(EnvironmentHealth enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentHealth::Green:
     return "Green";

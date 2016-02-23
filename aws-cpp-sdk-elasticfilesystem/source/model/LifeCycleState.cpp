@@ -56,7 +56,7 @@ LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
 
 Aws::String GetNameForLifeCycleState(LifeCycleState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifeCycleState::creating:
     return "creating";

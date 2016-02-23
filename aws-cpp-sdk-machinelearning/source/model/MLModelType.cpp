@@ -51,7 +51,7 @@ MLModelType GetMLModelTypeForName(const Aws::String& name)
 
 Aws::String GetNameForMLModelType(MLModelType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MLModelType::REGRESSION:
     return "REGRESSION";

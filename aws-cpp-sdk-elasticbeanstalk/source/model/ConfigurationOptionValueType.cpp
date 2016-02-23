@@ -46,7 +46,7 @@ ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::S
 
 Aws::String GetNameForConfigurationOptionValueType(ConfigurationOptionValueType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConfigurationOptionValueType::Scalar:
     return "Scalar";

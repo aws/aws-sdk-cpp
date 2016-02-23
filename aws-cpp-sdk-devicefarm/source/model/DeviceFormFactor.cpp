@@ -46,7 +46,7 @@ DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
 
 Aws::String GetNameForDeviceFormFactor(DeviceFormFactor enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeviceFormFactor::PHONE:
     return "PHONE";

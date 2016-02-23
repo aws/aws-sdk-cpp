@@ -46,7 +46,7 @@ PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::Str
 
 Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlayerSessionCreationPolicy::ACCEPT_ALL:
     return "ACCEPT_ALL";

@@ -46,7 +46,7 @@ ChangeStatus GetChangeStatusForName(const Aws::String& name)
 
 Aws::String GetNameForChangeStatus(ChangeStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChangeStatus::PENDING:
     return "PENDING";

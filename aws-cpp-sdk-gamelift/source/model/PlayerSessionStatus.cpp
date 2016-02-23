@@ -56,7 +56,7 @@ PlayerSessionStatus GetPlayerSessionStatusForName(const Aws::String& name)
 
 Aws::String GetNameForPlayerSessionStatus(PlayerSessionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlayerSessionStatus::RESERVED:
     return "RESERVED";

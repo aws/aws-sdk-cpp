@@ -56,7 +56,7 @@ ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(co
 
 Aws::String GetNameForScheduleLambdaFunctionFailedCause(ScheduleLambdaFunctionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE:
     return "ID_ALREADY_IN_USE";

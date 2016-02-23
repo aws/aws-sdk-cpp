@@ -66,7 +66,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSourceType(SourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SourceType::db_instance:
     return "db-instance";

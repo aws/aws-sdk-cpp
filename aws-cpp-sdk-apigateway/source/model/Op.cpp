@@ -66,7 +66,7 @@ Op GetOpForName(const Aws::String& name)
 
 Aws::String GetNameForOp(Op enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Op::add:
     return "add";

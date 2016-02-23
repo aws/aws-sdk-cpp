@@ -46,7 +46,7 @@ MessageType GetMessageTypeForName(const Aws::String& name)
 
 Aws::String GetNameForMessageType(MessageType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MessageType::ConfigurationItemChangeNotification:
     return "ConfigurationItemChangeNotification";

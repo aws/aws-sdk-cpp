@@ -46,7 +46,7 @@ StreamingStatus GetStreamingStatusForName(const Aws::String& name)
 
 Aws::String GetNameForStreamingStatus(StreamingStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StreamingStatus::ENABLED:
     return "ENABLED";

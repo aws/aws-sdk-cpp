@@ -46,7 +46,7 @@ AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)
 
 Aws::String GetNameForAutoScalingType(AutoScalingType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AutoScalingType::load:
     return "load";

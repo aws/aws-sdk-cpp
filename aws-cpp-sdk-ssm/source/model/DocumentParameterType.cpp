@@ -46,7 +46,7 @@ DocumentParameterType GetDocumentParameterTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDocumentParameterType(DocumentParameterType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DocumentParameterType::String:
     return "String";

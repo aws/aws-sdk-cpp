@@ -56,7 +56,7 @@ NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String&
 
 Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NetworkInterfaceAttribute::description:
     return "description";

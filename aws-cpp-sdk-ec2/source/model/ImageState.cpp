@@ -71,7 +71,7 @@ ImageState GetImageStateForName(const Aws::String& name)
 
 Aws::String GetNameForImageState(ImageState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageState::pending:
     return "pending";

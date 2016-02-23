@@ -51,7 +51,7 @@ WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(cons
 
 Aws::String GetNameForWorkflowExecutionTerminatedCause(WorkflowExecutionTerminatedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED:
     return "CHILD_POLICY_APPLIED";

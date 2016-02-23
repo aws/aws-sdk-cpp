@@ -86,7 +86,7 @@ InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceGroupState(InstanceGroupState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceGroupState::PROVISIONING:
     return "PROVISIONING";

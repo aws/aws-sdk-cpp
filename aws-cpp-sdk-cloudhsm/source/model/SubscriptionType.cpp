@@ -41,7 +41,7 @@ SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSubscriptionType(SubscriptionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SubscriptionType::PRODUCTION:
     return "PRODUCTION";

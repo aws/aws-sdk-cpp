@@ -46,7 +46,7 @@ SortByEnum GetSortByEnumForName(const Aws::String& name)
 
 Aws::String GetNameForSortByEnum(SortByEnum enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SortByEnum::repositoryName:
     return "repositoryName";

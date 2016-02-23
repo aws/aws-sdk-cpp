@@ -61,7 +61,7 @@ MaximumExecutionFrequency GetMaximumExecutionFrequencyForName(const Aws::String&
 
 Aws::String GetNameForMaximumExecutionFrequency(MaximumExecutionFrequency enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MaximumExecutionFrequency::One_Hour:
     return "One_Hour";

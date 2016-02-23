@@ -46,7 +46,7 @@ PendingAutomaticFailoverStatus GetPendingAutomaticFailoverStatusForName(const Aw
 
 Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PendingAutomaticFailoverStatus::enabled:
     return "enabled";

@@ -41,7 +41,7 @@ AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
 
 Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AuthorizerType::TOKEN:
     return "TOKEN";

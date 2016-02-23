@@ -56,7 +56,7 @@ DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
 
 Aws::String GetNameForDeviceAttribute(DeviceAttribute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeviceAttribute::ARN:
     return "ARN";

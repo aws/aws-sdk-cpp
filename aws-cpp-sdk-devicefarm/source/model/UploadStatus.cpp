@@ -56,7 +56,7 @@ UploadStatus GetUploadStatusForName(const Aws::String& name)
 
 Aws::String GetNameForUploadStatus(UploadStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case UploadStatus::INITIALIZED:
     return "INITIALIZED";

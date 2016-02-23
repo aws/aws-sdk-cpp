@@ -51,7 +51,7 @@ AttributeAction GetAttributeActionForName(const Aws::String& name)
 
 Aws::String GetNameForAttributeAction(AttributeAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AttributeAction::ADD:
     return "ADD";

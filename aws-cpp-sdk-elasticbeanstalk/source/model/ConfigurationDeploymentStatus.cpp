@@ -51,7 +51,7 @@ ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws:
 
 Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConfigurationDeploymentStatus::deployed:
     return "deployed";

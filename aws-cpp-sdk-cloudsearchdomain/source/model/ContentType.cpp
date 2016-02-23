@@ -46,7 +46,7 @@ ContentType GetContentTypeForName(const Aws::String& name)
 
 Aws::String GetNameForContentType(ContentType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContentType::application_json:
     return "application/json";

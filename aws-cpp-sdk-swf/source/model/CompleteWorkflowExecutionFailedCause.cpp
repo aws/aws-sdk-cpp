@@ -46,7 +46,7 @@ CompleteWorkflowExecutionFailedCause GetCompleteWorkflowExecutionFailedCauseForN
 
 Aws::String GetNameForCompleteWorkflowExecutionFailedCause(CompleteWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CompleteWorkflowExecutionFailedCause::UNHANDLED_DECISION:
     return "UNHANDLED_DECISION";

@@ -101,7 +101,7 @@ InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceAttributeName(InstanceAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceAttributeName::instanceType:
     return "instanceType";

@@ -51,7 +51,7 @@ BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)
 
 Aws::String GetNameForBucketLogsPermission(BucketLogsPermission enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BucketLogsPermission::FULL_CONTROL:
     return "FULL_CONTROL";

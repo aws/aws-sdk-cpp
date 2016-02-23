@@ -51,7 +51,7 @@ StorageClass GetStorageClassForName(const Aws::String& name)
 
 Aws::String GetNameForStorageClass(StorageClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StorageClass::STANDARD:
     return "STANDARD";

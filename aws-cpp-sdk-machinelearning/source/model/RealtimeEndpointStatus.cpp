@@ -56,7 +56,7 @@ RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
 
 Aws::String GetNameForRealtimeEndpointStatus(RealtimeEndpointStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RealtimeEndpointStatus::NONE:
     return "NONE";

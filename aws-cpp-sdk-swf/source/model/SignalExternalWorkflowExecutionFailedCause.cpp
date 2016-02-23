@@ -51,7 +51,7 @@ SignalExternalWorkflowExecutionFailedCause GetSignalExternalWorkflowExecutionFai
 
 Aws::String GetNameForSignalExternalWorkflowExecutionFailedCause(SignalExternalWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
     return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";

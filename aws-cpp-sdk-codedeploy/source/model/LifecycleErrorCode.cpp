@@ -66,7 +66,7 @@ LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
 
 Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifecycleErrorCode::Success:
     return "Success";

@@ -51,7 +51,7 @@ ReportStateType GetReportStateTypeForName(const Aws::String& name)
 
 Aws::String GetNameForReportStateType(ReportStateType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportStateType::STARTED:
     return "STARTED";

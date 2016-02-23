@@ -61,7 +61,7 @@ ReturnValue GetReturnValueForName(const Aws::String& name)
 
 Aws::String GetNameForReturnValue(ReturnValue enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReturnValue::NONE:
     return "NONE";

@@ -51,7 +51,7 @@ ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const 
 
 Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionConfigurationPropertyType::String:
     return "String";

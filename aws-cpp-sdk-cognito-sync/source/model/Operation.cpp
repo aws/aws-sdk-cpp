@@ -46,7 +46,7 @@ Operation GetOperationForName(const Aws::String& name)
 
 Aws::String GetNameForOperation(Operation enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Operation::replace:
     return "replace";

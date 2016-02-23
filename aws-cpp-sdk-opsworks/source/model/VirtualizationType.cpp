@@ -46,7 +46,7 @@ VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForVirtualizationType(VirtualizationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VirtualizationType::paravirtual:
     return "paravirtual";

@@ -71,7 +71,7 @@ TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTriggerEventType(TriggerEventType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TriggerEventType::DeploymentStart:
     return "DeploymentStart";

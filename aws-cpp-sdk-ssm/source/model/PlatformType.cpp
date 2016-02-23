@@ -46,7 +46,7 @@ PlatformType GetPlatformTypeForName(const Aws::String& name)
 
 Aws::String GetNameForPlatformType(PlatformType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlatformType::Windows:
     return "Windows";

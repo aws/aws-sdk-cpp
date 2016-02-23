@@ -51,7 +51,7 @@ RouteOrigin GetRouteOriginForName(const Aws::String& name)
 
 Aws::String GetNameForRouteOrigin(RouteOrigin enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RouteOrigin::CreateRouteTable:
     return "CreateRouteTable";

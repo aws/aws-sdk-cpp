@@ -46,7 +46,7 @@ EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentInfoType::tail:
     return "tail";

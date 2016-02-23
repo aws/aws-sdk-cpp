@@ -46,7 +46,7 @@ KeyType GetKeyTypeForName(const Aws::String& name)
 
 Aws::String GetNameForKeyType(KeyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyType::HASH:
     return "HASH";

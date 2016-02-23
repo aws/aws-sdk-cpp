@@ -41,7 +41,7 @@ StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
 
 Aws::String GetNameForStackAttributesKeys(StackAttributesKeys enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StackAttributesKeys::Color:
     return "Color";

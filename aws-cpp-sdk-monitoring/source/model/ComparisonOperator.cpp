@@ -56,7 +56,7 @@ ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
 
 Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ComparisonOperator::GreaterThanOrEqualToThreshold:
     return "GreaterThanOrEqualToThreshold";

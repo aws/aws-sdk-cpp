@@ -41,7 +41,7 @@ IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
 
 Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IPSetDescriptorType::IPV4:
     return "IPV4";

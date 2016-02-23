@@ -51,7 +51,7 @@ CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
 
 Aws::String GetNameForCloudHsmObjectState(CloudHsmObjectState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CloudHsmObjectState::READY:
     return "READY";

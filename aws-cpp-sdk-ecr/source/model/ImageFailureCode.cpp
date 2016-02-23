@@ -61,7 +61,7 @@ ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
 
 Aws::String GetNameForImageFailureCode(ImageFailureCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageFailureCode::InvalidImageDigest:
     return "InvalidImageDigest";

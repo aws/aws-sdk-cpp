@@ -51,7 +51,7 @@ InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceRoleType(InstanceRoleType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceRoleType::MASTER:
     return "MASTER";

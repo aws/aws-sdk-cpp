@@ -51,7 +51,7 @@ RadiusStatus GetRadiusStatusForName(const Aws::String& name)
 
 Aws::String GetNameForRadiusStatus(RadiusStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RadiusStatus::Creating:
     return "Creating";

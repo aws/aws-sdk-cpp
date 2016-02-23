@@ -71,7 +71,7 @@ ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForImageAttributeName(ImageAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageAttributeName::description:
     return "description";

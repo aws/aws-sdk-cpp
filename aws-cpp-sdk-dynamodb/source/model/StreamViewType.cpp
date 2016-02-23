@@ -56,7 +56,7 @@ StreamViewType GetStreamViewTypeForName(const Aws::String& name)
 
 Aws::String GetNameForStreamViewType(StreamViewType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StreamViewType::NEW_IMAGE:
     return "NEW_IMAGE";

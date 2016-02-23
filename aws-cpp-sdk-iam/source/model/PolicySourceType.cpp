@@ -71,7 +71,7 @@ PolicySourceType GetPolicySourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForPolicySourceType(PolicySourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PolicySourceType::user:
     return "user";

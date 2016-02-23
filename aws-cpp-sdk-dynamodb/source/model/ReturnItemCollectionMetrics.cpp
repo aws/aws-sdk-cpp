@@ -46,7 +46,7 @@ ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::Str
 
 Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReturnItemCollectionMetrics::SIZE:
     return "SIZE";

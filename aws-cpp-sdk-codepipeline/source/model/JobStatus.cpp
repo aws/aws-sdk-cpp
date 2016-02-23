@@ -71,7 +71,7 @@ JobStatus GetJobStatusForName(const Aws::String& name)
 
 Aws::String GetNameForJobStatus(JobStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case JobStatus::Created:
     return "Created";

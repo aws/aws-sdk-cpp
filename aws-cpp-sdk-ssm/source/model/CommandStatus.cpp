@@ -71,7 +71,7 @@ CommandStatus GetCommandStatusForName(const Aws::String& name)
 
 Aws::String GetNameForCommandStatus(CommandStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CommandStatus::Pending:
     return "Pending";

@@ -46,7 +46,7 @@ TransportProtocol GetTransportProtocolForName(const Aws::String& name)
 
 Aws::String GetNameForTransportProtocol(TransportProtocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TransportProtocol::tcp:
     return "tcp";

@@ -76,7 +76,7 @@ EvaluationFilterVariable GetEvaluationFilterVariableForName(const Aws::String& n
 
 Aws::String GetNameForEvaluationFilterVariable(EvaluationFilterVariable enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EvaluationFilterVariable::CreatedAt:
     return "CreatedAt";

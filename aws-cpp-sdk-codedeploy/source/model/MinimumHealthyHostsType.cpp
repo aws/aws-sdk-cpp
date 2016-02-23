@@ -46,7 +46,7 @@ MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& nam
 
 Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MinimumHealthyHostsType::HOST_COUNT:
     return "HOST_COUNT";

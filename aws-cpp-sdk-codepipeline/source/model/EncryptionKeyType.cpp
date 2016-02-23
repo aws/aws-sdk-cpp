@@ -41,7 +41,7 @@ EncryptionKeyType GetEncryptionKeyTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEncryptionKeyType(EncryptionKeyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EncryptionKeyType::KMS:
     return "KMS";

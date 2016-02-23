@@ -41,7 +41,7 @@ WorkflowExecutionTimeoutType GetWorkflowExecutionTimeoutTypeForName(const Aws::S
 
 Aws::String GetNameForWorkflowExecutionTimeoutType(WorkflowExecutionTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkflowExecutionTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

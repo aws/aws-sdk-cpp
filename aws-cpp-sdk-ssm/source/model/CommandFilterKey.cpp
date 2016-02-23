@@ -51,7 +51,7 @@ CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
 
 Aws::String GetNameForCommandFilterKey(CommandFilterKey enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CommandFilterKey::InvokedAfter:
     return "InvokedAfter";

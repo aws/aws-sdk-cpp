@@ -61,7 +61,7 @@ NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
 
 Aws::String GetNameForNatGatewayState(NatGatewayState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NatGatewayState::pending:
     return "pending";

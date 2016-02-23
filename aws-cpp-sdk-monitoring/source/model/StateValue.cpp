@@ -51,7 +51,7 @@ StateValue GetStateValueForName(const Aws::String& name)
 
 Aws::String GetNameForStateValue(StateValue enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StateValue::OK:
     return "OK";

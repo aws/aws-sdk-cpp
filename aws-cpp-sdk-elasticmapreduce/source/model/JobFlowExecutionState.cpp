@@ -76,7 +76,7 @@ JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name)
 
 Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case JobFlowExecutionState::STARTING:
     return "STARTING";

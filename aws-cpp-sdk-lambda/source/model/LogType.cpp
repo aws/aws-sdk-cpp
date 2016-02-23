@@ -46,7 +46,7 @@ LogType GetLogTypeForName(const Aws::String& name)
 
 Aws::String GetNameForLogType(LogType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LogType::None:
     return "None";

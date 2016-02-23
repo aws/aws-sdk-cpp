@@ -61,7 +61,7 @@ EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
 
 Aws::String GetNameForEnvironmentStatus(EnvironmentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentStatus::Launching:
     return "Launching";

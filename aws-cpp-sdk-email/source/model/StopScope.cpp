@@ -41,7 +41,7 @@ StopScope GetStopScopeForName(const Aws::String& name)
 
 Aws::String GetNameForStopScope(StopScope enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StopScope::RuleSet:
     return "RuleSet";

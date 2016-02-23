@@ -66,7 +66,7 @@ BounceType GetBounceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForBounceType(BounceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BounceType::DoesNotExist:
     return "DoesNotExist";

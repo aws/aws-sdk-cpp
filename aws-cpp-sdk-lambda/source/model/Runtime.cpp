@@ -51,7 +51,7 @@ Runtime GetRuntimeForName(const Aws::String& name)
 
 Aws::String GetNameForRuntime(Runtime enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Runtime::nodejs:
     return "nodejs";

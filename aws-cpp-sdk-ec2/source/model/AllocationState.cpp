@@ -61,7 +61,7 @@ AllocationState GetAllocationStateForName(const Aws::String& name)
 
 Aws::String GetNameForAllocationState(AllocationState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AllocationState::available:
     return "available";

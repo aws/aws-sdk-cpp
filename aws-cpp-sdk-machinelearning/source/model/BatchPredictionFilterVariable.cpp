@@ -76,7 +76,7 @@ BatchPredictionFilterVariable GetBatchPredictionFilterVariableForName(const Aws:
 
 Aws::String GetNameForBatchPredictionFilterVariable(BatchPredictionFilterVariable enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BatchPredictionFilterVariable::CreatedAt:
     return "CreatedAt";

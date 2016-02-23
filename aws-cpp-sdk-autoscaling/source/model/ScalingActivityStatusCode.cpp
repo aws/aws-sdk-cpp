@@ -96,7 +96,7 @@ ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String&
 
 Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ScalingActivityStatusCode::PendingSpotBidPlacement:
     return "PendingSpotBidPlacement";

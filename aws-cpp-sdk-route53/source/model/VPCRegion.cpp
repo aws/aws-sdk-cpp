@@ -86,7 +86,7 @@ VPCRegion GetVPCRegionForName(const Aws::String& name)
 
 Aws::String GetNameForVPCRegion(VPCRegion enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VPCRegion::us_east_1:
     return "us-east-1";

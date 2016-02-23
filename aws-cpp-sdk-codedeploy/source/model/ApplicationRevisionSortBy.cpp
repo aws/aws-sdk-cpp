@@ -51,7 +51,7 @@ ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String&
 
 Aws::String GetNameForApplicationRevisionSortBy(ApplicationRevisionSortBy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ApplicationRevisionSortBy::registerTime:
     return "registerTime";

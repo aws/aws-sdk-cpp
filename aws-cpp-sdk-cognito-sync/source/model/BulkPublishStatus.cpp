@@ -56,7 +56,7 @@ BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
 
 Aws::String GetNameForBulkPublishStatus(BulkPublishStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BulkPublishStatus::NOT_STARTED:
     return "NOT_STARTED";

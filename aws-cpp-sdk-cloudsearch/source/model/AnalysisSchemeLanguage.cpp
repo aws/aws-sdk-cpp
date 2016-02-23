@@ -211,7 +211,7 @@ AnalysisSchemeLanguage GetAnalysisSchemeLanguageForName(const Aws::String& name)
 
 Aws::String GetNameForAnalysisSchemeLanguage(AnalysisSchemeLanguage enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AnalysisSchemeLanguage::ar:
     return "ar";

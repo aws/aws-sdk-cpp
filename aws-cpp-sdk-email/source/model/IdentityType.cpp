@@ -46,7 +46,7 @@ IdentityType GetIdentityTypeForName(const Aws::String& name)
 
 Aws::String GetNameForIdentityType(IdentityType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IdentityType::EmailAddress:
     return "EmailAddress";

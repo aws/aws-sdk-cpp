@@ -96,7 +96,7 @@ ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
 
 Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContextKeyTypeEnum::string:
     return "string";

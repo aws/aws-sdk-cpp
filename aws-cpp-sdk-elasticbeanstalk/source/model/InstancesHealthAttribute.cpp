@@ -76,7 +76,7 @@ InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& n
 
 Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstancesHealthAttribute::HealthStatus:
     return "HealthStatus";

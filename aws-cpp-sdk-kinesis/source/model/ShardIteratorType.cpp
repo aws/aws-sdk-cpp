@@ -56,7 +56,7 @@ ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name)
 
 Aws::String GetNameForShardIteratorType(ShardIteratorType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ShardIteratorType::AT_SEQUENCE_NUMBER:
     return "AT_SEQUENCE_NUMBER";

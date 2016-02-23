@@ -46,7 +46,7 @@ ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
 
 Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReceiptFilterPolicy::Block:
     return "Block";

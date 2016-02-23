@@ -41,7 +41,7 @@ RequestCharged GetRequestChargedForName(const Aws::String& name)
 
 Aws::String GetNameForRequestCharged(RequestCharged enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RequestCharged::requester:
     return "requester";

@@ -46,7 +46,7 @@ ActionCode GetActionCodeForName(const Aws::String& name)
 
 Aws::String GetNameForActionCode(ActionCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionCode::ArchiveRetrieval:
     return "ArchiveRetrieval";

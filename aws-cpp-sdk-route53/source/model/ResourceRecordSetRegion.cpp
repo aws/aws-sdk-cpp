@@ -86,7 +86,7 @@ ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& nam
 
 Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceRecordSetRegion::us_east_1:
     return "us-east-1";

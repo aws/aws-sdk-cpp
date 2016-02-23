@@ -66,7 +66,7 @@ CommandPluginStatus GetCommandPluginStatusForName(const Aws::String& name)
 
 Aws::String GetNameForCommandPluginStatus(CommandPluginStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CommandPluginStatus::Pending:
     return "Pending";

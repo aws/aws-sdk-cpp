@@ -51,7 +51,7 @@ FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FlowLogsResourceType::VPC:
     return "VPC";

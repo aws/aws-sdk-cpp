@@ -91,7 +91,7 @@ IndexFieldType GetIndexFieldTypeForName(const Aws::String& name)
 
 Aws::String GetNameForIndexFieldType(IndexFieldType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IndexFieldType::int_:
     return "int";

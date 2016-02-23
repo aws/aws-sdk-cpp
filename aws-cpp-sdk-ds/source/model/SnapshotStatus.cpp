@@ -51,7 +51,7 @@ SnapshotStatus GetSnapshotStatusForName(const Aws::String& name)
 
 Aws::String GetNameForSnapshotStatus(SnapshotStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SnapshotStatus::Creating:
     return "Creating";

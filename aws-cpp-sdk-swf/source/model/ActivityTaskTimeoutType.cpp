@@ -56,7 +56,7 @@ ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& nam
 
 Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActivityTaskTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

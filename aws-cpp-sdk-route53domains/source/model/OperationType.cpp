@@ -71,7 +71,7 @@ OperationType GetOperationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForOperationType(OperationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OperationType::REGISTER_DOMAIN:
     return "REGISTER_DOMAIN";

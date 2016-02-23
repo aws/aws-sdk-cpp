@@ -61,7 +61,7 @@ DsnAction GetDsnActionForName(const Aws::String& name)
 
 Aws::String GetNameForDsnAction(DsnAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DsnAction::failed:
     return "failed";

@@ -161,7 +161,7 @@ LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
 
 Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LayerAttributesKeys::EcsClusterArn:
     return "EcsClusterArn";

@@ -101,7 +101,7 @@ ErrorCode GetErrorCodeForName(const Aws::String& name)
 
 Aws::String GetNameForErrorCode(ErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ErrorCode::DEPLOYMENT_GROUP_MISSING:
     return "DEPLOYMENT_GROUP_MISSING";

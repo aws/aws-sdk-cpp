@@ -66,7 +66,7 @@ LifecycleEventStatus GetLifecycleEventStatusForName(const Aws::String& name)
 
 Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifecycleEventStatus::Pending:
     return "Pending";

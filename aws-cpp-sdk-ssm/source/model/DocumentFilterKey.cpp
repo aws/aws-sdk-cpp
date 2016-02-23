@@ -51,7 +51,7 @@ DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
 
 Aws::String GetNameForDocumentFilterKey(DocumentFilterKey enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DocumentFilterKey::Name:
     return "Name";

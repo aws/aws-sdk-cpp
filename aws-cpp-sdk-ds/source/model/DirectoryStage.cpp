@@ -91,7 +91,7 @@ DirectoryStage GetDirectoryStageForName(const Aws::String& name)
 
 Aws::String GetNameForDirectoryStage(DirectoryStage enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DirectoryStage::Requested:
     return "Requested";

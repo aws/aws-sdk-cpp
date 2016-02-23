@@ -56,7 +56,7 @@ AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
 
 Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AttachmentStatus::attaching:
     return "attaching";

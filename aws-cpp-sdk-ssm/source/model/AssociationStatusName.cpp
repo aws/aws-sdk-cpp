@@ -51,7 +51,7 @@ AssociationStatusName GetAssociationStatusNameForName(const Aws::String& name)
 
 Aws::String GetNameForAssociationStatusName(AssociationStatusName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AssociationStatusName::Pending:
     return "Pending";

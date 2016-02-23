@@ -46,7 +46,7 @@ DeviceType GetDeviceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDeviceType(DeviceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeviceType::ebs:
     return "ebs";

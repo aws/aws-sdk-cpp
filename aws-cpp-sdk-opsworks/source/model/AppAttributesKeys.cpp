@@ -56,7 +56,7 @@ AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
 
 Aws::String GetNameForAppAttributesKeys(AppAttributesKeys enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AppAttributesKeys::DocumentRoot:
     return "DocumentRoot";

@@ -46,7 +46,7 @@ OrderEnum GetOrderEnumForName(const Aws::String& name)
 
 Aws::String GetNameForOrderEnum(OrderEnum enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OrderEnum::ascending:
     return "ascending";

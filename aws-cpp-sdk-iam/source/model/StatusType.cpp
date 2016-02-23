@@ -46,7 +46,7 @@ StatusType GetStatusTypeForName(const Aws::String& name)
 
 Aws::String GetNameForStatusType(StatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusType::Active:
     return "Active";

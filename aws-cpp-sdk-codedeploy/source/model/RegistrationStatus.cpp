@@ -46,7 +46,7 @@ RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
 
 Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RegistrationStatus::Registered:
     return "Registered";

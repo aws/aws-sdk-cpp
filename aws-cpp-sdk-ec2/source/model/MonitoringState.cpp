@@ -56,7 +56,7 @@ MonitoringState GetMonitoringStateForName(const Aws::String& name)
 
 Aws::String GetNameForMonitoringState(MonitoringState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MonitoringState::disabled:
     return "disabled";

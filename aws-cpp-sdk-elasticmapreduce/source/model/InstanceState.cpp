@@ -61,7 +61,7 @@ InstanceState GetInstanceStateForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceState(InstanceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceState::AWAITING_FULFILLMENT:
     return "AWAITING_FULFILLMENT";

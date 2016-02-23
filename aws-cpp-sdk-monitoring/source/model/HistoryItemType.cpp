@@ -51,7 +51,7 @@ HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
 
 Aws::String GetNameForHistoryItemType(HistoryItemType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case HistoryItemType::ConfigurationUpdate:
     return "ConfigurationUpdate";

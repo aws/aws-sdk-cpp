@@ -46,7 +46,7 @@ CancelTimerFailedCause GetCancelTimerFailedCauseForName(const Aws::String& name)
 
 Aws::String GetNameForCancelTimerFailedCause(CancelTimerFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CancelTimerFailedCause::TIMER_ID_UNKNOWN:
     return "TIMER_ID_UNKNOWN";

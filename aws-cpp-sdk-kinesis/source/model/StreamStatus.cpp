@@ -56,7 +56,7 @@ StreamStatus GetStreamStatusForName(const Aws::String& name)
 
 Aws::String GetNameForStreamStatus(StreamStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StreamStatus::CREATING:
     return "CREATING";

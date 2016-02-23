@@ -46,7 +46,7 @@ ReportStatusType GetReportStatusTypeForName(const Aws::String& name)
 
 Aws::String GetNameForReportStatusType(ReportStatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportStatusType::ok:
     return "ok";

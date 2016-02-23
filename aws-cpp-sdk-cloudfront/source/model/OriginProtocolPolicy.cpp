@@ -51,7 +51,7 @@ OriginProtocolPolicy GetOriginProtocolPolicyForName(const Aws::String& name)
 
 Aws::String GetNameForOriginProtocolPolicy(OriginProtocolPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OriginProtocolPolicy::http_only:
     return "http-only";

@@ -46,7 +46,7 @@ ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)
 
 Aws::String GetNameForServerSideEncryption(ServerSideEncryption enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ServerSideEncryption::AES256:
     return "AES256";

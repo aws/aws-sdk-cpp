@@ -146,7 +146,7 @@ ArtifactType GetArtifactTypeForName(const Aws::String& name)
 
 Aws::String GetNameForArtifactType(ArtifactType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ArtifactType::UNKNOWN:
     return "UNKNOWN";

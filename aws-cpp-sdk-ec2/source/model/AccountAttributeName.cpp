@@ -46,7 +46,7 @@ AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForAccountAttributeName(AccountAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AccountAttributeName::supported_platforms:
     return "supported-platforms";

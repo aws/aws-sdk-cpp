@@ -51,7 +51,7 @@ ProjectionType GetProjectionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForProjectionType(ProjectionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ProjectionType::ALL:
     return "ALL";

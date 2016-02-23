@@ -41,7 +41,7 @@ ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String&
 
 Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ObjectVersionStorageClass::STANDARD:
     return "STANDARD";

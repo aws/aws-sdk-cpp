@@ -71,7 +71,7 @@ AppType GetAppTypeForName(const Aws::String& name)
 
 Aws::String GetNameForAppType(AppType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AppType::aws_flow_ruby:
     return "aws-flow-ruby";

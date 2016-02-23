@@ -61,7 +61,7 @@ CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
 
 Aws::String GetNameForCacheClusterStatus(CacheClusterStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CacheClusterStatus::CREATE_IN_PROGRESS:
     return "CREATE_IN_PROGRESS";

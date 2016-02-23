@@ -51,7 +51,7 @@ Type GetTypeForName(const Aws::String& name)
 
 Aws::String GetNameForType(Type enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Type::CanonicalUser:
     return "CanonicalUser";

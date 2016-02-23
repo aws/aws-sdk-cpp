@@ -51,7 +51,7 @@ Tenancy GetTenancyForName(const Aws::String& name)
 
 Aws::String GetNameForTenancy(Tenancy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Tenancy::default_:
     return "default";

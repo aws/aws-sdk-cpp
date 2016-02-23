@@ -51,7 +51,7 @@ TaskStatus GetTaskStatusForName(const Aws::String& name)
 
 Aws::String GetNameForTaskStatus(TaskStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TaskStatus::FINISHED:
     return "FINISHED";

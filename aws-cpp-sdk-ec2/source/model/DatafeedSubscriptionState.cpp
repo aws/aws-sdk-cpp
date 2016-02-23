@@ -46,7 +46,7 @@ DatafeedSubscriptionState GetDatafeedSubscriptionStateForName(const Aws::String&
 
 Aws::String GetNameForDatafeedSubscriptionState(DatafeedSubscriptionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DatafeedSubscriptionState::Active:
     return "Active";

@@ -46,7 +46,7 @@ Protocol GetProtocolForName(const Aws::String& name)
 
 Aws::String GetNameForProtocol(Protocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Protocol::http:
     return "http";

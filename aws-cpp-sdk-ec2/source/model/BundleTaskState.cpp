@@ -71,7 +71,7 @@ BundleTaskState GetBundleTaskStateForName(const Aws::String& name)
 
 Aws::String GetNameForBundleTaskState(BundleTaskState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BundleTaskState::pending:
     return "pending";

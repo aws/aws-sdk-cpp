@@ -56,7 +56,7 @@ CertificateStatus GetCertificateStatusForName(const Aws::String& name)
 
 Aws::String GetNameForCertificateStatus(CertificateStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CertificateStatus::ACTIVE:
     return "ACTIVE";

@@ -41,7 +41,7 @@ CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name)
 
 Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CurrencyCodeValues::USD:
     return "USD";

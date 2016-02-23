@@ -46,7 +46,7 @@ AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
 
 Aws::String GetNameForAllocationStrategy(AllocationStrategy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AllocationStrategy::lowestPrice:
     return "lowestPrice";

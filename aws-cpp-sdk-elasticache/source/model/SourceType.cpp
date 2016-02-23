@@ -56,7 +56,7 @@ SourceType GetSourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSourceType(SourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SourceType::cache_cluster:
     return "cache-cluster";

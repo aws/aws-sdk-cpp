@@ -41,7 +41,7 @@ PlatformValues GetPlatformValuesForName(const Aws::String& name)
 
 Aws::String GetNameForPlatformValues(PlatformValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlatformValues::Windows:
     return "Windows";

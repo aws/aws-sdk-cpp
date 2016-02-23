@@ -56,7 +56,7 @@ PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)
 
 Aws::String GetNameForPlacementGroupState(PlacementGroupState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlacementGroupState::pending:
     return "pending";

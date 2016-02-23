@@ -66,7 +66,7 @@ TextTransformation GetTextTransformationForName(const Aws::String& name)
 
 Aws::String GetNameForTextTransformation(TextTransformation enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TextTransformation::NONE:
     return "NONE";

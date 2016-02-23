@@ -51,7 +51,7 @@ DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
 
 Aws::String GetNameForDeliveryStatus(DeliveryStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeliveryStatus::Success:
     return "Success";

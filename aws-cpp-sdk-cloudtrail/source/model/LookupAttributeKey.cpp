@@ -61,7 +61,7 @@ LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
 
 Aws::String GetNameForLookupAttributeKey(LookupAttributeKey enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LookupAttributeKey::EventId:
     return "EventId";

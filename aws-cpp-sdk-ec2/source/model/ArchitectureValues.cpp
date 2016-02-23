@@ -46,7 +46,7 @@ ArchitectureValues GetArchitectureValuesForName(const Aws::String& name)
 
 Aws::String GetNameForArchitectureValues(ArchitectureValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ArchitectureValues::i386:
     return "i386";

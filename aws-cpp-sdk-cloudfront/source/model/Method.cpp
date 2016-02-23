@@ -71,7 +71,7 @@ Method GetMethodForName(const Aws::String& name)
 
 Aws::String GetNameForMethod(Method enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Method::GET_:
     return "GET";

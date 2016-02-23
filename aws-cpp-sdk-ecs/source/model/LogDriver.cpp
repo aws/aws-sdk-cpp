@@ -61,7 +61,7 @@ LogDriver GetLogDriverForName(const Aws::String& name)
 
 Aws::String GetNameForLogDriver(LogDriver enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LogDriver::json_file:
     return "json-file";

@@ -46,7 +46,7 @@ SortOrder GetSortOrderForName(const Aws::String& name)
 
 Aws::String GetNameForSortOrder(SortOrder enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SortOrder::asc:
     return "asc";

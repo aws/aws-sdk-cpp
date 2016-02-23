@@ -56,7 +56,7 @@ ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& n
 
 Aws::String GetNameForApplicationVersionStatus(ApplicationVersionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ApplicationVersionStatus::Processed:
     return "Processed";

@@ -51,7 +51,7 @@ DirectoryType GetDirectoryTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDirectoryType(DirectoryType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DirectoryType::SimpleAD:
     return "SimpleAD";

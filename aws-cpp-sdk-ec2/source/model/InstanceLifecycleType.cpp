@@ -41,7 +41,7 @@ InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceLifecycleType::spot:
     return "spot";

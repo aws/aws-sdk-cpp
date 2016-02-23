@@ -46,7 +46,7 @@ AZMode GetAZModeForName(const Aws::String& name)
 
 Aws::String GetNameForAZMode(AZMode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AZMode::single_az:
     return "single-az";

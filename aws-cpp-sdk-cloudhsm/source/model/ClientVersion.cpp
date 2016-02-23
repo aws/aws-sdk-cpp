@@ -46,7 +46,7 @@ ClientVersion GetClientVersionForName(const Aws::String& name)
 
 Aws::String GetNameForClientVersion(ClientVersion enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ClientVersion::_5_1:
     return "5.1";

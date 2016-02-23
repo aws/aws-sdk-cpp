@@ -41,7 +41,7 @@ KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
 
 Aws::String GetNameForKeyUsageType(KeyUsageType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyUsageType::ENCRYPT_DECRYPT:
     return "ENCRYPT_DECRYPT";

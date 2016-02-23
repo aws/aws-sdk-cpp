@@ -51,7 +51,7 @@ NotificationType GetNotificationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForNotificationType(NotificationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NotificationType::Bounce:
     return "Bounce";

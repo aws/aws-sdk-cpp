@@ -51,7 +51,7 @@ WafActionType GetWafActionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForWafActionType(WafActionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WafActionType::BLOCK:
     return "BLOCK";

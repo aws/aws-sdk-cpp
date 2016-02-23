@@ -81,7 +81,7 @@ ReportInstanceReasonCodes GetReportInstanceReasonCodesForName(const Aws::String&
 
 Aws::String GetNameForReportInstanceReasonCodes(ReportInstanceReasonCodes enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportInstanceReasonCodes::instance_stuck_in_state:
     return "instance-stuck-in-state";

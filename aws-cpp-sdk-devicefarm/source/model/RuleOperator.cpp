@@ -61,7 +61,7 @@ RuleOperator GetRuleOperatorForName(const Aws::String& name)
 
 Aws::String GetNameForRuleOperator(RuleOperator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RuleOperator::EQUALS:
     return "EQUALS";

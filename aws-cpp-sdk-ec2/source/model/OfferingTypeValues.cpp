@@ -66,7 +66,7 @@ OfferingTypeValues GetOfferingTypeValuesForName(const Aws::String& name)
 
 Aws::String GetNameForOfferingTypeValues(OfferingTypeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OfferingTypeValues::Heavy_Utilization:
     return "Heavy Utilization";

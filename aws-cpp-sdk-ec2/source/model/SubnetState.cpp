@@ -46,7 +46,7 @@ SubnetState GetSubnetStateForName(const Aws::String& name)
 
 Aws::String GetNameForSubnetState(SubnetState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SubnetState::pending:
     return "pending";

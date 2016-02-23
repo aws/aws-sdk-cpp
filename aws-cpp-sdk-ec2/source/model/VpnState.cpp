@@ -56,7 +56,7 @@ VpnState GetVpnStateForName(const Aws::String& name)
 
 Aws::String GetNameForVpnState(VpnState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpnState::pending:
     return "pending";

@@ -56,7 +56,7 @@ BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
 
 Aws::String GetNameForBucketCannedACL(BucketCannedACL enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BucketCannedACL::private_:
     return "private";

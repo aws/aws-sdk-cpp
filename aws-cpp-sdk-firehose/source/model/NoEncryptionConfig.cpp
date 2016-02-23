@@ -41,7 +41,7 @@ NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
 
 Aws::String GetNameForNoEncryptionConfig(NoEncryptionConfig enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NoEncryptionConfig::NoEncryption:
     return "NoEncryption";

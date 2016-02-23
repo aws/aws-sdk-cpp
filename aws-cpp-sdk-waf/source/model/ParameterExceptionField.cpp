@@ -81,7 +81,7 @@ ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& nam
 
 Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ParameterExceptionField::CHANGE_ACTION:
     return "CHANGE_ACTION";

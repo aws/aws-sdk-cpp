@@ -51,7 +51,7 @@ RequestCancelExternalWorkflowExecutionFailedCause GetRequestCancelExternalWorkfl
 
 Aws::String GetNameForRequestCancelExternalWorkflowExecutionFailedCause(RequestCancelExternalWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
     return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";

@@ -46,7 +46,7 @@ DevicePlatform GetDevicePlatformForName(const Aws::String& name)
 
 Aws::String GetNameForDevicePlatform(DevicePlatform enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DevicePlatform::ANDROID:
     return "ANDROID";

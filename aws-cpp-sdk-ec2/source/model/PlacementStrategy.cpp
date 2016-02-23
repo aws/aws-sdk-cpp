@@ -41,7 +41,7 @@ PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
 
 Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlacementStrategy::cluster:
     return "cluster";

@@ -46,7 +46,7 @@ VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForVpcAttributeName(VpcAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpcAttributeName::enableDnsSupport:
     return "enableDnsSupport";

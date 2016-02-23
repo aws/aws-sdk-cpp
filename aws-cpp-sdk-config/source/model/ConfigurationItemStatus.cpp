@@ -56,7 +56,7 @@ ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& nam
 
 Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConfigurationItemStatus::Ok:
     return "Ok";

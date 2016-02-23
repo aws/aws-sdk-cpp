@@ -96,7 +96,7 @@ DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
 
 Aws::String GetNameForDeploymentCommandName(DeploymentCommandName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentCommandName::install_dependencies:
     return "install_dependencies";

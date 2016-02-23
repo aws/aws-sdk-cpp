@@ -46,7 +46,7 @@ EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
 
 Aws::String GetNameForEventSourcePosition(EventSourcePosition enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventSourcePosition::TRIM_HORIZON:
     return "TRIM_HORIZON";

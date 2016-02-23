@@ -46,7 +46,7 @@ EncodingType GetEncodingTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEncodingType(EncodingType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EncodingType::SSH:
     return "SSH";

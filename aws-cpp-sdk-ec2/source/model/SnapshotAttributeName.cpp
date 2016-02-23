@@ -46,7 +46,7 @@ SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
 
 Aws::String GetNameForSnapshotAttributeName(SnapshotAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SnapshotAttributeName::productCodes:
     return "productCodes";

@@ -46,7 +46,7 @@ Owner GetOwnerForName(const Aws::String& name)
 
 Aws::String GetNameForOwner(Owner enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Owner::CUSTOM_LAMBDA:
     return "CUSTOM_LAMBDA";

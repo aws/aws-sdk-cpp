@@ -46,7 +46,7 @@ RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForRevisionLocationType(RevisionLocationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RevisionLocationType::S3:
     return "S3";

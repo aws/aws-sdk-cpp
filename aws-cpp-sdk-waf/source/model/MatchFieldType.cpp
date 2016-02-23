@@ -61,7 +61,7 @@ MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
 
 Aws::String GetNameForMatchFieldType(MatchFieldType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MatchFieldType::URI:
     return "URI";

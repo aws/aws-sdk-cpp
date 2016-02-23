@@ -46,7 +46,7 @@ RuleState GetRuleStateForName(const Aws::String& name)
 
 Aws::String GetNameForRuleState(RuleState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RuleState::ENABLED:
     return "ENABLED";

@@ -56,7 +56,7 @@ AutomaticFailoverStatus GetAutomaticFailoverStatusForName(const Aws::String& nam
 
 Aws::String GetNameForAutomaticFailoverStatus(AutomaticFailoverStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AutomaticFailoverStatus::enabled:
     return "enabled";

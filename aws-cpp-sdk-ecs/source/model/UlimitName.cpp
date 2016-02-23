@@ -111,7 +111,7 @@ UlimitName GetUlimitNameForName(const Aws::String& name)
 
 Aws::String GetNameForUlimitName(UlimitName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case UlimitName::core:
     return "core";

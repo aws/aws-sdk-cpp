@@ -46,7 +46,7 @@ SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
 
 Aws::String GetNameForSSLSupportMethod(SSLSupportMethod enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SSLSupportMethod::sni_only:
     return "sni-only";

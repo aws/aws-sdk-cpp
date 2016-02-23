@@ -56,7 +56,7 @@ IndexStatus GetIndexStatusForName(const Aws::String& name)
 
 Aws::String GetNameForIndexStatus(IndexStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IndexStatus::CREATING:
     return "CREATING";

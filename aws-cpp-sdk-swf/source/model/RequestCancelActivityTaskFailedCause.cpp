@@ -46,7 +46,7 @@ RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForN
 
 Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN:
     return "ACTIVITY_ID_UNKNOWN";

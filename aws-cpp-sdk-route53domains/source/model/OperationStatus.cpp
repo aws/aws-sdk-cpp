@@ -61,7 +61,7 @@ OperationStatus GetOperationStatusForName(const Aws::String& name)
 
 Aws::String GetNameForOperationStatus(OperationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OperationStatus::SUBMITTED:
     return "SUBMITTED";

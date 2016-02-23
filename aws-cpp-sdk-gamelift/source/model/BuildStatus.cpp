@@ -51,7 +51,7 @@ BuildStatus GetBuildStatusForName(const Aws::String& name)
 
 Aws::String GetNameForBuildStatus(BuildStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BuildStatus::INITIALIZED:
     return "INITIALIZED";

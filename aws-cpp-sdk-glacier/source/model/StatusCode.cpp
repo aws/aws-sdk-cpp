@@ -51,7 +51,7 @@ StatusCode GetStatusCodeForName(const Aws::String& name)
 
 Aws::String GetNameForStatusCode(StatusCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusCode::InProgress:
     return "InProgress";

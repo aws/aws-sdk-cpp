@@ -46,7 +46,7 @@ AutoPlacement GetAutoPlacementForName(const Aws::String& name)
 
 Aws::String GetNameForAutoPlacement(AutoPlacement enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AutoPlacement::on:
     return "on";

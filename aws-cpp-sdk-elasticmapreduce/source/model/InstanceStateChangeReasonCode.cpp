@@ -61,7 +61,7 @@ InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws:
 
 Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

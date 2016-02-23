@@ -46,7 +46,7 @@ ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
 
 Aws::String GetNameForConditionalOperator(ConditionalOperator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConditionalOperator::AND:
     return "AND";

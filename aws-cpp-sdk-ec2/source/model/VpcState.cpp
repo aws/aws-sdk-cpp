@@ -46,7 +46,7 @@ VpcState GetVpcStateForName(const Aws::String& name)
 
 Aws::String GetNameForVpcState(VpcState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpcState::pending:
     return "pending";

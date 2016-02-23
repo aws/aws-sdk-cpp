@@ -51,7 +51,7 @@ ChildPolicy GetChildPolicyForName(const Aws::String& name)
 
 Aws::String GetNameForChildPolicy(ChildPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChildPolicy::TERMINATE:
     return "TERMINATE";

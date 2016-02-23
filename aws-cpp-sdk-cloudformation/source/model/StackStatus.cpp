@@ -116,7 +116,7 @@ StackStatus GetStackStatusForName(const Aws::String& name)
 
 Aws::String GetNameForStackStatus(StackStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StackStatus::CREATE_IN_PROGRESS:
     return "CREATE_IN_PROGRESS";

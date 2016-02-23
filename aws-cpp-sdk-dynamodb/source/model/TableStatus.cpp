@@ -56,7 +56,7 @@ TableStatus GetTableStatusForName(const Aws::String& name)
 
 Aws::String GetNameForTableStatus(TableStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TableStatus::CREATING:
     return "CREATING";

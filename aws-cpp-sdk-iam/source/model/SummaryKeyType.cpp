@@ -161,7 +161,7 @@ SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSummaryKeyType(SummaryKeyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SummaryKeyType::Users:
     return "Users";

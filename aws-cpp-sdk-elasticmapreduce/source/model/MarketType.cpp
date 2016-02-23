@@ -46,7 +46,7 @@ MarketType GetMarketTypeForName(const Aws::String& name)
 
 Aws::String GetNameForMarketType(MarketType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MarketType::ON_DEMAND:
     return "ON_DEMAND";

@@ -96,7 +96,7 @@ LayerType GetLayerTypeForName(const Aws::String& name)
 
 Aws::String GetNameForLayerType(LayerType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LayerType::aws_flow_ruby:
     return "aws-flow-ruby";

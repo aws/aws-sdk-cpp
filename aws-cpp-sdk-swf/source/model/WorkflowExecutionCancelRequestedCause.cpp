@@ -41,7 +41,7 @@ WorkflowExecutionCancelRequestedCause GetWorkflowExecutionCancelRequestedCauseFo
 
 Aws::String GetNameForWorkflowExecutionCancelRequestedCause(WorkflowExecutionCancelRequestedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED:
     return "CHILD_POLICY_APPLIED";

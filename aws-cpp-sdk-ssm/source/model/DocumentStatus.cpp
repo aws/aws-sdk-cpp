@@ -51,7 +51,7 @@ DocumentStatus GetDocumentStatusForName(const Aws::String& name)
 
 Aws::String GetNameForDocumentStatus(DocumentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DocumentStatus::Creating:
     return "Creating";

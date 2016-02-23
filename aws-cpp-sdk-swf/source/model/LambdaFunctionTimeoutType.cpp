@@ -41,7 +41,7 @@ LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String&
 
 Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LambdaFunctionTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

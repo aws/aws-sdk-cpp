@@ -76,7 +76,7 @@ EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& nam
 
 Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentHealthStatus::NoData:
     return "NoData";

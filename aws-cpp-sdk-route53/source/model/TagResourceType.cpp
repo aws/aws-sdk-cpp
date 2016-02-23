@@ -46,7 +46,7 @@ TagResourceType GetTagResourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTagResourceType(TagResourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TagResourceType::healthcheck:
     return "healthcheck";

@@ -46,7 +46,7 @@ ApplyMethod GetApplyMethodForName(const Aws::String& name)
 
 Aws::String GetNameForApplyMethod(ApplyMethod enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ApplyMethod::immediate:
     return "immediate";

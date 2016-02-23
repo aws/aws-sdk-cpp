@@ -46,7 +46,7 @@ MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
 
 Aws::String GetNameForMetadataDirective(MetadataDirective enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MetadataDirective::COPY:
     return "COPY";

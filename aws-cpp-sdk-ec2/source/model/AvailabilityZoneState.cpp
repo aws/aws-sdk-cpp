@@ -56,7 +56,7 @@ AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
 
 Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AvailabilityZoneState::available:
     return "available";

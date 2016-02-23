@@ -41,7 +41,7 @@ ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
 
 Aws::String GetNameForReportFormatType(ReportFormatType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportFormatType::text_csv:
     return "text/csv";

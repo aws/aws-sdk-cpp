@@ -171,7 +171,7 @@ StandardUnit GetStandardUnitForName(const Aws::String& name)
 
 Aws::String GetNameForStandardUnit(StandardUnit enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StandardUnit::Seconds:
     return "Seconds";

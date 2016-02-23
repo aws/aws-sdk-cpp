@@ -51,7 +51,7 @@ SnapshotState GetSnapshotStateForName(const Aws::String& name)
 
 Aws::String GetNameForSnapshotState(SnapshotState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SnapshotState::pending:
     return "pending";

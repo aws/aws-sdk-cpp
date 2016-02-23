@@ -76,7 +76,7 @@ PartitionInstanceType GetPartitionInstanceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForPartitionInstanceType(PartitionInstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PartitionInstanceType::search_m1_small:
     return "search.m1.small";

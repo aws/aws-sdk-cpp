@@ -56,7 +56,7 @@ ConversionTaskState GetConversionTaskStateForName(const Aws::String& name)
 
 Aws::String GetNameForConversionTaskState(ConversionTaskState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConversionTaskState::active:
     return "active";

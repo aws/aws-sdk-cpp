@@ -61,7 +61,7 @@ LogLevel GetLogLevelForName(const Aws::String& name)
 
 Aws::String GetNameForLogLevel(LogLevel enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LogLevel::DEBUG:
     return "DEBUG";

@@ -41,7 +41,7 @@ EventSource GetEventSourceForName(const Aws::String& name)
 
 Aws::String GetNameForEventSource(EventSource enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventSource::aws_config:
     return "aws.config";

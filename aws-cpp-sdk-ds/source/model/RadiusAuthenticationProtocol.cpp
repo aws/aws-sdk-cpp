@@ -56,7 +56,7 @@ RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::S
 
 Aws::String GetNameForRadiusAuthenticationProtocol(RadiusAuthenticationProtocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RadiusAuthenticationProtocol::PAP:
     return "PAP";

@@ -71,7 +71,7 @@ BatchState GetBatchStateForName(const Aws::String& name)
 
 Aws::String GetNameForBatchState(BatchState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BatchState::submitted:
     return "submitted";

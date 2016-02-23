@@ -46,7 +46,7 @@ ChangeAction GetChangeActionForName(const Aws::String& name)
 
 Aws::String GetNameForChangeAction(ChangeAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChangeAction::INSERT:
     return "INSERT";

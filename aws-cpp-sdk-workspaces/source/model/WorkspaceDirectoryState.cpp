@@ -61,7 +61,7 @@ WorkspaceDirectoryState GetWorkspaceDirectoryStateForName(const Aws::String& nam
 
 Aws::String GetNameForWorkspaceDirectoryState(WorkspaceDirectoryState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkspaceDirectoryState::REGISTERING:
     return "REGISTERING";

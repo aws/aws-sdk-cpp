@@ -51,7 +51,7 @@ SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
 
 Aws::String GetNameForSuggesterFuzzyMatching(SuggesterFuzzyMatching enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SuggesterFuzzyMatching::none:
     return "none";

@@ -306,7 +306,7 @@ EventType GetEventTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEventType(EventType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventType::WorkflowExecutionStarted:
     return "WorkflowExecutionStarted";

@@ -61,7 +61,7 @@ PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
 
 Aws::String GetNameForPositionalConstraint(PositionalConstraint enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PositionalConstraint::EXACTLY:
     return "EXACTLY";

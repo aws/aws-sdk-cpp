@@ -46,7 +46,7 @@ ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
 
 Aws::String GetNameForParameterApplyType(ParameterApplyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ParameterApplyType::static_:
     return "static";

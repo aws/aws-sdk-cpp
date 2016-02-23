@@ -46,7 +46,7 @@ JobType GetJobTypeForName(const Aws::String& name)
 
 Aws::String GetNameForJobType(JobType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case JobType::Import:
     return "Import";

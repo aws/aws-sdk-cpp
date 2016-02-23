@@ -41,7 +41,7 @@ RequestPayer GetRequestPayerForName(const Aws::String& name)
 
 Aws::String GetNameForRequestPayer(RequestPayer enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RequestPayer::requester:
     return "requester";

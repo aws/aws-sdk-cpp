@@ -51,7 +51,7 @@ KeyState GetKeyStateForName(const Aws::String& name)
 
 Aws::String GetNameForKeyState(KeyState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyState::Enabled:
     return "Enabled";

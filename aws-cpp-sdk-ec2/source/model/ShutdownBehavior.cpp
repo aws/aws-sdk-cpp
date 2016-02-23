@@ -46,7 +46,7 @@ ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
 
 Aws::String GetNameForShutdownBehavior(ShutdownBehavior enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ShutdownBehavior::stop:
     return "stop";

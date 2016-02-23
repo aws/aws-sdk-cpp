@@ -41,7 +41,7 @@ StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String&
 
 Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StepStateChangeReasonCode::NONE:
     return "NONE";

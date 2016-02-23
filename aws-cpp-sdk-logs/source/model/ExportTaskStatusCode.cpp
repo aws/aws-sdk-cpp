@@ -66,7 +66,7 @@ ExportTaskStatusCode GetExportTaskStatusCodeForName(const Aws::String& name)
 
 Aws::String GetNameForExportTaskStatusCode(ExportTaskStatusCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExportTaskStatusCode::CANCELLED:
     return "CANCELLED";

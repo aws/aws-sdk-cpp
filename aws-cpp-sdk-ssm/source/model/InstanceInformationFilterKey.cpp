@@ -56,7 +56,7 @@ InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::S
 
 Aws::String GetNameForInstanceInformationFilterKey(InstanceInformationFilterKey enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceInformationFilterKey::InstanceIds:
     return "InstanceIds";

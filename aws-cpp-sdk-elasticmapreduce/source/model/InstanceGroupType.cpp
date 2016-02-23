@@ -51,7 +51,7 @@ InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name)
 
 Aws::String GetNameForInstanceGroupType(InstanceGroupType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceGroupType::MASTER:
     return "MASTER";

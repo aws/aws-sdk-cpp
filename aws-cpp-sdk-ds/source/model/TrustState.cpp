@@ -76,7 +76,7 @@ TrustState GetTrustStateForName(const Aws::String& name)
 
 Aws::String GetNameForTrustState(TrustState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TrustState::Creating:
     return "Creating";

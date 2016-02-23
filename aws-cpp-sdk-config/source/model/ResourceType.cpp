@@ -131,7 +131,7 @@ ResourceType GetResourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForResourceType(ResourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceType::AWS_EC2_CustomerGateway:
     return "AWS::EC2::CustomerGateway";

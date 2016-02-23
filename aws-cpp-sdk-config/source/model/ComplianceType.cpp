@@ -56,7 +56,7 @@ ComplianceType GetComplianceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForComplianceType(ComplianceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ComplianceType::COMPLIANT:
     return "COMPLIANT";

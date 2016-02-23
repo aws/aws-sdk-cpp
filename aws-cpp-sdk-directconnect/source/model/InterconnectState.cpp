@@ -66,7 +66,7 @@ InterconnectState GetInterconnectStateForName(const Aws::String& name)
 
 Aws::String GetNameForInterconnectState(InterconnectState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InterconnectState::requested:
     return "requested";

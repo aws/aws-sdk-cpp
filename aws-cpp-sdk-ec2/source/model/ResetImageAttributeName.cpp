@@ -41,7 +41,7 @@ ResetImageAttributeName GetResetImageAttributeNameForName(const Aws::String& nam
 
 Aws::String GetNameForResetImageAttributeName(ResetImageAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResetImageAttributeName::launchPermission:
     return "launchPermission";

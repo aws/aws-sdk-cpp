@@ -111,7 +111,7 @@ UploadType GetUploadTypeForName(const Aws::String& name)
 
 Aws::String GetNameForUploadType(UploadType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case UploadType::ANDROID_APP:
     return "ANDROID_APP";

@@ -46,7 +46,7 @@ VolumeStatusName GetVolumeStatusNameForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeStatusName(VolumeStatusName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeStatusName::io_enabled:
     return "io-enabled";

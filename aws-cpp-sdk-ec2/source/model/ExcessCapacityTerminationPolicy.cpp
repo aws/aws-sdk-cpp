@@ -46,7 +46,7 @@ ExcessCapacityTerminationPolicy GetExcessCapacityTerminationPolicyForName(const 
 
 Aws::String GetNameForExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExcessCapacityTerminationPolicy::noTermination:
     return "noTermination";

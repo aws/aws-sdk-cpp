@@ -46,7 +46,7 @@ OrderBy GetOrderByForName(const Aws::String& name)
 
 Aws::String GetNameForOrderBy(OrderBy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OrderBy::LogStreamName:
     return "LogStreamName";

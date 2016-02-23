@@ -66,7 +66,7 @@ CloseStatus GetCloseStatusForName(const Aws::String& name)
 
 Aws::String GetNameForCloseStatus(CloseStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CloseStatus::COMPLETED:
     return "COMPLETED";

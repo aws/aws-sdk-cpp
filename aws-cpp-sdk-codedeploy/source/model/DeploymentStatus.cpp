@@ -66,7 +66,7 @@ DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
 
 Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentStatus::Created:
     return "Created";

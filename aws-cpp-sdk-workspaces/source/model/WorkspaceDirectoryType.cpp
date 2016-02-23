@@ -46,7 +46,7 @@ WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)
 
 Aws::String GetNameForWorkspaceDirectoryType(WorkspaceDirectoryType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkspaceDirectoryType::SIMPLE_AD:
     return "SIMPLE_AD";

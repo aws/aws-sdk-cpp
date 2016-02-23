@@ -56,7 +56,7 @@ SslProtocol GetSslProtocolForName(const Aws::String& name)
 
 Aws::String GetNameForSslProtocol(SslProtocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SslProtocol::SSLv3:
     return "SSLv3";

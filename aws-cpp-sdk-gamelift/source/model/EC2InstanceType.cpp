@@ -176,7 +176,7 @@ EC2InstanceType GetEC2InstanceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEC2InstanceType(EC2InstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EC2InstanceType::t2_micro:
     return "t2.micro";

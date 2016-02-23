@@ -51,7 +51,7 @@ ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
 
 Aws::String GetNameForActionExecutionStatus(ActionExecutionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionExecutionStatus::InProgress:
     return "InProgress";

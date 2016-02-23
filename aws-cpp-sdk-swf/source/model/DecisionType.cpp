@@ -101,7 +101,7 @@ DecisionType GetDecisionTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDecisionType(DecisionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DecisionType::ScheduleActivityTask:
     return "ScheduleActivityTask";

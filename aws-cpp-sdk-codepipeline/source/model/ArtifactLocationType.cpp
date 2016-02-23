@@ -41,7 +41,7 @@ ArtifactLocationType GetArtifactLocationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForArtifactLocationType(ArtifactLocationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ArtifactLocationType::S3:
     return "S3";

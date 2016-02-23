@@ -121,7 +121,7 @@ SampleType GetSampleTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSampleType(SampleType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SampleType::CPU:
     return "CPU";

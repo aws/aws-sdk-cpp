@@ -56,7 +56,7 @@ CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
 
 Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CancelBatchErrorCode::fleetRequestIdDoesNotExist:
     return "fleetRequestIdDoesNotExist";

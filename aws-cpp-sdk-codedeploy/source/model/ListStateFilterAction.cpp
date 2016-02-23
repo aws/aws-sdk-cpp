@@ -51,7 +51,7 @@ ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
 
 Aws::String GetNameForListStateFilterAction(ListStateFilterAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ListStateFilterAction::include:
     return "include";

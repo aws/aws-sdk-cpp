@@ -51,7 +51,7 @@ ActionOwner GetActionOwnerForName(const Aws::String& name)
 
 Aws::String GetNameForActionOwner(ActionOwner enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionOwner::AWS:
     return "AWS";

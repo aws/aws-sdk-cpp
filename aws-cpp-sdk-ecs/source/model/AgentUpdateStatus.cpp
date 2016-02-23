@@ -66,7 +66,7 @@ AgentUpdateStatus GetAgentUpdateStatusForName(const Aws::String& name)
 
 Aws::String GetNameForAgentUpdateStatus(AgentUpdateStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AgentUpdateStatus::PENDING:
     return "PENDING";

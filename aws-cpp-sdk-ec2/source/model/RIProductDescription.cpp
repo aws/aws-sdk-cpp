@@ -56,7 +56,7 @@ RIProductDescription GetRIProductDescriptionForName(const Aws::String& name)
 
 Aws::String GetNameForRIProductDescription(RIProductDescription enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RIProductDescription::Linux_UNIX:
     return "Linux/UNIX";

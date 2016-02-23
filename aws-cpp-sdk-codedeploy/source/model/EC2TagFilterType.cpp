@@ -51,7 +51,7 @@ EC2TagFilterType GetEC2TagFilterTypeForName(const Aws::String& name)
 
 Aws::String GetNameForEC2TagFilterType(EC2TagFilterType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EC2TagFilterType::KEY_ONLY:
     return "KEY_ONLY";

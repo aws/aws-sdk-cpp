@@ -51,7 +51,7 @@ PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name)
 
 Aws::String GetNameForPolicyScopeType(PolicyScopeType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PolicyScopeType::All:
     return "All";

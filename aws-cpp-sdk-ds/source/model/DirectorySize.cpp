@@ -46,7 +46,7 @@ DirectorySize GetDirectorySizeForName(const Aws::String& name)
 
 Aws::String GetNameForDirectorySize(DirectorySize enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DirectorySize::Small:
     return "Small";

@@ -76,7 +76,7 @@ CacheClusterSize GetCacheClusterSizeForName(const Aws::String& name)
 
 Aws::String GetNameForCacheClusterSize(CacheClusterSize enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CacheClusterSize::_0_5:
     return "0.5";

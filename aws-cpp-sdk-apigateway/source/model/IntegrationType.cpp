@@ -51,7 +51,7 @@ IntegrationType GetIntegrationTypeForName(const Aws::String& name)
 
 Aws::String GetNameForIntegrationType(IntegrationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case IntegrationType::HTTP:
     return "HTTP";

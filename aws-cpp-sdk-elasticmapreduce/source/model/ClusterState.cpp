@@ -71,7 +71,7 @@ ClusterState GetClusterStateForName(const Aws::String& name)
 
 Aws::String GetNameForClusterState(ClusterState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ClusterState::STARTING:
     return "STARTING";

@@ -56,7 +56,7 @@ StartTimerFailedCause GetStartTimerFailedCauseForName(const Aws::String& name)
 
 Aws::String GetNameForStartTimerFailedCause(StartTimerFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StartTimerFailedCause::TIMER_ID_ALREADY_IN_USE:
     return "TIMER_ID_ALREADY_IN_USE";

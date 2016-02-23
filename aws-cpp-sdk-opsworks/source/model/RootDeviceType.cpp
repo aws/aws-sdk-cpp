@@ -46,7 +46,7 @@ RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForRootDeviceType(RootDeviceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RootDeviceType::ebs:
     return "ebs";

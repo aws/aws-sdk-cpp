@@ -46,7 +46,7 @@ MoveStatus GetMoveStatusForName(const Aws::String& name)
 
 Aws::String GetNameForMoveStatus(MoveStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MoveStatus::movingToVpc:
     return "movingToVpc";

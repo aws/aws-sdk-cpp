@@ -61,7 +61,7 @@ EventCode GetEventCodeForName(const Aws::String& name)
 
 Aws::String GetNameForEventCode(EventCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventCode::instance_reboot:
     return "instance-reboot";

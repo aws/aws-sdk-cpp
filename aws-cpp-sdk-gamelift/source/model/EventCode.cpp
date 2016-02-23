@@ -121,7 +121,7 @@ EventCode GetEventCodeForName(const Aws::String& name)
 
 Aws::String GetNameForEventCode(EventCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventCode::GENERIC_EVENT:
     return "GENERIC_EVENT";

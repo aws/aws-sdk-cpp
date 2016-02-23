@@ -51,7 +51,7 @@ ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
 
 Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReturnConsumedCapacity::INDEXES:
     return "INDEXES";

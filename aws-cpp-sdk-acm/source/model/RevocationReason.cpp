@@ -86,7 +86,7 @@ RevocationReason GetRevocationReasonForName(const Aws::String& name)
 
 Aws::String GetNameForRevocationReason(RevocationReason enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RevocationReason::UNSPECIFIED:
     return "UNSPECIFIED";

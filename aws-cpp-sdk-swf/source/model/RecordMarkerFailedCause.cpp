@@ -41,7 +41,7 @@ RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& nam
 
 Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RecordMarkerFailedCause::OPERATION_NOT_PERMITTED:
     return "OPERATION_NOT_PERMITTED";

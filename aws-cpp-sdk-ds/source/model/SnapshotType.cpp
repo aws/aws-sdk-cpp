@@ -46,7 +46,7 @@ SnapshotType GetSnapshotTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSnapshotType(SnapshotType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SnapshotType::Auto:
     return "Auto";

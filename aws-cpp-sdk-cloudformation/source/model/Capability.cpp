@@ -41,7 +41,7 @@ Capability GetCapabilityForName(const Aws::String& name)
 
 Aws::String GetNameForCapability(Capability enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Capability::CAPABILITY_IAM:
     return "CAPABILITY_IAM";

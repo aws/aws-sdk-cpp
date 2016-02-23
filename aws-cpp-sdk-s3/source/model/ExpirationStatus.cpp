@@ -46,7 +46,7 @@ ExpirationStatus GetExpirationStatusForName(const Aws::String& name)
 
 Aws::String GetNameForExpirationStatus(ExpirationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExpirationStatus::Enabled:
     return "Enabled";

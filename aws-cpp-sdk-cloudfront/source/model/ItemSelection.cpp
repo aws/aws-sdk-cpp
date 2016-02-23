@@ -51,7 +51,7 @@ ItemSelection GetItemSelectionForName(const Aws::String& name)
 
 Aws::String GetNameForItemSelection(ItemSelection enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ItemSelection::none:
     return "none";

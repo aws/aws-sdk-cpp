@@ -46,7 +46,7 @@ HostTenancy GetHostTenancyForName(const Aws::String& name)
 
 Aws::String GetNameForHostTenancy(HostTenancy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case HostTenancy::dedicated:
     return "dedicated";

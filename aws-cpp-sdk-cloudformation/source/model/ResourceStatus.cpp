@@ -86,7 +86,7 @@ ResourceStatus GetResourceStatusForName(const Aws::String& name)
 
 Aws::String GetNameForResourceStatus(ResourceStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceStatus::CREATE_IN_PROGRESS:
     return "CREATE_IN_PROGRESS";

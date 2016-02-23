@@ -51,7 +51,7 @@ VolumeType GetVolumeTypeForName(const Aws::String& name)
 
 Aws::String GetNameForVolumeType(VolumeType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeType::standard:
     return "standard";

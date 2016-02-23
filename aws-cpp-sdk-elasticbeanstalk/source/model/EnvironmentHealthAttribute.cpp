@@ -76,7 +76,7 @@ EnvironmentHealthAttribute GetEnvironmentHealthAttributeForName(const Aws::Strin
 
 Aws::String GetNameForEnvironmentHealthAttribute(EnvironmentHealthAttribute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentHealthAttribute::Status:
     return "Status";

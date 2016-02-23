@@ -46,7 +46,7 @@ DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDevicePoolType(DevicePoolType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DevicePoolType::CURATED:
     return "CURATED";

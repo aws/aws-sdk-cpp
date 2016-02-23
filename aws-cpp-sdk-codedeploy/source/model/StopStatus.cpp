@@ -46,7 +46,7 @@ StopStatus GetStopStatusForName(const Aws::String& name)
 
 Aws::String GetNameForStopStatus(StopStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StopStatus::Pending:
     return "Pending";

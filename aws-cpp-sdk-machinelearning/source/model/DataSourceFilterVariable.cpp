@@ -66,7 +66,7 @@ DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& n
 
 Aws::String GetNameForDataSourceFilterVariable(DataSourceFilterVariable enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DataSourceFilterVariable::CreatedAt:
     return "CreatedAt";

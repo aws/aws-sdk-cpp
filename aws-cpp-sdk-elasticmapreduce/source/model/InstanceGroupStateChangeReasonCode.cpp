@@ -56,7 +56,7 @@ InstanceGroupStateChangeReasonCode GetInstanceGroupStateChangeReasonCodeForName(
 
 Aws::String GetNameForInstanceGroupStateChangeReasonCode(InstanceGroupStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceGroupStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

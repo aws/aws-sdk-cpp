@@ -56,7 +56,7 @@ QueryParser GetQueryParserForName(const Aws::String& name)
 
 Aws::String GetNameForQueryParser(QueryParser enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case QueryParser::simple:
     return "simple";

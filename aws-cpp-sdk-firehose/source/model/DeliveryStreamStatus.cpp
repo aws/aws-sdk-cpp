@@ -51,7 +51,7 @@ DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)
 
 Aws::String GetNameForDeliveryStreamStatus(DeliveryStreamStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeliveryStreamStatus::CREATING:
     return "CREATING";

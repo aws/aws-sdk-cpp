@@ -51,7 +51,7 @@ DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
 
 Aws::String GetNameForDiskImageFormat(DiskImageFormat enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DiskImageFormat::VMDK:
     return "VMDK";

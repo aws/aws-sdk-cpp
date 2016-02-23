@@ -121,7 +121,7 @@ ResourceType GetResourceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForResourceType(ResourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceType::customer_gateway:
     return "customer-gateway";

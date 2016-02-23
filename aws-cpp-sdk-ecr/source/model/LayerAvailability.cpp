@@ -46,7 +46,7 @@ LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)
 
 Aws::String GetNameForLayerAvailability(LayerAvailability enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LayerAvailability::AVAILABLE:
     return "AVAILABLE";

@@ -51,7 +51,7 @@ PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::S
 
 Aws::String GetNameForPolicyEvaluationDecisionType(PolicyEvaluationDecisionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PolicyEvaluationDecisionType::allowed:
     return "allowed";

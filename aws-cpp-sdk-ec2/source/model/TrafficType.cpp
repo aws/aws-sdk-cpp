@@ -51,7 +51,7 @@ TrafficType GetTrafficTypeForName(const Aws::String& name)
 
 Aws::String GetNameForTrafficType(TrafficType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TrafficType::ACCEPT:
     return "ACCEPT";

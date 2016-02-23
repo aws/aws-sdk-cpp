@@ -51,7 +51,7 @@ AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
 
 Aws::String GetNameForAssignmentStatusType(AssignmentStatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AssignmentStatusType::Assigned:
     return "Assigned";

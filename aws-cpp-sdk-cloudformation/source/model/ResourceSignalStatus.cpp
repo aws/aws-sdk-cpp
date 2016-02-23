@@ -46,7 +46,7 @@ ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
 
 Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceSignalStatus::SUCCESS:
     return "SUCCESS";

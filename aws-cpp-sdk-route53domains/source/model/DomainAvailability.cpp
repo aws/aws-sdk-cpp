@@ -76,7 +76,7 @@ DomainAvailability GetDomainAvailabilityForName(const Aws::String& name)
 
 Aws::String GetNameForDomainAvailability(DomainAvailability enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DomainAvailability::AVAILABLE:
     return "AVAILABLE";

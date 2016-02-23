@@ -66,7 +66,7 @@ EventSeverity GetEventSeverityForName(const Aws::String& name)
 
 Aws::String GetNameForEventSeverity(EventSeverity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventSeverity::TRACE:
     return "TRACE";

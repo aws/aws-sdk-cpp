@@ -46,7 +46,7 @@ TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)
 
 Aws::String GetNameForTelemetryStatus(TelemetryStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TelemetryStatus::UP:
     return "UP";

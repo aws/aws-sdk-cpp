@@ -71,7 +71,7 @@ VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
 
 Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VirtualInterfaceState::confirming:
     return "confirming";

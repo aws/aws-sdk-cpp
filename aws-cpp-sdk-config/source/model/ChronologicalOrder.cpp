@@ -46,7 +46,7 @@ ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
 
 Aws::String GetNameForChronologicalOrder(ChronologicalOrder enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChronologicalOrder::Reverse:
     return "Reverse";

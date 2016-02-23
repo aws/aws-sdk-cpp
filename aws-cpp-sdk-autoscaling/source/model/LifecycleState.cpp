@@ -101,7 +101,7 @@ LifecycleState GetLifecycleStateForName(const Aws::String& name)
 
 Aws::String GetNameForLifecycleState(LifecycleState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifecycleState::Pending:
     return "Pending";

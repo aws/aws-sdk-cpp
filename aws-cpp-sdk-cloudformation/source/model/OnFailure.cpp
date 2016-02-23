@@ -51,7 +51,7 @@ OnFailure GetOnFailureForName(const Aws::String& name)
 
 Aws::String GetNameForOnFailure(OnFailure enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OnFailure::DO_NOTHING:
     return "DO_NOTHING";

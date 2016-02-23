@@ -51,7 +51,7 @@ ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
 
 Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ViewerProtocolPolicy::allow_all:
     return "allow-all";

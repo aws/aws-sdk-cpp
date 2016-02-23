@@ -56,7 +56,7 @@ CompressionFormat GetCompressionFormatForName(const Aws::String& name)
 
 Aws::String GetNameForCompressionFormat(CompressionFormat enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CompressionFormat::UNCOMPRESSED:
     return "UNCOMPRESSED";

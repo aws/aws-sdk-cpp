@@ -61,7 +61,7 @@ Permission GetPermissionForName(const Aws::String& name)
 
 Aws::String GetNameForPermission(Permission enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Permission::FULL_CONTROL:
     return "FULL_CONTROL";

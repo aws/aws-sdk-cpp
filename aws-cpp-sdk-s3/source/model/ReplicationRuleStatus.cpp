@@ -46,7 +46,7 @@ ReplicationRuleStatus GetReplicationRuleStatusForName(const Aws::String& name)
 
 Aws::String GetNameForReplicationRuleStatus(ReplicationRuleStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReplicationRuleStatus::Enabled:
     return "Enabled";

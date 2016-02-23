@@ -41,7 +41,7 @@ DecisionTaskTimeoutType GetDecisionTaskTimeoutTypeForName(const Aws::String& nam
 
 Aws::String GetNameForDecisionTaskTimeoutType(DecisionTaskTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DecisionTaskTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

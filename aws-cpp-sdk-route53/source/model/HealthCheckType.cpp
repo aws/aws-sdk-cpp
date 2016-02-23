@@ -66,7 +66,7 @@ HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
 
 Aws::String GetNameForHealthCheckType(HealthCheckType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case HealthCheckType::HTTP:
     return "HTTP";

@@ -86,7 +86,7 @@ BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& n
 
 Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BucketLocationConstraint::EU:
     return "EU";

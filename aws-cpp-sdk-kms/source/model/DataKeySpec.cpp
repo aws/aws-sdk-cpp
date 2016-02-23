@@ -46,7 +46,7 @@ DataKeySpec GetDataKeySpecForName(const Aws::String& name)
 
 Aws::String GetNameForDataKeySpec(DataKeySpec enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DataKeySpec::AES_256:
     return "AES_256";

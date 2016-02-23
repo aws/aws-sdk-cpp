@@ -71,7 +71,7 @@ HsmStatus GetHsmStatusForName(const Aws::String& name)
 
 Aws::String GetNameForHsmStatus(HsmStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case HsmStatus::PENDING:
     return "PENDING";

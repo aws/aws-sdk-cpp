@@ -46,7 +46,7 @@ MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
 
 Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MinimumProtocolVersion::SSLv3:
     return "SSLv3";

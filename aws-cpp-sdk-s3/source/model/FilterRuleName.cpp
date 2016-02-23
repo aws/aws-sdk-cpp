@@ -46,7 +46,7 @@ FilterRuleName GetFilterRuleNameForName(const Aws::String& name)
 
 Aws::String GetNameForFilterRuleName(FilterRuleName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FilterRuleName::prefix:
     return "prefix";

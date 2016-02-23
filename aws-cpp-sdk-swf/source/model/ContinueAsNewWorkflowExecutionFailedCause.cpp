@@ -81,7 +81,7 @@ ContinueAsNewWorkflowExecutionFailedCause GetContinueAsNewWorkflowExecutionFaile
 
 Aws::String GetNameForContinueAsNewWorkflowExecutionFailedCause(ContinueAsNewWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContinueAsNewWorkflowExecutionFailedCause::UNHANDLED_DECISION:
     return "UNHANDLED_DECISION";

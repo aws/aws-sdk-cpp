@@ -46,7 +46,7 @@ Architecture GetArchitectureForName(const Aws::String& name)
 
 Aws::String GetNameForArchitecture(Architecture enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Architecture::x86_64:
     return "x86_64";

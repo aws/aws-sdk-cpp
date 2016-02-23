@@ -46,7 +46,7 @@ ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& n
 
 Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ParameterExceptionReason::INVALID_OPTION:
     return "INVALID_OPTION";

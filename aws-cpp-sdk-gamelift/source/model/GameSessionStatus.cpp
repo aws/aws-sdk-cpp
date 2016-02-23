@@ -56,7 +56,7 @@ GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
 
 Aws::String GetNameForGameSessionStatus(GameSessionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case GameSessionStatus::ACTIVE:
     return "ACTIVE";

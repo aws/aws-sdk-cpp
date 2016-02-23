@@ -46,7 +46,7 @@ TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
 
 Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TaskDefinitionStatus::ACTIVE:
     return "ACTIVE";

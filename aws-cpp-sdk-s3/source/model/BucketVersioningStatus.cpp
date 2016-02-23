@@ -46,7 +46,7 @@ BucketVersioningStatus GetBucketVersioningStatusForName(const Aws::String& name)
 
 Aws::String GetNameForBucketVersioningStatus(BucketVersioningStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BucketVersioningStatus::Enabled:
     return "Enabled";

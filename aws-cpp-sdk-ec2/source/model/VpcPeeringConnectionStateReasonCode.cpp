@@ -81,7 +81,7 @@ VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForNam
 
 Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpcPeeringConnectionStateReasonCode::initiating_request:
     return "initiating-request";

@@ -56,7 +56,7 @@ ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
 
 Aws::String GetNameForActionOnFailure(ActionOnFailure enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionOnFailure::TERMINATE_JOB_FLOW:
     return "TERMINATE_JOB_FLOW";

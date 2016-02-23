@@ -91,7 +91,7 @@ ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const 
 
 Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED:
     return "ACTIVITY_TYPE_DEPRECATED";

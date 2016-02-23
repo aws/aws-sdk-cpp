@@ -46,7 +46,7 @@ ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
 
 Aws::String GetNameForValidationSeverity(ValidationSeverity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ValidationSeverity::error:
     return "error";

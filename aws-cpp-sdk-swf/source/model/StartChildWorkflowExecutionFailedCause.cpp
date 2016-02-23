@@ -91,7 +91,7 @@ StartChildWorkflowExecutionFailedCause GetStartChildWorkflowExecutionFailedCause
 
 Aws::String GetNameForStartChildWorkflowExecutionFailedCause(StartChildWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST:
     return "WORKFLOW_TYPE_DOES_NOT_EXIST";

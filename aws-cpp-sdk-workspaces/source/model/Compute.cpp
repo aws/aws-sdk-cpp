@@ -51,7 +51,7 @@ Compute GetComputeForName(const Aws::String& name)
 
 Aws::String GetNameForCompute(Compute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Compute::VALUE:
     return "VALUE";

@@ -41,7 +41,7 @@ BlockerType GetBlockerTypeForName(const Aws::String& name)
 
 Aws::String GetNameForBlockerType(BlockerType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BlockerType::Schedule:
     return "Schedule";

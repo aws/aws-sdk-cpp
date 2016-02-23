@@ -41,7 +41,7 @@ ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name)
 
 Aws::String GetNameForArtifactStoreType(ArtifactStoreType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ArtifactStoreType::S3:
     return "S3";

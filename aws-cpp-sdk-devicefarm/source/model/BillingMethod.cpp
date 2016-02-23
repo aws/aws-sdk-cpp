@@ -46,7 +46,7 @@ BillingMethod GetBillingMethodForName(const Aws::String& name)
 
 Aws::String GetNameForBillingMethod(BillingMethod enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BillingMethod::METERED:
     return "METERED";

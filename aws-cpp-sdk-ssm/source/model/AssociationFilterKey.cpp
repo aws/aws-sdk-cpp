@@ -46,7 +46,7 @@ AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
 
 Aws::String GetNameForAssociationFilterKey(AssociationFilterKey enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AssociationFilterKey::InstanceId:
     return "InstanceId";

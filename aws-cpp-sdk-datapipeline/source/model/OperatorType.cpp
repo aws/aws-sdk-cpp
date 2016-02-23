@@ -61,7 +61,7 @@ OperatorType GetOperatorTypeForName(const Aws::String& name)
 
 Aws::String GetNameForOperatorType(OperatorType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OperatorType::EQ:
     return "EQ";

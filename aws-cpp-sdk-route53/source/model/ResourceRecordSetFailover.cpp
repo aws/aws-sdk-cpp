@@ -46,7 +46,7 @@ ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String&
 
 Aws::String GetNameForResourceRecordSetFailover(ResourceRecordSetFailover enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceRecordSetFailover::PRIMARY:
     return "PRIMARY";

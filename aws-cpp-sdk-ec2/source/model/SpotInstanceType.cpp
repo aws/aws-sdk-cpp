@@ -46,7 +46,7 @@ SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name)
 
 Aws::String GetNameForSpotInstanceType(SpotInstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SpotInstanceType::one_time:
     return "one-time";

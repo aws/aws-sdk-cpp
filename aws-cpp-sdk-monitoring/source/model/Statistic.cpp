@@ -61,7 +61,7 @@ Statistic GetStatisticForName(const Aws::String& name)
 
 Aws::String GetNameForStatistic(Statistic enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Statistic::SampleCount:
     return "SampleCount";

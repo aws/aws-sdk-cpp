@@ -46,7 +46,7 @@ DomainType GetDomainTypeForName(const Aws::String& name)
 
 Aws::String GetNameForDomainType(DomainType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DomainType::vpc:
     return "vpc";

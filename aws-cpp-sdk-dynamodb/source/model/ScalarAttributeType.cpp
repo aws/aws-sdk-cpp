@@ -51,7 +51,7 @@ ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
 
 Aws::String GetNameForScalarAttributeType(ScalarAttributeType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ScalarAttributeType::S:
     return "S";
