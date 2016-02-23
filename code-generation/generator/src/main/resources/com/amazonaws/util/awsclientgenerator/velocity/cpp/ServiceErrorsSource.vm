@@ -36,7 +36,7 @@ because MSVC has a maximum of 122 chained if-else blocks.
 #set($elseText = "")
 #set ($helperIndex =  $errorCounter / 122)
 
-bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreErrors>& error)
 {
 #end
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
@@ -69,6 +69,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 #set($elseText = "else ")
 #end
 #elseif ($serviceModel.serviceErrors.size() > 121)
+#set($elseText = "")
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
 #set($maxHelperIndex = $serviceModel.serviceErrors.size() / 122)
@@ -77,6 +78,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return error;
   }
+#set($elseText = "else ")
 #end
 #else
   AWS_UNREFERENCED_PARAM(errorName);
