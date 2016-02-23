@@ -48,12 +48,11 @@ enum class AWS_SNS_API SNSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ERROR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ENDPOINT_DISABLED,
-  INTERNAL,
+  INTERNAL_ERROR,
   INVALID_PARAMETER,
   NOT_FOUND,
-  PARAMETER_VALUE_INVALID,
   PLATFORM_APPLICATION_DISABLED,
   SUBSCRIPTION_LIMIT_EXCEEDED,
   TOPIC_LIMIT_EXCEEDED

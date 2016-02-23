@@ -20,12 +20,12 @@ using namespace Aws::Client;
 using namespace Aws::AutoScaling;
 using namespace Aws::Utils;
 
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
+static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
+static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
+static const int ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AlreadyExists");
+static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("ScalingActivityInProgress");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int SCALING_ACTIVITY_IN_PROGRESS_HASH = HashingUtils::HashString("ScalingActivityInProgress");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
-static const int RESOURCE_CONTENTION_HASH = HashingUtils::HashString("ResourceContention");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int RESOURCE_CONTENTION_FAULT_HASH = HashingUtils::HashString("ResourceContention");
 
 namespace Aws
 {
@@ -38,29 +38,29 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_IN_USE_HASH)
+  if (hashCode == RESOURCE_IN_USE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_IN_USE_FAULT), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS_FAULT), false);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::INVALID_NEXT_TOKEN), false);
   }
-  else if (hashCode == SCALING_ACTIVITY_IN_PROGRESS_HASH)
+  else if (hashCode == RESOURCE_CONTENTION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::SCALING_ACTIVITY_IN_PROGRESS), false);
-  }
-  else if (hashCode == ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::ALREADY_EXISTS), false);
-  }
-  else if (hashCode == RESOURCE_CONTENTION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION), true);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AutoScalingErrors::RESOURCE_CONTENTION_FAULT), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

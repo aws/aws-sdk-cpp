@@ -340,7 +340,6 @@ public class C2jModelToGeneratorModelTransformer {
                 error.setRetryable(true);
             }
 
-            error.setName(c2jError.getError().getCode());
             error.setText(c2jError.getError().getCode());
         }
 

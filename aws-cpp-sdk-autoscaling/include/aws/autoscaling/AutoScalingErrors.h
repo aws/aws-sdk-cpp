@@ -48,12 +48,12 @@ enum class AWS_AUTOSCALING_API AutoScalingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_NEXT_TOKEN,
-  LIMIT_EXCEEDED,
-  RESOURCE_CONTENTION,
-  RESOURCE_IN_USE,
-  SCALING_ACTIVITY_IN_PROGRESS
+  LIMIT_EXCEEDED_FAULT,
+  RESOURCE_CONTENTION_FAULT,
+  RESOURCE_IN_USE_FAULT,
+  SCALING_ACTIVITY_IN_PROGRESS_FAULT
 };
 namespace AutoScalingErrorMapper
 {

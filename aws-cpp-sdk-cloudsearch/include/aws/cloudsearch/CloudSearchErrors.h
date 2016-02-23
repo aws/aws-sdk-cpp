@@ -49,7 +49,7 @@ enum class AWS_CLOUDSEARCH_API CloudSearchErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BASE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  DISABLED_ACTION,
+  DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,
   LIMIT_EXCEEDED

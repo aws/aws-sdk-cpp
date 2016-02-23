@@ -48,10 +48,11 @@ enum class AWS_CLOUDWATCH_API CloudWatchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INVALID_FORMAT,
+  INTERNAL_SERVICE_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_FORMAT_FAULT,
   INVALID_NEXT_TOKEN,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED_FAULT,
+  MISSING_REQUIRED_PARAMETER
 };
 namespace CloudWatchErrorMapper
 {
