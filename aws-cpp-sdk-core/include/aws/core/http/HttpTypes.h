@@ -34,7 +34,8 @@ enum class AWS_CORE_API HttpMethod
     HTTP_POST, 
     HTTP_DELETE, 
     HTTP_PUT,
-    HTTP_HEAD
+    HTTP_HEAD,
+    HTTP_PATCH
 };
 
 enum class AWS_CORE_API TransferLibType

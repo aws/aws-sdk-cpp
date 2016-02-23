@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * Contains information about an alias.
+   * <p>Contains information about an alias.</p>
    */
   class AWS_KMS_API AliasListEntry
   {

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace FailWorkflowExecutionFailedCauseMapper
 {
+
+
 FailWorkflowExecutionFailedCause GetFailWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNHANDLED_DECISION_HASH)
   {
-    return FailWorkflowExecutionFailedCause::UNHANDLED_DECISION;
+     return FailWorkflowExecutionFailedCause::UNHANDLED_DECISION;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return FailWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause value)
+Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FailWorkflowExecutionFailedCause::UNHANDLED_DECISION:
     return "UNHANDLED_DECISION";

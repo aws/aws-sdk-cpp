@@ -43,7 +43,7 @@ Aws::String DescribeVpcAttributeRequest::SerializePayload() const
   {
     ss << "Attribute=" << VpcAttributeNameMapper::GetNameForVpcAttributeName(m_attribute) << "&";
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

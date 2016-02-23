@@ -28,7 +28,8 @@ CustomOriginConfig::CustomOriginConfig() :
     m_hTTPPortHasBeenSet(false),
     m_hTTPSPort(0),
     m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false)
+    m_originProtocolPolicyHasBeenSet(false),
+    m_originSslProtocolsHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,8 @@ CustomOriginConfig::CustomOriginConfig(const XmlNode& xmlNode) :
     m_hTTPPortHasBeenSet(false),
     m_hTTPSPort(0),
     m_hTTPSPortHasBeenSet(false),
-    m_originProtocolPolicyHasBeenSet(false)
+    m_originProtocolPolicyHasBeenSet(false),
+    m_originSslProtocolsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +67,12 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
     {
       m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());
       m_originProtocolPolicyHasBeenSet = true;
+    }
+    XmlNode originSslProtocolsNode = resultNode.FirstChild("OriginSslProtocols");
+    if(!originSslProtocolsNode.IsNull())
+    {
+      m_originSslProtocols = originSslProtocolsNode;
+      m_originSslProtocolsHasBeenSet = true;
     }
   }
 
@@ -94,6 +102,12 @@ void CustomOriginConfig::AddToNode(XmlNode& parentNode) const
   {
    XmlNode originProtocolPolicyNode = parentNode.CreateChildElement("OriginProtocolPolicy");
    originProtocolPolicyNode.SetText(OriginProtocolPolicyMapper::GetNameForOriginProtocolPolicy(m_originProtocolPolicy));
+  }
+
+  if(m_originSslProtocolsHasBeenSet)
+  {
+   XmlNode originSslProtocolsNode = parentNode.CreateChildElement("OriginSslProtocols");
+   m_originSslProtocols.AddToNode(originSslProtocolsNode);
   }
 
 }

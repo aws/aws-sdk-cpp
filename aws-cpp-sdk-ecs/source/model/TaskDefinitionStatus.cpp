@@ -28,25 +28,25 @@ namespace Model
 {
 namespace TaskDefinitionStatusMapper
 {
+
+
 TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVE_HASH)
   {
-    return TaskDefinitionStatus::ACTIVE;
+     return TaskDefinitionStatus::ACTIVE;
   }
   else if (hashCode == INACTIVE_HASH)
   {
-    return TaskDefinitionStatus::INACTIVE;
+     return TaskDefinitionStatus::INACTIVE;
   }
-
   return TaskDefinitionStatus::NOT_SET;
 }
 
-Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus value)
+Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TaskDefinitionStatus::ACTIVE:
     return "ACTIVE";

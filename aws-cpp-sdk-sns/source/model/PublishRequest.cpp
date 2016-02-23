@@ -25,7 +25,6 @@ PublishRequest::PublishRequest() :
     m_messageHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_messageStructureHasBeenSet(false),
-    m_attributesHasBeenSet(false),
     m_messageAttributesHasBeenSet(false)
 {
 }
@@ -53,18 +52,6 @@ Aws::String PublishRequest::SerializePayload() const
   if(m_messageStructureHasBeenSet)
   {
     ss << "MessageStructure=" << StringUtils::URLEncode(m_messageStructure.c_str()) << "&";
-  }
-  if(m_attributesHasBeenSet)
-  {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attributes.entry." << attributesCount << ".key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Attributes.entry." << attributesCount << ".value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      attributesCount++;
-    }
   }
   if(m_messageAttributesHasBeenSet)
   {

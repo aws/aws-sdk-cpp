@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ReturnItemCollectionMetricsMapper
 {
+
+
 ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SIZE_HASH)
   {
-    return ReturnItemCollectionMetrics::SIZE;
+     return ReturnItemCollectionMetrics::SIZE;
   }
   else if (hashCode == NONE_HASH)
   {
-    return ReturnItemCollectionMetrics::NONE;
+     return ReturnItemCollectionMetrics::NONE;
   }
-
   return ReturnItemCollectionMetrics::NOT_SET;
 }
 
-Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics value)
+Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReturnItemCollectionMetrics::SIZE:
     return "SIZE";

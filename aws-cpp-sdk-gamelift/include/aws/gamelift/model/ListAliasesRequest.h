@@ -1,0 +1,217 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/GameLiftRequest.h>
+#include <aws/gamelift/model/RoutingStrategyType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace GameLift
+{
+namespace Model
+{
+
+  /**
+   * <p>Represents the input for a request action.</p>
+   */
+  class AWS_GAMELIFT_API ListAliasesRequest : public GameLiftRequest
+  {
+  public:
+    ListAliasesRequest();
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
+     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
+     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
+     * The alias does not resolve to a fleet but instead can be used to display a
+     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
+     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     */
+    inline const RoutingStrategyType& GetRoutingStrategyType() const{ return m_routingStrategyType; }
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
+     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
+     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
+     * The alias does not resolve to a fleet but instead can be used to display a
+     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
+     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     */
+    inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
+     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
+     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
+     * The alias does not resolve to a fleet but instead can be used to display a
+     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
+     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     */
+    inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
+     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
+     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
+     * The alias does not resolve to a fleet but instead can be used to display a
+     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
+     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     */
+    inline ListAliasesRequest& WithRoutingStrategyType(const RoutingStrategyType& value) { SetRoutingStrategyType(value); return *this;}
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
+     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
+     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
+     * The alias does not resolve to a fleet but instead can be used to display a
+     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
+     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     */
+    inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(value); return *this;}
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline ListAliasesRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline ListAliasesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * unique.</p>
+     */
+    inline ListAliasesRequest& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>Maximum number of results to return. You can use this parameter with
+     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     */
+    inline long GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Maximum number of results to return. You can use this parameter with
+     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     */
+    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>Maximum number of results to return. You can use this parameter with
+     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     */
+    inline ListAliasesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline ListAliasesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline ListAliasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Token indicating the start of the next sequential page of results. Use the
+     * token that is returned with a previous call to this action. To specify the start
+     * of the result set, do not specify a value.</p>
+     */
+    inline ListAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+  private:
+    RoutingStrategyType m_routingStrategyType;
+    bool m_routingStrategyTypeHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    long m_limit;
+    bool m_limitHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

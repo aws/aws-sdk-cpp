@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 EventSubscription::EventSubscription() : 
-    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -39,7 +38,6 @@ EventSubscription::EventSubscription() :
 }
 
 EventSubscription::EventSubscription(const XmlNode& xmlNode) : 
-    m_idHasBeenSet(false),
     m_customerAwsIdHasBeenSet(false),
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
@@ -60,12 +58,6 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
-      m_idHasBeenSet = true;
-    }
     XmlNode customerAwsIdNode = resultNode.FirstChild("CustomerAwsId");
     if(!customerAwsIdNode.IsNull())
     {
@@ -139,10 +131,6 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_idHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
@@ -191,10 +179,6 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_idHasBeenSet)
-  {
-      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
   if(m_customerAwsIdHasBeenSet)
   {
       oStream << location << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";

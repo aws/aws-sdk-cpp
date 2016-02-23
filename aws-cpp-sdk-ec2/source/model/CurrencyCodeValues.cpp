@@ -27,21 +27,21 @@ namespace Model
 {
 namespace CurrencyCodeValuesMapper
 {
+
+
 CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == USD_HASH)
   {
-    return CurrencyCodeValues::USD;
+     return CurrencyCodeValues::USD;
   }
-
   return CurrencyCodeValues::NOT_SET;
 }
 
-Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues value)
+Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CurrencyCodeValues::USD:
     return "USD";

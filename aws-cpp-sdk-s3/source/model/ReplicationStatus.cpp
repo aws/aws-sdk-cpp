@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ReplicationStatusMapper
 {
+
+
 ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == COMPLETE_HASH)
   {
-    return ReplicationStatus::COMPLETE;
+     return ReplicationStatus::COMPLETE;
   }
   else if (hashCode == PENDING_HASH)
   {
-    return ReplicationStatus::PENDING;
+     return ReplicationStatus::PENDING;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return ReplicationStatus::FAILED;
+     return ReplicationStatus::FAILED;
   }
   else if (hashCode == REPLICA_HASH)
   {
-    return ReplicationStatus::REPLICA;
+     return ReplicationStatus::REPLICA;
   }
-
   return ReplicationStatus::NOT_SET;
 }
 
-Aws::String GetNameForReplicationStatus(ReplicationStatus value)
+Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReplicationStatus::COMPLETE:
     return "COMPLETE";

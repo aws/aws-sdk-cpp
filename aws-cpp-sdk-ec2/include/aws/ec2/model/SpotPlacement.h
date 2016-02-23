@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes Spot Instance placement.</p>
+   * <p>Describes Spot instance placement.</p>
    */
   class AWS_EC2_API SpotPlacement
   {
@@ -45,37 +45,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline SpotPlacement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline SpotPlacement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone.</p>
+     * <p>The Availability Zones. To specify multiple Availability Zones, separate them
+     * using commas; for example, "us-west-2a, us-west-2b".</p>
      */
     inline SpotPlacement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

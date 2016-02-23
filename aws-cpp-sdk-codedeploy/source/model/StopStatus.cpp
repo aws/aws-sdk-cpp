@@ -28,25 +28,25 @@ namespace Model
 {
 namespace StopStatusMapper
 {
+
+
 StopStatus GetStopStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return StopStatus::Pending;
+     return StopStatus::Pending;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return StopStatus::Succeeded;
+     return StopStatus::Succeeded;
   }
-
   return StopStatus::NOT_SET;
 }
 
-Aws::String GetNameForStopStatus(StopStatus value)
+Aws::String GetNameForStopStatus(StopStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StopStatus::Pending:
     return "Pending";

@@ -31,37 +31,37 @@ namespace Model
 {
 namespace EnvironmentStatusMapper
 {
+
+
 EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Launching_HASH)
   {
-    return EnvironmentStatus::Launching;
+     return EnvironmentStatus::Launching;
   }
   else if (hashCode == Updating_HASH)
   {
-    return EnvironmentStatus::Updating;
+     return EnvironmentStatus::Updating;
   }
   else if (hashCode == Ready_HASH)
   {
-    return EnvironmentStatus::Ready;
+     return EnvironmentStatus::Ready;
   }
   else if (hashCode == Terminating_HASH)
   {
-    return EnvironmentStatus::Terminating;
+     return EnvironmentStatus::Terminating;
   }
   else if (hashCode == Terminated_HASH)
   {
-    return EnvironmentStatus::Terminated;
+     return EnvironmentStatus::Terminated;
   }
-
   return EnvironmentStatus::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentStatus(EnvironmentStatus value)
+Aws::String GetNameForEnvironmentStatus(EnvironmentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentStatus::Launching:
     return "Launching";

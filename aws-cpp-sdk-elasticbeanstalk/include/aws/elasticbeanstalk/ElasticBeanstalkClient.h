@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityResult.h>
+#include <aws/elasticbeanstalk/model/ComposeEnvironmentsResult.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationResult.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationVersionResult.h>
 #include <aws/elasticbeanstalk/model/CreateConfigurationTemplateResult.h>
@@ -91,6 +92,7 @@ namespace Model
 {
         class AbortEnvironmentUpdateRequest;
         class CheckDNSAvailabilityRequest;
+        class ComposeEnvironmentsRequest;
         class CreateApplicationRequest;
         class CreateApplicationVersionRequest;
         class CreateConfigurationTemplateRequest;
@@ -124,6 +126,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
         typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
+        typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ComposeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationVersionOutcome;
         typedef Aws::Utils::Outcome<CreateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateConfigurationTemplateOutcome;
@@ -157,6 +160,7 @@ namespace Model
 
         typedef std::future<AbortEnvironmentUpdateOutcome> AbortEnvironmentUpdateOutcomeCallable;
         typedef std::future<CheckDNSAvailabilityOutcome> CheckDNSAvailabilityOutcomeCallable;
+        typedef std::future<ComposeEnvironmentsOutcome> ComposeEnvironmentsOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateApplicationVersionOutcome> CreateApplicationVersionOutcomeCallable;
         typedef std::future<CreateConfigurationTemplateOutcome> CreateConfigurationTemplateOutcomeCallable;
@@ -193,6 +197,7 @@ namespace Model
 
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortEnvironmentUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDNSAvailabilityResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::ComposeEnvironmentsRequest&, const Model::ComposeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ComposeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateApplicationVersionRequest&, const Model::CreateApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateConfigurationTemplateRequest&, const Model::CreateConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationTemplateResponseReceivedHandler;
@@ -237,7 +242,7 @@ namespace Model
    * To install the Software Development Kits (SDKs), Integrated Development
    * Environment (IDE) Toolkits, and command line tools that enable you to access the
    * API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>. </p> <p><b>Endpoints</b></p> <p>For a list of region-specific
+   * Services</a>. </p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific
    * endpoints that AWS Elastic Beanstalk supports, go to <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
    * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
@@ -309,6 +314,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CheckDNSAvailabilityAsync(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create or update a group of environments that each run a separate component
+         * of a single application. Takes a list of version labels that specify application
+         * source bundles for each of the environments to create or update. The name of
+         * each environment and other required information must be included in the source
+         * bundles in an environment manifest named <code>env.yaml</code>. See <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+         * Environments</a> for details.</p>
+         */
+        virtual Model::ComposeEnvironmentsOutcome ComposeEnvironments(const Model::ComposeEnvironmentsRequest& request) const;
+
+        /**
+         * <p>Create or update a group of environments that each run a separate component
+         * of a single application. Takes a list of version labels that specify application
+         * source bundles for each of the environments to create or update. The name of
+         * each environment and other required information must be included in the source
+         * bundles in an environment manifest named <code>env.yaml</code>. See <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+         * Environments</a> for details.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ComposeEnvironmentsOutcomeCallable ComposeEnvironmentsCallable(const Model::ComposeEnvironmentsRequest& request) const;
+
+        /**
+         * <p>Create or update a group of environments that each run a separate component
+         * of a single application. Takes a list of version labels that specify application
+         * source bundles for each of the environments to create or update. The name of
+         * each environment and other required information must be included in the source
+         * bundles in an environment manifest named <code>env.yaml</code>. See <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+         * Environments</a> for details.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ComposeEnvironmentsAsync(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates an application that has one configuration template named
@@ -560,19 +602,22 @@ namespace Model
         virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns descriptions for existing application versions.</p>
+         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
+         * storage bucket.</p>
          */
         virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Returns descriptions for existing application versions.</p>
+         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
+         * storage bucket.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Returns descriptions for existing application versions.</p>
+         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
+         * storage bucket.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1121,6 +1166,7 @@ namespace Model
         /**Async helpers**/
         void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ComposeEnvironmentsAsyncHelper(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationVersionAsyncHelper(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationTemplateAsyncHelper(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

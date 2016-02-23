@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ImageTypeValuesMapper
 {
+
+
 ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == machine_HASH)
   {
-    return ImageTypeValues::machine;
+     return ImageTypeValues::machine;
   }
   else if (hashCode == kernel_HASH)
   {
-    return ImageTypeValues::kernel;
+     return ImageTypeValues::kernel;
   }
   else if (hashCode == ramdisk_HASH)
   {
-    return ImageTypeValues::ramdisk;
+     return ImageTypeValues::ramdisk;
   }
-
   return ImageTypeValues::NOT_SET;
 }
 
-Aws::String GetNameForImageTypeValues(ImageTypeValues value)
+Aws::String GetNameForImageTypeValues(ImageTypeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageTypeValues::machine:
     return "machine";

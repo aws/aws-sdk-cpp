@@ -21,6 +21,7 @@ import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.JsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.apigateway.APIGatewayRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.cloudfront.CloudfrontCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.cloudwatch.MonitoringCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.dynamodb.DynamoDBJsonCppClientGenerator;
@@ -58,6 +59,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-cloudfront", new CloudfrontCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2", new Ec2CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-monitoring", new MonitoringCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-apigateway", new APIGatewayRestJsonCppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }

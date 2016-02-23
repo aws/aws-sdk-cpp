@@ -23,6 +23,7 @@ static const int cancelled_HASH = HashingUtils::HashString("cancelled");
 static const int failed_HASH = HashingUtils::HashString("failed");
 static const int cancelled_running_HASH = HashingUtils::HashString("cancelled_running");
 static const int cancelled_terminating_HASH = HashingUtils::HashString("cancelled_terminating");
+static const int modifying_HASH = HashingUtils::HashString("modifying");
 
 namespace Aws
 {
@@ -32,41 +33,45 @@ namespace Model
 {
 namespace BatchStateMapper
 {
+
+
 BatchState GetBatchStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == submitted_HASH)
   {
-    return BatchState::submitted;
+     return BatchState::submitted;
   }
   else if (hashCode == active_HASH)
   {
-    return BatchState::active;
+     return BatchState::active;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return BatchState::cancelled;
+     return BatchState::cancelled;
   }
   else if (hashCode == failed_HASH)
   {
-    return BatchState::failed;
+     return BatchState::failed;
   }
   else if (hashCode == cancelled_running_HASH)
   {
-    return BatchState::cancelled_running;
+     return BatchState::cancelled_running;
   }
   else if (hashCode == cancelled_terminating_HASH)
   {
-    return BatchState::cancelled_terminating;
+     return BatchState::cancelled_terminating;
   }
-
+  else if (hashCode == modifying_HASH)
+  {
+     return BatchState::modifying;
+  }
   return BatchState::NOT_SET;
 }
 
-Aws::String GetNameForBatchState(BatchState value)
+Aws::String GetNameForBatchState(BatchState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BatchState::submitted:
     return "submitted";
@@ -80,6 +85,8 @@ Aws::String GetNameForBatchState(BatchState value)
     return "cancelled_running";
   case BatchState::cancelled_terminating:
     return "cancelled_terminating";
+  case BatchState::modifying:
+    return "modifying";
   default:
     return "";
   }

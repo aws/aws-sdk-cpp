@@ -35,53 +35,53 @@ namespace Model
 {
 namespace ReportInstanceReasonCodesMapper
 {
+
+
 ReportInstanceReasonCodes GetReportInstanceReasonCodesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == instance_stuck_in_state_HASH)
   {
-    return ReportInstanceReasonCodes::instance_stuck_in_state;
+     return ReportInstanceReasonCodes::instance_stuck_in_state;
   }
   else if (hashCode == unresponsive_HASH)
   {
-    return ReportInstanceReasonCodes::unresponsive;
+     return ReportInstanceReasonCodes::unresponsive;
   }
   else if (hashCode == not_accepting_credentials_HASH)
   {
-    return ReportInstanceReasonCodes::not_accepting_credentials;
+     return ReportInstanceReasonCodes::not_accepting_credentials;
   }
   else if (hashCode == password_not_available_HASH)
   {
-    return ReportInstanceReasonCodes::password_not_available;
+     return ReportInstanceReasonCodes::password_not_available;
   }
   else if (hashCode == performance_network_HASH)
   {
-    return ReportInstanceReasonCodes::performance_network;
+     return ReportInstanceReasonCodes::performance_network;
   }
   else if (hashCode == performance_instance_store_HASH)
   {
-    return ReportInstanceReasonCodes::performance_instance_store;
+     return ReportInstanceReasonCodes::performance_instance_store;
   }
   else if (hashCode == performance_ebs_volume_HASH)
   {
-    return ReportInstanceReasonCodes::performance_ebs_volume;
+     return ReportInstanceReasonCodes::performance_ebs_volume;
   }
   else if (hashCode == performance_other_HASH)
   {
-    return ReportInstanceReasonCodes::performance_other;
+     return ReportInstanceReasonCodes::performance_other;
   }
   else if (hashCode == other_HASH)
   {
-    return ReportInstanceReasonCodes::other;
+     return ReportInstanceReasonCodes::other;
   }
-
   return ReportInstanceReasonCodes::NOT_SET;
 }
 
-Aws::String GetNameForReportInstanceReasonCodes(ReportInstanceReasonCodes value)
+Aws::String GetNameForReportInstanceReasonCodes(ReportInstanceReasonCodes enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportInstanceReasonCodes::instance_stuck_in_state:
     return "instance-stuck-in-state";

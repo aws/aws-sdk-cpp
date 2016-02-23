@@ -29,29 +29,29 @@ namespace Model
 {
 namespace OnFailureMapper
 {
+
+
 OnFailure GetOnFailureForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DO_NOTHING_HASH)
   {
-    return OnFailure::DO_NOTHING;
+     return OnFailure::DO_NOTHING;
   }
   else if (hashCode == ROLLBACK_HASH)
   {
-    return OnFailure::ROLLBACK;
+     return OnFailure::ROLLBACK;
   }
   else if (hashCode == DELETE__HASH)
   {
-    return OnFailure::DELETE_;
+     return OnFailure::DELETE_;
   }
-
   return OnFailure::NOT_SET;
 }
 
-Aws::String GetNameForOnFailure(OnFailure value)
+Aws::String GetNameForOnFailure(OnFailure enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OnFailure::DO_NOTHING:
     return "DO_NOTHING";

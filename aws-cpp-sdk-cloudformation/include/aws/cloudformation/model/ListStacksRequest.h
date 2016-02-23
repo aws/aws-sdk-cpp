@@ -37,44 +37,44 @@ namespace Model
 
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline ListStacksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline ListStacksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of stacks, if there is
-     * one.</p> <p>Default: There is no default value.</p>
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
      */
     inline ListStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

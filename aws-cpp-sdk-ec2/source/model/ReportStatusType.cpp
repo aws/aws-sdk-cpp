@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ReportStatusTypeMapper
 {
+
+
 ReportStatusType GetReportStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ok_HASH)
   {
-    return ReportStatusType::ok;
+     return ReportStatusType::ok;
   }
   else if (hashCode == impaired_HASH)
   {
-    return ReportStatusType::impaired;
+     return ReportStatusType::impaired;
   }
-
   return ReportStatusType::NOT_SET;
 }
 
-Aws::String GetNameForReportStatusType(ReportStatusType value)
+Aws::String GetNameForReportStatusType(ReportStatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportStatusType::ok:
     return "ok";

@@ -49,25 +49,25 @@ namespace Model
 
     /**
      * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * "RequestResonse" invocation type this status code will be 200. For the "Event"
-     * invocation type this status code will be 202. For the "DryRun" invocation type
-     * the status code will be 204. </p>
+     * <code>RequestResonse</code> invocation type this status code will be 200. For
+     * the <code>Event</code> invocation type this status code will be 202. For the
+     * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
     inline long GetStatusCode() const{ return m_statusCode; }
 
     /**
      * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * "RequestResonse" invocation type this status code will be 200. For the "Event"
-     * invocation type this status code will be 202. For the "DryRun" invocation type
-     * the status code will be 204. </p>
+     * <code>RequestResonse</code> invocation type this status code will be 200. For
+     * the <code>Event</code> invocation type this status code will be 202. For the
+     * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
     inline void SetStatusCode(long value) { m_statusCode = value; }
 
     /**
      * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * "RequestResonse" invocation type this status code will be 200. For the "Event"
-     * invocation type this status code will be 202. For the "DryRun" invocation type
-     * the status code will be 204. </p>
+     * <code>RequestResonse</code> invocation type this status code will be 200. For
+     * the <code>Event</code> invocation type this status code will be 202. For the
+     * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
     inline InvokeResult& WithStatusCode(long value) { SetStatusCode(value); return *this;}
 
@@ -164,59 +164,60 @@ namespace Model
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline const Aws::String& GetLogResult() const{ return m_logResult; }
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline void SetLogResult(const Aws::String& value) { m_logResult = value; }
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline void SetLogResult(Aws::String&& value) { m_logResult = value; }
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline void SetLogResult(const char* value) { m_logResult.assign(value); }
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline InvokeResult& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(value); return *this;}
 
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
-     * present only if the invocation type is "RequestResponse" and the logs were
-     * requested. </p>
+     * present only if the invocation type is <code>RequestResponse</code> and the logs
+     * were requested. </p>
      */
     inline InvokeResult& WithLogResult(const char* value) { SetLogResult(value); return *this;}
 
     /**
      * <p> It is the JSON representation of the object returned by the Lambda function.
-     * In This is present only if the invocation type is "RequestResponse". </p> <p>In
-     * the event of a function error this field contains a message describing the
-     * error. For the <code>Handled</code> errors the Lambda function will report this
-     * message. For <code>Unhandled</code> errors AWS Lambda reports the message. </p>
+     * In This is present only if the invocation type is <code>RequestResponse</code>.
+     * </p> <p>In the event of a function error this field contains a message
+     * describing the error. For the <code>Handled</code> errors the Lambda function
+     * will report this message. For <code>Unhandled</code> errors AWS Lambda reports
+     * the message. </p>
      */
     inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
 

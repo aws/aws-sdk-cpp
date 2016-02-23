@@ -218,27 +218,27 @@ namespace Model
     inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(value); return *this;}
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline ReservedInstancesOffering& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy of the reserved instance.</p>
+     * <p>The tenancy of the instance.</p>
      */
     inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 

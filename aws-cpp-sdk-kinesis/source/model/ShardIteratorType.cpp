@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ShardIteratorTypeMapper
 {
+
+
 ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AT_SEQUENCE_NUMBER_HASH)
   {
-    return ShardIteratorType::AT_SEQUENCE_NUMBER;
+     return ShardIteratorType::AT_SEQUENCE_NUMBER;
   }
   else if (hashCode == AFTER_SEQUENCE_NUMBER_HASH)
   {
-    return ShardIteratorType::AFTER_SEQUENCE_NUMBER;
+     return ShardIteratorType::AFTER_SEQUENCE_NUMBER;
   }
   else if (hashCode == TRIM_HORIZON_HASH)
   {
-    return ShardIteratorType::TRIM_HORIZON;
+     return ShardIteratorType::TRIM_HORIZON;
   }
   else if (hashCode == LATEST_HASH)
   {
-    return ShardIteratorType::LATEST;
+     return ShardIteratorType::LATEST;
   }
-
   return ShardIteratorType::NOT_SET;
 }
 
-Aws::String GetNameForShardIteratorType(ShardIteratorType value)
+Aws::String GetNameForShardIteratorType(ShardIteratorType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ShardIteratorType::AT_SEQUENCE_NUMBER:
     return "AT_SEQUENCE_NUMBER";

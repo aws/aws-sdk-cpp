@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_ELASTICBEANSTALK_API CreateApplicationVersionRequest : public ElasticBeanstalkRequest
   {
@@ -237,51 +237,57 @@ namespace Model
 
     /**
      * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: Automatically creates the specified application for this
-     * version if it does not already exist. </p> </value> <value name="false"> <p>
-     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
-     * specified application for this version does not already exist. </p> </value>
-     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
-     * application for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
-     * specified application for this release does not already exist. </li> </ul> <p>
-     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
+     * creates the specified application for this release if it does not already exist.
+     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist. </li> </ul>
+     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
      * <code>false</code> </p>
      */
     inline bool GetAutoCreateApplication() const{ return m_autoCreateApplication; }
 
     /**
      * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: Automatically creates the specified application for this
-     * version if it does not already exist. </p> </value> <value name="false"> <p>
-     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
-     * specified application for this version does not already exist. </p> </value>
-     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
-     * application for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
-     * specified application for this release does not already exist. </li> </ul> <p>
-     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
+     * creates the specified application for this release if it does not already exist.
+     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist. </li> </ul>
+     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
      * <code>false</code> </p>
      */
     inline void SetAutoCreateApplication(bool value) { m_autoCreateApplicationHasBeenSet = true; m_autoCreateApplication = value; }
 
     /**
      * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: Automatically creates the specified application for this
-     * version if it does not already exist. </p> </value> <value name="false"> <p>
-     * <code>false</code>: Returns an <code>InvalidParameterValue</code> if the
-     * specified application for this version does not already exist. </p> </value>
-     * </enumValues> <ul> <li> <code>true</code> : Automatically creates the specified
-     * application for this release if it does not already exist. </li> <li>
-     * <code>false</code> : Throws an <code>InvalidParameterValue</code> if the
-     * specified application for this release does not already exist. </li> </ul> <p>
-     * Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
+     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
+     * creates the specified application for this release if it does not already exist.
+     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
+     * the specified application for this release does not already exist. </li> </ul>
+     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
      * <code>false</code> </p>
      */
     inline CreateApplicationVersionRequest& WithAutoCreateApplication(bool value) { SetAutoCreateApplication(value); return *this;}
+
+    /**
+     * <p>Preprocesses and validates the environment manifest and configuration files
+     * in the source bundle. Validating configuration files can identify issues prior
+     * to deploying the application version to an environment.</p>
+     */
+    inline bool GetProcess() const{ return m_process; }
+
+    /**
+     * <p>Preprocesses and validates the environment manifest and configuration files
+     * in the source bundle. Validating configuration files can identify issues prior
+     * to deploying the application version to an environment.</p>
+     */
+    inline void SetProcess(bool value) { m_processHasBeenSet = true; m_process = value; }
+
+    /**
+     * <p>Preprocesses and validates the environment manifest and configuration files
+     * in the source bundle. Validating configuration files can identify issues prior
+     * to deploying the application version to an environment.</p>
+     */
+    inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 
   private:
     Aws::String m_applicationName;
@@ -294,6 +300,8 @@ namespace Model
     bool m_sourceBundleHasBeenSet;
     bool m_autoCreateApplication;
     bool m_autoCreateApplicationHasBeenSet;
+    bool m_process;
+    bool m_processHasBeenSet;
   };
 
 } // namespace Model

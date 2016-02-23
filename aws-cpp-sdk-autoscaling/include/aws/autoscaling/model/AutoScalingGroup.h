@@ -200,20 +200,20 @@ namespace Model
     inline AutoScalingGroup& WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
 
     /**
-     * <p>The number of seconds after a scaling activity completes before any further
-     * scaling activities can start.</p>
+     * <p>The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.</p>
      */
     inline long GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The number of seconds after a scaling activity completes before any further
-     * scaling activities can start.</p>
+     * <p>The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.</p>
      */
     inline void SetDefaultCooldown(long value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The number of seconds after a scaling activity completes before any further
-     * scaling activities can start.</p>
+     * <p>The amount of time, in seconds, after a scaling activity completes before
+     * another scaling activity can start.</p>
      */
     inline AutoScalingGroup& WithDefaultCooldown(long value) { SetDefaultCooldown(value); return *this;}
 
@@ -298,69 +298,62 @@ namespace Model
     inline AutoScalingGroup& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service of interest for the health status check, which can be either
-     * <code>EC2</code> for Amazon EC2 or <code>ELB</code> for Elastic Load
-     * Balancing.</p>
+     * <p>The service to use for the health checks. The valid values are
+     * <code>EC2</code> and <code>ELB</code>.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into service.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service.</p>
      */
     inline long GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into service.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service.</p>
      */
     inline void SetHealthCheckGracePeriod(long value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time that Auto Scaling waits before checking an instance's
-     * health status. The grace period begins when an instance comes into service.</p>
+     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
+     * health status of an EC2 instance that has come into service.</p>
      */
     inline AutoScalingGroup& WithHealthCheckGracePeriod(long value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -453,7 +446,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -461,7 +454,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -469,7 +462,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -477,7 +470,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -485,7 +478,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -493,7 +486,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(value); return *this;}
 
@@ -501,7 +494,7 @@ namespace Model
      * <p>The name of the placement group into which you'll launch your instances, if
      * any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a>.</p>
+     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -713,6 +706,24 @@ namespace Model
      */
     inline AutoScalingGroup& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
+
+    /**
+     * <p>Indicates whether newly launched instances are protected from termination by
+     * Auto Scaling when scaling in.</p>
+     */
+    inline AutoScalingGroup& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
+
   private:
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
@@ -754,6 +765,8 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::Vector<Aws::String> m_terminationPolicies;
     bool m_terminationPoliciesHasBeenSet;
+    bool m_newInstancesProtectedFromScaleIn;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet;
   };
 
 } // namespace Model

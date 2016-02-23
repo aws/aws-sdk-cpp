@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ProductCodeValuesMapper
 {
+
+
 ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == devpay_HASH)
   {
-    return ProductCodeValues::devpay;
+     return ProductCodeValues::devpay;
   }
   else if (hashCode == marketplace_HASH)
   {
-    return ProductCodeValues::marketplace;
+     return ProductCodeValues::marketplace;
   }
-
   return ProductCodeValues::NOT_SET;
 }
 
-Aws::String GetNameForProductCodeValues(ProductCodeValues value)
+Aws::String GetNameForProductCodeValues(ProductCodeValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ProductCodeValues::devpay:
     return "devpay";

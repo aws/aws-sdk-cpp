@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int default__HASH = HashingUtils::HashString("default");
 static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+static const int host_HASH = HashingUtils::HashString("host");
 
 namespace Aws
 {
@@ -28,30 +29,36 @@ namespace Model
 {
 namespace TenancyMapper
 {
+
+
 Tenancy GetTenancyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == default__HASH)
   {
-    return Tenancy::default_;
+     return Tenancy::default_;
   }
   else if (hashCode == dedicated_HASH)
   {
-    return Tenancy::dedicated;
+     return Tenancy::dedicated;
   }
-
+  else if (hashCode == host_HASH)
+  {
+     return Tenancy::host;
+  }
   return Tenancy::NOT_SET;
 }
 
-Aws::String GetNameForTenancy(Tenancy value)
+Aws::String GetNameForTenancy(Tenancy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Tenancy::default_:
     return "default";
   case Tenancy::dedicated:
     return "dedicated";
+  case Tenancy::host:
+    return "host";
   default:
     return "";
   }

@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The path for the policy. </p> <p>For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/). </p>
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}

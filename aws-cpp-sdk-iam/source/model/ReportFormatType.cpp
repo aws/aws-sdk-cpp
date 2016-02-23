@@ -27,21 +27,21 @@ namespace Model
 {
 namespace ReportFormatTypeMapper
 {
+
+
 ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == text_csv_HASH)
   {
-    return ReportFormatType::text_csv;
+     return ReportFormatType::text_csv;
   }
-
   return ReportFormatType::NOT_SET;
 }
 
-Aws::String GetNameForReportFormatType(ReportFormatType value)
+Aws::String GetNameForReportFormatType(ReportFormatType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportFormatType::text_csv:
     return "text/csv";

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace FilterRuleNameMapper
 {
+
+
 FilterRuleName GetFilterRuleNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == prefix_HASH)
   {
-    return FilterRuleName::prefix;
+     return FilterRuleName::prefix;
   }
   else if (hashCode == suffix_HASH)
   {
-    return FilterRuleName::suffix;
+     return FilterRuleName::suffix;
   }
-
   return FilterRuleName::NOT_SET;
 }
 
-Aws::String GetNameForFilterRuleName(FilterRuleName value)
+Aws::String GetNameForFilterRuleName(FilterRuleName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case FilterRuleName::prefix:
     return "prefix";

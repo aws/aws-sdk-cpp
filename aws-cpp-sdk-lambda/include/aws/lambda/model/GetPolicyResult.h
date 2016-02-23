@@ -40,44 +40,51 @@ namespace Model
     GetPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = value; }
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline GetPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline GetPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The access policy associated with the specified function. The response
-     * returns the same as a string using "\" as an escape character in the JSON. </p>
+     * <p>The resource policy associated with the specified function. The response
+     * returns the same as a string using a backslash ("\") as an escape character in
+     * the JSON. </p>
      */
     inline GetPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

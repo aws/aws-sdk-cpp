@@ -37,61 +37,61 @@ namespace Model
 {
 namespace StartChildWorkflowExecutionFailedCauseMapper
 {
+
+
 StartChildWorkflowExecutionFailedCause GetStartChildWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == WORKFLOW_TYPE_DOES_NOT_EXIST_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST;
+     return StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST;
   }
   else if (hashCode == WORKFLOW_TYPE_DEPRECATED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED;
+     return StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED;
   }
   else if (hashCode == OPEN_CHILDREN_LIMIT_EXCEEDED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::OPEN_CHILDREN_LIMIT_EXCEEDED;
+     return StartChildWorkflowExecutionFailedCause::OPEN_CHILDREN_LIMIT_EXCEEDED;
   }
   else if (hashCode == OPEN_WORKFLOWS_LIMIT_EXCEEDED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::OPEN_WORKFLOWS_LIMIT_EXCEEDED;
+     return StartChildWorkflowExecutionFailedCause::OPEN_WORKFLOWS_LIMIT_EXCEEDED;
   }
   else if (hashCode == CHILD_CREATION_RATE_EXCEEDED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::CHILD_CREATION_RATE_EXCEEDED;
+     return StartChildWorkflowExecutionFailedCause::CHILD_CREATION_RATE_EXCEEDED;
   }
   else if (hashCode == WORKFLOW_ALREADY_RUNNING_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::WORKFLOW_ALREADY_RUNNING;
+     return StartChildWorkflowExecutionFailedCause::WORKFLOW_ALREADY_RUNNING;
   }
   else if (hashCode == DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return StartChildWorkflowExecutionFailedCause::DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_TASK_LIST_UNDEFINED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
+     return StartChildWorkflowExecutionFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
   }
   else if (hashCode == DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return StartChildWorkflowExecutionFailedCause::DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_CHILD_POLICY_UNDEFINED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::DEFAULT_CHILD_POLICY_UNDEFINED;
+     return StartChildWorkflowExecutionFailedCause::DEFAULT_CHILD_POLICY_UNDEFINED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return StartChildWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return StartChildWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return StartChildWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForStartChildWorkflowExecutionFailedCause(StartChildWorkflowExecutionFailedCause value)
+Aws::String GetNameForStartChildWorkflowExecutionFailedCause(StartChildWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST:
     return "WORKFLOW_TYPE_DOES_NOT_EXIST";

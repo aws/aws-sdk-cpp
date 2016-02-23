@@ -49,7 +49,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::Vector<PolicyVersion>& GetVersions() const{ return m_versions; }
 
@@ -57,7 +57,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetVersions(const Aws::Vector<PolicyVersion>& value) { m_versions = value; }
 
@@ -65,7 +65,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetVersions(Aws::Vector<PolicyVersion>&& value) { m_versions = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline ListPolicyVersionsResult& WithVersions(const Aws::Vector<PolicyVersion>& value) { SetVersions(value); return *this;}
 
@@ -81,7 +81,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline ListPolicyVersionsResult& WithVersions(Aws::Vector<PolicyVersion>&& value) { SetVersions(value); return *this;}
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline ListPolicyVersionsResult& AddVersions(const PolicyVersion& value) { m_versions.push_back(value); return *this; }
 
@@ -97,28 +97,40 @@ namespace Model
      * <p>A list of policy versions.</p> <p>For more information about managed policy
      * versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>Using IAM</i> guide. </p>
+     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
      */
     inline ListPolicyVersionsResult& AddVersions(PolicyVersion&& value) { m_versions.push_back(value); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
-     * <code>Marker</code> request parameter to retrieve more items.</p>
+     * <code>Marker</code> request parameter to retrieve more items. Note that IAM
+     * might return fewer than the <code>MaxItems</code> number of results even when
+     * there are more results available. We recommend that you check
+     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * results.</p>
      */
     inline ListPolicyVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

@@ -30,33 +30,33 @@ namespace Model
 {
 namespace InstanceGroupStateChangeReasonCodeMapper
 {
+
+
 InstanceGroupStateChangeReasonCode GetInstanceGroupStateChangeReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return InstanceGroupStateChangeReasonCode::INTERNAL_ERROR;
+     return InstanceGroupStateChangeReasonCode::INTERNAL_ERROR;
   }
   else if (hashCode == VALIDATION_ERROR_HASH)
   {
-    return InstanceGroupStateChangeReasonCode::VALIDATION_ERROR;
+     return InstanceGroupStateChangeReasonCode::VALIDATION_ERROR;
   }
   else if (hashCode == INSTANCE_FAILURE_HASH)
   {
-    return InstanceGroupStateChangeReasonCode::INSTANCE_FAILURE;
+     return InstanceGroupStateChangeReasonCode::INSTANCE_FAILURE;
   }
   else if (hashCode == CLUSTER_TERMINATED_HASH)
   {
-    return InstanceGroupStateChangeReasonCode::CLUSTER_TERMINATED;
+     return InstanceGroupStateChangeReasonCode::CLUSTER_TERMINATED;
   }
-
   return InstanceGroupStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForInstanceGroupStateChangeReasonCode(InstanceGroupStateChangeReasonCode value)
+Aws::String GetNameForInstanceGroupStateChangeReasonCode(InstanceGroupStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceGroupStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

@@ -38,65 +38,65 @@ namespace Model
 {
 namespace LayerTypeMapper
 {
+
+
 LayerType GetLayerTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == aws_flow_ruby_HASH)
   {
-    return LayerType::aws_flow_ruby;
+     return LayerType::aws_flow_ruby;
   }
   else if (hashCode == ecs_cluster_HASH)
   {
-    return LayerType::ecs_cluster;
+     return LayerType::ecs_cluster;
   }
   else if (hashCode == java_app_HASH)
   {
-    return LayerType::java_app;
+     return LayerType::java_app;
   }
   else if (hashCode == lb_HASH)
   {
-    return LayerType::lb;
+     return LayerType::lb;
   }
   else if (hashCode == web_HASH)
   {
-    return LayerType::web;
+     return LayerType::web;
   }
   else if (hashCode == php_app_HASH)
   {
-    return LayerType::php_app;
+     return LayerType::php_app;
   }
   else if (hashCode == rails_app_HASH)
   {
-    return LayerType::rails_app;
+     return LayerType::rails_app;
   }
   else if (hashCode == nodejs_app_HASH)
   {
-    return LayerType::nodejs_app;
+     return LayerType::nodejs_app;
   }
   else if (hashCode == memcached_HASH)
   {
-    return LayerType::memcached;
+     return LayerType::memcached;
   }
   else if (hashCode == db_master_HASH)
   {
-    return LayerType::db_master;
+     return LayerType::db_master;
   }
   else if (hashCode == monitoring_master_HASH)
   {
-    return LayerType::monitoring_master;
+     return LayerType::monitoring_master;
   }
   else if (hashCode == custom_HASH)
   {
-    return LayerType::custom;
+     return LayerType::custom;
   }
-
   return LayerType::NOT_SET;
 }
 
-Aws::String GetNameForLayerType(LayerType value)
+Aws::String GetNameForLayerType(LayerType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LayerType::aws_flow_ruby:
     return "aws-flow-ruby";

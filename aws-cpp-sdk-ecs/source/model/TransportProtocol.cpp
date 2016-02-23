@@ -28,25 +28,25 @@ namespace Model
 {
 namespace TransportProtocolMapper
 {
+
+
 TransportProtocol GetTransportProtocolForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == tcp_HASH)
   {
-    return TransportProtocol::tcp;
+     return TransportProtocol::tcp;
   }
   else if (hashCode == udp_HASH)
   {
-    return TransportProtocol::udp;
+     return TransportProtocol::udp;
   }
-
   return TransportProtocol::NOT_SET;
 }
 
-Aws::String GetNameForTransportProtocol(TransportProtocol value)
+Aws::String GetNameForTransportProtocol(TransportProtocol enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TransportProtocol::tcp:
     return "tcp";

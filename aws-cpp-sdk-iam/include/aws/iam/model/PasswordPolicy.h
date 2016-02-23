@@ -136,20 +136,23 @@ namespace Model
     inline PasswordPolicy& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
 
     /**
-     * <p>Specifies whether IAM users are required to change their password after a
-     * specified number of days.</p>
+     * <p>Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.</p>
      */
     inline bool GetExpirePasswords() const{ return m_expirePasswords; }
 
     /**
-     * <p>Specifies whether IAM users are required to change their password after a
-     * specified number of days.</p>
+     * <p>Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.</p>
      */
     inline void SetExpirePasswords(bool value) { m_expirePasswordsHasBeenSet = true; m_expirePasswords = value; }
 
     /**
-     * <p>Specifies whether IAM users are required to change their password after a
-     * specified number of days.</p>
+     * <p>Indicates whether passwords in the account expire. Returns true if
+     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.</p>
      */
     inline PasswordPolicy& WithExpirePasswords(bool value) { SetExpirePasswords(value); return *this;}
 

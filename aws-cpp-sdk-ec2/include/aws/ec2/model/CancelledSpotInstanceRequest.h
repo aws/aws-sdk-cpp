@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a request to cancel a Spot Instance.</p>
+   * <p>Describes a request to cancel a Spot instance.</p>
    */
   class AWS_EC2_API CancelledSpotInstanceRequest
   {
@@ -46,62 +46,62 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The state of the Spot Instance request.</p>
+     * <p>The state of the Spot instance request.</p>
      */
     inline const CancelSpotInstanceRequestState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Spot Instance request.</p>
+     * <p>The state of the Spot instance request.</p>
      */
     inline void SetState(const CancelSpotInstanceRequestState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Spot Instance request.</p>
+     * <p>The state of the Spot instance request.</p>
      */
     inline void SetState(CancelSpotInstanceRequestState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Spot Instance request.</p>
+     * <p>The state of the Spot instance request.</p>
      */
     inline CancelledSpotInstanceRequest& WithState(const CancelSpotInstanceRequestState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Spot Instance request.</p>
+     * <p>The state of the Spot instance request.</p>
      */
     inline CancelledSpotInstanceRequest& WithState(CancelSpotInstanceRequestState&& value) { SetState(value); return *this;}
 

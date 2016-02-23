@@ -30,33 +30,33 @@ namespace Model
 {
 namespace StatusTypeMapper
 {
+
+
 StatusType GetStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == passed_HASH)
   {
-    return StatusType::passed;
+     return StatusType::passed;
   }
   else if (hashCode == failed_HASH)
   {
-    return StatusType::failed;
+     return StatusType::failed;
   }
   else if (hashCode == insufficient_data_HASH)
   {
-    return StatusType::insufficient_data;
+     return StatusType::insufficient_data;
   }
   else if (hashCode == initializing_HASH)
   {
-    return StatusType::initializing;
+     return StatusType::initializing;
   }
-
   return StatusType::NOT_SET;
 }
 
-Aws::String GetNameForStatusType(StatusType value)
+Aws::String GetNameForStatusType(StatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusType::passed:
     return "passed";

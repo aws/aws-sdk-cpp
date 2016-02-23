@@ -27,21 +27,21 @@ namespace Model
 {
 namespace RecurringChargeFrequencyMapper
 {
+
+
 RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Hourly_HASH)
   {
-    return RecurringChargeFrequency::Hourly;
+     return RecurringChargeFrequency::Hourly;
   }
-
   return RecurringChargeFrequency::NOT_SET;
 }
 
-Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency value)
+Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RecurringChargeFrequency::Hourly:
     return "Hourly";

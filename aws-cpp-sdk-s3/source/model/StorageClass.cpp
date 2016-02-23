@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int REDUCED_REDUNDANCY_HASH = HashingUtils::HashString("REDUCED_REDUNDANCY");
+static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
 namespace Aws
 {
@@ -28,30 +29,36 @@ namespace Model
 {
 namespace StorageClassMapper
 {
+
+
 StorageClass GetStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STANDARD_HASH)
   {
-    return StorageClass::STANDARD;
+     return StorageClass::STANDARD;
   }
   else if (hashCode == REDUCED_REDUNDANCY_HASH)
   {
-    return StorageClass::REDUCED_REDUNDANCY;
+     return StorageClass::REDUCED_REDUNDANCY;
   }
-
+  else if (hashCode == STANDARD_IA_HASH)
+  {
+     return StorageClass::STANDARD_IA;
+  }
   return StorageClass::NOT_SET;
 }
 
-Aws::String GetNameForStorageClass(StorageClass value)
+Aws::String GetNameForStorageClass(StorageClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StorageClass::STANDARD:
     return "STANDARD";
   case StorageClass::REDUCED_REDUNDANCY:
     return "REDUCED_REDUNDANCY";
+  case StorageClass::STANDARD_IA:
+    return "STANDARD_IA";
   default:
     return "";
   }

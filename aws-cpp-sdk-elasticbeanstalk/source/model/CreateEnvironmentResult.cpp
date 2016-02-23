@@ -138,6 +138,17 @@ CreateEnvironmentResult& CreateEnvironmentResult::operator =(const AmazonWebServ
     {
       m_tier = tierNode;
     }
+    XmlNode environmentLinksNode = resultNode.FirstChild("EnvironmentLinks");
+    if(!environmentLinksNode.IsNull())
+    {
+      XmlNode environmentLinksMember = environmentLinksNode.FirstChild("member");
+      while(!environmentLinksMember.IsNull())
+      {
+        m_environmentLinks.push_back(environmentLinksMember);
+        environmentLinksMember = environmentLinksMember.NextNode("member");
+      }
+
+    }
   }
 
   XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");

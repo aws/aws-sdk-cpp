@@ -30,33 +30,33 @@ namespace Model
 {
 namespace StreamStatusMapper
 {
+
+
 StreamStatus GetStreamStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATING_HASH)
   {
-    return StreamStatus::CREATING;
+     return StreamStatus::CREATING;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return StreamStatus::DELETING;
+     return StreamStatus::DELETING;
   }
   else if (hashCode == ACTIVE_HASH)
   {
-    return StreamStatus::ACTIVE;
+     return StreamStatus::ACTIVE;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return StreamStatus::UPDATING;
+     return StreamStatus::UPDATING;
   }
-
   return StreamStatus::NOT_SET;
 }
 
-Aws::String GetNameForStreamStatus(StreamStatus value)
+Aws::String GetNameForStreamStatus(StreamStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StreamStatus::CREATING:
     return "CREATING";

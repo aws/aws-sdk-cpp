@@ -29,29 +29,29 @@ namespace Model
 {
 namespace StateValueMapper
 {
+
+
 StateValue GetStateValueForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == OK_HASH)
   {
-    return StateValue::OK;
+     return StateValue::OK;
   }
   else if (hashCode == ALARM_HASH)
   {
-    return StateValue::ALARM;
+     return StateValue::ALARM;
   }
   else if (hashCode == INSUFFICIENT_DATA_HASH)
   {
-    return StateValue::INSUFFICIENT_DATA;
+     return StateValue::INSUFFICIENT_DATA;
   }
-
   return StateValue::NOT_SET;
 }
 
-Aws::String GetNameForStateValue(StateValue value)
+Aws::String GetNameForStateValue(StateValue enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StateValue::OK:
     return "OK";

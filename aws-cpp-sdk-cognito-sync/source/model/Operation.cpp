@@ -28,25 +28,25 @@ namespace Model
 {
 namespace OperationMapper
 {
+
+
 Operation GetOperationForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == replace_HASH)
   {
-    return Operation::replace;
+     return Operation::replace;
   }
   else if (hashCode == remove_HASH)
   {
-    return Operation::remove;
+     return Operation::remove;
   }
-
   return Operation::NOT_SET;
 }
 
-Aws::String GetNameForOperation(Operation value)
+Aws::String GetNameForOperation(Operation enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Operation::replace:
     return "replace";

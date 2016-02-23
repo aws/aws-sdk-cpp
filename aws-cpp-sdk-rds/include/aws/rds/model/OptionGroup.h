@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_RDS_API OptionGroup
   {
@@ -82,72 +82,79 @@ namespace Model
     inline OptionGroup& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline const Aws::String& GetOptionGroupDescription() const{ return m_optionGroupDescription; }
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline void SetOptionGroupDescription(Aws::String&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline void SetOptionGroupDescription(const char* value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription.assign(value); }
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline OptionGroup& WithOptionGroupDescription(const Aws::String& value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline OptionGroup& WithOptionGroupDescription(Aws::String&& value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p> Provides the description of the option group. </p>
+     * <p>Provides a description of the option group. </p>
      */
     inline OptionGroup& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline OptionGroup& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline OptionGroup& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Engine name that this option group can be applied to. </p>
+     * <p> Indicates the name of the engine that this option group can be applied to.
+     * </p>
      */
     inline OptionGroup& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -222,86 +229,93 @@ namespace Model
     inline OptionGroup& AddOptions(Option&& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
 
     /**
-     * <p> Indicates whether this option group can be applied to both VPC and non-VPC
-     * instances. The value 'true' indicates the option group can be applied to both
-     * VPC and non-VPC instances. </p>
+     * <p>Indicates whether this option group can be applied to both VPC and non-VPC
+     * instances. The value <code>true</code> indicates the option group can be applied
+     * to both VPC and non-VPC instances. </p>
      */
     inline bool GetAllowsVpcAndNonVpcInstanceMemberships() const{ return m_allowsVpcAndNonVpcInstanceMemberships; }
 
     /**
-     * <p> Indicates whether this option group can be applied to both VPC and non-VPC
-     * instances. The value 'true' indicates the option group can be applied to both
-     * VPC and non-VPC instances. </p>
+     * <p>Indicates whether this option group can be applied to both VPC and non-VPC
+     * instances. The value <code>true</code> indicates the option group can be applied
+     * to both VPC and non-VPC instances. </p>
      */
     inline void SetAllowsVpcAndNonVpcInstanceMemberships(bool value) { m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true; m_allowsVpcAndNonVpcInstanceMemberships = value; }
 
     /**
-     * <p> Indicates whether this option group can be applied to both VPC and non-VPC
-     * instances. The value 'true' indicates the option group can be applied to both
-     * VPC and non-VPC instances. </p>
+     * <p>Indicates whether this option group can be applied to both VPC and non-VPC
+     * instances. The value <code>true</code> indicates the option group can be applied
+     * to both VPC and non-VPC instances. </p>
      */
     inline OptionGroup& WithAllowsVpcAndNonVpcInstanceMemberships(bool value) { SetAllowsVpcAndNonVpcInstanceMemberships(value); return *this;}
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline OptionGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline OptionGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is blank. If
-     * AllowsVpcAndNonVpcInstanceMemberships is 'true' and this field is blank, then
-     * this option group can be applied to both VPC and non-VPC instances. If this
-     * field contains a value, then this option group can only be applied to instances
-     * that are in the VPC indicated by this field. </p>
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
      */
     inline OptionGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Tag.h>
 
 namespace Aws
 {
@@ -25,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_RDS_API CreateDBSnapshotRequest : public RDSRequest
   {
@@ -35,7 +37,7 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -44,7 +46,7 @@ namespace Model
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -53,7 +55,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -62,7 +64,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -71,7 +73,7 @@ namespace Model
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -80,7 +82,7 @@ namespace Model
     inline CreateDBSnapshotRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -89,7 +91,7 @@ namespace Model
     inline CreateDBSnapshotRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier for the DB Snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
+     * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
@@ -98,73 +100,96 @@ namespace Model
     inline CreateDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline CreateDBSnapshotRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline CreateDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The DB Instance identifier. This is the unique key that identifies a DB
-     * Instance. This parameter isn't case sensitive. </p> <p>Constraints:</p> <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * <p> The DB instance identifier. This is the unique key that identifies a DB
+     * instance. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     inline CreateDBSnapshotRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
+    
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline CreateDBSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline CreateDBSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+
+    
+    inline CreateDBSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    
+    inline CreateDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

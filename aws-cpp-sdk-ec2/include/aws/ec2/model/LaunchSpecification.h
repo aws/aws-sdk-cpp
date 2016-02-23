@@ -123,51 +123,51 @@ namespace Model
     inline LaunchSpecification& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline LaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline LaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline LaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups. To request an instance in a nondefault VPC, you
-     * must specify the ID of the security group. To request an instance in EC2-Classic
-     * or a default VPC, you can specify the name or the ID of the security group.</p>
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline LaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

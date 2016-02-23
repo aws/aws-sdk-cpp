@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ApplyMethodMapper
 {
+
+
 ApplyMethod GetApplyMethodForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == immediate_HASH)
   {
-    return ApplyMethod::immediate;
+     return ApplyMethod::immediate;
   }
   else if (hashCode == pending_reboot_HASH)
   {
-    return ApplyMethod::pending_reboot;
+     return ApplyMethod::pending_reboot;
   }
-
   return ApplyMethod::NOT_SET;
 }
 
-Aws::String GetNameForApplyMethod(ApplyMethod value)
+Aws::String GetNameForApplyMethod(ApplyMethod enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ApplyMethod::immediate:
     return "immediate";

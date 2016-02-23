@@ -100,8 +100,10 @@ namespace Model
     inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -119,8 +121,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -179,7 +183,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -196,19 +200,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -216,7 +221,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -262,8 +267,10 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -281,8 +288,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -341,7 +350,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -358,19 +367,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -378,7 +388,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -424,8 +434,10 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -443,8 +455,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -503,7 +517,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -520,19 +534,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -540,7 +555,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -586,8 +601,10 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -605,8 +622,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -665,7 +684,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -682,19 +701,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -702,7 +722,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -748,8 +768,10 @@ namespace Model
     inline DescribeInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -767,8 +789,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -827,7 +851,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -844,19 +868,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -864,7 +889,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -910,8 +935,10 @@ namespace Model
     inline DescribeInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -929,8 +956,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -989,7 +1018,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -1006,19 +1035,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -1026,7 +1056,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>
@@ -1072,8 +1102,10 @@ namespace Model
     inline DescribeInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>architecture</code> - The
-     * instance architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
+     * <p>One or more filters.</p> <ul> <li> <p><code>affinity</code> - The affinity
+     * setting for an instance running on a Dedicated host (<code>default</code> |
+     * <code>host</code>).</p> </li> <li> <p><code>architecture</code> - The instance
+     * architecture (<code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p><code>availability-zone</code> - The Availability Zone of the instance.</p>
      * </li> <li> <p><code>block-device-mapping.attach-time</code> - The attach time
      * for an EBS volume mapped to the instance, for example,
@@ -1091,8 +1123,10 @@ namespace Model
      * - The public DNS name of the instance.</p> </li> <li> <p><code>group-id</code> -
      * The ID of the security group for the instance. EC2-Classic only.</p> </li> <li>
      * <p><code>group-name</code> - The name of the security group for the instance.
-     * EC2-Classic only.</p> </li> <li> <p><code>hypervisor</code> - The hypervisor
-     * type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * EC2-Classic only.</p> </li> <li> <p><code>host-Id</code> - The ID of the
+     * Dedicated host on which the instance is running, if applicable.</p> </li> <li>
+     * <p><code>hypervisor</code> - The hypervisor type of the instance
+     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
      * <p><code>iam-instance-profile.arn</code> - The instance profile associated with
      * the instance. Specified as an ARN.</p> </li> <li> <p><code>image-id</code> - The
      * ID of the image used to launch the instance.</p> </li> <li>
@@ -1151,7 +1185,7 @@ namespace Model
      * enabled, and <code>false</code> means checking is disabled. The value must be
      * <code>false</code> for the instance to perform network address translation (NAT)
      * in your VPC. </p> </li> <li> <p><code>spot-instance-request-id</code> - The ID
-     * of the Spot Instance request.</p> </li> <li> <p><code>state-reason-code</code> -
+     * of the Spot instance request.</p> </li> <li> <p><code>state-reason-code</code> -
      * The reason code for the state change.</p> </li> <li>
      * <p><code>state-reason-message</code> - A message that describes the state
      * change.</p> </li> <li> <p><code>subnet-id</code> - The ID of the subnet for the
@@ -1168,19 +1202,20 @@ namespace Model
      * <p><code>tag-value</code> - The value of a tag assigned to the resource. This
      * filter is independent of the <code>tag-key</code> filter.</p> </li> <li>
      * <p><code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> |
-     * <code>default</code>).</p> </li> <li> <p><code>virtualization-type</code> - The
-     * virtualization type of the instance (<code>paravirtual</code> |
-     * <code>hvm</code>).</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC
-     * that the instance is running in.</p> </li> <li>
-     * <p><code>network-interface.description</code> - The description of the network
-     * interface.</p> </li> <li> <p><code>network-interface.subnet-id</code> - The ID
-     * of the subnet for the network interface.</p> </li> <li>
-     * <p><code>network-interface.vpc-id</code> - The ID of the VPC for the network
-     * interface.</p> </li> <li> <p><code>network-interface.network-interface.id</code>
-     * - The ID of the network interface.</p> </li> <li>
-     * <p><code>network-interface.owner-id</code> - The ID of the owner of the network
-     * interface.</p> </li> <li> <p><code>network-interface.availability-zone</code> -
-     * The Availability Zone for the network interface.</p> </li> <li>
+     * <code>default</code> | <code>host</code>).</p> </li> <li>
+     * <p><code>virtualization-type</code> - The virtualization type of the instance
+     * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> <li>
+     * <p><code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
+     * </li> <li> <p><code>network-interface.description</code> - The description of
+     * the network interface.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * network interface.</p> </li> <li> <p><code>network-interface.vpc-id</code> - The
+     * ID of the VPC for the network interface.</p> </li> <li>
+     * <p><code>network-interface.network-interface-id</code> - The ID of the network
+     * interface.</p> </li> <li> <p><code>network-interface.owner-id</code> - The ID of
+     * the owner of the network interface.</p> </li> <li>
+     * <p><code>network-interface.availability-zone</code> - The Availability Zone for
+     * the network interface.</p> </li> <li>
      * <p><code>network-interface.requester-id</code> - The requester ID for the
      * network interface.</p> </li> <li>
      * <p><code>network-interface.requester-managed</code> - Indicates whether the
@@ -1188,7 +1223,7 @@ namespace Model
      * <p><code>network-interface.status</code> - The status of the network interface
      * (<code>available</code>) | <code>in-use</code>).</p> </li> <li>
      * <p><code>network-interface.mac-address</code> - The MAC address of the network
-     * interface.</p> </li> <li> <p><code>network-interface-private-dns-name</code> -
+     * interface.</p> </li> <li> <p><code>network-interface.private-dns-name</code> -
      * The private DNS name of the network interface.</p> </li> <li>
      * <p><code>network-interface.source-dest-check</code> - Whether the network
      * interface performs source/destination checking. A value of <code>true</code>

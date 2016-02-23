@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -130,7 +130,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -142,7 +142,7 @@ namespace Model
 
     /**
      * <p>An identifier for the assumed role session. </p> <p>Use the role session name
-     * to uniquely identity a session when the same role is assumed by different
+     * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
@@ -161,13 +161,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -180,13 +180,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -199,13 +199,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -218,13 +218,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -237,13 +237,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -256,13 +256,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
@@ -275,13 +275,13 @@ namespace Model
      * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of the role
      * that is being assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in
-     * <i>Using Temporary Security Credentials</i>. </p> <note>The policy plain text
-     * must be 2048 bytes or shorter. However, an internal conversion compresses it
-     * into a packed binary format with a separate limit. The PackedPolicySize response
-     * element indicates by percentage how close to the upper size limit the policy is,
-     * with 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
+     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
+     * However, an internal conversion compresses it into a packed binary format with a
+     * separate limit. The PackedPolicySize response element indicates by percentage
+     * how close to the upper size limit the policy is, with 100% equaling the maximum
+     * allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -314,9 +314,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -328,9 +328,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -342,9 +342,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -356,9 +356,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -370,9 +370,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -384,9 +384,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
 
@@ -398,9 +398,9 @@ namespace Model
      * the role, they should pass the customer's external ID. The external ID is useful
      * in order to help third parties bind a role to the customer who created it. For
      * more information about the external ID, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html">How
-     * to Use External ID When Granting Access to Your AWS Resources</a> in <i>Using
-     * Temporary Security Credentials</i>.</p>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to Use an External ID When Granting Access to Your AWS Resources to a Third
+     * Party</a> in the <i>Using IAM</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

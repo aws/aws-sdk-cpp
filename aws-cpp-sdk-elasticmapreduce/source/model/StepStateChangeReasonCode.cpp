@@ -27,21 +27,21 @@ namespace Model
 {
 namespace StepStateChangeReasonCodeMapper
 {
+
+
 StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NONE_HASH)
   {
-    return StepStateChangeReasonCode::NONE;
+     return StepStateChangeReasonCode::NONE;
   }
-
   return StepStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode value)
+Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StepStateChangeReasonCode::NONE:
     return "NONE";

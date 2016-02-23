@@ -28,25 +28,25 @@ namespace Model
 {
 namespace EncodingTypeMapper
 {
+
+
 EncodingType GetEncodingTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SSH_HASH)
   {
-    return EncodingType::SSH;
+     return EncodingType::SSH;
   }
   else if (hashCode == PEM_HASH)
   {
-    return EncodingType::PEM;
+     return EncodingType::PEM;
   }
-
   return EncodingType::NOT_SET;
 }
 
-Aws::String GetNameForEncodingType(EncodingType value)
+Aws::String GetNameForEncodingType(EncodingType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EncodingType::SSH:
     return "SSH";

@@ -292,6 +292,41 @@ namespace Model
     inline Route& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline Route& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline Route& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline Route& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+
+    /**
      * <p>The state of the route. The <code>blackhole</code> state indicates that the
      * route's target isn't available (for example, the specified gateway isn't
      * attached to the VPC, or the specified NAT instance has been terminated).</p>
@@ -327,52 +362,52 @@ namespace Model
     inline Route& WithState(RouteState&& value) { SetState(value); return *this;}
 
     /**
-     * <p>Describes how the route was created.</p> <ul> <li>
-     * <code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li> <code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li> <li>
-     * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</li> </ul>
+     * <p>Describes how the route was created.</p> <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was automatically created
+     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
+     * that the route was manually added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
+     * propagated by route propagation.</li> </ul>
      */
     inline const RouteOrigin& GetOrigin() const{ return m_origin; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul> <li>
-     * <code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li> <code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li> <li>
-     * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</li> </ul>
+     * <p>Describes how the route was created.</p> <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was automatically created
+     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
+     * that the route was manually added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
+     * propagated by route propagation.</li> </ul>
      */
     inline void SetOrigin(const RouteOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul> <li>
-     * <code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li> <code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li> <li>
-     * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</li> </ul>
+     * <p>Describes how the route was created.</p> <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was automatically created
+     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
+     * that the route was manually added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
+     * propagated by route propagation.</li> </ul>
      */
     inline void SetOrigin(RouteOrigin&& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul> <li>
-     * <code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li> <code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li> <li>
-     * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</li> </ul>
+     * <p>Describes how the route was created.</p> <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was automatically created
+     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
+     * that the route was manually added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
+     * propagated by route propagation.</li> </ul>
      */
     inline Route& WithOrigin(const RouteOrigin& value) { SetOrigin(value); return *this;}
 
     /**
-     * <p>Describes how the route was created.</p> <ul> <li>
-     * <code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li> <code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li> <li>
-     * <code>EnableVgwRoutePropagation</code> indicates that the route was propagated
-     * by route propagation.</li> </ul>
+     * <p>Describes how the route was created.</p> <ul>
+     * <li><code>CreateRouteTable</code> indicates that route was automatically created
+     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
+     * that the route was manually added to the route table.</li>
+     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
+     * propagated by route propagation.</li> </ul>
      */
     inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(value); return *this;}
 
@@ -391,6 +426,8 @@ namespace Model
     bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
+    Aws::String m_natGatewayId;
+    bool m_natGatewayIdHasBeenSet;
     RouteState m_state;
     bool m_stateHasBeenSet;
     RouteOrigin m_origin;

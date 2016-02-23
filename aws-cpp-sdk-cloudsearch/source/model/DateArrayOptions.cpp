@@ -1,0 +1,138 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudsearch/model/DateArrayOptions.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudSearch::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+DateArrayOptions::DateArrayOptions() : 
+    m_defaultValueHasBeenSet(false),
+    m_sourceFieldsHasBeenSet(false),
+    m_facetEnabled(false),
+    m_facetEnabledHasBeenSet(false),
+    m_searchEnabled(false),
+    m_searchEnabledHasBeenSet(false),
+    m_returnEnabled(false),
+    m_returnEnabledHasBeenSet(false)
+{
+}
+
+DateArrayOptions::DateArrayOptions(const XmlNode& xmlNode) : 
+    m_defaultValueHasBeenSet(false),
+    m_sourceFieldsHasBeenSet(false),
+    m_facetEnabled(false),
+    m_facetEnabledHasBeenSet(false),
+    m_searchEnabled(false),
+    m_searchEnabledHasBeenSet(false),
+    m_returnEnabled(false),
+    m_returnEnabledHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+DateArrayOptions& DateArrayOptions::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
+    if(!defaultValueNode.IsNull())
+    {
+      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValueHasBeenSet = true;
+    }
+    XmlNode sourceFieldsNode = resultNode.FirstChild("SourceFields");
+    if(!sourceFieldsNode.IsNull())
+    {
+      m_sourceFields = StringUtils::Trim(sourceFieldsNode.GetText().c_str());
+      m_sourceFieldsHasBeenSet = true;
+    }
+    XmlNode facetEnabledNode = resultNode.FirstChild("FacetEnabled");
+    if(!facetEnabledNode.IsNull())
+    {
+      m_facetEnabled = StringUtils::ConvertToBool(StringUtils::Trim(facetEnabledNode.GetText().c_str()).c_str());
+      m_facetEnabledHasBeenSet = true;
+    }
+    XmlNode searchEnabledNode = resultNode.FirstChild("SearchEnabled");
+    if(!searchEnabledNode.IsNull())
+    {
+      m_searchEnabled = StringUtils::ConvertToBool(StringUtils::Trim(searchEnabledNode.GetText().c_str()).c_str());
+      m_searchEnabledHasBeenSet = true;
+    }
+    XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
+    if(!returnEnabledNode.IsNull())
+    {
+      m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(returnEnabledNode.GetText().c_str()).c_str());
+      m_returnEnabledHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void DateArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_defaultValueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
+  }
+  if(m_sourceFieldsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
+  }
+  if(m_facetEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FacetEnabled=" << m_facetEnabled << "&";
+  }
+  if(m_searchEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SearchEnabled=" << m_searchEnabled << "&";
+  }
+  if(m_returnEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
+  }
+}
+
+void DateArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_defaultValueHasBeenSet)
+  {
+      oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
+  }
+  if(m_sourceFieldsHasBeenSet)
+  {
+      oStream << location << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
+  }
+  if(m_facetEnabledHasBeenSet)
+  {
+      oStream << location << ".FacetEnabled=" << m_facetEnabled << "&";
+  }
+  if(m_searchEnabledHasBeenSet)
+  {
+      oStream << location << ".SearchEnabled=" << m_searchEnabled << "&";
+  }
+  if(m_returnEnabledHasBeenSet)
+  {
+      oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
+  }
+}

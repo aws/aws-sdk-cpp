@@ -33,11 +33,9 @@
 #include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/monitoring/model/EnableAlarmActionsRequest.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
-#include <aws/monitoring/model/ListHostInfoRequest.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
-#include <aws/monitoring/model/PutMetricDataBatchRequest.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 
 using namespace Aws;
@@ -313,36 +311,6 @@ void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsR
   handler(this, request, GetMetricStatistics(request), context);
 }
 
-ListHostInfoOutcome CloudWatchClient::ListHostInfo(const ListHostInfoRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListHostInfoOutcome(ListHostInfoResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListHostInfoOutcome(outcome.GetError());
-  }
-}
-
-ListHostInfoOutcomeCallable CloudWatchClient::ListHostInfoCallable(const ListHostInfoRequest& request) const
-{
-  return std::async(std::launch::async, &CloudWatchClient::ListHostInfo, this, request);
-}
-
-void CloudWatchClient::ListHostInfoAsync(const ListHostInfoRequest& request, const ListHostInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&CloudWatchClient::ListHostInfoAsyncHelper, this, request, handler, context);
-}
-
-void CloudWatchClient::ListHostInfoAsyncHelper(const ListHostInfoRequest& request, const ListHostInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHostInfo(request), context);
-}
-
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const
 {
   Aws::StringStream ss;
@@ -431,36 +399,6 @@ void CloudWatchClient::PutMetricDataAsync(const PutMetricDataRequest& request, c
 void CloudWatchClient::PutMetricDataAsyncHelper(const PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutMetricData(request), context);
-}
-
-PutMetricDataBatchOutcome CloudWatchClient::PutMetricDataBatch(const PutMetricDataBatchRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return PutMetricDataBatchOutcome(NoResult());
-  }
-  else
-  {
-    return PutMetricDataBatchOutcome(outcome.GetError());
-  }
-}
-
-PutMetricDataBatchOutcomeCallable CloudWatchClient::PutMetricDataBatchCallable(const PutMetricDataBatchRequest& request) const
-{
-  return std::async(std::launch::async, &CloudWatchClient::PutMetricDataBatch, this, request);
-}
-
-void CloudWatchClient::PutMetricDataBatchAsync(const PutMetricDataBatchRequest& request, const PutMetricDataBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&CloudWatchClient::PutMetricDataBatchAsyncHelper, this, request, handler, context);
-}
-
-void CloudWatchClient::PutMetricDataBatchAsyncHelper(const PutMetricDataBatchRequest& request, const PutMetricDataBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMetricDataBatch(request), context);
 }
 
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const

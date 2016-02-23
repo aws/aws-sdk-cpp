@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ReceiptFilterPolicyMapper
 {
+
+
 ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Block_HASH)
   {
-    return ReceiptFilterPolicy::Block;
+     return ReceiptFilterPolicy::Block;
   }
   else if (hashCode == Allow_HASH)
   {
-    return ReceiptFilterPolicy::Allow;
+     return ReceiptFilterPolicy::Allow;
   }
-
   return ReceiptFilterPolicy::NOT_SET;
 }
 
-Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy value)
+Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReceiptFilterPolicy::Block:
     return "Block";

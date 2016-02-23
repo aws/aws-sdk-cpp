@@ -47,72 +47,79 @@ namespace Model
     CreateSnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline CreateSnapshotResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline CreateSnapshotResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot.</p>
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
      */
     inline CreateSnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeId = value; }
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline CreateSnapshotResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline CreateSnapshotResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>The ID of the volume.</p>
+     * <p>The ID of the volume that was used to create the snapshot.</p>
      */
     inline CreateSnapshotResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
@@ -140,6 +147,69 @@ namespace Model
      * <p>The snapshot state.</p>
      */
     inline CreateSnapshotResponse& WithState(SnapshotState&& value) { SetState(value); return *this;}
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline void SetStateMessage(const Aws::String& value) { m_stateMessage = value; }
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline void SetStateMessage(Aws::String&& value) { m_stateMessage = value; }
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline void SetStateMessage(const char* value) { m_stateMessage.assign(value); }
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline CreateSnapshotResponse& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline CreateSnapshotResponse& WithStateMessage(Aws::String&& value) { SetStateMessage(value); return *this;}
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline CreateSnapshotResponse& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
@@ -417,6 +487,83 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline const Aws::String& GetDataEncryptionKeyId() const{ return m_dataEncryptionKeyId; }
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline void SetDataEncryptionKeyId(const Aws::String& value) { m_dataEncryptionKeyId = value; }
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline void SetDataEncryptionKeyId(Aws::String&& value) { m_dataEncryptionKeyId = value; }
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline void SetDataEncryptionKeyId(const char* value) { m_dataEncryptionKeyId.assign(value); }
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline CreateSnapshotResponse& WithDataEncryptionKeyId(const Aws::String& value) { SetDataEncryptionKeyId(value); return *this;}
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline CreateSnapshotResponse& WithDataEncryptionKeyId(Aws::String&& value) { SetDataEncryptionKeyId(value); return *this;}
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
+    inline CreateSnapshotResponse& WithDataEncryptionKeyId(const char* value) { SetDataEncryptionKeyId(value); return *this;}
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -436,6 +583,7 @@ namespace Model
     Aws::String m_snapshotId;
     Aws::String m_volumeId;
     SnapshotState m_state;
+    Aws::String m_stateMessage;
     double m_startTime;
     Aws::String m_progress;
     Aws::String m_ownerId;
@@ -445,6 +593,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_encrypted;
     Aws::String m_kmsKeyId;
+    Aws::String m_dataEncryptionKeyId;
     ResponseMetadata m_responseMetadata;
   };
 

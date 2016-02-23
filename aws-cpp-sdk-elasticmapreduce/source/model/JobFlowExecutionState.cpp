@@ -34,49 +34,49 @@ namespace Model
 {
 namespace JobFlowExecutionStateMapper
 {
+
+
 JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STARTING_HASH)
   {
-    return JobFlowExecutionState::STARTING;
+     return JobFlowExecutionState::STARTING;
   }
   else if (hashCode == BOOTSTRAPPING_HASH)
   {
-    return JobFlowExecutionState::BOOTSTRAPPING;
+     return JobFlowExecutionState::BOOTSTRAPPING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return JobFlowExecutionState::RUNNING;
+     return JobFlowExecutionState::RUNNING;
   }
   else if (hashCode == WAITING_HASH)
   {
-    return JobFlowExecutionState::WAITING;
+     return JobFlowExecutionState::WAITING;
   }
   else if (hashCode == SHUTTING_DOWN_HASH)
   {
-    return JobFlowExecutionState::SHUTTING_DOWN;
+     return JobFlowExecutionState::SHUTTING_DOWN;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return JobFlowExecutionState::TERMINATED;
+     return JobFlowExecutionState::TERMINATED;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return JobFlowExecutionState::COMPLETED;
+     return JobFlowExecutionState::COMPLETED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return JobFlowExecutionState::FAILED;
+     return JobFlowExecutionState::FAILED;
   }
-
   return JobFlowExecutionState::NOT_SET;
 }
 
-Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState value)
+Aws::String GetNameForJobFlowExecutionState(JobFlowExecutionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case JobFlowExecutionState::STARTING:
     return "STARTING";

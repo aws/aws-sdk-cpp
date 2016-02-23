@@ -31,6 +31,10 @@ namespace RDS
 namespace Model
 {
 
+  /**
+   * <p> Provides information on the option groups the DB instance is a member of.
+   * </p>
+   */
   class AWS_RDS_API OptionGroupMembership
   {
   public:
@@ -77,44 +81,65 @@ namespace Model
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the DB Instance's option group membership (e.g. in-sync,
-     * pending, pending-maintenance, applying). </p>
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

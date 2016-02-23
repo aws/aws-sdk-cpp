@@ -28,25 +28,25 @@ namespace Model
 {
 namespace SpotInstanceTypeMapper
 {
+
+
 SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == one_time_HASH)
   {
-    return SpotInstanceType::one_time;
+     return SpotInstanceType::one_time;
   }
   else if (hashCode == persistent_HASH)
   {
-    return SpotInstanceType::persistent;
+     return SpotInstanceType::persistent;
   }
-
   return SpotInstanceType::NOT_SET;
 }
 
-Aws::String GetNameForSpotInstanceType(SpotInstanceType value)
+Aws::String GetNameForSpotInstanceType(SpotInstanceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SpotInstanceType::one_time:
     return "one-time";

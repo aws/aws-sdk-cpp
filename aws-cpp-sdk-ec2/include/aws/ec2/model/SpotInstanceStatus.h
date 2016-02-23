@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of a Spot Instance request.</p>
+   * <p>Describes the status of a Spot instance request.</p>
    */
   class AWS_EC2_API SpotInstanceStatus
   {
@@ -45,37 +45,51 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The status code.</p>
+     * <p>The status code. For a list of status codes, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const char* value) { SetCode(value); return *this;}
 

@@ -39,7 +39,7 @@ namespace Model
    * <p>Describes whether an identity has Amazon Simple Notification Service (Amazon
    * SNS) topics set for bounce, complaint, and/or delivery notifications, and
    * specifies whether feedback forwarding is enabled for bounce and complaint
-   * notifications.TODO : describe the email notification enabled fields.</p>
+   * notifications.</p>
    */
   class AWS_SES_API GetIdentityNotificationAttributesResult
   {

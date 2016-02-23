@@ -574,8 +574,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -593,8 +593,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -612,8 +612,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -631,8 +631,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -650,8 +650,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -669,8 +669,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -688,8 +688,8 @@ namespace Model
      * <p>The stack's operating system, which must be set to one of the following.</p>
      * <ul> <li>A supported Linux operating system: An Amazon Linux version, such as
      * <code>Amazon Linux 2015.03</code>, <code>Red Hat Enterprise Linux 7</code>,
-     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li> <li>
-     * <code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
+     * <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
+     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li> <li>A custom AMI:
      * <code>Custom</code>. You specify the custom AMI you want to use when you create
      * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
@@ -1040,37 +1040,42 @@ namespace Model
     inline CloneStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
     /**
-     * <p>The configuration manager. When you clone a Linux stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10.
-     * The default value is currently 11.10.</p>
+     * <p>The configuration manager. When you clone a stack we recommend that you use
+     * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
+     * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
+     * currently 11.4.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
 
     /**
-     * <p>The configuration manager. When you clone a Linux stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10.
-     * The default value is currently 11.10.</p>
+     * <p>The configuration manager. When you clone a stack we recommend that you use
+     * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
+     * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
+     * currently 11.4.</p>
      */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
     /**
-     * <p>The configuration manager. When you clone a Linux stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10.
-     * The default value is currently 11.10.</p>
+     * <p>The configuration manager. When you clone a stack we recommend that you use
+     * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
+     * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
+     * currently 11.4.</p>
      */
     inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
     /**
-     * <p>The configuration manager. When you clone a Linux stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10.
-     * The default value is currently 11.10.</p>
+     * <p>The configuration manager. When you clone a stack we recommend that you use
+     * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
+     * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
+     * currently 11.4.</p>
      */
     inline CloneStackRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
 
     /**
-     * <p>The configuration manager. When you clone a Linux stack we recommend that you
-     * use the configuration manager to specify the Chef version: 0.9, 11.4, or 11.10.
-     * The default value is currently 11.10.</p>
+     * <p>The configuration manager. When you clone a stack we recommend that you use
+     * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
+     * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
+     * currently 11.4.</p>
      */
     inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
 

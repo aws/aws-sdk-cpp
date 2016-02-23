@@ -134,12 +134,7 @@ namespace Model
 
     /**
      * <p> Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the Auto
-     * Scaling group, LoadBalancer, etc.) are terminated along with the environment.
-     * </p> </value> <value name="false"> <p> <code>false</code>: The environment is
-     * removed from the AWS Elastic Beanstalk but the AWS resources continue to
-     * operate. </p> </value> </enumValues> <ul> <li> <code>true</code>: The specified
+     * environment is terminated: </p> <ul> <li> <code>true</code>: The specified
      * environment as well as the associated AWS resources, such as Auto Scaling group
      * and LoadBalancer, are terminated. </li> <li> <code>false</code>: AWS Elastic
      * Beanstalk resource management is removed from the environment, but the AWS
@@ -152,12 +147,7 @@ namespace Model
 
     /**
      * <p> Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the Auto
-     * Scaling group, LoadBalancer, etc.) are terminated along with the environment.
-     * </p> </value> <value name="false"> <p> <code>false</code>: The environment is
-     * removed from the AWS Elastic Beanstalk but the AWS resources continue to
-     * operate. </p> </value> </enumValues> <ul> <li> <code>true</code>: The specified
+     * environment is terminated: </p> <ul> <li> <code>true</code>: The specified
      * environment as well as the associated AWS resources, such as Auto Scaling group
      * and LoadBalancer, are terminated. </li> <li> <code>false</code>: AWS Elastic
      * Beanstalk resource management is removed from the environment, but the AWS
@@ -170,12 +160,7 @@ namespace Model
 
     /**
      * <p> Indicates whether the associated AWS resources should shut down when the
-     * environment is terminated: </p> <enumValues> <value name="true"> <p>
-     * <code>true</code>: (default) The user AWS resources (for example, the Auto
-     * Scaling group, LoadBalancer, etc.) are terminated along with the environment.
-     * </p> </value> <value name="false"> <p> <code>false</code>: The environment is
-     * removed from the AWS Elastic Beanstalk but the AWS resources continue to
-     * operate. </p> </value> </enumValues> <ul> <li> <code>true</code>: The specified
+     * environment is terminated: </p> <ul> <li> <code>true</code>: The specified
      * environment as well as the associated AWS resources, such as Auto Scaling group
      * and LoadBalancer, are terminated. </li> <li> <code>false</code>: AWS Elastic
      * Beanstalk resource management is removed from the environment, but the AWS
@@ -186,6 +171,24 @@ namespace Model
      */
     inline TerminateEnvironmentRequest& WithTerminateResources(bool value) { SetTerminateResources(value); return *this;}
 
+    /**
+     * <p>Terminates the target environment even if another environment in the same
+     * group is dependent on it.</p>
+     */
+    inline bool GetForceTerminate() const{ return m_forceTerminate; }
+
+    /**
+     * <p>Terminates the target environment even if another environment in the same
+     * group is dependent on it.</p>
+     */
+    inline void SetForceTerminate(bool value) { m_forceTerminateHasBeenSet = true; m_forceTerminate = value; }
+
+    /**
+     * <p>Terminates the target environment even if another environment in the same
+     * group is dependent on it.</p>
+     */
+    inline TerminateEnvironmentRequest& WithForceTerminate(bool value) { SetForceTerminate(value); return *this;}
+
   private:
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
@@ -193,6 +196,8 @@ namespace Model
     bool m_environmentNameHasBeenSet;
     bool m_terminateResources;
     bool m_terminateResourcesHasBeenSet;
+    bool m_forceTerminate;
+    bool m_forceTerminateHasBeenSet;
   };
 
 } // namespace Model

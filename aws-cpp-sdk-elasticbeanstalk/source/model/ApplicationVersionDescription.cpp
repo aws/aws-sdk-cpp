@@ -31,7 +31,8 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
     m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdated(0.0),
-    m_dateUpdatedHasBeenSet(false)
+    m_dateUpdatedHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlN
     m_dateCreated(0.0),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdated(0.0),
-    m_dateUpdatedHasBeenSet(false)
+    m_dateUpdatedHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -90,6 +92,12 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
       m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
       m_dateUpdatedHasBeenSet = true;
     }
+    XmlNode statusNode = resultNode.FirstChild("Status");
+    if(!statusNode.IsNull())
+    {
+      m_status = ApplicationVersionStatusMapper::GetApplicationVersionStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_statusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -123,6 +131,10 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
   {
         oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated) << "&";
   }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
+  }
 }
 
 void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -152,5 +164,9 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
   if(m_dateUpdatedHasBeenSet)
   {
         oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated) << "&";
+  }
+  if(m_statusHasBeenSet)
+  {
+      oStream << location << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
   }
 }

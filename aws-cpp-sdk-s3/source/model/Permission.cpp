@@ -31,37 +31,37 @@ namespace Model
 {
 namespace PermissionMapper
 {
+
+
 Permission GetPermissionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == FULL_CONTROL_HASH)
   {
-    return Permission::FULL_CONTROL;
+     return Permission::FULL_CONTROL;
   }
   else if (hashCode == WRITE_HASH)
   {
-    return Permission::WRITE;
+     return Permission::WRITE;
   }
   else if (hashCode == WRITE_ACP_HASH)
   {
-    return Permission::WRITE_ACP;
+     return Permission::WRITE_ACP;
   }
   else if (hashCode == READ_HASH)
   {
-    return Permission::READ;
+     return Permission::READ;
   }
   else if (hashCode == READ_ACP_HASH)
   {
-    return Permission::READ_ACP;
+     return Permission::READ_ACP;
   }
-
   return Permission::NOT_SET;
 }
 
-Aws::String GetNameForPermission(Permission value)
+Aws::String GetNameForPermission(Permission enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Permission::FULL_CONTROL:
     return "FULL_CONTROL";

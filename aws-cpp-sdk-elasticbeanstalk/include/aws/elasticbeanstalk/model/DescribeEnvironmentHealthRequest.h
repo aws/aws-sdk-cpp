@@ -37,114 +37,163 @@ namespace Model
 
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment name.</p> <p>Condition: You
+     * must specify either this or an EnvironmentId, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p>
+     * <p>Specifies the AWS Elastic Beanstalk environment ID.</p> <p>Condition: You
+     * must specify either this or an EnvironmentName, or both. If you do not specify
+     * either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+     * error. </p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline const Aws::Vector<EnvironmentHealthAttribute>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline void SetAttributeNames(const Aws::Vector<EnvironmentHealthAttribute>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline void SetAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline DescribeEnvironmentHealthRequest& WithAttributeNames(const Aws::Vector<EnvironmentHealthAttribute>& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline DescribeEnvironmentHealthRequest& WithAttributeNames(Aws::Vector<EnvironmentHealthAttribute>&& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline DescribeEnvironmentHealthRequest& AddAttributeNames(const EnvironmentHealthAttribute& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
      * <p>Specifies the response elements you wish to receive. If no attribute names
-     * are specified, AWS Elastic Beanstalk returns all response elements.</p>
+     * are specified, AWS Elastic Beanstalk only returns the name of the
+     * environment.</p>
      */
     inline DescribeEnvironmentHealthRequest& AddAttributeNames(EnvironmentHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 

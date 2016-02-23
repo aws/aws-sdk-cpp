@@ -1,0 +1,168 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/AssociationStatusName.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace SSM
+{
+namespace Model
+{
+
+  /**
+   * <p>Describes an association status.</p>
+   */
+  class AWS_SSM_API AssociationStatus
+  {
+  public:
+    AssociationStatus();
+    AssociationStatus(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssociationStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
+    inline double GetDate() const{ return m_date; }
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
+    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
+    inline AssociationStatus& WithDate(double value) { SetDate(value); return *this;}
+
+    /**
+     * <p>The status.</p>
+     */
+    inline const AssociationStatusName& GetName() const{ return m_name; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline void SetName(const AssociationStatusName& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline void SetName(AssociationStatusName&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline AssociationStatus& WithName(const AssociationStatusName& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The status.</p>
+     */
+    inline AssociationStatus& WithName(AssociationStatusName&& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline AssociationStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline AssociationStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline AssociationStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline AssociationStatus& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline AssociationStatus& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline AssociationStatus& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
+  private:
+    double m_date;
+    bool m_dateHasBeenSet;
+    AssociationStatusName m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_message;
+    bool m_messageHasBeenSet;
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace SSM
+} // namespace Aws

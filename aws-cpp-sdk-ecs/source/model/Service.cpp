@@ -34,6 +34,7 @@ Service::Service() :
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false)
@@ -53,6 +54,7 @@ Service::Service(const JsonValue& jsonValue) :
     m_pendingCount(0),
     m_pendingCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false)
@@ -126,6 +128,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_taskDefinition = jsonValue.GetString("taskDefinition");
 
     m_taskDefinitionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deploymentConfiguration"))
+  {
+    m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
+
+    m_deploymentConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("deployments"))
@@ -218,6 +227,12 @@ JsonValue Service::Jsonize() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_deploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
 
   }
 

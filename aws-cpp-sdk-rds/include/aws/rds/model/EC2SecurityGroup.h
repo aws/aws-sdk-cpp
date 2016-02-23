@@ -33,9 +33,9 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the following actions: </p>
-   * <ul> <li><a>AuthorizeDBSecurityGroupIngress</a></li>
-   * <li><a>DescribeDBSecurityGroups</a></li>
-   * <li><a>RevokeDBSecurityGroupIngress</a></li> </ul>
+   * <ul> <li> <a>AuthorizeDBSecurityGroupIngress</a> </li> <li>
+   * <a>DescribeDBSecurityGroups</a> </li> <li> <a>RevokeDBSecurityGroupIngress</a>
+   * </li> </ul>
    */
   class AWS_RDS_API EC2SecurityGroup
   {
@@ -90,72 +90,72 @@ namespace Model
     inline EC2SecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupName(const char* value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName.assign(value); }
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const Aws::String& value) { SetEC2SecurityGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the EC2 Security Group. </p>
+     * <p> Specifies the name of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline const Aws::String& GetEC2SecurityGroupId() const{ return m_eC2SecurityGroupId; }
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupId(const Aws::String& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupId(Aws::String&& value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId = value; }
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline void SetEC2SecurityGroupId(const char* value) { m_eC2SecurityGroupIdHasBeenSet = true; m_eC2SecurityGroupId.assign(value); }
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupId(const Aws::String& value) { SetEC2SecurityGroupId(value); return *this;}
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupId(Aws::String&& value) { SetEC2SecurityGroupId(value); return *this;}
 
     /**
-     * <p> Specifies the id of the EC2 Security Group. </p>
+     * <p> Specifies the id of the EC2 security group. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupId(const char* value) { SetEC2SecurityGroupId(value); return *this;}
 

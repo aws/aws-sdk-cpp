@@ -135,7 +135,7 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>. </p>
      * <p>Default value: false</p>
      */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
@@ -144,7 +144,7 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>. </p>
      * <p>Default value: false</p>
      */
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
@@ -153,7 +153,7 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>Using IAM</i> guide. </p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>. </p>
      * <p>Default value: false</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}

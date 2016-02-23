@@ -26,14 +26,18 @@ using namespace Aws::Utils;
 SpotFleetRequestConfig::SpotFleetRequestConfig() : 
     m_spotFleetRequestIdHasBeenSet(false),
     m_spotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false)
+    m_spotFleetRequestConfigHasBeenSet(false),
+    m_createTime(0.0),
+    m_createTimeHasBeenSet(false)
 {
 }
 
 SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode) : 
     m_spotFleetRequestIdHasBeenSet(false),
     m_spotFleetRequestStateHasBeenSet(false),
-    m_spotFleetRequestConfigHasBeenSet(false)
+    m_spotFleetRequestConfigHasBeenSet(false),
+    m_createTime(0.0),
+    m_createTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,6 +66,12 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
       m_spotFleetRequestConfig = spotFleetRequestConfigNode;
       m_spotFleetRequestConfigHasBeenSet = true;
     }
+    XmlNode createTimeNode = resultNode.FirstChild("createTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +93,10 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       spotFleetRequestConfigLocationAndMemberSs << location << index << locationValue << ".SpotFleetRequestConfig";
       m_spotFleetRequestConfig.OutputToStream(oStream, spotFleetRequestConfigLocationAndMemberSs.str().c_str());
   }
+  if(m_createTimeHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
+  }
 }
 
 void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,5 +114,9 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       Aws::String spotFleetRequestConfigLocationAndMember(location);
       spotFleetRequestConfigLocationAndMember += ".SpotFleetRequestConfig";
       m_spotFleetRequestConfig.OutputToStream(oStream, spotFleetRequestConfigLocationAndMember.c_str());
+  }
+  if(m_createTimeHasBeenSet)
+  {
+        oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
   }
 }

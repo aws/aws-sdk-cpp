@@ -32,10 +32,10 @@ namespace Model
 
   /**
    * Container for the transition rule that describes when noncurrent objects
-   * transition to the GLACIER storage class. If your bucket is versioning-enabled
-   * (or versioning is suspended), you can set this action to request that Amazon S3
-   * transition noncurrent object versions to the GLACIER storage class at a specific
-   * period in the object's lifetime.
+   * transition to the STANDARD_IA or GLACIER storage class. If your bucket is
+   * versioning-enabled (or versioning is suspended), you can set this action to
+   * request that Amazon S3 transition noncurrent object versions to the STANDARD_IA
+   * or GLACIER storage class at a specific period in the object's lifetime.
    */
   class AWS_S3_API NoncurrentVersionTransition
   {

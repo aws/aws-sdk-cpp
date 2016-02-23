@@ -39,69 +39,69 @@ namespace Model
 {
 namespace ErrorCodeMapper
 {
+
+
 ErrorCode GetErrorCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == DEPLOYMENT_GROUP_MISSING_HASH)
   {
-    return ErrorCode::DEPLOYMENT_GROUP_MISSING;
+     return ErrorCode::DEPLOYMENT_GROUP_MISSING;
   }
   else if (hashCode == APPLICATION_MISSING_HASH)
   {
-    return ErrorCode::APPLICATION_MISSING;
+     return ErrorCode::APPLICATION_MISSING;
   }
   else if (hashCode == REVISION_MISSING_HASH)
   {
-    return ErrorCode::REVISION_MISSING;
+     return ErrorCode::REVISION_MISSING;
   }
   else if (hashCode == IAM_ROLE_MISSING_HASH)
   {
-    return ErrorCode::IAM_ROLE_MISSING;
+     return ErrorCode::IAM_ROLE_MISSING;
   }
   else if (hashCode == IAM_ROLE_PERMISSIONS_HASH)
   {
-    return ErrorCode::IAM_ROLE_PERMISSIONS;
+     return ErrorCode::IAM_ROLE_PERMISSIONS;
   }
   else if (hashCode == NO_EC2_SUBSCRIPTION_HASH)
   {
-    return ErrorCode::NO_EC2_SUBSCRIPTION;
+     return ErrorCode::NO_EC2_SUBSCRIPTION;
   }
   else if (hashCode == OVER_MAX_INSTANCES_HASH)
   {
-    return ErrorCode::OVER_MAX_INSTANCES;
+     return ErrorCode::OVER_MAX_INSTANCES;
   }
   else if (hashCode == NO_INSTANCES_HASH)
   {
-    return ErrorCode::NO_INSTANCES;
+     return ErrorCode::NO_INSTANCES;
   }
   else if (hashCode == TIMEOUT_HASH)
   {
-    return ErrorCode::TIMEOUT;
+     return ErrorCode::TIMEOUT;
   }
   else if (hashCode == HEALTH_CONSTRAINTS_INVALID_HASH)
   {
-    return ErrorCode::HEALTH_CONSTRAINTS_INVALID;
+     return ErrorCode::HEALTH_CONSTRAINTS_INVALID;
   }
   else if (hashCode == HEALTH_CONSTRAINTS_HASH)
   {
-    return ErrorCode::HEALTH_CONSTRAINTS;
+     return ErrorCode::HEALTH_CONSTRAINTS;
   }
   else if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return ErrorCode::INTERNAL_ERROR;
+     return ErrorCode::INTERNAL_ERROR;
   }
   else if (hashCode == THROTTLED_HASH)
   {
-    return ErrorCode::THROTTLED;
+     return ErrorCode::THROTTLED;
   }
-
   return ErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForErrorCode(ErrorCode value)
+Aws::String GetNameForErrorCode(ErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ErrorCode::DEPLOYMENT_GROUP_MISSING:
     return "DEPLOYMENT_GROUP_MISSING";

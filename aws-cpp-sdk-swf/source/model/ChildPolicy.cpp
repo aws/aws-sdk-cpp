@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ChildPolicyMapper
 {
+
+
 ChildPolicy GetChildPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TERMINATE_HASH)
   {
-    return ChildPolicy::TERMINATE;
+     return ChildPolicy::TERMINATE;
   }
   else if (hashCode == REQUEST_CANCEL_HASH)
   {
-    return ChildPolicy::REQUEST_CANCEL;
+     return ChildPolicy::REQUEST_CANCEL;
   }
   else if (hashCode == ABANDON_HASH)
   {
-    return ChildPolicy::ABANDON;
+     return ChildPolicy::ABANDON;
   }
-
   return ChildPolicy::NOT_SET;
 }
 
-Aws::String GetNameForChildPolicy(ChildPolicy value)
+Aws::String GetNameForChildPolicy(ChildPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ChildPolicy::TERMINATE:
     return "TERMINATE";

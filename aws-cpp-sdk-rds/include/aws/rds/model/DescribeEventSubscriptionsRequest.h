@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -25,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API DescribeEventSubscriptionsRequest : public RDSRequest
   {
@@ -70,10 +72,45 @@ namespace Model
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
     /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeEventSubscriptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
@@ -81,7 +118,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -89,7 +126,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
@@ -152,6 +189,8 @@ namespace Model
   private:
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

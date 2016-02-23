@@ -28,25 +28,25 @@ namespace Model
 {
 namespace DataKeySpecMapper
 {
+
+
 DataKeySpec GetDataKeySpecForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AES_256_HASH)
   {
-    return DataKeySpec::AES_256;
+     return DataKeySpec::AES_256;
   }
   else if (hashCode == AES_128_HASH)
   {
-    return DataKeySpec::AES_128;
+     return DataKeySpec::AES_128;
   }
-
   return DataKeySpec::NOT_SET;
 }
 
-Aws::String GetNameForDataKeySpec(DataKeySpec value)
+Aws::String GetNameForDataKeySpec(DataKeySpec enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DataKeySpec::AES_256:
     return "AES_256";

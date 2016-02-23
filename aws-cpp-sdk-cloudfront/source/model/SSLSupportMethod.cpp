@@ -28,25 +28,25 @@ namespace Model
 {
 namespace SSLSupportMethodMapper
 {
+
+
 SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == sni_only_HASH)
   {
-    return SSLSupportMethod::sni_only;
+     return SSLSupportMethod::sni_only;
   }
   else if (hashCode == vip_HASH)
   {
-    return SSLSupportMethod::vip;
+     return SSLSupportMethod::vip;
   }
-
   return SSLSupportMethod::NOT_SET;
 }
 
-Aws::String GetNameForSSLSupportMethod(SSLSupportMethod value)
+Aws::String GetNameForSSLSupportMethod(SSLSupportMethod enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SSLSupportMethod::sni_only:
     return "sni-only";

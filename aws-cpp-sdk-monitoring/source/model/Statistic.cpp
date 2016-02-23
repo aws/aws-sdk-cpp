@@ -31,37 +31,37 @@ namespace Model
 {
 namespace StatisticMapper
 {
+
+
 Statistic GetStatisticForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SampleCount_HASH)
   {
-    return Statistic::SampleCount;
+     return Statistic::SampleCount;
   }
   else if (hashCode == Average_HASH)
   {
-    return Statistic::Average;
+     return Statistic::Average;
   }
   else if (hashCode == Sum_HASH)
   {
-    return Statistic::Sum;
+     return Statistic::Sum;
   }
   else if (hashCode == Minimum_HASH)
   {
-    return Statistic::Minimum;
+     return Statistic::Minimum;
   }
   else if (hashCode == Maximum_HASH)
   {
-    return Statistic::Maximum;
+     return Statistic::Maximum;
   }
-
   return Statistic::NOT_SET;
 }
 
-Aws::String GetNameForStatistic(Statistic value)
+Aws::String GetNameForStatistic(Statistic enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Statistic::SampleCount:
     return "SampleCount";

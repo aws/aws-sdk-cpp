@@ -29,29 +29,29 @@ namespace Model
 {
 namespace EventTypeMapper
 {
+
+
 EventType GetEventTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == instanceChange_HASH)
   {
-    return EventType::instanceChange;
+     return EventType::instanceChange;
   }
   else if (hashCode == fleetRequestChange_HASH)
   {
-    return EventType::fleetRequestChange;
+     return EventType::fleetRequestChange;
   }
   else if (hashCode == error_HASH)
   {
-    return EventType::error;
+     return EventType::error;
   }
-
   return EventType::NOT_SET;
 }
 
-Aws::String GetNameForEventType(EventType value)
+Aws::String GetNameForEventType(EventType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventType::instanceChange:
     return "instanceChange";

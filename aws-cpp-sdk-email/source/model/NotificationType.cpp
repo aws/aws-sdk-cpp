@@ -29,29 +29,29 @@ namespace Model
 {
 namespace NotificationTypeMapper
 {
+
+
 NotificationType GetNotificationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Bounce_HASH)
   {
-    return NotificationType::Bounce;
+     return NotificationType::Bounce;
   }
   else if (hashCode == Complaint_HASH)
   {
-    return NotificationType::Complaint;
+     return NotificationType::Complaint;
   }
   else if (hashCode == Delivery_HASH)
   {
-    return NotificationType::Delivery;
+     return NotificationType::Delivery;
   }
-
   return NotificationType::NOT_SET;
 }
 
-Aws::String GetNameForNotificationType(NotificationType value)
+Aws::String GetNameForNotificationType(NotificationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NotificationType::Bounce:
     return "Bounce";

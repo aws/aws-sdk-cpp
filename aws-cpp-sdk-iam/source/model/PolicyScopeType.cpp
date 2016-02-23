@@ -29,29 +29,29 @@ namespace Model
 {
 namespace PolicyScopeTypeMapper
 {
+
+
 PolicyScopeType GetPolicyScopeTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == All_HASH)
   {
-    return PolicyScopeType::All;
+     return PolicyScopeType::All;
   }
   else if (hashCode == AWS_HASH)
   {
-    return PolicyScopeType::AWS;
+     return PolicyScopeType::AWS;
   }
   else if (hashCode == Local_HASH)
   {
-    return PolicyScopeType::Local;
+     return PolicyScopeType::Local;
   }
-
   return PolicyScopeType::NOT_SET;
 }
 
-Aws::String GetNameForPolicyScopeType(PolicyScopeType value)
+Aws::String GetNameForPolicyScopeType(PolicyScopeType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PolicyScopeType::All:
     return "All";

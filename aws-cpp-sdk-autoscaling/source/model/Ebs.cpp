@@ -31,7 +31,9 @@ Ebs::Ebs() :
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false)
 {
 }
 
@@ -43,7 +45,9 @@ Ebs::Ebs(const XmlNode& xmlNode) :
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -84,6 +88,12 @@ Ebs& Ebs::operator =(const XmlNode& xmlNode)
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(iopsNode.GetText().c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
+    XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+      m_encryptedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +121,10 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
+  }
 }
 
 void Ebs::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,5 +148,9 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << ".Encrypted=" << m_encrypted << "&";
   }
 }

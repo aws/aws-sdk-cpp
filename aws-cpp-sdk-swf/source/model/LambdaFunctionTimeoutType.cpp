@@ -27,21 +27,21 @@ namespace Model
 {
 namespace LambdaFunctionTimeoutTypeMapper
 {
+
+
 LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == START_TO_CLOSE_HASH)
   {
-    return LambdaFunctionTimeoutType::START_TO_CLOSE;
+     return LambdaFunctionTimeoutType::START_TO_CLOSE;
   }
-
   return LambdaFunctionTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType value)
+Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LambdaFunctionTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

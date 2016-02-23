@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/OptionGroupOptionSetting.h>
 
 namespace Aws
 {
@@ -116,37 +117,37 @@ namespace Model
     inline OptionGroupOption& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline OptionGroupOption& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline OptionGroupOption& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Engine name that this option can be applied to. </p>
+     * <p>The name of the engine that this option can be applied to. </p>
      */
     inline OptionGroupOption& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -293,6 +294,93 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionsDependedOn(const char* value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
+    /**
+     * <p> A persistent option cannot be removed from the option group once the option
+     * group is used, but this option can be removed from the db instance while
+     * modifying the related data and assigning another option group without this
+     * option. </p>
+     */
+    inline bool GetPersistent() const{ return m_persistent; }
+
+    /**
+     * <p> A persistent option cannot be removed from the option group once the option
+     * group is used, but this option can be removed from the db instance while
+     * modifying the related data and assigning another option group without this
+     * option. </p>
+     */
+    inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
+
+    /**
+     * <p> A persistent option cannot be removed from the option group once the option
+     * group is used, but this option can be removed from the db instance while
+     * modifying the related data and assigning another option group without this
+     * option. </p>
+     */
+    inline OptionGroupOption& WithPersistent(bool value) { SetPersistent(value); return *this;}
+
+    /**
+     * <p> A permanent option cannot be removed from the option group once the option
+     * group is used, and it cannot be removed from the db instance after assigning an
+     * option group with this permanent option. </p>
+     */
+    inline bool GetPermanent() const{ return m_permanent; }
+
+    /**
+     * <p> A permanent option cannot be removed from the option group once the option
+     * group is used, and it cannot be removed from the db instance after assigning an
+     * option group with this permanent option. </p>
+     */
+    inline void SetPermanent(bool value) { m_permanentHasBeenSet = true; m_permanent = value; }
+
+    /**
+     * <p> A permanent option cannot be removed from the option group once the option
+     * group is used, and it cannot be removed from the db instance after assigning an
+     * option group with this permanent option. </p>
+     */
+    inline OptionGroupOption& WithPermanent(bool value) { SetPermanent(value); return *this;}
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline const Aws::Vector<OptionGroupOptionSetting>& GetOptionGroupOptionSettings() const{ return m_optionGroupOptionSettings; }
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline void SetOptionGroupOptionSettings(const Aws::Vector<OptionGroupOptionSetting>& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = value; }
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline void SetOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = value; }
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline OptionGroupOption& WithOptionGroupOptionSettings(const Aws::Vector<OptionGroupOptionSetting>& value) { SetOptionGroupOptionSettings(value); return *this;}
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline OptionGroupOption& WithOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { SetOptionGroupOptionSettings(value); return *this;}
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline OptionGroupOption& AddOptionGroupOptionSettings(const OptionGroupOptionSetting& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies the option settings that are available (and the default value) for
+     * each option in an option group. </p>
+     */
+    inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -310,6 +398,12 @@ namespace Model
     bool m_defaultPortHasBeenSet;
     Aws::Vector<Aws::String> m_optionsDependedOn;
     bool m_optionsDependedOnHasBeenSet;
+    bool m_persistent;
+    bool m_persistentHasBeenSet;
+    bool m_permanent;
+    bool m_permanentHasBeenSet;
+    Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
+    bool m_optionGroupOptionSettingsHasBeenSet;
   };
 
 } // namespace Model

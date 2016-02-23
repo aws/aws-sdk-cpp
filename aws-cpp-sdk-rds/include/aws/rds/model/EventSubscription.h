@@ -47,41 +47,6 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Not used.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline EventSubscription& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline EventSubscription& WithId(Aws::String&& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Not used.</p>
-     */
-    inline EventSubscription& WithId(const char* value) { SetId(value); return *this;}
-
-    /**
      * <p>The AWS customer account associated with the RDS event notification
      * subscription.</p>
      */
@@ -334,42 +299,42 @@ namespace Model
     inline EventSubscription& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIdsList() const{ return m_sourceIdsList; }
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline void SetSourceIdsList(const Aws::Vector<Aws::String>& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList = value; }
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline void SetSourceIdsList(Aws::Vector<Aws::String>&& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList = value; }
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline EventSubscription& WithSourceIdsList(const Aws::Vector<Aws::String>& value) { SetSourceIdsList(value); return *this;}
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline EventSubscription& WithSourceIdsList(Aws::Vector<Aws::String>&& value) { SetSourceIdsList(value); return *this;}
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline EventSubscription& AddSourceIdsList(const Aws::String& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline EventSubscription& AddSourceIdsList(Aws::String&& value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
 
     /**
-     * <p>A list of source Ids for the RDS event notification subscription.</p>
+     * <p>A list of source IDs for the RDS event notification subscription.</p>
      */
     inline EventSubscription& AddSourceIdsList(const char* value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
 
@@ -432,8 +397,6 @@ namespace Model
     inline EventSubscription& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
-    Aws::String m_id;
-    bool m_idHasBeenSet;
     Aws::String m_customerAwsId;
     bool m_customerAwsIdHasBeenSet;
     Aws::String m_custSubscriptionId;

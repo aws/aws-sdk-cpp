@@ -38,107 +38,107 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline StartTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline StartTaskRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to start your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline StartTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to start. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to start. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -208,66 +208,66 @@ namespace Model
     inline StartTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(value); return *this;}
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline StartTaskRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline StartTaskRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(value); return *this;}
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline StartTaskRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
-     * <p>The container instance UUIDs or full Amazon Resource Name (ARN) entries for
-     * the container instances on which you would like to place your task.</p>
-     * <important> <p>The list of container instances to start tasks on is limited to
-     * 10.</p> </important>
+     * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
+     * container instances on which you would like to place your task.</p> <important>
+     * <p>The list of container instances to start tasks on is limited to 10.</p>
+     * </important>
      */
     inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 

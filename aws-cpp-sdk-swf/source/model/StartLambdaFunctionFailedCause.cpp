@@ -27,21 +27,21 @@ namespace Model
 {
 namespace StartLambdaFunctionFailedCauseMapper
 {
+
+
 StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ASSUME_ROLE_FAILED_HASH)
   {
-    return StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED;
+     return StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED;
   }
-
   return StartLambdaFunctionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause value)
+Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED:
     return "ASSUME_ROLE_FAILED";

@@ -39,19 +39,29 @@ namespace Model
     DeleteServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline const Service& GetService() const{ return m_service; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline void SetService(const Service& value) { m_service = value; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline void SetService(Service&& value) { m_service = value; }
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline DeleteServiceResult& WithService(const Service& value) { SetService(value); return *this;}
 
-    
+    /**
+     * <p>The full description of the deleted service.</p>
+     */
     inline DeleteServiceResult& WithService(Service&& value) { SetService(value); return *this;}
 
   private:

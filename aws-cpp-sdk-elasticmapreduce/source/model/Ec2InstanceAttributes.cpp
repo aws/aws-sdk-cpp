@@ -28,6 +28,7 @@ Ec2InstanceAttributes::Ec2InstanceAttributes() :
     m_iamInstanceProfileHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -40,6 +41,7 @@ Ec2InstanceAttributes::Ec2InstanceAttributes(const JsonValue& jsonValue) :
     m_iamInstanceProfileHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
+    m_serviceAccessSecurityGroupHasBeenSet(false),
     m_additionalMasterSecurityGroupsHasBeenSet(false),
     m_additionalSlaveSecurityGroupsHasBeenSet(false)
 {
@@ -88,6 +90,13 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
     m_emrManagedSlaveSecurityGroup = jsonValue.GetString("EmrManagedSlaveSecurityGroup");
 
     m_emrManagedSlaveSecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceAccessSecurityGroup"))
+  {
+    m_serviceAccessSecurityGroup = jsonValue.GetString("ServiceAccessSecurityGroup");
+
+    m_serviceAccessSecurityGroupHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
@@ -150,6 +159,12 @@ JsonValue Ec2InstanceAttributes::Jsonize() const
   if(m_emrManagedSlaveSecurityGroupHasBeenSet)
   {
    payload.WithString("EmrManagedSlaveSecurityGroup", m_emrManagedSlaveSecurityGroup);
+
+  }
+
+  if(m_serviceAccessSecurityGroupHasBeenSet)
+  {
+   payload.WithString("ServiceAccessSecurityGroup", m_serviceAccessSecurityGroup);
 
   }
 

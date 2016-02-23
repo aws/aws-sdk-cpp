@@ -37,107 +37,107 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline RunTaskRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline RunTaskRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that you
-     * want to run your task on. If you do not specify a cluster, the default cluster
-     * is assumed..</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * run your task. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline RunTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
-     * definition that you want to run. If a <code>revision</code> is not specified,
-     * the latest <code>ACTIVE</code> revision is used.</p>
+     * definition to run. If a <code>revision</code> is not specified, the latest
+     * <code>ACTIVE</code> revision is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -207,23 +207,23 @@ namespace Model
     inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(value); return *this;}
 
     /**
-     * <p>The number of instantiations of the specified task that you would like to
-     * place on your cluster.</p> <important> <p>The <code>count</code> parameter is
-     * limited to 10 tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your
+     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
+     * tasks per call.</p> </important>
      */
     inline long GetCount() const{ return m_count; }
 
     /**
-     * <p>The number of instantiations of the specified task that you would like to
-     * place on your cluster.</p> <important> <p>The <code>count</code> parameter is
-     * limited to 10 tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your
+     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
+     * tasks per call.</p> </important>
      */
     inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number of instantiations of the specified task that you would like to
-     * place on your cluster.</p> <important> <p>The <code>count</code> parameter is
-     * limited to 10 tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your
+     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
+     * tasks per call.</p> </important>
      */
     inline RunTaskRequest& WithCount(long value) { SetCount(value); return *this;}
 

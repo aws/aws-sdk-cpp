@@ -661,27 +661,27 @@ namespace Model
     inline UpdateLayerRequest& WithUseEbsOptimizedInstances(bool value) { SetUseEbsOptimizedInstances(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline const LifecycleEventConfiguration& GetLifecycleEventConfiguration() const{ return m_lifecycleEventConfiguration; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetLifecycleEventConfiguration(const LifecycleEventConfiguration& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline void SetLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { m_lifecycleEventConfigurationHasBeenSet = true; m_lifecycleEventConfiguration = value; }
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline UpdateLayerRequest& WithLifecycleEventConfiguration(const LifecycleEventConfiguration& value) { SetLifecycleEventConfiguration(value); return *this;}
 
     /**
-     * <p></p>
+     * <p/>
      */
     inline UpdateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(value); return *this;}
 

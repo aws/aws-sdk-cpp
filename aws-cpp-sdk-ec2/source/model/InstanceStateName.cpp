@@ -32,41 +32,41 @@ namespace Model
 {
 namespace InstanceStateNameMapper
 {
+
+
 InstanceStateName GetInstanceStateNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return InstanceStateName::pending;
+     return InstanceStateName::pending;
   }
   else if (hashCode == running_HASH)
   {
-    return InstanceStateName::running;
+     return InstanceStateName::running;
   }
   else if (hashCode == shutting_down_HASH)
   {
-    return InstanceStateName::shutting_down;
+     return InstanceStateName::shutting_down;
   }
   else if (hashCode == terminated_HASH)
   {
-    return InstanceStateName::terminated;
+     return InstanceStateName::terminated;
   }
   else if (hashCode == stopping_HASH)
   {
-    return InstanceStateName::stopping;
+     return InstanceStateName::stopping;
   }
   else if (hashCode == stopped_HASH)
   {
-    return InstanceStateName::stopped;
+     return InstanceStateName::stopped;
   }
-
   return InstanceStateName::NOT_SET;
 }
 
-Aws::String GetNameForInstanceStateName(InstanceStateName value)
+Aws::String GetNameForInstanceStateName(InstanceStateName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceStateName::pending:
     return "pending";

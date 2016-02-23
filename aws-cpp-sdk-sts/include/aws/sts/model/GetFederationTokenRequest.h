@@ -108,7 +108,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
@@ -132,7 +132,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
@@ -156,7 +156,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
@@ -180,7 +180,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
@@ -204,7 +204,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline GetFederationTokenRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
@@ -228,7 +228,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline GetFederationTokenRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
@@ -252,7 +252,7 @@ namespace Model
      * percentage how close to the upper size limit the policy is, with 100% equaling
      * the maximum allowed size. </note> <p>For more information about how permissions
      * work, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-get-federation-token.html">Permissions
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
     inline GetFederationTokenRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}

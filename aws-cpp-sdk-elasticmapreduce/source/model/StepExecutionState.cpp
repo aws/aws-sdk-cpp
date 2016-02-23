@@ -33,45 +33,45 @@ namespace Model
 {
 namespace StepExecutionStateMapper
 {
+
+
 StepExecutionState GetStepExecutionStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return StepExecutionState::PENDING;
+     return StepExecutionState::PENDING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return StepExecutionState::RUNNING;
+     return StepExecutionState::RUNNING;
   }
   else if (hashCode == CONTINUE_HASH)
   {
-    return StepExecutionState::CONTINUE;
+     return StepExecutionState::CONTINUE;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return StepExecutionState::COMPLETED;
+     return StepExecutionState::COMPLETED;
   }
   else if (hashCode == CANCELLED_HASH)
   {
-    return StepExecutionState::CANCELLED;
+     return StepExecutionState::CANCELLED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return StepExecutionState::FAILED;
+     return StepExecutionState::FAILED;
   }
   else if (hashCode == INTERRUPTED_HASH)
   {
-    return StepExecutionState::INTERRUPTED;
+     return StepExecutionState::INTERRUPTED;
   }
-
   return StepExecutionState::NOT_SET;
 }
 
-Aws::String GetNameForStepExecutionState(StepExecutionState value)
+Aws::String GetNameForStepExecutionState(StepExecutionState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StepExecutionState::PENDING:
     return "PENDING";

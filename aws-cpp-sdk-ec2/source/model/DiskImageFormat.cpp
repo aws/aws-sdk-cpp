@@ -29,29 +29,29 @@ namespace Model
 {
 namespace DiskImageFormatMapper
 {
+
+
 DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == VMDK_HASH)
   {
-    return DiskImageFormat::VMDK;
+     return DiskImageFormat::VMDK;
   }
   else if (hashCode == RAW_HASH)
   {
-    return DiskImageFormat::RAW;
+     return DiskImageFormat::RAW;
   }
   else if (hashCode == VHD_HASH)
   {
-    return DiskImageFormat::VHD;
+     return DiskImageFormat::VHD;
   }
-
   return DiskImageFormat::NOT_SET;
 }
 
-Aws::String GetNameForDiskImageFormat(DiskImageFormat value)
+Aws::String GetNameForDiskImageFormat(DiskImageFormat enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DiskImageFormat::VMDK:
     return "VMDK";

@@ -27,21 +27,21 @@ namespace Model
 {
 namespace PlacementStrategyMapper
 {
+
+
 PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == cluster_HASH)
   {
-    return PlacementStrategy::cluster;
+     return PlacementStrategy::cluster;
   }
-
   return PlacementStrategy::NOT_SET;
 }
 
-Aws::String GetNameForPlacementStrategy(PlacementStrategy value)
+Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlacementStrategy::cluster:
     return "cluster";

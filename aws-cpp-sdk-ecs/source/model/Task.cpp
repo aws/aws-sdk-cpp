@@ -30,7 +30,14 @@ Task::Task() :
     m_lastStatusHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_startedByHasBeenSet(false)
+    m_startedByHasBeenSet(false),
+    m_stoppedReasonHasBeenSet(false),
+    m_createdAt(0.0),
+    m_createdAtHasBeenSet(false),
+    m_startedAt(0.0),
+    m_startedAtHasBeenSet(false),
+    m_stoppedAt(0.0),
+    m_stoppedAtHasBeenSet(false)
 {
 }
 
@@ -43,7 +50,14 @@ Task::Task(const JsonValue& jsonValue) :
     m_lastStatusHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
     m_containersHasBeenSet(false),
-    m_startedByHasBeenSet(false)
+    m_startedByHasBeenSet(false),
+    m_stoppedReasonHasBeenSet(false),
+    m_createdAt(0.0),
+    m_createdAtHasBeenSet(false),
+    m_startedAt(0.0),
+    m_startedAtHasBeenSet(false),
+    m_stoppedAt(0.0),
+    m_stoppedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +130,34 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_startedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stoppedReason"))
+  {
+    m_stoppedReason = jsonValue.GetString("stoppedReason");
+
+    m_stoppedReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("startedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stoppedAt"))
+  {
+    m_stoppedAt = jsonValue.GetDouble("stoppedAt");
+
+    m_stoppedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +221,30 @@ JsonValue Task::Jsonize() const
   if(m_startedByHasBeenSet)
   {
    payload.WithString("startedBy", m_startedBy);
+
+  }
+
+  if(m_stoppedReasonHasBeenSet)
+  {
+   payload.WithString("stoppedReason", m_stoppedReason);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt);
+
+  }
+
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithDouble("startedAt", m_startedAt);
+
+  }
+
+  if(m_stoppedAtHasBeenSet)
+  {
+   payload.WithDouble("stoppedAt", m_stoppedAt);
 
   }
 

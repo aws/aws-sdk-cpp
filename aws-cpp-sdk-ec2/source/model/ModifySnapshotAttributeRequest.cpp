@@ -75,7 +75,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   {
     m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission.");
   }
-  ss << "Version=2015-04-15";
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

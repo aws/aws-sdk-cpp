@@ -31,37 +31,37 @@ namespace Model
 {
 namespace SummaryStatusMapper
 {
+
+
 SummaryStatus GetSummaryStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ok_HASH)
   {
-    return SummaryStatus::ok;
+     return SummaryStatus::ok;
   }
   else if (hashCode == impaired_HASH)
   {
-    return SummaryStatus::impaired;
+     return SummaryStatus::impaired;
   }
   else if (hashCode == insufficient_data_HASH)
   {
-    return SummaryStatus::insufficient_data;
+     return SummaryStatus::insufficient_data;
   }
   else if (hashCode == not_applicable_HASH)
   {
-    return SummaryStatus::not_applicable;
+     return SummaryStatus::not_applicable;
   }
   else if (hashCode == initializing_HASH)
   {
-    return SummaryStatus::initializing;
+     return SummaryStatus::initializing;
   }
-
   return SummaryStatus::NOT_SET;
 }
 
-Aws::String GetNameForSummaryStatus(SummaryStatus value)
+Aws::String GetNameForSummaryStatus(SummaryStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SummaryStatus::ok:
     return "ok";

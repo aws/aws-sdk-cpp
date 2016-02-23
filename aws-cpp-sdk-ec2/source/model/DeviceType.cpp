@@ -28,25 +28,25 @@ namespace Model
 {
 namespace DeviceTypeMapper
 {
+
+
 DeviceType GetDeviceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ebs_HASH)
   {
-    return DeviceType::ebs;
+     return DeviceType::ebs;
   }
   else if (hashCode == instance_store_HASH)
   {
-    return DeviceType::instance_store;
+     return DeviceType::instance_store;
   }
-
   return DeviceType::NOT_SET;
 }
 
-Aws::String GetNameForDeviceType(DeviceType value)
+Aws::String GetNameForDeviceType(DeviceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeviceType::ebs:
     return "ebs";

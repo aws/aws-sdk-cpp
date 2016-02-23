@@ -135,99 +135,81 @@ namespace Model
     inline MetricDatum& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline MetricDatum& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline MetricDatum& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp used for the metric. If not specified, the default value is
-     * set to the time the metric data was received. Amazon CloudWatch uses Coordinated
-     * Universal Time (UTC) when returning time stamps, which do not accommodate
-     * seasonal adjustments such as daylight savings time. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time
-     * stamps</a> in the <i>Amazon CloudWatch Developer Guide</i>. </p>
+     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
+     * (UTC) format. If not specified, the default value is set to the time the metric
+     * data was received. </p>
      */
     inline MetricDatum& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The value for the metric. </p> <important>Although the <code>Value</code>
-     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     * truncates values with very large exponents. Values with base-10 exponents
-     * greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
-     * exponents less than -130 (1 x 10^-130) are also truncated. </important>
+     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
+     * values that are either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </important>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
      * <p> The value for the metric. </p> <important>Although the <code>Value</code>
-     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     * truncates values with very large exponents. Values with base-10 exponents
-     * greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
-     * exponents less than -130 (1 x 10^-130) are also truncated. </important>
+     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
+     * values that are either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </important>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p> The value for the metric. </p> <important>Although the <code>Value</code>
-     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch
-     * truncates values with very large exponents. Values with base-10 exponents
-     * greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
-     * exponents less than -130 (1 x 10^-130) are also truncated. </important>
+     * parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
+     * values that are either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </important>
      */
     inline MetricDatum& WithValue(double value) { SetValue(value); return *this;}
 

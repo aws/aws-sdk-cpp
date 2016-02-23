@@ -27,21 +27,21 @@ namespace Model
 {
 namespace CapabilityMapper
 {
+
+
 Capability GetCapabilityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CAPABILITY_IAM_HASH)
   {
-    return Capability::CAPABILITY_IAM;
+     return Capability::CAPABILITY_IAM;
   }
-
   return Capability::NOT_SET;
 }
 
-Aws::String GetNameForCapability(Capability value)
+Aws::String GetNameForCapability(Capability enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Capability::CAPABILITY_IAM:
     return "CAPABILITY_IAM";

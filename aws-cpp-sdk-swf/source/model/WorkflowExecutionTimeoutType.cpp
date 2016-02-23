@@ -27,21 +27,21 @@ namespace Model
 {
 namespace WorkflowExecutionTimeoutTypeMapper
 {
+
+
 WorkflowExecutionTimeoutType GetWorkflowExecutionTimeoutTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == START_TO_CLOSE_HASH)
   {
-    return WorkflowExecutionTimeoutType::START_TO_CLOSE;
+     return WorkflowExecutionTimeoutType::START_TO_CLOSE;
   }
-
   return WorkflowExecutionTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForWorkflowExecutionTimeoutType(WorkflowExecutionTimeoutType value)
+Aws::String GetNameForWorkflowExecutionTimeoutType(WorkflowExecutionTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case WorkflowExecutionTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ErrorCodeMapper
 {
+
+
 ErrorCode GetErrorCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AccessDenied_HASH)
   {
-    return ErrorCode::AccessDenied;
+     return ErrorCode::AccessDenied;
   }
   else if (hashCode == InternalServerError_HASH)
   {
-    return ErrorCode::InternalServerError;
+     return ErrorCode::InternalServerError;
   }
-
   return ErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForErrorCode(ErrorCode value)
+Aws::String GetNameForErrorCode(ErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ErrorCode::AccessDenied:
     return "AccessDenied";

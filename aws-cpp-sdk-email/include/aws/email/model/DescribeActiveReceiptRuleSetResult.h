@@ -42,40 +42,69 @@ namespace Model
     DescribeActiveReceiptRuleSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeActiveReceiptRuleSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>The metadata for the currently active receipt rule set. The metadata consists
+     * of the rule set name and a timestamp of when the rule set was created.</p>
+     */
     inline const ReceiptRuleSetMetadata& GetMetadata() const{ return m_metadata; }
 
-    
+    /**
+     * <p>The metadata for the currently active receipt rule set. The metadata consists
+     * of the rule set name and a timestamp of when the rule set was created.</p>
+     */
     inline void SetMetadata(const ReceiptRuleSetMetadata& value) { m_metadata = value; }
 
-    
+    /**
+     * <p>The metadata for the currently active receipt rule set. The metadata consists
+     * of the rule set name and a timestamp of when the rule set was created.</p>
+     */
     inline void SetMetadata(ReceiptRuleSetMetadata&& value) { m_metadata = value; }
 
-    
+    /**
+     * <p>The metadata for the currently active receipt rule set. The metadata consists
+     * of the rule set name and a timestamp of when the rule set was created.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& WithMetadata(const ReceiptRuleSetMetadata& value) { SetMetadata(value); return *this;}
 
-    
+    /**
+     * <p>The metadata for the currently active receipt rule set. The metadata consists
+     * of the rule set name and a timestamp of when the rule set was created.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& WithMetadata(ReceiptRuleSetMetadata&& value) { SetMetadata(value); return *this;}
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline const Aws::Vector<ReceiptRule>& GetRules() const{ return m_rules; }
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline void SetRules(const Aws::Vector<ReceiptRule>& value) { m_rules = value; }
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline void SetRules(Aws::Vector<ReceiptRule>&& value) { m_rules = value; }
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& WithRules(const Aws::Vector<ReceiptRule>& value) { SetRules(value); return *this;}
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& WithRules(Aws::Vector<ReceiptRule>&& value) { SetRules(value); return *this;}
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& AddRules(const ReceiptRule& value) { m_rules.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The receipt rules that belong to the active rule set.</p>
+     */
     inline DescribeActiveReceiptRuleSetResult& AddRules(ReceiptRule&& value) { m_rules.push_back(value); return *this; }
 
     

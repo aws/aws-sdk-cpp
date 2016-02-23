@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MFADeleteStatusMapper
 {
+
+
 MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return MFADeleteStatus::Enabled;
+     return MFADeleteStatus::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return MFADeleteStatus::Disabled;
+     return MFADeleteStatus::Disabled;
   }
-
   return MFADeleteStatus::NOT_SET;
 }
 
-Aws::String GetNameForMFADeleteStatus(MFADeleteStatus value)
+Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MFADeleteStatus::Enabled:
     return "Enabled";

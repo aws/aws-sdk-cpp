@@ -70,8 +70,8 @@ namespace Model
     inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -85,8 +85,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -100,8 +100,8 @@ namespace Model
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -115,8 +115,8 @@ namespace Model
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -130,8 +130,8 @@ namespace Model
     inline EnableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -145,8 +145,8 @@ namespace Model
     inline EnableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -160,8 +160,8 @@ namespace Model
     inline EnableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>
@@ -175,8 +175,8 @@ namespace Model
     inline EnableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
-     * <p>One or more metrics. If you omit this parameter, all metrics are enabled.</p>
-     * <ul> <li><p><code>GroupMinSize</code></p></li>
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
      * <li><p><code>GroupMaxSize</code></p></li>
      * <li><p><code>GroupDesiredCapacity</code></p></li>
      * <li><p><code>GroupInServiceInstances</code></p></li>

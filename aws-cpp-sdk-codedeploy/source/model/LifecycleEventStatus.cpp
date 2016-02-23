@@ -32,41 +32,41 @@ namespace Model
 {
 namespace LifecycleEventStatusMapper
 {
+
+
 LifecycleEventStatus GetLifecycleEventStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return LifecycleEventStatus::Pending;
+     return LifecycleEventStatus::Pending;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return LifecycleEventStatus::InProgress;
+     return LifecycleEventStatus::InProgress;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return LifecycleEventStatus::Succeeded;
+     return LifecycleEventStatus::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return LifecycleEventStatus::Failed;
+     return LifecycleEventStatus::Failed;
   }
   else if (hashCode == Skipped_HASH)
   {
-    return LifecycleEventStatus::Skipped;
+     return LifecycleEventStatus::Skipped;
   }
   else if (hashCode == Unknown_HASH)
   {
-    return LifecycleEventStatus::Unknown;
+     return LifecycleEventStatus::Unknown;
   }
-
   return LifecycleEventStatus::NOT_SET;
 }
 
-Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus value)
+Aws::String GetNameForLifecycleEventStatus(LifecycleEventStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifecycleEventStatus::Pending:
     return "Pending";

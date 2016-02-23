@@ -19,6 +19,7 @@ using namespace Aws::Utils;
 
 static const int nodejs_HASH = HashingUtils::HashString("nodejs");
 static const int java8_HASH = HashingUtils::HashString("java8");
+static const int python2_7_HASH = HashingUtils::HashString("python2.7");
 
 namespace Aws
 {
@@ -28,30 +29,36 @@ namespace Model
 {
 namespace RuntimeMapper
 {
+
+
 Runtime GetRuntimeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == nodejs_HASH)
   {
-    return Runtime::nodejs;
+     return Runtime::nodejs;
   }
   else if (hashCode == java8_HASH)
   {
-    return Runtime::java8;
+     return Runtime::java8;
   }
-
+  else if (hashCode == python2_7_HASH)
+  {
+     return Runtime::python2_7;
+  }
   return Runtime::NOT_SET;
 }
 
-Aws::String GetNameForRuntime(Runtime value)
+Aws::String GetNameForRuntime(Runtime enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Runtime::nodejs:
     return "nodejs";
   case Runtime::java8:
     return "java8";
+  case Runtime::python2_7:
+    return "python2.7";
   default:
     return "";
   }

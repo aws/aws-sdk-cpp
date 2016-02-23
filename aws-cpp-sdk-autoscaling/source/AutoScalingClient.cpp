@@ -71,6 +71,7 @@
 #include <aws/autoscaling/model/ResumeProcessesRequest.h>
 #include <aws/autoscaling/model/SetDesiredCapacityRequest.h>
 #include <aws/autoscaling/model/SetInstanceHealthRequest.h>
+#include <aws/autoscaling/model/SetInstanceProtectionRequest.h>
 #include <aws/autoscaling/model/SuspendProcessesRequest.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupRequest.h>
 #include <aws/autoscaling/model/UpdateAutoScalingGroupRequest.h>
@@ -1486,6 +1487,36 @@ void AutoScalingClient::SetInstanceHealthAsync(const SetInstanceHealthRequest& r
 void AutoScalingClient::SetInstanceHealthAsyncHelper(const SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetInstanceHealth(request), context);
+}
+
+SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetInstanceProtectionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetInstanceProtectionOutcome(SetInstanceProtectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetInstanceProtectionOutcome(outcome.GetError());
+  }
+}
+
+SetInstanceProtectionOutcomeCallable AutoScalingClient::SetInstanceProtectionCallable(const SetInstanceProtectionRequest& request) const
+{
+  return std::async(std::launch::async, &AutoScalingClient::SetInstanceProtection, this, request);
+}
+
+void AutoScalingClient::SetInstanceProtectionAsync(const SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&AutoScalingClient::SetInstanceProtectionAsyncHelper, this, request, handler, context);
+}
+
+void AutoScalingClient::SetInstanceProtectionAsyncHelper(const SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetInstanceProtection(request), context);
 }
 
 SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcessesRequest& request) const

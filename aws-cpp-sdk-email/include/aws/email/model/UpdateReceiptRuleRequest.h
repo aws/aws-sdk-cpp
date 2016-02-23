@@ -34,40 +34,64 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline UpdateReceiptRuleRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline UpdateReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
+     */
     inline UpdateReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
     inline const ReceiptRule& GetRule() const{ return m_rule; }
 
-    
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
     inline void SetRule(const ReceiptRule& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
-    
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
     inline void SetRule(ReceiptRule&& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
-    
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
     inline UpdateReceiptRuleRequest& WithRule(const ReceiptRule& value) { SetRule(value); return *this;}
 
-    
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
     inline UpdateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
 
   private:

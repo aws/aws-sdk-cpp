@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceAttachment.h>
 #include <aws/ec2/model/NetworkInterfaceAssociation.h>
+#include <aws/ec2/model/NetworkInterfaceType.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
@@ -623,6 +624,31 @@ namespace Model
      */
     inline NetworkInterface& AddPrivateIpAddresses(NetworkInterfacePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
+    /**
+     * <p>The type of interface. </p>
+     */
+    inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
+
+    /**
+     * <p>The type of interface. </p>
+     */
+    inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of interface. </p>
+     */
+    inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
+
+    /**
+     * <p>The type of interface. </p>
+     */
+    inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
+
+    /**
+     * <p>The type of interface. </p>
+     */
+    inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(value); return *this;}
+
   private:
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
@@ -660,6 +686,8 @@ namespace Model
     bool m_tagSetHasBeenSet;
     Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+    NetworkInterfaceType m_interfaceType;
+    bool m_interfaceTypeHasBeenSet;
   };
 
 } // namespace Model

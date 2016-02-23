@@ -28,25 +28,25 @@ namespace Model
 {
 namespace AutoScalingTypeMapper
 {
+
+
 AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == load_HASH)
   {
-    return AutoScalingType::load;
+     return AutoScalingType::load;
   }
   else if (hashCode == timer_HASH)
   {
-    return AutoScalingType::timer;
+     return AutoScalingType::timer;
   }
-
   return AutoScalingType::NOT_SET;
 }
 
-Aws::String GetNameForAutoScalingType(AutoScalingType value)
+Aws::String GetNameForAutoScalingType(AutoScalingType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AutoScalingType::load:
     return "load";

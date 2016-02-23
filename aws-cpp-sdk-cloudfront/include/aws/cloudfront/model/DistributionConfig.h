@@ -520,6 +520,48 @@ namespace Model
     
     inline DistributionConfig& WithRestrictions(Restrictions&& value) { SetRestrictions(value); return *this;}
 
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline DistributionConfig& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline DistributionConfig& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+
+    /**
+     * (Optional) If you're using AWS WAF to filter CloudFront requests, the Id of the
+     * AWS WAF web ACL that is associated with the distribution.
+     */
+    inline DistributionConfig& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+
   private:
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
@@ -547,6 +589,8 @@ namespace Model
     bool m_viewerCertificateHasBeenSet;
     Restrictions m_restrictions;
     bool m_restrictionsHasBeenSet;
+    Aws::String m_webACLId;
+    bool m_webACLIdHasBeenSet;
   };
 
 } // namespace Model

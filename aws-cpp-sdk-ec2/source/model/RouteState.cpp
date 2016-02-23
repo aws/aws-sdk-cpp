@@ -28,25 +28,25 @@ namespace Model
 {
 namespace RouteStateMapper
 {
+
+
 RouteState GetRouteStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == active_HASH)
   {
-    return RouteState::active;
+     return RouteState::active;
   }
   else if (hashCode == blackhole_HASH)
   {
-    return RouteState::blackhole;
+     return RouteState::blackhole;
   }
-
   return RouteState::NOT_SET;
 }
 
-Aws::String GetNameForRouteState(RouteState value)
+Aws::String GetNameForRouteState(RouteState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RouteState::active:
     return "active";

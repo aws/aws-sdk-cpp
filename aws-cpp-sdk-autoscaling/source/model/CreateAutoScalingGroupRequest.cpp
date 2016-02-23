@@ -39,6 +39,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_placementGroupHasBeenSet(false),
     m_vPCZoneIdentifierHasBeenSet(false),
     m_terminationPoliciesHasBeenSet(false),
+    m_newInstancesProtectedFromScaleIn(false),
+    m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -120,6 +122,10 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       terminationPoliciesCount++;
     }
+  }
+  if(m_newInstancesProtectedFromScaleInHasBeenSet)
+  {
+    ss << "NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
   }
   if(m_tagsHasBeenSet)
   {

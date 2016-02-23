@@ -215,6 +215,24 @@ namespace Model
      */
     inline Instance& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
+    /**
+     * <p>Indicates whether the instance is protected from termination by Auto Scaling
+     * when scaling in.</p>
+     */
+    inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether the instance is protected from termination by Auto Scaling
+     * when scaling in.</p>
+     */
+    inline void SetProtectedFromScaleIn(bool value) { m_protectedFromScaleInHasBeenSet = true; m_protectedFromScaleIn = value; }
+
+    /**
+     * <p>Indicates whether the instance is protected from termination by Auto Scaling
+     * when scaling in.</p>
+     */
+    inline Instance& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
+
   private:
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
@@ -226,6 +244,8 @@ namespace Model
     bool m_healthStatusHasBeenSet;
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+    bool m_protectedFromScaleIn;
+    bool m_protectedFromScaleInHasBeenSet;
   };
 
 } // namespace Model

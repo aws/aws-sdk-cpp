@@ -30,33 +30,33 @@ namespace Model
 {
 namespace PlatformMapper
 {
+
+
 Platform GetPlatformForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == APNS_HASH)
   {
-    return Platform::APNS;
+     return Platform::APNS;
   }
   else if (hashCode == APNS_SANDBOX_HASH)
   {
-    return Platform::APNS_SANDBOX;
+     return Platform::APNS_SANDBOX;
   }
   else if (hashCode == GCM_HASH)
   {
-    return Platform::GCM;
+     return Platform::GCM;
   }
   else if (hashCode == ADM_HASH)
   {
-    return Platform::ADM;
+     return Platform::ADM;
   }
-
   return Platform::NOT_SET;
 }
 
-Aws::String GetNameForPlatform(Platform value)
+Aws::String GetNameForPlatform(Platform enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Platform::APNS:
     return "APNS";

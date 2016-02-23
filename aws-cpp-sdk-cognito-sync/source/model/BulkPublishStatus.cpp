@@ -30,33 +30,33 @@ namespace Model
 {
 namespace BulkPublishStatusMapper
 {
+
+
 BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NOT_STARTED_HASH)
   {
-    return BulkPublishStatus::NOT_STARTED;
+     return BulkPublishStatus::NOT_STARTED;
   }
   else if (hashCode == IN_PROGRESS_HASH)
   {
-    return BulkPublishStatus::IN_PROGRESS;
+     return BulkPublishStatus::IN_PROGRESS;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return BulkPublishStatus::FAILED;
+     return BulkPublishStatus::FAILED;
   }
   else if (hashCode == SUCCEEDED_HASH)
   {
-    return BulkPublishStatus::SUCCEEDED;
+     return BulkPublishStatus::SUCCEEDED;
   }
-
   return BulkPublishStatus::NOT_SET;
 }
 
-Aws::String GetNameForBulkPublishStatus(BulkPublishStatus value)
+Aws::String GetNameForBulkPublishStatus(BulkPublishStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BulkPublishStatus::NOT_STARTED:
     return "NOT_STARTED";

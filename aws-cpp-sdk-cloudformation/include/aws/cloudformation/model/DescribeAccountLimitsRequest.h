@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>The input for the <a>DescribeAccountLimits</a> action.</p>
    */
   class AWS_CLOUDFORMATION_API DescribeAccountLimitsRequest : public CloudFormationRequest
   {
@@ -33,25 +34,46 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline DescribeAccountLimitsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline DescribeAccountLimitsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline DescribeAccountLimitsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

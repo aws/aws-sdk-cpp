@@ -117,51 +117,60 @@ namespace Model
     inline AutoScalingThresholds& WithIgnoreMetricsTime(long value) { SetIgnoreMetricsTime(value); return *this;}
 
     /**
-     * <p>The CPU utilization threshold, as a percent of the available CPU.</p>
+     * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
+     * -1 disables the threshold.</p>
      */
     inline double GetCpuThreshold() const{ return m_cpuThreshold; }
 
     /**
-     * <p>The CPU utilization threshold, as a percent of the available CPU.</p>
+     * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
+     * -1 disables the threshold.</p>
      */
     inline void SetCpuThreshold(double value) { m_cpuThresholdHasBeenSet = true; m_cpuThreshold = value; }
 
     /**
-     * <p>The CPU utilization threshold, as a percent of the available CPU.</p>
+     * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
+     * -1 disables the threshold.</p>
      */
     inline AutoScalingThresholds& WithCpuThreshold(double value) { SetCpuThreshold(value); return *this;}
 
     /**
-     * <p>The memory utilization threshold, as a percent of the available memory.</p>
+     * <p>The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.</p>
      */
     inline double GetMemoryThreshold() const{ return m_memoryThreshold; }
 
     /**
-     * <p>The memory utilization threshold, as a percent of the available memory.</p>
+     * <p>The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.</p>
      */
     inline void SetMemoryThreshold(double value) { m_memoryThresholdHasBeenSet = true; m_memoryThreshold = value; }
 
     /**
-     * <p>The memory utilization threshold, as a percent of the available memory.</p>
+     * <p>The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.</p>
      */
     inline AutoScalingThresholds& WithMemoryThreshold(double value) { SetMemoryThreshold(value); return *this;}
 
     /**
-     * <p>The load threshold. For more information about how load is computed, see <a
+     * <p>The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
      * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.</p>
      */
     inline double GetLoadThreshold() const{ return m_loadThreshold; }
 
     /**
-     * <p>The load threshold. For more information about how load is computed, see <a
+     * <p>The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
      * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.</p>
      */
     inline void SetLoadThreshold(double value) { m_loadThresholdHasBeenSet = true; m_loadThreshold = value; }
 
     /**
-     * <p>The load threshold. For more information about how load is computed, see <a
+     * <p>The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
      * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.</p>
      */

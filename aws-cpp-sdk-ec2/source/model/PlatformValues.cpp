@@ -27,21 +27,21 @@ namespace Model
 {
 namespace PlatformValuesMapper
 {
+
+
 PlatformValues GetPlatformValuesForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Windows_HASH)
   {
-    return PlatformValues::Windows;
+     return PlatformValues::Windows;
   }
-
   return PlatformValues::NOT_SET;
 }
 
-Aws::String GetNameForPlatformValues(PlatformValues value)
+Aws::String GetNameForPlatformValues(PlatformValues enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PlatformValues::Windows:
     return "Windows";

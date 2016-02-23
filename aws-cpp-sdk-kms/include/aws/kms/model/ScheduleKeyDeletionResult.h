@@ -39,34 +39,64 @@ namespace Model
     ScheduleKeyDeletionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ScheduleKeyDeletionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline ScheduleKeyDeletionResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline ScheduleKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the customer master key (CMK) for which deletion is
+     * scheduled.</p>
+     */
     inline ScheduleKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key
+     * (CMK).</p>
+     */
     inline double GetDeletionDate() const{ return m_deletionDate; }
 
-    
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key
+     * (CMK).</p>
+     */
     inline void SetDeletionDate(double value) { m_deletionDate = value; }
 
-    
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key
+     * (CMK).</p>
+     */
     inline ScheduleKeyDeletionResult& WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
 
   private:

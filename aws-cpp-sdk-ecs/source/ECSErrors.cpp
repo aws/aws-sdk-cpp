@@ -20,17 +20,17 @@ using namespace Aws::Client;
 using namespace Aws::ECS;
 using namespace Aws::Utils;
 
-static const int SERVICE_NOT_ACTIVE_HASH = HashingUtils::HashString("ServiceNotActiveException");
-static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFoundException");
-static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFoundException");
+static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UpdateInProgressException");
+static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
+static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
+static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
 static const int CLUSTER_CONTAINS_SERVICES_HASH = HashingUtils::HashString("ClusterContainsServicesException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
-static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UpdateInProgressException");
-static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
-static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
-static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
+static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFoundException");
+static const int SERVICE_NOT_ACTIVE_HASH = HashingUtils::HashString("ServiceNotActiveException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
+static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFoundException");
+static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
 
 namespace Aws
 {
@@ -43,17 +43,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SERVICE_NOT_ACTIVE_HASH)
+  if (hashCode == UPDATE_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVICE_NOT_ACTIVE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::UPDATE_IN_PROGRESS), false);
   }
-  else if (hashCode == CLUSTER_NOT_FOUND_HASH)
+  else if (hashCode == CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLIENT), false);
   }
-  else if (hashCode == SERVICE_NOT_FOUND_HASH)
+  else if (hashCode == CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVICE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_CONTAINER_INSTANCES), false);
+  }
+  else if (hashCode == NO_UPDATE_AVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::NO_UPDATE_AVAILABLE), false);
   }
   else if (hashCode == CLUSTER_CONTAINS_SERVICES_HASH)
   {
@@ -63,29 +67,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVER), false);
   }
-  else if (hashCode == UPDATE_IN_PROGRESS_HASH)
+  else if (hashCode == CLUSTER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::UPDATE_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_NOT_FOUND), false);
   }
-  else if (hashCode == NO_UPDATE_AVAILABLE_HASH)
+  else if (hashCode == SERVICE_NOT_ACTIVE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::NO_UPDATE_AVAILABLE), false);
-  }
-  else if (hashCode == CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_CONTAINER_INSTANCES), false);
-  }
-  else if (hashCode == MISSING_VERSION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::MISSING_VERSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVICE_NOT_ACTIVE), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::INVALID_PARAMETER), false);
   }
-  else if (hashCode == CLIENT_HASH)
+  else if (hashCode == SERVICE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVICE_NOT_FOUND), false);
+  }
+  else if (hashCode == MISSING_VERSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::MISSING_VERSION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

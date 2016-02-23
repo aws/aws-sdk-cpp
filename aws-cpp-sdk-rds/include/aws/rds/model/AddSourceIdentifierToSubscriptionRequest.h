@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API AddSourceIdentifierToSubscriptionRequest : public RDSRequest
   {
@@ -81,11 +81,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
@@ -94,11 +95,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -107,11 +109,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -120,11 +123,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
@@ -133,11 +137,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
@@ -146,11 +151,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
@@ -159,11 +165,12 @@ namespace Model
      * with a letter and must contain only ASCII letters, digits, and hyphens; it
      * cannot end with a hyphen or contain two consecutive hyphens. </p>
      * <p>Constraints:</p> <ul> <li>If the source type is a DB instance, then a
-     * DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB
-     * security group, a DBSecurityGroupName must be supplied.</li> <li>If the source
-     * type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-     * <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be
-     * supplied.</li> </ul>
+     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
+     * is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</li> <li>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
+     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
+     * </ul>
      */
     inline AddSourceIdentifierToSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 

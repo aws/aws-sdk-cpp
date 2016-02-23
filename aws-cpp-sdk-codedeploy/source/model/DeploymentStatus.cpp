@@ -32,41 +32,41 @@ namespace Model
 {
 namespace DeploymentStatusMapper
 {
+
+
 DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Created_HASH)
   {
-    return DeploymentStatus::Created;
+     return DeploymentStatus::Created;
   }
   else if (hashCode == Queued_HASH)
   {
-    return DeploymentStatus::Queued;
+     return DeploymentStatus::Queued;
   }
   else if (hashCode == InProgress_HASH)
   {
-    return DeploymentStatus::InProgress;
+     return DeploymentStatus::InProgress;
   }
   else if (hashCode == Succeeded_HASH)
   {
-    return DeploymentStatus::Succeeded;
+     return DeploymentStatus::Succeeded;
   }
   else if (hashCode == Failed_HASH)
   {
-    return DeploymentStatus::Failed;
+     return DeploymentStatus::Failed;
   }
   else if (hashCode == Stopped_HASH)
   {
-    return DeploymentStatus::Stopped;
+     return DeploymentStatus::Stopped;
   }
-
   return DeploymentStatus::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentStatus(DeploymentStatus value)
+Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentStatus::Created:
     return "Created";

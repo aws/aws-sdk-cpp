@@ -28,25 +28,25 @@ namespace Model
 {
 namespace StatusTypeMapper
 {
+
+
 StatusType GetStatusTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Active_HASH)
   {
-    return StatusType::Active;
+     return StatusType::Active;
   }
   else if (hashCode == Inactive_HASH)
   {
-    return StatusType::Inactive;
+     return StatusType::Inactive;
   }
-
   return StatusType::NOT_SET;
 }
 
-Aws::String GetNameForStatusType(StatusType value)
+Aws::String GetNameForStatusType(StatusType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusType::Active:
     return "Active";

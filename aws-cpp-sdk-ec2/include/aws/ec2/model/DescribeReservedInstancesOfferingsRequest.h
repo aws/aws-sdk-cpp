@@ -104,40 +104,40 @@ namespace Model
     inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(const char* value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(value); return *this; }
 
     /**
-     * <p>The instance type on which the Reserved Instance can be used. For more
-     * information, see <a
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type on which the Reserved Instance can be used. For more
-     * information, see <a
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type on which the Reserved Instance can be used. For more
-     * information, see <a
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type on which the Reserved Instance can be used. For more
-     * information, see <a
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type on which the Reserved Instance can be used. For more
-     * information, see <a
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -215,11 +215,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -245,11 +245,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -275,11 +275,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -305,11 +305,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -335,11 +335,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -365,11 +365,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -395,11 +395,11 @@ namespace Model
      * one year or three years), in seconds (<code>31536000</code> |
      * <code>94608000</code>).</p> </li> <li> <p><code>fixed-price</code> - The
      * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type on which the Reserved Instance
-     * can be used.</p> </li> <li> <p><code>marketplace</code> - Set to
+     * <p><code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p><code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from AWS
-     * and Reserved Instance Marketplace are listed.</p> </li> <li>
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
@@ -419,37 +419,42 @@ namespace Model
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The tenancy of the Reserved Instance offering. A Reserved Instance with
-     * <code>dedicated</code> tenancy runs on single-tenant hardware and can only be
-     * launched within a VPC.</p> <p>Default: <code>default</code></p>
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
+     * <code>default</code></p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
     /**
-     * <p>The tenancy of the Reserved Instance offering. A Reserved Instance with
-     * <code>dedicated</code> tenancy runs on single-tenant hardware and can only be
-     * launched within a VPC.</p> <p>Default: <code>default</code></p>
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
+     * <code>default</code></p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the Reserved Instance offering. A Reserved Instance with
-     * <code>dedicated</code> tenancy runs on single-tenant hardware and can only be
-     * launched within a VPC.</p> <p>Default: <code>default</code></p>
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
+     * <code>default</code></p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
-     * <p>The tenancy of the Reserved Instance offering. A Reserved Instance with
-     * <code>dedicated</code> tenancy runs on single-tenant hardware and can only be
-     * launched within a VPC.</p> <p>Default: <code>default</code></p>
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
+     * <code>default</code></p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy of the Reserved Instance offering. A Reserved Instance with
-     * <code>dedicated</code> tenancy runs on single-tenant hardware and can only be
-     * launched within a VPC.</p> <p>Default: <code>default</code></p>
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>Default:
+     * <code>default</code></p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 
@@ -548,17 +553,17 @@ namespace Model
     inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /**
-     * <p>Include Marketplace offerings in the response.</p>
+     * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
     inline bool GetIncludeMarketplace() const{ return m_includeMarketplace; }
 
     /**
-     * <p>Include Marketplace offerings in the response.</p>
+     * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
     inline void SetIncludeMarketplace(bool value) { m_includeMarketplaceHasBeenSet = true; m_includeMarketplace = value; }
 
     /**
-     * <p>Include Marketplace offerings in the response.</p>
+     * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithIncludeMarketplace(bool value) { SetIncludeMarketplace(value); return *this;}
 

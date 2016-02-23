@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     nodejs,
-    java8
+    java8,
+    python2_7
   };
 
 namespace RuntimeMapper

@@ -206,10 +206,10 @@ namespace Model
          * <i>producers</i>. Scale-out within an Amazon Kinesis stream is explicitly
          * supported by means of shards, which are uniquely identified groups of data
          * records in an Amazon Kinesis stream.</p> <p>You specify and control the number
-         * of shards that a stream is composed of. Each open shard can support up to 5 read
-         * transactions per second, up to a maximum total of 2 MB of data read per second.
-         * Each shard can support up to 1000 records written per second, up to a maximum
-         * total of 1 MB data written per second. You can add shards to a stream if the
+         * of shards that a stream is composed of. Each shard can support reads up to 5
+         * transactions per second, up to a maximum data read total of 2 MB per second.
+         * Each shard can support writes up to 1,000 records per second, up to a maximum
+         * data write total of 1 MB per second. You can add shards to a stream if the
          * amount of data input increases and you can remove shards if the amount of data
          * input decreases.</p> <p>The stream name identifies the stream. The name is
          * scoped to the AWS account used by the application. It is also scoped by region.
@@ -228,7 +228,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>You can use <code>DescribeStream</code> to check the
+         * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p>
          * <p><a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
          */
@@ -240,10 +240,10 @@ namespace Model
          * <i>producers</i>. Scale-out within an Amazon Kinesis stream is explicitly
          * supported by means of shards, which are uniquely identified groups of data
          * records in an Amazon Kinesis stream.</p> <p>You specify and control the number
-         * of shards that a stream is composed of. Each open shard can support up to 5 read
-         * transactions per second, up to a maximum total of 2 MB of data read per second.
-         * Each shard can support up to 1000 records written per second, up to a maximum
-         * total of 1 MB data written per second. You can add shards to a stream if the
+         * of shards that a stream is composed of. Each shard can support reads up to 5
+         * transactions per second, up to a maximum data read total of 2 MB per second.
+         * Each shard can support writes up to 1,000 records per second, up to a maximum
+         * data write total of 1 MB per second. You can add shards to a stream if the
          * amount of data input increases and you can remove shards if the amount of data
          * input decreases.</p> <p>The stream name identifies the stream. The name is
          * scoped to the AWS account used by the application. It is also scoped by region.
@@ -262,7 +262,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>You can use <code>DescribeStream</code> to check the
+         * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p>
          * <p><a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
          *
@@ -276,10 +276,10 @@ namespace Model
          * <i>producers</i>. Scale-out within an Amazon Kinesis stream is explicitly
          * supported by means of shards, which are uniquely identified groups of data
          * records in an Amazon Kinesis stream.</p> <p>You specify and control the number
-         * of shards that a stream is composed of. Each open shard can support up to 5 read
-         * transactions per second, up to a maximum total of 2 MB of data read per second.
-         * Each shard can support up to 1000 records written per second, up to a maximum
-         * total of 1 MB data written per second. You can add shards to a stream if the
+         * of shards that a stream is composed of. Each shard can support reads up to 5
+         * transactions per second, up to a maximum data read total of 2 MB per second.
+         * Each shard can support writes up to 1,000 records per second, up to a maximum
+         * data write total of 1 MB per second. You can add shards to a stream if the
          * amount of data input increases and you can remove shards if the amount of data
          * input decreases.</p> <p>The stream name identifies the stream. The name is
          * scoped to the AWS account used by the application. It is also scoped by region.
@@ -298,7 +298,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>You can use <code>DescribeStream</code> to check the
+         * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p>
          * <p><a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
          *
@@ -307,19 +307,34 @@ namespace Model
         virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Decreases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The minimum value of
+         * a stream’s retention period is 24 hours. </p> <p>This operation may result in
+         * lost data. For example, if the stream's retention period is 48 hours and is
+         * decreased to 24 hours, any data already in the stream that is older than 24
+         * hours is inaccessible.</p>
          */
         virtual Model::DecreaseStreamRetentionPeriodOutcome DecreaseStreamRetentionPeriod(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
 
         /**
-         * 
+         * <p>Decreases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The minimum value of
+         * a stream’s retention period is 24 hours. </p> <p>This operation may result in
+         * lost data. For example, if the stream's retention period is 48 hours and is
+         * decreased to 24 hours, any data already in the stream that is older than 24
+         * hours is inaccessible.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DecreaseStreamRetentionPeriodOutcomeCallable DecreaseStreamRetentionPeriodCallable(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
 
         /**
-         * 
+         * <p>Decreases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The minimum value of
+         * a stream’s retention period is 24 hours. </p> <p>This operation may result in
+         * lost data. For example, if the stream's retention period is 48 hours and is
+         * decreased to 24 hours, any data already in the stream that is older than 24
+         * hours is inaccessible.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -474,17 +489,15 @@ namespace Model
          * <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
          * You can terminate the loop when the shard is closed, or when the shard iterator
          * reaches the record with the sequence number or other attribute that marks it as
-         * the last record to process.</p> <p>Each data record can be up to 50 KB in size,
+         * the last record to process.</p> <p>Each data record can be up to 1 MB in size,
          * and each shard can read up to 2 MB per second. You can ensure that your calls
          * don't exceed the maximum supported size or throughput by using the
          * <code>Limit</code> parameter to specify the maximum number of records that
          * <a>GetRecords</a> can return. Consider your average record size when determining
-         * this limit. For example, if your average record size is 40 KB, you can limit the
-         * data returned to about 1 MB per call by specifying 25 as the limit.</p> <p>The
-         * size of the data returned by <a>GetRecords</a> will vary depending on the
-         * utilization of the shard. The maximum size of data that <a>GetRecords</a> can
-         * return is 10 MB. If a call returns this amount of data, subsequent calls made
-         * within the next 5 seconds throw
+         * this limit.</p> <p>The size of the data returned by <a>GetRecords</a> will vary
+         * depending on the utilization of the shard. The maximum size of data that
+         * <a>GetRecords</a> can return is 10 MB. If a call returns this amount of data,
+         * subsequent calls made within the next 5 seconds throw
          * <code>ProvisionedThroughputExceededException</code>. If there is insufficient
          * provisioned throughput on the shard, subsequent calls made within the next 1
          * second throw <code>ProvisionedThroughputExceededException</code>. Note that
@@ -493,11 +506,19 @@ namespace Model
          * <a>GetRecords</a>; however, it's possible that the application will get
          * exceptions for longer than 1 second.</p> <p>To detect whether the application is
          * falling behind in processing, you can use the <code>MillisBehindLatest</code>
-         * response attribute. You can also monitor the amount of data in a stream using
-         * the CloudWatch metrics. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
-         * Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p>
+         * response attribute. You can also monitor the stream using CloudWatch metrics
+         * (see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring
+         * Amazon Kinesis</a> in the <i>Amazon Kinesis Developer Guide</i>).</p> <p>Each
+         * Amazon Kinesis record includes a value,
+         * <code>ApproximateArrivalTimestamp</code>, that is set when an Amazon Kinesis
+         * stream successfully receives and stores a record. This is commonly referred to
+         * as a server-side timestamp, which is different than a client-side timestamp,
+         * where the timestamp is set when a data producer creates or sends the record to a
+         * stream. The timestamp has millisecond precision. There are no guarantees about
+         * the timestamp accuracy, or that the timestamp is always increasing. For example,
+         * records in a shard or across a stream might have timestamps that are out of
+         * order.</p>
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
@@ -519,17 +540,15 @@ namespace Model
          * <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
          * You can terminate the loop when the shard is closed, or when the shard iterator
          * reaches the record with the sequence number or other attribute that marks it as
-         * the last record to process.</p> <p>Each data record can be up to 50 KB in size,
+         * the last record to process.</p> <p>Each data record can be up to 1 MB in size,
          * and each shard can read up to 2 MB per second. You can ensure that your calls
          * don't exceed the maximum supported size or throughput by using the
          * <code>Limit</code> parameter to specify the maximum number of records that
          * <a>GetRecords</a> can return. Consider your average record size when determining
-         * this limit. For example, if your average record size is 40 KB, you can limit the
-         * data returned to about 1 MB per call by specifying 25 as the limit.</p> <p>The
-         * size of the data returned by <a>GetRecords</a> will vary depending on the
-         * utilization of the shard. The maximum size of data that <a>GetRecords</a> can
-         * return is 10 MB. If a call returns this amount of data, subsequent calls made
-         * within the next 5 seconds throw
+         * this limit.</p> <p>The size of the data returned by <a>GetRecords</a> will vary
+         * depending on the utilization of the shard. The maximum size of data that
+         * <a>GetRecords</a> can return is 10 MB. If a call returns this amount of data,
+         * subsequent calls made within the next 5 seconds throw
          * <code>ProvisionedThroughputExceededException</code>. If there is insufficient
          * provisioned throughput on the shard, subsequent calls made within the next 1
          * second throw <code>ProvisionedThroughputExceededException</code>. Note that
@@ -538,11 +557,19 @@ namespace Model
          * <a>GetRecords</a>; however, it's possible that the application will get
          * exceptions for longer than 1 second.</p> <p>To detect whether the application is
          * falling behind in processing, you can use the <code>MillisBehindLatest</code>
-         * response attribute. You can also monitor the amount of data in a stream using
-         * the CloudWatch metrics. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
-         * Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p>
+         * response attribute. You can also monitor the stream using CloudWatch metrics
+         * (see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring
+         * Amazon Kinesis</a> in the <i>Amazon Kinesis Developer Guide</i>).</p> <p>Each
+         * Amazon Kinesis record includes a value,
+         * <code>ApproximateArrivalTimestamp</code>, that is set when an Amazon Kinesis
+         * stream successfully receives and stores a record. This is commonly referred to
+         * as a server-side timestamp, which is different than a client-side timestamp,
+         * where the timestamp is set when a data producer creates or sends the record to a
+         * stream. The timestamp has millisecond precision. There are no guarantees about
+         * the timestamp accuracy, or that the timestamp is always increasing. For example,
+         * records in a shard or across a stream might have timestamps that are out of
+         * order.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -566,17 +593,15 @@ namespace Model
          * <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
          * You can terminate the loop when the shard is closed, or when the shard iterator
          * reaches the record with the sequence number or other attribute that marks it as
-         * the last record to process.</p> <p>Each data record can be up to 50 KB in size,
+         * the last record to process.</p> <p>Each data record can be up to 1 MB in size,
          * and each shard can read up to 2 MB per second. You can ensure that your calls
          * don't exceed the maximum supported size or throughput by using the
          * <code>Limit</code> parameter to specify the maximum number of records that
          * <a>GetRecords</a> can return. Consider your average record size when determining
-         * this limit. For example, if your average record size is 40 KB, you can limit the
-         * data returned to about 1 MB per call by specifying 25 as the limit.</p> <p>The
-         * size of the data returned by <a>GetRecords</a> will vary depending on the
-         * utilization of the shard. The maximum size of data that <a>GetRecords</a> can
-         * return is 10 MB. If a call returns this amount of data, subsequent calls made
-         * within the next 5 seconds throw
+         * this limit.</p> <p>The size of the data returned by <a>GetRecords</a> will vary
+         * depending on the utilization of the shard. The maximum size of data that
+         * <a>GetRecords</a> can return is 10 MB. If a call returns this amount of data,
+         * subsequent calls made within the next 5 seconds throw
          * <code>ProvisionedThroughputExceededException</code>. If there is insufficient
          * provisioned throughput on the shard, subsequent calls made within the next 1
          * second throw <code>ProvisionedThroughputExceededException</code>. Note that
@@ -585,11 +610,19 @@ namespace Model
          * <a>GetRecords</a>; however, it's possible that the application will get
          * exceptions for longer than 1 second.</p> <p>To detect whether the application is
          * falling behind in processing, you can use the <code>MillisBehindLatest</code>
-         * response attribute. You can also monitor the amount of data in a stream using
-         * the CloudWatch metrics. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring_with_cloudwatch.html">Monitoring
-         * Amazon Kinesis with Amazon CloudWatch</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p>
+         * response attribute. You can also monitor the stream using CloudWatch metrics
+         * (see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring
+         * Amazon Kinesis</a> in the <i>Amazon Kinesis Developer Guide</i>).</p> <p>Each
+         * Amazon Kinesis record includes a value,
+         * <code>ApproximateArrivalTimestamp</code>, that is set when an Amazon Kinesis
+         * stream successfully receives and stores a record. This is commonly referred to
+         * as a server-side timestamp, which is different than a client-side timestamp,
+         * where the timestamp is set when a data producer creates or sends the record to a
+         * stream. The timestamp has millisecond precision. There are no guarantees about
+         * the timestamp accuracy, or that the timestamp is always increasing. For example,
+         * records in a shard or across a stream might have timestamps that are out of
+         * order.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -708,19 +741,43 @@ namespace Model
         virtual void GetShardIteratorAsync(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Increases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The maximum value of
+         * a stream’s retention period is 168 hours (7 days).</p> <p>Upon choosing a longer
+         * stream retention period, this operation will increase the time period records
+         * are accessible that have not yet expired. However, it will not make previous
+         * data that has expired (older than the stream’s previous retention period)
+         * accessible after the operation has been called. For example, if a stream’s
+         * retention period is set to 24 hours and is increased to 168 hours, any data that
+         * is older than 24 hours will remain inaccessible to consumer applications.</p>
          */
         virtual Model::IncreaseStreamRetentionPeriodOutcome IncreaseStreamRetentionPeriod(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
 
         /**
-         * 
+         * <p>Increases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The maximum value of
+         * a stream’s retention period is 168 hours (7 days).</p> <p>Upon choosing a longer
+         * stream retention period, this operation will increase the time period records
+         * are accessible that have not yet expired. However, it will not make previous
+         * data that has expired (older than the stream’s previous retention period)
+         * accessible after the operation has been called. For example, if a stream’s
+         * retention period is set to 24 hours and is increased to 168 hours, any data that
+         * is older than 24 hours will remain inaccessible to consumer applications.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::IncreaseStreamRetentionPeriodOutcomeCallable IncreaseStreamRetentionPeriodCallable(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
 
         /**
-         * 
+         * <p>Increases the stream's retention period, which is the length of time data
+         * records are accessible after they are added to the stream. The maximum value of
+         * a stream’s retention period is 168 hours (7 days).</p> <p>Upon choosing a longer
+         * stream retention period, this operation will increase the time period records
+         * are accessible that have not yet expired. However, it will not make previous
+         * data that has expired (older than the stream’s previous retention period)
+         * accessible after the operation has been called. For example, if a stream’s
+         * retention period is set to 24 hours and is increased to 168 hours, any data that
+         * is older than 24 hours will remain inaccessible to consumer applications.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -919,144 +976,153 @@ namespace Model
         virtual void MergeShardsAsync(const Model::MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Puts (writes) a single data record from a producer into an Amazon Kinesis
-         * stream. Call <code>PutRecord</code> to send data from the producer into the
-         * Amazon Kinesis stream for real-time ingestion and subsequent processing, one
-         * record at a time. Each shard can support up to 1000 records written per second,
-         * up to a maximum total of 1 MB data written per second.</p> <p>You must specify
-         * the name of the stream that captures, stores, and transports the data; a
-         * partition key; and the data blob itself.</p> <p>The data blob can be any type of
-         * data; for example, a segment from a log file, geographic/location data, website
-         * clickstream data, and so on.</p> <p>The partition key is used by Amazon Kinesis
-         * to distribute data across shards. Amazon Kinesis segregates the data records
-         * that belong to a data stream into multiple shards, using the partition key
-         * associated with each data record to determine which shard a given data record
-         * belongs to. </p> <p>Partition keys are Unicode strings, with a maximum length
-         * limit of 256 characters for each key. An MD5 hash function is used to map
-         * partition keys to 128-bit integer values and to map associated data records to
-         * shards using the hash key ranges of the shards. You can override hashing the
-         * partition key to determine the shard by explicitly specifying a hash value using
-         * the <code>ExplicitHashKey</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes a single data record from a producer into an Amazon Kinesis stream.
+         * Call <code>PutRecord</code> to send data from the producer into the Amazon
+         * Kinesis stream for real-time ingestion and subsequent processing, one record at
+         * a time. Each shard can support writes up to 1,000 records per second, up to a
+         * maximum data write total of 1 MB per second.</p> <p>You must specify the name of
+         * the stream that captures, stores, and transports the data; a partition key; and
+         * the data blob itself.</p> <p>The data blob can be any type of data; for example,
+         * a segment from a log file, geographic/location data, website clickstream data,
+         * and so on.</p> <p>The partition key is used by Amazon Kinesis to distribute data
+         * across shards. Amazon Kinesis segregates the data records that belong to a data
+         * stream into multiple shards, using the partition key associated with each data
+         * record to determine which shard a given data record belongs to. </p>
+         * <p>Partition keys are Unicode strings, with a maximum length limit of 256
+         * characters for each key. An MD5 hash function is used to map partition keys to
+         * 128-bit integer values and to map associated data records to shards using the
+         * hash key ranges of the shards. You can override hashing the partition key to
+         * determine the shard by explicitly specifying a hash value using the
+         * <code>ExplicitHashKey</code> parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p>
          * <p><code>PutRecord</code> returns the shard ID of where the data record was
          * placed and the sequence number that was assigned to the data record.</p>
          * <p>Sequence numbers generally increase over time. To guarantee strictly
          * increasing ordering, use the <code>SequenceNumberForOrdering</code> parameter.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>If a
          * <code>PutRecord</code> request cannot be processed because of insufficient
          * provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to an Amazon
-         * Kinesis stream.</p>
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for only 24 hours from the time that they are added to an
+         * Amazon Kinesis stream. This retention period can be modified using the
+         * <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+         * operations.</p>
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
         /**
-         * <p>Puts (writes) a single data record from a producer into an Amazon Kinesis
-         * stream. Call <code>PutRecord</code> to send data from the producer into the
-         * Amazon Kinesis stream for real-time ingestion and subsequent processing, one
-         * record at a time. Each shard can support up to 1000 records written per second,
-         * up to a maximum total of 1 MB data written per second.</p> <p>You must specify
-         * the name of the stream that captures, stores, and transports the data; a
-         * partition key; and the data blob itself.</p> <p>The data blob can be any type of
-         * data; for example, a segment from a log file, geographic/location data, website
-         * clickstream data, and so on.</p> <p>The partition key is used by Amazon Kinesis
-         * to distribute data across shards. Amazon Kinesis segregates the data records
-         * that belong to a data stream into multiple shards, using the partition key
-         * associated with each data record to determine which shard a given data record
-         * belongs to. </p> <p>Partition keys are Unicode strings, with a maximum length
-         * limit of 256 characters for each key. An MD5 hash function is used to map
-         * partition keys to 128-bit integer values and to map associated data records to
-         * shards using the hash key ranges of the shards. You can override hashing the
-         * partition key to determine the shard by explicitly specifying a hash value using
-         * the <code>ExplicitHashKey</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes a single data record from a producer into an Amazon Kinesis stream.
+         * Call <code>PutRecord</code> to send data from the producer into the Amazon
+         * Kinesis stream for real-time ingestion and subsequent processing, one record at
+         * a time. Each shard can support writes up to 1,000 records per second, up to a
+         * maximum data write total of 1 MB per second.</p> <p>You must specify the name of
+         * the stream that captures, stores, and transports the data; a partition key; and
+         * the data blob itself.</p> <p>The data blob can be any type of data; for example,
+         * a segment from a log file, geographic/location data, website clickstream data,
+         * and so on.</p> <p>The partition key is used by Amazon Kinesis to distribute data
+         * across shards. Amazon Kinesis segregates the data records that belong to a data
+         * stream into multiple shards, using the partition key associated with each data
+         * record to determine which shard a given data record belongs to. </p>
+         * <p>Partition keys are Unicode strings, with a maximum length limit of 256
+         * characters for each key. An MD5 hash function is used to map partition keys to
+         * 128-bit integer values and to map associated data records to shards using the
+         * hash key ranges of the shards. You can override hashing the partition key to
+         * determine the shard by explicitly specifying a hash value using the
+         * <code>ExplicitHashKey</code> parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p>
          * <p><code>PutRecord</code> returns the shard ID of where the data record was
          * placed and the sequence number that was assigned to the data record.</p>
          * <p>Sequence numbers generally increase over time. To guarantee strictly
          * increasing ordering, use the <code>SequenceNumberForOrdering</code> parameter.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>If a
          * <code>PutRecord</code> request cannot be processed because of insufficient
          * provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to an Amazon
-         * Kinesis stream.</p>
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for only 24 hours from the time that they are added to an
+         * Amazon Kinesis stream. This retention period can be modified using the
+         * <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+         * operations.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRecordOutcomeCallable PutRecordCallable(const Model::PutRecordRequest& request) const;
 
         /**
-         * <p>Puts (writes) a single data record from a producer into an Amazon Kinesis
-         * stream. Call <code>PutRecord</code> to send data from the producer into the
-         * Amazon Kinesis stream for real-time ingestion and subsequent processing, one
-         * record at a time. Each shard can support up to 1000 records written per second,
-         * up to a maximum total of 1 MB data written per second.</p> <p>You must specify
-         * the name of the stream that captures, stores, and transports the data; a
-         * partition key; and the data blob itself.</p> <p>The data blob can be any type of
-         * data; for example, a segment from a log file, geographic/location data, website
-         * clickstream data, and so on.</p> <p>The partition key is used by Amazon Kinesis
-         * to distribute data across shards. Amazon Kinesis segregates the data records
-         * that belong to a data stream into multiple shards, using the partition key
-         * associated with each data record to determine which shard a given data record
-         * belongs to. </p> <p>Partition keys are Unicode strings, with a maximum length
-         * limit of 256 characters for each key. An MD5 hash function is used to map
-         * partition keys to 128-bit integer values and to map associated data records to
-         * shards using the hash key ranges of the shards. You can override hashing the
-         * partition key to determine the shard by explicitly specifying a hash value using
-         * the <code>ExplicitHashKey</code> parameter. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes a single data record from a producer into an Amazon Kinesis stream.
+         * Call <code>PutRecord</code> to send data from the producer into the Amazon
+         * Kinesis stream for real-time ingestion and subsequent processing, one record at
+         * a time. Each shard can support writes up to 1,000 records per second, up to a
+         * maximum data write total of 1 MB per second.</p> <p>You must specify the name of
+         * the stream that captures, stores, and transports the data; a partition key; and
+         * the data blob itself.</p> <p>The data blob can be any type of data; for example,
+         * a segment from a log file, geographic/location data, website clickstream data,
+         * and so on.</p> <p>The partition key is used by Amazon Kinesis to distribute data
+         * across shards. Amazon Kinesis segregates the data records that belong to a data
+         * stream into multiple shards, using the partition key associated with each data
+         * record to determine which shard a given data record belongs to. </p>
+         * <p>Partition keys are Unicode strings, with a maximum length limit of 256
+         * characters for each key. An MD5 hash function is used to map partition keys to
+         * 128-bit integer values and to map associated data records to shards using the
+         * hash key ranges of the shards. You can override hashing the partition key to
+         * determine the shard by explicitly specifying a hash value using the
+         * <code>ExplicitHashKey</code> parameter. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p>
          * <p><code>PutRecord</code> returns the shard ID of where the data record was
          * placed and the sequence number that was assigned to the data record.</p>
          * <p>Sequence numbers generally increase over time. To guarantee strictly
          * increasing ordering, use the <code>SequenceNumberForOrdering</code> parameter.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>If a
          * <code>PutRecord</code> request cannot be processed because of insufficient
          * provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
-         * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to an Amazon
-         * Kinesis stream.</p>
+         * <code>ProvisionedThroughputExceededException</code>. </p> <p>By default, data
+         * records are accessible for only 24 hours from the time that they are added to an
+         * Amazon Kinesis stream. This retention period can be modified using the
+         * <a>DecreaseStreamRetentionPeriod</a> and <a>IncreaseStreamRetentionPeriod</a>
+         * operations.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRecordAsync(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Puts (writes) multiple data records from a producer into an Amazon Kinesis
-         * stream in a single call (also referred to as a <code>PutRecords</code> request).
-         * Use this operation to send data from a data producer into the Amazon Kinesis
-         * stream for real-time ingestion and processing. Each shard can support up to 1000
-         * records written per second, up to a maximum total of 1 MB data written per
-         * second.</p> <p>You must specify the name of the stream that captures, stores,
-         * and transports the data; and an array of request <code>Records</code>, with each
-         * record in the array requiring a partition key and data blob. </p> <p>The data
-         * blob can be any type of data; for example, a segment from a log file,
-         * geographic/location data, website clickstream data, and so on.</p> <p>The
-         * partition key is used by Amazon Kinesis as input to a hash function that maps
-         * the partition key and associated data to a specific shard. An MD5 hash function
-         * is used to map partition keys to 128-bit integer values and to map associated
-         * data records to shards. As a result of this hashing mechanism, all data records
-         * with the same partition key map to the same shard within the stream. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes multiple data records from a producer into an Amazon Kinesis stream in
+         * a single call (also referred to as a <code>PutRecords</code> request). Use this
+         * operation to send data from a data producer into the Amazon Kinesis stream for
+         * data ingestion and processing. </p> <p>Each <code>PutRecords</code> request can
+         * support up to 500 records. Each record in the request can be as large as 1 MB,
+         * up to a limit of 5 MB for the entire request, including partition keys. Each
+         * shard can support writes up to 1,000 records per second, up to a maximum data
+         * write total of 1 MB per second.</p> <p>You must specify the name of the stream
+         * that captures, stores, and transports the data; and an array of request
+         * <code>Records</code>, with each record in the array requiring a partition key
+         * and data blob. The record size limit applies to the total size of the partition
+         * key and data blob.</p> <p>The data blob can be any type of data; for example, a
+         * segment from a log file, geographic/location data, website clickstream data, and
+         * so on.</p> <p>The partition key is used by Amazon Kinesis as input to a hash
+         * function that maps the partition key and associated data to a specific shard. An
+         * MD5 hash function is used to map partition keys to 128-bit integer values and to
+         * map associated data records to shards. As a result of this hashing mechanism,
+         * all data records with the same partition key map to the same shard within the
+         * stream. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>Each
          * record in the <code>Records</code> array may include an optional parameter,
          * <code>ExplicitHashKey</code>, which overrides the partition key to shard
          * mapping. This parameter allows a data producer to determine explicitly the shard
          * where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
          * Guide</i>.</p> <p>The <code>PutRecords</code> response includes an array of
          * response <code>Records</code>. Each record in the response array directly
@@ -1081,35 +1147,40 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p> <p>Data records are accessible for only 24 hours from the time
-         * that they are added to an Amazon Kinesis stream.</p>
+         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
+         * the time that they are added to an Amazon Kinesis stream. This retention period
+         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
          */
         virtual Model::PutRecordsOutcome PutRecords(const Model::PutRecordsRequest& request) const;
 
         /**
-         * <p>Puts (writes) multiple data records from a producer into an Amazon Kinesis
-         * stream in a single call (also referred to as a <code>PutRecords</code> request).
-         * Use this operation to send data from a data producer into the Amazon Kinesis
-         * stream for real-time ingestion and processing. Each shard can support up to 1000
-         * records written per second, up to a maximum total of 1 MB data written per
-         * second.</p> <p>You must specify the name of the stream that captures, stores,
-         * and transports the data; and an array of request <code>Records</code>, with each
-         * record in the array requiring a partition key and data blob. </p> <p>The data
-         * blob can be any type of data; for example, a segment from a log file,
-         * geographic/location data, website clickstream data, and so on.</p> <p>The
-         * partition key is used by Amazon Kinesis as input to a hash function that maps
-         * the partition key and associated data to a specific shard. An MD5 hash function
-         * is used to map partition keys to 128-bit integer values and to map associated
-         * data records to shards. As a result of this hashing mechanism, all data records
-         * with the same partition key map to the same shard within the stream. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes multiple data records from a producer into an Amazon Kinesis stream in
+         * a single call (also referred to as a <code>PutRecords</code> request). Use this
+         * operation to send data from a data producer into the Amazon Kinesis stream for
+         * data ingestion and processing. </p> <p>Each <code>PutRecords</code> request can
+         * support up to 500 records. Each record in the request can be as large as 1 MB,
+         * up to a limit of 5 MB for the entire request, including partition keys. Each
+         * shard can support writes up to 1,000 records per second, up to a maximum data
+         * write total of 1 MB per second.</p> <p>You must specify the name of the stream
+         * that captures, stores, and transports the data; and an array of request
+         * <code>Records</code>, with each record in the array requiring a partition key
+         * and data blob. The record size limit applies to the total size of the partition
+         * key and data blob.</p> <p>The data blob can be any type of data; for example, a
+         * segment from a log file, geographic/location data, website clickstream data, and
+         * so on.</p> <p>The partition key is used by Amazon Kinesis as input to a hash
+         * function that maps the partition key and associated data to a specific shard. An
+         * MD5 hash function is used to map partition keys to 128-bit integer values and to
+         * map associated data records to shards. As a result of this hashing mechanism,
+         * all data records with the same partition key map to the same shard within the
+         * stream. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>Each
          * record in the <code>Records</code> array may include an optional parameter,
          * <code>ExplicitHashKey</code>, which overrides the partition key to shard
          * mapping. This parameter allows a data producer to determine explicitly the shard
          * where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
          * Guide</i>.</p> <p>The <code>PutRecords</code> response includes an array of
          * response <code>Records</code>. Each record in the response array directly
@@ -1134,37 +1205,42 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p> <p>Data records are accessible for only 24 hours from the time
-         * that they are added to an Amazon Kinesis stream.</p>
+         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
+         * the time that they are added to an Amazon Kinesis stream. This retention period
+         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRecordsOutcomeCallable PutRecordsCallable(const Model::PutRecordsRequest& request) const;
 
         /**
-         * <p>Puts (writes) multiple data records from a producer into an Amazon Kinesis
-         * stream in a single call (also referred to as a <code>PutRecords</code> request).
-         * Use this operation to send data from a data producer into the Amazon Kinesis
-         * stream for real-time ingestion and processing. Each shard can support up to 1000
-         * records written per second, up to a maximum total of 1 MB data written per
-         * second.</p> <p>You must specify the name of the stream that captures, stores,
-         * and transports the data; and an array of request <code>Records</code>, with each
-         * record in the array requiring a partition key and data blob. </p> <p>The data
-         * blob can be any type of data; for example, a segment from a log file,
-         * geographic/location data, website clickstream data, and so on.</p> <p>The
-         * partition key is used by Amazon Kinesis as input to a hash function that maps
-         * the partition key and associated data to a specific shard. An MD5 hash function
-         * is used to map partition keys to 128-bit integer values and to map associated
-         * data records to shards. As a result of this hashing mechanism, all data records
-         * with the same partition key map to the same shard within the stream. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html">Adding
+         * <p>Writes multiple data records from a producer into an Amazon Kinesis stream in
+         * a single call (also referred to as a <code>PutRecords</code> request). Use this
+         * operation to send data from a data producer into the Amazon Kinesis stream for
+         * data ingestion and processing. </p> <p>Each <code>PutRecords</code> request can
+         * support up to 500 records. Each record in the request can be as large as 1 MB,
+         * up to a limit of 5 MB for the entire request, including partition keys. Each
+         * shard can support writes up to 1,000 records per second, up to a maximum data
+         * write total of 1 MB per second.</p> <p>You must specify the name of the stream
+         * that captures, stores, and transports the data; and an array of request
+         * <code>Records</code>, with each record in the array requiring a partition key
+         * and data blob. The record size limit applies to the total size of the partition
+         * key and data blob.</p> <p>The data blob can be any type of data; for example, a
+         * segment from a log file, geographic/location data, website clickstream data, and
+         * so on.</p> <p>The partition key is used by Amazon Kinesis as input to a hash
+         * function that maps the partition key and associated data to a specific shard. An
+         * MD5 hash function is used to map partition keys to 128-bit integer values and to
+         * map associated data records to shards. As a result of this hashing mechanism,
+         * all data records with the same partition key map to the same shard within the
+         * stream. For more information, see <a
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Developer Guide</i>.</p> <p>Each
          * record in the <code>Records</code> array may include an optional parameter,
          * <code>ExplicitHashKey</code>, which overrides the partition key to shard
          * mapping. This parameter allows a data producer to determine explicitly the shard
          * where the record is stored. For more information, see <a
-         * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
+         * href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
          * Guide</i>.</p> <p>The <code>PutRecords</code> response includes an array of
          * response <code>Records</code>. Each record in the response array directly
@@ -1189,8 +1265,10 @@ namespace Model
          * was throttled. For more information about partially successful responses, see <a
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
          * Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Developer
-         * Guide</i>.</p> <p>Data records are accessible for only 24 hours from the time
-         * that they are added to an Amazon Kinesis stream.</p>
+         * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
+         * the time that they are added to an Amazon Kinesis stream. This retention period
+         * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1257,7 +1335,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>If you try to operate on too many streams in parallel
+         * AWS Support</a>.</p> <p>If you try to operate on too many streams in parallel
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a> or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p>
          * <p><code>SplitShard</code> has limit of 5 transactions per second per
@@ -1304,7 +1382,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>If you try to operate on too many streams in parallel
+         * AWS Support</a>.</p> <p>If you try to operate on too many streams in parallel
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a> or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p>
          * <p><code>SplitShard</code> has limit of 5 transactions per second per
@@ -1353,7 +1431,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Limits</a>. If you need to increase this limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a></p> <p>If you try to operate on too many streams in parallel
+         * AWS Support</a>.</p> <p>If you try to operate on too many streams in parallel
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a> or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p>
          * <p><code>SplitShard</code> has limit of 5 transactions per second per

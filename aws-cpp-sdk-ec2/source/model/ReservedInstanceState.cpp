@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ReservedInstanceStateMapper
 {
+
+
 ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == payment_pending_HASH)
   {
-    return ReservedInstanceState::payment_pending;
+     return ReservedInstanceState::payment_pending;
   }
   else if (hashCode == active_HASH)
   {
-    return ReservedInstanceState::active;
+     return ReservedInstanceState::active;
   }
   else if (hashCode == payment_failed_HASH)
   {
-    return ReservedInstanceState::payment_failed;
+     return ReservedInstanceState::payment_failed;
   }
   else if (hashCode == retired_HASH)
   {
-    return ReservedInstanceState::retired;
+     return ReservedInstanceState::retired;
   }
-
   return ReservedInstanceState::NOT_SET;
 }
 
-Aws::String GetNameForReservedInstanceState(ReservedInstanceState value)
+Aws::String GetNameForReservedInstanceState(ReservedInstanceState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReservedInstanceState::payment_pending:
     return "payment-pending";

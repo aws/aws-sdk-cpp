@@ -35,7 +35,11 @@ namespace Model
 {
 
   /**
-   * Recipient level DSN fields for SendBounceRequest.
+   * <p>Recipient-related information to include in the Delivery Status Notification
+   * (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For
+   * information about receiving email through Amazon SES, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API RecipientDsnFields
   {
@@ -48,281 +52,328 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline const Aws::String& GetFinalRecipient() const{ return m_finalRecipient; }
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline void SetFinalRecipient(const char* value) { m_finalRecipientHasBeenSet = true; m_finalRecipient.assign(value); }
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline RecipientDsnFields& WithFinalRecipient(const Aws::String& value) { SetFinalRecipient(value); return *this;}
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(value); return *this;}
 
     /**
-     * The transformed address that the message was ultimately delivered to
-     * (Final-Recipient in the DSN). If not specified, it will be set to the Recipient
-     * in the BouncedRecipientInfo. This or the recipient in the BouncedRecipientInfo
-     * needs to be a recipient of the original message being bounced. If specified,
-     * this needs to be just an email address (i.e. do not prepend with "rfc 822;").
+     * <p>The email address to which the message was ultimately delivered. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note>Do not prepend the <code>FinalRecipient</code> email address
+     * with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
      */
     inline RecipientDsnFields& WithFinalRecipient(const char* value) { SetFinalRecipient(value); return *this;}
 
     /**
-     * The action taken that failed while trying to deliver the message. This is
-     * required by RFC 3464.
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline const DsnAction& GetAction() const{ return m_action; }
 
     /**
-     * The action taken that failed while trying to deliver the message. This is
-     * required by RFC 3464.
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline void SetAction(const DsnAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * The action taken that failed while trying to deliver the message. This is
-     * required by RFC 3464.
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline void SetAction(DsnAction&& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * The action taken that failed while trying to deliver the message. This is
-     * required by RFC 3464.
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithAction(const DsnAction& value) { SetAction(value); return *this;}
 
     /**
-     * The action taken that failed while trying to deliver the message. This is
-     * required by RFC 3464.
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(value); return *this;}
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline const Aws::String& GetRemoteMta() const{ return m_remoteMta; }
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline void SetRemoteMta(const Aws::String& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline void SetRemoteMta(Aws::String&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline void SetRemoteMta(const char* value) { m_remoteMtaHasBeenSet = true; m_remoteMta.assign(value); }
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline RecipientDsnFields& WithRemoteMta(const Aws::String& value) { SetRemoteMta(value); return *this;}
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline RecipientDsnFields& WithRemoteMta(Aws::String&& value) { SetRemoteMta(value); return *this;}
 
     /**
-     * The MTA that the Remote MTA was attempting to deliver the message to. Should be
-     * RFC 3464 formatted to be "mta-name-type; mta-name" (e.g. "dns;
-     * foo.amazonses.com"). This really only applies to propagating synchronous bounces
-     * (which is where a remote MTA is involved).
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
      */
     inline RecipientDsnFields& WithRemoteMta(const char* value) { SetRemoteMta(value); return *this;}
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * The status code that indicates what went wrong. This is required by RFC 3464.
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline const Aws::String& GetDiagnosticCode() const{ return m_diagnosticCode; }
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline void SetDiagnosticCode(const Aws::String& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline void SetDiagnosticCode(Aws::String&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline void SetDiagnosticCode(const char* value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode.assign(value); }
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline RecipientDsnFields& WithDiagnosticCode(const Aws::String& value) { SetDiagnosticCode(value); return *this;}
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline RecipientDsnFields& WithDiagnosticCode(Aws::String&& value) { SetDiagnosticCode(value); return *this;}
 
     /**
-     * Extended explanation of what went wrong, usually an SMTP response. See RFC 3463
-     * for the correct formatting of this parameter.
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
      */
     inline RecipientDsnFields& WithDiagnosticCode(const char* value) { SetDiagnosticCode(value); return *this;}
 
     /**
-     * Time the final delivery attempt was made. It should be in RFC 822 date-time
-     * format if specified.
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
     inline double GetLastAttemptDate() const{ return m_lastAttemptDate; }
 
     /**
-     * Time the final delivery attempt was made. It should be in RFC 822 date-time
-     * format if specified.
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
     inline void SetLastAttemptDate(double value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
 
     /**
-     * Time the final delivery attempt was made. It should be in RFC 822 date-time
-     * format if specified.
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
     inline RecipientDsnFields& WithLastAttemptDate(double value) { SetLastAttemptDate(value); return *this;}
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline void SetExtensionFields(const Aws::Vector<ExtensionField>& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline RecipientDsnFields& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline RecipientDsnFields& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(value); return *this;}
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline RecipientDsnFields& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 
     /**
-     * Additional x-headers to include in the DSN.
+     * <p>Additional X-headers to include in the DSN.</p>
      */
     inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
 

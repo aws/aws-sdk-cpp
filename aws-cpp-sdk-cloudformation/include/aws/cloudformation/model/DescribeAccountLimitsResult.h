@@ -35,6 +35,9 @@ namespace CloudFormation
 {
 namespace Model
 {
+  /**
+   * <p>The output for the <a>DescribeAccountLimits</a> action.</p>
+   */
   class AWS_CLOUDFORMATION_API DescribeAccountLimitsResult
   {
   public:
@@ -42,46 +45,88 @@ namespace Model
     DescribeAccountLimitsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     DescribeAccountLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline const Aws::Vector<AccountLimit>& GetAccountLimits() const{ return m_accountLimits; }
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline void SetAccountLimits(const Aws::Vector<AccountLimit>& value) { m_accountLimits = value; }
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline void SetAccountLimits(Aws::Vector<AccountLimit>&& value) { m_accountLimits = value; }
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline DescribeAccountLimitsResult& WithAccountLimits(const Aws::Vector<AccountLimit>& value) { SetAccountLimits(value); return *this;}
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline DescribeAccountLimitsResult& WithAccountLimits(Aws::Vector<AccountLimit>&& value) { SetAccountLimits(value); return *this;}
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline DescribeAccountLimitsResult& AddAccountLimits(const AccountLimit& value) { m_accountLimits.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An account limit structure that contain a list of AWS CloudFormation account
+     * limits and their values.</p>
+     */
     inline DescribeAccountLimitsResult& AddAccountLimits(AccountLimit&& value) { m_accountLimits.push_back(value); return *this; }
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline DescribeAccountLimitsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline DescribeAccountLimitsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * limits. If no additional page exists, this value is null.</p>
+     */
     inline DescribeAccountLimitsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     

@@ -35,25 +35,81 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline CancelKeyDeletionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline CancelKeyDeletionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier for the customer master key (CMK) for which to cancel
+     * deletion.</p> <p>To specify this value, use the unique key ID or the Amazon
+     * Resource Name (ARN) of the CMK. Examples: <ul> <li>Unique key ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</li> <li>Key ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</li>
+     * </ul> </p> <p>To obtain the unique key ID and key ARN for a given CMK, use
+     * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+     */
     inline CancelKeyDeletionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

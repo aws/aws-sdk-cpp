@@ -35,53 +35,53 @@ namespace Model
 {
 namespace ContinueAsNewWorkflowExecutionFailedCauseMapper
 {
+
+
 ContinueAsNewWorkflowExecutionFailedCause GetContinueAsNewWorkflowExecutionFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == UNHANDLED_DECISION_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::UNHANDLED_DECISION;
+     return ContinueAsNewWorkflowExecutionFailedCause::UNHANDLED_DECISION;
   }
   else if (hashCode == WORKFLOW_TYPE_DEPRECATED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED;
+     return ContinueAsNewWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED;
   }
   else if (hashCode == WORKFLOW_TYPE_DOES_NOT_EXIST_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST;
+     return ContinueAsNewWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST;
   }
   else if (hashCode == DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_TASK_LIST_UNDEFINED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
+     return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
   }
   else if (hashCode == DEFAULT_CHILD_POLICY_UNDEFINED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_CHILD_POLICY_UNDEFINED;
+     return ContinueAsNewWorkflowExecutionFailedCause::DEFAULT_CHILD_POLICY_UNDEFINED;
   }
   else if (hashCode == CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+     return ContinueAsNewWorkflowExecutionFailedCause::CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return ContinueAsNewWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+     return ContinueAsNewWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return ContinueAsNewWorkflowExecutionFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForContinueAsNewWorkflowExecutionFailedCause(ContinueAsNewWorkflowExecutionFailedCause value)
+Aws::String GetNameForContinueAsNewWorkflowExecutionFailedCause(ContinueAsNewWorkflowExecutionFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContinueAsNewWorkflowExecutionFailedCause::UNHANDLED_DECISION:
     return "UNHANDLED_DECISION";

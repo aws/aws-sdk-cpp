@@ -38,65 +38,65 @@ namespace Model
 {
 namespace DeploymentCommandNameMapper
 {
+
+
 DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == install_dependencies_HASH)
   {
-    return DeploymentCommandName::install_dependencies;
+     return DeploymentCommandName::install_dependencies;
   }
   else if (hashCode == update_dependencies_HASH)
   {
-    return DeploymentCommandName::update_dependencies;
+     return DeploymentCommandName::update_dependencies;
   }
   else if (hashCode == update_custom_cookbooks_HASH)
   {
-    return DeploymentCommandName::update_custom_cookbooks;
+     return DeploymentCommandName::update_custom_cookbooks;
   }
   else if (hashCode == execute_recipes_HASH)
   {
-    return DeploymentCommandName::execute_recipes;
+     return DeploymentCommandName::execute_recipes;
   }
   else if (hashCode == configure_HASH)
   {
-    return DeploymentCommandName::configure;
+     return DeploymentCommandName::configure;
   }
   else if (hashCode == setup_HASH)
   {
-    return DeploymentCommandName::setup;
+     return DeploymentCommandName::setup;
   }
   else if (hashCode == deploy_HASH)
   {
-    return DeploymentCommandName::deploy;
+     return DeploymentCommandName::deploy;
   }
   else if (hashCode == rollback_HASH)
   {
-    return DeploymentCommandName::rollback;
+     return DeploymentCommandName::rollback;
   }
   else if (hashCode == start_HASH)
   {
-    return DeploymentCommandName::start;
+     return DeploymentCommandName::start;
   }
   else if (hashCode == stop_HASH)
   {
-    return DeploymentCommandName::stop;
+     return DeploymentCommandName::stop;
   }
   else if (hashCode == restart_HASH)
   {
-    return DeploymentCommandName::restart;
+     return DeploymentCommandName::restart;
   }
   else if (hashCode == undeploy_HASH)
   {
-    return DeploymentCommandName::undeploy;
+     return DeploymentCommandName::undeploy;
   }
-
   return DeploymentCommandName::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentCommandName(DeploymentCommandName value)
+Aws::String GetNameForDeploymentCommandName(DeploymentCommandName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentCommandName::install_dependencies:
     return "install_dependencies";

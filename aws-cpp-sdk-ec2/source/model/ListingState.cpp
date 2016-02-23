@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ListingStateMapper
 {
+
+
 ListingState GetListingStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == available_HASH)
   {
-    return ListingState::available;
+     return ListingState::available;
   }
   else if (hashCode == sold_HASH)
   {
-    return ListingState::sold;
+     return ListingState::sold;
   }
   else if (hashCode == cancelled_HASH)
   {
-    return ListingState::cancelled;
+     return ListingState::cancelled;
   }
   else if (hashCode == pending_HASH)
   {
-    return ListingState::pending;
+     return ListingState::pending;
   }
-
   return ListingState::NOT_SET;
 }
 
-Aws::String GetNameForListingState(ListingState value)
+Aws::String GetNameForListingState(ListingState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ListingState::available:
     return "available";

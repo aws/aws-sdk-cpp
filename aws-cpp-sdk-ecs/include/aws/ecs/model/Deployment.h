@@ -183,19 +183,19 @@ namespace Model
 
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
-     * deploy and/or maintain.</p>
+     * deploy or maintain.</p>
      */
     inline long GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
-     * deploy and/or maintain.</p>
+     * deploy or maintain.</p>
      */
     inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
-     * deploy and/or maintain.</p>
+     * deploy or maintain.</p>
      */
     inline Deployment& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
 

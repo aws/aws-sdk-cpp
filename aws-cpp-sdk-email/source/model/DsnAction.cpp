@@ -31,37 +31,37 @@ namespace Model
 {
 namespace DsnActionMapper
 {
+
+
 DsnAction GetDsnActionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == failed_HASH)
   {
-    return DsnAction::failed;
+     return DsnAction::failed;
   }
   else if (hashCode == delayed_HASH)
   {
-    return DsnAction::delayed;
+     return DsnAction::delayed;
   }
   else if (hashCode == delivered_HASH)
   {
-    return DsnAction::delivered;
+     return DsnAction::delivered;
   }
   else if (hashCode == relayed_HASH)
   {
-    return DsnAction::relayed;
+     return DsnAction::relayed;
   }
   else if (hashCode == expanded_HASH)
   {
-    return DsnAction::expanded;
+     return DsnAction::expanded;
   }
-
   return DsnAction::NOT_SET;
 }
 
-Aws::String GetNameForDsnAction(DsnAction value)
+Aws::String GetNameForDsnAction(DsnAction enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DsnAction::failed:
     return "failed";

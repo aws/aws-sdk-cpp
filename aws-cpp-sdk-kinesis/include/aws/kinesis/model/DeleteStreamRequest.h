@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <code>DeleteStream</code>.</p>
+   * <p>Represents the input for <a>DeleteStream</a>.</p>
    */
   class AWS_KINESIS_API DeleteStreamRequest : public KinesisRequest
   {

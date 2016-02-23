@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Credentials for the the provided identity ID.</p>
+   * <p>Credentials for the provided identity ID.</p>
    */
   class AWS_COGNITOIDENTITY_API Credentials
   {

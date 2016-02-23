@@ -27,21 +27,21 @@ namespace Model
 {
 namespace PermissionGroupMapper
 {
+
+
 PermissionGroup GetPermissionGroupForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == all_HASH)
   {
-    return PermissionGroup::all;
+     return PermissionGroup::all;
   }
-
   return PermissionGroup::NOT_SET;
 }
 
-Aws::String GetNameForPermissionGroup(PermissionGroup value)
+Aws::String GetNameForPermissionGroup(PermissionGroup enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PermissionGroup::all:
     return "all";

@@ -48,7 +48,7 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
-  ss << "Version=2013-01-10";
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

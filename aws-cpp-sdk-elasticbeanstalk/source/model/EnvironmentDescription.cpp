@@ -44,6 +44,7 @@ EnvironmentDescription::EnvironmentDescription() :
     m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
+    m_environmentLinksHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -69,6 +70,7 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_healthStatusHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_tierHasBeenSet(false),
+    m_environmentLinksHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -182,6 +184,18 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
       m_tier = tierNode;
       m_tierHasBeenSet = true;
     }
+    XmlNode environmentLinksNode = resultNode.FirstChild("EnvironmentLinks");
+    if(!environmentLinksNode.IsNull())
+    {
+      XmlNode environmentLinksMember = environmentLinksNode.FirstChild("member");
+      while(!environmentLinksMember.IsNull())
+      {
+        m_environmentLinks.push_back(environmentLinksMember);
+        environmentLinksMember = environmentLinksMember.NextNode("member");
+      }
+
+      m_environmentLinksHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -260,6 +274,16 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       Aws::StringStream tierLocationAndMemberSs;
       tierLocationAndMemberSs << location << index << locationValue << ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMemberSs.str().c_str());
+  }
+  if(m_environmentLinksHasBeenSet)
+  {
+      unsigned environmentLinksIdx = 1;
+      for(auto& item : m_environmentLinks)
+      {
+        Aws::StringStream environmentLinksSs;
+        environmentLinksSs << location << index << locationValue << ".EnvironmentLinks.member." << environmentLinksIdx++;
+        item.OutputToStream(oStream, environmentLinksSs.str().c_str());
+      }
   }
   if(m_responseMetadataHasBeenSet)
   {
@@ -342,6 +366,16 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       Aws::String tierLocationAndMember(location);
       tierLocationAndMember += ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMember.c_str());
+  }
+  if(m_environmentLinksHasBeenSet)
+  {
+      unsigned environmentLinksIdx = 1;
+      for(auto& item : m_environmentLinks)
+      {
+        Aws::StringStream environmentLinksSs;
+        environmentLinksSs << location <<  ".EnvironmentLinks.member." << environmentLinksIdx++;
+        item.OutputToStream(oStream, environmentLinksSs.str().c_str());
+      }
   }
   if(m_responseMetadataHasBeenSet)
   {

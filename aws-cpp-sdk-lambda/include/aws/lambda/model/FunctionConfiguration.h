@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/Runtime.h>
+#include <aws/lambda/model/VpcConfigResponse.h>
 
 namespace Aws
 {
@@ -311,39 +312,134 @@ namespace Model
     inline FunctionConfiguration& WithMemorySize(long value) { SetMemorySize(value); return *this;}
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline FunctionConfiguration& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline FunctionConfiguration& WithLastModified(Aws::String&& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The timestamp of the last time you updated the function.</p>
+     * <p>The time stamp of the last time you updated the function.</p>
      */
     inline FunctionConfiguration& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline void SetCodeSha256(const char* value) { m_codeSha256HasBeenSet = true; m_codeSha256.assign(value); }
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline FunctionConfiguration& WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline FunctionConfiguration& WithCodeSha256(Aws::String&& value) { SetCodeSha256(value); return *this;}
+
+    /**
+     * <p>It is the SHA256 hash of your function deployment package.</p>
+     */
+    inline FunctionConfiguration& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline FunctionConfiguration& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline FunctionConfiguration& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the Lambda function.</p>
+     */
+    inline FunctionConfiguration& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>VPC configuration associated with your Lambda function.</p>
+     */
+    inline const VpcConfigResponse& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>VPC configuration associated with your Lambda function.</p>
+     */
+    inline void SetVpcConfig(const VpcConfigResponse& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>VPC configuration associated with your Lambda function.</p>
+     */
+    inline void SetVpcConfig(VpcConfigResponse&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>VPC configuration associated with your Lambda function.</p>
+     */
+    inline FunctionConfiguration& WithVpcConfig(const VpcConfigResponse& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>VPC configuration associated with your Lambda function.</p>
+     */
+    inline FunctionConfiguration& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
 
   private:
     Aws::String m_functionName;
@@ -366,6 +462,12 @@ namespace Model
     bool m_memorySizeHasBeenSet;
     Aws::String m_lastModified;
     bool m_lastModifiedHasBeenSet;
+    Aws::String m_codeSha256;
+    bool m_codeSha256HasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
+    VpcConfigResponse m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

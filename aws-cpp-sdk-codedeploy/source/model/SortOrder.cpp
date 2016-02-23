@@ -28,25 +28,25 @@ namespace Model
 {
 namespace SortOrderMapper
 {
+
+
 SortOrder GetSortOrderForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ascending_HASH)
   {
-    return SortOrder::ascending;
+     return SortOrder::ascending;
   }
   else if (hashCode == descending_HASH)
   {
-    return SortOrder::descending;
+     return SortOrder::descending;
   }
-
   return SortOrder::NOT_SET;
 }
 
-Aws::String GetNameForSortOrder(SortOrder value)
+Aws::String GetNameForSortOrder(SortOrder enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SortOrder::ascending:
     return "ascending";

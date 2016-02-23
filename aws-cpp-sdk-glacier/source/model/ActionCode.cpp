@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ActionCodeMapper
 {
+
+
 ActionCode GetActionCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ArchiveRetrieval_HASH)
   {
-    return ActionCode::ArchiveRetrieval;
+     return ActionCode::ArchiveRetrieval;
   }
   else if (hashCode == InventoryRetrieval_HASH)
   {
-    return ActionCode::InventoryRetrieval;
+     return ActionCode::InventoryRetrieval;
   }
-
   return ActionCode::NOT_SET;
 }
 
-Aws::String GetNameForActionCode(ActionCode value)
+Aws::String GetNameForActionCode(ActionCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionCode::ArchiveRetrieval:
     return "ArchiveRetrieval";

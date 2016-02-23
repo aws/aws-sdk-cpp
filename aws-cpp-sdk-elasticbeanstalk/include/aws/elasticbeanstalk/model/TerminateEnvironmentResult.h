@@ -20,7 +20,9 @@
 #include <aws/elasticbeanstalk/model/EnvironmentHealthStatus.h>
 #include <aws/elasticbeanstalk/model/EnvironmentResourcesDescription.h>
 #include <aws/elasticbeanstalk/model/EnvironmentTier.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <aws/elasticbeanstalk/model/EnvironmentLink.h>
 
 namespace Aws
 {
@@ -500,106 +502,76 @@ namespace Model
 
     /**
      * <p> Describes the health status of the environment. AWS Elastic Beanstalk
-     * indicates the failure levels for a running environment: </p> <enumValues> <value
-     * name="Red"> <p> <code>Red</code> : Indicates the environment is not working.
-     * </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that
-     * something is wrong, the application might not be available, but the instances
-     * appear running. </p> </value> <value name="Green"> <p> <code>Green</code>:
-     * Indicates the environment is healthy and fully functional. </p> </value>
-     * </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-     * responsive. Occurs when three or more consecutive failures occur for an
-     * environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong.
-     * Occurs when two consecutive failures occur for an environment. </li> <li>
-     * <code>Green</code>: Indicates the environment is healthy and fully functional.
-     * </li> <li> <code>Grey</code>: Default health for a new environment. The
-     * environment is not fully launched and health checks have not started or health
-     * checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request. </li> </ul> <p> Default:
-     * <code>Grey</code> </p>
+     * indicates the failure levels for a running environment: </p> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+     * or more consecutive failures occur for an environment. </li> <li>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two
+     * consecutive failures occur for an environment. </li> <li> <code>Green</code>:
+     * Indicates the environment is healthy and fully functional. </li> <li>
+     * <code>Grey</code>: Default health for a new environment. The environment is not
+     * fully launched and health checks have not started or health checks are suspended
+     * during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code> </p>
      */
     inline const EnvironmentHealth& GetHealth() const{ return m_health; }
 
     /**
      * <p> Describes the health status of the environment. AWS Elastic Beanstalk
-     * indicates the failure levels for a running environment: </p> <enumValues> <value
-     * name="Red"> <p> <code>Red</code> : Indicates the environment is not working.
-     * </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that
-     * something is wrong, the application might not be available, but the instances
-     * appear running. </p> </value> <value name="Green"> <p> <code>Green</code>:
-     * Indicates the environment is healthy and fully functional. </p> </value>
-     * </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-     * responsive. Occurs when three or more consecutive failures occur for an
-     * environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong.
-     * Occurs when two consecutive failures occur for an environment. </li> <li>
-     * <code>Green</code>: Indicates the environment is healthy and fully functional.
-     * </li> <li> <code>Grey</code>: Default health for a new environment. The
-     * environment is not fully launched and health checks have not started or health
-     * checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request. </li> </ul> <p> Default:
-     * <code>Grey</code> </p>
+     * indicates the failure levels for a running environment: </p> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+     * or more consecutive failures occur for an environment. </li> <li>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two
+     * consecutive failures occur for an environment. </li> <li> <code>Green</code>:
+     * Indicates the environment is healthy and fully functional. </li> <li>
+     * <code>Grey</code>: Default health for a new environment. The environment is not
+     * fully launched and health checks have not started or health checks are suspended
+     * during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code> </p>
      */
     inline void SetHealth(const EnvironmentHealth& value) { m_health = value; }
 
     /**
      * <p> Describes the health status of the environment. AWS Elastic Beanstalk
-     * indicates the failure levels for a running environment: </p> <enumValues> <value
-     * name="Red"> <p> <code>Red</code> : Indicates the environment is not working.
-     * </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that
-     * something is wrong, the application might not be available, but the instances
-     * appear running. </p> </value> <value name="Green"> <p> <code>Green</code>:
-     * Indicates the environment is healthy and fully functional. </p> </value>
-     * </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-     * responsive. Occurs when three or more consecutive failures occur for an
-     * environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong.
-     * Occurs when two consecutive failures occur for an environment. </li> <li>
-     * <code>Green</code>: Indicates the environment is healthy and fully functional.
-     * </li> <li> <code>Grey</code>: Default health for a new environment. The
-     * environment is not fully launched and health checks have not started or health
-     * checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request. </li> </ul> <p> Default:
-     * <code>Grey</code> </p>
+     * indicates the failure levels for a running environment: </p> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+     * or more consecutive failures occur for an environment. </li> <li>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two
+     * consecutive failures occur for an environment. </li> <li> <code>Green</code>:
+     * Indicates the environment is healthy and fully functional. </li> <li>
+     * <code>Grey</code>: Default health for a new environment. The environment is not
+     * fully launched and health checks have not started or health checks are suspended
+     * during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code> </p>
      */
     inline void SetHealth(EnvironmentHealth&& value) { m_health = value; }
 
     /**
      * <p> Describes the health status of the environment. AWS Elastic Beanstalk
-     * indicates the failure levels for a running environment: </p> <enumValues> <value
-     * name="Red"> <p> <code>Red</code> : Indicates the environment is not working.
-     * </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that
-     * something is wrong, the application might not be available, but the instances
-     * appear running. </p> </value> <value name="Green"> <p> <code>Green</code>:
-     * Indicates the environment is healthy and fully functional. </p> </value>
-     * </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-     * responsive. Occurs when three or more consecutive failures occur for an
-     * environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong.
-     * Occurs when two consecutive failures occur for an environment. </li> <li>
-     * <code>Green</code>: Indicates the environment is healthy and fully functional.
-     * </li> <li> <code>Grey</code>: Default health for a new environment. The
-     * environment is not fully launched and health checks have not started or health
-     * checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request. </li> </ul> <p> Default:
-     * <code>Grey</code> </p>
+     * indicates the failure levels for a running environment: </p> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+     * or more consecutive failures occur for an environment. </li> <li>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two
+     * consecutive failures occur for an environment. </li> <li> <code>Green</code>:
+     * Indicates the environment is healthy and fully functional. </li> <li>
+     * <code>Grey</code>: Default health for a new environment. The environment is not
+     * fully launched and health checks have not started or health checks are suspended
+     * during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code> </p>
      */
     inline TerminateEnvironmentResult& WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
 
     /**
      * <p> Describes the health status of the environment. AWS Elastic Beanstalk
-     * indicates the failure levels for a running environment: </p> <enumValues> <value
-     * name="Red"> <p> <code>Red</code> : Indicates the environment is not working.
-     * </p> </value> <value name="Yellow"> <p> <code>Yellow</code>: Indicates that
-     * something is wrong, the application might not be available, but the instances
-     * appear running. </p> </value> <value name="Green"> <p> <code>Green</code>:
-     * Indicates the environment is healthy and fully functional. </p> </value>
-     * </enumValues> <ul> <li> <code>Red</code>: Indicates the environment is not
-     * responsive. Occurs when three or more consecutive failures occur for an
-     * environment. </li> <li> <code>Yellow</code>: Indicates that something is wrong.
-     * Occurs when two consecutive failures occur for an environment. </li> <li>
-     * <code>Green</code>: Indicates the environment is healthy and fully functional.
-     * </li> <li> <code>Grey</code>: Default health for a new environment. The
-     * environment is not fully launched and health checks have not started or health
-     * checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request. </li> </ul> <p> Default:
-     * <code>Grey</code> </p>
+     * indicates the failure levels for a running environment: </p> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+     * or more consecutive failures occur for an environment. </li> <li>
+     * <code>Yellow</code>: Indicates that something is wrong. Occurs when two
+     * consecutive failures occur for an environment. </li> <li> <code>Green</code>:
+     * Indicates the environment is healthy and fully functional. </li> <li>
+     * <code>Grey</code>: Default health for a new environment. The environment is not
+     * fully launched and health checks have not started or health checks are suspended
+     * during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code> </p>
      */
     inline TerminateEnvironmentResult& WithHealth(EnvironmentHealth&& value) { SetHealth(value); return *this;}
 
@@ -693,6 +665,41 @@ namespace Model
      */
     inline TerminateEnvironmentResult& WithTier(EnvironmentTier&& value) { SetTier(value); return *this;}
 
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline const Aws::Vector<EnvironmentLink>& GetEnvironmentLinks() const{ return m_environmentLinks; }
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline void SetEnvironmentLinks(const Aws::Vector<EnvironmentLink>& value) { m_environmentLinks = value; }
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline void SetEnvironmentLinks(Aws::Vector<EnvironmentLink>&& value) { m_environmentLinks = value; }
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline TerminateEnvironmentResult& WithEnvironmentLinks(const Aws::Vector<EnvironmentLink>& value) { SetEnvironmentLinks(value); return *this;}
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline TerminateEnvironmentResult& WithEnvironmentLinks(Aws::Vector<EnvironmentLink>&& value) { SetEnvironmentLinks(value); return *this;}
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline TerminateEnvironmentResult& AddEnvironmentLinks(const EnvironmentLink& value) { m_environmentLinks.push_back(value); return *this; }
+
+    /**
+     * <p>A list of links to other environments in the same group.</p>
+     */
+    inline TerminateEnvironmentResult& AddEnvironmentLinks(EnvironmentLink&& value) { m_environmentLinks.push_back(value); return *this; }
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -726,6 +733,7 @@ namespace Model
     EnvironmentHealthStatus m_healthStatus;
     EnvironmentResourcesDescription m_resources;
     EnvironmentTier m_tier;
+    Aws::Vector<EnvironmentLink> m_environmentLinks;
     ResponseMetadata m_responseMetadata;
   };
 

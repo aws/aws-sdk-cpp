@@ -28,25 +28,25 @@ namespace Model
 {
 namespace AccountAttributeNameMapper
 {
+
+
 AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == supported_platforms_HASH)
   {
-    return AccountAttributeName::supported_platforms;
+     return AccountAttributeName::supported_platforms;
   }
   else if (hashCode == default_vpc_HASH)
   {
-    return AccountAttributeName::default_vpc;
+     return AccountAttributeName::default_vpc;
   }
-
   return AccountAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForAccountAttributeName(AccountAttributeName value)
+Aws::String GetNameForAccountAttributeName(AccountAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AccountAttributeName::supported_platforms:
     return "supported-platforms";

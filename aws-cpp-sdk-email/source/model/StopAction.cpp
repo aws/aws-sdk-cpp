@@ -24,14 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 StopAction::StopAction() : 
-    m_topicArnHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_topicArnHasBeenSet(false)
 {
 }
 
 StopAction::StopAction(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_topicArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -42,17 +42,17 @@ StopAction& StopAction::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode scopeNode = resultNode.FirstChild("Scope");
+    if(!scopeNode.IsNull())
+    {
+      m_scope = StopScopeMapper::GetStopScopeForName(StringUtils::Trim(scopeNode.GetText().c_str()).c_str());
+      m_scopeHasBeenSet = true;
+    }
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
-    }
-    XmlNode targetNode = resultNode.FirstChild("Target");
-    if(!targetNode.IsNull())
-    {
-      m_target = StopTargetMapper::GetStopTargetForName(StringUtils::Trim(targetNode.GetText().c_str()).c_str());
-      m_targetHasBeenSet = true;
     }
   }
 
@@ -61,24 +61,24 @@ StopAction& StopAction::operator =(const XmlNode& xmlNode)
 
 void StopAction::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_scopeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Scope=" << StopScopeMapper::GetNameForStopScope(m_scope) << "&";
+  }
   if(m_topicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  }
-  if(m_targetHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Target=" << StopTargetMapper::GetNameForStopTarget(m_target) << "&";
   }
 }
 
 void StopAction::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_scopeHasBeenSet)
+  {
+      oStream << location << ".Scope=" << StopScopeMapper::GetNameForStopScope(m_scope) << "&";
+  }
   if(m_topicArnHasBeenSet)
   {
       oStream << location << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
-  }
-  if(m_targetHasBeenSet)
-  {
-      oStream << location << ".Target=" << StopTargetMapper::GetNameForStopTarget(m_target) << "&";
   }
 }

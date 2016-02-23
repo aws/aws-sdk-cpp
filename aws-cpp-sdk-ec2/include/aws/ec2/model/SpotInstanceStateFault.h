@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Spot Instance state change.</p>
+   * <p>Describes a Spot instance state change.</p>
    */
   class AWS_EC2_API SpotInstanceStateFault
   {
@@ -45,72 +45,72 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The reason code for the Spot Instance state change.</p>
+     * <p>The reason code for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithCode(const char* value) { SetCode(value); return *this;}
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message for the Spot Instance state change.</p>
+     * <p>The message for the Spot instance state change.</p>
      */
     inline SpotInstanceStateFault& WithMessage(const char* value) { SetMessage(value); return *this;}
 

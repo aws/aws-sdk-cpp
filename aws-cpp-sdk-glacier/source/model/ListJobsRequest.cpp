@@ -44,30 +44,30 @@ void ListJobsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_limitHasBeenSet)
     {
-     ss << m_limit;
-     uri.AddQueryStringParameter("limit", ss.str());
-     ss.str("");
+      ss << m_limit;
+      uri.AddQueryStringParameter("limit", ss.str());
+      ss.str("");
     }
 
     if(m_markerHasBeenSet)
     {
-     ss << m_marker;
-     uri.AddQueryStringParameter("marker", ss.str());
-     ss.str("");
+      ss << m_marker;
+      uri.AddQueryStringParameter("marker", ss.str());
+      ss.str("");
     }
 
     if(m_statuscodeHasBeenSet)
     {
-     ss << m_statuscode;
-     uri.AddQueryStringParameter("statuscode", ss.str());
-     ss.str("");
+      ss << m_statuscode;
+      uri.AddQueryStringParameter("statuscode", ss.str());
+      ss.str("");
     }
 
     if(m_completedHasBeenSet)
     {
-     ss << m_completed;
-     uri.AddQueryStringParameter("completed", ss.str());
-     ss.str("");
+      ss << m_completed;
+      uri.AddQueryStringParameter("completed", ss.str());
+      ss.str("");
     }
 
 }

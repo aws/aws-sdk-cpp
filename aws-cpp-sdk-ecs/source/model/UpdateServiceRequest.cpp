@@ -26,7 +26,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_serviceHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+    m_taskDefinitionHasBeenSet(false),
+    m_deploymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_deploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
 
   }
 

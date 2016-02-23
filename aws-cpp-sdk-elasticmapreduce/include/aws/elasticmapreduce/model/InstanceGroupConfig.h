@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/MarketType.h>
 #include <aws/elasticmapreduce/model/InstanceRoleType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/EbsConfiguration.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 
 namespace Aws
@@ -271,6 +272,36 @@ namespace Model
      */
     inline InstanceGroupConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
+    /**
+     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
+     * instance group. </p>
+     */
+    inline const EbsConfiguration& GetEbsConfiguration() const{ return m_ebsConfiguration; }
+
+    /**
+     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
+     * instance group. </p>
+     */
+    inline void SetEbsConfiguration(const EbsConfiguration& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
+
+    /**
+     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
+     * instance group. </p>
+     */
+    inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
+
+    /**
+     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
+     * instance group. </p>
+     */
+    inline InstanceGroupConfig& WithEbsConfiguration(const EbsConfiguration& value) { SetEbsConfiguration(value); return *this;}
+
+    /**
+     * <p>EBS configurations that will be attached to each Amazon EC2 instance in the
+     * instance group. </p>
+     */
+    inline InstanceGroupConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -286,6 +317,8 @@ namespace Model
     bool m_instanceCountHasBeenSet;
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+    EbsConfiguration m_ebsConfiguration;
+    bool m_ebsConfigurationHasBeenSet;
   };
 
 } // namespace Model

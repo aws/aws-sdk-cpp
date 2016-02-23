@@ -41,50 +41,50 @@ namespace Model
     ListContainerInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstanceArns() const{ return m_containerInstanceArns; }
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline void SetContainerInstanceArns(const Aws::Vector<Aws::String>& value) { m_containerInstanceArns = value; }
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline void SetContainerInstanceArns(Aws::Vector<Aws::String>&& value) { m_containerInstanceArns = value; }
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& WithContainerInstanceArns(const Aws::Vector<Aws::String>& value) { SetContainerInstanceArns(value); return *this;}
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& WithContainerInstanceArns(Aws::Vector<Aws::String>&& value) { SetContainerInstanceArns(value); return *this;}
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const Aws::String& value) { m_containerInstanceArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& AddContainerInstanceArns(Aws::String&& value) { m_containerInstanceArns.push_back(value); return *this; }
 
     /**
-     * <p>The list of container instance full Amazon Resource Name (ARN) entries for
-     * each container instance associated with the specified cluster.</p>
+     * <p>The list of container instances with full Amazon Resource Name (ARN) entries
+     * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const char* value) { m_containerInstanceArns.push_back(value); return *this; }
 

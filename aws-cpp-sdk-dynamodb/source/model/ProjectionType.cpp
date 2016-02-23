@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ProjectionTypeMapper
 {
+
+
 ProjectionType GetProjectionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ALL_HASH)
   {
-    return ProjectionType::ALL;
+     return ProjectionType::ALL;
   }
   else if (hashCode == KEYS_ONLY_HASH)
   {
-    return ProjectionType::KEYS_ONLY;
+     return ProjectionType::KEYS_ONLY;
   }
   else if (hashCode == INCLUDE_HASH)
   {
-    return ProjectionType::INCLUDE;
+     return ProjectionType::INCLUDE;
   }
-
   return ProjectionType::NOT_SET;
 }
 
-Aws::String GetNameForProjectionType(ProjectionType value)
+Aws::String GetNameForProjectionType(ProjectionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ProjectionType::ALL:
     return "ALL";

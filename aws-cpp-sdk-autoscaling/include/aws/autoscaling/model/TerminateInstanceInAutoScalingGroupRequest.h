@@ -69,19 +69,19 @@ namespace Model
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * <p>If <code>true</code>, terminating the instance also decrements the size of
      * the Auto Scaling group.</p>
      */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
 
     /**
-     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * <p>If <code>true</code>, terminating the instance also decrements the size of
      * the Auto Scaling group.</p>
      */
     inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
     /**
-     * <p>If <code>true</code>, terminating this instance also decrements the size of
+     * <p>If <code>true</code>, terminating the instance also decrements the size of
      * the Auto Scaling group.</p>
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}

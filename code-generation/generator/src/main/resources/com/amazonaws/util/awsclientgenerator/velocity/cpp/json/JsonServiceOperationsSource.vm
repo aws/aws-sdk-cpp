@@ -9,7 +9,12 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
   ss << m_uri << "${uriParts.get(0)}";
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
-  ss << request.Get${CppViewHelper.convertToUpperCamel($uriVars.get($varIndex))}();
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#if($partShapeMember.shape.enum)
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#else
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#end
 #if($uriParts.size() > $partIndex)
   ss << "${uriParts.get($partIndex)}";
 #end

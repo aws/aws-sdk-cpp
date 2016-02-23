@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -25,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_RDS_API DescribeReservedDBInstancesOfferingsRequest : public RDSRequest
   {
@@ -84,44 +86,44 @@ namespace Model
     inline DescribeReservedDBInstancesOfferingsRequest& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The DB Instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB Instance class. </p>
+     * <p> The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class. </p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -219,56 +221,49 @@ namespace Model
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
 
     /**
      * <p> The offering type filter value. Specify this parameter to show only the
      * available offerings matching the specified offering type. </p> <p>Valid Values:
-     * <code>"Light Utilization" | "Medium Utilization" | "Heavy Utilization"
-     * </code></p>
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
@@ -291,10 +286,45 @@ namespace Model
     inline DescribeReservedDBInstancesOfferingsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeReservedDBInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeReservedDBInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeReservedDBInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline DescribeReservedDBInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
@@ -302,7 +332,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -310,7 +340,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
@@ -376,6 +406,8 @@ namespace Model
     bool m_offeringTypeHasBeenSet;
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ParameterApplyTypeMapper
 {
+
+
 ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == static__HASH)
   {
-    return ParameterApplyType::static_;
+     return ParameterApplyType::static_;
   }
   else if (hashCode == dynamic_HASH)
   {
-    return ParameterApplyType::dynamic;
+     return ParameterApplyType::dynamic;
   }
-
   return ParameterApplyType::NOT_SET;
 }
 
-Aws::String GetNameForParameterApplyType(ParameterApplyType value)
+Aws::String GetNameForParameterApplyType(ParameterApplyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ParameterApplyType::static_:
     return "static";

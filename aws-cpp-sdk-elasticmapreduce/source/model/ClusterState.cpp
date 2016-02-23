@@ -33,45 +33,45 @@ namespace Model
 {
 namespace ClusterStateMapper
 {
+
+
 ClusterState GetClusterStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STARTING_HASH)
   {
-    return ClusterState::STARTING;
+     return ClusterState::STARTING;
   }
   else if (hashCode == BOOTSTRAPPING_HASH)
   {
-    return ClusterState::BOOTSTRAPPING;
+     return ClusterState::BOOTSTRAPPING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return ClusterState::RUNNING;
+     return ClusterState::RUNNING;
   }
   else if (hashCode == WAITING_HASH)
   {
-    return ClusterState::WAITING;
+     return ClusterState::WAITING;
   }
   else if (hashCode == TERMINATING_HASH)
   {
-    return ClusterState::TERMINATING;
+     return ClusterState::TERMINATING;
   }
   else if (hashCode == TERMINATED_HASH)
   {
-    return ClusterState::TERMINATED;
+     return ClusterState::TERMINATED;
   }
   else if (hashCode == TERMINATED_WITH_ERRORS_HASH)
   {
-    return ClusterState::TERMINATED_WITH_ERRORS;
+     return ClusterState::TERMINATED_WITH_ERRORS;
   }
-
   return ClusterState::NOT_SET;
 }
 
-Aws::String GetNameForClusterState(ClusterState value)
+Aws::String GetNameForClusterState(ClusterState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ClusterState::STARTING:
     return "STARTING";

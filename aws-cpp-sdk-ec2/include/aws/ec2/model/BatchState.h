@@ -30,7 +30,8 @@ namespace Model
     cancelled,
     failed,
     cancelled_running,
-    cancelled_terminating
+    cancelled_terminating,
+    modifying
   };
 
 namespace BatchStateMapper

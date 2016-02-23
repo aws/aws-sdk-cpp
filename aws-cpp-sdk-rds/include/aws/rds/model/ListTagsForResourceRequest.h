@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -25,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API ListTagsForResourceRequest : public RDSRequest
   {
@@ -35,43 +37,101 @@ namespace Model
 
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The DB Instance with tags to be listed.</p>
+     * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline ListTagsForResourceRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline ListTagsForResourceRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline ListTagsForResourceRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline ListTagsForResourceRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
   private:
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

@@ -304,76 +304,130 @@ namespace Model
         virtual ~SESClient();
 
         /**
-         * 
+         * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
+         * configurations are copied to the new receipt rule set and are completely
+         * independent of the source rule set.</p> <p>For information about setting up rule
+         * sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::CloneReceiptRuleSetOutcome CloneReceiptRuleSet(const Model::CloneReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
+         * configurations are copied to the new receipt rule set and are completely
+         * independent of the source rule set.</p> <p>For information about setting up rule
+         * sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CloneReceiptRuleSetOutcomeCallable CloneReceiptRuleSetCallable(const Model::CloneReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
+         * configurations are copied to the new receipt rule set and are completely
+         * independent of the source rule set.</p> <p>For information about setting up rule
+         * sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CloneReceiptRuleSetAsync(const Model::CloneReceiptRuleSetRequest& request, const CloneReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
+         * address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::CreateReceiptFilterOutcome CreateReceiptFilter(const Model::CreateReceiptFilterRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
+         * address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateReceiptFilterOutcomeCallable CreateReceiptFilterCallable(const Model::CreateReceiptFilterRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a new IP address filter.</p> <p>For information about setting up IP
+         * address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateReceiptFilterAsync(const Model::CreateReceiptFilterRequest& request, const CreateReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
+         * rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::CreateReceiptRuleOutcome CreateReceiptRule(const Model::CreateReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
+         * rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateReceiptRuleOutcomeCallable CreateReceiptRuleCallable(const Model::CreateReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a receipt rule.</p> <p>For information about setting up receipt
+         * rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateReceiptRuleAsync(const Model::CreateReceiptRuleRequest& request, const CreateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
+         * receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::CreateReceiptRuleSetOutcome CreateReceiptRuleSet(const Model::CreateReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
+         * receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateReceiptRuleSetOutcomeCallable CreateReceiptRuleSetCallable(const Model::CreateReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Creates an empty receipt rule set.</p> <p>For information about setting up
+         * receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -451,57 +505,96 @@ namespace Model
         virtual void DeleteIdentityPolicyAsync(const Model::DeleteIdentityPolicyRequest& request, const DeleteIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the specified IP address filter.</p> <p>For information about
+         * managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DeleteReceiptFilterOutcome DeleteReceiptFilter(const Model::DeleteReceiptFilterRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified IP address filter.</p> <p>For information about
+         * managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReceiptFilterOutcomeCallable DeleteReceiptFilterCallable(const Model::DeleteReceiptFilterRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified IP address filter.</p> <p>For information about
+         * managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReceiptFilterAsync(const Model::DeleteReceiptFilterRequest& request, const DeleteReceiptFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule.</p> <p>For information about managing
+         * receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DeleteReceiptRuleOutcome DeleteReceiptRule(const Model::DeleteReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule.</p> <p>For information about managing
+         * receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReceiptRuleOutcomeCallable DeleteReceiptRuleCallable(const Model::DeleteReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule.</p> <p>For information about managing
+         * receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteReceiptRuleAsync(const Model::DeleteReceiptRuleRequest& request, const DeleteReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule set and all of the receipt rules it
+         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
+         * <p>For information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DeleteReceiptRuleSetOutcome DeleteReceiptRuleSet(const Model::DeleteReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule set and all of the receipt rules it
+         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
+         * <p>For information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteReceiptRuleSetOutcomeCallable DeleteReceiptRuleSetCallable(const Model::DeleteReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified receipt rule set and all of the receipt rules it
+         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
+         * <p>For information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -539,57 +632,96 @@ namespace Model
         virtual void DeleteVerifiedEmailAddressAsync(const Model::DeleteVerifiedEmailAddressRequest& request, const DeleteVerifiedEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns the metadata and receipt rules for the receipt rule set that is
+         * currently active.</p> <p>For information about setting up receipt rule sets, see
+         * the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the metadata and receipt rules for the receipt rule set that is
+         * currently active.</p> <p>For information about setting up receipt rule sets, see
+         * the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeActiveReceiptRuleSetOutcomeCallable DescribeActiveReceiptRuleSetCallable(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the metadata and receipt rules for the receipt rule set that is
+         * currently active.</p> <p>For information about setting up receipt rule sets, see
+         * the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeActiveReceiptRuleSetAsync(const Model::DescribeActiveReceiptRuleSetRequest& request, const DescribeActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule.</p> <p>For information
+         * about setting up receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DescribeReceiptRuleOutcome DescribeReceiptRule(const Model::DescribeReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule.</p> <p>For information
+         * about setting up receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReceiptRuleOutcomeCallable DescribeReceiptRuleCallable(const Model::DescribeReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule.</p> <p>For information
+         * about setting up receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeReceiptRuleAsync(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule set.</p> <p>For information
+         * about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::DescribeReceiptRuleSetOutcome DescribeReceiptRuleSet(const Model::DescribeReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule set.</p> <p>For information
+         * about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeReceiptRuleSetOutcomeCallable DescribeReceiptRuleSetCallable(const Model::DescribeReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the details of the specified receipt rule set.</p> <p>For information
+         * about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -892,38 +1024,71 @@ namespace Model
         virtual void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * information about managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * information about managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const Model::ListReceiptFiltersRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * information about managing IP address filters, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListReceiptFiltersAsync(const Model::ListReceiptFiltersRequest& request, const ListReceiptFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Lists the receipt rule sets that exist under your AWS account. If there are
+         * additional receipt rule sets to be retrieved, you will receive a
+         * <code>NextToken</code> that you can provide to the next call to
+         * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
+         * information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the receipt rule sets that exist under your AWS account. If there are
+         * additional receipt rule sets to be retrieved, you will receive a
+         * <code>NextToken</code> that you can provide to the next call to
+         * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
+         * information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListReceiptRuleSetsOutcomeCallable ListReceiptRuleSetsCallable(const Model::ListReceiptRuleSetsRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the receipt rule sets that exist under your AWS account. If there are
+         * additional receipt rule sets to be retrieved, you will receive a
+         * <code>NextToken</code> that you can provide to the next call to
+         * <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p> <p>For
+         * information about managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1004,44 +1169,80 @@ namespace Model
         virtual void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
+         * rules in the rule set must be represented in this request. That is, this API
+         * will return an error if the reorder request doesn’t explicitly position all of
+         * the rules.</note> <p>For information about managing receipt rule sets, see the
+         * <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
+         * rules in the rule set must be represented in this request. That is, this API
+         * will return an error if the reorder request doesn’t explicitly position all of
+         * the rules.</note> <p>For information about managing receipt rule sets, see the
+         * <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReorderReceiptRuleSetOutcomeCallable ReorderReceiptRuleSetCallable(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
+         * rules in the rule set must be represented in this request. That is, this API
+         * will return an error if the reorder request doesn’t explicitly position all of
+         * the rules.</note> <p>For information about managing receipt rule sets, see the
+         * <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReorderReceiptRuleSetAsync(const Model::ReorderReceiptRuleSetRequest& request, const ReorderReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Generates and sends a bounce in response to a valid message received through the
-         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
-         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         * <p>Generates and sends a bounce message to the sender of an email you received
+         * through Amazon SES. You can only use this API on an email up to 24 hours after
+         * you receive it.</p> <note>You cannot use this API to send generic bounces for
+         * mail that was not received by Amazon SES.</note> <p>For information about
+         * receiving email through Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::SendBounceOutcome SendBounce(const Model::SendBounceRequest& request) const;
 
         /**
-         * Generates and sends a bounce in response to a valid message received through the
-         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
-         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         * <p>Generates and sends a bounce message to the sender of an email you received
+         * through Amazon SES. You can only use this API on an email up to 24 hours after
+         * you receive it.</p> <note>You cannot use this API to send generic bounces for
+         * mail that was not received by Amazon SES.</note> <p>For information about
+         * receiving email through Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendBounceOutcomeCallable SendBounceCallable(const Model::SendBounceRequest& request) const;
 
         /**
-         * Generates and sends a bounce in response to a valid message received through the
-         * Inbound pipeline. This API gives you a lot of freedom in specifying as many
-         * optional DSN fields as desired (in addition to the fields required by RFC 3464).
+         * <p>Generates and sends a bounce message to the sender of an email you received
+         * through Amazon SES. You can only use this API on an email up to 24 hours after
+         * you receive it.</p> <note>You cannot use this API to send generic bounces for
+         * mail that was not received by Amazon SES.</note> <p>For information about
+         * receiving email through Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1272,19 +1473,37 @@ namespace Model
         virtual void SendRawEmailAsync(const Model::SendRawEmailRequest& request, const SendRawEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
+         * <note>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</note> <p>For information about
+         * managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
+         * <note>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</note> <p>For information about
+         * managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SetActiveReceiptRuleSetOutcomeCallable SetActiveReceiptRuleSetCallable(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
+         * <note>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</note> <p>For information about
+         * managing receipt rule sets, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1438,38 +1657,62 @@ namespace Model
         virtual void SetIdentityNotificationTopicAsync(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
+         * <p>For information about managing receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::SetReceiptRulePositionOutcome SetReceiptRulePosition(const Model::SetReceiptRulePositionRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
+         * <p>For information about managing receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SetReceiptRulePositionOutcomeCallable SetReceiptRulePositionCallable(const Model::SetReceiptRulePositionRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the position of the specified receipt rule in the receipt rule set.</p>
+         * <p>For information about managing receipt rules, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetReceiptRulePositionAsync(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
+         * see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          */
         virtual Model::UpdateReceiptRuleOutcome UpdateReceiptRule(const Model::UpdateReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
+         * see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateReceiptRuleOutcomeCallable UpdateReceiptRuleCallable(const Model::UpdateReceiptRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Updates a receipt rule.</p> <p>For information about managing receipt rules,
+         * see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
+         * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -31,6 +31,7 @@ Route::Route() :
     m_instanceOwnerIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_originHasBeenSet(false)
 {
@@ -44,6 +45,7 @@ Route::Route(const XmlNode& xmlNode) :
     m_instanceOwnerIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_originHasBeenSet(false)
 {
@@ -98,6 +100,12 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
+    XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
+    if(!natGatewayIdNode.IsNull())
+    {
+      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
+      m_natGatewayIdHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
@@ -145,6 +153,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
+  if(m_natGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
+  }
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << RouteStateMapper::GetNameForRouteState(m_state) << "&";
@@ -184,6 +196,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+  if(m_natGatewayIdHasBeenSet)
+  {
+      oStream << location << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {

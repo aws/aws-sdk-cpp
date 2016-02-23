@@ -1,0 +1,167 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace DeviceFarm
+{
+namespace Model
+{
+
+  /**
+   * <p>Represents entity counters.</p>
+   */
+  class AWS_DEVICEFARM_API Counters
+  {
+  public:
+    Counters();
+    Counters(const Aws::Utils::Json::JsonValue& jsonValue);
+    Counters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>The total number of entities.</p>
+     */
+    inline long GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total number of entities.</p>
+     */
+    inline void SetTotal(long value) { m_totalHasBeenSet = true; m_total = value; }
+
+    /**
+     * <p>The total number of entities.</p>
+     */
+    inline Counters& WithTotal(long value) { SetTotal(value); return *this;}
+
+    /**
+     * <p>The number of passed entities.</p>
+     */
+    inline long GetPassed() const{ return m_passed; }
+
+    /**
+     * <p>The number of passed entities.</p>
+     */
+    inline void SetPassed(long value) { m_passedHasBeenSet = true; m_passed = value; }
+
+    /**
+     * <p>The number of passed entities.</p>
+     */
+    inline Counters& WithPassed(long value) { SetPassed(value); return *this;}
+
+    /**
+     * <p>The number of failed entities.</p>
+     */
+    inline long GetFailed() const{ return m_failed; }
+
+    /**
+     * <p>The number of failed entities.</p>
+     */
+    inline void SetFailed(long value) { m_failedHasBeenSet = true; m_failed = value; }
+
+    /**
+     * <p>The number of failed entities.</p>
+     */
+    inline Counters& WithFailed(long value) { SetFailed(value); return *this;}
+
+    /**
+     * <p>The number of warned entities.</p>
+     */
+    inline long GetWarned() const{ return m_warned; }
+
+    /**
+     * <p>The number of warned entities.</p>
+     */
+    inline void SetWarned(long value) { m_warnedHasBeenSet = true; m_warned = value; }
+
+    /**
+     * <p>The number of warned entities.</p>
+     */
+    inline Counters& WithWarned(long value) { SetWarned(value); return *this;}
+
+    /**
+     * <p>The number of errored entities.</p>
+     */
+    inline long GetErrored() const{ return m_errored; }
+
+    /**
+     * <p>The number of errored entities.</p>
+     */
+    inline void SetErrored(long value) { m_erroredHasBeenSet = true; m_errored = value; }
+
+    /**
+     * <p>The number of errored entities.</p>
+     */
+    inline Counters& WithErrored(long value) { SetErrored(value); return *this;}
+
+    /**
+     * <p>The number of stopped entities.</p>
+     */
+    inline long GetStopped() const{ return m_stopped; }
+
+    /**
+     * <p>The number of stopped entities.</p>
+     */
+    inline void SetStopped(long value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+
+    /**
+     * <p>The number of stopped entities.</p>
+     */
+    inline Counters& WithStopped(long value) { SetStopped(value); return *this;}
+
+    /**
+     * <p>The number of skipped entities.</p>
+     */
+    inline long GetSkipped() const{ return m_skipped; }
+
+    /**
+     * <p>The number of skipped entities.</p>
+     */
+    inline void SetSkipped(long value) { m_skippedHasBeenSet = true; m_skipped = value; }
+
+    /**
+     * <p>The number of skipped entities.</p>
+     */
+    inline Counters& WithSkipped(long value) { SetSkipped(value); return *this;}
+
+  private:
+    long m_total;
+    bool m_totalHasBeenSet;
+    long m_passed;
+    bool m_passedHasBeenSet;
+    long m_failed;
+    bool m_failedHasBeenSet;
+    long m_warned;
+    bool m_warnedHasBeenSet;
+    long m_errored;
+    bool m_erroredHasBeenSet;
+    long m_stopped;
+    bool m_stoppedHasBeenSet;
+    long m_skipped;
+    bool m_skippedHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

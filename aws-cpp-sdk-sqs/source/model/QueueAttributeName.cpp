@@ -39,69 +39,69 @@ namespace Model
 {
 namespace QueueAttributeNameMapper
 {
+
+
 QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Policy_HASH)
   {
-    return QueueAttributeName::Policy;
+     return QueueAttributeName::Policy;
   }
   else if (hashCode == VisibilityTimeout_HASH)
   {
-    return QueueAttributeName::VisibilityTimeout;
+     return QueueAttributeName::VisibilityTimeout;
   }
   else if (hashCode == MaximumMessageSize_HASH)
   {
-    return QueueAttributeName::MaximumMessageSize;
+     return QueueAttributeName::MaximumMessageSize;
   }
   else if (hashCode == MessageRetentionPeriod_HASH)
   {
-    return QueueAttributeName::MessageRetentionPeriod;
+     return QueueAttributeName::MessageRetentionPeriod;
   }
   else if (hashCode == ApproximateNumberOfMessages_HASH)
   {
-    return QueueAttributeName::ApproximateNumberOfMessages;
+     return QueueAttributeName::ApproximateNumberOfMessages;
   }
   else if (hashCode == ApproximateNumberOfMessagesNotVisible_HASH)
   {
-    return QueueAttributeName::ApproximateNumberOfMessagesNotVisible;
+     return QueueAttributeName::ApproximateNumberOfMessagesNotVisible;
   }
   else if (hashCode == CreatedTimestamp_HASH)
   {
-    return QueueAttributeName::CreatedTimestamp;
+     return QueueAttributeName::CreatedTimestamp;
   }
   else if (hashCode == LastModifiedTimestamp_HASH)
   {
-    return QueueAttributeName::LastModifiedTimestamp;
+     return QueueAttributeName::LastModifiedTimestamp;
   }
   else if (hashCode == QueueArn_HASH)
   {
-    return QueueAttributeName::QueueArn;
+     return QueueAttributeName::QueueArn;
   }
   else if (hashCode == ApproximateNumberOfMessagesDelayed_HASH)
   {
-    return QueueAttributeName::ApproximateNumberOfMessagesDelayed;
+     return QueueAttributeName::ApproximateNumberOfMessagesDelayed;
   }
   else if (hashCode == DelaySeconds_HASH)
   {
-    return QueueAttributeName::DelaySeconds;
+     return QueueAttributeName::DelaySeconds;
   }
   else if (hashCode == ReceiveMessageWaitTimeSeconds_HASH)
   {
-    return QueueAttributeName::ReceiveMessageWaitTimeSeconds;
+     return QueueAttributeName::ReceiveMessageWaitTimeSeconds;
   }
   else if (hashCode == RedrivePolicy_HASH)
   {
-    return QueueAttributeName::RedrivePolicy;
+     return QueueAttributeName::RedrivePolicy;
   }
-
   return QueueAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForQueueAttributeName(QueueAttributeName value)
+Aws::String GetNameForQueueAttributeName(QueueAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case QueueAttributeName::Policy:
     return "Policy";

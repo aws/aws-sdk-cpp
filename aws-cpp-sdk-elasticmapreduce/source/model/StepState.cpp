@@ -32,41 +32,41 @@ namespace Model
 {
 namespace StepStateMapper
 {
+
+
 StepState GetStepStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == PENDING_HASH)
   {
-    return StepState::PENDING;
+     return StepState::PENDING;
   }
   else if (hashCode == RUNNING_HASH)
   {
-    return StepState::RUNNING;
+     return StepState::RUNNING;
   }
   else if (hashCode == COMPLETED_HASH)
   {
-    return StepState::COMPLETED;
+     return StepState::COMPLETED;
   }
   else if (hashCode == CANCELLED_HASH)
   {
-    return StepState::CANCELLED;
+     return StepState::CANCELLED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return StepState::FAILED;
+     return StepState::FAILED;
   }
   else if (hashCode == INTERRUPTED_HASH)
   {
-    return StepState::INTERRUPTED;
+     return StepState::INTERRUPTED;
   }
-
   return StepState::NOT_SET;
 }
 
-Aws::String GetNameForStepState(StepState value)
+Aws::String GetNameForStepState(StepState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StepState::PENDING:
     return "PENDING";

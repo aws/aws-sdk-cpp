@@ -27,7 +27,6 @@
 #include <aws/sns/SNSEndpoint.h>
 #include <aws/sns/SNSErrorMarshaller.h>
 #include <aws/sns/model/AddPermissionRequest.h>
-#include <aws/sns/model/AddTagsToResourceRequest.h>
 #include <aws/sns/model/ConfirmSubscriptionRequest.h>
 #include <aws/sns/model/CreatePlatformApplicationRequest.h>
 #include <aws/sns/model/CreatePlatformEndpointRequest.h>
@@ -43,11 +42,9 @@
 #include <aws/sns/model/ListPlatformApplicationsRequest.h>
 #include <aws/sns/model/ListSubscriptionsRequest.h>
 #include <aws/sns/model/ListSubscriptionsByTopicRequest.h>
-#include <aws/sns/model/ListTagsForResourceRequest.h>
 #include <aws/sns/model/ListTopicsRequest.h>
 #include <aws/sns/model/PublishRequest.h>
 #include <aws/sns/model/RemovePermissionRequest.h>
-#include <aws/sns/model/RemoveTagsFromResourceRequest.h>
 #include <aws/sns/model/SetEndpointAttributesRequest.h>
 #include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
 #include <aws/sns/model/SetSubscriptionAttributesRequest.h>
@@ -146,36 +143,6 @@ void SNSClient::AddPermissionAsync(const AddPermissionRequest& request, const Ad
 void SNSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddPermission(request), context);
-}
-
-AddTagsToResourceOutcome SNSClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return AddTagsToResourceOutcome(NoResult());
-  }
-  else
-  {
-    return AddTagsToResourceOutcome(outcome.GetError());
-  }
-}
-
-AddTagsToResourceOutcomeCallable SNSClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
-{
-  return std::async(std::launch::async, &SNSClient::AddTagsToResource, this, request);
-}
-
-void SNSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&SNSClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
-}
-
-void SNSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToResource(request), context);
 }
 
 ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscriptionRequest& request) const
@@ -628,36 +595,6 @@ void SNSClient::ListSubscriptionsByTopicAsyncHelper(const ListSubscriptionsByTop
   handler(this, request, ListSubscriptionsByTopic(request), context);
 }
 
-ListTagsForResourceOutcome SNSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
-}
-
-ListTagsForResourceOutcomeCallable SNSClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
-{
-  return std::async(std::launch::async, &SNSClient::ListTagsForResource, this, request);
-}
-
-void SNSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&SNSClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
-}
-
-void SNSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
-}
-
 ListTopicsOutcome SNSClient::ListTopics(const ListTopicsRequest& request) const
 {
   Aws::StringStream ss;
@@ -746,36 +683,6 @@ void SNSClient::RemovePermissionAsync(const RemovePermissionRequest& request, co
 void SNSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemovePermission(request), context);
-}
-
-RemoveTagsFromResourceOutcome SNSClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return RemoveTagsFromResourceOutcome(NoResult());
-  }
-  else
-  {
-    return RemoveTagsFromResourceOutcome(outcome.GetError());
-  }
-}
-
-RemoveTagsFromResourceOutcomeCallable SNSClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
-{
-  return std::async(std::launch::async, &SNSClient::RemoveTagsFromResource, this, request);
-}
-
-void SNSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&SNSClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
-}
-
-void SNSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromResource(request), context);
 }
 
 SetEndpointAttributesOutcome SNSClient::SetEndpointAttributes(const SetEndpointAttributesRequest& request) const

@@ -33,45 +33,45 @@ namespace Model
 {
 namespace ImageAttributeNameMapper
 {
+
+
 ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == description_HASH)
   {
-    return ImageAttributeName::description;
+     return ImageAttributeName::description;
   }
   else if (hashCode == kernel_HASH)
   {
-    return ImageAttributeName::kernel;
+     return ImageAttributeName::kernel;
   }
   else if (hashCode == ramdisk_HASH)
   {
-    return ImageAttributeName::ramdisk;
+     return ImageAttributeName::ramdisk;
   }
   else if (hashCode == launchPermission_HASH)
   {
-    return ImageAttributeName::launchPermission;
+     return ImageAttributeName::launchPermission;
   }
   else if (hashCode == productCodes_HASH)
   {
-    return ImageAttributeName::productCodes;
+     return ImageAttributeName::productCodes;
   }
   else if (hashCode == blockDeviceMapping_HASH)
   {
-    return ImageAttributeName::blockDeviceMapping;
+     return ImageAttributeName::blockDeviceMapping;
   }
   else if (hashCode == sriovNetSupport_HASH)
   {
-    return ImageAttributeName::sriovNetSupport;
+     return ImageAttributeName::sriovNetSupport;
   }
-
   return ImageAttributeName::NOT_SET;
 }
 
-Aws::String GetNameForImageAttributeName(ImageAttributeName value)
+Aws::String GetNameForImageAttributeName(ImageAttributeName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ImageAttributeName::description:
     return "description";

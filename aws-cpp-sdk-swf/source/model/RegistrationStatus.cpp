@@ -28,25 +28,25 @@ namespace Model
 {
 namespace RegistrationStatusMapper
 {
+
+
 RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == REGISTERED_HASH)
   {
-    return RegistrationStatus::REGISTERED;
+     return RegistrationStatus::REGISTERED;
   }
   else if (hashCode == DEPRECATED_HASH)
   {
-    return RegistrationStatus::DEPRECATED;
+     return RegistrationStatus::DEPRECATED;
   }
-
   return RegistrationStatus::NOT_SET;
 }
 
-Aws::String GetNameForRegistrationStatus(RegistrationStatus value)
+Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RegistrationStatus::REGISTERED:
     return "REGISTERED";

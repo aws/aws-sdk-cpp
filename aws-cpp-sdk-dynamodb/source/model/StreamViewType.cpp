@@ -30,33 +30,33 @@ namespace Model
 {
 namespace StreamViewTypeMapper
 {
+
+
 StreamViewType GetStreamViewTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NEW_IMAGE_HASH)
   {
-    return StreamViewType::NEW_IMAGE;
+     return StreamViewType::NEW_IMAGE;
   }
   else if (hashCode == OLD_IMAGE_HASH)
   {
-    return StreamViewType::OLD_IMAGE;
+     return StreamViewType::OLD_IMAGE;
   }
   else if (hashCode == NEW_AND_OLD_IMAGES_HASH)
   {
-    return StreamViewType::NEW_AND_OLD_IMAGES;
+     return StreamViewType::NEW_AND_OLD_IMAGES;
   }
   else if (hashCode == KEYS_ONLY_HASH)
   {
-    return StreamViewType::KEYS_ONLY;
+     return StreamViewType::KEYS_ONLY;
   }
-
   return StreamViewType::NOT_SET;
 }
 
-Aws::String GetNameForStreamViewType(StreamViewType value)
+Aws::String GetNameForStreamViewType(StreamViewType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StreamViewType::NEW_IMAGE:
     return "NEW_IMAGE";

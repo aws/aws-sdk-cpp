@@ -27,21 +27,21 @@ namespace Model
 {
 namespace EncodingTypeMapper
 {
+
+
 EncodingType GetEncodingTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == url_HASH)
   {
-    return EncodingType::url;
+     return EncodingType::url;
   }
-
   return EncodingType::NOT_SET;
 }
 
-Aws::String GetNameForEncodingType(EncodingType value)
+Aws::String GetNameForEncodingType(EncodingType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EncodingType::url:
     return "url";

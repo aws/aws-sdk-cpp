@@ -36,92 +36,92 @@ namespace Model
 
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline DescribeApplicationVersionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline DescribeApplicationVersionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * only include ones that are associated with the specified application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include ones that are associated with the specified application.</p>
      */
     inline DescribeApplicationVersionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersionLabels() const{ return m_versionLabels; }
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline void SetVersionLabels(const Aws::Vector<Aws::String>& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline void SetVersionLabels(Aws::Vector<Aws::String>&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels = value; }
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline DescribeApplicationVersionsRequest& WithVersionLabels(const Aws::Vector<Aws::String>& value) { SetVersionLabels(value); return *this;}
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline DescribeApplicationVersionsRequest& WithVersionLabels(Aws::Vector<Aws::String>&& value) { SetVersionLabels(value); return *this;}
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline DescribeApplicationVersionsRequest& AddVersionLabels(const Aws::String& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline DescribeApplicationVersionsRequest& AddVersionLabels(Aws::String&& value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
     /**
-     * <p> If specified, restricts the returned descriptions to only include ones that
-     * have the specified version labels. </p>
+     * <p>If specified, restricts the returned descriptions to only include ones that
+     * have the specified version labels.</p>
      */
     inline DescribeApplicationVersionsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 

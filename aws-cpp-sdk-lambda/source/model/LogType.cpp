@@ -28,25 +28,25 @@ namespace Model
 {
 namespace LogTypeMapper
 {
+
+
 LogType GetLogTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == None_HASH)
   {
-    return LogType::None;
+     return LogType::None;
   }
   else if (hashCode == Tail_HASH)
   {
-    return LogType::Tail;
+     return LogType::Tail;
   }
-
   return LogType::NOT_SET;
 }
 
-Aws::String GetNameForLogType(LogType value)
+Aws::String GetNameForLogType(LogType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LogType::None:
     return "None";

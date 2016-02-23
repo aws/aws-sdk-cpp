@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
+#include <aws/ec2/model/AllocationStrategy.h>
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 
 namespace Aws
@@ -103,59 +105,58 @@ namespace Model
     inline SpotFleetRequestConfigData& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(Aws::String&& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum hourly price (bid) for any Spot Instance launched to fulfill the
-     * request.</p>
+     * <p>The bid price per unit hour.</p>
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum number of Spot Instances to launch.</p>
+     * <p>The number of units to request. You can choose to set the target capacity in
+     * terms of instances or a performance characteristic that is important to your
+     * application workload, such as vCPUs, memory, or I/O.</p>
      */
     inline long GetTargetCapacity() const{ return m_targetCapacity; }
 
     /**
-     * <p>The maximum number of Spot Instances to launch.</p>
+     * <p>The number of units to request. You can choose to set the target capacity in
+     * terms of instances or a performance characteristic that is important to your
+     * application workload, such as vCPUs, memory, or I/O.</p>
      */
     inline void SetTargetCapacity(long value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
 
     /**
-     * <p>The maximum number of Spot Instances to launch.</p>
+     * <p>The number of units to request. You can choose to set the target capacity in
+     * terms of instances or a performance characteristic that is important to your
+     * application workload, such as vCPUs, memory, or I/O.</p>
      */
     inline SpotFleetRequestConfigData& WithTargetCapacity(long value) { SetTargetCapacity(value); return *this;}
 
@@ -183,132 +184,197 @@ namespace Model
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or enabled to fulfill the request.</p>
+     * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
     inline double GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or enabled to fulfill the request.</p>
+     * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
     inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or enabled to fulfill the request.</p>
+     * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
     inline SpotFleetRequestConfigData& WithValidUntil(double value) { SetValidUntil(value); return *this;}
 
     /**
-     * <p>Indicates whether running instances should be terminated when the Spot fleet
-     * request expires.</p>
+     * <p>Indicates whether running Spot instances should be terminated when the Spot
+     * fleet request expires.</p>
      */
     inline bool GetTerminateInstancesWithExpiration() const{ return m_terminateInstancesWithExpiration; }
 
     /**
-     * <p>Indicates whether running instances should be terminated when the Spot fleet
-     * request expires.</p>
+     * <p>Indicates whether running Spot instances should be terminated when the Spot
+     * fleet request expires.</p>
      */
     inline void SetTerminateInstancesWithExpiration(bool value) { m_terminateInstancesWithExpirationHasBeenSet = true; m_terminateInstancesWithExpiration = value; }
 
     /**
-     * <p>Indicates whether running instances should be terminated when the Spot fleet
-     * request expires.</p>
+     * <p>Indicates whether running Spot instances should be terminated when the Spot
+     * fleet request expires.</p>
      */
     inline SpotFleetRequestConfigData& WithTerminateInstancesWithExpiration(bool value) { SetTerminateInstancesWithExpiration(value); return *this;}
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline const Aws::String& GetIamFleetRole() const{ return m_iamFleetRole; }
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(const Aws::String& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = value; }
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(Aws::String&& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = value; }
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(const char* value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole.assign(value); }
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(const Aws::String& value) { SetIamFleetRole(value); return *this;}
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(Aws::String&& value) { SetIamFleetRole(value); return *this;}
 
     /**
-     * <p>Grants the Spot fleet service permission to terminate instances on your
-     * behalf when you cancel a Spot fleet request using <a>CancelSpotFleetRequests</a>
-     * or when the Spot fleet request expires, if you set
+     * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
+     * when you cancel its Spot fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(const char* value) { SetIamFleetRole(value); return *this;}
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline const Aws::Vector<SpotFleetLaunchSpecification>& GetLaunchSpecifications() const{ return m_launchSpecifications; }
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline void SetLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline void SetLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { SetLaunchSpecifications(value); return *this;}
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { SetLaunchSpecifications(value); return *this;}
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(const SpotFleetLaunchSpecification& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>Information about the launch specifications for the instances.</p>
+     * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(SpotFleetLaunchSpecification&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
+
+    /**
+     * <p>Indicates whether running Spot instances should be terminated if the target
+     * capacity of the Spot fleet request is decreased below the current size of the
+     * Spot fleet.</p>
+     */
+    inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
+     */
+    inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
+     */
+    inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
+     */
+    inline void SetAllocationStrategy(AllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
+     */
+    inline SpotFleetRequestConfigData& WithAllocationStrategy(const AllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
+     */
+    inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(value); return *this;}
 
   private:
     Aws::String m_clientToken;
@@ -327,6 +393,10 @@ namespace Model
     bool m_iamFleetRoleHasBeenSet;
     Aws::Vector<SpotFleetLaunchSpecification> m_launchSpecifications;
     bool m_launchSpecificationsHasBeenSet;
+    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
+    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    AllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet;
   };
 
 } // namespace Model

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MetadataDirectiveMapper
 {
+
+
 MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == COPY_HASH)
   {
-    return MetadataDirective::COPY;
+     return MetadataDirective::COPY;
   }
   else if (hashCode == REPLACE_HASH)
   {
-    return MetadataDirective::REPLACE;
+     return MetadataDirective::REPLACE;
   }
-
   return MetadataDirective::NOT_SET;
 }
 
-Aws::String GetNameForMetadataDirective(MetadataDirective value)
+Aws::String GetNameForMetadataDirective(MetadataDirective enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MetadataDirective::COPY:
     return "COPY";

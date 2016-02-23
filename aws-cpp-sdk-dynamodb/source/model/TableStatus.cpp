@@ -30,33 +30,33 @@ namespace Model
 {
 namespace TableStatusMapper
 {
+
+
 TableStatus GetTableStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == CREATING_HASH)
   {
-    return TableStatus::CREATING;
+     return TableStatus::CREATING;
   }
   else if (hashCode == UPDATING_HASH)
   {
-    return TableStatus::UPDATING;
+     return TableStatus::UPDATING;
   }
   else if (hashCode == DELETING_HASH)
   {
-    return TableStatus::DELETING;
+     return TableStatus::DELETING;
   }
   else if (hashCode == ACTIVE_HASH)
   {
-    return TableStatus::ACTIVE;
+     return TableStatus::ACTIVE;
   }
-
   return TableStatus::NOT_SET;
 }
 
-Aws::String GetNameForTableStatus(TableStatus value)
+Aws::String GetNameForTableStatus(TableStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TableStatus::CREATING:
     return "CREATING";

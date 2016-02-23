@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ReportStateTypeMapper
 {
+
+
 ReportStateType GetReportStateTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == STARTED_HASH)
   {
-    return ReportStateType::STARTED;
+     return ReportStateType::STARTED;
   }
   else if (hashCode == INPROGRESS_HASH)
   {
-    return ReportStateType::INPROGRESS;
+     return ReportStateType::INPROGRESS;
   }
   else if (hashCode == COMPLETE_HASH)
   {
-    return ReportStateType::COMPLETE;
+     return ReportStateType::COMPLETE;
   }
-
   return ReportStateType::NOT_SET;
 }
 
-Aws::String GetNameForReportStateType(ReportStateType value)
+Aws::String GetNameForReportStateType(ReportStateType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReportStateType::STARTED:
     return "STARTED";

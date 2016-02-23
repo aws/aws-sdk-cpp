@@ -34,49 +34,87 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline ReorderReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline ReorderReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline ReorderReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetRuleNames() const{ return m_ruleNames; }
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline void SetRuleNames(const Aws::Vector<Aws::String>& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline ReorderReceiptRuleSetRequest& WithRuleNames(const Aws::Vector<Aws::String>& value) { SetRuleNames(value); return *this;}
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline ReorderReceiptRuleSetRequest& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(value); return *this;}
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline ReorderReceiptRuleSetRequest& AddRuleNames(const Aws::String& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline ReorderReceiptRuleSetRequest& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
     inline ReorderReceiptRuleSetRequest& AddRuleNames(const char* value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
 
   private:

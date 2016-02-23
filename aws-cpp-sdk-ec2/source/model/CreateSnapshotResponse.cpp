@@ -68,6 +68,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const AmazonWebServic
     {
       m_state = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
     }
+    XmlNode stateMessageNode = resultNode.FirstChild("statusMessage");
+    if(!stateMessageNode.IsNull())
+    {
+      m_stateMessage = StringUtils::Trim(stateMessageNode.GetText().c_str());
+    }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
@@ -118,6 +123,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const AmazonWebServic
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+    }
+    XmlNode dataEncryptionKeyIdNode = resultNode.FirstChild("dataEncryptionKeyId");
+    if(!dataEncryptionKeyIdNode.IsNull())
+    {
+      m_dataEncryptionKeyId = StringUtils::Trim(dataEncryptionKeyIdNode.GetText().c_str());
     }
   }
 

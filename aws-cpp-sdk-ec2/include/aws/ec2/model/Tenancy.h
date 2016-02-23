@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     default_,
-    dedicated
+    dedicated,
+    host
   };
 
 namespace TenancyMapper

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace TlsPolicyMapper
 {
+
+
 TlsPolicy GetTlsPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Require_HASH)
   {
-    return TlsPolicy::Require;
+     return TlsPolicy::Require;
   }
   else if (hashCode == Optional_HASH)
   {
-    return TlsPolicy::Optional;
+     return TlsPolicy::Optional;
   }
-
   return TlsPolicy::NOT_SET;
 }
 
-Aws::String GetNameForTlsPolicy(TlsPolicy value)
+Aws::String GetNameForTlsPolicy(TlsPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TlsPolicy::Require:
     return "Require";

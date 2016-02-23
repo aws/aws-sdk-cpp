@@ -29,29 +29,29 @@ namespace Model
 {
 namespace VolumeStatusInfoStatusMapper
 {
+
+
 VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ok_HASH)
   {
-    return VolumeStatusInfoStatus::ok;
+     return VolumeStatusInfoStatus::ok;
   }
   else if (hashCode == impaired_HASH)
   {
-    return VolumeStatusInfoStatus::impaired;
+     return VolumeStatusInfoStatus::impaired;
   }
   else if (hashCode == insufficient_data_HASH)
   {
-    return VolumeStatusInfoStatus::insufficient_data;
+     return VolumeStatusInfoStatus::insufficient_data;
   }
-
   return VolumeStatusInfoStatus::NOT_SET;
 }
 
-Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus value)
+Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeStatusInfoStatus::ok:
     return "ok";

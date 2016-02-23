@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ExpirationStatusMapper
 {
+
+
 ExpirationStatus GetExpirationStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return ExpirationStatus::Enabled;
+     return ExpirationStatus::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return ExpirationStatus::Disabled;
+     return ExpirationStatus::Disabled;
   }
-
   return ExpirationStatus::NOT_SET;
 }
 
-Aws::String GetNameForExpirationStatus(ExpirationStatus value)
+Aws::String GetNameForExpirationStatus(ExpirationStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ExpirationStatus::Enabled:
     return "Enabled";

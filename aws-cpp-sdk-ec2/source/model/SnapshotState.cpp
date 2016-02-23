@@ -29,29 +29,29 @@ namespace Model
 {
 namespace SnapshotStateMapper
 {
+
+
 SnapshotState GetSnapshotStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return SnapshotState::pending;
+     return SnapshotState::pending;
   }
   else if (hashCode == completed_HASH)
   {
-    return SnapshotState::completed;
+     return SnapshotState::completed;
   }
   else if (hashCode == error_HASH)
   {
-    return SnapshotState::error;
+     return SnapshotState::error;
   }
-
   return SnapshotState::NOT_SET;
 }
 
-Aws::String GetNameForSnapshotState(SnapshotState value)
+Aws::String GetNameForSnapshotState(SnapshotState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SnapshotState::pending:
     return "pending";

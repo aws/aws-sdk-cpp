@@ -14,6 +14,7 @@
   */
 
 #include <aws/core/http/HttpTypes.h>
+#include <cassert>
 
 using namespace Aws::Http;
 
@@ -38,7 +39,10 @@ const char* GetNameForHttpMethod(HttpMethod httpMethod)
             return "PUT";
         case HttpMethod::HTTP_HEAD:
             return "HEAD";
+        case HttpMethod::HTTP_PATCH:
+            return "PATCH";
         default:
+            assert(0);
             return "GET";
     }
 }

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudfront/model/CustomHeaders.h>
 #include <aws/cloudfront/model/S3OriginConfig.h>
 #include <aws/cloudfront/model/CustomOriginConfig.h>
 
@@ -222,6 +223,36 @@ namespace Model
     inline Origin& WithOriginPath(const char* value) { SetOriginPath(value); return *this;}
 
     /**
+     * A complex type that contains information about the custom headers associated
+     * with this Origin.
+     */
+    inline const CustomHeaders& GetCustomHeaders() const{ return m_customHeaders; }
+
+    /**
+     * A complex type that contains information about the custom headers associated
+     * with this Origin.
+     */
+    inline void SetCustomHeaders(const CustomHeaders& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
+
+    /**
+     * A complex type that contains information about the custom headers associated
+     * with this Origin.
+     */
+    inline void SetCustomHeaders(CustomHeaders&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
+
+    /**
+     * A complex type that contains information about the custom headers associated
+     * with this Origin.
+     */
+    inline Origin& WithCustomHeaders(const CustomHeaders& value) { SetCustomHeaders(value); return *this;}
+
+    /**
+     * A complex type that contains information about the custom headers associated
+     * with this Origin.
+     */
+    inline Origin& WithCustomHeaders(CustomHeaders&& value) { SetCustomHeaders(value); return *this;}
+
+    /**
      * A complex type that contains information about the Amazon S3 origin. If the
      * origin is a custom origin, use the CustomOriginConfig element instead.
      */
@@ -288,6 +319,8 @@ namespace Model
     bool m_domainNameHasBeenSet;
     Aws::String m_originPath;
     bool m_originPathHasBeenSet;
+    CustomHeaders m_customHeaders;
+    bool m_customHeadersHasBeenSet;
     S3OriginConfig m_s3OriginConfig;
     bool m_s3OriginConfigHasBeenSet;
     CustomOriginConfig m_customOriginConfig;

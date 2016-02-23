@@ -29,29 +29,29 @@ namespace Model
 {
 namespace KeyStateMapper
 {
+
+
 KeyState GetKeyStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Enabled_HASH)
   {
-    return KeyState::Enabled;
+     return KeyState::Enabled;
   }
   else if (hashCode == Disabled_HASH)
   {
-    return KeyState::Disabled;
+     return KeyState::Disabled;
   }
   else if (hashCode == PendingDeletion_HASH)
   {
-    return KeyState::PendingDeletion;
+     return KeyState::PendingDeletion;
   }
-
   return KeyState::NOT_SET;
 }
 
-Aws::String GetNameForKeyState(KeyState value)
+Aws::String GetNameForKeyState(KeyState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyState::Enabled:
     return "Enabled";

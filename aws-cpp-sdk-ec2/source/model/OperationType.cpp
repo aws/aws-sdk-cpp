@@ -28,25 +28,25 @@ namespace Model
 {
 namespace OperationTypeMapper
 {
+
+
 OperationType GetOperationTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == add_HASH)
   {
-    return OperationType::add;
+     return OperationType::add;
   }
   else if (hashCode == remove_HASH)
   {
-    return OperationType::remove;
+     return OperationType::remove;
   }
-
   return OperationType::NOT_SET;
 }
 
-Aws::String GetNameForOperationType(OperationType value)
+Aws::String GetNameForOperationType(OperationType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case OperationType::add:
     return "add";

@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
@@ -109,37 +110,58 @@ namespace Model
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline Service& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>A user-generated string that you can use to identify your service.</p>
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a region or across multiple regions.</p>
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -383,6 +405,36 @@ namespace Model
     inline Service& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
     /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
+    inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
+    inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
+    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
+    inline Service& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
+    inline Service& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
+
+    /**
      * <p>The current state of deployments for the service.</p>
      */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
@@ -527,6 +579,8 @@ namespace Model
     bool m_pendingCountHasBeenSet;
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+    DeploymentConfiguration m_deploymentConfiguration;
+    bool m_deploymentConfigurationHasBeenSet;
     Aws::Vector<Deployment> m_deployments;
     bool m_deploymentsHasBeenSet;
     Aws::String m_roleArn;

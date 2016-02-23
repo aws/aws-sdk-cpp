@@ -27,7 +27,9 @@ StreamDescription::StreamDescription() :
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),
-    m_hasMoreShardsHasBeenSet(false)
+    m_hasMoreShardsHasBeenSet(false),
+    m_retentionPeriodHours(0),
+    m_retentionPeriodHoursHasBeenSet(false)
 {
 }
 
@@ -37,7 +39,9 @@ StreamDescription::StreamDescription(const JsonValue& jsonValue) :
     m_streamStatusHasBeenSet(false),
     m_shardsHasBeenSet(false),
     m_hasMoreShards(false),
-    m_hasMoreShardsHasBeenSet(false)
+    m_hasMoreShardsHasBeenSet(false),
+    m_retentionPeriodHours(0),
+    m_retentionPeriodHoursHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +86,13 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
     m_hasMoreShardsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetentionPeriodHours"))
+  {
+    m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
+
+    m_retentionPeriodHoursHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +131,12 @@ JsonValue StreamDescription::Jsonize() const
   if(m_hasMoreShardsHasBeenSet)
   {
    payload.WithBool("HasMoreShards", m_hasMoreShards);
+
+  }
+
+  if(m_retentionPeriodHoursHasBeenSet)
+  {
+   payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
 
   }
 

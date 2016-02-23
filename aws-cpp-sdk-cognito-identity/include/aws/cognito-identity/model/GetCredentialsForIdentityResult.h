@@ -80,27 +80,27 @@ namespace Model
     inline GetCredentialsForIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
     /**
-     * <p>Credentials for the the provided identity ID.</p>
+     * <p>Credentials for the provided identity ID.</p>
      */
     inline const Credentials& GetCredentials() const{ return m_credentials; }
 
     /**
-     * <p>Credentials for the the provided identity ID.</p>
+     * <p>Credentials for the provided identity ID.</p>
      */
     inline void SetCredentials(const Credentials& value) { m_credentials = value; }
 
     /**
-     * <p>Credentials for the the provided identity ID.</p>
+     * <p>Credentials for the provided identity ID.</p>
      */
     inline void SetCredentials(Credentials&& value) { m_credentials = value; }
 
     /**
-     * <p>Credentials for the the provided identity ID.</p>
+     * <p>Credentials for the provided identity ID.</p>
      */
     inline GetCredentialsForIdentityResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
 
     /**
-     * <p>Credentials for the the provided identity ID.</p>
+     * <p>Credentials for the provided identity ID.</p>
      */
     inline GetCredentialsForIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
+#include <aws/codedeploy/model/TriggerConfig.h>
 
 namespace Aws
 {
@@ -188,133 +189,163 @@ namespace Model
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(value); return *this;}
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
      * <p>The replacement set of Amazon EC2 tags to filter on, if you want to change
-     * them.</p>
+     * them. To keep the existing tags, enter their names. To remove tags, do not enter
+     * any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
      * <p>The replacement set of on-premises instance tags for filter on, if you want
-     * to change them.</p>
+     * to change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithAutoScalingGroups(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroups(value); return *this;}
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline UpdateDeploymentGroupRequest& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(value); return *this;}
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(const Aws::String& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them.</p>
+     * group, if you want to change them. To keep the existing Auto Scaling groups,
+     * enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling
+     * group names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
@@ -353,6 +384,48 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(value); return *this;}
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about triggers to change when the deployment group is
+     * updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -370,6 +443,8 @@ namespace Model
     bool m_autoScalingGroupsHasBeenSet;
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+    Aws::Vector<TriggerConfig> m_triggerConfigurations;
+    bool m_triggerConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace DomainTypeMapper
 {
+
+
 DomainType GetDomainTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == vpc_HASH)
   {
-    return DomainType::vpc;
+     return DomainType::vpc;
   }
   else if (hashCode == standard_HASH)
   {
-    return DomainType::standard;
+     return DomainType::standard;
   }
-
   return DomainType::NOT_SET;
 }
 
-Aws::String GetNameForDomainType(DomainType value)
+Aws::String GetNameForDomainType(DomainType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DomainType::vpc:
     return "vpc";

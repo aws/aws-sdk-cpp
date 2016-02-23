@@ -28,7 +28,8 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_ec2TagFiltersHasBeenSet(false),
     m_onPremisesInstanceTagFiltersHasBeenSet(false),
     m_autoScalingGroupsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false)
+    m_serviceRoleArnHasBeenSet(false),
+    m_triggerConfigurationsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,17 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
   if(m_serviceRoleArnHasBeenSet)
   {
    payload.WithString("serviceRoleArn", m_serviceRoleArn);
+
+  }
+
+  if(m_triggerConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
+   {
+     triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
 
   }
 

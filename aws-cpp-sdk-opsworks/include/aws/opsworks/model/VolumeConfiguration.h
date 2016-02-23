@@ -125,51 +125,51 @@ namespace Model
     inline VolumeConfiguration& WithSize(long value) { SetSize(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li> <code>standard</code> - Magnetic</li> <li>
-     * <code>io1</code> - Provisioned IOPS (SSD)</li> <li> <code>gp2</code> - General
-     * Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
+     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
+     * General Purpose (SSD)</li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 

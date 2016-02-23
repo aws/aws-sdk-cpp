@@ -1,0 +1,136 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/cloudsearch/model/TextArrayOptions.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CloudSearch::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+TextArrayOptions::TextArrayOptions() : 
+    m_defaultValueHasBeenSet(false),
+    m_sourceFieldsHasBeenSet(false),
+    m_returnEnabled(false),
+    m_returnEnabledHasBeenSet(false),
+    m_highlightEnabled(false),
+    m_highlightEnabledHasBeenSet(false),
+    m_analysisSchemeHasBeenSet(false)
+{
+}
+
+TextArrayOptions::TextArrayOptions(const XmlNode& xmlNode) : 
+    m_defaultValueHasBeenSet(false),
+    m_sourceFieldsHasBeenSet(false),
+    m_returnEnabled(false),
+    m_returnEnabledHasBeenSet(false),
+    m_highlightEnabled(false),
+    m_highlightEnabledHasBeenSet(false),
+    m_analysisSchemeHasBeenSet(false)
+{
+  *this = xmlNode;
+}
+
+TextArrayOptions& TextArrayOptions::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
+    if(!defaultValueNode.IsNull())
+    {
+      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValueHasBeenSet = true;
+    }
+    XmlNode sourceFieldsNode = resultNode.FirstChild("SourceFields");
+    if(!sourceFieldsNode.IsNull())
+    {
+      m_sourceFields = StringUtils::Trim(sourceFieldsNode.GetText().c_str());
+      m_sourceFieldsHasBeenSet = true;
+    }
+    XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
+    if(!returnEnabledNode.IsNull())
+    {
+      m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(returnEnabledNode.GetText().c_str()).c_str());
+      m_returnEnabledHasBeenSet = true;
+    }
+    XmlNode highlightEnabledNode = resultNode.FirstChild("HighlightEnabled");
+    if(!highlightEnabledNode.IsNull())
+    {
+      m_highlightEnabled = StringUtils::ConvertToBool(StringUtils::Trim(highlightEnabledNode.GetText().c_str()).c_str());
+      m_highlightEnabledHasBeenSet = true;
+    }
+    XmlNode analysisSchemeNode = resultNode.FirstChild("AnalysisScheme");
+    if(!analysisSchemeNode.IsNull())
+    {
+      m_analysisScheme = StringUtils::Trim(analysisSchemeNode.GetText().c_str());
+      m_analysisSchemeHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_defaultValueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
+  }
+  if(m_sourceFieldsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
+  }
+  if(m_returnEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
+  }
+  if(m_highlightEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HighlightEnabled=" << m_highlightEnabled << "&";
+  }
+  if(m_analysisSchemeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AnalysisScheme=" << StringUtils::URLEncode(m_analysisScheme.c_str()) << "&";
+  }
+}
+
+void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_defaultValueHasBeenSet)
+  {
+      oStream << location << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
+  }
+  if(m_sourceFieldsHasBeenSet)
+  {
+      oStream << location << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
+  }
+  if(m_returnEnabledHasBeenSet)
+  {
+      oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
+  }
+  if(m_highlightEnabledHasBeenSet)
+  {
+      oStream << location << ".HighlightEnabled=" << m_highlightEnabled << "&";
+  }
+  if(m_analysisSchemeHasBeenSet)
+  {
+      oStream << location << ".AnalysisScheme=" << StringUtils::URLEncode(m_analysisScheme.c_str()) << "&";
+  }
+}

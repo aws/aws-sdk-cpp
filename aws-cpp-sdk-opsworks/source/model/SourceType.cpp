@@ -30,33 +30,33 @@ namespace Model
 {
 namespace SourceTypeMapper
 {
+
+
 SourceType GetSourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == git_HASH)
   {
-    return SourceType::git;
+     return SourceType::git;
   }
   else if (hashCode == svn_HASH)
   {
-    return SourceType::svn;
+     return SourceType::svn;
   }
   else if (hashCode == archive_HASH)
   {
-    return SourceType::archive;
+     return SourceType::archive;
   }
   else if (hashCode == s3_HASH)
   {
-    return SourceType::s3;
+     return SourceType::s3;
   }
-
   return SourceType::NOT_SET;
 }
 
-Aws::String GetNameForSourceType(SourceType value)
+Aws::String GetNameForSourceType(SourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SourceType::git:
     return "git";

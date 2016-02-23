@@ -29,6 +29,7 @@ UpdateStackRequest::UpdateStackRequest() :
     m_stackPolicyDuringUpdateURLHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
+    m_resourceTypesHasBeenSet(false),
     m_stackPolicyBodyHasBeenSet(false),
     m_stackPolicyURLHasBeenSet(false),
     m_notificationARNsHasBeenSet(false)
@@ -80,6 +81,16 @@ Aws::String UpdateStackRequest::SerializePayload() const
       ss << "Capabilities.member." << capabilitiesCount << "="
           << StringUtils::URLEncode(CapabilityMapper::GetNameForCapability(item).c_str()) << "&";
       capabilitiesCount++;
+    }
+  }
+  if(m_resourceTypesHasBeenSet)
+  {
+    unsigned resourceTypesCount = 1;
+    for(auto& item : m_resourceTypes)
+    {
+      ss << "ResourceTypes.member." << resourceTypesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      resourceTypesCount++;
     }
   }
   if(m_stackPolicyBodyHasBeenSet)

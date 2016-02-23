@@ -34,49 +34,49 @@ namespace Model
 {
 namespace EnvironmentHealthStatusMapper
 {
+
+
 EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == NoData_HASH)
   {
-    return EnvironmentHealthStatus::NoData;
+     return EnvironmentHealthStatus::NoData;
   }
   else if (hashCode == Unknown_HASH)
   {
-    return EnvironmentHealthStatus::Unknown;
+     return EnvironmentHealthStatus::Unknown;
   }
   else if (hashCode == Pending_HASH)
   {
-    return EnvironmentHealthStatus::Pending;
+     return EnvironmentHealthStatus::Pending;
   }
   else if (hashCode == Ok_HASH)
   {
-    return EnvironmentHealthStatus::Ok;
+     return EnvironmentHealthStatus::Ok;
   }
   else if (hashCode == Info_HASH)
   {
-    return EnvironmentHealthStatus::Info;
+     return EnvironmentHealthStatus::Info;
   }
   else if (hashCode == Warning_HASH)
   {
-    return EnvironmentHealthStatus::Warning;
+     return EnvironmentHealthStatus::Warning;
   }
   else if (hashCode == Degraded_HASH)
   {
-    return EnvironmentHealthStatus::Degraded;
+     return EnvironmentHealthStatus::Degraded;
   }
   else if (hashCode == Severe_HASH)
   {
-    return EnvironmentHealthStatus::Severe;
+     return EnvironmentHealthStatus::Severe;
   }
-
   return EnvironmentHealthStatus::NOT_SET;
 }
 
-Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus value)
+Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EnvironmentHealthStatus::NoData:
     return "NoData";

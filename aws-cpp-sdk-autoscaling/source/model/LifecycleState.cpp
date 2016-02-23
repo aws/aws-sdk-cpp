@@ -39,69 +39,69 @@ namespace Model
 {
 namespace LifecycleStateMapper
 {
+
+
 LifecycleState GetLifecycleStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == Pending_HASH)
   {
-    return LifecycleState::Pending;
+     return LifecycleState::Pending;
   }
   else if (hashCode == Pending_Wait_HASH)
   {
-    return LifecycleState::Pending_Wait;
+     return LifecycleState::Pending_Wait;
   }
   else if (hashCode == Pending_Proceed_HASH)
   {
-    return LifecycleState::Pending_Proceed;
+     return LifecycleState::Pending_Proceed;
   }
   else if (hashCode == Quarantined_HASH)
   {
-    return LifecycleState::Quarantined;
+     return LifecycleState::Quarantined;
   }
   else if (hashCode == InService_HASH)
   {
-    return LifecycleState::InService;
+     return LifecycleState::InService;
   }
   else if (hashCode == Terminating_HASH)
   {
-    return LifecycleState::Terminating;
+     return LifecycleState::Terminating;
   }
   else if (hashCode == Terminating_Wait_HASH)
   {
-    return LifecycleState::Terminating_Wait;
+     return LifecycleState::Terminating_Wait;
   }
   else if (hashCode == Terminating_Proceed_HASH)
   {
-    return LifecycleState::Terminating_Proceed;
+     return LifecycleState::Terminating_Proceed;
   }
   else if (hashCode == Terminated_HASH)
   {
-    return LifecycleState::Terminated;
+     return LifecycleState::Terminated;
   }
   else if (hashCode == Detaching_HASH)
   {
-    return LifecycleState::Detaching;
+     return LifecycleState::Detaching;
   }
   else if (hashCode == Detached_HASH)
   {
-    return LifecycleState::Detached;
+     return LifecycleState::Detached;
   }
   else if (hashCode == EnteringStandby_HASH)
   {
-    return LifecycleState::EnteringStandby;
+     return LifecycleState::EnteringStandby;
   }
   else if (hashCode == Standby_HASH)
   {
-    return LifecycleState::Standby;
+     return LifecycleState::Standby;
   }
-
   return LifecycleState::NOT_SET;
 }
 
-Aws::String GetNameForLifecycleState(LifecycleState value)
+Aws::String GetNameForLifecycleState(LifecycleState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case LifecycleState::Pending:
     return "Pending";

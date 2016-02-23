@@ -87,49 +87,56 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"></a>.</p>
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 

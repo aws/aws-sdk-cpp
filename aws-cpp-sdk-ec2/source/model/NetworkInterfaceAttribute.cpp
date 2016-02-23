@@ -30,33 +30,33 @@ namespace Model
 {
 namespace NetworkInterfaceAttributeMapper
 {
+
+
 NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == description_HASH)
   {
-    return NetworkInterfaceAttribute::description;
+     return NetworkInterfaceAttribute::description;
   }
   else if (hashCode == groupSet_HASH)
   {
-    return NetworkInterfaceAttribute::groupSet;
+     return NetworkInterfaceAttribute::groupSet;
   }
   else if (hashCode == sourceDestCheck_HASH)
   {
-    return NetworkInterfaceAttribute::sourceDestCheck;
+     return NetworkInterfaceAttribute::sourceDestCheck;
   }
   else if (hashCode == attachment_HASH)
   {
-    return NetworkInterfaceAttribute::attachment;
+     return NetworkInterfaceAttribute::attachment;
   }
-
   return NetworkInterfaceAttribute::NOT_SET;
 }
 
-Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute value)
+Aws::String GetNameForNetworkInterfaceAttribute(NetworkInterfaceAttribute enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case NetworkInterfaceAttribute::description:
     return "description";

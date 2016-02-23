@@ -113,8 +113,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -140,8 +140,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -167,8 +167,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -194,8 +194,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -221,8 +221,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -248,8 +248,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
@@ -275,8 +275,8 @@ namespace Model
      * (<code>attaching</code> | <code>attached</code> | <code>detaching</code> |
      * <code>detached</code>).</p> </li> <li> <p><code>attachment.vpc-id</code> - The
      * ID of an attached VPC.</p> </li> <li> <p><code>availability-zone</code> - The
-     * Availability Zone for the virtual private gateway.</p> </li> <li>
-     * <p><code>state</code> - The state of the virtual private gateway
+     * Availability Zone for the virtual private gateway (if applicable).</p> </li>
+     * <li> <p><code>state</code> - The state of the virtual private gateway
      * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
      * <code>deleted</code>).</p> </li> <li>
      * <p><code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag

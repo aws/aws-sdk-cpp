@@ -115,37 +115,37 @@ namespace Model
     inline ActiveInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(Aws::String&& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline void SetSpotInstanceRequestId(const char* value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId.assign(value); }
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const Aws::String& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(Aws::String&& value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The ID of the Spot Instance request.</p>
+     * <p>The ID of the Spot instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 

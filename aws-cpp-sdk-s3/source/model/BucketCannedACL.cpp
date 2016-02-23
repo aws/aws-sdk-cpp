@@ -30,33 +30,33 @@ namespace Model
 {
 namespace BucketCannedACLMapper
 {
+
+
 BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == private__HASH)
   {
-    return BucketCannedACL::private_;
+     return BucketCannedACL::private_;
   }
   else if (hashCode == public_read_HASH)
   {
-    return BucketCannedACL::public_read;
+     return BucketCannedACL::public_read;
   }
   else if (hashCode == public_read_write_HASH)
   {
-    return BucketCannedACL::public_read_write;
+     return BucketCannedACL::public_read_write;
   }
   else if (hashCode == authenticated_read_HASH)
   {
-    return BucketCannedACL::authenticated_read;
+     return BucketCannedACL::authenticated_read;
   }
-
   return BucketCannedACL::NOT_SET;
 }
 
-Aws::String GetNameForBucketCannedACL(BucketCannedACL value)
+Aws::String GetNameForBucketCannedACL(BucketCannedACL enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case BucketCannedACL::private_:
     return "private";

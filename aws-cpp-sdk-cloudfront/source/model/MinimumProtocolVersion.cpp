@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MinimumProtocolVersionMapper
 {
+
+
 MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SSLv3_HASH)
   {
-    return MinimumProtocolVersion::SSLv3;
+     return MinimumProtocolVersion::SSLv3;
   }
   else if (hashCode == TLSv1_HASH)
   {
-    return MinimumProtocolVersion::TLSv1;
+     return MinimumProtocolVersion::TLSv1;
   }
-
   return MinimumProtocolVersion::NOT_SET;
 }
 
-Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion value)
+Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MinimumProtocolVersion::SSLv3:
     return "SSLv3";

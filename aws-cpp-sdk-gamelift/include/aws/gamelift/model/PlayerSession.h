@@ -1,0 +1,344 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/PlayerSessionStatus.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace GameLift
+{
+namespace Model
+{
+
+  /**
+   * <p>Properties describing a player session.</p>
+   */
+  class AWS_GAMELIFT_API PlayerSession
+  {
+  public:
+    PlayerSession();
+    PlayerSession(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlayerSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline void SetPlayerSessionId(const char* value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline PlayerSession& WithPlayerSessionId(const Aws::String& value) { SetPlayerSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline PlayerSession& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
+    inline PlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline const Aws::String& GetPlayerId() const{ return m_playerId; }
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline PlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline PlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a player.</p>
+     */
+    inline PlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline PlayerSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline PlayerSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a game session.</p>
+     */
+    inline PlayerSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline PlayerSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline PlayerSession& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline PlayerSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline double GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline double GetTerminationTime() const{ return m_terminationTime; }
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline void SetTerminationTime(double value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithTerminationTime(double value) { SetTerminationTime(value); return *this;}
+
+    /**
+     * <p>Current status of the player session. Possible player session states include:
+     * <ul><li>RESERVED: The player session request has been received, but the player
+     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
+     * The player has been validated by the game server and is currently
+     * connected.</li><li>COMPLETED: The player connection has been
+     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
+     * did not connect and/or was not validated within the time-out limit (60
+     * seconds).</li></ul></p>
+     */
+    inline const PlayerSessionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the player session. Possible player session states include:
+     * <ul><li>RESERVED: The player session request has been received, but the player
+     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
+     * The player has been validated by the game server and is currently
+     * connected.</li><li>COMPLETED: The player connection has been
+     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
+     * did not connect and/or was not validated within the time-out limit (60
+     * seconds).</li></ul></p>
+     */
+    inline void SetStatus(const PlayerSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Current status of the player session. Possible player session states include:
+     * <ul><li>RESERVED: The player session request has been received, but the player
+     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
+     * The player has been validated by the game server and is currently
+     * connected.</li><li>COMPLETED: The player connection has been
+     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
+     * did not connect and/or was not validated within the time-out limit (60
+     * seconds).</li></ul></p>
+     */
+    inline void SetStatus(PlayerSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Current status of the player session. Possible player session states include:
+     * <ul><li>RESERVED: The player session request has been received, but the player
+     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
+     * The player has been validated by the game server and is currently
+     * connected.</li><li>COMPLETED: The player connection has been
+     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
+     * did not connect and/or was not validated within the time-out limit (60
+     * seconds).</li></ul></p>
+     */
+    inline PlayerSession& WithStatus(const PlayerSessionStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Current status of the player session. Possible player session states include:
+     * <ul><li>RESERVED: The player session request has been received, but the player
+     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
+     * The player has been validated by the game server and is currently
+     * connected.</li><li>COMPLETED: The player connection has been
+     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
+     * did not connect and/or was not validated within the time-out limit (60
+     * seconds).</li></ul></p>
+     */
+    inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline PlayerSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p>Game session IP address. All player sessions reference the game session
+     * location. </p>
+     */
+    inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+  private:
+    Aws::String m_playerSessionId;
+    bool m_playerSessionIdHasBeenSet;
+    Aws::String m_playerId;
+    bool m_playerIdHasBeenSet;
+    Aws::String m_gameSessionId;
+    bool m_gameSessionIdHasBeenSet;
+    Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet;
+    double m_creationTime;
+    bool m_creationTimeHasBeenSet;
+    double m_terminationTime;
+    bool m_terminationTimeHasBeenSet;
+    PlayerSessionStatus m_status;
+    bool m_statusHasBeenSet;
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

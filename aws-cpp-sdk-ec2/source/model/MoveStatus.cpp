@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MoveStatusMapper
 {
+
+
 MoveStatus GetMoveStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == movingToVpc_HASH)
   {
-    return MoveStatus::movingToVpc;
+     return MoveStatus::movingToVpc;
   }
   else if (hashCode == restoringToClassic_HASH)
   {
-    return MoveStatus::restoringToClassic;
+     return MoveStatus::restoringToClassic;
   }
-
   return MoveStatus::NOT_SET;
 }
 
-Aws::String GetNameForMoveStatus(MoveStatus value)
+Aws::String GetNameForMoveStatus(MoveStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MoveStatus::movingToVpc:
     return "movingToVpc";

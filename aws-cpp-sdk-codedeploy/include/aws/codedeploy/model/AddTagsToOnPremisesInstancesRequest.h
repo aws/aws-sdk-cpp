@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an adds tags to on-premises instance operation.</p>
+   * <p>Represents the input of and adds tags to on-premises instance operation.</p>
    */
   class AWS_CODEDEPLOY_API AddTagsToOnPremisesInstancesRequest : public CodeDeployRequest
   {

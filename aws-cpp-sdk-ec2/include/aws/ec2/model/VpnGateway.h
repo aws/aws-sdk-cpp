@@ -135,37 +135,44 @@ namespace Model
     inline VpnGateway& WithType(GatewayType&& value) { SetType(value); return *this;}
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline VpnGateway& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline VpnGateway& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone where the virtual private gateway was created.</p>
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned. </p>
      */
     inline VpnGateway& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

@@ -47,16 +47,16 @@ void UploadPartRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_partNumberHasBeenSet)
     {
-     ss << m_partNumber;
-     uri.AddQueryStringParameter("partNumber", ss.str());
-     ss.str("");
+      ss << m_partNumber;
+      uri.AddQueryStringParameter("partNumber", ss.str());
+      ss.str("");
     }
 
     if(m_uploadIdHasBeenSet)
     {
-     ss << m_uploadId;
-     uri.AddQueryStringParameter("uploadId", ss.str());
-     ss.str("");
+      ss << m_uploadId;
+      uri.AddQueryStringParameter("uploadId", ss.str());
+      ss.str("");
     }
 
 }

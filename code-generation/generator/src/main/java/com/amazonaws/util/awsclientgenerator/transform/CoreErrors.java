@@ -26,6 +26,7 @@ public class CoreErrors
         VARIANTS.add("IncompleteSignature");
         VARIANTS.add("IncompleteSignatureException");
         VARIANTS.add("InternalFailure");
+        VARIANTS.add("InternalFailureException");
         VARIANTS.add("InvalidAction");
         VARIANTS.add("InvalidActionException");
         VARIANTS.add("InvalidClientTokenId");

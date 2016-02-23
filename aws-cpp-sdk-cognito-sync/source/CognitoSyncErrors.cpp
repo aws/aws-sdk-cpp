@@ -28,9 +28,9 @@ static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConf
 static const int LAMBDA_THROTTLED_HASH = HashingUtils::HashString("LambdaThrottled");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedError");
 static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStreamed");
+static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 
 namespace Aws
@@ -76,10 +76,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::CONCURRENT_MODIFICATION), false);
   }
-  else if (hashCode == INTERNAL_ERROR_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), false);
-  }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::NOT_AUTHORIZED), false);
@@ -87,6 +83,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ALREADY_STREAMED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::ALREADY_STREAMED), false);
+  }
+  else if (hashCode == INTERNAL_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoSyncErrors::INTERNAL_ERROR), true);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

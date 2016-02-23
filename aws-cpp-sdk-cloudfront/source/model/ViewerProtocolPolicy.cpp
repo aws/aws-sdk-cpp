@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ViewerProtocolPolicyMapper
 {
+
+
 ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == allow_all_HASH)
   {
-    return ViewerProtocolPolicy::allow_all;
+     return ViewerProtocolPolicy::allow_all;
   }
   else if (hashCode == https_only_HASH)
   {
-    return ViewerProtocolPolicy::https_only;
+     return ViewerProtocolPolicy::https_only;
   }
   else if (hashCode == redirect_to_https_HASH)
   {
-    return ViewerProtocolPolicy::redirect_to_https;
+     return ViewerProtocolPolicy::redirect_to_https;
   }
-
   return ViewerProtocolPolicy::NOT_SET;
 }
 
-Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy value)
+Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ViewerProtocolPolicy::allow_all:
     return "allow-all";

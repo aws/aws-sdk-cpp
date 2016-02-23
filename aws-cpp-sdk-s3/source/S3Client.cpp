@@ -42,7 +42,7 @@
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/GetBucketAclRequest.h>
 #include <aws/s3/model/GetBucketCorsRequest.h>
-#include <aws/s3/model/GetBucketLifecycleRequest.h>
+#include <aws/s3/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/GetBucketLoggingRequest.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
@@ -63,7 +63,7 @@
 #include <aws/s3/model/ListPartsRequest.h>
 #include <aws/s3/model/PutBucketAclRequest.h>
 #include <aws/s3/model/PutBucketCorsRequest.h>
-#include <aws/s3/model/PutBucketLifecycleRequest.h>
+#include <aws/s3/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/PutBucketLoggingRequest.h>
 #include <aws/s3/model/PutBucketNotificationConfigurationRequest.h>
 #include <aws/s3/model/PutBucketPolicyRequest.h>
@@ -657,7 +657,7 @@ void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request, con
   handler(this, request, GetBucketCors(request), context);
 }
 
-GetBucketLifecycleOutcome S3Client::GetBucketLifecycle(const GetBucketLifecycleRequest& request) const
+GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -666,27 +666,27 @@ GetBucketLifecycleOutcome S3Client::GetBucketLifecycle(const GetBucketLifecycleR
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
-    return GetBucketLifecycleOutcome(GetBucketLifecycleResult(outcome.GetResult()));
+    return GetBucketLifecycleConfigurationOutcome(GetBucketLifecycleConfigurationResult(outcome.GetResult()));
   }
   else
   {
-    return GetBucketLifecycleOutcome(outcome.GetError());
+    return GetBucketLifecycleConfigurationOutcome(outcome.GetError());
   }
 }
 
-GetBucketLifecycleOutcomeCallable S3Client::GetBucketLifecycleCallable(const GetBucketLifecycleRequest& request) const
+GetBucketLifecycleConfigurationOutcomeCallable S3Client::GetBucketLifecycleConfigurationCallable(const GetBucketLifecycleConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketLifecycle, this, request);
+  return std::async(std::launch::async, &S3Client::GetBucketLifecycleConfiguration, this, request);
 }
 
-void S3Client::GetBucketLifecycleAsync(const GetBucketLifecycleRequest& request, const GetBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3Client::GetBucketLifecycleConfigurationAsync(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketLifecycleAsyncHelper, this, request, handler, context);
+  m_executor->Submit(&S3Client::GetBucketLifecycleConfigurationAsyncHelper, this, request, handler, context);
 }
 
-void S3Client::GetBucketLifecycleAsyncHelper(const GetBucketLifecycleRequest& request, const GetBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3Client::GetBucketLifecycleConfigurationAsyncHelper(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetBucketLifecycle(request), context);
+  handler(this, request, GetBucketLifecycleConfiguration(request), context);
 }
 
 GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequest& request) const
@@ -1364,7 +1364,7 @@ void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request, con
   handler(this, request, PutBucketCors(request), context);
 }
 
-PutBucketLifecycleOutcome S3Client::PutBucketLifecycle(const PutBucketLifecycleRequest& request) const
+PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
@@ -1373,27 +1373,27 @@ PutBucketLifecycleOutcome S3Client::PutBucketLifecycle(const PutBucketLifecycleR
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
-    return PutBucketLifecycleOutcome(NoResult());
+    return PutBucketLifecycleConfigurationOutcome(NoResult());
   }
   else
   {
-    return PutBucketLifecycleOutcome(outcome.GetError());
+    return PutBucketLifecycleConfigurationOutcome(outcome.GetError());
   }
 }
 
-PutBucketLifecycleOutcomeCallable S3Client::PutBucketLifecycleCallable(const PutBucketLifecycleRequest& request) const
+PutBucketLifecycleConfigurationOutcomeCallable S3Client::PutBucketLifecycleConfigurationCallable(const PutBucketLifecycleConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketLifecycle, this, request);
+  return std::async(std::launch::async, &S3Client::PutBucketLifecycleConfiguration, this, request);
 }
 
-void S3Client::PutBucketLifecycleAsync(const PutBucketLifecycleRequest& request, const PutBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3Client::PutBucketLifecycleConfigurationAsync(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketLifecycleAsyncHelper, this, request, handler, context);
+  m_executor->Submit(&S3Client::PutBucketLifecycleConfigurationAsyncHelper, this, request, handler, context);
 }
 
-void S3Client::PutBucketLifecycleAsyncHelper(const PutBucketLifecycleRequest& request, const PutBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void S3Client::PutBucketLifecycleConfigurationAsyncHelper(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, PutBucketLifecycle(request), context);
+  handler(this, request, PutBucketLifecycleConfiguration(request), context);
 }
 
 PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest& request) const

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ShutdownBehaviorMapper
 {
+
+
 ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == stop_HASH)
   {
-    return ShutdownBehavior::stop;
+     return ShutdownBehavior::stop;
   }
   else if (hashCode == terminate_HASH)
   {
-    return ShutdownBehavior::terminate;
+     return ShutdownBehavior::terminate;
   }
-
   return ShutdownBehavior::NOT_SET;
 }
 
-Aws::String GetNameForShutdownBehavior(ShutdownBehavior value)
+Aws::String GetNameForShutdownBehavior(ShutdownBehavior enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ShutdownBehavior::stop:
     return "stop";

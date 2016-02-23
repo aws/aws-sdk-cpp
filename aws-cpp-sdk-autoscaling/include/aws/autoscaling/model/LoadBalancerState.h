@@ -80,86 +80,93 @@ namespace Model
     inline LoadBalancerState& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline LoadBalancerState& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline LoadBalancerState& WithState(Aws::String&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the load balancer.</p> <ul> <li><p><code>Adding</code> - The
-     * instances in the group are being registered with the load balancer.</p></li>
-     * <li><p><code>Added</code> - All instances in the group are registered with the
-     * load balancer.</p></li> <li><p><code>InService</code> - At least one instance in
-     * the group passed an ELB health check.</p></li> <li><p><code>Removing</code> -
-     * The instances are being deregistered from the load balancer. If connection
-     * draining is enabled, Elastic Load Balancing waits for in-flight requests to
-     * complete before deregistering the instances.</p></li> </ul>
+     * <p>One of the following load balancer states:</p> <ul>
+     * <li><p><code>Adding</code> - The instances in the group are being registered
+     * with the load balancer.</p></li> <li><p><code>Added</code> - All instances in
+     * the group are registered with the load balancer.</p></li>
+     * <li><p><code>InService</code> - At least one instance in the group passed an ELB
+     * health check.</p></li> <li><p><code>Removing</code> - The instances are being
+     * deregistered from the load balancer. If connection draining is enabled, Elastic
+     * Load Balancing waits for in-flight requests to complete before deregistering the
+     * instances.</p></li> </ul>
      */
     inline LoadBalancerState& WithState(const char* value) { SetState(value); return *this;}
 

@@ -27,21 +27,21 @@ namespace Model
 {
 namespace StatusNameMapper
 {
+
+
 StatusName GetStatusNameForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == reachability_HASH)
   {
-    return StatusName::reachability;
+     return StatusName::reachability;
   }
-
   return StatusName::NOT_SET;
 }
 
-Aws::String GetNameForStatusName(StatusName value)
+Aws::String GetNameForStatusName(StatusName enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case StatusName::reachability:
     return "reachability";

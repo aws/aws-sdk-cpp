@@ -259,7 +259,6 @@ else()
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-directconnect")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ds")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dynamodb")
-	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dynamodbstreams")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ec2")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ecs")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ecr")
@@ -279,7 +278,6 @@ else()
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-importexport")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-inspector")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iot")
-	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-iot-data")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-identity-management")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-kinesis")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-kms")
@@ -741,15 +739,6 @@ if(REGENERATE_CLIENTS)
         )
     endif()
 
-	#dynamodbstreams
-    LIST(FIND BUILD_ONLY "aws-cpp-sdk-dynamodbstreams" OUTPUT_VAR)
-    if(OUTPUT_VAR GREATER -1)
-        execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dynamodbstreams --apiVersion 2012-08-10 --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        )
-    endif()
-
 	#ecr
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-ecr" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
@@ -809,15 +798,6 @@ if(REGENERATE_CLIENTS)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
                 COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName iot --apiVersion 2015-05-28 --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        )
-    endif()
-
-	#iot-data
-    LIST(FIND BUILD_ONLY "aws-cpp-sdk-iot-data" OUTPUT_VAR)
-    if(OUTPUT_VAR GREATER -1)
-        execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName iot-data --apiVersion 2015-05-28 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()

@@ -37,50 +37,50 @@ namespace Model
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline ListServicesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline ListServicesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services you want to list. If you do not specify a cluster, the default
-     * cluster is assumed..</p>
+     * the services to list. If you do not specify a cluster, the default cluster is
+     * assumed..</p>
      */
     inline ListServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
@@ -154,8 +154,8 @@ namespace Model
      * single page along with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>ListServices</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListServices</code> returns up to 100 results and a <code>nextToken</code>
+     * value. This value can be between 1 and 10. If this parameter is not used, then
+     * <code>ListServices</code> returns up to 10 results and a <code>nextToken</code>
      * value if applicable.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
@@ -167,8 +167,8 @@ namespace Model
      * single page along with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>ListServices</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListServices</code> returns up to 100 results and a <code>nextToken</code>
+     * value. This value can be between 1 and 10. If this parameter is not used, then
+     * <code>ListServices</code> returns up to 10 results and a <code>nextToken</code>
      * value if applicable.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -180,8 +180,8 @@ namespace Model
      * single page along with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another
      * <code>ListServices</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListServices</code> returns up to 100 results and a <code>nextToken</code>
+     * value. This value can be between 1 and 10. If this parameter is not used, then
+     * <code>ListServices</code> returns up to 10 results and a <code>nextToken</code>
      * value if applicable.</p>
      */
     inline ListServicesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}

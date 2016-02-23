@@ -26,14 +26,18 @@ using namespace Aws::Utils;
 Placement::Placement() : 
     m_availabilityZoneHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_tenancyHasBeenSet(false)
+    m_tenancyHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_affinityHasBeenSet(false)
 {
 }
 
 Placement::Placement(const XmlNode& xmlNode) : 
     m_availabilityZoneHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_tenancyHasBeenSet(false)
+    m_tenancyHasBeenSet(false),
+    m_hostIdHasBeenSet(false),
+    m_affinityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,6 +66,18 @@ Placement& Placement::operator =(const XmlNode& xmlNode)
       m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(tenancyNode.GetText().c_str()).c_str());
       m_tenancyHasBeenSet = true;
     }
+    XmlNode hostIdNode = resultNode.FirstChild("hostId");
+    if(!hostIdNode.IsNull())
+    {
+      m_hostId = StringUtils::Trim(hostIdNode.GetText().c_str());
+      m_hostIdHasBeenSet = true;
+    }
+    XmlNode affinityNode = resultNode.FirstChild("affinity");
+    if(!affinityNode.IsNull())
+    {
+      m_affinity = StringUtils::Trim(affinityNode.GetText().c_str());
+      m_affinityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +97,14 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
   }
+  if(m_hostIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
+  }
+  if(m_affinityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Affinity=" << StringUtils::URLEncode(m_affinity.c_str()) << "&";
+  }
 }
 
 void Placement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -96,5 +120,13 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_tenancyHasBeenSet)
   {
       oStream << location << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
+  }
+  if(m_hostIdHasBeenSet)
+  {
+      oStream << location << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
+  }
+  if(m_affinityHasBeenSet)
+  {
+      oStream << location << ".Affinity=" << StringUtils::URLEncode(m_affinity.c_str()) << "&";
   }
 }

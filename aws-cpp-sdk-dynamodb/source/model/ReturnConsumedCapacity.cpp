@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ReturnConsumedCapacityMapper
 {
+
+
 ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INDEXES_HASH)
   {
-    return ReturnConsumedCapacity::INDEXES;
+     return ReturnConsumedCapacity::INDEXES;
   }
   else if (hashCode == TOTAL_HASH)
   {
-    return ReturnConsumedCapacity::TOTAL;
+     return ReturnConsumedCapacity::TOTAL;
   }
   else if (hashCode == NONE_HASH)
   {
-    return ReturnConsumedCapacity::NONE;
+     return ReturnConsumedCapacity::NONE;
   }
-
   return ReturnConsumedCapacity::NOT_SET;
 }
 
-Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity value)
+Aws::String GetNameForReturnConsumedCapacity(ReturnConsumedCapacity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ReturnConsumedCapacity::INDEXES:
     return "INDEXES";

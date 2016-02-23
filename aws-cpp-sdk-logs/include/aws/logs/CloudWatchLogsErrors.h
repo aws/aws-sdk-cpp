@@ -49,6 +49,7 @@ enum class AWS_CLOUDWATCHLOGS_API CloudWatchLogsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DATA_ALREADY_ACCEPTED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_OPERATION,
   INVALID_PARAMETER,
   INVALID_SEQUENCE_TOKEN,
   LIMIT_EXCEEDED,

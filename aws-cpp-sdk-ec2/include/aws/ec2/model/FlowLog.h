@@ -270,63 +270,77 @@ namespace Model
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline const Aws::String& GetDeliverLogsErrorMessage() const{ return m_deliverLogsErrorMessage; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline void SetDeliverLogsErrorMessage(const Aws::String& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline void SetDeliverLogsErrorMessage(const char* value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage.assign(value); }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(const Aws::String& value) { SetDeliverLogsErrorMessage(value); return *this;}
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(value); return *this;}
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
      * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces. <code>Access error</code> indicates that the IAM role
-     * associated with the flow log does not have sufficient permissions to publish to
-     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     * network interfaces, or that you've reached the limit on the number of CloudWatch
+     * Logs log groups that you can create. <code>Access error</code> indicates that
+     * the IAM role associated with the flow log does not have sufficient permissions
+     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(const char* value) { SetDeliverLogsErrorMessage(value); return *this;}
 

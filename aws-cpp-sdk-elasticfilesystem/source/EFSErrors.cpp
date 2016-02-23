@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 static const int IP_ADDRESS_IN_USE_HASH = HashingUtils::HashString("IpAddressInUse");
 static const int FILE_SYSTEM_IN_USE_HASH = HashingUtils::HashString("FileSystemInUse");
 static const int NO_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("NoFreeAddressesInSubnet");
-static const int MOUNT_TARGET_NOT_FOUND_HASH = HashingUtils::HashString("MountTargetNotFound");
 static const int FILE_SYSTEM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FileSystemLimitExceeded");
 static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
 static const int INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE_HASH = HashingUtils::HashString("IncorrectFileSystemLifeCycleState");
@@ -31,6 +30,7 @@ static const int SECURITY_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("Secur
 static const int SECURITY_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupLimitExceeded");
 static const int MOUNT_TARGET_CONFLICT_HASH = HashingUtils::HashString("MountTargetConflict");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
+static const int MOUNT_TARGET_NOT_FOUND_HASH = HashingUtils::HashString("MountTargetNotFound");
 static const int INCORRECT_MOUNT_TARGET_STATE_HASH = HashingUtils::HashString("IncorrectMountTargetState");
 static const int UNSUPPORTED_AVAILABILITY_ZONE_HASH = HashingUtils::HashString("UnsupportedAvailabilityZone");
 static const int FILE_SYSTEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("FileSystemAlreadyExists");
@@ -61,10 +61,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::NO_FREE_ADDRESSES_IN_SUBNET), false);
   }
-  else if (hashCode == MOUNT_TARGET_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_NOT_FOUND), false);
-  }
   else if (hashCode == FILE_SYSTEM_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::FILE_SYSTEM_LIMIT_EXCEEDED), false);
@@ -92,6 +88,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BAD_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == MOUNT_TARGET_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EFSErrors::MOUNT_TARGET_NOT_FOUND), false);
   }
   else if (hashCode == INCORRECT_MOUNT_TARGET_STATE_HASH)
   {

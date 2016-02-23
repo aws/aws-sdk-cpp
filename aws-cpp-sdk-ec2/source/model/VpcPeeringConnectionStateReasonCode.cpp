@@ -35,53 +35,53 @@ namespace Model
 {
 namespace VpcPeeringConnectionStateReasonCodeMapper
 {
+
+
 VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == initiating_request_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::initiating_request;
+     return VpcPeeringConnectionStateReasonCode::initiating_request;
   }
   else if (hashCode == pending_acceptance_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::pending_acceptance;
+     return VpcPeeringConnectionStateReasonCode::pending_acceptance;
   }
   else if (hashCode == active_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::active;
+     return VpcPeeringConnectionStateReasonCode::active;
   }
   else if (hashCode == deleted_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::deleted;
+     return VpcPeeringConnectionStateReasonCode::deleted;
   }
   else if (hashCode == rejected_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::rejected;
+     return VpcPeeringConnectionStateReasonCode::rejected;
   }
   else if (hashCode == failed_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::failed;
+     return VpcPeeringConnectionStateReasonCode::failed;
   }
   else if (hashCode == expired_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::expired;
+     return VpcPeeringConnectionStateReasonCode::expired;
   }
   else if (hashCode == provisioning_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::provisioning;
+     return VpcPeeringConnectionStateReasonCode::provisioning;
   }
   else if (hashCode == deleting_HASH)
   {
-    return VpcPeeringConnectionStateReasonCode::deleting;
+     return VpcPeeringConnectionStateReasonCode::deleting;
   }
-
   return VpcPeeringConnectionStateReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode value)
+Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpcPeeringConnectionStateReasonCode::initiating_request:
     return "initiating-request";

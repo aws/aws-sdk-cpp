@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ActivityTaskTimeoutTypeMapper
 {
+
+
 ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == START_TO_CLOSE_HASH)
   {
-    return ActivityTaskTimeoutType::START_TO_CLOSE;
+     return ActivityTaskTimeoutType::START_TO_CLOSE;
   }
   else if (hashCode == SCHEDULE_TO_START_HASH)
   {
-    return ActivityTaskTimeoutType::SCHEDULE_TO_START;
+     return ActivityTaskTimeoutType::SCHEDULE_TO_START;
   }
   else if (hashCode == SCHEDULE_TO_CLOSE_HASH)
   {
-    return ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE;
+     return ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE;
   }
   else if (hashCode == HEARTBEAT_HASH)
   {
-    return ActivityTaskTimeoutType::HEARTBEAT;
+     return ActivityTaskTimeoutType::HEARTBEAT;
   }
-
   return ActivityTaskTimeoutType::NOT_SET;
 }
 
-Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType value)
+Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActivityTaskTimeoutType::START_TO_CLOSE:
     return "START_TO_CLOSE";

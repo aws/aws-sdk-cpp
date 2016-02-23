@@ -29,7 +29,7 @@
 #include <aws/s3/model/DeleteObjectsResult.h>
 #include <aws/s3/model/GetBucketAclResult.h>
 #include <aws/s3/model/GetBucketCorsResult.h>
-#include <aws/s3/model/GetBucketLifecycleResult.h>
+#include <aws/s3/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3/model/GetBucketLocationResult.h>
 #include <aws/s3/model/GetBucketLoggingResult.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationResult.h>
@@ -114,7 +114,7 @@ namespace Aws
         class DeleteObjectsRequest;
         class GetBucketAclRequest;
         class GetBucketCorsRequest;
-        class GetBucketLifecycleRequest;
+        class GetBucketLifecycleConfigurationRequest;
         class GetBucketLocationRequest;
         class GetBucketLoggingRequest;
         class GetBucketNotificationConfigurationRequest;
@@ -135,7 +135,7 @@ namespace Aws
         class ListPartsRequest;
         class PutBucketAclRequest;
         class PutBucketCorsRequest;
-        class PutBucketLifecycleRequest;
+        class PutBucketLifecycleConfigurationRequest;
         class PutBucketLoggingRequest;
         class PutBucketNotificationConfigurationRequest;
         class PutBucketPolicyRequest;
@@ -166,7 +166,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DeleteObjectsResult, Aws::Client::AWSError<S3Errors>> DeleteObjectsOutcome;
         typedef Aws::Utils::Outcome<GetBucketAclResult, Aws::Client::AWSError<S3Errors>> GetBucketAclOutcome;
         typedef Aws::Utils::Outcome<GetBucketCorsResult, Aws::Client::AWSError<S3Errors>> GetBucketCorsOutcome;
-        typedef Aws::Utils::Outcome<GetBucketLifecycleResult, Aws::Client::AWSError<S3Errors>> GetBucketLifecycleOutcome;
+        typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketLocationResult, Aws::Client::AWSError<S3Errors>> GetBucketLocationOutcome;
         typedef Aws::Utils::Outcome<GetBucketLoggingResult, Aws::Client::AWSError<S3Errors>> GetBucketLoggingOutcome;
         typedef Aws::Utils::Outcome<GetBucketNotificationConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketNotificationConfigurationOutcome;
@@ -188,7 +188,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<ListPartsResult, Aws::Client::AWSError<S3Errors>> ListPartsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketAclOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketCorsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketLifecycleOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketLoggingOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketNotificationConfigurationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketPolicyOutcome;
@@ -219,7 +219,7 @@ namespace Aws
         typedef std::future<DeleteObjectsOutcome> DeleteObjectsOutcomeCallable;
         typedef std::future<GetBucketAclOutcome> GetBucketAclOutcomeCallable;
         typedef std::future<GetBucketCorsOutcome> GetBucketCorsOutcomeCallable;
-        typedef std::future<GetBucketLifecycleOutcome> GetBucketLifecycleOutcomeCallable;
+        typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<GetBucketLocationOutcome> GetBucketLocationOutcomeCallable;
         typedef std::future<GetBucketLoggingOutcome> GetBucketLoggingOutcomeCallable;
         typedef std::future<GetBucketNotificationConfigurationOutcome> GetBucketNotificationConfigurationOutcomeCallable;
@@ -241,7 +241,7 @@ namespace Aws
         typedef std::future<ListPartsOutcome> ListPartsOutcomeCallable;
         typedef std::future<PutBucketAclOutcome> PutBucketAclOutcomeCallable;
         typedef std::future<PutBucketCorsOutcome> PutBucketCorsOutcomeCallable;
-        typedef std::future<PutBucketLifecycleOutcome> PutBucketLifecycleOutcomeCallable;
+        typedef std::future<PutBucketLifecycleConfigurationOutcome> PutBucketLifecycleConfigurationOutcomeCallable;
         typedef std::future<PutBucketLoggingOutcome> PutBucketLoggingOutcomeCallable;
         typedef std::future<PutBucketNotificationConfigurationOutcome> PutBucketNotificationConfigurationOutcomeCallable;
         typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
@@ -275,7 +275,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::DeleteObjectsRequest&, const Model::DeleteObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketAclRequest&, const Model::GetBucketAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketAclResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketCorsRequest&, const Model::GetBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketCorsResponseReceivedHandler;
-    typedef std::function<void(const S3Client*, const Model::GetBucketLifecycleRequest&, const Model::GetBucketLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketLocationRequest&, const Model::GetBucketLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLocationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketLoggingRequest&, const Model::GetBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLoggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketNotificationConfigurationResponseReceivedHandler;
@@ -297,7 +297,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::ListPartsRequest&, const Model::ListPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketAclRequest&, const Model::PutBucketAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketAclResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketCorsRequest&, const Model::PutBucketCorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketCorsResponseReceivedHandler;
-    typedef std::function<void(const S3Client*, const Model::PutBucketLifecycleRequest&, const Model::PutBucketLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutBucketLifecycleConfigurationRequest&, const Model::PutBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketLoggingRequest&, const Model::PutBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLoggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketNotificationConfigurationRequest&, const Model::PutBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
@@ -343,14 +343,14 @@ namespace Aws
         virtual ~S3Client();
 
         /**
-         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p>
          */
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
         /**
-         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p>
          *
@@ -359,7 +359,7 @@ namespace Aws
         virtual Model::AbortMultipartUploadOutcomeCallable AbortMultipartUploadCallable(const Model::AbortMultipartUploadRequest& request) const;
 
         /**
-         * <p>Aborts a multipart upload.</p> <p>To verify that all parts have been removed,
+         * <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed,
          * so you don't get charged for the part storage, you should call the List Parts
          * operation and ensure the parts list is empty.</p>
          *
@@ -425,7 +425,7 @@ namespace Aws
         virtual void CreateBucketAsync(const Model::CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -435,7 +435,7 @@ namespace Aws
         virtual Model::CreateMultipartUploadOutcome CreateMultipartUpload(const Model::CreateMultipartUploadRequest& request) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -447,7 +447,7 @@ namespace Aws
         virtual Model::CreateMultipartUploadOutcomeCallable CreateMultipartUploadCallable(const Model::CreateMultipartUploadRequest& request) const;
 
         /**
-         * <p>Initiates a multipart upload and returns an upload ID.</p> <p><b>Note:</b>
+         * <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b>
          * After you initiate multipart upload and upload one or more parts, you must
          * either complete or abort multipart upload in order to stop getting charged for
          * storage of the uploaded parts. Only after you either complete or abort multipart
@@ -538,19 +538,19 @@ namespace Aws
         virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * Deletes the replication configuration for the given Amazon S3 bucket.
          */
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * 
+         * Deletes the replication configuration for the given Amazon S3 bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * 
+         * Deletes the replication configuration for the given Amazon S3 bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -682,21 +682,21 @@ namespace Aws
         /**
          * Returns the lifecycle configuration information set on the bucket.
          */
-        virtual Model::GetBucketLifecycleOutcome GetBucketLifecycle(const Model::GetBucketLifecycleRequest& request) const;
+        virtual Model::GetBucketLifecycleConfigurationOutcome GetBucketLifecycleConfiguration(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
         /**
          * Returns the lifecycle configuration information set on the bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetBucketLifecycleOutcomeCallable GetBucketLifecycleCallable(const Model::GetBucketLifecycleRequest& request) const;
+        virtual Model::GetBucketLifecycleConfigurationOutcomeCallable GetBucketLifecycleConfigurationCallable(const Model::GetBucketLifecycleConfigurationRequest& request) const;
 
         /**
          * Returns the lifecycle configuration information set on the bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetBucketLifecycleAsync(const Model::GetBucketLifecycleRequest& request, const GetBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetBucketLifecycleConfigurationAsync(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Returns the region the bucket resides in.
@@ -778,19 +778,19 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * Retrieves the replication configuration for the given Amazon S3 bucket.
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * 
+         * Retrieves the replication configuration for the given Amazon S3 bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * 
+         * Retrieves the replication configuration for the given Amazon S3 bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1118,7 +1118,7 @@ namespace Aws
          * Sets lifecycle configuration for your bucket. If a lifecycle configuration
          * exists, it replaces it.
          */
-        virtual Model::PutBucketLifecycleOutcome PutBucketLifecycle(const Model::PutBucketLifecycleRequest& request) const;
+        virtual Model::PutBucketLifecycleConfigurationOutcome PutBucketLifecycleConfiguration(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
         /**
          * Sets lifecycle configuration for your bucket. If a lifecycle configuration
@@ -1126,7 +1126,7 @@ namespace Aws
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::PutBucketLifecycleOutcomeCallable PutBucketLifecycleCallable(const Model::PutBucketLifecycleRequest& request) const;
+        virtual Model::PutBucketLifecycleConfigurationOutcomeCallable PutBucketLifecycleConfigurationCallable(const Model::PutBucketLifecycleConfigurationRequest& request) const;
 
         /**
          * Sets lifecycle configuration for your bucket. If a lifecycle configuration
@@ -1134,7 +1134,7 @@ namespace Aws
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void PutBucketLifecycleAsync(const Model::PutBucketLifecycleRequest& request, const PutBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void PutBucketLifecycleConfigurationAsync(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Set the logging parameters for a bucket and to specify permissions for who can
@@ -1379,7 +1379,7 @@ namespace Aws
         virtual void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -1388,7 +1388,7 @@ namespace Aws
         virtual Model::UploadPartOutcome UploadPart(const Model::UploadPartRequest& request) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -1399,7 +1399,7 @@ namespace Aws
         virtual Model::UploadPartOutcomeCallable UploadPartCallable(const Model::UploadPartRequest& request) const;
 
         /**
-         * <p>Uploads a part in a multipart upload.</p> <p><b>Note:</b> After you initiate
+         * <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
          * parts. Only after you either complete or abort multipart upload, Amazon S3 frees
@@ -1451,7 +1451,7 @@ namespace Aws
         void DeleteObjectsAsyncHelper(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketAclAsyncHelper(const Model::GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketCorsAsyncHelper(const Model::GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBucketLifecycleAsyncHelper(const Model::GetBucketLifecycleRequest& request, const GetBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBucketLifecycleConfigurationAsyncHelper(const Model::GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketLocationAsyncHelper(const Model::GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketLoggingAsyncHelper(const Model::GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketNotificationConfigurationAsyncHelper(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1473,7 +1473,7 @@ namespace Aws
         void ListPartsAsyncHelper(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketAclAsyncHelper(const Model::PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketCorsAsyncHelper(const Model::PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutBucketLifecycleAsyncHelper(const Model::PutBucketLifecycleRequest& request, const PutBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBucketLifecycleConfigurationAsyncHelper(const Model::PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketLoggingAsyncHelper(const Model::PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketNotificationConfigurationAsyncHelper(const Model::PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketPolicyAsyncHelper(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

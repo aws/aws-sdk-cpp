@@ -106,7 +106,9 @@ namespace Model
      * value of <code>dedicated</code> means all instances launched into the VPC are
      * launched as dedicated tenancy instances regardless of the tenancy assigned to
      * the instance at launch. Dedicated tenancy instances run on single-tenant
-     * hardware.</p> <p>Default: <code>default</code></p>
+     * hardware.</p> <p><b>Important:</b> The <code>host</code> value cannot be used
+     * with this parameter. Use the <code>default</code> or <code>dedicated</code>
+     * values only.</p> <p>Default: <code>default</code></p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
 
@@ -116,7 +118,9 @@ namespace Model
      * value of <code>dedicated</code> means all instances launched into the VPC are
      * launched as dedicated tenancy instances regardless of the tenancy assigned to
      * the instance at launch. Dedicated tenancy instances run on single-tenant
-     * hardware.</p> <p>Default: <code>default</code></p>
+     * hardware.</p> <p><b>Important:</b> The <code>host</code> value cannot be used
+     * with this parameter. Use the <code>default</code> or <code>dedicated</code>
+     * values only.</p> <p>Default: <code>default</code></p>
      */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
@@ -126,7 +130,9 @@ namespace Model
      * value of <code>dedicated</code> means all instances launched into the VPC are
      * launched as dedicated tenancy instances regardless of the tenancy assigned to
      * the instance at launch. Dedicated tenancy instances run on single-tenant
-     * hardware.</p> <p>Default: <code>default</code></p>
+     * hardware.</p> <p><b>Important:</b> The <code>host</code> value cannot be used
+     * with this parameter. Use the <code>default</code> or <code>dedicated</code>
+     * values only.</p> <p>Default: <code>default</code></p>
      */
     inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
@@ -136,7 +142,9 @@ namespace Model
      * value of <code>dedicated</code> means all instances launched into the VPC are
      * launched as dedicated tenancy instances regardless of the tenancy assigned to
      * the instance at launch. Dedicated tenancy instances run on single-tenant
-     * hardware.</p> <p>Default: <code>default</code></p>
+     * hardware.</p> <p><b>Important:</b> The <code>host</code> value cannot be used
+     * with this parameter. Use the <code>default</code> or <code>dedicated</code>
+     * values only.</p> <p>Default: <code>default</code></p>
      */
     inline CreateVpcRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
 
@@ -146,7 +154,9 @@ namespace Model
      * value of <code>dedicated</code> means all instances launched into the VPC are
      * launched as dedicated tenancy instances regardless of the tenancy assigned to
      * the instance at launch. Dedicated tenancy instances run on single-tenant
-     * hardware.</p> <p>Default: <code>default</code></p>
+     * hardware.</p> <p><b>Important:</b> The <code>host</code> value cannot be used
+     * with this parameter. Use the <code>default</code> or <code>dedicated</code>
+     * values only.</p> <p>Default: <code>default</code></p>
      */
     inline CreateVpcRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(value); return *this;}
 

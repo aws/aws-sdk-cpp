@@ -81,44 +81,44 @@ namespace Model
     inline DescribeStackEventsResult& AddStackEvents(StackEvent&& value) { m_stackEvents.push_back(value); return *this; }
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline DescribeStackEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline DescribeStackEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>String that identifies the start of the next list of events, if there is
-     * one.</p>
+     * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
+     * events. If no additional page exists, this value is null.</p>
      */
     inline DescribeStackEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

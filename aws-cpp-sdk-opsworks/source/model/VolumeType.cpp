@@ -29,29 +29,29 @@ namespace Model
 {
 namespace VolumeTypeMapper
 {
+
+
 VolumeType GetVolumeTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == gp2_HASH)
   {
-    return VolumeType::gp2;
+     return VolumeType::gp2;
   }
   else if (hashCode == io1_HASH)
   {
-    return VolumeType::io1;
+     return VolumeType::io1;
   }
   else if (hashCode == standard_HASH)
   {
-    return VolumeType::standard;
+     return VolumeType::standard;
   }
-
   return VolumeType::NOT_SET;
 }
 
-Aws::String GetNameForVolumeType(VolumeType value)
+Aws::String GetNameForVolumeType(VolumeType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VolumeType::gp2:
     return "gp2";

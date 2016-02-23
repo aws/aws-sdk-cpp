@@ -1,0 +1,73 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/es/ElasticsearchService_EXPORTS.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace ElasticsearchService
+{
+namespace Model
+{
+
+  /**
+   * <p>Specifies the time, in UTC format, when the service takes a daily automated
+   * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
+   * hours.</p>
+   */
+  class AWS_ELASTICSEARCHSERVICE_API SnapshotOptions
+  {
+  public:
+    SnapshotOptions();
+    SnapshotOptions(const Aws::Utils::Json::JsonValue& jsonValue);
+    SnapshotOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>Specifies the time, in UTC format, when the service takes a daily automated
+     * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
+     * hours.</p>
+     */
+    inline long GetAutomatedSnapshotStartHour() const{ return m_automatedSnapshotStartHour; }
+
+    /**
+     * <p>Specifies the time, in UTC format, when the service takes a daily automated
+     * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
+     * hours.</p>
+     */
+    inline void SetAutomatedSnapshotStartHour(long value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
+
+    /**
+     * <p>Specifies the time, in UTC format, when the service takes a daily automated
+     * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
+     * hours.</p>
+     */
+    inline SnapshotOptions& WithAutomatedSnapshotStartHour(long value) { SetAutomatedSnapshotStartHour(value); return *this;}
+
+  private:
+    long m_automatedSnapshotStartHour;
+    bool m_automatedSnapshotStartHourHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

@@ -169,37 +169,44 @@ namespace Model
     inline Diagnostics& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline const Aws::String& GetLogTail() const{ return m_logTail; }
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline void SetLogTail(const Aws::String& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline void SetLogTail(Aws::String&& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline void SetLogTail(const char* value) { m_logTailHasBeenSet = true; m_logTail.assign(value); }
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(const Aws::String& value) { SetLogTail(value); return *this;}
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(Aws::String&& value) { SetLogTail(value); return *this;}
 
     /**
-     * <p>The last portion of the associated diagnostic log.</p>
+     * <p>The last portion of the associated diagnostic log.</p> <p>If available, AWS
+     * CodeDeploy returns up to the last 4 KB of the associated diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(const char* value) { SetLogTail(value); return *this;}
 

@@ -35,7 +35,7 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_RDS_API ListTagsForResourceResult
   {

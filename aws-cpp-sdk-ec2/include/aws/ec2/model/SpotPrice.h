@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the maximum hourly price (bid) for any Spot Instance launched to
+   * <p>Describes the maximum hourly price (bid) for any Spot instance launched to
    * fulfill the request.</p>
    */
   class AWS_EC2_API SpotPrice
@@ -98,37 +98,37 @@ namespace Model
     inline SpotPrice& WithProductDescription(RIProductDescription&& value) { SetProductDescription(value); return *this;}
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline SpotPrice& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline SpotPrice& WithSpotPrice(Aws::String&& value) { SetSpotPrice(value); return *this;}
 
     /**
-     * <p>The maximum price (bid) that you are willing to pay for a Spot Instance.</p>
+     * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
      */
     inline SpotPrice& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 

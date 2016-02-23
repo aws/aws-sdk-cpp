@@ -39,25 +39,39 @@ namespace Model
     CancelKeyDeletionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CancelKeyDeletionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline CancelKeyDeletionResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline CancelKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the master key for which deletion is canceled.</p>
+     */
     inline CancelKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:

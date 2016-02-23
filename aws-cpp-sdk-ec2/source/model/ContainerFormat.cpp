@@ -27,21 +27,21 @@ namespace Model
 {
 namespace ContainerFormatMapper
 {
+
+
 ContainerFormat GetContainerFormatForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ova_HASH)
   {
-    return ContainerFormat::ova;
+     return ContainerFormat::ova;
   }
-
   return ContainerFormat::NOT_SET;
 }
 
-Aws::String GetNameForContainerFormat(ContainerFormat value)
+Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ContainerFormat::ova:
     return "ova";

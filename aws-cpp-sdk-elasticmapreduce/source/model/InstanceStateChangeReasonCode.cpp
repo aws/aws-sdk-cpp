@@ -31,37 +31,37 @@ namespace Model
 {
 namespace InstanceStateChangeReasonCodeMapper
 {
+
+
 InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return InstanceStateChangeReasonCode::INTERNAL_ERROR;
+     return InstanceStateChangeReasonCode::INTERNAL_ERROR;
   }
   else if (hashCode == VALIDATION_ERROR_HASH)
   {
-    return InstanceStateChangeReasonCode::VALIDATION_ERROR;
+     return InstanceStateChangeReasonCode::VALIDATION_ERROR;
   }
   else if (hashCode == INSTANCE_FAILURE_HASH)
   {
-    return InstanceStateChangeReasonCode::INSTANCE_FAILURE;
+     return InstanceStateChangeReasonCode::INSTANCE_FAILURE;
   }
   else if (hashCode == BOOTSTRAP_FAILURE_HASH)
   {
-    return InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE;
+     return InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE;
   }
   else if (hashCode == CLUSTER_TERMINATED_HASH)
   {
-    return InstanceStateChangeReasonCode::CLUSTER_TERMINATED;
+     return InstanceStateChangeReasonCode::CLUSTER_TERMINATED;
   }
-
   return InstanceStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode value)
+Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case InstanceStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MarketTypeMapper
 {
+
+
 MarketType GetMarketTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ON_DEMAND_HASH)
   {
-    return MarketType::ON_DEMAND;
+     return MarketType::ON_DEMAND;
   }
   else if (hashCode == SPOT_HASH)
   {
-    return MarketType::SPOT;
+     return MarketType::SPOT;
   }
-
   return MarketType::NOT_SET;
 }
 
-Aws::String GetNameForMarketType(MarketType value)
+Aws::String GetNameForMarketType(MarketType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MarketType::ON_DEMAND:
     return "ON_DEMAND";

@@ -30,33 +30,33 @@ namespace Model
 {
 namespace SourceTypeMapper
 {
+
+
 SourceType GetSourceTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == cluster_HASH)
   {
-    return SourceType::cluster;
+     return SourceType::cluster;
   }
   else if (hashCode == cluster_parameter_group_HASH)
   {
-    return SourceType::cluster_parameter_group;
+     return SourceType::cluster_parameter_group;
   }
   else if (hashCode == cluster_security_group_HASH)
   {
-    return SourceType::cluster_security_group;
+     return SourceType::cluster_security_group;
   }
   else if (hashCode == cluster_snapshot_HASH)
   {
-    return SourceType::cluster_snapshot;
+     return SourceType::cluster_snapshot;
   }
-
   return SourceType::NOT_SET;
 }
 
-Aws::String GetNameForSourceType(SourceType value)
+Aws::String GetNameForSourceType(SourceType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case SourceType::cluster:
     return "cluster";

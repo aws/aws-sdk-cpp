@@ -29,29 +29,29 @@ namespace Model
 {
 namespace TaskStatusMapper
 {
+
+
 TaskStatus GetTaskStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == FINISHED_HASH)
   {
-    return TaskStatus::FINISHED;
+     return TaskStatus::FINISHED;
   }
   else if (hashCode == FAILED_HASH)
   {
-    return TaskStatus::FAILED;
+     return TaskStatus::FAILED;
   }
   else if (hashCode == FALSE_HASH)
   {
-    return TaskStatus::FALSE;
+     return TaskStatus::FALSE;
   }
-
   return TaskStatus::NOT_SET;
 }
 
-Aws::String GetNameForTaskStatus(TaskStatus value)
+Aws::String GetNameForTaskStatus(TaskStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TaskStatus::FINISHED:
     return "FINISHED";

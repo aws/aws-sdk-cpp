@@ -148,37 +148,51 @@ namespace Model
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy, in JSON format, to be attached to the key.</p>
+     * <p>The policy to attach to the key. This is required and delegates back to the
+     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
+     * bytes). </p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

@@ -38,113 +38,113 @@ namespace Model
 
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline const Aws::String& GetFamilyPrefix() const{ return m_familyPrefix; }
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline void SetFamilyPrefix(const Aws::String& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = value; }
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline void SetFamilyPrefix(Aws::String&& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = value; }
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline void SetFamilyPrefix(const char* value) { m_familyPrefixHasBeenSet = true; m_familyPrefix.assign(value); }
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline ListTaskDefinitionsRequest& WithFamilyPrefix(const Aws::String& value) { SetFamilyPrefix(value); return *this;}
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline ListTaskDefinitionsRequest& WithFamilyPrefix(Aws::String&& value) { SetFamilyPrefix(value); return *this;}
 
     /**
-     * <p>The full family name that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. Specifying a
-     * <code>familyPrefix</code> will limit the listed task definitions to task
-     * definition revisions that belong to that family.</p>
+     * <p>The full family name with which to filter the
+     * <code>ListTaskDefinitions</code> results. Specifying a <code>familyPrefix</code>
+     * limits the listed task definitions to task definition revisions that belong to
+     * that family.</p>
      */
     inline ListTaskDefinitionsRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
 
     /**
-     * <p>The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
-     * <code>ACTIVE</code> task definitions are listed. By setting this parameter to
-     * <code>INACTIVE</code>, you can view task definitions that are
-     * <code>INACTIVE</code> as long as an active task or service still references
-     * them. If you paginate the resulting output, be sure to keep the
-     * <code>status</code> value constant in each subsequent request.</p>
+     * <p>The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
+     * task definitions are listed. By setting this parameter to <code>INACTIVE</code>,
+     * you can view task definitions that are <code>INACTIVE</code> as long as an
+     * active task or service still references them. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.</p>
      */
     inline const TaskDefinitionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
-     * <code>ACTIVE</code> task definitions are listed. By setting this parameter to
-     * <code>INACTIVE</code>, you can view task definitions that are
-     * <code>INACTIVE</code> as long as an active task or service still references
-     * them. If you paginate the resulting output, be sure to keep the
-     * <code>status</code> value constant in each subsequent request.</p>
+     * <p>The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
+     * task definitions are listed. By setting this parameter to <code>INACTIVE</code>,
+     * you can view task definitions that are <code>INACTIVE</code> as long as an
+     * active task or service still references them. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.</p>
      */
     inline void SetStatus(const TaskDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
-     * <code>ACTIVE</code> task definitions are listed. By setting this parameter to
-     * <code>INACTIVE</code>, you can view task definitions that are
-     * <code>INACTIVE</code> as long as an active task or service still references
-     * them. If you paginate the resulting output, be sure to keep the
-     * <code>status</code> value constant in each subsequent request.</p>
+     * <p>The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
+     * task definitions are listed. By setting this parameter to <code>INACTIVE</code>,
+     * you can view task definitions that are <code>INACTIVE</code> as long as an
+     * active task or service still references them. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.</p>
      */
     inline void SetStatus(TaskDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
-     * <code>ACTIVE</code> task definitions are listed. By setting this parameter to
-     * <code>INACTIVE</code>, you can view task definitions that are
-     * <code>INACTIVE</code> as long as an active task or service still references
-     * them. If you paginate the resulting output, be sure to keep the
-     * <code>status</code> value constant in each subsequent request.</p>
+     * <p>The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
+     * task definitions are listed. By setting this parameter to <code>INACTIVE</code>,
+     * you can view task definitions that are <code>INACTIVE</code> as long as an
+     * active task or service still references them. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.</p>
      */
     inline ListTaskDefinitionsRequest& WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The task definition status that you want to filter the
-     * <code>ListTaskDefinitions</code> results with. By default, only
-     * <code>ACTIVE</code> task definitions are listed. By setting this parameter to
-     * <code>INACTIVE</code>, you can view task definitions that are
-     * <code>INACTIVE</code> as long as an active task or service still references
-     * them. If you paginate the resulting output, be sure to keep the
-     * <code>status</code> value constant in each subsequent request.</p>
+     * <p>The task definition status with which to filter the
+     * <code>ListTaskDefinitions</code> results. By default, only <code>ACTIVE</code>
+     * task definitions are listed. By setting this parameter to <code>INACTIVE</code>,
+     * you can view task definitions that are <code>INACTIVE</code> as long as an
+     * active task or service still references them. If you paginate the resulting
+     * output, be sure to keep the <code>status</code> value constant in each
+     * subsequent request.</p>
      */
     inline ListTaskDefinitionsRequest& WithStatus(TaskDefinitionStatus&& value) { SetStatus(value); return *this;}
 

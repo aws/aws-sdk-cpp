@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ValidationSeverityMapper
 {
+
+
 ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == error_HASH)
   {
-    return ValidationSeverity::error;
+     return ValidationSeverity::error;
   }
   else if (hashCode == warning_HASH)
   {
-    return ValidationSeverity::warning;
+     return ValidationSeverity::warning;
   }
-
   return ValidationSeverity::NOT_SET;
 }
 
-Aws::String GetNameForValidationSeverity(ValidationSeverity value)
+Aws::String GetNameForValidationSeverity(ValidationSeverity enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ValidationSeverity::error:
     return "error";

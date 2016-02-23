@@ -39,69 +39,69 @@ namespace Model
 {
 namespace ComparisonOperatorMapper
 {
+
+
 ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == EQ_HASH)
   {
-    return ComparisonOperator::EQ;
+     return ComparisonOperator::EQ;
   }
   else if (hashCode == NE_HASH)
   {
-    return ComparisonOperator::NE;
+     return ComparisonOperator::NE;
   }
   else if (hashCode == IN_HASH)
   {
-    return ComparisonOperator::IN;
+     return ComparisonOperator::IN;
   }
   else if (hashCode == LE_HASH)
   {
-    return ComparisonOperator::LE;
+     return ComparisonOperator::LE;
   }
   else if (hashCode == LT_HASH)
   {
-    return ComparisonOperator::LT;
+     return ComparisonOperator::LT;
   }
   else if (hashCode == GE_HASH)
   {
-    return ComparisonOperator::GE;
+     return ComparisonOperator::GE;
   }
   else if (hashCode == GT_HASH)
   {
-    return ComparisonOperator::GT;
+     return ComparisonOperator::GT;
   }
   else if (hashCode == BETWEEN_HASH)
   {
-    return ComparisonOperator::BETWEEN;
+     return ComparisonOperator::BETWEEN;
   }
   else if (hashCode == NOT_NULL_HASH)
   {
-    return ComparisonOperator::NOT_NULL;
+     return ComparisonOperator::NOT_NULL;
   }
   else if (hashCode == NULL__HASH)
   {
-    return ComparisonOperator::NULL_;
+     return ComparisonOperator::NULL_;
   }
   else if (hashCode == CONTAINS_HASH)
   {
-    return ComparisonOperator::CONTAINS;
+     return ComparisonOperator::CONTAINS;
   }
   else if (hashCode == NOT_CONTAINS_HASH)
   {
-    return ComparisonOperator::NOT_CONTAINS;
+     return ComparisonOperator::NOT_CONTAINS;
   }
   else if (hashCode == BEGINS_WITH_HASH)
   {
-    return ComparisonOperator::BEGINS_WITH;
+     return ComparisonOperator::BEGINS_WITH;
   }
-
   return ComparisonOperator::NOT_SET;
 }
 
-Aws::String GetNameForComparisonOperator(ComparisonOperator value)
+Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ComparisonOperator::EQ:
     return "EQ";

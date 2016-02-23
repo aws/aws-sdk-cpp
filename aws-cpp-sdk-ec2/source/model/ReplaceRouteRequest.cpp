@@ -27,7 +27,8 @@ ReplaceRouteRequest::ReplaceRouteRequest() :
     m_gatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_natGatewayIdHasBeenSet(false)
 {
 }
 
@@ -63,7 +64,11 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
   {
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
-  ss << "Version=2015-04-15";
+  if(m_natGatewayIdHasBeenSet)
+  {
+    ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
+  }
+  ss << "Version=2015-10-01";
   return ss.str();
 }
 

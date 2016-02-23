@@ -20,6 +20,7 @@
 #include <aws/elasticmapreduce/model/InstanceGroupStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 
 namespace Aws
 {
@@ -353,6 +354,62 @@ namespace Model
      */
     inline InstanceGroup& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline InstanceGroup& WithEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { SetEbsBlockDevices(value); return *this;}
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline InstanceGroup& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(value); return *this;}
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline InstanceGroup& AddEbsBlockDevices(const EbsBlockDevice& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
+    inline InstanceGroup& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
+
+    /**
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
+     * an optimized configuration stack and provides additional, dedicated capacity for
+     * Amazon EBS I/O. </p>
+     */
+    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
+     * an optimized configuration stack and provides additional, dedicated capacity for
+     * Amazon EBS I/O. </p>
+     */
+    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+
+    /**
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
+     * an optimized configuration stack and provides additional, dedicated capacity for
+     * Amazon EBS I/O. </p>
+     */
+    inline InstanceGroup& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -374,6 +431,10 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+    Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
+    bool m_ebsBlockDevicesHasBeenSet;
+    bool m_ebsOptimized;
+    bool m_ebsOptimizedHasBeenSet;
   };
 
 } // namespace Model

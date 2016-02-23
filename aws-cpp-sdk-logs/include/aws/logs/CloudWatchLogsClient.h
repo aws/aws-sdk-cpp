@@ -20,7 +20,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/CreateExportTaskResult.h>
 #include <aws/logs/model/DescribeDestinationsResult.h>
+#include <aws/logs/model/DescribeExportTasksResult.h>
 #include <aws/logs/model/DescribeLogGroupsResult.h>
 #include <aws/logs/model/DescribeLogStreamsResult.h>
 #include <aws/logs/model/DescribeMetricFiltersResult.h>
@@ -76,6 +78,8 @@ namespace CloudWatchLogs
 
 namespace Model
 {
+        class CancelExportTaskRequest;
+        class CreateExportTaskRequest;
         class CreateLogGroupRequest;
         class CreateLogStreamRequest;
         class DeleteDestinationRequest;
@@ -85,6 +89,7 @@ namespace Model
         class DeleteRetentionPolicyRequest;
         class DeleteSubscriptionFilterRequest;
         class DescribeDestinationsRequest;
+        class DescribeExportTasksRequest;
         class DescribeLogGroupsRequest;
         class DescribeLogStreamsRequest;
         class DescribeMetricFiltersRequest;
@@ -99,6 +104,8 @@ namespace Model
         class PutSubscriptionFilterRequest;
         class TestMetricFilterRequest;
 
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CancelExportTaskOutcome;
+        typedef Aws::Utils::Outcome<CreateExportTaskResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateExportTaskOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateLogGroupOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> CreateLogStreamOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteDestinationOutcome;
@@ -108,6 +115,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteSubscriptionFilterOutcome;
         typedef Aws::Utils::Outcome<DescribeDestinationsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeDestinationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeLogGroupsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeLogStreamsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogStreamsOutcome;
         typedef Aws::Utils::Outcome<DescribeMetricFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeMetricFiltersOutcome;
@@ -122,6 +130,8 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutSubscriptionFilterOutcome;
         typedef Aws::Utils::Outcome<TestMetricFilterResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TestMetricFilterOutcome;
 
+        typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
+        typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
         typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
         typedef std::future<CreateLogStreamOutcome> CreateLogStreamOutcomeCallable;
         typedef std::future<DeleteDestinationOutcome> DeleteDestinationOutcomeCallable;
@@ -131,6 +141,7 @@ namespace Model
         typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
         typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
         typedef std::future<DescribeDestinationsOutcome> DescribeDestinationsOutcomeCallable;
+        typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
         typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
         typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
@@ -148,6 +159,8 @@ namespace Model
 
   class CloudWatchLogsClient;
 
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateExportTaskRequest&, const Model::CreateExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportTaskResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteDestinationRequest&, const Model::DeleteDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDestinationResponseReceivedHandler;
@@ -157,6 +170,7 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDestinationsRequest&, const Model::DescribeDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDestinationsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogGroupsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricFiltersResponseReceivedHandler;
@@ -180,16 +194,16 @@ namespace Model
    * CloudWatch Logs features and their associated API calls, go to the <a
    * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon
    * CloudWatch Developer Guide</a>. </p> <p>Use the following links to get started
-   * using the <i>Amazon CloudWatch Logs API Reference</i>:</p> <ul> <li> <a
+   * using the <i>Amazon CloudWatch Logs API Reference</i>:</p> <ul> <li><a
    * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html">Actions</a>:
-   * An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li> <a
+   * An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li><a
    * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html">Data
    * Types</a>: An alphabetical list of all Amazon CloudWatch Logs data types.</li>
-   * <li> <a
+   * <li><a
    * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
-   * Parameters</a>: Parameters that all Query actions can use.</li> <li> <a
+   * Parameters</a>: Parameters that all Query actions can use.</li> <li><a
    * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html">Common
-   * Errors</a>: Client and server errors that all actions can return.</li> <li> <a
+   * Errors</a>: Client and server errors that all actions can return.</li> <li><a
    * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
    * and Endpoints</a>: Itemized regions and endpoints for all AWS products.</li>
    * </ul> <p>In addition to using the Amazon CloudWatch Logs API, you can also use
@@ -237,6 +251,71 @@ namespace Model
             const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
 
         virtual ~CloudWatchLogsClient();
+
+        /**
+         * <p> Cancels an export task if it is in <code>PENDING</code> or
+         * <code>RUNNING</code> state. </p>
+         */
+        virtual Model::CancelExportTaskOutcome CancelExportTask(const Model::CancelExportTaskRequest& request) const;
+
+        /**
+         * <p> Cancels an export task if it is in <code>PENDING</code> or
+         * <code>RUNNING</code> state. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelExportTaskOutcomeCallable CancelExportTaskCallable(const Model::CancelExportTaskRequest& request) const;
+
+        /**
+         * <p> Cancels an export task if it is in <code>PENDING</code> or
+         * <code>RUNNING</code> state. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates an <code>ExportTask</code> which allows you to efficiently export
+         * data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous
+         * call. If all the required information is provided, this API will initiate an
+         * export task and respond with the task Id. Once started,
+         * <code>DescribeExportTasks</code> can be used to get the status of an export
+         * task. </p> <p> You can export logs from multiple log groups or multiple time
+         * ranges to the same Amazon S3 bucket. To separate out log data for each export
+         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
+         * all exported objects. </p>
+         */
+        virtual Model::CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest& request) const;
+
+        /**
+         * <p> Creates an <code>ExportTask</code> which allows you to efficiently export
+         * data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous
+         * call. If all the required information is provided, this API will initiate an
+         * export task and respond with the task Id. Once started,
+         * <code>DescribeExportTasks</code> can be used to get the status of an export
+         * task. </p> <p> You can export logs from multiple log groups or multiple time
+         * ranges to the same Amazon S3 bucket. To separate out log data for each export
+         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
+         * all exported objects. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExportTaskOutcomeCallable CreateExportTaskCallable(const Model::CreateExportTaskRequest& request) const;
+
+        /**
+         * <p> Creates an <code>ExportTask</code> which allows you to efficiently export
+         * data from a Log Group to your Amazon S3 bucket. </p> <p> This is an asynchronous
+         * call. If all the required information is provided, this API will initiate an
+         * export task and respond with the task Id. Once started,
+         * <code>DescribeExportTasks</code> can be used to get the status of an export
+         * task. </p> <p> You can export logs from multiple log groups or multiple time
+         * ranges to the same Amazon S3 bucket. To separate out log data for each export
+         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
+         * all exported objects. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new log group with the specified name. The name of the log group
@@ -471,6 +550,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDestinationsAsync(const Model::DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns all the export tasks that are associated with the AWS account making
+         * the request. The export tasks can be filtered based on <code>TaskId</code> or
+         * <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50
+         * export tasks that satisfy the specified filters. If there are more export tasks
+         * to list, the response would contain a <code class="code">nextToken</code> value
+         * in the response body. You can also limit the number of export tasks returned in
+         * the response by specifying the <code class="code">limit</code> parameter in the
+         * request. </p>
+         */
+        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
+
+        /**
+         * <p> Returns all the export tasks that are associated with the AWS account making
+         * the request. The export tasks can be filtered based on <code>TaskId</code> or
+         * <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50
+         * export tasks that satisfy the specified filters. If there are more export tasks
+         * to list, the response would contain a <code class="code">nextToken</code> value
+         * in the response body. You can also limit the number of export tasks returned in
+         * the response by specifying the <code class="code">limit</code> parameter in the
+         * request. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
+
+        /**
+         * <p> Returns all the export tasks that are associated with the AWS account making
+         * the request. The export tasks can be filtered based on <code>TaskId</code> or
+         * <code>TaskStatus</code>. </p> <p> By default, this operation returns up to 50
+         * export tasks that satisfy the specified filters. If there are more export tasks
+         * to list, the response would contain a <code class="code">nextToken</code> value
+         * in the response body. You can also limit the number of export tasks returned in
+         * the response by specifying the <code class="code">limit</code> parameter in the
+         * request. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Returns all the log groups that are associated with the AWS account making
@@ -991,6 +1110,8 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void CancelExportTaskAsyncHelper(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExportTaskAsyncHelper(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLogGroupAsyncHelper(const Model::CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLogStreamAsyncHelper(const Model::CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDestinationAsyncHelper(const Model::DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1000,6 +1121,7 @@ namespace Model
         void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubscriptionFilterAsyncHelper(const Model::DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDestinationsAsyncHelper(const Model::DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

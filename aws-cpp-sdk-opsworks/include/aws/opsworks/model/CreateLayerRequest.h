@@ -364,7 +364,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
 
@@ -373,7 +374,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline void SetCustomJson(const Aws::String& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
@@ -382,7 +384,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
 
@@ -391,7 +394,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline void SetCustomJson(const char* value) { m_customJsonHasBeenSet = true; m_customJson.assign(value); }
 
@@ -400,7 +404,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(const Aws::String& value) { SetCustomJson(value); return *this;}
 
@@ -409,7 +414,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
 
@@ -418,7 +424,8 @@ namespace Model
      * attributes to be installed on the layer's instances. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-     * Using Custom JSON</a>. </p>
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
      */
     inline CreateLayerRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 

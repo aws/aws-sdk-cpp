@@ -80,233 +80,233 @@ namespace Model
 {
 namespace EventTypeMapper
 {
+
+
 EventType GetEventTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == WorkflowExecutionStarted_HASH)
   {
-    return EventType::WorkflowExecutionStarted;
+     return EventType::WorkflowExecutionStarted;
   }
   else if (hashCode == WorkflowExecutionCancelRequested_HASH)
   {
-    return EventType::WorkflowExecutionCancelRequested;
+     return EventType::WorkflowExecutionCancelRequested;
   }
   else if (hashCode == WorkflowExecutionCompleted_HASH)
   {
-    return EventType::WorkflowExecutionCompleted;
+     return EventType::WorkflowExecutionCompleted;
   }
   else if (hashCode == CompleteWorkflowExecutionFailed_HASH)
   {
-    return EventType::CompleteWorkflowExecutionFailed;
+     return EventType::CompleteWorkflowExecutionFailed;
   }
   else if (hashCode == WorkflowExecutionFailed_HASH)
   {
-    return EventType::WorkflowExecutionFailed;
+     return EventType::WorkflowExecutionFailed;
   }
   else if (hashCode == FailWorkflowExecutionFailed_HASH)
   {
-    return EventType::FailWorkflowExecutionFailed;
+     return EventType::FailWorkflowExecutionFailed;
   }
   else if (hashCode == WorkflowExecutionTimedOut_HASH)
   {
-    return EventType::WorkflowExecutionTimedOut;
+     return EventType::WorkflowExecutionTimedOut;
   }
   else if (hashCode == WorkflowExecutionCanceled_HASH)
   {
-    return EventType::WorkflowExecutionCanceled;
+     return EventType::WorkflowExecutionCanceled;
   }
   else if (hashCode == CancelWorkflowExecutionFailed_HASH)
   {
-    return EventType::CancelWorkflowExecutionFailed;
+     return EventType::CancelWorkflowExecutionFailed;
   }
   else if (hashCode == WorkflowExecutionContinuedAsNew_HASH)
   {
-    return EventType::WorkflowExecutionContinuedAsNew;
+     return EventType::WorkflowExecutionContinuedAsNew;
   }
   else if (hashCode == ContinueAsNewWorkflowExecutionFailed_HASH)
   {
-    return EventType::ContinueAsNewWorkflowExecutionFailed;
+     return EventType::ContinueAsNewWorkflowExecutionFailed;
   }
   else if (hashCode == WorkflowExecutionTerminated_HASH)
   {
-    return EventType::WorkflowExecutionTerminated;
+     return EventType::WorkflowExecutionTerminated;
   }
   else if (hashCode == DecisionTaskScheduled_HASH)
   {
-    return EventType::DecisionTaskScheduled;
+     return EventType::DecisionTaskScheduled;
   }
   else if (hashCode == DecisionTaskStarted_HASH)
   {
-    return EventType::DecisionTaskStarted;
+     return EventType::DecisionTaskStarted;
   }
   else if (hashCode == DecisionTaskCompleted_HASH)
   {
-    return EventType::DecisionTaskCompleted;
+     return EventType::DecisionTaskCompleted;
   }
   else if (hashCode == DecisionTaskTimedOut_HASH)
   {
-    return EventType::DecisionTaskTimedOut;
+     return EventType::DecisionTaskTimedOut;
   }
   else if (hashCode == ActivityTaskScheduled_HASH)
   {
-    return EventType::ActivityTaskScheduled;
+     return EventType::ActivityTaskScheduled;
   }
   else if (hashCode == ScheduleActivityTaskFailed_HASH)
   {
-    return EventType::ScheduleActivityTaskFailed;
+     return EventType::ScheduleActivityTaskFailed;
   }
   else if (hashCode == ActivityTaskStarted_HASH)
   {
-    return EventType::ActivityTaskStarted;
+     return EventType::ActivityTaskStarted;
   }
   else if (hashCode == ActivityTaskCompleted_HASH)
   {
-    return EventType::ActivityTaskCompleted;
+     return EventType::ActivityTaskCompleted;
   }
   else if (hashCode == ActivityTaskFailed_HASH)
   {
-    return EventType::ActivityTaskFailed;
+     return EventType::ActivityTaskFailed;
   }
   else if (hashCode == ActivityTaskTimedOut_HASH)
   {
-    return EventType::ActivityTaskTimedOut;
+     return EventType::ActivityTaskTimedOut;
   }
   else if (hashCode == ActivityTaskCanceled_HASH)
   {
-    return EventType::ActivityTaskCanceled;
+     return EventType::ActivityTaskCanceled;
   }
   else if (hashCode == ActivityTaskCancelRequested_HASH)
   {
-    return EventType::ActivityTaskCancelRequested;
+     return EventType::ActivityTaskCancelRequested;
   }
   else if (hashCode == RequestCancelActivityTaskFailed_HASH)
   {
-    return EventType::RequestCancelActivityTaskFailed;
+     return EventType::RequestCancelActivityTaskFailed;
   }
   else if (hashCode == WorkflowExecutionSignaled_HASH)
   {
-    return EventType::WorkflowExecutionSignaled;
+     return EventType::WorkflowExecutionSignaled;
   }
   else if (hashCode == MarkerRecorded_HASH)
   {
-    return EventType::MarkerRecorded;
+     return EventType::MarkerRecorded;
   }
   else if (hashCode == RecordMarkerFailed_HASH)
   {
-    return EventType::RecordMarkerFailed;
+     return EventType::RecordMarkerFailed;
   }
   else if (hashCode == TimerStarted_HASH)
   {
-    return EventType::TimerStarted;
+     return EventType::TimerStarted;
   }
   else if (hashCode == StartTimerFailed_HASH)
   {
-    return EventType::StartTimerFailed;
+     return EventType::StartTimerFailed;
   }
   else if (hashCode == TimerFired_HASH)
   {
-    return EventType::TimerFired;
+     return EventType::TimerFired;
   }
   else if (hashCode == TimerCanceled_HASH)
   {
-    return EventType::TimerCanceled;
+     return EventType::TimerCanceled;
   }
   else if (hashCode == CancelTimerFailed_HASH)
   {
-    return EventType::CancelTimerFailed;
+     return EventType::CancelTimerFailed;
   }
   else if (hashCode == StartChildWorkflowExecutionInitiated_HASH)
   {
-    return EventType::StartChildWorkflowExecutionInitiated;
+     return EventType::StartChildWorkflowExecutionInitiated;
   }
   else if (hashCode == StartChildWorkflowExecutionFailed_HASH)
   {
-    return EventType::StartChildWorkflowExecutionFailed;
+     return EventType::StartChildWorkflowExecutionFailed;
   }
   else if (hashCode == ChildWorkflowExecutionStarted_HASH)
   {
-    return EventType::ChildWorkflowExecutionStarted;
+     return EventType::ChildWorkflowExecutionStarted;
   }
   else if (hashCode == ChildWorkflowExecutionCompleted_HASH)
   {
-    return EventType::ChildWorkflowExecutionCompleted;
+     return EventType::ChildWorkflowExecutionCompleted;
   }
   else if (hashCode == ChildWorkflowExecutionFailed_HASH)
   {
-    return EventType::ChildWorkflowExecutionFailed;
+     return EventType::ChildWorkflowExecutionFailed;
   }
   else if (hashCode == ChildWorkflowExecutionTimedOut_HASH)
   {
-    return EventType::ChildWorkflowExecutionTimedOut;
+     return EventType::ChildWorkflowExecutionTimedOut;
   }
   else if (hashCode == ChildWorkflowExecutionCanceled_HASH)
   {
-    return EventType::ChildWorkflowExecutionCanceled;
+     return EventType::ChildWorkflowExecutionCanceled;
   }
   else if (hashCode == ChildWorkflowExecutionTerminated_HASH)
   {
-    return EventType::ChildWorkflowExecutionTerminated;
+     return EventType::ChildWorkflowExecutionTerminated;
   }
   else if (hashCode == SignalExternalWorkflowExecutionInitiated_HASH)
   {
-    return EventType::SignalExternalWorkflowExecutionInitiated;
+     return EventType::SignalExternalWorkflowExecutionInitiated;
   }
   else if (hashCode == SignalExternalWorkflowExecutionFailed_HASH)
   {
-    return EventType::SignalExternalWorkflowExecutionFailed;
+     return EventType::SignalExternalWorkflowExecutionFailed;
   }
   else if (hashCode == ExternalWorkflowExecutionSignaled_HASH)
   {
-    return EventType::ExternalWorkflowExecutionSignaled;
+     return EventType::ExternalWorkflowExecutionSignaled;
   }
   else if (hashCode == RequestCancelExternalWorkflowExecutionInitiated_HASH)
   {
-    return EventType::RequestCancelExternalWorkflowExecutionInitiated;
+     return EventType::RequestCancelExternalWorkflowExecutionInitiated;
   }
   else if (hashCode == RequestCancelExternalWorkflowExecutionFailed_HASH)
   {
-    return EventType::RequestCancelExternalWorkflowExecutionFailed;
+     return EventType::RequestCancelExternalWorkflowExecutionFailed;
   }
   else if (hashCode == ExternalWorkflowExecutionCancelRequested_HASH)
   {
-    return EventType::ExternalWorkflowExecutionCancelRequested;
+     return EventType::ExternalWorkflowExecutionCancelRequested;
   }
   else if (hashCode == LambdaFunctionScheduled_HASH)
   {
-    return EventType::LambdaFunctionScheduled;
+     return EventType::LambdaFunctionScheduled;
   }
   else if (hashCode == LambdaFunctionStarted_HASH)
   {
-    return EventType::LambdaFunctionStarted;
+     return EventType::LambdaFunctionStarted;
   }
   else if (hashCode == LambdaFunctionCompleted_HASH)
   {
-    return EventType::LambdaFunctionCompleted;
+     return EventType::LambdaFunctionCompleted;
   }
   else if (hashCode == LambdaFunctionFailed_HASH)
   {
-    return EventType::LambdaFunctionFailed;
+     return EventType::LambdaFunctionFailed;
   }
   else if (hashCode == LambdaFunctionTimedOut_HASH)
   {
-    return EventType::LambdaFunctionTimedOut;
+     return EventType::LambdaFunctionTimedOut;
   }
   else if (hashCode == ScheduleLambdaFunctionFailed_HASH)
   {
-    return EventType::ScheduleLambdaFunctionFailed;
+     return EventType::ScheduleLambdaFunctionFailed;
   }
   else if (hashCode == StartLambdaFunctionFailed_HASH)
   {
-    return EventType::StartLambdaFunctionFailed;
+     return EventType::StartLambdaFunctionFailed;
   }
-
   return EventType::NOT_SET;
 }
 
-Aws::String GetNameForEventType(EventType value)
+Aws::String GetNameForEventType(EventType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventType::WorkflowExecutionStarted:
     return "WorkflowExecutionStarted";

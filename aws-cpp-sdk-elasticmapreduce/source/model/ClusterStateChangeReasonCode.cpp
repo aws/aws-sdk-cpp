@@ -33,45 +33,45 @@ namespace Model
 {
 namespace ClusterStateChangeReasonCodeMapper
 {
+
+
 ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return ClusterStateChangeReasonCode::INTERNAL_ERROR;
+     return ClusterStateChangeReasonCode::INTERNAL_ERROR;
   }
   else if (hashCode == VALIDATION_ERROR_HASH)
   {
-    return ClusterStateChangeReasonCode::VALIDATION_ERROR;
+     return ClusterStateChangeReasonCode::VALIDATION_ERROR;
   }
   else if (hashCode == INSTANCE_FAILURE_HASH)
   {
-    return ClusterStateChangeReasonCode::INSTANCE_FAILURE;
+     return ClusterStateChangeReasonCode::INSTANCE_FAILURE;
   }
   else if (hashCode == BOOTSTRAP_FAILURE_HASH)
   {
-    return ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE;
+     return ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE;
   }
   else if (hashCode == USER_REQUEST_HASH)
   {
-    return ClusterStateChangeReasonCode::USER_REQUEST;
+     return ClusterStateChangeReasonCode::USER_REQUEST;
   }
   else if (hashCode == STEP_FAILURE_HASH)
   {
-    return ClusterStateChangeReasonCode::STEP_FAILURE;
+     return ClusterStateChangeReasonCode::STEP_FAILURE;
   }
   else if (hashCode == ALL_STEPS_COMPLETED_HASH)
   {
-    return ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED;
+     return ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED;
   }
-
   return ClusterStateChangeReasonCode::NOT_SET;
 }
 
-Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode value)
+Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ClusterStateChangeReasonCode::INTERNAL_ERROR:
     return "INTERNAL_ERROR";

@@ -20,6 +20,7 @@ import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Data
 public class Shape {
@@ -102,6 +103,30 @@ public class Shape {
 
     public boolean hasBlobMembers() {
         return members.values().parallelStream().anyMatch(member -> member.getShape().isBlob());
+    }
+
+    public ShapeMember getMemberByLocationName(String locationName) {
+        Optional<ShapeMember> found =
+                members.values().parallelStream().filter(member -> member.getLocationName() != null && locationName.equals(member.getLocationName())).findFirst();
+
+        if(found.isPresent()) {
+            return found.get();
+        }
+
+        return null;
+
+    }
+
+    public String getMemberNameByLocationName(String locationName) {
+        Optional<Map.Entry<String, ShapeMember>> found =
+                members.entrySet().parallelStream().filter(member ->
+                        locationName.equals(member.getValue().getLocationName())).findFirst();
+
+        if(found.isPresent()) {
+            return found.get().getKey();
+        }
+
+        return null;
     }
 
     public Map<String, ShapeMember> getQueryStringMembers() {

@@ -266,12 +266,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -284,12 +284,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -302,12 +302,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -320,12 +320,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -338,12 +338,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline AssumeRoleWithWebIdentityRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -356,12 +356,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline AssumeRoleWithWebIdentityRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
@@ -374,12 +374,12 @@ namespace Model
      * security credentials. You cannot use the passed policy to grant permissions that
      * are in excess of those allowed by the access policy of the role that is being
      * assumed. For more information, see <a
-     * href="http://docs.aws.amazon.com/STS/latest/UsingSTS/permissions-assume-role.html">Permissions
-     * for AssumeRoleWithWebIdentity</a>. </p> <note>The policy plain text must be 2048
-     * bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element
-     * indicates by percentage how close to the upper size limit the policy is, with
-     * 100% equaling the maximum allowed size. </note>
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
+     * for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>. </p> <note>The policy
+     * plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size. </note>
      */
     inline AssumeRoleWithWebIdentityRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

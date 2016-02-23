@@ -37,7 +37,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_engineVersionHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -55,7 +57,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_engineVersionHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -120,6 +124,18 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
       m_dBInstanceIdentifierHasBeenSet = true;
     }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
+      m_storageTypeHasBeenSet = true;
+    }
+    XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
+    if(!cACertificateIdentifierNode.IsNull())
+    {
+      m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
+      m_cACertificateIdentifierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -163,6 +179,14 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -202,5 +226,13 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_dBInstanceIdentifierHasBeenSet)
   {
       oStream << location << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+      oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 }

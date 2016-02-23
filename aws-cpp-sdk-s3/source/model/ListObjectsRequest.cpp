@@ -45,37 +45,37 @@ void ListObjectsRequest::AddQueryStringParameters(URI& uri) const
     Aws::StringStream ss;
     if(m_delimiterHasBeenSet)
     {
-     ss << m_delimiter;
-     uri.AddQueryStringParameter("delimiter", ss.str());
-     ss.str("");
+      ss << m_delimiter;
+      uri.AddQueryStringParameter("delimiter", ss.str());
+      ss.str("");
     }
 
     if(m_encodingTypeHasBeenSet)
     {
-     ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
-     uri.AddQueryStringParameter("encoding-type", ss.str());
-     ss.str("");
+      ss << EncodingTypeMapper::GetNameForEncodingType(m_encodingType);
+      uri.AddQueryStringParameter("encoding-type", ss.str());
+      ss.str("");
     }
 
     if(m_markerHasBeenSet)
     {
-     ss << m_marker;
-     uri.AddQueryStringParameter("marker", ss.str());
-     ss.str("");
+      ss << m_marker;
+      uri.AddQueryStringParameter("marker", ss.str());
+      ss.str("");
     }
 
     if(m_maxKeysHasBeenSet)
     {
-     ss << m_maxKeys;
-     uri.AddQueryStringParameter("max-keys", ss.str());
-     ss.str("");
+      ss << m_maxKeys;
+      uri.AddQueryStringParameter("max-keys", ss.str());
+      ss.str("");
     }
 
     if(m_prefixHasBeenSet)
     {
-     ss << m_prefix;
-     uri.AddQueryStringParameter("prefix", ss.str());
-     ss.str("");
+      ss << m_prefix;
+      uri.AddQueryStringParameter("prefix", ss.str());
+      ss.str("");
     }
 
 }

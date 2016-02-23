@@ -22,7 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeKeyRequest::DescribeKeyRequest() : 
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_grantTokensHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,17 @@ Aws::String DescribeKeyRequest::SerializePayload() const
   if(m_keyIdHasBeenSet)
   {
    payload.WithString("KeyId", m_keyId);
+
+  }
+
+  if(m_grantTokensHasBeenSet)
+  {
+   Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
+   for(unsigned grantTokensIndex = 0; grantTokensIndex < grantTokensJsonList.GetLength(); ++grantTokensIndex)
+   {
+     grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
+   }
+   payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
 
   }
 

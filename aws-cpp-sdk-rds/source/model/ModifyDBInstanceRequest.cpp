@@ -44,7 +44,20 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
-    m_newDBInstanceIdentifierHasBeenSet(false)
+    m_newDBInstanceIdentifierHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_tdeCredentialArnHasBeenSet(false),
+    m_tdeCredentialPasswordHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false),
+    m_dBPortNumber(0),
+    m_dBPortNumberHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_monitoringRoleArnHasBeenSet(false)
 {
 }
 
@@ -136,7 +149,43 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   {
     ss << "NewDBInstanceIdentifier=" << StringUtils::URLEncode(m_newDBInstanceIdentifier.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_tdeCredentialArnHasBeenSet)
+  {
+    ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
+  }
+  if(m_tdeCredentialPasswordHasBeenSet)
+  {
+    ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
+  }
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
+  }
+  if(m_dBPortNumberHasBeenSet)
+  {
+    ss << "DBPortNumber=" << m_dBPortNumber << "&";
+  }
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+  if(m_monitoringRoleArnHasBeenSet)
+  {
+    ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

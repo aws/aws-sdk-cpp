@@ -29,29 +29,29 @@ namespace Model
 {
 namespace ConfigurationDeploymentStatusMapper
 {
+
+
 ConfigurationDeploymentStatus GetConfigurationDeploymentStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == deployed_HASH)
   {
-    return ConfigurationDeploymentStatus::deployed;
+     return ConfigurationDeploymentStatus::deployed;
   }
   else if (hashCode == pending_HASH)
   {
-    return ConfigurationDeploymentStatus::pending;
+     return ConfigurationDeploymentStatus::pending;
   }
   else if (hashCode == failed_HASH)
   {
-    return ConfigurationDeploymentStatus::failed;
+     return ConfigurationDeploymentStatus::failed;
   }
-
   return ConfigurationDeploymentStatus::NOT_SET;
 }
 
-Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus value)
+Aws::String GetNameForConfigurationDeploymentStatus(ConfigurationDeploymentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ConfigurationDeploymentStatus::deployed:
     return "deployed";

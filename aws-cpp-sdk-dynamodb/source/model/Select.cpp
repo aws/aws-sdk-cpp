@@ -30,33 +30,33 @@ namespace Model
 {
 namespace SelectMapper
 {
+
+
 Select GetSelectForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ALL_ATTRIBUTES_HASH)
   {
-    return Select::ALL_ATTRIBUTES;
+     return Select::ALL_ATTRIBUTES;
   }
   else if (hashCode == ALL_PROJECTED_ATTRIBUTES_HASH)
   {
-    return Select::ALL_PROJECTED_ATTRIBUTES;
+     return Select::ALL_PROJECTED_ATTRIBUTES;
   }
   else if (hashCode == SPECIFIC_ATTRIBUTES_HASH)
   {
-    return Select::SPECIFIC_ATTRIBUTES;
+     return Select::SPECIFIC_ATTRIBUTES;
   }
   else if (hashCode == COUNT_HASH)
   {
-    return Select::COUNT;
+     return Select::COUNT;
   }
-
   return Select::NOT_SET;
 }
 
-Aws::String GetNameForSelect(Select value)
+Aws::String GetNameForSelect(Select enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case Select::ALL_ATTRIBUTES:
     return "ALL_ATTRIBUTES";

@@ -46,73 +46,10 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(value); return *this;}
-
-    /**
-     * If you want viewers to use HTTPS to request your objects and you're using an
-     * alternate domain name in your object URLs (for example,
-     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
-     * custom viewer certificate for this distribution. Specify either this value or
-     * CloudFrontDefaultCertificate.
-     */
-    inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
-
-    /**
      * If you want viewers to use HTTPS to request your objects and you're using the
      * CloudFront domain name of your distribution in your object URLs (for example,
      * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an IAMCertificateId.
+     * you are setting an ACMCertificateArn or IAMCertificateId.
      */
     inline bool GetCloudFrontDefaultCertificate() const{ return m_cloudFrontDefaultCertificate; }
 
@@ -120,7 +57,7 @@ namespace Model
      * If you want viewers to use HTTPS to request your objects and you're using the
      * CloudFront domain name of your distribution in your object URLs (for example,
      * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an IAMCertificateId.
+     * you are setting an ACMCertificateArn or IAMCertificateId.
      */
     inline void SetCloudFrontDefaultCertificate(bool value) { m_cloudFrontDefaultCertificateHasBeenSet = true; m_cloudFrontDefaultCertificate = value; }
 
@@ -128,9 +65,135 @@ namespace Model
      * If you want viewers to use HTTPS to request your objects and you're using the
      * CloudFront domain name of your distribution in your object URLs (for example,
      * https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if
-     * you are setting an IAMCertificateId.
+     * you are setting an ACMCertificateArn or IAMCertificateId.
      */
     inline ViewerCertificate& WithCloudFrontDefaultCertificate(bool value) { SetCloudFrontDefaultCertificate(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline void SetIAMCertificateId(const Aws::String& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline void SetIAMCertificateId(Aws::String&& value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId = value; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline void SetIAMCertificateId(const char* value) { m_iAMCertificateIdHasBeenSet = true; m_iAMCertificateId.assign(value); }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithIAMCertificateId(const Aws::String& value) { SetIAMCertificateId(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithIAMCertificateId(Aws::String&& value) { SetIAMCertificateId(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the IAM certificate identifier of the
+     * custom viewer certificate for this distribution. Specify either this value,
+     * ACMCertificateArn, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline void SetACMCertificateArn(const Aws::String& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline void SetACMCertificateArn(Aws::String&& value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn = value; }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline void SetACMCertificateArn(const char* value) { m_aCMCertificateArnHasBeenSet = true; m_aCMCertificateArn.assign(value); }
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithACMCertificateArn(const Aws::String& value) { SetACMCertificateArn(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithACMCertificateArn(Aws::String&& value) { SetACMCertificateArn(value); return *this;}
+
+    /**
+     * If you want viewers to use HTTPS to request your objects and you're using an
+     * alternate domain name in your object URLs (for example,
+     * https://example.com/logo.jpg), specify the ACM certificate ARN of the custom
+     * viewer certificate for this distribution. Specify either this value,
+     * IAMCertificateId, or CloudFrontDefaultCertificate.
+     */
+    inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
 
     /**
      * If you specify a value for IAMCertificateId, you must also specify how you want
@@ -273,10 +336,12 @@ namespace Model
     inline ViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersion&& value) { SetMinimumProtocolVersion(value); return *this;}
 
   private:
-    Aws::String m_iAMCertificateId;
-    bool m_iAMCertificateIdHasBeenSet;
     bool m_cloudFrontDefaultCertificate;
     bool m_cloudFrontDefaultCertificateHasBeenSet;
+    Aws::String m_iAMCertificateId;
+    bool m_iAMCertificateIdHasBeenSet;
+    Aws::String m_aCMCertificateArn;
+    bool m_aCMCertificateArnHasBeenSet;
     SSLSupportMethod m_sSLSupportMethod;
     bool m_sSLSupportMethodHasBeenSet;
     MinimumProtocolVersion m_minimumProtocolVersion;

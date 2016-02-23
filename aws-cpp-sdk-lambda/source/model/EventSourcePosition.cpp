@@ -28,25 +28,25 @@ namespace Model
 {
 namespace EventSourcePositionMapper
 {
+
+
 EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TRIM_HORIZON_HASH)
   {
-    return EventSourcePosition::TRIM_HORIZON;
+     return EventSourcePosition::TRIM_HORIZON;
   }
   else if (hashCode == LATEST_HASH)
   {
-    return EventSourcePosition::LATEST;
+     return EventSourcePosition::LATEST;
   }
-
   return EventSourcePosition::NOT_SET;
 }
 
-Aws::String GetNameForEventSourcePosition(EventSourcePosition value)
+Aws::String GetNameForEventSourcePosition(EventSourcePosition enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case EventSourcePosition::TRIM_HORIZON:
     return "TRIM_HORIZON";

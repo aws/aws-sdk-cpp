@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 StopTaskRequest::StopTaskRequest() : 
     m_clusterHasBeenSet(false),
-    m_taskHasBeenSet(false)
+    m_taskHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String StopTaskRequest::SerializePayload() const
   if(m_taskHasBeenSet)
   {
    payload.WithString("task", m_task);
+
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", m_reason);
 
   }
 

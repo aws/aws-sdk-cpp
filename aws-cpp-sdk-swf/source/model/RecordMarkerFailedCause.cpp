@@ -27,21 +27,21 @@ namespace Model
 {
 namespace RecordMarkerFailedCauseMapper
 {
+
+
 RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return RecordMarkerFailedCause::OPERATION_NOT_PERMITTED;
+     return RecordMarkerFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return RecordMarkerFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause value)
+Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RecordMarkerFailedCause::OPERATION_NOT_PERMITTED:
     return "OPERATION_NOT_PERMITTED";

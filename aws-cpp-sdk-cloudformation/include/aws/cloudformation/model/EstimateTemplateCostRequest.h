@@ -107,8 +107,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -118,8 +117,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -129,8 +127,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -140,8 +137,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -151,8 +147,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -162,8 +157,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -173,8 +167,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,

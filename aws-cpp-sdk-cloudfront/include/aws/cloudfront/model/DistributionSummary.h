@@ -426,6 +426,41 @@ namespace Model
     
     inline DistributionSummary& WithRestrictions(Restrictions&& value) { SetRestrictions(value); return *this;}
 
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline DistributionSummary& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline DistributionSummary& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+
+    /**
+     * The Web ACL Id (if any) associated with the distribution.
+     */
+    inline DistributionSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -455,6 +490,8 @@ namespace Model
     bool m_viewerCertificateHasBeenSet;
     Restrictions m_restrictions;
     bool m_restrictionsHasBeenSet;
+    Aws::String m_webACLId;
+    bool m_webACLIdHasBeenSet;
   };
 
 } // namespace Model

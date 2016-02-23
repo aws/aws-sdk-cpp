@@ -133,37 +133,51 @@ namespace Model
     inline DescribeAlarmsForMetricRequest& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline DescribeAlarmsForMetricRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline DescribeAlarmsForMetricRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline DescribeAlarmsForMetricRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p> The list of dimensions associated with the metric. </p>
+     * <p> The list of dimensions associated with the metric. If the metric has any
+     * associated dimensions, you must specify them in order for the
+     * DescribeAlarmsForMetric to succeed. </p>
      */
     inline DescribeAlarmsForMetricRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 

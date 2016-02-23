@@ -58,11 +58,6 @@ ListReceiptRuleSetsResult& ListReceiptRuleSetsResult::operator =(const AmazonWeb
       }
 
     }
-    XmlNode nextPageTokenNode = resultNode.FirstChild("NextPageToken");
-    if(!nextPageTokenNode.IsNull())
-    {
-      m_nextPageToken = StringUtils::Trim(nextPageTokenNode.GetText().c_str());
-    }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {

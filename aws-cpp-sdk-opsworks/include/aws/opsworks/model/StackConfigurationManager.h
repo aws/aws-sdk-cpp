@@ -77,44 +77,51 @@ namespace Model
     inline StackConfigurationManager& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline StackConfigurationManager& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline StackConfigurationManager& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The
-     * default value is 11.4.</p>
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
      */
     inline StackConfigurationManager& WithVersion(const char* value) { SetVersion(value); return *this;}
 

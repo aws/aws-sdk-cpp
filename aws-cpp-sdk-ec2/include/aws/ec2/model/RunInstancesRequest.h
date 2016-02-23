@@ -338,37 +338,79 @@ namespace Model
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded MIME user data for the instances.</p>
+     * <p>Data to configure the instance, or a script to run during instance launch.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
+     * line tools perform encoding for you.</p>
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 

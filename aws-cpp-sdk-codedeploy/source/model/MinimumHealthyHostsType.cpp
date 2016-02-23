@@ -28,25 +28,25 @@ namespace Model
 {
 namespace MinimumHealthyHostsTypeMapper
 {
+
+
 MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == HOST_COUNT_HASH)
   {
-    return MinimumHealthyHostsType::HOST_COUNT;
+     return MinimumHealthyHostsType::HOST_COUNT;
   }
   else if (hashCode == FLEET_PERCENT_HASH)
   {
-    return MinimumHealthyHostsType::FLEET_PERCENT;
+     return MinimumHealthyHostsType::FLEET_PERCENT;
   }
-
   return MinimumHealthyHostsType::NOT_SET;
 }
 
-Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType value)
+Aws::String GetNameForMinimumHealthyHostsType(MinimumHealthyHostsType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case MinimumHealthyHostsType::HOST_COUNT:
     return "HOST_COUNT";

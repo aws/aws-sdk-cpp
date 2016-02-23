@@ -26,6 +26,7 @@ public class C2jMetadata {
     private String serviceAbbreviation;
     private String serviceFullName;
     private String signatureVersion;
+    private String signingName;
     private String targetPrefix;
     private String protocol;
     private String clientProjectName;

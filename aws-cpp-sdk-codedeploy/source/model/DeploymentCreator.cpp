@@ -28,25 +28,25 @@ namespace Model
 {
 namespace DeploymentCreatorMapper
 {
+
+
 DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == user_HASH)
   {
-    return DeploymentCreator::user;
+     return DeploymentCreator::user;
   }
   else if (hashCode == autoscaling_HASH)
   {
-    return DeploymentCreator::autoscaling;
+     return DeploymentCreator::autoscaling;
   }
-
   return DeploymentCreator::NOT_SET;
 }
 
-Aws::String GetNameForDeploymentCreator(DeploymentCreator value)
+Aws::String GetNameForDeploymentCreator(DeploymentCreator enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DeploymentCreator::user:
     return "user";

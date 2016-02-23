@@ -144,8 +144,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -155,8 +154,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -166,8 +164,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -177,8 +174,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -188,8 +184,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -199,8 +194,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -210,8 +204,7 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For more
-     * information, go to <a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -637,6 +630,118 @@ namespace Model
     inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline UpdateStackRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(value); return *this;}
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline UpdateStackRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The template resource types that you have permissions to work with for this
+     * update stack action, such as <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
+     * the list of resource types doesn't include a resource that you're updating, the
+     * stack update fails. By default, AWS CloudFormation grants permissions to all
+     * resource types. AWS Identity and Access Management (IAM) uses this parameter for
+     * AWS CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * Access with AWS Identity and Access Management</a>.</p>
+     */
+    inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+
+    /**
      * <p>Structure containing a new stack policy body. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p> <p>You might update the stack policy, for example, in order to
@@ -784,50 +889,58 @@ namespace Model
     inline UpdateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline UpdateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
     /**
-     * <p>Update the ARNs for the Amazon SNS topics that are associated with the
-     * stack.</p>
+     * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+     * AWS CloudFormation associates with the stack. Specify an empty list to remove
+     * all notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
@@ -848,6 +961,8 @@ namespace Model
     bool m_parametersHasBeenSet;
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+    Aws::Vector<Aws::String> m_resourceTypes;
+    bool m_resourceTypesHasBeenSet;
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
     Aws::String m_stackPolicyURL;

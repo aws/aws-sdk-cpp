@@ -44,86 +44,97 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline Record& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline Record& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
 
     /**
-     * <p>The unique identifier for the record in the Amazon Kinesis stream.</p>
+     * <p>The unique identifier of the record in the stream.</p>
      */
     inline Record& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
-    
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
     inline double GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
 
-    
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
     inline void SetApproximateArrivalTimestamp(double value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
 
-    
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
     inline Record& WithApproximateArrivalTimestamp(double value) { SetApproximateArrivalTimestamp(value); return *this;}
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
      * Amazon Kinesis service, which does not inspect, interpret, or change the data in
-     * the blob in any way. The maximum size of the data blob (the payload before
-     * base64-encoding) is 50 kilobytes (KB) </p>
+     * the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum
+     * record size (1 MB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
      * Amazon Kinesis service, which does not inspect, interpret, or change the data in
-     * the blob in any way. The maximum size of the data blob (the payload before
-     * base64-encoding) is 50 kilobytes (KB) </p>
+     * the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum
+     * record size (1 MB).</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
      * Amazon Kinesis service, which does not inspect, interpret, or change the data in
-     * the blob in any way. The maximum size of the data blob (the payload before
-     * base64-encoding) is 50 kilobytes (KB) </p>
+     * the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum
+     * record size (1 MB).</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
      * Amazon Kinesis service, which does not inspect, interpret, or change the data in
-     * the blob in any way. The maximum size of the data blob (the payload before
-     * base64-encoding) is 50 kilobytes (KB) </p>
+     * the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum
+     * record size (1 MB).</p>
      */
     inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
      * Amazon Kinesis service, which does not inspect, interpret, or change the data in
-     * the blob in any way. The maximum size of the data blob (the payload before
-     * base64-encoding) is 50 kilobytes (KB) </p>
+     * the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum
+     * record size (1 MB).</p>
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
 

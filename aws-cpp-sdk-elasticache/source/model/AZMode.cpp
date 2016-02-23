@@ -28,25 +28,25 @@ namespace Model
 {
 namespace AZModeMapper
 {
+
+
 AZMode GetAZModeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == single_az_HASH)
   {
-    return AZMode::single_az;
+     return AZMode::single_az;
   }
   else if (hashCode == cross_az_HASH)
   {
-    return AZMode::cross_az;
+     return AZMode::cross_az;
   }
-
   return AZMode::NOT_SET;
 }
 
-Aws::String GetNameForAZMode(AZMode value)
+Aws::String GetNameForAZMode(AZMode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AZMode::single_az:
     return "single-az";

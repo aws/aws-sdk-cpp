@@ -39,69 +39,69 @@ namespace Model
 {
 namespace DecisionTypeMapper
 {
+
+
 DecisionType GetDecisionTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ScheduleActivityTask_HASH)
   {
-    return DecisionType::ScheduleActivityTask;
+     return DecisionType::ScheduleActivityTask;
   }
   else if (hashCode == RequestCancelActivityTask_HASH)
   {
-    return DecisionType::RequestCancelActivityTask;
+     return DecisionType::RequestCancelActivityTask;
   }
   else if (hashCode == CompleteWorkflowExecution_HASH)
   {
-    return DecisionType::CompleteWorkflowExecution;
+     return DecisionType::CompleteWorkflowExecution;
   }
   else if (hashCode == FailWorkflowExecution_HASH)
   {
-    return DecisionType::FailWorkflowExecution;
+     return DecisionType::FailWorkflowExecution;
   }
   else if (hashCode == CancelWorkflowExecution_HASH)
   {
-    return DecisionType::CancelWorkflowExecution;
+     return DecisionType::CancelWorkflowExecution;
   }
   else if (hashCode == ContinueAsNewWorkflowExecution_HASH)
   {
-    return DecisionType::ContinueAsNewWorkflowExecution;
+     return DecisionType::ContinueAsNewWorkflowExecution;
   }
   else if (hashCode == RecordMarker_HASH)
   {
-    return DecisionType::RecordMarker;
+     return DecisionType::RecordMarker;
   }
   else if (hashCode == StartTimer_HASH)
   {
-    return DecisionType::StartTimer;
+     return DecisionType::StartTimer;
   }
   else if (hashCode == CancelTimer_HASH)
   {
-    return DecisionType::CancelTimer;
+     return DecisionType::CancelTimer;
   }
   else if (hashCode == SignalExternalWorkflowExecution_HASH)
   {
-    return DecisionType::SignalExternalWorkflowExecution;
+     return DecisionType::SignalExternalWorkflowExecution;
   }
   else if (hashCode == RequestCancelExternalWorkflowExecution_HASH)
   {
-    return DecisionType::RequestCancelExternalWorkflowExecution;
+     return DecisionType::RequestCancelExternalWorkflowExecution;
   }
   else if (hashCode == StartChildWorkflowExecution_HASH)
   {
-    return DecisionType::StartChildWorkflowExecution;
+     return DecisionType::StartChildWorkflowExecution;
   }
   else if (hashCode == ScheduleLambdaFunction_HASH)
   {
-    return DecisionType::ScheduleLambdaFunction;
+     return DecisionType::ScheduleLambdaFunction;
   }
-
   return DecisionType::NOT_SET;
 }
 
-Aws::String GetNameForDecisionType(DecisionType value)
+Aws::String GetNameForDecisionType(DecisionType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case DecisionType::ScheduleActivityTask:
     return "ScheduleActivityTask";

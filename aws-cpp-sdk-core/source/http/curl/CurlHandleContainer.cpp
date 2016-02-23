@@ -131,7 +131,7 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
                 m_maxPoolSize(maxSize), m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout),
                 m_poolSize(0)
 {
-    AWS_LOGSTREAM_INFO(CurlTag, "Intializing CurlHandleContainer with size " << maxSize);
+    AWS_LOGSTREAM_INFO(CurlTag, "Initializing CurlHandleContainer with size " << maxSize);
     if (!isInit)
     {
         AWS_LOG_INFO(CurlTag, "Initializing Curl library");
@@ -179,8 +179,10 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
 
 void CurlHandleContainer::ReleaseCurlHandle(CURL* handle)
 {
-    if (handle != NULL)
+    if (handle)
     {
+        curl_easy_reset(handle);
+        SetDefaultOptionsOnHandle(handle);
         AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << handle);
         std::unique_lock<std::mutex> locker(m_handleContainerMutex);
         m_handleContainer.push(handle);
@@ -205,12 +207,7 @@ bool CurlHandleContainer::CheckAndGrowPool()
 
             if (curlHandle)
             {
-                //for timeouts to work in a multi-threaded context,
-                //always turn signals off. This also forces dns queries to
-                //not be included in the timeout calculations.
-                curl_easy_setopt(curlHandle, CURLOPT_NOSIGNAL, 1L);
-                curl_easy_setopt(curlHandle, CURLOPT_TIMEOUT_MS, m_requestTimeout);
-                curl_easy_setopt(curlHandle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
+                SetDefaultOptionsOnHandle(curlHandle);
                 m_handleContainer.push(curlHandle);
                 ++actuallyAdded;
             }
@@ -229,4 +226,14 @@ bool CurlHandleContainer::CheckAndGrowPool()
     AWS_LOG_INFO(CurlTag, "Pool cannot be grown any further, already at max size.");
 
     return false;
+}
+
+void CurlHandleContainer::SetDefaultOptionsOnHandle(void* handle)
+{
+    //for timeouts to work in a multi-threaded context,
+    //always turn signals off. This also forces dns queries to
+    //not be included in the timeout calculations.
+    curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
+    curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, m_requestTimeout);
+    curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
 }

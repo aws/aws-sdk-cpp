@@ -45,37 +45,44 @@ namespace Model
     DescribeApplicationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline const Aws::Vector<ApplicationVersionDescription>& GetApplicationVersions() const{ return m_applicationVersions; }
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline void SetApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { m_applicationVersions = value; }
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = value; }
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { SetApplicationVersions(value); return *this;}
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(value); return *this;}
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(const ApplicationVersionDescription& value) { m_applicationVersions.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>ApplicationVersionDescription</a> . </p>
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * creation.</p>
      */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(value); return *this; }
 

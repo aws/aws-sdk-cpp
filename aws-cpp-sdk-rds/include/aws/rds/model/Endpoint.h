@@ -33,8 +33,8 @@ namespace Model
 
   /**
    * <p> This data type is used as a response element in the following actions: </p>
-   * <ul> <li><a>CreateDBInstance</a></li> <li><a>DescribeDBInstances</a></li>
-   * <li><a>DeleteDBInstance</a></li> </ul>
+   * <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li>
+   * <li> <a>DeleteDBInstance</a> </li> </ul>
    */
   class AWS_RDS_API Endpoint
   {
@@ -47,37 +47,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> Specifies the DNS address of the DB Instance. </p>
+     * <p> Specifies the DNS address of the DB instance. </p>
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
@@ -96,11 +96,55 @@ namespace Model
      */
     inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
 
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline Endpoint& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline Endpoint& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline Endpoint& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
   private:
     Aws::String m_address;
     bool m_addressHasBeenSet;
     long m_port;
     bool m_portHasBeenSet;
+    Aws::String m_hostedZoneId;
+    bool m_hostedZoneIdHasBeenSet;
   };
 
 } // namespace Model

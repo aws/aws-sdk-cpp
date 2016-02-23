@@ -44,7 +44,7 @@ public class C2jModelToGeneratorModelTransformer {
         convertShapes();
         convertOperations();
         removeUnreferencedShapes();
-        PostProcessShapes();
+        postProcessShapes();
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
@@ -80,6 +80,7 @@ public class C2jModelToGeneratorModelTransformer {
         Metadata metadata = new Metadata();
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
+        metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
         metadata.setProtocol(c2jMetadata.getProtocol());
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
@@ -108,7 +109,7 @@ public class C2jModelToGeneratorModelTransformer {
         }
     }
 
-    void PostProcessShapes() {
+    void postProcessShapes() {
         for(Map.Entry<String, Shape> entry : shapes.entrySet()) {
             Shape shape = entry.getValue();
 
@@ -320,6 +321,12 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     Error convertError(C2jError c2jError) {
+        if(c2jServiceModel.getShapes().get(c2jError.getShape()) != null) {
+            C2jShape shape = c2jServiceModel.getShapes().get(c2jError.getShape());
+            c2jError.setError(shape.getError());
+            c2jError.setException(shape.isException());
+        }
+
         Error error = new Error();
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
         error.setName(c2jError.getShape());
@@ -329,6 +336,10 @@ public class C2jModelToGeneratorModelTransformer {
 
         //query xml loads this inner structure to do this work.
         if (c2jError.getError() != null && c2jError.getError().getCode() != null) {
+            if(c2jError.getError().getHttpStatusCode() >= 500 || !c2jError.getError().isSenderFault()) {
+                error.setRetryable(true);
+            }
+
             error.setText(c2jError.getError().getCode());
         }
 
@@ -341,6 +352,6 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     String sanitizeServiceAbbreviation(String serviceAbbreviation) {
-        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "");
+        return serviceAbbreviation.replace(" ", "").replace("-", "").replace("_", "").replace("Amazon", "").replace("AWS", "").replace("/", "");
     }
 }

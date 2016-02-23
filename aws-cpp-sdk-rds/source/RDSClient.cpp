@@ -28,8 +28,15 @@
 #include <aws/rds/RDSErrorMarshaller.h>
 #include <aws/rds/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/rds/model/AddTagsToResourceRequest.h>
+#include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressRequest.h>
+#include <aws/rds/model/CopyDBClusterSnapshotRequest.h>
+#include <aws/rds/model/CopyDBParameterGroupRequest.h>
 #include <aws/rds/model/CopyDBSnapshotRequest.h>
+#include <aws/rds/model/CopyOptionGroupRequest.h>
+#include <aws/rds/model/CreateDBClusterRequest.h>
+#include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
+#include <aws/rds/model/CreateDBClusterSnapshotRequest.h>
 #include <aws/rds/model/CreateDBInstanceRequest.h>
 #include <aws/rds/model/CreateDBInstanceReadReplicaRequest.h>
 #include <aws/rds/model/CreateDBParameterGroupRequest.h>
@@ -38,6 +45,9 @@
 #include <aws/rds/model/CreateDBSubnetGroupRequest.h>
 #include <aws/rds/model/CreateEventSubscriptionRequest.h>
 #include <aws/rds/model/CreateOptionGroupRequest.h>
+#include <aws/rds/model/DeleteDBClusterRequest.h>
+#include <aws/rds/model/DeleteDBClusterParameterGroupRequest.h>
+#include <aws/rds/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/rds/model/DeleteDBInstanceRequest.h>
 #include <aws/rds/model/DeleteDBParameterGroupRequest.h>
 #include <aws/rds/model/DeleteDBSecurityGroupRequest.h>
@@ -45,13 +55,22 @@
 #include <aws/rds/model/DeleteDBSubnetGroupRequest.h>
 #include <aws/rds/model/DeleteEventSubscriptionRequest.h>
 #include <aws/rds/model/DeleteOptionGroupRequest.h>
+#include <aws/rds/model/DescribeAccountAttributesRequest.h>
+#include <aws/rds/model/DescribeCertificatesRequest.h>
+#include <aws/rds/model/DescribeDBClusterParameterGroupsRequest.h>
+#include <aws/rds/model/DescribeDBClusterParametersRequest.h>
+#include <aws/rds/model/DescribeDBClusterSnapshotsRequest.h>
+#include <aws/rds/model/DescribeDBClustersRequest.h>
 #include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
 #include <aws/rds/model/DescribeDBInstancesRequest.h>
+#include <aws/rds/model/DescribeDBLogFilesRequest.h>
 #include <aws/rds/model/DescribeDBParameterGroupsRequest.h>
 #include <aws/rds/model/DescribeDBParametersRequest.h>
 #include <aws/rds/model/DescribeDBSecurityGroupsRequest.h>
+#include <aws/rds/model/DescribeDBSnapshotAttributesRequest.h>
 #include <aws/rds/model/DescribeDBSnapshotsRequest.h>
 #include <aws/rds/model/DescribeDBSubnetGroupsRequest.h>
+#include <aws/rds/model/DescribeEngineDefaultClusterParametersRequest.h>
 #include <aws/rds/model/DescribeEngineDefaultParametersRequest.h>
 #include <aws/rds/model/DescribeEventCategoriesRequest.h>
 #include <aws/rds/model/DescribeEventSubscriptionsRequest.h>
@@ -59,11 +78,17 @@
 #include <aws/rds/model/DescribeOptionGroupOptionsRequest.h>
 #include <aws/rds/model/DescribeOptionGroupsRequest.h>
 #include <aws/rds/model/DescribeOrderableDBInstanceOptionsRequest.h>
+#include <aws/rds/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
+#include <aws/rds/model/DownloadDBLogFilePortionRequest.h>
+#include <aws/rds/model/FailoverDBClusterRequest.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
+#include <aws/rds/model/ModifyDBClusterRequest.h>
+#include <aws/rds/model/ModifyDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/ModifyDBInstanceRequest.h>
 #include <aws/rds/model/ModifyDBParameterGroupRequest.h>
+#include <aws/rds/model/ModifyDBSnapshotAttributeRequest.h>
 #include <aws/rds/model/ModifyDBSubnetGroupRequest.h>
 #include <aws/rds/model/ModifyEventSubscriptionRequest.h>
 #include <aws/rds/model/ModifyOptionGroupRequest.h>
@@ -72,7 +97,10 @@
 #include <aws/rds/model/RebootDBInstanceRequest.h>
 #include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/rds/model/RemoveTagsFromResourceRequest.h>
+#include <aws/rds/model/ResetDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/ResetDBParameterGroupRequest.h>
+#include <aws/rds/model/RestoreDBClusterFromSnapshotRequest.h>
+#include <aws/rds/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeRequest.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressRequest.h>
@@ -200,6 +228,36 @@ void RDSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& req
   handler(this, request, AddTagsToResource(request), context);
 }
 
+ApplyPendingMaintenanceActionOutcome RDSClient::ApplyPendingMaintenanceAction(const ApplyPendingMaintenanceActionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ApplyPendingMaintenanceActionOutcome(ApplyPendingMaintenanceActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ApplyPendingMaintenanceActionOutcome(outcome.GetError());
+  }
+}
+
+ApplyPendingMaintenanceActionOutcomeCallable RDSClient::ApplyPendingMaintenanceActionCallable(const ApplyPendingMaintenanceActionRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ApplyPendingMaintenanceAction, this, request);
+}
+
+void RDSClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ApplyPendingMaintenanceActionAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ApplyPendingMaintenanceAction(request), context);
+}
+
 AuthorizeDBSecurityGroupIngressOutcome RDSClient::AuthorizeDBSecurityGroupIngress(const AuthorizeDBSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
@@ -230,6 +288,66 @@ void RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper(const AuthorizeDBSecu
   handler(this, request, AuthorizeDBSecurityGroupIngress(request), context);
 }
 
+CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBClusterSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CopyDBClusterSnapshotOutcome(CopyDBClusterSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyDBClusterSnapshotOutcome(outcome.GetError());
+  }
+}
+
+CopyDBClusterSnapshotOutcomeCallable RDSClient::CopyDBClusterSnapshotCallable(const CopyDBClusterSnapshotRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CopyDBClusterSnapshot, this, request);
+}
+
+void RDSClient::CopyDBClusterSnapshotAsync(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CopyDBClusterSnapshotAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CopyDBClusterSnapshotAsyncHelper(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyDBClusterSnapshot(request), context);
+}
+
+CopyDBParameterGroupOutcome RDSClient::CopyDBParameterGroup(const CopyDBParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CopyDBParameterGroupOutcome(CopyDBParameterGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyDBParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+CopyDBParameterGroupOutcomeCallable RDSClient::CopyDBParameterGroupCallable(const CopyDBParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CopyDBParameterGroup, this, request);
+}
+
+void RDSClient::CopyDBParameterGroupAsync(const CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CopyDBParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CopyDBParameterGroupAsyncHelper(const CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyDBParameterGroup(request), context);
+}
+
 CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& request) const
 {
   Aws::StringStream ss;
@@ -258,6 +376,126 @@ void RDSClient::CopyDBSnapshotAsync(const CopyDBSnapshotRequest& request, const 
 void RDSClient::CopyDBSnapshotAsyncHelper(const CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CopyDBSnapshot(request), context);
+}
+
+CopyOptionGroupOutcome RDSClient::CopyOptionGroup(const CopyOptionGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CopyOptionGroupOutcome(CopyOptionGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyOptionGroupOutcome(outcome.GetError());
+  }
+}
+
+CopyOptionGroupOutcomeCallable RDSClient::CopyOptionGroupCallable(const CopyOptionGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CopyOptionGroup, this, request);
+}
+
+void RDSClient::CopyOptionGroupAsync(const CopyOptionGroupRequest& request, const CopyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CopyOptionGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CopyOptionGroupAsyncHelper(const CopyOptionGroupRequest& request, const CopyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyOptionGroup(request), context);
+}
+
+CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDBClusterOutcome(CreateDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDBClusterOutcome(outcome.GetError());
+  }
+}
+
+CreateDBClusterOutcomeCallable RDSClient::CreateDBClusterCallable(const CreateDBClusterRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CreateDBCluster, this, request);
+}
+
+void RDSClient::CreateDBClusterAsync(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CreateDBClusterAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CreateDBClusterAsyncHelper(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDBCluster(request), context);
+}
+
+CreateDBClusterParameterGroupOutcome RDSClient::CreateDBClusterParameterGroup(const CreateDBClusterParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDBClusterParameterGroupOutcome(CreateDBClusterParameterGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDBClusterParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateDBClusterParameterGroupOutcomeCallable RDSClient::CreateDBClusterParameterGroupCallable(const CreateDBClusterParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CreateDBClusterParameterGroup, this, request);
+}
+
+void RDSClient::CreateDBClusterParameterGroupAsync(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CreateDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CreateDBClusterParameterGroupAsyncHelper(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDBClusterParameterGroup(request), context);
+}
+
+CreateDBClusterSnapshotOutcome RDSClient::CreateDBClusterSnapshot(const CreateDBClusterSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateDBClusterSnapshotOutcome(CreateDBClusterSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDBClusterSnapshotOutcome(outcome.GetError());
+  }
+}
+
+CreateDBClusterSnapshotOutcomeCallable RDSClient::CreateDBClusterSnapshotCallable(const CreateDBClusterSnapshotRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CreateDBClusterSnapshot, this, request);
+}
+
+void RDSClient::CreateDBClusterSnapshotAsync(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CreateDBClusterSnapshotAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CreateDBClusterSnapshotAsyncHelper(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDBClusterSnapshot(request), context);
 }
 
 CreateDBInstanceOutcome RDSClient::CreateDBInstance(const CreateDBInstanceRequest& request) const
@@ -500,6 +738,96 @@ void RDSClient::CreateOptionGroupAsyncHelper(const CreateOptionGroupRequest& req
   handler(this, request, CreateOptionGroup(request), context);
 }
 
+DeleteDBClusterOutcome RDSClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDBClusterOutcome(DeleteDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDBClusterOutcome(outcome.GetError());
+  }
+}
+
+DeleteDBClusterOutcomeCallable RDSClient::DeleteDBClusterCallable(const DeleteDBClusterRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DeleteDBCluster, this, request);
+}
+
+void RDSClient::DeleteDBClusterAsync(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DeleteDBClusterAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DeleteDBClusterAsyncHelper(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDBCluster(request), context);
+}
+
+DeleteDBClusterParameterGroupOutcome RDSClient::DeleteDBClusterParameterGroup(const DeleteDBClusterParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDBClusterParameterGroupOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteDBClusterParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteDBClusterParameterGroupOutcomeCallable RDSClient::DeleteDBClusterParameterGroupCallable(const DeleteDBClusterParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DeleteDBClusterParameterGroup, this, request);
+}
+
+void RDSClient::DeleteDBClusterParameterGroupAsync(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DeleteDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DeleteDBClusterParameterGroupAsyncHelper(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDBClusterParameterGroup(request), context);
+}
+
+DeleteDBClusterSnapshotOutcome RDSClient::DeleteDBClusterSnapshot(const DeleteDBClusterSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDBClusterSnapshotOutcome(DeleteDBClusterSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDBClusterSnapshotOutcome(outcome.GetError());
+  }
+}
+
+DeleteDBClusterSnapshotOutcomeCallable RDSClient::DeleteDBClusterSnapshotCallable(const DeleteDBClusterSnapshotRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DeleteDBClusterSnapshot, this, request);
+}
+
+void RDSClient::DeleteDBClusterSnapshotAsync(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DeleteDBClusterSnapshotAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DeleteDBClusterSnapshotAsyncHelper(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDBClusterSnapshot(request), context);
+}
+
 DeleteDBInstanceOutcome RDSClient::DeleteDBInstance(const DeleteDBInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -710,6 +1038,186 @@ void RDSClient::DeleteOptionGroupAsyncHelper(const DeleteOptionGroupRequest& req
   handler(this, request, DeleteOptionGroup(request), context);
 }
 
+DescribeAccountAttributesOutcome RDSClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAccountAttributesOutcome(outcome.GetError());
+  }
+}
+
+DescribeAccountAttributesOutcomeCallable RDSClient::DescribeAccountAttributesCallable(const DescribeAccountAttributesRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeAccountAttributes, this, request);
+}
+
+void RDSClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeAccountAttributesAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountAttributes(request), context);
+}
+
+DescribeCertificatesOutcome RDSClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCertificatesOutcome(DescribeCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCertificatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeCertificatesOutcomeCallable RDSClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeCertificates, this, request);
+}
+
+void RDSClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeCertificatesAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCertificates(request), context);
+}
+
+DescribeDBClusterParameterGroupsOutcome RDSClient::DescribeDBClusterParameterGroups(const DescribeDBClusterParameterGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBClusterParameterGroupsOutcome(DescribeDBClusterParameterGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBClusterParameterGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBClusterParameterGroupsOutcomeCallable RDSClient::DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBClusterParameterGroups, this, request);
+}
+
+void RDSClient::DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBClusterParameterGroupsAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBClusterParameterGroupsAsyncHelper(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusterParameterGroups(request), context);
+}
+
+DescribeDBClusterParametersOutcome RDSClient::DescribeDBClusterParameters(const DescribeDBClusterParametersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBClusterParametersOutcome(DescribeDBClusterParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBClusterParametersOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBClusterParametersOutcomeCallable RDSClient::DescribeDBClusterParametersCallable(const DescribeDBClusterParametersRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBClusterParameters, this, request);
+}
+
+void RDSClient::DescribeDBClusterParametersAsync(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBClusterParametersAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBClusterParametersAsyncHelper(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusterParameters(request), context);
+}
+
+DescribeDBClusterSnapshotsOutcome RDSClient::DescribeDBClusterSnapshots(const DescribeDBClusterSnapshotsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBClusterSnapshotsOutcome(DescribeDBClusterSnapshotsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBClusterSnapshotsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBClusterSnapshotsOutcomeCallable RDSClient::DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBClusterSnapshots, this, request);
+}
+
+void RDSClient::DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBClusterSnapshotsAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBClusterSnapshotsAsyncHelper(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusterSnapshots(request), context);
+}
+
+DescribeDBClustersOutcome RDSClient::DescribeDBClusters(const DescribeDBClustersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBClustersOutcome(DescribeDBClustersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBClustersOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBClustersOutcomeCallable RDSClient::DescribeDBClustersCallable(const DescribeDBClustersRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBClusters, this, request);
+}
+
+void RDSClient::DescribeDBClustersAsync(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBClustersAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBClustersAsyncHelper(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusters(request), context);
+}
+
 DescribeDBEngineVersionsOutcome RDSClient::DescribeDBEngineVersions(const DescribeDBEngineVersionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -768,6 +1276,36 @@ void RDSClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& reque
 void RDSClient::DescribeDBInstancesAsyncHelper(const DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDBInstances(request), context);
+}
+
+DescribeDBLogFilesOutcome RDSClient::DescribeDBLogFiles(const DescribeDBLogFilesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBLogFilesOutcome(DescribeDBLogFilesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBLogFilesOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBLogFilesOutcomeCallable RDSClient::DescribeDBLogFilesCallable(const DescribeDBLogFilesRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBLogFiles, this, request);
+}
+
+void RDSClient::DescribeDBLogFilesAsync(const DescribeDBLogFilesRequest& request, const DescribeDBLogFilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBLogFilesAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBLogFilesAsyncHelper(const DescribeDBLogFilesRequest& request, const DescribeDBLogFilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBLogFiles(request), context);
 }
 
 DescribeDBParameterGroupsOutcome RDSClient::DescribeDBParameterGroups(const DescribeDBParameterGroupsRequest& request) const
@@ -860,6 +1398,36 @@ void RDSClient::DescribeDBSecurityGroupsAsyncHelper(const DescribeDBSecurityGrou
   handler(this, request, DescribeDBSecurityGroups(request), context);
 }
 
+DescribeDBSnapshotAttributesOutcome RDSClient::DescribeDBSnapshotAttributes(const DescribeDBSnapshotAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBSnapshotAttributesOutcome(DescribeDBSnapshotAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBSnapshotAttributesOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBSnapshotAttributesOutcomeCallable RDSClient::DescribeDBSnapshotAttributesCallable(const DescribeDBSnapshotAttributesRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBSnapshotAttributes, this, request);
+}
+
+void RDSClient::DescribeDBSnapshotAttributesAsync(const DescribeDBSnapshotAttributesRequest& request, const DescribeDBSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBSnapshotAttributesAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBSnapshotAttributesAsyncHelper(const DescribeDBSnapshotAttributesRequest& request, const DescribeDBSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBSnapshotAttributes(request), context);
+}
+
 DescribeDBSnapshotsOutcome RDSClient::DescribeDBSnapshots(const DescribeDBSnapshotsRequest& request) const
 {
   Aws::StringStream ss;
@@ -918,6 +1486,36 @@ void RDSClient::DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequest&
 void RDSClient::DescribeDBSubnetGroupsAsyncHelper(const DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDBSubnetGroups(request), context);
+}
+
+DescribeEngineDefaultClusterParametersOutcome RDSClient::DescribeEngineDefaultClusterParameters(const DescribeEngineDefaultClusterParametersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEngineDefaultClusterParametersOutcome(DescribeEngineDefaultClusterParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEngineDefaultClusterParametersOutcome(outcome.GetError());
+  }
+}
+
+DescribeEngineDefaultClusterParametersOutcomeCallable RDSClient::DescribeEngineDefaultClusterParametersCallable(const DescribeEngineDefaultClusterParametersRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeEngineDefaultClusterParameters, this, request);
+}
+
+void RDSClient::DescribeEngineDefaultClusterParametersAsync(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeEngineDefaultClusterParametersAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeEngineDefaultClusterParametersAsyncHelper(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEngineDefaultClusterParameters(request), context);
 }
 
 DescribeEngineDefaultParametersOutcome RDSClient::DescribeEngineDefaultParameters(const DescribeEngineDefaultParametersRequest& request) const
@@ -1130,6 +1728,36 @@ void RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper(const DescribeOrde
   handler(this, request, DescribeOrderableDBInstanceOptions(request), context);
 }
 
+DescribePendingMaintenanceActionsOutcome RDSClient::DescribePendingMaintenanceActions(const DescribePendingMaintenanceActionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribePendingMaintenanceActionsOutcome(DescribePendingMaintenanceActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePendingMaintenanceActionsOutcome(outcome.GetError());
+  }
+}
+
+DescribePendingMaintenanceActionsOutcomeCallable RDSClient::DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribePendingMaintenanceActions, this, request);
+}
+
+void RDSClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribePendingMaintenanceActionsAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePendingMaintenanceActions(request), context);
+}
+
 DescribeReservedDBInstancesOutcome RDSClient::DescribeReservedDBInstances(const DescribeReservedDBInstancesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1190,6 +1818,66 @@ void RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper(const DescribeRe
   handler(this, request, DescribeReservedDBInstancesOfferings(request), context);
 }
 
+DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const DownloadDBLogFilePortionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DownloadDBLogFilePortionOutcome(DownloadDBLogFilePortionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DownloadDBLogFilePortionOutcome(outcome.GetError());
+  }
+}
+
+DownloadDBLogFilePortionOutcomeCallable RDSClient::DownloadDBLogFilePortionCallable(const DownloadDBLogFilePortionRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DownloadDBLogFilePortion, this, request);
+}
+
+void RDSClient::DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DownloadDBLogFilePortionAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DownloadDBLogFilePortionAsyncHelper(const DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DownloadDBLogFilePortion(request), context);
+}
+
+FailoverDBClusterOutcome RDSClient::FailoverDBCluster(const FailoverDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return FailoverDBClusterOutcome(FailoverDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return FailoverDBClusterOutcome(outcome.GetError());
+  }
+}
+
+FailoverDBClusterOutcomeCallable RDSClient::FailoverDBClusterCallable(const FailoverDBClusterRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::FailoverDBCluster, this, request);
+}
+
+void RDSClient::FailoverDBClusterAsync(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::FailoverDBClusterAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::FailoverDBClusterAsyncHelper(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, FailoverDBCluster(request), context);
+}
+
 ListTagsForResourceOutcome RDSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1218,6 +1906,66 @@ void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
 void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ModifyDBClusterOutcome RDSClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyDBClusterOutcome(ModifyDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyDBClusterOutcome(outcome.GetError());
+  }
+}
+
+ModifyDBClusterOutcomeCallable RDSClient::ModifyDBClusterCallable(const ModifyDBClusterRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ModifyDBCluster, this, request);
+}
+
+void RDSClient::ModifyDBClusterAsync(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ModifyDBClusterAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ModifyDBClusterAsyncHelper(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyDBCluster(request), context);
+}
+
+ModifyDBClusterParameterGroupOutcome RDSClient::ModifyDBClusterParameterGroup(const ModifyDBClusterParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyDBClusterParameterGroupOutcome(ModifyDBClusterParameterGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyDBClusterParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+ModifyDBClusterParameterGroupOutcomeCallable RDSClient::ModifyDBClusterParameterGroupCallable(const ModifyDBClusterParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ModifyDBClusterParameterGroup, this, request);
+}
+
+void RDSClient::ModifyDBClusterParameterGroupAsync(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ModifyDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ModifyDBClusterParameterGroupAsyncHelper(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyDBClusterParameterGroup(request), context);
 }
 
 ModifyDBInstanceOutcome RDSClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const
@@ -1278,6 +2026,36 @@ void RDSClient::ModifyDBParameterGroupAsync(const ModifyDBParameterGroupRequest&
 void RDSClient::ModifyDBParameterGroupAsyncHelper(const ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyDBParameterGroup(request), context);
+}
+
+ModifyDBSnapshotAttributeOutcome RDSClient::ModifyDBSnapshotAttribute(const ModifyDBSnapshotAttributeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyDBSnapshotAttributeOutcome(ModifyDBSnapshotAttributeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyDBSnapshotAttributeOutcome(outcome.GetError());
+  }
+}
+
+ModifyDBSnapshotAttributeOutcomeCallable RDSClient::ModifyDBSnapshotAttributeCallable(const ModifyDBSnapshotAttributeRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ModifyDBSnapshotAttribute, this, request);
+}
+
+void RDSClient::ModifyDBSnapshotAttributeAsync(const ModifyDBSnapshotAttributeRequest& request, const ModifyDBSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ModifyDBSnapshotAttributeAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ModifyDBSnapshotAttributeAsyncHelper(const ModifyDBSnapshotAttributeRequest& request, const ModifyDBSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyDBSnapshotAttribute(request), context);
 }
 
 ModifyDBSubnetGroupOutcome RDSClient::ModifyDBSubnetGroup(const ModifyDBSubnetGroupRequest& request) const
@@ -1520,6 +2298,36 @@ void RDSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRe
   handler(this, request, RemoveTagsFromResource(request), context);
 }
 
+ResetDBClusterParameterGroupOutcome RDSClient::ResetDBClusterParameterGroup(const ResetDBClusterParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResetDBClusterParameterGroupOutcome(ResetDBClusterParameterGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResetDBClusterParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+ResetDBClusterParameterGroupOutcomeCallable RDSClient::ResetDBClusterParameterGroupCallable(const ResetDBClusterParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ResetDBClusterParameterGroup, this, request);
+}
+
+void RDSClient::ResetDBClusterParameterGroupAsync(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ResetDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ResetDBClusterParameterGroupAsyncHelper(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetDBClusterParameterGroup(request), context);
+}
+
 ResetDBParameterGroupOutcome RDSClient::ResetDBParameterGroup(const ResetDBParameterGroupRequest& request) const
 {
   Aws::StringStream ss;
@@ -1548,6 +2356,66 @@ void RDSClient::ResetDBParameterGroupAsync(const ResetDBParameterGroupRequest& r
 void RDSClient::ResetDBParameterGroupAsyncHelper(const ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetDBParameterGroup(request), context);
+}
+
+RestoreDBClusterFromSnapshotOutcome RDSClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDBClusterFromSnapshotOutcome(RestoreDBClusterFromSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDBClusterFromSnapshotOutcome(outcome.GetError());
+  }
+}
+
+RestoreDBClusterFromSnapshotOutcomeCallable RDSClient::RestoreDBClusterFromSnapshotCallable(const RestoreDBClusterFromSnapshotRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::RestoreDBClusterFromSnapshot, this, request);
+}
+
+void RDSClient::RestoreDBClusterFromSnapshotAsync(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::RestoreDBClusterFromSnapshotAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::RestoreDBClusterFromSnapshotAsyncHelper(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDBClusterFromSnapshot(request), context);
+}
+
+RestoreDBClusterToPointInTimeOutcome RDSClient::RestoreDBClusterToPointInTime(const RestoreDBClusterToPointInTimeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDBClusterToPointInTimeOutcome(RestoreDBClusterToPointInTimeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDBClusterToPointInTimeOutcome(outcome.GetError());
+  }
+}
+
+RestoreDBClusterToPointInTimeOutcomeCallable RDSClient::RestoreDBClusterToPointInTimeCallable(const RestoreDBClusterToPointInTimeRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::RestoreDBClusterToPointInTime, this, request);
+}
+
+void RDSClient::RestoreDBClusterToPointInTimeAsync(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::RestoreDBClusterToPointInTimeAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::RestoreDBClusterToPointInTimeAsyncHelper(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDBClusterToPointInTime(request), context);
 }
 
 RestoreDBInstanceFromDBSnapshotOutcome RDSClient::RestoreDBInstanceFromDBSnapshot(const RestoreDBInstanceFromDBSnapshotRequest& request) const

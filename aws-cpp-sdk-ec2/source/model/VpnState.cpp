@@ -30,33 +30,33 @@ namespace Model
 {
 namespace VpnStateMapper
 {
+
+
 VpnState GetVpnStateForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == pending_HASH)
   {
-    return VpnState::pending;
+     return VpnState::pending;
   }
   else if (hashCode == available_HASH)
   {
-    return VpnState::available;
+     return VpnState::available;
   }
   else if (hashCode == deleting_HASH)
   {
-    return VpnState::deleting;
+     return VpnState::deleting;
   }
   else if (hashCode == deleted_HASH)
   {
-    return VpnState::deleted;
+     return VpnState::deleted;
   }
-
   return VpnState::NOT_SET;
 }
 
-Aws::String GetNameForVpnState(VpnState value)
+Aws::String GetNameForVpnState(VpnState enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case VpnState::pending:
     return "pending";

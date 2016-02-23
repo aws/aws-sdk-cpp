@@ -28,6 +28,7 @@
 #include <aws/ec2/EC2ErrorMarshaller.h>
 #include <aws/ec2/model/AcceptVpcPeeringConnectionRequest.h>
 #include <aws/ec2/model/AllocateAddressRequest.h>
+#include <aws/ec2/model/AllocateHostsRequest.h>
 #include <aws/ec2/model/AssignPrivateIpAddressesRequest.h>
 #include <aws/ec2/model/AssociateAddressRequest.h>
 #include <aws/ec2/model/AssociateDhcpOptionsRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/ec2/model/CreateInstanceExportTaskRequest.h>
 #include <aws/ec2/model/CreateInternetGatewayRequest.h>
 #include <aws/ec2/model/CreateKeyPairRequest.h>
+#include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNetworkAclRequest.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfaceRequest.h>
@@ -81,6 +83,7 @@
 #include <aws/ec2/model/DeleteFlowLogsRequest.h>
 #include <aws/ec2/model/DeleteInternetGatewayRequest.h>
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
+#include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
 #include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
@@ -110,6 +113,8 @@
 #include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
 #include <aws/ec2/model/DescribeExportTasksRequest.h>
 #include <aws/ec2/model/DescribeFlowLogsRequest.h>
+#include <aws/ec2/model/DescribeHostsRequest.h>
+#include <aws/ec2/model/DescribeIdFormatRequest.h>
 #include <aws/ec2/model/DescribeImageAttributeRequest.h>
 #include <aws/ec2/model/DescribeImagesRequest.h>
 #include <aws/ec2/model/DescribeImportImageTasksRequest.h>
@@ -120,6 +125,7 @@
 #include <aws/ec2/model/DescribeInternetGatewaysRequest.h>
 #include <aws/ec2/model/DescribeKeyPairsRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
+#include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/ec2/model/DescribeNetworkAclsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
@@ -131,6 +137,8 @@
 #include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
 #include <aws/ec2/model/DescribeRouteTablesRequest.h>
+#include <aws/ec2/model/DescribeScheduledInstanceAvailabilityRequest.h>
+#include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
@@ -147,6 +155,7 @@
 #include <aws/ec2/model/DescribeVolumesRequest.h>
 #include <aws/ec2/model/DescribeVpcAttributeRequest.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkRequest.h>
+#include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DescribeVpcEndpointServicesRequest.h>
 #include <aws/ec2/model/DescribeVpcEndpointsRequest.h>
 #include <aws/ec2/model/DescribeVpcPeeringConnectionsRequest.h>
@@ -160,11 +169,13 @@
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
+#include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DisassociateAddressRequest.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/EnableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/EnableVolumeIORequest.h>
 #include <aws/ec2/model/EnableVpcClassicLinkRequest.h>
+#include <aws/ec2/model/EnableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/ImportImageRequest.h>
@@ -172,11 +183,15 @@
 #include <aws/ec2/model/ImportKeyPairRequest.h>
 #include <aws/ec2/model/ImportSnapshotRequest.h>
 #include <aws/ec2/model/ImportVolumeRequest.h>
+#include <aws/ec2/model/ModifyHostsRequest.h>
+#include <aws/ec2/model/ModifyIdFormatRequest.h>
 #include <aws/ec2/model/ModifyImageAttributeRequest.h>
 #include <aws/ec2/model/ModifyInstanceAttributeRequest.h>
+#include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
 #include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
+#include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
 #include <aws/ec2/model/ModifySubnetAttributeRequest.h>
 #include <aws/ec2/model/ModifyVolumeAttributeRequest.h>
 #include <aws/ec2/model/ModifyVpcAttributeRequest.h>
@@ -184,10 +199,12 @@
 #include <aws/ec2/model/MonitorInstancesRequest.h>
 #include <aws/ec2/model/MoveAddressToVpcRequest.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingRequest.h>
+#include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionRequest.h>
 #include <aws/ec2/model/ReleaseAddressRequest.h>
+#include <aws/ec2/model/ReleaseHostsRequest.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationRequest.h>
 #include <aws/ec2/model/ReplaceNetworkAclEntryRequest.h>
 #include <aws/ec2/model/ReplaceRouteRequest.h>
@@ -203,6 +220,7 @@
 #include <aws/ec2/model/RevokeSecurityGroupEgressRequest.h>
 #include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
 #include <aws/ec2/model/RunInstancesRequest.h>
+#include <aws/ec2/model/RunScheduledInstancesRequest.h>
 #include <aws/ec2/model/StartInstancesRequest.h>
 #include <aws/ec2/model/StopInstancesRequest.h>
 #include <aws/ec2/model/TerminateInstancesRequest.h>
@@ -330,6 +348,36 @@ void EC2Client::AllocateAddressAsync(const AllocateAddressRequest& request, cons
 void EC2Client::AllocateAddressAsyncHelper(const AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AllocateAddress(request), context);
+}
+
+AllocateHostsOutcome EC2Client::AllocateHosts(const AllocateHostsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AllocateHostsOutcome(AllocateHostsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return AllocateHostsOutcome(outcome.GetError());
+  }
+}
+
+AllocateHostsOutcomeCallable EC2Client::AllocateHostsCallable(const AllocateHostsRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::AllocateHosts, this, request);
+}
+
+void EC2Client::AllocateHostsAsync(const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::AllocateHostsAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::AllocateHostsAsyncHelper(const AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AllocateHosts(request), context);
 }
 
 AssignPrivateIpAddressesOutcome EC2Client::AssignPrivateIpAddresses(const AssignPrivateIpAddressesRequest& request) const
@@ -1202,6 +1250,36 @@ void EC2Client::CreateKeyPairAsyncHelper(const CreateKeyPairRequest& request, co
   handler(this, request, CreateKeyPair(request), context);
 }
 
+CreateNatGatewayOutcome EC2Client::CreateNatGateway(const CreateNatGatewayRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateNatGatewayOutcome(CreateNatGatewayResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateNatGatewayOutcome(outcome.GetError());
+  }
+}
+
+CreateNatGatewayOutcomeCallable EC2Client::CreateNatGatewayCallable(const CreateNatGatewayRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::CreateNatGateway, this, request);
+}
+
+void EC2Client::CreateNatGatewayAsync(const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::CreateNatGatewayAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::CreateNatGatewayAsyncHelper(const CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNatGateway(request), context);
+}
+
 CreateNetworkAclOutcome EC2Client::CreateNetworkAcl(const CreateNetworkAclRequest& request) const
 {
   Aws::StringStream ss;
@@ -1920,6 +1998,36 @@ void EC2Client::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, const De
 void EC2Client::DeleteKeyPairAsyncHelper(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteKeyPair(request), context);
+}
+
+DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteNatGatewayOutcome(DeleteNatGatewayResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteNatGatewayOutcome(outcome.GetError());
+  }
+}
+
+DeleteNatGatewayOutcomeCallable EC2Client::DeleteNatGatewayCallable(const DeleteNatGatewayRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DeleteNatGateway, this, request);
+}
+
+void EC2Client::DeleteNatGatewayAsync(const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DeleteNatGatewayAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DeleteNatGatewayAsyncHelper(const DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNatGateway(request), context);
 }
 
 DeleteNetworkAclOutcome EC2Client::DeleteNetworkAcl(const DeleteNetworkAclRequest& request) const
@@ -2792,6 +2900,66 @@ void EC2Client::DescribeFlowLogsAsyncHelper(const DescribeFlowLogsRequest& reque
   handler(this, request, DescribeFlowLogs(request), context);
 }
 
+DescribeHostsOutcome EC2Client::DescribeHosts(const DescribeHostsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeHostsOutcome(DescribeHostsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeHostsOutcome(outcome.GetError());
+  }
+}
+
+DescribeHostsOutcomeCallable EC2Client::DescribeHostsCallable(const DescribeHostsRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeHosts, this, request);
+}
+
+void EC2Client::DescribeHostsAsync(const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeHostsAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeHostsAsyncHelper(const DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeHosts(request), context);
+}
+
+DescribeIdFormatOutcome EC2Client::DescribeIdFormat(const DescribeIdFormatRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeIdFormatOutcome(DescribeIdFormatResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeIdFormatOutcome(outcome.GetError());
+  }
+}
+
+DescribeIdFormatOutcomeCallable EC2Client::DescribeIdFormatCallable(const DescribeIdFormatRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeIdFormat, this, request);
+}
+
+void EC2Client::DescribeIdFormatAsync(const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeIdFormatAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeIdFormatAsyncHelper(const DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIdFormat(request), context);
+}
+
 DescribeImageAttributeOutcome EC2Client::DescribeImageAttribute(const DescribeImageAttributeRequest& request) const
 {
   Aws::StringStream ss;
@@ -3090,6 +3258,36 @@ void EC2Client::DescribeMovingAddressesAsync(const DescribeMovingAddressesReques
 void EC2Client::DescribeMovingAddressesAsyncHelper(const DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeMovingAddresses(request), context);
+}
+
+DescribeNatGatewaysOutcome EC2Client::DescribeNatGateways(const DescribeNatGatewaysRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeNatGatewaysOutcome(DescribeNatGatewaysResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeNatGatewaysOutcome(outcome.GetError());
+  }
+}
+
+DescribeNatGatewaysOutcomeCallable EC2Client::DescribeNatGatewaysCallable(const DescribeNatGatewaysRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeNatGateways, this, request);
+}
+
+void EC2Client::DescribeNatGatewaysAsync(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeNatGatewaysAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeNatGatewaysAsyncHelper(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNatGateways(request), context);
 }
 
 DescribeNetworkAclsOutcome EC2Client::DescribeNetworkAcls(const DescribeNetworkAclsRequest& request) const
@@ -3420,6 +3618,66 @@ void EC2Client::DescribeRouteTablesAsync(const DescribeRouteTablesRequest& reque
 void EC2Client::DescribeRouteTablesAsyncHelper(const DescribeRouteTablesRequest& request, const DescribeRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRouteTables(request), context);
+}
+
+DescribeScheduledInstanceAvailabilityOutcome EC2Client::DescribeScheduledInstanceAvailability(const DescribeScheduledInstanceAvailabilityRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScheduledInstanceAvailabilityOutcome(DescribeScheduledInstanceAvailabilityResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScheduledInstanceAvailabilityOutcome(outcome.GetError());
+  }
+}
+
+DescribeScheduledInstanceAvailabilityOutcomeCallable EC2Client::DescribeScheduledInstanceAvailabilityCallable(const DescribeScheduledInstanceAvailabilityRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeScheduledInstanceAvailability, this, request);
+}
+
+void EC2Client::DescribeScheduledInstanceAvailabilityAsync(const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeScheduledInstanceAvailabilityAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeScheduledInstanceAvailabilityAsyncHelper(const DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeScheduledInstanceAvailability(request), context);
+}
+
+DescribeScheduledInstancesOutcome EC2Client::DescribeScheduledInstances(const DescribeScheduledInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScheduledInstancesOutcome(DescribeScheduledInstancesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScheduledInstancesOutcome(outcome.GetError());
+  }
+}
+
+DescribeScheduledInstancesOutcomeCallable EC2Client::DescribeScheduledInstancesCallable(const DescribeScheduledInstancesRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeScheduledInstances, this, request);
+}
+
+void EC2Client::DescribeScheduledInstancesAsync(const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeScheduledInstancesAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeScheduledInstancesAsyncHelper(const DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeScheduledInstances(request), context);
 }
 
 DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const
@@ -3902,6 +4160,36 @@ void EC2Client::DescribeVpcClassicLinkAsyncHelper(const DescribeVpcClassicLinkRe
   handler(this, request, DescribeVpcClassicLink(request), context);
 }
 
+DescribeVpcClassicLinkDnsSupportOutcome EC2Client::DescribeVpcClassicLinkDnsSupport(const DescribeVpcClassicLinkDnsSupportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeVpcClassicLinkDnsSupportOutcome(DescribeVpcClassicLinkDnsSupportResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeVpcClassicLinkDnsSupportOutcome(outcome.GetError());
+  }
+}
+
+DescribeVpcClassicLinkDnsSupportOutcomeCallable EC2Client::DescribeVpcClassicLinkDnsSupportCallable(const DescribeVpcClassicLinkDnsSupportRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeVpcClassicLinkDnsSupport, this, request);
+}
+
+void EC2Client::DescribeVpcClassicLinkDnsSupportAsync(const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeVpcClassicLinkDnsSupportAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeVpcClassicLinkDnsSupportAsyncHelper(const DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVpcClassicLinkDnsSupport(request), context);
+}
+
 DescribeVpcEndpointServicesOutcome EC2Client::DescribeVpcEndpointServices(const DescribeVpcEndpointServicesRequest& request) const
 {
   Aws::StringStream ss;
@@ -4292,6 +4580,36 @@ void EC2Client::DisableVpcClassicLinkAsyncHelper(const DisableVpcClassicLinkRequ
   handler(this, request, DisableVpcClassicLink(request), context);
 }
 
+DisableVpcClassicLinkDnsSupportOutcome EC2Client::DisableVpcClassicLinkDnsSupport(const DisableVpcClassicLinkDnsSupportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisableVpcClassicLinkDnsSupportOutcome(DisableVpcClassicLinkDnsSupportResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableVpcClassicLinkDnsSupportOutcome(outcome.GetError());
+  }
+}
+
+DisableVpcClassicLinkDnsSupportOutcomeCallable EC2Client::DisableVpcClassicLinkDnsSupportCallable(const DisableVpcClassicLinkDnsSupportRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DisableVpcClassicLinkDnsSupport, this, request);
+}
+
+void EC2Client::DisableVpcClassicLinkDnsSupportAsync(const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DisableVpcClassicLinkDnsSupportAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DisableVpcClassicLinkDnsSupportAsyncHelper(const DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableVpcClassicLinkDnsSupport(request), context);
+}
+
 DisassociateAddressOutcome EC2Client::DisassociateAddress(const DisassociateAddressRequest& request) const
 {
   Aws::StringStream ss;
@@ -4440,6 +4758,36 @@ void EC2Client::EnableVpcClassicLinkAsync(const EnableVpcClassicLinkRequest& req
 void EC2Client::EnableVpcClassicLinkAsyncHelper(const EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableVpcClassicLink(request), context);
+}
+
+EnableVpcClassicLinkDnsSupportOutcome EC2Client::EnableVpcClassicLinkDnsSupport(const EnableVpcClassicLinkDnsSupportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return EnableVpcClassicLinkDnsSupportOutcome(EnableVpcClassicLinkDnsSupportResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableVpcClassicLinkDnsSupportOutcome(outcome.GetError());
+  }
+}
+
+EnableVpcClassicLinkDnsSupportOutcomeCallable EC2Client::EnableVpcClassicLinkDnsSupportCallable(const EnableVpcClassicLinkDnsSupportRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::EnableVpcClassicLinkDnsSupport, this, request);
+}
+
+void EC2Client::EnableVpcClassicLinkDnsSupportAsync(const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::EnableVpcClassicLinkDnsSupportAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::EnableVpcClassicLinkDnsSupportAsyncHelper(const EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableVpcClassicLinkDnsSupport(request), context);
 }
 
 GetConsoleOutputOutcome EC2Client::GetConsoleOutput(const GetConsoleOutputRequest& request) const
@@ -4652,6 +5000,66 @@ void EC2Client::ImportVolumeAsyncHelper(const ImportVolumeRequest& request, cons
   handler(this, request, ImportVolume(request), context);
 }
 
+ModifyHostsOutcome EC2Client::ModifyHosts(const ModifyHostsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyHostsOutcome(ModifyHostsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyHostsOutcome(outcome.GetError());
+  }
+}
+
+ModifyHostsOutcomeCallable EC2Client::ModifyHostsCallable(const ModifyHostsRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::ModifyHosts, this, request);
+}
+
+void EC2Client::ModifyHostsAsync(const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::ModifyHostsAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::ModifyHostsAsyncHelper(const ModifyHostsRequest& request, const ModifyHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyHosts(request), context);
+}
+
+ModifyIdFormatOutcome EC2Client::ModifyIdFormat(const ModifyIdFormatRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyIdFormatOutcome(NoResult());
+  }
+  else
+  {
+    return ModifyIdFormatOutcome(outcome.GetError());
+  }
+}
+
+ModifyIdFormatOutcomeCallable EC2Client::ModifyIdFormatCallable(const ModifyIdFormatRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::ModifyIdFormat, this, request);
+}
+
+void EC2Client::ModifyIdFormatAsync(const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::ModifyIdFormatAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::ModifyIdFormatAsyncHelper(const ModifyIdFormatRequest& request, const ModifyIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyIdFormat(request), context);
+}
+
 ModifyImageAttributeOutcome EC2Client::ModifyImageAttribute(const ModifyImageAttributeRequest& request) const
 {
   Aws::StringStream ss;
@@ -4710,6 +5118,36 @@ void EC2Client::ModifyInstanceAttributeAsync(const ModifyInstanceAttributeReques
 void EC2Client::ModifyInstanceAttributeAsyncHelper(const ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyInstanceAttribute(request), context);
+}
+
+ModifyInstancePlacementOutcome EC2Client::ModifyInstancePlacement(const ModifyInstancePlacementRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyInstancePlacementOutcome(ModifyInstancePlacementResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyInstancePlacementOutcome(outcome.GetError());
+  }
+}
+
+ModifyInstancePlacementOutcomeCallable EC2Client::ModifyInstancePlacementCallable(const ModifyInstancePlacementRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::ModifyInstancePlacement, this, request);
+}
+
+void EC2Client::ModifyInstancePlacementAsync(const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::ModifyInstancePlacementAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::ModifyInstancePlacementAsyncHelper(const ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyInstancePlacement(request), context);
 }
 
 ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(const ModifyNetworkInterfaceAttributeRequest& request) const
@@ -4800,6 +5238,36 @@ void EC2Client::ModifySnapshotAttributeAsync(const ModifySnapshotAttributeReques
 void EC2Client::ModifySnapshotAttributeAsyncHelper(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifySnapshotAttribute(request), context);
+}
+
+ModifySpotFleetRequestOutcome EC2Client::ModifySpotFleetRequest(const ModifySpotFleetRequestRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifySpotFleetRequestOutcome(ModifySpotFleetRequestResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifySpotFleetRequestOutcome(outcome.GetError());
+  }
+}
+
+ModifySpotFleetRequestOutcomeCallable EC2Client::ModifySpotFleetRequestCallable(const ModifySpotFleetRequestRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::ModifySpotFleetRequest, this, request);
+}
+
+void EC2Client::ModifySpotFleetRequestAsync(const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::ModifySpotFleetRequestAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::ModifySpotFleetRequestAsyncHelper(const ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifySpotFleetRequest(request), context);
 }
 
 ModifySubnetAttributeOutcome EC2Client::ModifySubnetAttribute(const ModifySubnetAttributeRequest& request) const
@@ -5012,6 +5480,36 @@ void EC2Client::PurchaseReservedInstancesOfferingAsyncHelper(const PurchaseReser
   handler(this, request, PurchaseReservedInstancesOffering(request), context);
 }
 
+PurchaseScheduledInstancesOutcome EC2Client::PurchaseScheduledInstances(const PurchaseScheduledInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PurchaseScheduledInstancesOutcome(PurchaseScheduledInstancesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return PurchaseScheduledInstancesOutcome(outcome.GetError());
+  }
+}
+
+PurchaseScheduledInstancesOutcomeCallable EC2Client::PurchaseScheduledInstancesCallable(const PurchaseScheduledInstancesRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::PurchaseScheduledInstances, this, request);
+}
+
+void EC2Client::PurchaseScheduledInstancesAsync(const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::PurchaseScheduledInstancesAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::PurchaseScheduledInstancesAsyncHelper(const PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PurchaseScheduledInstances(request), context);
+}
+
 RebootInstancesOutcome EC2Client::RebootInstances(const RebootInstancesRequest& request) const
 {
   Aws::StringStream ss;
@@ -5130,6 +5628,36 @@ void EC2Client::ReleaseAddressAsync(const ReleaseAddressRequest& request, const 
 void EC2Client::ReleaseAddressAsyncHelper(const ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ReleaseAddress(request), context);
+}
+
+ReleaseHostsOutcome EC2Client::ReleaseHosts(const ReleaseHostsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ReleaseHostsOutcome(ReleaseHostsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ReleaseHostsOutcome(outcome.GetError());
+  }
+}
+
+ReleaseHostsOutcomeCallable EC2Client::ReleaseHostsCallable(const ReleaseHostsRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::ReleaseHosts, this, request);
+}
+
+void EC2Client::ReleaseHostsAsync(const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::ReleaseHostsAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::ReleaseHostsAsyncHelper(const ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReleaseHosts(request), context);
 }
 
 ReplaceNetworkAclAssociationOutcome EC2Client::ReplaceNetworkAclAssociation(const ReplaceNetworkAclAssociationRequest& request) const
@@ -5580,6 +6108,36 @@ void EC2Client::RunInstancesAsync(const RunInstancesRequest& request, const RunI
 void EC2Client::RunInstancesAsyncHelper(const RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RunInstances(request), context);
+}
+
+RunScheduledInstancesOutcome EC2Client::RunScheduledInstances(const RunScheduledInstancesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RunScheduledInstancesOutcome(RunScheduledInstancesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RunScheduledInstancesOutcome(outcome.GetError());
+  }
+}
+
+RunScheduledInstancesOutcomeCallable EC2Client::RunScheduledInstancesCallable(const RunScheduledInstancesRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::RunScheduledInstances, this, request);
+}
+
+void EC2Client::RunScheduledInstancesAsync(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::RunScheduledInstancesAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::RunScheduledInstancesAsyncHelper(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RunScheduledInstances(request), context);
 }
 
 StartInstancesOutcome EC2Client::StartInstances(const StartInstancesRequest& request) const

@@ -1,0 +1,84 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#include <aws/devicefarm/model/ExecutionStatus.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
+static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
+static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace Model
+{
+namespace ExecutionStatusMapper
+{
+
+
+ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
+{
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PENDING_HASH)
+  {
+     return ExecutionStatus::PENDING;
+  }
+  else if (hashCode == PROCESSING_HASH)
+  {
+     return ExecutionStatus::PROCESSING;
+  }
+  else if (hashCode == SCHEDULING_HASH)
+  {
+     return ExecutionStatus::SCHEDULING;
+  }
+  else if (hashCode == RUNNING_HASH)
+  {
+     return ExecutionStatus::RUNNING;
+  }
+  else if (hashCode == COMPLETED_HASH)
+  {
+     return ExecutionStatus::COMPLETED;
+  }
+  return ExecutionStatus::NOT_SET;
+}
+
+Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue)
+{
+  switch(enumValue)
+  {
+  case ExecutionStatus::PENDING:
+    return "PENDING";
+  case ExecutionStatus::PROCESSING:
+    return "PROCESSING";
+  case ExecutionStatus::SCHEDULING:
+    return "SCHEDULING";
+  case ExecutionStatus::RUNNING:
+    return "RUNNING";
+  case ExecutionStatus::COMPLETED:
+    return "COMPLETED";
+  default:
+    return "";
+  }
+}
+
+} // namespace ExecutionStatusMapper
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

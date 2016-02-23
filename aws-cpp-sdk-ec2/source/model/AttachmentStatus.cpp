@@ -30,33 +30,33 @@ namespace Model
 {
 namespace AttachmentStatusMapper
 {
+
+
 AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == attaching_HASH)
   {
-    return AttachmentStatus::attaching;
+     return AttachmentStatus::attaching;
   }
   else if (hashCode == attached_HASH)
   {
-    return AttachmentStatus::attached;
+     return AttachmentStatus::attached;
   }
   else if (hashCode == detaching_HASH)
   {
-    return AttachmentStatus::detaching;
+     return AttachmentStatus::detaching;
   }
   else if (hashCode == detached_HASH)
   {
-    return AttachmentStatus::detached;
+     return AttachmentStatus::detached;
   }
-
   return AttachmentStatus::NOT_SET;
 }
 
-Aws::String GetNameForAttachmentStatus(AttachmentStatus value)
+Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case AttachmentStatus::attaching:
     return "attaching";

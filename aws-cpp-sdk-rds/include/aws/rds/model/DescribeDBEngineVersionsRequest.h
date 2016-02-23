@@ -16,6 +16,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/Filter.h>
 
 namespace Aws
 {
@@ -111,7 +113,7 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -119,7 +121,7 @@ namespace Model
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -127,7 +129,7 @@ namespace Model
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -135,7 +137,7 @@ namespace Model
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -143,7 +145,7 @@ namespace Model
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -151,7 +153,7 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -159,7 +161,7 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of a specific DB Parameter Group family to return details for. </p>
+     * <p> The name of a specific DB parameter group family to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
      * contain two consecutive hyphens</li> </ul>
@@ -167,10 +169,45 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
+     * <p> Not currently supported. </p>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline DescribeDBEngineVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline DescribeDBEngineVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline DescribeDBEngineVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p> Not currently supported. </p>
+     */
+    inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
@@ -178,7 +215,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -186,7 +223,7 @@ namespace Model
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
      * is included in the response so that the following results can be retrieved. </p>
-     * <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100</p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
@@ -285,6 +322,8 @@ namespace Model
     bool m_engineVersionHasBeenSet;
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;

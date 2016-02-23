@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ResourceSignalStatusMapper
 {
+
+
 ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == SUCCESS_HASH)
   {
-    return ResourceSignalStatus::SUCCESS;
+     return ResourceSignalStatus::SUCCESS;
   }
   else if (hashCode == FAILURE_HASH)
   {
-    return ResourceSignalStatus::FAILURE;
+     return ResourceSignalStatus::FAILURE;
   }
-
   return ResourceSignalStatus::NOT_SET;
 }
 
-Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus value)
+Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ResourceSignalStatus::SUCCESS:
     return "SUCCESS";

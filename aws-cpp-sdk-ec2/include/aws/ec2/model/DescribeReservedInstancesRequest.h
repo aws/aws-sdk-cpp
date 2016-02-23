@@ -117,11 +117,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -159,11 +159,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -201,11 +201,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -243,11 +243,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -285,11 +285,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -327,11 +327,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
@@ -369,11 +369,11 @@ namespace Model
      * (for example, 2015-08-07T11:54:42.000Z).</p> </li> <li>
      * <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for
      * example, 9800.0).</p> </li> <li> <p><code>instance-type</code> - The instance
-     * type on which the Reserved Instance can be used.</p> </li> <li>
+     * type that is covered by the reservation.</p> </li> <li>
      * <p><code>product-description</code> - The Reserved Instance product platform
      * description. Instances that include <code>(Amazon VPC)</code> in the product
      * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * are for use with Amazon VPC (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
      * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |

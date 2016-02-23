@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Represents the input for <a>IncreaseStreamRetentionPeriod</a>.</p>
    */
   class AWS_KINESIS_API IncreaseStreamRetentionPeriodRequest : public KinesisRequest
   {
@@ -35,34 +36,57 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline IncreaseStreamRetentionPeriodRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
-    
+    /**
+     * <p>The new retention period of the stream, in hours. Must be more than the
+     * current retention period.</p>
+     */
     inline long GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
 
-    
+    /**
+     * <p>The new retention period of the stream, in hours. Must be more than the
+     * current retention period.</p>
+     */
     inline void SetRetentionPeriodHours(long value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
-    
+    /**
+     * <p>The new retention period of the stream, in hours. Must be more than the
+     * current retention period.</p>
+     */
     inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
 
   private:

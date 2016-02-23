@@ -46,7 +46,11 @@
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.mapValue.shape.name) + "List")
 #end
 #if(!$template.atBottom)
+#if($template.currentShape.mapKey.shape.enum)
+  ${template.currentSpaces}  ${template.containerVar}[${template.currentShape.mapKey.shape.name}Mapper::Get${template.currentShape.mapKey.shape.name}ForName(${template.lowerCaseVarName}Item.first)] = std::move(${template.internalCollectionName});
+#else
   ${template.currentSpaces}  ${template.containerVar}[${template.lowerCaseVarName}Item.first] = std::move(${template.internalCollectionName});
+#end
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)

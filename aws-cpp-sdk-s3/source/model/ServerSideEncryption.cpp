@@ -28,25 +28,25 @@ namespace Model
 {
 namespace ServerSideEncryptionMapper
 {
+
+
 ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == AES256_HASH)
   {
-    return ServerSideEncryption::AES256;
+     return ServerSideEncryption::AES256;
   }
   else if (hashCode == aws_kms_HASH)
   {
-    return ServerSideEncryption::aws_kms;
+     return ServerSideEncryption::aws_kms;
   }
-
   return ServerSideEncryption::NOT_SET;
 }
 
-Aws::String GetNameForServerSideEncryption(ServerSideEncryption value)
+Aws::String GetNameForServerSideEncryption(ServerSideEncryption enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ServerSideEncryption::AES256:
     return "AES256";

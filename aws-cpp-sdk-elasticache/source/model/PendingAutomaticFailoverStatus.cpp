@@ -28,25 +28,25 @@ namespace Model
 {
 namespace PendingAutomaticFailoverStatusMapper
 {
+
+
 PendingAutomaticFailoverStatus GetPendingAutomaticFailoverStatusForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == enabled_HASH)
   {
-    return PendingAutomaticFailoverStatus::enabled;
+     return PendingAutomaticFailoverStatus::enabled;
   }
   else if (hashCode == disabled_HASH)
   {
-    return PendingAutomaticFailoverStatus::disabled;
+     return PendingAutomaticFailoverStatus::disabled;
   }
-
   return PendingAutomaticFailoverStatus::NOT_SET;
 }
 
-Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus value)
+Aws::String GetNameForPendingAutomaticFailoverStatus(PendingAutomaticFailoverStatus enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case PendingAutomaticFailoverStatus::enabled:
     return "enabled";

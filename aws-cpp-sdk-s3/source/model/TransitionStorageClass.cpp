@@ -18,6 +18,7 @@
 using namespace Aws::Utils;
 
 static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
+static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
 namespace Aws
 {
@@ -27,24 +28,30 @@ namespace Model
 {
 namespace TransitionStorageClassMapper
 {
+
+
 TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == GLACIER_HASH)
   {
-    return TransitionStorageClass::GLACIER;
+     return TransitionStorageClass::GLACIER;
   }
-
+  else if (hashCode == STANDARD_IA_HASH)
+  {
+     return TransitionStorageClass::STANDARD_IA;
+  }
   return TransitionStorageClass::NOT_SET;
 }
 
-Aws::String GetNameForTransitionStorageClass(TransitionStorageClass value)
+Aws::String GetNameForTransitionStorageClass(TransitionStorageClass enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case TransitionStorageClass::GLACIER:
     return "GLACIER";
+  case TransitionStorageClass::STANDARD_IA:
+    return "STANDARD_IA";
   default:
     return "";
   }

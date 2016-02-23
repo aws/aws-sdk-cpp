@@ -27,6 +27,7 @@
 #include <aws/cloudformation/CloudFormationEndpoint.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>
 #include <aws/cloudformation/model/CancelUpdateStackRequest.h>
+#include <aws/cloudformation/model/ContinueUpdateRollbackRequest.h>
 #include <aws/cloudformation/model/CreateStackRequest.h>
 #include <aws/cloudformation/model/DeleteStackRequest.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
@@ -136,6 +137,36 @@ void CloudFormationClient::CancelUpdateStackAsync(const CancelUpdateStackRequest
 void CloudFormationClient::CancelUpdateStackAsyncHelper(const CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelUpdateStack(request), context);
+}
+
+ContinueUpdateRollbackOutcome CloudFormationClient::ContinueUpdateRollback(const ContinueUpdateRollbackRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ContinueUpdateRollbackOutcome(ContinueUpdateRollbackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ContinueUpdateRollbackOutcome(outcome.GetError());
+  }
+}
+
+ContinueUpdateRollbackOutcomeCallable CloudFormationClient::ContinueUpdateRollbackCallable(const ContinueUpdateRollbackRequest& request) const
+{
+  return std::async(std::launch::async, &CloudFormationClient::ContinueUpdateRollback, this, request);
+}
+
+void CloudFormationClient::ContinueUpdateRollbackAsync(const ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudFormationClient::ContinueUpdateRollbackAsyncHelper, this, request, handler, context);
+}
+
+void CloudFormationClient::ContinueUpdateRollbackAsyncHelper(const ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ContinueUpdateRollback(request), context);
 }
 
 CreateStackOutcome CloudFormationClient::CreateStack(const CreateStackRequest& request) const

@@ -49,7 +49,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_enabledMetricsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false)
+    m_terminationPoliciesHasBeenSet(false),
+    m_newInstancesProtectedFromScaleIn(false),
+    m_newInstancesProtectedFromScaleInHasBeenSet(false)
 {
 }
 
@@ -79,7 +81,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_enabledMetricsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_terminationPoliciesHasBeenSet(false)
+    m_terminationPoliciesHasBeenSet(false),
+    m_newInstancesProtectedFromScaleIn(false),
+    m_newInstancesProtectedFromScaleInHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -252,6 +256,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
 
       m_terminationPoliciesHasBeenSet = true;
     }
+    XmlNode newInstancesProtectedFromScaleInNode = resultNode.FirstChild("NewInstancesProtectedFromScaleIn");
+    if(!newInstancesProtectedFromScaleInNode.IsNull())
+    {
+      m_newInstancesProtectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(newInstancesProtectedFromScaleInNode.GetText().c_str()).c_str());
+      m_newInstancesProtectedFromScaleInHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -375,6 +385,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+  if(m_newInstancesProtectedFromScaleInHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+  }
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -494,5 +508,9 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       {
         oStream << location << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_newInstancesProtectedFromScaleInHasBeenSet)
+  {
+      oStream << location << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
   }
 }

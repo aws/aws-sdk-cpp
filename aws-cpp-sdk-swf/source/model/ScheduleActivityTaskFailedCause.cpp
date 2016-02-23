@@ -37,61 +37,61 @@ namespace Model
 {
 namespace ScheduleActivityTaskFailedCauseMapper
 {
+
+
 ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVITY_TYPE_DEPRECATED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED;
+     return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED;
   }
   else if (hashCode == ACTIVITY_TYPE_DOES_NOT_EXIST_HASH)
   {
-    return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST;
+     return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST;
   }
   else if (hashCode == ACTIVITY_ID_ALREADY_IN_USE_HASH)
   {
-    return ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE;
+     return ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE;
   }
   else if (hashCode == OPEN_ACTIVITIES_LIMIT_EXCEEDED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED;
+     return ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED;
   }
   else if (hashCode == ACTIVITY_CREATION_RATE_EXCEEDED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED;
+     return ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED;
   }
   else if (hashCode == DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_TASK_LIST_UNDEFINED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
+     return ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
   }
   else if (hashCode == DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED;
+     return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+     return ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED;
+     return ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
+     return ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return ScheduleActivityTaskFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause value)
+Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED:
     return "ACTIVITY_TYPE_DEPRECATED";

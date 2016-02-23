@@ -28,25 +28,25 @@ namespace Model
 {
 namespace KeyTypeMapper
 {
+
+
 KeyType GetKeyTypeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == HASH_HASH)
   {
-    return KeyType::HASH;
+     return KeyType::HASH;
   }
   else if (hashCode == RANGE_HASH)
   {
-    return KeyType::RANGE;
+     return KeyType::RANGE;
   }
-
   return KeyType::NOT_SET;
 }
 
-Aws::String GetNameForKeyType(KeyType value)
+Aws::String GetNameForKeyType(KeyType enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case KeyType::HASH:
     return "HASH";

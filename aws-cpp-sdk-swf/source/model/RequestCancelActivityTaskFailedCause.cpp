@@ -28,25 +28,25 @@ namespace Model
 {
 namespace RequestCancelActivityTaskFailedCauseMapper
 {
+
+
 RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == ACTIVITY_ID_UNKNOWN_HASH)
   {
-    return RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN;
+     return RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
+     return RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
   }
-
   return RequestCancelActivityTaskFailedCause::NOT_SET;
 }
 
-Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause value)
+Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN:
     return "ACTIVITY_ID_UNKNOWN";

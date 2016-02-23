@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CreateDBSnapshotRequest::CreateDBSnapshotRequest() : 
     m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false)
+    m_dBInstanceIdentifierHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,16 @@ Aws::String CreateDBSnapshotRequest::SerializePayload() const
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
-  ss << "Version=2013-01-10";
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+  ss << "Version=2014-10-31";
   return ss.str();
 }
 

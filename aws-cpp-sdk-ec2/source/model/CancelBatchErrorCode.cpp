@@ -30,33 +30,33 @@ namespace Model
 {
 namespace CancelBatchErrorCodeMapper
 {
+
+
 CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == fleetRequestIdDoesNotExist_HASH)
   {
-    return CancelBatchErrorCode::fleetRequestIdDoesNotExist;
+     return CancelBatchErrorCode::fleetRequestIdDoesNotExist;
   }
   else if (hashCode == fleetRequestIdMalformed_HASH)
   {
-    return CancelBatchErrorCode::fleetRequestIdMalformed;
+     return CancelBatchErrorCode::fleetRequestIdMalformed;
   }
   else if (hashCode == fleetRequestNotInCancellableState_HASH)
   {
-    return CancelBatchErrorCode::fleetRequestNotInCancellableState;
+     return CancelBatchErrorCode::fleetRequestNotInCancellableState;
   }
   else if (hashCode == unexpectedError_HASH)
   {
-    return CancelBatchErrorCode::unexpectedError;
+     return CancelBatchErrorCode::unexpectedError;
   }
-
   return CancelBatchErrorCode::NOT_SET;
 }
 
-Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode value)
+Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case CancelBatchErrorCode::fleetRequestIdDoesNotExist:
     return "fleetRequestIdDoesNotExist";

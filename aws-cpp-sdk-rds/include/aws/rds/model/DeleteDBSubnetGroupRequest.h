@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_RDS_API DeleteDBSubnetGroupRequest : public RDSRequest
   {

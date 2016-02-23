@@ -30,33 +30,33 @@ namespace Model
 {
 namespace ActionOnFailureMapper
 {
+
+
 ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
 {
   int hashCode = HashingUtils::HashString(name.c_str());
-
   if (hashCode == TERMINATE_JOB_FLOW_HASH)
   {
-    return ActionOnFailure::TERMINATE_JOB_FLOW;
+     return ActionOnFailure::TERMINATE_JOB_FLOW;
   }
   else if (hashCode == TERMINATE_CLUSTER_HASH)
   {
-    return ActionOnFailure::TERMINATE_CLUSTER;
+     return ActionOnFailure::TERMINATE_CLUSTER;
   }
   else if (hashCode == CANCEL_AND_WAIT_HASH)
   {
-    return ActionOnFailure::CANCEL_AND_WAIT;
+     return ActionOnFailure::CANCEL_AND_WAIT;
   }
   else if (hashCode == CONTINUE_HASH)
   {
-    return ActionOnFailure::CONTINUE;
+     return ActionOnFailure::CONTINUE;
   }
-
   return ActionOnFailure::NOT_SET;
 }
 
-Aws::String GetNameForActionOnFailure(ActionOnFailure value)
+Aws::String GetNameForActionOnFailure(ActionOnFailure enumValue)
 {
-  switch(value)
+  switch(enumValue)
   {
   case ActionOnFailure::TERMINATE_JOB_FLOW:
     return "TERMINATE_JOB_FLOW";

@@ -32,7 +32,8 @@ namespace Model
     ReEncryptFrom,
     ReEncryptTo,
     CreateGrant,
-    RetireGrant
+    RetireGrant,
+    DescribeKey
   };
 
 namespace GrantOperationMapper
