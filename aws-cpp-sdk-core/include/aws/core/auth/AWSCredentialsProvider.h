@@ -153,7 +153,7 @@ namespace Aws
         };
 
 /**
-* Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_KEY_ID if they exist. If they
+* Reads AWS credentials from the Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY if they exist. If they
 * are not found, empty credentials are returned.
 */
         class AWS_CORE_API EnvironmentAWSCredentialsProvider : public AWSCredentialsProvider
