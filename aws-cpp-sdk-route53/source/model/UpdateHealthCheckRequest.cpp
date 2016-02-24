@@ -37,7 +37,9 @@ UpdateHealthCheckRequest::UpdateHealthCheckRequest() :
     m_invertedHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false)
+    m_childHealthChecksHasBeenSet(false),
+    m_enableSNI(false),
+    m_enableSNIHasBeenSet(false)
 {
 }
 

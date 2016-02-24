@@ -216,43 +216,50 @@ namespace Model
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline const Aws::String& GetSearchString() const{ return m_searchString; }
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline HealthCheckConfig& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline HealthCheckConfig& WithSearchString(Aws::String&& value) { SetSearchString(value); return *this;}
 
     /**
      * <p>A string to search for in the body of a health check response. Required for
-     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.</p>
+     * HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53 considers case
+     * when searching for <code>SearchString</code> in the response body. </p>
      */
     inline HealthCheckConfig& WithSearchString(const char* value) { SetSearchString(value); return *this;}
 
@@ -421,6 +428,36 @@ namespace Model
      */
     inline HealthCheckConfig& AddChildHealthChecks(const char* value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
 
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     */
+    inline bool GetEnableSNI() const{ return m_enableSNI; }
+
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     */
+    inline void SetEnableSNI(bool value) { m_enableSNIHasBeenSet = true; m_enableSNI = value; }
+
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     */
+    inline HealthCheckConfig& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
+
   private:
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
@@ -446,6 +483,8 @@ namespace Model
     bool m_healthThresholdHasBeenSet;
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;
+    bool m_enableSNI;
+    bool m_enableSNIHasBeenSet;
   };
 
 } // namespace Model

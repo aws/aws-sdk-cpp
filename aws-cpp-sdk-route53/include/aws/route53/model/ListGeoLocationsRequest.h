@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for a ListGeoLocations request.</p>
+   * <p>The input for a <code>ListGeoLocations</code> request.</p>
    */
   class AWS_ROUTE53_API ListGeoLocationsRequest : public Route53Request
   {

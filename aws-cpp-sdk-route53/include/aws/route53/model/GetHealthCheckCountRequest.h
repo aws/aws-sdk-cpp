@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>To retrieve a count of all your health checks, send a <code>GET</code>
-   * request to the <code>2013-04-01/healthcheckcount</code> resource.</p>
+   * request to the <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+   * resource.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckCountRequest : public Route53Request
   {

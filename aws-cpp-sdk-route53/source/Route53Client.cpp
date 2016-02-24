@@ -42,7 +42,6 @@
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/DisassociateVPCFromHostedZoneRequest.h>
 #include <aws/route53/model/GetChangeRequest.h>
-#include <aws/route53/model/GetChangeDetailsRequest.h>
 #include <aws/route53/model/GetCheckerIpRangesRequest.h>
 #include <aws/route53/model/GetGeoLocationRequest.h>
 #include <aws/route53/model/GetHealthCheckRequest.h>
@@ -55,8 +54,6 @@
 #include <aws/route53/model/GetTrafficPolicyRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceCountRequest.h>
-#include <aws/route53/model/ListChangeBatchesByHostedZoneRequest.h>
-#include <aws/route53/model/ListChangeBatchesByRRSetRequest.h>
 #include <aws/route53/model/ListGeoLocationsRequest.h>
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
@@ -636,37 +633,6 @@ void Route53Client::GetChangeAsyncHelper(const GetChangeRequest& request, const 
   handler(this, request, GetChange(request), context);
 }
 
-GetChangeDetailsOutcome Route53Client::GetChangeDetails(const GetChangeDetailsRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2013-04-01/changedetails/";
-  ss << request.GetId();
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetChangeDetailsOutcome(GetChangeDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetChangeDetailsOutcome(outcome.GetError());
-  }
-}
-
-GetChangeDetailsOutcomeCallable Route53Client::GetChangeDetailsCallable(const GetChangeDetailsRequest& request) const
-{
-  return std::async(std::launch::async, &Route53Client::GetChangeDetails, this, request);
-}
-
-void Route53Client::GetChangeDetailsAsync(const GetChangeDetailsRequest& request, const GetChangeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&Route53Client::GetChangeDetailsAsyncHelper, this, request, handler, context);
-}
-
-void Route53Client::GetChangeDetailsAsyncHelper(const GetChangeDetailsRequest& request, const GetChangeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChangeDetails(request), context);
-}
-
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1036,70 +1002,6 @@ void Route53Client::GetTrafficPolicyInstanceCountAsync(const GetTrafficPolicyIns
 void Route53Client::GetTrafficPolicyInstanceCountAsyncHelper(const GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTrafficPolicyInstanceCount(request), context);
-}
-
-ListChangeBatchesByHostedZoneOutcome Route53Client::ListChangeBatchesByHostedZone(const ListChangeBatchesByHostedZoneRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/changes";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListChangeBatchesByHostedZoneOutcome(ListChangeBatchesByHostedZoneResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChangeBatchesByHostedZoneOutcome(outcome.GetError());
-  }
-}
-
-ListChangeBatchesByHostedZoneOutcomeCallable Route53Client::ListChangeBatchesByHostedZoneCallable(const ListChangeBatchesByHostedZoneRequest& request) const
-{
-  return std::async(std::launch::async, &Route53Client::ListChangeBatchesByHostedZone, this, request);
-}
-
-void Route53Client::ListChangeBatchesByHostedZoneAsync(const ListChangeBatchesByHostedZoneRequest& request, const ListChangeBatchesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&Route53Client::ListChangeBatchesByHostedZoneAsyncHelper, this, request, handler, context);
-}
-
-void Route53Client::ListChangeBatchesByHostedZoneAsyncHelper(const ListChangeBatchesByHostedZoneRequest& request, const ListChangeBatchesByHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChangeBatchesByHostedZone(request), context);
-}
-
-ListChangeBatchesByRRSetOutcome Route53Client::ListChangeBatchesByRRSet(const ListChangeBatchesByRRSetRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/rrsChanges";
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListChangeBatchesByRRSetOutcome(ListChangeBatchesByRRSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChangeBatchesByRRSetOutcome(outcome.GetError());
-  }
-}
-
-ListChangeBatchesByRRSetOutcomeCallable Route53Client::ListChangeBatchesByRRSetCallable(const ListChangeBatchesByRRSetRequest& request) const
-{
-  return std::async(std::launch::async, &Route53Client::ListChangeBatchesByRRSet, this, request);
-}
-
-void Route53Client::ListChangeBatchesByRRSetAsync(const ListChangeBatchesByRRSetRequest& request, const ListChangeBatchesByRRSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit(&Route53Client::ListChangeBatchesByRRSetAsyncHelper, this, request, handler, context);
-}
-
-void Route53Client::ListChangeBatchesByRRSetAsyncHelper(const ListChangeBatchesByRRSetRequest& request, const ListChangeBatchesByRRSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChangeBatchesByRRSet(request), context);
 }
 
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const

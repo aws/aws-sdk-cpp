@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>To retrieve a count of all your traffic policy instances, send a
-   * <code>GET</code> request to the
-   * <code>2013-04-01/trafficpolicyinstancecount</code> resource.</p>
+   * <code>GET</code> request to the <code>/<i>Route 53 API
+   * version</i>/trafficpolicyinstancecount</code> resource.</p>
    */
   class AWS_ROUTE53_API GetTrafficPolicyInstanceCountRequest : public Route53Request
   {

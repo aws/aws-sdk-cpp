@@ -239,9 +239,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -250,8 +252,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -275,9 +279,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -286,8 +292,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -311,9 +319,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -322,8 +332,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -347,9 +359,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -358,8 +372,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -383,9 +399,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -394,8 +412,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -419,9 +439,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -430,8 +452,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -455,9 +479,11 @@ namespace Model
      * Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from
      * the console and the other value from the API or the CLI, creating the resource
-     * record set will fail.</li> <li><b>An Amazon S3 bucket that is configured as a
-     * static website:</b> Specify the domain name of the Amazon S3 website endpoint in
-     * which you created the bucket; for example,
+     * record set will fail.</li> <li><b>An Elastic Beanstalk environment:</b> Specify
+     * the CNAME attribute for the environment. (The environment must have a
+     * regionalized domain name.) </li> <li><b>An Amazon S3 bucket that is configured
+     * as a static website:</b> Specify the domain name of the Amazon S3 website
+     * endpoint in which you created the bucket; for example,
      * <code>s3-website-us-east-1.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
@@ -466,8 +492,10 @@ namespace Model
      * websites, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.</li> <li/> </ul> <p>For more information and an example,
-     * see <a
+     * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
+     * set:</b> Specify the value of the <code>Name</code> element for a resource
+     * record set in the current hosted zone.</li> </ul> <p>For more information and an
+     * example, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
      * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
      * Reference</i>.</p>
@@ -497,10 +525,10 @@ namespace Model
      * or latency alias, for example) and the configuration of the resource record sets
      * that they reference, Amazon Route 53 chooses a resource record set from the
      * healthy resource record sets, and responds to the query.</li> </ol> <p>Note the
-     * following:</p> <ul><li>You cannot set EvaluateTargetHealth to true when the
-     * alias target is a CloudFront distribution.</li> <li>If the AWS resource that you
-     * specify in <code>AliasTarget</code> is a resource record set or a group of
-     * resource record sets (for example, a group of weighted resource record sets),
+     * following:</p> <ul><li>You cannot set <code>EvaluateTargetHealth</code> to true
+     * when the alias target is a CloudFront distribution.</li> <li>If the AWS resource
+     * that you specify in <code>AliasTarget</code> is a resource record set or a group
+     * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
      * a health check with all of the resource record sets in the alias target. For
      * more information, see <a
@@ -552,10 +580,10 @@ namespace Model
      * or latency alias, for example) and the configuration of the resource record sets
      * that they reference, Amazon Route 53 chooses a resource record set from the
      * healthy resource record sets, and responds to the query.</li> </ol> <p>Note the
-     * following:</p> <ul><li>You cannot set EvaluateTargetHealth to true when the
-     * alias target is a CloudFront distribution.</li> <li>If the AWS resource that you
-     * specify in <code>AliasTarget</code> is a resource record set or a group of
-     * resource record sets (for example, a group of weighted resource record sets),
+     * following:</p> <ul><li>You cannot set <code>EvaluateTargetHealth</code> to true
+     * when the alias target is a CloudFront distribution.</li> <li>If the AWS resource
+     * that you specify in <code>AliasTarget</code> is a resource record set or a group
+     * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
      * a health check with all of the resource record sets in the alias target. For
      * more information, see <a
@@ -607,10 +635,10 @@ namespace Model
      * or latency alias, for example) and the configuration of the resource record sets
      * that they reference, Amazon Route 53 chooses a resource record set from the
      * healthy resource record sets, and responds to the query.</li> </ol> <p>Note the
-     * following:</p> <ul><li>You cannot set EvaluateTargetHealth to true when the
-     * alias target is a CloudFront distribution.</li> <li>If the AWS resource that you
-     * specify in <code>AliasTarget</code> is a resource record set or a group of
-     * resource record sets (for example, a group of weighted resource record sets),
+     * following:</p> <ul><li>You cannot set <code>EvaluateTargetHealth</code> to true
+     * when the alias target is a CloudFront distribution.</li> <li>If the AWS resource
+     * that you specify in <code>AliasTarget</code> is a resource record set or a group
+     * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
      * a health check with all of the resource record sets in the alias target. For
      * more information, see <a

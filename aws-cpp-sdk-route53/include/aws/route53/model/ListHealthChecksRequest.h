@@ -30,8 +30,8 @@ namespace Model
 
   /**
    * <p>To retrieve a list of your health checks, send a <code>GET</code> request to
-   * the <code>2013-04-01/healthcheck</code> resource. The response to this request
-   * includes a <code>HealthChecks</code> element with zero or more
+   * the <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The response
+   * to this request includes a <code>HealthChecks</code> element with zero or more
    * <code>HealthCheck</code> child elements. By default, the list of health checks
    * is displayed on a single page. You can control the length of the page that is
    * displayed by using the <code>MaxItems</code> parameter. You can use the

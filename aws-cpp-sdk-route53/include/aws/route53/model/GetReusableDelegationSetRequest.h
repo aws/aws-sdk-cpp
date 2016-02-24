@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for a GetReusableDelegationSet request.</p>
+   * <p>The input for a <code>GetReusableDelegationSet</code> request.</p>
    */
   class AWS_ROUTE53_API GetReusableDelegationSetRequest : public Route53Request
   {

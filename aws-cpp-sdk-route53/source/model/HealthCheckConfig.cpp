@@ -41,7 +41,9 @@ HealthCheckConfig::HealthCheckConfig() :
     m_invertedHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false)
+    m_childHealthChecksHasBeenSet(false),
+    m_enableSNI(false),
+    m_enableSNIHasBeenSet(false)
 {
 }
 
@@ -63,7 +65,9 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_invertedHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false)
+    m_childHealthChecksHasBeenSet(false),
+    m_enableSNI(false),
+    m_enableSNIHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -151,6 +155,12 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
       }
 
       m_childHealthChecksHasBeenSet = true;
+    }
+    XmlNode enableSNINode = resultNode.FirstChild("EnableSNI");
+    if(!enableSNINode.IsNull())
+    {
+      m_enableSNI = StringUtils::ConvertToBool(StringUtils::Trim(enableSNINode.GetText().c_str()).c_str());
+      m_enableSNIHasBeenSet = true;
     }
   }
 
@@ -246,6 +256,14 @@ void HealthCheckConfig::AddToNode(XmlNode& parentNode) const
      XmlNode childHealthChecksNode = childHealthChecksParentNode.CreateChildElement("HealthCheckId");
      childHealthChecksNode.SetText(item);
    }
+  }
+
+  if(m_enableSNIHasBeenSet)
+  {
+   XmlNode enableSNINode = parentNode.CreateChildElement("EnableSNI");
+  ss << m_enableSNI;
+   enableSNINode.SetText(ss.str());
+  ss.str("");
   }
 
 }

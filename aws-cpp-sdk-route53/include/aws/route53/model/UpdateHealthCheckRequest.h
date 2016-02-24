@@ -267,8 +267,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline const Aws::String& GetSearchString() const{ return m_searchString; }
 
@@ -276,8 +277,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
@@ -285,8 +287,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
@@ -294,8 +297,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
 
@@ -303,8 +307,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline UpdateHealthCheckRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
 
@@ -312,8 +317,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline UpdateHealthCheckRequest& WithSearchString(Aws::String&& value) { SetSearchString(value); return *this;}
 
@@ -321,8 +327,9 @@ namespace Model
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
      * for in the response body from the specified resource. If the string appears in
-     * the response body, Amazon Route 53 considers the resource healthy. </p>
-     * <p>Specify this value only if you want to change it.</p>
+     * the response body, Amazon Route 53 considers the resource healthy. Amazon Route
+     * 53 considers case when searching for <code>SearchString</code> in the response
+     * body.</p> <p>Specify this value only if you want to change it.</p>
      */
     inline UpdateHealthCheckRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
 
@@ -460,6 +467,39 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& AddChildHealthChecks(const char* value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
 
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     * <p>Specify this value only if you want to change it.</p>
+     */
+    inline bool GetEnableSNI() const{ return m_enableSNI; }
+
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     * <p>Specify this value only if you want to change it.</p>
+     */
+    inline void SetEnableSNI(bool value) { m_enableSNIHasBeenSet = true; m_enableSNI = value; }
+
+    /**
+     * <p>Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't specify a
+     * value for <code>EnableSNI</code>, Amazon Route 53 defaults to <code>true</code>
+     * when <code>Type</code> is <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and
+     * defaults to <code>false</code> when <code>Type</code> is any other value.</p>
+     * <p>Specify this value only if you want to change it.</p>
+     */
+    inline UpdateHealthCheckRequest& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
+
   private:
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
@@ -483,6 +523,8 @@ namespace Model
     bool m_healthThresholdHasBeenSet;
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;
+    bool m_enableSNI;
+    bool m_enableSNIHasBeenSet;
   };
 
 } // namespace Model
