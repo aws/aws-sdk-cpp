@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -20,43 +20,59 @@
 
 namespace Aws
 {
-namespace Utils
-{
-namespace Stream
-{
+    namespace Utils
+    {
+        namespace Stream
+        {
+            /**
+             * Encapsulates and manages ownership of custom response streams. This is a move only type.
+             */
+            class AWS_CORE_API ResponseStream
+            {
+            public:
+                /**
+                 * sets underlying stream to nullptr
+                 */
+                ResponseStream();
+                /**
+                 * moves the underlying stream
+                 */
+                ResponseStream(ResponseStream&&);
+                /**
+                 * Uses factory to allocate underlying stream
+                 */
+                ResponseStream(const Aws::IOStreamFactory& factory);
+                ResponseStream(const ResponseStream&) = delete;
+                ~ResponseStream();
 
-class AWS_CORE_API ResponseStream
-{
-    public:
-        ResponseStream();
-        ResponseStream(ResponseStream&&);
-        ResponseStream(const Aws::IOStreamFactory& factory);
-        ResponseStream(const ResponseStream&) = delete;
-        ~ResponseStream();
+                /**
+                 * moves the underlying stream
+                 */
+                ResponseStream& operator=(ResponseStream&&);
+                ResponseStream& operator=(const ResponseStream&) = delete;
 
-        ResponseStream& operator=(ResponseStream&&);
-        ResponseStream& operator=(const ResponseStream&) = delete;
+                /**
+                 * Gives access to underlying stream, but keep in mind that this changes state of the stream
+                 */
+                inline Aws::IOStream& GetUnderlyingStream() const { return *m_underlyingStream; }
 
-        inline Aws::IOStream& GetUnderlyingStream() const { return *m_underlyingStream; }
+            private:
+                void ReleaseStream();
 
-    private:
-        void ReleaseStream();
+                Aws::IOStream* m_underlyingStream;
+            };
 
-        Aws::IOStream* m_underlyingStream;
-};
+            class AWS_CORE_API DefaultUnderlyingStream : public Aws::IOStream
+            {
+            public:
+                using Base = Aws::IOStream;
 
-class AWS_CORE_API DefaultUnderlyingStream : public Aws::IOStream
-{
-    public:
+                DefaultUnderlyingStream();
+                virtual ~DefaultUnderlyingStream();
+            };
 
-        using Base = Aws::IOStream;
+            AWS_CORE_API Aws::IOStream* DefaultResponseStreamFactoryMethod();
 
-        DefaultUnderlyingStream();
-        virtual ~DefaultUnderlyingStream();
-};
-
-AWS_CORE_API Aws::IOStream* DefaultResponseStreamFactoryMethod();
-
-} //namespace Stream
-} //namespace Utils
+        } //namespace Stream
+    } //namespace Utils
 } //namespace Aws

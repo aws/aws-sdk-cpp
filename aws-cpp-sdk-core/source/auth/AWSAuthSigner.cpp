@@ -193,9 +193,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
 
     Aws::StringStream intConversionStream;
     intConversionStream << expirationTimeInSeconds;
-    request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());
-
-   
+    request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());   
 
     if (!credentials.GetSessionToken().empty())
     {

@@ -36,11 +36,6 @@ using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
-WinSyncHttpClient::WinSyncHttpClient() :
-    Base()
-{
-}
-
 WinSyncHttpClient::~WinSyncHttpClient()
 {
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "Cleaning up client with handle " << m_openHandle);

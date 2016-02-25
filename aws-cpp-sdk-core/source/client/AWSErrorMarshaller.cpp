@@ -23,10 +23,6 @@ using namespace Aws::Client;
 
 static const char* logTag = "AWSErrorMarshaller";
 
-AWSErrorMarshaller::AWSErrorMarshaller()
-{
-}
-
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
 {
     auto locationOfPound = exceptionName.find_first_of('#');

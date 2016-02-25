@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -29,16 +29,38 @@ namespace Aws
         class AsyncCallerContext
         {
         public:
+            /**
+             * Initializes object with empty UUID
+             */
             AsyncCallerContext() {}
-            AsyncCallerContext(const Aws::String& uuid) : m_uuid(uuid) {}
-            AsyncCallerContext(const char* uuid) : m_uuid(uuid) {}
 
-            //it is intended that you override this class.
+            /**
+             * Initializes object with UUID
+             */
+            AsyncCallerContext(const Aws::String& uuid) : m_uuid(uuid) {}
+
+            /**
+            * Initializes object with UUID
+            */
+            AsyncCallerContext(const char* uuid) : m_uuid(uuid) {}
+          
             virtual ~AsyncCallerContext() {}
 
+            /**
+             * Gets underlying UUID 
+             */
             inline const Aws::String& GetUUID() const { return m_uuid; }
+
+            /**
+             * Sets underlying UUID
+             */
             inline void SetUUID(const Aws::String& value) { m_uuid = value; }
+
+            /**
+             * Sets underlying UUID
+             */
             inline void SetUUID(const char* value) { m_uuid.assign(value); }
+
         private:
             Aws::String m_uuid;
         };

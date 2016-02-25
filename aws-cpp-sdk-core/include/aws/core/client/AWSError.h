@@ -1,12 +1,12 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -20,56 +20,68 @@
 
 namespace Aws
 {
-namespace Client
-{
-enum class CoreErrors;
+    namespace Client
+    {
+        enum class CoreErrors;
 
-class AWS_CORE_API AWSErrorType
-{
+        /**
+         * Container for Error enumerations with additional exception information. Name, message, retryable etc....
+         */
+        template<typename ERROR_TYPE>
+        class AWSError
+        {
+        public:
+            /**
+             * Initializes AWSError object as empty with the error not being retryable.
+             */
+            AWSError() : m_isRetryable(false) {}
+            /**
+             * Initializes AWSError object with errorType, exceptionName, message, and retryable flag.
+             */
+            AWSError(ERROR_TYPE errorType, Aws::String exceptionName, const Aws::String message, bool isRetryable) :
+                m_errorType(errorType), m_exceptionName(exceptionName), m_message(message), m_isRetryable(isRetryable) {}
+            /**
+             * Initializes AWSError object with errorType and retryable flag. ExceptionName and message are empty.
+             */
+            AWSError(ERROR_TYPE errorType, bool isRetryable) :
+                m_errorType(errorType), m_isRetryable(isRetryable) {}
 
-public:
-    AWSErrorType(const char* name, bool shouldRetry) :
-        m_shouldRetry(shouldRetry), m_name(name) 
-    {} // Ideally private, perhaps protected
+            //by policy we enforce all clients to contain a CoreErrors alignment for their Errors.
+            AWSError(const AWSError<CoreErrors>& rhs) :
+                m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), m_message(rhs.GetMessage()), m_isRetryable(rhs.ShouldRetry())
+            {}
 
-private:
-    bool m_shouldRetry;
-    const char* m_name;
+            /**
+             * Gets underlying errorType.
+             */
+            inline const ERROR_TYPE GetErrorType() const { return m_errorType; }
+            /**
+             * Gets the underlying ExceptionName.
+             */
+            inline const Aws::String& GetExceptionName() const { return m_exceptionName; }
+            /**
+             *Sets the underlying ExceptionName.
+             */
+            inline void SetExceptionName(const Aws::String& exceptionName) { m_exceptionName = exceptionName; }
+            /**
+             * Gets the error message.
+             */
+            inline const Aws::String& GetMessage() const { return m_message; }
+            /**
+             * Sets the error message
+             */
+            inline void SetMessage(const Aws::String& message) { m_message = message; }
+            /**
+             * returns whether or not this error is eligible for retry.
+             */
+            inline bool ShouldRetry() const { return m_isRetryable; }
 
-public:
-    inline bool ShouldRetry() const { return m_shouldRetry; }
-    inline const char* GetName() const { return m_name; }
-};
+        private:
+            ERROR_TYPE m_errorType;
+            Aws::String m_exceptionName;
+            Aws::String m_message;
+            bool m_isRetryable;
+        };
 
-template<typename ERROR_TYPE>
-class AWSError
-{
-public: 
-    AWSError() : m_isRetryable(false) {}
-    AWSError(ERROR_TYPE errorType, Aws::String exceptionName, const Aws::String message, bool isRetryable) :
-        m_errorType(errorType), m_exceptionName(exceptionName), m_message(message), m_isRetryable(isRetryable) {}
-
-    AWSError(ERROR_TYPE errorType, bool isRetryable) :
-        m_errorType(errorType), m_isRetryable(isRetryable) {}
-
-    //by policy we enforce all clients to contain a CoreErrors alignment for their Errors.
-    AWSError(const AWSError<CoreErrors>& rhs) :
-        m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), m_message(rhs.GetMessage()), m_isRetryable(rhs.ShouldRetry())
-    {}
-
-    inline const ERROR_TYPE GetErrorType() const { return m_errorType; }
-    inline const Aws::String& GetExceptionName() const { return m_exceptionName; }
-    inline void SetExceptionName(const Aws::String& exceptionName) { m_exceptionName = exceptionName; }
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline void SetMessage(const Aws::String& message) { m_message = message; }
-    inline bool ShouldRetry() const { return m_isRetryable; }
-
-private:
-    ERROR_TYPE m_errorType;
-    Aws::String m_exceptionName;
-    Aws::String m_message;
-    bool m_isRetryable;
-};
-
-} // namespace Client
+    } // namespace Client
 } // namespace Aws

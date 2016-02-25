@@ -26,7 +26,9 @@ namespace Aws
 #else
         static const char PATH_DELIM = '/';
 #endif
-
+        /**
+         * Various utilities for working with a file system.
+         */ 
         class AWS_CORE_API FileSystemUtils
         {
         public:
@@ -51,7 +53,10 @@ namespace Aws
              */
             static bool RelocateFileOrDirectory(const char* from, const char* to);
 
-	        static char GetPathDelimiter() { return PATH_DELIM; }
+            /**
+             * Gets path delimiter for the current platform
+             */
+            static char GetPathDelimiter() { return PATH_DELIM; }
         };
     }
 }

@@ -50,7 +50,7 @@ static const char* AWS_ACCESS_KEY_ID = "aws_access_key_id";
 static const char* AWS_SECRET_ACCESS_KEY = "aws_secret_access_key";
 static const char* AWS_SESSION_TOKEN = "aws_session_token";
 
-static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_CREDENTIAL_PROFILES_FILE";
+static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_SHARED_CREDENTIALS_FILE";
 
 static const char* PROFILE_DEFAULT_FILENAME = "credentials";
 
@@ -82,11 +82,6 @@ bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 static const char* environmentLogTag = "EnvironmentAWSCredentialsProvider";
 
 
-EnvironmentAWSCredentialsProvider::EnvironmentAWSCredentialsProvider()
-{
-}
-
-
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
     char* accessKey = std::getenv(ACCESS_KEY_ENV_VARIABLE);
@@ -113,7 +108,6 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOG_INFO(environmentLogTag, "Found sessionToken");
         }
     }
-
 
     return credentials;
 }
@@ -289,24 +283,7 @@ Aws::Map<Aws::String, Aws::String> ProfileConfigFileAWSCredentialsProvider::Pars
     return propertyValueMap;
 }
 
-
-Aws::String ProfileConfigFileAWSCredentialsProvider::GetAccountIdForProfile(const Aws::String& profileName)
-{
-    auto profileMap = ProfileConfigFileAWSCredentialsProvider::ParseProfileConfigFile(ProfileConfigFileAWSCredentialsProvider::GetProfileFilename());
-
-    Aws::String key = profileName.c_str() + Aws::String(":") + AWS_ACCOUNT_ID;
-    auto iter = profileMap.find(key);
-    if (iter != profileMap.cend())
-    {
-        return iter->second;
-    }
-
-    return Aws::String("");
-}
-
-
 static const char* instanceLogTag = "InstanceProfileCredentialsProvider";
-
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
         m_credentials(nullptr),
@@ -318,7 +295,7 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refr
 }
 
 
-InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(std::shared_ptr<EC2MetadataClient> mdClient,
+InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<EC2MetadataClient>& mdClient,
                                                                        long refreshRateMs) :
         m_metadataClient(mdClient),
         m_credentials(nullptr),
