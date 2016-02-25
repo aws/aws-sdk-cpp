@@ -15,6 +15,11 @@ Vagrantfile
 #Mac stuff
 .DS_Store
 
+#doxygen
+doxygen/html/
+doxygen/latex/
+
+
 #cmake artifacts
 dependencies
 _build
