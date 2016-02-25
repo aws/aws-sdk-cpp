@@ -126,6 +126,7 @@ def ParseArguments(platformEnvironments):
     parser.add_argument("--configs", action="store")
     parser.add_argument("--parallel", action="store")
     parser.add_argument("--generateClients", action="store")
+	parser.add_argument("--sourcedir", action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
@@ -134,6 +135,7 @@ def ParseArguments(platformEnvironments):
     argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugDynamic ReleaseDynamic ReleaseStatic").split()
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
+	argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
     
     return argMap
 
@@ -187,6 +189,7 @@ def Main():
     parallelJobs = arguments[ "parallel" ]
     quotedInstallDirectory = '"' + installDirectory + '"'
     generateClients = arguments[ "generateClients" ]
+	sourceDir = arguments["sourcedir" ]
 
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
@@ -219,7 +222,7 @@ def Main():
             os.mkdir( buildDirectory )
             os.chdir( buildDirectory )
 
-            cmake_call_list = "cmake " + customCmakeParams + " " + archConfig[ 'cmake_params' ] + " " + targetPlatformDef[ 'global_cmake_params' ] + " " + ".."
+            cmake_call_list = "cmake " + customCmakeParams + " " + archConfig[ 'cmake_params' ] + " " + targetPlatformDef[ 'global_cmake_params' ] + " " + sourceDir
             print( "cmake call = " + cmake_call_list )
             subprocess.check_call( cmake_call_list, shell = True )
 
@@ -228,7 +231,7 @@ def Main():
             print( "build call = " + str( build_call_list ) )
             subprocess.check_call( build_call_list )
 
-            install_call = "cmake -DCMAKE_INSTALL_CONFIG_NAME=" + archConfig[ 'config' ] + " -DCMAKE_INSTALL_PREFIX=" + quotedInstallDirectory + " -P cmake_install.cmake .."
+            install_call = "cmake -DCMAKE_INSTALL_CONFIG_NAME=" + archConfig[ 'config' ] + " -DCMAKE_INSTALL_PREFIX=" + quotedInstallDirectory + " -P cmake_install.cmake " + sourceDir
             print( "install call = " + install_call )
             subprocess.check_call( install_call, shell = True )
 
