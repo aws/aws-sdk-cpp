@@ -126,7 +126,7 @@ def ParseArguments(platformEnvironments):
     parser.add_argument("--configs", action="store")
     parser.add_argument("--parallel", action="store")
     parser.add_argument("--generateClients", action="store")
-	parser.add_argument("--sourcedir", action="store")
+    parser.add_argument("--sourcedir", action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
@@ -135,7 +135,7 @@ def ParseArguments(platformEnvironments):
     argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugDynamic ReleaseDynamic ReleaseStatic").split()
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
-	argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
+    argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
     
     return argMap
 
@@ -189,7 +189,7 @@ def Main():
     parallelJobs = arguments[ "parallel" ]
     quotedInstallDirectory = '"' + installDirectory + '"'
     generateClients = arguments[ "generateClients" ]
-	sourceDir = arguments["sourcedir" ]
+    sourceDir = arguments["sourcedir" ]
 
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
