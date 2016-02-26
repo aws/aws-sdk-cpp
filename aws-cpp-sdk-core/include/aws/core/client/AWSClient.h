@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <memory>
+#include <atomic>
 
 namespace Aws
 {
@@ -170,6 +171,8 @@ namespace Aws
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body) const;
             void AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const;
+            void InitializeGlobalStatics();
+            void CleanupGlobalStatics();
 
             std::shared_ptr<Aws::Http::HttpClientFactory const> m_clientFactory;
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
@@ -180,6 +183,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
             const char* m_hostHeaderOverride;
+            static std::atomic<int> s_refCount;
         };
 
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Json::JsonValue>, AWSError<CoreErrors>> JsonOutcome;

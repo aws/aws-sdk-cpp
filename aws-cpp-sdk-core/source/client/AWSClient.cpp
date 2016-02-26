@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
-
+#include <aws/core/Globals.h>
 #include <thread>
 
 
@@ -45,6 +45,46 @@ using namespace Aws::Utils::Xml;
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 static const char* LOG_TAG = "AWSClient";
+
+std::atomic<int> AWSClient::s_refCount(0);
+
+void AWSClient::InitializeGlobalStatics()
+{
+    int currentRefCount = s_refCount.load();
+    if (!currentRefCount)
+    {      
+        int expectedRefCount = 0;    
+        Utils::EnumParseOverflowContainer* expectedPtrValue = nullptr;
+        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(LOG_TAG);        
+        if (!s_refCount.compare_exchange_strong(expectedRefCount, 1) ||
+             !g_enumOverflow.compare_exchange_strong(expectedPtrValue, container))
+        {
+            Aws::Delete(container);
+        }        
+    }
+    else
+    {
+        ++s_refCount;
+    }
+}
+
+void AWSClient::CleanupGlobalStatics()
+{
+    int currentRefCount = s_refCount.load(); 
+    Utils::EnumParseOverflowContainer* expectedPtrValue = g_enumOverflow.load();
+
+    if (currentRefCount == 1)
+    {
+        if (s_refCount.compare_exchange_strong(currentRefCount, 0) &&
+             g_enumOverflow.compare_exchange_strong(expectedPtrValue, nullptr))
+        {
+            Aws::Delete(expectedPtrValue);           
+            return;
+        }        
+    }
+
+    --s_refCount;
+}
 
 AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
     const Aws::Client::ClientConfiguration& configuration,
@@ -60,10 +100,12 @@ AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& 
     m_userAgent(configuration.userAgent),
     m_hostHeaderOverride(hostHeaderOverride)
 {
+    InitializeGlobalStatics();
 }
 
 AWSClient::~AWSClient()
 {
+    CleanupGlobalStatics();
 }
 
 void AWSClient::DisableRequestProcessing() 
