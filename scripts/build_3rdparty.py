@@ -150,7 +150,7 @@ def CopyPDBs(config, libDir, installDirectoryPrefix):
                 
                 sourceFile = os.path.join(rootDir, dirName, config, dirName + ".pdb")
                 if os.path.isfile(sourceFile):
-                    subprocess.check_call( "copy " + sourceFile + " " + destDirectory, shell = True )
+                    subprocess.check_call( "copy " + sourceFile + " \"" + destDirectory + "\"", shell = True )
     
 
 def CopyAndroidExternalDependencies(config, installDirectory):
