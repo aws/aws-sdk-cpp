@@ -26,5 +26,5 @@ namespace Aws
      * have an up to date client. This member will be initialized the first time a client
      * is created and will be cleaned up when the last client goes out of scope.
      */
-    extern std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow;
+    extern AWS_CORE_API std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow;
 }
