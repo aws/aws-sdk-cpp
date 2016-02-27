@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/UploadStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace UploadStatusMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace UploadStatusMapper
+      {
 
 
-UploadStatus GetUploadStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == INITIALIZED_HASH)
-  {
-     return UploadStatus::INITIALIZED;
-  }
-  else if (hashCode == PROCESSING_HASH)
-  {
-     return UploadStatus::PROCESSING;
-  }
-  else if (hashCode == SUCCEEDED_HASH)
-  {
-     return UploadStatus::SUCCEEDED;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return UploadStatus::FAILED;
-  }
-  return UploadStatus::NOT_SET;
-}
+        UploadStatus GetUploadStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INITIALIZED_HASH)
+          {
+            return UploadStatus::INITIALIZED;
+          }
+          else if (hashCode == PROCESSING_HASH)
+          {
+            return UploadStatus::PROCESSING;
+          }
+          else if (hashCode == SUCCEEDED_HASH)
+          {
+            return UploadStatus::SUCCEEDED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return UploadStatus::FAILED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<UploadStatus>(hashCode);
+          }
 
-Aws::String GetNameForUploadStatus(UploadStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case UploadStatus::INITIALIZED:
-    return "INITIALIZED";
-  case UploadStatus::PROCESSING:
-    return "PROCESSING";
-  case UploadStatus::SUCCEEDED:
-    return "SUCCEEDED";
-  case UploadStatus::FAILED:
-    return "FAILED";
-  default:
-    return "";
-  }
-}
+          return UploadStatus::NOT_SET;
+        }
 
-} // namespace UploadStatusMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForUploadStatus(UploadStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case UploadStatus::INITIALIZED:
+            return "INITIALIZED";
+          case UploadStatus::PROCESSING:
+            return "PROCESSING";
+          case UploadStatus::SUCCEEDED:
+            return "SUCCEEDED";
+          case UploadStatus::FAILED:
+            return "FAILED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace UploadStatusMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

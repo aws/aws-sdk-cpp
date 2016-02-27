@@ -14,6 +14,7 @@
 */
 #include <aws/codepipeline/model/BlockerType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int Schedule_HASH = HashingUtils::HashString("Schedule");
 
 namespace Aws
 {
-namespace CodePipeline
-{
-namespace Model
-{
-namespace BlockerTypeMapper
-{
-
-
-BlockerType GetBlockerTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Schedule_HASH)
+  namespace CodePipeline
   {
-     return BlockerType::Schedule;
-  }
-  return BlockerType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace BlockerTypeMapper
+      {
 
-Aws::String GetNameForBlockerType(BlockerType enumValue)
-{
-  switch(enumValue)
-  {
-  case BlockerType::Schedule:
-    return "Schedule";
-  default:
-    return "";
-  }
-}
 
-} // namespace BlockerTypeMapper
-} // namespace Model
-} // namespace CodePipeline
+        BlockerType GetBlockerTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Schedule_HASH)
+          {
+            return BlockerType::Schedule;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<BlockerType>(hashCode);
+          }
+
+          return BlockerType::NOT_SET;
+        }
+
+        Aws::String GetNameForBlockerType(BlockerType enumValue)
+        {
+          switch(enumValue)
+          {
+          case BlockerType::Schedule:
+            return "Schedule";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace BlockerTypeMapper
+    } // namespace Model
+  } // namespace CodePipeline
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/TagResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace TagResourceTypeMapper
-{
-
-
-TagResourceType GetTagResourceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == healthcheck_HASH)
+  namespace Route53
   {
-     return TagResourceType::healthcheck;
-  }
-  else if (hashCode == hostedzone_HASH)
-  {
-     return TagResourceType::hostedzone;
-  }
-  return TagResourceType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace TagResourceTypeMapper
+      {
 
-Aws::String GetNameForTagResourceType(TagResourceType enumValue)
-{
-  switch(enumValue)
-  {
-  case TagResourceType::healthcheck:
-    return "healthcheck";
-  case TagResourceType::hostedzone:
-    return "hostedzone";
-  default:
-    return "";
-  }
-}
 
-} // namespace TagResourceTypeMapper
-} // namespace Model
-} // namespace Route53
+        TagResourceType GetTagResourceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == healthcheck_HASH)
+          {
+            return TagResourceType::healthcheck;
+          }
+          else if (hashCode == hostedzone_HASH)
+          {
+            return TagResourceType::hostedzone;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TagResourceType>(hashCode);
+          }
+
+          return TagResourceType::NOT_SET;
+        }
+
+        Aws::String GetNameForTagResourceType(TagResourceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case TagResourceType::healthcheck:
+            return "healthcheck";
+          case TagResourceType::hostedzone:
+            return "hostedzone";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TagResourceTypeMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

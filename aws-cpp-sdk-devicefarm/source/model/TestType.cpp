@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/TestType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int XCTEST_HASH = HashingUtils::HashString("XCTEST");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace TestTypeMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace TestTypeMapper
+      {
 
 
-TestType GetTestTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == BUILTIN_FUZZ_HASH)
-  {
-     return TestType::BUILTIN_FUZZ;
-  }
-  else if (hashCode == BUILTIN_EXPLORER_HASH)
-  {
-     return TestType::BUILTIN_EXPLORER;
-  }
-  else if (hashCode == APPIUM_JAVA_JUNIT_HASH)
-  {
-     return TestType::APPIUM_JAVA_JUNIT;
-  }
-  else if (hashCode == APPIUM_JAVA_TESTNG_HASH)
-  {
-     return TestType::APPIUM_JAVA_TESTNG;
-  }
-  else if (hashCode == APPIUM_PYTHON_HASH)
-  {
-     return TestType::APPIUM_PYTHON;
-  }
-  else if (hashCode == APPIUM_WEB_JAVA_JUNIT_HASH)
-  {
-     return TestType::APPIUM_WEB_JAVA_JUNIT;
-  }
-  else if (hashCode == APPIUM_WEB_JAVA_TESTNG_HASH)
-  {
-     return TestType::APPIUM_WEB_JAVA_TESTNG;
-  }
-  else if (hashCode == APPIUM_WEB_PYTHON_HASH)
-  {
-     return TestType::APPIUM_WEB_PYTHON;
-  }
-  else if (hashCode == CALABASH_HASH)
-  {
-     return TestType::CALABASH;
-  }
-  else if (hashCode == INSTRUMENTATION_HASH)
-  {
-     return TestType::INSTRUMENTATION;
-  }
-  else if (hashCode == UIAUTOMATION_HASH)
-  {
-     return TestType::UIAUTOMATION;
-  }
-  else if (hashCode == UIAUTOMATOR_HASH)
-  {
-     return TestType::UIAUTOMATOR;
-  }
-  else if (hashCode == XCTEST_HASH)
-  {
-     return TestType::XCTEST;
-  }
-  return TestType::NOT_SET;
-}
+        TestType GetTestTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == BUILTIN_FUZZ_HASH)
+          {
+            return TestType::BUILTIN_FUZZ;
+          }
+          else if (hashCode == BUILTIN_EXPLORER_HASH)
+          {
+            return TestType::BUILTIN_EXPLORER;
+          }
+          else if (hashCode == APPIUM_JAVA_JUNIT_HASH)
+          {
+            return TestType::APPIUM_JAVA_JUNIT;
+          }
+          else if (hashCode == APPIUM_JAVA_TESTNG_HASH)
+          {
+            return TestType::APPIUM_JAVA_TESTNG;
+          }
+          else if (hashCode == APPIUM_PYTHON_HASH)
+          {
+            return TestType::APPIUM_PYTHON;
+          }
+          else if (hashCode == APPIUM_WEB_JAVA_JUNIT_HASH)
+          {
+            return TestType::APPIUM_WEB_JAVA_JUNIT;
+          }
+          else if (hashCode == APPIUM_WEB_JAVA_TESTNG_HASH)
+          {
+            return TestType::APPIUM_WEB_JAVA_TESTNG;
+          }
+          else if (hashCode == APPIUM_WEB_PYTHON_HASH)
+          {
+            return TestType::APPIUM_WEB_PYTHON;
+          }
+          else if (hashCode == CALABASH_HASH)
+          {
+            return TestType::CALABASH;
+          }
+          else if (hashCode == INSTRUMENTATION_HASH)
+          {
+            return TestType::INSTRUMENTATION;
+          }
+          else if (hashCode == UIAUTOMATION_HASH)
+          {
+            return TestType::UIAUTOMATION;
+          }
+          else if (hashCode == UIAUTOMATOR_HASH)
+          {
+            return TestType::UIAUTOMATOR;
+          }
+          else if (hashCode == XCTEST_HASH)
+          {
+            return TestType::XCTEST;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TestType>(hashCode);
+          }
 
-Aws::String GetNameForTestType(TestType enumValue)
-{
-  switch(enumValue)
-  {
-  case TestType::BUILTIN_FUZZ:
-    return "BUILTIN_FUZZ";
-  case TestType::BUILTIN_EXPLORER:
-    return "BUILTIN_EXPLORER";
-  case TestType::APPIUM_JAVA_JUNIT:
-    return "APPIUM_JAVA_JUNIT";
-  case TestType::APPIUM_JAVA_TESTNG:
-    return "APPIUM_JAVA_TESTNG";
-  case TestType::APPIUM_PYTHON:
-    return "APPIUM_PYTHON";
-  case TestType::APPIUM_WEB_JAVA_JUNIT:
-    return "APPIUM_WEB_JAVA_JUNIT";
-  case TestType::APPIUM_WEB_JAVA_TESTNG:
-    return "APPIUM_WEB_JAVA_TESTNG";
-  case TestType::APPIUM_WEB_PYTHON:
-    return "APPIUM_WEB_PYTHON";
-  case TestType::CALABASH:
-    return "CALABASH";
-  case TestType::INSTRUMENTATION:
-    return "INSTRUMENTATION";
-  case TestType::UIAUTOMATION:
-    return "UIAUTOMATION";
-  case TestType::UIAUTOMATOR:
-    return "UIAUTOMATOR";
-  case TestType::XCTEST:
-    return "XCTEST";
-  default:
-    return "";
-  }
-}
+          return TestType::NOT_SET;
+        }
 
-} // namespace TestTypeMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForTestType(TestType enumValue)
+        {
+          switch(enumValue)
+          {
+          case TestType::BUILTIN_FUZZ:
+            return "BUILTIN_FUZZ";
+          case TestType::BUILTIN_EXPLORER:
+            return "BUILTIN_EXPLORER";
+          case TestType::APPIUM_JAVA_JUNIT:
+            return "APPIUM_JAVA_JUNIT";
+          case TestType::APPIUM_JAVA_TESTNG:
+            return "APPIUM_JAVA_TESTNG";
+          case TestType::APPIUM_PYTHON:
+            return "APPIUM_PYTHON";
+          case TestType::APPIUM_WEB_JAVA_JUNIT:
+            return "APPIUM_WEB_JAVA_JUNIT";
+          case TestType::APPIUM_WEB_JAVA_TESTNG:
+            return "APPIUM_WEB_JAVA_TESTNG";
+          case TestType::APPIUM_WEB_PYTHON:
+            return "APPIUM_WEB_PYTHON";
+          case TestType::CALABASH:
+            return "CALABASH";
+          case TestType::INSTRUMENTATION:
+            return "INSTRUMENTATION";
+          case TestType::UIAUTOMATION:
+            return "UIAUTOMATION";
+          case TestType::UIAUTOMATOR:
+            return "UIAUTOMATOR";
+          case TestType::XCTEST:
+            return "XCTEST";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TestTypeMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

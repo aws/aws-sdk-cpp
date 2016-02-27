@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/ClusterStateChangeReasonCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int ALL_STEPS_COMPLETED_HASH = HashingUtils::HashString("ALL_STEPS_
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace ClusterStateChangeReasonCodeMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace ClusterStateChangeReasonCodeMapper
+      {
 
 
-ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == INTERNAL_ERROR_HASH)
-  {
-     return ClusterStateChangeReasonCode::INTERNAL_ERROR;
-  }
-  else if (hashCode == VALIDATION_ERROR_HASH)
-  {
-     return ClusterStateChangeReasonCode::VALIDATION_ERROR;
-  }
-  else if (hashCode == INSTANCE_FAILURE_HASH)
-  {
-     return ClusterStateChangeReasonCode::INSTANCE_FAILURE;
-  }
-  else if (hashCode == BOOTSTRAP_FAILURE_HASH)
-  {
-     return ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE;
-  }
-  else if (hashCode == USER_REQUEST_HASH)
-  {
-     return ClusterStateChangeReasonCode::USER_REQUEST;
-  }
-  else if (hashCode == STEP_FAILURE_HASH)
-  {
-     return ClusterStateChangeReasonCode::STEP_FAILURE;
-  }
-  else if (hashCode == ALL_STEPS_COMPLETED_HASH)
-  {
-     return ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED;
-  }
-  return ClusterStateChangeReasonCode::NOT_SET;
-}
+        ClusterStateChangeReasonCode GetClusterStateChangeReasonCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INTERNAL_ERROR_HASH)
+          {
+            return ClusterStateChangeReasonCode::INTERNAL_ERROR;
+          }
+          else if (hashCode == VALIDATION_ERROR_HASH)
+          {
+            return ClusterStateChangeReasonCode::VALIDATION_ERROR;
+          }
+          else if (hashCode == INSTANCE_FAILURE_HASH)
+          {
+            return ClusterStateChangeReasonCode::INSTANCE_FAILURE;
+          }
+          else if (hashCode == BOOTSTRAP_FAILURE_HASH)
+          {
+            return ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE;
+          }
+          else if (hashCode == USER_REQUEST_HASH)
+          {
+            return ClusterStateChangeReasonCode::USER_REQUEST;
+          }
+          else if (hashCode == STEP_FAILURE_HASH)
+          {
+            return ClusterStateChangeReasonCode::STEP_FAILURE;
+          }
+          else if (hashCode == ALL_STEPS_COMPLETED_HASH)
+          {
+            return ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ClusterStateChangeReasonCode>(hashCode);
+          }
 
-Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode enumValue)
-{
-  switch(enumValue)
-  {
-  case ClusterStateChangeReasonCode::INTERNAL_ERROR:
-    return "INTERNAL_ERROR";
-  case ClusterStateChangeReasonCode::VALIDATION_ERROR:
-    return "VALIDATION_ERROR";
-  case ClusterStateChangeReasonCode::INSTANCE_FAILURE:
-    return "INSTANCE_FAILURE";
-  case ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE:
-    return "BOOTSTRAP_FAILURE";
-  case ClusterStateChangeReasonCode::USER_REQUEST:
-    return "USER_REQUEST";
-  case ClusterStateChangeReasonCode::STEP_FAILURE:
-    return "STEP_FAILURE";
-  case ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED:
-    return "ALL_STEPS_COMPLETED";
-  default:
-    return "";
-  }
-}
+          return ClusterStateChangeReasonCode::NOT_SET;
+        }
 
-} // namespace ClusterStateChangeReasonCodeMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForClusterStateChangeReasonCode(ClusterStateChangeReasonCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case ClusterStateChangeReasonCode::INTERNAL_ERROR:
+            return "INTERNAL_ERROR";
+          case ClusterStateChangeReasonCode::VALIDATION_ERROR:
+            return "VALIDATION_ERROR";
+          case ClusterStateChangeReasonCode::INSTANCE_FAILURE:
+            return "INSTANCE_FAILURE";
+          case ClusterStateChangeReasonCode::BOOTSTRAP_FAILURE:
+            return "BOOTSTRAP_FAILURE";
+          case ClusterStateChangeReasonCode::USER_REQUEST:
+            return "USER_REQUEST";
+          case ClusterStateChangeReasonCode::STEP_FAILURE:
+            return "STEP_FAILURE";
+          case ClusterStateChangeReasonCode::ALL_STEPS_COMPLETED:
+            return "ALL_STEPS_COMPLETED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ClusterStateChangeReasonCodeMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

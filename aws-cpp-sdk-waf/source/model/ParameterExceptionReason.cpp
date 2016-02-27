@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/ParameterExceptionReason.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int ILLEGAL_COMBINATION_HASH = HashingUtils::HashString("ILLEGAL_CO
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace ParameterExceptionReasonMapper
-{
-
-
-ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == INVALID_OPTION_HASH)
+  namespace WAF
   {
-     return ParameterExceptionReason::INVALID_OPTION;
-  }
-  else if (hashCode == ILLEGAL_COMBINATION_HASH)
-  {
-     return ParameterExceptionReason::ILLEGAL_COMBINATION;
-  }
-  return ParameterExceptionReason::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ParameterExceptionReasonMapper
+      {
 
-Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason enumValue)
-{
-  switch(enumValue)
-  {
-  case ParameterExceptionReason::INVALID_OPTION:
-    return "INVALID_OPTION";
-  case ParameterExceptionReason::ILLEGAL_COMBINATION:
-    return "ILLEGAL_COMBINATION";
-  default:
-    return "";
-  }
-}
 
-} // namespace ParameterExceptionReasonMapper
-} // namespace Model
-} // namespace WAF
+        ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INVALID_OPTION_HASH)
+          {
+            return ParameterExceptionReason::INVALID_OPTION;
+          }
+          else if (hashCode == ILLEGAL_COMBINATION_HASH)
+          {
+            return ParameterExceptionReason::ILLEGAL_COMBINATION;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ParameterExceptionReason>(hashCode);
+          }
+
+          return ParameterExceptionReason::NOT_SET;
+        }
+
+        Aws::String GetNameForParameterExceptionReason(ParameterExceptionReason enumValue)
+        {
+          switch(enumValue)
+          {
+          case ParameterExceptionReason::INVALID_OPTION:
+            return "INVALID_OPTION";
+          case ParameterExceptionReason::ILLEGAL_COMBINATION:
+            return "ILLEGAL_COMBINATION";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ParameterExceptionReasonMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace DocumentStatusMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace DocumentStatusMapper
+      {
 
 
-DocumentStatus GetDocumentStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Creating_HASH)
-  {
-     return DocumentStatus::Creating;
-  }
-  else if (hashCode == Active_HASH)
-  {
-     return DocumentStatus::Active;
-  }
-  else if (hashCode == Deleting_HASH)
-  {
-     return DocumentStatus::Deleting;
-  }
-  return DocumentStatus::NOT_SET;
-}
+        DocumentStatus GetDocumentStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Creating_HASH)
+          {
+            return DocumentStatus::Creating;
+          }
+          else if (hashCode == Active_HASH)
+          {
+            return DocumentStatus::Active;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return DocumentStatus::Deleting;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DocumentStatus>(hashCode);
+          }
 
-Aws::String GetNameForDocumentStatus(DocumentStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case DocumentStatus::Creating:
-    return "Creating";
-  case DocumentStatus::Active:
-    return "Active";
-  case DocumentStatus::Deleting:
-    return "Deleting";
-  default:
-    return "";
-  }
-}
+          return DocumentStatus::NOT_SET;
+        }
 
-} // namespace DocumentStatusMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForDocumentStatus(DocumentStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case DocumentStatus::Creating:
+            return "Creating";
+          case DocumentStatus::Active:
+            return "Active";
+          case DocumentStatus::Deleting:
+            return "Deleting";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DocumentStatusMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

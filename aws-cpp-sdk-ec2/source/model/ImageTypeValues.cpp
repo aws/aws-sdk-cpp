@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/ImageTypeValues.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ImageTypeValuesMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace ImageTypeValuesMapper
+      {
 
 
-ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == machine_HASH)
-  {
-     return ImageTypeValues::machine;
-  }
-  else if (hashCode == kernel_HASH)
-  {
-     return ImageTypeValues::kernel;
-  }
-  else if (hashCode == ramdisk_HASH)
-  {
-     return ImageTypeValues::ramdisk;
-  }
-  return ImageTypeValues::NOT_SET;
-}
+        ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == machine_HASH)
+          {
+            return ImageTypeValues::machine;
+          }
+          else if (hashCode == kernel_HASH)
+          {
+            return ImageTypeValues::kernel;
+          }
+          else if (hashCode == ramdisk_HASH)
+          {
+            return ImageTypeValues::ramdisk;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ImageTypeValues>(hashCode);
+          }
 
-Aws::String GetNameForImageTypeValues(ImageTypeValues enumValue)
-{
-  switch(enumValue)
-  {
-  case ImageTypeValues::machine:
-    return "machine";
-  case ImageTypeValues::kernel:
-    return "kernel";
-  case ImageTypeValues::ramdisk:
-    return "ramdisk";
-  default:
-    return "";
-  }
-}
+          return ImageTypeValues::NOT_SET;
+        }
 
-} // namespace ImageTypeValuesMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForImageTypeValues(ImageTypeValues enumValue)
+        {
+          switch(enumValue)
+          {
+          case ImageTypeValues::machine:
+            return "machine";
+          case ImageTypeValues::kernel:
+            return "kernel";
+          case ImageTypeValues::ramdisk:
+            return "ramdisk";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ImageTypeValuesMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

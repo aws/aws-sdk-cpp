@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/MonitoringState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int pending_HASH = HashingUtils::HashString("pending");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace MonitoringStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace MonitoringStateMapper
+      {
 
 
-MonitoringState GetMonitoringStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == disabled_HASH)
-  {
-     return MonitoringState::disabled;
-  }
-  else if (hashCode == disabling_HASH)
-  {
-     return MonitoringState::disabling;
-  }
-  else if (hashCode == enabled_HASH)
-  {
-     return MonitoringState::enabled;
-  }
-  else if (hashCode == pending_HASH)
-  {
-     return MonitoringState::pending;
-  }
-  return MonitoringState::NOT_SET;
-}
+        MonitoringState GetMonitoringStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == disabled_HASH)
+          {
+            return MonitoringState::disabled;
+          }
+          else if (hashCode == disabling_HASH)
+          {
+            return MonitoringState::disabling;
+          }
+          else if (hashCode == enabled_HASH)
+          {
+            return MonitoringState::enabled;
+          }
+          else if (hashCode == pending_HASH)
+          {
+            return MonitoringState::pending;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MonitoringState>(hashCode);
+          }
 
-Aws::String GetNameForMonitoringState(MonitoringState enumValue)
-{
-  switch(enumValue)
-  {
-  case MonitoringState::disabled:
-    return "disabled";
-  case MonitoringState::disabling:
-    return "disabling";
-  case MonitoringState::enabled:
-    return "enabled";
-  case MonitoringState::pending:
-    return "pending";
-  default:
-    return "";
-  }
-}
+          return MonitoringState::NOT_SET;
+        }
 
-} // namespace MonitoringStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForMonitoringState(MonitoringState enumValue)
+        {
+          switch(enumValue)
+          {
+          case MonitoringState::disabled:
+            return "disabled";
+          case MonitoringState::disabling:
+            return "disabling";
+          case MonitoringState::enabled:
+            return "enabled";
+          case MonitoringState::pending:
+            return "pending";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MonitoringStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

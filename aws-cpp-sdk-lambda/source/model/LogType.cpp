@@ -14,6 +14,7 @@
 */
 #include <aws/lambda/model/LogType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Tail_HASH = HashingUtils::HashString("Tail");
 
 namespace Aws
 {
-namespace Lambda
-{
-namespace Model
-{
-namespace LogTypeMapper
-{
-
-
-LogType GetLogTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == None_HASH)
+  namespace Lambda
   {
-     return LogType::None;
-  }
-  else if (hashCode == Tail_HASH)
-  {
-     return LogType::Tail;
-  }
-  return LogType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace LogTypeMapper
+      {
 
-Aws::String GetNameForLogType(LogType enumValue)
-{
-  switch(enumValue)
-  {
-  case LogType::None:
-    return "None";
-  case LogType::Tail:
-    return "Tail";
-  default:
-    return "";
-  }
-}
 
-} // namespace LogTypeMapper
-} // namespace Model
-} // namespace Lambda
+        LogType GetLogTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == None_HASH)
+          {
+            return LogType::None;
+          }
+          else if (hashCode == Tail_HASH)
+          {
+            return LogType::Tail;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LogType>(hashCode);
+          }
+
+          return LogType::NOT_SET;
+        }
+
+        Aws::String GetNameForLogType(LogType enumValue)
+        {
+          switch(enumValue)
+          {
+          case LogType::None:
+            return "None";
+          case LogType::Tail:
+            return "Tail";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LogTypeMapper
+    } // namespace Model
+  } // namespace Lambda
 } // namespace Aws

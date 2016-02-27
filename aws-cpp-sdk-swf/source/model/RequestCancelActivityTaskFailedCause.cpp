@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/RequestCancelActivityTaskFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace RequestCancelActivityTaskFailedCauseMapper
-{
-
-
-RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVITY_ID_UNKNOWN_HASH)
+  namespace SWF
   {
-     return RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN;
-  }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-     return RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return RequestCancelActivityTaskFailedCause::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RequestCancelActivityTaskFailedCauseMapper
+      {
 
-Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN:
-    return "ACTIVITY_ID_UNKNOWN";
-  case RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
 
-} // namespace RequestCancelActivityTaskFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVITY_ID_UNKNOWN_HASH)
+          {
+            return RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN;
+          }
+          else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RequestCancelActivityTaskFailedCause>(hashCode);
+          }
+
+          return RequestCancelActivityTaskFailedCause::NOT_SET;
+        }
+
+        Aws::String GetNameForRequestCancelActivityTaskFailedCause(RequestCancelActivityTaskFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN:
+            return "ACTIVITY_ID_UNKNOWN";
+          case RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RequestCancelActivityTaskFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

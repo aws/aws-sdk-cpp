@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ChangeStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace ChangeStatusMapper
-{
-
-
-ChangeStatus GetChangeStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
+  namespace Route53
   {
-     return ChangeStatus::PENDING;
-  }
-  else if (hashCode == INSYNC_HASH)
-  {
-     return ChangeStatus::INSYNC;
-  }
-  return ChangeStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ChangeStatusMapper
+      {
 
-Aws::String GetNameForChangeStatus(ChangeStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ChangeStatus::PENDING:
-    return "PENDING";
-  case ChangeStatus::INSYNC:
-    return "INSYNC";
-  default:
-    return "";
-  }
-}
 
-} // namespace ChangeStatusMapper
-} // namespace Model
-} // namespace Route53
+        ChangeStatus GetChangeStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return ChangeStatus::PENDING;
+          }
+          else if (hashCode == INSYNC_HASH)
+          {
+            return ChangeStatus::INSYNC;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ChangeStatus>(hashCode);
+          }
+
+          return ChangeStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForChangeStatus(ChangeStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ChangeStatus::PENDING:
+            return "PENDING";
+          case ChangeStatus::INSYNC:
+            return "INSYNC";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ChangeStatusMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace ExecutionResultMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace ExecutionResultMapper
+      {
 
 
-ExecutionResult GetExecutionResultForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
-  {
-     return ExecutionResult::PENDING;
-  }
-  else if (hashCode == PASSED_HASH)
-  {
-     return ExecutionResult::PASSED;
-  }
-  else if (hashCode == WARNED_HASH)
-  {
-     return ExecutionResult::WARNED;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return ExecutionResult::FAILED;
-  }
-  else if (hashCode == SKIPPED_HASH)
-  {
-     return ExecutionResult::SKIPPED;
-  }
-  else if (hashCode == ERRORED_HASH)
-  {
-     return ExecutionResult::ERRORED;
-  }
-  else if (hashCode == STOPPED_HASH)
-  {
-     return ExecutionResult::STOPPED;
-  }
-  return ExecutionResult::NOT_SET;
-}
+        ExecutionResult GetExecutionResultForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return ExecutionResult::PENDING;
+          }
+          else if (hashCode == PASSED_HASH)
+          {
+            return ExecutionResult::PASSED;
+          }
+          else if (hashCode == WARNED_HASH)
+          {
+            return ExecutionResult::WARNED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return ExecutionResult::FAILED;
+          }
+          else if (hashCode == SKIPPED_HASH)
+          {
+            return ExecutionResult::SKIPPED;
+          }
+          else if (hashCode == ERRORED_HASH)
+          {
+            return ExecutionResult::ERRORED;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return ExecutionResult::STOPPED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ExecutionResult>(hashCode);
+          }
 
-Aws::String GetNameForExecutionResult(ExecutionResult enumValue)
-{
-  switch(enumValue)
-  {
-  case ExecutionResult::PENDING:
-    return "PENDING";
-  case ExecutionResult::PASSED:
-    return "PASSED";
-  case ExecutionResult::WARNED:
-    return "WARNED";
-  case ExecutionResult::FAILED:
-    return "FAILED";
-  case ExecutionResult::SKIPPED:
-    return "SKIPPED";
-  case ExecutionResult::ERRORED:
-    return "ERRORED";
-  case ExecutionResult::STOPPED:
-    return "STOPPED";
-  default:
-    return "";
-  }
-}
+          return ExecutionResult::NOT_SET;
+        }
 
-} // namespace ExecutionResultMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForExecutionResult(ExecutionResult enumValue)
+        {
+          switch(enumValue)
+          {
+          case ExecutionResult::PENDING:
+            return "PENDING";
+          case ExecutionResult::PASSED:
+            return "PASSED";
+          case ExecutionResult::WARNED:
+            return "WARNED";
+          case ExecutionResult::FAILED:
+            return "FAILED";
+          case ExecutionResult::SKIPPED:
+            return "SKIPPED";
+          case ExecutionResult::ERRORED:
+            return "ERRORED";
+          case ExecutionResult::STOPPED:
+            return "STOPPED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ExecutionResultMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

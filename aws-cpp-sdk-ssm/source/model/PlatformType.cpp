@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Linux_HASH = HashingUtils::HashString("Linux");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace PlatformTypeMapper
-{
-
-
-PlatformType GetPlatformTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Windows_HASH)
+  namespace SSM
   {
-     return PlatformType::Windows;
-  }
-  else if (hashCode == Linux_HASH)
-  {
-     return PlatformType::Linux;
-  }
-  return PlatformType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace PlatformTypeMapper
+      {
 
-Aws::String GetNameForPlatformType(PlatformType enumValue)
-{
-  switch(enumValue)
-  {
-  case PlatformType::Windows:
-    return "Windows";
-  case PlatformType::Linux:
-    return "Linux";
-  default:
-    return "";
-  }
-}
 
-} // namespace PlatformTypeMapper
-} // namespace Model
-} // namespace SSM
+        PlatformType GetPlatformTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Windows_HASH)
+          {
+            return PlatformType::Windows;
+          }
+          else if (hashCode == Linux_HASH)
+          {
+            return PlatformType::Linux;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PlatformType>(hashCode);
+          }
+
+          return PlatformType::NOT_SET;
+        }
+
+        Aws::String GetNameForPlatformType(PlatformType enumValue)
+        {
+          switch(enumValue)
+          {
+          case PlatformType::Windows:
+            return "Windows";
+          case PlatformType::Linux:
+            return "Linux";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlatformTypeMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

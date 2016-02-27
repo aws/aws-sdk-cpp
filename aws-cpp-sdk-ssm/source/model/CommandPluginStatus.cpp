@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/CommandPluginStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace CommandPluginStatusMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace CommandPluginStatusMapper
+      {
 
 
-CommandPluginStatus GetCommandPluginStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
-  {
-     return CommandPluginStatus::Pending;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return CommandPluginStatus::InProgress;
-  }
-  else if (hashCode == Success_HASH)
-  {
-     return CommandPluginStatus::Success;
-  }
-  else if (hashCode == TimedOut_HASH)
-  {
-     return CommandPluginStatus::TimedOut;
-  }
-  else if (hashCode == Cancelled_HASH)
-  {
-     return CommandPluginStatus::Cancelled;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return CommandPluginStatus::Failed;
-  }
-  return CommandPluginStatus::NOT_SET;
-}
+        CommandPluginStatus GetCommandPluginStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return CommandPluginStatus::Pending;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return CommandPluginStatus::InProgress;
+          }
+          else if (hashCode == Success_HASH)
+          {
+            return CommandPluginStatus::Success;
+          }
+          else if (hashCode == TimedOut_HASH)
+          {
+            return CommandPluginStatus::TimedOut;
+          }
+          else if (hashCode == Cancelled_HASH)
+          {
+            return CommandPluginStatus::Cancelled;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return CommandPluginStatus::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CommandPluginStatus>(hashCode);
+          }
 
-Aws::String GetNameForCommandPluginStatus(CommandPluginStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case CommandPluginStatus::Pending:
-    return "Pending";
-  case CommandPluginStatus::InProgress:
-    return "InProgress";
-  case CommandPluginStatus::Success:
-    return "Success";
-  case CommandPluginStatus::TimedOut:
-    return "TimedOut";
-  case CommandPluginStatus::Cancelled:
-    return "Cancelled";
-  case CommandPluginStatus::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return CommandPluginStatus::NOT_SET;
+        }
 
-} // namespace CommandPluginStatusMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForCommandPluginStatus(CommandPluginStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case CommandPluginStatus::Pending:
+            return "Pending";
+          case CommandPluginStatus::InProgress:
+            return "InProgress";
+          case CommandPluginStatus::Success:
+            return "Success";
+          case CommandPluginStatus::TimedOut:
+            return "TimedOut";
+          case CommandPluginStatus::Cancelled:
+            return "Cancelled";
+          case CommandPluginStatus::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CommandPluginStatusMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

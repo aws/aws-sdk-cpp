@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VpcPeeringConnectionStateReasonCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -29,84 +30,97 @@ static const int deleting_HASH = HashingUtils::HashString("deleting");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VpcPeeringConnectionStateReasonCodeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace VpcPeeringConnectionStateReasonCodeMapper
+      {
 
 
-VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == initiating_request_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::initiating_request;
-  }
-  else if (hashCode == pending_acceptance_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::pending_acceptance;
-  }
-  else if (hashCode == active_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::active;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::deleted;
-  }
-  else if (hashCode == rejected_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::rejected;
-  }
-  else if (hashCode == failed_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::failed;
-  }
-  else if (hashCode == expired_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::expired;
-  }
-  else if (hashCode == provisioning_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::provisioning;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return VpcPeeringConnectionStateReasonCode::deleting;
-  }
-  return VpcPeeringConnectionStateReasonCode::NOT_SET;
-}
+        VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == initiating_request_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::initiating_request;
+          }
+          else if (hashCode == pending_acceptance_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::pending_acceptance;
+          }
+          else if (hashCode == active_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::active;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::deleted;
+          }
+          else if (hashCode == rejected_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::rejected;
+          }
+          else if (hashCode == failed_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::failed;
+          }
+          else if (hashCode == expired_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::expired;
+          }
+          else if (hashCode == provisioning_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::provisioning;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return VpcPeeringConnectionStateReasonCode::deleting;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VpcPeeringConnectionStateReasonCode>(hashCode);
+          }
 
-Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode enumValue)
-{
-  switch(enumValue)
-  {
-  case VpcPeeringConnectionStateReasonCode::initiating_request:
-    return "initiating-request";
-  case VpcPeeringConnectionStateReasonCode::pending_acceptance:
-    return "pending-acceptance";
-  case VpcPeeringConnectionStateReasonCode::active:
-    return "active";
-  case VpcPeeringConnectionStateReasonCode::deleted:
-    return "deleted";
-  case VpcPeeringConnectionStateReasonCode::rejected:
-    return "rejected";
-  case VpcPeeringConnectionStateReasonCode::failed:
-    return "failed";
-  case VpcPeeringConnectionStateReasonCode::expired:
-    return "expired";
-  case VpcPeeringConnectionStateReasonCode::provisioning:
-    return "provisioning";
-  case VpcPeeringConnectionStateReasonCode::deleting:
-    return "deleting";
-  default:
-    return "";
-  }
-}
+          return VpcPeeringConnectionStateReasonCode::NOT_SET;
+        }
 
-} // namespace VpcPeeringConnectionStateReasonCodeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForVpcPeeringConnectionStateReasonCode(VpcPeeringConnectionStateReasonCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case VpcPeeringConnectionStateReasonCode::initiating_request:
+            return "initiating-request";
+          case VpcPeeringConnectionStateReasonCode::pending_acceptance:
+            return "pending-acceptance";
+          case VpcPeeringConnectionStateReasonCode::active:
+            return "active";
+          case VpcPeeringConnectionStateReasonCode::deleted:
+            return "deleted";
+          case VpcPeeringConnectionStateReasonCode::rejected:
+            return "rejected";
+          case VpcPeeringConnectionStateReasonCode::failed:
+            return "failed";
+          case VpcPeeringConnectionStateReasonCode::expired:
+            return "expired";
+          case VpcPeeringConnectionStateReasonCode::provisioning:
+            return "provisioning";
+          case VpcPeeringConnectionStateReasonCode::deleting:
+            return "deleting";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VpcPeeringConnectionStateReasonCodeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

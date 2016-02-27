@@ -14,6 +14,7 @@
 */
 #include <aws/cloudsearch/model/OptionState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int FailedToValidate_HASH = HashingUtils::HashString("FailedToValid
 
 namespace Aws
 {
-namespace CloudSearch
-{
-namespace Model
-{
-namespace OptionStateMapper
-{
+  namespace CloudSearch
+  {
+    namespace Model
+    {
+      namespace OptionStateMapper
+      {
 
 
-OptionState GetOptionStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == RequiresIndexDocuments_HASH)
-  {
-     return OptionState::RequiresIndexDocuments;
-  }
-  else if (hashCode == Processing_HASH)
-  {
-     return OptionState::Processing;
-  }
-  else if (hashCode == Active_HASH)
-  {
-     return OptionState::Active;
-  }
-  else if (hashCode == FailedToValidate_HASH)
-  {
-     return OptionState::FailedToValidate;
-  }
-  return OptionState::NOT_SET;
-}
+        OptionState GetOptionStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == RequiresIndexDocuments_HASH)
+          {
+            return OptionState::RequiresIndexDocuments;
+          }
+          else if (hashCode == Processing_HASH)
+          {
+            return OptionState::Processing;
+          }
+          else if (hashCode == Active_HASH)
+          {
+            return OptionState::Active;
+          }
+          else if (hashCode == FailedToValidate_HASH)
+          {
+            return OptionState::FailedToValidate;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OptionState>(hashCode);
+          }
 
-Aws::String GetNameForOptionState(OptionState enumValue)
-{
-  switch(enumValue)
-  {
-  case OptionState::RequiresIndexDocuments:
-    return "RequiresIndexDocuments";
-  case OptionState::Processing:
-    return "Processing";
-  case OptionState::Active:
-    return "Active";
-  case OptionState::FailedToValidate:
-    return "FailedToValidate";
-  default:
-    return "";
-  }
-}
+          return OptionState::NOT_SET;
+        }
 
-} // namespace OptionStateMapper
-} // namespace Model
-} // namespace CloudSearch
+        Aws::String GetNameForOptionState(OptionState enumValue)
+        {
+          switch(enumValue)
+          {
+          case OptionState::RequiresIndexDocuments:
+            return "RequiresIndexDocuments";
+          case OptionState::Processing:
+            return "Processing";
+          case OptionState::Active:
+            return "Active";
+          case OptionState::FailedToValidate:
+            return "FailedToValidate";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OptionStateMapper
+    } // namespace Model
+  } // namespace CloudSearch
 } // namespace Aws

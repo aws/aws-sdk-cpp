@@ -14,6 +14,7 @@
 */
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -47,192 +48,205 @@ static const int None_HASH = HashingUtils::HashString("None");
 
 namespace Aws
 {
-namespace CloudWatch
-{
-namespace Model
-{
-namespace StandardUnitMapper
-{
+  namespace CloudWatch
+  {
+    namespace Model
+    {
+      namespace StandardUnitMapper
+      {
 
 
-StandardUnit GetStandardUnitForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Seconds_HASH)
-  {
-     return StandardUnit::Seconds;
-  }
-  else if (hashCode == Microseconds_HASH)
-  {
-     return StandardUnit::Microseconds;
-  }
-  else if (hashCode == Milliseconds_HASH)
-  {
-     return StandardUnit::Milliseconds;
-  }
-  else if (hashCode == Bytes_HASH)
-  {
-     return StandardUnit::Bytes;
-  }
-  else if (hashCode == Kilobytes_HASH)
-  {
-     return StandardUnit::Kilobytes;
-  }
-  else if (hashCode == Megabytes_HASH)
-  {
-     return StandardUnit::Megabytes;
-  }
-  else if (hashCode == Gigabytes_HASH)
-  {
-     return StandardUnit::Gigabytes;
-  }
-  else if (hashCode == Terabytes_HASH)
-  {
-     return StandardUnit::Terabytes;
-  }
-  else if (hashCode == Bits_HASH)
-  {
-     return StandardUnit::Bits;
-  }
-  else if (hashCode == Kilobits_HASH)
-  {
-     return StandardUnit::Kilobits;
-  }
-  else if (hashCode == Megabits_HASH)
-  {
-     return StandardUnit::Megabits;
-  }
-  else if (hashCode == Gigabits_HASH)
-  {
-     return StandardUnit::Gigabits;
-  }
-  else if (hashCode == Terabits_HASH)
-  {
-     return StandardUnit::Terabits;
-  }
-  else if (hashCode == Percent_HASH)
-  {
-     return StandardUnit::Percent;
-  }
-  else if (hashCode == Count_HASH)
-  {
-     return StandardUnit::Count;
-  }
-  else if (hashCode == Bytes_Second_HASH)
-  {
-     return StandardUnit::Bytes_Second;
-  }
-  else if (hashCode == Kilobytes_Second_HASH)
-  {
-     return StandardUnit::Kilobytes_Second;
-  }
-  else if (hashCode == Megabytes_Second_HASH)
-  {
-     return StandardUnit::Megabytes_Second;
-  }
-  else if (hashCode == Gigabytes_Second_HASH)
-  {
-     return StandardUnit::Gigabytes_Second;
-  }
-  else if (hashCode == Terabytes_Second_HASH)
-  {
-     return StandardUnit::Terabytes_Second;
-  }
-  else if (hashCode == Bits_Second_HASH)
-  {
-     return StandardUnit::Bits_Second;
-  }
-  else if (hashCode == Kilobits_Second_HASH)
-  {
-     return StandardUnit::Kilobits_Second;
-  }
-  else if (hashCode == Megabits_Second_HASH)
-  {
-     return StandardUnit::Megabits_Second;
-  }
-  else if (hashCode == Gigabits_Second_HASH)
-  {
-     return StandardUnit::Gigabits_Second;
-  }
-  else if (hashCode == Terabits_Second_HASH)
-  {
-     return StandardUnit::Terabits_Second;
-  }
-  else if (hashCode == Count_Second_HASH)
-  {
-     return StandardUnit::Count_Second;
-  }
-  else if (hashCode == None_HASH)
-  {
-     return StandardUnit::None;
-  }
-  return StandardUnit::NOT_SET;
-}
+        StandardUnit GetStandardUnitForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Seconds_HASH)
+          {
+            return StandardUnit::Seconds;
+          }
+          else if (hashCode == Microseconds_HASH)
+          {
+            return StandardUnit::Microseconds;
+          }
+          else if (hashCode == Milliseconds_HASH)
+          {
+            return StandardUnit::Milliseconds;
+          }
+          else if (hashCode == Bytes_HASH)
+          {
+            return StandardUnit::Bytes;
+          }
+          else if (hashCode == Kilobytes_HASH)
+          {
+            return StandardUnit::Kilobytes;
+          }
+          else if (hashCode == Megabytes_HASH)
+          {
+            return StandardUnit::Megabytes;
+          }
+          else if (hashCode == Gigabytes_HASH)
+          {
+            return StandardUnit::Gigabytes;
+          }
+          else if (hashCode == Terabytes_HASH)
+          {
+            return StandardUnit::Terabytes;
+          }
+          else if (hashCode == Bits_HASH)
+          {
+            return StandardUnit::Bits;
+          }
+          else if (hashCode == Kilobits_HASH)
+          {
+            return StandardUnit::Kilobits;
+          }
+          else if (hashCode == Megabits_HASH)
+          {
+            return StandardUnit::Megabits;
+          }
+          else if (hashCode == Gigabits_HASH)
+          {
+            return StandardUnit::Gigabits;
+          }
+          else if (hashCode == Terabits_HASH)
+          {
+            return StandardUnit::Terabits;
+          }
+          else if (hashCode == Percent_HASH)
+          {
+            return StandardUnit::Percent;
+          }
+          else if (hashCode == Count_HASH)
+          {
+            return StandardUnit::Count;
+          }
+          else if (hashCode == Bytes_Second_HASH)
+          {
+            return StandardUnit::Bytes_Second;
+          }
+          else if (hashCode == Kilobytes_Second_HASH)
+          {
+            return StandardUnit::Kilobytes_Second;
+          }
+          else if (hashCode == Megabytes_Second_HASH)
+          {
+            return StandardUnit::Megabytes_Second;
+          }
+          else if (hashCode == Gigabytes_Second_HASH)
+          {
+            return StandardUnit::Gigabytes_Second;
+          }
+          else if (hashCode == Terabytes_Second_HASH)
+          {
+            return StandardUnit::Terabytes_Second;
+          }
+          else if (hashCode == Bits_Second_HASH)
+          {
+            return StandardUnit::Bits_Second;
+          }
+          else if (hashCode == Kilobits_Second_HASH)
+          {
+            return StandardUnit::Kilobits_Second;
+          }
+          else if (hashCode == Megabits_Second_HASH)
+          {
+            return StandardUnit::Megabits_Second;
+          }
+          else if (hashCode == Gigabits_Second_HASH)
+          {
+            return StandardUnit::Gigabits_Second;
+          }
+          else if (hashCode == Terabits_Second_HASH)
+          {
+            return StandardUnit::Terabits_Second;
+          }
+          else if (hashCode == Count_Second_HASH)
+          {
+            return StandardUnit::Count_Second;
+          }
+          else if (hashCode == None_HASH)
+          {
+            return StandardUnit::None;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StandardUnit>(hashCode);
+          }
 
-Aws::String GetNameForStandardUnit(StandardUnit enumValue)
-{
-  switch(enumValue)
-  {
-  case StandardUnit::Seconds:
-    return "Seconds";
-  case StandardUnit::Microseconds:
-    return "Microseconds";
-  case StandardUnit::Milliseconds:
-    return "Milliseconds";
-  case StandardUnit::Bytes:
-    return "Bytes";
-  case StandardUnit::Kilobytes:
-    return "Kilobytes";
-  case StandardUnit::Megabytes:
-    return "Megabytes";
-  case StandardUnit::Gigabytes:
-    return "Gigabytes";
-  case StandardUnit::Terabytes:
-    return "Terabytes";
-  case StandardUnit::Bits:
-    return "Bits";
-  case StandardUnit::Kilobits:
-    return "Kilobits";
-  case StandardUnit::Megabits:
-    return "Megabits";
-  case StandardUnit::Gigabits:
-    return "Gigabits";
-  case StandardUnit::Terabits:
-    return "Terabits";
-  case StandardUnit::Percent:
-    return "Percent";
-  case StandardUnit::Count:
-    return "Count";
-  case StandardUnit::Bytes_Second:
-    return "Bytes/Second";
-  case StandardUnit::Kilobytes_Second:
-    return "Kilobytes/Second";
-  case StandardUnit::Megabytes_Second:
-    return "Megabytes/Second";
-  case StandardUnit::Gigabytes_Second:
-    return "Gigabytes/Second";
-  case StandardUnit::Terabytes_Second:
-    return "Terabytes/Second";
-  case StandardUnit::Bits_Second:
-    return "Bits/Second";
-  case StandardUnit::Kilobits_Second:
-    return "Kilobits/Second";
-  case StandardUnit::Megabits_Second:
-    return "Megabits/Second";
-  case StandardUnit::Gigabits_Second:
-    return "Gigabits/Second";
-  case StandardUnit::Terabits_Second:
-    return "Terabits/Second";
-  case StandardUnit::Count_Second:
-    return "Count/Second";
-  case StandardUnit::None:
-    return "None";
-  default:
-    return "";
-  }
-}
+          return StandardUnit::NOT_SET;
+        }
 
-} // namespace StandardUnitMapper
-} // namespace Model
-} // namespace CloudWatch
+        Aws::String GetNameForStandardUnit(StandardUnit enumValue)
+        {
+          switch(enumValue)
+          {
+          case StandardUnit::Seconds:
+            return "Seconds";
+          case StandardUnit::Microseconds:
+            return "Microseconds";
+          case StandardUnit::Milliseconds:
+            return "Milliseconds";
+          case StandardUnit::Bytes:
+            return "Bytes";
+          case StandardUnit::Kilobytes:
+            return "Kilobytes";
+          case StandardUnit::Megabytes:
+            return "Megabytes";
+          case StandardUnit::Gigabytes:
+            return "Gigabytes";
+          case StandardUnit::Terabytes:
+            return "Terabytes";
+          case StandardUnit::Bits:
+            return "Bits";
+          case StandardUnit::Kilobits:
+            return "Kilobits";
+          case StandardUnit::Megabits:
+            return "Megabits";
+          case StandardUnit::Gigabits:
+            return "Gigabits";
+          case StandardUnit::Terabits:
+            return "Terabits";
+          case StandardUnit::Percent:
+            return "Percent";
+          case StandardUnit::Count:
+            return "Count";
+          case StandardUnit::Bytes_Second:
+            return "Bytes/Second";
+          case StandardUnit::Kilobytes_Second:
+            return "Kilobytes/Second";
+          case StandardUnit::Megabytes_Second:
+            return "Megabytes/Second";
+          case StandardUnit::Gigabytes_Second:
+            return "Gigabytes/Second";
+          case StandardUnit::Terabytes_Second:
+            return "Terabytes/Second";
+          case StandardUnit::Bits_Second:
+            return "Bits/Second";
+          case StandardUnit::Kilobits_Second:
+            return "Kilobits/Second";
+          case StandardUnit::Megabits_Second:
+            return "Megabits/Second";
+          case StandardUnit::Gigabits_Second:
+            return "Gigabits/Second";
+          case StandardUnit::Terabits_Second:
+            return "Terabits/Second";
+          case StandardUnit::Count_Second:
+            return "Count/Second";
+          case StandardUnit::None:
+            return "None";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StandardUnitMapper
+    } // namespace Model
+  } // namespace CloudWatch
 } // namespace Aws

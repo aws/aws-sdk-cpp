@@ -14,6 +14,7 @@
 */
 #include <aws/iot/model/LogLevel.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 namespace Aws
 {
-namespace IoT
-{
-namespace Model
-{
-namespace LogLevelMapper
-{
+  namespace IoT
+  {
+    namespace Model
+    {
+      namespace LogLevelMapper
+      {
 
 
-LogLevel GetLogLevelForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == DEBUG_HASH)
-  {
-     return LogLevel::DEBUG;
-  }
-  else if (hashCode == INFO_HASH)
-  {
-     return LogLevel::INFO;
-  }
-  else if (hashCode == ERROR__HASH)
-  {
-     return LogLevel::ERROR_;
-  }
-  else if (hashCode == WARN_HASH)
-  {
-     return LogLevel::WARN;
-  }
-  else if (hashCode == DISABLED_HASH)
-  {
-     return LogLevel::DISABLED;
-  }
-  return LogLevel::NOT_SET;
-}
+        LogLevel GetLogLevelForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == DEBUG_HASH)
+          {
+            return LogLevel::DEBUG;
+          }
+          else if (hashCode == INFO_HASH)
+          {
+            return LogLevel::INFO;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return LogLevel::ERROR_;
+          }
+          else if (hashCode == WARN_HASH)
+          {
+            return LogLevel::WARN;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return LogLevel::DISABLED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LogLevel>(hashCode);
+          }
 
-Aws::String GetNameForLogLevel(LogLevel enumValue)
-{
-  switch(enumValue)
-  {
-  case LogLevel::DEBUG:
-    return "DEBUG";
-  case LogLevel::INFO:
-    return "INFO";
-  case LogLevel::ERROR_:
-    return "ERROR";
-  case LogLevel::WARN:
-    return "WARN";
-  case LogLevel::DISABLED:
-    return "DISABLED";
-  default:
-    return "";
-  }
-}
+          return LogLevel::NOT_SET;
+        }
 
-} // namespace LogLevelMapper
-} // namespace Model
-} // namespace IoT
+        Aws::String GetNameForLogLevel(LogLevel enumValue)
+        {
+          switch(enumValue)
+          {
+          case LogLevel::DEBUG:
+            return "DEBUG";
+          case LogLevel::INFO:
+            return "INFO";
+          case LogLevel::ERROR_:
+            return "ERROR";
+          case LogLevel::WARN:
+            return "WARN";
+          case LogLevel::DISABLED:
+            return "DISABLED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LogLevelMapper
+    } // namespace Model
+  } // namespace IoT
 } // namespace Aws

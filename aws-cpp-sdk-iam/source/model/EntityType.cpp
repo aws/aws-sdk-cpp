@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/EntityType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int AWSManagedPolicy_HASH = HashingUtils::HashString("AWSManagedPol
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace EntityTypeMapper
-{
+  namespace IAM
+  {
+    namespace Model
+    {
+      namespace EntityTypeMapper
+      {
 
 
-EntityType GetEntityTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == User_HASH)
-  {
-     return EntityType::User;
-  }
-  else if (hashCode == Role_HASH)
-  {
-     return EntityType::Role;
-  }
-  else if (hashCode == Group_HASH)
-  {
-     return EntityType::Group;
-  }
-  else if (hashCode == LocalManagedPolicy_HASH)
-  {
-     return EntityType::LocalManagedPolicy;
-  }
-  else if (hashCode == AWSManagedPolicy_HASH)
-  {
-     return EntityType::AWSManagedPolicy;
-  }
-  return EntityType::NOT_SET;
-}
+        EntityType GetEntityTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == User_HASH)
+          {
+            return EntityType::User;
+          }
+          else if (hashCode == Role_HASH)
+          {
+            return EntityType::Role;
+          }
+          else if (hashCode == Group_HASH)
+          {
+            return EntityType::Group;
+          }
+          else if (hashCode == LocalManagedPolicy_HASH)
+          {
+            return EntityType::LocalManagedPolicy;
+          }
+          else if (hashCode == AWSManagedPolicy_HASH)
+          {
+            return EntityType::AWSManagedPolicy;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EntityType>(hashCode);
+          }
 
-Aws::String GetNameForEntityType(EntityType enumValue)
-{
-  switch(enumValue)
-  {
-  case EntityType::User:
-    return "User";
-  case EntityType::Role:
-    return "Role";
-  case EntityType::Group:
-    return "Group";
-  case EntityType::LocalManagedPolicy:
-    return "LocalManagedPolicy";
-  case EntityType::AWSManagedPolicy:
-    return "AWSManagedPolicy";
-  default:
-    return "";
-  }
-}
+          return EntityType::NOT_SET;
+        }
 
-} // namespace EntityTypeMapper
-} // namespace Model
-} // namespace IAM
+        Aws::String GetNameForEntityType(EntityType enumValue)
+        {
+          switch(enumValue)
+          {
+          case EntityType::User:
+            return "User";
+          case EntityType::Role:
+            return "Role";
+          case EntityType::Group:
+            return "Group";
+          case EntityType::LocalManagedPolicy:
+            return "LocalManagedPolicy";
+          case EntityType::AWSManagedPolicy:
+            return "AWSManagedPolicy";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EntityTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

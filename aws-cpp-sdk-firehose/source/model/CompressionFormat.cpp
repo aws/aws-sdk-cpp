@@ -14,6 +14,7 @@
 */
 #include <aws/firehose/model/CompressionFormat.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int Snappy_HASH = HashingUtils::HashString("Snappy");
 
 namespace Aws
 {
-namespace Firehose
-{
-namespace Model
-{
-namespace CompressionFormatMapper
-{
+  namespace Firehose
+  {
+    namespace Model
+    {
+      namespace CompressionFormatMapper
+      {
 
 
-CompressionFormat GetCompressionFormatForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNCOMPRESSED_HASH)
-  {
-     return CompressionFormat::UNCOMPRESSED;
-  }
-  else if (hashCode == GZIP_HASH)
-  {
-     return CompressionFormat::GZIP;
-  }
-  else if (hashCode == ZIP_HASH)
-  {
-     return CompressionFormat::ZIP;
-  }
-  else if (hashCode == Snappy_HASH)
-  {
-     return CompressionFormat::Snappy;
-  }
-  return CompressionFormat::NOT_SET;
-}
+        CompressionFormat GetCompressionFormatForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNCOMPRESSED_HASH)
+          {
+            return CompressionFormat::UNCOMPRESSED;
+          }
+          else if (hashCode == GZIP_HASH)
+          {
+            return CompressionFormat::GZIP;
+          }
+          else if (hashCode == ZIP_HASH)
+          {
+            return CompressionFormat::ZIP;
+          }
+          else if (hashCode == Snappy_HASH)
+          {
+            return CompressionFormat::Snappy;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CompressionFormat>(hashCode);
+          }
 
-Aws::String GetNameForCompressionFormat(CompressionFormat enumValue)
-{
-  switch(enumValue)
-  {
-  case CompressionFormat::UNCOMPRESSED:
-    return "UNCOMPRESSED";
-  case CompressionFormat::GZIP:
-    return "GZIP";
-  case CompressionFormat::ZIP:
-    return "ZIP";
-  case CompressionFormat::Snappy:
-    return "Snappy";
-  default:
-    return "";
-  }
-}
+          return CompressionFormat::NOT_SET;
+        }
 
-} // namespace CompressionFormatMapper
-} // namespace Model
-} // namespace Firehose
+        Aws::String GetNameForCompressionFormat(CompressionFormat enumValue)
+        {
+          switch(enumValue)
+          {
+          case CompressionFormat::UNCOMPRESSED:
+            return "UNCOMPRESSED";
+          case CompressionFormat::GZIP:
+            return "GZIP";
+          case CompressionFormat::ZIP:
+            return "ZIP";
+          case CompressionFormat::Snappy:
+            return "Snappy";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CompressionFormatMapper
+    } // namespace Model
+  } // namespace Firehose
 } // namespace Aws

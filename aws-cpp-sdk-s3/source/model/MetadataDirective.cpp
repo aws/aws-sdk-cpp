@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/MetadataDirective.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace MetadataDirectiveMapper
-{
-
-
-MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == COPY_HASH)
+  namespace S3
   {
-     return MetadataDirective::COPY;
-  }
-  else if (hashCode == REPLACE_HASH)
-  {
-     return MetadataDirective::REPLACE;
-  }
-  return MetadataDirective::NOT_SET;
-}
+    namespace Model
+    {
+      namespace MetadataDirectiveMapper
+      {
 
-Aws::String GetNameForMetadataDirective(MetadataDirective enumValue)
-{
-  switch(enumValue)
-  {
-  case MetadataDirective::COPY:
-    return "COPY";
-  case MetadataDirective::REPLACE:
-    return "REPLACE";
-  default:
-    return "";
-  }
-}
 
-} // namespace MetadataDirectiveMapper
-} // namespace Model
-} // namespace S3
+        MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == COPY_HASH)
+          {
+            return MetadataDirective::COPY;
+          }
+          else if (hashCode == REPLACE_HASH)
+          {
+            return MetadataDirective::REPLACE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MetadataDirective>(hashCode);
+          }
+
+          return MetadataDirective::NOT_SET;
+        }
+
+        Aws::String GetNameForMetadataDirective(MetadataDirective enumValue)
+        {
+          switch(enumValue)
+          {
+          case MetadataDirective::COPY:
+            return "COPY";
+          case MetadataDirective::REPLACE:
+            return "REPLACE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MetadataDirectiveMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

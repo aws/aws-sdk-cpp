@@ -14,6 +14,7 @@
 */
 #include <aws/monitoring/model/HistoryItemType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Action_HASH = HashingUtils::HashString("Action");
 
 namespace Aws
 {
-namespace CloudWatch
-{
-namespace Model
-{
-namespace HistoryItemTypeMapper
-{
+  namespace CloudWatch
+  {
+    namespace Model
+    {
+      namespace HistoryItemTypeMapper
+      {
 
 
-HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ConfigurationUpdate_HASH)
-  {
-     return HistoryItemType::ConfigurationUpdate;
-  }
-  else if (hashCode == StateUpdate_HASH)
-  {
-     return HistoryItemType::StateUpdate;
-  }
-  else if (hashCode == Action_HASH)
-  {
-     return HistoryItemType::Action;
-  }
-  return HistoryItemType::NOT_SET;
-}
+        HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ConfigurationUpdate_HASH)
+          {
+            return HistoryItemType::ConfigurationUpdate;
+          }
+          else if (hashCode == StateUpdate_HASH)
+          {
+            return HistoryItemType::StateUpdate;
+          }
+          else if (hashCode == Action_HASH)
+          {
+            return HistoryItemType::Action;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<HistoryItemType>(hashCode);
+          }
 
-Aws::String GetNameForHistoryItemType(HistoryItemType enumValue)
-{
-  switch(enumValue)
-  {
-  case HistoryItemType::ConfigurationUpdate:
-    return "ConfigurationUpdate";
-  case HistoryItemType::StateUpdate:
-    return "StateUpdate";
-  case HistoryItemType::Action:
-    return "Action";
-  default:
-    return "";
-  }
-}
+          return HistoryItemType::NOT_SET;
+        }
 
-} // namespace HistoryItemTypeMapper
-} // namespace Model
-} // namespace CloudWatch
+        Aws::String GetNameForHistoryItemType(HistoryItemType enumValue)
+        {
+          switch(enumValue)
+          {
+          case HistoryItemType::ConfigurationUpdate:
+            return "ConfigurationUpdate";
+          case HistoryItemType::StateUpdate:
+            return "StateUpdate";
+          case HistoryItemType::Action:
+            return "Action";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace HistoryItemTypeMapper
+    } // namespace Model
+  } // namespace CloudWatch
 } // namespace Aws

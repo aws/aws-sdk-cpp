@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/StorageClass.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace StorageClassMapper
-{
+  namespace S3
+  {
+    namespace Model
+    {
+      namespace StorageClassMapper
+      {
 
 
-StorageClass GetStorageClassForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == STANDARD_HASH)
-  {
-     return StorageClass::STANDARD;
-  }
-  else if (hashCode == REDUCED_REDUNDANCY_HASH)
-  {
-     return StorageClass::REDUCED_REDUNDANCY;
-  }
-  else if (hashCode == STANDARD_IA_HASH)
-  {
-     return StorageClass::STANDARD_IA;
-  }
-  return StorageClass::NOT_SET;
-}
+        StorageClass GetStorageClassForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == STANDARD_HASH)
+          {
+            return StorageClass::STANDARD;
+          }
+          else if (hashCode == REDUCED_REDUNDANCY_HASH)
+          {
+            return StorageClass::REDUCED_REDUNDANCY;
+          }
+          else if (hashCode == STANDARD_IA_HASH)
+          {
+            return StorageClass::STANDARD_IA;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StorageClass>(hashCode);
+          }
 
-Aws::String GetNameForStorageClass(StorageClass enumValue)
-{
-  switch(enumValue)
-  {
-  case StorageClass::STANDARD:
-    return "STANDARD";
-  case StorageClass::REDUCED_REDUNDANCY:
-    return "REDUCED_REDUNDANCY";
-  case StorageClass::STANDARD_IA:
-    return "STANDARD_IA";
-  default:
-    return "";
-  }
-}
+          return StorageClass::NOT_SET;
+        }
 
-} // namespace StorageClassMapper
-} // namespace Model
-} // namespace S3
+        Aws::String GetNameForStorageClass(StorageClass enumValue)
+        {
+          switch(enumValue)
+          {
+          case StorageClass::STANDARD:
+            return "STANDARD";
+          case StorageClass::REDUCED_REDUNDANCY:
+            return "REDUCED_REDUNDANCY";
+          case StorageClass::STANDARD_IA:
+            return "STANDARD_IA";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StorageClassMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

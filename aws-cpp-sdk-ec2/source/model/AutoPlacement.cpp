@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int off_HASH = HashingUtils::HashString("off");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AutoPlacementMapper
-{
-
-
-AutoPlacement GetAutoPlacementForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == on_HASH)
+  namespace EC2
   {
-     return AutoPlacement::on;
-  }
-  else if (hashCode == off_HASH)
-  {
-     return AutoPlacement::off;
-  }
-  return AutoPlacement::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AutoPlacementMapper
+      {
 
-Aws::String GetNameForAutoPlacement(AutoPlacement enumValue)
-{
-  switch(enumValue)
-  {
-  case AutoPlacement::on:
-    return "on";
-  case AutoPlacement::off:
-    return "off";
-  default:
-    return "";
-  }
-}
 
-} // namespace AutoPlacementMapper
-} // namespace Model
-} // namespace EC2
+        AutoPlacement GetAutoPlacementForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == on_HASH)
+          {
+            return AutoPlacement::on;
+          }
+          else if (hashCode == off_HASH)
+          {
+            return AutoPlacement::off;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AutoPlacement>(hashCode);
+          }
+
+          return AutoPlacement::NOT_SET;
+        }
+
+        Aws::String GetNameForAutoPlacement(AutoPlacement enumValue)
+        {
+          switch(enumValue)
+          {
+          case AutoPlacement::on:
+            return "on";
+          case AutoPlacement::off:
+            return "off";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AutoPlacementMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

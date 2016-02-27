@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/AssignmentStatusType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Any_HASH = HashingUtils::HashString("Any");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace AssignmentStatusTypeMapper
-{
+  namespace IAM
+  {
+    namespace Model
+    {
+      namespace AssignmentStatusTypeMapper
+      {
 
 
-AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Assigned_HASH)
-  {
-     return AssignmentStatusType::Assigned;
-  }
-  else if (hashCode == Unassigned_HASH)
-  {
-     return AssignmentStatusType::Unassigned;
-  }
-  else if (hashCode == Any_HASH)
-  {
-     return AssignmentStatusType::Any;
-  }
-  return AssignmentStatusType::NOT_SET;
-}
+        AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Assigned_HASH)
+          {
+            return AssignmentStatusType::Assigned;
+          }
+          else if (hashCode == Unassigned_HASH)
+          {
+            return AssignmentStatusType::Unassigned;
+          }
+          else if (hashCode == Any_HASH)
+          {
+            return AssignmentStatusType::Any;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AssignmentStatusType>(hashCode);
+          }
 
-Aws::String GetNameForAssignmentStatusType(AssignmentStatusType enumValue)
-{
-  switch(enumValue)
-  {
-  case AssignmentStatusType::Assigned:
-    return "Assigned";
-  case AssignmentStatusType::Unassigned:
-    return "Unassigned";
-  case AssignmentStatusType::Any:
-    return "Any";
-  default:
-    return "";
-  }
-}
+          return AssignmentStatusType::NOT_SET;
+        }
 
-} // namespace AssignmentStatusTypeMapper
-} // namespace Model
-} // namespace IAM
+        Aws::String GetNameForAssignmentStatusType(AssignmentStatusType enumValue)
+        {
+          switch(enumValue)
+          {
+          case AssignmentStatusType::Assigned:
+            return "Assigned";
+          case AssignmentStatusType::Unassigned:
+            return "Unassigned";
+          case AssignmentStatusType::Any:
+            return "Any";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AssignmentStatusTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

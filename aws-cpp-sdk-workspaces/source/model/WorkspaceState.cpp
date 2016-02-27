@@ -14,6 +14,7 @@
 */
 #include <aws/workspaces/model/WorkspaceState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -30,90 +31,103 @@ static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 namespace Aws
 {
-namespace WorkSpaces
-{
-namespace Model
-{
-namespace WorkspaceStateMapper
-{
+  namespace WorkSpaces
+  {
+    namespace Model
+    {
+      namespace WorkspaceStateMapper
+      {
 
 
-WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
-  {
-     return WorkspaceState::PENDING;
-  }
-  else if (hashCode == AVAILABLE_HASH)
-  {
-     return WorkspaceState::AVAILABLE;
-  }
-  else if (hashCode == IMPAIRED_HASH)
-  {
-     return WorkspaceState::IMPAIRED;
-  }
-  else if (hashCode == UNHEALTHY_HASH)
-  {
-     return WorkspaceState::UNHEALTHY;
-  }
-  else if (hashCode == REBOOTING_HASH)
-  {
-     return WorkspaceState::REBOOTING;
-  }
-  else if (hashCode == REBUILDING_HASH)
-  {
-     return WorkspaceState::REBUILDING;
-  }
-  else if (hashCode == TERMINATING_HASH)
-  {
-     return WorkspaceState::TERMINATING;
-  }
-  else if (hashCode == TERMINATED_HASH)
-  {
-     return WorkspaceState::TERMINATED;
-  }
-  else if (hashCode == SUSPENDED_HASH)
-  {
-     return WorkspaceState::SUSPENDED;
-  }
-  else if (hashCode == ERROR__HASH)
-  {
-     return WorkspaceState::ERROR_;
-  }
-  return WorkspaceState::NOT_SET;
-}
+        WorkspaceState GetWorkspaceStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return WorkspaceState::PENDING;
+          }
+          else if (hashCode == AVAILABLE_HASH)
+          {
+            return WorkspaceState::AVAILABLE;
+          }
+          else if (hashCode == IMPAIRED_HASH)
+          {
+            return WorkspaceState::IMPAIRED;
+          }
+          else if (hashCode == UNHEALTHY_HASH)
+          {
+            return WorkspaceState::UNHEALTHY;
+          }
+          else if (hashCode == REBOOTING_HASH)
+          {
+            return WorkspaceState::REBOOTING;
+          }
+          else if (hashCode == REBUILDING_HASH)
+          {
+            return WorkspaceState::REBUILDING;
+          }
+          else if (hashCode == TERMINATING_HASH)
+          {
+            return WorkspaceState::TERMINATING;
+          }
+          else if (hashCode == TERMINATED_HASH)
+          {
+            return WorkspaceState::TERMINATED;
+          }
+          else if (hashCode == SUSPENDED_HASH)
+          {
+            return WorkspaceState::SUSPENDED;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return WorkspaceState::ERROR_;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<WorkspaceState>(hashCode);
+          }
 
-Aws::String GetNameForWorkspaceState(WorkspaceState enumValue)
-{
-  switch(enumValue)
-  {
-  case WorkspaceState::PENDING:
-    return "PENDING";
-  case WorkspaceState::AVAILABLE:
-    return "AVAILABLE";
-  case WorkspaceState::IMPAIRED:
-    return "IMPAIRED";
-  case WorkspaceState::UNHEALTHY:
-    return "UNHEALTHY";
-  case WorkspaceState::REBOOTING:
-    return "REBOOTING";
-  case WorkspaceState::REBUILDING:
-    return "REBUILDING";
-  case WorkspaceState::TERMINATING:
-    return "TERMINATING";
-  case WorkspaceState::TERMINATED:
-    return "TERMINATED";
-  case WorkspaceState::SUSPENDED:
-    return "SUSPENDED";
-  case WorkspaceState::ERROR_:
-    return "ERROR";
-  default:
-    return "";
-  }
-}
+          return WorkspaceState::NOT_SET;
+        }
 
-} // namespace WorkspaceStateMapper
-} // namespace Model
-} // namespace WorkSpaces
+        Aws::String GetNameForWorkspaceState(WorkspaceState enumValue)
+        {
+          switch(enumValue)
+          {
+          case WorkspaceState::PENDING:
+            return "PENDING";
+          case WorkspaceState::AVAILABLE:
+            return "AVAILABLE";
+          case WorkspaceState::IMPAIRED:
+            return "IMPAIRED";
+          case WorkspaceState::UNHEALTHY:
+            return "UNHEALTHY";
+          case WorkspaceState::REBOOTING:
+            return "REBOOTING";
+          case WorkspaceState::REBUILDING:
+            return "REBUILDING";
+          case WorkspaceState::TERMINATING:
+            return "TERMINATING";
+          case WorkspaceState::TERMINATED:
+            return "TERMINATED";
+          case WorkspaceState::SUSPENDED:
+            return "SUSPENDED";
+          case WorkspaceState::ERROR_:
+            return "ERROR";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace WorkspaceStateMapper
+    } // namespace Model
+  } // namespace WorkSpaces
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/Protocol.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int https_HASH = HashingUtils::HashString("https");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace ProtocolMapper
-{
-
-
-Protocol GetProtocolForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == http_HASH)
+  namespace S3
   {
-     return Protocol::http;
-  }
-  else if (hashCode == https_HASH)
-  {
-     return Protocol::https;
-  }
-  return Protocol::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ProtocolMapper
+      {
 
-Aws::String GetNameForProtocol(Protocol enumValue)
-{
-  switch(enumValue)
-  {
-  case Protocol::http:
-    return "http";
-  case Protocol::https:
-    return "https";
-  default:
-    return "";
-  }
-}
 
-} // namespace ProtocolMapper
-} // namespace Model
-} // namespace S3
+        Protocol GetProtocolForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == http_HASH)
+          {
+            return Protocol::http;
+          }
+          else if (hashCode == https_HASH)
+          {
+            return Protocol::https;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Protocol>(hashCode);
+          }
+
+          return Protocol::NOT_SET;
+        }
+
+        Aws::String GetNameForProtocol(Protocol enumValue)
+        {
+          switch(enumValue)
+          {
+          case Protocol::http:
+            return "http";
+          case Protocol::https:
+            return "https";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ProtocolMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

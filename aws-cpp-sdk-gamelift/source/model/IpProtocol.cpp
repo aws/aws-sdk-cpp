@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/IpProtocol.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int UDP_HASH = HashingUtils::HashString("UDP");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace IpProtocolMapper
-{
-
-
-IpProtocol GetIpProtocolForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == TCP_HASH)
+  namespace GameLift
   {
-     return IpProtocol::TCP;
-  }
-  else if (hashCode == UDP_HASH)
-  {
-     return IpProtocol::UDP;
-  }
-  return IpProtocol::NOT_SET;
-}
+    namespace Model
+    {
+      namespace IpProtocolMapper
+      {
 
-Aws::String GetNameForIpProtocol(IpProtocol enumValue)
-{
-  switch(enumValue)
-  {
-  case IpProtocol::TCP:
-    return "TCP";
-  case IpProtocol::UDP:
-    return "UDP";
-  default:
-    return "";
-  }
-}
 
-} // namespace IpProtocolMapper
-} // namespace Model
-} // namespace GameLift
+        IpProtocol GetIpProtocolForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == TCP_HASH)
+          {
+            return IpProtocol::TCP;
+          }
+          else if (hashCode == UDP_HASH)
+          {
+            return IpProtocol::UDP;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<IpProtocol>(hashCode);
+          }
+
+          return IpProtocol::NOT_SET;
+        }
+
+        Aws::String GetNameForIpProtocol(IpProtocol enumValue)
+        {
+          switch(enumValue)
+          {
+          case IpProtocol::TCP:
+            return "TCP";
+          case IpProtocol::UDP:
+            return "UDP";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace IpProtocolMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

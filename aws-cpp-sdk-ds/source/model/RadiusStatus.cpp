@@ -14,6 +14,7 @@
 */
 #include <aws/ds/model/RadiusStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace DirectoryService
-{
-namespace Model
-{
-namespace RadiusStatusMapper
-{
+  namespace DirectoryService
+  {
+    namespace Model
+    {
+      namespace RadiusStatusMapper
+      {
 
 
-RadiusStatus GetRadiusStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Creating_HASH)
-  {
-     return RadiusStatus::Creating;
-  }
-  else if (hashCode == Completed_HASH)
-  {
-     return RadiusStatus::Completed;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return RadiusStatus::Failed;
-  }
-  return RadiusStatus::NOT_SET;
-}
+        RadiusStatus GetRadiusStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Creating_HASH)
+          {
+            return RadiusStatus::Creating;
+          }
+          else if (hashCode == Completed_HASH)
+          {
+            return RadiusStatus::Completed;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return RadiusStatus::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RadiusStatus>(hashCode);
+          }
 
-Aws::String GetNameForRadiusStatus(RadiusStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case RadiusStatus::Creating:
-    return "Creating";
-  case RadiusStatus::Completed:
-    return "Completed";
-  case RadiusStatus::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return RadiusStatus::NOT_SET;
+        }
 
-} // namespace RadiusStatusMapper
-} // namespace Model
-} // namespace DirectoryService
+        Aws::String GetNameForRadiusStatus(RadiusStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case RadiusStatus::Creating:
+            return "Creating";
+          case RadiusStatus::Completed:
+            return "Completed";
+          case RadiusStatus::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RadiusStatusMapper
+    } // namespace Model
+  } // namespace DirectoryService
 } // namespace Aws

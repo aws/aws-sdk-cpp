@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/OperationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int remove_HASH = HashingUtils::HashString("remove");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace OperationTypeMapper
-{
-
-
-OperationType GetOperationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == add_HASH)
+  namespace EC2
   {
-     return OperationType::add;
-  }
-  else if (hashCode == remove_HASH)
-  {
-     return OperationType::remove;
-  }
-  return OperationType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace OperationTypeMapper
+      {
 
-Aws::String GetNameForOperationType(OperationType enumValue)
-{
-  switch(enumValue)
-  {
-  case OperationType::add:
-    return "add";
-  case OperationType::remove:
-    return "remove";
-  default:
-    return "";
-  }
-}
 
-} // namespace OperationTypeMapper
-} // namespace Model
-} // namespace EC2
+        OperationType GetOperationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == add_HASH)
+          {
+            return OperationType::add;
+          }
+          else if (hashCode == remove_HASH)
+          {
+            return OperationType::remove;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OperationType>(hashCode);
+          }
+
+          return OperationType::NOT_SET;
+        }
+
+        Aws::String GetNameForOperationType(OperationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case OperationType::add:
+            return "add";
+          case OperationType::remove:
+            return "remove";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OperationTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

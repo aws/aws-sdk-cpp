@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/ContainerFormat.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int ova_HASH = HashingUtils::HashString("ova");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ContainerFormatMapper
-{
-
-
-ContainerFormat GetContainerFormatForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ova_HASH)
+  namespace EC2
   {
-     return ContainerFormat::ova;
-  }
-  return ContainerFormat::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ContainerFormatMapper
+      {
 
-Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
-{
-  switch(enumValue)
-  {
-  case ContainerFormat::ova:
-    return "ova";
-  default:
-    return "";
-  }
-}
 
-} // namespace ContainerFormatMapper
-} // namespace Model
-} // namespace EC2
+        ContainerFormat GetContainerFormatForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ova_HASH)
+          {
+            return ContainerFormat::ova;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ContainerFormat>(hashCode);
+          }
+
+          return ContainerFormat::NOT_SET;
+        }
+
+        Aws::String GetNameForContainerFormat(ContainerFormat enumValue)
+        {
+          switch(enumValue)
+          {
+          case ContainerFormat::ova:
+            return "ova";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ContainerFormatMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/es/model/ESPartitionInstanceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -34,114 +35,127 @@ static const int i2_2xlarge_elasticsearch_HASH = HashingUtils::HashString("i2.2x
 
 namespace Aws
 {
-namespace ElasticsearchService
-{
-namespace Model
-{
-namespace ESPartitionInstanceTypeMapper
-{
+  namespace ElasticsearchService
+  {
+    namespace Model
+    {
+      namespace ESPartitionInstanceTypeMapper
+      {
 
 
-ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == m3_medium_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::m3_medium_elasticsearch;
-  }
-  else if (hashCode == m3_large_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::m3_large_elasticsearch;
-  }
-  else if (hashCode == m3_xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::m3_xlarge_elasticsearch;
-  }
-  else if (hashCode == m3_2xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::m3_2xlarge_elasticsearch;
-  }
-  else if (hashCode == t2_micro_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::t2_micro_elasticsearch;
-  }
-  else if (hashCode == t2_small_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::t2_small_elasticsearch;
-  }
-  else if (hashCode == t2_medium_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::t2_medium_elasticsearch;
-  }
-  else if (hashCode == r3_large_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::r3_large_elasticsearch;
-  }
-  else if (hashCode == r3_xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::r3_xlarge_elasticsearch;
-  }
-  else if (hashCode == r3_2xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::r3_2xlarge_elasticsearch;
-  }
-  else if (hashCode == r3_4xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::r3_4xlarge_elasticsearch;
-  }
-  else if (hashCode == r3_8xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::r3_8xlarge_elasticsearch;
-  }
-  else if (hashCode == i2_xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::i2_xlarge_elasticsearch;
-  }
-  else if (hashCode == i2_2xlarge_elasticsearch_HASH)
-  {
-     return ESPartitionInstanceType::i2_2xlarge_elasticsearch;
-  }
-  return ESPartitionInstanceType::NOT_SET;
-}
+        ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == m3_medium_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m3_medium_elasticsearch;
+          }
+          else if (hashCode == m3_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m3_large_elasticsearch;
+          }
+          else if (hashCode == m3_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m3_xlarge_elasticsearch;
+          }
+          else if (hashCode == m3_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m3_2xlarge_elasticsearch;
+          }
+          else if (hashCode == t2_micro_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::t2_micro_elasticsearch;
+          }
+          else if (hashCode == t2_small_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::t2_small_elasticsearch;
+          }
+          else if (hashCode == t2_medium_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::t2_medium_elasticsearch;
+          }
+          else if (hashCode == r3_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r3_large_elasticsearch;
+          }
+          else if (hashCode == r3_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r3_xlarge_elasticsearch;
+          }
+          else if (hashCode == r3_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r3_2xlarge_elasticsearch;
+          }
+          else if (hashCode == r3_4xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r3_4xlarge_elasticsearch;
+          }
+          else if (hashCode == r3_8xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r3_8xlarge_elasticsearch;
+          }
+          else if (hashCode == i2_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::i2_xlarge_elasticsearch;
+          }
+          else if (hashCode == i2_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::i2_2xlarge_elasticsearch;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ESPartitionInstanceType>(hashCode);
+          }
 
-Aws::String GetNameForESPartitionInstanceType(ESPartitionInstanceType enumValue)
-{
-  switch(enumValue)
-  {
-  case ESPartitionInstanceType::m3_medium_elasticsearch:
-    return "m3.medium.elasticsearch";
-  case ESPartitionInstanceType::m3_large_elasticsearch:
-    return "m3.large.elasticsearch";
-  case ESPartitionInstanceType::m3_xlarge_elasticsearch:
-    return "m3.xlarge.elasticsearch";
-  case ESPartitionInstanceType::m3_2xlarge_elasticsearch:
-    return "m3.2xlarge.elasticsearch";
-  case ESPartitionInstanceType::t2_micro_elasticsearch:
-    return "t2.micro.elasticsearch";
-  case ESPartitionInstanceType::t2_small_elasticsearch:
-    return "t2.small.elasticsearch";
-  case ESPartitionInstanceType::t2_medium_elasticsearch:
-    return "t2.medium.elasticsearch";
-  case ESPartitionInstanceType::r3_large_elasticsearch:
-    return "r3.large.elasticsearch";
-  case ESPartitionInstanceType::r3_xlarge_elasticsearch:
-    return "r3.xlarge.elasticsearch";
-  case ESPartitionInstanceType::r3_2xlarge_elasticsearch:
-    return "r3.2xlarge.elasticsearch";
-  case ESPartitionInstanceType::r3_4xlarge_elasticsearch:
-    return "r3.4xlarge.elasticsearch";
-  case ESPartitionInstanceType::r3_8xlarge_elasticsearch:
-    return "r3.8xlarge.elasticsearch";
-  case ESPartitionInstanceType::i2_xlarge_elasticsearch:
-    return "i2.xlarge.elasticsearch";
-  case ESPartitionInstanceType::i2_2xlarge_elasticsearch:
-    return "i2.2xlarge.elasticsearch";
-  default:
-    return "";
-  }
-}
+          return ESPartitionInstanceType::NOT_SET;
+        }
 
-} // namespace ESPartitionInstanceTypeMapper
-} // namespace Model
-} // namespace ElasticsearchService
+        Aws::String GetNameForESPartitionInstanceType(ESPartitionInstanceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ESPartitionInstanceType::m3_medium_elasticsearch:
+            return "m3.medium.elasticsearch";
+          case ESPartitionInstanceType::m3_large_elasticsearch:
+            return "m3.large.elasticsearch";
+          case ESPartitionInstanceType::m3_xlarge_elasticsearch:
+            return "m3.xlarge.elasticsearch";
+          case ESPartitionInstanceType::m3_2xlarge_elasticsearch:
+            return "m3.2xlarge.elasticsearch";
+          case ESPartitionInstanceType::t2_micro_elasticsearch:
+            return "t2.micro.elasticsearch";
+          case ESPartitionInstanceType::t2_small_elasticsearch:
+            return "t2.small.elasticsearch";
+          case ESPartitionInstanceType::t2_medium_elasticsearch:
+            return "t2.medium.elasticsearch";
+          case ESPartitionInstanceType::r3_large_elasticsearch:
+            return "r3.large.elasticsearch";
+          case ESPartitionInstanceType::r3_xlarge_elasticsearch:
+            return "r3.xlarge.elasticsearch";
+          case ESPartitionInstanceType::r3_2xlarge_elasticsearch:
+            return "r3.2xlarge.elasticsearch";
+          case ESPartitionInstanceType::r3_4xlarge_elasticsearch:
+            return "r3.4xlarge.elasticsearch";
+          case ESPartitionInstanceType::r3_8xlarge_elasticsearch:
+            return "r3.8xlarge.elasticsearch";
+          case ESPartitionInstanceType::i2_xlarge_elasticsearch:
+            return "i2.xlarge.elasticsearch";
+          case ESPartitionInstanceType::i2_2xlarge_elasticsearch:
+            return "i2.2xlarge.elasticsearch";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ESPartitionInstanceTypeMapper
+    } // namespace Model
+  } // namespace ElasticsearchService
 } // namespace Aws

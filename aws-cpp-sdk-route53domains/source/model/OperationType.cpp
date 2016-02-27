@@ -14,6 +14,7 @@
 */
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int DOMAIN_LOCK_HASH = HashingUtils::HashString("DOMAIN_LOCK");
 
 namespace Aws
 {
-namespace Route53Domains
-{
-namespace Model
-{
-namespace OperationTypeMapper
-{
+  namespace Route53Domains
+  {
+    namespace Model
+    {
+      namespace OperationTypeMapper
+      {
 
 
-OperationType GetOperationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == REGISTER_DOMAIN_HASH)
-  {
-     return OperationType::REGISTER_DOMAIN;
-  }
-  else if (hashCode == DELETE_DOMAIN_HASH)
-  {
-     return OperationType::DELETE_DOMAIN;
-  }
-  else if (hashCode == TRANSFER_IN_DOMAIN_HASH)
-  {
-     return OperationType::TRANSFER_IN_DOMAIN;
-  }
-  else if (hashCode == UPDATE_DOMAIN_CONTACT_HASH)
-  {
-     return OperationType::UPDATE_DOMAIN_CONTACT;
-  }
-  else if (hashCode == UPDATE_NAMESERVER_HASH)
-  {
-     return OperationType::UPDATE_NAMESERVER;
-  }
-  else if (hashCode == CHANGE_PRIVACY_PROTECTION_HASH)
-  {
-     return OperationType::CHANGE_PRIVACY_PROTECTION;
-  }
-  else if (hashCode == DOMAIN_LOCK_HASH)
-  {
-     return OperationType::DOMAIN_LOCK;
-  }
-  return OperationType::NOT_SET;
-}
+        OperationType GetOperationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == REGISTER_DOMAIN_HASH)
+          {
+            return OperationType::REGISTER_DOMAIN;
+          }
+          else if (hashCode == DELETE_DOMAIN_HASH)
+          {
+            return OperationType::DELETE_DOMAIN;
+          }
+          else if (hashCode == TRANSFER_IN_DOMAIN_HASH)
+          {
+            return OperationType::TRANSFER_IN_DOMAIN;
+          }
+          else if (hashCode == UPDATE_DOMAIN_CONTACT_HASH)
+          {
+            return OperationType::UPDATE_DOMAIN_CONTACT;
+          }
+          else if (hashCode == UPDATE_NAMESERVER_HASH)
+          {
+            return OperationType::UPDATE_NAMESERVER;
+          }
+          else if (hashCode == CHANGE_PRIVACY_PROTECTION_HASH)
+          {
+            return OperationType::CHANGE_PRIVACY_PROTECTION;
+          }
+          else if (hashCode == DOMAIN_LOCK_HASH)
+          {
+            return OperationType::DOMAIN_LOCK;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OperationType>(hashCode);
+          }
 
-Aws::String GetNameForOperationType(OperationType enumValue)
-{
-  switch(enumValue)
-  {
-  case OperationType::REGISTER_DOMAIN:
-    return "REGISTER_DOMAIN";
-  case OperationType::DELETE_DOMAIN:
-    return "DELETE_DOMAIN";
-  case OperationType::TRANSFER_IN_DOMAIN:
-    return "TRANSFER_IN_DOMAIN";
-  case OperationType::UPDATE_DOMAIN_CONTACT:
-    return "UPDATE_DOMAIN_CONTACT";
-  case OperationType::UPDATE_NAMESERVER:
-    return "UPDATE_NAMESERVER";
-  case OperationType::CHANGE_PRIVACY_PROTECTION:
-    return "CHANGE_PRIVACY_PROTECTION";
-  case OperationType::DOMAIN_LOCK:
-    return "DOMAIN_LOCK";
-  default:
-    return "";
-  }
-}
+          return OperationType::NOT_SET;
+        }
 
-} // namespace OperationTypeMapper
-} // namespace Model
-} // namespace Route53Domains
+        Aws::String GetNameForOperationType(OperationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case OperationType::REGISTER_DOMAIN:
+            return "REGISTER_DOMAIN";
+          case OperationType::DELETE_DOMAIN:
+            return "DELETE_DOMAIN";
+          case OperationType::TRANSFER_IN_DOMAIN:
+            return "TRANSFER_IN_DOMAIN";
+          case OperationType::UPDATE_DOMAIN_CONTACT:
+            return "UPDATE_DOMAIN_CONTACT";
+          case OperationType::UPDATE_NAMESERVER:
+            return "UPDATE_NAMESERVER";
+          case OperationType::CHANGE_PRIVACY_PROTECTION:
+            return "CHANGE_PRIVACY_PROTECTION";
+          case OperationType::DOMAIN_LOCK:
+            return "DOMAIN_LOCK";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OperationTypeMapper
+    } // namespace Model
+  } // namespace Route53Domains
 } // namespace Aws

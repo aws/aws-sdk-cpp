@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/RecordMarkerFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace RecordMarkerFailedCauseMapper
-{
-
-
-RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+  namespace SWF
   {
-     return RecordMarkerFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return RecordMarkerFailedCause::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RecordMarkerFailedCauseMapper
+      {
 
-Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case RecordMarkerFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
 
-} // namespace RecordMarkerFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return RecordMarkerFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RecordMarkerFailedCause>(hashCode);
+          }
+
+          return RecordMarkerFailedCause::NOT_SET;
+        }
+
+        Aws::String GetNameForRecordMarkerFailedCause(RecordMarkerFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case RecordMarkerFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RecordMarkerFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

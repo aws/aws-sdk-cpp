@@ -14,6 +14,7 @@
 */
 #include <aws/email/model/ReceiptFilterPolicy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Allow_HASH = HashingUtils::HashString("Allow");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace ReceiptFilterPolicyMapper
-{
-
-
-ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Block_HASH)
+  namespace SES
   {
-     return ReceiptFilterPolicy::Block;
-  }
-  else if (hashCode == Allow_HASH)
-  {
-     return ReceiptFilterPolicy::Allow;
-  }
-  return ReceiptFilterPolicy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ReceiptFilterPolicyMapper
+      {
 
-Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy enumValue)
-{
-  switch(enumValue)
-  {
-  case ReceiptFilterPolicy::Block:
-    return "Block";
-  case ReceiptFilterPolicy::Allow:
-    return "Allow";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReceiptFilterPolicyMapper
-} // namespace Model
-} // namespace SES
+        ReceiptFilterPolicy GetReceiptFilterPolicyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Block_HASH)
+          {
+            return ReceiptFilterPolicy::Block;
+          }
+          else if (hashCode == Allow_HASH)
+          {
+            return ReceiptFilterPolicy::Allow;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReceiptFilterPolicy>(hashCode);
+          }
+
+          return ReceiptFilterPolicy::NOT_SET;
+        }
+
+        Aws::String GetNameForReceiptFilterPolicy(ReceiptFilterPolicy enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReceiptFilterPolicy::Block:
+            return "Block";
+          case ReceiptFilterPolicy::Allow:
+            return "Allow";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReceiptFilterPolicyMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

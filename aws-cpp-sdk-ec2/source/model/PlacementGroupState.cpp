@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/PlacementGroupState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace PlacementGroupStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace PlacementGroupStateMapper
+      {
 
 
-PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == pending_HASH)
-  {
-     return PlacementGroupState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return PlacementGroupState::available;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return PlacementGroupState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return PlacementGroupState::deleted;
-  }
-  return PlacementGroupState::NOT_SET;
-}
+        PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == pending_HASH)
+          {
+            return PlacementGroupState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return PlacementGroupState::available;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return PlacementGroupState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return PlacementGroupState::deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PlacementGroupState>(hashCode);
+          }
 
-Aws::String GetNameForPlacementGroupState(PlacementGroupState enumValue)
-{
-  switch(enumValue)
-  {
-  case PlacementGroupState::pending:
-    return "pending";
-  case PlacementGroupState::available:
-    return "available";
-  case PlacementGroupState::deleting:
-    return "deleting";
-  case PlacementGroupState::deleted:
-    return "deleted";
-  default:
-    return "";
-  }
-}
+          return PlacementGroupState::NOT_SET;
+        }
 
-} // namespace PlacementGroupStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForPlacementGroupState(PlacementGroupState enumValue)
+        {
+          switch(enumValue)
+          {
+          case PlacementGroupState::pending:
+            return "pending";
+          case PlacementGroupState::available:
+            return "available";
+          case PlacementGroupState::deleting:
+            return "deleting";
+          case PlacementGroupState::deleted:
+            return "deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlacementGroupStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

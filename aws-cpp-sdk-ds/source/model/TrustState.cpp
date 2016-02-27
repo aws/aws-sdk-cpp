@@ -14,6 +14,7 @@
 */
 #include <aws/ds/model/TrustState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -28,78 +29,91 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace DirectoryService
-{
-namespace Model
-{
-namespace TrustStateMapper
-{
+  namespace DirectoryService
+  {
+    namespace Model
+    {
+      namespace TrustStateMapper
+      {
 
 
-TrustState GetTrustStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Creating_HASH)
-  {
-     return TrustState::Creating;
-  }
-  else if (hashCode == Created_HASH)
-  {
-     return TrustState::Created;
-  }
-  else if (hashCode == Verifying_HASH)
-  {
-     return TrustState::Verifying;
-  }
-  else if (hashCode == VerifyFailed_HASH)
-  {
-     return TrustState::VerifyFailed;
-  }
-  else if (hashCode == Verified_HASH)
-  {
-     return TrustState::Verified;
-  }
-  else if (hashCode == Deleting_HASH)
-  {
-     return TrustState::Deleting;
-  }
-  else if (hashCode == Deleted_HASH)
-  {
-     return TrustState::Deleted;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return TrustState::Failed;
-  }
-  return TrustState::NOT_SET;
-}
+        TrustState GetTrustStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Creating_HASH)
+          {
+            return TrustState::Creating;
+          }
+          else if (hashCode == Created_HASH)
+          {
+            return TrustState::Created;
+          }
+          else if (hashCode == Verifying_HASH)
+          {
+            return TrustState::Verifying;
+          }
+          else if (hashCode == VerifyFailed_HASH)
+          {
+            return TrustState::VerifyFailed;
+          }
+          else if (hashCode == Verified_HASH)
+          {
+            return TrustState::Verified;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return TrustState::Deleting;
+          }
+          else if (hashCode == Deleted_HASH)
+          {
+            return TrustState::Deleted;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return TrustState::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TrustState>(hashCode);
+          }
 
-Aws::String GetNameForTrustState(TrustState enumValue)
-{
-  switch(enumValue)
-  {
-  case TrustState::Creating:
-    return "Creating";
-  case TrustState::Created:
-    return "Created";
-  case TrustState::Verifying:
-    return "Verifying";
-  case TrustState::VerifyFailed:
-    return "VerifyFailed";
-  case TrustState::Verified:
-    return "Verified";
-  case TrustState::Deleting:
-    return "Deleting";
-  case TrustState::Deleted:
-    return "Deleted";
-  case TrustState::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return TrustState::NOT_SET;
+        }
 
-} // namespace TrustStateMapper
-} // namespace Model
-} // namespace DirectoryService
+        Aws::String GetNameForTrustState(TrustState enumValue)
+        {
+          switch(enumValue)
+          {
+          case TrustState::Creating:
+            return "Creating";
+          case TrustState::Created:
+            return "Created";
+          case TrustState::Verifying:
+            return "Verifying";
+          case TrustState::VerifyFailed:
+            return "VerifyFailed";
+          case TrustState::Verified:
+            return "Verified";
+          case TrustState::Deleting:
+            return "Deleting";
+          case TrustState::Deleted:
+            return "Deleted";
+          case TrustState::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TrustStateMapper
+    } // namespace Model
+  } // namespace DirectoryService
 } // namespace Aws

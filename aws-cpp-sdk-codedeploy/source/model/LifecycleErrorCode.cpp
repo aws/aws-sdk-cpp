@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/LifecycleErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace LifecycleErrorCodeMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace LifecycleErrorCodeMapper
+      {
 
 
-LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Success_HASH)
-  {
-     return LifecycleErrorCode::Success;
-  }
-  else if (hashCode == ScriptMissing_HASH)
-  {
-     return LifecycleErrorCode::ScriptMissing;
-  }
-  else if (hashCode == ScriptNotExecutable_HASH)
-  {
-     return LifecycleErrorCode::ScriptNotExecutable;
-  }
-  else if (hashCode == ScriptTimedOut_HASH)
-  {
-     return LifecycleErrorCode::ScriptTimedOut;
-  }
-  else if (hashCode == ScriptFailed_HASH)
-  {
-     return LifecycleErrorCode::ScriptFailed;
-  }
-  else if (hashCode == UnknownError_HASH)
-  {
-     return LifecycleErrorCode::UnknownError;
-  }
-  return LifecycleErrorCode::NOT_SET;
-}
+        LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Success_HASH)
+          {
+            return LifecycleErrorCode::Success;
+          }
+          else if (hashCode == ScriptMissing_HASH)
+          {
+            return LifecycleErrorCode::ScriptMissing;
+          }
+          else if (hashCode == ScriptNotExecutable_HASH)
+          {
+            return LifecycleErrorCode::ScriptNotExecutable;
+          }
+          else if (hashCode == ScriptTimedOut_HASH)
+          {
+            return LifecycleErrorCode::ScriptTimedOut;
+          }
+          else if (hashCode == ScriptFailed_HASH)
+          {
+            return LifecycleErrorCode::ScriptFailed;
+          }
+          else if (hashCode == UnknownError_HASH)
+          {
+            return LifecycleErrorCode::UnknownError;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LifecycleErrorCode>(hashCode);
+          }
 
-Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode enumValue)
-{
-  switch(enumValue)
-  {
-  case LifecycleErrorCode::Success:
-    return "Success";
-  case LifecycleErrorCode::ScriptMissing:
-    return "ScriptMissing";
-  case LifecycleErrorCode::ScriptNotExecutable:
-    return "ScriptNotExecutable";
-  case LifecycleErrorCode::ScriptTimedOut:
-    return "ScriptTimedOut";
-  case LifecycleErrorCode::ScriptFailed:
-    return "ScriptFailed";
-  case LifecycleErrorCode::UnknownError:
-    return "UnknownError";
-  default:
-    return "";
-  }
-}
+          return LifecycleErrorCode::NOT_SET;
+        }
 
-} // namespace LifecycleErrorCodeMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForLifecycleErrorCode(LifecycleErrorCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case LifecycleErrorCode::Success:
+            return "Success";
+          case LifecycleErrorCode::ScriptMissing:
+            return "ScriptMissing";
+          case LifecycleErrorCode::ScriptNotExecutable:
+            return "ScriptNotExecutable";
+          case LifecycleErrorCode::ScriptTimedOut:
+            return "ScriptTimedOut";
+          case LifecycleErrorCode::ScriptFailed:
+            return "ScriptFailed";
+          case LifecycleErrorCode::UnknownError:
+            return "UnknownError";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LifecycleErrorCodeMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

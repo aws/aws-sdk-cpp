@@ -14,6 +14,7 @@
 */
 #include <aws/kms/model/KeyState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletio
 
 namespace Aws
 {
-namespace KMS
-{
-namespace Model
-{
-namespace KeyStateMapper
-{
+  namespace KMS
+  {
+    namespace Model
+    {
+      namespace KeyStateMapper
+      {
 
 
-KeyState GetKeyStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Enabled_HASH)
-  {
-     return KeyState::Enabled;
-  }
-  else if (hashCode == Disabled_HASH)
-  {
-     return KeyState::Disabled;
-  }
-  else if (hashCode == PendingDeletion_HASH)
-  {
-     return KeyState::PendingDeletion;
-  }
-  return KeyState::NOT_SET;
-}
+        KeyState GetKeyStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Enabled_HASH)
+          {
+            return KeyState::Enabled;
+          }
+          else if (hashCode == Disabled_HASH)
+          {
+            return KeyState::Disabled;
+          }
+          else if (hashCode == PendingDeletion_HASH)
+          {
+            return KeyState::PendingDeletion;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<KeyState>(hashCode);
+          }
 
-Aws::String GetNameForKeyState(KeyState enumValue)
-{
-  switch(enumValue)
-  {
-  case KeyState::Enabled:
-    return "Enabled";
-  case KeyState::Disabled:
-    return "Disabled";
-  case KeyState::PendingDeletion:
-    return "PendingDeletion";
-  default:
-    return "";
-  }
-}
+          return KeyState::NOT_SET;
+        }
 
-} // namespace KeyStateMapper
-} // namespace Model
-} // namespace KMS
+        Aws::String GetNameForKeyState(KeyState enumValue)
+        {
+          switch(enumValue)
+          {
+          case KeyState::Enabled:
+            return "Enabled";
+          case KeyState::Disabled:
+            return "Disabled";
+          case KeyState::PendingDeletion:
+            return "PendingDeletion";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace KeyStateMapper
+    } // namespace Model
+  } // namespace KMS
 } // namespace Aws

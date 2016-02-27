@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/ReplicationRuleStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace ReplicationRuleStatusMapper
-{
-
-
-ReplicationRuleStatus GetReplicationRuleStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Enabled_HASH)
+  namespace S3
   {
-     return ReplicationRuleStatus::Enabled;
-  }
-  else if (hashCode == Disabled_HASH)
-  {
-     return ReplicationRuleStatus::Disabled;
-  }
-  return ReplicationRuleStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ReplicationRuleStatusMapper
+      {
 
-Aws::String GetNameForReplicationRuleStatus(ReplicationRuleStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ReplicationRuleStatus::Enabled:
-    return "Enabled";
-  case ReplicationRuleStatus::Disabled:
-    return "Disabled";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReplicationRuleStatusMapper
-} // namespace Model
-} // namespace S3
+        ReplicationRuleStatus GetReplicationRuleStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Enabled_HASH)
+          {
+            return ReplicationRuleStatus::Enabled;
+          }
+          else if (hashCode == Disabled_HASH)
+          {
+            return ReplicationRuleStatus::Disabled;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReplicationRuleStatus>(hashCode);
+          }
+
+          return ReplicationRuleStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForReplicationRuleStatus(ReplicationRuleStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReplicationRuleStatus::Enabled:
+            return "Enabled";
+          case ReplicationRuleStatus::Disabled:
+            return "Disabled";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReplicationRuleStatusMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/LayerAttributesKeys.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -45,180 +46,193 @@ static const int JavaAppServerVersion_HASH = HashingUtils::HashString("JavaAppSe
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace LayerAttributesKeysMapper
-{
+  namespace OpsWorks
+  {
+    namespace Model
+    {
+      namespace LayerAttributesKeysMapper
+      {
 
 
-LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == EcsClusterArn_HASH)
-  {
-     return LayerAttributesKeys::EcsClusterArn;
-  }
-  else if (hashCode == EnableHaproxyStats_HASH)
-  {
-     return LayerAttributesKeys::EnableHaproxyStats;
-  }
-  else if (hashCode == HaproxyStatsUrl_HASH)
-  {
-     return LayerAttributesKeys::HaproxyStatsUrl;
-  }
-  else if (hashCode == HaproxyStatsUser_HASH)
-  {
-     return LayerAttributesKeys::HaproxyStatsUser;
-  }
-  else if (hashCode == HaproxyStatsPassword_HASH)
-  {
-     return LayerAttributesKeys::HaproxyStatsPassword;
-  }
-  else if (hashCode == HaproxyHealthCheckUrl_HASH)
-  {
-     return LayerAttributesKeys::HaproxyHealthCheckUrl;
-  }
-  else if (hashCode == HaproxyHealthCheckMethod_HASH)
-  {
-     return LayerAttributesKeys::HaproxyHealthCheckMethod;
-  }
-  else if (hashCode == MysqlRootPassword_HASH)
-  {
-     return LayerAttributesKeys::MysqlRootPassword;
-  }
-  else if (hashCode == MysqlRootPasswordUbiquitous_HASH)
-  {
-     return LayerAttributesKeys::MysqlRootPasswordUbiquitous;
-  }
-  else if (hashCode == GangliaUrl_HASH)
-  {
-     return LayerAttributesKeys::GangliaUrl;
-  }
-  else if (hashCode == GangliaUser_HASH)
-  {
-     return LayerAttributesKeys::GangliaUser;
-  }
-  else if (hashCode == GangliaPassword_HASH)
-  {
-     return LayerAttributesKeys::GangliaPassword;
-  }
-  else if (hashCode == MemcachedMemory_HASH)
-  {
-     return LayerAttributesKeys::MemcachedMemory;
-  }
-  else if (hashCode == NodejsVersion_HASH)
-  {
-     return LayerAttributesKeys::NodejsVersion;
-  }
-  else if (hashCode == RubyVersion_HASH)
-  {
-     return LayerAttributesKeys::RubyVersion;
-  }
-  else if (hashCode == RubygemsVersion_HASH)
-  {
-     return LayerAttributesKeys::RubygemsVersion;
-  }
-  else if (hashCode == ManageBundler_HASH)
-  {
-     return LayerAttributesKeys::ManageBundler;
-  }
-  else if (hashCode == BundlerVersion_HASH)
-  {
-     return LayerAttributesKeys::BundlerVersion;
-  }
-  else if (hashCode == RailsStack_HASH)
-  {
-     return LayerAttributesKeys::RailsStack;
-  }
-  else if (hashCode == PassengerVersion_HASH)
-  {
-     return LayerAttributesKeys::PassengerVersion;
-  }
-  else if (hashCode == Jvm_HASH)
-  {
-     return LayerAttributesKeys::Jvm;
-  }
-  else if (hashCode == JvmVersion_HASH)
-  {
-     return LayerAttributesKeys::JvmVersion;
-  }
-  else if (hashCode == JvmOptions_HASH)
-  {
-     return LayerAttributesKeys::JvmOptions;
-  }
-  else if (hashCode == JavaAppServer_HASH)
-  {
-     return LayerAttributesKeys::JavaAppServer;
-  }
-  else if (hashCode == JavaAppServerVersion_HASH)
-  {
-     return LayerAttributesKeys::JavaAppServerVersion;
-  }
-  return LayerAttributesKeys::NOT_SET;
-}
+        LayerAttributesKeys GetLayerAttributesKeysForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EcsClusterArn_HASH)
+          {
+            return LayerAttributesKeys::EcsClusterArn;
+          }
+          else if (hashCode == EnableHaproxyStats_HASH)
+          {
+            return LayerAttributesKeys::EnableHaproxyStats;
+          }
+          else if (hashCode == HaproxyStatsUrl_HASH)
+          {
+            return LayerAttributesKeys::HaproxyStatsUrl;
+          }
+          else if (hashCode == HaproxyStatsUser_HASH)
+          {
+            return LayerAttributesKeys::HaproxyStatsUser;
+          }
+          else if (hashCode == HaproxyStatsPassword_HASH)
+          {
+            return LayerAttributesKeys::HaproxyStatsPassword;
+          }
+          else if (hashCode == HaproxyHealthCheckUrl_HASH)
+          {
+            return LayerAttributesKeys::HaproxyHealthCheckUrl;
+          }
+          else if (hashCode == HaproxyHealthCheckMethod_HASH)
+          {
+            return LayerAttributesKeys::HaproxyHealthCheckMethod;
+          }
+          else if (hashCode == MysqlRootPassword_HASH)
+          {
+            return LayerAttributesKeys::MysqlRootPassword;
+          }
+          else if (hashCode == MysqlRootPasswordUbiquitous_HASH)
+          {
+            return LayerAttributesKeys::MysqlRootPasswordUbiquitous;
+          }
+          else if (hashCode == GangliaUrl_HASH)
+          {
+            return LayerAttributesKeys::GangliaUrl;
+          }
+          else if (hashCode == GangliaUser_HASH)
+          {
+            return LayerAttributesKeys::GangliaUser;
+          }
+          else if (hashCode == GangliaPassword_HASH)
+          {
+            return LayerAttributesKeys::GangliaPassword;
+          }
+          else if (hashCode == MemcachedMemory_HASH)
+          {
+            return LayerAttributesKeys::MemcachedMemory;
+          }
+          else if (hashCode == NodejsVersion_HASH)
+          {
+            return LayerAttributesKeys::NodejsVersion;
+          }
+          else if (hashCode == RubyVersion_HASH)
+          {
+            return LayerAttributesKeys::RubyVersion;
+          }
+          else if (hashCode == RubygemsVersion_HASH)
+          {
+            return LayerAttributesKeys::RubygemsVersion;
+          }
+          else if (hashCode == ManageBundler_HASH)
+          {
+            return LayerAttributesKeys::ManageBundler;
+          }
+          else if (hashCode == BundlerVersion_HASH)
+          {
+            return LayerAttributesKeys::BundlerVersion;
+          }
+          else if (hashCode == RailsStack_HASH)
+          {
+            return LayerAttributesKeys::RailsStack;
+          }
+          else if (hashCode == PassengerVersion_HASH)
+          {
+            return LayerAttributesKeys::PassengerVersion;
+          }
+          else if (hashCode == Jvm_HASH)
+          {
+            return LayerAttributesKeys::Jvm;
+          }
+          else if (hashCode == JvmVersion_HASH)
+          {
+            return LayerAttributesKeys::JvmVersion;
+          }
+          else if (hashCode == JvmOptions_HASH)
+          {
+            return LayerAttributesKeys::JvmOptions;
+          }
+          else if (hashCode == JavaAppServer_HASH)
+          {
+            return LayerAttributesKeys::JavaAppServer;
+          }
+          else if (hashCode == JavaAppServerVersion_HASH)
+          {
+            return LayerAttributesKeys::JavaAppServerVersion;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LayerAttributesKeys>(hashCode);
+          }
 
-Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys enumValue)
-{
-  switch(enumValue)
-  {
-  case LayerAttributesKeys::EcsClusterArn:
-    return "EcsClusterArn";
-  case LayerAttributesKeys::EnableHaproxyStats:
-    return "EnableHaproxyStats";
-  case LayerAttributesKeys::HaproxyStatsUrl:
-    return "HaproxyStatsUrl";
-  case LayerAttributesKeys::HaproxyStatsUser:
-    return "HaproxyStatsUser";
-  case LayerAttributesKeys::HaproxyStatsPassword:
-    return "HaproxyStatsPassword";
-  case LayerAttributesKeys::HaproxyHealthCheckUrl:
-    return "HaproxyHealthCheckUrl";
-  case LayerAttributesKeys::HaproxyHealthCheckMethod:
-    return "HaproxyHealthCheckMethod";
-  case LayerAttributesKeys::MysqlRootPassword:
-    return "MysqlRootPassword";
-  case LayerAttributesKeys::MysqlRootPasswordUbiquitous:
-    return "MysqlRootPasswordUbiquitous";
-  case LayerAttributesKeys::GangliaUrl:
-    return "GangliaUrl";
-  case LayerAttributesKeys::GangliaUser:
-    return "GangliaUser";
-  case LayerAttributesKeys::GangliaPassword:
-    return "GangliaPassword";
-  case LayerAttributesKeys::MemcachedMemory:
-    return "MemcachedMemory";
-  case LayerAttributesKeys::NodejsVersion:
-    return "NodejsVersion";
-  case LayerAttributesKeys::RubyVersion:
-    return "RubyVersion";
-  case LayerAttributesKeys::RubygemsVersion:
-    return "RubygemsVersion";
-  case LayerAttributesKeys::ManageBundler:
-    return "ManageBundler";
-  case LayerAttributesKeys::BundlerVersion:
-    return "BundlerVersion";
-  case LayerAttributesKeys::RailsStack:
-    return "RailsStack";
-  case LayerAttributesKeys::PassengerVersion:
-    return "PassengerVersion";
-  case LayerAttributesKeys::Jvm:
-    return "Jvm";
-  case LayerAttributesKeys::JvmVersion:
-    return "JvmVersion";
-  case LayerAttributesKeys::JvmOptions:
-    return "JvmOptions";
-  case LayerAttributesKeys::JavaAppServer:
-    return "JavaAppServer";
-  case LayerAttributesKeys::JavaAppServerVersion:
-    return "JavaAppServerVersion";
-  default:
-    return "";
-  }
-}
+          return LayerAttributesKeys::NOT_SET;
+        }
 
-} // namespace LayerAttributesKeysMapper
-} // namespace Model
-} // namespace OpsWorks
+        Aws::String GetNameForLayerAttributesKeys(LayerAttributesKeys enumValue)
+        {
+          switch(enumValue)
+          {
+          case LayerAttributesKeys::EcsClusterArn:
+            return "EcsClusterArn";
+          case LayerAttributesKeys::EnableHaproxyStats:
+            return "EnableHaproxyStats";
+          case LayerAttributesKeys::HaproxyStatsUrl:
+            return "HaproxyStatsUrl";
+          case LayerAttributesKeys::HaproxyStatsUser:
+            return "HaproxyStatsUser";
+          case LayerAttributesKeys::HaproxyStatsPassword:
+            return "HaproxyStatsPassword";
+          case LayerAttributesKeys::HaproxyHealthCheckUrl:
+            return "HaproxyHealthCheckUrl";
+          case LayerAttributesKeys::HaproxyHealthCheckMethod:
+            return "HaproxyHealthCheckMethod";
+          case LayerAttributesKeys::MysqlRootPassword:
+            return "MysqlRootPassword";
+          case LayerAttributesKeys::MysqlRootPasswordUbiquitous:
+            return "MysqlRootPasswordUbiquitous";
+          case LayerAttributesKeys::GangliaUrl:
+            return "GangliaUrl";
+          case LayerAttributesKeys::GangliaUser:
+            return "GangliaUser";
+          case LayerAttributesKeys::GangliaPassword:
+            return "GangliaPassword";
+          case LayerAttributesKeys::MemcachedMemory:
+            return "MemcachedMemory";
+          case LayerAttributesKeys::NodejsVersion:
+            return "NodejsVersion";
+          case LayerAttributesKeys::RubyVersion:
+            return "RubyVersion";
+          case LayerAttributesKeys::RubygemsVersion:
+            return "RubygemsVersion";
+          case LayerAttributesKeys::ManageBundler:
+            return "ManageBundler";
+          case LayerAttributesKeys::BundlerVersion:
+            return "BundlerVersion";
+          case LayerAttributesKeys::RailsStack:
+            return "RailsStack";
+          case LayerAttributesKeys::PassengerVersion:
+            return "PassengerVersion";
+          case LayerAttributesKeys::Jvm:
+            return "Jvm";
+          case LayerAttributesKeys::JvmVersion:
+            return "JvmVersion";
+          case LayerAttributesKeys::JvmOptions:
+            return "JvmOptions";
+          case LayerAttributesKeys::JavaAppServer:
+            return "JavaAppServer";
+          case LayerAttributesKeys::JavaAppServerVersion:
+            return "JavaAppServerVersion";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LayerAttributesKeysMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

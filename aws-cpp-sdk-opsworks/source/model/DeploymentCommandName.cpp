@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/DeploymentCommandName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -32,102 +33,115 @@ static const int undeploy_HASH = HashingUtils::HashString("undeploy");
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace DeploymentCommandNameMapper
-{
+  namespace OpsWorks
+  {
+    namespace Model
+    {
+      namespace DeploymentCommandNameMapper
+      {
 
 
-DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == install_dependencies_HASH)
-  {
-     return DeploymentCommandName::install_dependencies;
-  }
-  else if (hashCode == update_dependencies_HASH)
-  {
-     return DeploymentCommandName::update_dependencies;
-  }
-  else if (hashCode == update_custom_cookbooks_HASH)
-  {
-     return DeploymentCommandName::update_custom_cookbooks;
-  }
-  else if (hashCode == execute_recipes_HASH)
-  {
-     return DeploymentCommandName::execute_recipes;
-  }
-  else if (hashCode == configure_HASH)
-  {
-     return DeploymentCommandName::configure;
-  }
-  else if (hashCode == setup_HASH)
-  {
-     return DeploymentCommandName::setup;
-  }
-  else if (hashCode == deploy_HASH)
-  {
-     return DeploymentCommandName::deploy;
-  }
-  else if (hashCode == rollback_HASH)
-  {
-     return DeploymentCommandName::rollback;
-  }
-  else if (hashCode == start_HASH)
-  {
-     return DeploymentCommandName::start;
-  }
-  else if (hashCode == stop_HASH)
-  {
-     return DeploymentCommandName::stop;
-  }
-  else if (hashCode == restart_HASH)
-  {
-     return DeploymentCommandName::restart;
-  }
-  else if (hashCode == undeploy_HASH)
-  {
-     return DeploymentCommandName::undeploy;
-  }
-  return DeploymentCommandName::NOT_SET;
-}
+        DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == install_dependencies_HASH)
+          {
+            return DeploymentCommandName::install_dependencies;
+          }
+          else if (hashCode == update_dependencies_HASH)
+          {
+            return DeploymentCommandName::update_dependencies;
+          }
+          else if (hashCode == update_custom_cookbooks_HASH)
+          {
+            return DeploymentCommandName::update_custom_cookbooks;
+          }
+          else if (hashCode == execute_recipes_HASH)
+          {
+            return DeploymentCommandName::execute_recipes;
+          }
+          else if (hashCode == configure_HASH)
+          {
+            return DeploymentCommandName::configure;
+          }
+          else if (hashCode == setup_HASH)
+          {
+            return DeploymentCommandName::setup;
+          }
+          else if (hashCode == deploy_HASH)
+          {
+            return DeploymentCommandName::deploy;
+          }
+          else if (hashCode == rollback_HASH)
+          {
+            return DeploymentCommandName::rollback;
+          }
+          else if (hashCode == start_HASH)
+          {
+            return DeploymentCommandName::start;
+          }
+          else if (hashCode == stop_HASH)
+          {
+            return DeploymentCommandName::stop;
+          }
+          else if (hashCode == restart_HASH)
+          {
+            return DeploymentCommandName::restart;
+          }
+          else if (hashCode == undeploy_HASH)
+          {
+            return DeploymentCommandName::undeploy;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeploymentCommandName>(hashCode);
+          }
 
-Aws::String GetNameForDeploymentCommandName(DeploymentCommandName enumValue)
-{
-  switch(enumValue)
-  {
-  case DeploymentCommandName::install_dependencies:
-    return "install_dependencies";
-  case DeploymentCommandName::update_dependencies:
-    return "update_dependencies";
-  case DeploymentCommandName::update_custom_cookbooks:
-    return "update_custom_cookbooks";
-  case DeploymentCommandName::execute_recipes:
-    return "execute_recipes";
-  case DeploymentCommandName::configure:
-    return "configure";
-  case DeploymentCommandName::setup:
-    return "setup";
-  case DeploymentCommandName::deploy:
-    return "deploy";
-  case DeploymentCommandName::rollback:
-    return "rollback";
-  case DeploymentCommandName::start:
-    return "start";
-  case DeploymentCommandName::stop:
-    return "stop";
-  case DeploymentCommandName::restart:
-    return "restart";
-  case DeploymentCommandName::undeploy:
-    return "undeploy";
-  default:
-    return "";
-  }
-}
+          return DeploymentCommandName::NOT_SET;
+        }
 
-} // namespace DeploymentCommandNameMapper
-} // namespace Model
-} // namespace OpsWorks
+        Aws::String GetNameForDeploymentCommandName(DeploymentCommandName enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeploymentCommandName::install_dependencies:
+            return "install_dependencies";
+          case DeploymentCommandName::update_dependencies:
+            return "update_dependencies";
+          case DeploymentCommandName::update_custom_cookbooks:
+            return "update_custom_cookbooks";
+          case DeploymentCommandName::execute_recipes:
+            return "execute_recipes";
+          case DeploymentCommandName::configure:
+            return "configure";
+          case DeploymentCommandName::setup:
+            return "setup";
+          case DeploymentCommandName::deploy:
+            return "deploy";
+          case DeploymentCommandName::rollback:
+            return "rollback";
+          case DeploymentCommandName::start:
+            return "start";
+          case DeploymentCommandName::stop:
+            return "stop";
+          case DeploymentCommandName::restart:
+            return "restart";
+          case DeploymentCommandName::undeploy:
+            return "undeploy";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeploymentCommandNameMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

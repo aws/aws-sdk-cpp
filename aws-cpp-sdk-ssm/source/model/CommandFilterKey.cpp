@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/CommandFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Status_HASH = HashingUtils::HashString("Status");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace CommandFilterKeyMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace CommandFilterKeyMapper
+      {
 
 
-CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InvokedAfter_HASH)
-  {
-     return CommandFilterKey::InvokedAfter;
-  }
-  else if (hashCode == InvokedBefore_HASH)
-  {
-     return CommandFilterKey::InvokedBefore;
-  }
-  else if (hashCode == Status_HASH)
-  {
-     return CommandFilterKey::Status;
-  }
-  return CommandFilterKey::NOT_SET;
-}
+        CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InvokedAfter_HASH)
+          {
+            return CommandFilterKey::InvokedAfter;
+          }
+          else if (hashCode == InvokedBefore_HASH)
+          {
+            return CommandFilterKey::InvokedBefore;
+          }
+          else if (hashCode == Status_HASH)
+          {
+            return CommandFilterKey::Status;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CommandFilterKey>(hashCode);
+          }
 
-Aws::String GetNameForCommandFilterKey(CommandFilterKey enumValue)
-{
-  switch(enumValue)
-  {
-  case CommandFilterKey::InvokedAfter:
-    return "InvokedAfter";
-  case CommandFilterKey::InvokedBefore:
-    return "InvokedBefore";
-  case CommandFilterKey::Status:
-    return "Status";
-  default:
-    return "";
-  }
-}
+          return CommandFilterKey::NOT_SET;
+        }
 
-} // namespace CommandFilterKeyMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForCommandFilterKey(CommandFilterKey enumValue)
+        {
+          switch(enumValue)
+          {
+          case CommandFilterKey::InvokedAfter:
+            return "InvokedAfter";
+          case CommandFilterKey::InvokedBefore:
+            return "InvokedBefore";
+          case CommandFilterKey::Status:
+            return "Status";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CommandFilterKeyMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

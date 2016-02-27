@@ -14,6 +14,7 @@
 */
 #include <aws/email/model/TlsPolicy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Optional_HASH = HashingUtils::HashString("Optional");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace TlsPolicyMapper
-{
-
-
-TlsPolicy GetTlsPolicyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Require_HASH)
+  namespace SES
   {
-     return TlsPolicy::Require;
-  }
-  else if (hashCode == Optional_HASH)
-  {
-     return TlsPolicy::Optional;
-  }
-  return TlsPolicy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace TlsPolicyMapper
+      {
 
-Aws::String GetNameForTlsPolicy(TlsPolicy enumValue)
-{
-  switch(enumValue)
-  {
-  case TlsPolicy::Require:
-    return "Require";
-  case TlsPolicy::Optional:
-    return "Optional";
-  default:
-    return "";
-  }
-}
 
-} // namespace TlsPolicyMapper
-} // namespace Model
-} // namespace SES
+        TlsPolicy GetTlsPolicyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Require_HASH)
+          {
+            return TlsPolicy::Require;
+          }
+          else if (hashCode == Optional_HASH)
+          {
+            return TlsPolicy::Optional;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TlsPolicy>(hashCode);
+          }
+
+          return TlsPolicy::NOT_SET;
+        }
+
+        Aws::String GetNameForTlsPolicy(TlsPolicy enumValue)
+        {
+          switch(enumValue)
+          {
+          case TlsPolicy::Require:
+            return "Require";
+          case TlsPolicy::Optional:
+            return "Optional";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TlsPolicyMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

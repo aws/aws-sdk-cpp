@@ -14,6 +14,7 @@
 */
 #include <aws/glacier/model/ActionCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRe
 
 namespace Aws
 {
-namespace Glacier
-{
-namespace Model
-{
-namespace ActionCodeMapper
-{
-
-
-ActionCode GetActionCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ArchiveRetrieval_HASH)
+  namespace Glacier
   {
-     return ActionCode::ArchiveRetrieval;
-  }
-  else if (hashCode == InventoryRetrieval_HASH)
-  {
-     return ActionCode::InventoryRetrieval;
-  }
-  return ActionCode::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ActionCodeMapper
+      {
 
-Aws::String GetNameForActionCode(ActionCode enumValue)
-{
-  switch(enumValue)
-  {
-  case ActionCode::ArchiveRetrieval:
-    return "ArchiveRetrieval";
-  case ActionCode::InventoryRetrieval:
-    return "InventoryRetrieval";
-  default:
-    return "";
-  }
-}
 
-} // namespace ActionCodeMapper
-} // namespace Model
-} // namespace Glacier
+        ActionCode GetActionCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ArchiveRetrieval_HASH)
+          {
+            return ActionCode::ArchiveRetrieval;
+          }
+          else if (hashCode == InventoryRetrieval_HASH)
+          {
+            return ActionCode::InventoryRetrieval;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActionCode>(hashCode);
+          }
+
+          return ActionCode::NOT_SET;
+        }
+
+        Aws::String GetNameForActionCode(ActionCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActionCode::ArchiveRetrieval:
+            return "ArchiveRetrieval";
+          case ActionCode::InventoryRetrieval:
+            return "InventoryRetrieval";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActionCodeMapper
+    } // namespace Model
+  } // namespace Glacier
 } // namespace Aws

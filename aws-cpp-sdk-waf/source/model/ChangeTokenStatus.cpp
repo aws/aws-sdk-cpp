@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/ChangeTokenStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace ChangeTokenStatusMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace ChangeTokenStatusMapper
+      {
 
 
-ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PROVISIONED_HASH)
-  {
-     return ChangeTokenStatus::PROVISIONED;
-  }
-  else if (hashCode == PENDING_HASH)
-  {
-     return ChangeTokenStatus::PENDING;
-  }
-  else if (hashCode == INSYNC_HASH)
-  {
-     return ChangeTokenStatus::INSYNC;
-  }
-  return ChangeTokenStatus::NOT_SET;
-}
+        ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PROVISIONED_HASH)
+          {
+            return ChangeTokenStatus::PROVISIONED;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return ChangeTokenStatus::PENDING;
+          }
+          else if (hashCode == INSYNC_HASH)
+          {
+            return ChangeTokenStatus::INSYNC;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ChangeTokenStatus>(hashCode);
+          }
 
-Aws::String GetNameForChangeTokenStatus(ChangeTokenStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ChangeTokenStatus::PROVISIONED:
-    return "PROVISIONED";
-  case ChangeTokenStatus::PENDING:
-    return "PENDING";
-  case ChangeTokenStatus::INSYNC:
-    return "INSYNC";
-  default:
-    return "";
-  }
-}
+          return ChangeTokenStatus::NOT_SET;
+        }
 
-} // namespace ChangeTokenStatusMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForChangeTokenStatus(ChangeTokenStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ChangeTokenStatus::PROVISIONED:
+            return "PROVISIONED";
+          case ChangeTokenStatus::PENDING:
+            return "PENDING";
+          case ChangeTokenStatus::INSYNC:
+            return "INSYNC";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ChangeTokenStatusMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

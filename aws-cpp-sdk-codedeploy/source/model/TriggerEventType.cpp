@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/TriggerEventType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int InstanceFailure_HASH = HashingUtils::HashString("InstanceFailur
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace TriggerEventTypeMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace TriggerEventTypeMapper
+      {
 
 
-TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == DeploymentStart_HASH)
-  {
-     return TriggerEventType::DeploymentStart;
-  }
-  else if (hashCode == DeploymentSuccess_HASH)
-  {
-     return TriggerEventType::DeploymentSuccess;
-  }
-  else if (hashCode == DeploymentFailure_HASH)
-  {
-     return TriggerEventType::DeploymentFailure;
-  }
-  else if (hashCode == DeploymentStop_HASH)
-  {
-     return TriggerEventType::DeploymentStop;
-  }
-  else if (hashCode == InstanceStart_HASH)
-  {
-     return TriggerEventType::InstanceStart;
-  }
-  else if (hashCode == InstanceSuccess_HASH)
-  {
-     return TriggerEventType::InstanceSuccess;
-  }
-  else if (hashCode == InstanceFailure_HASH)
-  {
-     return TriggerEventType::InstanceFailure;
-  }
-  return TriggerEventType::NOT_SET;
-}
+        TriggerEventType GetTriggerEventTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == DeploymentStart_HASH)
+          {
+            return TriggerEventType::DeploymentStart;
+          }
+          else if (hashCode == DeploymentSuccess_HASH)
+          {
+            return TriggerEventType::DeploymentSuccess;
+          }
+          else if (hashCode == DeploymentFailure_HASH)
+          {
+            return TriggerEventType::DeploymentFailure;
+          }
+          else if (hashCode == DeploymentStop_HASH)
+          {
+            return TriggerEventType::DeploymentStop;
+          }
+          else if (hashCode == InstanceStart_HASH)
+          {
+            return TriggerEventType::InstanceStart;
+          }
+          else if (hashCode == InstanceSuccess_HASH)
+          {
+            return TriggerEventType::InstanceSuccess;
+          }
+          else if (hashCode == InstanceFailure_HASH)
+          {
+            return TriggerEventType::InstanceFailure;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TriggerEventType>(hashCode);
+          }
 
-Aws::String GetNameForTriggerEventType(TriggerEventType enumValue)
-{
-  switch(enumValue)
-  {
-  case TriggerEventType::DeploymentStart:
-    return "DeploymentStart";
-  case TriggerEventType::DeploymentSuccess:
-    return "DeploymentSuccess";
-  case TriggerEventType::DeploymentFailure:
-    return "DeploymentFailure";
-  case TriggerEventType::DeploymentStop:
-    return "DeploymentStop";
-  case TriggerEventType::InstanceStart:
-    return "InstanceStart";
-  case TriggerEventType::InstanceSuccess:
-    return "InstanceSuccess";
-  case TriggerEventType::InstanceFailure:
-    return "InstanceFailure";
-  default:
-    return "";
-  }
-}
+          return TriggerEventType::NOT_SET;
+        }
 
-} // namespace TriggerEventTypeMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForTriggerEventType(TriggerEventType enumValue)
+        {
+          switch(enumValue)
+          {
+          case TriggerEventType::DeploymentStart:
+            return "DeploymentStart";
+          case TriggerEventType::DeploymentSuccess:
+            return "DeploymentSuccess";
+          case TriggerEventType::DeploymentFailure:
+            return "DeploymentFailure";
+          case TriggerEventType::DeploymentStop:
+            return "DeploymentStop";
+          case TriggerEventType::InstanceStart:
+            return "InstanceStart";
+          case TriggerEventType::InstanceSuccess:
+            return "InstanceSuccess";
+          case TriggerEventType::InstanceFailure:
+            return "InstanceFailure";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TriggerEventTypeMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

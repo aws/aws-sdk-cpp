@@ -14,6 +14,7 @@
 */
 #include <aws/apigateway/model/IntegrationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int MOCK_HASH = HashingUtils::HashString("MOCK");
 
 namespace Aws
 {
-namespace APIGateway
-{
-namespace Model
-{
-namespace IntegrationTypeMapper
-{
+  namespace APIGateway
+  {
+    namespace Model
+    {
+      namespace IntegrationTypeMapper
+      {
 
 
-IntegrationType GetIntegrationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == HTTP_HASH)
-  {
-     return IntegrationType::HTTP;
-  }
-  else if (hashCode == AWS_HASH)
-  {
-     return IntegrationType::AWS;
-  }
-  else if (hashCode == MOCK_HASH)
-  {
-     return IntegrationType::MOCK;
-  }
-  return IntegrationType::NOT_SET;
-}
+        IntegrationType GetIntegrationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == HTTP_HASH)
+          {
+            return IntegrationType::HTTP;
+          }
+          else if (hashCode == AWS_HASH)
+          {
+            return IntegrationType::AWS;
+          }
+          else if (hashCode == MOCK_HASH)
+          {
+            return IntegrationType::MOCK;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<IntegrationType>(hashCode);
+          }
 
-Aws::String GetNameForIntegrationType(IntegrationType enumValue)
-{
-  switch(enumValue)
-  {
-  case IntegrationType::HTTP:
-    return "HTTP";
-  case IntegrationType::AWS:
-    return "AWS";
-  case IntegrationType::MOCK:
-    return "MOCK";
-  default:
-    return "";
-  }
-}
+          return IntegrationType::NOT_SET;
+        }
 
-} // namespace IntegrationTypeMapper
-} // namespace Model
-} // namespace APIGateway
+        Aws::String GetNameForIntegrationType(IntegrationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case IntegrationType::HTTP:
+            return "HTTP";
+          case IntegrationType::AWS:
+            return "AWS";
+          case IntegrationType::MOCK:
+            return "MOCK";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace IntegrationTypeMapper
+    } // namespace Model
+  } // namespace APIGateway
 } // namespace Aws

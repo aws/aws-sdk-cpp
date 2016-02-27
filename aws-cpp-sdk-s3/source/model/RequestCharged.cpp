@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int requester_HASH = HashingUtils::HashString("requester");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace RequestChargedMapper
-{
-
-
-RequestCharged GetRequestChargedForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == requester_HASH)
+  namespace S3
   {
-     return RequestCharged::requester;
-  }
-  return RequestCharged::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RequestChargedMapper
+      {
 
-Aws::String GetNameForRequestCharged(RequestCharged enumValue)
-{
-  switch(enumValue)
-  {
-  case RequestCharged::requester:
-    return "requester";
-  default:
-    return "";
-  }
-}
 
-} // namespace RequestChargedMapper
-} // namespace Model
-} // namespace S3
+        RequestCharged GetRequestChargedForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == requester_HASH)
+          {
+            return RequestCharged::requester;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RequestCharged>(hashCode);
+          }
+
+          return RequestCharged::NOT_SET;
+        }
+
+        Aws::String GetNameForRequestCharged(RequestCharged enumValue)
+        {
+          switch(enumValue)
+          {
+          case RequestCharged::requester:
+            return "requester";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RequestChargedMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

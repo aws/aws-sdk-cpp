@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/Fault.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace FaultMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace FaultMapper
+      {
 
 
-Fault GetFaultForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Client_HASH)
-  {
-     return Fault::Client;
-  }
-  else if (hashCode == Server_HASH)
-  {
-     return Fault::Server;
-  }
-  else if (hashCode == Unknown_HASH)
-  {
-     return Fault::Unknown;
-  }
-  return Fault::NOT_SET;
-}
+        Fault GetFaultForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Client_HASH)
+          {
+            return Fault::Client;
+          }
+          else if (hashCode == Server_HASH)
+          {
+            return Fault::Server;
+          }
+          else if (hashCode == Unknown_HASH)
+          {
+            return Fault::Unknown;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Fault>(hashCode);
+          }
 
-Aws::String GetNameForFault(Fault enumValue)
-{
-  switch(enumValue)
-  {
-  case Fault::Client:
-    return "Client";
-  case Fault::Server:
-    return "Server";
-  case Fault::Unknown:
-    return "Unknown";
-  default:
-    return "";
-  }
-}
+          return Fault::NOT_SET;
+        }
 
-} // namespace FaultMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForFault(Fault enumValue)
+        {
+          switch(enumValue)
+          {
+          case Fault::Client:
+            return "Client";
+          case Fault::Server:
+            return "Server";
+          case Fault::Unknown:
+            return "Unknown";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace FaultMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

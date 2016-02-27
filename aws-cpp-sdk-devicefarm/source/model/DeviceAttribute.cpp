@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/DeviceAttribute.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace DeviceAttributeMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace DeviceAttributeMapper
+      {
 
 
-DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ARN_HASH)
-  {
-     return DeviceAttribute::ARN;
-  }
-  else if (hashCode == PLATFORM_HASH)
-  {
-     return DeviceAttribute::PLATFORM;
-  }
-  else if (hashCode == FORM_FACTOR_HASH)
-  {
-     return DeviceAttribute::FORM_FACTOR;
-  }
-  else if (hashCode == MANUFACTURER_HASH)
-  {
-     return DeviceAttribute::MANUFACTURER;
-  }
-  return DeviceAttribute::NOT_SET;
-}
+        DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ARN_HASH)
+          {
+            return DeviceAttribute::ARN;
+          }
+          else if (hashCode == PLATFORM_HASH)
+          {
+            return DeviceAttribute::PLATFORM;
+          }
+          else if (hashCode == FORM_FACTOR_HASH)
+          {
+            return DeviceAttribute::FORM_FACTOR;
+          }
+          else if (hashCode == MANUFACTURER_HASH)
+          {
+            return DeviceAttribute::MANUFACTURER;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeviceAttribute>(hashCode);
+          }
 
-Aws::String GetNameForDeviceAttribute(DeviceAttribute enumValue)
-{
-  switch(enumValue)
-  {
-  case DeviceAttribute::ARN:
-    return "ARN";
-  case DeviceAttribute::PLATFORM:
-    return "PLATFORM";
-  case DeviceAttribute::FORM_FACTOR:
-    return "FORM_FACTOR";
-  case DeviceAttribute::MANUFACTURER:
-    return "MANUFACTURER";
-  default:
-    return "";
-  }
-}
+          return DeviceAttribute::NOT_SET;
+        }
 
-} // namespace DeviceAttributeMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForDeviceAttribute(DeviceAttribute enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeviceAttribute::ARN:
+            return "ARN";
+          case DeviceAttribute::PLATFORM:
+            return "PLATFORM";
+          case DeviceAttribute::FORM_FACTOR:
+            return "FORM_FACTOR";
+          case DeviceAttribute::MANUFACTURER:
+            return "MANUFACTURER";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeviceAttributeMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

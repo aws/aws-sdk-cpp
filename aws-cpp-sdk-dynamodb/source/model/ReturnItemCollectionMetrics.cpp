@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/ReturnItemCollectionMetrics.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ReturnItemCollectionMetricsMapper
-{
-
-
-ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SIZE_HASH)
+  namespace DynamoDB
   {
-     return ReturnItemCollectionMetrics::SIZE;
-  }
-  else if (hashCode == NONE_HASH)
-  {
-     return ReturnItemCollectionMetrics::NONE;
-  }
-  return ReturnItemCollectionMetrics::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ReturnItemCollectionMetricsMapper
+      {
 
-Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
-{
-  switch(enumValue)
-  {
-  case ReturnItemCollectionMetrics::SIZE:
-    return "SIZE";
-  case ReturnItemCollectionMetrics::NONE:
-    return "NONE";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReturnItemCollectionMetricsMapper
-} // namespace Model
-} // namespace DynamoDB
+        ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SIZE_HASH)
+          {
+            return ReturnItemCollectionMetrics::SIZE;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return ReturnItemCollectionMetrics::NONE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReturnItemCollectionMetrics>(hashCode);
+          }
+
+          return ReturnItemCollectionMetrics::NOT_SET;
+        }
+
+        Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReturnItemCollectionMetrics::SIZE:
+            return "SIZE";
+          case ReturnItemCollectionMetrics::NONE:
+            return "NONE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReturnItemCollectionMetricsMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

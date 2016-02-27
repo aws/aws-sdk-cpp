@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int VHD_HASH = HashingUtils::HashString("VHD");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace DiskImageFormatMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace DiskImageFormatMapper
+      {
 
 
-DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == VMDK_HASH)
-  {
-     return DiskImageFormat::VMDK;
-  }
-  else if (hashCode == RAW_HASH)
-  {
-     return DiskImageFormat::RAW;
-  }
-  else if (hashCode == VHD_HASH)
-  {
-     return DiskImageFormat::VHD;
-  }
-  return DiskImageFormat::NOT_SET;
-}
+        DiskImageFormat GetDiskImageFormatForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == VMDK_HASH)
+          {
+            return DiskImageFormat::VMDK;
+          }
+          else if (hashCode == RAW_HASH)
+          {
+            return DiskImageFormat::RAW;
+          }
+          else if (hashCode == VHD_HASH)
+          {
+            return DiskImageFormat::VHD;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DiskImageFormat>(hashCode);
+          }
 
-Aws::String GetNameForDiskImageFormat(DiskImageFormat enumValue)
-{
-  switch(enumValue)
-  {
-  case DiskImageFormat::VMDK:
-    return "VMDK";
-  case DiskImageFormat::RAW:
-    return "RAW";
-  case DiskImageFormat::VHD:
-    return "VHD";
-  default:
-    return "";
-  }
-}
+          return DiskImageFormat::NOT_SET;
+        }
 
-} // namespace DiskImageFormatMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForDiskImageFormat(DiskImageFormat enumValue)
+        {
+          switch(enumValue)
+          {
+          case DiskImageFormat::VMDK:
+            return "VMDK";
+          case DiskImageFormat::RAW:
+            return "RAW";
+          case DiskImageFormat::VHD:
+            return "VHD";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DiskImageFormatMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

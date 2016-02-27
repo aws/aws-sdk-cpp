@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/MFADelete.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace MFADeleteMapper
-{
-
-
-MFADelete GetMFADeleteForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Enabled_HASH)
+  namespace S3
   {
-     return MFADelete::Enabled;
-  }
-  else if (hashCode == Disabled_HASH)
-  {
-     return MFADelete::Disabled;
-  }
-  return MFADelete::NOT_SET;
-}
+    namespace Model
+    {
+      namespace MFADeleteMapper
+      {
 
-Aws::String GetNameForMFADelete(MFADelete enumValue)
-{
-  switch(enumValue)
-  {
-  case MFADelete::Enabled:
-    return "Enabled";
-  case MFADelete::Disabled:
-    return "Disabled";
-  default:
-    return "";
-  }
-}
 
-} // namespace MFADeleteMapper
-} // namespace Model
-} // namespace S3
+        MFADelete GetMFADeleteForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Enabled_HASH)
+          {
+            return MFADelete::Enabled;
+          }
+          else if (hashCode == Disabled_HASH)
+          {
+            return MFADelete::Disabled;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MFADelete>(hashCode);
+          }
+
+          return MFADelete::NOT_SET;
+        }
+
+        Aws::String GetNameForMFADelete(MFADelete enumValue)
+        {
+          switch(enumValue)
+          {
+          case MFADelete::Enabled:
+            return "Enabled";
+          case MFADelete::Disabled:
+            return "Disabled";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MFADeleteMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/EnvironmentHealthStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -28,78 +29,91 @@ static const int Severe_HASH = HashingUtils::HashString("Severe");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace EnvironmentHealthStatusMapper
-{
+  namespace ElasticBeanstalk
+  {
+    namespace Model
+    {
+      namespace EnvironmentHealthStatusMapper
+      {
 
 
-EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NoData_HASH)
-  {
-     return EnvironmentHealthStatus::NoData;
-  }
-  else if (hashCode == Unknown_HASH)
-  {
-     return EnvironmentHealthStatus::Unknown;
-  }
-  else if (hashCode == Pending_HASH)
-  {
-     return EnvironmentHealthStatus::Pending;
-  }
-  else if (hashCode == Ok_HASH)
-  {
-     return EnvironmentHealthStatus::Ok;
-  }
-  else if (hashCode == Info_HASH)
-  {
-     return EnvironmentHealthStatus::Info;
-  }
-  else if (hashCode == Warning_HASH)
-  {
-     return EnvironmentHealthStatus::Warning;
-  }
-  else if (hashCode == Degraded_HASH)
-  {
-     return EnvironmentHealthStatus::Degraded;
-  }
-  else if (hashCode == Severe_HASH)
-  {
-     return EnvironmentHealthStatus::Severe;
-  }
-  return EnvironmentHealthStatus::NOT_SET;
-}
+        EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NoData_HASH)
+          {
+            return EnvironmentHealthStatus::NoData;
+          }
+          else if (hashCode == Unknown_HASH)
+          {
+            return EnvironmentHealthStatus::Unknown;
+          }
+          else if (hashCode == Pending_HASH)
+          {
+            return EnvironmentHealthStatus::Pending;
+          }
+          else if (hashCode == Ok_HASH)
+          {
+            return EnvironmentHealthStatus::Ok;
+          }
+          else if (hashCode == Info_HASH)
+          {
+            return EnvironmentHealthStatus::Info;
+          }
+          else if (hashCode == Warning_HASH)
+          {
+            return EnvironmentHealthStatus::Warning;
+          }
+          else if (hashCode == Degraded_HASH)
+          {
+            return EnvironmentHealthStatus::Degraded;
+          }
+          else if (hashCode == Severe_HASH)
+          {
+            return EnvironmentHealthStatus::Severe;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EnvironmentHealthStatus>(hashCode);
+          }
 
-Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case EnvironmentHealthStatus::NoData:
-    return "NoData";
-  case EnvironmentHealthStatus::Unknown:
-    return "Unknown";
-  case EnvironmentHealthStatus::Pending:
-    return "Pending";
-  case EnvironmentHealthStatus::Ok:
-    return "Ok";
-  case EnvironmentHealthStatus::Info:
-    return "Info";
-  case EnvironmentHealthStatus::Warning:
-    return "Warning";
-  case EnvironmentHealthStatus::Degraded:
-    return "Degraded";
-  case EnvironmentHealthStatus::Severe:
-    return "Severe";
-  default:
-    return "";
-  }
-}
+          return EnvironmentHealthStatus::NOT_SET;
+        }
 
-} // namespace EnvironmentHealthStatusMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        Aws::String GetNameForEnvironmentHealthStatus(EnvironmentHealthStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case EnvironmentHealthStatus::NoData:
+            return "NoData";
+          case EnvironmentHealthStatus::Unknown:
+            return "Unknown";
+          case EnvironmentHealthStatus::Pending:
+            return "Pending";
+          case EnvironmentHealthStatus::Ok:
+            return "Ok";
+          case EnvironmentHealthStatus::Info:
+            return "Info";
+          case EnvironmentHealthStatus::Warning:
+            return "Warning";
+          case EnvironmentHealthStatus::Degraded:
+            return "Degraded";
+          case EnvironmentHealthStatus::Severe:
+            return "Severe";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EnvironmentHealthStatusMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

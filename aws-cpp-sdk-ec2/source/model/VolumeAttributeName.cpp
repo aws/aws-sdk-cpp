@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VolumeAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int productCodes_HASH = HashingUtils::HashString("productCodes");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeAttributeNameMapper
-{
-
-
-VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == autoEnableIO_HASH)
+  namespace EC2
   {
-     return VolumeAttributeName::autoEnableIO;
-  }
-  else if (hashCode == productCodes_HASH)
-  {
-     return VolumeAttributeName::productCodes;
-  }
-  return VolumeAttributeName::NOT_SET;
-}
+    namespace Model
+    {
+      namespace VolumeAttributeNameMapper
+      {
 
-Aws::String GetNameForVolumeAttributeName(VolumeAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case VolumeAttributeName::autoEnableIO:
-    return "autoEnableIO";
-  case VolumeAttributeName::productCodes:
-    return "productCodes";
-  default:
-    return "";
-  }
-}
 
-} // namespace VolumeAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == autoEnableIO_HASH)
+          {
+            return VolumeAttributeName::autoEnableIO;
+          }
+          else if (hashCode == productCodes_HASH)
+          {
+            return VolumeAttributeName::productCodes;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeAttributeName>(hashCode);
+          }
+
+          return VolumeAttributeName::NOT_SET;
+        }
+
+        Aws::String GetNameForVolumeAttributeName(VolumeAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeAttributeName::autoEnableIO:
+            return "autoEnableIO";
+          case VolumeAttributeName::productCodes:
+            return "productCodes";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

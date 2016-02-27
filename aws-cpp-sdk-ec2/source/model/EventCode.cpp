@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/EventCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int instance_stop_HASH = HashingUtils::HashString("instance-stop");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace EventCodeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace EventCodeMapper
+      {
 
 
-EventCode GetEventCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == instance_reboot_HASH)
-  {
-     return EventCode::instance_reboot;
-  }
-  else if (hashCode == system_reboot_HASH)
-  {
-     return EventCode::system_reboot;
-  }
-  else if (hashCode == system_maintenance_HASH)
-  {
-     return EventCode::system_maintenance;
-  }
-  else if (hashCode == instance_retirement_HASH)
-  {
-     return EventCode::instance_retirement;
-  }
-  else if (hashCode == instance_stop_HASH)
-  {
-     return EventCode::instance_stop;
-  }
-  return EventCode::NOT_SET;
-}
+        EventCode GetEventCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == instance_reboot_HASH)
+          {
+            return EventCode::instance_reboot;
+          }
+          else if (hashCode == system_reboot_HASH)
+          {
+            return EventCode::system_reboot;
+          }
+          else if (hashCode == system_maintenance_HASH)
+          {
+            return EventCode::system_maintenance;
+          }
+          else if (hashCode == instance_retirement_HASH)
+          {
+            return EventCode::instance_retirement;
+          }
+          else if (hashCode == instance_stop_HASH)
+          {
+            return EventCode::instance_stop;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventCode>(hashCode);
+          }
 
-Aws::String GetNameForEventCode(EventCode enumValue)
-{
-  switch(enumValue)
-  {
-  case EventCode::instance_reboot:
-    return "instance-reboot";
-  case EventCode::system_reboot:
-    return "system-reboot";
-  case EventCode::system_maintenance:
-    return "system-maintenance";
-  case EventCode::instance_retirement:
-    return "instance-retirement";
-  case EventCode::instance_stop:
-    return "instance-stop";
-  default:
-    return "";
-  }
-}
+          return EventCode::NOT_SET;
+        }
 
-} // namespace EventCodeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForEventCode(EventCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventCode::instance_reboot:
+            return "instance-reboot";
+          case EventCode::system_reboot:
+            return "system-reboot";
+          case EventCode::system_maintenance:
+            return "system-maintenance";
+          case EventCode::instance_retirement:
+            return "instance-retirement";
+          case EventCode::instance_stop:
+            return "instance-stop";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventCodeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

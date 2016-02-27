@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/BuildStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace BuildStatusMapper
-{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace BuildStatusMapper
+      {
 
 
-BuildStatus GetBuildStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == INITIALIZED_HASH)
-  {
-     return BuildStatus::INITIALIZED;
-  }
-  else if (hashCode == READY_HASH)
-  {
-     return BuildStatus::READY;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return BuildStatus::FAILED;
-  }
-  return BuildStatus::NOT_SET;
-}
+        BuildStatus GetBuildStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INITIALIZED_HASH)
+          {
+            return BuildStatus::INITIALIZED;
+          }
+          else if (hashCode == READY_HASH)
+          {
+            return BuildStatus::READY;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return BuildStatus::FAILED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<BuildStatus>(hashCode);
+          }
 
-Aws::String GetNameForBuildStatus(BuildStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case BuildStatus::INITIALIZED:
-    return "INITIALIZED";
-  case BuildStatus::READY:
-    return "READY";
-  case BuildStatus::FAILED:
-    return "FAILED";
-  default:
-    return "";
-  }
-}
+          return BuildStatus::NOT_SET;
+        }
 
-} // namespace BuildStatusMapper
-} // namespace Model
-} // namespace GameLift
+        Aws::String GetNameForBuildStatus(BuildStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case BuildStatus::INITIALIZED:
+            return "INITIALIZED";
+          case BuildStatus::READY:
+            return "READY";
+          case BuildStatus::FAILED:
+            return "FAILED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace BuildStatusMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

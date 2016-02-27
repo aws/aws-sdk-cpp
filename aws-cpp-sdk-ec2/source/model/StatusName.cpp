@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/StatusName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int reachability_HASH = HashingUtils::HashString("reachability");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace StatusNameMapper
-{
-
-
-StatusName GetStatusNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == reachability_HASH)
+  namespace EC2
   {
-     return StatusName::reachability;
-  }
-  return StatusName::NOT_SET;
-}
+    namespace Model
+    {
+      namespace StatusNameMapper
+      {
 
-Aws::String GetNameForStatusName(StatusName enumValue)
-{
-  switch(enumValue)
-  {
-  case StatusName::reachability:
-    return "reachability";
-  default:
-    return "";
-  }
-}
 
-} // namespace StatusNameMapper
-} // namespace Model
-} // namespace EC2
+        StatusName GetStatusNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == reachability_HASH)
+          {
+            return StatusName::reachability;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StatusName>(hashCode);
+          }
+
+          return StatusName::NOT_SET;
+        }
+
+        Aws::String GetNameForStatusName(StatusName enumValue)
+        {
+          switch(enumValue)
+          {
+          case StatusName::reachability:
+            return "reachability";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StatusNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

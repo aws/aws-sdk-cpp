@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int B_HASH = HashingUtils::HashString("B");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ScalarAttributeTypeMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace ScalarAttributeTypeMapper
+      {
 
 
-ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == S_HASH)
-  {
-     return ScalarAttributeType::S;
-  }
-  else if (hashCode == N_HASH)
-  {
-     return ScalarAttributeType::N;
-  }
-  else if (hashCode == B_HASH)
-  {
-     return ScalarAttributeType::B;
-  }
-  return ScalarAttributeType::NOT_SET;
-}
+        ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == S_HASH)
+          {
+            return ScalarAttributeType::S;
+          }
+          else if (hashCode == N_HASH)
+          {
+            return ScalarAttributeType::N;
+          }
+          else if (hashCode == B_HASH)
+          {
+            return ScalarAttributeType::B;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ScalarAttributeType>(hashCode);
+          }
 
-Aws::String GetNameForScalarAttributeType(ScalarAttributeType enumValue)
-{
-  switch(enumValue)
-  {
-  case ScalarAttributeType::S:
-    return "S";
-  case ScalarAttributeType::N:
-    return "N";
-  case ScalarAttributeType::B:
-    return "B";
-  default:
-    return "";
-  }
-}
+          return ScalarAttributeType::NOT_SET;
+        }
 
-} // namespace ScalarAttributeTypeMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForScalarAttributeType(ScalarAttributeType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ScalarAttributeType::S:
+            return "S";
+          case ScalarAttributeType::N:
+            return "N";
+          case ScalarAttributeType::B:
+            return "B";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ScalarAttributeTypeMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

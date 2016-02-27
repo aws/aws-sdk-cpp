@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/MLModelType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int MULTICLASS_HASH = HashingUtils::HashString("MULTICLASS");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace MLModelTypeMapper
-{
+  namespace MachineLearning
+  {
+    namespace Model
+    {
+      namespace MLModelTypeMapper
+      {
 
 
-MLModelType GetMLModelTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == REGRESSION_HASH)
-  {
-     return MLModelType::REGRESSION;
-  }
-  else if (hashCode == BINARY_HASH)
-  {
-     return MLModelType::BINARY;
-  }
-  else if (hashCode == MULTICLASS_HASH)
-  {
-     return MLModelType::MULTICLASS;
-  }
-  return MLModelType::NOT_SET;
-}
+        MLModelType GetMLModelTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == REGRESSION_HASH)
+          {
+            return MLModelType::REGRESSION;
+          }
+          else if (hashCode == BINARY_HASH)
+          {
+            return MLModelType::BINARY;
+          }
+          else if (hashCode == MULTICLASS_HASH)
+          {
+            return MLModelType::MULTICLASS;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MLModelType>(hashCode);
+          }
 
-Aws::String GetNameForMLModelType(MLModelType enumValue)
-{
-  switch(enumValue)
-  {
-  case MLModelType::REGRESSION:
-    return "REGRESSION";
-  case MLModelType::BINARY:
-    return "BINARY";
-  case MLModelType::MULTICLASS:
-    return "MULTICLASS";
-  default:
-    return "";
-  }
-}
+          return MLModelType::NOT_SET;
+        }
 
-} // namespace MLModelTypeMapper
-} // namespace Model
-} // namespace MachineLearning
+        Aws::String GetNameForMLModelType(MLModelType enumValue)
+        {
+          switch(enumValue)
+          {
+          case MLModelType::REGRESSION:
+            return "REGRESSION";
+          case MLModelType::BINARY:
+            return "BINARY";
+          case MLModelType::MULTICLASS:
+            return "MULTICLASS";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MLModelTypeMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

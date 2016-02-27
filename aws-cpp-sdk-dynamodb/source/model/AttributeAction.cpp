@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/AttributeAction.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace AttributeActionMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace AttributeActionMapper
+      {
 
 
-AttributeAction GetAttributeActionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ADD_HASH)
-  {
-     return AttributeAction::ADD;
-  }
-  else if (hashCode == PUT_HASH)
-  {
-     return AttributeAction::PUT;
-  }
-  else if (hashCode == DELETE__HASH)
-  {
-     return AttributeAction::DELETE_;
-  }
-  return AttributeAction::NOT_SET;
-}
+        AttributeAction GetAttributeActionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ADD_HASH)
+          {
+            return AttributeAction::ADD;
+          }
+          else if (hashCode == PUT_HASH)
+          {
+            return AttributeAction::PUT;
+          }
+          else if (hashCode == DELETE__HASH)
+          {
+            return AttributeAction::DELETE_;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AttributeAction>(hashCode);
+          }
 
-Aws::String GetNameForAttributeAction(AttributeAction enumValue)
-{
-  switch(enumValue)
-  {
-  case AttributeAction::ADD:
-    return "ADD";
-  case AttributeAction::PUT:
-    return "PUT";
-  case AttributeAction::DELETE_:
-    return "DELETE";
-  default:
-    return "";
-  }
-}
+          return AttributeAction::NOT_SET;
+        }
 
-} // namespace AttributeActionMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForAttributeAction(AttributeAction enumValue)
+        {
+          switch(enumValue)
+          {
+          case AttributeAction::ADD:
+            return "ADD";
+          case AttributeAction::PUT:
+            return "PUT";
+          case AttributeAction::DELETE_:
+            return "DELETE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AttributeActionMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

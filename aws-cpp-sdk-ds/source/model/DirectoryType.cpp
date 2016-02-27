@@ -14,6 +14,7 @@
 */
 #include <aws/ds/model/DirectoryType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int MicrosoftAD_HASH = HashingUtils::HashString("MicrosoftAD");
 
 namespace Aws
 {
-namespace DirectoryService
-{
-namespace Model
-{
-namespace DirectoryTypeMapper
-{
+  namespace DirectoryService
+  {
+    namespace Model
+    {
+      namespace DirectoryTypeMapper
+      {
 
 
-DirectoryType GetDirectoryTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SimpleAD_HASH)
-  {
-     return DirectoryType::SimpleAD;
-  }
-  else if (hashCode == ADConnector_HASH)
-  {
-     return DirectoryType::ADConnector;
-  }
-  else if (hashCode == MicrosoftAD_HASH)
-  {
-     return DirectoryType::MicrosoftAD;
-  }
-  return DirectoryType::NOT_SET;
-}
+        DirectoryType GetDirectoryTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SimpleAD_HASH)
+          {
+            return DirectoryType::SimpleAD;
+          }
+          else if (hashCode == ADConnector_HASH)
+          {
+            return DirectoryType::ADConnector;
+          }
+          else if (hashCode == MicrosoftAD_HASH)
+          {
+            return DirectoryType::MicrosoftAD;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DirectoryType>(hashCode);
+          }
 
-Aws::String GetNameForDirectoryType(DirectoryType enumValue)
-{
-  switch(enumValue)
-  {
-  case DirectoryType::SimpleAD:
-    return "SimpleAD";
-  case DirectoryType::ADConnector:
-    return "ADConnector";
-  case DirectoryType::MicrosoftAD:
-    return "MicrosoftAD";
-  default:
-    return "";
-  }
-}
+          return DirectoryType::NOT_SET;
+        }
 
-} // namespace DirectoryTypeMapper
-} // namespace Model
-} // namespace DirectoryService
+        Aws::String GetNameForDirectoryType(DirectoryType enumValue)
+        {
+          switch(enumValue)
+          {
+          case DirectoryType::SimpleAD:
+            return "SimpleAD";
+          case DirectoryType::ADConnector:
+            return "ADConnector";
+          case DirectoryType::MicrosoftAD:
+            return "MicrosoftAD";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DirectoryTypeMapper
+    } // namespace Model
+  } // namespace DirectoryService
 } // namespace Aws

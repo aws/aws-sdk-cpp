@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/ScheduleActivityTaskFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -31,96 +32,109 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace ScheduleActivityTaskFailedCauseMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace ScheduleActivityTaskFailedCauseMapper
+      {
 
 
-ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVITY_TYPE_DEPRECATED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED;
-  }
-  else if (hashCode == ACTIVITY_TYPE_DOES_NOT_EXIST_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST;
-  }
-  else if (hashCode == ACTIVITY_ID_ALREADY_IN_USE_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE;
-  }
-  else if (hashCode == OPEN_ACTIVITIES_LIMIT_EXCEEDED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED;
-  }
-  else if (hashCode == ACTIVITY_CREATION_RATE_EXCEEDED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED;
-  }
-  else if (hashCode == DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED;
-  }
-  else if (hashCode == DEFAULT_TASK_LIST_UNDEFINED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
-  }
-  else if (hashCode == DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED;
-  }
-  else if (hashCode == DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED;
-  }
-  else if (hashCode == DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED;
-  }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-     return ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return ScheduleActivityTaskFailedCause::NOT_SET;
-}
+        ScheduleActivityTaskFailedCause GetScheduleActivityTaskFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVITY_TYPE_DEPRECATED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED;
+          }
+          else if (hashCode == ACTIVITY_TYPE_DOES_NOT_EXIST_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST;
+          }
+          else if (hashCode == ACTIVITY_ID_ALREADY_IN_USE_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE;
+          }
+          else if (hashCode == OPEN_ACTIVITIES_LIMIT_EXCEEDED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == ACTIVITY_CREATION_RATE_EXCEEDED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED;
+          }
+          else if (hashCode == DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED;
+          }
+          else if (hashCode == DEFAULT_TASK_LIST_UNDEFINED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED;
+          }
+          else if (hashCode == DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED;
+          }
+          else if (hashCode == DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED;
+          }
+          else if (hashCode == DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED;
+          }
+          else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ScheduleActivityTaskFailedCause>(hashCode);
+          }
 
-Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED:
-    return "ACTIVITY_TYPE_DEPRECATED";
-  case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST:
-    return "ACTIVITY_TYPE_DOES_NOT_EXIST";
-  case ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE:
-    return "ACTIVITY_ID_ALREADY_IN_USE";
-  case ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED:
-    return "OPEN_ACTIVITIES_LIMIT_EXCEEDED";
-  case ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED:
-    return "ACTIVITY_CREATION_RATE_EXCEEDED";
-  case ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED:
-    return "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED";
-  case ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED:
-    return "DEFAULT_TASK_LIST_UNDEFINED";
-  case ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED:
-    return "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED";
-  case ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED:
-    return "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED";
-  case ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED:
-    return "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED";
-  case ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
+          return ScheduleActivityTaskFailedCause::NOT_SET;
+        }
 
-} // namespace ScheduleActivityTaskFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForScheduleActivityTaskFailedCause(ScheduleActivityTaskFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED:
+            return "ACTIVITY_TYPE_DEPRECATED";
+          case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST:
+            return "ACTIVITY_TYPE_DOES_NOT_EXIST";
+          case ScheduleActivityTaskFailedCause::ACTIVITY_ID_ALREADY_IN_USE:
+            return "ACTIVITY_ID_ALREADY_IN_USE";
+          case ScheduleActivityTaskFailedCause::OPEN_ACTIVITIES_LIMIT_EXCEEDED:
+            return "OPEN_ACTIVITIES_LIMIT_EXCEEDED";
+          case ScheduleActivityTaskFailedCause::ACTIVITY_CREATION_RATE_EXCEEDED:
+            return "ACTIVITY_CREATION_RATE_EXCEEDED";
+          case ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED:
+            return "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED";
+          case ScheduleActivityTaskFailedCause::DEFAULT_TASK_LIST_UNDEFINED:
+            return "DEFAULT_TASK_LIST_UNDEFINED";
+          case ScheduleActivityTaskFailedCause::DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED:
+            return "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED";
+          case ScheduleActivityTaskFailedCause::DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED:
+            return "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED";
+          case ScheduleActivityTaskFailedCause::DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED:
+            return "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED";
+          case ScheduleActivityTaskFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ScheduleActivityTaskFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/ComparisonOperator.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int GT_HASH = HashingUtils::HashString("GT");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace ComparisonOperatorMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace ComparisonOperatorMapper
+      {
 
 
-ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == EQ_HASH)
-  {
-     return ComparisonOperator::EQ;
-  }
-  else if (hashCode == NE_HASH)
-  {
-     return ComparisonOperator::NE;
-  }
-  else if (hashCode == LE_HASH)
-  {
-     return ComparisonOperator::LE;
-  }
-  else if (hashCode == LT_HASH)
-  {
-     return ComparisonOperator::LT;
-  }
-  else if (hashCode == GE_HASH)
-  {
-     return ComparisonOperator::GE;
-  }
-  else if (hashCode == GT_HASH)
-  {
-     return ComparisonOperator::GT;
-  }
-  return ComparisonOperator::NOT_SET;
-}
+        ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EQ_HASH)
+          {
+            return ComparisonOperator::EQ;
+          }
+          else if (hashCode == NE_HASH)
+          {
+            return ComparisonOperator::NE;
+          }
+          else if (hashCode == LE_HASH)
+          {
+            return ComparisonOperator::LE;
+          }
+          else if (hashCode == LT_HASH)
+          {
+            return ComparisonOperator::LT;
+          }
+          else if (hashCode == GE_HASH)
+          {
+            return ComparisonOperator::GE;
+          }
+          else if (hashCode == GT_HASH)
+          {
+            return ComparisonOperator::GT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ComparisonOperator>(hashCode);
+          }
 
-Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue)
-{
-  switch(enumValue)
-  {
-  case ComparisonOperator::EQ:
-    return "EQ";
-  case ComparisonOperator::NE:
-    return "NE";
-  case ComparisonOperator::LE:
-    return "LE";
-  case ComparisonOperator::LT:
-    return "LT";
-  case ComparisonOperator::GE:
-    return "GE";
-  case ComparisonOperator::GT:
-    return "GT";
-  default:
-    return "";
-  }
-}
+          return ComparisonOperator::NOT_SET;
+        }
 
-} // namespace ComparisonOperatorMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForComparisonOperator(ComparisonOperator enumValue)
+        {
+          switch(enumValue)
+          {
+          case ComparisonOperator::EQ:
+            return "EQ";
+          case ComparisonOperator::NE:
+            return "NE";
+          case ComparisonOperator::LE:
+            return "LE";
+          case ComparisonOperator::LT:
+            return "LT";
+          case ComparisonOperator::GE:
+            return "GE";
+          case ComparisonOperator::GT:
+            return "GT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ComparisonOperatorMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

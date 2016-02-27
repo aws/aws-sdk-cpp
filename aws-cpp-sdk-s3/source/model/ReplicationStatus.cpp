@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/ReplicationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace ReplicationStatusMapper
-{
+  namespace S3
+  {
+    namespace Model
+    {
+      namespace ReplicationStatusMapper
+      {
 
 
-ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == COMPLETE_HASH)
-  {
-     return ReplicationStatus::COMPLETE;
-  }
-  else if (hashCode == PENDING_HASH)
-  {
-     return ReplicationStatus::PENDING;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return ReplicationStatus::FAILED;
-  }
-  else if (hashCode == REPLICA_HASH)
-  {
-     return ReplicationStatus::REPLICA;
-  }
-  return ReplicationStatus::NOT_SET;
-}
+        ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == COMPLETE_HASH)
+          {
+            return ReplicationStatus::COMPLETE;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return ReplicationStatus::PENDING;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return ReplicationStatus::FAILED;
+          }
+          else if (hashCode == REPLICA_HASH)
+          {
+            return ReplicationStatus::REPLICA;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReplicationStatus>(hashCode);
+          }
 
-Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ReplicationStatus::COMPLETE:
-    return "COMPLETE";
-  case ReplicationStatus::PENDING:
-    return "PENDING";
-  case ReplicationStatus::FAILED:
-    return "FAILED";
-  case ReplicationStatus::REPLICA:
-    return "REPLICA";
-  default:
-    return "";
-  }
-}
+          return ReplicationStatus::NOT_SET;
+        }
 
-} // namespace ReplicationStatusMapper
-} // namespace Model
-} // namespace S3
+        Aws::String GetNameForReplicationStatus(ReplicationStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReplicationStatus::COMPLETE:
+            return "COMPLETE";
+          case ReplicationStatus::PENDING:
+            return "PENDING";
+          case ReplicationStatus::FAILED:
+            return "FAILED";
+          case ReplicationStatus::REPLICA:
+            return "REPLICA";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReplicationStatusMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

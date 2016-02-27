@@ -14,6 +14,7 @@
 */
 #include <aws/kms/model/KeyUsageType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYP
 
 namespace Aws
 {
-namespace KMS
-{
-namespace Model
-{
-namespace KeyUsageTypeMapper
-{
-
-
-KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ENCRYPT_DECRYPT_HASH)
+  namespace KMS
   {
-     return KeyUsageType::ENCRYPT_DECRYPT;
-  }
-  return KeyUsageType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace KeyUsageTypeMapper
+      {
 
-Aws::String GetNameForKeyUsageType(KeyUsageType enumValue)
-{
-  switch(enumValue)
-  {
-  case KeyUsageType::ENCRYPT_DECRYPT:
-    return "ENCRYPT_DECRYPT";
-  default:
-    return "";
-  }
-}
 
-} // namespace KeyUsageTypeMapper
-} // namespace Model
-} // namespace KMS
+        KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ENCRYPT_DECRYPT_HASH)
+          {
+            return KeyUsageType::ENCRYPT_DECRYPT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<KeyUsageType>(hashCode);
+          }
+
+          return KeyUsageType::NOT_SET;
+        }
+
+        Aws::String GetNameForKeyUsageType(KeyUsageType enumValue)
+        {
+          switch(enumValue)
+          {
+          case KeyUsageType::ENCRYPT_DECRYPT:
+            return "ENCRYPT_DECRYPT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace KeyUsageTypeMapper
+    } // namespace Model
+  } // namespace KMS
 } // namespace Aws

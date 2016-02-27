@@ -14,6 +14,7 @@
 */
 #include <aws/glacier/model/StatusCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace Glacier
-{
-namespace Model
-{
-namespace StatusCodeMapper
-{
+  namespace Glacier
+  {
+    namespace Model
+    {
+      namespace StatusCodeMapper
+      {
 
 
-StatusCode GetStatusCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InProgress_HASH)
-  {
-     return StatusCode::InProgress;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return StatusCode::Succeeded;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return StatusCode::Failed;
-  }
-  return StatusCode::NOT_SET;
-}
+        StatusCode GetStatusCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InProgress_HASH)
+          {
+            return StatusCode::InProgress;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return StatusCode::Succeeded;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return StatusCode::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StatusCode>(hashCode);
+          }
 
-Aws::String GetNameForStatusCode(StatusCode enumValue)
-{
-  switch(enumValue)
-  {
-  case StatusCode::InProgress:
-    return "InProgress";
-  case StatusCode::Succeeded:
-    return "Succeeded";
-  case StatusCode::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return StatusCode::NOT_SET;
+        }
 
-} // namespace StatusCodeMapper
-} // namespace Model
-} // namespace Glacier
+        Aws::String GetNameForStatusCode(StatusCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case StatusCode::InProgress:
+            return "InProgress";
+          case StatusCode::Succeeded:
+            return "Succeeded";
+          case StatusCode::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StatusCodeMapper
+    } // namespace Model
+  } // namespace Glacier
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/GatewayType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace GatewayTypeMapper
-{
-
-
-GatewayType GetGatewayTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ipsec_1_HASH)
+  namespace EC2
   {
-     return GatewayType::ipsec_1;
-  }
-  return GatewayType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace GatewayTypeMapper
+      {
 
-Aws::String GetNameForGatewayType(GatewayType enumValue)
-{
-  switch(enumValue)
-  {
-  case GatewayType::ipsec_1:
-    return "ipsec.1";
-  default:
-    return "";
-  }
-}
 
-} // namespace GatewayTypeMapper
-} // namespace Model
-} // namespace EC2
+        GatewayType GetGatewayTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ipsec_1_HASH)
+          {
+            return GatewayType::ipsec_1;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<GatewayType>(hashCode);
+          }
+
+          return GatewayType::NOT_SET;
+        }
+
+        Aws::String GetNameForGatewayType(GatewayType enumValue)
+        {
+          switch(enumValue)
+          {
+          case GatewayType::ipsec_1:
+            return "ipsec.1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace GatewayTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

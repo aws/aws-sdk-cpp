@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/RequestCancelExternalWorkflowExecutionFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace RequestCancelExternalWorkflowExecutionFailedCauseMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace RequestCancelExternalWorkflowExecutionFailedCauseMapper
+      {
 
 
-RequestCancelExternalWorkflowExecutionFailedCause GetRequestCancelExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
-  {
-     return RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
-  }
-  else if (hashCode == REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
-  {
-     return RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
-  }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-     return RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET;
-}
+        RequestCancelExternalWorkflowExecutionFailedCause GetRequestCancelExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
+          {
+            return RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
+          }
+          else if (hashCode == REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
+          {
+            return RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+          }
+          else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RequestCancelExternalWorkflowExecutionFailedCause>(hashCode);
+          }
 
-Aws::String GetNameForRequestCancelExternalWorkflowExecutionFailedCause(RequestCancelExternalWorkflowExecutionFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
-    return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
-  case RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:
-    return "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED";
-  case RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
+          return RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET;
+        }
 
-} // namespace RequestCancelExternalWorkflowExecutionFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForRequestCancelExternalWorkflowExecutionFailedCause(RequestCancelExternalWorkflowExecutionFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
+            return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
+          case RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:
+            return "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED";
+          case RequestCancelExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RequestCancelExternalWorkflowExecutionFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

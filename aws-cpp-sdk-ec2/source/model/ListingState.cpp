@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/ListingState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int pending_HASH = HashingUtils::HashString("pending");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ListingStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace ListingStateMapper
+      {
 
 
-ListingState GetListingStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == available_HASH)
-  {
-     return ListingState::available;
-  }
-  else if (hashCode == sold_HASH)
-  {
-     return ListingState::sold;
-  }
-  else if (hashCode == cancelled_HASH)
-  {
-     return ListingState::cancelled;
-  }
-  else if (hashCode == pending_HASH)
-  {
-     return ListingState::pending;
-  }
-  return ListingState::NOT_SET;
-}
+        ListingState GetListingStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == available_HASH)
+          {
+            return ListingState::available;
+          }
+          else if (hashCode == sold_HASH)
+          {
+            return ListingState::sold;
+          }
+          else if (hashCode == cancelled_HASH)
+          {
+            return ListingState::cancelled;
+          }
+          else if (hashCode == pending_HASH)
+          {
+            return ListingState::pending;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ListingState>(hashCode);
+          }
 
-Aws::String GetNameForListingState(ListingState enumValue)
-{
-  switch(enumValue)
-  {
-  case ListingState::available:
-    return "available";
-  case ListingState::sold:
-    return "sold";
-  case ListingState::cancelled:
-    return "cancelled";
-  case ListingState::pending:
-    return "pending";
-  default:
-    return "";
-  }
-}
+          return ListingState::NOT_SET;
+        }
 
-} // namespace ListingStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForListingState(ListingState enumValue)
+        {
+          switch(enumValue)
+          {
+          case ListingState::available:
+            return "available";
+          case ListingState::sold:
+            return "sold";
+          case ListingState::cancelled:
+            return "cancelled";
+          case ListingState::pending:
+            return "pending";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ListingStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/DecisionType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int ScheduleLambdaFunction_HASH = HashingUtils::HashString("Schedul
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace DecisionTypeMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace DecisionTypeMapper
+      {
 
 
-DecisionType GetDecisionTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ScheduleActivityTask_HASH)
-  {
-     return DecisionType::ScheduleActivityTask;
-  }
-  else if (hashCode == RequestCancelActivityTask_HASH)
-  {
-     return DecisionType::RequestCancelActivityTask;
-  }
-  else if (hashCode == CompleteWorkflowExecution_HASH)
-  {
-     return DecisionType::CompleteWorkflowExecution;
-  }
-  else if (hashCode == FailWorkflowExecution_HASH)
-  {
-     return DecisionType::FailWorkflowExecution;
-  }
-  else if (hashCode == CancelWorkflowExecution_HASH)
-  {
-     return DecisionType::CancelWorkflowExecution;
-  }
-  else if (hashCode == ContinueAsNewWorkflowExecution_HASH)
-  {
-     return DecisionType::ContinueAsNewWorkflowExecution;
-  }
-  else if (hashCode == RecordMarker_HASH)
-  {
-     return DecisionType::RecordMarker;
-  }
-  else if (hashCode == StartTimer_HASH)
-  {
-     return DecisionType::StartTimer;
-  }
-  else if (hashCode == CancelTimer_HASH)
-  {
-     return DecisionType::CancelTimer;
-  }
-  else if (hashCode == SignalExternalWorkflowExecution_HASH)
-  {
-     return DecisionType::SignalExternalWorkflowExecution;
-  }
-  else if (hashCode == RequestCancelExternalWorkflowExecution_HASH)
-  {
-     return DecisionType::RequestCancelExternalWorkflowExecution;
-  }
-  else if (hashCode == StartChildWorkflowExecution_HASH)
-  {
-     return DecisionType::StartChildWorkflowExecution;
-  }
-  else if (hashCode == ScheduleLambdaFunction_HASH)
-  {
-     return DecisionType::ScheduleLambdaFunction;
-  }
-  return DecisionType::NOT_SET;
-}
+        DecisionType GetDecisionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ScheduleActivityTask_HASH)
+          {
+            return DecisionType::ScheduleActivityTask;
+          }
+          else if (hashCode == RequestCancelActivityTask_HASH)
+          {
+            return DecisionType::RequestCancelActivityTask;
+          }
+          else if (hashCode == CompleteWorkflowExecution_HASH)
+          {
+            return DecisionType::CompleteWorkflowExecution;
+          }
+          else if (hashCode == FailWorkflowExecution_HASH)
+          {
+            return DecisionType::FailWorkflowExecution;
+          }
+          else if (hashCode == CancelWorkflowExecution_HASH)
+          {
+            return DecisionType::CancelWorkflowExecution;
+          }
+          else if (hashCode == ContinueAsNewWorkflowExecution_HASH)
+          {
+            return DecisionType::ContinueAsNewWorkflowExecution;
+          }
+          else if (hashCode == RecordMarker_HASH)
+          {
+            return DecisionType::RecordMarker;
+          }
+          else if (hashCode == StartTimer_HASH)
+          {
+            return DecisionType::StartTimer;
+          }
+          else if (hashCode == CancelTimer_HASH)
+          {
+            return DecisionType::CancelTimer;
+          }
+          else if (hashCode == SignalExternalWorkflowExecution_HASH)
+          {
+            return DecisionType::SignalExternalWorkflowExecution;
+          }
+          else if (hashCode == RequestCancelExternalWorkflowExecution_HASH)
+          {
+            return DecisionType::RequestCancelExternalWorkflowExecution;
+          }
+          else if (hashCode == StartChildWorkflowExecution_HASH)
+          {
+            return DecisionType::StartChildWorkflowExecution;
+          }
+          else if (hashCode == ScheduleLambdaFunction_HASH)
+          {
+            return DecisionType::ScheduleLambdaFunction;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DecisionType>(hashCode);
+          }
 
-Aws::String GetNameForDecisionType(DecisionType enumValue)
-{
-  switch(enumValue)
-  {
-  case DecisionType::ScheduleActivityTask:
-    return "ScheduleActivityTask";
-  case DecisionType::RequestCancelActivityTask:
-    return "RequestCancelActivityTask";
-  case DecisionType::CompleteWorkflowExecution:
-    return "CompleteWorkflowExecution";
-  case DecisionType::FailWorkflowExecution:
-    return "FailWorkflowExecution";
-  case DecisionType::CancelWorkflowExecution:
-    return "CancelWorkflowExecution";
-  case DecisionType::ContinueAsNewWorkflowExecution:
-    return "ContinueAsNewWorkflowExecution";
-  case DecisionType::RecordMarker:
-    return "RecordMarker";
-  case DecisionType::StartTimer:
-    return "StartTimer";
-  case DecisionType::CancelTimer:
-    return "CancelTimer";
-  case DecisionType::SignalExternalWorkflowExecution:
-    return "SignalExternalWorkflowExecution";
-  case DecisionType::RequestCancelExternalWorkflowExecution:
-    return "RequestCancelExternalWorkflowExecution";
-  case DecisionType::StartChildWorkflowExecution:
-    return "StartChildWorkflowExecution";
-  case DecisionType::ScheduleLambdaFunction:
-    return "ScheduleLambdaFunction";
-  default:
-    return "";
-  }
-}
+          return DecisionType::NOT_SET;
+        }
 
-} // namespace DecisionTypeMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForDecisionType(DecisionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case DecisionType::ScheduleActivityTask:
+            return "ScheduleActivityTask";
+          case DecisionType::RequestCancelActivityTask:
+            return "RequestCancelActivityTask";
+          case DecisionType::CompleteWorkflowExecution:
+            return "CompleteWorkflowExecution";
+          case DecisionType::FailWorkflowExecution:
+            return "FailWorkflowExecution";
+          case DecisionType::CancelWorkflowExecution:
+            return "CancelWorkflowExecution";
+          case DecisionType::ContinueAsNewWorkflowExecution:
+            return "ContinueAsNewWorkflowExecution";
+          case DecisionType::RecordMarker:
+            return "RecordMarker";
+          case DecisionType::StartTimer:
+            return "StartTimer";
+          case DecisionType::CancelTimer:
+            return "CancelTimer";
+          case DecisionType::SignalExternalWorkflowExecution:
+            return "SignalExternalWorkflowExecution";
+          case DecisionType::RequestCancelExternalWorkflowExecution:
+            return "RequestCancelExternalWorkflowExecution";
+          case DecisionType::StartChildWorkflowExecution:
+            return "StartChildWorkflowExecution";
+          case DecisionType::ScheduleLambdaFunction:
+            return "ScheduleLambdaFunction";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DecisionTypeMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

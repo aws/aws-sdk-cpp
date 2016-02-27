@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/ProjectionType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ProjectionTypeMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace ProjectionTypeMapper
+      {
 
 
-ProjectionType GetProjectionTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ALL_HASH)
-  {
-     return ProjectionType::ALL;
-  }
-  else if (hashCode == KEYS_ONLY_HASH)
-  {
-     return ProjectionType::KEYS_ONLY;
-  }
-  else if (hashCode == INCLUDE_HASH)
-  {
-     return ProjectionType::INCLUDE;
-  }
-  return ProjectionType::NOT_SET;
-}
+        ProjectionType GetProjectionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ALL_HASH)
+          {
+            return ProjectionType::ALL;
+          }
+          else if (hashCode == KEYS_ONLY_HASH)
+          {
+            return ProjectionType::KEYS_ONLY;
+          }
+          else if (hashCode == INCLUDE_HASH)
+          {
+            return ProjectionType::INCLUDE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ProjectionType>(hashCode);
+          }
 
-Aws::String GetNameForProjectionType(ProjectionType enumValue)
-{
-  switch(enumValue)
-  {
-  case ProjectionType::ALL:
-    return "ALL";
-  case ProjectionType::KEYS_ONLY:
-    return "KEYS_ONLY";
-  case ProjectionType::INCLUDE:
-    return "INCLUDE";
-  default:
-    return "";
-  }
-}
+          return ProjectionType::NOT_SET;
+        }
 
-} // namespace ProjectionTypeMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForProjectionType(ProjectionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ProjectionType::ALL:
+            return "ALL";
+          case ProjectionType::KEYS_ONLY:
+            return "KEYS_ONLY";
+          case ProjectionType::INCLUDE:
+            return "INCLUDE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ProjectionTypeMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

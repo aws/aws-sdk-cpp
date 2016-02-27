@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/RootDeviceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int instance_store_HASH = HashingUtils::HashString("instance-store"
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace RootDeviceTypeMapper
-{
-
-
-RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ebs_HASH)
+  namespace OpsWorks
   {
-     return RootDeviceType::ebs;
-  }
-  else if (hashCode == instance_store_HASH)
-  {
-     return RootDeviceType::instance_store;
-  }
-  return RootDeviceType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RootDeviceTypeMapper
+      {
 
-Aws::String GetNameForRootDeviceType(RootDeviceType enumValue)
-{
-  switch(enumValue)
-  {
-  case RootDeviceType::ebs:
-    return "ebs";
-  case RootDeviceType::instance_store:
-    return "instance-store";
-  default:
-    return "";
-  }
-}
 
-} // namespace RootDeviceTypeMapper
-} // namespace Model
-} // namespace OpsWorks
+        RootDeviceType GetRootDeviceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ebs_HASH)
+          {
+            return RootDeviceType::ebs;
+          }
+          else if (hashCode == instance_store_HASH)
+          {
+            return RootDeviceType::instance_store;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RootDeviceType>(hashCode);
+          }
+
+          return RootDeviceType::NOT_SET;
+        }
+
+        Aws::String GetNameForRootDeviceType(RootDeviceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case RootDeviceType::ebs:
+            return "ebs";
+          case RootDeviceType::instance_store:
+            return "instance-store";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RootDeviceTypeMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

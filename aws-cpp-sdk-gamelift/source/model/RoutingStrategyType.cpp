@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/RoutingStrategyType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int TERMINAL_HASH = HashingUtils::HashString("TERMINAL");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace RoutingStrategyTypeMapper
-{
-
-
-RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SIMPLE_HASH)
+  namespace GameLift
   {
-     return RoutingStrategyType::SIMPLE;
-  }
-  else if (hashCode == TERMINAL_HASH)
-  {
-     return RoutingStrategyType::TERMINAL;
-  }
-  return RoutingStrategyType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RoutingStrategyTypeMapper
+      {
 
-Aws::String GetNameForRoutingStrategyType(RoutingStrategyType enumValue)
-{
-  switch(enumValue)
-  {
-  case RoutingStrategyType::SIMPLE:
-    return "SIMPLE";
-  case RoutingStrategyType::TERMINAL:
-    return "TERMINAL";
-  default:
-    return "";
-  }
-}
 
-} // namespace RoutingStrategyTypeMapper
-} // namespace Model
-} // namespace GameLift
+        RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SIMPLE_HASH)
+          {
+            return RoutingStrategyType::SIMPLE;
+          }
+          else if (hashCode == TERMINAL_HASH)
+          {
+            return RoutingStrategyType::TERMINAL;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RoutingStrategyType>(hashCode);
+          }
+
+          return RoutingStrategyType::NOT_SET;
+        }
+
+        Aws::String GetNameForRoutingStrategyType(RoutingStrategyType enumValue)
+        {
+          switch(enumValue)
+          {
+          case RoutingStrategyType::SIMPLE:
+            return "SIMPLE";
+          case RoutingStrategyType::TERMINAL:
+            return "TERMINAL";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RoutingStrategyTypeMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

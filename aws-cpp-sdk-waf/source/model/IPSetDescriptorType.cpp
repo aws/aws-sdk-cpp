@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/IPSetDescriptorType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int IPV4_HASH = HashingUtils::HashString("IPV4");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace IPSetDescriptorTypeMapper
-{
-
-
-IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == IPV4_HASH)
+  namespace WAF
   {
-     return IPSetDescriptorType::IPV4;
-  }
-  return IPSetDescriptorType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace IPSetDescriptorTypeMapper
+      {
 
-Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType enumValue)
-{
-  switch(enumValue)
-  {
-  case IPSetDescriptorType::IPV4:
-    return "IPV4";
-  default:
-    return "";
-  }
-}
 
-} // namespace IPSetDescriptorTypeMapper
-} // namespace Model
-} // namespace WAF
+        IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == IPV4_HASH)
+          {
+            return IPSetDescriptorType::IPV4;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<IPSetDescriptorType>(hashCode);
+          }
+
+          return IPSetDescriptorType::NOT_SET;
+        }
+
+        Aws::String GetNameForIPSetDescriptorType(IPSetDescriptorType enumValue)
+        {
+          switch(enumValue)
+          {
+          case IPSetDescriptorType::IPV4:
+            return "IPV4";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace IPSetDescriptorTypeMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/ScheduleLambdaFunctionFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH = HashingUtils::Has
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace ScheduleLambdaFunctionFailedCauseMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace ScheduleLambdaFunctionFailedCauseMapper
+      {
 
 
-ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ID_ALREADY_IN_USE_HASH)
-  {
-     return ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE;
-  }
-  else if (hashCode == OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED_HASH)
-  {
-     return ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED;
-  }
-  else if (hashCode == LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED_HASH)
-  {
-     return ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED;
-  }
-  else if (hashCode == LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH)
-  {
-     return ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
-  }
-  return ScheduleLambdaFunctionFailedCause::NOT_SET;
-}
+        ScheduleLambdaFunctionFailedCause GetScheduleLambdaFunctionFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ID_ALREADY_IN_USE_HASH)
+          {
+            return ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE;
+          }
+          else if (hashCode == OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED_HASH)
+          {
+            return ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED_HASH)
+          {
+            return ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED;
+          }
+          else if (hashCode == LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION_HASH)
+          {
+            return ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ScheduleLambdaFunctionFailedCause>(hashCode);
+          }
 
-Aws::String GetNameForScheduleLambdaFunctionFailedCause(ScheduleLambdaFunctionFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE:
-    return "ID_ALREADY_IN_USE";
-  case ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED:
-    return "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED";
-  case ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED:
-    return "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED";
-  case ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION:
-    return "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION";
-  default:
-    return "";
-  }
-}
+          return ScheduleLambdaFunctionFailedCause::NOT_SET;
+        }
 
-} // namespace ScheduleLambdaFunctionFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForScheduleLambdaFunctionFailedCause(ScheduleLambdaFunctionFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE:
+            return "ID_ALREADY_IN_USE";
+          case ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED:
+            return "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED";
+          case ScheduleLambdaFunctionFailedCause::LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED:
+            return "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED";
+          case ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION:
+            return "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ScheduleLambdaFunctionFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

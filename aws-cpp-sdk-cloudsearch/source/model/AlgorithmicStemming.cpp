@@ -14,6 +14,7 @@
 */
 #include <aws/cloudsearch/model/AlgorithmicStemming.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int full_HASH = HashingUtils::HashString("full");
 
 namespace Aws
 {
-namespace CloudSearch
-{
-namespace Model
-{
-namespace AlgorithmicStemmingMapper
-{
+  namespace CloudSearch
+  {
+    namespace Model
+    {
+      namespace AlgorithmicStemmingMapper
+      {
 
 
-AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == none_HASH)
-  {
-     return AlgorithmicStemming::none;
-  }
-  else if (hashCode == minimal_HASH)
-  {
-     return AlgorithmicStemming::minimal;
-  }
-  else if (hashCode == light_HASH)
-  {
-     return AlgorithmicStemming::light;
-  }
-  else if (hashCode == full_HASH)
-  {
-     return AlgorithmicStemming::full;
-  }
-  return AlgorithmicStemming::NOT_SET;
-}
+        AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == none_HASH)
+          {
+            return AlgorithmicStemming::none;
+          }
+          else if (hashCode == minimal_HASH)
+          {
+            return AlgorithmicStemming::minimal;
+          }
+          else if (hashCode == light_HASH)
+          {
+            return AlgorithmicStemming::light;
+          }
+          else if (hashCode == full_HASH)
+          {
+            return AlgorithmicStemming::full;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AlgorithmicStemming>(hashCode);
+          }
 
-Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming enumValue)
-{
-  switch(enumValue)
-  {
-  case AlgorithmicStemming::none:
-    return "none";
-  case AlgorithmicStemming::minimal:
-    return "minimal";
-  case AlgorithmicStemming::light:
-    return "light";
-  case AlgorithmicStemming::full:
-    return "full";
-  default:
-    return "";
-  }
-}
+          return AlgorithmicStemming::NOT_SET;
+        }
 
-} // namespace AlgorithmicStemmingMapper
-} // namespace Model
-} // namespace CloudSearch
+        Aws::String GetNameForAlgorithmicStemming(AlgorithmicStemming enumValue)
+        {
+          switch(enumValue)
+          {
+          case AlgorithmicStemming::none:
+            return "none";
+          case AlgorithmicStemming::minimal:
+            return "minimal";
+          case AlgorithmicStemming::light:
+            return "light";
+          case AlgorithmicStemming::full:
+            return "full";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AlgorithmicStemmingMapper
+    } // namespace Model
+  } // namespace CloudSearch
 } // namespace Aws

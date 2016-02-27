@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/ActionOnFailure.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace ActionOnFailureMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace ActionOnFailureMapper
+      {
 
 
-ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == TERMINATE_JOB_FLOW_HASH)
-  {
-     return ActionOnFailure::TERMINATE_JOB_FLOW;
-  }
-  else if (hashCode == TERMINATE_CLUSTER_HASH)
-  {
-     return ActionOnFailure::TERMINATE_CLUSTER;
-  }
-  else if (hashCode == CANCEL_AND_WAIT_HASH)
-  {
-     return ActionOnFailure::CANCEL_AND_WAIT;
-  }
-  else if (hashCode == CONTINUE_HASH)
-  {
-     return ActionOnFailure::CONTINUE;
-  }
-  return ActionOnFailure::NOT_SET;
-}
+        ActionOnFailure GetActionOnFailureForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == TERMINATE_JOB_FLOW_HASH)
+          {
+            return ActionOnFailure::TERMINATE_JOB_FLOW;
+          }
+          else if (hashCode == TERMINATE_CLUSTER_HASH)
+          {
+            return ActionOnFailure::TERMINATE_CLUSTER;
+          }
+          else if (hashCode == CANCEL_AND_WAIT_HASH)
+          {
+            return ActionOnFailure::CANCEL_AND_WAIT;
+          }
+          else if (hashCode == CONTINUE_HASH)
+          {
+            return ActionOnFailure::CONTINUE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActionOnFailure>(hashCode);
+          }
 
-Aws::String GetNameForActionOnFailure(ActionOnFailure enumValue)
-{
-  switch(enumValue)
-  {
-  case ActionOnFailure::TERMINATE_JOB_FLOW:
-    return "TERMINATE_JOB_FLOW";
-  case ActionOnFailure::TERMINATE_CLUSTER:
-    return "TERMINATE_CLUSTER";
-  case ActionOnFailure::CANCEL_AND_WAIT:
-    return "CANCEL_AND_WAIT";
-  case ActionOnFailure::CONTINUE:
-    return "CONTINUE";
-  default:
-    return "";
-  }
-}
+          return ActionOnFailure::NOT_SET;
+        }
 
-} // namespace ActionOnFailureMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForActionOnFailure(ActionOnFailure enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActionOnFailure::TERMINATE_JOB_FLOW:
+            return "TERMINATE_JOB_FLOW";
+          case ActionOnFailure::TERMINATE_CLUSTER:
+            return "TERMINATE_CLUSTER";
+          case ActionOnFailure::CANCEL_AND_WAIT:
+            return "CANCEL_AND_WAIT";
+          case ActionOnFailure::CONTINUE:
+            return "CONTINUE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActionOnFailureMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

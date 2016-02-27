@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/CommandInvocationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace CommandInvocationStatusMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace CommandInvocationStatusMapper
+      {
 
 
-CommandInvocationStatus GetCommandInvocationStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
-  {
-     return CommandInvocationStatus::Pending;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return CommandInvocationStatus::InProgress;
-  }
-  else if (hashCode == Cancelling_HASH)
-  {
-     return CommandInvocationStatus::Cancelling;
-  }
-  else if (hashCode == Success_HASH)
-  {
-     return CommandInvocationStatus::Success;
-  }
-  else if (hashCode == TimedOut_HASH)
-  {
-     return CommandInvocationStatus::TimedOut;
-  }
-  else if (hashCode == Cancelled_HASH)
-  {
-     return CommandInvocationStatus::Cancelled;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return CommandInvocationStatus::Failed;
-  }
-  return CommandInvocationStatus::NOT_SET;
-}
+        CommandInvocationStatus GetCommandInvocationStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return CommandInvocationStatus::Pending;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return CommandInvocationStatus::InProgress;
+          }
+          else if (hashCode == Cancelling_HASH)
+          {
+            return CommandInvocationStatus::Cancelling;
+          }
+          else if (hashCode == Success_HASH)
+          {
+            return CommandInvocationStatus::Success;
+          }
+          else if (hashCode == TimedOut_HASH)
+          {
+            return CommandInvocationStatus::TimedOut;
+          }
+          else if (hashCode == Cancelled_HASH)
+          {
+            return CommandInvocationStatus::Cancelled;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return CommandInvocationStatus::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CommandInvocationStatus>(hashCode);
+          }
 
-Aws::String GetNameForCommandInvocationStatus(CommandInvocationStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case CommandInvocationStatus::Pending:
-    return "Pending";
-  case CommandInvocationStatus::InProgress:
-    return "InProgress";
-  case CommandInvocationStatus::Cancelling:
-    return "Cancelling";
-  case CommandInvocationStatus::Success:
-    return "Success";
-  case CommandInvocationStatus::TimedOut:
-    return "TimedOut";
-  case CommandInvocationStatus::Cancelled:
-    return "Cancelled";
-  case CommandInvocationStatus::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return CommandInvocationStatus::NOT_SET;
+        }
 
-} // namespace CommandInvocationStatusMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForCommandInvocationStatus(CommandInvocationStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case CommandInvocationStatus::Pending:
+            return "Pending";
+          case CommandInvocationStatus::InProgress:
+            return "InProgress";
+          case CommandInvocationStatus::Cancelling:
+            return "Cancelling";
+          case CommandInvocationStatus::Success:
+            return "Success";
+          case CommandInvocationStatus::TimedOut:
+            return "TimedOut";
+          case CommandInvocationStatus::Cancelled:
+            return "Cancelled";
+          case CommandInvocationStatus::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CommandInvocationStatusMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

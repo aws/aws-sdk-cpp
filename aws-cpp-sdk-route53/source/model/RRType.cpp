@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/RRType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -30,90 +31,103 @@ static const int AAAA_HASH = HashingUtils::HashString("AAAA");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace RRTypeMapper
-{
+  namespace Route53
+  {
+    namespace Model
+    {
+      namespace RRTypeMapper
+      {
 
 
-RRType GetRRTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SOA_HASH)
-  {
-     return RRType::SOA;
-  }
-  else if (hashCode == A_HASH)
-  {
-     return RRType::A;
-  }
-  else if (hashCode == TXT_HASH)
-  {
-     return RRType::TXT;
-  }
-  else if (hashCode == NS_HASH)
-  {
-     return RRType::NS;
-  }
-  else if (hashCode == CNAME_HASH)
-  {
-     return RRType::CNAME;
-  }
-  else if (hashCode == MX_HASH)
-  {
-     return RRType::MX;
-  }
-  else if (hashCode == PTR_HASH)
-  {
-     return RRType::PTR;
-  }
-  else if (hashCode == SRV_HASH)
-  {
-     return RRType::SRV;
-  }
-  else if (hashCode == SPF_HASH)
-  {
-     return RRType::SPF;
-  }
-  else if (hashCode == AAAA_HASH)
-  {
-     return RRType::AAAA;
-  }
-  return RRType::NOT_SET;
-}
+        RRType GetRRTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SOA_HASH)
+          {
+            return RRType::SOA;
+          }
+          else if (hashCode == A_HASH)
+          {
+            return RRType::A;
+          }
+          else if (hashCode == TXT_HASH)
+          {
+            return RRType::TXT;
+          }
+          else if (hashCode == NS_HASH)
+          {
+            return RRType::NS;
+          }
+          else if (hashCode == CNAME_HASH)
+          {
+            return RRType::CNAME;
+          }
+          else if (hashCode == MX_HASH)
+          {
+            return RRType::MX;
+          }
+          else if (hashCode == PTR_HASH)
+          {
+            return RRType::PTR;
+          }
+          else if (hashCode == SRV_HASH)
+          {
+            return RRType::SRV;
+          }
+          else if (hashCode == SPF_HASH)
+          {
+            return RRType::SPF;
+          }
+          else if (hashCode == AAAA_HASH)
+          {
+            return RRType::AAAA;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RRType>(hashCode);
+          }
 
-Aws::String GetNameForRRType(RRType enumValue)
-{
-  switch(enumValue)
-  {
-  case RRType::SOA:
-    return "SOA";
-  case RRType::A:
-    return "A";
-  case RRType::TXT:
-    return "TXT";
-  case RRType::NS:
-    return "NS";
-  case RRType::CNAME:
-    return "CNAME";
-  case RRType::MX:
-    return "MX";
-  case RRType::PTR:
-    return "PTR";
-  case RRType::SRV:
-    return "SRV";
-  case RRType::SPF:
-    return "SPF";
-  case RRType::AAAA:
-    return "AAAA";
-  default:
-    return "";
-  }
-}
+          return RRType::NOT_SET;
+        }
 
-} // namespace RRTypeMapper
-} // namespace Model
-} // namespace Route53
+        Aws::String GetNameForRRType(RRType enumValue)
+        {
+          switch(enumValue)
+          {
+          case RRType::SOA:
+            return "SOA";
+          case RRType::A:
+            return "A";
+          case RRType::TXT:
+            return "TXT";
+          case RRType::NS:
+            return "NS";
+          case RRType::CNAME:
+            return "CNAME";
+          case RRType::MX:
+            return "MX";
+          case RRType::PTR:
+            return "PTR";
+          case RRType::SRV:
+            return "SRV";
+          case RRType::SPF:
+            return "SPF";
+          case RRType::AAAA:
+            return "AAAA";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RRTypeMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

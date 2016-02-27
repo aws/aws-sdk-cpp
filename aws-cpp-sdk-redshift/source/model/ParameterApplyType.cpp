@@ -14,6 +14,7 @@
 */
 #include <aws/redshift/model/ParameterApplyType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int dynamic_HASH = HashingUtils::HashString("dynamic");
 
 namespace Aws
 {
-namespace Redshift
-{
-namespace Model
-{
-namespace ParameterApplyTypeMapper
-{
-
-
-ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == static__HASH)
+  namespace Redshift
   {
-     return ParameterApplyType::static_;
-  }
-  else if (hashCode == dynamic_HASH)
-  {
-     return ParameterApplyType::dynamic;
-  }
-  return ParameterApplyType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ParameterApplyTypeMapper
+      {
 
-Aws::String GetNameForParameterApplyType(ParameterApplyType enumValue)
-{
-  switch(enumValue)
-  {
-  case ParameterApplyType::static_:
-    return "static";
-  case ParameterApplyType::dynamic:
-    return "dynamic";
-  default:
-    return "";
-  }
-}
 
-} // namespace ParameterApplyTypeMapper
-} // namespace Model
-} // namespace Redshift
+        ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == static__HASH)
+          {
+            return ParameterApplyType::static_;
+          }
+          else if (hashCode == dynamic_HASH)
+          {
+            return ParameterApplyType::dynamic;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ParameterApplyType>(hashCode);
+          }
+
+          return ParameterApplyType::NOT_SET;
+        }
+
+        Aws::String GetNameForParameterApplyType(ParameterApplyType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ParameterApplyType::static_:
+            return "static";
+          case ParameterApplyType::dynamic:
+            return "dynamic";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ParameterApplyTypeMapper
+    } // namespace Model
+  } // namespace Redshift
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VolumeAttachmentState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int detached_HASH = HashingUtils::HashString("detached");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeAttachmentStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace VolumeAttachmentStateMapper
+      {
 
 
-VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == attaching_HASH)
-  {
-     return VolumeAttachmentState::attaching;
-  }
-  else if (hashCode == attached_HASH)
-  {
-     return VolumeAttachmentState::attached;
-  }
-  else if (hashCode == detaching_HASH)
-  {
-     return VolumeAttachmentState::detaching;
-  }
-  else if (hashCode == detached_HASH)
-  {
-     return VolumeAttachmentState::detached;
-  }
-  return VolumeAttachmentState::NOT_SET;
-}
+        VolumeAttachmentState GetVolumeAttachmentStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == attaching_HASH)
+          {
+            return VolumeAttachmentState::attaching;
+          }
+          else if (hashCode == attached_HASH)
+          {
+            return VolumeAttachmentState::attached;
+          }
+          else if (hashCode == detaching_HASH)
+          {
+            return VolumeAttachmentState::detaching;
+          }
+          else if (hashCode == detached_HASH)
+          {
+            return VolumeAttachmentState::detached;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeAttachmentState>(hashCode);
+          }
 
-Aws::String GetNameForVolumeAttachmentState(VolumeAttachmentState enumValue)
-{
-  switch(enumValue)
-  {
-  case VolumeAttachmentState::attaching:
-    return "attaching";
-  case VolumeAttachmentState::attached:
-    return "attached";
-  case VolumeAttachmentState::detaching:
-    return "detaching";
-  case VolumeAttachmentState::detached:
-    return "detached";
-  default:
-    return "";
-  }
-}
+          return VolumeAttachmentState::NOT_SET;
+        }
 
-} // namespace VolumeAttachmentStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForVolumeAttachmentState(VolumeAttachmentState enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeAttachmentState::attaching:
+            return "attaching";
+          case VolumeAttachmentState::attached:
+            return "attached";
+          case VolumeAttachmentState::detaching:
+            return "detaching";
+          case VolumeAttachmentState::detached:
+            return "detached";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeAttachmentStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

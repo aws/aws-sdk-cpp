@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/TrafficType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace TrafficTypeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace TrafficTypeMapper
+      {
 
 
-TrafficType GetTrafficTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACCEPT_HASH)
-  {
-     return TrafficType::ACCEPT;
-  }
-  else if (hashCode == REJECT_HASH)
-  {
-     return TrafficType::REJECT;
-  }
-  else if (hashCode == ALL_HASH)
-  {
-     return TrafficType::ALL;
-  }
-  return TrafficType::NOT_SET;
-}
+        TrafficType GetTrafficTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACCEPT_HASH)
+          {
+            return TrafficType::ACCEPT;
+          }
+          else if (hashCode == REJECT_HASH)
+          {
+            return TrafficType::REJECT;
+          }
+          else if (hashCode == ALL_HASH)
+          {
+            return TrafficType::ALL;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TrafficType>(hashCode);
+          }
 
-Aws::String GetNameForTrafficType(TrafficType enumValue)
-{
-  switch(enumValue)
-  {
-  case TrafficType::ACCEPT:
-    return "ACCEPT";
-  case TrafficType::REJECT:
-    return "REJECT";
-  case TrafficType::ALL:
-    return "ALL";
-  default:
-    return "";
-  }
-}
+          return TrafficType::NOT_SET;
+        }
 
-} // namespace TrafficTypeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForTrafficType(TrafficType enumValue)
+        {
+          switch(enumValue)
+          {
+          case TrafficType::ACCEPT:
+            return "ACCEPT";
+          case TrafficType::REJECT:
+            return "REJECT";
+          case TrafficType::ALL:
+            return "ALL";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TrafficTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

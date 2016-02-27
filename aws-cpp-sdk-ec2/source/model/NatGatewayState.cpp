@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace NatGatewayStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace NatGatewayStateMapper
+      {
 
 
-NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == pending_HASH)
-  {
-     return NatGatewayState::pending;
-  }
-  else if (hashCode == failed_HASH)
-  {
-     return NatGatewayState::failed;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return NatGatewayState::available;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return NatGatewayState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return NatGatewayState::deleted;
-  }
-  return NatGatewayState::NOT_SET;
-}
+        NatGatewayState GetNatGatewayStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == pending_HASH)
+          {
+            return NatGatewayState::pending;
+          }
+          else if (hashCode == failed_HASH)
+          {
+            return NatGatewayState::failed;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return NatGatewayState::available;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return NatGatewayState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return NatGatewayState::deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<NatGatewayState>(hashCode);
+          }
 
-Aws::String GetNameForNatGatewayState(NatGatewayState enumValue)
-{
-  switch(enumValue)
-  {
-  case NatGatewayState::pending:
-    return "pending";
-  case NatGatewayState::failed:
-    return "failed";
-  case NatGatewayState::available:
-    return "available";
-  case NatGatewayState::deleting:
-    return "deleting";
-  case NatGatewayState::deleted:
-    return "deleted";
-  default:
-    return "";
-  }
-}
+          return NatGatewayState::NOT_SET;
+        }
 
-} // namespace NatGatewayStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForNatGatewayState(NatGatewayState enumValue)
+        {
+          switch(enumValue)
+          {
+          case NatGatewayState::pending:
+            return "pending";
+          case NatGatewayState::failed:
+            return "failed";
+          case NatGatewayState::available:
+            return "available";
+          case NatGatewayState::deleting:
+            return "deleting";
+          case NatGatewayState::deleted:
+            return "deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace NatGatewayStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/autoscaling/model/LifecycleState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int Standby_HASH = HashingUtils::HashString("Standby");
 
 namespace Aws
 {
-namespace AutoScaling
-{
-namespace Model
-{
-namespace LifecycleStateMapper
-{
+  namespace AutoScaling
+  {
+    namespace Model
+    {
+      namespace LifecycleStateMapper
+      {
 
 
-LifecycleState GetLifecycleStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
-  {
-     return LifecycleState::Pending;
-  }
-  else if (hashCode == Pending_Wait_HASH)
-  {
-     return LifecycleState::Pending_Wait;
-  }
-  else if (hashCode == Pending_Proceed_HASH)
-  {
-     return LifecycleState::Pending_Proceed;
-  }
-  else if (hashCode == Quarantined_HASH)
-  {
-     return LifecycleState::Quarantined;
-  }
-  else if (hashCode == InService_HASH)
-  {
-     return LifecycleState::InService;
-  }
-  else if (hashCode == Terminating_HASH)
-  {
-     return LifecycleState::Terminating;
-  }
-  else if (hashCode == Terminating_Wait_HASH)
-  {
-     return LifecycleState::Terminating_Wait;
-  }
-  else if (hashCode == Terminating_Proceed_HASH)
-  {
-     return LifecycleState::Terminating_Proceed;
-  }
-  else if (hashCode == Terminated_HASH)
-  {
-     return LifecycleState::Terminated;
-  }
-  else if (hashCode == Detaching_HASH)
-  {
-     return LifecycleState::Detaching;
-  }
-  else if (hashCode == Detached_HASH)
-  {
-     return LifecycleState::Detached;
-  }
-  else if (hashCode == EnteringStandby_HASH)
-  {
-     return LifecycleState::EnteringStandby;
-  }
-  else if (hashCode == Standby_HASH)
-  {
-     return LifecycleState::Standby;
-  }
-  return LifecycleState::NOT_SET;
-}
+        LifecycleState GetLifecycleStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return LifecycleState::Pending;
+          }
+          else if (hashCode == Pending_Wait_HASH)
+          {
+            return LifecycleState::Pending_Wait;
+          }
+          else if (hashCode == Pending_Proceed_HASH)
+          {
+            return LifecycleState::Pending_Proceed;
+          }
+          else if (hashCode == Quarantined_HASH)
+          {
+            return LifecycleState::Quarantined;
+          }
+          else if (hashCode == InService_HASH)
+          {
+            return LifecycleState::InService;
+          }
+          else if (hashCode == Terminating_HASH)
+          {
+            return LifecycleState::Terminating;
+          }
+          else if (hashCode == Terminating_Wait_HASH)
+          {
+            return LifecycleState::Terminating_Wait;
+          }
+          else if (hashCode == Terminating_Proceed_HASH)
+          {
+            return LifecycleState::Terminating_Proceed;
+          }
+          else if (hashCode == Terminated_HASH)
+          {
+            return LifecycleState::Terminated;
+          }
+          else if (hashCode == Detaching_HASH)
+          {
+            return LifecycleState::Detaching;
+          }
+          else if (hashCode == Detached_HASH)
+          {
+            return LifecycleState::Detached;
+          }
+          else if (hashCode == EnteringStandby_HASH)
+          {
+            return LifecycleState::EnteringStandby;
+          }
+          else if (hashCode == Standby_HASH)
+          {
+            return LifecycleState::Standby;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LifecycleState>(hashCode);
+          }
 
-Aws::String GetNameForLifecycleState(LifecycleState enumValue)
-{
-  switch(enumValue)
-  {
-  case LifecycleState::Pending:
-    return "Pending";
-  case LifecycleState::Pending_Wait:
-    return "Pending:Wait";
-  case LifecycleState::Pending_Proceed:
-    return "Pending:Proceed";
-  case LifecycleState::Quarantined:
-    return "Quarantined";
-  case LifecycleState::InService:
-    return "InService";
-  case LifecycleState::Terminating:
-    return "Terminating";
-  case LifecycleState::Terminating_Wait:
-    return "Terminating:Wait";
-  case LifecycleState::Terminating_Proceed:
-    return "Terminating:Proceed";
-  case LifecycleState::Terminated:
-    return "Terminated";
-  case LifecycleState::Detaching:
-    return "Detaching";
-  case LifecycleState::Detached:
-    return "Detached";
-  case LifecycleState::EnteringStandby:
-    return "EnteringStandby";
-  case LifecycleState::Standby:
-    return "Standby";
-  default:
-    return "";
-  }
-}
+          return LifecycleState::NOT_SET;
+        }
 
-} // namespace LifecycleStateMapper
-} // namespace Model
-} // namespace AutoScaling
+        Aws::String GetNameForLifecycleState(LifecycleState enumValue)
+        {
+          switch(enumValue)
+          {
+          case LifecycleState::Pending:
+            return "Pending";
+          case LifecycleState::Pending_Wait:
+            return "Pending:Wait";
+          case LifecycleState::Pending_Proceed:
+            return "Pending:Proceed";
+          case LifecycleState::Quarantined:
+            return "Quarantined";
+          case LifecycleState::InService:
+            return "InService";
+          case LifecycleState::Terminating:
+            return "Terminating";
+          case LifecycleState::Terminating_Wait:
+            return "Terminating:Wait";
+          case LifecycleState::Terminating_Proceed:
+            return "Terminating:Proceed";
+          case LifecycleState::Terminated:
+            return "Terminated";
+          case LifecycleState::Detaching:
+            return "Detaching";
+          case LifecycleState::Detached:
+            return "Detached";
+          case LifecycleState::EnteringStandby:
+            return "EnteringStandby";
+          case LifecycleState::Standby:
+            return "Standby";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LifecycleStateMapper
+    } // namespace Model
+  } // namespace AutoScaling
 } // namespace Aws

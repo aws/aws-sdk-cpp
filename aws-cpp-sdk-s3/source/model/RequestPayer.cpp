@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/RequestPayer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int requester_HASH = HashingUtils::HashString("requester");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace RequestPayerMapper
-{
-
-
-RequestPayer GetRequestPayerForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == requester_HASH)
+  namespace S3
   {
-     return RequestPayer::requester;
-  }
-  return RequestPayer::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RequestPayerMapper
+      {
 
-Aws::String GetNameForRequestPayer(RequestPayer enumValue)
-{
-  switch(enumValue)
-  {
-  case RequestPayer::requester:
-    return "requester";
-  default:
-    return "";
-  }
-}
 
-} // namespace RequestPayerMapper
-} // namespace Model
-} // namespace S3
+        RequestPayer GetRequestPayerForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == requester_HASH)
+          {
+            return RequestPayer::requester;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RequestPayer>(hashCode);
+          }
+
+          return RequestPayer::NOT_SET;
+        }
+
+        Aws::String GetNameForRequestPayer(RequestPayer enumValue)
+        {
+          switch(enumValue)
+          {
+          case RequestPayer::requester:
+            return "requester";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RequestPayerMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

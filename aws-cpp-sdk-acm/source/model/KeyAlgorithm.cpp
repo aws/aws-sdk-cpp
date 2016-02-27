@@ -14,6 +14,7 @@
 */
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
 
 namespace Aws
 {
-namespace ACM
-{
-namespace Model
-{
-namespace KeyAlgorithmMapper
-{
-
-
-KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == RSA_2048_HASH)
+  namespace ACM
   {
-     return KeyAlgorithm::RSA_2048;
-  }
-  else if (hashCode == EC_prime256v1_HASH)
-  {
-     return KeyAlgorithm::EC_prime256v1;
-  }
-  return KeyAlgorithm::NOT_SET;
-}
+    namespace Model
+    {
+      namespace KeyAlgorithmMapper
+      {
 
-Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue)
-{
-  switch(enumValue)
-  {
-  case KeyAlgorithm::RSA_2048:
-    return "RSA_2048";
-  case KeyAlgorithm::EC_prime256v1:
-    return "EC_prime256v1";
-  default:
-    return "";
-  }
-}
 
-} // namespace KeyAlgorithmMapper
-} // namespace Model
-} // namespace ACM
+        KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == RSA_2048_HASH)
+          {
+            return KeyAlgorithm::RSA_2048;
+          }
+          else if (hashCode == EC_prime256v1_HASH)
+          {
+            return KeyAlgorithm::EC_prime256v1;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<KeyAlgorithm>(hashCode);
+          }
+
+          return KeyAlgorithm::NOT_SET;
+        }
+
+        Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue)
+        {
+          switch(enumValue)
+          {
+          case KeyAlgorithm::RSA_2048:
+            return "RSA_2048";
+          case KeyAlgorithm::EC_prime256v1:
+            return "EC_prime256v1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace KeyAlgorithmMapper
+    } // namespace Model
+  } // namespace ACM
 } // namespace Aws

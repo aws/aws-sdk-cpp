@@ -14,6 +14,7 @@
 */
 #include <aws/logs/model/OrderBy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int LastEventTime_HASH = HashingUtils::HashString("LastEventTime");
 
 namespace Aws
 {
-namespace CloudWatchLogs
-{
-namespace Model
-{
-namespace OrderByMapper
-{
-
-
-OrderBy GetOrderByForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == LogStreamName_HASH)
+  namespace CloudWatchLogs
   {
-     return OrderBy::LogStreamName;
-  }
-  else if (hashCode == LastEventTime_HASH)
-  {
-     return OrderBy::LastEventTime;
-  }
-  return OrderBy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace OrderByMapper
+      {
 
-Aws::String GetNameForOrderBy(OrderBy enumValue)
-{
-  switch(enumValue)
-  {
-  case OrderBy::LogStreamName:
-    return "LogStreamName";
-  case OrderBy::LastEventTime:
-    return "LastEventTime";
-  default:
-    return "";
-  }
-}
 
-} // namespace OrderByMapper
-} // namespace Model
-} // namespace CloudWatchLogs
+        OrderBy GetOrderByForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == LogStreamName_HASH)
+          {
+            return OrderBy::LogStreamName;
+          }
+          else if (hashCode == LastEventTime_HASH)
+          {
+            return OrderBy::LastEventTime;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OrderBy>(hashCode);
+          }
+
+          return OrderBy::NOT_SET;
+        }
+
+        Aws::String GetNameForOrderBy(OrderBy enumValue)
+        {
+          switch(enumValue)
+          {
+          case OrderBy::LogStreamName:
+            return "LogStreamName";
+          case OrderBy::LastEventTime:
+            return "LastEventTime";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OrderByMapper
+    } // namespace Model
+  } // namespace CloudWatchLogs
 } // namespace Aws

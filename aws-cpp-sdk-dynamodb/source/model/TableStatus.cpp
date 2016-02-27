@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/TableStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace TableStatusMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace TableStatusMapper
+      {
 
 
-TableStatus GetTableStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CREATING_HASH)
-  {
-     return TableStatus::CREATING;
-  }
-  else if (hashCode == UPDATING_HASH)
-  {
-     return TableStatus::UPDATING;
-  }
-  else if (hashCode == DELETING_HASH)
-  {
-     return TableStatus::DELETING;
-  }
-  else if (hashCode == ACTIVE_HASH)
-  {
-     return TableStatus::ACTIVE;
-  }
-  return TableStatus::NOT_SET;
-}
+        TableStatus GetTableStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CREATING_HASH)
+          {
+            return TableStatus::CREATING;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return TableStatus::UPDATING;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return TableStatus::DELETING;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return TableStatus::ACTIVE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TableStatus>(hashCode);
+          }
 
-Aws::String GetNameForTableStatus(TableStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case TableStatus::CREATING:
-    return "CREATING";
-  case TableStatus::UPDATING:
-    return "UPDATING";
-  case TableStatus::DELETING:
-    return "DELETING";
-  case TableStatus::ACTIVE:
-    return "ACTIVE";
-  default:
-    return "";
-  }
-}
+          return TableStatus::NOT_SET;
+        }
 
-} // namespace TableStatusMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForTableStatus(TableStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case TableStatus::CREATING:
+            return "CREATING";
+          case TableStatus::UPDATING:
+            return "UPDATING";
+          case TableStatus::DELETING:
+            return "DELETING";
+          case TableStatus::ACTIVE:
+            return "ACTIVE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TableStatusMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

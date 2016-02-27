@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/SubnetState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int available_HASH = HashingUtils::HashString("available");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace SubnetStateMapper
-{
-
-
-SubnetState GetSubnetStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == pending_HASH)
+  namespace EC2
   {
-     return SubnetState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return SubnetState::available;
-  }
-  return SubnetState::NOT_SET;
-}
+    namespace Model
+    {
+      namespace SubnetStateMapper
+      {
 
-Aws::String GetNameForSubnetState(SubnetState enumValue)
-{
-  switch(enumValue)
-  {
-  case SubnetState::pending:
-    return "pending";
-  case SubnetState::available:
-    return "available";
-  default:
-    return "";
-  }
-}
 
-} // namespace SubnetStateMapper
-} // namespace Model
-} // namespace EC2
+        SubnetState GetSubnetStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == pending_HASH)
+          {
+            return SubnetState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return SubnetState::available;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SubnetState>(hashCode);
+          }
+
+          return SubnetState::NOT_SET;
+        }
+
+        Aws::String GetNameForSubnetState(SubnetState enumValue)
+        {
+          switch(enumValue)
+          {
+          case SubnetState::pending:
+            return "pending";
+          case SubnetState::available:
+            return "available";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SubnetStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

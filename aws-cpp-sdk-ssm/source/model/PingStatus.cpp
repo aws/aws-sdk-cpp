@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/PingStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace PingStatusMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace PingStatusMapper
+      {
 
 
-PingStatus GetPingStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Online_HASH)
-  {
-     return PingStatus::Online;
-  }
-  else if (hashCode == ConnectionLost_HASH)
-  {
-     return PingStatus::ConnectionLost;
-  }
-  else if (hashCode == Inactive_HASH)
-  {
-     return PingStatus::Inactive;
-  }
-  return PingStatus::NOT_SET;
-}
+        PingStatus GetPingStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Online_HASH)
+          {
+            return PingStatus::Online;
+          }
+          else if (hashCode == ConnectionLost_HASH)
+          {
+            return PingStatus::ConnectionLost;
+          }
+          else if (hashCode == Inactive_HASH)
+          {
+            return PingStatus::Inactive;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PingStatus>(hashCode);
+          }
 
-Aws::String GetNameForPingStatus(PingStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case PingStatus::Online:
-    return "Online";
-  case PingStatus::ConnectionLost:
-    return "ConnectionLost";
-  case PingStatus::Inactive:
-    return "Inactive";
-  default:
-    return "";
-  }
-}
+          return PingStatus::NOT_SET;
+        }
 
-} // namespace PingStatusMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForPingStatus(PingStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case PingStatus::Online:
+            return "Online";
+          case PingStatus::ConnectionLost:
+            return "ConnectionLost";
+          case PingStatus::Inactive:
+            return "Inactive";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PingStatusMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

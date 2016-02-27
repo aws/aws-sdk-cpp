@@ -14,6 +14,7 @@
 */
 #include <aws/cognito-sync/model/BulkPublishStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
 
 namespace Aws
 {
-namespace CognitoSync
-{
-namespace Model
-{
-namespace BulkPublishStatusMapper
-{
+  namespace CognitoSync
+  {
+    namespace Model
+    {
+      namespace BulkPublishStatusMapper
+      {
 
 
-BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NOT_STARTED_HASH)
-  {
-     return BulkPublishStatus::NOT_STARTED;
-  }
-  else if (hashCode == IN_PROGRESS_HASH)
-  {
-     return BulkPublishStatus::IN_PROGRESS;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return BulkPublishStatus::FAILED;
-  }
-  else if (hashCode == SUCCEEDED_HASH)
-  {
-     return BulkPublishStatus::SUCCEEDED;
-  }
-  return BulkPublishStatus::NOT_SET;
-}
+        BulkPublishStatus GetBulkPublishStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NOT_STARTED_HASH)
+          {
+            return BulkPublishStatus::NOT_STARTED;
+          }
+          else if (hashCode == IN_PROGRESS_HASH)
+          {
+            return BulkPublishStatus::IN_PROGRESS;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return BulkPublishStatus::FAILED;
+          }
+          else if (hashCode == SUCCEEDED_HASH)
+          {
+            return BulkPublishStatus::SUCCEEDED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<BulkPublishStatus>(hashCode);
+          }
 
-Aws::String GetNameForBulkPublishStatus(BulkPublishStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case BulkPublishStatus::NOT_STARTED:
-    return "NOT_STARTED";
-  case BulkPublishStatus::IN_PROGRESS:
-    return "IN_PROGRESS";
-  case BulkPublishStatus::FAILED:
-    return "FAILED";
-  case BulkPublishStatus::SUCCEEDED:
-    return "SUCCEEDED";
-  default:
-    return "";
-  }
-}
+          return BulkPublishStatus::NOT_SET;
+        }
 
-} // namespace BulkPublishStatusMapper
-} // namespace Model
-} // namespace CognitoSync
+        Aws::String GetNameForBulkPublishStatus(BulkPublishStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case BulkPublishStatus::NOT_STARTED:
+            return "NOT_STARTED";
+          case BulkPublishStatus::IN_PROGRESS:
+            return "IN_PROGRESS";
+          case BulkPublishStatus::FAILED:
+            return "FAILED";
+          case BulkPublishStatus::SUCCEEDED:
+            return "SUCCEEDED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace BulkPublishStatusMapper
+    } // namespace Model
+  } // namespace CognitoSync
 } // namespace Aws

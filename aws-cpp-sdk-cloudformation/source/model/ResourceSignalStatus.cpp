@@ -14,6 +14,7 @@
 */
 #include <aws/cloudformation/model/ResourceSignalStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int FAILURE_HASH = HashingUtils::HashString("FAILURE");
 
 namespace Aws
 {
-namespace CloudFormation
-{
-namespace Model
-{
-namespace ResourceSignalStatusMapper
-{
-
-
-ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SUCCESS_HASH)
+  namespace CloudFormation
   {
-     return ResourceSignalStatus::SUCCESS;
-  }
-  else if (hashCode == FAILURE_HASH)
-  {
-     return ResourceSignalStatus::FAILURE;
-  }
-  return ResourceSignalStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ResourceSignalStatusMapper
+      {
 
-Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ResourceSignalStatus::SUCCESS:
-    return "SUCCESS";
-  case ResourceSignalStatus::FAILURE:
-    return "FAILURE";
-  default:
-    return "";
-  }
-}
 
-} // namespace ResourceSignalStatusMapper
-} // namespace Model
-} // namespace CloudFormation
+        ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SUCCESS_HASH)
+          {
+            return ResourceSignalStatus::SUCCESS;
+          }
+          else if (hashCode == FAILURE_HASH)
+          {
+            return ResourceSignalStatus::FAILURE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ResourceSignalStatus>(hashCode);
+          }
+
+          return ResourceSignalStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForResourceSignalStatus(ResourceSignalStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ResourceSignalStatus::SUCCESS:
+            return "SUCCESS";
+          case ResourceSignalStatus::FAILURE:
+            return "FAILURE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ResourceSignalStatusMapper
+    } // namespace Model
+  } // namespace CloudFormation
 } // namespace Aws

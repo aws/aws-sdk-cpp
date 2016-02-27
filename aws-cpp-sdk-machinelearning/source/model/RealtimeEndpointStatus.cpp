@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/RealtimeEndpointStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace RealtimeEndpointStatusMapper
-{
+  namespace MachineLearning
+  {
+    namespace Model
+    {
+      namespace RealtimeEndpointStatusMapper
+      {
 
 
-RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NONE_HASH)
-  {
-     return RealtimeEndpointStatus::NONE;
-  }
-  else if (hashCode == READY_HASH)
-  {
-     return RealtimeEndpointStatus::READY;
-  }
-  else if (hashCode == UPDATING_HASH)
-  {
-     return RealtimeEndpointStatus::UPDATING;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return RealtimeEndpointStatus::FAILED;
-  }
-  return RealtimeEndpointStatus::NOT_SET;
-}
+        RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NONE_HASH)
+          {
+            return RealtimeEndpointStatus::NONE;
+          }
+          else if (hashCode == READY_HASH)
+          {
+            return RealtimeEndpointStatus::READY;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return RealtimeEndpointStatus::UPDATING;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return RealtimeEndpointStatus::FAILED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RealtimeEndpointStatus>(hashCode);
+          }
 
-Aws::String GetNameForRealtimeEndpointStatus(RealtimeEndpointStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case RealtimeEndpointStatus::NONE:
-    return "NONE";
-  case RealtimeEndpointStatus::READY:
-    return "READY";
-  case RealtimeEndpointStatus::UPDATING:
-    return "UPDATING";
-  case RealtimeEndpointStatus::FAILED:
-    return "FAILED";
-  default:
-    return "";
-  }
-}
+          return RealtimeEndpointStatus::NOT_SET;
+        }
 
-} // namespace RealtimeEndpointStatusMapper
-} // namespace Model
-} // namespace MachineLearning
+        Aws::String GetNameForRealtimeEndpointStatus(RealtimeEndpointStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case RealtimeEndpointStatus::NONE:
+            return "NONE";
+          case RealtimeEndpointStatus::READY:
+            return "READY";
+          case RealtimeEndpointStatus::UPDATING:
+            return "UPDATING";
+          case RealtimeEndpointStatus::FAILED:
+            return "FAILED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RealtimeEndpointStatusMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

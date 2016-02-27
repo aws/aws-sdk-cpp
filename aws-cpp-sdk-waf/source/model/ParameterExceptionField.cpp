@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/ParameterExceptionField.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -29,84 +30,97 @@ static const int SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH = HashingUtils::HashSt
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace ParameterExceptionFieldMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace ParameterExceptionFieldMapper
+      {
 
 
-ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CHANGE_ACTION_HASH)
-  {
-     return ParameterExceptionField::CHANGE_ACTION;
-  }
-  else if (hashCode == WAF_ACTION_HASH)
-  {
-     return ParameterExceptionField::WAF_ACTION;
-  }
-  else if (hashCode == PREDICATE_TYPE_HASH)
-  {
-     return ParameterExceptionField::PREDICATE_TYPE;
-  }
-  else if (hashCode == IPSET_TYPE_HASH)
-  {
-     return ParameterExceptionField::IPSET_TYPE;
-  }
-  else if (hashCode == BYTE_MATCH_FIELD_TYPE_HASH)
-  {
-     return ParameterExceptionField::BYTE_MATCH_FIELD_TYPE;
-  }
-  else if (hashCode == SQL_INJECTION_MATCH_FIELD_TYPE_HASH)
-  {
-     return ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE;
-  }
-  else if (hashCode == BYTE_MATCH_TEXT_TRANSFORMATION_HASH)
-  {
-     return ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION;
-  }
-  else if (hashCode == BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH)
-  {
-     return ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT;
-  }
-  else if (hashCode == SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH)
-  {
-     return ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR;
-  }
-  return ParameterExceptionField::NOT_SET;
-}
+        ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CHANGE_ACTION_HASH)
+          {
+            return ParameterExceptionField::CHANGE_ACTION;
+          }
+          else if (hashCode == WAF_ACTION_HASH)
+          {
+            return ParameterExceptionField::WAF_ACTION;
+          }
+          else if (hashCode == PREDICATE_TYPE_HASH)
+          {
+            return ParameterExceptionField::PREDICATE_TYPE;
+          }
+          else if (hashCode == IPSET_TYPE_HASH)
+          {
+            return ParameterExceptionField::IPSET_TYPE;
+          }
+          else if (hashCode == BYTE_MATCH_FIELD_TYPE_HASH)
+          {
+            return ParameterExceptionField::BYTE_MATCH_FIELD_TYPE;
+          }
+          else if (hashCode == SQL_INJECTION_MATCH_FIELD_TYPE_HASH)
+          {
+            return ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE;
+          }
+          else if (hashCode == BYTE_MATCH_TEXT_TRANSFORMATION_HASH)
+          {
+            return ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION;
+          }
+          else if (hashCode == BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH)
+          {
+            return ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT;
+          }
+          else if (hashCode == SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH)
+          {
+            return ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ParameterExceptionField>(hashCode);
+          }
 
-Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
-{
-  switch(enumValue)
-  {
-  case ParameterExceptionField::CHANGE_ACTION:
-    return "CHANGE_ACTION";
-  case ParameterExceptionField::WAF_ACTION:
-    return "WAF_ACTION";
-  case ParameterExceptionField::PREDICATE_TYPE:
-    return "PREDICATE_TYPE";
-  case ParameterExceptionField::IPSET_TYPE:
-    return "IPSET_TYPE";
-  case ParameterExceptionField::BYTE_MATCH_FIELD_TYPE:
-    return "BYTE_MATCH_FIELD_TYPE";
-  case ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE:
-    return "SQL_INJECTION_MATCH_FIELD_TYPE";
-  case ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION:
-    return "BYTE_MATCH_TEXT_TRANSFORMATION";
-  case ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT:
-    return "BYTE_MATCH_POSITIONAL_CONSTRAINT";
-  case ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR:
-    return "SIZE_CONSTRAINT_COMPARISON_OPERATOR";
-  default:
-    return "";
-  }
-}
+          return ParameterExceptionField::NOT_SET;
+        }
 
-} // namespace ParameterExceptionFieldMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
+        {
+          switch(enumValue)
+          {
+          case ParameterExceptionField::CHANGE_ACTION:
+            return "CHANGE_ACTION";
+          case ParameterExceptionField::WAF_ACTION:
+            return "WAF_ACTION";
+          case ParameterExceptionField::PREDICATE_TYPE:
+            return "PREDICATE_TYPE";
+          case ParameterExceptionField::IPSET_TYPE:
+            return "IPSET_TYPE";
+          case ParameterExceptionField::BYTE_MATCH_FIELD_TYPE:
+            return "BYTE_MATCH_FIELD_TYPE";
+          case ParameterExceptionField::SQL_INJECTION_MATCH_FIELD_TYPE:
+            return "SQL_INJECTION_MATCH_FIELD_TYPE";
+          case ParameterExceptionField::BYTE_MATCH_TEXT_TRANSFORMATION:
+            return "BYTE_MATCH_TEXT_TRANSFORMATION";
+          case ParameterExceptionField::BYTE_MATCH_POSITIONAL_CONSTRAINT:
+            return "BYTE_MATCH_POSITIONAL_CONSTRAINT";
+          case ParameterExceptionField::SIZE_CONSTRAINT_COMPARISON_OPERATOR:
+            return "SIZE_CONSTRAINT_COMPARISON_OPERATOR";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ParameterExceptionFieldMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

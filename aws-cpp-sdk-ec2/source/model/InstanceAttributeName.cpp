@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/InstanceAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSuppor
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace InstanceAttributeNameMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace InstanceAttributeNameMapper
+      {
 
 
-InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == instanceType_HASH)
-  {
-     return InstanceAttributeName::instanceType;
-  }
-  else if (hashCode == kernel_HASH)
-  {
-     return InstanceAttributeName::kernel;
-  }
-  else if (hashCode == ramdisk_HASH)
-  {
-     return InstanceAttributeName::ramdisk;
-  }
-  else if (hashCode == userData_HASH)
-  {
-     return InstanceAttributeName::userData;
-  }
-  else if (hashCode == disableApiTermination_HASH)
-  {
-     return InstanceAttributeName::disableApiTermination;
-  }
-  else if (hashCode == instanceInitiatedShutdownBehavior_HASH)
-  {
-     return InstanceAttributeName::instanceInitiatedShutdownBehavior;
-  }
-  else if (hashCode == rootDeviceName_HASH)
-  {
-     return InstanceAttributeName::rootDeviceName;
-  }
-  else if (hashCode == blockDeviceMapping_HASH)
-  {
-     return InstanceAttributeName::blockDeviceMapping;
-  }
-  else if (hashCode == productCodes_HASH)
-  {
-     return InstanceAttributeName::productCodes;
-  }
-  else if (hashCode == sourceDestCheck_HASH)
-  {
-     return InstanceAttributeName::sourceDestCheck;
-  }
-  else if (hashCode == groupSet_HASH)
-  {
-     return InstanceAttributeName::groupSet;
-  }
-  else if (hashCode == ebsOptimized_HASH)
-  {
-     return InstanceAttributeName::ebsOptimized;
-  }
-  else if (hashCode == sriovNetSupport_HASH)
-  {
-     return InstanceAttributeName::sriovNetSupport;
-  }
-  return InstanceAttributeName::NOT_SET;
-}
+        InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == instanceType_HASH)
+          {
+            return InstanceAttributeName::instanceType;
+          }
+          else if (hashCode == kernel_HASH)
+          {
+            return InstanceAttributeName::kernel;
+          }
+          else if (hashCode == ramdisk_HASH)
+          {
+            return InstanceAttributeName::ramdisk;
+          }
+          else if (hashCode == userData_HASH)
+          {
+            return InstanceAttributeName::userData;
+          }
+          else if (hashCode == disableApiTermination_HASH)
+          {
+            return InstanceAttributeName::disableApiTermination;
+          }
+          else if (hashCode == instanceInitiatedShutdownBehavior_HASH)
+          {
+            return InstanceAttributeName::instanceInitiatedShutdownBehavior;
+          }
+          else if (hashCode == rootDeviceName_HASH)
+          {
+            return InstanceAttributeName::rootDeviceName;
+          }
+          else if (hashCode == blockDeviceMapping_HASH)
+          {
+            return InstanceAttributeName::blockDeviceMapping;
+          }
+          else if (hashCode == productCodes_HASH)
+          {
+            return InstanceAttributeName::productCodes;
+          }
+          else if (hashCode == sourceDestCheck_HASH)
+          {
+            return InstanceAttributeName::sourceDestCheck;
+          }
+          else if (hashCode == groupSet_HASH)
+          {
+            return InstanceAttributeName::groupSet;
+          }
+          else if (hashCode == ebsOptimized_HASH)
+          {
+            return InstanceAttributeName::ebsOptimized;
+          }
+          else if (hashCode == sriovNetSupport_HASH)
+          {
+            return InstanceAttributeName::sriovNetSupport;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceAttributeName>(hashCode);
+          }
 
-Aws::String GetNameForInstanceAttributeName(InstanceAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceAttributeName::instanceType:
-    return "instanceType";
-  case InstanceAttributeName::kernel:
-    return "kernel";
-  case InstanceAttributeName::ramdisk:
-    return "ramdisk";
-  case InstanceAttributeName::userData:
-    return "userData";
-  case InstanceAttributeName::disableApiTermination:
-    return "disableApiTermination";
-  case InstanceAttributeName::instanceInitiatedShutdownBehavior:
-    return "instanceInitiatedShutdownBehavior";
-  case InstanceAttributeName::rootDeviceName:
-    return "rootDeviceName";
-  case InstanceAttributeName::blockDeviceMapping:
-    return "blockDeviceMapping";
-  case InstanceAttributeName::productCodes:
-    return "productCodes";
-  case InstanceAttributeName::sourceDestCheck:
-    return "sourceDestCheck";
-  case InstanceAttributeName::groupSet:
-    return "groupSet";
-  case InstanceAttributeName::ebsOptimized:
-    return "ebsOptimized";
-  case InstanceAttributeName::sriovNetSupport:
-    return "sriovNetSupport";
-  default:
-    return "";
-  }
-}
+          return InstanceAttributeName::NOT_SET;
+        }
 
-} // namespace InstanceAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForInstanceAttributeName(InstanceAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceAttributeName::instanceType:
+            return "instanceType";
+          case InstanceAttributeName::kernel:
+            return "kernel";
+          case InstanceAttributeName::ramdisk:
+            return "ramdisk";
+          case InstanceAttributeName::userData:
+            return "userData";
+          case InstanceAttributeName::disableApiTermination:
+            return "disableApiTermination";
+          case InstanceAttributeName::instanceInitiatedShutdownBehavior:
+            return "instanceInitiatedShutdownBehavior";
+          case InstanceAttributeName::rootDeviceName:
+            return "rootDeviceName";
+          case InstanceAttributeName::blockDeviceMapping:
+            return "blockDeviceMapping";
+          case InstanceAttributeName::productCodes:
+            return "productCodes";
+          case InstanceAttributeName::sourceDestCheck:
+            return "sourceDestCheck";
+          case InstanceAttributeName::groupSet:
+            return "groupSet";
+          case InstanceAttributeName::ebsOptimized:
+            return "ebsOptimized";
+          case InstanceAttributeName::sriovNetSupport:
+            return "sriovNetSupport";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

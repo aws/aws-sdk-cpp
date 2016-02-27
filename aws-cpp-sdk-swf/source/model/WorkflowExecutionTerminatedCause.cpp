@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/WorkflowExecutionTerminatedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int OPERATOR_INITIATED_HASH = HashingUtils::HashString("OPERATOR_IN
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace WorkflowExecutionTerminatedCauseMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace WorkflowExecutionTerminatedCauseMapper
+      {
 
 
-WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CHILD_POLICY_APPLIED_HASH)
-  {
-     return WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED;
-  }
-  else if (hashCode == EVENT_LIMIT_EXCEEDED_HASH)
-  {
-     return WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED;
-  }
-  else if (hashCode == OPERATOR_INITIATED_HASH)
-  {
-     return WorkflowExecutionTerminatedCause::OPERATOR_INITIATED;
-  }
-  return WorkflowExecutionTerminatedCause::NOT_SET;
-}
+        WorkflowExecutionTerminatedCause GetWorkflowExecutionTerminatedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CHILD_POLICY_APPLIED_HASH)
+          {
+            return WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED;
+          }
+          else if (hashCode == EVENT_LIMIT_EXCEEDED_HASH)
+          {
+            return WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == OPERATOR_INITIATED_HASH)
+          {
+            return WorkflowExecutionTerminatedCause::OPERATOR_INITIATED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<WorkflowExecutionTerminatedCause>(hashCode);
+          }
 
-Aws::String GetNameForWorkflowExecutionTerminatedCause(WorkflowExecutionTerminatedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED:
-    return "CHILD_POLICY_APPLIED";
-  case WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED:
-    return "EVENT_LIMIT_EXCEEDED";
-  case WorkflowExecutionTerminatedCause::OPERATOR_INITIATED:
-    return "OPERATOR_INITIATED";
-  default:
-    return "";
-  }
-}
+          return WorkflowExecutionTerminatedCause::NOT_SET;
+        }
 
-} // namespace WorkflowExecutionTerminatedCauseMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForWorkflowExecutionTerminatedCause(WorkflowExecutionTerminatedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED:
+            return "CHILD_POLICY_APPLIED";
+          case WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED:
+            return "EVENT_LIMIT_EXCEEDED";
+          case WorkflowExecutionTerminatedCause::OPERATOR_INITIATED:
+            return "OPERATOR_INITIATED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace WorkflowExecutionTerminatedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

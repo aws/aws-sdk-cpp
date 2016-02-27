@@ -14,6 +14,7 @@
 */
 #include <aws/monitoring/model/StateValue.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT
 
 namespace Aws
 {
-namespace CloudWatch
-{
-namespace Model
-{
-namespace StateValueMapper
-{
+  namespace CloudWatch
+  {
+    namespace Model
+    {
+      namespace StateValueMapper
+      {
 
 
-StateValue GetStateValueForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == OK_HASH)
-  {
-     return StateValue::OK;
-  }
-  else if (hashCode == ALARM_HASH)
-  {
-     return StateValue::ALARM;
-  }
-  else if (hashCode == INSUFFICIENT_DATA_HASH)
-  {
-     return StateValue::INSUFFICIENT_DATA;
-  }
-  return StateValue::NOT_SET;
-}
+        StateValue GetStateValueForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == OK_HASH)
+          {
+            return StateValue::OK;
+          }
+          else if (hashCode == ALARM_HASH)
+          {
+            return StateValue::ALARM;
+          }
+          else if (hashCode == INSUFFICIENT_DATA_HASH)
+          {
+            return StateValue::INSUFFICIENT_DATA;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StateValue>(hashCode);
+          }
 
-Aws::String GetNameForStateValue(StateValue enumValue)
-{
-  switch(enumValue)
-  {
-  case StateValue::OK:
-    return "OK";
-  case StateValue::ALARM:
-    return "ALARM";
-  case StateValue::INSUFFICIENT_DATA:
-    return "INSUFFICIENT_DATA";
-  default:
-    return "";
-  }
-}
+          return StateValue::NOT_SET;
+        }
 
-} // namespace StateValueMapper
-} // namespace Model
-} // namespace CloudWatch
+        Aws::String GetNameForStateValue(StateValue enumValue)
+        {
+          switch(enumValue)
+          {
+          case StateValue::OK:
+            return "OK";
+          case StateValue::ALARM:
+            return "ALARM";
+          case StateValue::INSUFFICIENT_DATA:
+            return "INSUFFICIENT_DATA";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StateValueMapper
+    } // namespace Model
+  } // namespace CloudWatch
 } // namespace Aws

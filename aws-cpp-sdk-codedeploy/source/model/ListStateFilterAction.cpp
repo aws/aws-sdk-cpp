@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/ListStateFilterAction.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int ignore_HASH = HashingUtils::HashString("ignore");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace ListStateFilterActionMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace ListStateFilterActionMapper
+      {
 
 
-ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == include_HASH)
-  {
-     return ListStateFilterAction::include;
-  }
-  else if (hashCode == exclude_HASH)
-  {
-     return ListStateFilterAction::exclude;
-  }
-  else if (hashCode == ignore_HASH)
-  {
-     return ListStateFilterAction::ignore;
-  }
-  return ListStateFilterAction::NOT_SET;
-}
+        ListStateFilterAction GetListStateFilterActionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == include_HASH)
+          {
+            return ListStateFilterAction::include;
+          }
+          else if (hashCode == exclude_HASH)
+          {
+            return ListStateFilterAction::exclude;
+          }
+          else if (hashCode == ignore_HASH)
+          {
+            return ListStateFilterAction::ignore;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ListStateFilterAction>(hashCode);
+          }
 
-Aws::String GetNameForListStateFilterAction(ListStateFilterAction enumValue)
-{
-  switch(enumValue)
-  {
-  case ListStateFilterAction::include:
-    return "include";
-  case ListStateFilterAction::exclude:
-    return "exclude";
-  case ListStateFilterAction::ignore:
-    return "ignore";
-  default:
-    return "";
-  }
-}
+          return ListStateFilterAction::NOT_SET;
+        }
 
-} // namespace ListStateFilterActionMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForListStateFilterAction(ListStateFilterAction enumValue)
+        {
+          switch(enumValue)
+          {
+          case ListStateFilterAction::include:
+            return "include";
+          case ListStateFilterAction::exclude:
+            return "exclude";
+          case ListStateFilterAction::ignore:
+            return "ignore";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ListStateFilterActionMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

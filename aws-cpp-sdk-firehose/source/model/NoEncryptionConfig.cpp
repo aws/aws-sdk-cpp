@@ -14,6 +14,7 @@
 */
 #include <aws/firehose/model/NoEncryptionConfig.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int NoEncryption_HASH = HashingUtils::HashString("NoEncryption");
 
 namespace Aws
 {
-namespace Firehose
-{
-namespace Model
-{
-namespace NoEncryptionConfigMapper
-{
-
-
-NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NoEncryption_HASH)
+  namespace Firehose
   {
-     return NoEncryptionConfig::NoEncryption;
-  }
-  return NoEncryptionConfig::NOT_SET;
-}
+    namespace Model
+    {
+      namespace NoEncryptionConfigMapper
+      {
 
-Aws::String GetNameForNoEncryptionConfig(NoEncryptionConfig enumValue)
-{
-  switch(enumValue)
-  {
-  case NoEncryptionConfig::NoEncryption:
-    return "NoEncryption";
-  default:
-    return "";
-  }
-}
 
-} // namespace NoEncryptionConfigMapper
-} // namespace Model
-} // namespace Firehose
+        NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NoEncryption_HASH)
+          {
+            return NoEncryptionConfig::NoEncryption;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<NoEncryptionConfig>(hashCode);
+          }
+
+          return NoEncryptionConfig::NOT_SET;
+        }
+
+        Aws::String GetNameForNoEncryptionConfig(NoEncryptionConfig enumValue)
+        {
+          switch(enumValue)
+          {
+          case NoEncryptionConfig::NoEncryption:
+            return "NoEncryption";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace NoEncryptionConfigMapper
+    } // namespace Model
+  } // namespace Firehose
 } // namespace Aws

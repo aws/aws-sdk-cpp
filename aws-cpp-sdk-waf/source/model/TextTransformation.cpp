@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/TextTransformation.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int URL_DECODE_HASH = HashingUtils::HashString("URL_DECODE");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace TextTransformationMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace TextTransformationMapper
+      {
 
 
-TextTransformation GetTextTransformationForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NONE_HASH)
-  {
-     return TextTransformation::NONE;
-  }
-  else if (hashCode == COMPRESS_WHITE_SPACE_HASH)
-  {
-     return TextTransformation::COMPRESS_WHITE_SPACE;
-  }
-  else if (hashCode == HTML_ENTITY_DECODE_HASH)
-  {
-     return TextTransformation::HTML_ENTITY_DECODE;
-  }
-  else if (hashCode == LOWERCASE_HASH)
-  {
-     return TextTransformation::LOWERCASE;
-  }
-  else if (hashCode == CMD_LINE_HASH)
-  {
-     return TextTransformation::CMD_LINE;
-  }
-  else if (hashCode == URL_DECODE_HASH)
-  {
-     return TextTransformation::URL_DECODE;
-  }
-  return TextTransformation::NOT_SET;
-}
+        TextTransformation GetTextTransformationForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NONE_HASH)
+          {
+            return TextTransformation::NONE;
+          }
+          else if (hashCode == COMPRESS_WHITE_SPACE_HASH)
+          {
+            return TextTransformation::COMPRESS_WHITE_SPACE;
+          }
+          else if (hashCode == HTML_ENTITY_DECODE_HASH)
+          {
+            return TextTransformation::HTML_ENTITY_DECODE;
+          }
+          else if (hashCode == LOWERCASE_HASH)
+          {
+            return TextTransformation::LOWERCASE;
+          }
+          else if (hashCode == CMD_LINE_HASH)
+          {
+            return TextTransformation::CMD_LINE;
+          }
+          else if (hashCode == URL_DECODE_HASH)
+          {
+            return TextTransformation::URL_DECODE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TextTransformation>(hashCode);
+          }
 
-Aws::String GetNameForTextTransformation(TextTransformation enumValue)
-{
-  switch(enumValue)
-  {
-  case TextTransformation::NONE:
-    return "NONE";
-  case TextTransformation::COMPRESS_WHITE_SPACE:
-    return "COMPRESS_WHITE_SPACE";
-  case TextTransformation::HTML_ENTITY_DECODE:
-    return "HTML_ENTITY_DECODE";
-  case TextTransformation::LOWERCASE:
-    return "LOWERCASE";
-  case TextTransformation::CMD_LINE:
-    return "CMD_LINE";
-  case TextTransformation::URL_DECODE:
-    return "URL_DECODE";
-  default:
-    return "";
-  }
-}
+          return TextTransformation::NOT_SET;
+        }
 
-} // namespace TextTransformationMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForTextTransformation(TextTransformation enumValue)
+        {
+          switch(enumValue)
+          {
+          case TextTransformation::NONE:
+            return "NONE";
+          case TextTransformation::COMPRESS_WHITE_SPACE:
+            return "COMPRESS_WHITE_SPACE";
+          case TextTransformation::HTML_ENTITY_DECODE:
+            return "HTML_ENTITY_DECODE";
+          case TextTransformation::LOWERCASE:
+            return "LOWERCASE";
+          case TextTransformation::CMD_LINE:
+            return "CMD_LINE";
+          case TextTransformation::URL_DECODE:
+            return "URL_DECODE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TextTransformationMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

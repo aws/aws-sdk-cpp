@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/BucketCannedACL.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int authenticated_read_HASH = HashingUtils::HashString("authenticat
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace BucketCannedACLMapper
-{
+  namespace S3
+  {
+    namespace Model
+    {
+      namespace BucketCannedACLMapper
+      {
 
 
-BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == private__HASH)
-  {
-     return BucketCannedACL::private_;
-  }
-  else if (hashCode == public_read_HASH)
-  {
-     return BucketCannedACL::public_read;
-  }
-  else if (hashCode == public_read_write_HASH)
-  {
-     return BucketCannedACL::public_read_write;
-  }
-  else if (hashCode == authenticated_read_HASH)
-  {
-     return BucketCannedACL::authenticated_read;
-  }
-  return BucketCannedACL::NOT_SET;
-}
+        BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == private__HASH)
+          {
+            return BucketCannedACL::private_;
+          }
+          else if (hashCode == public_read_HASH)
+          {
+            return BucketCannedACL::public_read;
+          }
+          else if (hashCode == public_read_write_HASH)
+          {
+            return BucketCannedACL::public_read_write;
+          }
+          else if (hashCode == authenticated_read_HASH)
+          {
+            return BucketCannedACL::authenticated_read;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<BucketCannedACL>(hashCode);
+          }
 
-Aws::String GetNameForBucketCannedACL(BucketCannedACL enumValue)
-{
-  switch(enumValue)
-  {
-  case BucketCannedACL::private_:
-    return "private";
-  case BucketCannedACL::public_read:
-    return "public-read";
-  case BucketCannedACL::public_read_write:
-    return "public-read-write";
-  case BucketCannedACL::authenticated_read:
-    return "authenticated-read";
-  default:
-    return "";
-  }
-}
+          return BucketCannedACL::NOT_SET;
+        }
 
-} // namespace BucketCannedACLMapper
-} // namespace Model
-} // namespace S3
+        Aws::String GetNameForBucketCannedACL(BucketCannedACL enumValue)
+        {
+          switch(enumValue)
+          {
+          case BucketCannedACL::private_:
+            return "private";
+          case BucketCannedACL::public_read:
+            return "public-read";
+          case BucketCannedACL::public_read_write:
+            return "public-read-write";
+          case BucketCannedACL::authenticated_read:
+            return "authenticated-read";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace BucketCannedACLMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

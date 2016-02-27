@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/ActivityTaskTimeoutType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int HEARTBEAT_HASH = HashingUtils::HashString("HEARTBEAT");
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace ActivityTaskTimeoutTypeMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace ActivityTaskTimeoutTypeMapper
+      {
 
 
-ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == START_TO_CLOSE_HASH)
-  {
-     return ActivityTaskTimeoutType::START_TO_CLOSE;
-  }
-  else if (hashCode == SCHEDULE_TO_START_HASH)
-  {
-     return ActivityTaskTimeoutType::SCHEDULE_TO_START;
-  }
-  else if (hashCode == SCHEDULE_TO_CLOSE_HASH)
-  {
-     return ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE;
-  }
-  else if (hashCode == HEARTBEAT_HASH)
-  {
-     return ActivityTaskTimeoutType::HEARTBEAT;
-  }
-  return ActivityTaskTimeoutType::NOT_SET;
-}
+        ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == START_TO_CLOSE_HASH)
+          {
+            return ActivityTaskTimeoutType::START_TO_CLOSE;
+          }
+          else if (hashCode == SCHEDULE_TO_START_HASH)
+          {
+            return ActivityTaskTimeoutType::SCHEDULE_TO_START;
+          }
+          else if (hashCode == SCHEDULE_TO_CLOSE_HASH)
+          {
+            return ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE;
+          }
+          else if (hashCode == HEARTBEAT_HASH)
+          {
+            return ActivityTaskTimeoutType::HEARTBEAT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActivityTaskTimeoutType>(hashCode);
+          }
 
-Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType enumValue)
-{
-  switch(enumValue)
-  {
-  case ActivityTaskTimeoutType::START_TO_CLOSE:
-    return "START_TO_CLOSE";
-  case ActivityTaskTimeoutType::SCHEDULE_TO_START:
-    return "SCHEDULE_TO_START";
-  case ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE:
-    return "SCHEDULE_TO_CLOSE";
-  case ActivityTaskTimeoutType::HEARTBEAT:
-    return "HEARTBEAT";
-  default:
-    return "";
-  }
-}
+          return ActivityTaskTimeoutType::NOT_SET;
+        }
 
-} // namespace ActivityTaskTimeoutTypeMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForActivityTaskTimeoutType(ActivityTaskTimeoutType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActivityTaskTimeoutType::START_TO_CLOSE:
+            return "START_TO_CLOSE";
+          case ActivityTaskTimeoutType::SCHEDULE_TO_START:
+            return "SCHEDULE_TO_START";
+          case ActivityTaskTimeoutType::SCHEDULE_TO_CLOSE:
+            return "SCHEDULE_TO_CLOSE";
+          case ActivityTaskTimeoutType::HEARTBEAT:
+            return "HEARTBEAT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActivityTaskTimeoutTypeMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

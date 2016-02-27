@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/AppAttributesKeys.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int AwsFlowRubySettings_HASH = HashingUtils::HashString("AwsFlowRub
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace AppAttributesKeysMapper
-{
+  namespace OpsWorks
+  {
+    namespace Model
+    {
+      namespace AppAttributesKeysMapper
+      {
 
 
-AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == DocumentRoot_HASH)
-  {
-     return AppAttributesKeys::DocumentRoot;
-  }
-  else if (hashCode == RailsEnv_HASH)
-  {
-     return AppAttributesKeys::RailsEnv;
-  }
-  else if (hashCode == AutoBundleOnDeploy_HASH)
-  {
-     return AppAttributesKeys::AutoBundleOnDeploy;
-  }
-  else if (hashCode == AwsFlowRubySettings_HASH)
-  {
-     return AppAttributesKeys::AwsFlowRubySettings;
-  }
-  return AppAttributesKeys::NOT_SET;
-}
+        AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == DocumentRoot_HASH)
+          {
+            return AppAttributesKeys::DocumentRoot;
+          }
+          else if (hashCode == RailsEnv_HASH)
+          {
+            return AppAttributesKeys::RailsEnv;
+          }
+          else if (hashCode == AutoBundleOnDeploy_HASH)
+          {
+            return AppAttributesKeys::AutoBundleOnDeploy;
+          }
+          else if (hashCode == AwsFlowRubySettings_HASH)
+          {
+            return AppAttributesKeys::AwsFlowRubySettings;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AppAttributesKeys>(hashCode);
+          }
 
-Aws::String GetNameForAppAttributesKeys(AppAttributesKeys enumValue)
-{
-  switch(enumValue)
-  {
-  case AppAttributesKeys::DocumentRoot:
-    return "DocumentRoot";
-  case AppAttributesKeys::RailsEnv:
-    return "RailsEnv";
-  case AppAttributesKeys::AutoBundleOnDeploy:
-    return "AutoBundleOnDeploy";
-  case AppAttributesKeys::AwsFlowRubySettings:
-    return "AwsFlowRubySettings";
-  default:
-    return "";
-  }
-}
+          return AppAttributesKeys::NOT_SET;
+        }
 
-} // namespace AppAttributesKeysMapper
-} // namespace Model
-} // namespace OpsWorks
+        Aws::String GetNameForAppAttributesKeys(AppAttributesKeys enumValue)
+        {
+          switch(enumValue)
+          {
+          case AppAttributesKeys::DocumentRoot:
+            return "DocumentRoot";
+          case AppAttributesKeys::RailsEnv:
+            return "RailsEnv";
+          case AppAttributesKeys::AutoBundleOnDeploy:
+            return "AutoBundleOnDeploy";
+          case AppAttributesKeys::AwsFlowRubySettings:
+            return "AwsFlowRubySettings";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AppAttributesKeysMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

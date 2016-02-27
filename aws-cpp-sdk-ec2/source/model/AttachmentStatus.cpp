@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int detached_HASH = HashingUtils::HashString("detached");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AttachmentStatusMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace AttachmentStatusMapper
+      {
 
 
-AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == attaching_HASH)
-  {
-     return AttachmentStatus::attaching;
-  }
-  else if (hashCode == attached_HASH)
-  {
-     return AttachmentStatus::attached;
-  }
-  else if (hashCode == detaching_HASH)
-  {
-     return AttachmentStatus::detaching;
-  }
-  else if (hashCode == detached_HASH)
-  {
-     return AttachmentStatus::detached;
-  }
-  return AttachmentStatus::NOT_SET;
-}
+        AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == attaching_HASH)
+          {
+            return AttachmentStatus::attaching;
+          }
+          else if (hashCode == attached_HASH)
+          {
+            return AttachmentStatus::attached;
+          }
+          else if (hashCode == detaching_HASH)
+          {
+            return AttachmentStatus::detaching;
+          }
+          else if (hashCode == detached_HASH)
+          {
+            return AttachmentStatus::detached;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AttachmentStatus>(hashCode);
+          }
 
-Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case AttachmentStatus::attaching:
-    return "attaching";
-  case AttachmentStatus::attached:
-    return "attached";
-  case AttachmentStatus::detaching:
-    return "detaching";
-  case AttachmentStatus::detached:
-    return "detached";
-  default:
-    return "";
-  }
-}
+          return AttachmentStatus::NOT_SET;
+        }
 
-} // namespace AttachmentStatusMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForAttachmentStatus(AttachmentStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case AttachmentStatus::attaching:
+            return "attaching";
+          case AttachmentStatus::attached:
+            return "attached";
+          case AttachmentStatus::detaching:
+            return "detaching";
+          case AttachmentStatus::detached:
+            return "detached";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AttachmentStatusMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

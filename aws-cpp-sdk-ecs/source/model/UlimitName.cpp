@@ -14,6 +14,7 @@
 */
 #include <aws/ecs/model/UlimitName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -35,120 +36,133 @@ static const int stack_HASH = HashingUtils::HashString("stack");
 
 namespace Aws
 {
-namespace ECS
-{
-namespace Model
-{
-namespace UlimitNameMapper
-{
+  namespace ECS
+  {
+    namespace Model
+    {
+      namespace UlimitNameMapper
+      {
 
 
-UlimitName GetUlimitNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == core_HASH)
-  {
-     return UlimitName::core;
-  }
-  else if (hashCode == cpu_HASH)
-  {
-     return UlimitName::cpu;
-  }
-  else if (hashCode == data_HASH)
-  {
-     return UlimitName::data;
-  }
-  else if (hashCode == fsize_HASH)
-  {
-     return UlimitName::fsize;
-  }
-  else if (hashCode == locks_HASH)
-  {
-     return UlimitName::locks;
-  }
-  else if (hashCode == memlock_HASH)
-  {
-     return UlimitName::memlock;
-  }
-  else if (hashCode == msgqueue_HASH)
-  {
-     return UlimitName::msgqueue;
-  }
-  else if (hashCode == nice_HASH)
-  {
-     return UlimitName::nice;
-  }
-  else if (hashCode == nofile_HASH)
-  {
-     return UlimitName::nofile;
-  }
-  else if (hashCode == nproc_HASH)
-  {
-     return UlimitName::nproc;
-  }
-  else if (hashCode == rss_HASH)
-  {
-     return UlimitName::rss;
-  }
-  else if (hashCode == rtprio_HASH)
-  {
-     return UlimitName::rtprio;
-  }
-  else if (hashCode == rttime_HASH)
-  {
-     return UlimitName::rttime;
-  }
-  else if (hashCode == sigpending_HASH)
-  {
-     return UlimitName::sigpending;
-  }
-  else if (hashCode == stack_HASH)
-  {
-     return UlimitName::stack;
-  }
-  return UlimitName::NOT_SET;
-}
+        UlimitName GetUlimitNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == core_HASH)
+          {
+            return UlimitName::core;
+          }
+          else if (hashCode == cpu_HASH)
+          {
+            return UlimitName::cpu;
+          }
+          else if (hashCode == data_HASH)
+          {
+            return UlimitName::data;
+          }
+          else if (hashCode == fsize_HASH)
+          {
+            return UlimitName::fsize;
+          }
+          else if (hashCode == locks_HASH)
+          {
+            return UlimitName::locks;
+          }
+          else if (hashCode == memlock_HASH)
+          {
+            return UlimitName::memlock;
+          }
+          else if (hashCode == msgqueue_HASH)
+          {
+            return UlimitName::msgqueue;
+          }
+          else if (hashCode == nice_HASH)
+          {
+            return UlimitName::nice;
+          }
+          else if (hashCode == nofile_HASH)
+          {
+            return UlimitName::nofile;
+          }
+          else if (hashCode == nproc_HASH)
+          {
+            return UlimitName::nproc;
+          }
+          else if (hashCode == rss_HASH)
+          {
+            return UlimitName::rss;
+          }
+          else if (hashCode == rtprio_HASH)
+          {
+            return UlimitName::rtprio;
+          }
+          else if (hashCode == rttime_HASH)
+          {
+            return UlimitName::rttime;
+          }
+          else if (hashCode == sigpending_HASH)
+          {
+            return UlimitName::sigpending;
+          }
+          else if (hashCode == stack_HASH)
+          {
+            return UlimitName::stack;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<UlimitName>(hashCode);
+          }
 
-Aws::String GetNameForUlimitName(UlimitName enumValue)
-{
-  switch(enumValue)
-  {
-  case UlimitName::core:
-    return "core";
-  case UlimitName::cpu:
-    return "cpu";
-  case UlimitName::data:
-    return "data";
-  case UlimitName::fsize:
-    return "fsize";
-  case UlimitName::locks:
-    return "locks";
-  case UlimitName::memlock:
-    return "memlock";
-  case UlimitName::msgqueue:
-    return "msgqueue";
-  case UlimitName::nice:
-    return "nice";
-  case UlimitName::nofile:
-    return "nofile";
-  case UlimitName::nproc:
-    return "nproc";
-  case UlimitName::rss:
-    return "rss";
-  case UlimitName::rtprio:
-    return "rtprio";
-  case UlimitName::rttime:
-    return "rttime";
-  case UlimitName::sigpending:
-    return "sigpending";
-  case UlimitName::stack:
-    return "stack";
-  default:
-    return "";
-  }
-}
+          return UlimitName::NOT_SET;
+        }
 
-} // namespace UlimitNameMapper
-} // namespace Model
-} // namespace ECS
+        Aws::String GetNameForUlimitName(UlimitName enumValue)
+        {
+          switch(enumValue)
+          {
+          case UlimitName::core:
+            return "core";
+          case UlimitName::cpu:
+            return "cpu";
+          case UlimitName::data:
+            return "data";
+          case UlimitName::fsize:
+            return "fsize";
+          case UlimitName::locks:
+            return "locks";
+          case UlimitName::memlock:
+            return "memlock";
+          case UlimitName::msgqueue:
+            return "msgqueue";
+          case UlimitName::nice:
+            return "nice";
+          case UlimitName::nofile:
+            return "nofile";
+          case UlimitName::nproc:
+            return "nproc";
+          case UlimitName::rss:
+            return "rss";
+          case UlimitName::rtprio:
+            return "rtprio";
+          case UlimitName::rttime:
+            return "rttime";
+          case UlimitName::sigpending:
+            return "sigpending";
+          case UlimitName::stack:
+            return "stack";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace UlimitNameMapper
+    } // namespace Model
+  } // namespace ECS
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/ExecutionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace ExecutionStatusMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace ExecutionStatusMapper
+      {
 
 
-ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
-  {
-     return ExecutionStatus::PENDING;
-  }
-  else if (hashCode == PROCESSING_HASH)
-  {
-     return ExecutionStatus::PROCESSING;
-  }
-  else if (hashCode == SCHEDULING_HASH)
-  {
-     return ExecutionStatus::SCHEDULING;
-  }
-  else if (hashCode == RUNNING_HASH)
-  {
-     return ExecutionStatus::RUNNING;
-  }
-  else if (hashCode == COMPLETED_HASH)
-  {
-     return ExecutionStatus::COMPLETED;
-  }
-  return ExecutionStatus::NOT_SET;
-}
+        ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return ExecutionStatus::PENDING;
+          }
+          else if (hashCode == PROCESSING_HASH)
+          {
+            return ExecutionStatus::PROCESSING;
+          }
+          else if (hashCode == SCHEDULING_HASH)
+          {
+            return ExecutionStatus::SCHEDULING;
+          }
+          else if (hashCode == RUNNING_HASH)
+          {
+            return ExecutionStatus::RUNNING;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return ExecutionStatus::COMPLETED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ExecutionStatus>(hashCode);
+          }
 
-Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ExecutionStatus::PENDING:
-    return "PENDING";
-  case ExecutionStatus::PROCESSING:
-    return "PROCESSING";
-  case ExecutionStatus::SCHEDULING:
-    return "SCHEDULING";
-  case ExecutionStatus::RUNNING:
-    return "RUNNING";
-  case ExecutionStatus::COMPLETED:
-    return "COMPLETED";
-  default:
-    return "";
-  }
-}
+          return ExecutionStatus::NOT_SET;
+        }
 
-} // namespace ExecutionStatusMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForExecutionStatus(ExecutionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ExecutionStatus::PENDING:
+            return "PENDING";
+          case ExecutionStatus::PROCESSING:
+            return "PROCESSING";
+          case ExecutionStatus::SCHEDULING:
+            return "SCHEDULING";
+          case ExecutionStatus::RUNNING:
+            return "RUNNING";
+          case ExecutionStatus::COMPLETED:
+            return "COMPLETED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ExecutionStatusMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

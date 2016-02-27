@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/GameSessionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace GameSessionStatusMapper
-{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace GameSessionStatusMapper
+      {
 
 
-GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVE_HASH)
-  {
-     return GameSessionStatus::ACTIVE;
-  }
-  else if (hashCode == ACTIVATING_HASH)
-  {
-     return GameSessionStatus::ACTIVATING;
-  }
-  else if (hashCode == TERMINATED_HASH)
-  {
-     return GameSessionStatus::TERMINATED;
-  }
-  else if (hashCode == TERMINATING_HASH)
-  {
-     return GameSessionStatus::TERMINATING;
-  }
-  return GameSessionStatus::NOT_SET;
-}
+        GameSessionStatus GetGameSessionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVE_HASH)
+          {
+            return GameSessionStatus::ACTIVE;
+          }
+          else if (hashCode == ACTIVATING_HASH)
+          {
+            return GameSessionStatus::ACTIVATING;
+          }
+          else if (hashCode == TERMINATED_HASH)
+          {
+            return GameSessionStatus::TERMINATED;
+          }
+          else if (hashCode == TERMINATING_HASH)
+          {
+            return GameSessionStatus::TERMINATING;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<GameSessionStatus>(hashCode);
+          }
 
-Aws::String GetNameForGameSessionStatus(GameSessionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case GameSessionStatus::ACTIVE:
-    return "ACTIVE";
-  case GameSessionStatus::ACTIVATING:
-    return "ACTIVATING";
-  case GameSessionStatus::TERMINATED:
-    return "TERMINATED";
-  case GameSessionStatus::TERMINATING:
-    return "TERMINATING";
-  default:
-    return "";
-  }
-}
+          return GameSessionStatus::NOT_SET;
+        }
 
-} // namespace GameSessionStatusMapper
-} // namespace Model
-} // namespace GameLift
+        Aws::String GetNameForGameSessionStatus(GameSessionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case GameSessionStatus::ACTIVE:
+            return "ACTIVE";
+          case GameSessionStatus::ACTIVATING:
+            return "ACTIVATING";
+          case GameSessionStatus::TERMINATED:
+            return "TERMINATED";
+          case GameSessionStatus::TERMINATING:
+            return "TERMINATING";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace GameSessionStatusMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

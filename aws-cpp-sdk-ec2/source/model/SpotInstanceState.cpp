@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/SpotInstanceState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int failed_HASH = HashingUtils::HashString("failed");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace SpotInstanceStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace SpotInstanceStateMapper
+      {
 
 
-SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == open_HASH)
-  {
-     return SpotInstanceState::open;
-  }
-  else if (hashCode == active_HASH)
-  {
-     return SpotInstanceState::active;
-  }
-  else if (hashCode == closed_HASH)
-  {
-     return SpotInstanceState::closed;
-  }
-  else if (hashCode == cancelled_HASH)
-  {
-     return SpotInstanceState::cancelled;
-  }
-  else if (hashCode == failed_HASH)
-  {
-     return SpotInstanceState::failed;
-  }
-  return SpotInstanceState::NOT_SET;
-}
+        SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == open_HASH)
+          {
+            return SpotInstanceState::open;
+          }
+          else if (hashCode == active_HASH)
+          {
+            return SpotInstanceState::active;
+          }
+          else if (hashCode == closed_HASH)
+          {
+            return SpotInstanceState::closed;
+          }
+          else if (hashCode == cancelled_HASH)
+          {
+            return SpotInstanceState::cancelled;
+          }
+          else if (hashCode == failed_HASH)
+          {
+            return SpotInstanceState::failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SpotInstanceState>(hashCode);
+          }
 
-Aws::String GetNameForSpotInstanceState(SpotInstanceState enumValue)
-{
-  switch(enumValue)
-  {
-  case SpotInstanceState::open:
-    return "open";
-  case SpotInstanceState::active:
-    return "active";
-  case SpotInstanceState::closed:
-    return "closed";
-  case SpotInstanceState::cancelled:
-    return "cancelled";
-  case SpotInstanceState::failed:
-    return "failed";
-  default:
-    return "";
-  }
-}
+          return SpotInstanceState::NOT_SET;
+        }
 
-} // namespace SpotInstanceStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForSpotInstanceState(SpotInstanceState enumValue)
+        {
+          switch(enumValue)
+          {
+          case SpotInstanceState::open:
+            return "open";
+          case SpotInstanceState::active:
+            return "active";
+          case SpotInstanceState::closed:
+            return "closed";
+          case SpotInstanceState::cancelled:
+            return "cancelled";
+          case SpotInstanceState::failed:
+            return "failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SpotInstanceStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/InstanceStateChangeReasonCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int CLUSTER_TERMINATED_HASH = HashingUtils::HashString("CLUSTER_TER
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace InstanceStateChangeReasonCodeMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace InstanceStateChangeReasonCodeMapper
+      {
 
 
-InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == INTERNAL_ERROR_HASH)
-  {
-     return InstanceStateChangeReasonCode::INTERNAL_ERROR;
-  }
-  else if (hashCode == VALIDATION_ERROR_HASH)
-  {
-     return InstanceStateChangeReasonCode::VALIDATION_ERROR;
-  }
-  else if (hashCode == INSTANCE_FAILURE_HASH)
-  {
-     return InstanceStateChangeReasonCode::INSTANCE_FAILURE;
-  }
-  else if (hashCode == BOOTSTRAP_FAILURE_HASH)
-  {
-     return InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE;
-  }
-  else if (hashCode == CLUSTER_TERMINATED_HASH)
-  {
-     return InstanceStateChangeReasonCode::CLUSTER_TERMINATED;
-  }
-  return InstanceStateChangeReasonCode::NOT_SET;
-}
+        InstanceStateChangeReasonCode GetInstanceStateChangeReasonCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == INTERNAL_ERROR_HASH)
+          {
+            return InstanceStateChangeReasonCode::INTERNAL_ERROR;
+          }
+          else if (hashCode == VALIDATION_ERROR_HASH)
+          {
+            return InstanceStateChangeReasonCode::VALIDATION_ERROR;
+          }
+          else if (hashCode == INSTANCE_FAILURE_HASH)
+          {
+            return InstanceStateChangeReasonCode::INSTANCE_FAILURE;
+          }
+          else if (hashCode == BOOTSTRAP_FAILURE_HASH)
+          {
+            return InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE;
+          }
+          else if (hashCode == CLUSTER_TERMINATED_HASH)
+          {
+            return InstanceStateChangeReasonCode::CLUSTER_TERMINATED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceStateChangeReasonCode>(hashCode);
+          }
 
-Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceStateChangeReasonCode::INTERNAL_ERROR:
-    return "INTERNAL_ERROR";
-  case InstanceStateChangeReasonCode::VALIDATION_ERROR:
-    return "VALIDATION_ERROR";
-  case InstanceStateChangeReasonCode::INSTANCE_FAILURE:
-    return "INSTANCE_FAILURE";
-  case InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE:
-    return "BOOTSTRAP_FAILURE";
-  case InstanceStateChangeReasonCode::CLUSTER_TERMINATED:
-    return "CLUSTER_TERMINATED";
-  default:
-    return "";
-  }
-}
+          return InstanceStateChangeReasonCode::NOT_SET;
+        }
 
-} // namespace InstanceStateChangeReasonCodeMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForInstanceStateChangeReasonCode(InstanceStateChangeReasonCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceStateChangeReasonCode::INTERNAL_ERROR:
+            return "INTERNAL_ERROR";
+          case InstanceStateChangeReasonCode::VALIDATION_ERROR:
+            return "VALIDATION_ERROR";
+          case InstanceStateChangeReasonCode::INSTANCE_FAILURE:
+            return "INSTANCE_FAILURE";
+          case InstanceStateChangeReasonCode::BOOTSTRAP_FAILURE:
+            return "BOOTSTRAP_FAILURE";
+          case InstanceStateChangeReasonCode::CLUSTER_TERMINATED:
+            return "CLUSTER_TERMINATED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceStateChangeReasonCodeMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

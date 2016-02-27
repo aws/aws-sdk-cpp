@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/ArtifactType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -42,162 +43,175 @@ static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLI
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace ArtifactTypeMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace ArtifactTypeMapper
+      {
 
 
-ArtifactType GetArtifactTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNKNOWN_HASH)
-  {
-     return ArtifactType::UNKNOWN;
-  }
-  else if (hashCode == SCREENSHOT_HASH)
-  {
-     return ArtifactType::SCREENSHOT;
-  }
-  else if (hashCode == DEVICE_LOG_HASH)
-  {
-     return ArtifactType::DEVICE_LOG;
-  }
-  else if (hashCode == MESSAGE_LOG_HASH)
-  {
-     return ArtifactType::MESSAGE_LOG;
-  }
-  else if (hashCode == RESULT_LOG_HASH)
-  {
-     return ArtifactType::RESULT_LOG;
-  }
-  else if (hashCode == SERVICE_LOG_HASH)
-  {
-     return ArtifactType::SERVICE_LOG;
-  }
-  else if (hashCode == WEBKIT_LOG_HASH)
-  {
-     return ArtifactType::WEBKIT_LOG;
-  }
-  else if (hashCode == INSTRUMENTATION_OUTPUT_HASH)
-  {
-     return ArtifactType::INSTRUMENTATION_OUTPUT;
-  }
-  else if (hashCode == EXERCISER_MONKEY_OUTPUT_HASH)
-  {
-     return ArtifactType::EXERCISER_MONKEY_OUTPUT;
-  }
-  else if (hashCode == CALABASH_JSON_OUTPUT_HASH)
-  {
-     return ArtifactType::CALABASH_JSON_OUTPUT;
-  }
-  else if (hashCode == CALABASH_PRETTY_OUTPUT_HASH)
-  {
-     return ArtifactType::CALABASH_PRETTY_OUTPUT;
-  }
-  else if (hashCode == CALABASH_STANDARD_OUTPUT_HASH)
-  {
-     return ArtifactType::CALABASH_STANDARD_OUTPUT;
-  }
-  else if (hashCode == CALABASH_JAVA_XML_OUTPUT_HASH)
-  {
-     return ArtifactType::CALABASH_JAVA_XML_OUTPUT;
-  }
-  else if (hashCode == AUTOMATION_OUTPUT_HASH)
-  {
-     return ArtifactType::AUTOMATION_OUTPUT;
-  }
-  else if (hashCode == APPIUM_SERVER_OUTPUT_HASH)
-  {
-     return ArtifactType::APPIUM_SERVER_OUTPUT;
-  }
-  else if (hashCode == APPIUM_JAVA_OUTPUT_HASH)
-  {
-     return ArtifactType::APPIUM_JAVA_OUTPUT;
-  }
-  else if (hashCode == APPIUM_JAVA_XML_OUTPUT_HASH)
-  {
-     return ArtifactType::APPIUM_JAVA_XML_OUTPUT;
-  }
-  else if (hashCode == APPIUM_PYTHON_OUTPUT_HASH)
-  {
-     return ArtifactType::APPIUM_PYTHON_OUTPUT;
-  }
-  else if (hashCode == APPIUM_PYTHON_XML_OUTPUT_HASH)
-  {
-     return ArtifactType::APPIUM_PYTHON_XML_OUTPUT;
-  }
-  else if (hashCode == EXPLORER_EVENT_LOG_HASH)
-  {
-     return ArtifactType::EXPLORER_EVENT_LOG;
-  }
-  else if (hashCode == EXPLORER_SUMMARY_LOG_HASH)
-  {
-     return ArtifactType::EXPLORER_SUMMARY_LOG;
-  }
-  else if (hashCode == APPLICATION_CRASH_REPORT_HASH)
-  {
-     return ArtifactType::APPLICATION_CRASH_REPORT;
-  }
-  return ArtifactType::NOT_SET;
-}
+        ArtifactType GetArtifactTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNKNOWN_HASH)
+          {
+            return ArtifactType::UNKNOWN;
+          }
+          else if (hashCode == SCREENSHOT_HASH)
+          {
+            return ArtifactType::SCREENSHOT;
+          }
+          else if (hashCode == DEVICE_LOG_HASH)
+          {
+            return ArtifactType::DEVICE_LOG;
+          }
+          else if (hashCode == MESSAGE_LOG_HASH)
+          {
+            return ArtifactType::MESSAGE_LOG;
+          }
+          else if (hashCode == RESULT_LOG_HASH)
+          {
+            return ArtifactType::RESULT_LOG;
+          }
+          else if (hashCode == SERVICE_LOG_HASH)
+          {
+            return ArtifactType::SERVICE_LOG;
+          }
+          else if (hashCode == WEBKIT_LOG_HASH)
+          {
+            return ArtifactType::WEBKIT_LOG;
+          }
+          else if (hashCode == INSTRUMENTATION_OUTPUT_HASH)
+          {
+            return ArtifactType::INSTRUMENTATION_OUTPUT;
+          }
+          else if (hashCode == EXERCISER_MONKEY_OUTPUT_HASH)
+          {
+            return ArtifactType::EXERCISER_MONKEY_OUTPUT;
+          }
+          else if (hashCode == CALABASH_JSON_OUTPUT_HASH)
+          {
+            return ArtifactType::CALABASH_JSON_OUTPUT;
+          }
+          else if (hashCode == CALABASH_PRETTY_OUTPUT_HASH)
+          {
+            return ArtifactType::CALABASH_PRETTY_OUTPUT;
+          }
+          else if (hashCode == CALABASH_STANDARD_OUTPUT_HASH)
+          {
+            return ArtifactType::CALABASH_STANDARD_OUTPUT;
+          }
+          else if (hashCode == CALABASH_JAVA_XML_OUTPUT_HASH)
+          {
+            return ArtifactType::CALABASH_JAVA_XML_OUTPUT;
+          }
+          else if (hashCode == AUTOMATION_OUTPUT_HASH)
+          {
+            return ArtifactType::AUTOMATION_OUTPUT;
+          }
+          else if (hashCode == APPIUM_SERVER_OUTPUT_HASH)
+          {
+            return ArtifactType::APPIUM_SERVER_OUTPUT;
+          }
+          else if (hashCode == APPIUM_JAVA_OUTPUT_HASH)
+          {
+            return ArtifactType::APPIUM_JAVA_OUTPUT;
+          }
+          else if (hashCode == APPIUM_JAVA_XML_OUTPUT_HASH)
+          {
+            return ArtifactType::APPIUM_JAVA_XML_OUTPUT;
+          }
+          else if (hashCode == APPIUM_PYTHON_OUTPUT_HASH)
+          {
+            return ArtifactType::APPIUM_PYTHON_OUTPUT;
+          }
+          else if (hashCode == APPIUM_PYTHON_XML_OUTPUT_HASH)
+          {
+            return ArtifactType::APPIUM_PYTHON_XML_OUTPUT;
+          }
+          else if (hashCode == EXPLORER_EVENT_LOG_HASH)
+          {
+            return ArtifactType::EXPLORER_EVENT_LOG;
+          }
+          else if (hashCode == EXPLORER_SUMMARY_LOG_HASH)
+          {
+            return ArtifactType::EXPLORER_SUMMARY_LOG;
+          }
+          else if (hashCode == APPLICATION_CRASH_REPORT_HASH)
+          {
+            return ArtifactType::APPLICATION_CRASH_REPORT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ArtifactType>(hashCode);
+          }
 
-Aws::String GetNameForArtifactType(ArtifactType enumValue)
-{
-  switch(enumValue)
-  {
-  case ArtifactType::UNKNOWN:
-    return "UNKNOWN";
-  case ArtifactType::SCREENSHOT:
-    return "SCREENSHOT";
-  case ArtifactType::DEVICE_LOG:
-    return "DEVICE_LOG";
-  case ArtifactType::MESSAGE_LOG:
-    return "MESSAGE_LOG";
-  case ArtifactType::RESULT_LOG:
-    return "RESULT_LOG";
-  case ArtifactType::SERVICE_LOG:
-    return "SERVICE_LOG";
-  case ArtifactType::WEBKIT_LOG:
-    return "WEBKIT_LOG";
-  case ArtifactType::INSTRUMENTATION_OUTPUT:
-    return "INSTRUMENTATION_OUTPUT";
-  case ArtifactType::EXERCISER_MONKEY_OUTPUT:
-    return "EXERCISER_MONKEY_OUTPUT";
-  case ArtifactType::CALABASH_JSON_OUTPUT:
-    return "CALABASH_JSON_OUTPUT";
-  case ArtifactType::CALABASH_PRETTY_OUTPUT:
-    return "CALABASH_PRETTY_OUTPUT";
-  case ArtifactType::CALABASH_STANDARD_OUTPUT:
-    return "CALABASH_STANDARD_OUTPUT";
-  case ArtifactType::CALABASH_JAVA_XML_OUTPUT:
-    return "CALABASH_JAVA_XML_OUTPUT";
-  case ArtifactType::AUTOMATION_OUTPUT:
-    return "AUTOMATION_OUTPUT";
-  case ArtifactType::APPIUM_SERVER_OUTPUT:
-    return "APPIUM_SERVER_OUTPUT";
-  case ArtifactType::APPIUM_JAVA_OUTPUT:
-    return "APPIUM_JAVA_OUTPUT";
-  case ArtifactType::APPIUM_JAVA_XML_OUTPUT:
-    return "APPIUM_JAVA_XML_OUTPUT";
-  case ArtifactType::APPIUM_PYTHON_OUTPUT:
-    return "APPIUM_PYTHON_OUTPUT";
-  case ArtifactType::APPIUM_PYTHON_XML_OUTPUT:
-    return "APPIUM_PYTHON_XML_OUTPUT";
-  case ArtifactType::EXPLORER_EVENT_LOG:
-    return "EXPLORER_EVENT_LOG";
-  case ArtifactType::EXPLORER_SUMMARY_LOG:
-    return "EXPLORER_SUMMARY_LOG";
-  case ArtifactType::APPLICATION_CRASH_REPORT:
-    return "APPLICATION_CRASH_REPORT";
-  default:
-    return "";
-  }
-}
+          return ArtifactType::NOT_SET;
+        }
 
-} // namespace ArtifactTypeMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForArtifactType(ArtifactType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ArtifactType::UNKNOWN:
+            return "UNKNOWN";
+          case ArtifactType::SCREENSHOT:
+            return "SCREENSHOT";
+          case ArtifactType::DEVICE_LOG:
+            return "DEVICE_LOG";
+          case ArtifactType::MESSAGE_LOG:
+            return "MESSAGE_LOG";
+          case ArtifactType::RESULT_LOG:
+            return "RESULT_LOG";
+          case ArtifactType::SERVICE_LOG:
+            return "SERVICE_LOG";
+          case ArtifactType::WEBKIT_LOG:
+            return "WEBKIT_LOG";
+          case ArtifactType::INSTRUMENTATION_OUTPUT:
+            return "INSTRUMENTATION_OUTPUT";
+          case ArtifactType::EXERCISER_MONKEY_OUTPUT:
+            return "EXERCISER_MONKEY_OUTPUT";
+          case ArtifactType::CALABASH_JSON_OUTPUT:
+            return "CALABASH_JSON_OUTPUT";
+          case ArtifactType::CALABASH_PRETTY_OUTPUT:
+            return "CALABASH_PRETTY_OUTPUT";
+          case ArtifactType::CALABASH_STANDARD_OUTPUT:
+            return "CALABASH_STANDARD_OUTPUT";
+          case ArtifactType::CALABASH_JAVA_XML_OUTPUT:
+            return "CALABASH_JAVA_XML_OUTPUT";
+          case ArtifactType::AUTOMATION_OUTPUT:
+            return "AUTOMATION_OUTPUT";
+          case ArtifactType::APPIUM_SERVER_OUTPUT:
+            return "APPIUM_SERVER_OUTPUT";
+          case ArtifactType::APPIUM_JAVA_OUTPUT:
+            return "APPIUM_JAVA_OUTPUT";
+          case ArtifactType::APPIUM_JAVA_XML_OUTPUT:
+            return "APPIUM_JAVA_XML_OUTPUT";
+          case ArtifactType::APPIUM_PYTHON_OUTPUT:
+            return "APPIUM_PYTHON_OUTPUT";
+          case ArtifactType::APPIUM_PYTHON_XML_OUTPUT:
+            return "APPIUM_PYTHON_XML_OUTPUT";
+          case ArtifactType::EXPLORER_EVENT_LOG:
+            return "EXPLORER_EVENT_LOG";
+          case ArtifactType::EXPLORER_SUMMARY_LOG:
+            return "EXPLORER_SUMMARY_LOG";
+          case ArtifactType::APPLICATION_CRASH_REPORT:
+            return "APPLICATION_CRASH_REPORT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ArtifactTypeMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

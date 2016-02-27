@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/ConfigurationItemStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int Deleted_HASH = HashingUtils::HashString("Deleted");
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace ConfigurationItemStatusMapper
-{
+  namespace ConfigService
+  {
+    namespace Model
+    {
+      namespace ConfigurationItemStatusMapper
+      {
 
 
-ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Ok_HASH)
-  {
-     return ConfigurationItemStatus::Ok;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return ConfigurationItemStatus::Failed;
-  }
-  else if (hashCode == Discovered_HASH)
-  {
-     return ConfigurationItemStatus::Discovered;
-  }
-  else if (hashCode == Deleted_HASH)
-  {
-     return ConfigurationItemStatus::Deleted;
-  }
-  return ConfigurationItemStatus::NOT_SET;
-}
+        ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Ok_HASH)
+          {
+            return ConfigurationItemStatus::Ok;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return ConfigurationItemStatus::Failed;
+          }
+          else if (hashCode == Discovered_HASH)
+          {
+            return ConfigurationItemStatus::Discovered;
+          }
+          else if (hashCode == Deleted_HASH)
+          {
+            return ConfigurationItemStatus::Deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ConfigurationItemStatus>(hashCode);
+          }
 
-Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ConfigurationItemStatus::Ok:
-    return "Ok";
-  case ConfigurationItemStatus::Failed:
-    return "Failed";
-  case ConfigurationItemStatus::Discovered:
-    return "Discovered";
-  case ConfigurationItemStatus::Deleted:
-    return "Deleted";
-  default:
-    return "";
-  }
-}
+          return ConfigurationItemStatus::NOT_SET;
+        }
 
-} // namespace ConfigurationItemStatusMapper
-} // namespace Model
-} // namespace ConfigService
+        Aws::String GetNameForConfigurationItemStatus(ConfigurationItemStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ConfigurationItemStatus::Ok:
+            return "Ok";
+          case ConfigurationItemStatus::Failed:
+            return "Failed";
+          case ConfigurationItemStatus::Discovered:
+            return "Discovered";
+          case ConfigurationItemStatus::Deleted:
+            return "Deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ConfigurationItemStatusMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

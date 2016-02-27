@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/LayerType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -32,102 +33,115 @@ static const int custom_HASH = HashingUtils::HashString("custom");
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace LayerTypeMapper
-{
+  namespace OpsWorks
+  {
+    namespace Model
+    {
+      namespace LayerTypeMapper
+      {
 
 
-LayerType GetLayerTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == aws_flow_ruby_HASH)
-  {
-     return LayerType::aws_flow_ruby;
-  }
-  else if (hashCode == ecs_cluster_HASH)
-  {
-     return LayerType::ecs_cluster;
-  }
-  else if (hashCode == java_app_HASH)
-  {
-     return LayerType::java_app;
-  }
-  else if (hashCode == lb_HASH)
-  {
-     return LayerType::lb;
-  }
-  else if (hashCode == web_HASH)
-  {
-     return LayerType::web;
-  }
-  else if (hashCode == php_app_HASH)
-  {
-     return LayerType::php_app;
-  }
-  else if (hashCode == rails_app_HASH)
-  {
-     return LayerType::rails_app;
-  }
-  else if (hashCode == nodejs_app_HASH)
-  {
-     return LayerType::nodejs_app;
-  }
-  else if (hashCode == memcached_HASH)
-  {
-     return LayerType::memcached;
-  }
-  else if (hashCode == db_master_HASH)
-  {
-     return LayerType::db_master;
-  }
-  else if (hashCode == monitoring_master_HASH)
-  {
-     return LayerType::monitoring_master;
-  }
-  else if (hashCode == custom_HASH)
-  {
-     return LayerType::custom;
-  }
-  return LayerType::NOT_SET;
-}
+        LayerType GetLayerTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == aws_flow_ruby_HASH)
+          {
+            return LayerType::aws_flow_ruby;
+          }
+          else if (hashCode == ecs_cluster_HASH)
+          {
+            return LayerType::ecs_cluster;
+          }
+          else if (hashCode == java_app_HASH)
+          {
+            return LayerType::java_app;
+          }
+          else if (hashCode == lb_HASH)
+          {
+            return LayerType::lb;
+          }
+          else if (hashCode == web_HASH)
+          {
+            return LayerType::web;
+          }
+          else if (hashCode == php_app_HASH)
+          {
+            return LayerType::php_app;
+          }
+          else if (hashCode == rails_app_HASH)
+          {
+            return LayerType::rails_app;
+          }
+          else if (hashCode == nodejs_app_HASH)
+          {
+            return LayerType::nodejs_app;
+          }
+          else if (hashCode == memcached_HASH)
+          {
+            return LayerType::memcached;
+          }
+          else if (hashCode == db_master_HASH)
+          {
+            return LayerType::db_master;
+          }
+          else if (hashCode == monitoring_master_HASH)
+          {
+            return LayerType::monitoring_master;
+          }
+          else if (hashCode == custom_HASH)
+          {
+            return LayerType::custom;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LayerType>(hashCode);
+          }
 
-Aws::String GetNameForLayerType(LayerType enumValue)
-{
-  switch(enumValue)
-  {
-  case LayerType::aws_flow_ruby:
-    return "aws-flow-ruby";
-  case LayerType::ecs_cluster:
-    return "ecs-cluster";
-  case LayerType::java_app:
-    return "java-app";
-  case LayerType::lb:
-    return "lb";
-  case LayerType::web:
-    return "web";
-  case LayerType::php_app:
-    return "php-app";
-  case LayerType::rails_app:
-    return "rails-app";
-  case LayerType::nodejs_app:
-    return "nodejs-app";
-  case LayerType::memcached:
-    return "memcached";
-  case LayerType::db_master:
-    return "db-master";
-  case LayerType::monitoring_master:
-    return "monitoring-master";
-  case LayerType::custom:
-    return "custom";
-  default:
-    return "";
-  }
-}
+          return LayerType::NOT_SET;
+        }
 
-} // namespace LayerTypeMapper
-} // namespace Model
-} // namespace OpsWorks
+        Aws::String GetNameForLayerType(LayerType enumValue)
+        {
+          switch(enumValue)
+          {
+          case LayerType::aws_flow_ruby:
+            return "aws-flow-ruby";
+          case LayerType::ecs_cluster:
+            return "ecs-cluster";
+          case LayerType::java_app:
+            return "java-app";
+          case LayerType::lb:
+            return "lb";
+          case LayerType::web:
+            return "web";
+          case LayerType::php_app:
+            return "php-app";
+          case LayerType::rails_app:
+            return "rails-app";
+          case LayerType::nodejs_app:
+            return "nodejs-app";
+          case LayerType::memcached:
+            return "memcached";
+          case LayerType::db_master:
+            return "db-master";
+          case LayerType::monitoring_master:
+            return "monitoring-master";
+          case LayerType::custom:
+            return "custom";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LayerTypeMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

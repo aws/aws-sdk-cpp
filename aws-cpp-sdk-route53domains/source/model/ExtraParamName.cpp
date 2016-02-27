@@ -14,6 +14,7 @@
 */
 #include <aws/route53domains/model/ExtraParamName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -40,150 +41,163 @@ static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
 
 namespace Aws
 {
-namespace Route53Domains
-{
-namespace Model
-{
-namespace ExtraParamNameMapper
-{
+  namespace Route53Domains
+  {
+    namespace Model
+    {
+      namespace ExtraParamNameMapper
+      {
 
 
-ExtraParamName GetExtraParamNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == DUNS_NUMBER_HASH)
-  {
-     return ExtraParamName::DUNS_NUMBER;
-  }
-  else if (hashCode == BRAND_NUMBER_HASH)
-  {
-     return ExtraParamName::BRAND_NUMBER;
-  }
-  else if (hashCode == BIRTH_DEPARTMENT_HASH)
-  {
-     return ExtraParamName::BIRTH_DEPARTMENT;
-  }
-  else if (hashCode == BIRTH_DATE_IN_YYYY_MM_DD_HASH)
-  {
-     return ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD;
-  }
-  else if (hashCode == BIRTH_COUNTRY_HASH)
-  {
-     return ExtraParamName::BIRTH_COUNTRY;
-  }
-  else if (hashCode == BIRTH_CITY_HASH)
-  {
-     return ExtraParamName::BIRTH_CITY;
-  }
-  else if (hashCode == DOCUMENT_NUMBER_HASH)
-  {
-     return ExtraParamName::DOCUMENT_NUMBER;
-  }
-  else if (hashCode == AU_ID_NUMBER_HASH)
-  {
-     return ExtraParamName::AU_ID_NUMBER;
-  }
-  else if (hashCode == AU_ID_TYPE_HASH)
-  {
-     return ExtraParamName::AU_ID_TYPE;
-  }
-  else if (hashCode == CA_LEGAL_TYPE_HASH)
-  {
-     return ExtraParamName::CA_LEGAL_TYPE;
-  }
-  else if (hashCode == ES_IDENTIFICATION_HASH)
-  {
-     return ExtraParamName::ES_IDENTIFICATION;
-  }
-  else if (hashCode == ES_IDENTIFICATION_TYPE_HASH)
-  {
-     return ExtraParamName::ES_IDENTIFICATION_TYPE;
-  }
-  else if (hashCode == ES_LEGAL_FORM_HASH)
-  {
-     return ExtraParamName::ES_LEGAL_FORM;
-  }
-  else if (hashCode == FI_BUSINESS_NUMBER_HASH)
-  {
-     return ExtraParamName::FI_BUSINESS_NUMBER;
-  }
-  else if (hashCode == FI_ID_NUMBER_HASH)
-  {
-     return ExtraParamName::FI_ID_NUMBER;
-  }
-  else if (hashCode == IT_PIN_HASH)
-  {
-     return ExtraParamName::IT_PIN;
-  }
-  else if (hashCode == RU_PASSPORT_DATA_HASH)
-  {
-     return ExtraParamName::RU_PASSPORT_DATA;
-  }
-  else if (hashCode == SE_ID_NUMBER_HASH)
-  {
-     return ExtraParamName::SE_ID_NUMBER;
-  }
-  else if (hashCode == SG_ID_NUMBER_HASH)
-  {
-     return ExtraParamName::SG_ID_NUMBER;
-  }
-  else if (hashCode == VAT_NUMBER_HASH)
-  {
-     return ExtraParamName::VAT_NUMBER;
-  }
-  return ExtraParamName::NOT_SET;
-}
+        ExtraParamName GetExtraParamNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == DUNS_NUMBER_HASH)
+          {
+            return ExtraParamName::DUNS_NUMBER;
+          }
+          else if (hashCode == BRAND_NUMBER_HASH)
+          {
+            return ExtraParamName::BRAND_NUMBER;
+          }
+          else if (hashCode == BIRTH_DEPARTMENT_HASH)
+          {
+            return ExtraParamName::BIRTH_DEPARTMENT;
+          }
+          else if (hashCode == BIRTH_DATE_IN_YYYY_MM_DD_HASH)
+          {
+            return ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD;
+          }
+          else if (hashCode == BIRTH_COUNTRY_HASH)
+          {
+            return ExtraParamName::BIRTH_COUNTRY;
+          }
+          else if (hashCode == BIRTH_CITY_HASH)
+          {
+            return ExtraParamName::BIRTH_CITY;
+          }
+          else if (hashCode == DOCUMENT_NUMBER_HASH)
+          {
+            return ExtraParamName::DOCUMENT_NUMBER;
+          }
+          else if (hashCode == AU_ID_NUMBER_HASH)
+          {
+            return ExtraParamName::AU_ID_NUMBER;
+          }
+          else if (hashCode == AU_ID_TYPE_HASH)
+          {
+            return ExtraParamName::AU_ID_TYPE;
+          }
+          else if (hashCode == CA_LEGAL_TYPE_HASH)
+          {
+            return ExtraParamName::CA_LEGAL_TYPE;
+          }
+          else if (hashCode == ES_IDENTIFICATION_HASH)
+          {
+            return ExtraParamName::ES_IDENTIFICATION;
+          }
+          else if (hashCode == ES_IDENTIFICATION_TYPE_HASH)
+          {
+            return ExtraParamName::ES_IDENTIFICATION_TYPE;
+          }
+          else if (hashCode == ES_LEGAL_FORM_HASH)
+          {
+            return ExtraParamName::ES_LEGAL_FORM;
+          }
+          else if (hashCode == FI_BUSINESS_NUMBER_HASH)
+          {
+            return ExtraParamName::FI_BUSINESS_NUMBER;
+          }
+          else if (hashCode == FI_ID_NUMBER_HASH)
+          {
+            return ExtraParamName::FI_ID_NUMBER;
+          }
+          else if (hashCode == IT_PIN_HASH)
+          {
+            return ExtraParamName::IT_PIN;
+          }
+          else if (hashCode == RU_PASSPORT_DATA_HASH)
+          {
+            return ExtraParamName::RU_PASSPORT_DATA;
+          }
+          else if (hashCode == SE_ID_NUMBER_HASH)
+          {
+            return ExtraParamName::SE_ID_NUMBER;
+          }
+          else if (hashCode == SG_ID_NUMBER_HASH)
+          {
+            return ExtraParamName::SG_ID_NUMBER;
+          }
+          else if (hashCode == VAT_NUMBER_HASH)
+          {
+            return ExtraParamName::VAT_NUMBER;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ExtraParamName>(hashCode);
+          }
 
-Aws::String GetNameForExtraParamName(ExtraParamName enumValue)
-{
-  switch(enumValue)
-  {
-  case ExtraParamName::DUNS_NUMBER:
-    return "DUNS_NUMBER";
-  case ExtraParamName::BRAND_NUMBER:
-    return "BRAND_NUMBER";
-  case ExtraParamName::BIRTH_DEPARTMENT:
-    return "BIRTH_DEPARTMENT";
-  case ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD:
-    return "BIRTH_DATE_IN_YYYY_MM_DD";
-  case ExtraParamName::BIRTH_COUNTRY:
-    return "BIRTH_COUNTRY";
-  case ExtraParamName::BIRTH_CITY:
-    return "BIRTH_CITY";
-  case ExtraParamName::DOCUMENT_NUMBER:
-    return "DOCUMENT_NUMBER";
-  case ExtraParamName::AU_ID_NUMBER:
-    return "AU_ID_NUMBER";
-  case ExtraParamName::AU_ID_TYPE:
-    return "AU_ID_TYPE";
-  case ExtraParamName::CA_LEGAL_TYPE:
-    return "CA_LEGAL_TYPE";
-  case ExtraParamName::ES_IDENTIFICATION:
-    return "ES_IDENTIFICATION";
-  case ExtraParamName::ES_IDENTIFICATION_TYPE:
-    return "ES_IDENTIFICATION_TYPE";
-  case ExtraParamName::ES_LEGAL_FORM:
-    return "ES_LEGAL_FORM";
-  case ExtraParamName::FI_BUSINESS_NUMBER:
-    return "FI_BUSINESS_NUMBER";
-  case ExtraParamName::FI_ID_NUMBER:
-    return "FI_ID_NUMBER";
-  case ExtraParamName::IT_PIN:
-    return "IT_PIN";
-  case ExtraParamName::RU_PASSPORT_DATA:
-    return "RU_PASSPORT_DATA";
-  case ExtraParamName::SE_ID_NUMBER:
-    return "SE_ID_NUMBER";
-  case ExtraParamName::SG_ID_NUMBER:
-    return "SG_ID_NUMBER";
-  case ExtraParamName::VAT_NUMBER:
-    return "VAT_NUMBER";
-  default:
-    return "";
-  }
-}
+          return ExtraParamName::NOT_SET;
+        }
 
-} // namespace ExtraParamNameMapper
-} // namespace Model
-} // namespace Route53Domains
+        Aws::String GetNameForExtraParamName(ExtraParamName enumValue)
+        {
+          switch(enumValue)
+          {
+          case ExtraParamName::DUNS_NUMBER:
+            return "DUNS_NUMBER";
+          case ExtraParamName::BRAND_NUMBER:
+            return "BRAND_NUMBER";
+          case ExtraParamName::BIRTH_DEPARTMENT:
+            return "BIRTH_DEPARTMENT";
+          case ExtraParamName::BIRTH_DATE_IN_YYYY_MM_DD:
+            return "BIRTH_DATE_IN_YYYY_MM_DD";
+          case ExtraParamName::BIRTH_COUNTRY:
+            return "BIRTH_COUNTRY";
+          case ExtraParamName::BIRTH_CITY:
+            return "BIRTH_CITY";
+          case ExtraParamName::DOCUMENT_NUMBER:
+            return "DOCUMENT_NUMBER";
+          case ExtraParamName::AU_ID_NUMBER:
+            return "AU_ID_NUMBER";
+          case ExtraParamName::AU_ID_TYPE:
+            return "AU_ID_TYPE";
+          case ExtraParamName::CA_LEGAL_TYPE:
+            return "CA_LEGAL_TYPE";
+          case ExtraParamName::ES_IDENTIFICATION:
+            return "ES_IDENTIFICATION";
+          case ExtraParamName::ES_IDENTIFICATION_TYPE:
+            return "ES_IDENTIFICATION_TYPE";
+          case ExtraParamName::ES_LEGAL_FORM:
+            return "ES_LEGAL_FORM";
+          case ExtraParamName::FI_BUSINESS_NUMBER:
+            return "FI_BUSINESS_NUMBER";
+          case ExtraParamName::FI_ID_NUMBER:
+            return "FI_ID_NUMBER";
+          case ExtraParamName::IT_PIN:
+            return "IT_PIN";
+          case ExtraParamName::RU_PASSPORT_DATA:
+            return "RU_PASSPORT_DATA";
+          case ExtraParamName::SE_ID_NUMBER:
+            return "SE_ID_NUMBER";
+          case ExtraParamName::SG_ID_NUMBER:
+            return "SG_ID_NUMBER";
+          case ExtraParamName::VAT_NUMBER:
+            return "VAT_NUMBER";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ExtraParamNameMapper
+    } // namespace Model
+  } // namespace Route53Domains
 } // namespace Aws

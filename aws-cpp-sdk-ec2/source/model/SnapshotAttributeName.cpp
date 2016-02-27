@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/SnapshotAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int createVolumePermission_HASH = HashingUtils::HashString("createV
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace SnapshotAttributeNameMapper
-{
-
-
-SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == productCodes_HASH)
+  namespace EC2
   {
-     return SnapshotAttributeName::productCodes;
-  }
-  else if (hashCode == createVolumePermission_HASH)
-  {
-     return SnapshotAttributeName::createVolumePermission;
-  }
-  return SnapshotAttributeName::NOT_SET;
-}
+    namespace Model
+    {
+      namespace SnapshotAttributeNameMapper
+      {
 
-Aws::String GetNameForSnapshotAttributeName(SnapshotAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case SnapshotAttributeName::productCodes:
-    return "productCodes";
-  case SnapshotAttributeName::createVolumePermission:
-    return "createVolumePermission";
-  default:
-    return "";
-  }
-}
 
-} // namespace SnapshotAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == productCodes_HASH)
+          {
+            return SnapshotAttributeName::productCodes;
+          }
+          else if (hashCode == createVolumePermission_HASH)
+          {
+            return SnapshotAttributeName::createVolumePermission;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SnapshotAttributeName>(hashCode);
+          }
+
+          return SnapshotAttributeName::NOT_SET;
+        }
+
+        Aws::String GetNameForSnapshotAttributeName(SnapshotAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case SnapshotAttributeName::productCodes:
+            return "productCodes";
+          case SnapshotAttributeName::createVolumePermission:
+            return "createVolumePermission";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SnapshotAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/Algorithm.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int sgd_HASH = HashingUtils::HashString("sgd");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace AlgorithmMapper
-{
-
-
-Algorithm GetAlgorithmForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == sgd_HASH)
+  namespace MachineLearning
   {
-     return Algorithm::sgd;
-  }
-  return Algorithm::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AlgorithmMapper
+      {
 
-Aws::String GetNameForAlgorithm(Algorithm enumValue)
-{
-  switch(enumValue)
-  {
-  case Algorithm::sgd:
-    return "sgd";
-  default:
-    return "";
-  }
-}
 
-} // namespace AlgorithmMapper
-} // namespace Model
-} // namespace MachineLearning
+        Algorithm GetAlgorithmForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == sgd_HASH)
+          {
+            return Algorithm::sgd;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Algorithm>(hashCode);
+          }
+
+          return Algorithm::NOT_SET;
+        }
+
+        Aws::String GetNameForAlgorithm(Algorithm enumValue)
+        {
+          switch(enumValue)
+          {
+          case Algorithm::sgd:
+            return "sgd";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AlgorithmMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

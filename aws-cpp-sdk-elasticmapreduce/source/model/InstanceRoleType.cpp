@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/InstanceRoleType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int TASK_HASH = HashingUtils::HashString("TASK");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace InstanceRoleTypeMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace InstanceRoleTypeMapper
+      {
 
 
-InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == MASTER_HASH)
-  {
-     return InstanceRoleType::MASTER;
-  }
-  else if (hashCode == CORE_HASH)
-  {
-     return InstanceRoleType::CORE;
-  }
-  else if (hashCode == TASK_HASH)
-  {
-     return InstanceRoleType::TASK;
-  }
-  return InstanceRoleType::NOT_SET;
-}
+        InstanceRoleType GetInstanceRoleTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == MASTER_HASH)
+          {
+            return InstanceRoleType::MASTER;
+          }
+          else if (hashCode == CORE_HASH)
+          {
+            return InstanceRoleType::CORE;
+          }
+          else if (hashCode == TASK_HASH)
+          {
+            return InstanceRoleType::TASK;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceRoleType>(hashCode);
+          }
 
-Aws::String GetNameForInstanceRoleType(InstanceRoleType enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceRoleType::MASTER:
-    return "MASTER";
-  case InstanceRoleType::CORE:
-    return "CORE";
-  case InstanceRoleType::TASK:
-    return "TASK";
-  default:
-    return "";
-  }
-}
+          return InstanceRoleType::NOT_SET;
+        }
 
-} // namespace InstanceRoleTypeMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForInstanceRoleType(InstanceRoleType enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceRoleType::MASTER:
+            return "MASTER";
+          case InstanceRoleType::CORE:
+            return "CORE";
+          case InstanceRoleType::TASK:
+            return "TASK";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceRoleTypeMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

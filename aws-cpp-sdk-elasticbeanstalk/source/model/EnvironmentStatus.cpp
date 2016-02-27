@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/EnvironmentStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int Terminated_HASH = HashingUtils::HashString("Terminated");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace EnvironmentStatusMapper
-{
+  namespace ElasticBeanstalk
+  {
+    namespace Model
+    {
+      namespace EnvironmentStatusMapper
+      {
 
 
-EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Launching_HASH)
-  {
-     return EnvironmentStatus::Launching;
-  }
-  else if (hashCode == Updating_HASH)
-  {
-     return EnvironmentStatus::Updating;
-  }
-  else if (hashCode == Ready_HASH)
-  {
-     return EnvironmentStatus::Ready;
-  }
-  else if (hashCode == Terminating_HASH)
-  {
-     return EnvironmentStatus::Terminating;
-  }
-  else if (hashCode == Terminated_HASH)
-  {
-     return EnvironmentStatus::Terminated;
-  }
-  return EnvironmentStatus::NOT_SET;
-}
+        EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Launching_HASH)
+          {
+            return EnvironmentStatus::Launching;
+          }
+          else if (hashCode == Updating_HASH)
+          {
+            return EnvironmentStatus::Updating;
+          }
+          else if (hashCode == Ready_HASH)
+          {
+            return EnvironmentStatus::Ready;
+          }
+          else if (hashCode == Terminating_HASH)
+          {
+            return EnvironmentStatus::Terminating;
+          }
+          else if (hashCode == Terminated_HASH)
+          {
+            return EnvironmentStatus::Terminated;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EnvironmentStatus>(hashCode);
+          }
 
-Aws::String GetNameForEnvironmentStatus(EnvironmentStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case EnvironmentStatus::Launching:
-    return "Launching";
-  case EnvironmentStatus::Updating:
-    return "Updating";
-  case EnvironmentStatus::Ready:
-    return "Ready";
-  case EnvironmentStatus::Terminating:
-    return "Terminating";
-  case EnvironmentStatus::Terminated:
-    return "Terminated";
-  default:
-    return "";
-  }
-}
+          return EnvironmentStatus::NOT_SET;
+        }
 
-} // namespace EnvironmentStatusMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        Aws::String GetNameForEnvironmentStatus(EnvironmentStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case EnvironmentStatus::Launching:
+            return "Launching";
+          case EnvironmentStatus::Updating:
+            return "Updating";
+          case EnvironmentStatus::Ready:
+            return "Ready";
+          case EnvironmentStatus::Terminating:
+            return "Terminating";
+          case EnvironmentStatus::Terminated:
+            return "Terminated";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EnvironmentStatusMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

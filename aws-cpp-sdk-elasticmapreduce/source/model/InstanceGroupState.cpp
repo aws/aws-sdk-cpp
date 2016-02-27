@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/InstanceGroupState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -30,90 +31,103 @@ static const int ENDED_HASH = HashingUtils::HashString("ENDED");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace InstanceGroupStateMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace InstanceGroupStateMapper
+      {
 
 
-InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PROVISIONING_HASH)
-  {
-     return InstanceGroupState::PROVISIONING;
-  }
-  else if (hashCode == BOOTSTRAPPING_HASH)
-  {
-     return InstanceGroupState::BOOTSTRAPPING;
-  }
-  else if (hashCode == RUNNING_HASH)
-  {
-     return InstanceGroupState::RUNNING;
-  }
-  else if (hashCode == RESIZING_HASH)
-  {
-     return InstanceGroupState::RESIZING;
-  }
-  else if (hashCode == SUSPENDED_HASH)
-  {
-     return InstanceGroupState::SUSPENDED;
-  }
-  else if (hashCode == TERMINATING_HASH)
-  {
-     return InstanceGroupState::TERMINATING;
-  }
-  else if (hashCode == TERMINATED_HASH)
-  {
-     return InstanceGroupState::TERMINATED;
-  }
-  else if (hashCode == ARRESTED_HASH)
-  {
-     return InstanceGroupState::ARRESTED;
-  }
-  else if (hashCode == SHUTTING_DOWN_HASH)
-  {
-     return InstanceGroupState::SHUTTING_DOWN;
-  }
-  else if (hashCode == ENDED_HASH)
-  {
-     return InstanceGroupState::ENDED;
-  }
-  return InstanceGroupState::NOT_SET;
-}
+        InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PROVISIONING_HASH)
+          {
+            return InstanceGroupState::PROVISIONING;
+          }
+          else if (hashCode == BOOTSTRAPPING_HASH)
+          {
+            return InstanceGroupState::BOOTSTRAPPING;
+          }
+          else if (hashCode == RUNNING_HASH)
+          {
+            return InstanceGroupState::RUNNING;
+          }
+          else if (hashCode == RESIZING_HASH)
+          {
+            return InstanceGroupState::RESIZING;
+          }
+          else if (hashCode == SUSPENDED_HASH)
+          {
+            return InstanceGroupState::SUSPENDED;
+          }
+          else if (hashCode == TERMINATING_HASH)
+          {
+            return InstanceGroupState::TERMINATING;
+          }
+          else if (hashCode == TERMINATED_HASH)
+          {
+            return InstanceGroupState::TERMINATED;
+          }
+          else if (hashCode == ARRESTED_HASH)
+          {
+            return InstanceGroupState::ARRESTED;
+          }
+          else if (hashCode == SHUTTING_DOWN_HASH)
+          {
+            return InstanceGroupState::SHUTTING_DOWN;
+          }
+          else if (hashCode == ENDED_HASH)
+          {
+            return InstanceGroupState::ENDED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceGroupState>(hashCode);
+          }
 
-Aws::String GetNameForInstanceGroupState(InstanceGroupState enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceGroupState::PROVISIONING:
-    return "PROVISIONING";
-  case InstanceGroupState::BOOTSTRAPPING:
-    return "BOOTSTRAPPING";
-  case InstanceGroupState::RUNNING:
-    return "RUNNING";
-  case InstanceGroupState::RESIZING:
-    return "RESIZING";
-  case InstanceGroupState::SUSPENDED:
-    return "SUSPENDED";
-  case InstanceGroupState::TERMINATING:
-    return "TERMINATING";
-  case InstanceGroupState::TERMINATED:
-    return "TERMINATED";
-  case InstanceGroupState::ARRESTED:
-    return "ARRESTED";
-  case InstanceGroupState::SHUTTING_DOWN:
-    return "SHUTTING_DOWN";
-  case InstanceGroupState::ENDED:
-    return "ENDED";
-  default:
-    return "";
-  }
-}
+          return InstanceGroupState::NOT_SET;
+        }
 
-} // namespace InstanceGroupStateMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForInstanceGroupState(InstanceGroupState enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceGroupState::PROVISIONING:
+            return "PROVISIONING";
+          case InstanceGroupState::BOOTSTRAPPING:
+            return "BOOTSTRAPPING";
+          case InstanceGroupState::RUNNING:
+            return "RUNNING";
+          case InstanceGroupState::RESIZING:
+            return "RESIZING";
+          case InstanceGroupState::SUSPENDED:
+            return "SUSPENDED";
+          case InstanceGroupState::TERMINATING:
+            return "TERMINATING";
+          case InstanceGroupState::TERMINATED:
+            return "TERMINATED";
+          case InstanceGroupState::ARRESTED:
+            return "ARRESTED";
+          case InstanceGroupState::SHUTTING_DOWN:
+            return "SHUTTING_DOWN";
+          case InstanceGroupState::ENDED:
+            return "ENDED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceGroupStateMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

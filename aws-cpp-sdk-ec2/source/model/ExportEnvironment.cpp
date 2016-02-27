@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/ExportEnvironment.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int microsoft_HASH = HashingUtils::HashString("microsoft");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ExportEnvironmentMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace ExportEnvironmentMapper
+      {
 
 
-ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == citrix_HASH)
-  {
-     return ExportEnvironment::citrix;
-  }
-  else if (hashCode == vmware_HASH)
-  {
-     return ExportEnvironment::vmware;
-  }
-  else if (hashCode == microsoft_HASH)
-  {
-     return ExportEnvironment::microsoft;
-  }
-  return ExportEnvironment::NOT_SET;
-}
+        ExportEnvironment GetExportEnvironmentForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == citrix_HASH)
+          {
+            return ExportEnvironment::citrix;
+          }
+          else if (hashCode == vmware_HASH)
+          {
+            return ExportEnvironment::vmware;
+          }
+          else if (hashCode == microsoft_HASH)
+          {
+            return ExportEnvironment::microsoft;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ExportEnvironment>(hashCode);
+          }
 
-Aws::String GetNameForExportEnvironment(ExportEnvironment enumValue)
-{
-  switch(enumValue)
-  {
-  case ExportEnvironment::citrix:
-    return "citrix";
-  case ExportEnvironment::vmware:
-    return "vmware";
-  case ExportEnvironment::microsoft:
-    return "microsoft";
-  default:
-    return "";
-  }
-}
+          return ExportEnvironment::NOT_SET;
+        }
 
-} // namespace ExportEnvironmentMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForExportEnvironment(ExportEnvironment enumValue)
+        {
+          switch(enumValue)
+          {
+          case ExportEnvironment::citrix:
+            return "citrix";
+          case ExportEnvironment::vmware:
+            return "vmware";
+          case ExportEnvironment::microsoft:
+            return "microsoft";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ExportEnvironmentMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

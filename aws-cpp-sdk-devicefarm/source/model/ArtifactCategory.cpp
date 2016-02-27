@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/ArtifactCategory.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int LOG_HASH = HashingUtils::HashString("LOG");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace ArtifactCategoryMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace ArtifactCategoryMapper
+      {
 
 
-ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SCREENSHOT_HASH)
-  {
-     return ArtifactCategory::SCREENSHOT;
-  }
-  else if (hashCode == FILE_HASH)
-  {
-     return ArtifactCategory::FILE;
-  }
-  else if (hashCode == LOG_HASH)
-  {
-     return ArtifactCategory::LOG;
-  }
-  return ArtifactCategory::NOT_SET;
-}
+        ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SCREENSHOT_HASH)
+          {
+            return ArtifactCategory::SCREENSHOT;
+          }
+          else if (hashCode == FILE_HASH)
+          {
+            return ArtifactCategory::FILE;
+          }
+          else if (hashCode == LOG_HASH)
+          {
+            return ArtifactCategory::LOG;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ArtifactCategory>(hashCode);
+          }
 
-Aws::String GetNameForArtifactCategory(ArtifactCategory enumValue)
-{
-  switch(enumValue)
-  {
-  case ArtifactCategory::SCREENSHOT:
-    return "SCREENSHOT";
-  case ArtifactCategory::FILE:
-    return "FILE";
-  case ArtifactCategory::LOG:
-    return "LOG";
-  default:
-    return "";
-  }
-}
+          return ArtifactCategory::NOT_SET;
+        }
 
-} // namespace ArtifactCategoryMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForArtifactCategory(ArtifactCategory enumValue)
+        {
+          switch(enumValue)
+          {
+          case ArtifactCategory::SCREENSHOT:
+            return "SCREENSHOT";
+          case ArtifactCategory::FILE:
+            return "FILE";
+          case ArtifactCategory::LOG:
+            return "LOG";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ArtifactCategoryMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/codepipeline/model/ActionExecutionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace CodePipeline
-{
-namespace Model
-{
-namespace ActionExecutionStatusMapper
-{
+  namespace CodePipeline
+  {
+    namespace Model
+    {
+      namespace ActionExecutionStatusMapper
+      {
 
 
-ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InProgress_HASH)
-  {
-     return ActionExecutionStatus::InProgress;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return ActionExecutionStatus::Succeeded;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return ActionExecutionStatus::Failed;
-  }
-  return ActionExecutionStatus::NOT_SET;
-}
+        ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InProgress_HASH)
+          {
+            return ActionExecutionStatus::InProgress;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return ActionExecutionStatus::Succeeded;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return ActionExecutionStatus::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActionExecutionStatus>(hashCode);
+          }
 
-Aws::String GetNameForActionExecutionStatus(ActionExecutionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ActionExecutionStatus::InProgress:
-    return "InProgress";
-  case ActionExecutionStatus::Succeeded:
-    return "Succeeded";
-  case ActionExecutionStatus::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return ActionExecutionStatus::NOT_SET;
+        }
 
-} // namespace ActionExecutionStatusMapper
-} // namespace Model
-} // namespace CodePipeline
+        Aws::String GetNameForActionExecutionStatus(ActionExecutionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActionExecutionStatus::InProgress:
+            return "InProgress";
+          case ActionExecutionStatus::Succeeded:
+            return "Succeeded";
+          case ActionExecutionStatus::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActionExecutionStatusMapper
+    } // namespace Model
+  } // namespace CodePipeline
 } // namespace Aws

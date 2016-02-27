@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/DevicePoolType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace DevicePoolTypeMapper
-{
-
-
-DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CURATED_HASH)
+  namespace DeviceFarm
   {
-     return DevicePoolType::CURATED;
-  }
-  else if (hashCode == PRIVATE__HASH)
-  {
-     return DevicePoolType::PRIVATE_;
-  }
-  return DevicePoolType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace DevicePoolTypeMapper
+      {
 
-Aws::String GetNameForDevicePoolType(DevicePoolType enumValue)
-{
-  switch(enumValue)
-  {
-  case DevicePoolType::CURATED:
-    return "CURATED";
-  case DevicePoolType::PRIVATE_:
-    return "PRIVATE";
-  default:
-    return "";
-  }
-}
 
-} // namespace DevicePoolTypeMapper
-} // namespace Model
-} // namespace DeviceFarm
+        DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CURATED_HASH)
+          {
+            return DevicePoolType::CURATED;
+          }
+          else if (hashCode == PRIVATE__HASH)
+          {
+            return DevicePoolType::PRIVATE_;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DevicePoolType>(hashCode);
+          }
+
+          return DevicePoolType::NOT_SET;
+        }
+
+        Aws::String GetNameForDevicePoolType(DevicePoolType enumValue)
+        {
+          switch(enumValue)
+          {
+          case DevicePoolType::CURATED:
+            return "CURATED";
+          case DevicePoolType::PRIVATE_:
+            return "PRIVATE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DevicePoolTypeMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

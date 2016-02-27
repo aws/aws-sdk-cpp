@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ChangeAction.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int UPSERT_HASH = HashingUtils::HashString("UPSERT");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace ChangeActionMapper
-{
+  namespace Route53
+  {
+    namespace Model
+    {
+      namespace ChangeActionMapper
+      {
 
 
-ChangeAction GetChangeActionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CREATE_HASH)
-  {
-     return ChangeAction::CREATE;
-  }
-  else if (hashCode == DELETE__HASH)
-  {
-     return ChangeAction::DELETE_;
-  }
-  else if (hashCode == UPSERT_HASH)
-  {
-     return ChangeAction::UPSERT;
-  }
-  return ChangeAction::NOT_SET;
-}
+        ChangeAction GetChangeActionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CREATE_HASH)
+          {
+            return ChangeAction::CREATE;
+          }
+          else if (hashCode == DELETE__HASH)
+          {
+            return ChangeAction::DELETE_;
+          }
+          else if (hashCode == UPSERT_HASH)
+          {
+            return ChangeAction::UPSERT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ChangeAction>(hashCode);
+          }
 
-Aws::String GetNameForChangeAction(ChangeAction enumValue)
-{
-  switch(enumValue)
-  {
-  case ChangeAction::CREATE:
-    return "CREATE";
-  case ChangeAction::DELETE_:
-    return "DELETE";
-  case ChangeAction::UPSERT:
-    return "UPSERT";
-  default:
-    return "";
-  }
-}
+          return ChangeAction::NOT_SET;
+        }
 
-} // namespace ChangeActionMapper
-} // namespace Model
-} // namespace Route53
+        Aws::String GetNameForChangeAction(ChangeAction enumValue)
+        {
+          switch(enumValue)
+          {
+          case ChangeAction::CREATE:
+            return "CREATE";
+          case ChangeAction::DELETE_:
+            return "DELETE";
+          case ChangeAction::UPSERT:
+            return "UPSERT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ChangeActionMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

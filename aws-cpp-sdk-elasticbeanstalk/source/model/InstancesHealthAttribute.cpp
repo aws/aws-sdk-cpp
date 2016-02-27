@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/InstancesHealthAttribute.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -28,78 +29,91 @@ static const int All_HASH = HashingUtils::HashString("All");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace InstancesHealthAttributeMapper
-{
+  namespace ElasticBeanstalk
+  {
+    namespace Model
+    {
+      namespace InstancesHealthAttributeMapper
+      {
 
 
-InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == HealthStatus_HASH)
-  {
-     return InstancesHealthAttribute::HealthStatus;
-  }
-  else if (hashCode == Color_HASH)
-  {
-     return InstancesHealthAttribute::Color;
-  }
-  else if (hashCode == Causes_HASH)
-  {
-     return InstancesHealthAttribute::Causes;
-  }
-  else if (hashCode == ApplicationMetrics_HASH)
-  {
-     return InstancesHealthAttribute::ApplicationMetrics;
-  }
-  else if (hashCode == RefreshedAt_HASH)
-  {
-     return InstancesHealthAttribute::RefreshedAt;
-  }
-  else if (hashCode == LaunchedAt_HASH)
-  {
-     return InstancesHealthAttribute::LaunchedAt;
-  }
-  else if (hashCode == System_HASH)
-  {
-     return InstancesHealthAttribute::System;
-  }
-  else if (hashCode == All_HASH)
-  {
-     return InstancesHealthAttribute::All;
-  }
-  return InstancesHealthAttribute::NOT_SET;
-}
+        InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == HealthStatus_HASH)
+          {
+            return InstancesHealthAttribute::HealthStatus;
+          }
+          else if (hashCode == Color_HASH)
+          {
+            return InstancesHealthAttribute::Color;
+          }
+          else if (hashCode == Causes_HASH)
+          {
+            return InstancesHealthAttribute::Causes;
+          }
+          else if (hashCode == ApplicationMetrics_HASH)
+          {
+            return InstancesHealthAttribute::ApplicationMetrics;
+          }
+          else if (hashCode == RefreshedAt_HASH)
+          {
+            return InstancesHealthAttribute::RefreshedAt;
+          }
+          else if (hashCode == LaunchedAt_HASH)
+          {
+            return InstancesHealthAttribute::LaunchedAt;
+          }
+          else if (hashCode == System_HASH)
+          {
+            return InstancesHealthAttribute::System;
+          }
+          else if (hashCode == All_HASH)
+          {
+            return InstancesHealthAttribute::All;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstancesHealthAttribute>(hashCode);
+          }
 
-Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute enumValue)
-{
-  switch(enumValue)
-  {
-  case InstancesHealthAttribute::HealthStatus:
-    return "HealthStatus";
-  case InstancesHealthAttribute::Color:
-    return "Color";
-  case InstancesHealthAttribute::Causes:
-    return "Causes";
-  case InstancesHealthAttribute::ApplicationMetrics:
-    return "ApplicationMetrics";
-  case InstancesHealthAttribute::RefreshedAt:
-    return "RefreshedAt";
-  case InstancesHealthAttribute::LaunchedAt:
-    return "LaunchedAt";
-  case InstancesHealthAttribute::System:
-    return "System";
-  case InstancesHealthAttribute::All:
-    return "All";
-  default:
-    return "";
-  }
-}
+          return InstancesHealthAttribute::NOT_SET;
+        }
 
-} // namespace InstancesHealthAttributeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstancesHealthAttribute::HealthStatus:
+            return "HealthStatus";
+          case InstancesHealthAttribute::Color:
+            return "Color";
+          case InstancesHealthAttribute::Causes:
+            return "Causes";
+          case InstancesHealthAttribute::ApplicationMetrics:
+            return "ApplicationMetrics";
+          case InstancesHealthAttribute::RefreshedAt:
+            return "RefreshedAt";
+          case InstancesHealthAttribute::LaunchedAt:
+            return "LaunchedAt";
+          case InstancesHealthAttribute::System:
+            return "System";
+          case InstancesHealthAttribute::All:
+            return "All";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstancesHealthAttributeMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

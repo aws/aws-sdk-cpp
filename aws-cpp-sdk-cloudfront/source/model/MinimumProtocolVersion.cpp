@@ -14,6 +14,7 @@
 */
 #include <aws/cloudfront/model/MinimumProtocolVersion.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
 
 namespace Aws
 {
-namespace CloudFront
-{
-namespace Model
-{
-namespace MinimumProtocolVersionMapper
-{
-
-
-MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SSLv3_HASH)
+  namespace CloudFront
   {
-     return MinimumProtocolVersion::SSLv3;
-  }
-  else if (hashCode == TLSv1_HASH)
-  {
-     return MinimumProtocolVersion::TLSv1;
-  }
-  return MinimumProtocolVersion::NOT_SET;
-}
+    namespace Model
+    {
+      namespace MinimumProtocolVersionMapper
+      {
 
-Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
-{
-  switch(enumValue)
-  {
-  case MinimumProtocolVersion::SSLv3:
-    return "SSLv3";
-  case MinimumProtocolVersion::TLSv1:
-    return "TLSv1";
-  default:
-    return "";
-  }
-}
 
-} // namespace MinimumProtocolVersionMapper
-} // namespace Model
-} // namespace CloudFront
+        MinimumProtocolVersion GetMinimumProtocolVersionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SSLv3_HASH)
+          {
+            return MinimumProtocolVersion::SSLv3;
+          }
+          else if (hashCode == TLSv1_HASH)
+          {
+            return MinimumProtocolVersion::TLSv1;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MinimumProtocolVersion>(hashCode);
+          }
+
+          return MinimumProtocolVersion::NOT_SET;
+        }
+
+        Aws::String GetNameForMinimumProtocolVersion(MinimumProtocolVersion enumValue)
+        {
+          switch(enumValue)
+          {
+          case MinimumProtocolVersion::SSLv3:
+            return "SSLv3";
+          case MinimumProtocolVersion::TLSv1:
+            return "TLSv1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MinimumProtocolVersionMapper
+    } // namespace Model
+  } // namespace CloudFront
 } // namespace Aws

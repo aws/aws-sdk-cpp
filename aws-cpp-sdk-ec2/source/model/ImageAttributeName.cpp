@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/ImageAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSuppor
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace ImageAttributeNameMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace ImageAttributeNameMapper
+      {
 
 
-ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == description_HASH)
-  {
-     return ImageAttributeName::description;
-  }
-  else if (hashCode == kernel_HASH)
-  {
-     return ImageAttributeName::kernel;
-  }
-  else if (hashCode == ramdisk_HASH)
-  {
-     return ImageAttributeName::ramdisk;
-  }
-  else if (hashCode == launchPermission_HASH)
-  {
-     return ImageAttributeName::launchPermission;
-  }
-  else if (hashCode == productCodes_HASH)
-  {
-     return ImageAttributeName::productCodes;
-  }
-  else if (hashCode == blockDeviceMapping_HASH)
-  {
-     return ImageAttributeName::blockDeviceMapping;
-  }
-  else if (hashCode == sriovNetSupport_HASH)
-  {
-     return ImageAttributeName::sriovNetSupport;
-  }
-  return ImageAttributeName::NOT_SET;
-}
+        ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == description_HASH)
+          {
+            return ImageAttributeName::description;
+          }
+          else if (hashCode == kernel_HASH)
+          {
+            return ImageAttributeName::kernel;
+          }
+          else if (hashCode == ramdisk_HASH)
+          {
+            return ImageAttributeName::ramdisk;
+          }
+          else if (hashCode == launchPermission_HASH)
+          {
+            return ImageAttributeName::launchPermission;
+          }
+          else if (hashCode == productCodes_HASH)
+          {
+            return ImageAttributeName::productCodes;
+          }
+          else if (hashCode == blockDeviceMapping_HASH)
+          {
+            return ImageAttributeName::blockDeviceMapping;
+          }
+          else if (hashCode == sriovNetSupport_HASH)
+          {
+            return ImageAttributeName::sriovNetSupport;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ImageAttributeName>(hashCode);
+          }
 
-Aws::String GetNameForImageAttributeName(ImageAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case ImageAttributeName::description:
-    return "description";
-  case ImageAttributeName::kernel:
-    return "kernel";
-  case ImageAttributeName::ramdisk:
-    return "ramdisk";
-  case ImageAttributeName::launchPermission:
-    return "launchPermission";
-  case ImageAttributeName::productCodes:
-    return "productCodes";
-  case ImageAttributeName::blockDeviceMapping:
-    return "blockDeviceMapping";
-  case ImageAttributeName::sriovNetSupport:
-    return "sriovNetSupport";
-  default:
-    return "";
-  }
-}
+          return ImageAttributeName::NOT_SET;
+        }
 
-} // namespace ImageAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForImageAttributeName(ImageAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case ImageAttributeName::description:
+            return "description";
+          case ImageAttributeName::kernel:
+            return "kernel";
+          case ImageAttributeName::ramdisk:
+            return "ramdisk";
+          case ImageAttributeName::launchPermission:
+            return "launchPermission";
+          case ImageAttributeName::productCodes:
+            return "productCodes";
+          case ImageAttributeName::blockDeviceMapping:
+            return "blockDeviceMapping";
+          case ImageAttributeName::sriovNetSupport:
+            return "sriovNetSupport";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ImageAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

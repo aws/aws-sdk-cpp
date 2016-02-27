@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/DeviceFormFactor.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int TABLET_HASH = HashingUtils::HashString("TABLET");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace DeviceFormFactorMapper
-{
-
-
-DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PHONE_HASH)
+  namespace DeviceFarm
   {
-     return DeviceFormFactor::PHONE;
-  }
-  else if (hashCode == TABLET_HASH)
-  {
-     return DeviceFormFactor::TABLET;
-  }
-  return DeviceFormFactor::NOT_SET;
-}
+    namespace Model
+    {
+      namespace DeviceFormFactorMapper
+      {
 
-Aws::String GetNameForDeviceFormFactor(DeviceFormFactor enumValue)
-{
-  switch(enumValue)
-  {
-  case DeviceFormFactor::PHONE:
-    return "PHONE";
-  case DeviceFormFactor::TABLET:
-    return "TABLET";
-  default:
-    return "";
-  }
-}
 
-} // namespace DeviceFormFactorMapper
-} // namespace Model
-} // namespace DeviceFarm
+        DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PHONE_HASH)
+          {
+            return DeviceFormFactor::PHONE;
+          }
+          else if (hashCode == TABLET_HASH)
+          {
+            return DeviceFormFactor::TABLET;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeviceFormFactor>(hashCode);
+          }
+
+          return DeviceFormFactor::NOT_SET;
+        }
+
+        Aws::String GetNameForDeviceFormFactor(DeviceFormFactor enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeviceFormFactor::PHONE:
+            return "PHONE";
+          case DeviceFormFactor::TABLET:
+            return "TABLET";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeviceFormFactorMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

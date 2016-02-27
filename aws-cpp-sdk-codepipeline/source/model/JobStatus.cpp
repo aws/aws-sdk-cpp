@@ -14,6 +14,7 @@
 */
 #include <aws/codepipeline/model/JobStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace CodePipeline
-{
-namespace Model
-{
-namespace JobStatusMapper
-{
+  namespace CodePipeline
+  {
+    namespace Model
+    {
+      namespace JobStatusMapper
+      {
 
 
-JobStatus GetJobStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Created_HASH)
-  {
-     return JobStatus::Created;
-  }
-  else if (hashCode == Queued_HASH)
-  {
-     return JobStatus::Queued;
-  }
-  else if (hashCode == Dispatched_HASH)
-  {
-     return JobStatus::Dispatched;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return JobStatus::InProgress;
-  }
-  else if (hashCode == TimedOut_HASH)
-  {
-     return JobStatus::TimedOut;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return JobStatus::Succeeded;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return JobStatus::Failed;
-  }
-  return JobStatus::NOT_SET;
-}
+        JobStatus GetJobStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Created_HASH)
+          {
+            return JobStatus::Created;
+          }
+          else if (hashCode == Queued_HASH)
+          {
+            return JobStatus::Queued;
+          }
+          else if (hashCode == Dispatched_HASH)
+          {
+            return JobStatus::Dispatched;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return JobStatus::InProgress;
+          }
+          else if (hashCode == TimedOut_HASH)
+          {
+            return JobStatus::TimedOut;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return JobStatus::Succeeded;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return JobStatus::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<JobStatus>(hashCode);
+          }
 
-Aws::String GetNameForJobStatus(JobStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case JobStatus::Created:
-    return "Created";
-  case JobStatus::Queued:
-    return "Queued";
-  case JobStatus::Dispatched:
-    return "Dispatched";
-  case JobStatus::InProgress:
-    return "InProgress";
-  case JobStatus::TimedOut:
-    return "TimedOut";
-  case JobStatus::Succeeded:
-    return "Succeeded";
-  case JobStatus::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return JobStatus::NOT_SET;
+        }
 
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace CodePipeline
+        Aws::String GetNameForJobStatus(JobStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case JobStatus::Created:
+            return "Created";
+          case JobStatus::Queued:
+            return "Queued";
+          case JobStatus::Dispatched:
+            return "Dispatched";
+          case JobStatus::InProgress:
+            return "InProgress";
+          case JobStatus::TimedOut:
+            return "TimedOut";
+          case JobStatus::Succeeded:
+            return "Succeeded";
+          case JobStatus::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace JobStatusMapper
+    } // namespace Model
+  } // namespace CodePipeline
 } // namespace Aws

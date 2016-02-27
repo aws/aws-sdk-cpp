@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/EnvironmentInfoType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int bundle_HASH = HashingUtils::HashString("bundle");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace EnvironmentInfoTypeMapper
-{
-
-
-EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == tail_HASH)
+  namespace ElasticBeanstalk
   {
-     return EnvironmentInfoType::tail;
-  }
-  else if (hashCode == bundle_HASH)
-  {
-     return EnvironmentInfoType::bundle;
-  }
-  return EnvironmentInfoType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace EnvironmentInfoTypeMapper
+      {
 
-Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType enumValue)
-{
-  switch(enumValue)
-  {
-  case EnvironmentInfoType::tail:
-    return "tail";
-  case EnvironmentInfoType::bundle:
-    return "bundle";
-  default:
-    return "";
-  }
-}
 
-} // namespace EnvironmentInfoTypeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == tail_HASH)
+          {
+            return EnvironmentInfoType::tail;
+          }
+          else if (hashCode == bundle_HASH)
+          {
+            return EnvironmentInfoType::bundle;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EnvironmentInfoType>(hashCode);
+          }
+
+          return EnvironmentInfoType::NOT_SET;
+        }
+
+        Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType enumValue)
+        {
+          switch(enumValue)
+          {
+          case EnvironmentInfoType::tail:
+            return "tail";
+          case EnvironmentInfoType::bundle:
+            return "bundle";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EnvironmentInfoTypeMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

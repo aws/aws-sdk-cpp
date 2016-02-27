@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/RegistrationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace RegistrationStatusMapper
-{
-
-
-RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == REGISTERED_HASH)
+  namespace SWF
   {
-     return RegistrationStatus::REGISTERED;
-  }
-  else if (hashCode == DEPRECATED_HASH)
-  {
-     return RegistrationStatus::DEPRECATED;
-  }
-  return RegistrationStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RegistrationStatusMapper
+      {
 
-Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case RegistrationStatus::REGISTERED:
-    return "REGISTERED";
-  case RegistrationStatus::DEPRECATED:
-    return "DEPRECATED";
-  default:
-    return "";
-  }
-}
 
-} // namespace RegistrationStatusMapper
-} // namespace Model
-} // namespace SWF
+        RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == REGISTERED_HASH)
+          {
+            return RegistrationStatus::REGISTERED;
+          }
+          else if (hashCode == DEPRECATED_HASH)
+          {
+            return RegistrationStatus::DEPRECATED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RegistrationStatus>(hashCode);
+          }
+
+          return RegistrationStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case RegistrationStatus::REGISTERED:
+            return "REGISTERED";
+          case RegistrationStatus::DEPRECATED:
+            return "DEPRECATED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RegistrationStatusMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

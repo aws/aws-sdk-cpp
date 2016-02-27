@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/InstanceStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace InstanceStatusMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace InstanceStatusMapper
+      {
 
 
-InstanceStatus GetInstanceStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
-  {
-     return InstanceStatus::Pending;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return InstanceStatus::InProgress;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return InstanceStatus::Succeeded;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return InstanceStatus::Failed;
-  }
-  else if (hashCode == Skipped_HASH)
-  {
-     return InstanceStatus::Skipped;
-  }
-  else if (hashCode == Unknown_HASH)
-  {
-     return InstanceStatus::Unknown;
-  }
-  return InstanceStatus::NOT_SET;
-}
+        InstanceStatus GetInstanceStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return InstanceStatus::Pending;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return InstanceStatus::InProgress;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return InstanceStatus::Succeeded;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return InstanceStatus::Failed;
+          }
+          else if (hashCode == Skipped_HASH)
+          {
+            return InstanceStatus::Skipped;
+          }
+          else if (hashCode == Unknown_HASH)
+          {
+            return InstanceStatus::Unknown;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceStatus>(hashCode);
+          }
 
-Aws::String GetNameForInstanceStatus(InstanceStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceStatus::Pending:
-    return "Pending";
-  case InstanceStatus::InProgress:
-    return "InProgress";
-  case InstanceStatus::Succeeded:
-    return "Succeeded";
-  case InstanceStatus::Failed:
-    return "Failed";
-  case InstanceStatus::Skipped:
-    return "Skipped";
-  case InstanceStatus::Unknown:
-    return "Unknown";
-  default:
-    return "";
-  }
-}
+          return InstanceStatus::NOT_SET;
+        }
 
-} // namespace InstanceStatusMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForInstanceStatus(InstanceStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceStatus::Pending:
+            return "Pending";
+          case InstanceStatus::InProgress:
+            return "InProgress";
+          case InstanceStatus::Succeeded:
+            return "Succeeded";
+          case InstanceStatus::Failed:
+            return "Failed";
+          case InstanceStatus::Skipped:
+            return "Skipped";
+          case InstanceStatus::Unknown:
+            return "Unknown";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceStatusMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

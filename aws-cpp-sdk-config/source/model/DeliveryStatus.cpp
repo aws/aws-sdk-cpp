@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/DeliveryStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Not_Applicable_HASH = HashingUtils::HashString("Not_Applicable"
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace DeliveryStatusMapper
-{
+  namespace ConfigService
+  {
+    namespace Model
+    {
+      namespace DeliveryStatusMapper
+      {
 
 
-DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Success_HASH)
-  {
-     return DeliveryStatus::Success;
-  }
-  else if (hashCode == Failure_HASH)
-  {
-     return DeliveryStatus::Failure;
-  }
-  else if (hashCode == Not_Applicable_HASH)
-  {
-     return DeliveryStatus::Not_Applicable;
-  }
-  return DeliveryStatus::NOT_SET;
-}
+        DeliveryStatus GetDeliveryStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Success_HASH)
+          {
+            return DeliveryStatus::Success;
+          }
+          else if (hashCode == Failure_HASH)
+          {
+            return DeliveryStatus::Failure;
+          }
+          else if (hashCode == Not_Applicable_HASH)
+          {
+            return DeliveryStatus::Not_Applicable;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeliveryStatus>(hashCode);
+          }
 
-Aws::String GetNameForDeliveryStatus(DeliveryStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case DeliveryStatus::Success:
-    return "Success";
-  case DeliveryStatus::Failure:
-    return "Failure";
-  case DeliveryStatus::Not_Applicable:
-    return "Not_Applicable";
-  default:
-    return "";
-  }
-}
+          return DeliveryStatus::NOT_SET;
+        }
 
-} // namespace DeliveryStatusMapper
-} // namespace Model
-} // namespace ConfigService
+        Aws::String GetNameForDeliveryStatus(DeliveryStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeliveryStatus::Success:
+            return "Success";
+          case DeliveryStatus::Failure:
+            return "Failure";
+          case DeliveryStatus::Not_Applicable:
+            return "Not_Applicable";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeliveryStatusMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

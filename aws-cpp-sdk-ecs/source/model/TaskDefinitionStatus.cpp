@@ -14,6 +14,7 @@
 */
 #include <aws/ecs/model/TaskDefinitionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 
 namespace Aws
 {
-namespace ECS
-{
-namespace Model
-{
-namespace TaskDefinitionStatusMapper
-{
-
-
-TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVE_HASH)
+  namespace ECS
   {
-     return TaskDefinitionStatus::ACTIVE;
-  }
-  else if (hashCode == INACTIVE_HASH)
-  {
-     return TaskDefinitionStatus::INACTIVE;
-  }
-  return TaskDefinitionStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace TaskDefinitionStatusMapper
+      {
 
-Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case TaskDefinitionStatus::ACTIVE:
-    return "ACTIVE";
-  case TaskDefinitionStatus::INACTIVE:
-    return "INACTIVE";
-  default:
-    return "";
-  }
-}
 
-} // namespace TaskDefinitionStatusMapper
-} // namespace Model
-} // namespace ECS
+        TaskDefinitionStatus GetTaskDefinitionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVE_HASH)
+          {
+            return TaskDefinitionStatus::ACTIVE;
+          }
+          else if (hashCode == INACTIVE_HASH)
+          {
+            return TaskDefinitionStatus::INACTIVE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TaskDefinitionStatus>(hashCode);
+          }
+
+          return TaskDefinitionStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForTaskDefinitionStatus(TaskDefinitionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case TaskDefinitionStatus::ACTIVE:
+            return "ACTIVE";
+          case TaskDefinitionStatus::INACTIVE:
+            return "INACTIVE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TaskDefinitionStatusMapper
+    } // namespace Model
+  } // namespace ECS
 } // namespace Aws

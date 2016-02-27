@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/StatusType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace StatusTypeMapper
-{
-
-
-StatusType GetStatusTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Active_HASH)
+  namespace IAM
   {
-     return StatusType::Active;
-  }
-  else if (hashCode == Inactive_HASH)
-  {
-     return StatusType::Inactive;
-  }
-  return StatusType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace StatusTypeMapper
+      {
 
-Aws::String GetNameForStatusType(StatusType enumValue)
-{
-  switch(enumValue)
-  {
-  case StatusType::Active:
-    return "Active";
-  case StatusType::Inactive:
-    return "Inactive";
-  default:
-    return "";
-  }
-}
 
-} // namespace StatusTypeMapper
-} // namespace Model
-} // namespace IAM
+        StatusType GetStatusTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Active_HASH)
+          {
+            return StatusType::Active;
+          }
+          else if (hashCode == Inactive_HASH)
+          {
+            return StatusType::Inactive;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StatusType>(hashCode);
+          }
+
+          return StatusType::NOT_SET;
+        }
+
+        Aws::String GetNameForStatusType(StatusType enumValue)
+        {
+          switch(enumValue)
+          {
+          case StatusType::Active:
+            return "Active";
+          case StatusType::Inactive:
+            return "Inactive";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StatusTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/cognito-sync/model/Platform.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int ADM_HASH = HashingUtils::HashString("ADM");
 
 namespace Aws
 {
-namespace CognitoSync
-{
-namespace Model
-{
-namespace PlatformMapper
-{
+  namespace CognitoSync
+  {
+    namespace Model
+    {
+      namespace PlatformMapper
+      {
 
 
-Platform GetPlatformForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == APNS_HASH)
-  {
-     return Platform::APNS;
-  }
-  else if (hashCode == APNS_SANDBOX_HASH)
-  {
-     return Platform::APNS_SANDBOX;
-  }
-  else if (hashCode == GCM_HASH)
-  {
-     return Platform::GCM;
-  }
-  else if (hashCode == ADM_HASH)
-  {
-     return Platform::ADM;
-  }
-  return Platform::NOT_SET;
-}
+        Platform GetPlatformForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == APNS_HASH)
+          {
+            return Platform::APNS;
+          }
+          else if (hashCode == APNS_SANDBOX_HASH)
+          {
+            return Platform::APNS_SANDBOX;
+          }
+          else if (hashCode == GCM_HASH)
+          {
+            return Platform::GCM;
+          }
+          else if (hashCode == ADM_HASH)
+          {
+            return Platform::ADM;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Platform>(hashCode);
+          }
 
-Aws::String GetNameForPlatform(Platform enumValue)
-{
-  switch(enumValue)
-  {
-  case Platform::APNS:
-    return "APNS";
-  case Platform::APNS_SANDBOX:
-    return "APNS_SANDBOX";
-  case Platform::GCM:
-    return "GCM";
-  case Platform::ADM:
-    return "ADM";
-  default:
-    return "";
-  }
-}
+          return Platform::NOT_SET;
+        }
 
-} // namespace PlatformMapper
-} // namespace Model
-} // namespace CognitoSync
+        Aws::String GetNameForPlatform(Platform enumValue)
+        {
+          switch(enumValue)
+          {
+          case Platform::APNS:
+            return "APNS";
+          case Platform::APNS_SANDBOX:
+            return "APNS_SANDBOX";
+          case Platform::GCM:
+            return "GCM";
+          case Platform::ADM:
+            return "ADM";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlatformMapper
+    } // namespace Model
+  } // namespace CognitoSync
 } // namespace Aws

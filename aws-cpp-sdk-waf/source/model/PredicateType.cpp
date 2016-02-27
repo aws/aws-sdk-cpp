@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/PredicateType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint"
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace PredicateTypeMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace PredicateTypeMapper
+      {
 
 
-PredicateType GetPredicateTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == IPMatch_HASH)
-  {
-     return PredicateType::IPMatch;
-  }
-  else if (hashCode == ByteMatch_HASH)
-  {
-     return PredicateType::ByteMatch;
-  }
-  else if (hashCode == SqlInjectionMatch_HASH)
-  {
-     return PredicateType::SqlInjectionMatch;
-  }
-  else if (hashCode == SizeConstraint_HASH)
-  {
-     return PredicateType::SizeConstraint;
-  }
-  return PredicateType::NOT_SET;
-}
+        PredicateType GetPredicateTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == IPMatch_HASH)
+          {
+            return PredicateType::IPMatch;
+          }
+          else if (hashCode == ByteMatch_HASH)
+          {
+            return PredicateType::ByteMatch;
+          }
+          else if (hashCode == SqlInjectionMatch_HASH)
+          {
+            return PredicateType::SqlInjectionMatch;
+          }
+          else if (hashCode == SizeConstraint_HASH)
+          {
+            return PredicateType::SizeConstraint;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PredicateType>(hashCode);
+          }
 
-Aws::String GetNameForPredicateType(PredicateType enumValue)
-{
-  switch(enumValue)
-  {
-  case PredicateType::IPMatch:
-    return "IPMatch";
-  case PredicateType::ByteMatch:
-    return "ByteMatch";
-  case PredicateType::SqlInjectionMatch:
-    return "SqlInjectionMatch";
-  case PredicateType::SizeConstraint:
-    return "SizeConstraint";
-  default:
-    return "";
-  }
-}
+          return PredicateType::NOT_SET;
+        }
 
-} // namespace PredicateTypeMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForPredicateType(PredicateType enumValue)
+        {
+          switch(enumValue)
+          {
+          case PredicateType::IPMatch:
+            return "IPMatch";
+          case PredicateType::ByteMatch:
+            return "ByteMatch";
+          case PredicateType::SqlInjectionMatch:
+            return "SqlInjectionMatch";
+          case PredicateType::SizeConstraint:
+            return "SizeConstraint";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PredicateTypeMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -28,78 +29,91 @@ static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 namespace Aws
 {
-namespace DirectConnect
-{
-namespace Model
-{
-namespace ConnectionStateMapper
-{
+  namespace DirectConnect
+  {
+    namespace Model
+    {
+      namespace ConnectionStateMapper
+      {
 
 
-ConnectionState GetConnectionStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ordering_HASH)
-  {
-     return ConnectionState::ordering;
-  }
-  else if (hashCode == requested_HASH)
-  {
-     return ConnectionState::requested;
-  }
-  else if (hashCode == pending_HASH)
-  {
-     return ConnectionState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return ConnectionState::available;
-  }
-  else if (hashCode == down_HASH)
-  {
-     return ConnectionState::down;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return ConnectionState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return ConnectionState::deleted;
-  }
-  else if (hashCode == rejected_HASH)
-  {
-     return ConnectionState::rejected;
-  }
-  return ConnectionState::NOT_SET;
-}
+        ConnectionState GetConnectionStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ordering_HASH)
+          {
+            return ConnectionState::ordering;
+          }
+          else if (hashCode == requested_HASH)
+          {
+            return ConnectionState::requested;
+          }
+          else if (hashCode == pending_HASH)
+          {
+            return ConnectionState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return ConnectionState::available;
+          }
+          else if (hashCode == down_HASH)
+          {
+            return ConnectionState::down;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return ConnectionState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return ConnectionState::deleted;
+          }
+          else if (hashCode == rejected_HASH)
+          {
+            return ConnectionState::rejected;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ConnectionState>(hashCode);
+          }
 
-Aws::String GetNameForConnectionState(ConnectionState enumValue)
-{
-  switch(enumValue)
-  {
-  case ConnectionState::ordering:
-    return "ordering";
-  case ConnectionState::requested:
-    return "requested";
-  case ConnectionState::pending:
-    return "pending";
-  case ConnectionState::available:
-    return "available";
-  case ConnectionState::down:
-    return "down";
-  case ConnectionState::deleting:
-    return "deleting";
-  case ConnectionState::deleted:
-    return "deleted";
-  case ConnectionState::rejected:
-    return "rejected";
-  default:
-    return "";
-  }
-}
+          return ConnectionState::NOT_SET;
+        }
 
-} // namespace ConnectionStateMapper
-} // namespace Model
-} // namespace DirectConnect
+        Aws::String GetNameForConnectionState(ConnectionState enumValue)
+        {
+          switch(enumValue)
+          {
+          case ConnectionState::ordering:
+            return "ordering";
+          case ConnectionState::requested:
+            return "requested";
+          case ConnectionState::pending:
+            return "pending";
+          case ConnectionState::available:
+            return "available";
+          case ConnectionState::down:
+            return "down";
+          case ConnectionState::deleting:
+            return "deleting";
+          case ConnectionState::deleted:
+            return "deleted";
+          case ConnectionState::rejected:
+            return "rejected";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ConnectionStateMapper
+    } // namespace Model
+  } // namespace DirectConnect
 } // namespace Aws

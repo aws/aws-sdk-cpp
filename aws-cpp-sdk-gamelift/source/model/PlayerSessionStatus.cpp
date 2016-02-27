@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/PlayerSessionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int TIMEDOUT_HASH = HashingUtils::HashString("TIMEDOUT");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace PlayerSessionStatusMapper
-{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace PlayerSessionStatusMapper
+      {
 
 
-PlayerSessionStatus GetPlayerSessionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == RESERVED_HASH)
-  {
-     return PlayerSessionStatus::RESERVED;
-  }
-  else if (hashCode == ACTIVE_HASH)
-  {
-     return PlayerSessionStatus::ACTIVE;
-  }
-  else if (hashCode == COMPLETED_HASH)
-  {
-     return PlayerSessionStatus::COMPLETED;
-  }
-  else if (hashCode == TIMEDOUT_HASH)
-  {
-     return PlayerSessionStatus::TIMEDOUT;
-  }
-  return PlayerSessionStatus::NOT_SET;
-}
+        PlayerSessionStatus GetPlayerSessionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == RESERVED_HASH)
+          {
+            return PlayerSessionStatus::RESERVED;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return PlayerSessionStatus::ACTIVE;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return PlayerSessionStatus::COMPLETED;
+          }
+          else if (hashCode == TIMEDOUT_HASH)
+          {
+            return PlayerSessionStatus::TIMEDOUT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PlayerSessionStatus>(hashCode);
+          }
 
-Aws::String GetNameForPlayerSessionStatus(PlayerSessionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case PlayerSessionStatus::RESERVED:
-    return "RESERVED";
-  case PlayerSessionStatus::ACTIVE:
-    return "ACTIVE";
-  case PlayerSessionStatus::COMPLETED:
-    return "COMPLETED";
-  case PlayerSessionStatus::TIMEDOUT:
-    return "TIMEDOUT";
-  default:
-    return "";
-  }
-}
+          return PlayerSessionStatus::NOT_SET;
+        }
 
-} // namespace PlayerSessionStatusMapper
-} // namespace Model
-} // namespace GameLift
+        Aws::String GetNameForPlayerSessionStatus(PlayerSessionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case PlayerSessionStatus::RESERVED:
+            return "RESERVED";
+          case PlayerSessionStatus::ACTIVE:
+            return "ACTIVE";
+          case PlayerSessionStatus::COMPLETED:
+            return "COMPLETED";
+          case PlayerSessionStatus::TIMEDOUT:
+            return "TIMEDOUT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlayerSessionStatusMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

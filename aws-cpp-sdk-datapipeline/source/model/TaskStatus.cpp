@@ -14,6 +14,7 @@
 */
 #include <aws/datapipeline/model/TaskStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int FALSE_HASH = HashingUtils::HashString("FALSE");
 
 namespace Aws
 {
-namespace DataPipeline
-{
-namespace Model
-{
-namespace TaskStatusMapper
-{
+  namespace DataPipeline
+  {
+    namespace Model
+    {
+      namespace TaskStatusMapper
+      {
 
 
-TaskStatus GetTaskStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == FINISHED_HASH)
-  {
-     return TaskStatus::FINISHED;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return TaskStatus::FAILED;
-  }
-  else if (hashCode == FALSE_HASH)
-  {
-     return TaskStatus::FALSE;
-  }
-  return TaskStatus::NOT_SET;
-}
+        TaskStatus GetTaskStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == FINISHED_HASH)
+          {
+            return TaskStatus::FINISHED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return TaskStatus::FAILED;
+          }
+          else if (hashCode == FALSE_HASH)
+          {
+            return TaskStatus::FALSE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TaskStatus>(hashCode);
+          }
 
-Aws::String GetNameForTaskStatus(TaskStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case TaskStatus::FINISHED:
-    return "FINISHED";
-  case TaskStatus::FAILED:
-    return "FAILED";
-  case TaskStatus::FALSE:
-    return "FALSE";
-  default:
-    return "";
-  }
-}
+          return TaskStatus::NOT_SET;
+        }
 
-} // namespace TaskStatusMapper
-} // namespace Model
-} // namespace DataPipeline
+        Aws::String GetNameForTaskStatus(TaskStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case TaskStatus::FINISHED:
+            return "FINISHED";
+          case TaskStatus::FAILED:
+            return "FAILED";
+          case TaskStatus::FALSE:
+            return "FALSE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TaskStatusMapper
+    } // namespace Model
+  } // namespace DataPipeline
 } // namespace Aws

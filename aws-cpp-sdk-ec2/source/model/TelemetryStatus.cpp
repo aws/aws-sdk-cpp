@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/TelemetryStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DOWN_HASH = HashingUtils::HashString("DOWN");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace TelemetryStatusMapper
-{
-
-
-TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UP_HASH)
+  namespace EC2
   {
-     return TelemetryStatus::UP;
-  }
-  else if (hashCode == DOWN_HASH)
-  {
-     return TelemetryStatus::DOWN;
-  }
-  return TelemetryStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace TelemetryStatusMapper
+      {
 
-Aws::String GetNameForTelemetryStatus(TelemetryStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case TelemetryStatus::UP:
-    return "UP";
-  case TelemetryStatus::DOWN:
-    return "DOWN";
-  default:
-    return "";
-  }
-}
 
-} // namespace TelemetryStatusMapper
-} // namespace Model
-} // namespace EC2
+        TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UP_HASH)
+          {
+            return TelemetryStatus::UP;
+          }
+          else if (hashCode == DOWN_HASH)
+          {
+            return TelemetryStatus::DOWN;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TelemetryStatus>(hashCode);
+          }
+
+          return TelemetryStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForTelemetryStatus(TelemetryStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case TelemetryStatus::UP:
+            return "UP";
+          case TelemetryStatus::DOWN:
+            return "DOWN";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TelemetryStatusMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

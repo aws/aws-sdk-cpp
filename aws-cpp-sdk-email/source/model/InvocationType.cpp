@@ -14,6 +14,7 @@
 */
 #include <aws/email/model/InvocationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int RequestResponse_HASH = HashingUtils::HashString("RequestRespons
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace InvocationTypeMapper
-{
-
-
-InvocationType GetInvocationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Event_HASH)
+  namespace SES
   {
-     return InvocationType::Event;
-  }
-  else if (hashCode == RequestResponse_HASH)
-  {
-     return InvocationType::RequestResponse;
-  }
-  return InvocationType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace InvocationTypeMapper
+      {
 
-Aws::String GetNameForInvocationType(InvocationType enumValue)
-{
-  switch(enumValue)
-  {
-  case InvocationType::Event:
-    return "Event";
-  case InvocationType::RequestResponse:
-    return "RequestResponse";
-  default:
-    return "";
-  }
-}
 
-} // namespace InvocationTypeMapper
-} // namespace Model
-} // namespace SES
+        InvocationType GetInvocationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Event_HASH)
+          {
+            return InvocationType::Event;
+          }
+          else if (hashCode == RequestResponse_HASH)
+          {
+            return InvocationType::RequestResponse;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InvocationType>(hashCode);
+          }
+
+          return InvocationType::NOT_SET;
+        }
+
+        Aws::String GetNameForInvocationType(InvocationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case InvocationType::Event:
+            return "Event";
+          case InvocationType::RequestResponse:
+            return "RequestResponse";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InvocationTypeMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

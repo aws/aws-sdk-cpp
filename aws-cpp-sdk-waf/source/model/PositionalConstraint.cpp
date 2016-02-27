@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/PositionalConstraint.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int CONTAINS_WORD_HASH = HashingUtils::HashString("CONTAINS_WORD");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace PositionalConstraintMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace PositionalConstraintMapper
+      {
 
 
-PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == EXACTLY_HASH)
-  {
-     return PositionalConstraint::EXACTLY;
-  }
-  else if (hashCode == STARTS_WITH_HASH)
-  {
-     return PositionalConstraint::STARTS_WITH;
-  }
-  else if (hashCode == ENDS_WITH_HASH)
-  {
-     return PositionalConstraint::ENDS_WITH;
-  }
-  else if (hashCode == CONTAINS_HASH)
-  {
-     return PositionalConstraint::CONTAINS;
-  }
-  else if (hashCode == CONTAINS_WORD_HASH)
-  {
-     return PositionalConstraint::CONTAINS_WORD;
-  }
-  return PositionalConstraint::NOT_SET;
-}
+        PositionalConstraint GetPositionalConstraintForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EXACTLY_HASH)
+          {
+            return PositionalConstraint::EXACTLY;
+          }
+          else if (hashCode == STARTS_WITH_HASH)
+          {
+            return PositionalConstraint::STARTS_WITH;
+          }
+          else if (hashCode == ENDS_WITH_HASH)
+          {
+            return PositionalConstraint::ENDS_WITH;
+          }
+          else if (hashCode == CONTAINS_HASH)
+          {
+            return PositionalConstraint::CONTAINS;
+          }
+          else if (hashCode == CONTAINS_WORD_HASH)
+          {
+            return PositionalConstraint::CONTAINS_WORD;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PositionalConstraint>(hashCode);
+          }
 
-Aws::String GetNameForPositionalConstraint(PositionalConstraint enumValue)
-{
-  switch(enumValue)
-  {
-  case PositionalConstraint::EXACTLY:
-    return "EXACTLY";
-  case PositionalConstraint::STARTS_WITH:
-    return "STARTS_WITH";
-  case PositionalConstraint::ENDS_WITH:
-    return "ENDS_WITH";
-  case PositionalConstraint::CONTAINS:
-    return "CONTAINS";
-  case PositionalConstraint::CONTAINS_WORD:
-    return "CONTAINS_WORD";
-  default:
-    return "";
-  }
-}
+          return PositionalConstraint::NOT_SET;
+        }
 
-} // namespace PositionalConstraintMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForPositionalConstraint(PositionalConstraint enumValue)
+        {
+          switch(enumValue)
+          {
+          case PositionalConstraint::EXACTLY:
+            return "EXACTLY";
+          case PositionalConstraint::STARTS_WITH:
+            return "STARTS_WITH";
+          case PositionalConstraint::ENDS_WITH:
+            return "ENDS_WITH";
+          case PositionalConstraint::CONTAINS:
+            return "CONTAINS";
+          case PositionalConstraint::CONTAINS_WORD:
+            return "CONTAINS_WORD";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PositionalConstraintMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ResourceRecordSetFailover.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace ResourceRecordSetFailoverMapper
-{
-
-
-ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PRIMARY_HASH)
+  namespace Route53
   {
-     return ResourceRecordSetFailover::PRIMARY;
-  }
-  else if (hashCode == SECONDARY_HASH)
-  {
-     return ResourceRecordSetFailover::SECONDARY;
-  }
-  return ResourceRecordSetFailover::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ResourceRecordSetFailoverMapper
+      {
 
-Aws::String GetNameForResourceRecordSetFailover(ResourceRecordSetFailover enumValue)
-{
-  switch(enumValue)
-  {
-  case ResourceRecordSetFailover::PRIMARY:
-    return "PRIMARY";
-  case ResourceRecordSetFailover::SECONDARY:
-    return "SECONDARY";
-  default:
-    return "";
-  }
-}
 
-} // namespace ResourceRecordSetFailoverMapper
-} // namespace Model
-} // namespace Route53
+        ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PRIMARY_HASH)
+          {
+            return ResourceRecordSetFailover::PRIMARY;
+          }
+          else if (hashCode == SECONDARY_HASH)
+          {
+            return ResourceRecordSetFailover::SECONDARY;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ResourceRecordSetFailover>(hashCode);
+          }
+
+          return ResourceRecordSetFailover::NOT_SET;
+        }
+
+        Aws::String GetNameForResourceRecordSetFailover(ResourceRecordSetFailover enumValue)
+        {
+          switch(enumValue)
+          {
+          case ResourceRecordSetFailover::PRIMARY:
+            return "PRIMARY";
+          case ResourceRecordSetFailover::SECONDARY:
+            return "SECONDARY";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ResourceRecordSetFailoverMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

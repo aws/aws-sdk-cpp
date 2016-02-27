@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/PolicyEvaluationDecisionType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int implicitDeny_HASH = HashingUtils::HashString("implicitDeny");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace PolicyEvaluationDecisionTypeMapper
-{
+  namespace IAM
+  {
+    namespace Model
+    {
+      namespace PolicyEvaluationDecisionTypeMapper
+      {
 
 
-PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == allowed_HASH)
-  {
-     return PolicyEvaluationDecisionType::allowed;
-  }
-  else if (hashCode == explicitDeny_HASH)
-  {
-     return PolicyEvaluationDecisionType::explicitDeny;
-  }
-  else if (hashCode == implicitDeny_HASH)
-  {
-     return PolicyEvaluationDecisionType::implicitDeny;
-  }
-  return PolicyEvaluationDecisionType::NOT_SET;
-}
+        PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == allowed_HASH)
+          {
+            return PolicyEvaluationDecisionType::allowed;
+          }
+          else if (hashCode == explicitDeny_HASH)
+          {
+            return PolicyEvaluationDecisionType::explicitDeny;
+          }
+          else if (hashCode == implicitDeny_HASH)
+          {
+            return PolicyEvaluationDecisionType::implicitDeny;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PolicyEvaluationDecisionType>(hashCode);
+          }
 
-Aws::String GetNameForPolicyEvaluationDecisionType(PolicyEvaluationDecisionType enumValue)
-{
-  switch(enumValue)
-  {
-  case PolicyEvaluationDecisionType::allowed:
-    return "allowed";
-  case PolicyEvaluationDecisionType::explicitDeny:
-    return "explicitDeny";
-  case PolicyEvaluationDecisionType::implicitDeny:
-    return "implicitDeny";
-  default:
-    return "";
-  }
-}
+          return PolicyEvaluationDecisionType::NOT_SET;
+        }
 
-} // namespace PolicyEvaluationDecisionTypeMapper
-} // namespace Model
-} // namespace IAM
+        Aws::String GetNameForPolicyEvaluationDecisionType(PolicyEvaluationDecisionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case PolicyEvaluationDecisionType::allowed:
+            return "allowed";
+          case PolicyEvaluationDecisionType::explicitDeny:
+            return "explicitDeny";
+          case PolicyEvaluationDecisionType::implicitDeny:
+            return "implicitDeny";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PolicyEvaluationDecisionTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

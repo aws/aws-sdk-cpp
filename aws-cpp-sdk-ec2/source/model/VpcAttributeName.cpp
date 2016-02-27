@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VpcAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int enableDnsHostnames_HASH = HashingUtils::HashString("enableDnsHo
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VpcAttributeNameMapper
-{
-
-
-VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == enableDnsSupport_HASH)
+  namespace EC2
   {
-     return VpcAttributeName::enableDnsSupport;
-  }
-  else if (hashCode == enableDnsHostnames_HASH)
-  {
-     return VpcAttributeName::enableDnsHostnames;
-  }
-  return VpcAttributeName::NOT_SET;
-}
+    namespace Model
+    {
+      namespace VpcAttributeNameMapper
+      {
 
-Aws::String GetNameForVpcAttributeName(VpcAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case VpcAttributeName::enableDnsSupport:
-    return "enableDnsSupport";
-  case VpcAttributeName::enableDnsHostnames:
-    return "enableDnsHostnames";
-  default:
-    return "";
-  }
-}
 
-} // namespace VpcAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == enableDnsSupport_HASH)
+          {
+            return VpcAttributeName::enableDnsSupport;
+          }
+          else if (hashCode == enableDnsHostnames_HASH)
+          {
+            return VpcAttributeName::enableDnsHostnames;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VpcAttributeName>(hashCode);
+          }
+
+          return VpcAttributeName::NOT_SET;
+        }
+
+        Aws::String GetNameForVpcAttributeName(VpcAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case VpcAttributeName::enableDnsSupport:
+            return "enableDnsSupport";
+          case VpcAttributeName::enableDnsHostnames:
+            return "enableDnsHostnames";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VpcAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

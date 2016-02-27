@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/ObjectVersionStorageClass.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace ObjectVersionStorageClassMapper
-{
-
-
-ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == STANDARD_HASH)
+  namespace S3
   {
-     return ObjectVersionStorageClass::STANDARD;
-  }
-  return ObjectVersionStorageClass::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ObjectVersionStorageClassMapper
+      {
 
-Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass enumValue)
-{
-  switch(enumValue)
-  {
-  case ObjectVersionStorageClass::STANDARD:
-    return "STANDARD";
-  default:
-    return "";
-  }
-}
 
-} // namespace ObjectVersionStorageClassMapper
-} // namespace Model
-} // namespace S3
+        ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == STANDARD_HASH)
+          {
+            return ObjectVersionStorageClass::STANDARD;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ObjectVersionStorageClass>(hashCode);
+          }
+
+          return ObjectVersionStorageClass::NOT_SET;
+        }
+
+        Aws::String GetNameForObjectVersionStorageClass(ObjectVersionStorageClass enumValue)
+        {
+          switch(enumValue)
+          {
+          case ObjectVersionStorageClass::STANDARD:
+            return "STANDARD";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ObjectVersionStorageClassMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

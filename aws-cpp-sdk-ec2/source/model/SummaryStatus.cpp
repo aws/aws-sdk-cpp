@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/SummaryStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int initializing_HASH = HashingUtils::HashString("initializing");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace SummaryStatusMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace SummaryStatusMapper
+      {
 
 
-SummaryStatus GetSummaryStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ok_HASH)
-  {
-     return SummaryStatus::ok;
-  }
-  else if (hashCode == impaired_HASH)
-  {
-     return SummaryStatus::impaired;
-  }
-  else if (hashCode == insufficient_data_HASH)
-  {
-     return SummaryStatus::insufficient_data;
-  }
-  else if (hashCode == not_applicable_HASH)
-  {
-     return SummaryStatus::not_applicable;
-  }
-  else if (hashCode == initializing_HASH)
-  {
-     return SummaryStatus::initializing;
-  }
-  return SummaryStatus::NOT_SET;
-}
+        SummaryStatus GetSummaryStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ok_HASH)
+          {
+            return SummaryStatus::ok;
+          }
+          else if (hashCode == impaired_HASH)
+          {
+            return SummaryStatus::impaired;
+          }
+          else if (hashCode == insufficient_data_HASH)
+          {
+            return SummaryStatus::insufficient_data;
+          }
+          else if (hashCode == not_applicable_HASH)
+          {
+            return SummaryStatus::not_applicable;
+          }
+          else if (hashCode == initializing_HASH)
+          {
+            return SummaryStatus::initializing;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SummaryStatus>(hashCode);
+          }
 
-Aws::String GetNameForSummaryStatus(SummaryStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case SummaryStatus::ok:
-    return "ok";
-  case SummaryStatus::impaired:
-    return "impaired";
-  case SummaryStatus::insufficient_data:
-    return "insufficient-data";
-  case SummaryStatus::not_applicable:
-    return "not-applicable";
-  case SummaryStatus::initializing:
-    return "initializing";
-  default:
-    return "";
-  }
-}
+          return SummaryStatus::NOT_SET;
+        }
 
-} // namespace SummaryStatusMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForSummaryStatus(SummaryStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case SummaryStatus::ok:
+            return "ok";
+          case SummaryStatus::impaired:
+            return "impaired";
+          case SummaryStatus::insufficient_data:
+            return "insufficient-data";
+          case SummaryStatus::not_applicable:
+            return "not-applicable";
+          case SummaryStatus::initializing:
+            return "initializing";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SummaryStatusMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

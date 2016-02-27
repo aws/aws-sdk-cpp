@@ -14,6 +14,7 @@
 */
 #include <aws/opsworks/model/StackAttributesKeys.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int Color_HASH = HashingUtils::HashString("Color");
 
 namespace Aws
 {
-namespace OpsWorks
-{
-namespace Model
-{
-namespace StackAttributesKeysMapper
-{
-
-
-StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Color_HASH)
+  namespace OpsWorks
   {
-     return StackAttributesKeys::Color;
-  }
-  return StackAttributesKeys::NOT_SET;
-}
+    namespace Model
+    {
+      namespace StackAttributesKeysMapper
+      {
 
-Aws::String GetNameForStackAttributesKeys(StackAttributesKeys enumValue)
-{
-  switch(enumValue)
-  {
-  case StackAttributesKeys::Color:
-    return "Color";
-  default:
-    return "";
-  }
-}
 
-} // namespace StackAttributesKeysMapper
-} // namespace Model
-} // namespace OpsWorks
+        StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Color_HASH)
+          {
+            return StackAttributesKeys::Color;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StackAttributesKeys>(hashCode);
+          }
+
+          return StackAttributesKeys::NOT_SET;
+        }
+
+        Aws::String GetNameForStackAttributesKeys(StackAttributesKeys enumValue)
+        {
+          switch(enumValue)
+          {
+          case StackAttributesKeys::Color:
+            return "Color";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StackAttributesKeysMapper
+    } // namespace Model
+  } // namespace OpsWorks
 } // namespace Aws

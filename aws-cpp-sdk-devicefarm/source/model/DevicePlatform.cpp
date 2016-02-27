@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int IOS_HASH = HashingUtils::HashString("IOS");
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace DevicePlatformMapper
-{
-
-
-DevicePlatform GetDevicePlatformForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ANDROID_HASH)
+  namespace DeviceFarm
   {
-     return DevicePlatform::ANDROID;
-  }
-  else if (hashCode == IOS_HASH)
-  {
-     return DevicePlatform::IOS;
-  }
-  return DevicePlatform::NOT_SET;
-}
+    namespace Model
+    {
+      namespace DevicePlatformMapper
+      {
 
-Aws::String GetNameForDevicePlatform(DevicePlatform enumValue)
-{
-  switch(enumValue)
-  {
-  case DevicePlatform::ANDROID:
-    return "ANDROID";
-  case DevicePlatform::IOS:
-    return "IOS";
-  default:
-    return "";
-  }
-}
 
-} // namespace DevicePlatformMapper
-} // namespace Model
-} // namespace DeviceFarm
+        DevicePlatform GetDevicePlatformForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ANDROID_HASH)
+          {
+            return DevicePlatform::ANDROID;
+          }
+          else if (hashCode == IOS_HASH)
+          {
+            return DevicePlatform::IOS;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DevicePlatform>(hashCode);
+          }
+
+          return DevicePlatform::NOT_SET;
+        }
+
+        Aws::String GetNameForDevicePlatform(DevicePlatform enumValue)
+        {
+          switch(enumValue)
+          {
+          case DevicePlatform::ANDROID:
+            return "ANDROID";
+          case DevicePlatform::IOS:
+            return "IOS";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DevicePlatformMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

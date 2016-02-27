@@ -14,6 +14,7 @@
 */
 #include <aws/importexport/model/JobType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Export_HASH = HashingUtils::HashString("Export");
 
 namespace Aws
 {
-namespace ImportExport
-{
-namespace Model
-{
-namespace JobTypeMapper
-{
-
-
-JobType GetJobTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Import_HASH)
+  namespace ImportExport
   {
-     return JobType::Import;
-  }
-  else if (hashCode == Export_HASH)
-  {
-     return JobType::Export;
-  }
-  return JobType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace JobTypeMapper
+      {
 
-Aws::String GetNameForJobType(JobType enumValue)
-{
-  switch(enumValue)
-  {
-  case JobType::Import:
-    return "Import";
-  case JobType::Export:
-    return "Export";
-  default:
-    return "";
-  }
-}
 
-} // namespace JobTypeMapper
-} // namespace Model
-} // namespace ImportExport
+        JobType GetJobTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Import_HASH)
+          {
+            return JobType::Import;
+          }
+          else if (hashCode == Export_HASH)
+          {
+            return JobType::Export;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<JobType>(hashCode);
+          }
+
+          return JobType::NOT_SET;
+        }
+
+        Aws::String GetNameForJobType(JobType enumValue)
+        {
+          switch(enumValue)
+          {
+          case JobType::Import:
+            return "Import";
+          case JobType::Export:
+            return "Export";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace JobTypeMapper
+    } // namespace Model
+  } // namespace ImportExport
 } // namespace Aws

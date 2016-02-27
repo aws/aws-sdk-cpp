@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/DocumentFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace DocumentFilterKeyMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace DocumentFilterKeyMapper
+      {
 
 
-DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Name_HASH)
-  {
-     return DocumentFilterKey::Name;
-  }
-  else if (hashCode == Owner_HASH)
-  {
-     return DocumentFilterKey::Owner;
-  }
-  else if (hashCode == PlatformTypes_HASH)
-  {
-     return DocumentFilterKey::PlatformTypes;
-  }
-  return DocumentFilterKey::NOT_SET;
-}
+        DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Name_HASH)
+          {
+            return DocumentFilterKey::Name;
+          }
+          else if (hashCode == Owner_HASH)
+          {
+            return DocumentFilterKey::Owner;
+          }
+          else if (hashCode == PlatformTypes_HASH)
+          {
+            return DocumentFilterKey::PlatformTypes;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DocumentFilterKey>(hashCode);
+          }
 
-Aws::String GetNameForDocumentFilterKey(DocumentFilterKey enumValue)
-{
-  switch(enumValue)
-  {
-  case DocumentFilterKey::Name:
-    return "Name";
-  case DocumentFilterKey::Owner:
-    return "Owner";
-  case DocumentFilterKey::PlatformTypes:
-    return "PlatformTypes";
-  default:
-    return "";
-  }
-}
+          return DocumentFilterKey::NOT_SET;
+        }
 
-} // namespace DocumentFilterKeyMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForDocumentFilterKey(DocumentFilterKey enumValue)
+        {
+          switch(enumValue)
+          {
+          case DocumentFilterKey::Name:
+            return "Name";
+          case DocumentFilterKey::Owner:
+            return "Owner";
+          case DocumentFilterKey::PlatformTypes:
+            return "PlatformTypes";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DocumentFilterKeyMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

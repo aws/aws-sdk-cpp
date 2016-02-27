@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AllocationState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int released_permanent_failure_HASH = HashingUtils::HashString("rel
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AllocationStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace AllocationStateMapper
+      {
 
 
-AllocationState GetAllocationStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == available_HASH)
-  {
-     return AllocationState::available;
-  }
-  else if (hashCode == under_assessment_HASH)
-  {
-     return AllocationState::under_assessment;
-  }
-  else if (hashCode == permanent_failure_HASH)
-  {
-     return AllocationState::permanent_failure;
-  }
-  else if (hashCode == released_HASH)
-  {
-     return AllocationState::released;
-  }
-  else if (hashCode == released_permanent_failure_HASH)
-  {
-     return AllocationState::released_permanent_failure;
-  }
-  return AllocationState::NOT_SET;
-}
+        AllocationState GetAllocationStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == available_HASH)
+          {
+            return AllocationState::available;
+          }
+          else if (hashCode == under_assessment_HASH)
+          {
+            return AllocationState::under_assessment;
+          }
+          else if (hashCode == permanent_failure_HASH)
+          {
+            return AllocationState::permanent_failure;
+          }
+          else if (hashCode == released_HASH)
+          {
+            return AllocationState::released;
+          }
+          else if (hashCode == released_permanent_failure_HASH)
+          {
+            return AllocationState::released_permanent_failure;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AllocationState>(hashCode);
+          }
 
-Aws::String GetNameForAllocationState(AllocationState enumValue)
-{
-  switch(enumValue)
-  {
-  case AllocationState::available:
-    return "available";
-  case AllocationState::under_assessment:
-    return "under-assessment";
-  case AllocationState::permanent_failure:
-    return "permanent-failure";
-  case AllocationState::released:
-    return "released";
-  case AllocationState::released_permanent_failure:
-    return "released-permanent-failure";
-  default:
-    return "";
-  }
-}
+          return AllocationState::NOT_SET;
+        }
 
-} // namespace AllocationStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForAllocationState(AllocationState enumValue)
+        {
+          switch(enumValue)
+          {
+          case AllocationState::available:
+            return "available";
+          case AllocationState::under_assessment:
+            return "under-assessment";
+          case AllocationState::permanent_failure:
+            return "permanent-failure";
+          case AllocationState::released:
+            return "released";
+          case AllocationState::released_permanent_failure:
+            return "released-permanent-failure";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AllocationStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/AssociationFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Name_HASH = HashingUtils::HashString("Name");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace AssociationFilterKeyMapper
-{
-
-
-AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InstanceId_HASH)
+  namespace SSM
   {
-     return AssociationFilterKey::InstanceId;
-  }
-  else if (hashCode == Name_HASH)
-  {
-     return AssociationFilterKey::Name;
-  }
-  return AssociationFilterKey::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AssociationFilterKeyMapper
+      {
 
-Aws::String GetNameForAssociationFilterKey(AssociationFilterKey enumValue)
-{
-  switch(enumValue)
-  {
-  case AssociationFilterKey::InstanceId:
-    return "InstanceId";
-  case AssociationFilterKey::Name:
-    return "Name";
-  default:
-    return "";
-  }
-}
 
-} // namespace AssociationFilterKeyMapper
-} // namespace Model
-} // namespace SSM
+        AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InstanceId_HASH)
+          {
+            return AssociationFilterKey::InstanceId;
+          }
+          else if (hashCode == Name_HASH)
+          {
+            return AssociationFilterKey::Name;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AssociationFilterKey>(hashCode);
+          }
+
+          return AssociationFilterKey::NOT_SET;
+        }
+
+        Aws::String GetNameForAssociationFilterKey(AssociationFilterKey enumValue)
+        {
+          switch(enumValue)
+          {
+          case AssociationFilterKey::InstanceId:
+            return "InstanceId";
+          case AssociationFilterKey::Name:
+            return "Name";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AssociationFilterKeyMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/DetailsAttributes.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Algorithm_HASH = HashingUtils::HashString("Algorithm");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace DetailsAttributesMapper
-{
-
-
-DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PredictiveModelType_HASH)
+  namespace MachineLearning
   {
-     return DetailsAttributes::PredictiveModelType;
-  }
-  else if (hashCode == Algorithm_HASH)
-  {
-     return DetailsAttributes::Algorithm;
-  }
-  return DetailsAttributes::NOT_SET;
-}
+    namespace Model
+    {
+      namespace DetailsAttributesMapper
+      {
 
-Aws::String GetNameForDetailsAttributes(DetailsAttributes enumValue)
-{
-  switch(enumValue)
-  {
-  case DetailsAttributes::PredictiveModelType:
-    return "PredictiveModelType";
-  case DetailsAttributes::Algorithm:
-    return "Algorithm";
-  default:
-    return "";
-  }
-}
 
-} // namespace DetailsAttributesMapper
-} // namespace Model
-} // namespace MachineLearning
+        DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PredictiveModelType_HASH)
+          {
+            return DetailsAttributes::PredictiveModelType;
+          }
+          else if (hashCode == Algorithm_HASH)
+          {
+            return DetailsAttributes::Algorithm;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DetailsAttributes>(hashCode);
+          }
+
+          return DetailsAttributes::NOT_SET;
+        }
+
+        Aws::String GetNameForDetailsAttributes(DetailsAttributes enumValue)
+        {
+          switch(enumValue)
+          {
+          case DetailsAttributes::PredictiveModelType:
+            return "PredictiveModelType";
+          case DetailsAttributes::Algorithm:
+            return "Algorithm";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DetailsAttributesMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

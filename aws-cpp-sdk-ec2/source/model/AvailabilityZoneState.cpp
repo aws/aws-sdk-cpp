@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AvailabilityZoneState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AvailabilityZoneStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace AvailabilityZoneStateMapper
+      {
 
 
-AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == available_HASH)
-  {
-     return AvailabilityZoneState::available;
-  }
-  else if (hashCode == information_HASH)
-  {
-     return AvailabilityZoneState::information;
-  }
-  else if (hashCode == impaired_HASH)
-  {
-     return AvailabilityZoneState::impaired;
-  }
-  else if (hashCode == unavailable_HASH)
-  {
-     return AvailabilityZoneState::unavailable;
-  }
-  return AvailabilityZoneState::NOT_SET;
-}
+        AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == available_HASH)
+          {
+            return AvailabilityZoneState::available;
+          }
+          else if (hashCode == information_HASH)
+          {
+            return AvailabilityZoneState::information;
+          }
+          else if (hashCode == impaired_HASH)
+          {
+            return AvailabilityZoneState::impaired;
+          }
+          else if (hashCode == unavailable_HASH)
+          {
+            return AvailabilityZoneState::unavailable;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AvailabilityZoneState>(hashCode);
+          }
 
-Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState enumValue)
-{
-  switch(enumValue)
-  {
-  case AvailabilityZoneState::available:
-    return "available";
-  case AvailabilityZoneState::information:
-    return "information";
-  case AvailabilityZoneState::impaired:
-    return "impaired";
-  case AvailabilityZoneState::unavailable:
-    return "unavailable";
-  default:
-    return "";
-  }
-}
+          return AvailabilityZoneState::NOT_SET;
+        }
 
-} // namespace AvailabilityZoneStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForAvailabilityZoneState(AvailabilityZoneState enumValue)
+        {
+          switch(enumValue)
+          {
+          case AvailabilityZoneState::available:
+            return "available";
+          case AvailabilityZoneState::information:
+            return "information";
+          case AvailabilityZoneState::impaired:
+            return "impaired";
+          case AvailabilityZoneState::unavailable:
+            return "unavailable";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AvailabilityZoneStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

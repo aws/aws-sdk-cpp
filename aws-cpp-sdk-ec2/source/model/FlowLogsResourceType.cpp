@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/FlowLogsResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterf
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace FlowLogsResourceTypeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace FlowLogsResourceTypeMapper
+      {
 
 
-FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == VPC_HASH)
-  {
-     return FlowLogsResourceType::VPC;
-  }
-  else if (hashCode == Subnet_HASH)
-  {
-     return FlowLogsResourceType::Subnet;
-  }
-  else if (hashCode == NetworkInterface_HASH)
-  {
-     return FlowLogsResourceType::NetworkInterface;
-  }
-  return FlowLogsResourceType::NOT_SET;
-}
+        FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == VPC_HASH)
+          {
+            return FlowLogsResourceType::VPC;
+          }
+          else if (hashCode == Subnet_HASH)
+          {
+            return FlowLogsResourceType::Subnet;
+          }
+          else if (hashCode == NetworkInterface_HASH)
+          {
+            return FlowLogsResourceType::NetworkInterface;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<FlowLogsResourceType>(hashCode);
+          }
 
-Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue)
-{
-  switch(enumValue)
-  {
-  case FlowLogsResourceType::VPC:
-    return "VPC";
-  case FlowLogsResourceType::Subnet:
-    return "Subnet";
-  case FlowLogsResourceType::NetworkInterface:
-    return "NetworkInterface";
-  default:
-    return "";
-  }
-}
+          return FlowLogsResourceType::NOT_SET;
+        }
 
-} // namespace FlowLogsResourceTypeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case FlowLogsResourceType::VPC:
+            return "VPC";
+          case FlowLogsResourceType::Subnet:
+            return "Subnet";
+          case FlowLogsResourceType::NetworkInterface:
+            return "NetworkInterface";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace FlowLogsResourceTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

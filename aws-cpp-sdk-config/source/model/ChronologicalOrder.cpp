@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/ChronologicalOrder.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Forward_HASH = HashingUtils::HashString("Forward");
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace ChronologicalOrderMapper
-{
-
-
-ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Reverse_HASH)
+  namespace ConfigService
   {
-     return ChronologicalOrder::Reverse;
-  }
-  else if (hashCode == Forward_HASH)
-  {
-     return ChronologicalOrder::Forward;
-  }
-  return ChronologicalOrder::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ChronologicalOrderMapper
+      {
 
-Aws::String GetNameForChronologicalOrder(ChronologicalOrder enumValue)
-{
-  switch(enumValue)
-  {
-  case ChronologicalOrder::Reverse:
-    return "Reverse";
-  case ChronologicalOrder::Forward:
-    return "Forward";
-  default:
-    return "";
-  }
-}
 
-} // namespace ChronologicalOrderMapper
-} // namespace Model
-} // namespace ConfigService
+        ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Reverse_HASH)
+          {
+            return ChronologicalOrder::Reverse;
+          }
+          else if (hashCode == Forward_HASH)
+          {
+            return ChronologicalOrder::Forward;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ChronologicalOrder>(hashCode);
+          }
+
+          return ChronologicalOrder::NOT_SET;
+        }
+
+        Aws::String GetNameForChronologicalOrder(ChronologicalOrder enumValue)
+        {
+          switch(enumValue)
+          {
+          case ChronologicalOrder::Reverse:
+            return "Reverse";
+          case ChronologicalOrder::Forward:
+            return "Forward";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ChronologicalOrderMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

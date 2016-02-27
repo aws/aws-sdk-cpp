@@ -14,6 +14,7 @@
 */
 #include <aws/sqs/model/QueueAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
 
 namespace Aws
 {
-namespace SQS
-{
-namespace Model
-{
-namespace QueueAttributeNameMapper
-{
+  namespace SQS
+  {
+    namespace Model
+    {
+      namespace QueueAttributeNameMapper
+      {
 
 
-QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Policy_HASH)
-  {
-     return QueueAttributeName::Policy;
-  }
-  else if (hashCode == VisibilityTimeout_HASH)
-  {
-     return QueueAttributeName::VisibilityTimeout;
-  }
-  else if (hashCode == MaximumMessageSize_HASH)
-  {
-     return QueueAttributeName::MaximumMessageSize;
-  }
-  else if (hashCode == MessageRetentionPeriod_HASH)
-  {
-     return QueueAttributeName::MessageRetentionPeriod;
-  }
-  else if (hashCode == ApproximateNumberOfMessages_HASH)
-  {
-     return QueueAttributeName::ApproximateNumberOfMessages;
-  }
-  else if (hashCode == ApproximateNumberOfMessagesNotVisible_HASH)
-  {
-     return QueueAttributeName::ApproximateNumberOfMessagesNotVisible;
-  }
-  else if (hashCode == CreatedTimestamp_HASH)
-  {
-     return QueueAttributeName::CreatedTimestamp;
-  }
-  else if (hashCode == LastModifiedTimestamp_HASH)
-  {
-     return QueueAttributeName::LastModifiedTimestamp;
-  }
-  else if (hashCode == QueueArn_HASH)
-  {
-     return QueueAttributeName::QueueArn;
-  }
-  else if (hashCode == ApproximateNumberOfMessagesDelayed_HASH)
-  {
-     return QueueAttributeName::ApproximateNumberOfMessagesDelayed;
-  }
-  else if (hashCode == DelaySeconds_HASH)
-  {
-     return QueueAttributeName::DelaySeconds;
-  }
-  else if (hashCode == ReceiveMessageWaitTimeSeconds_HASH)
-  {
-     return QueueAttributeName::ReceiveMessageWaitTimeSeconds;
-  }
-  else if (hashCode == RedrivePolicy_HASH)
-  {
-     return QueueAttributeName::RedrivePolicy;
-  }
-  return QueueAttributeName::NOT_SET;
-}
+        QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Policy_HASH)
+          {
+            return QueueAttributeName::Policy;
+          }
+          else if (hashCode == VisibilityTimeout_HASH)
+          {
+            return QueueAttributeName::VisibilityTimeout;
+          }
+          else if (hashCode == MaximumMessageSize_HASH)
+          {
+            return QueueAttributeName::MaximumMessageSize;
+          }
+          else if (hashCode == MessageRetentionPeriod_HASH)
+          {
+            return QueueAttributeName::MessageRetentionPeriod;
+          }
+          else if (hashCode == ApproximateNumberOfMessages_HASH)
+          {
+            return QueueAttributeName::ApproximateNumberOfMessages;
+          }
+          else if (hashCode == ApproximateNumberOfMessagesNotVisible_HASH)
+          {
+            return QueueAttributeName::ApproximateNumberOfMessagesNotVisible;
+          }
+          else if (hashCode == CreatedTimestamp_HASH)
+          {
+            return QueueAttributeName::CreatedTimestamp;
+          }
+          else if (hashCode == LastModifiedTimestamp_HASH)
+          {
+            return QueueAttributeName::LastModifiedTimestamp;
+          }
+          else if (hashCode == QueueArn_HASH)
+          {
+            return QueueAttributeName::QueueArn;
+          }
+          else if (hashCode == ApproximateNumberOfMessagesDelayed_HASH)
+          {
+            return QueueAttributeName::ApproximateNumberOfMessagesDelayed;
+          }
+          else if (hashCode == DelaySeconds_HASH)
+          {
+            return QueueAttributeName::DelaySeconds;
+          }
+          else if (hashCode == ReceiveMessageWaitTimeSeconds_HASH)
+          {
+            return QueueAttributeName::ReceiveMessageWaitTimeSeconds;
+          }
+          else if (hashCode == RedrivePolicy_HASH)
+          {
+            return QueueAttributeName::RedrivePolicy;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<QueueAttributeName>(hashCode);
+          }
 
-Aws::String GetNameForQueueAttributeName(QueueAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case QueueAttributeName::Policy:
-    return "Policy";
-  case QueueAttributeName::VisibilityTimeout:
-    return "VisibilityTimeout";
-  case QueueAttributeName::MaximumMessageSize:
-    return "MaximumMessageSize";
-  case QueueAttributeName::MessageRetentionPeriod:
-    return "MessageRetentionPeriod";
-  case QueueAttributeName::ApproximateNumberOfMessages:
-    return "ApproximateNumberOfMessages";
-  case QueueAttributeName::ApproximateNumberOfMessagesNotVisible:
-    return "ApproximateNumberOfMessagesNotVisible";
-  case QueueAttributeName::CreatedTimestamp:
-    return "CreatedTimestamp";
-  case QueueAttributeName::LastModifiedTimestamp:
-    return "LastModifiedTimestamp";
-  case QueueAttributeName::QueueArn:
-    return "QueueArn";
-  case QueueAttributeName::ApproximateNumberOfMessagesDelayed:
-    return "ApproximateNumberOfMessagesDelayed";
-  case QueueAttributeName::DelaySeconds:
-    return "DelaySeconds";
-  case QueueAttributeName::ReceiveMessageWaitTimeSeconds:
-    return "ReceiveMessageWaitTimeSeconds";
-  case QueueAttributeName::RedrivePolicy:
-    return "RedrivePolicy";
-  default:
-    return "";
-  }
-}
+          return QueueAttributeName::NOT_SET;
+        }
 
-} // namespace QueueAttributeNameMapper
-} // namespace Model
-} // namespace SQS
+        Aws::String GetNameForQueueAttributeName(QueueAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case QueueAttributeName::Policy:
+            return "Policy";
+          case QueueAttributeName::VisibilityTimeout:
+            return "VisibilityTimeout";
+          case QueueAttributeName::MaximumMessageSize:
+            return "MaximumMessageSize";
+          case QueueAttributeName::MessageRetentionPeriod:
+            return "MessageRetentionPeriod";
+          case QueueAttributeName::ApproximateNumberOfMessages:
+            return "ApproximateNumberOfMessages";
+          case QueueAttributeName::ApproximateNumberOfMessagesNotVisible:
+            return "ApproximateNumberOfMessagesNotVisible";
+          case QueueAttributeName::CreatedTimestamp:
+            return "CreatedTimestamp";
+          case QueueAttributeName::LastModifiedTimestamp:
+            return "LastModifiedTimestamp";
+          case QueueAttributeName::QueueArn:
+            return "QueueArn";
+          case QueueAttributeName::ApproximateNumberOfMessagesDelayed:
+            return "ApproximateNumberOfMessagesDelayed";
+          case QueueAttributeName::DelaySeconds:
+            return "DelaySeconds";
+          case QueueAttributeName::ReceiveMessageWaitTimeSeconds:
+            return "ReceiveMessageWaitTimeSeconds";
+          case QueueAttributeName::RedrivePolicy:
+            return "RedrivePolicy";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace QueueAttributeNameMapper
+    } // namespace Model
+  } // namespace SQS
 } // namespace Aws

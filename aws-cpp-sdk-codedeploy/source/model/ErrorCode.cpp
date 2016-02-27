@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/ErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -33,108 +34,121 @@ static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace ErrorCodeMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace ErrorCodeMapper
+      {
 
 
-ErrorCode GetErrorCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == DEPLOYMENT_GROUP_MISSING_HASH)
-  {
-     return ErrorCode::DEPLOYMENT_GROUP_MISSING;
-  }
-  else if (hashCode == APPLICATION_MISSING_HASH)
-  {
-     return ErrorCode::APPLICATION_MISSING;
-  }
-  else if (hashCode == REVISION_MISSING_HASH)
-  {
-     return ErrorCode::REVISION_MISSING;
-  }
-  else if (hashCode == IAM_ROLE_MISSING_HASH)
-  {
-     return ErrorCode::IAM_ROLE_MISSING;
-  }
-  else if (hashCode == IAM_ROLE_PERMISSIONS_HASH)
-  {
-     return ErrorCode::IAM_ROLE_PERMISSIONS;
-  }
-  else if (hashCode == NO_EC2_SUBSCRIPTION_HASH)
-  {
-     return ErrorCode::NO_EC2_SUBSCRIPTION;
-  }
-  else if (hashCode == OVER_MAX_INSTANCES_HASH)
-  {
-     return ErrorCode::OVER_MAX_INSTANCES;
-  }
-  else if (hashCode == NO_INSTANCES_HASH)
-  {
-     return ErrorCode::NO_INSTANCES;
-  }
-  else if (hashCode == TIMEOUT_HASH)
-  {
-     return ErrorCode::TIMEOUT;
-  }
-  else if (hashCode == HEALTH_CONSTRAINTS_INVALID_HASH)
-  {
-     return ErrorCode::HEALTH_CONSTRAINTS_INVALID;
-  }
-  else if (hashCode == HEALTH_CONSTRAINTS_HASH)
-  {
-     return ErrorCode::HEALTH_CONSTRAINTS;
-  }
-  else if (hashCode == INTERNAL_ERROR_HASH)
-  {
-     return ErrorCode::INTERNAL_ERROR;
-  }
-  else if (hashCode == THROTTLED_HASH)
-  {
-     return ErrorCode::THROTTLED;
-  }
-  return ErrorCode::NOT_SET;
-}
+        ErrorCode GetErrorCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == DEPLOYMENT_GROUP_MISSING_HASH)
+          {
+            return ErrorCode::DEPLOYMENT_GROUP_MISSING;
+          }
+          else if (hashCode == APPLICATION_MISSING_HASH)
+          {
+            return ErrorCode::APPLICATION_MISSING;
+          }
+          else if (hashCode == REVISION_MISSING_HASH)
+          {
+            return ErrorCode::REVISION_MISSING;
+          }
+          else if (hashCode == IAM_ROLE_MISSING_HASH)
+          {
+            return ErrorCode::IAM_ROLE_MISSING;
+          }
+          else if (hashCode == IAM_ROLE_PERMISSIONS_HASH)
+          {
+            return ErrorCode::IAM_ROLE_PERMISSIONS;
+          }
+          else if (hashCode == NO_EC2_SUBSCRIPTION_HASH)
+          {
+            return ErrorCode::NO_EC2_SUBSCRIPTION;
+          }
+          else if (hashCode == OVER_MAX_INSTANCES_HASH)
+          {
+            return ErrorCode::OVER_MAX_INSTANCES;
+          }
+          else if (hashCode == NO_INSTANCES_HASH)
+          {
+            return ErrorCode::NO_INSTANCES;
+          }
+          else if (hashCode == TIMEOUT_HASH)
+          {
+            return ErrorCode::TIMEOUT;
+          }
+          else if (hashCode == HEALTH_CONSTRAINTS_INVALID_HASH)
+          {
+            return ErrorCode::HEALTH_CONSTRAINTS_INVALID;
+          }
+          else if (hashCode == HEALTH_CONSTRAINTS_HASH)
+          {
+            return ErrorCode::HEALTH_CONSTRAINTS;
+          }
+          else if (hashCode == INTERNAL_ERROR_HASH)
+          {
+            return ErrorCode::INTERNAL_ERROR;
+          }
+          else if (hashCode == THROTTLED_HASH)
+          {
+            return ErrorCode::THROTTLED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ErrorCode>(hashCode);
+          }
 
-Aws::String GetNameForErrorCode(ErrorCode enumValue)
-{
-  switch(enumValue)
-  {
-  case ErrorCode::DEPLOYMENT_GROUP_MISSING:
-    return "DEPLOYMENT_GROUP_MISSING";
-  case ErrorCode::APPLICATION_MISSING:
-    return "APPLICATION_MISSING";
-  case ErrorCode::REVISION_MISSING:
-    return "REVISION_MISSING";
-  case ErrorCode::IAM_ROLE_MISSING:
-    return "IAM_ROLE_MISSING";
-  case ErrorCode::IAM_ROLE_PERMISSIONS:
-    return "IAM_ROLE_PERMISSIONS";
-  case ErrorCode::NO_EC2_SUBSCRIPTION:
-    return "NO_EC2_SUBSCRIPTION";
-  case ErrorCode::OVER_MAX_INSTANCES:
-    return "OVER_MAX_INSTANCES";
-  case ErrorCode::NO_INSTANCES:
-    return "NO_INSTANCES";
-  case ErrorCode::TIMEOUT:
-    return "TIMEOUT";
-  case ErrorCode::HEALTH_CONSTRAINTS_INVALID:
-    return "HEALTH_CONSTRAINTS_INVALID";
-  case ErrorCode::HEALTH_CONSTRAINTS:
-    return "HEALTH_CONSTRAINTS";
-  case ErrorCode::INTERNAL_ERROR:
-    return "INTERNAL_ERROR";
-  case ErrorCode::THROTTLED:
-    return "THROTTLED";
-  default:
-    return "";
-  }
-}
+          return ErrorCode::NOT_SET;
+        }
 
-} // namespace ErrorCodeMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForErrorCode(ErrorCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case ErrorCode::DEPLOYMENT_GROUP_MISSING:
+            return "DEPLOYMENT_GROUP_MISSING";
+          case ErrorCode::APPLICATION_MISSING:
+            return "APPLICATION_MISSING";
+          case ErrorCode::REVISION_MISSING:
+            return "REVISION_MISSING";
+          case ErrorCode::IAM_ROLE_MISSING:
+            return "IAM_ROLE_MISSING";
+          case ErrorCode::IAM_ROLE_PERMISSIONS:
+            return "IAM_ROLE_PERMISSIONS";
+          case ErrorCode::NO_EC2_SUBSCRIPTION:
+            return "NO_EC2_SUBSCRIPTION";
+          case ErrorCode::OVER_MAX_INSTANCES:
+            return "OVER_MAX_INSTANCES";
+          case ErrorCode::NO_INSTANCES:
+            return "NO_INSTANCES";
+          case ErrorCode::TIMEOUT:
+            return "TIMEOUT";
+          case ErrorCode::HEALTH_CONSTRAINTS_INVALID:
+            return "HEALTH_CONSTRAINTS_INVALID";
+          case ErrorCode::HEALTH_CONSTRAINTS:
+            return "HEALTH_CONSTRAINTS";
+          case ErrorCode::INTERNAL_ERROR:
+            return "INTERNAL_ERROR";
+          case ErrorCode::THROTTLED:
+            return "THROTTLED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ErrorCodeMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

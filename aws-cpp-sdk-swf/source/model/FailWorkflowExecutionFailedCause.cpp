@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/FailWorkflowExecutionFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace FailWorkflowExecutionFailedCauseMapper
-{
-
-
-FailWorkflowExecutionFailedCause GetFailWorkflowExecutionFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNHANDLED_DECISION_HASH)
+  namespace SWF
   {
-     return FailWorkflowExecutionFailedCause::UNHANDLED_DECISION;
-  }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-     return FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return FailWorkflowExecutionFailedCause::NOT_SET;
-}
+    namespace Model
+    {
+      namespace FailWorkflowExecutionFailedCauseMapper
+      {
 
-Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case FailWorkflowExecutionFailedCause::UNHANDLED_DECISION:
-    return "UNHANDLED_DECISION";
-  case FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
 
-} // namespace FailWorkflowExecutionFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        FailWorkflowExecutionFailedCause GetFailWorkflowExecutionFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNHANDLED_DECISION_HASH)
+          {
+            return FailWorkflowExecutionFailedCause::UNHANDLED_DECISION;
+          }
+          else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<FailWorkflowExecutionFailedCause>(hashCode);
+          }
+
+          return FailWorkflowExecutionFailedCause::NOT_SET;
+        }
+
+        Aws::String GetNameForFailWorkflowExecutionFailedCause(FailWorkflowExecutionFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case FailWorkflowExecutionFailedCause::UNHANDLED_DECISION:
+            return "UNHANDLED_DECISION";
+          case FailWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace FailWorkflowExecutionFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

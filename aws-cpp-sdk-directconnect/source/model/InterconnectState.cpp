@@ -14,6 +14,7 @@
 */
 #include <aws/directconnect/model/InterconnectState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
-namespace DirectConnect
-{
-namespace Model
-{
-namespace InterconnectStateMapper
-{
+  namespace DirectConnect
+  {
+    namespace Model
+    {
+      namespace InterconnectStateMapper
+      {
 
 
-InterconnectState GetInterconnectStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == requested_HASH)
-  {
-     return InterconnectState::requested;
-  }
-  else if (hashCode == pending_HASH)
-  {
-     return InterconnectState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return InterconnectState::available;
-  }
-  else if (hashCode == down_HASH)
-  {
-     return InterconnectState::down;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return InterconnectState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return InterconnectState::deleted;
-  }
-  return InterconnectState::NOT_SET;
-}
+        InterconnectState GetInterconnectStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == requested_HASH)
+          {
+            return InterconnectState::requested;
+          }
+          else if (hashCode == pending_HASH)
+          {
+            return InterconnectState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return InterconnectState::available;
+          }
+          else if (hashCode == down_HASH)
+          {
+            return InterconnectState::down;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return InterconnectState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return InterconnectState::deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InterconnectState>(hashCode);
+          }
 
-Aws::String GetNameForInterconnectState(InterconnectState enumValue)
-{
-  switch(enumValue)
-  {
-  case InterconnectState::requested:
-    return "requested";
-  case InterconnectState::pending:
-    return "pending";
-  case InterconnectState::available:
-    return "available";
-  case InterconnectState::down:
-    return "down";
-  case InterconnectState::deleting:
-    return "deleting";
-  case InterconnectState::deleted:
-    return "deleted";
-  default:
-    return "";
-  }
-}
+          return InterconnectState::NOT_SET;
+        }
 
-} // namespace InterconnectStateMapper
-} // namespace Model
-} // namespace DirectConnect
+        Aws::String GetNameForInterconnectState(InterconnectState enumValue)
+        {
+          switch(enumValue)
+          {
+          case InterconnectState::requested:
+            return "requested";
+          case InterconnectState::pending:
+            return "pending";
+          case InterconnectState::available:
+            return "available";
+          case InterconnectState::down:
+            return "down";
+          case InterconnectState::deleting:
+            return "deleting";
+          case InterconnectState::deleted:
+            return "deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InterconnectStateMapper
+    } // namespace Model
+  } // namespace DirectConnect
 } // namespace Aws

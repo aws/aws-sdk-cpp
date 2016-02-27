@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -29,84 +30,97 @@ static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace FleetStatusMapper
-{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace FleetStatusMapper
+      {
 
 
-FleetStatus GetFleetStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NEW__HASH)
-  {
-     return FleetStatus::NEW_;
-  }
-  else if (hashCode == DOWNLOADING_HASH)
-  {
-     return FleetStatus::DOWNLOADING;
-  }
-  else if (hashCode == VALIDATING_HASH)
-  {
-     return FleetStatus::VALIDATING;
-  }
-  else if (hashCode == BUILDING_HASH)
-  {
-     return FleetStatus::BUILDING;
-  }
-  else if (hashCode == ACTIVATING_HASH)
-  {
-     return FleetStatus::ACTIVATING;
-  }
-  else if (hashCode == ACTIVE_HASH)
-  {
-     return FleetStatus::ACTIVE;
-  }
-  else if (hashCode == DELETING_HASH)
-  {
-     return FleetStatus::DELETING;
-  }
-  else if (hashCode == ERROR__HASH)
-  {
-     return FleetStatus::ERROR_;
-  }
-  else if (hashCode == TERMINATED_HASH)
-  {
-     return FleetStatus::TERMINATED;
-  }
-  return FleetStatus::NOT_SET;
-}
+        FleetStatus GetFleetStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NEW__HASH)
+          {
+            return FleetStatus::NEW_;
+          }
+          else if (hashCode == DOWNLOADING_HASH)
+          {
+            return FleetStatus::DOWNLOADING;
+          }
+          else if (hashCode == VALIDATING_HASH)
+          {
+            return FleetStatus::VALIDATING;
+          }
+          else if (hashCode == BUILDING_HASH)
+          {
+            return FleetStatus::BUILDING;
+          }
+          else if (hashCode == ACTIVATING_HASH)
+          {
+            return FleetStatus::ACTIVATING;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return FleetStatus::ACTIVE;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return FleetStatus::DELETING;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return FleetStatus::ERROR_;
+          }
+          else if (hashCode == TERMINATED_HASH)
+          {
+            return FleetStatus::TERMINATED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<FleetStatus>(hashCode);
+          }
 
-Aws::String GetNameForFleetStatus(FleetStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case FleetStatus::NEW_:
-    return "NEW";
-  case FleetStatus::DOWNLOADING:
-    return "DOWNLOADING";
-  case FleetStatus::VALIDATING:
-    return "VALIDATING";
-  case FleetStatus::BUILDING:
-    return "BUILDING";
-  case FleetStatus::ACTIVATING:
-    return "ACTIVATING";
-  case FleetStatus::ACTIVE:
-    return "ACTIVE";
-  case FleetStatus::DELETING:
-    return "DELETING";
-  case FleetStatus::ERROR_:
-    return "ERROR";
-  case FleetStatus::TERMINATED:
-    return "TERMINATED";
-  default:
-    return "";
-  }
-}
+          return FleetStatus::NOT_SET;
+        }
 
-} // namespace FleetStatusMapper
-} // namespace Model
-} // namespace GameLift
+        Aws::String GetNameForFleetStatus(FleetStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case FleetStatus::NEW_:
+            return "NEW";
+          case FleetStatus::DOWNLOADING:
+            return "DOWNLOADING";
+          case FleetStatus::VALIDATING:
+            return "VALIDATING";
+          case FleetStatus::BUILDING:
+            return "BUILDING";
+          case FleetStatus::ACTIVATING:
+            return "ACTIVATING";
+          case FleetStatus::ACTIVE:
+            return "ACTIVE";
+          case FleetStatus::DELETING:
+            return "DELETING";
+          case FleetStatus::ERROR_:
+            return "ERROR";
+          case FleetStatus::TERMINATED:
+            return "TERMINATED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace FleetStatusMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

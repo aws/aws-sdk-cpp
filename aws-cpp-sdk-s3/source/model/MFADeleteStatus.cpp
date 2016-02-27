@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/MFADeleteStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace MFADeleteStatusMapper
-{
-
-
-MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Enabled_HASH)
+  namespace S3
   {
-     return MFADeleteStatus::Enabled;
-  }
-  else if (hashCode == Disabled_HASH)
-  {
-     return MFADeleteStatus::Disabled;
-  }
-  return MFADeleteStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace MFADeleteStatusMapper
+      {
 
-Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case MFADeleteStatus::Enabled:
-    return "Enabled";
-  case MFADeleteStatus::Disabled:
-    return "Disabled";
-  default:
-    return "";
-  }
-}
 
-} // namespace MFADeleteStatusMapper
-} // namespace Model
-} // namespace S3
+        MFADeleteStatus GetMFADeleteStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Enabled_HASH)
+          {
+            return MFADeleteStatus::Enabled;
+          }
+          else if (hashCode == Disabled_HASH)
+          {
+            return MFADeleteStatus::Disabled;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MFADeleteStatus>(hashCode);
+          }
+
+          return MFADeleteStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForMFADeleteStatus(MFADeleteStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case MFADeleteStatus::Enabled:
+            return "Enabled";
+          case MFADeleteStatus::Disabled:
+            return "Disabled";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MFADeleteStatusMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

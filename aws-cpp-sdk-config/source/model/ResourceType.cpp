@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -39,144 +40,157 @@ static const int AWS_IAM_User_HASH = HashingUtils::HashString("AWS::IAM::User");
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace ResourceTypeMapper
-{
+  namespace ConfigService
+  {
+    namespace Model
+    {
+      namespace ResourceTypeMapper
+      {
 
 
-ResourceType GetResourceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == AWS_EC2_CustomerGateway_HASH)
-  {
-     return ResourceType::AWS_EC2_CustomerGateway;
-  }
-  else if (hashCode == AWS_EC2_EIP_HASH)
-  {
-     return ResourceType::AWS_EC2_EIP;
-  }
-  else if (hashCode == AWS_EC2_Host_HASH)
-  {
-     return ResourceType::AWS_EC2_Host;
-  }
-  else if (hashCode == AWS_EC2_Instance_HASH)
-  {
-     return ResourceType::AWS_EC2_Instance;
-  }
-  else if (hashCode == AWS_EC2_InternetGateway_HASH)
-  {
-     return ResourceType::AWS_EC2_InternetGateway;
-  }
-  else if (hashCode == AWS_EC2_NetworkAcl_HASH)
-  {
-     return ResourceType::AWS_EC2_NetworkAcl;
-  }
-  else if (hashCode == AWS_EC2_NetworkInterface_HASH)
-  {
-     return ResourceType::AWS_EC2_NetworkInterface;
-  }
-  else if (hashCode == AWS_EC2_RouteTable_HASH)
-  {
-     return ResourceType::AWS_EC2_RouteTable;
-  }
-  else if (hashCode == AWS_EC2_SecurityGroup_HASH)
-  {
-     return ResourceType::AWS_EC2_SecurityGroup;
-  }
-  else if (hashCode == AWS_EC2_Subnet_HASH)
-  {
-     return ResourceType::AWS_EC2_Subnet;
-  }
-  else if (hashCode == AWS_CloudTrail_Trail_HASH)
-  {
-     return ResourceType::AWS_CloudTrail_Trail;
-  }
-  else if (hashCode == AWS_EC2_Volume_HASH)
-  {
-     return ResourceType::AWS_EC2_Volume;
-  }
-  else if (hashCode == AWS_EC2_VPC_HASH)
-  {
-     return ResourceType::AWS_EC2_VPC;
-  }
-  else if (hashCode == AWS_EC2_VPNConnection_HASH)
-  {
-     return ResourceType::AWS_EC2_VPNConnection;
-  }
-  else if (hashCode == AWS_EC2_VPNGateway_HASH)
-  {
-     return ResourceType::AWS_EC2_VPNGateway;
-  }
-  else if (hashCode == AWS_IAM_Group_HASH)
-  {
-     return ResourceType::AWS_IAM_Group;
-  }
-  else if (hashCode == AWS_IAM_Policy_HASH)
-  {
-     return ResourceType::AWS_IAM_Policy;
-  }
-  else if (hashCode == AWS_IAM_Role_HASH)
-  {
-     return ResourceType::AWS_IAM_Role;
-  }
-  else if (hashCode == AWS_IAM_User_HASH)
-  {
-     return ResourceType::AWS_IAM_User;
-  }
-  return ResourceType::NOT_SET;
-}
+        ResourceType GetResourceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == AWS_EC2_CustomerGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_CustomerGateway;
+          }
+          else if (hashCode == AWS_EC2_EIP_HASH)
+          {
+            return ResourceType::AWS_EC2_EIP;
+          }
+          else if (hashCode == AWS_EC2_Host_HASH)
+          {
+            return ResourceType::AWS_EC2_Host;
+          }
+          else if (hashCode == AWS_EC2_Instance_HASH)
+          {
+            return ResourceType::AWS_EC2_Instance;
+          }
+          else if (hashCode == AWS_EC2_InternetGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_InternetGateway;
+          }
+          else if (hashCode == AWS_EC2_NetworkAcl_HASH)
+          {
+            return ResourceType::AWS_EC2_NetworkAcl;
+          }
+          else if (hashCode == AWS_EC2_NetworkInterface_HASH)
+          {
+            return ResourceType::AWS_EC2_NetworkInterface;
+          }
+          else if (hashCode == AWS_EC2_RouteTable_HASH)
+          {
+            return ResourceType::AWS_EC2_RouteTable;
+          }
+          else if (hashCode == AWS_EC2_SecurityGroup_HASH)
+          {
+            return ResourceType::AWS_EC2_SecurityGroup;
+          }
+          else if (hashCode == AWS_EC2_Subnet_HASH)
+          {
+            return ResourceType::AWS_EC2_Subnet;
+          }
+          else if (hashCode == AWS_CloudTrail_Trail_HASH)
+          {
+            return ResourceType::AWS_CloudTrail_Trail;
+          }
+          else if (hashCode == AWS_EC2_Volume_HASH)
+          {
+            return ResourceType::AWS_EC2_Volume;
+          }
+          else if (hashCode == AWS_EC2_VPC_HASH)
+          {
+            return ResourceType::AWS_EC2_VPC;
+          }
+          else if (hashCode == AWS_EC2_VPNConnection_HASH)
+          {
+            return ResourceType::AWS_EC2_VPNConnection;
+          }
+          else if (hashCode == AWS_EC2_VPNGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_VPNGateway;
+          }
+          else if (hashCode == AWS_IAM_Group_HASH)
+          {
+            return ResourceType::AWS_IAM_Group;
+          }
+          else if (hashCode == AWS_IAM_Policy_HASH)
+          {
+            return ResourceType::AWS_IAM_Policy;
+          }
+          else if (hashCode == AWS_IAM_Role_HASH)
+          {
+            return ResourceType::AWS_IAM_Role;
+          }
+          else if (hashCode == AWS_IAM_User_HASH)
+          {
+            return ResourceType::AWS_IAM_User;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ResourceType>(hashCode);
+          }
 
-Aws::String GetNameForResourceType(ResourceType enumValue)
-{
-  switch(enumValue)
-  {
-  case ResourceType::AWS_EC2_CustomerGateway:
-    return "AWS::EC2::CustomerGateway";
-  case ResourceType::AWS_EC2_EIP:
-    return "AWS::EC2::EIP";
-  case ResourceType::AWS_EC2_Host:
-    return "AWS::EC2::Host";
-  case ResourceType::AWS_EC2_Instance:
-    return "AWS::EC2::Instance";
-  case ResourceType::AWS_EC2_InternetGateway:
-    return "AWS::EC2::InternetGateway";
-  case ResourceType::AWS_EC2_NetworkAcl:
-    return "AWS::EC2::NetworkAcl";
-  case ResourceType::AWS_EC2_NetworkInterface:
-    return "AWS::EC2::NetworkInterface";
-  case ResourceType::AWS_EC2_RouteTable:
-    return "AWS::EC2::RouteTable";
-  case ResourceType::AWS_EC2_SecurityGroup:
-    return "AWS::EC2::SecurityGroup";
-  case ResourceType::AWS_EC2_Subnet:
-    return "AWS::EC2::Subnet";
-  case ResourceType::AWS_CloudTrail_Trail:
-    return "AWS::CloudTrail::Trail";
-  case ResourceType::AWS_EC2_Volume:
-    return "AWS::EC2::Volume";
-  case ResourceType::AWS_EC2_VPC:
-    return "AWS::EC2::VPC";
-  case ResourceType::AWS_EC2_VPNConnection:
-    return "AWS::EC2::VPNConnection";
-  case ResourceType::AWS_EC2_VPNGateway:
-    return "AWS::EC2::VPNGateway";
-  case ResourceType::AWS_IAM_Group:
-    return "AWS::IAM::Group";
-  case ResourceType::AWS_IAM_Policy:
-    return "AWS::IAM::Policy";
-  case ResourceType::AWS_IAM_Role:
-    return "AWS::IAM::Role";
-  case ResourceType::AWS_IAM_User:
-    return "AWS::IAM::User";
-  default:
-    return "";
-  }
-}
+          return ResourceType::NOT_SET;
+        }
 
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace ConfigService
+        Aws::String GetNameForResourceType(ResourceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_EC2_CustomerGateway:
+            return "AWS::EC2::CustomerGateway";
+          case ResourceType::AWS_EC2_EIP:
+            return "AWS::EC2::EIP";
+          case ResourceType::AWS_EC2_Host:
+            return "AWS::EC2::Host";
+          case ResourceType::AWS_EC2_Instance:
+            return "AWS::EC2::Instance";
+          case ResourceType::AWS_EC2_InternetGateway:
+            return "AWS::EC2::InternetGateway";
+          case ResourceType::AWS_EC2_NetworkAcl:
+            return "AWS::EC2::NetworkAcl";
+          case ResourceType::AWS_EC2_NetworkInterface:
+            return "AWS::EC2::NetworkInterface";
+          case ResourceType::AWS_EC2_RouteTable:
+            return "AWS::EC2::RouteTable";
+          case ResourceType::AWS_EC2_SecurityGroup:
+            return "AWS::EC2::SecurityGroup";
+          case ResourceType::AWS_EC2_Subnet:
+            return "AWS::EC2::Subnet";
+          case ResourceType::AWS_CloudTrail_Trail:
+            return "AWS::CloudTrail::Trail";
+          case ResourceType::AWS_EC2_Volume:
+            return "AWS::EC2::Volume";
+          case ResourceType::AWS_EC2_VPC:
+            return "AWS::EC2::VPC";
+          case ResourceType::AWS_EC2_VPNConnection:
+            return "AWS::EC2::VPNConnection";
+          case ResourceType::AWS_EC2_VPNGateway:
+            return "AWS::EC2::VPNGateway";
+          case ResourceType::AWS_IAM_Group:
+            return "AWS::IAM::Group";
+          case ResourceType::AWS_IAM_Policy:
+            return "AWS::IAM::Policy";
+          case ResourceType::AWS_IAM_Role:
+            return "AWS::IAM::Role";
+          case ResourceType::AWS_IAM_User:
+            return "AWS::IAM::User";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ResourceTypeMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

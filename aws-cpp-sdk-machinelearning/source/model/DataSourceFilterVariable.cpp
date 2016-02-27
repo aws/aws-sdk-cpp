@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/DataSourceFilterVariable.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int IAMUser_HASH = HashingUtils::HashString("IAMUser");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace DataSourceFilterVariableMapper
-{
+  namespace MachineLearning
+  {
+    namespace Model
+    {
+      namespace DataSourceFilterVariableMapper
+      {
 
 
-DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CreatedAt_HASH)
-  {
-     return DataSourceFilterVariable::CreatedAt;
-  }
-  else if (hashCode == LastUpdatedAt_HASH)
-  {
-     return DataSourceFilterVariable::LastUpdatedAt;
-  }
-  else if (hashCode == Status_HASH)
-  {
-     return DataSourceFilterVariable::Status;
-  }
-  else if (hashCode == Name_HASH)
-  {
-     return DataSourceFilterVariable::Name;
-  }
-  else if (hashCode == DataLocationS3_HASH)
-  {
-     return DataSourceFilterVariable::DataLocationS3;
-  }
-  else if (hashCode == IAMUser_HASH)
-  {
-     return DataSourceFilterVariable::IAMUser;
-  }
-  return DataSourceFilterVariable::NOT_SET;
-}
+        DataSourceFilterVariable GetDataSourceFilterVariableForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CreatedAt_HASH)
+          {
+            return DataSourceFilterVariable::CreatedAt;
+          }
+          else if (hashCode == LastUpdatedAt_HASH)
+          {
+            return DataSourceFilterVariable::LastUpdatedAt;
+          }
+          else if (hashCode == Status_HASH)
+          {
+            return DataSourceFilterVariable::Status;
+          }
+          else if (hashCode == Name_HASH)
+          {
+            return DataSourceFilterVariable::Name;
+          }
+          else if (hashCode == DataLocationS3_HASH)
+          {
+            return DataSourceFilterVariable::DataLocationS3;
+          }
+          else if (hashCode == IAMUser_HASH)
+          {
+            return DataSourceFilterVariable::IAMUser;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DataSourceFilterVariable>(hashCode);
+          }
 
-Aws::String GetNameForDataSourceFilterVariable(DataSourceFilterVariable enumValue)
-{
-  switch(enumValue)
-  {
-  case DataSourceFilterVariable::CreatedAt:
-    return "CreatedAt";
-  case DataSourceFilterVariable::LastUpdatedAt:
-    return "LastUpdatedAt";
-  case DataSourceFilterVariable::Status:
-    return "Status";
-  case DataSourceFilterVariable::Name:
-    return "Name";
-  case DataSourceFilterVariable::DataLocationS3:
-    return "DataLocationS3";
-  case DataSourceFilterVariable::IAMUser:
-    return "IAMUser";
-  default:
-    return "";
-  }
-}
+          return DataSourceFilterVariable::NOT_SET;
+        }
 
-} // namespace DataSourceFilterVariableMapper
-} // namespace Model
-} // namespace MachineLearning
+        Aws::String GetNameForDataSourceFilterVariable(DataSourceFilterVariable enumValue)
+        {
+          switch(enumValue)
+          {
+          case DataSourceFilterVariable::CreatedAt:
+            return "CreatedAt";
+          case DataSourceFilterVariable::LastUpdatedAt:
+            return "LastUpdatedAt";
+          case DataSourceFilterVariable::Status:
+            return "Status";
+          case DataSourceFilterVariable::Name:
+            return "Name";
+          case DataSourceFilterVariable::DataLocationS3:
+            return "DataLocationS3";
+          case DataSourceFilterVariable::IAMUser:
+            return "IAMUser";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DataSourceFilterVariableMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

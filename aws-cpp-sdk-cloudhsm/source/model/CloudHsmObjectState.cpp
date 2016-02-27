@@ -14,6 +14,7 @@
 */
 #include <aws/cloudhsm/model/CloudHsmObjectState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
 
 namespace Aws
 {
-namespace CloudHSM
-{
-namespace Model
-{
-namespace CloudHsmObjectStateMapper
-{
+  namespace CloudHSM
+  {
+    namespace Model
+    {
+      namespace CloudHsmObjectStateMapper
+      {
 
 
-CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == READY_HASH)
-  {
-     return CloudHsmObjectState::READY;
-  }
-  else if (hashCode == UPDATING_HASH)
-  {
-     return CloudHsmObjectState::UPDATING;
-  }
-  else if (hashCode == DEGRADED_HASH)
-  {
-     return CloudHsmObjectState::DEGRADED;
-  }
-  return CloudHsmObjectState::NOT_SET;
-}
+        CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == READY_HASH)
+          {
+            return CloudHsmObjectState::READY;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return CloudHsmObjectState::UPDATING;
+          }
+          else if (hashCode == DEGRADED_HASH)
+          {
+            return CloudHsmObjectState::DEGRADED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CloudHsmObjectState>(hashCode);
+          }
 
-Aws::String GetNameForCloudHsmObjectState(CloudHsmObjectState enumValue)
-{
-  switch(enumValue)
-  {
-  case CloudHsmObjectState::READY:
-    return "READY";
-  case CloudHsmObjectState::UPDATING:
-    return "UPDATING";
-  case CloudHsmObjectState::DEGRADED:
-    return "DEGRADED";
-  default:
-    return "";
-  }
-}
+          return CloudHsmObjectState::NOT_SET;
+        }
 
-} // namespace CloudHsmObjectStateMapper
-} // namespace Model
-} // namespace CloudHSM
+        Aws::String GetNameForCloudHsmObjectState(CloudHsmObjectState enumValue)
+        {
+          switch(enumValue)
+          {
+          case CloudHsmObjectState::READY:
+            return "READY";
+          case CloudHsmObjectState::UPDATING:
+            return "UPDATING";
+          case CloudHsmObjectState::DEGRADED:
+            return "DEGRADED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CloudHsmObjectStateMapper
+    } // namespace Model
+  } // namespace CloudHSM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
-namespace EFS
-{
-namespace Model
-{
-namespace LifeCycleStateMapper
-{
+  namespace EFS
+  {
+    namespace Model
+    {
+      namespace LifeCycleStateMapper
+      {
 
 
-LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == creating_HASH)
-  {
-     return LifeCycleState::creating;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return LifeCycleState::available;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return LifeCycleState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return LifeCycleState::deleted;
-  }
-  return LifeCycleState::NOT_SET;
-}
+        LifeCycleState GetLifeCycleStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == creating_HASH)
+          {
+            return LifeCycleState::creating;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return LifeCycleState::available;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return LifeCycleState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return LifeCycleState::deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LifeCycleState>(hashCode);
+          }
 
-Aws::String GetNameForLifeCycleState(LifeCycleState enumValue)
-{
-  switch(enumValue)
-  {
-  case LifeCycleState::creating:
-    return "creating";
-  case LifeCycleState::available:
-    return "available";
-  case LifeCycleState::deleting:
-    return "deleting";
-  case LifeCycleState::deleted:
-    return "deleted";
-  default:
-    return "";
-  }
-}
+          return LifeCycleState::NOT_SET;
+        }
 
-} // namespace LifeCycleStateMapper
-} // namespace Model
-} // namespace EFS
+        Aws::String GetNameForLifeCycleState(LifeCycleState enumValue)
+        {
+          switch(enumValue)
+          {
+          case LifeCycleState::creating:
+            return "creating";
+          case LifeCycleState::available:
+            return "available";
+          case LifeCycleState::deleting:
+            return "deleting";
+          case LifeCycleState::deleted:
+            return "deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LifeCycleStateMapper
+    } // namespace Model
+  } // namespace EFS
 } // namespace Aws

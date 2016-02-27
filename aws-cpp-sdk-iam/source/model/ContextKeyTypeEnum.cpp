@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/ContextKeyTypeEnum.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -32,102 +33,115 @@ static const int dateList_HASH = HashingUtils::HashString("dateList");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace ContextKeyTypeEnumMapper
-{
+  namespace IAM
+  {
+    namespace Model
+    {
+      namespace ContextKeyTypeEnumMapper
+      {
 
 
-ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == string_HASH)
-  {
-     return ContextKeyTypeEnum::string;
-  }
-  else if (hashCode == stringList_HASH)
-  {
-     return ContextKeyTypeEnum::stringList;
-  }
-  else if (hashCode == numeric_HASH)
-  {
-     return ContextKeyTypeEnum::numeric;
-  }
-  else if (hashCode == numericList_HASH)
-  {
-     return ContextKeyTypeEnum::numericList;
-  }
-  else if (hashCode == boolean_HASH)
-  {
-     return ContextKeyTypeEnum::boolean;
-  }
-  else if (hashCode == booleanList_HASH)
-  {
-     return ContextKeyTypeEnum::booleanList;
-  }
-  else if (hashCode == ip_HASH)
-  {
-     return ContextKeyTypeEnum::ip;
-  }
-  else if (hashCode == ipList_HASH)
-  {
-     return ContextKeyTypeEnum::ipList;
-  }
-  else if (hashCode == binary_HASH)
-  {
-     return ContextKeyTypeEnum::binary;
-  }
-  else if (hashCode == binaryList_HASH)
-  {
-     return ContextKeyTypeEnum::binaryList;
-  }
-  else if (hashCode == date_HASH)
-  {
-     return ContextKeyTypeEnum::date;
-  }
-  else if (hashCode == dateList_HASH)
-  {
-     return ContextKeyTypeEnum::dateList;
-  }
-  return ContextKeyTypeEnum::NOT_SET;
-}
+        ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == string_HASH)
+          {
+            return ContextKeyTypeEnum::string;
+          }
+          else if (hashCode == stringList_HASH)
+          {
+            return ContextKeyTypeEnum::stringList;
+          }
+          else if (hashCode == numeric_HASH)
+          {
+            return ContextKeyTypeEnum::numeric;
+          }
+          else if (hashCode == numericList_HASH)
+          {
+            return ContextKeyTypeEnum::numericList;
+          }
+          else if (hashCode == boolean_HASH)
+          {
+            return ContextKeyTypeEnum::boolean;
+          }
+          else if (hashCode == booleanList_HASH)
+          {
+            return ContextKeyTypeEnum::booleanList;
+          }
+          else if (hashCode == ip_HASH)
+          {
+            return ContextKeyTypeEnum::ip;
+          }
+          else if (hashCode == ipList_HASH)
+          {
+            return ContextKeyTypeEnum::ipList;
+          }
+          else if (hashCode == binary_HASH)
+          {
+            return ContextKeyTypeEnum::binary;
+          }
+          else if (hashCode == binaryList_HASH)
+          {
+            return ContextKeyTypeEnum::binaryList;
+          }
+          else if (hashCode == date_HASH)
+          {
+            return ContextKeyTypeEnum::date;
+          }
+          else if (hashCode == dateList_HASH)
+          {
+            return ContextKeyTypeEnum::dateList;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ContextKeyTypeEnum>(hashCode);
+          }
 
-Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum enumValue)
-{
-  switch(enumValue)
-  {
-  case ContextKeyTypeEnum::string:
-    return "string";
-  case ContextKeyTypeEnum::stringList:
-    return "stringList";
-  case ContextKeyTypeEnum::numeric:
-    return "numeric";
-  case ContextKeyTypeEnum::numericList:
-    return "numericList";
-  case ContextKeyTypeEnum::boolean:
-    return "boolean";
-  case ContextKeyTypeEnum::booleanList:
-    return "booleanList";
-  case ContextKeyTypeEnum::ip:
-    return "ip";
-  case ContextKeyTypeEnum::ipList:
-    return "ipList";
-  case ContextKeyTypeEnum::binary:
-    return "binary";
-  case ContextKeyTypeEnum::binaryList:
-    return "binaryList";
-  case ContextKeyTypeEnum::date:
-    return "date";
-  case ContextKeyTypeEnum::dateList:
-    return "dateList";
-  default:
-    return "";
-  }
-}
+          return ContextKeyTypeEnum::NOT_SET;
+        }
 
-} // namespace ContextKeyTypeEnumMapper
-} // namespace Model
-} // namespace IAM
+        Aws::String GetNameForContextKeyTypeEnum(ContextKeyTypeEnum enumValue)
+        {
+          switch(enumValue)
+          {
+          case ContextKeyTypeEnum::string:
+            return "string";
+          case ContextKeyTypeEnum::stringList:
+            return "stringList";
+          case ContextKeyTypeEnum::numeric:
+            return "numeric";
+          case ContextKeyTypeEnum::numericList:
+            return "numericList";
+          case ContextKeyTypeEnum::boolean:
+            return "boolean";
+          case ContextKeyTypeEnum::booleanList:
+            return "booleanList";
+          case ContextKeyTypeEnum::ip:
+            return "ip";
+          case ContextKeyTypeEnum::ipList:
+            return "ipList";
+          case ContextKeyTypeEnum::binary:
+            return "binary";
+          case ContextKeyTypeEnum::binaryList:
+            return "binaryList";
+          case ContextKeyTypeEnum::date:
+            return "date";
+          case ContextKeyTypeEnum::dateList:
+            return "dateList";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ContextKeyTypeEnumMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/ReportStateType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace ReportStateTypeMapper
-{
+  namespace IAM
+  {
+    namespace Model
+    {
+      namespace ReportStateTypeMapper
+      {
 
 
-ReportStateType GetReportStateTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == STARTED_HASH)
-  {
-     return ReportStateType::STARTED;
-  }
-  else if (hashCode == INPROGRESS_HASH)
-  {
-     return ReportStateType::INPROGRESS;
-  }
-  else if (hashCode == COMPLETE_HASH)
-  {
-     return ReportStateType::COMPLETE;
-  }
-  return ReportStateType::NOT_SET;
-}
+        ReportStateType GetReportStateTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == STARTED_HASH)
+          {
+            return ReportStateType::STARTED;
+          }
+          else if (hashCode == INPROGRESS_HASH)
+          {
+            return ReportStateType::INPROGRESS;
+          }
+          else if (hashCode == COMPLETE_HASH)
+          {
+            return ReportStateType::COMPLETE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReportStateType>(hashCode);
+          }
 
-Aws::String GetNameForReportStateType(ReportStateType enumValue)
-{
-  switch(enumValue)
-  {
-  case ReportStateType::STARTED:
-    return "STARTED";
-  case ReportStateType::INPROGRESS:
-    return "INPROGRESS";
-  case ReportStateType::COMPLETE:
-    return "COMPLETE";
-  default:
-    return "";
-  }
-}
+          return ReportStateType::NOT_SET;
+        }
 
-} // namespace ReportStateTypeMapper
-} // namespace Model
-} // namespace IAM
+        Aws::String GetNameForReportStateType(ReportStateType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReportStateType::STARTED:
+            return "STARTED";
+          case ReportStateType::INPROGRESS:
+            return "INPROGRESS";
+          case ReportStateType::COMPLETE:
+            return "COMPLETE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReportStateTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/ReturnValue.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int UPDATED_NEW_HASH = HashingUtils::HashString("UPDATED_NEW");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ReturnValueMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace ReturnValueMapper
+      {
 
 
-ReturnValue GetReturnValueForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == NONE_HASH)
-  {
-     return ReturnValue::NONE;
-  }
-  else if (hashCode == ALL_OLD_HASH)
-  {
-     return ReturnValue::ALL_OLD;
-  }
-  else if (hashCode == UPDATED_OLD_HASH)
-  {
-     return ReturnValue::UPDATED_OLD;
-  }
-  else if (hashCode == ALL_NEW_HASH)
-  {
-     return ReturnValue::ALL_NEW;
-  }
-  else if (hashCode == UPDATED_NEW_HASH)
-  {
-     return ReturnValue::UPDATED_NEW;
-  }
-  return ReturnValue::NOT_SET;
-}
+        ReturnValue GetReturnValueForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == NONE_HASH)
+          {
+            return ReturnValue::NONE;
+          }
+          else if (hashCode == ALL_OLD_HASH)
+          {
+            return ReturnValue::ALL_OLD;
+          }
+          else if (hashCode == UPDATED_OLD_HASH)
+          {
+            return ReturnValue::UPDATED_OLD;
+          }
+          else if (hashCode == ALL_NEW_HASH)
+          {
+            return ReturnValue::ALL_NEW;
+          }
+          else if (hashCode == UPDATED_NEW_HASH)
+          {
+            return ReturnValue::UPDATED_NEW;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReturnValue>(hashCode);
+          }
 
-Aws::String GetNameForReturnValue(ReturnValue enumValue)
-{
-  switch(enumValue)
-  {
-  case ReturnValue::NONE:
-    return "NONE";
-  case ReturnValue::ALL_OLD:
-    return "ALL_OLD";
-  case ReturnValue::UPDATED_OLD:
-    return "UPDATED_OLD";
-  case ReturnValue::ALL_NEW:
-    return "ALL_NEW";
-  case ReturnValue::UPDATED_NEW:
-    return "UPDATED_NEW";
-  default:
-    return "";
-  }
-}
+          return ReturnValue::NOT_SET;
+        }
 
-} // namespace ReturnValueMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForReturnValue(ReturnValue enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReturnValue::NONE:
+            return "NONE";
+          case ReturnValue::ALL_OLD:
+            return "ALL_OLD";
+          case ReturnValue::UPDATED_OLD:
+            return "UPDATED_OLD";
+          case ReturnValue::ALL_NEW:
+            return "ALL_NEW";
+          case ReturnValue::UPDATED_NEW:
+            return "UPDATED_NEW";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReturnValueMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

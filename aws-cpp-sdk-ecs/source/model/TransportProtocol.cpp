@@ -14,6 +14,7 @@
 */
 #include <aws/ecs/model/TransportProtocol.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int udp_HASH = HashingUtils::HashString("udp");
 
 namespace Aws
 {
-namespace ECS
-{
-namespace Model
-{
-namespace TransportProtocolMapper
-{
-
-
-TransportProtocol GetTransportProtocolForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == tcp_HASH)
+  namespace ECS
   {
-     return TransportProtocol::tcp;
-  }
-  else if (hashCode == udp_HASH)
-  {
-     return TransportProtocol::udp;
-  }
-  return TransportProtocol::NOT_SET;
-}
+    namespace Model
+    {
+      namespace TransportProtocolMapper
+      {
 
-Aws::String GetNameForTransportProtocol(TransportProtocol enumValue)
-{
-  switch(enumValue)
-  {
-  case TransportProtocol::tcp:
-    return "tcp";
-  case TransportProtocol::udp:
-    return "udp";
-  default:
-    return "";
-  }
-}
 
-} // namespace TransportProtocolMapper
-} // namespace Model
-} // namespace ECS
+        TransportProtocol GetTransportProtocolForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == tcp_HASH)
+          {
+            return TransportProtocol::tcp;
+          }
+          else if (hashCode == udp_HASH)
+          {
+            return TransportProtocol::udp;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<TransportProtocol>(hashCode);
+          }
+
+          return TransportProtocol::NOT_SET;
+        }
+
+        Aws::String GetNameForTransportProtocol(TransportProtocol enumValue)
+        {
+          switch(enumValue)
+          {
+          case TransportProtocol::tcp:
+            return "tcp";
+          case TransportProtocol::udp:
+            return "udp";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace TransportProtocolMapper
+    } // namespace Model
+  } // namespace ECS
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/monitoring/model/Statistic.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int Maximum_HASH = HashingUtils::HashString("Maximum");
 
 namespace Aws
 {
-namespace CloudWatch
-{
-namespace Model
-{
-namespace StatisticMapper
-{
+  namespace CloudWatch
+  {
+    namespace Model
+    {
+      namespace StatisticMapper
+      {
 
 
-Statistic GetStatisticForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == SampleCount_HASH)
-  {
-     return Statistic::SampleCount;
-  }
-  else if (hashCode == Average_HASH)
-  {
-     return Statistic::Average;
-  }
-  else if (hashCode == Sum_HASH)
-  {
-     return Statistic::Sum;
-  }
-  else if (hashCode == Minimum_HASH)
-  {
-     return Statistic::Minimum;
-  }
-  else if (hashCode == Maximum_HASH)
-  {
-     return Statistic::Maximum;
-  }
-  return Statistic::NOT_SET;
-}
+        Statistic GetStatisticForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == SampleCount_HASH)
+          {
+            return Statistic::SampleCount;
+          }
+          else if (hashCode == Average_HASH)
+          {
+            return Statistic::Average;
+          }
+          else if (hashCode == Sum_HASH)
+          {
+            return Statistic::Sum;
+          }
+          else if (hashCode == Minimum_HASH)
+          {
+            return Statistic::Minimum;
+          }
+          else if (hashCode == Maximum_HASH)
+          {
+            return Statistic::Maximum;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Statistic>(hashCode);
+          }
 
-Aws::String GetNameForStatistic(Statistic enumValue)
-{
-  switch(enumValue)
-  {
-  case Statistic::SampleCount:
-    return "SampleCount";
-  case Statistic::Average:
-    return "Average";
-  case Statistic::Sum:
-    return "Sum";
-  case Statistic::Minimum:
-    return "Minimum";
-  case Statistic::Maximum:
-    return "Maximum";
-  default:
-    return "";
-  }
-}
+          return Statistic::NOT_SET;
+        }
 
-} // namespace StatisticMapper
-} // namespace Model
-} // namespace CloudWatch
+        Aws::String GetNameForStatistic(Statistic enumValue)
+        {
+          switch(enumValue)
+          {
+          case Statistic::SampleCount:
+            return "SampleCount";
+          case Statistic::Average:
+            return "Average";
+          case Statistic::Sum:
+            return "Sum";
+          case Statistic::Minimum:
+            return "Minimum";
+          case Statistic::Maximum:
+            return "Maximum";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StatisticMapper
+    } // namespace Model
+  } // namespace CloudWatch
 } // namespace Aws

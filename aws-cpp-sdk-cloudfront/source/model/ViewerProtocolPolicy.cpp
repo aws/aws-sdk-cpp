@@ -14,6 +14,7 @@
 */
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int redirect_to_https_HASH = HashingUtils::HashString("redirect-to-
 
 namespace Aws
 {
-namespace CloudFront
-{
-namespace Model
-{
-namespace ViewerProtocolPolicyMapper
-{
+  namespace CloudFront
+  {
+    namespace Model
+    {
+      namespace ViewerProtocolPolicyMapper
+      {
 
 
-ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == allow_all_HASH)
-  {
-     return ViewerProtocolPolicy::allow_all;
-  }
-  else if (hashCode == https_only_HASH)
-  {
-     return ViewerProtocolPolicy::https_only;
-  }
-  else if (hashCode == redirect_to_https_HASH)
-  {
-     return ViewerProtocolPolicy::redirect_to_https;
-  }
-  return ViewerProtocolPolicy::NOT_SET;
-}
+        ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == allow_all_HASH)
+          {
+            return ViewerProtocolPolicy::allow_all;
+          }
+          else if (hashCode == https_only_HASH)
+          {
+            return ViewerProtocolPolicy::https_only;
+          }
+          else if (hashCode == redirect_to_https_HASH)
+          {
+            return ViewerProtocolPolicy::redirect_to_https;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ViewerProtocolPolicy>(hashCode);
+          }
 
-Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy enumValue)
-{
-  switch(enumValue)
-  {
-  case ViewerProtocolPolicy::allow_all:
-    return "allow-all";
-  case ViewerProtocolPolicy::https_only:
-    return "https-only";
-  case ViewerProtocolPolicy::redirect_to_https:
-    return "redirect-to-https";
-  default:
-    return "";
-  }
-}
+          return ViewerProtocolPolicy::NOT_SET;
+        }
 
-} // namespace ViewerProtocolPolicyMapper
-} // namespace Model
-} // namespace CloudFront
+        Aws::String GetNameForViewerProtocolPolicy(ViewerProtocolPolicy enumValue)
+        {
+          switch(enumValue)
+          {
+          case ViewerProtocolPolicy::allow_all:
+            return "allow-all";
+          case ViewerProtocolPolicy::https_only:
+            return "https-only";
+          case ViewerProtocolPolicy::redirect_to_https:
+            return "redirect-to-https";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ViewerProtocolPolicyMapper
+    } // namespace Model
+  } // namespace CloudFront
 } // namespace Aws

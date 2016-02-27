@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/WafActionType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int COUNT_HASH = HashingUtils::HashString("COUNT");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace WafActionTypeMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace WafActionTypeMapper
+      {
 
 
-WafActionType GetWafActionTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == BLOCK_HASH)
-  {
-     return WafActionType::BLOCK;
-  }
-  else if (hashCode == ALLOW_HASH)
-  {
-     return WafActionType::ALLOW;
-  }
-  else if (hashCode == COUNT_HASH)
-  {
-     return WafActionType::COUNT;
-  }
-  return WafActionType::NOT_SET;
-}
+        WafActionType GetWafActionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == BLOCK_HASH)
+          {
+            return WafActionType::BLOCK;
+          }
+          else if (hashCode == ALLOW_HASH)
+          {
+            return WafActionType::ALLOW;
+          }
+          else if (hashCode == COUNT_HASH)
+          {
+            return WafActionType::COUNT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<WafActionType>(hashCode);
+          }
 
-Aws::String GetNameForWafActionType(WafActionType enumValue)
-{
-  switch(enumValue)
-  {
-  case WafActionType::BLOCK:
-    return "BLOCK";
-  case WafActionType::ALLOW:
-    return "ALLOW";
-  case WafActionType::COUNT:
-    return "COUNT";
-  default:
-    return "";
-  }
-}
+          return WafActionType::NOT_SET;
+        }
 
-} // namespace WafActionTypeMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForWafActionType(WafActionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case WafActionType::BLOCK:
+            return "BLOCK";
+          case WafActionType::ALLOW:
+            return "ALLOW";
+          case WafActionType::COUNT:
+            return "COUNT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace WafActionTypeMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

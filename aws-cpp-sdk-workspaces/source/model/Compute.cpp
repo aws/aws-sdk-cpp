@@ -14,6 +14,7 @@
 */
 #include <aws/workspaces/model/Compute.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
 
 namespace Aws
 {
-namespace WorkSpaces
-{
-namespace Model
-{
-namespace ComputeMapper
-{
+  namespace WorkSpaces
+  {
+    namespace Model
+    {
+      namespace ComputeMapper
+      {
 
 
-Compute GetComputeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == VALUE_HASH)
-  {
-     return Compute::VALUE;
-  }
-  else if (hashCode == STANDARD_HASH)
-  {
-     return Compute::STANDARD;
-  }
-  else if (hashCode == PERFORMANCE_HASH)
-  {
-     return Compute::PERFORMANCE;
-  }
-  return Compute::NOT_SET;
-}
+        Compute GetComputeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == VALUE_HASH)
+          {
+            return Compute::VALUE;
+          }
+          else if (hashCode == STANDARD_HASH)
+          {
+            return Compute::STANDARD;
+          }
+          else if (hashCode == PERFORMANCE_HASH)
+          {
+            return Compute::PERFORMANCE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Compute>(hashCode);
+          }
 
-Aws::String GetNameForCompute(Compute enumValue)
-{
-  switch(enumValue)
-  {
-  case Compute::VALUE:
-    return "VALUE";
-  case Compute::STANDARD:
-    return "STANDARD";
-  case Compute::PERFORMANCE:
-    return "PERFORMANCE";
-  default:
-    return "";
-  }
-}
+          return Compute::NOT_SET;
+        }
 
-} // namespace ComputeMapper
-} // namespace Model
-} // namespace WorkSpaces
+        Aws::String GetNameForCompute(Compute enumValue)
+        {
+          switch(enumValue)
+          {
+          case Compute::VALUE:
+            return "VALUE";
+          case Compute::STANDARD:
+            return "STANDARD";
+          case Compute::PERFORMANCE:
+            return "PERFORMANCE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ComputeMapper
+    } // namespace Model
+  } // namespace WorkSpaces
 } // namespace Aws

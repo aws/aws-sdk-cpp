@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VpcState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int available_HASH = HashingUtils::HashString("available");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VpcStateMapper
-{
-
-
-VpcState GetVpcStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == pending_HASH)
+  namespace EC2
   {
-     return VpcState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return VpcState::available;
-  }
-  return VpcState::NOT_SET;
-}
+    namespace Model
+    {
+      namespace VpcStateMapper
+      {
 
-Aws::String GetNameForVpcState(VpcState enumValue)
-{
-  switch(enumValue)
-  {
-  case VpcState::pending:
-    return "pending";
-  case VpcState::available:
-    return "available";
-  default:
-    return "";
-  }
-}
 
-} // namespace VpcStateMapper
-} // namespace Model
-} // namespace EC2
+        VpcState GetVpcStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == pending_HASH)
+          {
+            return VpcState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return VpcState::available;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VpcState>(hashCode);
+          }
+
+          return VpcState::NOT_SET;
+        }
+
+        Aws::String GetNameForVpcState(VpcState enumValue)
+        {
+          switch(enumValue)
+          {
+          case VpcState::pending:
+            return "pending";
+          case VpcState::available:
+            return "available";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VpcStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

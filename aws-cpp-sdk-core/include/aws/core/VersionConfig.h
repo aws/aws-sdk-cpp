@@ -13,4 +13,4 @@
   * permissions and limitations under the License.
   */
 
-#define AWS_SDK_VERSION_STRING "0.9.6-46-g2ff5415"
+#define AWS_SDK_VERSION_STRING "0.9.6-54-g7a599f2"

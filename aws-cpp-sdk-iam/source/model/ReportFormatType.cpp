@@ -14,6 +14,7 @@
 */
 #include <aws/iam/model/ReportFormatType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int text_csv_HASH = HashingUtils::HashString("text/csv");
 
 namespace Aws
 {
-namespace IAM
-{
-namespace Model
-{
-namespace ReportFormatTypeMapper
-{
-
-
-ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == text_csv_HASH)
+  namespace IAM
   {
-     return ReportFormatType::text_csv;
-  }
-  return ReportFormatType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ReportFormatTypeMapper
+      {
 
-Aws::String GetNameForReportFormatType(ReportFormatType enumValue)
-{
-  switch(enumValue)
-  {
-  case ReportFormatType::text_csv:
-    return "text/csv";
-  default:
-    return "";
-  }
-}
 
-} // namespace ReportFormatTypeMapper
-} // namespace Model
-} // namespace IAM
+        ReportFormatType GetReportFormatTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == text_csv_HASH)
+          {
+            return ReportFormatType::text_csv;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ReportFormatType>(hashCode);
+          }
+
+          return ReportFormatType::NOT_SET;
+        }
+
+        Aws::String GetNameForReportFormatType(ReportFormatType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ReportFormatType::text_csv:
+            return "text/csv";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ReportFormatTypeMapper
+    } // namespace Model
+  } // namespace IAM
 } // namespace Aws

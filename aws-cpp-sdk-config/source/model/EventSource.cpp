@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/EventSource.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int aws_config_HASH = HashingUtils::HashString("aws.config");
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace EventSourceMapper
-{
-
-
-EventSource GetEventSourceForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == aws_config_HASH)
+  namespace ConfigService
   {
-     return EventSource::aws_config;
-  }
-  return EventSource::NOT_SET;
-}
+    namespace Model
+    {
+      namespace EventSourceMapper
+      {
 
-Aws::String GetNameForEventSource(EventSource enumValue)
-{
-  switch(enumValue)
-  {
-  case EventSource::aws_config:
-    return "aws.config";
-  default:
-    return "";
-  }
-}
 
-} // namespace EventSourceMapper
-} // namespace Model
-} // namespace ConfigService
+        EventSource GetEventSourceForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == aws_config_HASH)
+          {
+            return EventSource::aws_config;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventSource>(hashCode);
+          }
+
+          return EventSource::NOT_SET;
+        }
+
+        Aws::String GetNameForEventSource(EventSource enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventSource::aws_config:
+            return "aws.config";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventSourceMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

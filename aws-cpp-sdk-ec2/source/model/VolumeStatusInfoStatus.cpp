@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VolumeStatusInfoStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int insufficient_data_HASH = HashingUtils::HashString("insufficient
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeStatusInfoStatusMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace VolumeStatusInfoStatusMapper
+      {
 
 
-VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ok_HASH)
-  {
-     return VolumeStatusInfoStatus::ok;
-  }
-  else if (hashCode == impaired_HASH)
-  {
-     return VolumeStatusInfoStatus::impaired;
-  }
-  else if (hashCode == insufficient_data_HASH)
-  {
-     return VolumeStatusInfoStatus::insufficient_data;
-  }
-  return VolumeStatusInfoStatus::NOT_SET;
-}
+        VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ok_HASH)
+          {
+            return VolumeStatusInfoStatus::ok;
+          }
+          else if (hashCode == impaired_HASH)
+          {
+            return VolumeStatusInfoStatus::impaired;
+          }
+          else if (hashCode == insufficient_data_HASH)
+          {
+            return VolumeStatusInfoStatus::insufficient_data;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeStatusInfoStatus>(hashCode);
+          }
 
-Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case VolumeStatusInfoStatus::ok:
-    return "ok";
-  case VolumeStatusInfoStatus::impaired:
-    return "impaired";
-  case VolumeStatusInfoStatus::insufficient_data:
-    return "insufficient-data";
-  default:
-    return "";
-  }
-}
+          return VolumeStatusInfoStatus::NOT_SET;
+        }
 
-} // namespace VolumeStatusInfoStatusMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeStatusInfoStatus::ok:
+            return "ok";
+          case VolumeStatusInfoStatus::impaired:
+            return "impaired";
+          case VolumeStatusInfoStatus::insufficient_data:
+            return "insufficient-data";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeStatusInfoStatusMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

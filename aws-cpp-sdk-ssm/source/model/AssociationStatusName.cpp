@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/AssociationStatusName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace AssociationStatusNameMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace AssociationStatusNameMapper
+      {
 
 
-AssociationStatusName GetAssociationStatusNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
-  {
-     return AssociationStatusName::Pending;
-  }
-  else if (hashCode == Success_HASH)
-  {
-     return AssociationStatusName::Success;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return AssociationStatusName::Failed;
-  }
-  return AssociationStatusName::NOT_SET;
-}
+        AssociationStatusName GetAssociationStatusNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return AssociationStatusName::Pending;
+          }
+          else if (hashCode == Success_HASH)
+          {
+            return AssociationStatusName::Success;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return AssociationStatusName::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AssociationStatusName>(hashCode);
+          }
 
-Aws::String GetNameForAssociationStatusName(AssociationStatusName enumValue)
-{
-  switch(enumValue)
-  {
-  case AssociationStatusName::Pending:
-    return "Pending";
-  case AssociationStatusName::Success:
-    return "Success";
-  case AssociationStatusName::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return AssociationStatusName::NOT_SET;
+        }
 
-} // namespace AssociationStatusNameMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForAssociationStatusName(AssociationStatusName enumValue)
+        {
+          switch(enumValue)
+          {
+          case AssociationStatusName::Pending:
+            return "Pending";
+          case AssociationStatusName::Success:
+            return "Success";
+          case AssociationStatusName::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AssociationStatusNameMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

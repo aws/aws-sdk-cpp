@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VpnState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VpnStateMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace VpnStateMapper
+      {
 
 
-VpnState GetVpnStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == pending_HASH)
-  {
-     return VpnState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return VpnState::available;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return VpnState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return VpnState::deleted;
-  }
-  return VpnState::NOT_SET;
-}
+        VpnState GetVpnStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == pending_HASH)
+          {
+            return VpnState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return VpnState::available;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return VpnState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return VpnState::deleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VpnState>(hashCode);
+          }
 
-Aws::String GetNameForVpnState(VpnState enumValue)
-{
-  switch(enumValue)
-  {
-  case VpnState::pending:
-    return "pending";
-  case VpnState::available:
-    return "available";
-  case VpnState::deleting:
-    return "deleting";
-  case VpnState::deleted:
-    return "deleted";
-  default:
-    return "";
-  }
-}
+          return VpnState::NOT_SET;
+        }
 
-} // namespace VpnStateMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForVpnState(VpnState enumValue)
+        {
+          switch(enumValue)
+          {
+          case VpnState::pending:
+            return "pending";
+          case VpnState::available:
+            return "available";
+          case VpnState::deleting:
+            return "deleting";
+          case VpnState::deleted:
+            return "deleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VpnStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

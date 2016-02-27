@@ -14,6 +14,7 @@
 */
 #include <aws/codecommit/model/OrderEnum.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int descending_HASH = HashingUtils::HashString("descending");
 
 namespace Aws
 {
-namespace CodeCommit
-{
-namespace Model
-{
-namespace OrderEnumMapper
-{
-
-
-OrderEnum GetOrderEnumForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ascending_HASH)
+  namespace CodeCommit
   {
-     return OrderEnum::ascending;
-  }
-  else if (hashCode == descending_HASH)
-  {
-     return OrderEnum::descending;
-  }
-  return OrderEnum::NOT_SET;
-}
+    namespace Model
+    {
+      namespace OrderEnumMapper
+      {
 
-Aws::String GetNameForOrderEnum(OrderEnum enumValue)
-{
-  switch(enumValue)
-  {
-  case OrderEnum::ascending:
-    return "ascending";
-  case OrderEnum::descending:
-    return "descending";
-  default:
-    return "";
-  }
-}
 
-} // namespace OrderEnumMapper
-} // namespace Model
-} // namespace CodeCommit
+        OrderEnum GetOrderEnumForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ascending_HASH)
+          {
+            return OrderEnum::ascending;
+          }
+          else if (hashCode == descending_HASH)
+          {
+            return OrderEnum::descending;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OrderEnum>(hashCode);
+          }
+
+          return OrderEnum::NOT_SET;
+        }
+
+        Aws::String GetNameForOrderEnum(OrderEnum enumValue)
+        {
+          switch(enumValue)
+          {
+          case OrderEnum::ascending:
+            return "ascending";
+          case OrderEnum::descending:
+            return "descending";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OrderEnumMapper
+    } // namespace Model
+  } // namespace CodeCommit
 } // namespace Aws

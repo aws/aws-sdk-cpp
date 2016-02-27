@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int gp2_HASH = HashingUtils::HashString("gp2");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace VolumeTypeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace VolumeTypeMapper
+      {
 
 
-VolumeType GetVolumeTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == standard_HASH)
-  {
-     return VolumeType::standard;
-  }
-  else if (hashCode == io1_HASH)
-  {
-     return VolumeType::io1;
-  }
-  else if (hashCode == gp2_HASH)
-  {
-     return VolumeType::gp2;
-  }
-  return VolumeType::NOT_SET;
-}
+        VolumeType GetVolumeTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == standard_HASH)
+          {
+            return VolumeType::standard;
+          }
+          else if (hashCode == io1_HASH)
+          {
+            return VolumeType::io1;
+          }
+          else if (hashCode == gp2_HASH)
+          {
+            return VolumeType::gp2;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VolumeType>(hashCode);
+          }
 
-Aws::String GetNameForVolumeType(VolumeType enumValue)
-{
-  switch(enumValue)
-  {
-  case VolumeType::standard:
-    return "standard";
-  case VolumeType::io1:
-    return "io1";
-  case VolumeType::gp2:
-    return "gp2";
-  default:
-    return "";
-  }
-}
+          return VolumeType::NOT_SET;
+        }
 
-} // namespace VolumeTypeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForVolumeType(VolumeType enumValue)
+        {
+          switch(enumValue)
+          {
+          case VolumeType::standard:
+            return "standard";
+          case VolumeType::io1:
+            return "io1";
+          case VolumeType::gp2:
+            return "gp2";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VolumeTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

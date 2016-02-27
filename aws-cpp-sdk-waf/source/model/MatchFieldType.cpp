@@ -14,6 +14,7 @@
 */
 #include <aws/waf/model/MatchFieldType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int BODY_HASH = HashingUtils::HashString("BODY");
 
 namespace Aws
 {
-namespace WAF
-{
-namespace Model
-{
-namespace MatchFieldTypeMapper
-{
+  namespace WAF
+  {
+    namespace Model
+    {
+      namespace MatchFieldTypeMapper
+      {
 
 
-MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == URI_HASH)
-  {
-     return MatchFieldType::URI;
-  }
-  else if (hashCode == QUERY_STRING_HASH)
-  {
-     return MatchFieldType::QUERY_STRING;
-  }
-  else if (hashCode == HEADER_HASH)
-  {
-     return MatchFieldType::HEADER;
-  }
-  else if (hashCode == METHOD_HASH)
-  {
-     return MatchFieldType::METHOD;
-  }
-  else if (hashCode == BODY_HASH)
-  {
-     return MatchFieldType::BODY;
-  }
-  return MatchFieldType::NOT_SET;
-}
+        MatchFieldType GetMatchFieldTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == URI_HASH)
+          {
+            return MatchFieldType::URI;
+          }
+          else if (hashCode == QUERY_STRING_HASH)
+          {
+            return MatchFieldType::QUERY_STRING;
+          }
+          else if (hashCode == HEADER_HASH)
+          {
+            return MatchFieldType::HEADER;
+          }
+          else if (hashCode == METHOD_HASH)
+          {
+            return MatchFieldType::METHOD;
+          }
+          else if (hashCode == BODY_HASH)
+          {
+            return MatchFieldType::BODY;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MatchFieldType>(hashCode);
+          }
 
-Aws::String GetNameForMatchFieldType(MatchFieldType enumValue)
-{
-  switch(enumValue)
-  {
-  case MatchFieldType::URI:
-    return "URI";
-  case MatchFieldType::QUERY_STRING:
-    return "QUERY_STRING";
-  case MatchFieldType::HEADER:
-    return "HEADER";
-  case MatchFieldType::METHOD:
-    return "METHOD";
-  case MatchFieldType::BODY:
-    return "BODY";
-  default:
-    return "";
-  }
-}
+          return MatchFieldType::NOT_SET;
+        }
 
-} // namespace MatchFieldTypeMapper
-} // namespace Model
-} // namespace WAF
+        Aws::String GetNameForMatchFieldType(MatchFieldType enumValue)
+        {
+          switch(enumValue)
+          {
+          case MatchFieldType::URI:
+            return "URI";
+          case MatchFieldType::QUERY_STRING:
+            return "QUERY_STRING";
+          case MatchFieldType::HEADER:
+            return "HEADER";
+          case MatchFieldType::METHOD:
+            return "METHOD";
+          case MatchFieldType::BODY:
+            return "BODY";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MatchFieldTypeMapper
+    } // namespace Model
+  } // namespace WAF
 } // namespace Aws

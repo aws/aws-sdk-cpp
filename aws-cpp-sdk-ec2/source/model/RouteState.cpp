@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/RouteState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int blackhole_HASH = HashingUtils::HashString("blackhole");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace RouteStateMapper
-{
-
-
-RouteState GetRouteStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == active_HASH)
+  namespace EC2
   {
-     return RouteState::active;
-  }
-  else if (hashCode == blackhole_HASH)
-  {
-     return RouteState::blackhole;
-  }
-  return RouteState::NOT_SET;
-}
+    namespace Model
+    {
+      namespace RouteStateMapper
+      {
 
-Aws::String GetNameForRouteState(RouteState enumValue)
-{
-  switch(enumValue)
-  {
-  case RouteState::active:
-    return "active";
-  case RouteState::blackhole:
-    return "blackhole";
-  default:
-    return "";
-  }
-}
 
-} // namespace RouteStateMapper
-} // namespace Model
-} // namespace EC2
+        RouteState GetRouteStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == active_HASH)
+          {
+            return RouteState::active;
+          }
+          else if (hashCode == blackhole_HASH)
+          {
+            return RouteState::blackhole;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RouteState>(hashCode);
+          }
+
+          return RouteState::NOT_SET;
+        }
+
+        Aws::String GetNameForRouteState(RouteState enumValue)
+        {
+          switch(enumValue)
+          {
+          case RouteState::active:
+            return "active";
+          case RouteState::blackhole:
+            return "blackhole";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RouteStateMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

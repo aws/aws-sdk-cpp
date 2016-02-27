@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace HealthCheckTypeMapper
-{
+  namespace Route53
+  {
+    namespace Model
+    {
+      namespace HealthCheckTypeMapper
+      {
 
 
-HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == HTTP_HASH)
-  {
-     return HealthCheckType::HTTP;
-  }
-  else if (hashCode == HTTPS_HASH)
-  {
-     return HealthCheckType::HTTPS;
-  }
-  else if (hashCode == HTTP_STR_MATCH_HASH)
-  {
-     return HealthCheckType::HTTP_STR_MATCH;
-  }
-  else if (hashCode == HTTPS_STR_MATCH_HASH)
-  {
-     return HealthCheckType::HTTPS_STR_MATCH;
-  }
-  else if (hashCode == TCP_HASH)
-  {
-     return HealthCheckType::TCP;
-  }
-  else if (hashCode == CALCULATED_HASH)
-  {
-     return HealthCheckType::CALCULATED;
-  }
-  return HealthCheckType::NOT_SET;
-}
+        HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == HTTP_HASH)
+          {
+            return HealthCheckType::HTTP;
+          }
+          else if (hashCode == HTTPS_HASH)
+          {
+            return HealthCheckType::HTTPS;
+          }
+          else if (hashCode == HTTP_STR_MATCH_HASH)
+          {
+            return HealthCheckType::HTTP_STR_MATCH;
+          }
+          else if (hashCode == HTTPS_STR_MATCH_HASH)
+          {
+            return HealthCheckType::HTTPS_STR_MATCH;
+          }
+          else if (hashCode == TCP_HASH)
+          {
+            return HealthCheckType::TCP;
+          }
+          else if (hashCode == CALCULATED_HASH)
+          {
+            return HealthCheckType::CALCULATED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<HealthCheckType>(hashCode);
+          }
 
-Aws::String GetNameForHealthCheckType(HealthCheckType enumValue)
-{
-  switch(enumValue)
-  {
-  case HealthCheckType::HTTP:
-    return "HTTP";
-  case HealthCheckType::HTTPS:
-    return "HTTPS";
-  case HealthCheckType::HTTP_STR_MATCH:
-    return "HTTP_STR_MATCH";
-  case HealthCheckType::HTTPS_STR_MATCH:
-    return "HTTPS_STR_MATCH";
-  case HealthCheckType::TCP:
-    return "TCP";
-  case HealthCheckType::CALCULATED:
-    return "CALCULATED";
-  default:
-    return "";
-  }
-}
+          return HealthCheckType::NOT_SET;
+        }
 
-} // namespace HealthCheckTypeMapper
-} // namespace Model
-} // namespace Route53
+        Aws::String GetNameForHealthCheckType(HealthCheckType enumValue)
+        {
+          switch(enumValue)
+          {
+          case HealthCheckType::HTTP:
+            return "HTTP";
+          case HealthCheckType::HTTPS:
+            return "HTTPS";
+          case HealthCheckType::HTTP_STR_MATCH:
+            return "HTTP_STR_MATCH";
+          case HealthCheckType::HTTPS_STR_MATCH:
+            return "HTTPS_STR_MATCH";
+          case HealthCheckType::TCP:
+            return "TCP";
+          case HealthCheckType::CALCULATED:
+            return "CALCULATED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace HealthCheckTypeMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/CancelBatchErrorCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedErro
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace CancelBatchErrorCodeMapper
-{
+  namespace EC2
+  {
+    namespace Model
+    {
+      namespace CancelBatchErrorCodeMapper
+      {
 
 
-CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == fleetRequestIdDoesNotExist_HASH)
-  {
-     return CancelBatchErrorCode::fleetRequestIdDoesNotExist;
-  }
-  else if (hashCode == fleetRequestIdMalformed_HASH)
-  {
-     return CancelBatchErrorCode::fleetRequestIdMalformed;
-  }
-  else if (hashCode == fleetRequestNotInCancellableState_HASH)
-  {
-     return CancelBatchErrorCode::fleetRequestNotInCancellableState;
-  }
-  else if (hashCode == unexpectedError_HASH)
-  {
-     return CancelBatchErrorCode::unexpectedError;
-  }
-  return CancelBatchErrorCode::NOT_SET;
-}
+        CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == fleetRequestIdDoesNotExist_HASH)
+          {
+            return CancelBatchErrorCode::fleetRequestIdDoesNotExist;
+          }
+          else if (hashCode == fleetRequestIdMalformed_HASH)
+          {
+            return CancelBatchErrorCode::fleetRequestIdMalformed;
+          }
+          else if (hashCode == fleetRequestNotInCancellableState_HASH)
+          {
+            return CancelBatchErrorCode::fleetRequestNotInCancellableState;
+          }
+          else if (hashCode == unexpectedError_HASH)
+          {
+            return CancelBatchErrorCode::unexpectedError;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CancelBatchErrorCode>(hashCode);
+          }
 
-Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode enumValue)
-{
-  switch(enumValue)
-  {
-  case CancelBatchErrorCode::fleetRequestIdDoesNotExist:
-    return "fleetRequestIdDoesNotExist";
-  case CancelBatchErrorCode::fleetRequestIdMalformed:
-    return "fleetRequestIdMalformed";
-  case CancelBatchErrorCode::fleetRequestNotInCancellableState:
-    return "fleetRequestNotInCancellableState";
-  case CancelBatchErrorCode::unexpectedError:
-    return "unexpectedError";
-  default:
-    return "";
-  }
-}
+          return CancelBatchErrorCode::NOT_SET;
+        }
 
-} // namespace CancelBatchErrorCodeMapper
-} // namespace Model
-} // namespace EC2
+        Aws::String GetNameForCancelBatchErrorCode(CancelBatchErrorCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case CancelBatchErrorCode::fleetRequestIdDoesNotExist:
+            return "fleetRequestIdDoesNotExist";
+          case CancelBatchErrorCode::fleetRequestIdMalformed:
+            return "fleetRequestIdMalformed";
+          case CancelBatchErrorCode::fleetRequestNotInCancellableState:
+            return "fleetRequestNotInCancellableState";
+          case CancelBatchErrorCode::unexpectedError:
+            return "unexpectedError";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CancelBatchErrorCodeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

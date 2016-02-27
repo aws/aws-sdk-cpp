@@ -14,6 +14,7 @@
 */
 #include <aws/codepipeline/model/ActionConfigurationPropertyType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Boolean_HASH = HashingUtils::HashString("Boolean");
 
 namespace Aws
 {
-namespace CodePipeline
-{
-namespace Model
-{
-namespace ActionConfigurationPropertyTypeMapper
-{
+  namespace CodePipeline
+  {
+    namespace Model
+    {
+      namespace ActionConfigurationPropertyTypeMapper
+      {
 
 
-ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == String_HASH)
-  {
-     return ActionConfigurationPropertyType::String;
-  }
-  else if (hashCode == Number_HASH)
-  {
-     return ActionConfigurationPropertyType::Number;
-  }
-  else if (hashCode == Boolean_HASH)
-  {
-     return ActionConfigurationPropertyType::Boolean;
-  }
-  return ActionConfigurationPropertyType::NOT_SET;
-}
+        ActionConfigurationPropertyType GetActionConfigurationPropertyTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == String_HASH)
+          {
+            return ActionConfigurationPropertyType::String;
+          }
+          else if (hashCode == Number_HASH)
+          {
+            return ActionConfigurationPropertyType::Number;
+          }
+          else if (hashCode == Boolean_HASH)
+          {
+            return ActionConfigurationPropertyType::Boolean;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ActionConfigurationPropertyType>(hashCode);
+          }
 
-Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType enumValue)
-{
-  switch(enumValue)
-  {
-  case ActionConfigurationPropertyType::String:
-    return "String";
-  case ActionConfigurationPropertyType::Number:
-    return "Number";
-  case ActionConfigurationPropertyType::Boolean:
-    return "Boolean";
-  default:
-    return "";
-  }
-}
+          return ActionConfigurationPropertyType::NOT_SET;
+        }
 
-} // namespace ActionConfigurationPropertyTypeMapper
-} // namespace Model
-} // namespace CodePipeline
+        Aws::String GetNameForActionConfigurationPropertyType(ActionConfigurationPropertyType enumValue)
+        {
+          switch(enumValue)
+          {
+          case ActionConfigurationPropertyType::String:
+            return "String";
+          case ActionConfigurationPropertyType::Number:
+            return "Number";
+          case ActionConfigurationPropertyType::Boolean:
+            return "Boolean";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ActionConfigurationPropertyTypeMapper
+    } // namespace Model
+  } // namespace CodePipeline
 } // namespace Aws

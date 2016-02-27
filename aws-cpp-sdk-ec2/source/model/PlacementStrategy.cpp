@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int cluster_HASH = HashingUtils::HashString("cluster");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace PlacementStrategyMapper
-{
-
-
-PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == cluster_HASH)
+  namespace EC2
   {
-     return PlacementStrategy::cluster;
-  }
-  return PlacementStrategy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace PlacementStrategyMapper
+      {
 
-Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue)
-{
-  switch(enumValue)
-  {
-  case PlacementStrategy::cluster:
-    return "cluster";
-  default:
-    return "";
-  }
-}
 
-} // namespace PlacementStrategyMapper
-} // namespace Model
-} // namespace EC2
+        PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == cluster_HASH)
+          {
+            return PlacementStrategy::cluster;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PlacementStrategy>(hashCode);
+          }
+
+          return PlacementStrategy::NOT_SET;
+        }
+
+        Aws::String GetNameForPlacementStrategy(PlacementStrategy enumValue)
+        {
+          switch(enumValue)
+          {
+          case PlacementStrategy::cluster:
+            return "cluster";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlacementStrategyMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/EventCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -37,132 +38,145 @@ static const int FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = HashingUtils::HashS
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace EventCodeMapper
-{
+  namespace GameLift
+  {
+    namespace Model
+    {
+      namespace EventCodeMapper
+      {
 
 
-EventCode GetEventCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == GENERIC_EVENT_HASH)
-  {
-     return EventCode::GENERIC_EVENT;
-  }
-  else if (hashCode == FLEET_CREATED_HASH)
-  {
-     return EventCode::FLEET_CREATED;
-  }
-  else if (hashCode == FLEET_DELETED_HASH)
-  {
-     return EventCode::FLEET_DELETED;
-  }
-  else if (hashCode == FLEET_SCALING_EVENT_HASH)
-  {
-     return EventCode::FLEET_SCALING_EVENT;
-  }
-  else if (hashCode == FLEET_STATE_DOWNLOADING_HASH)
-  {
-     return EventCode::FLEET_STATE_DOWNLOADING;
-  }
-  else if (hashCode == FLEET_STATE_VALIDATING_HASH)
-  {
-     return EventCode::FLEET_STATE_VALIDATING;
-  }
-  else if (hashCode == FLEET_STATE_BUILDING_HASH)
-  {
-     return EventCode::FLEET_STATE_BUILDING;
-  }
-  else if (hashCode == FLEET_STATE_ACTIVATING_HASH)
-  {
-     return EventCode::FLEET_STATE_ACTIVATING;
-  }
-  else if (hashCode == FLEET_STATE_ACTIVE_HASH)
-  {
-     return EventCode::FLEET_STATE_ACTIVE;
-  }
-  else if (hashCode == FLEET_STATE_ERROR_HASH)
-  {
-     return EventCode::FLEET_STATE_ERROR;
-  }
-  else if (hashCode == FLEET_INITIALIZATION_FAILED_HASH)
-  {
-     return EventCode::FLEET_INITIALIZATION_FAILED;
-  }
-  else if (hashCode == FLEET_BINARY_DOWNLOAD_FAILED_HASH)
-  {
-     return EventCode::FLEET_BINARY_DOWNLOAD_FAILED;
-  }
-  else if (hashCode == FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH)
-  {
-     return EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND;
-  }
-  else if (hashCode == FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH)
-  {
-     return EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE;
-  }
-  else if (hashCode == FLEET_VALIDATION_TIMED_OUT_HASH)
-  {
-     return EventCode::FLEET_VALIDATION_TIMED_OUT;
-  }
-  else if (hashCode == FLEET_ACTIVATION_FAILED_HASH)
-  {
-     return EventCode::FLEET_ACTIVATION_FAILED;
-  }
-  else if (hashCode == FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH)
-  {
-     return EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES;
-  }
-  return EventCode::NOT_SET;
-}
+        EventCode GetEventCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == GENERIC_EVENT_HASH)
+          {
+            return EventCode::GENERIC_EVENT;
+          }
+          else if (hashCode == FLEET_CREATED_HASH)
+          {
+            return EventCode::FLEET_CREATED;
+          }
+          else if (hashCode == FLEET_DELETED_HASH)
+          {
+            return EventCode::FLEET_DELETED;
+          }
+          else if (hashCode == FLEET_SCALING_EVENT_HASH)
+          {
+            return EventCode::FLEET_SCALING_EVENT;
+          }
+          else if (hashCode == FLEET_STATE_DOWNLOADING_HASH)
+          {
+            return EventCode::FLEET_STATE_DOWNLOADING;
+          }
+          else if (hashCode == FLEET_STATE_VALIDATING_HASH)
+          {
+            return EventCode::FLEET_STATE_VALIDATING;
+          }
+          else if (hashCode == FLEET_STATE_BUILDING_HASH)
+          {
+            return EventCode::FLEET_STATE_BUILDING;
+          }
+          else if (hashCode == FLEET_STATE_ACTIVATING_HASH)
+          {
+            return EventCode::FLEET_STATE_ACTIVATING;
+          }
+          else if (hashCode == FLEET_STATE_ACTIVE_HASH)
+          {
+            return EventCode::FLEET_STATE_ACTIVE;
+          }
+          else if (hashCode == FLEET_STATE_ERROR_HASH)
+          {
+            return EventCode::FLEET_STATE_ERROR;
+          }
+          else if (hashCode == FLEET_INITIALIZATION_FAILED_HASH)
+          {
+            return EventCode::FLEET_INITIALIZATION_FAILED;
+          }
+          else if (hashCode == FLEET_BINARY_DOWNLOAD_FAILED_HASH)
+          {
+            return EventCode::FLEET_BINARY_DOWNLOAD_FAILED;
+          }
+          else if (hashCode == FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH)
+          {
+            return EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND;
+          }
+          else if (hashCode == FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH)
+          {
+            return EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE;
+          }
+          else if (hashCode == FLEET_VALIDATION_TIMED_OUT_HASH)
+          {
+            return EventCode::FLEET_VALIDATION_TIMED_OUT;
+          }
+          else if (hashCode == FLEET_ACTIVATION_FAILED_HASH)
+          {
+            return EventCode::FLEET_ACTIVATION_FAILED;
+          }
+          else if (hashCode == FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH)
+          {
+            return EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventCode>(hashCode);
+          }
 
-Aws::String GetNameForEventCode(EventCode enumValue)
-{
-  switch(enumValue)
-  {
-  case EventCode::GENERIC_EVENT:
-    return "GENERIC_EVENT";
-  case EventCode::FLEET_CREATED:
-    return "FLEET_CREATED";
-  case EventCode::FLEET_DELETED:
-    return "FLEET_DELETED";
-  case EventCode::FLEET_SCALING_EVENT:
-    return "FLEET_SCALING_EVENT";
-  case EventCode::FLEET_STATE_DOWNLOADING:
-    return "FLEET_STATE_DOWNLOADING";
-  case EventCode::FLEET_STATE_VALIDATING:
-    return "FLEET_STATE_VALIDATING";
-  case EventCode::FLEET_STATE_BUILDING:
-    return "FLEET_STATE_BUILDING";
-  case EventCode::FLEET_STATE_ACTIVATING:
-    return "FLEET_STATE_ACTIVATING";
-  case EventCode::FLEET_STATE_ACTIVE:
-    return "FLEET_STATE_ACTIVE";
-  case EventCode::FLEET_STATE_ERROR:
-    return "FLEET_STATE_ERROR";
-  case EventCode::FLEET_INITIALIZATION_FAILED:
-    return "FLEET_INITIALIZATION_FAILED";
-  case EventCode::FLEET_BINARY_DOWNLOAD_FAILED:
-    return "FLEET_BINARY_DOWNLOAD_FAILED";
-  case EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND:
-    return "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND";
-  case EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE:
-    return "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE";
-  case EventCode::FLEET_VALIDATION_TIMED_OUT:
-    return "FLEET_VALIDATION_TIMED_OUT";
-  case EventCode::FLEET_ACTIVATION_FAILED:
-    return "FLEET_ACTIVATION_FAILED";
-  case EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES:
-    return "FLEET_ACTIVATION_FAILED_NO_INSTANCES";
-  default:
-    return "";
-  }
-}
+          return EventCode::NOT_SET;
+        }
 
-} // namespace EventCodeMapper
-} // namespace Model
-} // namespace GameLift
+        Aws::String GetNameForEventCode(EventCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventCode::GENERIC_EVENT:
+            return "GENERIC_EVENT";
+          case EventCode::FLEET_CREATED:
+            return "FLEET_CREATED";
+          case EventCode::FLEET_DELETED:
+            return "FLEET_DELETED";
+          case EventCode::FLEET_SCALING_EVENT:
+            return "FLEET_SCALING_EVENT";
+          case EventCode::FLEET_STATE_DOWNLOADING:
+            return "FLEET_STATE_DOWNLOADING";
+          case EventCode::FLEET_STATE_VALIDATING:
+            return "FLEET_STATE_VALIDATING";
+          case EventCode::FLEET_STATE_BUILDING:
+            return "FLEET_STATE_BUILDING";
+          case EventCode::FLEET_STATE_ACTIVATING:
+            return "FLEET_STATE_ACTIVATING";
+          case EventCode::FLEET_STATE_ACTIVE:
+            return "FLEET_STATE_ACTIVE";
+          case EventCode::FLEET_STATE_ERROR:
+            return "FLEET_STATE_ERROR";
+          case EventCode::FLEET_INITIALIZATION_FAILED:
+            return "FLEET_INITIALIZATION_FAILED";
+          case EventCode::FLEET_BINARY_DOWNLOAD_FAILED:
+            return "FLEET_BINARY_DOWNLOAD_FAILED";
+          case EventCode::FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND:
+            return "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND";
+          case EventCode::FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE:
+            return "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE";
+          case EventCode::FLEET_VALIDATION_TIMED_OUT:
+            return "FLEET_VALIDATION_TIMED_OUT";
+          case EventCode::FLEET_ACTIVATION_FAILED:
+            return "FLEET_ACTIVATION_FAILED";
+          case EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES:
+            return "FLEET_ACTIVATION_FAILED_NO_INSTANCES";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventCodeMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

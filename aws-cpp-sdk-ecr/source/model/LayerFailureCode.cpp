@@ -14,6 +14,7 @@
 */
 #include <aws/ecr/model/LayerFailureCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int MissingLayerDigest_HASH = HashingUtils::HashString("MissingLaye
 
 namespace Aws
 {
-namespace ECR
-{
-namespace Model
-{
-namespace LayerFailureCodeMapper
-{
-
-
-LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InvalidLayerDigest_HASH)
+  namespace ECR
   {
-     return LayerFailureCode::InvalidLayerDigest;
-  }
-  else if (hashCode == MissingLayerDigest_HASH)
-  {
-     return LayerFailureCode::MissingLayerDigest;
-  }
-  return LayerFailureCode::NOT_SET;
-}
+    namespace Model
+    {
+      namespace LayerFailureCodeMapper
+      {
 
-Aws::String GetNameForLayerFailureCode(LayerFailureCode enumValue)
-{
-  switch(enumValue)
-  {
-  case LayerFailureCode::InvalidLayerDigest:
-    return "InvalidLayerDigest";
-  case LayerFailureCode::MissingLayerDigest:
-    return "MissingLayerDigest";
-  default:
-    return "";
-  }
-}
 
-} // namespace LayerFailureCodeMapper
-} // namespace Model
-} // namespace ECR
+        LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InvalidLayerDigest_HASH)
+          {
+            return LayerFailureCode::InvalidLayerDigest;
+          }
+          else if (hashCode == MissingLayerDigest_HASH)
+          {
+            return LayerFailureCode::MissingLayerDigest;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LayerFailureCode>(hashCode);
+          }
+
+          return LayerFailureCode::NOT_SET;
+        }
+
+        Aws::String GetNameForLayerFailureCode(LayerFailureCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case LayerFailureCode::InvalidLayerDigest:
+            return "InvalidLayerDigest";
+          case LayerFailureCode::MissingLayerDigest:
+            return "MissingLayerDigest";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LayerFailureCodeMapper
+    } // namespace Model
+  } // namespace ECR
 } // namespace Aws

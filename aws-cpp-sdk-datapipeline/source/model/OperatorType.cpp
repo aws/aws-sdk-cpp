@@ -14,6 +14,7 @@
 */
 #include <aws/datapipeline/model/OperatorType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
 
 namespace Aws
 {
-namespace DataPipeline
-{
-namespace Model
-{
-namespace OperatorTypeMapper
-{
+  namespace DataPipeline
+  {
+    namespace Model
+    {
+      namespace OperatorTypeMapper
+      {
 
 
-OperatorType GetOperatorTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == EQ_HASH)
-  {
-     return OperatorType::EQ;
-  }
-  else if (hashCode == REF_EQ_HASH)
-  {
-     return OperatorType::REF_EQ;
-  }
-  else if (hashCode == LE_HASH)
-  {
-     return OperatorType::LE;
-  }
-  else if (hashCode == GE_HASH)
-  {
-     return OperatorType::GE;
-  }
-  else if (hashCode == BETWEEN_HASH)
-  {
-     return OperatorType::BETWEEN;
-  }
-  return OperatorType::NOT_SET;
-}
+        OperatorType GetOperatorTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EQ_HASH)
+          {
+            return OperatorType::EQ;
+          }
+          else if (hashCode == REF_EQ_HASH)
+          {
+            return OperatorType::REF_EQ;
+          }
+          else if (hashCode == LE_HASH)
+          {
+            return OperatorType::LE;
+          }
+          else if (hashCode == GE_HASH)
+          {
+            return OperatorType::GE;
+          }
+          else if (hashCode == BETWEEN_HASH)
+          {
+            return OperatorType::BETWEEN;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<OperatorType>(hashCode);
+          }
 
-Aws::String GetNameForOperatorType(OperatorType enumValue)
-{
-  switch(enumValue)
-  {
-  case OperatorType::EQ:
-    return "EQ";
-  case OperatorType::REF_EQ:
-    return "REF_EQ";
-  case OperatorType::LE:
-    return "LE";
-  case OperatorType::GE:
-    return "GE";
-  case OperatorType::BETWEEN:
-    return "BETWEEN";
-  default:
-    return "";
-  }
-}
+          return OperatorType::NOT_SET;
+        }
 
-} // namespace OperatorTypeMapper
-} // namespace Model
-} // namespace DataPipeline
+        Aws::String GetNameForOperatorType(OperatorType enumValue)
+        {
+          switch(enumValue)
+          {
+          case OperatorType::EQ:
+            return "EQ";
+          case OperatorType::REF_EQ:
+            return "REF_EQ";
+          case OperatorType::LE:
+            return "LE";
+          case OperatorType::GE:
+            return "GE";
+          case OperatorType::BETWEEN:
+            return "BETWEEN";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OperatorTypeMapper
+    } // namespace Model
+  } // namespace DataPipeline
 } // namespace Aws

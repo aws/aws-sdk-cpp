@@ -14,6 +14,7 @@
 */
 #include <aws/cloudsearch/model/SuggesterFuzzyMatching.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int high_HASH = HashingUtils::HashString("high");
 
 namespace Aws
 {
-namespace CloudSearch
-{
-namespace Model
-{
-namespace SuggesterFuzzyMatchingMapper
-{
+  namespace CloudSearch
+  {
+    namespace Model
+    {
+      namespace SuggesterFuzzyMatchingMapper
+      {
 
 
-SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == none_HASH)
-  {
-     return SuggesterFuzzyMatching::none;
-  }
-  else if (hashCode == low_HASH)
-  {
-     return SuggesterFuzzyMatching::low;
-  }
-  else if (hashCode == high_HASH)
-  {
-     return SuggesterFuzzyMatching::high;
-  }
-  return SuggesterFuzzyMatching::NOT_SET;
-}
+        SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == none_HASH)
+          {
+            return SuggesterFuzzyMatching::none;
+          }
+          else if (hashCode == low_HASH)
+          {
+            return SuggesterFuzzyMatching::low;
+          }
+          else if (hashCode == high_HASH)
+          {
+            return SuggesterFuzzyMatching::high;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SuggesterFuzzyMatching>(hashCode);
+          }
 
-Aws::String GetNameForSuggesterFuzzyMatching(SuggesterFuzzyMatching enumValue)
-{
-  switch(enumValue)
-  {
-  case SuggesterFuzzyMatching::none:
-    return "none";
-  case SuggesterFuzzyMatching::low:
-    return "low";
-  case SuggesterFuzzyMatching::high:
-    return "high";
-  default:
-    return "";
-  }
-}
+          return SuggesterFuzzyMatching::NOT_SET;
+        }
 
-} // namespace SuggesterFuzzyMatchingMapper
-} // namespace Model
-} // namespace CloudSearch
+        Aws::String GetNameForSuggesterFuzzyMatching(SuggesterFuzzyMatching enumValue)
+        {
+          switch(enumValue)
+          {
+          case SuggesterFuzzyMatching::none:
+            return "none";
+          case SuggesterFuzzyMatching::low:
+            return "low";
+          case SuggesterFuzzyMatching::high:
+            return "high";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SuggesterFuzzyMatchingMapper
+    } // namespace Model
+  } // namespace CloudSearch
 } // namespace Aws

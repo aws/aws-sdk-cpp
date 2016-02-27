@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ResourceRecordSetRegion.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -31,96 +32,109 @@ static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
 
 namespace Aws
 {
-namespace Route53
-{
-namespace Model
-{
-namespace ResourceRecordSetRegionMapper
-{
+  namespace Route53
+  {
+    namespace Model
+    {
+      namespace ResourceRecordSetRegionMapper
+      {
 
 
-ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == us_east_1_HASH)
-  {
-     return ResourceRecordSetRegion::us_east_1;
-  }
-  else if (hashCode == us_west_1_HASH)
-  {
-     return ResourceRecordSetRegion::us_west_1;
-  }
-  else if (hashCode == us_west_2_HASH)
-  {
-     return ResourceRecordSetRegion::us_west_2;
-  }
-  else if (hashCode == eu_west_1_HASH)
-  {
-     return ResourceRecordSetRegion::eu_west_1;
-  }
-  else if (hashCode == eu_central_1_HASH)
-  {
-     return ResourceRecordSetRegion::eu_central_1;
-  }
-  else if (hashCode == ap_southeast_1_HASH)
-  {
-     return ResourceRecordSetRegion::ap_southeast_1;
-  }
-  else if (hashCode == ap_southeast_2_HASH)
-  {
-     return ResourceRecordSetRegion::ap_southeast_2;
-  }
-  else if (hashCode == ap_northeast_1_HASH)
-  {
-     return ResourceRecordSetRegion::ap_northeast_1;
-  }
-  else if (hashCode == ap_northeast_2_HASH)
-  {
-     return ResourceRecordSetRegion::ap_northeast_2;
-  }
-  else if (hashCode == sa_east_1_HASH)
-  {
-     return ResourceRecordSetRegion::sa_east_1;
-  }
-  else if (hashCode == cn_north_1_HASH)
-  {
-     return ResourceRecordSetRegion::cn_north_1;
-  }
-  return ResourceRecordSetRegion::NOT_SET;
-}
+        ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == us_east_1_HASH)
+          {
+            return ResourceRecordSetRegion::us_east_1;
+          }
+          else if (hashCode == us_west_1_HASH)
+          {
+            return ResourceRecordSetRegion::us_west_1;
+          }
+          else if (hashCode == us_west_2_HASH)
+          {
+            return ResourceRecordSetRegion::us_west_2;
+          }
+          else if (hashCode == eu_west_1_HASH)
+          {
+            return ResourceRecordSetRegion::eu_west_1;
+          }
+          else if (hashCode == eu_central_1_HASH)
+          {
+            return ResourceRecordSetRegion::eu_central_1;
+          }
+          else if (hashCode == ap_southeast_1_HASH)
+          {
+            return ResourceRecordSetRegion::ap_southeast_1;
+          }
+          else if (hashCode == ap_southeast_2_HASH)
+          {
+            return ResourceRecordSetRegion::ap_southeast_2;
+          }
+          else if (hashCode == ap_northeast_1_HASH)
+          {
+            return ResourceRecordSetRegion::ap_northeast_1;
+          }
+          else if (hashCode == ap_northeast_2_HASH)
+          {
+            return ResourceRecordSetRegion::ap_northeast_2;
+          }
+          else if (hashCode == sa_east_1_HASH)
+          {
+            return ResourceRecordSetRegion::sa_east_1;
+          }
+          else if (hashCode == cn_north_1_HASH)
+          {
+            return ResourceRecordSetRegion::cn_north_1;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ResourceRecordSetRegion>(hashCode);
+          }
 
-Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion enumValue)
-{
-  switch(enumValue)
-  {
-  case ResourceRecordSetRegion::us_east_1:
-    return "us-east-1";
-  case ResourceRecordSetRegion::us_west_1:
-    return "us-west-1";
-  case ResourceRecordSetRegion::us_west_2:
-    return "us-west-2";
-  case ResourceRecordSetRegion::eu_west_1:
-    return "eu-west-1";
-  case ResourceRecordSetRegion::eu_central_1:
-    return "eu-central-1";
-  case ResourceRecordSetRegion::ap_southeast_1:
-    return "ap-southeast-1";
-  case ResourceRecordSetRegion::ap_southeast_2:
-    return "ap-southeast-2";
-  case ResourceRecordSetRegion::ap_northeast_1:
-    return "ap-northeast-1";
-  case ResourceRecordSetRegion::ap_northeast_2:
-    return "ap-northeast-2";
-  case ResourceRecordSetRegion::sa_east_1:
-    return "sa-east-1";
-  case ResourceRecordSetRegion::cn_north_1:
-    return "cn-north-1";
-  default:
-    return "";
-  }
-}
+          return ResourceRecordSetRegion::NOT_SET;
+        }
 
-} // namespace ResourceRecordSetRegionMapper
-} // namespace Model
-} // namespace Route53
+        Aws::String GetNameForResourceRecordSetRegion(ResourceRecordSetRegion enumValue)
+        {
+          switch(enumValue)
+          {
+          case ResourceRecordSetRegion::us_east_1:
+            return "us-east-1";
+          case ResourceRecordSetRegion::us_west_1:
+            return "us-west-1";
+          case ResourceRecordSetRegion::us_west_2:
+            return "us-west-2";
+          case ResourceRecordSetRegion::eu_west_1:
+            return "eu-west-1";
+          case ResourceRecordSetRegion::eu_central_1:
+            return "eu-central-1";
+          case ResourceRecordSetRegion::ap_southeast_1:
+            return "ap-southeast-1";
+          case ResourceRecordSetRegion::ap_southeast_2:
+            return "ap-southeast-2";
+          case ResourceRecordSetRegion::ap_northeast_1:
+            return "ap-northeast-1";
+          case ResourceRecordSetRegion::ap_northeast_2:
+            return "ap-northeast-2";
+          case ResourceRecordSetRegion::sa_east_1:
+            return "sa-east-1";
+          case ResourceRecordSetRegion::cn_north_1:
+            return "cn-north-1";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ResourceRecordSetRegionMapper
+    } // namespace Model
+  } // namespace Route53
 } // namespace Aws

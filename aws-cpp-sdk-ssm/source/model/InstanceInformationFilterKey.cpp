@@ -14,6 +14,7 @@
 */
 #include <aws/ssm/model/InstanceInformationFilterKey.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 namespace Aws
 {
-namespace SSM
-{
-namespace Model
-{
-namespace InstanceInformationFilterKeyMapper
-{
+  namespace SSM
+  {
+    namespace Model
+    {
+      namespace InstanceInformationFilterKeyMapper
+      {
 
 
-InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == InstanceIds_HASH)
-  {
-     return InstanceInformationFilterKey::InstanceIds;
-  }
-  else if (hashCode == AgentVersion_HASH)
-  {
-     return InstanceInformationFilterKey::AgentVersion;
-  }
-  else if (hashCode == PingStatus_HASH)
-  {
-     return InstanceInformationFilterKey::PingStatus;
-  }
-  else if (hashCode == PlatformTypes_HASH)
-  {
-     return InstanceInformationFilterKey::PlatformTypes;
-  }
-  return InstanceInformationFilterKey::NOT_SET;
-}
+        InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == InstanceIds_HASH)
+          {
+            return InstanceInformationFilterKey::InstanceIds;
+          }
+          else if (hashCode == AgentVersion_HASH)
+          {
+            return InstanceInformationFilterKey::AgentVersion;
+          }
+          else if (hashCode == PingStatus_HASH)
+          {
+            return InstanceInformationFilterKey::PingStatus;
+          }
+          else if (hashCode == PlatformTypes_HASH)
+          {
+            return InstanceInformationFilterKey::PlatformTypes;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceInformationFilterKey>(hashCode);
+          }
 
-Aws::String GetNameForInstanceInformationFilterKey(InstanceInformationFilterKey enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceInformationFilterKey::InstanceIds:
-    return "InstanceIds";
-  case InstanceInformationFilterKey::AgentVersion:
-    return "AgentVersion";
-  case InstanceInformationFilterKey::PingStatus:
-    return "PingStatus";
-  case InstanceInformationFilterKey::PlatformTypes:
-    return "PlatformTypes";
-  default:
-    return "";
-  }
-}
+          return InstanceInformationFilterKey::NOT_SET;
+        }
 
-} // namespace InstanceInformationFilterKeyMapper
-} // namespace Model
-} // namespace SSM
+        Aws::String GetNameForInstanceInformationFilterKey(InstanceInformationFilterKey enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceInformationFilterKey::InstanceIds:
+            return "InstanceIds";
+          case InstanceInformationFilterKey::AgentVersion:
+            return "AgentVersion";
+          case InstanceInformationFilterKey::PingStatus:
+            return "PingStatus";
+          case InstanceInformationFilterKey::PlatformTypes:
+            return "PlatformTypes";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceInformationFilterKeyMapper
+    } // namespace Model
+  } // namespace SSM
 } // namespace Aws

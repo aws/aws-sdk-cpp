@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AccountAttributeName.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int default_vpc_HASH = HashingUtils::HashString("default-vpc");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AccountAttributeNameMapper
-{
-
-
-AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == supported_platforms_HASH)
+  namespace EC2
   {
-     return AccountAttributeName::supported_platforms;
-  }
-  else if (hashCode == default_vpc_HASH)
-  {
-     return AccountAttributeName::default_vpc;
-  }
-  return AccountAttributeName::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AccountAttributeNameMapper
+      {
 
-Aws::String GetNameForAccountAttributeName(AccountAttributeName enumValue)
-{
-  switch(enumValue)
-  {
-  case AccountAttributeName::supported_platforms:
-    return "supported-platforms";
-  case AccountAttributeName::default_vpc:
-    return "default-vpc";
-  default:
-    return "";
-  }
-}
 
-} // namespace AccountAttributeNameMapper
-} // namespace Model
-} // namespace EC2
+        AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == supported_platforms_HASH)
+          {
+            return AccountAttributeName::supported_platforms;
+          }
+          else if (hashCode == default_vpc_HASH)
+          {
+            return AccountAttributeName::default_vpc;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AccountAttributeName>(hashCode);
+          }
+
+          return AccountAttributeName::NOT_SET;
+        }
+
+        Aws::String GetNameForAccountAttributeName(AccountAttributeName enumValue)
+        {
+          switch(enumValue)
+          {
+          case AccountAttributeName::supported_platforms:
+            return "supported-platforms";
+          case AccountAttributeName::default_vpc:
+            return "default-vpc";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AccountAttributeNameMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

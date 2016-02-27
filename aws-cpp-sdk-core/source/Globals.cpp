@@ -12,19 +12,9 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-
-#pragma once
-
-#include <aws/core/utils/EnumParseOverflowContainer.h>
-#include <atomic>
+#include <aws/core/Globals.h>
 
 namespace Aws
 {
-    /**
-     * This is used to handle the Enum round tripping problem
-     * for when a service updates their enumerations, but the user does not
-     * have an up to date client. This member will be initialized the first time a client
-     * is created and will be cleaned up when the last client goes out of scope.
-     */
-    extern std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow;
+    std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow(nullptr);
 }

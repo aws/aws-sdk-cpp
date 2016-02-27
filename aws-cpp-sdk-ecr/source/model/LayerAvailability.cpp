@@ -14,6 +14,7 @@
 */
 #include <aws/ecr/model/LayerAvailability.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
 
 namespace Aws
 {
-namespace ECR
-{
-namespace Model
-{
-namespace LayerAvailabilityMapper
-{
-
-
-LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == AVAILABLE_HASH)
+  namespace ECR
   {
-     return LayerAvailability::AVAILABLE;
-  }
-  else if (hashCode == UNAVAILABLE_HASH)
-  {
-     return LayerAvailability::UNAVAILABLE;
-  }
-  return LayerAvailability::NOT_SET;
-}
+    namespace Model
+    {
+      namespace LayerAvailabilityMapper
+      {
 
-Aws::String GetNameForLayerAvailability(LayerAvailability enumValue)
-{
-  switch(enumValue)
-  {
-  case LayerAvailability::AVAILABLE:
-    return "AVAILABLE";
-  case LayerAvailability::UNAVAILABLE:
-    return "UNAVAILABLE";
-  default:
-    return "";
-  }
-}
 
-} // namespace LayerAvailabilityMapper
-} // namespace Model
-} // namespace ECR
+        LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == AVAILABLE_HASH)
+          {
+            return LayerAvailability::AVAILABLE;
+          }
+          else if (hashCode == UNAVAILABLE_HASH)
+          {
+            return LayerAvailability::UNAVAILABLE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LayerAvailability>(hashCode);
+          }
+
+          return LayerAvailability::NOT_SET;
+        }
+
+        Aws::String GetNameForLayerAvailability(LayerAvailability enumValue)
+        {
+          switch(enumValue)
+          {
+          case LayerAvailability::AVAILABLE:
+            return "AVAILABLE";
+          case LayerAvailability::UNAVAILABLE:
+            return "UNAVAILABLE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LayerAvailabilityMapper
+    } // namespace Model
+  } // namespace ECR
 } // namespace Aws

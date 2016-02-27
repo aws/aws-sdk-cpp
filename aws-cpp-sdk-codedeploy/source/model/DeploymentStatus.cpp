@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/DeploymentStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace DeploymentStatusMapper
-{
+  namespace CodeDeploy
+  {
+    namespace Model
+    {
+      namespace DeploymentStatusMapper
+      {
 
 
-DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Created_HASH)
-  {
-     return DeploymentStatus::Created;
-  }
-  else if (hashCode == Queued_HASH)
-  {
-     return DeploymentStatus::Queued;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return DeploymentStatus::InProgress;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return DeploymentStatus::Succeeded;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return DeploymentStatus::Failed;
-  }
-  else if (hashCode == Stopped_HASH)
-  {
-     return DeploymentStatus::Stopped;
-  }
-  return DeploymentStatus::NOT_SET;
-}
+        DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Created_HASH)
+          {
+            return DeploymentStatus::Created;
+          }
+          else if (hashCode == Queued_HASH)
+          {
+            return DeploymentStatus::Queued;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return DeploymentStatus::InProgress;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return DeploymentStatus::Succeeded;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return DeploymentStatus::Failed;
+          }
+          else if (hashCode == Stopped_HASH)
+          {
+            return DeploymentStatus::Stopped;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeploymentStatus>(hashCode);
+          }
 
-Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case DeploymentStatus::Created:
-    return "Created";
-  case DeploymentStatus::Queued:
-    return "Queued";
-  case DeploymentStatus::InProgress:
-    return "InProgress";
-  case DeploymentStatus::Succeeded:
-    return "Succeeded";
-  case DeploymentStatus::Failed:
-    return "Failed";
-  case DeploymentStatus::Stopped:
-    return "Stopped";
-  default:
-    return "";
-  }
-}
+          return DeploymentStatus::NOT_SET;
+        }
 
-} // namespace DeploymentStatusMapper
-} // namespace Model
-} // namespace CodeDeploy
+        Aws::String GetNameForDeploymentStatus(DeploymentStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeploymentStatus::Created:
+            return "Created";
+          case DeploymentStatus::Queued:
+            return "Queued";
+          case DeploymentStatus::InProgress:
+            return "InProgress";
+          case DeploymentStatus::Succeeded:
+            return "Succeeded";
+          case DeploymentStatus::Failed:
+            return "Failed";
+          case DeploymentStatus::Stopped:
+            return "Stopped";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeploymentStatusMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

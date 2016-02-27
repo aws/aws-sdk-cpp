@@ -14,6 +14,7 @@
 */
 #include <aws/firehose/model/DeliveryStreamStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 namespace Aws
 {
-namespace Firehose
-{
-namespace Model
-{
-namespace DeliveryStreamStatusMapper
-{
+  namespace Firehose
+  {
+    namespace Model
+    {
+      namespace DeliveryStreamStatusMapper
+      {
 
 
-DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CREATING_HASH)
-  {
-     return DeliveryStreamStatus::CREATING;
-  }
-  else if (hashCode == DELETING_HASH)
-  {
-     return DeliveryStreamStatus::DELETING;
-  }
-  else if (hashCode == ACTIVE_HASH)
-  {
-     return DeliveryStreamStatus::ACTIVE;
-  }
-  return DeliveryStreamStatus::NOT_SET;
-}
+        DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CREATING_HASH)
+          {
+            return DeliveryStreamStatus::CREATING;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return DeliveryStreamStatus::DELETING;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return DeliveryStreamStatus::ACTIVE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DeliveryStreamStatus>(hashCode);
+          }
 
-Aws::String GetNameForDeliveryStreamStatus(DeliveryStreamStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case DeliveryStreamStatus::CREATING:
-    return "CREATING";
-  case DeliveryStreamStatus::DELETING:
-    return "DELETING";
-  case DeliveryStreamStatus::ACTIVE:
-    return "ACTIVE";
-  default:
-    return "";
-  }
-}
+          return DeliveryStreamStatus::NOT_SET;
+        }
 
-} // namespace DeliveryStreamStatusMapper
-} // namespace Model
-} // namespace Firehose
+        Aws::String GetNameForDeliveryStreamStatus(DeliveryStreamStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case DeliveryStreamStatus::CREATING:
+            return "CREATING";
+          case DeliveryStreamStatus::DELETING:
+            return "DELETING";
+          case DeliveryStreamStatus::ACTIVE:
+            return "ACTIVE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DeliveryStreamStatusMapper
+    } // namespace Model
+  } // namespace Firehose
 } // namespace Aws

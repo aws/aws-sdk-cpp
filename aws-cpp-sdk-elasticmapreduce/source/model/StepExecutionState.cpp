@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/StepExecutionState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace StepExecutionStateMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace StepExecutionStateMapper
+      {
 
 
-StepExecutionState GetStepExecutionStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
-  {
-     return StepExecutionState::PENDING;
-  }
-  else if (hashCode == RUNNING_HASH)
-  {
-     return StepExecutionState::RUNNING;
-  }
-  else if (hashCode == CONTINUE_HASH)
-  {
-     return StepExecutionState::CONTINUE;
-  }
-  else if (hashCode == COMPLETED_HASH)
-  {
-     return StepExecutionState::COMPLETED;
-  }
-  else if (hashCode == CANCELLED_HASH)
-  {
-     return StepExecutionState::CANCELLED;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return StepExecutionState::FAILED;
-  }
-  else if (hashCode == INTERRUPTED_HASH)
-  {
-     return StepExecutionState::INTERRUPTED;
-  }
-  return StepExecutionState::NOT_SET;
-}
+        StepExecutionState GetStepExecutionStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return StepExecutionState::PENDING;
+          }
+          else if (hashCode == RUNNING_HASH)
+          {
+            return StepExecutionState::RUNNING;
+          }
+          else if (hashCode == CONTINUE_HASH)
+          {
+            return StepExecutionState::CONTINUE;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return StepExecutionState::COMPLETED;
+          }
+          else if (hashCode == CANCELLED_HASH)
+          {
+            return StepExecutionState::CANCELLED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return StepExecutionState::FAILED;
+          }
+          else if (hashCode == INTERRUPTED_HASH)
+          {
+            return StepExecutionState::INTERRUPTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StepExecutionState>(hashCode);
+          }
 
-Aws::String GetNameForStepExecutionState(StepExecutionState enumValue)
-{
-  switch(enumValue)
-  {
-  case StepExecutionState::PENDING:
-    return "PENDING";
-  case StepExecutionState::RUNNING:
-    return "RUNNING";
-  case StepExecutionState::CONTINUE:
-    return "CONTINUE";
-  case StepExecutionState::COMPLETED:
-    return "COMPLETED";
-  case StepExecutionState::CANCELLED:
-    return "CANCELLED";
-  case StepExecutionState::FAILED:
-    return "FAILED";
-  case StepExecutionState::INTERRUPTED:
-    return "INTERRUPTED";
-  default:
-    return "";
-  }
-}
+          return StepExecutionState::NOT_SET;
+        }
 
-} // namespace StepExecutionStateMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForStepExecutionState(StepExecutionState enumValue)
+        {
+          switch(enumValue)
+          {
+          case StepExecutionState::PENDING:
+            return "PENDING";
+          case StepExecutionState::RUNNING:
+            return "RUNNING";
+          case StepExecutionState::CONTINUE:
+            return "CONTINUE";
+          case StepExecutionState::COMPLETED:
+            return "COMPLETED";
+          case StepExecutionState::CANCELLED:
+            return "CANCELLED";
+          case StepExecutionState::FAILED:
+            return "FAILED";
+          case StepExecutionState::INTERRUPTED:
+            return "INTERRUPTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StepExecutionStateMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

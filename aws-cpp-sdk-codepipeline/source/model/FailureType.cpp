@@ -14,6 +14,7 @@
 */
 #include <aws/codepipeline/model/FailureType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int SystemUnavailable_HASH = HashingUtils::HashString("SystemUnavai
 
 namespace Aws
 {
-namespace CodePipeline
-{
-namespace Model
-{
-namespace FailureTypeMapper
-{
+  namespace CodePipeline
+  {
+    namespace Model
+    {
+      namespace FailureTypeMapper
+      {
 
 
-FailureType GetFailureTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == JobFailed_HASH)
-  {
-     return FailureType::JobFailed;
-  }
-  else if (hashCode == ConfigurationError_HASH)
-  {
-     return FailureType::ConfigurationError;
-  }
-  else if (hashCode == PermissionError_HASH)
-  {
-     return FailureType::PermissionError;
-  }
-  else if (hashCode == RevisionOutOfSync_HASH)
-  {
-     return FailureType::RevisionOutOfSync;
-  }
-  else if (hashCode == RevisionUnavailable_HASH)
-  {
-     return FailureType::RevisionUnavailable;
-  }
-  else if (hashCode == SystemUnavailable_HASH)
-  {
-     return FailureType::SystemUnavailable;
-  }
-  return FailureType::NOT_SET;
-}
+        FailureType GetFailureTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == JobFailed_HASH)
+          {
+            return FailureType::JobFailed;
+          }
+          else if (hashCode == ConfigurationError_HASH)
+          {
+            return FailureType::ConfigurationError;
+          }
+          else if (hashCode == PermissionError_HASH)
+          {
+            return FailureType::PermissionError;
+          }
+          else if (hashCode == RevisionOutOfSync_HASH)
+          {
+            return FailureType::RevisionOutOfSync;
+          }
+          else if (hashCode == RevisionUnavailable_HASH)
+          {
+            return FailureType::RevisionUnavailable;
+          }
+          else if (hashCode == SystemUnavailable_HASH)
+          {
+            return FailureType::SystemUnavailable;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<FailureType>(hashCode);
+          }
 
-Aws::String GetNameForFailureType(FailureType enumValue)
-{
-  switch(enumValue)
-  {
-  case FailureType::JobFailed:
-    return "JobFailed";
-  case FailureType::ConfigurationError:
-    return "ConfigurationError";
-  case FailureType::PermissionError:
-    return "PermissionError";
-  case FailureType::RevisionOutOfSync:
-    return "RevisionOutOfSync";
-  case FailureType::RevisionUnavailable:
-    return "RevisionUnavailable";
-  case FailureType::SystemUnavailable:
-    return "SystemUnavailable";
-  default:
-    return "";
-  }
-}
+          return FailureType::NOT_SET;
+        }
 
-} // namespace FailureTypeMapper
-} // namespace Model
-} // namespace CodePipeline
+        Aws::String GetNameForFailureType(FailureType enumValue)
+        {
+          switch(enumValue)
+          {
+          case FailureType::JobFailed:
+            return "JobFailed";
+          case FailureType::ConfigurationError:
+            return "ConfigurationError";
+          case FailureType::PermissionError:
+            return "PermissionError";
+          case FailureType::RevisionOutOfSync:
+            return "RevisionOutOfSync";
+          case FailureType::RevisionUnavailable:
+            return "RevisionUnavailable";
+          case FailureType::SystemUnavailable:
+            return "SystemUnavailable";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace FailureTypeMapper
+    } // namespace Model
+  } // namespace CodePipeline
 } // namespace Aws

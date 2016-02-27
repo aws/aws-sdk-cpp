@@ -14,6 +14,7 @@
 */
 #include <aws/apigateway/model/AuthorizerType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
 
 namespace Aws
 {
-namespace APIGateway
-{
-namespace Model
-{
-namespace AuthorizerTypeMapper
-{
-
-
-AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == TOKEN_HASH)
+  namespace APIGateway
   {
-     return AuthorizerType::TOKEN;
-  }
-  return AuthorizerType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AuthorizerTypeMapper
+      {
 
-Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
-{
-  switch(enumValue)
-  {
-  case AuthorizerType::TOKEN:
-    return "TOKEN";
-  default:
-    return "";
-  }
-}
 
-} // namespace AuthorizerTypeMapper
-} // namespace Model
-} // namespace APIGateway
+        AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == TOKEN_HASH)
+          {
+            return AuthorizerType::TOKEN;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AuthorizerType>(hashCode);
+          }
+
+          return AuthorizerType::NOT_SET;
+        }
+
+        Aws::String GetNameForAuthorizerType(AuthorizerType enumValue)
+        {
+          switch(enumValue)
+          {
+          case AuthorizerType::TOKEN:
+            return "TOKEN";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AuthorizerTypeMapper
+    } // namespace Model
+  } // namespace APIGateway
 } // namespace Aws

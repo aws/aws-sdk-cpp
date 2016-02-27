@@ -14,6 +14,7 @@
 */
 #include <aws/cloudhsm/model/SubscriptionType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
 
 namespace Aws
 {
-namespace CloudHSM
-{
-namespace Model
-{
-namespace SubscriptionTypeMapper
-{
-
-
-SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PRODUCTION_HASH)
+  namespace CloudHSM
   {
-     return SubscriptionType::PRODUCTION;
-  }
-  return SubscriptionType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace SubscriptionTypeMapper
+      {
 
-Aws::String GetNameForSubscriptionType(SubscriptionType enumValue)
-{
-  switch(enumValue)
-  {
-  case SubscriptionType::PRODUCTION:
-    return "PRODUCTION";
-  default:
-    return "";
-  }
-}
 
-} // namespace SubscriptionTypeMapper
-} // namespace Model
-} // namespace CloudHSM
+        SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PRODUCTION_HASH)
+          {
+            return SubscriptionType::PRODUCTION;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SubscriptionType>(hashCode);
+          }
+
+          return SubscriptionType::NOT_SET;
+        }
+
+        Aws::String GetNameForSubscriptionType(SubscriptionType enumValue)
+        {
+          switch(enumValue)
+          {
+          case SubscriptionType::PRODUCTION:
+            return "PRODUCTION";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SubscriptionTypeMapper
+    } // namespace Model
+  } // namespace CloudHSM
 } // namespace Aws

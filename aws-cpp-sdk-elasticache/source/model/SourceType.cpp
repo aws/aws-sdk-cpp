@@ -14,6 +14,7 @@
 */
 #include <aws/elasticache/model/SourceType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subne
 
 namespace Aws
 {
-namespace ElastiCache
-{
-namespace Model
-{
-namespace SourceTypeMapper
-{
+  namespace ElastiCache
+  {
+    namespace Model
+    {
+      namespace SourceTypeMapper
+      {
 
 
-SourceType GetSourceTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == cache_cluster_HASH)
-  {
-     return SourceType::cache_cluster;
-  }
-  else if (hashCode == cache_parameter_group_HASH)
-  {
-     return SourceType::cache_parameter_group;
-  }
-  else if (hashCode == cache_security_group_HASH)
-  {
-     return SourceType::cache_security_group;
-  }
-  else if (hashCode == cache_subnet_group_HASH)
-  {
-     return SourceType::cache_subnet_group;
-  }
-  return SourceType::NOT_SET;
-}
+        SourceType GetSourceTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == cache_cluster_HASH)
+          {
+            return SourceType::cache_cluster;
+          }
+          else if (hashCode == cache_parameter_group_HASH)
+          {
+            return SourceType::cache_parameter_group;
+          }
+          else if (hashCode == cache_security_group_HASH)
+          {
+            return SourceType::cache_security_group;
+          }
+          else if (hashCode == cache_subnet_group_HASH)
+          {
+            return SourceType::cache_subnet_group;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SourceType>(hashCode);
+          }
 
-Aws::String GetNameForSourceType(SourceType enumValue)
-{
-  switch(enumValue)
-  {
-  case SourceType::cache_cluster:
-    return "cache-cluster";
-  case SourceType::cache_parameter_group:
-    return "cache-parameter-group";
-  case SourceType::cache_security_group:
-    return "cache-security-group";
-  case SourceType::cache_subnet_group:
-    return "cache-subnet-group";
-  default:
-    return "";
-  }
-}
+          return SourceType::NOT_SET;
+        }
 
-} // namespace SourceTypeMapper
-} // namespace Model
-} // namespace ElastiCache
+        Aws::String GetNameForSourceType(SourceType enumValue)
+        {
+          switch(enumValue)
+          {
+          case SourceType::cache_cluster:
+            return "cache-cluster";
+          case SourceType::cache_parameter_group:
+            return "cache-parameter-group";
+          case SourceType::cache_security_group:
+            return "cache-security-group";
+          case SourceType::cache_subnet_group:
+            return "cache-subnet-group";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SourceTypeMapper
+    } // namespace Model
+  } // namespace ElastiCache
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -30,90 +31,103 @@ static const int A_A_COMPROMISE_HASH = HashingUtils::HashString("A_A_COMPROMISE"
 
 namespace Aws
 {
-namespace ACM
-{
-namespace Model
-{
-namespace RevocationReasonMapper
-{
+  namespace ACM
+  {
+    namespace Model
+    {
+      namespace RevocationReasonMapper
+      {
 
 
-RevocationReason GetRevocationReasonForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNSPECIFIED_HASH)
-  {
-     return RevocationReason::UNSPECIFIED;
-  }
-  else if (hashCode == KEY_COMPROMISE_HASH)
-  {
-     return RevocationReason::KEY_COMPROMISE;
-  }
-  else if (hashCode == CA_COMPROMISE_HASH)
-  {
-     return RevocationReason::CA_COMPROMISE;
-  }
-  else if (hashCode == AFFILIATION_CHANGED_HASH)
-  {
-     return RevocationReason::AFFILIATION_CHANGED;
-  }
-  else if (hashCode == SUPERCEDED_HASH)
-  {
-     return RevocationReason::SUPERCEDED;
-  }
-  else if (hashCode == CESSATION_OF_OPERATION_HASH)
-  {
-     return RevocationReason::CESSATION_OF_OPERATION;
-  }
-  else if (hashCode == CERTIFICATE_HOLD_HASH)
-  {
-     return RevocationReason::CERTIFICATE_HOLD;
-  }
-  else if (hashCode == REMOVE_FROM_CRL_HASH)
-  {
-     return RevocationReason::REMOVE_FROM_CRL;
-  }
-  else if (hashCode == PRIVILEGE_WITHDRAWN_HASH)
-  {
-     return RevocationReason::PRIVILEGE_WITHDRAWN;
-  }
-  else if (hashCode == A_A_COMPROMISE_HASH)
-  {
-     return RevocationReason::A_A_COMPROMISE;
-  }
-  return RevocationReason::NOT_SET;
-}
+        RevocationReason GetRevocationReasonForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNSPECIFIED_HASH)
+          {
+            return RevocationReason::UNSPECIFIED;
+          }
+          else if (hashCode == KEY_COMPROMISE_HASH)
+          {
+            return RevocationReason::KEY_COMPROMISE;
+          }
+          else if (hashCode == CA_COMPROMISE_HASH)
+          {
+            return RevocationReason::CA_COMPROMISE;
+          }
+          else if (hashCode == AFFILIATION_CHANGED_HASH)
+          {
+            return RevocationReason::AFFILIATION_CHANGED;
+          }
+          else if (hashCode == SUPERCEDED_HASH)
+          {
+            return RevocationReason::SUPERCEDED;
+          }
+          else if (hashCode == CESSATION_OF_OPERATION_HASH)
+          {
+            return RevocationReason::CESSATION_OF_OPERATION;
+          }
+          else if (hashCode == CERTIFICATE_HOLD_HASH)
+          {
+            return RevocationReason::CERTIFICATE_HOLD;
+          }
+          else if (hashCode == REMOVE_FROM_CRL_HASH)
+          {
+            return RevocationReason::REMOVE_FROM_CRL;
+          }
+          else if (hashCode == PRIVILEGE_WITHDRAWN_HASH)
+          {
+            return RevocationReason::PRIVILEGE_WITHDRAWN;
+          }
+          else if (hashCode == A_A_COMPROMISE_HASH)
+          {
+            return RevocationReason::A_A_COMPROMISE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<RevocationReason>(hashCode);
+          }
 
-Aws::String GetNameForRevocationReason(RevocationReason enumValue)
-{
-  switch(enumValue)
-  {
-  case RevocationReason::UNSPECIFIED:
-    return "UNSPECIFIED";
-  case RevocationReason::KEY_COMPROMISE:
-    return "KEY_COMPROMISE";
-  case RevocationReason::CA_COMPROMISE:
-    return "CA_COMPROMISE";
-  case RevocationReason::AFFILIATION_CHANGED:
-    return "AFFILIATION_CHANGED";
-  case RevocationReason::SUPERCEDED:
-    return "SUPERCEDED";
-  case RevocationReason::CESSATION_OF_OPERATION:
-    return "CESSATION_OF_OPERATION";
-  case RevocationReason::CERTIFICATE_HOLD:
-    return "CERTIFICATE_HOLD";
-  case RevocationReason::REMOVE_FROM_CRL:
-    return "REMOVE_FROM_CRL";
-  case RevocationReason::PRIVILEGE_WITHDRAWN:
-    return "PRIVILEGE_WITHDRAWN";
-  case RevocationReason::A_A_COMPROMISE:
-    return "A_A_COMPROMISE";
-  default:
-    return "";
-  }
-}
+          return RevocationReason::NOT_SET;
+        }
 
-} // namespace RevocationReasonMapper
-} // namespace Model
-} // namespace ACM
+        Aws::String GetNameForRevocationReason(RevocationReason enumValue)
+        {
+          switch(enumValue)
+          {
+          case RevocationReason::UNSPECIFIED:
+            return "UNSPECIFIED";
+          case RevocationReason::KEY_COMPROMISE:
+            return "KEY_COMPROMISE";
+          case RevocationReason::CA_COMPROMISE:
+            return "CA_COMPROMISE";
+          case RevocationReason::AFFILIATION_CHANGED:
+            return "AFFILIATION_CHANGED";
+          case RevocationReason::SUPERCEDED:
+            return "SUPERCEDED";
+          case RevocationReason::CESSATION_OF_OPERATION:
+            return "CESSATION_OF_OPERATION";
+          case RevocationReason::CERTIFICATE_HOLD:
+            return "CERTIFICATE_HOLD";
+          case RevocationReason::REMOVE_FROM_CRL:
+            return "REMOVE_FROM_CRL";
+          case RevocationReason::PRIVILEGE_WITHDRAWN:
+            return "PRIVILEGE_WITHDRAWN";
+          case RevocationReason::A_A_COMPROMISE:
+            return "A_A_COMPROMISE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RevocationReasonMapper
+    } // namespace Model
+  } // namespace ACM
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/ObjectStorageClass.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
 
 namespace Aws
 {
-namespace S3
-{
-namespace Model
-{
-namespace ObjectStorageClassMapper
-{
+  namespace S3
+  {
+    namespace Model
+    {
+      namespace ObjectStorageClassMapper
+      {
 
 
-ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == STANDARD_HASH)
-  {
-     return ObjectStorageClass::STANDARD;
-  }
-  else if (hashCode == REDUCED_REDUNDANCY_HASH)
-  {
-     return ObjectStorageClass::REDUCED_REDUNDANCY;
-  }
-  else if (hashCode == GLACIER_HASH)
-  {
-     return ObjectStorageClass::GLACIER;
-  }
-  return ObjectStorageClass::NOT_SET;
-}
+        ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == STANDARD_HASH)
+          {
+            return ObjectStorageClass::STANDARD;
+          }
+          else if (hashCode == REDUCED_REDUNDANCY_HASH)
+          {
+            return ObjectStorageClass::REDUCED_REDUNDANCY;
+          }
+          else if (hashCode == GLACIER_HASH)
+          {
+            return ObjectStorageClass::GLACIER;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ObjectStorageClass>(hashCode);
+          }
 
-Aws::String GetNameForObjectStorageClass(ObjectStorageClass enumValue)
-{
-  switch(enumValue)
-  {
-  case ObjectStorageClass::STANDARD:
-    return "STANDARD";
-  case ObjectStorageClass::REDUCED_REDUNDANCY:
-    return "REDUCED_REDUNDANCY";
-  case ObjectStorageClass::GLACIER:
-    return "GLACIER";
-  default:
-    return "";
-  }
-}
+          return ObjectStorageClass::NOT_SET;
+        }
 
-} // namespace ObjectStorageClassMapper
-} // namespace Model
-} // namespace S3
+        Aws::String GetNameForObjectStorageClass(ObjectStorageClass enumValue)
+        {
+          switch(enumValue)
+          {
+          case ObjectStorageClass::STANDARD:
+            return "STANDARD";
+          case ObjectStorageClass::REDUCED_REDUNDANCY:
+            return "REDUCED_REDUNDANCY";
+          case ObjectStorageClass::GLACIER:
+            return "GLACIER";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ObjectStorageClassMapper
+    } // namespace Model
+  } // namespace S3
 } // namespace Aws

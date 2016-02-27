@@ -14,6 +14,7 @@
 */
 #include <aws/ds/model/DirectoryStage.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -31,96 +32,109 @@ static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
-namespace DirectoryService
-{
-namespace Model
-{
-namespace DirectoryStageMapper
-{
+  namespace DirectoryService
+  {
+    namespace Model
+    {
+      namespace DirectoryStageMapper
+      {
 
 
-DirectoryStage GetDirectoryStageForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Requested_HASH)
-  {
-     return DirectoryStage::Requested;
-  }
-  else if (hashCode == Creating_HASH)
-  {
-     return DirectoryStage::Creating;
-  }
-  else if (hashCode == Created_HASH)
-  {
-     return DirectoryStage::Created;
-  }
-  else if (hashCode == Active_HASH)
-  {
-     return DirectoryStage::Active;
-  }
-  else if (hashCode == Inoperable_HASH)
-  {
-     return DirectoryStage::Inoperable;
-  }
-  else if (hashCode == Impaired_HASH)
-  {
-     return DirectoryStage::Impaired;
-  }
-  else if (hashCode == Restoring_HASH)
-  {
-     return DirectoryStage::Restoring;
-  }
-  else if (hashCode == RestoreFailed_HASH)
-  {
-     return DirectoryStage::RestoreFailed;
-  }
-  else if (hashCode == Deleting_HASH)
-  {
-     return DirectoryStage::Deleting;
-  }
-  else if (hashCode == Deleted_HASH)
-  {
-     return DirectoryStage::Deleted;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return DirectoryStage::Failed;
-  }
-  return DirectoryStage::NOT_SET;
-}
+        DirectoryStage GetDirectoryStageForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Requested_HASH)
+          {
+            return DirectoryStage::Requested;
+          }
+          else if (hashCode == Creating_HASH)
+          {
+            return DirectoryStage::Creating;
+          }
+          else if (hashCode == Created_HASH)
+          {
+            return DirectoryStage::Created;
+          }
+          else if (hashCode == Active_HASH)
+          {
+            return DirectoryStage::Active;
+          }
+          else if (hashCode == Inoperable_HASH)
+          {
+            return DirectoryStage::Inoperable;
+          }
+          else if (hashCode == Impaired_HASH)
+          {
+            return DirectoryStage::Impaired;
+          }
+          else if (hashCode == Restoring_HASH)
+          {
+            return DirectoryStage::Restoring;
+          }
+          else if (hashCode == RestoreFailed_HASH)
+          {
+            return DirectoryStage::RestoreFailed;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return DirectoryStage::Deleting;
+          }
+          else if (hashCode == Deleted_HASH)
+          {
+            return DirectoryStage::Deleted;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return DirectoryStage::Failed;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<DirectoryStage>(hashCode);
+          }
 
-Aws::String GetNameForDirectoryStage(DirectoryStage enumValue)
-{
-  switch(enumValue)
-  {
-  case DirectoryStage::Requested:
-    return "Requested";
-  case DirectoryStage::Creating:
-    return "Creating";
-  case DirectoryStage::Created:
-    return "Created";
-  case DirectoryStage::Active:
-    return "Active";
-  case DirectoryStage::Inoperable:
-    return "Inoperable";
-  case DirectoryStage::Impaired:
-    return "Impaired";
-  case DirectoryStage::Restoring:
-    return "Restoring";
-  case DirectoryStage::RestoreFailed:
-    return "RestoreFailed";
-  case DirectoryStage::Deleting:
-    return "Deleting";
-  case DirectoryStage::Deleted:
-    return "Deleted";
-  case DirectoryStage::Failed:
-    return "Failed";
-  default:
-    return "";
-  }
-}
+          return DirectoryStage::NOT_SET;
+        }
 
-} // namespace DirectoryStageMapper
-} // namespace Model
-} // namespace DirectoryService
+        Aws::String GetNameForDirectoryStage(DirectoryStage enumValue)
+        {
+          switch(enumValue)
+          {
+          case DirectoryStage::Requested:
+            return "Requested";
+          case DirectoryStage::Creating:
+            return "Creating";
+          case DirectoryStage::Created:
+            return "Created";
+          case DirectoryStage::Active:
+            return "Active";
+          case DirectoryStage::Inoperable:
+            return "Inoperable";
+          case DirectoryStage::Impaired:
+            return "Impaired";
+          case DirectoryStage::Restoring:
+            return "Restoring";
+          case DirectoryStage::RestoreFailed:
+            return "RestoreFailed";
+          case DirectoryStage::Deleting:
+            return "Deleting";
+          case DirectoryStage::Deleted:
+            return "Deleted";
+          case DirectoryStage::Failed:
+            return "Failed";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace DirectoryStageMapper
+    } // namespace Model
+  } // namespace DirectoryService
 } // namespace Aws

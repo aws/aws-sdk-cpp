@@ -14,6 +14,7 @@
 */
 #include <aws/apigateway/model/Op.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int test_HASH = HashingUtils::HashString("test");
 
 namespace Aws
 {
-namespace APIGateway
-{
-namespace Model
-{
-namespace OpMapper
-{
+  namespace APIGateway
+  {
+    namespace Model
+    {
+      namespace OpMapper
+      {
 
 
-Op GetOpForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == add_HASH)
-  {
-     return Op::add;
-  }
-  else if (hashCode == remove_HASH)
-  {
-     return Op::remove;
-  }
-  else if (hashCode == replace_HASH)
-  {
-     return Op::replace;
-  }
-  else if (hashCode == move_HASH)
-  {
-     return Op::move;
-  }
-  else if (hashCode == copy_HASH)
-  {
-     return Op::copy;
-  }
-  else if (hashCode == test_HASH)
-  {
-     return Op::test;
-  }
-  return Op::NOT_SET;
-}
+        Op GetOpForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == add_HASH)
+          {
+            return Op::add;
+          }
+          else if (hashCode == remove_HASH)
+          {
+            return Op::remove;
+          }
+          else if (hashCode == replace_HASH)
+          {
+            return Op::replace;
+          }
+          else if (hashCode == move_HASH)
+          {
+            return Op::move;
+          }
+          else if (hashCode == copy_HASH)
+          {
+            return Op::copy;
+          }
+          else if (hashCode == test_HASH)
+          {
+            return Op::test;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Op>(hashCode);
+          }
 
-Aws::String GetNameForOp(Op enumValue)
-{
-  switch(enumValue)
-  {
-  case Op::add:
-    return "add";
-  case Op::remove:
-    return "remove";
-  case Op::replace:
-    return "replace";
-  case Op::move:
-    return "move";
-  case Op::copy:
-    return "copy";
-  case Op::test:
-    return "test";
-  default:
-    return "";
-  }
-}
+          return Op::NOT_SET;
+        }
 
-} // namespace OpMapper
-} // namespace Model
-} // namespace APIGateway
+        Aws::String GetNameForOp(Op enumValue)
+        {
+          switch(enumValue)
+          {
+          case Op::add:
+            return "add";
+          case Op::remove:
+            return "remove";
+          case Op::replace:
+            return "replace";
+          case Op::move:
+            return "move";
+          case Op::copy:
+            return "copy";
+          case Op::test:
+            return "test";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace OpMapper
+    } // namespace Model
+  } // namespace APIGateway
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/EventSeverity.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int FATAL_HASH = HashingUtils::HashString("FATAL");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace EventSeverityMapper
-{
+  namespace ElasticBeanstalk
+  {
+    namespace Model
+    {
+      namespace EventSeverityMapper
+      {
 
 
-EventSeverity GetEventSeverityForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == TRACE_HASH)
-  {
-     return EventSeverity::TRACE;
-  }
-  else if (hashCode == DEBUG_HASH)
-  {
-     return EventSeverity::DEBUG;
-  }
-  else if (hashCode == INFO_HASH)
-  {
-     return EventSeverity::INFO;
-  }
-  else if (hashCode == WARN_HASH)
-  {
-     return EventSeverity::WARN;
-  }
-  else if (hashCode == ERROR__HASH)
-  {
-     return EventSeverity::ERROR_;
-  }
-  else if (hashCode == FATAL_HASH)
-  {
-     return EventSeverity::FATAL;
-  }
-  return EventSeverity::NOT_SET;
-}
+        EventSeverity GetEventSeverityForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == TRACE_HASH)
+          {
+            return EventSeverity::TRACE;
+          }
+          else if (hashCode == DEBUG_HASH)
+          {
+            return EventSeverity::DEBUG;
+          }
+          else if (hashCode == INFO_HASH)
+          {
+            return EventSeverity::INFO;
+          }
+          else if (hashCode == WARN_HASH)
+          {
+            return EventSeverity::WARN;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return EventSeverity::ERROR_;
+          }
+          else if (hashCode == FATAL_HASH)
+          {
+            return EventSeverity::FATAL;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<EventSeverity>(hashCode);
+          }
 
-Aws::String GetNameForEventSeverity(EventSeverity enumValue)
-{
-  switch(enumValue)
-  {
-  case EventSeverity::TRACE:
-    return "TRACE";
-  case EventSeverity::DEBUG:
-    return "DEBUG";
-  case EventSeverity::INFO:
-    return "INFO";
-  case EventSeverity::WARN:
-    return "WARN";
-  case EventSeverity::ERROR_:
-    return "ERROR";
-  case EventSeverity::FATAL:
-    return "FATAL";
-  default:
-    return "";
-  }
-}
+          return EventSeverity::NOT_SET;
+        }
 
-} // namespace EventSeverityMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        Aws::String GetNameForEventSeverity(EventSeverity enumValue)
+        {
+          switch(enumValue)
+          {
+          case EventSeverity::TRACE:
+            return "TRACE";
+          case EventSeverity::DEBUG:
+            return "DEBUG";
+          case EventSeverity::INFO:
+            return "INFO";
+          case EventSeverity::WARN:
+            return "WARN";
+          case EventSeverity::ERROR_:
+            return "ERROR";
+          case EventSeverity::FATAL:
+            return "FATAL";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace EventSeverityMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

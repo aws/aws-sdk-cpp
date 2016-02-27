@@ -14,6 +14,7 @@
 */
 #include <aws/iot/model/CertificateStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANS
 
 namespace Aws
 {
-namespace IoT
-{
-namespace Model
-{
-namespace CertificateStatusMapper
-{
+  namespace IoT
+  {
+    namespace Model
+    {
+      namespace CertificateStatusMapper
+      {
 
 
-CertificateStatus GetCertificateStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVE_HASH)
-  {
-     return CertificateStatus::ACTIVE;
-  }
-  else if (hashCode == INACTIVE_HASH)
-  {
-     return CertificateStatus::INACTIVE;
-  }
-  else if (hashCode == REVOKED_HASH)
-  {
-     return CertificateStatus::REVOKED;
-  }
-  else if (hashCode == PENDING_TRANSFER_HASH)
-  {
-     return CertificateStatus::PENDING_TRANSFER;
-  }
-  return CertificateStatus::NOT_SET;
-}
+        CertificateStatus GetCertificateStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVE_HASH)
+          {
+            return CertificateStatus::ACTIVE;
+          }
+          else if (hashCode == INACTIVE_HASH)
+          {
+            return CertificateStatus::INACTIVE;
+          }
+          else if (hashCode == REVOKED_HASH)
+          {
+            return CertificateStatus::REVOKED;
+          }
+          else if (hashCode == PENDING_TRANSFER_HASH)
+          {
+            return CertificateStatus::PENDING_TRANSFER;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CertificateStatus>(hashCode);
+          }
 
-Aws::String GetNameForCertificateStatus(CertificateStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case CertificateStatus::ACTIVE:
-    return "ACTIVE";
-  case CertificateStatus::INACTIVE:
-    return "INACTIVE";
-  case CertificateStatus::REVOKED:
-    return "REVOKED";
-  case CertificateStatus::PENDING_TRANSFER:
-    return "PENDING_TRANSFER";
-  default:
-    return "";
-  }
-}
+          return CertificateStatus::NOT_SET;
+        }
 
-} // namespace CertificateStatusMapper
-} // namespace Model
-} // namespace IoT
+        Aws::String GetNameForCertificateStatus(CertificateStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case CertificateStatus::ACTIVE:
+            return "ACTIVE";
+          case CertificateStatus::INACTIVE:
+            return "INACTIVE";
+          case CertificateStatus::REVOKED:
+            return "REVOKED";
+          case CertificateStatus::PENDING_TRANSFER:
+            return "PENDING_TRANSFER";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CertificateStatusMapper
+    } // namespace Model
+  } // namespace IoT
 } // namespace Aws

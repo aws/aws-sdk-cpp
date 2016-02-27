@@ -14,6 +14,7 @@
 */
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DENY_ALL_HASH = HashingUtils::HashString("DENY_ALL");
 
 namespace Aws
 {
-namespace GameLift
-{
-namespace Model
-{
-namespace PlayerSessionCreationPolicyMapper
-{
-
-
-PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACCEPT_ALL_HASH)
+  namespace GameLift
   {
-     return PlayerSessionCreationPolicy::ACCEPT_ALL;
-  }
-  else if (hashCode == DENY_ALL_HASH)
-  {
-     return PlayerSessionCreationPolicy::DENY_ALL;
-  }
-  return PlayerSessionCreationPolicy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace PlayerSessionCreationPolicyMapper
+      {
 
-Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy enumValue)
-{
-  switch(enumValue)
-  {
-  case PlayerSessionCreationPolicy::ACCEPT_ALL:
-    return "ACCEPT_ALL";
-  case PlayerSessionCreationPolicy::DENY_ALL:
-    return "DENY_ALL";
-  default:
-    return "";
-  }
-}
 
-} // namespace PlayerSessionCreationPolicyMapper
-} // namespace Model
-} // namespace GameLift
+        PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACCEPT_ALL_HASH)
+          {
+            return PlayerSessionCreationPolicy::ACCEPT_ALL;
+          }
+          else if (hashCode == DENY_ALL_HASH)
+          {
+            return PlayerSessionCreationPolicy::DENY_ALL;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<PlayerSessionCreationPolicy>(hashCode);
+          }
+
+          return PlayerSessionCreationPolicy::NOT_SET;
+        }
+
+        Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy enumValue)
+        {
+          switch(enumValue)
+          {
+          case PlayerSessionCreationPolicy::ACCEPT_ALL:
+            return "ACCEPT_ALL";
+          case PlayerSessionCreationPolicy::DENY_ALL:
+            return "DENY_ALL";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace PlayerSessionCreationPolicyMapper
+    } // namespace Model
+  } // namespace GameLift
 } // namespace Aws

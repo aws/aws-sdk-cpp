@@ -14,6 +14,7 @@
 */
 #include <aws/apigateway/model/CacheClusterStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -25,60 +26,73 @@ static const int FLUSH_IN_PROGRESS_HASH = HashingUtils::HashString("FLUSH_IN_PRO
 
 namespace Aws
 {
-namespace APIGateway
-{
-namespace Model
-{
-namespace CacheClusterStatusMapper
-{
+  namespace APIGateway
+  {
+    namespace Model
+    {
+      namespace CacheClusterStatusMapper
+      {
 
 
-CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CREATE_IN_PROGRESS_HASH)
-  {
-     return CacheClusterStatus::CREATE_IN_PROGRESS;
-  }
-  else if (hashCode == AVAILABLE_HASH)
-  {
-     return CacheClusterStatus::AVAILABLE;
-  }
-  else if (hashCode == DELETE_IN_PROGRESS_HASH)
-  {
-     return CacheClusterStatus::DELETE_IN_PROGRESS;
-  }
-  else if (hashCode == NOT_AVAILABLE_HASH)
-  {
-     return CacheClusterStatus::NOT_AVAILABLE;
-  }
-  else if (hashCode == FLUSH_IN_PROGRESS_HASH)
-  {
-     return CacheClusterStatus::FLUSH_IN_PROGRESS;
-  }
-  return CacheClusterStatus::NOT_SET;
-}
+        CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CREATE_IN_PROGRESS_HASH)
+          {
+            return CacheClusterStatus::CREATE_IN_PROGRESS;
+          }
+          else if (hashCode == AVAILABLE_HASH)
+          {
+            return CacheClusterStatus::AVAILABLE;
+          }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
+          {
+            return CacheClusterStatus::DELETE_IN_PROGRESS;
+          }
+          else if (hashCode == NOT_AVAILABLE_HASH)
+          {
+            return CacheClusterStatus::NOT_AVAILABLE;
+          }
+          else if (hashCode == FLUSH_IN_PROGRESS_HASH)
+          {
+            return CacheClusterStatus::FLUSH_IN_PROGRESS;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<CacheClusterStatus>(hashCode);
+          }
 
-Aws::String GetNameForCacheClusterStatus(CacheClusterStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case CacheClusterStatus::CREATE_IN_PROGRESS:
-    return "CREATE_IN_PROGRESS";
-  case CacheClusterStatus::AVAILABLE:
-    return "AVAILABLE";
-  case CacheClusterStatus::DELETE_IN_PROGRESS:
-    return "DELETE_IN_PROGRESS";
-  case CacheClusterStatus::NOT_AVAILABLE:
-    return "NOT_AVAILABLE";
-  case CacheClusterStatus::FLUSH_IN_PROGRESS:
-    return "FLUSH_IN_PROGRESS";
-  default:
-    return "";
-  }
-}
+          return CacheClusterStatus::NOT_SET;
+        }
 
-} // namespace CacheClusterStatusMapper
-} // namespace Model
-} // namespace APIGateway
+        Aws::String GetNameForCacheClusterStatus(CacheClusterStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case CacheClusterStatus::CREATE_IN_PROGRESS:
+            return "CREATE_IN_PROGRESS";
+          case CacheClusterStatus::AVAILABLE:
+            return "AVAILABLE";
+          case CacheClusterStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
+          case CacheClusterStatus::NOT_AVAILABLE:
+            return "NOT_AVAILABLE";
+          case CacheClusterStatus::FLUSH_IN_PROGRESS:
+            return "FLUSH_IN_PROGRESS";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace CacheClusterStatusMapper
+    } // namespace Model
+  } // namespace APIGateway
 } // namespace Aws

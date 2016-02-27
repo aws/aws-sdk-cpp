@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/Select.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int COUNT_HASH = HashingUtils::HashString("COUNT");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace SelectMapper
-{
+  namespace DynamoDB
+  {
+    namespace Model
+    {
+      namespace SelectMapper
+      {
 
 
-Select GetSelectForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ALL_ATTRIBUTES_HASH)
-  {
-     return Select::ALL_ATTRIBUTES;
-  }
-  else if (hashCode == ALL_PROJECTED_ATTRIBUTES_HASH)
-  {
-     return Select::ALL_PROJECTED_ATTRIBUTES;
-  }
-  else if (hashCode == SPECIFIC_ATTRIBUTES_HASH)
-  {
-     return Select::SPECIFIC_ATTRIBUTES;
-  }
-  else if (hashCode == COUNT_HASH)
-  {
-     return Select::COUNT;
-  }
-  return Select::NOT_SET;
-}
+        Select GetSelectForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ALL_ATTRIBUTES_HASH)
+          {
+            return Select::ALL_ATTRIBUTES;
+          }
+          else if (hashCode == ALL_PROJECTED_ATTRIBUTES_HASH)
+          {
+            return Select::ALL_PROJECTED_ATTRIBUTES;
+          }
+          else if (hashCode == SPECIFIC_ATTRIBUTES_HASH)
+          {
+            return Select::SPECIFIC_ATTRIBUTES;
+          }
+          else if (hashCode == COUNT_HASH)
+          {
+            return Select::COUNT;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Select>(hashCode);
+          }
 
-Aws::String GetNameForSelect(Select enumValue)
-{
-  switch(enumValue)
-  {
-  case Select::ALL_ATTRIBUTES:
-    return "ALL_ATTRIBUTES";
-  case Select::ALL_PROJECTED_ATTRIBUTES:
-    return "ALL_PROJECTED_ATTRIBUTES";
-  case Select::SPECIFIC_ATTRIBUTES:
-    return "SPECIFIC_ATTRIBUTES";
-  case Select::COUNT:
-    return "COUNT";
-  default:
-    return "";
-  }
-}
+          return Select::NOT_SET;
+        }
 
-} // namespace SelectMapper
-} // namespace Model
-} // namespace DynamoDB
+        Aws::String GetNameForSelect(Select enumValue)
+        {
+          switch(enumValue)
+          {
+          case Select::ALL_ATTRIBUTES:
+            return "ALL_ATTRIBUTES";
+          case Select::ALL_PROJECTED_ATTRIBUTES:
+            return "ALL_PROJECTED_ATTRIBUTES";
+          case Select::SPECIFIC_ATTRIBUTES:
+            return "SPECIFIC_ATTRIBUTES";
+          case Select::COUNT:
+            return "COUNT";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SelectMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

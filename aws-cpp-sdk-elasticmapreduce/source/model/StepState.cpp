@@ -14,6 +14,7 @@
 */
 #include <aws/elasticmapreduce/model/StepState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -26,66 +27,79 @@ static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
 
 namespace Aws
 {
-namespace EMR
-{
-namespace Model
-{
-namespace StepStateMapper
-{
+  namespace EMR
+  {
+    namespace Model
+    {
+      namespace StepStateMapper
+      {
 
 
-StepState GetStepStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH)
-  {
-     return StepState::PENDING;
-  }
-  else if (hashCode == RUNNING_HASH)
-  {
-     return StepState::RUNNING;
-  }
-  else if (hashCode == COMPLETED_HASH)
-  {
-     return StepState::COMPLETED;
-  }
-  else if (hashCode == CANCELLED_HASH)
-  {
-     return StepState::CANCELLED;
-  }
-  else if (hashCode == FAILED_HASH)
-  {
-     return StepState::FAILED;
-  }
-  else if (hashCode == INTERRUPTED_HASH)
-  {
-     return StepState::INTERRUPTED;
-  }
-  return StepState::NOT_SET;
-}
+        StepState GetStepStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PENDING_HASH)
+          {
+            return StepState::PENDING;
+          }
+          else if (hashCode == RUNNING_HASH)
+          {
+            return StepState::RUNNING;
+          }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return StepState::COMPLETED;
+          }
+          else if (hashCode == CANCELLED_HASH)
+          {
+            return StepState::CANCELLED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return StepState::FAILED;
+          }
+          else if (hashCode == INTERRUPTED_HASH)
+          {
+            return StepState::INTERRUPTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StepState>(hashCode);
+          }
 
-Aws::String GetNameForStepState(StepState enumValue)
-{
-  switch(enumValue)
-  {
-  case StepState::PENDING:
-    return "PENDING";
-  case StepState::RUNNING:
-    return "RUNNING";
-  case StepState::COMPLETED:
-    return "COMPLETED";
-  case StepState::CANCELLED:
-    return "CANCELLED";
-  case StepState::FAILED:
-    return "FAILED";
-  case StepState::INTERRUPTED:
-    return "INTERRUPTED";
-  default:
-    return "";
-  }
-}
+          return StepState::NOT_SET;
+        }
 
-} // namespace StepStateMapper
-} // namespace Model
-} // namespace EMR
+        Aws::String GetNameForStepState(StepState enumValue)
+        {
+          switch(enumValue)
+          {
+          case StepState::PENDING:
+            return "PENDING";
+          case StepState::RUNNING:
+            return "RUNNING";
+          case StepState::COMPLETED:
+            return "COMPLETED";
+          case StepState::CANCELLED:
+            return "CANCELLED";
+          case StepState::FAILED:
+            return "FAILED";
+          case StepState::INTERRUPTED:
+            return "INTERRUPTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StepStateMapper
+    } // namespace Model
+  } // namespace EMR
 } // namespace Aws

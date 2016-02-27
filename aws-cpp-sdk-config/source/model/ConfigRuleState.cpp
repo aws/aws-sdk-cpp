@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/ConfigRuleState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace ConfigRuleStateMapper
-{
-
-
-ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ACTIVE_HASH)
+  namespace ConfigService
   {
-     return ConfigRuleState::ACTIVE;
-  }
-  else if (hashCode == DELETING_HASH)
-  {
-     return ConfigRuleState::DELETING;
-  }
-  return ConfigRuleState::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ConfigRuleStateMapper
+      {
 
-Aws::String GetNameForConfigRuleState(ConfigRuleState enumValue)
-{
-  switch(enumValue)
-  {
-  case ConfigRuleState::ACTIVE:
-    return "ACTIVE";
-  case ConfigRuleState::DELETING:
-    return "DELETING";
-  default:
-    return "";
-  }
-}
 
-} // namespace ConfigRuleStateMapper
-} // namespace Model
-} // namespace ConfigService
+        ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ACTIVE_HASH)
+          {
+            return ConfigRuleState::ACTIVE;
+          }
+          else if (hashCode == DELETING_HASH)
+          {
+            return ConfigRuleState::DELETING;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ConfigRuleState>(hashCode);
+          }
+
+          return ConfigRuleState::NOT_SET;
+        }
+
+        Aws::String GetNameForConfigRuleState(ConfigRuleState enumValue)
+        {
+          switch(enumValue)
+          {
+          case ConfigRuleState::ACTIVE:
+            return "ACTIVE";
+          case ConfigRuleState::DELETING:
+            return "DELETING";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ConfigRuleStateMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

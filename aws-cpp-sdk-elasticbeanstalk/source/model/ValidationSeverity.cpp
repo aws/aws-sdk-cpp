@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/ValidationSeverity.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int warning_HASH = HashingUtils::HashString("warning");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace ValidationSeverityMapper
-{
-
-
-ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == error_HASH)
+  namespace ElasticBeanstalk
   {
-     return ValidationSeverity::error;
-  }
-  else if (hashCode == warning_HASH)
-  {
-     return ValidationSeverity::warning;
-  }
-  return ValidationSeverity::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ValidationSeverityMapper
+      {
 
-Aws::String GetNameForValidationSeverity(ValidationSeverity enumValue)
-{
-  switch(enumValue)
-  {
-  case ValidationSeverity::error:
-    return "error";
-  case ValidationSeverity::warning:
-    return "warning";
-  default:
-    return "";
-  }
-}
 
-} // namespace ValidationSeverityMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        ValidationSeverity GetValidationSeverityForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == error_HASH)
+          {
+            return ValidationSeverity::error;
+          }
+          else if (hashCode == warning_HASH)
+          {
+            return ValidationSeverity::warning;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ValidationSeverity>(hashCode);
+          }
+
+          return ValidationSeverity::NOT_SET;
+        }
+
+        Aws::String GetNameForValidationSeverity(ValidationSeverity enumValue)
+        {
+          switch(enumValue)
+          {
+          case ValidationSeverity::error:
+            return "error";
+          case ValidationSeverity::warning:
+            return "warning";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ValidationSeverityMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

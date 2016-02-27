@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/AllocationStrategy.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int diversified_HASH = HashingUtils::HashString("diversified");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace AllocationStrategyMapper
-{
-
-
-AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == lowestPrice_HASH)
+  namespace EC2
   {
-     return AllocationStrategy::lowestPrice;
-  }
-  else if (hashCode == diversified_HASH)
-  {
-     return AllocationStrategy::diversified;
-  }
-  return AllocationStrategy::NOT_SET;
-}
+    namespace Model
+    {
+      namespace AllocationStrategyMapper
+      {
 
-Aws::String GetNameForAllocationStrategy(AllocationStrategy enumValue)
-{
-  switch(enumValue)
-  {
-  case AllocationStrategy::lowestPrice:
-    return "lowestPrice";
-  case AllocationStrategy::diversified:
-    return "diversified";
-  default:
-    return "";
-  }
-}
 
-} // namespace AllocationStrategyMapper
-} // namespace Model
-} // namespace EC2
+        AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == lowestPrice_HASH)
+          {
+            return AllocationStrategy::lowestPrice;
+          }
+          else if (hashCode == diversified_HASH)
+          {
+            return AllocationStrategy::diversified;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<AllocationStrategy>(hashCode);
+          }
+
+          return AllocationStrategy::NOT_SET;
+        }
+
+        Aws::String GetNameForAllocationStrategy(AllocationStrategy enumValue)
+        {
+          switch(enumValue)
+          {
+          case AllocationStrategy::lowestPrice:
+            return "lowestPrice";
+          case AllocationStrategy::diversified:
+            return "diversified";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace AllocationStrategyMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/machinelearning/model/SortOrder.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int dsc_HASH = HashingUtils::HashString("dsc");
 
 namespace Aws
 {
-namespace MachineLearning
-{
-namespace Model
-{
-namespace SortOrderMapper
-{
-
-
-SortOrder GetSortOrderForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == asc_HASH)
+  namespace MachineLearning
   {
-     return SortOrder::asc;
-  }
-  else if (hashCode == dsc_HASH)
-  {
-     return SortOrder::dsc;
-  }
-  return SortOrder::NOT_SET;
-}
+    namespace Model
+    {
+      namespace SortOrderMapper
+      {
 
-Aws::String GetNameForSortOrder(SortOrder enumValue)
-{
-  switch(enumValue)
-  {
-  case SortOrder::asc:
-    return "asc";
-  case SortOrder::dsc:
-    return "dsc";
-  default:
-    return "";
-  }
-}
 
-} // namespace SortOrderMapper
-} // namespace Model
-} // namespace MachineLearning
+        SortOrder GetSortOrderForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == asc_HASH)
+          {
+            return SortOrder::asc;
+          }
+          else if (hashCode == dsc_HASH)
+          {
+            return SortOrder::dsc;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SortOrder>(hashCode);
+          }
+
+          return SortOrder::NOT_SET;
+        }
+
+        Aws::String GetNameForSortOrder(SortOrder enumValue)
+        {
+          switch(enumValue)
+          {
+          case SortOrder::asc:
+            return "asc";
+          case SortOrder::dsc:
+            return "dsc";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SortOrderMapper
+    } // namespace Model
+  } // namespace MachineLearning
 } // namespace Aws

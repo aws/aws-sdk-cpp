@@ -14,6 +14,7 @@
 */
 #include <aws/config/model/MessageType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int ConfigurationSnapshotDeliveryCompleted_HASH = HashingUtils::Has
 
 namespace Aws
 {
-namespace ConfigService
-{
-namespace Model
-{
-namespace MessageTypeMapper
-{
-
-
-MessageType GetMessageTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ConfigurationItemChangeNotification_HASH)
+  namespace ConfigService
   {
-     return MessageType::ConfigurationItemChangeNotification;
-  }
-  else if (hashCode == ConfigurationSnapshotDeliveryCompleted_HASH)
-  {
-     return MessageType::ConfigurationSnapshotDeliveryCompleted;
-  }
-  return MessageType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace MessageTypeMapper
+      {
 
-Aws::String GetNameForMessageType(MessageType enumValue)
-{
-  switch(enumValue)
-  {
-  case MessageType::ConfigurationItemChangeNotification:
-    return "ConfigurationItemChangeNotification";
-  case MessageType::ConfigurationSnapshotDeliveryCompleted:
-    return "ConfigurationSnapshotDeliveryCompleted";
-  default:
-    return "";
-  }
-}
 
-} // namespace MessageTypeMapper
-} // namespace Model
-} // namespace ConfigService
+        MessageType GetMessageTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ConfigurationItemChangeNotification_HASH)
+          {
+            return MessageType::ConfigurationItemChangeNotification;
+          }
+          else if (hashCode == ConfigurationSnapshotDeliveryCompleted_HASH)
+          {
+            return MessageType::ConfigurationSnapshotDeliveryCompleted;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<MessageType>(hashCode);
+          }
+
+          return MessageType::NOT_SET;
+        }
+
+        Aws::String GetNameForMessageType(MessageType enumValue)
+        {
+          switch(enumValue)
+          {
+          case MessageType::ConfigurationItemChangeNotification:
+            return "ConfigurationItemChangeNotification";
+          case MessageType::ConfigurationSnapshotDeliveryCompleted:
+            return "ConfigurationSnapshotDeliveryCompleted";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace MessageTypeMapper
+    } // namespace Model
+  } // namespace ConfigService
 } // namespace Aws

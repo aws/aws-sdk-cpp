@@ -14,6 +14,7 @@
 */
 #include <aws/autoscaling/model/ScalingActivityStatusCode.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -32,102 +33,115 @@ static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
 
 namespace Aws
 {
-namespace AutoScaling
-{
-namespace Model
-{
-namespace ScalingActivityStatusCodeMapper
-{
+  namespace AutoScaling
+  {
+    namespace Model
+    {
+      namespace ScalingActivityStatusCodeMapper
+      {
 
 
-ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PendingSpotBidPlacement_HASH)
-  {
-     return ScalingActivityStatusCode::PendingSpotBidPlacement;
-  }
-  else if (hashCode == WaitingForSpotInstanceRequestId_HASH)
-  {
-     return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
-  }
-  else if (hashCode == WaitingForSpotInstanceId_HASH)
-  {
-     return ScalingActivityStatusCode::WaitingForSpotInstanceId;
-  }
-  else if (hashCode == WaitingForInstanceId_HASH)
-  {
-     return ScalingActivityStatusCode::WaitingForInstanceId;
-  }
-  else if (hashCode == PreInService_HASH)
-  {
-     return ScalingActivityStatusCode::PreInService;
-  }
-  else if (hashCode == InProgress_HASH)
-  {
-     return ScalingActivityStatusCode::InProgress;
-  }
-  else if (hashCode == WaitingForELBConnectionDraining_HASH)
-  {
-     return ScalingActivityStatusCode::WaitingForELBConnectionDraining;
-  }
-  else if (hashCode == MidLifecycleAction_HASH)
-  {
-     return ScalingActivityStatusCode::MidLifecycleAction;
-  }
-  else if (hashCode == WaitingForInstanceWarmup_HASH)
-  {
-     return ScalingActivityStatusCode::WaitingForInstanceWarmup;
-  }
-  else if (hashCode == Successful_HASH)
-  {
-     return ScalingActivityStatusCode::Successful;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return ScalingActivityStatusCode::Failed;
-  }
-  else if (hashCode == Cancelled_HASH)
-  {
-     return ScalingActivityStatusCode::Cancelled;
-  }
-  return ScalingActivityStatusCode::NOT_SET;
-}
+        ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == PendingSpotBidPlacement_HASH)
+          {
+            return ScalingActivityStatusCode::PendingSpotBidPlacement;
+          }
+          else if (hashCode == WaitingForSpotInstanceRequestId_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForSpotInstanceRequestId;
+          }
+          else if (hashCode == WaitingForSpotInstanceId_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForSpotInstanceId;
+          }
+          else if (hashCode == WaitingForInstanceId_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForInstanceId;
+          }
+          else if (hashCode == PreInService_HASH)
+          {
+            return ScalingActivityStatusCode::PreInService;
+          }
+          else if (hashCode == InProgress_HASH)
+          {
+            return ScalingActivityStatusCode::InProgress;
+          }
+          else if (hashCode == WaitingForELBConnectionDraining_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForELBConnectionDraining;
+          }
+          else if (hashCode == MidLifecycleAction_HASH)
+          {
+            return ScalingActivityStatusCode::MidLifecycleAction;
+          }
+          else if (hashCode == WaitingForInstanceWarmup_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForInstanceWarmup;
+          }
+          else if (hashCode == Successful_HASH)
+          {
+            return ScalingActivityStatusCode::Successful;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return ScalingActivityStatusCode::Failed;
+          }
+          else if (hashCode == Cancelled_HASH)
+          {
+            return ScalingActivityStatusCode::Cancelled;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ScalingActivityStatusCode>(hashCode);
+          }
 
-Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode enumValue)
-{
-  switch(enumValue)
-  {
-  case ScalingActivityStatusCode::PendingSpotBidPlacement:
-    return "PendingSpotBidPlacement";
-  case ScalingActivityStatusCode::WaitingForSpotInstanceRequestId:
-    return "WaitingForSpotInstanceRequestId";
-  case ScalingActivityStatusCode::WaitingForSpotInstanceId:
-    return "WaitingForSpotInstanceId";
-  case ScalingActivityStatusCode::WaitingForInstanceId:
-    return "WaitingForInstanceId";
-  case ScalingActivityStatusCode::PreInService:
-    return "PreInService";
-  case ScalingActivityStatusCode::InProgress:
-    return "InProgress";
-  case ScalingActivityStatusCode::WaitingForELBConnectionDraining:
-    return "WaitingForELBConnectionDraining";
-  case ScalingActivityStatusCode::MidLifecycleAction:
-    return "MidLifecycleAction";
-  case ScalingActivityStatusCode::WaitingForInstanceWarmup:
-    return "WaitingForInstanceWarmup";
-  case ScalingActivityStatusCode::Successful:
-    return "Successful";
-  case ScalingActivityStatusCode::Failed:
-    return "Failed";
-  case ScalingActivityStatusCode::Cancelled:
-    return "Cancelled";
-  default:
-    return "";
-  }
-}
+          return ScalingActivityStatusCode::NOT_SET;
+        }
 
-} // namespace ScalingActivityStatusCodeMapper
-} // namespace Model
-} // namespace AutoScaling
+        Aws::String GetNameForScalingActivityStatusCode(ScalingActivityStatusCode enumValue)
+        {
+          switch(enumValue)
+          {
+          case ScalingActivityStatusCode::PendingSpotBidPlacement:
+            return "PendingSpotBidPlacement";
+          case ScalingActivityStatusCode::WaitingForSpotInstanceRequestId:
+            return "WaitingForSpotInstanceRequestId";
+          case ScalingActivityStatusCode::WaitingForSpotInstanceId:
+            return "WaitingForSpotInstanceId";
+          case ScalingActivityStatusCode::WaitingForInstanceId:
+            return "WaitingForInstanceId";
+          case ScalingActivityStatusCode::PreInService:
+            return "PreInService";
+          case ScalingActivityStatusCode::InProgress:
+            return "InProgress";
+          case ScalingActivityStatusCode::WaitingForELBConnectionDraining:
+            return "WaitingForELBConnectionDraining";
+          case ScalingActivityStatusCode::MidLifecycleAction:
+            return "MidLifecycleAction";
+          case ScalingActivityStatusCode::WaitingForInstanceWarmup:
+            return "WaitingForInstanceWarmup";
+          case ScalingActivityStatusCode::Successful:
+            return "Successful";
+          case ScalingActivityStatusCode::Failed:
+            return "Failed";
+          case ScalingActivityStatusCode::Cancelled:
+            return "Cancelled";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ScalingActivityStatusCodeMapper
+    } // namespace Model
+  } // namespace AutoScaling
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/email/model/NotificationType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int Delivery_HASH = HashingUtils::HashString("Delivery");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace NotificationTypeMapper
-{
+  namespace SES
+  {
+    namespace Model
+    {
+      namespace NotificationTypeMapper
+      {
 
 
-NotificationType GetNotificationTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Bounce_HASH)
-  {
-     return NotificationType::Bounce;
-  }
-  else if (hashCode == Complaint_HASH)
-  {
-     return NotificationType::Complaint;
-  }
-  else if (hashCode == Delivery_HASH)
-  {
-     return NotificationType::Delivery;
-  }
-  return NotificationType::NOT_SET;
-}
+        NotificationType GetNotificationTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Bounce_HASH)
+          {
+            return NotificationType::Bounce;
+          }
+          else if (hashCode == Complaint_HASH)
+          {
+            return NotificationType::Complaint;
+          }
+          else if (hashCode == Delivery_HASH)
+          {
+            return NotificationType::Delivery;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<NotificationType>(hashCode);
+          }
 
-Aws::String GetNameForNotificationType(NotificationType enumValue)
-{
-  switch(enumValue)
-  {
-  case NotificationType::Bounce:
-    return "Bounce";
-  case NotificationType::Complaint:
-    return "Complaint";
-  case NotificationType::Delivery:
-    return "Delivery";
-  default:
-    return "";
-  }
-}
+          return NotificationType::NOT_SET;
+        }
 
-} // namespace NotificationTypeMapper
-} // namespace Model
-} // namespace SES
+        Aws::String GetNameForNotificationType(NotificationType enumValue)
+        {
+          switch(enumValue)
+          {
+          case NotificationType::Bounce:
+            return "Bounce";
+          case NotificationType::Complaint:
+            return "Complaint";
+          case NotificationType::Delivery:
+            return "Delivery";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace NotificationTypeMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

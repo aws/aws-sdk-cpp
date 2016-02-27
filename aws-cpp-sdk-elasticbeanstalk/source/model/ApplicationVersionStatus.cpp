@@ -14,6 +14,7 @@
 */
 #include <aws/elasticbeanstalk/model/ApplicationVersionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -24,54 +25,67 @@ static const int Processing_HASH = HashingUtils::HashString("Processing");
 
 namespace Aws
 {
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-namespace ApplicationVersionStatusMapper
-{
+  namespace ElasticBeanstalk
+  {
+    namespace Model
+    {
+      namespace ApplicationVersionStatusMapper
+      {
 
 
-ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Processed_HASH)
-  {
-     return ApplicationVersionStatus::Processed;
-  }
-  else if (hashCode == Unprocessed_HASH)
-  {
-     return ApplicationVersionStatus::Unprocessed;
-  }
-  else if (hashCode == Failed_HASH)
-  {
-     return ApplicationVersionStatus::Failed;
-  }
-  else if (hashCode == Processing_HASH)
-  {
-     return ApplicationVersionStatus::Processing;
-  }
-  return ApplicationVersionStatus::NOT_SET;
-}
+        ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Processed_HASH)
+          {
+            return ApplicationVersionStatus::Processed;
+          }
+          else if (hashCode == Unprocessed_HASH)
+          {
+            return ApplicationVersionStatus::Unprocessed;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return ApplicationVersionStatus::Failed;
+          }
+          else if (hashCode == Processing_HASH)
+          {
+            return ApplicationVersionStatus::Processing;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ApplicationVersionStatus>(hashCode);
+          }
 
-Aws::String GetNameForApplicationVersionStatus(ApplicationVersionStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case ApplicationVersionStatus::Processed:
-    return "Processed";
-  case ApplicationVersionStatus::Unprocessed:
-    return "Unprocessed";
-  case ApplicationVersionStatus::Failed:
-    return "Failed";
-  case ApplicationVersionStatus::Processing:
-    return "Processing";
-  default:
-    return "";
-  }
-}
+          return ApplicationVersionStatus::NOT_SET;
+        }
 
-} // namespace ApplicationVersionStatusMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
+        Aws::String GetNameForApplicationVersionStatus(ApplicationVersionStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case ApplicationVersionStatus::Processed:
+            return "Processed";
+          case ApplicationVersionStatus::Unprocessed:
+            return "Unprocessed";
+          case ApplicationVersionStatus::Failed:
+            return "Failed";
+          case ApplicationVersionStatus::Processing:
+            return "Processing";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ApplicationVersionStatusMapper
+    } // namespace Model
+  } // namespace ElasticBeanstalk
 } // namespace Aws

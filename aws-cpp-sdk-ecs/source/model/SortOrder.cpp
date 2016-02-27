@@ -14,6 +14,7 @@
 */
 #include <aws/ecs/model/SortOrder.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DESC_HASH = HashingUtils::HashString("DESC");
 
 namespace Aws
 {
-namespace ECS
-{
-namespace Model
-{
-namespace SortOrderMapper
-{
-
-
-SortOrder GetSortOrderForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ASC_HASH)
+  namespace ECS
   {
-     return SortOrder::ASC;
-  }
-  else if (hashCode == DESC_HASH)
-  {
-     return SortOrder::DESC;
-  }
-  return SortOrder::NOT_SET;
-}
+    namespace Model
+    {
+      namespace SortOrderMapper
+      {
 
-Aws::String GetNameForSortOrder(SortOrder enumValue)
-{
-  switch(enumValue)
-  {
-  case SortOrder::ASC:
-    return "ASC";
-  case SortOrder::DESC:
-    return "DESC";
-  default:
-    return "";
-  }
-}
 
-} // namespace SortOrderMapper
-} // namespace Model
-} // namespace ECS
+        SortOrder GetSortOrderForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ASC_HASH)
+          {
+            return SortOrder::ASC;
+          }
+          else if (hashCode == DESC_HASH)
+          {
+            return SortOrder::DESC;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SortOrder>(hashCode);
+          }
+
+          return SortOrder::NOT_SET;
+        }
+
+        Aws::String GetNameForSortOrder(SortOrder enumValue)
+        {
+          switch(enumValue)
+          {
+          case SortOrder::ASC:
+            return "ASC";
+          case SortOrder::DESC:
+            return "DESC";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SortOrderMapper
+    } // namespace Model
+  } // namespace ECS
 } // namespace Aws

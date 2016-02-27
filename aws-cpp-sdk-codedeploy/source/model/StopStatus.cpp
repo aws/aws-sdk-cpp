@@ -14,6 +14,7 @@
 */
 #include <aws/codedeploy/model/StopStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 namespace Aws
 {
-namespace CodeDeploy
-{
-namespace Model
-{
-namespace StopStatusMapper
-{
-
-
-StopStatus GetStopStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == Pending_HASH)
+  namespace CodeDeploy
   {
-     return StopStatus::Pending;
-  }
-  else if (hashCode == Succeeded_HASH)
-  {
-     return StopStatus::Succeeded;
-  }
-  return StopStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace StopStatusMapper
+      {
 
-Aws::String GetNameForStopStatus(StopStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case StopStatus::Pending:
-    return "Pending";
-  case StopStatus::Succeeded:
-    return "Succeeded";
-  default:
-    return "";
-  }
-}
 
-} // namespace StopStatusMapper
-} // namespace Model
-} // namespace CodeDeploy
+        StopStatus GetStopStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == Pending_HASH)
+          {
+            return StopStatus::Pending;
+          }
+          else if (hashCode == Succeeded_HASH)
+          {
+            return StopStatus::Succeeded;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StopStatus>(hashCode);
+          }
+
+          return StopStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForStopStatus(StopStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case StopStatus::Pending:
+            return "Pending";
+          case StopStatus::Succeeded:
+            return "Succeeded";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StopStatusMapper
+    } // namespace Model
+  } // namespace CodeDeploy
 } // namespace Aws

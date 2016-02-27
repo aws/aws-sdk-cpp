@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/LambdaFunctionTimeoutType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE"
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace LambdaFunctionTimeoutTypeMapper
-{
-
-
-LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == START_TO_CLOSE_HASH)
+  namespace SWF
   {
-     return LambdaFunctionTimeoutType::START_TO_CLOSE;
-  }
-  return LambdaFunctionTimeoutType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace LambdaFunctionTimeoutTypeMapper
+      {
 
-Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
-{
-  switch(enumValue)
-  {
-  case LambdaFunctionTimeoutType::START_TO_CLOSE:
-    return "START_TO_CLOSE";
-  default:
-    return "";
-  }
-}
 
-} // namespace LambdaFunctionTimeoutTypeMapper
-} // namespace Model
-} // namespace SWF
+        LambdaFunctionTimeoutType GetLambdaFunctionTimeoutTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == START_TO_CLOSE_HASH)
+          {
+            return LambdaFunctionTimeoutType::START_TO_CLOSE;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<LambdaFunctionTimeoutType>(hashCode);
+          }
+
+          return LambdaFunctionTimeoutType::NOT_SET;
+        }
+
+        Aws::String GetNameForLambdaFunctionTimeoutType(LambdaFunctionTimeoutType enumValue)
+        {
+          switch(enumValue)
+          {
+          case LambdaFunctionTimeoutType::START_TO_CLOSE:
+            return "START_TO_CLOSE";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace LambdaFunctionTimeoutTypeMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/lambda/model/Runtime.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int python2_7_HASH = HashingUtils::HashString("python2.7");
 
 namespace Aws
 {
-namespace Lambda
-{
-namespace Model
-{
-namespace RuntimeMapper
-{
+  namespace Lambda
+  {
+    namespace Model
+    {
+      namespace RuntimeMapper
+      {
 
 
-Runtime GetRuntimeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == nodejs_HASH)
-  {
-     return Runtime::nodejs;
-  }
-  else if (hashCode == java8_HASH)
-  {
-     return Runtime::java8;
-  }
-  else if (hashCode == python2_7_HASH)
-  {
-     return Runtime::python2_7;
-  }
-  return Runtime::NOT_SET;
-}
+        Runtime GetRuntimeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == nodejs_HASH)
+          {
+            return Runtime::nodejs;
+          }
+          else if (hashCode == java8_HASH)
+          {
+            return Runtime::java8;
+          }
+          else if (hashCode == python2_7_HASH)
+          {
+            return Runtime::python2_7;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<Runtime>(hashCode);
+          }
 
-Aws::String GetNameForRuntime(Runtime enumValue)
-{
-  switch(enumValue)
-  {
-  case Runtime::nodejs:
-    return "nodejs";
-  case Runtime::java8:
-    return "java8";
-  case Runtime::python2_7:
-    return "python2.7";
-  default:
-    return "";
-  }
-}
+          return Runtime::NOT_SET;
+        }
 
-} // namespace RuntimeMapper
-} // namespace Model
-} // namespace Lambda
+        Aws::String GetNameForRuntime(Runtime enumValue)
+        {
+          switch(enumValue)
+          {
+          case Runtime::nodejs:
+            return "nodejs";
+          case Runtime::java8:
+            return "java8";
+          case Runtime::python2_7:
+            return "python2.7";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace RuntimeMapper
+    } // namespace Model
+  } // namespace Lambda
 } // namespace Aws

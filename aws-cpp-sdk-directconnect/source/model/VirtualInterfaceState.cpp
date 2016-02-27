@@ -14,6 +14,7 @@
 */
 #include <aws/directconnect/model/VirtualInterfaceState.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -27,72 +28,85 @@ static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 namespace Aws
 {
-namespace DirectConnect
-{
-namespace Model
-{
-namespace VirtualInterfaceStateMapper
-{
+  namespace DirectConnect
+  {
+    namespace Model
+    {
+      namespace VirtualInterfaceStateMapper
+      {
 
 
-VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == confirming_HASH)
-  {
-     return VirtualInterfaceState::confirming;
-  }
-  else if (hashCode == verifying_HASH)
-  {
-     return VirtualInterfaceState::verifying;
-  }
-  else if (hashCode == pending_HASH)
-  {
-     return VirtualInterfaceState::pending;
-  }
-  else if (hashCode == available_HASH)
-  {
-     return VirtualInterfaceState::available;
-  }
-  else if (hashCode == deleting_HASH)
-  {
-     return VirtualInterfaceState::deleting;
-  }
-  else if (hashCode == deleted_HASH)
-  {
-     return VirtualInterfaceState::deleted;
-  }
-  else if (hashCode == rejected_HASH)
-  {
-     return VirtualInterfaceState::rejected;
-  }
-  return VirtualInterfaceState::NOT_SET;
-}
+        VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == confirming_HASH)
+          {
+            return VirtualInterfaceState::confirming;
+          }
+          else if (hashCode == verifying_HASH)
+          {
+            return VirtualInterfaceState::verifying;
+          }
+          else if (hashCode == pending_HASH)
+          {
+            return VirtualInterfaceState::pending;
+          }
+          else if (hashCode == available_HASH)
+          {
+            return VirtualInterfaceState::available;
+          }
+          else if (hashCode == deleting_HASH)
+          {
+            return VirtualInterfaceState::deleting;
+          }
+          else if (hashCode == deleted_HASH)
+          {
+            return VirtualInterfaceState::deleted;
+          }
+          else if (hashCode == rejected_HASH)
+          {
+            return VirtualInterfaceState::rejected;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<VirtualInterfaceState>(hashCode);
+          }
 
-Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState enumValue)
-{
-  switch(enumValue)
-  {
-  case VirtualInterfaceState::confirming:
-    return "confirming";
-  case VirtualInterfaceState::verifying:
-    return "verifying";
-  case VirtualInterfaceState::pending:
-    return "pending";
-  case VirtualInterfaceState::available:
-    return "available";
-  case VirtualInterfaceState::deleting:
-    return "deleting";
-  case VirtualInterfaceState::deleted:
-    return "deleted";
-  case VirtualInterfaceState::rejected:
-    return "rejected";
-  default:
-    return "";
-  }
-}
+          return VirtualInterfaceState::NOT_SET;
+        }
 
-} // namespace VirtualInterfaceStateMapper
-} // namespace Model
-} // namespace DirectConnect
+        Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState enumValue)
+        {
+          switch(enumValue)
+          {
+          case VirtualInterfaceState::confirming:
+            return "confirming";
+          case VirtualInterfaceState::verifying:
+            return "verifying";
+          case VirtualInterfaceState::pending:
+            return "pending";
+          case VirtualInterfaceState::available:
+            return "available";
+          case VirtualInterfaceState::deleting:
+            return "deleting";
+          case VirtualInterfaceState::deleted:
+            return "deleted";
+          case VirtualInterfaceState::rejected:
+            return "rejected";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace VirtualInterfaceStateMapper
+    } // namespace Model
+  } // namespace DirectConnect
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/rds/model/ApplyMethod.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int pending_reboot_HASH = HashingUtils::HashString("pending-reboot"
 
 namespace Aws
 {
-namespace RDS
-{
-namespace Model
-{
-namespace ApplyMethodMapper
-{
-
-
-ApplyMethod GetApplyMethodForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == immediate_HASH)
+  namespace RDS
   {
-     return ApplyMethod::immediate;
-  }
-  else if (hashCode == pending_reboot_HASH)
-  {
-     return ApplyMethod::pending_reboot;
-  }
-  return ApplyMethod::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ApplyMethodMapper
+      {
 
-Aws::String GetNameForApplyMethod(ApplyMethod enumValue)
-{
-  switch(enumValue)
-  {
-  case ApplyMethod::immediate:
-    return "immediate";
-  case ApplyMethod::pending_reboot:
-    return "pending-reboot";
-  default:
-    return "";
-  }
-}
 
-} // namespace ApplyMethodMapper
-} // namespace Model
-} // namespace RDS
+        ApplyMethod GetApplyMethodForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == immediate_HASH)
+          {
+            return ApplyMethod::immediate;
+          }
+          else if (hashCode == pending_reboot_HASH)
+          {
+            return ApplyMethod::pending_reboot;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ApplyMethod>(hashCode);
+          }
+
+          return ApplyMethod::NOT_SET;
+        }
+
+        Aws::String GetNameForApplyMethod(ApplyMethod enumValue)
+        {
+          switch(enumValue)
+          {
+          case ApplyMethod::immediate:
+            return "immediate";
+          case ApplyMethod::pending_reboot:
+            return "pending-reboot";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ApplyMethodMapper
+    } // namespace Model
+  } // namespace RDS
 } // namespace Aws

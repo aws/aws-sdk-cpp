@@ -14,6 +14,7 @@
 */
 #include <aws/cognito-sync/model/StreamingStatus.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 namespace Aws
 {
-namespace CognitoSync
-{
-namespace Model
-{
-namespace StreamingStatusMapper
-{
-
-
-StreamingStatus GetStreamingStatusForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == ENABLED_HASH)
+  namespace CognitoSync
   {
-     return StreamingStatus::ENABLED;
-  }
-  else if (hashCode == DISABLED_HASH)
-  {
-     return StreamingStatus::DISABLED;
-  }
-  return StreamingStatus::NOT_SET;
-}
+    namespace Model
+    {
+      namespace StreamingStatusMapper
+      {
 
-Aws::String GetNameForStreamingStatus(StreamingStatus enumValue)
-{
-  switch(enumValue)
-  {
-  case StreamingStatus::ENABLED:
-    return "ENABLED";
-  case StreamingStatus::DISABLED:
-    return "DISABLED";
-  default:
-    return "";
-  }
-}
 
-} // namespace StreamingStatusMapper
-} // namespace Model
-} // namespace CognitoSync
+        StreamingStatus GetStreamingStatusForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == ENABLED_HASH)
+          {
+            return StreamingStatus::ENABLED;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return StreamingStatus::DISABLED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<StreamingStatus>(hashCode);
+          }
+
+          return StreamingStatus::NOT_SET;
+        }
+
+        Aws::String GetNameForStreamingStatus(StreamingStatus enumValue)
+        {
+          switch(enumValue)
+          {
+          case StreamingStatus::ENABLED:
+            return "ENABLED";
+          case StreamingStatus::DISABLED:
+            return "DISABLED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace StreamingStatusMapper
+    } // namespace Model
+  } // namespace CognitoSync
 } // namespace Aws

@@ -14,6 +14,7 @@
 */
 #include <aws/dynamodb/model/ConditionalOperator.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int OR_HASH = HashingUtils::HashString("OR");
 
 namespace Aws
 {
-namespace DynamoDB
-{
-namespace Model
-{
-namespace ConditionalOperatorMapper
-{
-
-
-ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == AND_HASH)
+  namespace DynamoDB
   {
-     return ConditionalOperator::AND;
-  }
-  else if (hashCode == OR_HASH)
-  {
-     return ConditionalOperator::OR;
-  }
-  return ConditionalOperator::NOT_SET;
-}
+    namespace Model
+    {
+      namespace ConditionalOperatorMapper
+      {
 
-Aws::String GetNameForConditionalOperator(ConditionalOperator enumValue)
-{
-  switch(enumValue)
-  {
-  case ConditionalOperator::AND:
-    return "AND";
-  case ConditionalOperator::OR:
-    return "OR";
-  default:
-    return "";
-  }
-}
 
-} // namespace ConditionalOperatorMapper
-} // namespace Model
-} // namespace DynamoDB
+        ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == AND_HASH)
+          {
+            return ConditionalOperator::AND;
+          }
+          else if (hashCode == OR_HASH)
+          {
+            return ConditionalOperator::OR;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<ConditionalOperator>(hashCode);
+          }
+
+          return ConditionalOperator::NOT_SET;
+        }
+
+        Aws::String GetNameForConditionalOperator(ConditionalOperator enumValue)
+        {
+          switch(enumValue)
+          {
+          case ConditionalOperator::AND:
+            return "AND";
+          case ConditionalOperator::OR:
+            return "OR";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace ConditionalOperatorMapper
+    } // namespace Model
+  } // namespace DynamoDB
 } // namespace Aws

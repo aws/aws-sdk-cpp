@@ -14,6 +14,7 @@
 */
 #include <aws/swf/model/SignalExternalWorkflowExecutionFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -23,48 +24,61 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERAT
 
 namespace Aws
 {
-namespace SWF
-{
-namespace Model
-{
-namespace SignalExternalWorkflowExecutionFailedCauseMapper
-{
+  namespace SWF
+  {
+    namespace Model
+    {
+      namespace SignalExternalWorkflowExecutionFailedCauseMapper
+      {
 
 
-SignalExternalWorkflowExecutionFailedCause GetSignalExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
-  {
-     return SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
-  }
-  else if (hashCode == SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
-  {
-     return SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
-  }
-  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-     return SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
-  }
-  return SignalExternalWorkflowExecutionFailedCause::NOT_SET;
-}
+        SignalExternalWorkflowExecutionFailedCause GetSignalExternalWorkflowExecutionFailedCauseForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION_HASH)
+          {
+            return SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
+          }
+          else if (hashCode == SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH)
+          {
+            return SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+          }
+          else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+          {
+            return SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SignalExternalWorkflowExecutionFailedCause>(hashCode);
+          }
 
-Aws::String GetNameForSignalExternalWorkflowExecutionFailedCause(SignalExternalWorkflowExecutionFailedCause enumValue)
-{
-  switch(enumValue)
-  {
-  case SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
-    return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
-  case SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:
-    return "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED";
-  case SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
-    return "OPERATION_NOT_PERMITTED";
-  default:
-    return "";
-  }
-}
+          return SignalExternalWorkflowExecutionFailedCause::NOT_SET;
+        }
 
-} // namespace SignalExternalWorkflowExecutionFailedCauseMapper
-} // namespace Model
-} // namespace SWF
+        Aws::String GetNameForSignalExternalWorkflowExecutionFailedCause(SignalExternalWorkflowExecutionFailedCause enumValue)
+        {
+          switch(enumValue)
+          {
+          case SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
+            return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
+          case SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:
+            return "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED";
+          case SignalExternalWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:
+            return "OPERATION_NOT_PERMITTED";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SignalExternalWorkflowExecutionFailedCauseMapper
+    } // namespace Model
+  } // namespace SWF
 } // namespace Aws

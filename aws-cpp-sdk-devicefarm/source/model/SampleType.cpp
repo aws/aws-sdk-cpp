@@ -14,6 +14,7 @@
 */
 #include <aws/devicefarm/model/SampleType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -37,132 +38,145 @@ static const int OPENGL_MAX_DRAWTIME_HASH = HashingUtils::HashString("OPENGL_MAX
 
 namespace Aws
 {
-namespace DeviceFarm
-{
-namespace Model
-{
-namespace SampleTypeMapper
-{
+  namespace DeviceFarm
+  {
+    namespace Model
+    {
+      namespace SampleTypeMapper
+      {
 
 
-SampleType GetSampleTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CPU_HASH)
-  {
-     return SampleType::CPU;
-  }
-  else if (hashCode == MEMORY_HASH)
-  {
-     return SampleType::MEMORY;
-  }
-  else if (hashCode == THREADS_HASH)
-  {
-     return SampleType::THREADS;
-  }
-  else if (hashCode == RX_RATE_HASH)
-  {
-     return SampleType::RX_RATE;
-  }
-  else if (hashCode == TX_RATE_HASH)
-  {
-     return SampleType::TX_RATE;
-  }
-  else if (hashCode == RX_HASH)
-  {
-     return SampleType::RX;
-  }
-  else if (hashCode == TX_HASH)
-  {
-     return SampleType::TX;
-  }
-  else if (hashCode == NATIVE_FRAMES_HASH)
-  {
-     return SampleType::NATIVE_FRAMES;
-  }
-  else if (hashCode == NATIVE_FPS_HASH)
-  {
-     return SampleType::NATIVE_FPS;
-  }
-  else if (hashCode == NATIVE_MIN_DRAWTIME_HASH)
-  {
-     return SampleType::NATIVE_MIN_DRAWTIME;
-  }
-  else if (hashCode == NATIVE_AVG_DRAWTIME_HASH)
-  {
-     return SampleType::NATIVE_AVG_DRAWTIME;
-  }
-  else if (hashCode == NATIVE_MAX_DRAWTIME_HASH)
-  {
-     return SampleType::NATIVE_MAX_DRAWTIME;
-  }
-  else if (hashCode == OPENGL_FRAMES_HASH)
-  {
-     return SampleType::OPENGL_FRAMES;
-  }
-  else if (hashCode == OPENGL_FPS_HASH)
-  {
-     return SampleType::OPENGL_FPS;
-  }
-  else if (hashCode == OPENGL_MIN_DRAWTIME_HASH)
-  {
-     return SampleType::OPENGL_MIN_DRAWTIME;
-  }
-  else if (hashCode == OPENGL_AVG_DRAWTIME_HASH)
-  {
-     return SampleType::OPENGL_AVG_DRAWTIME;
-  }
-  else if (hashCode == OPENGL_MAX_DRAWTIME_HASH)
-  {
-     return SampleType::OPENGL_MAX_DRAWTIME;
-  }
-  return SampleType::NOT_SET;
-}
+        SampleType GetSampleTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == CPU_HASH)
+          {
+            return SampleType::CPU;
+          }
+          else if (hashCode == MEMORY_HASH)
+          {
+            return SampleType::MEMORY;
+          }
+          else if (hashCode == THREADS_HASH)
+          {
+            return SampleType::THREADS;
+          }
+          else if (hashCode == RX_RATE_HASH)
+          {
+            return SampleType::RX_RATE;
+          }
+          else if (hashCode == TX_RATE_HASH)
+          {
+            return SampleType::TX_RATE;
+          }
+          else if (hashCode == RX_HASH)
+          {
+            return SampleType::RX;
+          }
+          else if (hashCode == TX_HASH)
+          {
+            return SampleType::TX;
+          }
+          else if (hashCode == NATIVE_FRAMES_HASH)
+          {
+            return SampleType::NATIVE_FRAMES;
+          }
+          else if (hashCode == NATIVE_FPS_HASH)
+          {
+            return SampleType::NATIVE_FPS;
+          }
+          else if (hashCode == NATIVE_MIN_DRAWTIME_HASH)
+          {
+            return SampleType::NATIVE_MIN_DRAWTIME;
+          }
+          else if (hashCode == NATIVE_AVG_DRAWTIME_HASH)
+          {
+            return SampleType::NATIVE_AVG_DRAWTIME;
+          }
+          else if (hashCode == NATIVE_MAX_DRAWTIME_HASH)
+          {
+            return SampleType::NATIVE_MAX_DRAWTIME;
+          }
+          else if (hashCode == OPENGL_FRAMES_HASH)
+          {
+            return SampleType::OPENGL_FRAMES;
+          }
+          else if (hashCode == OPENGL_FPS_HASH)
+          {
+            return SampleType::OPENGL_FPS;
+          }
+          else if (hashCode == OPENGL_MIN_DRAWTIME_HASH)
+          {
+            return SampleType::OPENGL_MIN_DRAWTIME;
+          }
+          else if (hashCode == OPENGL_AVG_DRAWTIME_HASH)
+          {
+            return SampleType::OPENGL_AVG_DRAWTIME;
+          }
+          else if (hashCode == OPENGL_MAX_DRAWTIME_HASH)
+          {
+            return SampleType::OPENGL_MAX_DRAWTIME;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<SampleType>(hashCode);
+          }
 
-Aws::String GetNameForSampleType(SampleType enumValue)
-{
-  switch(enumValue)
-  {
-  case SampleType::CPU:
-    return "CPU";
-  case SampleType::MEMORY:
-    return "MEMORY";
-  case SampleType::THREADS:
-    return "THREADS";
-  case SampleType::RX_RATE:
-    return "RX_RATE";
-  case SampleType::TX_RATE:
-    return "TX_RATE";
-  case SampleType::RX:
-    return "RX";
-  case SampleType::TX:
-    return "TX";
-  case SampleType::NATIVE_FRAMES:
-    return "NATIVE_FRAMES";
-  case SampleType::NATIVE_FPS:
-    return "NATIVE_FPS";
-  case SampleType::NATIVE_MIN_DRAWTIME:
-    return "NATIVE_MIN_DRAWTIME";
-  case SampleType::NATIVE_AVG_DRAWTIME:
-    return "NATIVE_AVG_DRAWTIME";
-  case SampleType::NATIVE_MAX_DRAWTIME:
-    return "NATIVE_MAX_DRAWTIME";
-  case SampleType::OPENGL_FRAMES:
-    return "OPENGL_FRAMES";
-  case SampleType::OPENGL_FPS:
-    return "OPENGL_FPS";
-  case SampleType::OPENGL_MIN_DRAWTIME:
-    return "OPENGL_MIN_DRAWTIME";
-  case SampleType::OPENGL_AVG_DRAWTIME:
-    return "OPENGL_AVG_DRAWTIME";
-  case SampleType::OPENGL_MAX_DRAWTIME:
-    return "OPENGL_MAX_DRAWTIME";
-  default:
-    return "";
-  }
-}
+          return SampleType::NOT_SET;
+        }
 
-} // namespace SampleTypeMapper
-} // namespace Model
-} // namespace DeviceFarm
+        Aws::String GetNameForSampleType(SampleType enumValue)
+        {
+          switch(enumValue)
+          {
+          case SampleType::CPU:
+            return "CPU";
+          case SampleType::MEMORY:
+            return "MEMORY";
+          case SampleType::THREADS:
+            return "THREADS";
+          case SampleType::RX_RATE:
+            return "RX_RATE";
+          case SampleType::TX_RATE:
+            return "TX_RATE";
+          case SampleType::RX:
+            return "RX";
+          case SampleType::TX:
+            return "TX";
+          case SampleType::NATIVE_FRAMES:
+            return "NATIVE_FRAMES";
+          case SampleType::NATIVE_FPS:
+            return "NATIVE_FPS";
+          case SampleType::NATIVE_MIN_DRAWTIME:
+            return "NATIVE_MIN_DRAWTIME";
+          case SampleType::NATIVE_AVG_DRAWTIME:
+            return "NATIVE_AVG_DRAWTIME";
+          case SampleType::NATIVE_MAX_DRAWTIME:
+            return "NATIVE_MAX_DRAWTIME";
+          case SampleType::OPENGL_FRAMES:
+            return "OPENGL_FRAMES";
+          case SampleType::OPENGL_FPS:
+            return "OPENGL_FPS";
+          case SampleType::OPENGL_MIN_DRAWTIME:
+            return "OPENGL_MIN_DRAWTIME";
+          case SampleType::OPENGL_AVG_DRAWTIME:
+            return "OPENGL_AVG_DRAWTIME";
+          case SampleType::OPENGL_MAX_DRAWTIME:
+            return "OPENGL_MAX_DRAWTIME";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace SampleTypeMapper
+    } // namespace Model
+  } // namespace DeviceFarm
 } // namespace Aws

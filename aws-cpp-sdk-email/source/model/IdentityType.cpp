@@ -14,6 +14,7 @@
 */
 #include <aws/email/model/IdentityType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -22,42 +23,55 @@ static const int Domain_HASH = HashingUtils::HashString("Domain");
 
 namespace Aws
 {
-namespace SES
-{
-namespace Model
-{
-namespace IdentityTypeMapper
-{
-
-
-IdentityType GetIdentityTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == EmailAddress_HASH)
+  namespace SES
   {
-     return IdentityType::EmailAddress;
-  }
-  else if (hashCode == Domain_HASH)
-  {
-     return IdentityType::Domain;
-  }
-  return IdentityType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace IdentityTypeMapper
+      {
 
-Aws::String GetNameForIdentityType(IdentityType enumValue)
-{
-  switch(enumValue)
-  {
-  case IdentityType::EmailAddress:
-    return "EmailAddress";
-  case IdentityType::Domain:
-    return "Domain";
-  default:
-    return "";
-  }
-}
 
-} // namespace IdentityTypeMapper
-} // namespace Model
-} // namespace SES
+        IdentityType GetIdentityTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == EmailAddress_HASH)
+          {
+            return IdentityType::EmailAddress;
+          }
+          else if (hashCode == Domain_HASH)
+          {
+            return IdentityType::Domain;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<IdentityType>(hashCode);
+          }
+
+          return IdentityType::NOT_SET;
+        }
+
+        Aws::String GetNameForIdentityType(IdentityType enumValue)
+        {
+          switch(enumValue)
+          {
+          case IdentityType::EmailAddress:
+            return "EmailAddress";
+          case IdentityType::Domain:
+            return "Domain";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace IdentityTypeMapper
+    } // namespace Model
+  } // namespace SES
 } // namespace Aws

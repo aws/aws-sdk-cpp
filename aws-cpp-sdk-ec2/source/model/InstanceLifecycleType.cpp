@@ -14,6 +14,7 @@
 */
 #include <aws/ec2/model/InstanceLifecycleType.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/Globals.h>
 
 using namespace Aws::Utils;
 
@@ -21,36 +22,49 @@ static const int spot_HASH = HashingUtils::HashString("spot");
 
 namespace Aws
 {
-namespace EC2
-{
-namespace Model
-{
-namespace InstanceLifecycleTypeMapper
-{
-
-
-InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
-{
-  int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == spot_HASH)
+  namespace EC2
   {
-     return InstanceLifecycleType::spot;
-  }
-  return InstanceLifecycleType::NOT_SET;
-}
+    namespace Model
+    {
+      namespace InstanceLifecycleTypeMapper
+      {
 
-Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue)
-{
-  switch(enumValue)
-  {
-  case InstanceLifecycleType::spot:
-    return "spot";
-  default:
-    return "";
-  }
-}
 
-} // namespace InstanceLifecycleTypeMapper
-} // namespace Model
-} // namespace EC2
+        InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
+        {
+          int hashCode = HashingUtils::HashString(name.c_str());
+          if (hashCode == spot_HASH)
+          {
+            return InstanceLifecycleType::spot;
+          }
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          if(overflowContainer)
+          {
+            overflowContainer->StoreOverflow(hashCode, name);
+            return static_cast<InstanceLifecycleType>(hashCode);
+          }
+
+          return InstanceLifecycleType::NOT_SET;
+        }
+
+        Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType enumValue)
+        {
+          switch(enumValue)
+          {
+          case InstanceLifecycleType::spot:
+            return "spot";
+          default:
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            if(overflowContainer)
+            {
+              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            }
+
+            return "";
+          }
+        }
+
+      } // namespace InstanceLifecycleTypeMapper
+    } // namespace Model
+  } // namespace EC2
 } // namespace Aws
