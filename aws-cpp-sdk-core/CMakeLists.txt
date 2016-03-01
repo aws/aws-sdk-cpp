@@ -319,7 +319,7 @@ if(NOT PLATFORM_WINDOWS)
        target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
 
        if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-           target_compile_options(aws-cpp-sdk-core PRIVATE --Wno-unused-private-field)
+           target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
        endif()
     endif()
 elseif(MSVC)
