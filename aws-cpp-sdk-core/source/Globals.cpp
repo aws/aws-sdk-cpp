@@ -13,8 +13,20 @@
 * permissions and limitations under the License.
 */
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <atomic>
 
 namespace Aws
 {
-    std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow(nullptr);
+    static std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow(nullptr);
+
+    Utils::EnumParseOverflowContainer* GetEnumOverflowContainer()
+    {
+        return g_enumOverflow.load();
+    }
+
+    bool CheckAndSwapEnumOverflowContainer(Utils::EnumParseOverflowContainer* expectedValue, Utils::EnumParseOverflowContainer* newValue)
+    {
+        return g_enumOverflow.compare_exchange_strong(expectedValue, newValue);
+    }
 }

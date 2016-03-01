@@ -15,16 +15,24 @@
 
 #pragma once
 
-#include <aws/core/utils/EnumParseOverflowContainer.h>
-#include <atomic>
+#include <aws/core/Core_EXPORTS.h>
 
 namespace Aws
 {
+    namespace Utils
+    {
+        class EnumParseOverflowContainer;
+    }
     /**
      * This is used to handle the Enum round tripping problem
      * for when a service updates their enumerations, but the user does not
      * have an up to date client. This member will be initialized the first time a client
      * is created and will be cleaned up when the last client goes out of scope.
      */
-    extern AWS_CORE_API std::atomic<Utils::EnumParseOverflowContainer*> g_enumOverflow;
+    AWS_CORE_API Utils::EnumParseOverflowContainer* GetEnumOverflowContainer();
+
+    /**
+     * Atomically set the underlying container to newValue, if it's current value is expectedValue.
+     */
+    AWS_CORE_API bool CheckAndSwapEnumOverflowContainer(Utils::EnumParseOverflowContainer* expectedValue, Utils::EnumParseOverflowContainer* newValue);
 }

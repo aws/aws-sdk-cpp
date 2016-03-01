@@ -57,7 +57,7 @@ void AWSClient::InitializeGlobalStatics()
         Utils::EnumParseOverflowContainer* expectedPtrValue = nullptr;
         Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(LOG_TAG);        
         if (!s_refCount.compare_exchange_strong(expectedRefCount, 1) ||
-             !g_enumOverflow.compare_exchange_strong(expectedPtrValue, container))
+             !Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, container))
         {
             Aws::Delete(container);
         }        
@@ -71,12 +71,12 @@ void AWSClient::InitializeGlobalStatics()
 void AWSClient::CleanupGlobalStatics()
 {
     int currentRefCount = s_refCount.load(); 
-    Utils::EnumParseOverflowContainer* expectedPtrValue = g_enumOverflow.load();
+    Utils::EnumParseOverflowContainer* expectedPtrValue = Aws::GetEnumOverflowContainer();
 
     if (currentRefCount == 1)
     {
         if (s_refCount.compare_exchange_strong(currentRefCount, 0) &&
-             g_enumOverflow.compare_exchange_strong(expectedPtrValue, nullptr))
+            Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, nullptr))
         {
             Aws::Delete(expectedPtrValue);           
             return;
