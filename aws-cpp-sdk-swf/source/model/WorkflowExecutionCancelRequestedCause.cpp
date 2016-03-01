@@ -15,6 +15,7 @@
 #include <aws/swf/model/WorkflowExecutionCancelRequestedCause.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -37,7 +38,7 @@ namespace Aws
           {
             return WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -54,7 +55,7 @@ namespace Aws
           case WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED:
             return "CHILD_POLICY_APPLIED";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

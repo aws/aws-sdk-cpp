@@ -978,7 +978,11 @@ if(PLATFORM_WINDOWS)
     endif()
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-unused-private-field -pedantic -Wextra")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -Wextra")
+
+    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --Wno-unused-private-field")
+    endif()
 endif()
 
 if(NOT PLATFORM_WINDOWS)

@@ -15,6 +15,7 @@
 #include <aws/s3/model/Event.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -77,7 +78,7 @@ namespace Aws
           {
             return Event::s3_ObjectRemoved_DeleteMarkerCreated;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -110,7 +111,7 @@ namespace Aws
           case Event::s3_ObjectRemoved_DeleteMarkerCreated:
             return "s3:ObjectRemoved:DeleteMarkerCreated";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

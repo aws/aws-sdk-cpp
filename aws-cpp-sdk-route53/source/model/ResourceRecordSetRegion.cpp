@@ -15,6 +15,7 @@
 #include <aws/route53/model/ResourceRecordSetRegion.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -87,7 +88,7 @@ namespace Aws
           {
             return ResourceRecordSetRegion::cn_north_1;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -124,7 +125,7 @@ namespace Aws
           case ResourceRecordSetRegion::cn_north_1:
             return "cn-north-1";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

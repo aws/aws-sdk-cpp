@@ -15,6 +15,7 @@
 #include <aws/ds/model/RadiusAuthenticationProtocol.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -52,7 +53,7 @@ namespace Aws
           {
             return RadiusAuthenticationProtocol::MS_CHAPv2;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -75,7 +76,7 @@ namespace Aws
           case RadiusAuthenticationProtocol::MS_CHAPv2:
             return "MS-CHAPv2";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

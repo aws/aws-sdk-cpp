@@ -15,6 +15,7 @@
 #include <aws/swf/model/ScheduleLambdaFunctionFailedCause.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -52,7 +53,7 @@ namespace Aws
           {
             return ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -75,7 +76,7 @@ namespace Aws
           case ScheduleLambdaFunctionFailedCause::LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION:
             return "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

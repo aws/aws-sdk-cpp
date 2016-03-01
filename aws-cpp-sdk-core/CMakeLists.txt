@@ -316,7 +316,11 @@ if(NOT PLATFORM_WINDOWS)
     if(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
         # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
         # We also have some nested comments in the auto-generated member comments so turn that off as well
-       target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-unused-private-field -Wno-comment)
+       target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
+
+       if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+           target_compile_options(aws-cpp-sdk-core PRIVATE --Wno-unused-private-field)
+       endif()
     endif()
 elseif(MSVC)
     target_compile_options(aws-cpp-sdk-core PRIVATE /bigobj)
