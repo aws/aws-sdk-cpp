@@ -77,42 +77,6 @@ namespace Model
     inline TestInvokeAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const{ return m_headers; }
-
-    
-    inline void SetHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_headersHasBeenSet = true; m_headers = value; }
-
-    
-    inline void SetHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_headersHasBeenSet = true; m_headers = value; }
-
-    
-    inline TestInvokeAuthorizerRequest& WithHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetHeaders(value); return *this;}
-
-    
-    inline TestInvokeAuthorizerRequest& WithHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetHeaders(value); return *this;}
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(const Aws::String& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(Aws::String&& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(const Aws::String& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(Aws::String&& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(const char* key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(Aws::String&& key, const char* value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
-    inline TestInvokeAuthorizerRequest& AddHeaders(const char* key, const char* value) { m_headersHasBeenSet = true; m_headers[key] = value; return *this; }
-
-    
     inline const Aws::String& GetPathWithQueryString() const{ return m_pathWithQueryString; }
 
     
@@ -132,27 +96,6 @@ namespace Model
 
     
     inline TestInvokeAuthorizerRequest& WithPathWithQueryString(const char* value) { SetPathWithQueryString(value); return *this;}
-
-    
-    inline const Aws::String& GetBody() const{ return m_body; }
-
-    
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-
-    
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = value; }
-
-    
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-
-    
-    inline TestInvokeAuthorizerRequest& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-
-    
-    inline TestInvokeAuthorizerRequest& WithBody(Aws::String&& value) { SetBody(value); return *this;}
-
-    
-    inline TestInvokeAuthorizerRequest& WithBody(const char* value) { SetBody(value); return *this;}
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
@@ -226,21 +169,78 @@ namespace Model
     
     inline TestInvokeAuthorizerRequest& AddAdditionalContext(const char* key, const char* value) { m_additionalContextHasBeenSet = true; m_additionalContext[key] = value; return *this; }
 
+    
+    inline const Aws::String& GetRequestBody() const{ return m_requestBody; }
+
+    
+    inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
+
+    
+    inline void SetRequestBody(Aws::String&& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
+
+    
+    inline void SetRequestBody(const char* value) { m_requestBodyHasBeenSet = true; m_requestBody.assign(value); }
+
+    
+    inline TestInvokeAuthorizerRequest& WithRequestBody(const Aws::String& value) { SetRequestBody(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerRequest& WithRequestBody(Aws::String&& value) { SetRequestBody(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestHeaders() const{ return m_requestHeaders; }
+
+    
+    inline void SetRequestHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders = value; }
+
+    
+    inline void SetRequestHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders = value; }
+
+    
+    inline TestInvokeAuthorizerRequest& WithRequestHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestHeaders(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerRequest& WithRequestHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestHeaders(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const Aws::String& key, const Aws::String& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, const Aws::String& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const Aws::String& key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const char* key, Aws::String&& value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(Aws::String&& key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerRequest& AddRequestHeaders(const char* key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders[key] = value; return *this; }
+
   private:
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
-    Aws::Map<Aws::String, Aws::String> m_headers;
-    bool m_headersHasBeenSet;
     Aws::String m_pathWithQueryString;
     bool m_pathWithQueryStringHasBeenSet;
-    Aws::String m_body;
-    bool m_bodyHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
     bool m_stageVariablesHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_additionalContext;
     bool m_additionalContextHasBeenSet;
+    Aws::String m_requestBody;
+    bool m_requestBodyHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_requestHeaders;
+    bool m_requestHeadersHasBeenSet;
   };
 
 } // namespace Model

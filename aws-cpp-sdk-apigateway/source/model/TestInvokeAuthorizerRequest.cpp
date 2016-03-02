@@ -24,11 +24,11 @@ using namespace Aws::Utils;
 TestInvokeAuthorizerRequest::TestInvokeAuthorizerRequest() : 
     m_restApiIdHasBeenSet(false),
     m_authorizerIdHasBeenSet(false),
-    m_headersHasBeenSet(false),
     m_pathWithQueryStringHasBeenSet(false),
-    m_bodyHasBeenSet(false),
     m_stageVariablesHasBeenSet(false),
-    m_additionalContextHasBeenSet(false)
+    m_additionalContextHasBeenSet(false),
+    m_requestBodyHasBeenSet(false),
+    m_requestHeadersHasBeenSet(false)
 {
 }
 
@@ -36,26 +36,9 @@ Aws::String TestInvokeAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_headersHasBeenSet)
-  {
-   JsonValue headersJsonMap;
-   for(auto& headersItem : m_headers)
-   {
-     headersJsonMap.WithString(headersItem.first, headersItem.second);
-   }
-   payload.WithObject("headers", std::move(headersJsonMap));
-
-  }
-
   if(m_pathWithQueryStringHasBeenSet)
   {
    payload.WithString("pathWithQueryString", m_pathWithQueryString);
-
-  }
-
-  if(m_bodyHasBeenSet)
-  {
-   payload.WithString("body", m_body);
 
   }
 
@@ -78,6 +61,23 @@ Aws::String TestInvokeAuthorizerRequest::SerializePayload() const
      additionalContextJsonMap.WithString(additionalContextItem.first, additionalContextItem.second);
    }
    payload.WithObject("additionalContext", std::move(additionalContextJsonMap));
+
+  }
+
+  if(m_requestBodyHasBeenSet)
+  {
+   payload.WithString("requestBody", m_requestBody);
+
+  }
+
+  if(m_requestHeadersHasBeenSet)
+  {
+   JsonValue requestHeadersJsonMap;
+   for(auto& requestHeadersItem : m_requestHeaders)
+   {
+     requestHeadersJsonMap.WithString(requestHeadersItem.first, requestHeadersItem.second);
+   }
+   payload.WithObject("requestHeaders", std::move(requestHeadersJsonMap));
 
   }
 

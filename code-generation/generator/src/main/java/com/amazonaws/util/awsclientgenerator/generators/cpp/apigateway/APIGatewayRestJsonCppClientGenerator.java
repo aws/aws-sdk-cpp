@@ -46,6 +46,19 @@ public class APIGatewayRestJsonCppClientGenerator extends JsonCppClientGenerator
         members.put("requestHeaders", headersMember);
         members.remove("headers");
 
+        Shape authorizerRequest = serviceModel.getShapes().get("TestInvokeAuthorizerRequest");
+        members = authorizerRequest.getMembers();
+
+        //rename body
+        bodyMember = members.get("body");
+        members.put("requestBody", bodyMember);
+        members.remove("body");
+
+        //rename headers
+        headersMember = members.get("headers");
+        members.put("requestHeaders", headersMember);
+        members.remove("headers");
+
         return super.generateSourceFiles(serviceModel);
     }
 }
