@@ -32,10 +32,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>An empty element. Receiving this element indicates that the request completed
-   * successfully.</p>
-   */
   class AWS_SES_API DeleteIdentityResult
   {
   public:

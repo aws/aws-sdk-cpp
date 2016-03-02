@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to delete an identity from the
-   * list of identities for the AWS Account.</p>
    */
   class AWS_SES_API DeleteIdentityRequest : public SESRequest
   {

@@ -28,8 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Request object for sending a simple/complex bounce. It contains all of the
-   * information needed to generate a basic DSN or a fully-customized DSN.</p>
    */
   class AWS_SES_API SendBounceRequest : public SESRequest
   {

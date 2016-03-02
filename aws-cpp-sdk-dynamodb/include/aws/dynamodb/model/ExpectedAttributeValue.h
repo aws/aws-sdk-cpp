@@ -86,14 +86,14 @@ namespace Model
      * does not exist, the operation fails with a
      * <i>ConditionalCheckFailedException</i>.</p> </li> </ul> <p>The default setting
      * for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by
-     * itself, DynamoDB assumes the attribute exists: You don't have to set
+     * itself, DynamoDB assumes the attribute exists: You don&#39;t have to set
      * <i>Exists</i> to <code>true</code>, because it is implied.</p> <p>DynamoDB
      * returns a <i>ValidationException</i> if:</p> <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a value to
-     * exist, but don't specify what that value is.)</p> </li> <li> <p><i>Exists</i> is
-     * <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an
-     * attribute to have a value, while also expecting it not to exist.)</p> </li>
-     * </ul>
+     * exist, but don&#39;t specify what that value is.)</p> </li> <li>
+     * <p><i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You
+     * cannot expect an attribute to have a value, while also expecting it not to
+     * exist.)</p> </li> </ul>
      */
     inline bool GetExists() const{ return m_exists; }
 
@@ -109,14 +109,14 @@ namespace Model
      * does not exist, the operation fails with a
      * <i>ConditionalCheckFailedException</i>.</p> </li> </ul> <p>The default setting
      * for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by
-     * itself, DynamoDB assumes the attribute exists: You don't have to set
+     * itself, DynamoDB assumes the attribute exists: You don&#39;t have to set
      * <i>Exists</i> to <code>true</code>, because it is implied.</p> <p>DynamoDB
      * returns a <i>ValidationException</i> if:</p> <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a value to
-     * exist, but don't specify what that value is.)</p> </li> <li> <p><i>Exists</i> is
-     * <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an
-     * attribute to have a value, while also expecting it not to exist.)</p> </li>
-     * </ul>
+     * exist, but don&#39;t specify what that value is.)</p> </li> <li>
+     * <p><i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You
+     * cannot expect an attribute to have a value, while also expecting it not to
+     * exist.)</p> </li> </ul>
      */
     inline void SetExists(bool value) { m_existsHasBeenSet = true; m_exists = value; }
 
@@ -132,14 +132,14 @@ namespace Model
      * does not exist, the operation fails with a
      * <i>ConditionalCheckFailedException</i>.</p> </li> </ul> <p>The default setting
      * for <i>Exists</i> is <code>true</code>. If you supply a <i>Value</i> all by
-     * itself, DynamoDB assumes the attribute exists: You don't have to set
+     * itself, DynamoDB assumes the attribute exists: You don&#39;t have to set
      * <i>Exists</i> to <code>true</code>, because it is implied.</p> <p>DynamoDB
      * returns a <i>ValidationException</i> if:</p> <ul> <li> <p><i>Exists</i> is
      * <code>true</code> but there is no <i>Value</i> to check. (You expect a value to
-     * exist, but don't specify what that value is.)</p> </li> <li> <p><i>Exists</i> is
-     * <code>false</code> but you also provide a <i>Value</i>. (You cannot expect an
-     * attribute to have a value, while also expecting it not to exist.)</p> </li>
-     * </ul>
+     * exist, but don&#39;t specify what that value is.)</p> </li> <li>
+     * <p><i>Exists</i> is <code>false</code> but you also provide a <i>Value</i>. (You
+     * cannot expect an attribute to have a value, while also expecting it not to
+     * exist.)</p> </li> </ul>
      */
     inline ExpectedAttributeValue& WithExists(bool value) { SetExists(value); return *this;}
 

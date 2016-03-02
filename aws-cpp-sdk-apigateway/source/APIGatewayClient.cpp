@@ -49,6 +49,7 @@
 #include <aws/apigateway/model/DeleteResourceRequest.h>
 #include <aws/apigateway/model/DeleteRestApiRequest.h>
 #include <aws/apigateway/model/DeleteStageRequest.h>
+#include <aws/apigateway/model/FlushStageAuthorizersCacheRequest.h>
 #include <aws/apigateway/model/FlushStageCacheRequest.h>
 #include <aws/apigateway/model/GenerateClientCertificateRequest.h>
 #include <aws/apigateway/model/GetAccountRequest.h>
@@ -83,6 +84,7 @@
 #include <aws/apigateway/model/PutIntegrationResponseRequest.h>
 #include <aws/apigateway/model/PutMethodRequest.h>
 #include <aws/apigateway/model/PutMethodResponseRequest.h>
+#include <aws/apigateway/model/TestInvokeAuthorizerRequest.h>
 #include <aws/apigateway/model/TestInvokeMethodRequest.h>
 #include <aws/apigateway/model/UpdateAccountRequest.h>
 #include <aws/apigateway/model/UpdateApiKeyRequest.h>
@@ -933,6 +935,41 @@ void APIGatewayClient::DeleteStageAsync(const DeleteStageRequest& request, const
 void APIGatewayClient::DeleteStageAsyncHelper(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStage(request), context);
+}
+
+FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(const FlushStageAuthorizersCacheRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/stages/";
+  ss << request.GetStageName();
+  ss << "/cache/authorizers";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return FlushStageAuthorizersCacheOutcome(NoResult());
+  }
+  else
+  {
+    return FlushStageAuthorizersCacheOutcome(outcome.GetError());
+  }
+}
+
+FlushStageAuthorizersCacheOutcomeCallable APIGatewayClient::FlushStageAuthorizersCacheCallable(const FlushStageAuthorizersCacheRequest& request) const
+{
+  return std::async(std::launch::async, &APIGatewayClient::FlushStageAuthorizersCache, this, request);
+}
+
+void APIGatewayClient::FlushStageAuthorizersCacheAsync(const FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&APIGatewayClient::FlushStageAuthorizersCacheAsyncHelper, this, request, handler, context);
+}
+
+void APIGatewayClient::FlushStageAuthorizersCacheAsyncHelper(const FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, FlushStageAuthorizersCache(request), context);
 }
 
 FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRequest& request) const
@@ -2089,6 +2126,40 @@ void APIGatewayClient::PutMethodResponseAsync(const PutMethodResponseRequest& re
 void APIGatewayClient::PutMethodResponseAsyncHelper(const PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutMethodResponse(request), context);
+}
+
+TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+  ss << "/authorizers/";
+  ss << request.GetAuthorizerId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TestInvokeAuthorizerOutcome(TestInvokeAuthorizerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestInvokeAuthorizerOutcome(outcome.GetError());
+  }
+}
+
+TestInvokeAuthorizerOutcomeCallable APIGatewayClient::TestInvokeAuthorizerCallable(const TestInvokeAuthorizerRequest& request) const
+{
+  return std::async(std::launch::async, &APIGatewayClient::TestInvokeAuthorizer, this, request);
+}
+
+void APIGatewayClient::TestInvokeAuthorizerAsync(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&APIGatewayClient::TestInvokeAuthorizerAsyncHelper, this, request, handler, context);
+}
+
+void APIGatewayClient::TestInvokeAuthorizerAsyncHelper(const TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestInvokeAuthorizer(request), context);
 }
 
 TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMethodRequest& request) const

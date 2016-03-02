@@ -104,23 +104,17 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p> <p>The
-     * time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline double GetTime() const{ return m_time; }
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p> <p>The
-     * time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p> <p>The
-     * time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithTime(double value) { SetTime(value); return *this;}
 

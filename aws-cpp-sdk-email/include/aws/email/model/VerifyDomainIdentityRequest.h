@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to begin domain
-   * verification.</p>
    */
   class AWS_SES_API VerifyDomainIdentityRequest : public SESRequest
   {

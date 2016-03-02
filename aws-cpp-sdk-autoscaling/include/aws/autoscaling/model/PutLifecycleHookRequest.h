@@ -217,141 +217,141 @@ namespace Model
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline const Aws::String& GetNotificationTargetARN() const{ return m_notificationTargetARN; }
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline void SetNotificationTargetARN(const char* value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN.assign(value); }
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline PutLifecycleHookRequest& WithNotificationTargetARN(const Aws::String& value) { SetNotificationTargetARN(value); return *this;}
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline PutLifecycleHookRequest& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(value); return *this;}
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
-     * when an instance is in the transition state for the lifecycle hook. This ARN
-     * target can be either an SQS queue or an SNS topic. </p> <p>This parameter is
-     * required for new lifecycle hooks, but optional when updating existing hooks.</p>
-     * <p>The notification message sent to the target will include:</p> <ul>
-     * <li><b>LifecycleActionToken</b>. The Lifecycle action token.</li>
-     * <li><b>AccountId</b>. The user account ID.</li> <li><b>AutoScalingGroupName</b>.
-     * The name of the Auto Scaling group.</li> <li><b>LifecycleHookName</b>. The
-     * lifecycle hook name.</li> <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle transition.</li>
-     * <li><b>NotificationMetadata</b>. The notification metadata.</li> </ul> <p>This
+     * when an instance is in the transition state for the lifecycle hook. This target
+     * can be either an SQS queue or an SNS topic. If you specify an empty string, this
+     * overrides the current ARN.</p> <p>The notification messages sent to the target
+     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
+     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
+     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
+     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
+     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
+     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
+     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
-     * Amazon SNS topic.</p> <p>When you call this operation, a test message is sent to
-     * the notification target. This test message contains an additional key/value
-     * pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.</p>
+     * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
+     * sends it a test message. Test messages contains the following additional
+     * key/value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
      */
     inline PutLifecycleHookRequest& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
 
@@ -399,84 +399,81 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the action
-     * defined in the <code>DefaultResult</code> parameter. You can prevent the
-     * lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
-     * The default is 3600 seconds (1 hour).</p>
+     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
     inline long GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the action
-     * defined in the <code>DefaultResult</code> parameter. You can prevent the
-     * lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
-     * The default is 3600 seconds (1 hour).</p>
+     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
     inline void SetHeartbeatTimeout(long value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
-     * times out. When the lifecycle hook times out, Auto Scaling performs the action
-     * defined in the <code>DefaultResult</code> parameter. You can prevent the
-     * lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
-     * The default is 3600 seconds (1 hour).</p>
+     * times out. When the lifecycle hook times out, Auto Scaling performs the default
+     * action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
     inline PutLifecycleHookRequest& WithHeartbeatTimeout(long value) { SetHeartbeatTimeout(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline const Aws::String& GetDefaultResult() const{ return m_defaultResult; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const Aws::String& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const char* value) { m_defaultResultHasBeenSet = true; m_defaultResult.assign(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline PutLifecycleHookRequest& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline PutLifecycleHookRequest& WithDefaultResult(Aws::String&& value) { SetDefaultResult(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The value for this parameter
-     * can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value
-     * for this parameter is <code>ABANDON</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
      */
     inline PutLifecycleHookRequest& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
 

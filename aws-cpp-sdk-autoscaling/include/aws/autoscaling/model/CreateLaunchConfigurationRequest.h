@@ -367,80 +367,72 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and is not supported otherwise. For
-     * more information, see <a
+     * <p>The IDs of one or more security groups for the specified ClassicLink-enabled
+     * VPC. This parameter is required if you specify a ClassicLink-enabled VPC, and is
+     * not supported otherwise. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -451,8 +443,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -461,8 +452,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -471,8 +461,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -481,8 +470,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -491,8 +479,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -501,8 +488,7 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
@@ -511,14 +497,13 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>At this time, launch configurations don't support compressed
-     * (zipped) user data files.</p>
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -529,8 +514,8 @@ namespace Model
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -541,8 +526,8 @@ namespace Model
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -553,8 +538,8 @@ namespace Model
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -565,8 +550,8 @@ namespace Model
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -577,8 +562,8 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -589,8 +574,8 @@ namespace Model
     inline CreateLaunchConfigurationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance to use to create the launch configuration.</p>
-     * <p>The new launch configuration derives attributes from the instance, with the
+     * <p>The ID of the instance to use to create the launch configuration.</p> <p>The
+     * new launch configuration derives attributes from the instance, with the
      * exception of the block device mapping.</p> <p>To create a launch configuration
      * with a block device mapping or override any other instance attributes, specify
      * them as part of the same request.</p> <p>For more information, see <a
@@ -795,8 +780,9 @@ namespace Model
      * generates metrics every minute and your account is charged a fee. When you
      * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-     * Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
@@ -806,8 +792,9 @@ namespace Model
      * generates metrics every minute and your account is charged a fee. When you
      * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-     * Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
@@ -817,8 +804,9 @@ namespace Model
      * generates metrics every minute and your account is charged a fee. When you
      * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-     * Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
@@ -828,8 +816,9 @@ namespace Model
      * generates metrics every minute and your account is charged a fee. When you
      * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-     * Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
@@ -839,8 +828,9 @@ namespace Model
      * generates metrics every minute and your account is charged a fee. When you
      * disable detailed monitoring, by specifying <code>False</code>, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitor
-     * Your Auto Scaling Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html">Monitoring
+     * Your Auto Scaling Instances and Groups</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(value); return *this;}
 
@@ -848,7 +838,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -858,7 +848,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -868,7 +858,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -878,7 +868,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -888,7 +878,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -898,7 +888,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -908,7 +898,7 @@ namespace Model
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
      * current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launch
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
      * Guide</i>.</p>
      */
@@ -1038,13 +1028,13 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>.</p> <p>If you specify a value for this parameter, be sure to specify
-     * at least one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group. </p> <p>Default: If the instance is launched into a default subnet,
-     * the default is <code>true</code>. If the instance is launched into a nondefault
-     * subnet, the default is <code>false</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>If you specify this parameter, be sure to specify at least one
+     * subnet when you create your group.</p> <p>Default: If the instance is launched
+     * into a default subnet, the default is <code>true</code>. If the instance is
+     * launched into a nondefault subnet, the default is <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -1054,13 +1044,13 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>.</p> <p>If you specify a value for this parameter, be sure to specify
-     * at least one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group. </p> <p>Default: If the instance is launched into a default subnet,
-     * the default is <code>true</code>. If the instance is launched into a nondefault
-     * subnet, the default is <code>false</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>If you specify this parameter, be sure to specify at least one
+     * subnet when you create your group.</p> <p>Default: If the instance is launched
+     * into a default subnet, the default is <code>true</code>. If the instance is
+     * launched into a nondefault subnet, the default is <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -1070,13 +1060,13 @@ namespace Model
      * <p>Used for groups that launch instances into a virtual private cloud (VPC).
      * Specifies whether to assign a public IP address to each instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>.</p> <p>If you specify a value for this parameter, be sure to specify
-     * at least one subnet using the <i>VPCZoneIdentifier</i> parameter when you create
-     * your group. </p> <p>Default: If the instance is launched into a default subnet,
-     * the default is <code>true</code>. If the instance is launched into a nondefault
-     * subnet, the default is <code>false</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>If you specify this parameter, be sure to specify at least one
+     * subnet when you create your group.</p> <p>Default: If the instance is launched
+     * into a default subnet, the default is <code>true</code>. If the instance is
+     * launched into a nondefault subnet, the default is <code>false</code>. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -1088,12 +1078,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
@@ -1104,12 +1094,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
@@ -1120,12 +1110,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline void SetPlacementTenancy(Aws::String&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
@@ -1136,12 +1126,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
@@ -1152,12 +1142,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
@@ -1168,12 +1158,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(Aws::String&& value) { SetPlacementTenancy(value); return *this;}
@@ -1184,12 +1174,12 @@ namespace Model
      * into a VPC.</p> <p>You must set the value of this parameter to
      * <code>dedicated</code> if want to launch Dedicated Instances into a shared
      * tenancy VPC (VPC with instance placement tenancy attribute set to
-     * <code>default</code>).</p> <p>If you specify a value for this parameter, be sure
-     * to specify at least one subnet using the <i>VPCZoneIdentifier</i> parameter when
-     * you create your group.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto
-     * Scaling and Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer
-     * Guide</i>. </p> <p>Valid values: <code>default</code> |
+     * <code>default</code>).</p> <p>If you specify this parameter, be sure to specify
+     * at least one subnet when you create your group.</p> <p>For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+     * Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer
+     * Guide</i>.</p> <p>Valid values: <code>default</code> |
      * <code>dedicated</code></p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}

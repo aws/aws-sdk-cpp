@@ -81,99 +81,99 @@ namespace Model
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(value); return *this;}
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to delete.</p> <p>For the primary key, you must provide
-     * all of the attributes. For example, with a hash type primary key, you only need
-     * to provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p>
+     * all of the attributes. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide values for both the partition key and the sort key.</p>
      */
     inline DeleteItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
@@ -2078,10 +2078,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2095,10 +2095,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2112,10 +2112,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2129,10 +2129,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2146,10 +2146,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2163,10 +2163,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy
@@ -2180,10 +2180,10 @@ namespace Model
      * following:</p> <ul> <li> <p>Functions: <code>attribute_exists |
      * attribute_not_exists | attribute_type | contains | begins_with | size</code></p>
      * <p>These function names are case-sensitive.</p> </li> <li> <p>Comparison
-     * operators: <code> = | &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= |
-     * BETWEEN | IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR |
-     * NOT</code></p> </li> </ul> <p>For more information on condition expressions, see
-     * <a
+     * operators: <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>
+     * | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN |
+     * IN</code> </p> </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p>
+     * </li> </ul> <p>For more information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      * <note><p><i>ConditionExpression</i> replaces the legacy

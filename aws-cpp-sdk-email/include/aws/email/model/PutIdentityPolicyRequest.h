@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to apply an authorization policy
-   * to an identity.</p>
    */
   class AWS_SES_API PutIdentityPolicyRequest : public SESRequest
   {

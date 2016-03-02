@@ -32,10 +32,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents the user's current activity limits returned from a successful
-   * <code>GetSendQuota</code> request. </p>
-   */
   class AWS_SES_API GetSendQuotaResult
   {
   public:

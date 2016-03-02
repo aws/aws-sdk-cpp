@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() : 
     m_lifecycleHookNameHasBeenSet(false),
     m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleActionTokenHasBeenSet(false)
+    m_lifecycleActionTokenHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,10 @@ Aws::String RecordLifecycleActionHeartbeatRequest::SerializePayload() const
   if(m_lifecycleActionTokenHasBeenSet)
   {
     ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
   ss << "Version=2011-01-01";
   return ss.str();

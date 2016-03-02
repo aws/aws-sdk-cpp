@@ -292,8 +292,8 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline long GetCooldown() const{ return m_cooldown; }
 
@@ -303,8 +303,8 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetCooldown(long value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
@@ -314,8 +314,8 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is not
      * supported unless the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(long value) { SetCooldown(value); return *this;}
 

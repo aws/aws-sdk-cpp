@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to begin DKIM verification for a
-   * domain.</p>
    */
   class AWS_SES_API VerifyDomainDkimRequest : public SESRequest
   {

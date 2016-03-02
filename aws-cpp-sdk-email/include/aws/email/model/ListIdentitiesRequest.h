@@ -26,8 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to list all identities for the
-   * AWS Account.</p>
    */
   class AWS_SES_API ListIdentitiesRequest : public SESRequest
   {

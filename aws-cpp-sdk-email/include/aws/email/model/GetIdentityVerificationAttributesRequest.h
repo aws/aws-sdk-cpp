@@ -26,8 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to provide the verification
-   * attributes for a list of identities.</p>
    */
   class AWS_SES_API GetIdentityVerificationAttributesRequest : public SESRequest
   {

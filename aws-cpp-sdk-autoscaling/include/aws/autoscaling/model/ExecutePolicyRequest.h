@@ -109,8 +109,8 @@ namespace Model
      * policy without waiting for the cooldown period to complete.</p> <p>This
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
 
@@ -120,8 +120,8 @@ namespace Model
      * policy without waiting for the cooldown period to complete.</p> <p>This
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
@@ -131,8 +131,8 @@ namespace Model
      * policy without waiting for the cooldown period to complete.</p> <p>This
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Understanding
-     * Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
     inline ExecutePolicyRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 

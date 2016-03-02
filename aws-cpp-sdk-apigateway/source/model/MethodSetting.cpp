@@ -36,7 +36,10 @@ MethodSetting::MethodSetting() :
     m_cacheTtlInSeconds(0),
     m_cacheTtlInSecondsHasBeenSet(false),
     m_cacheDataEncrypted(false),
-    m_cacheDataEncryptedHasBeenSet(false)
+    m_cacheDataEncryptedHasBeenSet(false),
+    m_requireAuthorizationForCacheControl(false),
+    m_requireAuthorizationForCacheControlHasBeenSet(false),
+    m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false)
 {
 }
 
@@ -55,7 +58,10 @@ MethodSetting::MethodSetting(const JsonValue& jsonValue) :
     m_cacheTtlInSeconds(0),
     m_cacheTtlInSecondsHasBeenSet(false),
     m_cacheDataEncrypted(false),
-    m_cacheDataEncryptedHasBeenSet(false)
+    m_cacheDataEncryptedHasBeenSet(false),
+    m_requireAuthorizationForCacheControl(false),
+    m_requireAuthorizationForCacheControlHasBeenSet(false),
+    m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +124,20 @@ MethodSetting& MethodSetting::operator =(const JsonValue& jsonValue)
     m_cacheDataEncryptedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("requireAuthorizationForCacheControl"))
+  {
+    m_requireAuthorizationForCacheControl = jsonValue.GetBool("requireAuthorizationForCacheControl");
+
+    m_requireAuthorizationForCacheControlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unauthorizedCacheControlHeaderStrategy"))
+  {
+    m_unauthorizedCacheControlHeaderStrategy = UnauthorizedCacheControlHeaderStrategyMapper::GetUnauthorizedCacheControlHeaderStrategyForName(jsonValue.GetString("unauthorizedCacheControlHeaderStrategy"));
+
+    m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +191,17 @@ JsonValue MethodSetting::Jsonize() const
   {
    payload.WithBool("cacheDataEncrypted", m_cacheDataEncrypted);
 
+  }
+
+  if(m_requireAuthorizationForCacheControlHasBeenSet)
+  {
+   payload.WithBool("requireAuthorizationForCacheControl", m_requireAuthorizationForCacheControl);
+
+  }
+
+  if(m_unauthorizedCacheControlHeaderStrategyHasBeenSet)
+  {
+   payload.WithString("unauthorizedCacheControlHeaderStrategy", UnauthorizedCacheControlHeaderStrategyMapper::GetNameForUnauthorizedCacheControlHeaderStrategy(m_unauthorizedCacheControlHeaderStrategy));
   }
 
   return payload;

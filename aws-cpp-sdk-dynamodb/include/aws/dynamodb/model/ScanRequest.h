@@ -423,8 +423,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -460,8 +460,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -497,8 +497,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -534,8 +534,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -571,8 +571,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -608,8 +608,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -645,8 +645,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -682,8 +682,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -719,8 +719,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -756,8 +756,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -793,8 +793,8 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
-     * <p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
+     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
      * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
      * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
@@ -1793,55 +1793,46 @@ namespace Model
 
     /**
      * <p>A Boolean value that determines the read consistency model during the
-     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then
-     * <i>Scan</i> will use eventually consistent reads. The data returned from
-     * <i>Scan</i> might not contain the results of other recently completed write
-     * operations (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.</p> </li> <li> <p>If <i>ConsistentRead</i> is
-     * <code>true</code>, then <i>Scan</i> will use strongly consistent reads. All of
-     * the write operations that completed before the <i>Scan</i> began are guaranteed
-     * to be contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default
-     * setting for <i>ConsistentRead</i> is <code>false</code>, meaning that eventually
-     * consistent reads will be used.</p> <p>Strongly consistent reads are not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <i>ConsistentRead</i> set to true, you will receive a
-     * <i>ValidationException</i>.</p>
+     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then the
+     * data returned from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).</p> </li> <li>
+     * <p>If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to be
+     * contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default setting
+     * for <i>ConsistentRead</i> is <code>false</code>.</p> <p>The
+     * <i>ConsistentRead</i> parameter is not supported on global secondary indexes. If
+     * you scan a global secondary index with <i>ConsistentRead</i> set to true, you
+     * will receive a <i>ValidationException</i>.</p>
      */
     inline bool GetConsistentRead() const{ return m_consistentRead; }
 
     /**
      * <p>A Boolean value that determines the read consistency model during the
-     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then
-     * <i>Scan</i> will use eventually consistent reads. The data returned from
-     * <i>Scan</i> might not contain the results of other recently completed write
-     * operations (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.</p> </li> <li> <p>If <i>ConsistentRead</i> is
-     * <code>true</code>, then <i>Scan</i> will use strongly consistent reads. All of
-     * the write operations that completed before the <i>Scan</i> began are guaranteed
-     * to be contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default
-     * setting for <i>ConsistentRead</i> is <code>false</code>, meaning that eventually
-     * consistent reads will be used.</p> <p>Strongly consistent reads are not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <i>ConsistentRead</i> set to true, you will receive a
-     * <i>ValidationException</i>.</p>
+     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then the
+     * data returned from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).</p> </li> <li>
+     * <p>If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to be
+     * contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default setting
+     * for <i>ConsistentRead</i> is <code>false</code>.</p> <p>The
+     * <i>ConsistentRead</i> parameter is not supported on global secondary indexes. If
+     * you scan a global secondary index with <i>ConsistentRead</i> set to true, you
+     * will receive a <i>ValidationException</i>.</p>
      */
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
 
     /**
      * <p>A Boolean value that determines the read consistency model during the
-     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then
-     * <i>Scan</i> will use eventually consistent reads. The data returned from
-     * <i>Scan</i> might not contain the results of other recently completed write
-     * operations (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.</p> </li> <li> <p>If <i>ConsistentRead</i> is
-     * <code>true</code>, then <i>Scan</i> will use strongly consistent reads. All of
-     * the write operations that completed before the <i>Scan</i> began are guaranteed
-     * to be contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default
-     * setting for <i>ConsistentRead</i> is <code>false</code>, meaning that eventually
-     * consistent reads will be used.</p> <p>Strongly consistent reads are not
-     * supported on global secondary indexes. If you scan a global secondary index with
-     * <i>ConsistentRead</i> set to true, you will receive a
-     * <i>ValidationException</i>.</p>
+     * scan:</p> <ul> <li> <p>If <i>ConsistentRead</i> is <code>false</code>, then the
+     * data returned from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).</p> </li> <li>
+     * <p>If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to be
+     * contained in the <i>Scan</i> response.</p> </li> </ul> <p>The default setting
+     * for <i>ConsistentRead</i> is <code>false</code>.</p> <p>The
+     * <i>ConsistentRead</i> parameter is not supported on global secondary indexes. If
+     * you scan a global secondary index with <i>ConsistentRead</i> set to true, you
+     * will receive a <i>ValidationException</i>.</p>
      */
     inline ScanRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 

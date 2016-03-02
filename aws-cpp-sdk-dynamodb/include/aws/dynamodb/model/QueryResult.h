@@ -92,7 +92,7 @@ namespace Model
      * <p>The number of items in the response.</p> <p>If you used a <i>QueryFilter</i>
      * in the request, then <i>Count</i> is the number of items returned after the
      * filter was applied, and <i>ScannedCount</i> is the number of matching items
-     * before&gt; the filter was applied.</p> <p>If you did not use a filter in the
+     * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
     inline long GetCount() const{ return m_count; }
@@ -101,7 +101,7 @@ namespace Model
      * <p>The number of items in the response.</p> <p>If you used a <i>QueryFilter</i>
      * in the request, then <i>Count</i> is the number of items returned after the
      * filter was applied, and <i>ScannedCount</i> is the number of matching items
-     * before&gt; the filter was applied.</p> <p>If you did not use a filter in the
+     * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
     inline void SetCount(long value) { m_count = value; }
@@ -110,7 +110,7 @@ namespace Model
      * <p>The number of items in the response.</p> <p>If you used a <i>QueryFilter</i>
      * in the request, then <i>Count</i> is the number of items returned after the
      * filter was applied, and <i>ScannedCount</i> is the number of matching items
-     * before&gt; the filter was applied.</p> <p>If you did not use a filter in the
+     * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
     inline QueryResult& WithCount(long value) { SetCount(value); return *this;}

@@ -48,68 +48,68 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItemCollectionKey() const{ return m_itemCollectionKey; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline void SetItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline void SetItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& WithItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetItemCollectionKey(value); return *this;}
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& WithItemCollectionKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetItemCollectionKey(value); return *this;}
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(const Aws::String& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(Aws::String&& key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, AttributeValue&& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 
     /**
-     * <p>The hash key value of the item collection. This value is the same as the hash
-     * key of the item.</p>
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey[key] = value; return *this; }
 

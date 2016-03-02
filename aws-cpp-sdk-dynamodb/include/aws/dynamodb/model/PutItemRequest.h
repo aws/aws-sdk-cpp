@@ -82,11 +82,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -98,11 +98,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -114,11 +114,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -130,11 +130,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -146,11 +146,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -162,11 +162,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -178,11 +178,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -194,11 +194,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -210,11 +210,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -226,11 +226,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -242,11 +242,11 @@ namespace Model
      * <p>A map of attribute name/value pairs, one for each attribute. Only the primary
      * key attributes are required; you can optionally provide other attribute
      * name-value pairs for the item.</p> <p>You must provide all of the attributes for
-     * the primary key. For example, with a hash type primary key, you only need to
-     * provide the hash attribute. For a hash-and-range type primary key, you must
-     * provide both the hash attribute and the range attribute.</p> <p>If you specify
-     * any attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * the primary key. For example, with a simple primary key, you only need to
+     * provide a value for the partition key. For a composite primary key, you must
+     * provide both values for both the partition key and the sort key.</p> <p>If you
+     * specify any attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's attribute
      * definition.</p> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each element in
@@ -1967,7 +1967,6 @@ namespace Model
      * nothing is returned. (This setting is the default for <i>ReturnValues</i>.)</p>
      * </li> <li> <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
      * name-value pair, then the content of the old item is returned.</p> </li> </ul>
-     * <note><p>Other "Valid Values" are not relevant to PutItem.</p></note>
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -1979,7 +1978,6 @@ namespace Model
      * nothing is returned. (This setting is the default for <i>ReturnValues</i>.)</p>
      * </li> <li> <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
      * name-value pair, then the content of the old item is returned.</p> </li> </ul>
-     * <note><p>Other "Valid Values" are not relevant to PutItem.</p></note>
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -1991,7 +1989,6 @@ namespace Model
      * nothing is returned. (This setting is the default for <i>ReturnValues</i>.)</p>
      * </li> <li> <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
      * name-value pair, then the content of the old item is returned.</p> </li> </ul>
-     * <note><p>Other "Valid Values" are not relevant to PutItem.</p></note>
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -2003,7 +2000,6 @@ namespace Model
      * nothing is returned. (This setting is the default for <i>ReturnValues</i>.)</p>
      * </li> <li> <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
      * name-value pair, then the content of the old item is returned.</p> </li> </ul>
-     * <note><p>Other "Valid Values" are not relevant to PutItem.</p></note>
      */
     inline PutItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -2015,7 +2011,6 @@ namespace Model
      * nothing is returned. (This setting is the default for <i>ReturnValues</i>.)</p>
      * </li> <li> <p><code>ALL_OLD</code> - If <i>PutItem</i> overwrote an attribute
      * name-value pair, then the content of the old item is returned.</p> </li> </ul>
-     * <note><p>Other "Valid Values" are not relevant to PutItem.</p></note>
      */
     inline PutItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(value); return *this;}
 
@@ -2160,9 +2155,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2176,9 +2172,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2192,9 +2189,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2208,9 +2206,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2224,9 +2223,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2240,9 +2240,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and
@@ -2256,9 +2257,10 @@ namespace Model
      * <ul> <li> <p>Functions: <code>attribute_exists | attribute_not_exists |
      * attribute_type | contains | begins_with | size</code></p> <p>These function
      * names are case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
-     * &#x3C;&#x3E; | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code> </p>
-     * </li> <li> <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul>
-     * <p>For more information on condition expressions, see <a
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code> </p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
      * <p><i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and

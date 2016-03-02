@@ -34,9 +34,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a list of all verified identities for the AWS Account.</p>
-   */
   class AWS_SES_API ListIdentitiesResult
   {
   public:

@@ -25,6 +25,7 @@
 #include <aws/dynamodb/model/CreateTableResult.h>
 #include <aws/dynamodb/model/DeleteItemResult.h>
 #include <aws/dynamodb/model/DeleteTableResult.h>
+#include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
@@ -83,6 +84,7 @@ namespace Model
         class CreateTableRequest;
         class DeleteItemRequest;
         class DeleteTableRequest;
+        class DescribeLimitsRequest;
         class DescribeTableRequest;
         class GetItemRequest;
         class ListTablesRequest;
@@ -97,6 +99,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTableResult, Aws::Client::AWSError<DynamoDBErrors>> CreateTableOutcome;
         typedef Aws::Utils::Outcome<DeleteItemResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteItemOutcome;
         typedef Aws::Utils::Outcome<DeleteTableResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
@@ -111,6 +114,7 @@ namespace Model
         typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
         typedef std::future<DeleteItemOutcome> DeleteItemOutcomeCallable;
         typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
+        typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
@@ -128,6 +132,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::CreateTableRequest&, const Model::CreateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DeleteItemRequest&, const Model::DeleteItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
@@ -138,30 +143,41 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon DynamoDB</fullname> <p> <b>Overview</b></p> <p>This is the
-   * Amazon DynamoDB API Reference. This guide provides descriptions and samples of
-   * the low-level DynamoDB API. For information about DynamoDB application
-   * development, see the <a
+   * <fullname>Amazon DynamoDB</fullname> <p>This is the Amazon DynamoDB API
+   * Reference. This guide provides descriptions of the low-level DynamoDB API.</p>
+   * <p>This guide is intended for use with the following DynamoDB documentation:</p>
+   * <ul> <li> <p> <a
+   * href="http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/">Amazon
+   * DynamoDB Getting Started Guide</a> - provides hands-on exercises that help you
+   * learn the basics of working with DynamoDB. <i>If you are new to DynamoDB, we
+   * recommend that you begin with the Getting Started Guide.</i></p> </li> <li> <p>
+   * <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
-   * DynamoDB Developer Guide</a>.</p> <p>Instead of making the requests to the
-   * low-level DynamoDB API directly from your application, we recommend that you use
-   * the AWS Software Development Kits (SDKs). The easy-to-use libraries in the AWS
-   * SDKs make it unnecessary to call the low-level DynamoDB API directly from your
+   * DynamoDB Developer Guide</a> - contains detailed information about DynamoDB
+   * concepts, usage, and best practices.</p> </li> <li> <p> <a
+   * href="http://docs.aws.amazon.com/dynamodbstreams/latest/APIReference/">Amazon
+   * DynamoDB Streams API Reference</a> - provides descriptions and samples of the
+   * DynamoDB Streams API. (For more information, see <a
+   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
+   * Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer
+   * Guide.)</p> </li> </ul> <p>Instead of making the requests to the low-level
+   * DynamoDB API directly from your application, we recommend that you use the AWS
+   * Software Development Kits (SDKs). The easy-to-use libraries in the AWS SDKs make
+   * it unnecessary to call the low-level DynamoDB API directly from your
    * application. The libraries take care of request authentication, serialization,
    * and connection management. For more information, see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html">Using
-   * the AWS SDKs with DynamoDB</a> in the <i>Amazon DynamoDB Developer
-   * Guide</i>.</p> <p>If you decide to code against the low-level DynamoDB API
-   * directly, you will need to write the necessary code to authenticate your
-   * requests. For more information on signing your requests, see <a
+   * the AWS SDKs with DynamoDB</a> in the Amazon DynamoDB Developer Guide.</p> <p>If
+   * you decide to code against the low-level DynamoDB API directly, you will need to
+   * write the necessary code to authenticate your requests. For more information on
+   * signing your requests, see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html">Using
    * the DynamoDB API</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>The
    * following are short descriptions of each low-level API action, organized by
    * function.</p> <p> <b>Managing Tables</b> </p> <ul> <li> <p><i>CreateTable</i> -
    * Creates a table with user-specified provisioned throughput settings. You must
-   * designate one attribute as the hash primary key for the table; you can
-   * optionally designate a second attribute as the range primary key. DynamoDB
-   * creates indexes on these key attributes for fast data access. Optionally, you
+   * define a primary key for the table - either a simple primary key (partition
+   * key), or a composite primary key (partition key and sort key). Optionally, you
    * can create one or more secondary indexes, which provide fast data access using
    * non-key attributes.</p> </li> <li> <p><i>DescribeTable</i> - Returns metadata
    * for a table, such as table size, status, and index information.</p> </li> <li>
@@ -182,17 +198,17 @@ namespace Model
    * has a size limit of 16 MB and returns a maximum of 100 items. Both eventually
    * consistent and strongly consistent reads can be used.</p> </li> <li>
    * <p><i>Query</i> - Returns one or more items from a table or a secondary index.
-   * You must provide a specific hash key value. You can narrow the scope of the
-   * query using comparison operators against a range key value, or on the index key.
-   * <i>Query</i> supports either eventual or strong consistency. A single response
-   * has a size limit of 1 MB.</p> </li> <li> <p><i>Scan</i> - Reads every item in a
-   * table; the result set is eventually consistent. You can limit the number of
-   * items returned by filtering the data attributes, using conditional expressions.
-   * <i>Scan</i> can be used to enable ad-hoc querying of a table against non-key
-   * attributes; however, since this is a full table scan without using an index,
-   * <i>Scan</i> should not be used for any application query use case that requires
-   * predictable performance.</p> </li> </ul> <p>For conceptual information about
-   * reading data, see <a
+   * You must provide a specific value for the partition key. You can narrow the
+   * scope of the query using comparison operators against a sort key value, or on
+   * the index key. <i>Query</i> supports either eventual or strong consistency. A
+   * single response has a size limit of 1 MB.</p> </li> <li> <p><i>Scan</i> - Reads
+   * every item in a table; the result set is eventually consistent. You can limit
+   * the number of items returned by filtering the data attributes, using conditional
+   * expressions. <i>Scan</i> can be used to enable ad-hoc querying of a table
+   * against non-key attributes; however, since this is a full table scan without
+   * using an index, <i>Scan</i> should not be used for any application query use
+   * case that requires predictable performance.</p> </li> </ul> <p>For conceptual
+   * information about reading data, see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
    * with Items</a> and <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
@@ -443,9 +459,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
+         * </li> </ul>
          */
         virtual Model::BatchWriteItemOutcome BatchWriteItem(const Model::BatchWriteItemRequest& request) const;
 
@@ -501,9 +517,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
+         * </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -561,9 +577,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
+         * </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -738,6 +754,97 @@ namespace Model
         virtual void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * region, both for the region as a whole and for any one DynamoDB table you create
+         * there.</p> <p>When you establish an AWS account, the account has initial limits
+         * on the maximum Read- and Write-Capacity Units (RCUs and WCUs) that you can
+         * provision across all your DynamoDB tables in a given region, and also per-table
+         * limits that apply when you create a table there. Although you can increase these
+         * limits by filing a Case at <a href="https://console.aws.amazon.com/support">AWS
+         * Support Center</a>, obtaining the increase is not instantaneous. The
+         * <i>DescribeLimits</i> API lets you write code to compare the capacity you are
+         * currently using to those limits imposed by your account so you have enough time
+         * to apply for an increase before you hit a limit. For example, you could use one
+         * of the AWS SDKs to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> to
+         * obtain the current account limits on provisioned capacity in a region.</li>
+         * <li>Call <i>ListTables</i> to obtain a list of all your DynamoDB tables
+         * there.</li> <li>Loop over the tables, calling <i>DescribeTable</i> on each. Sum
+         * the capacity provisioned for each table and all its global secondary indexes
+         * across all the tables, while also keeping track of the table or global secondary
+         * index with the largest provisioned read capacity, and the one with the largest
+         * provisioned write capacity.</li> <li>Report the account limits returned by
+         * <i>DescribeLimits</i> as compared to the current provisioned capacity levels for
+         * the account as a whole, and for the highest current per-table provisioning.</li>
+         * </ol> <p>This will let you see whether you are getting close to your
+         * account-level limits. See <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#d0e53086">Limits
+         * in DynamoDB</a> for a code example written in Python.</p>
+         */
+        virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
+
+        /**
+         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * region, both for the region as a whole and for any one DynamoDB table you create
+         * there.</p> <p>When you establish an AWS account, the account has initial limits
+         * on the maximum Read- and Write-Capacity Units (RCUs and WCUs) that you can
+         * provision across all your DynamoDB tables in a given region, and also per-table
+         * limits that apply when you create a table there. Although you can increase these
+         * limits by filing a Case at <a href="https://console.aws.amazon.com/support">AWS
+         * Support Center</a>, obtaining the increase is not instantaneous. The
+         * <i>DescribeLimits</i> API lets you write code to compare the capacity you are
+         * currently using to those limits imposed by your account so you have enough time
+         * to apply for an increase before you hit a limit. For example, you could use one
+         * of the AWS SDKs to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> to
+         * obtain the current account limits on provisioned capacity in a region.</li>
+         * <li>Call <i>ListTables</i> to obtain a list of all your DynamoDB tables
+         * there.</li> <li>Loop over the tables, calling <i>DescribeTable</i> on each. Sum
+         * the capacity provisioned for each table and all its global secondary indexes
+         * across all the tables, while also keeping track of the table or global secondary
+         * index with the largest provisioned read capacity, and the one with the largest
+         * provisioned write capacity.</li> <li>Report the account limits returned by
+         * <i>DescribeLimits</i> as compared to the current provisioned capacity levels for
+         * the account as a whole, and for the highest current per-table provisioning.</li>
+         * </ol> <p>This will let you see whether you are getting close to your
+         * account-level limits. See <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#d0e53086">Limits
+         * in DynamoDB</a> for a code example written in Python.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLimitsOutcomeCallable DescribeLimitsCallable(const Model::DescribeLimitsRequest& request) const;
+
+        /**
+         * <p>Returns the current provisioned-capacity limits for your AWS account in a
+         * region, both for the region as a whole and for any one DynamoDB table you create
+         * there.</p> <p>When you establish an AWS account, the account has initial limits
+         * on the maximum Read- and Write-Capacity Units (RCUs and WCUs) that you can
+         * provision across all your DynamoDB tables in a given region, and also per-table
+         * limits that apply when you create a table there. Although you can increase these
+         * limits by filing a Case at <a href="https://console.aws.amazon.com/support">AWS
+         * Support Center</a>, obtaining the increase is not instantaneous. The
+         * <i>DescribeLimits</i> API lets you write code to compare the capacity you are
+         * currently using to those limits imposed by your account so you have enough time
+         * to apply for an increase before you hit a limit. For example, you could use one
+         * of the AWS SDKs to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> to
+         * obtain the current account limits on provisioned capacity in a region.</li>
+         * <li>Call <i>ListTables</i> to obtain a list of all your DynamoDB tables
+         * there.</li> <li>Loop over the tables, calling <i>DescribeTable</i> on each. Sum
+         * the capacity provisioned for each table and all its global secondary indexes
+         * across all the tables, while also keeping track of the table or global secondary
+         * index with the largest provisioned read capacity, and the one with the largest
+         * provisioned write capacity.</li> <li>Report the account limits returned by
+         * <i>DescribeLimits</i> as compared to the current provisioned capacity levels for
+         * the account as a whole, and for the highest current per-table provisioning.</li>
+         * </ol> <p>This will let you see whether you are getting close to your
+         * account-level limits. See <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html#d0e53086">Limits
+         * in DynamoDB</a> for a code example written in Python.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLimitsAsync(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the table, including the current status of the
          * table, when it was created, the primary key schema, and any indexes on the
          * table.</p> <note> <p>If you issue a DescribeTable request immediately after a
@@ -852,9 +959,11 @@ namespace Model
          * the original item (before the update) or a copy of the updated item (after the
          * update). For more information, see the <i>ReturnValues</i> description
          * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional put operation with <i>ComparisonOperator</i> set to
-         * <code>NULL</code> for the primary key attribute, or attributes.</p> </note>
-         * <p>For more information about using this API, see <a
+         * a conditional expression that contains the <code>attribute_not_exists</code>
+         * function with the name of the attribute being used as the partition key for the
+         * table. Since every record must contain that attribute, the
+         * <code>attribute_not_exists</code> function will only succeed if no matching item
+         * exists.</p> </note> <p>For more information about using this API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          */
@@ -876,9 +985,11 @@ namespace Model
          * the original item (before the update) or a copy of the updated item (after the
          * update). For more information, see the <i>ReturnValues</i> description
          * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional put operation with <i>ComparisonOperator</i> set to
-         * <code>NULL</code> for the primary key attribute, or attributes.</p> </note>
-         * <p>For more information about using this API, see <a
+         * a conditional expression that contains the <code>attribute_not_exists</code>
+         * function with the name of the attribute being used as the partition key for the
+         * table. Since every record must contain that attribute, the
+         * <code>attribute_not_exists</code> function will only succeed if no matching item
+         * exists.</p> </note> <p>For more information about using this API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -902,9 +1013,11 @@ namespace Model
          * the original item (before the update) or a copy of the updated item (after the
          * update). For more information, see the <i>ReturnValues</i> description
          * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional put operation with <i>ComparisonOperator</i> set to
-         * <code>NULL</code> for the primary key attribute, or attributes.</p> </note>
-         * <p>For more information about using this API, see <a
+         * a conditional expression that contains the <code>attribute_not_exists</code>
+         * function with the name of the attribute being used as the partition key for the
+         * table. Since every record must contain that attribute, the
+         * <code>attribute_not_exists</code> function will only succeed if no matching item
+         * exists.</p> </note> <p>For more information about using this API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -915,16 +1028,16 @@ namespace Model
         /**
          * <p>A <i>Query</i> operation uses the primary key of a table or a secondary index
          * to directly access items from that table or index.</p> <p>Use the
-         * <i>KeyConditionExpression</i> parameter to provide a specific hash key value.
-         * The <i>Query</i> operation will return all of the items from the table or index
-         * with that hash key value. You can optionally narrow the scope of the
-         * <i>Query</i> operation by specifying a range key value and a comparison operator
-         * in <i>KeyConditionExpression</i>. You can use the <i>ScanIndexForward</i>
-         * parameter to get results in forward or reverse order, by range key or by index
-         * key. </p> <p>Queries that do not return results consume the minimum number of
-         * read capacity units for that type of read operation.</p> <p>If the total number
-         * of items meeting the query criteria exceeds the result set size limit of 1 MB,
-         * the query stops and results are returned to the user with the
+         * <i>KeyConditionExpression</i> parameter to provide a specific value for the
+         * partition key. The <i>Query</i> operation will return all of the items from the
+         * table or index with that partition key value. You can optionally narrow the
+         * scope of the <i>Query</i> operation by specifying a sort key value and a
+         * comparison operator in <i>KeyConditionExpression</i>. You can use the
+         * <i>ScanIndexForward</i> parameter to get results in forward or reverse order, by
+         * sort key.</p> <p>Queries that do not return results consume the minimum number
+         * of read capacity units for that type of read operation.</p> <p>If the total
+         * number of items meeting the query criteria exceeds the result set size limit of
+         * 1 MB, the query stops and results are returned to the user with the
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
@@ -941,16 +1054,16 @@ namespace Model
         /**
          * <p>A <i>Query</i> operation uses the primary key of a table or a secondary index
          * to directly access items from that table or index.</p> <p>Use the
-         * <i>KeyConditionExpression</i> parameter to provide a specific hash key value.
-         * The <i>Query</i> operation will return all of the items from the table or index
-         * with that hash key value. You can optionally narrow the scope of the
-         * <i>Query</i> operation by specifying a range key value and a comparison operator
-         * in <i>KeyConditionExpression</i>. You can use the <i>ScanIndexForward</i>
-         * parameter to get results in forward or reverse order, by range key or by index
-         * key. </p> <p>Queries that do not return results consume the minimum number of
-         * read capacity units for that type of read operation.</p> <p>If the total number
-         * of items meeting the query criteria exceeds the result set size limit of 1 MB,
-         * the query stops and results are returned to the user with the
+         * <i>KeyConditionExpression</i> parameter to provide a specific value for the
+         * partition key. The <i>Query</i> operation will return all of the items from the
+         * table or index with that partition key value. You can optionally narrow the
+         * scope of the <i>Query</i> operation by specifying a sort key value and a
+         * comparison operator in <i>KeyConditionExpression</i>. You can use the
+         * <i>ScanIndexForward</i> parameter to get results in forward or reverse order, by
+         * sort key.</p> <p>Queries that do not return results consume the minimum number
+         * of read capacity units for that type of read operation.</p> <p>If the total
+         * number of items meeting the query criteria exceeds the result set size limit of
+         * 1 MB, the query stops and results are returned to the user with the
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
@@ -969,16 +1082,16 @@ namespace Model
         /**
          * <p>A <i>Query</i> operation uses the primary key of a table or a secondary index
          * to directly access items from that table or index.</p> <p>Use the
-         * <i>KeyConditionExpression</i> parameter to provide a specific hash key value.
-         * The <i>Query</i> operation will return all of the items from the table or index
-         * with that hash key value. You can optionally narrow the scope of the
-         * <i>Query</i> operation by specifying a range key value and a comparison operator
-         * in <i>KeyConditionExpression</i>. You can use the <i>ScanIndexForward</i>
-         * parameter to get results in forward or reverse order, by range key or by index
-         * key. </p> <p>Queries that do not return results consume the minimum number of
-         * read capacity units for that type of read operation.</p> <p>If the total number
-         * of items meeting the query criteria exceeds the result set size limit of 1 MB,
-         * the query stops and results are returned to the user with the
+         * <i>KeyConditionExpression</i> parameter to provide a specific value for the
+         * partition key. The <i>Query</i> operation will return all of the items from the
+         * table or index with that partition key value. You can optionally narrow the
+         * scope of the <i>Query</i> operation by specifying a sort key value and a
+         * comparison operator in <i>KeyConditionExpression</i>. You can use the
+         * <i>ScanIndexForward</i> parameter to get results in forward or reverse order, by
+         * sort key.</p> <p>Queries that do not return results consume the minimum number
+         * of read capacity units for that type of read operation.</p> <p>If the total
+         * number of items meeting the query criteria exceeds the result set size limit of
+         * 1 MB, the query stops and results are returned to the user with the
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
@@ -1009,9 +1122,11 @@ namespace Model
          * see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
          * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>By default,
-         * <i>Scan</i> uses eventually consistent reads when acessing the data in the table
-         * or local secondary index. However, you can use strongly consistent reads instead
-         * by setting the <i>ConsistentRead</i> parameter to <i>true</i>.</p>
+         * <i>Scan</i> uses eventually consistent reads when accessing the data in a table;
+         * therefore, the result set might not include the changes to data in the table
+         * immediately before the operation began. If you need a consistent copy of the
+         * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
+         * parameter to <i>true</i>.</p>
          */
         virtual Model::ScanOutcome Scan(const Model::ScanRequest& request) const;
 
@@ -1030,9 +1145,11 @@ namespace Model
          * see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
          * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>By default,
-         * <i>Scan</i> uses eventually consistent reads when acessing the data in the table
-         * or local secondary index. However, you can use strongly consistent reads instead
-         * by setting the <i>ConsistentRead</i> parameter to <i>true</i>.</p>
+         * <i>Scan</i> uses eventually consistent reads when accessing the data in a table;
+         * therefore, the result set might not include the changes to data in the table
+         * immediately before the operation began. If you need a consistent copy of the
+         * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
+         * parameter to <i>true</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1053,9 +1170,11 @@ namespace Model
          * see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
          * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>By default,
-         * <i>Scan</i> uses eventually consistent reads when acessing the data in the table
-         * or local secondary index. However, you can use strongly consistent reads instead
-         * by setting the <i>ConsistentRead</i> parameter to <i>true</i>.</p>
+         * <i>Scan</i> uses eventually consistent reads when accessing the data in a table;
+         * therefore, the result set might not include the changes to data in the table
+         * immediately before the operation began. If you need a consistent copy of the
+         * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
+         * parameter to <i>true</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1066,10 +1185,9 @@ namespace Model
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). If conditions are specified and the
-         * item does not exist, then the operation fails and a new item is not created.
-         * </p> <p>You can also return the item's attribute values in the same
-         * <i>UpdateItem</i> operation using the <i>ReturnValues</i> parameter.</p>
+         * it has certain expected attribute values). </p> <p>You can also return the
+         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * <i>ReturnValues</i> parameter.</p>
          */
         virtual Model::UpdateItemOutcome UpdateItem(const Model::UpdateItemRequest& request) const;
 
@@ -1078,10 +1196,9 @@ namespace Model
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). If conditions are specified and the
-         * item does not exist, then the operation fails and a new item is not created.
-         * </p> <p>You can also return the item's attribute values in the same
-         * <i>UpdateItem</i> operation using the <i>ReturnValues</i> parameter.</p>
+         * it has certain expected attribute values). </p> <p>You can also return the
+         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * <i>ReturnValues</i> parameter.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1092,10 +1209,9 @@ namespace Model
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). If conditions are specified and the
-         * item does not exist, then the operation fails and a new item is not created.
-         * </p> <p>You can also return the item's attribute values in the same
-         * <i>UpdateItem</i> operation using the <i>ReturnValues</i> parameter.</p>
+         * it has certain expected attribute values). </p> <p>You can also return the
+         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * <i>ReturnValues</i> parameter.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1109,7 +1225,7 @@ namespace Model
          * the table.</p></li> <li><p>Remove a global secondary index from the
          * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
          * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p> </li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
@@ -1125,7 +1241,7 @@ namespace Model
          * the table.</p></li> <li><p>Remove a global secondary index from the
          * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
          * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p> </li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
@@ -1143,7 +1259,7 @@ namespace Model
          * the table.</p></li> <li><p>Remove a global secondary index from the
          * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
          * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p> </li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
@@ -1163,6 +1279,7 @@ namespace Model
         void CreateTableAsyncHelper(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteItemAsyncHelper(const Model::DeleteItemRequest& request, const DeleteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTableAsyncHelper(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

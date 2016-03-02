@@ -35,9 +35,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a list of all the DKIM attributes for the specified identity.</p>
-   */
   class AWS_SES_API GetIdentityDkimAttributesResult
   {
   public:

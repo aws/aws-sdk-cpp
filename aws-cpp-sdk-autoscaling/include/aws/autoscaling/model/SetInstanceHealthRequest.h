@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline SetInstanceHealthRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline SetInstanceHealthRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline SetInstanceHealthRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -129,8 +129,8 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call will respect the grace period. Set this to <code>False</code>, if you do
      * not want the call to respect the grace period associated with the group.</p>
-     * <p>For more information, see the <code>HealthCheckGracePeriod</code> parameter
-     * description for <a>CreateAutoScalingGroup</a>.</p>
+     * <p>For more information, see the description of the health check grace period
+     * for <a>CreateAutoScalingGroup</a>.</p>
      */
     inline bool GetShouldRespectGracePeriod() const{ return m_shouldRespectGracePeriod; }
 
@@ -139,8 +139,8 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call will respect the grace period. Set this to <code>False</code>, if you do
      * not want the call to respect the grace period associated with the group.</p>
-     * <p>For more information, see the <code>HealthCheckGracePeriod</code> parameter
-     * description for <a>CreateAutoScalingGroup</a>.</p>
+     * <p>For more information, see the description of the health check grace period
+     * for <a>CreateAutoScalingGroup</a>.</p>
      */
     inline void SetShouldRespectGracePeriod(bool value) { m_shouldRespectGracePeriodHasBeenSet = true; m_shouldRespectGracePeriod = value; }
 
@@ -149,8 +149,8 @@ namespace Model
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
      * call will respect the grace period. Set this to <code>False</code>, if you do
      * not want the call to respect the grace period associated with the group.</p>
-     * <p>For more information, see the <code>HealthCheckGracePeriod</code> parameter
-     * description for <a>CreateAutoScalingGroup</a>.</p>
+     * <p>For more information, see the description of the health check grace period
+     * for <a>CreateAutoScalingGroup</a>.</p>
      */
     inline SetInstanceHealthRequest& WithShouldRespectGracePeriod(bool value) { SetShouldRespectGracePeriod(value); return *this;}
 

@@ -57,6 +57,15 @@ SearchResult& SearchResult::operator =(const AmazonWebServiceResult<JsonValue>& 
     }
   }
 
+  if(jsonValue.ValueExists("stats"))
+  {
+    Aws::Map<Aws::String, JsonValue> statsJsonMap = jsonValue.GetObject("stats").GetAllObjects();
+    for(auto& statsItem : statsJsonMap)
+    {
+      m_stats[statsItem.first] = statsItem.second.AsObject();
+    }
+  }
+
 
 
   return *this;

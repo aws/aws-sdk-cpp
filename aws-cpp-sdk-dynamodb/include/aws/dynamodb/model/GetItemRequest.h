@@ -78,99 +78,99 @@ namespace Model
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(value); return *this;}
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>A map of attribute names to <i>AttributeValue</i> objects, representing the
      * primary key of the item to retrieve.</p> <p>For the primary key, you must
-     * provide all of the attributes. For example, with a hash type primary key, you
-     * only need to provide the hash attribute. For a hash-and-range type primary key,
-     * you must provide both the hash attribute and the range attribute.</p>
+     * provide all of the attributes. For example, with a simple primary key, you only
+     * need to provide a value for the partition key. For a composite primary key, you
+     * must provide values for both the partition key and the sort key.</p>
      */
     inline GetItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 

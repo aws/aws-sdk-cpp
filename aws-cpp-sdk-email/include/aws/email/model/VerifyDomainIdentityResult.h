@@ -33,9 +33,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a token used for domain ownership verification.</p>
-   */
   class AWS_SES_API VerifyDomainIdentityResult
   {
   public:

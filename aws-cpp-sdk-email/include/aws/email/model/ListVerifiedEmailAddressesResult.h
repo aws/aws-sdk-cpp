@@ -34,10 +34,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a list of all the email addresses verified for the current
-   * user.</p>
-   */
   class AWS_SES_API ListVerifiedEmailAddressesResult
   {
   public:

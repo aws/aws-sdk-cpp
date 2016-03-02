@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -69,9 +70,83 @@ namespace Model
      */
     inline DeleteStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRetainResources() const{ return m_retainResources; }
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline void SetRetainResources(const Aws::Vector<Aws::String>& value) { m_retainResourcesHasBeenSet = true; m_retainResources = value; }
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline void SetRetainResources(Aws::Vector<Aws::String>&& value) { m_retainResourcesHasBeenSet = true; m_retainResources = value; }
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline DeleteStackRequest& WithRetainResources(const Aws::Vector<Aws::String>& value) { SetRetainResources(value); return *this;}
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline DeleteStackRequest& WithRetainResources(Aws::Vector<Aws::String>&& value) { SetRetainResources(value); return *this;}
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline DeleteStackRequest& AddRetainResources(const Aws::String& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline DeleteStackRequest& AddRetainResources(Aws::String&& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
+
+    /**
+     * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain. During
+     * deletion, AWS CloudFormation deletes the stack but does not delete the retained
+     * resources.</p> <p>Retaining resources is useful when you cannot delete a
+     * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
+     */
+    inline DeleteStackRequest& AddRetainResources(const char* value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+    Aws::Vector<Aws::String> m_retainResources;
+    bool m_retainResourcesHasBeenSet;
   };
 
 } // namespace Model

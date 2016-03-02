@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to begin email address
-   * verification.</p>
    */
   class AWS_SES_API VerifyEmailAddressRequest : public SESRequest
   {

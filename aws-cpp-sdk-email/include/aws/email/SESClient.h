@@ -1171,7 +1171,7 @@ namespace Model
         /**
          * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
          * rules in the rule set must be represented in this request. That is, this API
-         * will return an error if the reorder request doesn’t explicitly position all of
+         * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</note> <p>For information about managing receipt rule sets, see the
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
@@ -1183,7 +1183,7 @@ namespace Model
         /**
          * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
          * rules in the rule set must be represented in this request. That is, this API
-         * will return an error if the reorder request doesn’t explicitly position all of
+         * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</note> <p>For information about managing receipt rule sets, see the
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
@@ -1197,7 +1197,7 @@ namespace Model
         /**
          * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
          * rules in the rule set must be represented in this request. That is, this API
-         * will return an error if the reorder request doesn’t explicitly position all of
+         * will return an error if the reorder request doesn't explicitly position all of
          * the rules.</note> <p>For information about managing receipt rule sets, see the
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon

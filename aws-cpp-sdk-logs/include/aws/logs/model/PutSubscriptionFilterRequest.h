@@ -149,119 +149,140 @@ namespace Model
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
-     * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+     * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
      * same account as the subscription filter, for same-account delivery. </li> <li> A
      * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-     * different account, for cross-account delivery. </li> </ul> </p>
+     * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+     * Firehose stream belonging to the same account as the subscription filter, for
+     * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+     * account as the subscription filter, for same-account delivery. </li> </ul> </p>
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to provide
-     * the ARN when you are working with a logical destination (used via an ARN of
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide the ARN
+     * when you are working with a logical destination (used via an ARN of
      * <code>Destination</code>) for cross-account delivery.</p>
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

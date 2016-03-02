@@ -34,10 +34,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a list of policy names returned from a successful
-   * <code>ListIdentityPolicies</code> request. </p>
-   */
   class AWS_SES_API ListIdentityPoliciesResult
   {
   public:

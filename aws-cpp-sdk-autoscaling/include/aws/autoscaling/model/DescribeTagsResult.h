@@ -43,37 +43,37 @@ namespace Model
     DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<TagDescription>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(const Aws::Vector<TagDescription>& value) { m_tags = value; }
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(Aws::Vector<TagDescription>&& value) { m_tags = value; }
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline DescribeTagsResult& WithTags(const Aws::Vector<TagDescription>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline DescribeTagsResult& WithTags(Aws::Vector<TagDescription>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline DescribeTagsResult& AddTags(const TagDescription& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags.</p>
+     * <p>One or more tags.</p>
      */
     inline DescribeTagsResult& AddTags(TagDescription&& value) { m_tags.push_back(value); return *this; }
 

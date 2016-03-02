@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigateway/model/UnauthorizedCacheControlHeaderStrategy.h>
 
 namespace Aws
 {
@@ -256,6 +257,80 @@ namespace Model
      */
     inline MethodSetting& WithCacheDataEncrypted(bool value) { SetCacheDataEncrypted(value); return *this;}
 
+    /**
+     * <p>Specifies whether authorization is required for a cache invalidation request.
+     * The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
+     * and the value is a Boolean.</p>
+     */
+    inline bool GetRequireAuthorizationForCacheControl() const{ return m_requireAuthorizationForCacheControl; }
+
+    /**
+     * <p>Specifies whether authorization is required for a cache invalidation request.
+     * The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
+     * and the value is a Boolean.</p>
+     */
+    inline void SetRequireAuthorizationForCacheControl(bool value) { m_requireAuthorizationForCacheControlHasBeenSet = true; m_requireAuthorizationForCacheControl = value; }
+
+    /**
+     * <p>Specifies whether authorization is required for a cache invalidation request.
+     * The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
+     * and the value is a Boolean.</p>
+     */
+    inline MethodSetting& WithRequireAuthorizationForCacheControl(bool value) { SetRequireAuthorizationForCacheControl(value); return *this;}
+
+    /**
+     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
+     * invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline const UnauthorizedCacheControlHeaderStrategy& GetUnauthorizedCacheControlHeaderStrategy() const{ return m_unauthorizedCacheControlHeaderStrategy; }
+
+    /**
+     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
+     * invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline void SetUnauthorizedCacheControlHeaderStrategy(const UnauthorizedCacheControlHeaderStrategy& value) { m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true; m_unauthorizedCacheControlHeaderStrategy = value; }
+
+    /**
+     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
+     * invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline void SetUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy&& value) { m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true; m_unauthorizedCacheControlHeaderStrategy = value; }
+
+    /**
+     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
+     * invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline MethodSetting& WithUnauthorizedCacheControlHeaderStrategy(const UnauthorizedCacheControlHeaderStrategy& value) { SetUnauthorizedCacheControlHeaderStrategy(value); return *this;}
+
+    /**
+     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
+     * invalidation. The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline MethodSetting& WithUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy&& value) { SetUnauthorizedCacheControlHeaderStrategy(value); return *this;}
+
   private:
     bool m_metricsEnabled;
     bool m_metricsEnabledHasBeenSet;
@@ -273,6 +348,10 @@ namespace Model
     bool m_cacheTtlInSecondsHasBeenSet;
     bool m_cacheDataEncrypted;
     bool m_cacheDataEncryptedHasBeenSet;
+    bool m_requireAuthorizationForCacheControl;
+    bool m_requireAuthorizationForCacheControlHasBeenSet;
+    UnauthorizedCacheControlHeaderStrategy m_unauthorizedCacheControlHeaderStrategy;
+    bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet;
   };
 
 } // namespace Model

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearchdomain/model/BucketInfo.h>
+#include <aws/cloudsearchdomain/model/FieldStats.h>
 
 namespace Aws
 {
@@ -153,10 +154,66 @@ namespace Model
      */
     inline SearchResult& AddFacets(const char* key, const BucketInfo& value) { m_facets[key] = value; return *this; }
 
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline const Aws::Map<Aws::String, FieldStats>& GetStats() const{ return m_stats; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline void SetStats(const Aws::Map<Aws::String, FieldStats>& value) { m_stats = value; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline void SetStats(Aws::Map<Aws::String, FieldStats>&& value) { m_stats = value; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& WithStats(const Aws::Map<Aws::String, FieldStats>& value) { SetStats(value); return *this;}
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& WithStats(Aws::Map<Aws::String, FieldStats>&& value) { SetStats(value); return *this;}
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(const Aws::String& key, const FieldStats& value) { m_stats[key] = value; return *this; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(Aws::String&& key, const FieldStats& value) { m_stats[key] = value; return *this; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(const Aws::String& key, FieldStats&& value) { m_stats[key] = value; return *this; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(Aws::String&& key, FieldStats&& value) { m_stats[key] = value; return *this; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(const char* key, FieldStats&& value) { m_stats[key] = value; return *this; }
+
+    /**
+     * <p>The requested field statistics information.</p>
+     */
+    inline SearchResult& AddStats(const char* key, const FieldStats& value) { m_stats[key] = value; return *this; }
+
   private:
     SearchStatus m_status;
     Hits m_hits;
     Aws::Map<Aws::String, BucketInfo> m_facets;
+    Aws::Map<Aws::String, FieldStats> m_stats;
   };
 
 } // namespace Model

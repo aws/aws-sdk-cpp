@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request to set or clear an identity's notification topic.</p>
    */
   class AWS_SES_API SetIdentityNotificationTopicRequest : public SESRequest
   {

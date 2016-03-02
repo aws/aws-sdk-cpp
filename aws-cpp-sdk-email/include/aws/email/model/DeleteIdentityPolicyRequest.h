@@ -25,9 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to delete an authorization
-   * policy applying to an identity.</p> <p>This request succeeds regardless of
-   * whether the specified policy exists.</p>
    */
   class AWS_SES_API DeleteIdentityPolicyRequest : public SESRequest
   {

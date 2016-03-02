@@ -34,10 +34,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a map of policy names to policies returned from a successful
-   * <code>GetIdentityPolicies</code> request. </p>
-   */
   class AWS_SES_API GetIdentityPoliciesResult
   {
   public:

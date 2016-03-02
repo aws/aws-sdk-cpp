@@ -244,14 +244,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
          * fix the error</a> and continue the rollback. By continuing the rollback, you can
          * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
-         * state), return the stack to its original settings, and then try to update the
-         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
-         * state when AWS CloudFormation cannot roll back all changes after a failed stack
-         * update. For example, you might have a stack that is rolling back to an old
-         * database instance that was deleted outside of AWS CloudFormation. Because AWS
-         * CloudFormation doesn't know the database was deleted, it assumes that the
-         * database instance still exists and attempts to roll back to it, causing the
-         * update rollback to fail.</p>
+         * state), and then try to update the stack again.</p> <p>A stack goes into the
+         * <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation cannot roll
+         * back all changes after a failed stack update. For example, you might have a
+         * stack that is rolling back to an old database instance that was deleted outside
+         * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
+         * deleted, it assumes that the database instance still exists and attempts to roll
+         * back to it, causing the update rollback to fail.</p>
          */
         virtual Model::ContinueUpdateRollbackOutcome ContinueUpdateRollback(const Model::ContinueUpdateRollbackRequest& request) const;
 
@@ -262,14 +261,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
          * fix the error</a> and continue the rollback. By continuing the rollback, you can
          * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
-         * state), return the stack to its original settings, and then try to update the
-         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
-         * state when AWS CloudFormation cannot roll back all changes after a failed stack
-         * update. For example, you might have a stack that is rolling back to an old
-         * database instance that was deleted outside of AWS CloudFormation. Because AWS
-         * CloudFormation doesn't know the database was deleted, it assumes that the
-         * database instance still exists and attempts to roll back to it, causing the
-         * update rollback to fail.</p>
+         * state), and then try to update the stack again.</p> <p>A stack goes into the
+         * <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation cannot roll
+         * back all changes after a failed stack update. For example, you might have a
+         * stack that is rolling back to an old database instance that was deleted outside
+         * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
+         * deleted, it assumes that the database instance still exists and attempts to roll
+         * back to it, causing the update rollback to fail.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -282,14 +280,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
          * fix the error</a> and continue the rollback. By continuing the rollback, you can
          * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
-         * state), return the stack to its original settings, and then try to update the
-         * stack again.</p> <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code>
-         * state when AWS CloudFormation cannot roll back all changes after a failed stack
-         * update. For example, you might have a stack that is rolling back to an old
-         * database instance that was deleted outside of AWS CloudFormation. Because AWS
-         * CloudFormation doesn't know the database was deleted, it assumes that the
-         * database instance still exists and attempts to roll back to it, causing the
-         * update rollback to fail.</p>
+         * state), and then try to update the stack again.</p> <p>A stack goes into the
+         * <code>UPDATE_ROLLBACK_FAILED</code> state when AWS CloudFormation cannot roll
+         * back all changes after a failed stack update. For example, you might have a
+         * stack that is rolling back to an old database instance that was deleted outside
+         * of AWS CloudFormation. Because AWS CloudFormation doesn't know the database was
+         * deleted, it assumes that the database instance still exists and attempts to roll
+         * back to it, causing the update rollback to fail.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -746,9 +743,7 @@ namespace Model
          * <p>Updates a stack as specified in the template. After the call completes
          * successfully, the stack update starts. You can check the status of the stack via
          * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
-         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
-         * associated with this stack during creation time will still be associated with
-         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>For more
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
@@ -760,9 +755,7 @@ namespace Model
          * <p>Updates a stack as specified in the template. After the call completes
          * successfully, the stack update starts. You can check the status of the stack via
          * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
-         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
-         * associated with this stack during creation time will still be associated with
-         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>For more
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
@@ -776,9 +769,7 @@ namespace Model
          * <p>Updates a stack as specified in the template. After the call completes
          * successfully, the stack update starts. You can check the status of the stack via
          * the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template for an
-         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>Tags that were
-         * associated with this stack during creation time will still be associated with
-         * the stack after an <code>UpdateStack</code> operation.</p> <p>For more
+         * existing stack, you can use the <a>GetTemplate</a> action.</p> <p>For more
          * information about creating an update template, updating a stack, and monitoring
          * the progress of the update, see <a
          * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating

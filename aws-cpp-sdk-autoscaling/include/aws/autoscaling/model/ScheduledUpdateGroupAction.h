@@ -150,17 +150,17 @@ namespace Model
     inline ScheduledUpdateGroupAction& WithScheduledActionARN(const char* value) { SetScheduledActionARN(value); return *this;}
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline double GetTime() const{ return m_time; }
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <p>This parameter is deprecated; use <code>StartTime</code> instead.</p>
+     * <p>This parameter is deprecated.</p>
      */
     inline ScheduledUpdateGroupAction& WithTime(double value) { SetTime(value); return *this;}
 

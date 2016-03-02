@@ -33,10 +33,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a unique message ID returned from a successful
-   * <code>SendEmail</code> request. </p>
-   */
   class AWS_SES_API SendEmailResult
   {
   public:

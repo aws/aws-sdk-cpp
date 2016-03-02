@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the EC2 instance.</p>
+     * <p>The ID of the instance.</p>
      */
     inline TerminateInstanceInAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

@@ -186,44 +186,31 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon CloudWatch Logs API Reference</fullname> <p>This is the
-   * <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch Logs enables you
-   * to monitor, store, and access your system, application, and custom log files.
-   * This guide provides detailed information about Amazon CloudWatch Logs actions,
-   * data types, parameters, and errors. For detailed information about Amazon
-   * CloudWatch Logs features and their associated API calls, go to the <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon
-   * CloudWatch Developer Guide</a>. </p> <p>Use the following links to get started
-   * using the <i>Amazon CloudWatch Logs API Reference</i>:</p> <ul> <li><a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html">Actions</a>:
-   * An alphabetical list of all Amazon CloudWatch Logs actions.</li> <li><a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html">Data
-   * Types</a>: An alphabetical list of all Amazon CloudWatch Logs data types.</li>
-   * <li><a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
-   * Parameters</a>: Parameters that all Query actions can use.</li> <li><a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html">Common
-   * Errors</a>: Client and server errors that all actions can return.</li> <li><a
-   * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions
-   * and Endpoints</a>: Itemized regions and endpoints for all AWS products.</li>
-   * </ul> <p>In addition to using the Amazon CloudWatch Logs API, you can also use
-   * the following SDKs and third-party libraries to access Amazon CloudWatch Logs
-   * programmatically.</p> <ul> <li><a
-   * href="http://aws.amazon.com/documentation/sdkforjava/">AWS SDK for Java
-   * Documentation</a></li> <li><a
-   * href="http://aws.amazon.com/documentation/sdkfornet/">AWS SDK for .NET
-   * Documentation</a></li> <li><a
-   * href="http://aws.amazon.com/documentation/sdkforphp/">AWS SDK for PHP
-   * Documentation</a></li> <li><a
-   * href="http://aws.amazon.com/documentation/sdkforruby/">AWS SDK for Ruby
-   * Documentation</a></li> </ul> <p>Developers in the AWS developer community also
-   * provide their own libraries, which you can find at the following AWS developer
-   * centers:</p> <ul> <li><a href="http://aws.amazon.com/java/">AWS Java Developer
-   * Center</a></li> <li><a href="http://aws.amazon.com/php/">AWS PHP Developer
-   * Center</a></li> <li><a href="http://aws.amazon.com/python/">AWS Python Developer
-   * Center</a></li> <li><a href="http://aws.amazon.com/ruby/">AWS Ruby Developer
-   * Center</a></li> <li><a href="http://aws.amazon.com/net/">AWS Windows and .NET
-   * Developer Center</a></li> </ul>
+   * <fullname>Amazon CloudWatch Logs API Reference</fullname> <p>You can use Amazon
+   * CloudWatch Logs to monitor, store, and access your log files from Amazon Elastic
+   * Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources. You
+   * can then retrieve the associated log data from CloudWatch Logs using the Amazon
+   * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch
+   * Logs API, or the CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p>
+   * <ul> <li> <p><b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can
+   * use CloudWatch Logs to monitor applications and systems using log data. For
+   * example, CloudWatch Logs can track the number of errors that occur in your
+   * application logs and send you a notification whenever the rate of errors exceeds
+   * a threshold you specify. CloudWatch Logs uses your log data for monitoring; so,
+   * no code changes are required. For example, you can monitor application logs for
+   * specific literal terms (such as "NullReferenceException") or count the number of
+   * occurrences of a literal term at a particular position in log data (such as
+   * "404" status codes in an Apache access log). When the term you are searching for
+   * is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that
+   * you specify.</p> </li> <li> <p><b>Monitor Amazon CloudTrail Logged Events</b>:
+   * You can create alarms in Amazon CloudWatch and receive notifications of
+   * particular API activity as captured by CloudTrail and use the notification to
+   * perform troubleshooting.</p> </li> <li> <p><b>Archive Log Data</b>: You can use
+   * CloudWatch Logs to store your log data in highly durable storage. You can change
+   * the log retention setting so that any log events older than this setting are
+   * automatically deleted. The CloudWatch Logs agent makes it easy to quickly send
+   * both rotated and non-rotated log data off of a host and into the log service.
+   * You can then access the raw log data when you need it.</p> </li> </ul>
    */
   class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient
   {
@@ -280,10 +267,12 @@ namespace Model
          * call. If all the required information is provided, this API will initiate an
          * export task and respond with the task Id. Once started,
          * <code>DescribeExportTasks</code> can be used to get the status of an export
-         * task. </p> <p> You can export logs from multiple log groups or multiple time
-         * ranges to the same Amazon S3 bucket. To separate out log data for each export
-         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
-         * all exported objects. </p>
+         * task. You can only have one active (<code>RUNNING</code> or
+         * <code>PENDING</code>) export task at a time, per account. </p> <p> You can
+         * export logs from multiple log groups or multiple time ranges to the same Amazon
+         * S3 bucket. To separate out log data for each export task, you can specify a
+         * prefix that will be used as the Amazon S3 key prefix for all exported objects.
+         * </p>
          */
         virtual Model::CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest& request) const;
 
@@ -293,10 +282,12 @@ namespace Model
          * call. If all the required information is provided, this API will initiate an
          * export task and respond with the task Id. Once started,
          * <code>DescribeExportTasks</code> can be used to get the status of an export
-         * task. </p> <p> You can export logs from multiple log groups or multiple time
-         * ranges to the same Amazon S3 bucket. To separate out log data for each export
-         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
-         * all exported objects. </p>
+         * task. You can only have one active (<code>RUNNING</code> or
+         * <code>PENDING</code>) export task at a time, per account. </p> <p> You can
+         * export logs from multiple log groups or multiple time ranges to the same Amazon
+         * S3 bucket. To separate out log data for each export task, you can specify a
+         * prefix that will be used as the Amazon S3 key prefix for all exported objects.
+         * </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -308,10 +299,12 @@ namespace Model
          * call. If all the required information is provided, this API will initiate an
          * export task and respond with the task Id. Once started,
          * <code>DescribeExportTasks</code> can be used to get the status of an export
-         * task. </p> <p> You can export logs from multiple log groups or multiple time
-         * ranges to the same Amazon S3 bucket. To separate out log data for each export
-         * task, you can specify a prefix that will be used as the Amazon S3 key prefix for
-         * all exported objects. </p>
+         * task. You can only have one active (<code>RUNNING</code> or
+         * <code>PENDING</code>) export task at a time, per account. </p> <p> You can
+         * export logs from multiple log groups or multiple time ranges to the same Amazon
+         * S3 bucket. To separate out log data for each export task, you can specify a
+         * prefix that will be used as the Amazon S3 key prefix for all exported objects.
+         * </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -941,7 +934,9 @@ namespace Model
          * the log events in the batch can be older than 14 days or the retention period of
          * the log group.</li> <li>The log events in the batch must be in chronological
          * ordered by their <code class="code">timestamp</code>.</li> <li>The maximum
-         * number of log events in a batch is 10,000.</li> </ul> </p>
+         * number of log events in a batch is 10,000.</li> <li>A batch of log events in a
+         * single PutLogEvents request cannot span more than 24 hours. Otherwise, the
+         * PutLogEvents operation will fail.</li> </ul> </p>
          */
         virtual Model::PutLogEventsOutcome PutLogEvents(const Model::PutLogEventsRequest& request) const;
 
@@ -957,7 +952,9 @@ namespace Model
          * the log events in the batch can be older than 14 days or the retention period of
          * the log group.</li> <li>The log events in the batch must be in chronological
          * ordered by their <code class="code">timestamp</code>.</li> <li>The maximum
-         * number of log events in a batch is 10,000.</li> </ul> </p>
+         * number of log events in a batch is 10,000.</li> <li>A batch of log events in a
+         * single PutLogEvents request cannot span more than 24 hours. Otherwise, the
+         * PutLogEvents operation will fail.</li> </ul> </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -975,7 +972,9 @@ namespace Model
          * the log events in the batch can be older than 14 days or the retention period of
          * the log group.</li> <li>The log events in the batch must be in chronological
          * ordered by their <code class="code">timestamp</code>.</li> <li>The maximum
-         * number of log events in a batch is 10,000.</li> </ul> </p>
+         * number of log events in a batch is 10,000.</li> <li>A batch of log events in a
+         * single PutLogEvents request cannot span more than 24 hours. Otherwise, the
+         * PutLogEvents operation will fail.</li> </ul> </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1042,11 +1041,15 @@ namespace Model
          * specified log group. Subscription filters allow you to subscribe to a real-time
          * stream of log events ingested through <code class="code">PutLogEvents</code>
          * requests and have them delivered to a specific destination. Currently, the
-         * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+         * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
          * same account as the subscription filter, for same-account delivery. </li> <li> A
          * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-         * different account, for cross-account delivery. </li> </ul> </p> <p> Currently
-         * there can only be one subscription filter associated with a log group. </p>
+         * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+         * Firehose stream belonging to the same account as the subscription filter, for
+         * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+         * account as the subscription filter, for same-account delivery. </li> </ul> </p>
+         * <p> Currently there can only be one subscription filter associated with a log
+         * group. </p>
          */
         virtual Model::PutSubscriptionFilterOutcome PutSubscriptionFilter(const Model::PutSubscriptionFilterRequest& request) const;
 
@@ -1055,11 +1058,15 @@ namespace Model
          * specified log group. Subscription filters allow you to subscribe to a real-time
          * stream of log events ingested through <code class="code">PutLogEvents</code>
          * requests and have them delivered to a specific destination. Currently, the
-         * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+         * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
          * same account as the subscription filter, for same-account delivery. </li> <li> A
          * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-         * different account, for cross-account delivery. </li> </ul> </p> <p> Currently
-         * there can only be one subscription filter associated with a log group. </p>
+         * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+         * Firehose stream belonging to the same account as the subscription filter, for
+         * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+         * account as the subscription filter, for same-account delivery. </li> </ul> </p>
+         * <p> Currently there can only be one subscription filter associated with a log
+         * group. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1070,11 +1077,15 @@ namespace Model
          * specified log group. Subscription filters allow you to subscribe to a real-time
          * stream of log events ingested through <code class="code">PutLogEvents</code>
          * requests and have them delivered to a specific destination. Currently, the
-         * supported destinations are: <ul> <li> A Amazon Kinesis stream belonging to the
+         * supported destinations are: <ul> <li> An Amazon Kinesis stream belonging to the
          * same account as the subscription filter, for same-account delivery. </li> <li> A
          * logical destination (used via an ARN of <code>Destination</code>) belonging to a
-         * different account, for cross-account delivery. </li> </ul> </p> <p> Currently
-         * there can only be one subscription filter associated with a log group. </p>
+         * different account, for cross-account delivery. </li> <li> An Amazon Kinesis
+         * Firehose stream belonging to the same account as the subscription filter, for
+         * same-account delivery. </li> <li> An AWS Lambda function belonging to the same
+         * account as the subscription filter, for same-account delivery. </li> </ul> </p>
+         * <p> Currently there can only be one subscription filter associated with a log
+         * group. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

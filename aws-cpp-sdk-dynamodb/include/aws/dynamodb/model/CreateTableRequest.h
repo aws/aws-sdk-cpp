@@ -128,14 +128,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -149,14 +156,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -170,14 +184,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -191,14 +212,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -212,14 +240,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -233,14 +268,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -254,14 +296,21 @@ namespace Model
      * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>Each
      * <i>KeySchemaElement</i> in the array is composed of:</p> <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute.</p> </li> <li>
-     * <p><i>KeyType</i> - Determines whether the key attribute is <code>HASH</code> or
-     * <code>RANGE</code>.</p> </li> </ul> <p>For a primary key that consists of a hash
-     * attribute, you must provide exactly one element with a <i>KeyType</i> of
-     * <code>HASH</code>.</p> <p>For a primary key that consists of hash and range
-     * attributes, you must provide exactly two elements, in this order: The first
-     * element must have a <i>KeyType</i> of <code>HASH</code>, and the second element
-     * must have a <i>KeyType</i> of <code>RANGE</code>.</p> <p>For more information,
-     * see <a
+     * <p><i>KeyType</i> - The role that the key attribute will assume:</p> <ul>
+     * <li><p><code>HASH</code> - partition key</p> </li> <li><p><code>RANGE</code> -
+     * sort key</p></li> </ul> </li> </ul> <note> <p>The partition key of an item is
+     * also known as its <i>hash attribute</i>. The term "hash attribute" derives from
+     * DynamoDB&#39; usage of an internal hash function to evenly distribute data items
+     * across partitions, based on their partition key values.</p> <p>The sort key of
+     * an item is also known as its <i>range attribute</i>. The term "range attribute"
+     * derives from the way DynamoDB stores items with the same partition key
+     * physically close together, in sorted order by the sort key value.</p></note>
+     * <p>For a simple primary key (partition key), you must provide exactly one
+     * element with a <i>KeyType</i> of <code>HASH</code>.</p> <p>For a composite
+     * primary key (partition key and sort key), you must provide exactly two elements,
+     * in this order: The first element must have a <i>KeyType</i> of
+     * <code>HASH</code>, and the second element must have a <i>KeyType</i> of
+     * <code>RANGE</code>.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -269,16 +318,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -296,16 +345,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -323,16 +372,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -350,16 +399,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -377,16 +426,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -404,16 +453,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -431,16 +480,16 @@ namespace Model
 
     /**
      * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given hash key value. There is a 10 GB size
-     * limit per hash key; otherwise, the size of a local secondary index is
-     * unconstrained.</p> <p>Each local secondary index in the array includes the
-     * following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
-     * index. Must be unique only for this table.</p> <p></p> </li> <li>
+     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * size limit per partition key value; otherwise, the size of a local secondary
+     * index is unconstrained.</p> <p>Each local secondary index in the array includes
+     * the following:</p> <ul> <li> <p><i>IndexName</i> - The name of the local
+     * secondary index. Must be unique only for this table.</p> <p/> </li> <li>
      * <p><i>KeySchema</i> - Specifies the key schema for the local secondary index.
-     * The key schema must begin with the same hash key attribute as the table.</p>
-     * </li> <li> <p><i>Projection</i> - Specifies attributes that are copied
-     * (projected) from the table into the index. These are in addition to the primary
-     * key attributes and index key attributes, which are automatically projected. Each
+     * The key schema must begin with the same partition key as the table.</p> </li>
+     * <li> <p><i>Projection</i> - Specifies attributes that are copied (projected)
+     * from the table into the index. These are in addition to the primary key
+     * attributes and index key attributes, which are automatically projected. Each
      * attribute specification is composed of:</p> <ul> <li> <p><i>ProjectionType</i> -
      * One of the following:</p> <ul> <li> <p><code>KEYS_ONLY</code> - Only the index
      * and primary keys are projected into the index.</p> </li> <li>
@@ -460,8 +509,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -487,8 +536,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -514,8 +563,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -541,8 +590,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -568,8 +617,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -595,8 +644,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute
@@ -622,8 +671,8 @@ namespace Model
      * <p>One or more global secondary indexes (the maximum is five) to be created on
      * the table. Each global secondary index in the array includes the following:</p>
      * <ul> <li> <p><i>IndexName</i> - The name of the global secondary index. Must be
-     * unique only for this table.</p> <p></p> </li> <li> <p><i>KeySchema</i> -
-     * Specifies the key schema for the global secondary index.</p> </li> <li>
+     * unique only for this table.</p> <p/> </li> <li> <p><i>KeySchema</i> - Specifies
+     * the key schema for the global secondary index.</p> </li> <li>
      * <p><i>Projection</i> - Specifies attributes that are copied (projected) from the
      * table into the index. These are in addition to the primary key attributes and
      * index key attributes, which are automatically projected. Each attribute

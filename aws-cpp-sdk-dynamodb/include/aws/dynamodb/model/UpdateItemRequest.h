@@ -82,99 +82,99 @@ namespace Model
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(value); return *this;}
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
     /**
      * <p>The primary key of the item to be updated. Each element consists of an
      * attribute name and a value for that attribute.</p> <p>For the primary key, you
-     * must provide all of the attributes. For example, with a hash type primary key,
-     * you only need to provide the hash attribute. For a hash-and-range type primary
-     * key, you must provide both the hash attribute and the range attribute.</p>
+     * must provide all of the attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for both the partition key and the sort key.</p>
      */
     inline UpdateItemRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key[key] = value; return *this; }
 
@@ -189,7 +189,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -259,7 +259,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -329,7 +329,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -399,7 +399,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -469,7 +469,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -539,7 +539,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -609,7 +609,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -679,7 +679,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -749,7 +749,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -819,7 +819,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -889,7 +889,7 @@ namespace Model
      * updating an attribute that is an index key attribute for any indexes on that
      * table, the attribute type must match the index key type defined in the
      * <i>AttributesDefinition</i> of the table description. You can use
-     * <i>UpdateItem</i> to update any nonkey attributes.</p> <p>Attribute values
+     * <i>UpdateItem</i> to update any non-key attributes.</p> <p>Attribute values
      * cannot be null. String and Binary type attributes must have lengths greater than
      * zero. Set type attributes must not be empty. Requests with empty values will be
      * rejected with a <i>ValidationException</i> exception.</p> <p>Each
@@ -2745,7 +2745,10 @@ namespace Model
      * are returned.</p> </li> <li> <p><code>ALL_NEW</code> - All of the attributes of
      * the new version of the item are returned.</p> </li> <li>
      * <p><code>UPDATED_NEW</code> - The new versions of only the updated attributes
-     * are returned.</p> </li> </ul>
+     * are returned.</p> </li> </ul> <p>There is no additional cost associated with
+     * requesting a return value aside from the small network and processing overhead
+     * of receiving a larger response. No Read Capacity Units are consumed.</p>
+     * <p>Values returned are strongly consistent</p>
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -2761,7 +2764,10 @@ namespace Model
      * are returned.</p> </li> <li> <p><code>ALL_NEW</code> - All of the attributes of
      * the new version of the item are returned.</p> </li> <li>
      * <p><code>UPDATED_NEW</code> - The new versions of only the updated attributes
-     * are returned.</p> </li> </ul>
+     * are returned.</p> </li> </ul> <p>There is no additional cost associated with
+     * requesting a return value aside from the small network and processing overhead
+     * of receiving a larger response. No Read Capacity Units are consumed.</p>
+     * <p>Values returned are strongly consistent</p>
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -2777,7 +2783,10 @@ namespace Model
      * are returned.</p> </li> <li> <p><code>ALL_NEW</code> - All of the attributes of
      * the new version of the item are returned.</p> </li> <li>
      * <p><code>UPDATED_NEW</code> - The new versions of only the updated attributes
-     * are returned.</p> </li> </ul>
+     * are returned.</p> </li> </ul> <p>There is no additional cost associated with
+     * requesting a return value aside from the small network and processing overhead
+     * of receiving a larger response. No Read Capacity Units are consumed.</p>
+     * <p>Values returned are strongly consistent</p>
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -2793,7 +2802,10 @@ namespace Model
      * are returned.</p> </li> <li> <p><code>ALL_NEW</code> - All of the attributes of
      * the new version of the item are returned.</p> </li> <li>
      * <p><code>UPDATED_NEW</code> - The new versions of only the updated attributes
-     * are returned.</p> </li> </ul>
+     * are returned.</p> </li> </ul> <p>There is no additional cost associated with
+     * requesting a return value aside from the small network and processing overhead
+     * of receiving a larger response. No Read Capacity Units are consumed.</p>
+     * <p>Values returned are strongly consistent</p>
      */
     inline UpdateItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -2809,7 +2821,10 @@ namespace Model
      * are returned.</p> </li> <li> <p><code>ALL_NEW</code> - All of the attributes of
      * the new version of the item are returned.</p> </li> <li>
      * <p><code>UPDATED_NEW</code> - The new versions of only the updated attributes
-     * are returned.</p> </li> </ul>
+     * are returned.</p> </li> </ul> <p>There is no additional cost associated with
+     * requesting a return value aside from the small network and processing overhead
+     * of receiving a larger response. No Read Capacity Units are consumed.</p>
+     * <p>Values returned are strongly consistent</p>
      */
     inline UpdateItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(value); return *this;}
 
@@ -3314,9 +3329,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3330,9 +3346,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3346,9 +3363,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3362,9 +3380,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3378,9 +3397,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3394,9 +3414,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -3410,9 +3431,10 @@ namespace Model
      * succeed.</p> <p>An expression can contain any of the following:</p> <ul> <li>
      * <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type |
      * contains | begins_with | size</code></p> <p>These function names are
-     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = | &#x3C;&#x3E;
-     * | &#x3C; | &#x3E; | &#x3C;= | &#x3E;= | BETWEEN | IN</code></p> </li> <li> <p>
-     * Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
+     * case-sensitive.</p> </li> <li> <p>Comparison operators: <code> = |
+     * <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> |
+     * <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code></p> </li> <li>
+     * <p> Logical operators: <code>AND | OR | NOT</code></p> </li> </ul> <p>For more
      * information on condition expressions, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>

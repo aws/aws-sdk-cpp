@@ -150,9 +150,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -161,9 +169,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -172,9 +188,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -183,9 +207,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -194,9 +226,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -205,9 +245,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -216,9 +264,17 @@ namespace Model
     /**
      * <p>The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of:</p> <ul> <li> <p><i>AttributeName</i> - The name of the
-     * attribute.</p> </li> <li> <p><i>KeyType</i> - The key type for the attribute.
-     * Can be either <code>HASH</code> or <code>RANGE</code>.</p> </li> </ul> <p>For
-     * more information about primary keys, see <a
+     * attribute.</p> </li> <li> <p><i>KeyType</i> - The role of the attribute:</p> .
+     * <ul> <li><p><code>HASH</code> - partition key</p> </li>
+     * <li><p><code>RANGE</code> - sort key</p></li> </ul> <note> <p>The partition key
+     * of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
+     * derives from DynamoDB&#39; usage of an internal hash function to evenly
+     * distribute data items across partitions, based on their partition key
+     * values.</p> <p>The sort key of an item is also known as its <i>range
+     * attribute</i>. The term "range attribute" derives from the way DynamoDB stores
+     * items with the same partition key physically close together, in sorted order by
+     * the sort key value.</p></note> </li> </ul> <p>For more information about primary
+     * keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -415,18 +471,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -449,18 +505,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -483,18 +539,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -517,18 +573,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -551,18 +607,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -585,18 +641,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -619,18 +675,18 @@ namespace Model
 
     /**
      * <p>Represents one or more local secondary indexes on the table. Each index is
-     * scoped to a given hash key value. Tables with one or more local secondary
+     * scoped to a given partition key value. Tables with one or more local secondary
      * indexes are subject to an item collection size limit, where the amount of data
      * within a given item collection cannot exceed 10 GB. Each element is composed
      * of:</p> <ul> <li> <p><i>IndexName</i> - The name of the local secondary
      * index.</p> </li> <li> <p><i>KeySchema</i> - Specifies the complete index key
      * schema. The attribute names in the key schema must be between 1 and 255
-     * characters (inclusive). The key schema must begin with the same hash key
-     * attribute as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
-     * attributes that are copied (projected) from the table into the index. These are
-     * in addition to the primary key attributes and index key attributes, which are
-     * automatically projected. Each attribute specification is composed of:</p> <ul>
-     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * characters (inclusive). The key schema must begin with the same partition key as
+     * the table.</p> </li> <li> <p><i>Projection</i> - Specifies attributes that are
+     * copied (projected) from the table into the index. These are in addition to the
+     * primary key attributes and index key attributes, which are automatically
+     * projected. Each attribute specification is composed of:</p> <ul> <li>
+     * <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -653,7 +709,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -672,11 +728,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -697,7 +753,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -716,11 +772,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -741,7 +797,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -760,11 +816,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -785,7 +841,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -804,11 +860,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -829,7 +885,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -848,11 +904,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -873,7 +929,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -892,11 +948,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
@@ -917,7 +973,7 @@ namespace Model
 
     /**
      * <p>The global secondary indexes, if any, on the table. Each index is scoped to a
-     * given hash key value. Each element is composed of:</p> <ul> <li>
+     * given partition key value. Each element is composed of:</p> <ul> <li>
      * <p><i>Backfilling</i> - If true, then the index is currently in the backfilling
      * phase. Backfilling occurs only when a new global secondary index is added to the
      * table; it is the process by which DynamoDB populates the new index with data
@@ -936,11 +992,11 @@ namespace Model
      * not be reflected in this value. </p> </li> <li> <p><i>KeySchema</i> - Specifies
      * the complete index key schema. The attribute names in the key schema must be
      * between 1 and 255 characters (inclusive). The key schema must begin with the
-     * same hash key attribute as the table.</p> </li> <li> <p><i>Projection</i> -
-     * Specifies attributes that are copied (projected) from the table into the index.
-     * These are in addition to the primary key attributes and index key attributes,
-     * which are automatically projected. Each attribute specification is composed
-     * of:</p> <ul> <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
+     * same partition key as the table.</p> </li> <li> <p><i>Projection</i> - Specifies
+     * attributes that are copied (projected) from the table into the index. These are
+     * in addition to the primary key attributes and index key attributes, which are
+     * automatically projected. Each attribute specification is composed of:</p> <ul>
+     * <li> <p><i>ProjectionType</i> - One of the following:</p> <ul> <li>
      * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
      * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in

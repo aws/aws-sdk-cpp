@@ -34,11 +34,6 @@ namespace SES
 {
 namespace Model
 {
-  /**
-   * <p>Represents a list of <code>SendDataPoint</code> items returned from a
-   * successful <code>GetSendStatistics</code> request. This list contains aggregated
-   * data from the previous two weeks of sending activity. </p>
-   */
   class AWS_SES_API GetSendStatisticsResult
   {
   public:

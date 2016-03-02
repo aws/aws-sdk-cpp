@@ -75,7 +75,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
 
@@ -85,7 +85,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
@@ -95,7 +95,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
@@ -105,7 +105,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
 
@@ -115,7 +115,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(value); return *this;}
 
@@ -125,7 +125,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
@@ -135,7 +135,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
@@ -145,7 +145,7 @@ namespace Model
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
-     * token in the <code>NextToken</code> parameter.</p>
+     * token.</p>
      */
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const char* value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 

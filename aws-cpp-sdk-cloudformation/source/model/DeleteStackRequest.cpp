@@ -20,7 +20,8 @@ using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
 DeleteStackRequest::DeleteStackRequest() : 
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_retainResourcesHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,16 @@ Aws::String DeleteStackRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if(m_retainResourcesHasBeenSet)
+  {
+    unsigned retainResourcesCount = 1;
+    for(auto& item : m_retainResources)
+    {
+      ss << "RetainResources.member." << retainResourcesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      retainResourcesCount++;
+    }
   }
   ss << "Version=2010-05-15";
   return ss.str();

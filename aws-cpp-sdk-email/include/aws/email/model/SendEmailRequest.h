@@ -28,11 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to send a single email
-   * message.</p> <p>This datatype can be used in application code to compose a
-   * message consisting of source, destination, message, reply-to, and return-path
-   * parts. This object can then be sent using the <code>SendEmail</code> action.
-   * </p>
    */
   class AWS_SES_API SendEmailRequest : public SESRequest
   {

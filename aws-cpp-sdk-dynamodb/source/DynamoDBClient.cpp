@@ -31,6 +31,7 @@
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
+#include <aws/dynamodb/model/DescribeLimitsRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/ListTablesRequest.h>
@@ -255,6 +256,37 @@ void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const D
 void DynamoDBClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTable(request), context);
+}
+
+DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLimitsOutcome(DescribeLimitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLimitsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLimitsOutcomeCallable DynamoDBClient::DescribeLimitsCallable(const DescribeLimitsRequest& request) const
+{
+  return std::async(std::launch::async, &DynamoDBClient::DescribeLimits, this, request);
+}
+
+void DynamoDBClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DynamoDBClient::DescribeLimitsAsyncHelper, this, request, handler, context);
+}
+
+void DynamoDBClient::DescribeLimitsAsyncHelper(const DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLimits(request), context);
 }
 
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const

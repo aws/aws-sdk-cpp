@@ -62,6 +62,7 @@
 #include <aws/apigateway/model/PutIntegrationResponseResult.h>
 #include <aws/apigateway/model/PutMethodResult.h>
 #include <aws/apigateway/model/PutMethodResponseResult.h>
+#include <aws/apigateway/model/TestInvokeAuthorizerResult.h>
 #include <aws/apigateway/model/TestInvokeMethodResult.h>
 #include <aws/apigateway/model/UpdateAccountResult.h>
 #include <aws/apigateway/model/UpdateApiKeyResult.h>
@@ -147,6 +148,7 @@ namespace Model
         class DeleteResourceRequest;
         class DeleteRestApiRequest;
         class DeleteStageRequest;
+        class FlushStageAuthorizersCacheRequest;
         class FlushStageCacheRequest;
         class GenerateClientCertificateRequest;
         class GetAccountRequest;
@@ -181,6 +183,7 @@ namespace Model
         class PutIntegrationResponseRequest;
         class PutMethodRequest;
         class PutMethodResponseRequest;
+        class TestInvokeAuthorizerRequest;
         class TestInvokeMethodRequest;
         class UpdateAccountRequest;
         class UpdateApiKeyRequest;
@@ -221,6 +224,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteResourceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteRestApiOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> DeleteStageOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> FlushStageAuthorizersCacheOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<APIGatewayErrors>> FlushStageCacheOutcome;
         typedef Aws::Utils::Outcome<GenerateClientCertificateResult, Aws::Client::AWSError<APIGatewayErrors>> GenerateClientCertificateOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, Aws::Client::AWSError<APIGatewayErrors>> GetAccountOutcome;
@@ -255,6 +259,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutIntegrationResponseResult, Aws::Client::AWSError<APIGatewayErrors>> PutIntegrationResponseOutcome;
         typedef Aws::Utils::Outcome<PutMethodResult, Aws::Client::AWSError<APIGatewayErrors>> PutMethodOutcome;
         typedef Aws::Utils::Outcome<PutMethodResponseResult, Aws::Client::AWSError<APIGatewayErrors>> PutMethodResponseOutcome;
+        typedef Aws::Utils::Outcome<TestInvokeAuthorizerResult, Aws::Client::AWSError<APIGatewayErrors>> TestInvokeAuthorizerOutcome;
         typedef Aws::Utils::Outcome<TestInvokeMethodResult, Aws::Client::AWSError<APIGatewayErrors>> TestInvokeMethodOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateApiKeyOutcome;
@@ -295,6 +300,7 @@ namespace Model
         typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
         typedef std::future<DeleteRestApiOutcome> DeleteRestApiOutcomeCallable;
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
+        typedef std::future<FlushStageAuthorizersCacheOutcome> FlushStageAuthorizersCacheOutcomeCallable;
         typedef std::future<FlushStageCacheOutcome> FlushStageCacheOutcomeCallable;
         typedef std::future<GenerateClientCertificateOutcome> GenerateClientCertificateOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
@@ -329,6 +335,7 @@ namespace Model
         typedef std::future<PutIntegrationResponseOutcome> PutIntegrationResponseOutcomeCallable;
         typedef std::future<PutMethodOutcome> PutMethodOutcomeCallable;
         typedef std::future<PutMethodResponseOutcome> PutMethodResponseOutcomeCallable;
+        typedef std::future<TestInvokeAuthorizerOutcome> TestInvokeAuthorizerOutcomeCallable;
         typedef std::future<TestInvokeMethodOutcome> TestInvokeMethodOutcomeCallable;
         typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
         typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
@@ -372,6 +379,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteResourceRequest&, const Model::DeleteResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteRestApiRequest&, const Model::DeleteRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::FlushStageAuthorizersCacheRequest&, const Model::FlushStageAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushStageAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::FlushStageCacheRequest&, const Model::FlushStageCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushStageCacheResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GenerateClientCertificateRequest&, const Model::GenerateClientCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateClientCertificateResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
@@ -406,6 +414,7 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::PutIntegrationResponseRequest&, const Model::PutIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodRequest&, const Model::PutMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodResponseRequest&, const Model::PutMethodResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeAuthorizerRequest&, const Model::TestInvokeAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeAuthorizerResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeMethodRequest&, const Model::TestInvokeMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateAccountRequest&, const Model::UpdateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
@@ -902,6 +911,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStageAsync(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Flushes all authorizer cache entries on a stage.</p>
+         */
+        virtual Model::FlushStageAuthorizersCacheOutcome FlushStageAuthorizersCache(const Model::FlushStageAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Flushes all authorizer cache entries on a stage.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::FlushStageAuthorizersCacheOutcomeCallable FlushStageAuthorizersCacheCallable(const Model::FlushStageAuthorizersCacheRequest& request) const;
+
+        /**
+         * <p>Flushes all authorizer cache entries on a stage.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void FlushStageAuthorizersCacheAsync(const Model::FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Flushes a stage's cache.</p>
@@ -1558,6 +1586,25 @@ namespace Model
         /**
          * 
          */
+        virtual Model::TestInvokeAuthorizerOutcome TestInvokeAuthorizer(const Model::TestInvokeAuthorizerRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TestInvokeAuthorizerOutcomeCallable TestInvokeAuthorizerCallable(const Model::TestInvokeAuthorizerRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TestInvokeAuthorizerAsync(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
         virtual Model::TestInvokeMethodOutcome TestInvokeMethod(const Model::TestInvokeMethodRequest& request) const;
 
         /**
@@ -1887,6 +1934,7 @@ namespace Model
         void DeleteResourceAsyncHelper(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRestApiAsyncHelper(const Model::DeleteRestApiRequest& request, const DeleteRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void FlushStageAuthorizersCacheAsyncHelper(const Model::FlushStageAuthorizersCacheRequest& request, const FlushStageAuthorizersCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FlushStageCacheAsyncHelper(const Model::FlushStageCacheRequest& request, const FlushStageCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GenerateClientCertificateAsyncHelper(const Model::GenerateClientCertificateRequest& request, const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1921,6 +1969,7 @@ namespace Model
         void PutIntegrationResponseAsyncHelper(const Model::PutIntegrationResponseRequest& request, const PutIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMethodAsyncHelper(const Model::PutMethodRequest& request, const PutMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMethodResponseAsyncHelper(const Model::PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TestInvokeAuthorizerAsyncHelper(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestInvokeMethodAsyncHelper(const Model::TestInvokeMethodRequest& request, const TestInvokeMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAsyncHelper(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

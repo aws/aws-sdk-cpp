@@ -40,7 +40,8 @@ SearchRequest::SearchRequest() :
     m_sizeHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_start(0),
-    m_startHasBeenSet(false)
+    m_startHasBeenSet(false),
+    m_statsHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,13 @@ void SearchRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_start;
       uri.AddQueryStringParameter("start", ss.str());
+      ss.str("");
+    }
+
+    if(m_statsHasBeenSet)
+    {
+      ss << m_stats;
+      uri.AddQueryStringParameter("stats", ss.str());
       ss.str("");
     }
 

@@ -23,7 +23,8 @@ CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() :
     m_lifecycleHookNameHasBeenSet(false),
     m_autoScalingGroupNameHasBeenSet(false),
     m_lifecycleActionTokenHasBeenSet(false),
-    m_lifecycleActionResultHasBeenSet(false)
+    m_lifecycleActionResultHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,10 @@ Aws::String CompleteLifecycleActionRequest::SerializePayload() const
   if(m_lifecycleActionResultHasBeenSet)
   {
     ss << "LifecycleActionResult=" << StringUtils::URLEncode(m_lifecycleActionResult.c_str()) << "&";
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
   ss << "Version=2011-01-01";
   return ss.str();

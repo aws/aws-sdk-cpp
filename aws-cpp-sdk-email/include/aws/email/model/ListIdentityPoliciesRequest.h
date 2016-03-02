@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to list all authorization
-   * policies, by name, applying to an identity.</p>
    */
   class AWS_SES_API ListIdentityPoliciesRequest : public SESRequest
   {

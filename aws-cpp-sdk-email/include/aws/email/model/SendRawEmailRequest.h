@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to send a raw email message.</p>
-   * <p>This datatype can be used in application code to compose a message consisting
-   * of source, destination, and raw message text. This object can then be sent using
-   * the <code>SendRawEmail</code> action. </p>
    */
   class AWS_SES_API SendRawEmailRequest : public SESRequest
   {

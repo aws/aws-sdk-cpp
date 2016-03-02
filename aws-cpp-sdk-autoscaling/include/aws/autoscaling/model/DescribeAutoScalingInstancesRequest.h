@@ -35,58 +35,58 @@ namespace Model
 
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Auto Scaling instances to describe, up to 50 instances. If you
-     * omit this parameter, all Auto Scaling instances are described. If you specify an
-     * ID that does not exist, it is ignored with no error.</p>
+     * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
+     * all Auto Scaling instances are described. If you specify an ID that does not
+     * exist, it is ignored with no error.</p>
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 

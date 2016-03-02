@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
+#include <aws/cloudformation/model/Tag.h>
 
 namespace Aws
 {
@@ -944,6 +945,69 @@ namespace Model
      */
     inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline UpdateStackRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline UpdateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline UpdateStackRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can specify a
+     * maximum number of 10 tags.</p> <p>If you don't specify this parameter, AWS
+     * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
+     * AWS CloudFormation removes all associated tags.</p>
+     */
+    inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
   private:
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
@@ -969,6 +1033,8 @@ namespace Model
     bool m_stackPolicyURLHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -25,8 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request instructing the service to enable or disable DKIM
-   * signing for an identity.</p>
    */
   class AWS_SES_API SetIdentityDkimEnabledRequest : public SESRequest
   {

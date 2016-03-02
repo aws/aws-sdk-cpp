@@ -1002,7 +1002,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1014,7 +1014,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1026,7 +1026,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1048,7 +1048,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1061,21 +1061,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1097,7 +1097,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1109,7 +1109,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1121,7 +1121,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1143,7 +1143,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1156,21 +1156,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1192,7 +1192,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1204,7 +1204,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1216,7 +1216,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1238,7 +1238,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1251,21 +1251,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1287,7 +1287,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1299,7 +1299,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1311,7 +1311,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1333,7 +1333,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1346,21 +1346,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1382,7 +1382,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1394,7 +1394,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1406,7 +1406,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1428,7 +1428,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1441,21 +1441,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1477,7 +1477,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1489,7 +1489,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1501,7 +1501,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1523,7 +1523,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1536,21 +1536,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -1572,7 +1572,7 @@ namespace Model
      * following form
      * <code>{"OPTION1":"VALUE1","OPTION2":VALUE2"..."OPTIONN":"VALUEN"}.</code></p>
      * <p>The options you can configure vary according to which parser you use:</p>
-     * <ul> <li> <code>defaultOperator</code>: The default operator used to combine
+     * <ul> <li><code>defaultOperator</code>: The default operator used to combine
      * individual terms in the search string. For example: <code>defaultOperator:
      * 'or'</code>. For the <code>dismax</code> parser, you specify a percentage that
      * represents the percentage of terms in the search string (rounded down) that must
@@ -1584,7 +1584,7 @@ namespace Model
      * (<code>dismax</code>). Default: <code>and</code> (<code>simple</code>,
      * <code>structured</code>, <code>lucene</code>) or <code>100</code>
      * (<code>dismax</code>). Valid for: <code>simple</code>, <code>structured</code>,
-     * <code>lucene</code>, and <code>dismax</code>.</li> <li> <code>fields</code>: An
+     * <code>lucene</code>, and <code>dismax</code>.</li> <li><code>fields</code>: An
      * array of the fields to search when no fields are specified in a search. If no
      * fields are specified in a search and this option is not specified, all text and
      * text-array fields are searched. You can specify a weight for each field to
@@ -1596,7 +1596,7 @@ namespace Model
      * of any configured field and an optional numeric value greater than zero.
      * Default: All <code>text</code> and <code>text-array</code> fields. Valid for:
      * <code>simple</code>, <code>structured</code>, <code>lucene</code>, and
-     * <code>dismax</code>.</li> <li> <code>operators</code>: An array of the operators
+     * <code>dismax</code>.</li> <li><code>operators</code>: An array of the operators
      * or special characters you want to disable for the simple query parser. If you
      * disable the <code>and</code>, <code>or</code>, or <code>not</code> operators,
      * the corresponding operators (<code>+</code>, <code>|</code>, <code>-</code>)
@@ -1618,7 +1618,7 @@ namespace Model
      * <code>near</code>, <code>not</code>, <code>or</code>, <code>phrase</code>,
      * <code>precedence</code>, <code>prefix</code>, <code>whitespace</code>. Default:
      * All operators and special characters are enabled. Valid for:
-     * <code>simple</code>.</li> <li> <code>phraseFields</code>: An array of the
+     * <code>simple</code>.</li> <li><code>phraseFields</code>: An array of the
      * <code>text</code> or <code>text-array</code> fields you want to use for phrase
      * searches. When the terms in the search string appear in close proximity within a
      * field, the field scores higher. You can specify a weight for each field to boost
@@ -1631,21 +1631,21 @@ namespace Model
      * <code>text-array</code> field and an optional numeric value greater than zero.
      * Default: No fields. If you don't specify any fields with
      * <code>phraseFields</code>, proximity scoring is disabled even if
-     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li> <li>
-     * <code>phraseSlop</code>: An integer value that specifies how much matches can
-     * deviate from the search phrase and still be boosted according to the weights
+     * <code>phraseSlop</code> is specified. Valid for: <code>dismax</code>.</li>
+     * <li><code>phraseSlop</code>: An integer value that specifies how much matches
+     * can deviate from the search phrase and still be boosted according to the weights
      * specified in the <code>phraseFields</code> option; for example,
      * <code>phraseSlop: 2</code>. You must also specify <code>phraseFields</code> to
      * enable proximity scoring. Valid values: positive integers. Default: 0. Valid
-     * for: <code>dismax</code>.</li> <li> <code>explicitPhraseSlop</code>: An integer
+     * for: <code>dismax</code>.</li> <li><code>explicitPhraseSlop</code>: An integer
      * value that specifies how much a match can deviate from the search phrase when
      * the phrase is enclosed in double quotes in the search string. (Phrases that
      * exceed this proximity distance are not considered a match.) For example, to
      * specify a slop of three for dismax phrase queries, you would specify
      * <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default:
-     * 0. Valid for: <code>dismax</code>.</li> <li> <code>tieBreaker</code>: When a
-     * term in the search string is found in a document's field, a score is calculated
-     * for that field based on how common the word is in that field compared to other
+     * 0. Valid for: <code>dismax</code>.</li> <li><code>tieBreaker</code>: When a term
+     * in the search string is found in a document's field, a score is calculated for
+     * that field based on how common the word is in that field compared to other
      * documents. If the term occurs in multiple fields within a document, by default
      * only the highest scoring field contributes to the document's overall score. You
      * can specify a <code>tieBreaker</code> value to enable the matches in
@@ -2068,6 +2068,69 @@ namespace Model
      */
     inline SearchRequest& WithStart(long long value) { SetStart(value); return *this;}
 
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline const Aws::String& GetStats() const{ return m_stats; }
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline void SetStats(const Aws::String& value) { m_statsHasBeenSet = true; m_stats = value; }
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline void SetStats(Aws::String&& value) { m_statsHasBeenSet = true; m_stats = value; }
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline void SetStats(const char* value) { m_statsHasBeenSet = true; m_stats.assign(value); }
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline SearchRequest& WithStats(const Aws::String& value) { SetStats(value); return *this;}
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline SearchRequest& WithStats(Aws::String&& value) { SetStats(value); return *this;}
+
+    /**
+     * <p>Specifies one or more fields for which to get statistics information. Each
+     * specified field must be facet-enabled in the domain configuration. The fields
+     * are specified in JSON using the form:</p>
+     * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
+     * supported for statistics.</p>
+     */
+    inline SearchRequest& WithStats(const char* value) { SetStats(value); return *this;}
+
   private:
     Aws::String m_cursor;
     bool m_cursorHasBeenSet;
@@ -2095,6 +2158,8 @@ namespace Model
     bool m_sortHasBeenSet;
     long long m_start;
     bool m_startHasBeenSet;
+    Aws::String m_stats;
+    bool m_statsHasBeenSet;
   };
 
 } // namespace Model

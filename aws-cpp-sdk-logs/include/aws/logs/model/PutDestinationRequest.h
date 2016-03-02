@@ -106,44 +106,44 @@ namespace Model
     inline PutDestinationRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to do
-     * Amazon Kinesis PutRecord requests on the desitnation stream.</p>
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
+     * Kinesis PutRecord requests on the desitnation stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 SNSAction::SNSAction() : 
-    m_topicArnHasBeenSet(false)
+    m_topicArnHasBeenSet(false),
+    m_encodingHasBeenSet(false)
 {
 }
 
 SNSAction::SNSAction(const XmlNode& xmlNode) : 
-    m_topicArnHasBeenSet(false)
+    m_topicArnHasBeenSet(false),
+    m_encodingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -46,6 +48,12 @@ SNSAction& SNSAction::operator =(const XmlNode& xmlNode)
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
+    XmlNode encodingNode = resultNode.FirstChild("Encoding");
+    if(!encodingNode.IsNull())
+    {
+      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(encodingNode.GetText().c_str()).c_str());
+      m_encodingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +65,10 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+  if(m_encodingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
+  }
 }
 
 void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -64,5 +76,9 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_topicArnHasBeenSet)
   {
       oStream << location << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
+  }
+  if(m_encodingHasBeenSet)
+  {
+      oStream << location << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
   }
 }

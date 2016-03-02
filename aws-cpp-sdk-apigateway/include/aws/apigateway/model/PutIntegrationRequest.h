@@ -168,72 +168,86 @@ namespace Model
     inline PutIntegrationRequest& WithType(IntegrationType&& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline const Aws::String& GetIntegrationHttpMethod() const{ return m_integrationHttpMethod; }
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline void SetIntegrationHttpMethod(const Aws::String& value) { m_integrationHttpMethodHasBeenSet = true; m_integrationHttpMethod = value; }
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline void SetIntegrationHttpMethod(Aws::String&& value) { m_integrationHttpMethodHasBeenSet = true; m_integrationHttpMethod = value; }
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline void SetIntegrationHttpMethod(const char* value) { m_integrationHttpMethodHasBeenSet = true; m_integrationHttpMethod.assign(value); }
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithIntegrationHttpMethod(const Aws::String& value) { SetIntegrationHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithIntegrationHttpMethod(Aws::String&& value) { SetIntegrationHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies a put integration HTTP method.</p>
+     * <p>Specifies a put integration HTTP method. When the integration type is HTTP or
+     * AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithIntegrationHttpMethod(const char* value) { SetIntegrationHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithUri(Aws::String&& value) { SetUri(value); return *this;}
 
     /**
-     * <p>Specifies a put integration input's Uniform Resource Identifier (URI).</p>
+     * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
+     * the integration type is HTTP or AWS, this field is required.</p>
      */
     inline PutIntegrationRequest& WithUri(const char* value) { SetUri(value); return *this;}
 
