@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Export task that matches the specified task Id will be returned. This can
      * result in zero or one export task.</p>

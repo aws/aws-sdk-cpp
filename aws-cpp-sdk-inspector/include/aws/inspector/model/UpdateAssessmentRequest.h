@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Asessment ARN that you want to update.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     DeleteIdentityPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity that is associated with the policy that you want to delete. You
      * can specify the identity by using its name or by using its Amazon Resource Name

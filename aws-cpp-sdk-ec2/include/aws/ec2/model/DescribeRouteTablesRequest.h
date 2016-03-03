@@ -34,7 +34,6 @@ namespace Model
     DescribeRouteTablesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the

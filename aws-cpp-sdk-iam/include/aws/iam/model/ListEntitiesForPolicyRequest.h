@@ -33,7 +33,6 @@ namespace Model
     ListEntitiesForPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 

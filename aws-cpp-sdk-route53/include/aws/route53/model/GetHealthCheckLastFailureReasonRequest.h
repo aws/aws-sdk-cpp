@@ -34,7 +34,6 @@ namespace Model
     GetHealthCheckLastFailureReasonRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the health check for which you want to retrieve the reason for the
      * most recent failure.</p>

@@ -32,7 +32,6 @@ namespace Model
     DescribeReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the receipt rule set to describe.</p>
      */

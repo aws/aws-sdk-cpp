@@ -32,7 +32,6 @@ namespace Model
     CreateFileSystemRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>

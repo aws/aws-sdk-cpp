@@ -33,7 +33,6 @@ namespace Model
     SwapEnvironmentCNAMEsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The ID of the source environment. </p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the

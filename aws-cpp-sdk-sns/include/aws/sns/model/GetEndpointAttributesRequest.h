@@ -33,7 +33,6 @@ namespace Model
     GetEndpointAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
      */

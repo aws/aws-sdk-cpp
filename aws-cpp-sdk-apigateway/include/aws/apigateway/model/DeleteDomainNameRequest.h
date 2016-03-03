@@ -33,7 +33,6 @@ namespace Model
     DeleteDomainNameRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
      */

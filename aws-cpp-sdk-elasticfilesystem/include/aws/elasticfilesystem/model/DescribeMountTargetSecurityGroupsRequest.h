@@ -32,7 +32,6 @@ namespace Model
     DescribeMountTargetSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */

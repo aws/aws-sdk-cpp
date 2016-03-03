@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change
      * <code>Name</code> after you create the <code>WebACL</code>.</p>

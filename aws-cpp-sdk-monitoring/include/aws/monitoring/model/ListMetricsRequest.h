@@ -34,7 +34,6 @@ namespace Model
     ListMetricsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The namespace to filter against. </p>
      */

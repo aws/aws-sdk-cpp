@@ -32,7 +32,6 @@ namespace Model
     DecodeAuthorizationMessageRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The encoded message that was returned with the response.</p>
      */

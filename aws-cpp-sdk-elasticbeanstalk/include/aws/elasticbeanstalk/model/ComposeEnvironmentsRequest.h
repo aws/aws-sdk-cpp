@@ -34,7 +34,6 @@ namespace Model
     ComposeEnvironmentsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */

@@ -31,7 +31,6 @@ namespace Model
     UpdateAccountPasswordPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The minimum number of characters allowed in an IAM user password.</p>
      * <p>Default value: 6</p>

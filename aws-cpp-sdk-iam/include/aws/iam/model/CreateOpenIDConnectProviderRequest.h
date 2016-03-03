@@ -33,7 +33,6 @@ namespace Model
     CreateOpenIDConnectProviderRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The URL of the identity provider. The URL must begin with "https://" and
      * should correspond to the <code>iss</code> claim in the provider's OpenID Connect

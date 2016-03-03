@@ -32,7 +32,6 @@ namespace Model
     ExecutePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */

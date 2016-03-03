@@ -32,7 +32,6 @@ namespace Model
     DeleteServerCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the server certificate you want to delete.</p>
      */

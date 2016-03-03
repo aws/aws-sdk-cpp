@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Descriptive label associated with this build. Build names do not need to be
      * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>

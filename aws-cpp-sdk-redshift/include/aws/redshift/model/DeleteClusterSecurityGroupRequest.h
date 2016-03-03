@@ -33,7 +33,6 @@ namespace Model
     DeleteClusterSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the cluster security group to be deleted. </p>
      */

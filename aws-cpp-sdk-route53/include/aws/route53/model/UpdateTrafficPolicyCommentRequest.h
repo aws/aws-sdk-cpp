@@ -34,7 +34,6 @@ namespace Model
     UpdateTrafficPolicyCommentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The value of <code>Id</code> for the traffic policy for which you want to
      * update the comment.</p>

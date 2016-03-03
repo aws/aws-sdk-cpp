@@ -34,7 +34,6 @@ namespace Model
     ModifyClusterSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the subnet group to be modified.</p>
      */

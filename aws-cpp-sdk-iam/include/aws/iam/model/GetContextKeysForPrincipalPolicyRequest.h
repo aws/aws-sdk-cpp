@@ -33,7 +33,6 @@ namespace Model
     GetContextKeysForPrincipalPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that

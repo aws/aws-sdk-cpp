@@ -33,7 +33,6 @@ namespace Model
     CreateCacheSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric

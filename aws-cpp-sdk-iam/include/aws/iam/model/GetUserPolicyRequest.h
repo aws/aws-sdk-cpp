@@ -32,7 +32,6 @@ namespace Model
     GetUserPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user who the policy is associated with.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     CreateVpnConnectionRouteRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the VPN connection.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     GetInstanceProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the instance profile to get information about.</p>
      */

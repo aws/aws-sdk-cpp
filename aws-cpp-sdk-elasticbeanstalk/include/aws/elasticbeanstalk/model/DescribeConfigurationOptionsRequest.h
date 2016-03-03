@@ -35,7 +35,6 @@ namespace Model
     DescribeConfigurationOptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application associated with the configuration template or
      * environment. Only needed if you want to describe the configuration options

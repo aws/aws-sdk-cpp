@@ -39,7 +39,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 

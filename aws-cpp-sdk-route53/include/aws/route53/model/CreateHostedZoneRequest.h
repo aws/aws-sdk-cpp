@@ -36,7 +36,6 @@ namespace Model
     CreateHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the domain. This must be a fully-specified domain, for example,
      * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the

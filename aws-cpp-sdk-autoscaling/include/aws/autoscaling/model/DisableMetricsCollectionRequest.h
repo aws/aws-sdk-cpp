@@ -33,7 +33,6 @@ namespace Model
     DisableMetricsCollectionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or Amazon Resource Name (ARN) of the group.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     UpdateJobRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 

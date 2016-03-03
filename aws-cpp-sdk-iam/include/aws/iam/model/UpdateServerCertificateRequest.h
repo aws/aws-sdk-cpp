@@ -32,7 +32,6 @@ namespace Model
     UpdateServerCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the server certificate that you want to update.</p>
      */

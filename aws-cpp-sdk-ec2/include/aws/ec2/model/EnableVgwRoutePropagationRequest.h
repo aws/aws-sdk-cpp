@@ -32,7 +32,6 @@ namespace Model
     EnableVgwRoutePropagationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the route table.</p>
      */

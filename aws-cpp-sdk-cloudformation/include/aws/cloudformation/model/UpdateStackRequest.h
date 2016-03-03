@@ -37,7 +37,6 @@ namespace Model
     UpdateStackRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     SimulatePrincipalPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you
      * want to include in the simulation. If you specify a user, group, or role, the

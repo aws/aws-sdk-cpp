@@ -34,7 +34,6 @@ namespace Model
     DescribeEventsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those associated with this application. </p>

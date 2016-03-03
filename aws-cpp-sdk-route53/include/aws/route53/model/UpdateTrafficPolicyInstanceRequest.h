@@ -34,7 +34,6 @@ namespace Model
     UpdateTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the traffic policy instance that you want to update.</p>
      */

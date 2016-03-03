@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The name of the log group to associate the retention policy with.</p>
      */

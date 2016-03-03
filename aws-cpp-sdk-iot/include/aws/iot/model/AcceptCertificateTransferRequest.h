@@ -39,7 +39,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The ID of the certificate.</p>
      */

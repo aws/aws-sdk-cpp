@@ -34,7 +34,6 @@ namespace Model
     ChangeMessageVisibilityBatchRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The URL of the Amazon SQS queue to take action on.</p>
      */

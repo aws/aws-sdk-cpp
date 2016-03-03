@@ -34,7 +34,6 @@ namespace Model
     ModifyClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of the cluster to be modified. </p> <p>Example:
      * <code>examplecluster</code></p>

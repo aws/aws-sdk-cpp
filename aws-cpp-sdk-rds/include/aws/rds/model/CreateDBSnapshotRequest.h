@@ -35,7 +35,6 @@ namespace Model
     CreateDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier for the DB snapshot. </p> <p>Constraints:</p> <ul> <li>Cannot
      * be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric

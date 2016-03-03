@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>An existing deployment ID associated with the applicable IAM user or AWS
      * account.</p>

@@ -33,7 +33,6 @@ namespace Model
     SetIdentityNotificationTopicRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity for which the Amazon SNS topic will be set. You can specify an
      * identity by using its name or by using its Amazon Resource Name (ARN). Examples:

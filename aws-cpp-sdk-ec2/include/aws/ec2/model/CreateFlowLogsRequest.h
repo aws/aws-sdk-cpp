@@ -35,7 +35,6 @@ namespace Model
     CreateFlowLogsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p>
      */

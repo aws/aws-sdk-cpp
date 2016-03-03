@@ -33,7 +33,6 @@ namespace Model
     ListSubscriptionsByTopicRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     ReleaseHostsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The IDs of the Dedicated hosts you want to release.</p>
      */

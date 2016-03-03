@@ -32,7 +32,6 @@ namespace Model
     ListInstanceProfilesForRoleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the role to list instance profiles for.</p>
      */

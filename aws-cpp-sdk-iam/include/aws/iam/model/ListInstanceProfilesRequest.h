@@ -32,7 +32,6 @@ namespace Model
     ListInstanceProfilesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all instance profiles whose

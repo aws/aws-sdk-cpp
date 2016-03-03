@@ -33,7 +33,6 @@ namespace Model
     ListSubscriptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
      */

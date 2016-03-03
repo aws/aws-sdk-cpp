@@ -32,7 +32,6 @@ namespace Model
     UpdateAssumeRolePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the role to update.</p>
      */

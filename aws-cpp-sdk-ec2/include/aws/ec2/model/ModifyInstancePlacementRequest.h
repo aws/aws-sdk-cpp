@@ -34,7 +34,6 @@ namespace Model
     ModifyInstancePlacementRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the instance that you are modifying.</p>
      */

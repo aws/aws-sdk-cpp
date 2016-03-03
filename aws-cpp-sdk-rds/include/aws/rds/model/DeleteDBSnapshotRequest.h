@@ -33,7 +33,6 @@ namespace Model
     DeleteDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The DBSnapshot identifier. </p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>

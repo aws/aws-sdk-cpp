@@ -33,7 +33,6 @@ namespace Model
     AbortEnvironmentUpdateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>

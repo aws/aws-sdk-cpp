@@ -35,7 +35,6 @@ namespace Model
     PurchaseReservedDBInstancesOfferingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The ID of the Reserved DB instance offering to purchase. </p> <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>

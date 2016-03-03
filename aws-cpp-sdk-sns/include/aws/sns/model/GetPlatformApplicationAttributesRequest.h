@@ -33,7 +33,6 @@ namespace Model
     GetPlatformApplicationAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
      */

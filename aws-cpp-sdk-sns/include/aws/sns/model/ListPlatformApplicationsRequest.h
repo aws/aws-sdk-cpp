@@ -33,7 +33,6 @@ namespace Model
     ListPlatformApplicationsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>

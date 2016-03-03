@@ -33,7 +33,6 @@ namespace Model
     ModifyDBSnapshotAttributeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier for the DB snapshot to modify the attributes for.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     DescribeCacheSubnetGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cache subnet group to return details for.</p>
      */

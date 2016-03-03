@@ -33,7 +33,6 @@ namespace Model
     DeleteHsmConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
      */

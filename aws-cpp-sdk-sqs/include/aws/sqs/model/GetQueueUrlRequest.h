@@ -32,7 +32,6 @@ namespace Model
     GetQueueUrlRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters;
      * alphanumeric characters, hyphens (-), and underscores (_) are allowed.</p>

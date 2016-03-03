@@ -34,7 +34,6 @@ namespace Model
     CreateJobRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const JobType& GetJobType() const{ return m_jobType; }
 

@@ -33,7 +33,6 @@ namespace Model
     GetShippingLabelRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::Vector<Aws::String>& GetJobIds() const{ return m_jobIds; }
 

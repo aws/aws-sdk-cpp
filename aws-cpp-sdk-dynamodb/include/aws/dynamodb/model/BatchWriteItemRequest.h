@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The desired data set type.</p> <p> <ul>
      * <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by

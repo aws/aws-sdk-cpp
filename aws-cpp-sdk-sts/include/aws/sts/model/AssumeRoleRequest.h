@@ -32,7 +32,6 @@ namespace Model
     AssumeRoleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the role to assume.</p>
      */

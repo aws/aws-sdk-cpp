@@ -33,7 +33,6 @@ namespace Model
     DescribeVpcClassicLinkDnsSupportRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more VPC IDs.</p>
      */

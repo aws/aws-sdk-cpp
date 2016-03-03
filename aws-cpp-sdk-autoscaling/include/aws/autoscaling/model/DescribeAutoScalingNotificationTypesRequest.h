@@ -31,7 +31,6 @@ namespace Model
     DescribeAutoScalingNotificationTypesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

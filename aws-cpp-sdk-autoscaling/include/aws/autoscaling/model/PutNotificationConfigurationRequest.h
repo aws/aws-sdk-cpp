@@ -33,7 +33,6 @@ namespace Model
     PutNotificationConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the Auto Scaling group.</p>
      */

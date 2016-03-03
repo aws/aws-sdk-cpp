@@ -33,7 +33,6 @@ namespace Model
     ContinueUpdateRollbackRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
      * back.</p>

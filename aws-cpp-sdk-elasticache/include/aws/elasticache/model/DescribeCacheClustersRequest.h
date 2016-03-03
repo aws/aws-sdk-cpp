@@ -33,7 +33,6 @@ namespace Model
     DescribeCacheClustersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The user-supplied cluster identifier. If this parameter is specified, only
      * information about that specific cache cluster is returned. This parameter isn't

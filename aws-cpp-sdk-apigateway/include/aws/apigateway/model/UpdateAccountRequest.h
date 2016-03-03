@@ -35,7 +35,6 @@ namespace Model
     UpdateAccountRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of operations describing the updates to apply to the specified
      * resource. The patches are applied in the order specified in the list.</p>

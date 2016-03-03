@@ -32,7 +32,6 @@ namespace Model
     DeleteTopicRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the topic you want to delete.</p>
 <examples>

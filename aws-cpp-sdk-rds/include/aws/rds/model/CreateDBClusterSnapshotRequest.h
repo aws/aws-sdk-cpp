@@ -35,7 +35,6 @@ namespace Model
     CreateDBClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63

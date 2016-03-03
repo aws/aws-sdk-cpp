@@ -32,7 +32,6 @@ namespace Model
     SetInstanceHealthRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the instance.</p>
      */

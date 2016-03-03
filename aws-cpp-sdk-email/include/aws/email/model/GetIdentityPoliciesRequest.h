@@ -33,7 +33,6 @@ namespace Model
     GetIdentityPoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity for which the policies will be retrieved. You can specify an
      * identity by using its name or by using its Amazon Resource Name (ARN). Examples:

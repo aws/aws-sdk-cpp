@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Will only return log groups that match the provided logGroupNamePrefix. If
      * you don't specify a value, no prefix filter is applied.</p>

@@ -32,7 +32,6 @@ namespace Model
     DeleteGroupPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) identifying the group that the policy is
      * embedded in.</p>

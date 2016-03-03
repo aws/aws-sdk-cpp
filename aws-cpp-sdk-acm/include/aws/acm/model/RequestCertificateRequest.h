@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> Fully qualified domain name (FQDN), such as www.example.com, of the site you
      * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard

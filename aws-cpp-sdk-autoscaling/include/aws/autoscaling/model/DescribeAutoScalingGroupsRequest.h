@@ -33,7 +33,6 @@ namespace Model
     DescribeAutoScalingGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The group names.</p>
      */

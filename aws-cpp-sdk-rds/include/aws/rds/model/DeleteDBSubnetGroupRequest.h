@@ -33,7 +33,6 @@ namespace Model
     DeleteDBSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the database subnet group to delete. </p> <note>You cannot
      * delete the default subnet group.</note> <p> Constraints: </p> <ul> <li>Must be 1

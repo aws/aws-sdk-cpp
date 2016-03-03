@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Descriptive label associated with this fleet. Fleet names do not need to be
      * unique.</p>

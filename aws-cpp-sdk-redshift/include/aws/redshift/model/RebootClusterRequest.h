@@ -33,7 +33,6 @@ namespace Model
     RebootClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The cluster identifier. </p>
      */

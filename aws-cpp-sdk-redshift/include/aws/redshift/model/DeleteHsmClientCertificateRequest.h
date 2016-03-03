@@ -33,7 +33,6 @@ namespace Model
     DeleteHsmClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the HSM client certificate to be deleted.</p>
      */

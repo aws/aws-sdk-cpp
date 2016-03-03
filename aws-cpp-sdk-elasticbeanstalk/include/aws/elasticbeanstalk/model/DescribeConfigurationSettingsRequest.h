@@ -34,7 +34,6 @@ namespace Model
     DescribeConfigurationSettingsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The application for the environment or configuration template. </p>
      */

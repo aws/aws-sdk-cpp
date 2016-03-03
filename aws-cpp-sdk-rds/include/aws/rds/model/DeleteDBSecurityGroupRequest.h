@@ -33,7 +33,6 @@ namespace Model
     DeleteDBSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB security group to delete. </p> <note>You cannot delete
      * the default DB security group.</note> <p> Constraints: </p> <ul> <li>Must be 1

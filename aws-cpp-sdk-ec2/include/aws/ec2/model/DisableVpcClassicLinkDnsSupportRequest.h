@@ -32,7 +32,6 @@ namespace Model
     DisableVpcClassicLinkDnsSupportRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the VPC.</p>
      */

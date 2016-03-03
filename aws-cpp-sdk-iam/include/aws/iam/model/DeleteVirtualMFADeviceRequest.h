@@ -32,7 +32,6 @@ namespace Model
     DeleteVirtualMFADeviceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The serial number that uniquely identifies the MFA device. For virtual MFA
      * devices, the serial number is the same as the ARN. </p>

@@ -35,7 +35,6 @@ namespace Model
     CreateDeploymentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The <a>RestApi</a> resource identifier for the <a>Deployment</a> resource to
      * create.</p>

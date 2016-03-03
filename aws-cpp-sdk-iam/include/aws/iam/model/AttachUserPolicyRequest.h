@@ -32,7 +32,6 @@ namespace Model
     AttachUserPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
      */

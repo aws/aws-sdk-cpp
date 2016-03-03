@@ -32,7 +32,6 @@ namespace Model
     CreateLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user to create a password for.</p>
      */

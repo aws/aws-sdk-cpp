@@ -44,7 +44,10 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($shape.computeContentMd5)
+    inline bool ShouldComputeContentMd5() const override { return true; )
 
+#end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };

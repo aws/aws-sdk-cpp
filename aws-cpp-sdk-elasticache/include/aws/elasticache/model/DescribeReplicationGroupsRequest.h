@@ -33,7 +33,6 @@ namespace Model
     DescribeReplicationGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier for the replication group to be described. This parameter is
      * not case sensitive.</p> <p>If you do not specify this parameter, information

@@ -37,7 +37,6 @@ namespace Model
     DescribeDomainsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */

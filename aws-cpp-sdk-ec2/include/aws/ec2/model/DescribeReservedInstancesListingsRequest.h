@@ -34,7 +34,6 @@ namespace Model
     DescribeReservedInstancesListingsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */

@@ -35,7 +35,6 @@ namespace Model
     PublishRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The topic you want to publish to.</p>
      */

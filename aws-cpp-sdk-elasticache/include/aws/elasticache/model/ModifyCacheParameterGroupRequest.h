@@ -35,7 +35,6 @@ namespace Model
     ModifyCacheParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cache parameter group to modify.</p>
      */

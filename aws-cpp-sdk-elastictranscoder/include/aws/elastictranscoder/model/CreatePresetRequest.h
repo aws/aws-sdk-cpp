@@ -36,7 +36,6 @@ namespace Model
     CreatePresetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the preset. We recommend that the name be unique within the AWS
      * account, but uniqueness is not enforced.</p>

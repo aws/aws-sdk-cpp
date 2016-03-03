@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ID of the job that successfully completed. This is the same ID returned
      * from PollForThirdPartyJobs.</p>

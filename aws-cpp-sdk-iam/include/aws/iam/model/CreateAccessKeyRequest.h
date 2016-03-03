@@ -32,7 +32,6 @@ namespace Model
     CreateAccessKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The user name that the new key will belong to.</p>
      */

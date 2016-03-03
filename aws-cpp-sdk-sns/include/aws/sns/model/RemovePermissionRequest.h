@@ -33,7 +33,6 @@ namespace Model
     RemovePermissionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */

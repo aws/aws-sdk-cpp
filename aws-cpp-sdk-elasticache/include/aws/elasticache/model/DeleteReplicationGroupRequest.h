@@ -33,7 +33,6 @@ namespace Model
     DeleteReplicationGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier for the cluster to be deleted. This parameter is not case
      * sensitive.</p>

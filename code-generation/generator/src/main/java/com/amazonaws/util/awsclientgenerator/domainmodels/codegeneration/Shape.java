@@ -40,6 +40,7 @@ public class Shape {
     private boolean isResult;
     private boolean isReferenced;
     private boolean flattened;
+    private boolean computeContentMd5;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

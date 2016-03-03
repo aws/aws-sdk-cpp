@@ -39,7 +39,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The first continent code in the lexicographic ordering of geo locations that
      * you want the <code>ListGeoLocations</code> request to list. For non-continent

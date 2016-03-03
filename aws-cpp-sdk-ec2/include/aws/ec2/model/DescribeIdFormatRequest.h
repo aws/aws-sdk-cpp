@@ -32,7 +32,6 @@ namespace Model
     DescribeIdFormatRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The type of resource.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     GetIdentityVerificationAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of identities.</p>
      */

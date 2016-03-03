@@ -33,7 +33,6 @@ namespace Model
     EnableTopicRuleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the topic rule to enable.</p>
      */

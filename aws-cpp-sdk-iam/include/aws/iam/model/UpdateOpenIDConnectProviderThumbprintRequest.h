@@ -33,7 +33,6 @@ namespace Model
     UpdateOpenIDConnectProviderThumbprintRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
      * update the thumbprint for. You can get a list of OIDC provider ARNs by using the

@@ -34,7 +34,6 @@ namespace Model
     ModifyDBClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
      * not case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must be the identifier for

@@ -32,7 +32,6 @@ namespace Model
     ListDomainsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The maximum number of domain names you want returned. The range is 1 to 100. The
      * default setting is 100.

@@ -33,7 +33,6 @@ namespace Model
     DeleteDBClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the DB cluster snapshot to delete. </p> <p>Constraints:
      * Must be the name of an existing DB cluster snapshot in the

@@ -33,7 +33,6 @@ namespace Model
     AuthorizeDBSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB security group to add authorization to. </p>
      */

@@ -35,7 +35,6 @@ namespace Model
     CreateLaunchConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the launch configuration. This name must be unique within the
      * scope of your AWS account.</p>

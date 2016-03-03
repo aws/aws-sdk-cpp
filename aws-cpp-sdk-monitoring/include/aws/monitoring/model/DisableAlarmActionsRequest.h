@@ -34,7 +34,6 @@ namespace Model
     DisableAlarmActionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The names of the alarms to disable actions for. </p>
      */

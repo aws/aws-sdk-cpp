@@ -34,7 +34,6 @@ namespace Model
     CreateTrafficPolicyVersionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the traffic policy for which you want to create a new version.</p>
      */

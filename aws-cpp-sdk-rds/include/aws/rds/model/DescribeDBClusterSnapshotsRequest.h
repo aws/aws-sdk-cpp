@@ -35,7 +35,6 @@ namespace Model
     DescribeDBClusterSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the

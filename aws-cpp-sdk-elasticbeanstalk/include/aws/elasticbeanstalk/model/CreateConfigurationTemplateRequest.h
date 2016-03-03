@@ -36,7 +36,6 @@ namespace Model
     CreateConfigurationTemplateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application to associate with this configuration template.
      * If no application is found with this name, AWS Elastic Beanstalk returns an

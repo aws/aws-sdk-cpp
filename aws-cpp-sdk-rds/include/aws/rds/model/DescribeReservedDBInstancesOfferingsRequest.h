@@ -35,7 +35,6 @@ namespace Model
     DescribeReservedDBInstancesOfferingsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The offering identifier filter value. Specify this parameter to show only
      * the available offering that matches the specified reservation identifier. </p>

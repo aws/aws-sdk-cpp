@@ -33,7 +33,6 @@ namespace Model
     SetAlarmStateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The descriptive name for the alarm. This name must be unique within the
      * user's AWS account. The maximum length is 255 characters. </p>

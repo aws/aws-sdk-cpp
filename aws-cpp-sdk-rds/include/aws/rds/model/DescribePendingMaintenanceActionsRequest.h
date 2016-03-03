@@ -35,7 +35,6 @@ namespace Model
     DescribePendingMaintenanceActionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */

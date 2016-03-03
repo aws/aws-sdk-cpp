@@ -32,7 +32,6 @@ namespace Model
     DeleteAccountAliasRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the account alias to delete.</p>
      */

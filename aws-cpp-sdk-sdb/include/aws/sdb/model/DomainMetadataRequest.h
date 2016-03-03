@@ -32,7 +32,6 @@ namespace Model
     DomainMetadataRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The name of the domain for which to display the metadata of.
      */

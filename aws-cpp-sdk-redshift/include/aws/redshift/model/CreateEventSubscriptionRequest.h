@@ -35,7 +35,6 @@ namespace Model
     CreateEventSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the event subscription to be created. </p> <p>Constraints:</p>
      * <ul> <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to 255

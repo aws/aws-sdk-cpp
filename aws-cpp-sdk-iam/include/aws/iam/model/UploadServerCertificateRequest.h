@@ -32,7 +32,6 @@ namespace Model
     UploadServerCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM

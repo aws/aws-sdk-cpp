@@ -33,7 +33,6 @@ namespace Model
     ListTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the resource for which you want the list of tags, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>

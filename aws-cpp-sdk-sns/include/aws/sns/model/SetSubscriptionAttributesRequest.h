@@ -33,7 +33,6 @@ namespace Model
     SetSubscriptionAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the subscription to modify.</p>
      */

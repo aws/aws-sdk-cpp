@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> A list of strings that uniquely identify the job flows to protect. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from

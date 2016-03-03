@@ -32,7 +32,6 @@ namespace Model
     UploadSigningCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user the signing certificate is for.</p>
      */

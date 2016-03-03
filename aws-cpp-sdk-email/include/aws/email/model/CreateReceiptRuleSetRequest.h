@@ -32,7 +32,6 @@ namespace Model
     CreateReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the rule set to create. The name must:</p> <ul> <li>Contain only
      * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes

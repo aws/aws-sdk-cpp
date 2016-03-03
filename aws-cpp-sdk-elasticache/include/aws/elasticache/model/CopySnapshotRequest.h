@@ -33,7 +33,6 @@ namespace Model
     CopySnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of an existing snapshot from which to copy.</p>
      */

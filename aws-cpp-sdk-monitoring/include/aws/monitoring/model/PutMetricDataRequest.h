@@ -34,7 +34,6 @@ namespace Model
     PutMetricDataRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The namespace for the metric data. </p> <note> You cannot specify a
      * namespace that begins with "AWS/". Namespaces that begin with "AWS/" are

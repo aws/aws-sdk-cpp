@@ -34,7 +34,6 @@ namespace Model
     CreateAutoScalingGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group. This name must be unique within the scope of your AWS
      * account.</p>

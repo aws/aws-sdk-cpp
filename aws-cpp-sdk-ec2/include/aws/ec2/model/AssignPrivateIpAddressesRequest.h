@@ -33,7 +33,6 @@ namespace Model
     AssignPrivateIpAddressesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the network interface.</p>
      */

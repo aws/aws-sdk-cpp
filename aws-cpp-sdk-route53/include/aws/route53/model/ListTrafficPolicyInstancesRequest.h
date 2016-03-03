@@ -41,7 +41,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>For the first request to <code>ListTrafficPolicyInstances</code>, omit this
      * value.</p> <p>If the value of <code>IsTruncated</code> in the previous response

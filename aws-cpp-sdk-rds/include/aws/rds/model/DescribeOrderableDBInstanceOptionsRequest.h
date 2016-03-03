@@ -35,7 +35,6 @@ namespace Model
     DescribeOrderableDBInstanceOptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the engine to retrieve DB instance options for. </p>
      */

@@ -33,7 +33,6 @@ namespace Model
     DeleteOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the option group to be deleted. </p> <note>You cannot delete
      * default option groups.</note>

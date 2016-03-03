@@ -33,7 +33,6 @@ namespace Model
     DeleteConfigurationTemplateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application to delete the configuration template from. </p>
      */

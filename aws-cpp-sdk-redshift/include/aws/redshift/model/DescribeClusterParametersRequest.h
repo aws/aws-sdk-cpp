@@ -32,7 +32,6 @@ namespace Model
     DescribeClusterParametersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of a cluster parameter group for which to return details. </p>
      */

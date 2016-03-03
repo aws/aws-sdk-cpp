@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
      * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that

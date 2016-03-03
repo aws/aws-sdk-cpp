@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The code for a continent geo location. Note: only continent locations have a
      * continent code.</p> <p>Valid values: <code>AF</code> | <code>AN</code> |

@@ -35,7 +35,6 @@ namespace Model
     CreateDBClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of EC2 Availability Zones that instances in the DB cluster can be
      * created in. For information on regions and Availability Zones, see <a

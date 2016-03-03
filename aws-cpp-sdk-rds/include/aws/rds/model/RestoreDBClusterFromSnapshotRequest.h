@@ -35,7 +35,6 @@ namespace Model
     RestoreDBClusterFromSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the restored DB
      * cluster can be created in.</p>

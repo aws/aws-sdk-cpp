@@ -44,6 +44,11 @@ namespace Aws
         {
             class RateLimiterInterface;
         } // namespace RateLimits
+
+        namespace Crypto
+        {
+            class MD5;
+        } // namespace Crypto
     } // namespace Utils
 
     namespace Http
@@ -169,7 +174,8 @@ namespace Aws
 
         private:
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
-            void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body) const;
+            void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
+                                         const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5 = false) const;
             void AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const;
             void InitializeGlobalStatics();
             void CleanupGlobalStatics();
@@ -183,6 +189,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
             const char* m_hostHeaderOverride;
+            Aws::UniquePtr<Aws::Utils::Crypto::MD5> m_hash;
             static std::atomic<int> s_refCount;
         };
 

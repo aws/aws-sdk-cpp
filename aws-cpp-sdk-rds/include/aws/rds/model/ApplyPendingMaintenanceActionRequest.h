@@ -33,7 +33,6 @@ namespace Model
     ApplyPendingMaintenanceActionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a

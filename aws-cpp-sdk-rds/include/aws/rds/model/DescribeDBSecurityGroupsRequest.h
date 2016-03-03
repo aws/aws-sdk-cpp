@@ -35,7 +35,6 @@ namespace Model
     DescribeDBSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB security group to return details for. </p>
      */

@@ -33,7 +33,6 @@ namespace Model
     DescribeLoggingStatusRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the cluster to get the logging status from. </p>
      * <p>Example: <code>examplecluster</code></p>

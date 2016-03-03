@@ -32,7 +32,6 @@ namespace Model
     UploadSSHPublicKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p>
      */

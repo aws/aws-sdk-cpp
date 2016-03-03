@@ -32,7 +32,6 @@ namespace Model
     RecordLifecycleActionHeartbeatRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the lifecycle hook.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     GetAccessKeyLastUsedRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of an access key.</p>
      */

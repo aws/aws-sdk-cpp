@@ -33,7 +33,6 @@ namespace Model
     DescribeAlarmHistoryRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the alarm. </p>
      */

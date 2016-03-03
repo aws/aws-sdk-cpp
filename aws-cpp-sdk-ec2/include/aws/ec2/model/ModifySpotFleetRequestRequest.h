@@ -34,7 +34,6 @@ namespace Model
     ModifySpotFleetRequestRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the Spot fleet request.</p>
      */

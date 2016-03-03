@@ -31,7 +31,6 @@ namespace Model
     GetSendQuotaRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

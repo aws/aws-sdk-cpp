@@ -34,7 +34,6 @@ namespace Model
     BatchPutAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The name of the domain in which the attributes are being stored.
      */

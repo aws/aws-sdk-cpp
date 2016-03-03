@@ -33,7 +33,6 @@ namespace Model
     AllocateHostsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated hosts, when you are launching

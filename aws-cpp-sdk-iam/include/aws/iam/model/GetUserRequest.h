@@ -32,7 +32,6 @@ namespace Model
     GetUserRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.</p>

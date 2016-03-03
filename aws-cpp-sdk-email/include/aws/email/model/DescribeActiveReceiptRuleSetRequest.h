@@ -31,7 +31,6 @@ namespace Model
     DescribeActiveReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

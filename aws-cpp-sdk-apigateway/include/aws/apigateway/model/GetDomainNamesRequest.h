@@ -39,7 +39,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The position of the current domain names to get information about.</p>
      */

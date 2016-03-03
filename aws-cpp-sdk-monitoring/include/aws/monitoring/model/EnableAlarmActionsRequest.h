@@ -33,7 +33,6 @@ namespace Model
     EnableAlarmActionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The names of the alarms to enable actions for. </p>
      */

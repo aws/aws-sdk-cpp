@@ -32,7 +32,6 @@ namespace Model
     SetReceiptRulePositionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>

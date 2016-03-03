@@ -31,7 +31,6 @@ namespace Model
     ListVerifiedEmailAddressesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

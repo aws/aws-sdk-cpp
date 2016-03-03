@@ -32,7 +32,6 @@ namespace Model
     DeleteSigningCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user the signing certificate belongs to.</p>
      */

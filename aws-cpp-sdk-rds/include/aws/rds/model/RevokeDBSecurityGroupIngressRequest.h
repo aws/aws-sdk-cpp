@@ -33,7 +33,6 @@ namespace Model
     RevokeDBSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB security group to revoke ingress from. </p>
      */

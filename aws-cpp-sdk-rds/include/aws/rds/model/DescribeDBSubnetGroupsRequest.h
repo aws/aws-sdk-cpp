@@ -35,7 +35,6 @@ namespace Model
     DescribeDBSubnetGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB subnet group to return details for. </p>
      */

@@ -32,7 +32,6 @@ namespace Model
     PutIdentityPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity to which the policy will apply. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:

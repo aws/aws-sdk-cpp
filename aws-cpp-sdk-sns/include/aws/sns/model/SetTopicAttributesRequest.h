@@ -33,7 +33,6 @@ namespace Model
     SetTopicAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the topic to modify.</p>
      */

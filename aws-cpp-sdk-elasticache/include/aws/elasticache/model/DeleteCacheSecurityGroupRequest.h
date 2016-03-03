@@ -33,7 +33,6 @@ namespace Model
     DeleteCacheSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cache security group to delete.</p> <note>You cannot delete
      * the default security group.</note>

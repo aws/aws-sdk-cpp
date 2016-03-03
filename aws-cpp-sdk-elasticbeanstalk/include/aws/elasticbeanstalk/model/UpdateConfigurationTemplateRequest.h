@@ -37,7 +37,6 @@ namespace Model
     UpdateConfigurationTemplateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the application associated with the configuration template to
      * update.</p> <p> If no application is found with this name,

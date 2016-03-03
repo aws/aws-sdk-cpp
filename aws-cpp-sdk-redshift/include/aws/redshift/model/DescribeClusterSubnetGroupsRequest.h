@@ -34,7 +34,6 @@ namespace Model
     DescribeClusterSubnetGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cluster subnet group for which information is requested. </p>
      */

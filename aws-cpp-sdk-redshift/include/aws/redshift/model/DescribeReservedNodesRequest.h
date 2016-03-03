@@ -33,7 +33,6 @@ namespace Model
     DescribeReservedNodesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Identifier for the node reservation.</p>
      */

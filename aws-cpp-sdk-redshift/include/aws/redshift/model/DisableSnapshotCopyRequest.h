@@ -33,7 +33,6 @@ namespace Model
     DisableSnapshotCopyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of the source cluster that you want to disable copying
      * of snapshots to a destination region. </p> <p> Constraints: Must be the valid

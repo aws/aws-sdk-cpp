@@ -33,7 +33,6 @@ namespace Model
     CopyClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier for the source snapshot. </p> <p>Constraints:</p> <ul>
      * <li>Must be the identifier for a valid automated snapshot whose state is

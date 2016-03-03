@@ -38,7 +38,6 @@ namespace Model
     CreateStackRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note>A stack name can contain

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
      * None</p>

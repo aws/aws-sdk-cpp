@@ -32,7 +32,6 @@ namespace Model
     DeactivateMFADeviceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose MFA device you want to deactivate.</p>
      */

@@ -35,7 +35,6 @@ namespace Model
     RestoreDBInstanceFromDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63

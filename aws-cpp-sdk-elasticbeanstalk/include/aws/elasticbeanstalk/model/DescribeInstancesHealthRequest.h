@@ -35,7 +35,6 @@ namespace Model
     DescribeInstancesHealthRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Specifies the AWS Elastic Beanstalk environment name.</p>
      */

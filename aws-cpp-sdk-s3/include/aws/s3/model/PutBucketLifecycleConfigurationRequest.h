@@ -33,6 +33,7 @@ namespace Model
     PutBucketLifecycleConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; )
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }

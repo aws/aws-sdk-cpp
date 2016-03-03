@@ -33,7 +33,6 @@ namespace Model
     DescribeCacheParametersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
      */

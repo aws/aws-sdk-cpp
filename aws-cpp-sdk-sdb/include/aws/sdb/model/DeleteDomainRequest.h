@@ -32,7 +32,6 @@ namespace Model
     DeleteDomainRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The name of the domain to delete.
      */

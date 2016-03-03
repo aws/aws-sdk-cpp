@@ -35,7 +35,6 @@ namespace Model
     RestoreDBInstanceToPointInTimeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the source DB instance from which to restore. </p>
      * <p>Constraints:</p> <ul> <li>Must be the identifier of an existing database

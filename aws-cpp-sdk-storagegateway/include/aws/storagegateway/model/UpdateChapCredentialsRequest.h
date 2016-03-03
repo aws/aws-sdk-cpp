@@ -39,7 +39,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
      * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN for

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
      * Leave this parameter empty to retrieve attributes for all fleets.</p>

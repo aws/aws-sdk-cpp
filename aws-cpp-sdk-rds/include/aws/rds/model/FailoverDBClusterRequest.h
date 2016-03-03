@@ -33,7 +33,6 @@ namespace Model
     FailoverDBClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A DB cluster identifier to force a failover for. This parameter is not
      * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63

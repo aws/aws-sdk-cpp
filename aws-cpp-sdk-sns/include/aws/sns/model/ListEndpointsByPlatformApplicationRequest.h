@@ -33,7 +33,6 @@ namespace Model
     ListEndpointsByPlatformApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      * action.</p>

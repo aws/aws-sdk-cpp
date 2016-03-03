@@ -33,7 +33,6 @@ namespace Model
     RejectCertificateTransferRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the certificate.</p>
      */

@@ -31,7 +31,6 @@ namespace Model
     GetSendStatisticsRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

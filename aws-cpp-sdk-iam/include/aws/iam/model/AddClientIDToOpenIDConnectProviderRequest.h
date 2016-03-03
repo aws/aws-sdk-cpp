@@ -32,7 +32,6 @@ namespace Model
     AddClientIDToOpenIDConnectProviderRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
      * add the client ID to. You can get a list of OIDC provider ARNs by using the

@@ -32,7 +32,6 @@ namespace Model
     ChangePasswordRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The IAM user's current password.</p>
      */

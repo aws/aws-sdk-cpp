@@ -33,7 +33,6 @@ namespace Model
     DeleteClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the parameter group to be deleted. </p> <p>Constraints:</p> <ul>
      * <li>Must be the name of an existing cluster parameter group.</li> <li>Cannot

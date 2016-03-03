@@ -35,7 +35,6 @@ namespace Model
     SendEmailRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been

@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Will only return destinations that match the provided destinationNamePrefix.
      * If you don't specify a value, no prefix is applied.</p>

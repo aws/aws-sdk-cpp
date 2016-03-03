@@ -35,7 +35,6 @@ namespace Model
     CreateDBSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name for the DB security group. This value is stored as a lowercase
      * string. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric

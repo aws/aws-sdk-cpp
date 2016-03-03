@@ -34,7 +34,6 @@ namespace Model
     DescribeClusterSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the cluster for which information about snapshots is
      * requested. </p>

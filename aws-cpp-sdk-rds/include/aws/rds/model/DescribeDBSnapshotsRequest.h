@@ -35,7 +35,6 @@ namespace Model
     DescribeDBSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> A DB instance identifier to retrieve the list of DB snapshots for. This
      * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.

@@ -36,7 +36,6 @@ namespace Model
     DescribeEventsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the event source for which events will be returned. If not
      * specified, then all sources are included in the response. </p>

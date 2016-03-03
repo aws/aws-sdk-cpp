@@ -32,7 +32,6 @@ namespace Model
     PurgeQueueRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The queue URL of the queue to delete the messages from when using the
      * <code>PurgeQueue</code> API.</p>

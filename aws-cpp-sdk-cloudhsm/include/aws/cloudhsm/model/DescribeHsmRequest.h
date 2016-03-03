@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i>
      * parameter must be specified.</p>

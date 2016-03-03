@@ -38,7 +38,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Lambda function whose resource policy you want to remove a permission
      * from.</p> <p> You can specify a function name (for example,

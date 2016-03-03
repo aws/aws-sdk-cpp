@@ -34,7 +34,6 @@ namespace Model
     RemoveTagsFromResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon RDS resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a

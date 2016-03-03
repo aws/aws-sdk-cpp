@@ -32,7 +32,6 @@ namespace Model
     UpdateUserRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
      * the original user name. </p>

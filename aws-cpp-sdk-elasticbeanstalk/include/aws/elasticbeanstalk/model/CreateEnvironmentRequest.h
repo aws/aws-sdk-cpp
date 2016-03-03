@@ -38,7 +38,6 @@ namespace Model
     CreateEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application that contains the version to be deployed. </p>
      * <p> If no application is found with this name, <code>CreateEnvironment</code>

@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The stack ID that the instances are registered with. The operation returns
      * descriptions of all registered Amazon RDS instances.</p>

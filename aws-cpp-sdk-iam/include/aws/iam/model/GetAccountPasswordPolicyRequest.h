@@ -31,7 +31,6 @@ namespace Model
     GetAccountPasswordPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

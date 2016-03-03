@@ -33,7 +33,6 @@ namespace Model
     RevokeSnapshotAccessRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the snapshot that the account can no longer access. </p>
      */

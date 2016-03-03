@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>String that contains the display name. The name must start with the word
      * "alias" followed by a forward slash (alias/). Aliases that begin with

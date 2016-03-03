@@ -33,7 +33,6 @@ namespace Model
     DeleteTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more tags.</p>
      */

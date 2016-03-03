@@ -35,7 +35,6 @@ namespace Model
     ModifyDBClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the DB cluster parameter group to modify.</p>
      */

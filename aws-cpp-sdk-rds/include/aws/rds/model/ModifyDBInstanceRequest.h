@@ -34,7 +34,6 @@ namespace Model
     ModifyDBInstanceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
      * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing DB

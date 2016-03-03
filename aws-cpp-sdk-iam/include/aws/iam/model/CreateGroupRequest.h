@@ -32,7 +32,6 @@ namespace Model
     CreateGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM

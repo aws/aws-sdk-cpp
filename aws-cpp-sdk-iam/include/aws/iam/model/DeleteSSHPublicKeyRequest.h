@@ -32,7 +32,6 @@ namespace Model
     DeleteSSHPublicKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */

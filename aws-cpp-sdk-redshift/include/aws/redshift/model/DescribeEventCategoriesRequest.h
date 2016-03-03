@@ -33,7 +33,6 @@ namespace Model
     DescribeEventCategoriesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The source type, such as cluster or parameter group, to which the described
      * event categories apply. </p> <p> Valid values: cluster, snapshot, parameter

@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The assessments that the AWS Lambda function performs. Each evaluation
      * identifies an AWS resource and indicates whether it complies with the AWS Config

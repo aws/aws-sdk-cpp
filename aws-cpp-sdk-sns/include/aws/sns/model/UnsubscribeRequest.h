@@ -33,7 +33,6 @@ namespace Model
     UnsubscribeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the subscription to be deleted.</p>
      */

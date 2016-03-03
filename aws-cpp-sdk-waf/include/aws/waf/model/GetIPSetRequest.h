@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by

@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>For an initial request for a list of domains, omit this element. If the
      * number of domains that are associated with the current AWS account is greater

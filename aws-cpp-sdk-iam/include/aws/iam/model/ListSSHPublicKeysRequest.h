@@ -32,7 +32,6 @@ namespace Model
     ListSSHPublicKeysRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to

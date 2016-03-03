@@ -33,7 +33,6 @@ namespace Model
     DeleteIntegrationResponseRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Specifies a delete integration response request's API identifier.</p>
      */

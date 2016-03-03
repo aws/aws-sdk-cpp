@@ -31,7 +31,6 @@ namespace Model
     ListReceiptFiltersRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

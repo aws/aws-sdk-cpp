@@ -33,7 +33,6 @@ namespace Model
     DeleteDBClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
      * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to

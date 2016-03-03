@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Use one of the following variables to filter a list of
      * <code>BatchPrediction</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the

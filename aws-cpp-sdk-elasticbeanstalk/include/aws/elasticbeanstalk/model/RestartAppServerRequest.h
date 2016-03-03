@@ -33,7 +33,6 @@ namespace Model
     RestartAppServerRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The ID of the environment to restart the server for. </p> <p> Condition: You
      * must specify either this or an EnvironmentName, or both. If you do not specify

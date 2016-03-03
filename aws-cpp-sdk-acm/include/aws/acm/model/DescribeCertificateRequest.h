@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> String that contains an ACM Certificate ARN. The ARN must be of the form:
      * </p> <p>

@@ -35,7 +35,6 @@ namespace Model
     CreateSnapshotCopyGrantRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
      * for the AWS account.</p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to

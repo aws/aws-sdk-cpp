@@ -37,7 +37,6 @@ namespace Model
     PutMetricAlarmRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The descriptive name for the alarm. This name must be unique within the
      * user's AWS account </p>

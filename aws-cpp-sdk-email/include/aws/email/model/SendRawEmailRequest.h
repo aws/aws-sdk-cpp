@@ -34,7 +34,6 @@ namespace Model
     SendRawEmailRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.

@@ -32,7 +32,6 @@ namespace Model
     AttachRolePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
      */

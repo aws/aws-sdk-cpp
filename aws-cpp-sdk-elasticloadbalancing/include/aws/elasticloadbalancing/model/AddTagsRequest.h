@@ -34,7 +34,6 @@ namespace Model
     AddTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the load balancer. You can specify one load balancer only.</p>
      */

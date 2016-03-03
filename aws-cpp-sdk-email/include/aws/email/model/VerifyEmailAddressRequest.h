@@ -32,7 +32,6 @@ namespace Model
     VerifyEmailAddressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The email address to be verified.</p>
      */

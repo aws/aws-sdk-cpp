@@ -34,7 +34,6 @@ namespace Model
     DescribeClusterSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of a cluster security group for which you are requesting details.
      * You can specify either the <b>Marker</b> parameter or a

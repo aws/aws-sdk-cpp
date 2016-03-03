@@ -34,7 +34,6 @@ namespace Model
     DescribeAlarmsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> A list of alarm names to retrieve information for. </p>
      */

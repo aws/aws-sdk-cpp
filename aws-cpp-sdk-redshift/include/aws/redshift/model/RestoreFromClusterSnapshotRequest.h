@@ -34,7 +34,6 @@ namespace Model
     RestoreFromClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the cluster that will be created from restoring the
      * snapshot. </p> <p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63

@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the

@@ -32,7 +32,6 @@ namespace Model
     AddUserToGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group to update.</p>
      */

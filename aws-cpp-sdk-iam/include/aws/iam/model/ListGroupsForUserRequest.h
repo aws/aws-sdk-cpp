@@ -32,7 +32,6 @@ namespace Model
     ListGroupsForUserRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user to list groups for.</p>
      */

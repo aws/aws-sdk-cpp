@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>.
      * Pass null if this is the first call.</p>

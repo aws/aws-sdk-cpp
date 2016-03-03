@@ -33,7 +33,6 @@ namespace Model
     DescribeReservedCacheNodesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The reserved cache node identifier filter value. Use this parameter to show
      * only the reservation that matches the specified reservation ID.</p>

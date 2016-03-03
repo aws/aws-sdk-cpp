@@ -35,7 +35,6 @@ namespace Model
     CreateOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> Specifies the name of the option group to be created. </p> <p> Constraints:
      * </p> <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First

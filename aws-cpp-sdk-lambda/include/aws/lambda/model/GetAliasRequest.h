@@ -32,7 +32,6 @@ namespace Model
     GetAliasRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Function name for which the alias is created. An alias is a subresource that
      * exists only in the context of an existing Lambda function so you must specify

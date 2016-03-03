@@ -34,7 +34,6 @@ namespace Model
     DescribeHsmConfigurationsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of a specific Amazon Redshift HSM configuration to be
      * described. If no identifier is specified, information is returned for all HSM

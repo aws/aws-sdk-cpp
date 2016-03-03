@@ -33,7 +33,6 @@ namespace Model
     RevokeCacheSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cache security group to revoke ingress from.</p>
      */

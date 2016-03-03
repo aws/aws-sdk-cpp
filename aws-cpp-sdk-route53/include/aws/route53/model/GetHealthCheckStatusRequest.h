@@ -34,7 +34,6 @@ namespace Model
     GetHealthCheckStatusRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>If you want Amazon Route 53 to return this resource record set in response to
      * a DNS query only when a health check is passing, include the

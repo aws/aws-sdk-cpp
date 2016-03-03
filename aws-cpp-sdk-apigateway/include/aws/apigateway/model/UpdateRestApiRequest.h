@@ -35,7 +35,6 @@ namespace Model
     UpdateRestApiRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the <a>RestApi</a> you want to update.</p>
      */

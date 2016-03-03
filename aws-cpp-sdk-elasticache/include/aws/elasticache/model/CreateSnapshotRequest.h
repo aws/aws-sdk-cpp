@@ -33,7 +33,6 @@ namespace Model
     CreateSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of an existing cache cluster. The snapshot will be created
      * from this cache cluster.</p>

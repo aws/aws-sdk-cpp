@@ -34,7 +34,6 @@ namespace Model
     CreateCacheSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric

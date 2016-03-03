@@ -35,7 +35,6 @@ namespace Model
     CreateHsmConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier to be assigned to the new Amazon Redshift HSM
      * configuration.</p>

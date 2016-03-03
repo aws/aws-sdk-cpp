@@ -33,7 +33,6 @@ namespace Model
     RevokeClusterSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the security Group from which to revoke the ingress rule. </p>
      */

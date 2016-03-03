@@ -32,7 +32,6 @@ namespace Model
     DeleteReceiptFilterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the IP address filter to delete.</p>
      */

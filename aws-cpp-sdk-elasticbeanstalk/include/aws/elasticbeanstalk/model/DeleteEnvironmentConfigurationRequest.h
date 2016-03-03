@@ -33,7 +33,6 @@ namespace Model
     DeleteEnvironmentConfigurationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application the environment is associated with. </p>
      */

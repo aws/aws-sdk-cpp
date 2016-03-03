@@ -35,7 +35,6 @@ namespace Model
     CreateTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
      * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>

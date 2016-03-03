@@ -31,7 +31,6 @@ namespace Model
     DescribeScalingProcessTypesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

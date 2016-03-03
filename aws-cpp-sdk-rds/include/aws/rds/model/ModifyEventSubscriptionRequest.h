@@ -34,7 +34,6 @@ namespace Model
     ModifyEventSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the RDS event notification subscription.</p>
      */

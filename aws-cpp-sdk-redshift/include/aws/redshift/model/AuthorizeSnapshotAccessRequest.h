@@ -33,7 +33,6 @@ namespace Model
     AuthorizeSnapshotAccessRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the snapshot the account is authorized to restore. </p>
      */

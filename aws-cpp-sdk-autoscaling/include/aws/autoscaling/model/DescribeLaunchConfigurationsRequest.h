@@ -33,7 +33,6 @@ namespace Model
     DescribeLaunchConfigurationsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The launch configuration names.</p>
      */

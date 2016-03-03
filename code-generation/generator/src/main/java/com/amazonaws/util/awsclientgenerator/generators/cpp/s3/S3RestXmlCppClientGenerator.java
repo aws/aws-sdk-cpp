@@ -16,6 +16,7 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp.s3;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
@@ -24,12 +25,37 @@ import com.amazonaws.util.awsclientgenerator.regions.RegionEndpointMapper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
+    private static Set<String> opsThatNeedMd5 = new HashSet<>();
+
+    static {
+        opsThatNeedMd5.add("DeleteObjects");
+        opsThatNeedMd5.add("PutBucketCors");
+        opsThatNeedMd5.add("PutBucketLifecycle");
+        opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
+        opsThatNeedMd5.add("PutBucketPolicy");
+        opsThatNeedMd5.add("PutBucketTagging");
+    }
+
     public S3RestXmlCppClientGenerator() throws Exception {
         super();
+    }
+
+    @Override
+    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+
+        //if an operation should precompute md5, make sure it is added here.
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        opsThatNeedMd5.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.getRequest().getShape().setComputeContentMd5(true));
+
+        return super.generateSourceFiles(serviceModel);
     }
 
     @Override

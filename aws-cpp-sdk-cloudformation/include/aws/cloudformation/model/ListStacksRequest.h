@@ -35,7 +35,6 @@ namespace Model
     ListStacksRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>

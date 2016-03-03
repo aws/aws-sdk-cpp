@@ -33,7 +33,6 @@ namespace Model
     DeleteAlarmsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> A list of alarms to be deleted. </p>
      */

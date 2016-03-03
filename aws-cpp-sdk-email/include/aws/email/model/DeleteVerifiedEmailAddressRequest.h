@@ -32,7 +32,6 @@ namespace Model
     DeleteVerifiedEmailAddressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */

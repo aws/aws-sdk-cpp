@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
      * (ARN) entries. If you do not specify a cluster, the default cluster is

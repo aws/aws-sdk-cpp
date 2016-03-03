@@ -34,7 +34,6 @@ namespace Model
     DescribeClusterParameterGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of a specific parameter group for which to return details. By
      * default, details about all parameter groups and the default parameter group are

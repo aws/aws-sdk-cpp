@@ -35,7 +35,6 @@ namespace Model
     ListTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a

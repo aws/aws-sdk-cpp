@@ -32,7 +32,6 @@ namespace Model
     GetClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 

@@ -39,7 +39,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
      */

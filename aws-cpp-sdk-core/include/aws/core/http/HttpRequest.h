@@ -45,6 +45,7 @@ namespace Aws
         extern AWS_CORE_API const char* HOST_HEADER;
         extern AWS_CORE_API const char* AMZ_TARGET_HEADER;
         extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
+        extern AWS_CORE_API const char* CONTENT_MD5_HEADER;
 
         class HttpRequest;
         class HttpResponse;

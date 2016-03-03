@@ -33,7 +33,6 @@ namespace Model
     AuthorizeClusterSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the security group to which the ingress rule is added. </p>
      */

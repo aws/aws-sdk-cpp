@@ -33,7 +33,6 @@ namespace Model
     ReorderReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the receipt rule set to reorder.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     GetLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose login profile you want to retrieve.</p>
      */

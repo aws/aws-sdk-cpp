@@ -32,7 +32,6 @@ namespace Model
     DeleteClusterSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */

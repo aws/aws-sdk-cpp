@@ -33,7 +33,6 @@ namespace Model
     DeleteSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the snapshot to be deleted.</p>
      */

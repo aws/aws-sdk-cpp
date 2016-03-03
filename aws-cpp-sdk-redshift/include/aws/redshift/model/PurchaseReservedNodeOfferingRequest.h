@@ -33,7 +33,6 @@ namespace Model
     PurchaseReservedNodeOfferingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */

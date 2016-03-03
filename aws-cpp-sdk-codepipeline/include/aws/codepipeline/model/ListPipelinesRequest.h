@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>An identifier that was returned from the previous list pipelines call, which
      * can be used to return the next set of pipelines in the list.</p>

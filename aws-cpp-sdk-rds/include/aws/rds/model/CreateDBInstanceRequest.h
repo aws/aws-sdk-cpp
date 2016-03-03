@@ -35,7 +35,6 @@ namespace Model
     CreateDBInstanceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database

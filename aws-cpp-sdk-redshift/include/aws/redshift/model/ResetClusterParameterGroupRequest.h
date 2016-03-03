@@ -35,7 +35,6 @@ namespace Model
     ResetClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the cluster parameter group to be reset. </p>
      */

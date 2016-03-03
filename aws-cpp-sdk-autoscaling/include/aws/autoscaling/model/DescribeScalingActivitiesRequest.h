@@ -33,7 +33,6 @@ namespace Model
     DescribeScalingActivitiesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The activity IDs of the desired scaling activities. If this list is omitted,
      * all activities are described. If you specify an Auto Scaling group, the results

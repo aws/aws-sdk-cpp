@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The identifier for the operation for which you want to get the status. Amazon
      * Route 53 returned the identifier in the response to the original request.</p>

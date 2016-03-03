@@ -32,7 +32,6 @@ namespace Model
     CreateAliasRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Name of the Lambda function for which you want to create an alias. </p>
      */

@@ -33,7 +33,6 @@ namespace Model
     DeleteSnapshotCopyGrantRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the snapshot copy grant to delete.</p>
      */

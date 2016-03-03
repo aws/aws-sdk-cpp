@@ -34,7 +34,6 @@ namespace Model
     RemoveTagsFromResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the ElastiCache resource from which you want the listed tags
      * removed, for example

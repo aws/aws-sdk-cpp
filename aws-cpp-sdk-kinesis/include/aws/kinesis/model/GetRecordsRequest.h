@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The position in the shard from which you want to start sequentially reading
      * data records. A shard iterator specifies this position using the sequence number

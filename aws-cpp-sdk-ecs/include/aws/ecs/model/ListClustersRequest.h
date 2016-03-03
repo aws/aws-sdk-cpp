@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListClusters</code> request where <code>maxResults</code> was used and the

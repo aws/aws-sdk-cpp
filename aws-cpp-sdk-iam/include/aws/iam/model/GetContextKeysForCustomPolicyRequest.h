@@ -33,7 +33,6 @@ namespace Model
     GetContextKeysForCustomPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of policies for which you want list of context keys used in
      * <code>Condition</code> elements. Each document is specified as a string

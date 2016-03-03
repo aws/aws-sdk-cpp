@@ -38,7 +38,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The on-premises instances registration status:</p> <ul> <li>Deregistered:
      * Include in the resulting list deregistered on-premises instances.</li>

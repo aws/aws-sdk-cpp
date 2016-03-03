@@ -33,7 +33,6 @@ namespace Model
     SubscribeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
      */

@@ -35,7 +35,6 @@ namespace Model
     DescribeCertificatesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter

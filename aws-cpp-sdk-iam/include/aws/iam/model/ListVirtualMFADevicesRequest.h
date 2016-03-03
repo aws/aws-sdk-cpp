@@ -33,7 +33,6 @@ namespace Model
     ListVirtualMFADevicesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The status (unassigned or assigned) of the devices to list. If you do not
      * specify an <code>AssignmentStatus</code>, the action defaults to

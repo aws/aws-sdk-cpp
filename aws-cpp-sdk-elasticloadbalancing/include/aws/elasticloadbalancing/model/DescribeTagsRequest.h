@@ -33,7 +33,6 @@ namespace Model
     DescribeTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The names of the load balancers.</p>
      */

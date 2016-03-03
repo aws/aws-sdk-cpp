@@ -32,7 +32,6 @@ namespace Model
     EnableMFADeviceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user for whom you want to enable the MFA device.</p>
      */

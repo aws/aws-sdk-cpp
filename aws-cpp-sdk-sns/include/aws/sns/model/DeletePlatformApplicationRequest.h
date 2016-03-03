@@ -33,7 +33,6 @@ namespace Model
     DeletePlatformApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>PlatformApplicationArn of platform application object to delete.</p>
      */

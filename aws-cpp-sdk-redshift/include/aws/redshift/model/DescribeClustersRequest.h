@@ -34,7 +34,6 @@ namespace Model
     DescribeClustersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of a cluster whose properties you are requesting. This
      * parameter is case sensitive. </p> <p>The default is that all clusters defined

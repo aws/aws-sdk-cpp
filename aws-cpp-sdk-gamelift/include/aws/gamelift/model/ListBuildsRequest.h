@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Build state to filter results on. Use this parameter to retrieve builds in a
      * certain state. To retrieve all builds, leave this parameter empty. Possible

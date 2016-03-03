@@ -35,7 +35,6 @@ namespace Model
     CreateLoadBalancerRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
      * set of load balancers for the region, must have a maximum of 32 characters, must

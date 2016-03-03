@@ -32,7 +32,6 @@ namespace Model
     DeleteAutoScalingGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group to delete.</p>
      */

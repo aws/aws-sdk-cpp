@@ -51,7 +51,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The first name in the lexicographic ordering of domain names that you want
      * the <code>ListHostedZonesByNameRequest</code> request to list.</p> <p>If the

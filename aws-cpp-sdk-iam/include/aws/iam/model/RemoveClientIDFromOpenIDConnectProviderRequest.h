@@ -32,7 +32,6 @@ namespace Model
     RemoveClientIDFromOpenIDConnectProviderRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider to
      * remove the client ID from. You can get a list of OIDC provider ARNs by using the

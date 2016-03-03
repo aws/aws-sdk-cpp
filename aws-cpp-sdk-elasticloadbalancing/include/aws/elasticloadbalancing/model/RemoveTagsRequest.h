@@ -34,7 +34,6 @@ namespace Model
     RemoveTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the load balancer. You can specify a maximum of one load balancer
      * name.</p>

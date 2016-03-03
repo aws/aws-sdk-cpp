@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The type of task the task runner is configured to accept and process. The
      * worker group is set as a field on objects in the pipeline when they are created.

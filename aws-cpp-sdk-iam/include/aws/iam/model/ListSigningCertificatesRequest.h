@@ -32,7 +32,6 @@ namespace Model
     ListSigningCertificatesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user.</p>
      */

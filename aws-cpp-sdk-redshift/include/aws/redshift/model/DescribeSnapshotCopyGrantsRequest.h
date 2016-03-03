@@ -34,7 +34,6 @@ namespace Model
     DescribeSnapshotCopyGrantsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the snapshot copy grant.</p>
      */

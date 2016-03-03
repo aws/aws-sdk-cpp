@@ -34,7 +34,6 @@ namespace Model
     CreateQueueRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name for the queue to be created.</p>
      */

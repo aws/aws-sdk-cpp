@@ -35,7 +35,6 @@ namespace Model
     ModifyClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the parameter group to be modified. </p>
      */

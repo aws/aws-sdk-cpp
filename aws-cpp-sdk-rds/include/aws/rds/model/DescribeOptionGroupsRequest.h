@@ -35,7 +35,6 @@ namespace Model
     DescribeOptionGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the option group to describe. Cannot be supplied together with
      * EngineName or MajorEngineVersion. </p>

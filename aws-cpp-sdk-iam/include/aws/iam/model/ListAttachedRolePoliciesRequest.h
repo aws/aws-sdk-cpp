@@ -32,7 +32,6 @@ namespace Model
     ListAttachedRolePoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the role to list attached policies
      * for.</p>

@@ -33,7 +33,6 @@ namespace Model
     DescribeCacheSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the cache security group to return details for.</p>
      */

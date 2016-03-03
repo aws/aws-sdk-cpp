@@ -32,7 +32,6 @@ namespace Model
     DeleteLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose password you want to delete.</p>
      */

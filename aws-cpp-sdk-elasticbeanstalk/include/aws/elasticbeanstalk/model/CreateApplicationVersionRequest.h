@@ -34,7 +34,6 @@ namespace Model
     CreateApplicationVersionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application. If no application is found with this name, and
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an

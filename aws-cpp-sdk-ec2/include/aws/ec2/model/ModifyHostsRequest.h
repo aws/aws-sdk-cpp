@@ -34,7 +34,6 @@ namespace Model
     ModifyHostsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The host IDs of the Dedicated hosts you want to modify.</p>
      */

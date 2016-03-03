@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
      * memory, storage, and networking capacity of the fleetaposs hosts. Amazon

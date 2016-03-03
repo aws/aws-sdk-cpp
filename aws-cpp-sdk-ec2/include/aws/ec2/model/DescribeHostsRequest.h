@@ -34,7 +34,6 @@ namespace Model
     DescribeHostsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The IDs of the Dedicated hosts. The IDs are used for targeted instance
      * launches.</p>

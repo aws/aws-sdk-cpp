@@ -33,7 +33,6 @@ namespace Model
     DeleteReusableDelegationSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the reusable delegation set you want to delete.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     CreateInvalidation2016_01_28Request();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The distribution's id.
      */

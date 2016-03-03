@@ -32,6 +32,7 @@ namespace Model
     PutBucketPolicyRequest();
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; )
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }

@@ -32,7 +32,6 @@ namespace Model
     GetSessionTokenRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)

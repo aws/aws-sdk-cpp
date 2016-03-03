@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool you
      * wish to delete.</p>

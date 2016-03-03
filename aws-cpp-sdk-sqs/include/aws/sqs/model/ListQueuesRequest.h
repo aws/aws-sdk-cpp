@@ -32,7 +32,6 @@ namespace Model
     ListQueuesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
      * begins with the specified string are returned.</p>

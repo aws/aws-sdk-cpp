@@ -33,7 +33,6 @@ namespace Model
     UpdatePipelineStatusRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the pipeline to update.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     DescribeNatGatewaysRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more NAT gateway IDs.</p>
      */

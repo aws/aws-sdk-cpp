@@ -32,7 +32,6 @@ namespace Model
     DeleteInstanceProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the instance profile to delete.</p>
      */

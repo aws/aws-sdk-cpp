@@ -32,7 +32,6 @@ namespace Model
     SetActiveReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the receipt rule set to make active. Setting this value to null
      * disables all email receiving.</p>

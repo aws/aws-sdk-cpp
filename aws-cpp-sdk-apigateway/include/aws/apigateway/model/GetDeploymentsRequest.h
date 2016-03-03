@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the collection of
      * <a>Deployment</a> resources to get information about.</p>

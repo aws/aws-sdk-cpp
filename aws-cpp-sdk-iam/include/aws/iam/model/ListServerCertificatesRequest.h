@@ -32,7 +32,6 @@ namespace Model
     ListServerCertificatesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates for which

@@ -32,7 +32,6 @@ namespace Model
     CancelReservedInstancesListingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */

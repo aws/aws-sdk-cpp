@@ -33,7 +33,6 @@ namespace Model
     DisableAvailabilityZonesForLoadBalancerRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the load balancer.</p>
      */

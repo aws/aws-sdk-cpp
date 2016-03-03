@@ -32,7 +32,6 @@ namespace Model
     GetRolePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the role associated with the policy.</p>
      */

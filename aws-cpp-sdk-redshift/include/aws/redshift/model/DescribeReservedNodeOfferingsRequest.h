@@ -33,7 +33,6 @@ namespace Model
     DescribeReservedNodeOfferingsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The unique identifier for the offering.</p>
      */

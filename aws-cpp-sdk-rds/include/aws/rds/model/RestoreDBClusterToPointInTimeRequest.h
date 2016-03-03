@@ -35,7 +35,6 @@ namespace Model
     RestoreDBClusterToPointInTimeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the new DB cluster to be created. </p> <p>Constraints:</p> <ul>
      * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First

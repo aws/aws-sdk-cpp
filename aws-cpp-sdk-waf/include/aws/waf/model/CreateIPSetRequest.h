@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change
      * <code>Name</code> after you create the <code>IPSet</code>.</p>

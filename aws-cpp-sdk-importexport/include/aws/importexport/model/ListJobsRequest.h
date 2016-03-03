@@ -33,7 +33,6 @@ namespace Model
     ListJobsRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline long GetMaxJobs() const{ return m_maxJobs; }
 

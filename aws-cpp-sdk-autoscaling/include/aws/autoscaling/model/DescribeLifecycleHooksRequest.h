@@ -33,7 +33,6 @@ namespace Model
     DescribeLifecycleHooksRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group.</p>
      */

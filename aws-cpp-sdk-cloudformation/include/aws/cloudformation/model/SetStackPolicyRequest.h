@@ -33,7 +33,6 @@ namespace Model
     SetStackPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     ModifySubnetAttributeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the subnet.</p>
      */

@@ -35,7 +35,6 @@ namespace Model
     CreateClusterSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name for the subnet group. Amazon Redshift stores the value as a
      * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than

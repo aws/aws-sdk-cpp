@@ -40,7 +40,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>An array of attributes that describe the key schema for the table and
      * indexes. If you are adding a new global secondary index to the table,

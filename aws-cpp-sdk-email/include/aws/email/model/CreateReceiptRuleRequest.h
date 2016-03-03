@@ -33,7 +33,6 @@ namespace Model
     CreateReceiptRuleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the rule set to which to add the rule.</p>
      */

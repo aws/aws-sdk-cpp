@@ -31,7 +31,6 @@ namespace Model
     DescribeTerminationPolicyTypesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Specifies the ARN of the trail to which one or more tags will be added. The
      * format of a trail ARN is

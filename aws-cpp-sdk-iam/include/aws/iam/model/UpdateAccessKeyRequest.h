@@ -33,7 +33,6 @@ namespace Model
     UpdateAccessKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose key you want to update.</p>
      */

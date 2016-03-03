@@ -33,7 +33,6 @@ namespace Model
     DeleteClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the cluster to be deleted. </p> <p>Constraints:</p> <ul>
      * <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63

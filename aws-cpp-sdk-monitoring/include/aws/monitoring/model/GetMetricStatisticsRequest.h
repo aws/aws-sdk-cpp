@@ -36,7 +36,6 @@ namespace Model
     GetMetricStatisticsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The namespace of the metric, with or without spaces. </p>
      */

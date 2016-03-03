@@ -33,7 +33,6 @@ namespace Model
     GetIdentityDkimAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>

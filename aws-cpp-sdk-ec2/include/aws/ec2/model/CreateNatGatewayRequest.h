@@ -32,7 +32,6 @@ namespace Model
     CreateNatGatewayRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
      */

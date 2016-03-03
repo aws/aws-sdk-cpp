@@ -33,7 +33,6 @@ namespace Model
     ExitStandbyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more instance IDs. You must specify at least one instance ID.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     GetHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the hosted zone for which you want to get a list of the name
      * servers in the delegation set.</p>

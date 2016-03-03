@@ -38,7 +38,6 @@ namespace Model
     DescribeIndexFieldsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the domain you want to describe.</p>
      */

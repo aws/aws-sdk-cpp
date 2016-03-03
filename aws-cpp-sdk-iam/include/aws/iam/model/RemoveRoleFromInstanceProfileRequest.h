@@ -32,7 +32,6 @@ namespace Model
     RemoveRoleFromInstanceProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the instance profile to update.</p>
      */

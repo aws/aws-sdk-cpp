@@ -33,7 +33,6 @@ namespace Model
     DescribeEnvironmentResourcesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The ID of the environment to retrieve AWS resource usage data. </p> <p>
      * Condition: You must specify either this or an EnvironmentName, or both. If you

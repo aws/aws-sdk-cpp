@@ -32,7 +32,6 @@ namespace Model
     ListMFADevicesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose MFA devices you want to list.</p>
      */

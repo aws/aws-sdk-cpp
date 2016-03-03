@@ -32,7 +32,6 @@ namespace Model
     DetachRolePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the role to detach the policy from.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     PutScalingPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or ARN of the group.</p>
      */

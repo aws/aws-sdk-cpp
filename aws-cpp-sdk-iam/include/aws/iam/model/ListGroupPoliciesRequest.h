@@ -32,7 +32,6 @@ namespace Model
     ListGroupPoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group to list policies for.</p>
      */

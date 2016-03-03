@@ -35,7 +35,6 @@ namespace Model
     ModifyOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the option group to be modified. </p> <p> Permanent options,
      * such as the TDE option for Oracle Advanced Security TDE, cannot be removed from

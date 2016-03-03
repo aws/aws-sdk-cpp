@@ -32,7 +32,6 @@ namespace Model
     DescribeClusterVersionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The specific cluster version to return. </p> <p>Example:
      * <code>1.0</code></p>

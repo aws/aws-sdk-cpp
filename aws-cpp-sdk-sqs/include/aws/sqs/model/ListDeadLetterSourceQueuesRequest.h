@@ -32,7 +32,6 @@ namespace Model
     ListDeadLetterSourceQueuesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The queue URL of a dead letter queue.
      */

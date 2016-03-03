@@ -34,7 +34,6 @@ namespace Model
     DescribeFlowLogsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more flow log IDs.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     CreateInstanceExportTaskRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A description for the conversion task or the resource being exported. The
      * maximum length is 255 bytes.</p>

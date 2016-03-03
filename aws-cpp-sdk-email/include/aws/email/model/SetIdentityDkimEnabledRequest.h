@@ -32,7 +32,6 @@ namespace Model
     SetIdentityDkimEnabledRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity for which DKIM signing should be enabled or disabled.</p>
      */

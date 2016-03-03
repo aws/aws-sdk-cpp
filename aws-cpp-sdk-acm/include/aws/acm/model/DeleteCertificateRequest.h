@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> String that contains the ARN of the ACM Certificate to be deleted. This must
      * be of the form: </p> <p>

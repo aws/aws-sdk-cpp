@@ -31,7 +31,6 @@ namespace Model
     DescribeAdjustmentTypesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

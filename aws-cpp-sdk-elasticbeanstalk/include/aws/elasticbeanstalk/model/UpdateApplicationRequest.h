@@ -33,7 +33,6 @@ namespace Model
     UpdateApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>

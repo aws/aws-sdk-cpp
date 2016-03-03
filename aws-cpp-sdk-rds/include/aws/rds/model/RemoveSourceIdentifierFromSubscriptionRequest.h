@@ -33,7 +33,6 @@ namespace Model
     RemoveSourceIdentifierFromSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the RDS event notification subscription you want to remove a
      * source identifier from.</p>

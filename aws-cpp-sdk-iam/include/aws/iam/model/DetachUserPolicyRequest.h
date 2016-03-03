@@ -32,7 +32,6 @@ namespace Model
     DetachUserPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the user to detach the policy from.</p>
      */

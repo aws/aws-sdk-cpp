@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Unique identifier of the build to return fleets for. Use this parameter to
      * return only fleets using the specified build. To retrieve all fleets, leave this

@@ -34,7 +34,6 @@ namespace Model
     CreateNetworkInterfaceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */

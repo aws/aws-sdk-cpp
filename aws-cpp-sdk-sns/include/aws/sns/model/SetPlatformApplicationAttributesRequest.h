@@ -34,7 +34,6 @@ namespace Model
     SetPlatformApplicationAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
      */

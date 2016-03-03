@@ -33,7 +33,6 @@ namespace Model
     CreateTopicRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the topic you want to create.</p>
     <p>Constraints: Topic names

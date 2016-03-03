@@ -32,7 +32,6 @@ namespace Model
     ListAttachedUserPoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) of the user to list attached policies
      * for.</p>

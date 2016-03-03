@@ -32,7 +32,6 @@ namespace Model
     CreateVirtualMFADeviceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path for the virtual MFA device. For more information about paths, see
      * <a

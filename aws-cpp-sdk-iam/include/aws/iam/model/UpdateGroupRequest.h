@@ -32,7 +32,6 @@ namespace Model
     UpdateGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> Name of the group to update. If you're changing the name of the group, this
      * is the original name. </p>

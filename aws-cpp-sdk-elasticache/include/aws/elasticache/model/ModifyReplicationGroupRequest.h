@@ -34,7 +34,6 @@ namespace Model
     ModifyReplicationGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the replication group to modify.</p>
      */

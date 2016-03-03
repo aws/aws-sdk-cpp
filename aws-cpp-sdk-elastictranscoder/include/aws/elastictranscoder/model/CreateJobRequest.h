@@ -38,7 +38,6 @@ namespace Model
     CreateJobRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
      * for transcoding. The pipeline determines several settings, including the Amazon

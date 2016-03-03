@@ -34,7 +34,6 @@ namespace Model
     GetAccountAuthorizationDetailsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.</p>

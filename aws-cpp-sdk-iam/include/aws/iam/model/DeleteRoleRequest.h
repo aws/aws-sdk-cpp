@@ -32,7 +32,6 @@ namespace Model
     DeleteRoleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the role to delete.</p>
      */

@@ -32,7 +32,6 @@ namespace Model
     VerifyDomainDkimRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
      */

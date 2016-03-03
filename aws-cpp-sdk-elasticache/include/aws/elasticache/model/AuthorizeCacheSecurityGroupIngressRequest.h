@@ -34,7 +34,6 @@ namespace Model
     AuthorizeCacheSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The cache security group which will allow network ingress.</p>
      */

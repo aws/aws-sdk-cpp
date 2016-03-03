@@ -34,7 +34,6 @@ namespace Model
     SignalResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The stack name or unique stack ID that includes the resource that you want to
      * signal.</p>

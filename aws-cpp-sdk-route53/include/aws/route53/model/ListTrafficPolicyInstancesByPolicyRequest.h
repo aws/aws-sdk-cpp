@@ -41,7 +41,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>The ID of the traffic policy for which you want to list traffic policy
      * instances.</p>

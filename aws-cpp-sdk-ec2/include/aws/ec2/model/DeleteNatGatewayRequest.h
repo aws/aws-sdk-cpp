@@ -32,7 +32,6 @@ namespace Model
     DeleteNatGatewayRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the NAT gateway.</p>
      */

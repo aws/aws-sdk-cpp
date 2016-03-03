@@ -34,7 +34,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
      * of a <code>Rule</code> after you create it.</p>

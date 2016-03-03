@@ -34,7 +34,6 @@ namespace Model
     CreatePlatformEndpointRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
      * create a an endpoint.</p>

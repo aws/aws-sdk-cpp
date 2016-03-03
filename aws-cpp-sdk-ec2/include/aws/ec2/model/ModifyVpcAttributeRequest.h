@@ -33,7 +33,6 @@ namespace Model
     ModifyVpcAttributeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the VPC.</p>
      */

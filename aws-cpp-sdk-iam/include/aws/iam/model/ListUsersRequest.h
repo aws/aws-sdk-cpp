@@ -32,7 +32,6 @@ namespace Model
     ListUsersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user names

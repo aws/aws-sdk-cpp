@@ -33,7 +33,6 @@ namespace Model
     RebootDBInstanceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric

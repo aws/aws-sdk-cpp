@@ -33,7 +33,6 @@ namespace Model
     AddSourceIdentifierToSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the RDS event notification subscription you want to add a source
      * identifier to.</p>

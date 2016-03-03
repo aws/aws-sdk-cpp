@@ -38,7 +38,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>Name of the Lambda function whose resource policy you are updating by adding
      * a new permission.</p> <p> You can specify a function name (for example,

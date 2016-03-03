@@ -31,7 +31,6 @@ namespace Model
     CreateStorageLocationRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

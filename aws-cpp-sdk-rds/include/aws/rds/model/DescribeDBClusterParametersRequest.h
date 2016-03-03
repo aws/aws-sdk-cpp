@@ -35,7 +35,6 @@ namespace Model
     DescribeDBClusterParametersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of a specific DB cluster parameter group to return parameter
      * details for. </p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric

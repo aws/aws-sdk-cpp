@@ -32,7 +32,6 @@ namespace Model
     GetSAMLProviderRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to get information
      * about.</p>

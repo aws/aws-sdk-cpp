@@ -32,7 +32,6 @@ namespace Model
     GetLoggingOptionsRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

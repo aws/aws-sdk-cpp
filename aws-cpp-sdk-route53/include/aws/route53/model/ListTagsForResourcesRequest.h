@@ -36,7 +36,6 @@ namespace Model
     ListTagsForResourcesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The type of the resources.</p> <p>- The resource type for health checks is
      * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is

@@ -35,7 +35,6 @@ namespace Model
     DescribeEventCategoriesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The type of source that will be generating the events. </p> <p>Valid values:
      * db-instance | db-parameter-group | db-security-group | db-snapshot</p>

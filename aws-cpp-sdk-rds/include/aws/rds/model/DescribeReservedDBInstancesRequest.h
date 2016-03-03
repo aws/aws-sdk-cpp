@@ -35,7 +35,6 @@ namespace Model
     DescribeReservedDBInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The reserved DB instance identifier filter value. Specify this parameter to
      * show only the reservation that matches the specified reservation ID. </p>

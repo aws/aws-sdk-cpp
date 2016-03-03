@@ -37,7 +37,6 @@ namespace Model
     UpdateEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the application with which the environment is associated.</p>
      */

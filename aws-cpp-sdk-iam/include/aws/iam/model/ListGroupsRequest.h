@@ -32,7 +32,6 @@ namespace Model
     ListGroupsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts

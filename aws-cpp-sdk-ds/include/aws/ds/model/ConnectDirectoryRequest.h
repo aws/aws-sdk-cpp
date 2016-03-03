@@ -37,7 +37,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>The fully-qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>

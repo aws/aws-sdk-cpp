@@ -33,7 +33,6 @@ namespace Model
     ModifySnapshotCopyRetentionPeriodRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of the cluster for which you want to change the
      * retention period for automated snapshots that are copied to a destination

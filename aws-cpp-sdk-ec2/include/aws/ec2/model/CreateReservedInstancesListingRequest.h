@@ -34,7 +34,6 @@ namespace Model
     CreateReservedInstancesListingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the active Reserved Instance.</p>
      */

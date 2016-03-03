@@ -88,6 +88,11 @@ namespace Aws
         * get closure for data sent event
         */
         inline virtual const Aws::Http::DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
+        /**
+         * If this is set to true, content-md5 needs to be computed and set on the request
+         */
+        inline virtual bool ShouldComputeContentMd5() const { return false; }
+
 
     private:
 

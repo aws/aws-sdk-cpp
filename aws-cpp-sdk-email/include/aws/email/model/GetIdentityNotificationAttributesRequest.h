@@ -33,7 +33,6 @@ namespace Model
     GetIdentityNotificationAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A list of one or more identities. You can specify an identity by using its
      * name or by using its Amazon Resource Name (ARN). Examples:

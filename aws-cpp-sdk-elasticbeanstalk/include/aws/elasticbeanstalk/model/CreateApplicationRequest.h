@@ -33,7 +33,6 @@ namespace Model
     CreateApplicationRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the application.</p> <p> Constraint: This name must be unique
      * within your account. If the specified name already exists, the action returns an

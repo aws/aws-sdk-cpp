@@ -33,7 +33,6 @@ namespace Model
     DeleteEndpointRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>EndpointArn of endpoint to delete.</p>
      */

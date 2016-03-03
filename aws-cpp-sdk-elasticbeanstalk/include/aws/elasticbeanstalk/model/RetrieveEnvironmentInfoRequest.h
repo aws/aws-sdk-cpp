@@ -34,7 +34,6 @@ namespace Model
     RetrieveEnvironmentInfoRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the data's environment.</p> <p> If no such environment is found,
      * returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You

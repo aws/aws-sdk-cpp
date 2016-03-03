@@ -36,7 +36,6 @@ namespace Model
     CreateCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The node group identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li>A name must contain from 1 to 20

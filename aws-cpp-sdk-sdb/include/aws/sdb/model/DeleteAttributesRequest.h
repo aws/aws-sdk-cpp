@@ -35,7 +35,6 @@ namespace Model
     DeleteAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The name of the domain in which to perform the operation.
      */

@@ -33,7 +33,6 @@ namespace Model
     StartInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more instance IDs.</p>
      */

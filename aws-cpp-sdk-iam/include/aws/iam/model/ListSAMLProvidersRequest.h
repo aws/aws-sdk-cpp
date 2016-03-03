@@ -31,7 +31,6 @@ namespace Model
     ListSAMLProvidersRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

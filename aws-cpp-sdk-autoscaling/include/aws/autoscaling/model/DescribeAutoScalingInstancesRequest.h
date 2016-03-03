@@ -33,7 +33,6 @@ namespace Model
     DescribeAutoScalingInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
      * all Auto Scaling instances are described. If you specify an ID that does not

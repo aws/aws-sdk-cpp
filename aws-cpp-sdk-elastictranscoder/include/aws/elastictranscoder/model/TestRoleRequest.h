@@ -34,7 +34,6 @@ namespace Model
     TestRoleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      * Transcoder to test.</p>

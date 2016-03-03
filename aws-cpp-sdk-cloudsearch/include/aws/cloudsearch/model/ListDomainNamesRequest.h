@@ -31,7 +31,6 @@ namespace Model
     ListDomainNamesRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

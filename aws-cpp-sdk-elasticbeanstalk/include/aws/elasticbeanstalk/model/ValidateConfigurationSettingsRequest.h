@@ -35,7 +35,6 @@ namespace Model
     ValidateConfigurationSettingsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the application that the configuration template or environment
      * belongs to. </p>

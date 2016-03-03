@@ -34,7 +34,6 @@ namespace Model
     DescribeHsmClientCertificatesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM

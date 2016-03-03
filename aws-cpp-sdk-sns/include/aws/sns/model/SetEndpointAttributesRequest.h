@@ -34,7 +34,6 @@ namespace Model
     SetEndpointAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */

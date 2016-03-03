@@ -35,7 +35,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>Policy to attach to the key. This is required and delegates back to the
      * account. The key is the root of trust. The policy size limit is 32 KiB (32768

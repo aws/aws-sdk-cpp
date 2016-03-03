@@ -33,7 +33,6 @@ namespace Model
     CheckDNSAvailabilityRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The prefix used when this CNAME is reserved. </p>
      */

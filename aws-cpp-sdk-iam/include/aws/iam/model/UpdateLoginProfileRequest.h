@@ -32,7 +32,6 @@ namespace Model
     UpdateLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user whose password you want to update.</p>
      */

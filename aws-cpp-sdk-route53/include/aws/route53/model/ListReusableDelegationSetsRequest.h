@@ -48,7 +48,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>If the request returned more than one page of results, submit another request
      * and specify the value of <code>NextMarker</code> from the last response in the

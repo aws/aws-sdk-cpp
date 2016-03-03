@@ -32,7 +32,6 @@ namespace Model
     PutGroupPolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the group to associate the policy with.</p>
      */

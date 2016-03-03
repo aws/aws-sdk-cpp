@@ -33,7 +33,6 @@ namespace Model
     CreateResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>RestApi</a> for the resource. </p>
      */

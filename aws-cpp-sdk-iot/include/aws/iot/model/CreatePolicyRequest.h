@@ -33,7 +33,6 @@ namespace Model
     CreatePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The policy name.</p>
      */

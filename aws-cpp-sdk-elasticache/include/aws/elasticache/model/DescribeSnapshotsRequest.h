@@ -33,7 +33,6 @@ namespace Model
     DescribeSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
      * snapshots associated with that specific cache cluster will be described.</p>

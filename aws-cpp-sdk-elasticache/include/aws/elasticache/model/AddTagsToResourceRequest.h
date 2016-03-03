@@ -35,7 +35,6 @@ namespace Model
     AddTagsToResourceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the resource to which the tags are to be added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>

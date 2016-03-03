@@ -32,7 +32,6 @@ namespace Model
     SelectRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * The expression used to query the domain.
      */

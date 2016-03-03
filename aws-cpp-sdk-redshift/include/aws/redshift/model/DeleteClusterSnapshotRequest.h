@@ -33,7 +33,6 @@ namespace Model
     DeleteClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of the manual snapshot to be deleted. </p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the

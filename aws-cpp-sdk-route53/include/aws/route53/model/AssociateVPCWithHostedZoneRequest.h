@@ -35,7 +35,6 @@ namespace Model
     AssociateVPCWithHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the hosted zone you want to associate your VPC with.</p> <p>Note
      * that you cannot associate a VPC with a hosted zone that doesn't have an existing

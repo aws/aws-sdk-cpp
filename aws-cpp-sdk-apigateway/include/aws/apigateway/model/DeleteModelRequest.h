@@ -34,7 +34,6 @@ namespace Model
     DeleteModelRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The <a>RestApi</a> under which the model will be deleted.</p>
      */

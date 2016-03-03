@@ -34,7 +34,6 @@ namespace Model
     UpdatePipelineNotificationsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the pipeline for which you want to change notification
      * settings. </p>

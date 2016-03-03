@@ -33,7 +33,6 @@ namespace Model
     TestInvokeAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 

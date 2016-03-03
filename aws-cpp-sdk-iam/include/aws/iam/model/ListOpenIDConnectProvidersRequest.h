@@ -31,7 +31,6 @@ namespace Model
     ListOpenIDConnectProvidersRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

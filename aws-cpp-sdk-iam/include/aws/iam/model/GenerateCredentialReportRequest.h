@@ -31,7 +31,6 @@ namespace Model
     GenerateCredentialReportRequest();
     Aws::String SerializePayload() const override;
 
-
   };
 
 } // namespace Model

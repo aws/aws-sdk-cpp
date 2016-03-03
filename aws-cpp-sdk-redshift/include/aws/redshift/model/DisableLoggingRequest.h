@@ -33,7 +33,6 @@ namespace Model
     DisableLoggingRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The identifier of the cluster on which logging is to be stopped. </p>
      * <p>Example: <code>examplecluster</code></p>

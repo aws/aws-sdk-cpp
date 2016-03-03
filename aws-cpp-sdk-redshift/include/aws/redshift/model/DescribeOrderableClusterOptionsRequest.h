@@ -33,7 +33,6 @@ namespace Model
     DescribeOrderableClusterOptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The version filter value. Specify this parameter to show only the available
      * offerings matching the specified version. </p> <p>Default: All versions.</p>

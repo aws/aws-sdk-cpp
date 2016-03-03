@@ -33,7 +33,6 @@ namespace Model
     CancelUpdateStackRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */

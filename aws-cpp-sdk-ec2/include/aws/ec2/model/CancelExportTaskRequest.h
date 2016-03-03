@@ -32,7 +32,6 @@ namespace Model
     CancelExportTaskRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>

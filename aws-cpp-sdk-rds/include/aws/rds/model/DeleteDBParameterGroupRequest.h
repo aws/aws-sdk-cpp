@@ -33,7 +33,6 @@ namespace Model
     DeleteDBParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
      * be the name of an existing DB parameter group</li> <li>You cannot delete a

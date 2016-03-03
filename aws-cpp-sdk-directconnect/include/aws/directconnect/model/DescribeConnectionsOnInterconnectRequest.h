@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p>ID of the interconnect on which a list of connection is provisioned.</p>
      * <p>Example: dxcon-abc123</p> <p>Default: None</p>

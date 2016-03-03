@@ -32,7 +32,6 @@ namespace Model
     SetIdentityFeedbackForwardingEnabledRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity for which to set bounce and complaint notification forwarding.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>

@@ -33,7 +33,6 @@ namespace Model
     GetTemplateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
      * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either

@@ -32,7 +32,6 @@ namespace Model
     GetServerCertificateRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the server certificate you want to retrieve information
      * about.</p>

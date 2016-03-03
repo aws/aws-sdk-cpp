@@ -35,7 +35,6 @@ namespace Model
     SendBounceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The message ID of the message to be bounced.</p>
      */

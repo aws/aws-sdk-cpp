@@ -32,7 +32,6 @@ namespace Model
     GetRoleRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the role to get information about.</p>
      */

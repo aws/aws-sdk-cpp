@@ -33,7 +33,6 @@ namespace Model
     ReadJobRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the job for which you want to get detailed information.</p>
      */

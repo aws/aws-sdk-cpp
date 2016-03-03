@@ -34,7 +34,6 @@ namespace Model
     DescribeTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A filter used to scope the tags to return.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     RebootCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The cache cluster identifier. This parameter is stored as a lowercase
      * string.</p>

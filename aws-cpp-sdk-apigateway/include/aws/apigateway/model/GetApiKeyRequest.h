@@ -33,7 +33,6 @@ namespace Model
     GetApiKeyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identifier of the <a>ApiKey</a> resource.</p>
      */

@@ -33,7 +33,6 @@ namespace Model
     DeleteApplicationVersionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the application to delete releases from.</p>
      */

@@ -35,7 +35,6 @@ namespace Model
     DisassociateVPCFromHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
      * that you cannot disassociate the last VPC from a hosted zone.</p>

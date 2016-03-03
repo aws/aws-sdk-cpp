@@ -32,7 +32,6 @@ namespace Model
     DeleteRolePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.</p>

@@ -36,7 +36,6 @@ namespace Model
     AddTagsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */

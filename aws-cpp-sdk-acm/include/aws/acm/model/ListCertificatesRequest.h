@@ -36,7 +36,6 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>

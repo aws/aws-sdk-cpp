@@ -32,7 +32,6 @@ namespace Model
     ListIdentityPoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The identity that is associated with the policy for which the policies will
      * be listed. You can specify an identity by using its name or by using its Amazon

@@ -33,7 +33,6 @@ namespace Model
     GetSubscriptionAttributesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The ARN of the subscription whose properties you want to get.</p>
      */

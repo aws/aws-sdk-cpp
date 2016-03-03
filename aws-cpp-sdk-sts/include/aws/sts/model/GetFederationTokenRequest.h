@@ -32,7 +32,6 @@ namespace Model
     GetFederationTokenRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can

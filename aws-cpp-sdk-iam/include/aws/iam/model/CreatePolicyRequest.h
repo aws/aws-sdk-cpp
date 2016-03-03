@@ -32,7 +32,6 @@ namespace Model
     CreatePolicyRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the policy document.</p>
      */

@@ -34,7 +34,6 @@ namespace Model
     CreateDomainRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>A name for the domain you are creating. Allowed characters are a-z
      * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter

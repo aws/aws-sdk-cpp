@@ -33,7 +33,6 @@ namespace Model
     DeleteDBInstanceRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The DB instance identifier for the DB instance to be deleted. This parameter
      * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to

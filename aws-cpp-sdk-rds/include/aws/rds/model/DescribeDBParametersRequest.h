@@ -34,7 +34,6 @@ namespace Model
     DescribeDBParametersRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name of a specific DB parameter group to return details for. </p>
      * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>

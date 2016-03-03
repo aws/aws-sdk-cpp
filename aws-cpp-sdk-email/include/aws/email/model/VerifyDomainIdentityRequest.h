@@ -32,7 +32,6 @@ namespace Model
     VerifyDomainIdentityRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The domain to be verified.</p>
      */

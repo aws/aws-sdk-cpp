@@ -33,7 +33,6 @@ namespace Model
     DownloadDBLogFilePortionRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The customer-assigned name of the DB instance that contains the log files
      * you want to list. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63

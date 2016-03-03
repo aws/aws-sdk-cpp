@@ -32,7 +32,6 @@ namespace Model
     CreateAccountAliasRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The account alias to create.</p>
      */

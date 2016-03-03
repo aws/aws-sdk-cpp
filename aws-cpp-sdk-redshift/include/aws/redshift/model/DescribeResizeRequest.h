@@ -33,7 +33,6 @@ namespace Model
     DescribeResizeRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The unique identifier of a cluster whose resize progress you are requesting.
      * This parameter is case-sensitive. </p> <p>By default, resize operations for all

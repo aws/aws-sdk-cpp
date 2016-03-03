@@ -40,7 +40,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
     /**
      * <p>For your first request to <code>ListTrafficPolicies</code>, do not include
      * the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have more

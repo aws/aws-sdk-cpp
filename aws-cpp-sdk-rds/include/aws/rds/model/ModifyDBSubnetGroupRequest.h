@@ -34,7 +34,6 @@ namespace Model
     ModifyDBSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p> The name for the DB subnet group. This value is stored as a lowercase
      * string. </p> <p>Constraints: Must contain no more than 255 alphanumeric

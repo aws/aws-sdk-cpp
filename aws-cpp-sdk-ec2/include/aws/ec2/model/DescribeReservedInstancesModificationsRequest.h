@@ -34,7 +34,6 @@ namespace Model
     DescribeReservedInstancesModificationsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>IDs for the submitted modification request.</p>
      */

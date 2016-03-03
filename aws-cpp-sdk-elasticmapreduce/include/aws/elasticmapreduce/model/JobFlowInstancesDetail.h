@@ -149,39 +149,25 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithMasterInstanceId(const char* value) { SetMasterInstanceId(value); return *this;}
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType.assign(value); }
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline JobFlowInstancesDetail& WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline JobFlowInstancesDetail& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(value); return *this;}
 
-    /**
-     * <p>The Amazon EC2 slave node instance type.</p>
-     */
+    
     inline JobFlowInstancesDetail& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
     /**

@@ -33,7 +33,6 @@ namespace Model
     DescribeEventSubscriptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the Amazon Redshift event notification subscription to be
      * described.</p>

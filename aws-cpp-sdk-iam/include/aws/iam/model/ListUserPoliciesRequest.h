@@ -32,7 +32,6 @@ namespace Model
     ListUserPoliciesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>The name of the user to list policies for.</p>
      */

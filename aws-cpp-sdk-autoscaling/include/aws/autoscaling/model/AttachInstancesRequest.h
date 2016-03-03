@@ -33,7 +33,6 @@ namespace Model
     AttachInstancesRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>One or more instance IDs.</p>
      */

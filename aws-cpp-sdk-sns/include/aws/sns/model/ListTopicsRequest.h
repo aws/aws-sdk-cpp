@@ -32,7 +32,6 @@ namespace Model
     ListTopicsRequest();
     Aws::String SerializePayload() const override;
 
-
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
      */

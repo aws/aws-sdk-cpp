@@ -35,7 +35,6 @@ namespace Model
     UpdateAvailabilityOptionsRequest();
     Aws::String SerializePayload() const override;
 
-
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
