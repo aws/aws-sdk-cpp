@@ -45,7 +45,7 @@ namespace Model
 
 #end
 #if($shape.computeContentMd5)
-    inline bool ShouldComputeContentMd5() const override { return true; )
+    inline bool ShouldComputeContentMd5() const override { return true; }
 
 #end
 #set($useRequiredField = true)
