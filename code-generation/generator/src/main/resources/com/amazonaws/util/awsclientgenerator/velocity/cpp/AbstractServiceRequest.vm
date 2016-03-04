@@ -26,6 +26,12 @@ namespace ${metadata.namespace}
     {
       auto headers = GetRequestSpecificHeaders();
       headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
+#if($metadata.additionalHeaders)
+#foreach($headerEntry in $metadata.additionalHeaders.entrySet())
+      headers.insert("${headerEntry.key}", "${headerEntry.value}");
+#end
+
+#end
       return headers;
     }
 

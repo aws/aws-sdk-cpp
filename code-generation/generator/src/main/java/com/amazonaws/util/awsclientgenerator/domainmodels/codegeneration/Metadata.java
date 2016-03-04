@@ -17,6 +17,8 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class Metadata {
     private String apiVersion;
@@ -31,4 +33,5 @@ public class Metadata {
     private String protocol;
     private String projectName;
     private String classNamePrefix;
+    private Map<String, String> additionalHeaders;
 }

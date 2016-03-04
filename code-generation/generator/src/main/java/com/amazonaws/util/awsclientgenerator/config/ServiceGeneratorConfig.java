@@ -26,6 +26,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.cloudfront.Cloudfron
 import com.amazonaws.util.awsclientgenerator.generators.cpp.cloudwatch.MonitoringCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.dynamodb.DynamoDBJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.iam.IamCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
@@ -52,6 +53,7 @@ public class ServiceGeneratorConfig {
     static {
         try {
             SPEC_OVERRIDE_MAPPING.put("cpp-dynamodb", new DynamoDBJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-glacier", new GlacierRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-lambda", new LambdaRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-sqs", new SQSQueryXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3", new S3RestXmlCppClientGenerator());
