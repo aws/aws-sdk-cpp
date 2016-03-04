@@ -36,6 +36,8 @@ UploadArchiveRequest::UploadArchiveRequest() :
 Aws::Http::HeaderValueCollection UploadArchiveRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
+  headers.insert("x-amz-glacier-version", "2012-06-01");
+
   Aws::StringStream ss;
   if(m_archiveDescriptionHasBeenSet)
   {
