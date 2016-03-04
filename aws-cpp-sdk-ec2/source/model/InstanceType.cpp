@@ -63,6 +63,7 @@ static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
 static const int cc1_4xlarge_HASH = HashingUtils::HashString("cc1.4xlarge");
 static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
 static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
+static const int g2_8xlarge_HASH = HashingUtils::HashString("g2.8xlarge");
 static const int cg1_4xlarge_HASH = HashingUtils::HashString("cg1.4xlarge");
 static const int r3_large_HASH = HashingUtils::HashString("r3.large");
 static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
@@ -263,6 +264,10 @@ namespace Aws
           {
             return InstanceType::g2_2xlarge;
           }
+          else if (hashCode == g2_8xlarge_HASH)
+          {
+            return InstanceType::g2_8xlarge;
+          }
           else if (hashCode == cg1_4xlarge_HASH)
           {
             return InstanceType::cg1_4xlarge;
@@ -405,6 +410,8 @@ namespace Aws
             return "cc2.8xlarge";
           case InstanceType::g2_2xlarge:
             return "g2.2xlarge";
+          case InstanceType::g2_8xlarge:
+            return "g2.8xlarge";
           case InstanceType::cg1_4xlarge:
             return "cg1.4xlarge";
           case InstanceType::r3_large:

@@ -30,7 +30,9 @@
 #include <aws/ds/model/DeleteDirectoryResult.h>
 #include <aws/ds/model/DeleteSnapshotResult.h>
 #include <aws/ds/model/DeleteTrustResult.h>
+#include <aws/ds/model/DeregisterEventTopicResult.h>
 #include <aws/ds/model/DescribeDirectoriesResult.h>
+#include <aws/ds/model/DescribeEventTopicsResult.h>
 #include <aws/ds/model/DescribeSnapshotsResult.h>
 #include <aws/ds/model/DescribeTrustsResult.h>
 #include <aws/ds/model/DisableRadiusResult.h>
@@ -39,6 +41,7 @@
 #include <aws/ds/model/EnableSsoResult.h>
 #include <aws/ds/model/GetDirectoryLimitsResult.h>
 #include <aws/ds/model/GetSnapshotLimitsResult.h>
+#include <aws/ds/model/RegisterEventTopicResult.h>
 #include <aws/ds/model/RestoreFromSnapshotResult.h>
 #include <aws/ds/model/UpdateRadiusResult.h>
 #include <aws/ds/model/VerifyTrustResult.h>
@@ -97,7 +100,9 @@ namespace Model
         class DeleteDirectoryRequest;
         class DeleteSnapshotRequest;
         class DeleteTrustRequest;
+        class DeregisterEventTopicRequest;
         class DescribeDirectoriesRequest;
+        class DescribeEventTopicsRequest;
         class DescribeSnapshotsRequest;
         class DescribeTrustsRequest;
         class DisableRadiusRequest;
@@ -106,6 +111,7 @@ namespace Model
         class EnableSsoRequest;
         class GetDirectoryLimitsRequest;
         class GetSnapshotLimitsRequest;
+        class RegisterEventTopicRequest;
         class RestoreFromSnapshotRequest;
         class UpdateRadiusRequest;
         class VerifyTrustRequest;
@@ -120,7 +126,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteDirectoryOutcome;
         typedef Aws::Utils::Outcome<DeleteSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteTrustOutcome;
+        typedef Aws::Utils::Outcome<DeregisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeregisterEventTopicOutcome;
         typedef Aws::Utils::Outcome<DescribeDirectoriesResult, Aws::Client::AWSError<DirectoryServiceErrors>> DescribeDirectoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventTopicsResult, Aws::Client::AWSError<DirectoryServiceErrors>> DescribeEventTopicsOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotsResult, Aws::Client::AWSError<DirectoryServiceErrors>> DescribeSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeTrustsResult, Aws::Client::AWSError<DirectoryServiceErrors>> DescribeTrustsOutcome;
         typedef Aws::Utils::Outcome<DisableRadiusResult, Aws::Client::AWSError<DirectoryServiceErrors>> DisableRadiusOutcome;
@@ -129,6 +137,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableSsoResult, Aws::Client::AWSError<DirectoryServiceErrors>> EnableSsoOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetDirectoryLimitsOutcome;
         typedef Aws::Utils::Outcome<GetSnapshotLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetSnapshotLimitsOutcome;
+        typedef Aws::Utils::Outcome<RegisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> RegisterEventTopicOutcome;
         typedef Aws::Utils::Outcome<RestoreFromSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> RestoreFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<UpdateRadiusResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateRadiusOutcome;
         typedef Aws::Utils::Outcome<VerifyTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> VerifyTrustOutcome;
@@ -143,7 +152,9 @@ namespace Model
         typedef std::future<DeleteDirectoryOutcome> DeleteDirectoryOutcomeCallable;
         typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
         typedef std::future<DeleteTrustOutcome> DeleteTrustOutcomeCallable;
+        typedef std::future<DeregisterEventTopicOutcome> DeregisterEventTopicOutcomeCallable;
         typedef std::future<DescribeDirectoriesOutcome> DescribeDirectoriesOutcomeCallable;
+        typedef std::future<DescribeEventTopicsOutcome> DescribeEventTopicsOutcomeCallable;
         typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
         typedef std::future<DescribeTrustsOutcome> DescribeTrustsOutcomeCallable;
         typedef std::future<DisableRadiusOutcome> DisableRadiusOutcomeCallable;
@@ -152,6 +163,7 @@ namespace Model
         typedef std::future<EnableSsoOutcome> EnableSsoOutcomeCallable;
         typedef std::future<GetDirectoryLimitsOutcome> GetDirectoryLimitsOutcomeCallable;
         typedef std::future<GetSnapshotLimitsOutcome> GetSnapshotLimitsOutcomeCallable;
+        typedef std::future<RegisterEventTopicOutcome> RegisterEventTopicOutcomeCallable;
         typedef std::future<RestoreFromSnapshotOutcome> RestoreFromSnapshotOutcomeCallable;
         typedef std::future<UpdateRadiusOutcome> UpdateRadiusOutcomeCallable;
         typedef std::future<VerifyTrustOutcome> VerifyTrustOutcomeCallable;
@@ -169,7 +181,9 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteDirectoryRequest&, const Model::DeleteDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteTrustRequest&, const Model::DeleteTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterEventTopicRequest&, const Model::DeregisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterEventTopicResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDirectoriesRequest&, const Model::DescribeDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoriesResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeEventTopicsRequest&, const Model::DescribeEventTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTopicsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeTrustsRequest&, const Model::DescribeTrustsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableRadiusRequest&, const Model::DisableRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRadiusResponseReceivedHandler;
@@ -178,6 +192,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableSsoRequest&, const Model::EnableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSsoResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetDirectoryLimitsRequest&, const Model::GetDirectoryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryLimitsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetSnapshotLimitsRequest&, const Model::GetSnapshotLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotLimitsResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::RegisterEventTopicRequest&, const Model::RegisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEventTopicResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RestoreFromSnapshotRequest&, const Model::RestoreFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateRadiusRequest&, const Model::UpdateRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRadiusResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::VerifyTrustRequest&, const Model::VerifyTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyTrustResponseReceivedHandler;
@@ -328,22 +343,25 @@ namespace Model
         virtual void CreateMicrosoftADAsync(const Model::CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD directory.</p> <note> <p>You cannot take
-         * snapshots of AD Connector directories.</p> </note>
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
+         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
+         * </note>
          */
         virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD directory.</p> <note> <p>You cannot take
-         * snapshots of AD Connector directories.</p> </note>
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
+         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a Simple AD directory.</p> <note> <p>You cannot take
-         * snapshots of AD Connector directories.</p> </note>
+         * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
+         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -447,6 +465,28 @@ namespace Model
         virtual void DeleteTrustAsync(const Model::DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes the specified directory as a publisher to the specified SNS
+         * topic.</p>
+         */
+        virtual Model::DeregisterEventTopicOutcome DeregisterEventTopic(const Model::DeregisterEventTopicRequest& request) const;
+
+        /**
+         * <p>Removes the specified directory as a publisher to the specified SNS
+         * topic.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterEventTopicOutcomeCallable DeregisterEventTopicCallable(const Model::DeregisterEventTopicRequest& request) const;
+
+        /**
+         * <p>Removes the specified directory as a publisher to the specified SNS
+         * topic.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterEventTopicAsync(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Obtains information about the directories that belong to this account.</p>
          * <p>You can retrieve information about specific directories by passing the
          * directory identifiers in the <i>DirectoryIds</i> parameter. Otherwise, all
@@ -491,6 +531,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDirectoriesAsync(const Model::DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Obtains information about which SNS topics receive status messages from the
+         * specified directory.</p> <p>If no input parameters are provided, such as
+         * DirectoryId or TopicName, this request describes all of the associations in the
+         * account.</p>
+         */
+        virtual Model::DescribeEventTopicsOutcome DescribeEventTopics(const Model::DescribeEventTopicsRequest& request) const;
+
+        /**
+         * <p>Obtains information about which SNS topics receive status messages from the
+         * specified directory.</p> <p>If no input parameters are provided, such as
+         * DirectoryId or TopicName, this request describes all of the associations in the
+         * account.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEventTopicsOutcomeCallable DescribeEventTopicsCallable(const Model::DescribeEventTopicsRequest& request) const;
+
+        /**
+         * <p>Obtains information about which SNS topics receive status messages from the
+         * specified directory.</p> <p>If no input parameters are provided, such as
+         * DirectoryId or TopicName, this request describes all of the associations in the
+         * account.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEventTopicsAsync(const Model::DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Obtains information about the directory snapshots that belong to this
@@ -675,6 +743,37 @@ namespace Model
         virtual void GetSnapshotLimitsAsync(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a directory with an SNS topic. This establishes the directory as a
+         * publisher to the specified SNS topic. You can then receive email or text (SMS)
+         * messages when the status of your directory changes. You get notified if your
+         * directory goes from an Active status to an Impaired or Inoperable status. You
+         * also receive a notification when the directory returns to an Active status. </p>
+         */
+        virtual Model::RegisterEventTopicOutcome RegisterEventTopic(const Model::RegisterEventTopicRequest& request) const;
+
+        /**
+         * <p>Associates a directory with an SNS topic. This establishes the directory as a
+         * publisher to the specified SNS topic. You can then receive email or text (SMS)
+         * messages when the status of your directory changes. You get notified if your
+         * directory goes from an Active status to an Impaired or Inoperable status. You
+         * also receive a notification when the directory returns to an Active status. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterEventTopicOutcomeCallable RegisterEventTopicCallable(const Model::RegisterEventTopicRequest& request) const;
+
+        /**
+         * <p>Associates a directory with an SNS topic. This establishes the directory as a
+         * publisher to the specified SNS topic. You can then receive email or text (SMS)
+         * messages when the status of your directory changes. You get notified if your
+         * directory goes from an Active status to an Impaired or Inoperable status. You
+         * also receive a notification when the directory returns to an Active status. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterEventTopicAsync(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Restores a directory using an existing directory snapshot.</p> <p>When you
          * restore a directory from a snapshot, any changes made to the directory after the
          * snapshot date are overwritten.</p> <p>This action returns as soon as the restore
@@ -773,7 +872,9 @@ namespace Model
         void DeleteDirectoryAsyncHelper(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrustAsyncHelper(const Model::DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterEventTopicAsyncHelper(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDirectoriesAsyncHelper(const Model::DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEventTopicsAsyncHelper(const Model::DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrustsAsyncHelper(const Model::DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableRadiusAsyncHelper(const Model::DisableRadiusRequest& request, const DisableRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -782,6 +883,7 @@ namespace Model
         void EnableSsoAsyncHelper(const Model::EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryLimitsAsyncHelper(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnapshotLimitsAsyncHelper(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterEventTopicAsyncHelper(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromSnapshotAsyncHelper(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRadiusAsyncHelper(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyTrustAsyncHelper(const Model::VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

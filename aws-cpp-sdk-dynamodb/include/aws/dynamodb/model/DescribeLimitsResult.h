@@ -42,80 +42,80 @@ namespace Model
     DescribeLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The maximum total Read-Capacity Units (RCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline long long GetAccountMaxReadCapacityUnits() const{ return m_accountMaxReadCapacityUnits; }
 
     /**
-     * <p>The maximum total Read-Capacity Units (RCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline void SetAccountMaxReadCapacityUnits(long long value) { m_accountMaxReadCapacityUnits = value; }
 
     /**
-     * <p>The maximum total Read-Capacity Units (RCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total read capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline DescribeLimitsResult& WithAccountMaxReadCapacityUnits(long long value) { SetAccountMaxReadCapacityUnits(value); return *this;}
 
     /**
-     * <p>The maximum total Write-Capacity Units (WCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline long long GetAccountMaxWriteCapacityUnits() const{ return m_accountMaxWriteCapacityUnits; }
 
     /**
-     * <p>The maximum total Write-Capacity Units (WCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline void SetAccountMaxWriteCapacityUnits(long long value) { m_accountMaxWriteCapacityUnits = value; }
 
     /**
-     * <p>The maximum total Write-Capacity Units (WCUs) that your account allows you to
-     * provision across all your tables in this region.</p>
+     * <p>The maximum total write capacity units that your account allows you to
+     * provision across all of your tables in this region.</p>
      */
     inline DescribeLimitsResult& WithAccountMaxWriteCapacityUnits(long long value) { SetAccountMaxWriteCapacityUnits(value); return *this;}
 
     /**
-     * <p>The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the RCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum read capacity units that your account allows you to provision for
+     * a new table that you are creating in this region, including the read capacity
+     * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline long long GetTableMaxReadCapacityUnits() const{ return m_tableMaxReadCapacityUnits; }
 
     /**
-     * <p>The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the RCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum read capacity units that your account allows you to provision for
+     * a new table that you are creating in this region, including the read capacity
+     * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline void SetTableMaxReadCapacityUnits(long long value) { m_tableMaxReadCapacityUnits = value; }
 
     /**
-     * <p>The maximum Read-Capacity Units (RCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the RCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum read capacity units that your account allows you to provision for
+     * a new table that you are creating in this region, including the read capacity
+     * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline DescribeLimitsResult& WithTableMaxReadCapacityUnits(long long value) { SetTableMaxReadCapacityUnits(value); return *this;}
 
     /**
-     * <p>The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the WCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum write capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the write
+     * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline long long GetTableMaxWriteCapacityUnits() const{ return m_tableMaxWriteCapacityUnits; }
 
     /**
-     * <p>The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the WCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum write capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the write
+     * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline void SetTableMaxWriteCapacityUnits(long long value) { m_tableMaxWriteCapacityUnits = value; }
 
     /**
-     * <p>The maximum Write-Capacity Units (WCUs) that your account allows you to
-     * provision for a new table you are creating in this region, including the WCUs
-     * provisioned for its global secondary indexes (GSIs).</p>
+     * <p>The maximum write capacity units that your account allows you to provision
+     * for a new table that you are creating in this region, including the write
+     * capacity units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline DescribeLimitsResult& WithTableMaxWriteCapacityUnits(long long value) { SetTableMaxWriteCapacityUnits(value); return *this;}
 

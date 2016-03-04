@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline CreateSnapshotRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline CreateSnapshotRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the directory to take a snapshot of.</p>
+     * <p>The identifier of the directory of which to take a snapshot.</p>
      */
     inline CreateSnapshotRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

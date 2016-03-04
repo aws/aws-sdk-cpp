@@ -36,7 +36,9 @@
 #include <aws/ds/model/DeleteDirectoryRequest.h>
 #include <aws/ds/model/DeleteSnapshotRequest.h>
 #include <aws/ds/model/DeleteTrustRequest.h>
+#include <aws/ds/model/DeregisterEventTopicRequest.h>
 #include <aws/ds/model/DescribeDirectoriesRequest.h>
+#include <aws/ds/model/DescribeEventTopicsRequest.h>
 #include <aws/ds/model/DescribeSnapshotsRequest.h>
 #include <aws/ds/model/DescribeTrustsRequest.h>
 #include <aws/ds/model/DisableRadiusRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/ds/model/EnableSsoRequest.h>
 #include <aws/ds/model/GetDirectoryLimitsRequest.h>
 #include <aws/ds/model/GetSnapshotLimitsRequest.h>
+#include <aws/ds/model/RegisterEventTopicRequest.h>
 #include <aws/ds/model/RestoreFromSnapshotRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
 #include <aws/ds/model/VerifyTrustRequest.h>
@@ -421,6 +424,37 @@ void DirectoryServiceClient::DeleteTrustAsyncHelper(const DeleteTrustRequest& re
   handler(this, request, DeleteTrust(request), context);
 }
 
+DeregisterEventTopicOutcome DirectoryServiceClient::DeregisterEventTopic(const DeregisterEventTopicRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterEventTopicOutcome(DeregisterEventTopicResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterEventTopicOutcome(outcome.GetError());
+  }
+}
+
+DeregisterEventTopicOutcomeCallable DirectoryServiceClient::DeregisterEventTopicCallable(const DeregisterEventTopicRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::DeregisterEventTopic, this, request);
+}
+
+void DirectoryServiceClient::DeregisterEventTopicAsync(const DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::DeregisterEventTopicAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::DeregisterEventTopicAsyncHelper(const DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterEventTopic(request), context);
+}
+
 DescribeDirectoriesOutcome DirectoryServiceClient::DescribeDirectories(const DescribeDirectoriesRequest& request) const
 {
   Aws::StringStream ss;
@@ -450,6 +484,37 @@ void DirectoryServiceClient::DescribeDirectoriesAsync(const DescribeDirectoriesR
 void DirectoryServiceClient::DescribeDirectoriesAsyncHelper(const DescribeDirectoriesRequest& request, const DescribeDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDirectories(request), context);
+}
+
+DescribeEventTopicsOutcome DirectoryServiceClient::DescribeEventTopics(const DescribeEventTopicsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEventTopicsOutcome(DescribeEventTopicsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEventTopicsOutcome(outcome.GetError());
+  }
+}
+
+DescribeEventTopicsOutcomeCallable DirectoryServiceClient::DescribeEventTopicsCallable(const DescribeEventTopicsRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::DescribeEventTopics, this, request);
+}
+
+void DirectoryServiceClient::DescribeEventTopicsAsync(const DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::DescribeEventTopicsAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::DescribeEventTopicsAsyncHelper(const DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventTopics(request), context);
 }
 
 DescribeSnapshotsOutcome DirectoryServiceClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
@@ -698,6 +763,37 @@ void DirectoryServiceClient::GetSnapshotLimitsAsync(const GetSnapshotLimitsReque
 void DirectoryServiceClient::GetSnapshotLimitsAsyncHelper(const GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSnapshotLimits(request), context);
+}
+
+RegisterEventTopicOutcome DirectoryServiceClient::RegisterEventTopic(const RegisterEventTopicRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterEventTopicOutcome(RegisterEventTopicResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterEventTopicOutcome(outcome.GetError());
+  }
+}
+
+RegisterEventTopicOutcomeCallable DirectoryServiceClient::RegisterEventTopicCallable(const RegisterEventTopicRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::RegisterEventTopic, this, request);
+}
+
+void DirectoryServiceClient::RegisterEventTopicAsync(const RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::RegisterEventTopicAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::RegisterEventTopicAsyncHelper(const RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterEventTopic(request), context);
 }
 
 RestoreFromSnapshotOutcome DirectoryServiceClient::RestoreFromSnapshot(const RestoreFromSnapshotRequest& request) const

@@ -253,7 +253,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
 
@@ -261,7 +262,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
@@ -269,7 +271,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
@@ -277,7 +280,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
 
@@ -285,7 +289,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline NatGateway& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
 
@@ -293,7 +298,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline NatGateway& WithFailureCode(Aws::String&& value) { SetFailureCode(value); return *this;}
 
@@ -301,7 +307,8 @@ namespace Model
      * <p>If the NAT gateway could not be created, specifies the error code for the
      * failure. (<code>InsufficientFreeAddressesInSubnet</code> |
      * <code>Gateway.NotAttached</code> | <code>InvalidAllocationID.NotFound</code> |
-     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>)</p>
+     * <code>Resource.AlreadyAssociated</code> | <code>InternalError</code> |
+     * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline NatGateway& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
 
@@ -316,7 +323,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
@@ -331,7 +340,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
@@ -346,7 +357,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
@@ -361,7 +374,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
@@ -376,7 +391,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline NatGateway& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
@@ -391,7 +408,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
 
@@ -406,7 +425,9 @@ namespace Model
      * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
      * already associated</code></li> <li>For InternalError: <code>Network interface
      * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> </ul>
+     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be
+     * found.</code></li> </ul>
      */
     inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 

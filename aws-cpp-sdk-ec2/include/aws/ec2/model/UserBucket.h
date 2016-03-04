@@ -80,37 +80,37 @@ namespace Model
     inline UserBucket& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline UserBucket& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline UserBucket& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The key for the disk image.</p>
+     * <p>The file name of the disk image.</p>
      */
     inline UserBucket& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 

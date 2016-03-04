@@ -189,23 +189,23 @@ namespace Model
     inline DescribeScheduledInstanceAvailabilityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 300. The default value is 300. To retrieve the remaining results,
+     * make another call with the returned <code>NextToken</code> value.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 300. The default value is 300. To retrieve the remaining results,
+     * make another call with the returned <code>NextToken</code> value.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 300. The default value is 300. To retrieve the remaining results,
+     * make another call with the returned <code>NextToken</code> value.</p>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 

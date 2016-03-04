@@ -444,35 +444,38 @@ namespace Model
     inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
     /**
-     * <p>The required duration for the Spot instances, in minutes. This value must be
-     * a multiple of 60 (60, 120, 180, 240, 300, or 360).</p> <p>The duration period
-     * starts as soon as your Spot instance receives its instance ID. At the end of the
-     * duration period, Amazon EC2 marks the Spot instance for termination and provides
-     * a Spot instance termination notice, which gives the instance a two-minute
-     * warning before it terminates.</p> <p>Note that you can't specify an Availability
-     * Zone group or a launch group if you specify a duration.</p>
+     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
+     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
+     * instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
+     * you can't specify an Availability Zone group or a launch group if you specify a
+     * duration.</p>
      */
     inline long GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The required duration for the Spot instances, in minutes. This value must be
-     * a multiple of 60 (60, 120, 180, 240, 300, or 360).</p> <p>The duration period
-     * starts as soon as your Spot instance receives its instance ID. At the end of the
-     * duration period, Amazon EC2 marks the Spot instance for termination and provides
-     * a Spot instance termination notice, which gives the instance a two-minute
-     * warning before it terminates.</p> <p>Note that you can't specify an Availability
-     * Zone group or a launch group if you specify a duration.</p>
+     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
+     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
+     * instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
+     * you can't specify an Availability Zone group or a launch group if you specify a
+     * duration.</p>
      */
     inline void SetBlockDurationMinutes(long value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The required duration for the Spot instances, in minutes. This value must be
-     * a multiple of 60 (60, 120, 180, 240, 300, or 360).</p> <p>The duration period
-     * starts as soon as your Spot instance receives its instance ID. At the end of the
-     * duration period, Amazon EC2 marks the Spot instance for termination and provides
-     * a Spot instance termination notice, which gives the instance a two-minute
-     * warning before it terminates.</p> <p>Note that you can't specify an Availability
-     * Zone group or a launch group if you specify a duration.</p>
+     * <p>The required duration for the Spot instances (also known as Spot blocks), in
+     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
+     * 360).</p> <p>The duration period starts as soon as your Spot instance receives
+     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
+     * instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.</p> <p>Note that
+     * you can't specify an Availability Zone group or a launch group if you specify a
+     * duration.</p>
      */
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(long value) { SetBlockDurationMinutes(value); return *this;}
 

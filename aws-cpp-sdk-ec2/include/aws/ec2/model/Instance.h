@@ -907,27 +907,27 @@ namespace Model
     inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a Spot instance.</p>
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline const InstanceLifecycleType& GetInstanceLifecycle() const{ return m_instanceLifecycle; }
 
     /**
-     * <p>Indicates whether this is a Spot instance.</p>
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
-     * <p>Indicates whether this is a Spot instance.</p>
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline void SetInstanceLifecycle(InstanceLifecycleType&& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
-     * <p>Indicates whether this is a Spot instance.</p>
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline Instance& WithInstanceLifecycle(const InstanceLifecycleType& value) { SetInstanceLifecycle(value); return *this;}
 
     /**
-     * <p>Indicates whether this is a Spot instance.</p>
+     * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(value); return *this;}
 

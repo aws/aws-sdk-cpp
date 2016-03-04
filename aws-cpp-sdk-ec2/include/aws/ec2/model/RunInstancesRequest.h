@@ -140,7 +140,7 @@ namespace Model
      * specified instance type. For more information about the default limits, and how
      * to request an increase, see <a
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
     inline long GetMaxCount() const{ return m_maxCount; }
 
@@ -152,7 +152,7 @@ namespace Model
      * specified instance type. For more information about the default limits, and how
      * to request an increase, see <a
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
     inline void SetMaxCount(long value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
 
@@ -164,7 +164,7 @@ namespace Model
      * specified instance type. For more information about the default limits, and how
      * to request an increase, see <a
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
     inline RunInstancesRequest& WithMaxCount(long value) { SetMaxCount(value); return *this;}
 
@@ -342,8 +342,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -353,8 +354,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -364,8 +366,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -375,8 +378,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -386,8 +390,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -397,8 +402,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
@@ -408,8 +414,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. Command
-     * line tools perform encoding for you.</p>
+     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
+     * command line tools, the encoding is performed for you, and you can load the text
+     * from a file.</p>
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 

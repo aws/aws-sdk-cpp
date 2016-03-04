@@ -159,37 +159,37 @@ namespace Model
     inline RunInstancesResponse& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = value; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline RunInstancesResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline RunInstancesResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(value); return *this; }
 

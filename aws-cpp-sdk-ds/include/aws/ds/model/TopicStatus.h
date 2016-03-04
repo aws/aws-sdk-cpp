@@ -13,28 +13,30 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace EC2
+namespace DirectoryService
 {
 namespace Model
 {
-  enum class InstanceLifecycleType
+  enum class TopicStatus
   {
     NOT_SET,
-    spot,
-    scheduled
+    Registered,
+    Topic_not_found,
+    Failed,
+    Deleted
   };
 
-namespace InstanceLifecycleTypeMapper
+namespace TopicStatusMapper
 {
-AWS_EC2_API InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name);
+AWS_DIRECTORYSERVICE_API TopicStatus GetTopicStatusForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType value);
-} // namespace InstanceLifecycleTypeMapper
+AWS_DIRECTORYSERVICE_API Aws::String GetNameForTopicStatus(TopicStatus value);
+} // namespace TopicStatusMapper
 } // namespace Model
-} // namespace EC2
+} // namespace DirectoryService
 } // namespace Aws

@@ -92,7 +92,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline const Aws::String& GetImportManifestUrl() const{ return m_importManifestUrl; }
 
@@ -103,7 +106,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(const Aws::String& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = value; }
 
@@ -114,7 +120,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(Aws::String&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = value; }
 
@@ -125,7 +134,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(const char* value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl.assign(value); }
 
@@ -136,7 +148,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline DiskImageDetail& WithImportManifestUrl(const Aws::String& value) { SetImportManifestUrl(value); return *this;}
 
@@ -147,7 +162,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline DiskImageDetail& WithImportManifestUrl(Aws::String&& value) { SetImportManifestUrl(value); return *this;}
 
@@ -158,7 +176,10 @@ namespace Model
      * Alternative" section of the <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>For information about the import manifest referenced by this
+     * API action, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * Import Manifest</a>.</p>
      */
     inline DiskImageDetail& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}
 

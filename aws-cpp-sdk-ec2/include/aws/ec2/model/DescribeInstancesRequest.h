@@ -129,35 +129,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -296,35 +297,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -463,35 +465,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -630,35 +633,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -797,35 +801,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -964,35 +969,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
@@ -1131,35 +1137,36 @@ namespace Model
      * ID of the image used to launch the instance.</p> </li> <li>
      * <p><code>instance-id</code> - The ID of the instance.</p> </li> <li>
      * <p><code>instance-lifecycle</code> - Indicates whether this is a Spot Instance
-     * (<code>spot</code>).</p> </li> <li> <p><code>instance-state-code</code> - The
-     * state of the instance, as a 16-bit unsigned integer. The high byte is an opaque
-     * internal value and should be ignored. The low byte is set based on the state
-     * represented. The valid values are: 0 (pending), 16 (running), 32
-     * (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).</p> </li>
-     * <li> <p><code>instance-state-name</code> - The state of the instance
-     * (<code>pending</code> | <code>running</code> | <code>shutting-down</code> |
-     * <code>terminated</code> | <code>stopping</code> | <code>stopped</code>).</p>
-     * </li> <li> <p><code>instance-type</code> - The type of instance (for example,
-     * <code>t2.micro</code>).</p> </li> <li> <p><code>instance.group-id</code> - The
-     * ID of the security group for the instance. </p> </li> <li>
-     * <p><code>instance.group-name</code> - The name of the security group for the
-     * instance. </p> </li> <li> <p><code>ip-address</code> - The public IP address of
-     * the instance.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p><code>key-name</code> - The name of the key pair used when the
-     * instance was launched.</p> </li> <li> <p><code>launch-index</code> - When
-     * launching multiple instances, this is the index for the instance in the launch
-     * group (for example, 0, 1, 2, and so on). </p> </li> <li>
-     * <p><code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p><code>monitoring-state</code> - Indicates whether monitoring is enabled
-     * for the instance (<code>disabled</code> | <code>enabled</code>).</p> </li> <li>
-     * <p><code>owner-id</code> - The AWS account ID of the instance owner.</p> </li>
-     * <li> <p><code>placement-group-name</code> - The name of the placement group for
-     * the instance.</p> </li> <li> <p><code>platform</code> - The platform. Use
-     * <code>windows</code> if you have Windows instances; otherwise, leave blank.</p>
-     * </li> <li> <p><code>private-dns-name</code> - The private DNS name of the
-     * instance.</p> </li> <li> <p><code>private-ip-address</code> - The private IP
-     * address of the instance.</p> </li> <li> <p><code>product-code</code> - The
-     * product code associated with the AMI used to launch the instance.</p> </li> <li>
+     * or a Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li>
+     * <li> <p><code>instance-state-code</code> - The state of the instance, as a
+     * 16-bit unsigned integer. The high byte is an opaque internal value and should be
+     * ignored. The low byte is set based on the state represented. The valid values
+     * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
+     * (stopping), and 80 (stopped).</p> </li> <li> <p><code>instance-state-name</code>
+     * - The state of the instance (<code>pending</code> | <code>running</code> |
+     * <code>shutting-down</code> | <code>terminated</code> | <code>stopping</code> |
+     * <code>stopped</code>).</p> </li> <li> <p><code>instance-type</code> - The type
+     * of instance (for example, <code>t2.micro</code>).</p> </li> <li>
+     * <p><code>instance.group-id</code> - The ID of the security group for the
+     * instance. </p> </li> <li> <p><code>instance.group-name</code> - The name of the
+     * security group for the instance. </p> </li> <li> <p><code>ip-address</code> -
+     * The public IP address of the instance.</p> </li> <li> <p><code>kernel-id</code>
+     * - The kernel ID.</p> </li> <li> <p><code>key-name</code> - The name of the key
+     * pair used when the instance was launched.</p> </li> <li>
+     * <p><code>launch-index</code> - When launching multiple instances, this is the
+     * index for the instance in the launch group (for example, 0, 1, 2, and so on).
+     * </p> </li> <li> <p><code>launch-time</code> - The time when the instance was
+     * launched.</p> </li> <li> <p><code>monitoring-state</code> - Indicates whether
+     * monitoring is enabled for the instance (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p><code>owner-id</code> - The AWS account
+     * ID of the instance owner.</p> </li> <li> <p><code>placement-group-name</code> -
+     * The name of the placement group for the instance.</p> </li> <li>
+     * <p><code>platform</code> - The platform. Use <code>windows</code> if you have
+     * Windows instances; otherwise, leave blank.</p> </li> <li>
+     * <p><code>private-dns-name</code> - The private DNS name of the instance.</p>
+     * </li> <li> <p><code>private-ip-address</code> - The private IP address of the
+     * instance.</p> </li> <li> <p><code>product-code</code> - The product code
+     * associated with the AMI used to launch the instance.</p> </li> <li>
      * <p><code>product-code.type</code> - The type of product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
      * <p><code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li>

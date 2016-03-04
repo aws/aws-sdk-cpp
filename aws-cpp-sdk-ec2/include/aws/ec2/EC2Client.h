@@ -4249,7 +4249,10 @@ namespace Model
          * <p>Describes one or more of your conversion tasks. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          */
         virtual Model::DescribeConversionTasksOutcome DescribeConversionTasks(const Model::DescribeConversionTasksRequest& request) const;
 
@@ -4257,7 +4260,10 @@ namespace Model
          * <p>Describes one or more of your conversion tasks. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4267,7 +4273,10 @@ namespace Model
          * <p>Describes one or more of your conversion tasks. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6643,7 +6652,10 @@ namespace Model
          * line tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          */
         virtual Model::ImportInstanceOutcome ImportInstance(const Model::ImportInstanceRequest& request) const;
 
@@ -6655,7 +6667,10 @@ namespace Model
          * line tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6669,7 +6684,10 @@ namespace Model
          * line tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6741,7 +6759,10 @@ namespace Model
          * (CLI) tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          */
         virtual Model::ImportVolumeOutcome ImportVolume(const Model::ImportVolumeRequest& request) const;
 
@@ -6752,7 +6773,10 @@ namespace Model
          * (CLI) tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6765,7 +6789,10 @@ namespace Model
          * (CLI) tools. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
          * the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the
-         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For information about the
+         * import manifest referenced by this API action, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * Import Manifest</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -6814,11 +6841,16 @@ namespace Model
          * they are created. The following resource types support longer IDs:
          * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
          * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user, unless
-         * they explicitly override the settings by running this request. Resources created
-         * with longer IDs are visible to all IAM users, regardless of these settings and
-         * provided that they have permission to use the relevant <code>Describe</code>
-         * command for the resource type.</p>
+         * By default, an IAM user defaults to the same settings as the root user. If
+         * you're using this action as the root user or as an IAM role that has permission
+         * to use this action, then these settings apply to the entire account, unless an
+         * IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
+         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
+         * users, regardless of these settings and provided that they have permission to
+         * use the relevant <code>Describe</code> command for the resource type.</p>
          */
         virtual Model::ModifyIdFormatOutcome ModifyIdFormat(const Model::ModifyIdFormatRequest& request) const;
 
@@ -6828,11 +6860,16 @@ namespace Model
          * they are created. The following resource types support longer IDs:
          * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
          * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user, unless
-         * they explicitly override the settings by running this request. Resources created
-         * with longer IDs are visible to all IAM users, regardless of these settings and
-         * provided that they have permission to use the relevant <code>Describe</code>
-         * command for the resource type.</p>
+         * By default, an IAM user defaults to the same settings as the root user. If
+         * you're using this action as the root user or as an IAM role that has permission
+         * to use this action, then these settings apply to the entire account, unless an
+         * IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
+         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
+         * users, regardless of these settings and provided that they have permission to
+         * use the relevant <code>Describe</code> command for the resource type.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -6844,11 +6881,16 @@ namespace Model
          * they are created. The following resource types support longer IDs:
          * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
          * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user, unless
-         * they explicitly override the settings by running this request. Resources created
-         * with longer IDs are visible to all IAM users, regardless of these settings and
-         * provided that they have permission to use the relevant <code>Describe</code>
-         * command for the resource type.</p>
+         * By default, an IAM user defaults to the same settings as the root user. If
+         * you're using this action as the root user or as an IAM role that has permission
+         * to use this action, then these settings apply to the entire account, unless an
+         * IAM user explicitly overrides these settings for themselves. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
+         * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
+         * users, regardless of these settings and provided that they have permission to
+         * use the relevant <code>Describe</code> command for the resource type.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8162,9 +8204,12 @@ namespace Model
          * permissions.</p> <p>When you launch an instance, it enters the
          * <code>pending</code> state. After the instance is ready for you, it enters the
          * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
+         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
+         * large requests into smaller batches. For example, create five separate launch
+         * requests for 100 instances each instead of one launch request for 500
+         * instances.</p> <p>If you don't specify a security group when launching an
+         * instance, Amazon EC2 uses the default security group. For more information, see
+         * <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8181,10 +8226,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
          * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
          * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>T2 instance types can only
+         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
          * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails.</p> <p>For
-         * more information about troubleshooting, see <a
+         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
@@ -8198,9 +8246,12 @@ namespace Model
          * permissions.</p> <p>When you launch an instance, it enters the
          * <code>pending</code> state. After the instance is ready for you, it enters the
          * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
+         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
+         * large requests into smaller batches. For example, create five separate launch
+         * requests for 100 instances each instead of one launch request for 500
+         * instances.</p> <p>If you don't specify a security group when launching an
+         * instance, Amazon EC2 uses the default security group. For more information, see
+         * <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8217,10 +8268,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
          * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
          * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>T2 instance types can only
+         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
          * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails.</p> <p>For
-         * more information about troubleshooting, see <a
+         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
@@ -8236,9 +8290,12 @@ namespace Model
          * permissions.</p> <p>When you launch an instance, it enters the
          * <code>pending</code> state. After the instance is ready for you, it enters the
          * <code>running</code> state. To check the state of your instance, call
-         * <a>DescribeInstances</a>.</p> <p>If you don't specify a security group when
-         * launching an instance, Amazon EC2 uses the default security group. For more
-         * information, see <a
+         * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
+         * large requests into smaller batches. For example, create five separate launch
+         * requests for 100 instances each instead of one launch request for 500
+         * instances.</p> <p>If you don't specify a security group when launching an
+         * instance, Amazon EC2 uses the default security group. For more information, see
+         * <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8255,10 +8312,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
          * Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If
          * any of the AMIs have a product code attached for which the user has not
-         * subscribed, <code>RunInstances</code> fails.</p> <p>T2 instance types can only
+         * subscribed, <code>RunInstances</code> fails.</p> <p>Some instance types can only
          * be launched into a VPC. If you do not have a default VPC, or if you do not
-         * specify a subnet ID in the request, <code>RunInstances</code> fails.</p> <p>For
-         * more information about troubleshooting, see <a
+         * specify a subnet ID in the request, <code>RunInstances</code> fails. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * Types Available Only in a VPC</a>.</p> <p>For more information about
+         * troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting

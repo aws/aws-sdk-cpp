@@ -69,6 +69,7 @@ namespace Model
     cc1_4xlarge,
     cc2_8xlarge,
     g2_2xlarge,
+    g2_8xlarge,
     cg1_4xlarge,
     r3_large,
     r3_xlarge,

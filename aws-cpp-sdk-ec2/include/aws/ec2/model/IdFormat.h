@@ -99,19 +99,22 @@ namespace Model
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs.</p>
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
      */
     inline double GetDeadline() const{ return m_deadline; }
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs.</p>
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
      */
     inline void SetDeadline(double value) { m_deadlineHasBeenSet = true; m_deadline = value; }
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
-     * IDs.</p>
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
      */
     inline IdFormat& WithDeadline(double value) { SetDeadline(value); return *this;}
 

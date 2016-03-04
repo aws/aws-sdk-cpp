@@ -13,28 +13,33 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
 namespace Aws
 {
-namespace EC2
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace DirectoryService
 {
 namespace Model
 {
-  enum class InstanceLifecycleType
+  class AWS_DIRECTORYSERVICE_API DeregisterEventTopicResult
   {
-    NOT_SET,
-    spot,
-    scheduled
+  public:
+    DeregisterEventTopicResult();
+    DeregisterEventTopicResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterEventTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace InstanceLifecycleTypeMapper
-{
-AWS_EC2_API InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name);
-
-AWS_EC2_API Aws::String GetNameForInstanceLifecycleType(InstanceLifecycleType value);
-} // namespace InstanceLifecycleTypeMapper
 } // namespace Model
-} // namespace EC2
+} // namespace DirectoryService
 } // namespace Aws
