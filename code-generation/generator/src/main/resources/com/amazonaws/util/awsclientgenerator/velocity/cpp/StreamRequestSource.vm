@@ -39,7 +39,7 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #end
 #if($metadata.additionalHeaders)
 #foreach($headerEntry in $metadata.additionalHeaders.entrySet())
-  headers.insert("${headerEntry.key}", "${headerEntry.value}");
+  headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
 #end
 
 #end
