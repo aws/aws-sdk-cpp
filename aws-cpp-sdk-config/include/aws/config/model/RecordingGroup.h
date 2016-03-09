@@ -40,18 +40,18 @@ namespace Model
    * Regional resources are tied to a region and can be used only in that region.
    * Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can
    * also have AWS Config record configuration changes for supported types of global
-   * resources. Global resources are not tied to an individual region and can be used
-   * in all regions.</p> <important>The configuration details for any global resource
-   * are the same in all regions. If you customize AWS Config in multiple regions to
-   * record global resources, it will create multiple configuration items each time a
-   * global resource changes: one configuration item for each region. These
-   * configuration items will contain identical data. To prevent duplicate
-   * configuration items, you should consider customizing AWS Config in only one
-   * region to record global resources, unless you want the configuration items to be
-   * available in multiple regions.</important> <p>If you don't want AWS Config to
-   * record all resources, you can specify which types of resources it will record
-   * with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported
-   * resource types, see <a
+   * resources (for example, IAM resources). Global resources are not tied to an
+   * individual region and can be used in all regions.</p> <important>The
+   * configuration details for any global resource are the same in all regions. If
+   * you customize AWS Config in multiple regions to record global resources, it will
+   * create multiple configuration items each time a global resource changes: one
+   * configuration item for each region. These configuration items will contain
+   * identical data. To prevent duplicate configuration items, you should consider
+   * customizing AWS Config in only one region to record global resources, unless you
+   * want the configuration items to be available in multiple regions.</important>
+   * <p>If you don't want AWS Config to record all resources, you can specify which
+   * types of resources it will record with the <code>resourceTypes</code>
+   * parameter.</p> <p>For a list of supported resource types, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * resource types</a>.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
@@ -97,31 +97,40 @@ namespace Model
 
     /**
      * <p>Specifies whether AWS Config includes all supported types of global resources
-     * with the resources that it records.</p> <p>Before you can set this option to
-     * <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.</p> <p>If you set this option to <code>true</code>, when AWS
-     * Config adds support for a new type of global resource, it automatically starts
-     * recording resources of that type.</p>
+     * (for example, IAM resources) with the resources that it records.</p> <p>Before
+     * you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>true</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * global resource, it automatically starts recording resources of that type.</p>
+     * <p>The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.</p>
      */
     inline bool GetIncludeGlobalResourceTypes() const{ return m_includeGlobalResourceTypes; }
 
     /**
      * <p>Specifies whether AWS Config includes all supported types of global resources
-     * with the resources that it records.</p> <p>Before you can set this option to
-     * <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.</p> <p>If you set this option to <code>true</code>, when AWS
-     * Config adds support for a new type of global resource, it automatically starts
-     * recording resources of that type.</p>
+     * (for example, IAM resources) with the resources that it records.</p> <p>Before
+     * you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>true</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * global resource, it automatically starts recording resources of that type.</p>
+     * <p>The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.</p>
      */
     inline void SetIncludeGlobalResourceTypes(bool value) { m_includeGlobalResourceTypesHasBeenSet = true; m_includeGlobalResourceTypes = value; }
 
     /**
      * <p>Specifies whether AWS Config includes all supported types of global resources
-     * with the resources that it records.</p> <p>Before you can set this option to
-     * <code>true</code>, you must set the <code>allSupported</code> option to
-     * <code>true</code>.</p> <p>If you set this option to <code>true</code>, when AWS
-     * Config adds support for a new type of global resource, it automatically starts
-     * recording resources of that type.</p>
+     * (for example, IAM resources) with the resources that it records.</p> <p>Before
+     * you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>true</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * global resource, it automatically starts recording resources of that type.</p>
+     * <p>The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.</p>
      */
     inline RecordingGroup& WithIncludeGlobalResourceTypes(bool value) { SetIncludeGlobalResourceTypes(value); return *this;}
 

@@ -106,51 +106,37 @@ namespace Model
     inline CreateBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline CreateBranchRequest& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline CreateBranchRequest& WithCommitId(Aws::String&& value) { SetCommitId(value); return *this;}
 
     /**
-     * <p>The ID of the commit to point the new branch to.</p> <note>If this commit ID
-     * is not specified, the new branch will point to the commit that is pointed to by
-     * the repository's default branch.</note>
+     * <p>The ID of the commit to point the new branch to.</p>
      */
     inline CreateBranchRequest& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 

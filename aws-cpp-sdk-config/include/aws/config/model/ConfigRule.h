@@ -37,9 +37,9 @@ namespace Model
   /**
    * <p>An AWS Lambda function that evaluates configuration items to assess whether
    * your AWS resources comply with your desired configurations. This function can
-   * run when AWS Config detects a configuration change or delivers a configuration
-   * snapshot.</p> <p>For more information about developing and using AWS Config
-   * rules, see <a
+   * run when AWS Config detects a configuration change to an AWS resource, or when
+   * it delivers a configuration snapshot of the resources in the account.</p> <p>For
+   * more information about developing and using AWS Config rules, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
    * Guide</i>.</p>

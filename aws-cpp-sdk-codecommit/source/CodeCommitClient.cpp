@@ -31,9 +31,13 @@
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
+#include <aws/codecommit/model/GetCommitRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
+#include <aws/codecommit/model/GetRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/ListBranchesRequest.h>
 #include <aws/codecommit/model/ListRepositoriesRequest.h>
+#include <aws/codecommit/model/PutRepositoryTriggersRequest.h>
+#include <aws/codecommit/model/TestRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/UpdateDefaultBranchRequest.h>
 #include <aws/codecommit/model/UpdateRepositoryDescriptionRequest.h>
 #include <aws/codecommit/model/UpdateRepositoryNameRequest.h>
@@ -255,6 +259,37 @@ void CodeCommitClient::GetBranchAsyncHelper(const GetBranchRequest& request, con
   handler(this, request, GetBranch(request), context);
 }
 
+GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCommitOutcome(GetCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCommitOutcome(outcome.GetError());
+  }
+}
+
+GetCommitOutcomeCallable CodeCommitClient::GetCommitCallable(const GetCommitRequest& request) const
+{
+  return std::async(std::launch::async, &CodeCommitClient::GetCommit, this, request);
+}
+
+void CodeCommitClient::GetCommitAsync(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeCommitClient::GetCommitAsyncHelper, this, request, handler, context);
+}
+
+void CodeCommitClient::GetCommitAsyncHelper(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCommit(request), context);
+}
+
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -284,6 +319,37 @@ void CodeCommitClient::GetRepositoryAsync(const GetRepositoryRequest& request, c
 void CodeCommitClient::GetRepositoryAsyncHelper(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRepository(request), context);
+}
+
+GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRepositoryTriggersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetRepositoryTriggersOutcome(GetRepositoryTriggersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRepositoryTriggersOutcome(outcome.GetError());
+  }
+}
+
+GetRepositoryTriggersOutcomeCallable CodeCommitClient::GetRepositoryTriggersCallable(const GetRepositoryTriggersRequest& request) const
+{
+  return std::async(std::launch::async, &CodeCommitClient::GetRepositoryTriggers, this, request);
+}
+
+void CodeCommitClient::GetRepositoryTriggersAsync(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeCommitClient::GetRepositoryTriggersAsyncHelper, this, request, handler, context);
+}
+
+void CodeCommitClient::GetRepositoryTriggersAsyncHelper(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRepositoryTriggers(request), context);
 }
 
 ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& request) const
@@ -346,6 +412,68 @@ void CodeCommitClient::ListRepositoriesAsync(const ListRepositoriesRequest& requ
 void CodeCommitClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRepositories(request), context);
+}
+
+PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutRepositoryTriggersOutcome(PutRepositoryTriggersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRepositoryTriggersOutcome(outcome.GetError());
+  }
+}
+
+PutRepositoryTriggersOutcomeCallable CodeCommitClient::PutRepositoryTriggersCallable(const PutRepositoryTriggersRequest& request) const
+{
+  return std::async(std::launch::async, &CodeCommitClient::PutRepositoryTriggers, this, request);
+}
+
+void CodeCommitClient::PutRepositoryTriggersAsync(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeCommitClient::PutRepositoryTriggersAsyncHelper, this, request, handler, context);
+}
+
+void CodeCommitClient::PutRepositoryTriggersAsyncHelper(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRepositoryTriggers(request), context);
+}
+
+TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const TestRepositoryTriggersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TestRepositoryTriggersOutcome(TestRepositoryTriggersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestRepositoryTriggersOutcome(outcome.GetError());
+  }
+}
+
+TestRepositoryTriggersOutcomeCallable CodeCommitClient::TestRepositoryTriggersCallable(const TestRepositoryTriggersRequest& request) const
+{
+  return std::async(std::launch::async, &CodeCommitClient::TestRepositoryTriggers, this, request);
+}
+
+void CodeCommitClient::TestRepositoryTriggersAsync(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeCommitClient::TestRepositoryTriggersAsyncHelper, this, request, handler, context);
+}
+
+void CodeCommitClient::TestRepositoryTriggersAsyncHelper(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestRepositoryTriggers(request), context);
 }
 
 UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDefaultBranchRequest& request) const

@@ -37,7 +37,8 @@ namespace Model
     INSTRUMENTATION,
     UIAUTOMATION,
     UIAUTOMATOR,
-    XCTEST
+    XCTEST,
+    XCTEST_UI
   };
 
 namespace TestTypeMapper

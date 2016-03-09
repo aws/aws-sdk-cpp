@@ -41,59 +41,73 @@ namespace Model
     RepositoryNameIdPair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline RepositoryNameIdPair& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline RepositoryNameIdPair& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
 
-    
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline RepositoryNameIdPair& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline const Aws::String& GetRepositoryId() const{ return m_repositoryId; }
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline void SetRepositoryId(const Aws::String& value) { m_repositoryIdHasBeenSet = true; m_repositoryId = value; }
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline void SetRepositoryId(Aws::String&& value) { m_repositoryIdHasBeenSet = true; m_repositoryId = value; }
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline void SetRepositoryId(const char* value) { m_repositoryIdHasBeenSet = true; m_repositoryId.assign(value); }
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline RepositoryNameIdPair& WithRepositoryId(const Aws::String& value) { SetRepositoryId(value); return *this;}
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline RepositoryNameIdPair& WithRepositoryId(Aws::String&& value) { SetRepositoryId(value); return *this;}
 
     /**
-     * <p>The ID associated with the repository name.</p>
+     * <p>The ID associated with the repository.</p>
      */
     inline RepositoryNameIdPair& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
 

@@ -109,18 +109,21 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li>
+     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
+     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
      * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
      * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash
-     * test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An
-     * instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator
-     * test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit
-     * test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An
-     * Appium Java TestNG test package upload.</p></li>
-     * <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
+     * An Appium Java JUnit test package upload.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
+     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
      * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -130,18 +133,21 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li>
+     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
+     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
      * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
      * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash
-     * test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An
-     * instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator
-     * test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit
-     * test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An
-     * Appium Java TestNG test package upload.</p></li>
-     * <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
+     * An Appium Java JUnit test package upload.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
+     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
      * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -151,18 +157,21 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li>
+     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
+     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
      * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
      * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash
-     * test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An
-     * instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator
-     * test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit
-     * test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An
-     * Appium Java TestNG test package upload.</p></li>
-     * <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
+     * An Appium Java JUnit test package upload.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
+     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
      * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -172,18 +181,21 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li>
+     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
+     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
      * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
      * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash
-     * test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An
-     * instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator
-     * test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit
-     * test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An
-     * Appium Java TestNG test package upload.</p></li>
-     * <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
+     * An Appium Java JUnit test package upload.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
+     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
      * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
@@ -193,18 +205,21 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS
-     * upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li>
+     * upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li>
+     * <li><p>EXTERNAL_DATA: An external data upload.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
      * upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG
      * test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium
-     * Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash
-     * test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An
-     * instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator
-     * test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
-     * upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit
-     * test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An
-     * Appium Java TestNG test package upload.</p></li>
-     * <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     * Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
+     * An Appium Java JUnit test package upload.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
+     * package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package
+     * upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
+     * upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
+     * upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
+     * upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package
+     * upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package
      * upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>

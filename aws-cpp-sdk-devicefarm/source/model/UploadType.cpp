@@ -34,6 +34,7 @@ static const int INSTRUMENTATION_TEST_PACKAGE_HASH = HashingUtils::HashString("I
 static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
 static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
 static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
+static const int XCTEST_UI_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
 
 namespace Aws
 {
@@ -108,6 +109,10 @@ namespace Aws
           {
             return UploadType::XCTEST_TEST_PACKAGE;
           }
+          else if (hashCode == XCTEST_UI_TEST_PACKAGE_HASH)
+          {
+            return UploadType::XCTEST_UI_TEST_PACKAGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -152,6 +157,8 @@ namespace Aws
             return "UIAUTOMATOR_TEST_PACKAGE";
           case UploadType::XCTEST_TEST_PACKAGE:
             return "XCTEST_TEST_PACKAGE";
+          case UploadType::XCTEST_UI_TEST_PACKAGE:
+            return "XCTEST_UI_TEST_PACKAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

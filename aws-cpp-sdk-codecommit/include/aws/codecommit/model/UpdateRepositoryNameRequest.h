@@ -35,46 +35,74 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline const Aws::String& GetOldName() const{ return m_oldName; }
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline void SetOldName(const Aws::String& value) { m_oldNameHasBeenSet = true; m_oldName = value; }
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline void SetOldName(Aws::String&& value) { m_oldNameHasBeenSet = true; m_oldName = value; }
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline void SetOldName(const char* value) { m_oldNameHasBeenSet = true; m_oldName.assign(value); }
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithOldName(const Aws::String& value) { SetOldName(value); return *this;}
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithOldName(Aws::String&& value) { SetOldName(value); return *this;}
 
-    
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithOldName(const char* value) { SetOldName(value); return *this;}
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline const Aws::String& GetNewName() const{ return m_newName; }
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline void SetNewName(const Aws::String& value) { m_newNameHasBeenSet = true; m_newName = value; }
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline void SetNewName(Aws::String&& value) { m_newNameHasBeenSet = true; m_newName = value; }
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline void SetNewName(const char* value) { m_newNameHasBeenSet = true; m_newName.assign(value); }
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithNewName(const Aws::String& value) { SetNewName(value); return *this;}
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithNewName(Aws::String&& value) { SetNewName(value); return *this;}
 
-    
+    /**
+     * <p>The new name for the repository.</p>
+     */
     inline UpdateRepositoryNameRequest& WithNewName(const char* value) { SetNewName(value); return *this;}
 
   private:

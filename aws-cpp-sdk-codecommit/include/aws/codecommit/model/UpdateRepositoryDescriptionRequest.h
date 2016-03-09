@@ -78,37 +78,44 @@ namespace Model
     inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline void SetRepositoryDescription(const Aws::String& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline void SetRepositoryDescription(const char* value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription.assign(value); }
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const Aws::String& value) { SetRepositoryDescription(value); return *this;}
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(value); return *this;}
 
     /**
-     * <p>The new comment or description for the specified repository.</p>
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
      */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
 

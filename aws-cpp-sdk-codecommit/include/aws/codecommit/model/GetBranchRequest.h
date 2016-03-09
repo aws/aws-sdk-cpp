@@ -35,25 +35,46 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline GetBranchRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline GetBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline GetBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**

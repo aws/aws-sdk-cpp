@@ -761,7 +761,7 @@ if(REGENERATE_CLIENTS)
     LIST(FIND BUILD_ONLY "aws-cpp-sdk-events" OUTPUT_VAR)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName events --apiVersion 2014-02-03 --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName events --apiVersion 2015-10-07 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()

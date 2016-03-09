@@ -235,9 +235,10 @@ namespace Model
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
          * <p>AWS Config sets the state of a rule to <code>DELETING</code> until the
          * deletion is complete. You cannot update a rule while it is in this state. If you
-         * make a <code>PutConfigRule</code> request for the rule, you will receive a
-         * <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by
-         * using the <code>DescribeConfigRules</code> request.</p>
+         * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
+         * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
+         * check the state of a rule by using the <code>DescribeConfigRules</code>
+         * request.</p>
          */
         virtual Model::DeleteConfigRuleOutcome DeleteConfigRule(const Model::DeleteConfigRuleRequest& request) const;
 
@@ -245,9 +246,10 @@ namespace Model
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
          * <p>AWS Config sets the state of a rule to <code>DELETING</code> until the
          * deletion is complete. You cannot update a rule while it is in this state. If you
-         * make a <code>PutConfigRule</code> request for the rule, you will receive a
-         * <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by
-         * using the <code>DescribeConfigRules</code> request.</p>
+         * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
+         * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
+         * check the state of a rule by using the <code>DescribeConfigRules</code>
+         * request.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -257,9 +259,10 @@ namespace Model
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
          * <p>AWS Config sets the state of a rule to <code>DELETING</code> until the
          * deletion is complete. You cannot update a rule while it is in this state. If you
-         * make a <code>PutConfigRule</code> request for the rule, you will receive a
-         * <code>ResourceInUseException</code>.</p> <p>You can check the state of a rule by
-         * using the <code>DescribeConfigRules</code> request.</p>
+         * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
+         * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
+         * check the state of a rule by using the <code>DescribeConfigRules</code>
+         * request.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

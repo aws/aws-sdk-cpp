@@ -120,31 +120,31 @@ namespace Model
 
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.</p>
+     * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
     inline const ComplianceContributorCount& GetComplianceContributorCount() const{ return m_complianceContributorCount; }
 
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.</p>
+     * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
     inline void SetComplianceContributorCount(const ComplianceContributorCount& value) { m_complianceContributorCountHasBeenSet = true; m_complianceContributorCount = value; }
 
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.</p>
+     * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
     inline void SetComplianceContributorCount(ComplianceContributorCount&& value) { m_complianceContributorCountHasBeenSet = true; m_complianceContributorCount = value; }
 
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.</p>
+     * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
     inline Compliance& WithComplianceContributorCount(const ComplianceContributorCount& value) { SetComplianceContributorCount(value); return *this;}
 
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.</p>
+     * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
      */
     inline Compliance& WithComplianceContributorCount(ComplianceContributorCount&& value) { SetComplianceContributorCount(value); return *this;}
 

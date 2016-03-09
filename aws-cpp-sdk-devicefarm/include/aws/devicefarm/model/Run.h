@@ -126,14 +126,15 @@ namespace Model
      * it and capturing screenshots at the same time.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
      * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>CALABASH: The
-     * Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation
-     * type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li>
-     * <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test
-     * type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> </ul>
+     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
+     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
+     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
+     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
+     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
+     * The XCode UI test type.</p></li> </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
 
@@ -144,14 +145,15 @@ namespace Model
      * it and capturing screenshots at the same time.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
      * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>CALABASH: The
-     * Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation
-     * type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li>
-     * <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test
-     * type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> </ul>
+     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
+     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
+     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
+     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
+     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
+     * The XCode UI test type.</p></li> </ul>
      */
     inline void SetType(const TestType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -162,14 +164,15 @@ namespace Model
      * it and capturing screenshots at the same time.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
      * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>CALABASH: The
-     * Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation
-     * type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li>
-     * <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test
-     * type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> </ul>
+     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
+     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
+     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
+     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
+     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
+     * The XCode UI test type.</p></li> </ul>
      */
     inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -180,14 +183,15 @@ namespace Model
      * it and capturing screenshots at the same time.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
      * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>CALABASH: The
-     * Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation
-     * type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li>
-     * <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test
-     * type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> </ul>
+     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
+     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
+     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
+     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
+     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
+     * The XCode UI test type.</p></li> </ul>
      */
     inline Run& WithType(const TestType& value) { SetType(value); return *this;}
 
@@ -198,14 +202,15 @@ namespace Model
      * it and capturing screenshots at the same time.</p></li>
      * <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li>
      * <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li>
-     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>CALABASH: The
-     * Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation
-     * type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li>
-     * <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test
-     * type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p></li> </ul>
+     * <li><p>APPIUM_PYTHON: The Appium Python type.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li>
+     * <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web
+     * apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web
+     * apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li>
+     * <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION:
+     * The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator
+     * type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI:
+     * The XCode UI test type.</p></li> </ul>
      */
     inline Run& WithType(TestType&& value) { SetType(value); return *this;}
 

@@ -41,6 +41,7 @@ static const int APPIUM_PYTHON_XML_OUTPUT_HASH = HashingUtils::HashString("APPIU
 static const int EXPLORER_EVENT_LOG_HASH = HashingUtils::HashString("EXPLORER_EVENT_LOG");
 static const int EXPLORER_SUMMARY_LOG_HASH = HashingUtils::HashString("EXPLORER_SUMMARY_LOG");
 static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLICATION_CRASH_REPORT");
+static const int XCTEST_LOG_HASH = HashingUtils::HashString("XCTEST_LOG");
 
 namespace Aws
 {
@@ -143,6 +144,10 @@ namespace Aws
           {
             return ArtifactType::APPLICATION_CRASH_REPORT;
           }
+          else if (hashCode == XCTEST_LOG_HASH)
+          {
+            return ArtifactType::XCTEST_LOG;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -201,6 +206,8 @@ namespace Aws
             return "EXPLORER_SUMMARY_LOG";
           case ArtifactType::APPLICATION_CRASH_REPORT:
             return "APPLICATION_CRASH_REPORT";
+          case ArtifactType::XCTEST_LOG:
+            return "XCTEST_LOG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
