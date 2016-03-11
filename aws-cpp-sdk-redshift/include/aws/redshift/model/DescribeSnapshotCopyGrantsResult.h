@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p>The result of the snapshot copy grant.</p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeSnapshotCopyGrantsResult
   {
@@ -130,37 +130,37 @@ namespace Model
     inline DescribeSnapshotCopyGrantsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline const Aws::Vector<SnapshotCopyGrant>& GetSnapshotCopyGrants() const{ return m_snapshotCopyGrants; }
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline void SetSnapshotCopyGrants(const Aws::Vector<SnapshotCopyGrant>& value) { m_snapshotCopyGrants = value; }
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline void SetSnapshotCopyGrants(Aws::Vector<SnapshotCopyGrant>&& value) { m_snapshotCopyGrants = value; }
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline DescribeSnapshotCopyGrantsResult& WithSnapshotCopyGrants(const Aws::Vector<SnapshotCopyGrant>& value) { SetSnapshotCopyGrants(value); return *this;}
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline DescribeSnapshotCopyGrantsResult& WithSnapshotCopyGrants(Aws::Vector<SnapshotCopyGrant>&& value) { SetSnapshotCopyGrants(value); return *this;}
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline DescribeSnapshotCopyGrantsResult& AddSnapshotCopyGrants(const SnapshotCopyGrant& value) { m_snapshotCopyGrants.push_back(value); return *this; }
 
     /**
-     * <p>The list of snapshot copy grants.</p>
+     * <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
      */
     inline DescribeSnapshotCopyGrantsResult& AddSnapshotCopyGrants(SnapshotCopyGrant&& value) { m_snapshotCopyGrants.push_back(value); return *this; }
 

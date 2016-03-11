@@ -68,6 +68,7 @@
 #include <aws/redshift/model/DescribeReservedNodesRequest.h>
 #include <aws/redshift/model/DescribeResizeRequest.h>
 #include <aws/redshift/model/DescribeSnapshotCopyGrantsRequest.h>
+#include <aws/redshift/model/DescribeTableRestoreStatusRequest.h>
 #include <aws/redshift/model/DescribeTagsRequest.h>
 #include <aws/redshift/model/DisableLoggingRequest.h>
 #include <aws/redshift/model/DisableSnapshotCopyRequest.h>
@@ -82,6 +83,7 @@
 #include <aws/redshift/model/RebootClusterRequest.h>
 #include <aws/redshift/model/ResetClusterParameterGroupRequest.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotRequest.h>
+#include <aws/redshift/model/RestoreTableFromClusterSnapshotRequest.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressRequest.h>
 #include <aws/redshift/model/RevokeSnapshotAccessRequest.h>
 #include <aws/redshift/model/RotateEncryptionKeyRequest.h>
@@ -1409,6 +1411,36 @@ void RedshiftClient::DescribeSnapshotCopyGrantsAsyncHelper(const DescribeSnapsho
   handler(this, request, DescribeSnapshotCopyGrants(request), context);
 }
 
+DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(const DescribeTableRestoreStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTableRestoreStatusOutcome(DescribeTableRestoreStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTableRestoreStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeTableRestoreStatusOutcomeCallable RedshiftClient::DescribeTableRestoreStatusCallable(const DescribeTableRestoreStatusRequest& request) const
+{
+  return std::async(std::launch::async, &RedshiftClient::DescribeTableRestoreStatus, this, request);
+}
+
+void RedshiftClient::DescribeTableRestoreStatusAsync(const DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RedshiftClient::DescribeTableRestoreStatusAsyncHelper, this, request, handler, context);
+}
+
+void RedshiftClient::DescribeTableRestoreStatusAsyncHelper(const DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTableRestoreStatus(request), context);
+}
+
 DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1827,6 +1859,36 @@ void RedshiftClient::RestoreFromClusterSnapshotAsync(const RestoreFromClusterSna
 void RedshiftClient::RestoreFromClusterSnapshotAsyncHelper(const RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreFromClusterSnapshot(request), context);
+}
+
+RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSnapshot(const RestoreTableFromClusterSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreTableFromClusterSnapshotOutcome(RestoreTableFromClusterSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreTableFromClusterSnapshotOutcome(outcome.GetError());
+  }
+}
+
+RestoreTableFromClusterSnapshotOutcomeCallable RedshiftClient::RestoreTableFromClusterSnapshotCallable(const RestoreTableFromClusterSnapshotRequest& request) const
+{
+  return std::async(std::launch::async, &RedshiftClient::RestoreTableFromClusterSnapshot, this, request);
+}
+
+void RedshiftClient::RestoreTableFromClusterSnapshotAsync(const RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RedshiftClient::RestoreTableFromClusterSnapshotAsyncHelper, this, request, handler, context);
+}
+
+void RedshiftClient::RestoreTableFromClusterSnapshotAsyncHelper(const RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreTableFromClusterSnapshot(request), context);
 }
 
 RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGroupIngress(const RevokeClusterSecurityGroupIngressRequest& request) const

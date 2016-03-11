@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p/>
    */
   class AWS_REDSHIFT_API CreateClusterRequest : public RedshiftRequest
   {
@@ -232,63 +232,63 @@ namespace Model
     inline CreateClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline const Aws::String& GetClusterType() const{ return m_clusterType; }
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline void SetClusterType(const Aws::String& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline void SetClusterType(const char* value) { m_clusterTypeHasBeenSet = true; m_clusterType.assign(value); }
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline CreateClusterRequest& WithClusterType(const Aws::String& value) { SetClusterType(value); return *this;}
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
     inline CreateClusterRequest& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
 
     /**
-     * <p> The type of the cluster. When cluster type is specified as <ul> <li>
-     * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
-     * required.</li> <li> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter
+     * <p> The type of the cluster. When cluster type is specified as <ul>
+     * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
+     * required.</li> <li><code>multi-node</code>, the <b>NumberOfNodes</b> parameter
      * is required.</li> </ul> </p> <p> Valid Values: <code>multi-node</code> |
      * <code>single-node</code> </p> <p>Default: <code>multi-node</code></p>
      */
@@ -1366,6 +1366,41 @@ namespace Model
      */
     inline CreateClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateClusterRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateClusterRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateClusterRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
   private:
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
@@ -1415,6 +1450,8 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet;
   };
 
 } // namespace Model

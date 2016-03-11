@@ -84,9 +84,67 @@ namespace Model
      */
     inline PolicyUser& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline PolicyUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline PolicyUser& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline PolicyUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet;
   };
 
 } // namespace Model

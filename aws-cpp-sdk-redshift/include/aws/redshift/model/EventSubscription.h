@@ -33,6 +33,9 @@ namespace Redshift
 namespace Model
 {
 
+  /**
+   * <p>Describes event subscriptions.</p>
+   */
   class AWS_REDSHIFT_API EventSubscription
   {
   public:

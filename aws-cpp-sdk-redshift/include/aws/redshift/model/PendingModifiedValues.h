@@ -263,6 +263,24 @@ namespace Model
      */
     inline PendingModifiedValues& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+    /**
+     * <p> The pending or in-progress change of the ability to connect to the cluster
+     * from the public network.</p>
+     */
+    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+
+    /**
+     * <p> The pending or in-progress change of the ability to connect to the cluster
+     * from the public network.</p>
+     */
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
+
+    /**
+     * <p> The pending or in-progress change of the ability to connect to the cluster
+     * from the public network.</p>
+     */
+    inline PendingModifiedValues& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
   private:
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
@@ -278,6 +296,8 @@ namespace Model
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+    bool m_publiclyAccessible;
+    bool m_publiclyAccessibleHasBeenSet;
   };
 
 } // namespace Model

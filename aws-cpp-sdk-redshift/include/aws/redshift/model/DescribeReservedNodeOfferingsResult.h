@@ -36,8 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> Contains the output from the <a>DescribeReservedNodeOfferings</a> action.
-   * </p>
+   * <p> </p>
    */
   class AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult
   {
@@ -117,37 +116,37 @@ namespace Model
     inline DescribeReservedNodeOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline const Aws::Vector<ReservedNodeOffering>& GetReservedNodeOfferings() const{ return m_reservedNodeOfferings; }
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline void SetReservedNodeOfferings(const Aws::Vector<ReservedNodeOffering>& value) { m_reservedNodeOfferings = value; }
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline void SetReservedNodeOfferings(Aws::Vector<ReservedNodeOffering>&& value) { m_reservedNodeOfferings = value; }
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline DescribeReservedNodeOfferingsResult& WithReservedNodeOfferings(const Aws::Vector<ReservedNodeOffering>& value) { SetReservedNodeOfferings(value); return *this;}
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline DescribeReservedNodeOfferingsResult& WithReservedNodeOfferings(Aws::Vector<ReservedNodeOffering>&& value) { SetReservedNodeOfferings(value); return *this;}
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(const ReservedNodeOffering& value) { m_reservedNodeOfferings.push_back(value); return *this; }
 
     /**
-     * <p>A list of reserved node offerings.</p>
+     * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
     inline DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(ReservedNodeOffering&& value) { m_reservedNodeOfferings.push_back(value); return *this; }
 

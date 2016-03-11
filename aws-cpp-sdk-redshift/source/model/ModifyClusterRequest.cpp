@@ -37,7 +37,10 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_allowVersionUpgradeHasBeenSet(false),
     m_hsmClientCertificateIdentifierHasBeenSet(false),
     m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_newClusterIdentifierHasBeenSet(false)
+    m_newClusterIdentifierHasBeenSet(false),
+    m_publiclyAccessible(false),
+    m_publiclyAccessibleHasBeenSet(false),
+    m_elasticIpHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,14 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_newClusterIdentifierHasBeenSet)
   {
     ss << "NewClusterIdentifier=" << StringUtils::URLEncode(m_newClusterIdentifier.c_str()) << "&";
+  }
+  if(m_publiclyAccessibleHasBeenSet)
+  {
+    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+  if(m_elasticIpHasBeenSet)
+  {
+    ss << "ElasticIp=" << StringUtils::URLEncode(m_elasticIp.c_str()) << "&";
   }
   ss << "Version=2012-12-01";
   return ss.str();

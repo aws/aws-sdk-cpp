@@ -36,8 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> Contains the output from the <a>DescribeClusterSecurityGroups</a> action.
-   * </p>
+   * <p> </p>
    */
   class AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult
   {

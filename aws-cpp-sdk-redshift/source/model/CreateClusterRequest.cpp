@@ -49,7 +49,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_hsmConfigurationIdentifierHasBeenSet(false),
     m_elasticIpHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,10 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_additionalInfoHasBeenSet)
+  {
+    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
   ss << "Version=2012-12-01";
   return ss.str();
