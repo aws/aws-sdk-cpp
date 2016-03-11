@@ -20,6 +20,10 @@
 #end
 #if($member.shape.enum)
   ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName)));
+#elseif($member.shape.blob)
+  ${spaces}ss << HashingUtils::Base64Encode(m_${lowerCaseVarName});
+  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}ss.str("");
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
