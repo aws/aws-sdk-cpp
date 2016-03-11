@@ -33,7 +33,8 @@ FleetAttributes::FleetAttributes() :
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
-    m_logPathsHasBeenSet(false)
+    m_logPathsHasBeenSet(false),
+    m_newGameSessionProtectionPolicyHasBeenSet(false)
 {
 }
 
@@ -49,7 +50,8 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_buildIdHasBeenSet(false),
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
-    m_logPathsHasBeenSet(false)
+    m_logPathsHasBeenSet(false),
+    m_newGameSessionProtectionPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +131,13 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_logPathsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NewGameSessionProtectionPolicy"))
+  {
+    m_newGameSessionProtectionPolicy = ProtectionPolicyMapper::GetProtectionPolicyForName(jsonValue.GetString("NewGameSessionProtectionPolicy"));
+
+    m_newGameSessionProtectionPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,11 @@ JsonValue FleetAttributes::Jsonize() const
    }
    payload.WithArray("LogPaths", std::move(logPathsJsonList));
 
+  }
+
+  if(m_newGameSessionProtectionPolicyHasBeenSet)
+  {
+   payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
   }
 
   return payload;

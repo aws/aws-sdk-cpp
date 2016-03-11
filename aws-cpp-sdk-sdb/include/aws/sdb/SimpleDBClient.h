@@ -163,7 +163,18 @@ namespace Model
         /**
          * <p> Performs multiple DeleteAttributes operations in a single call, which
          * reduces round trips and latencies. This enables Amazon SimpleDB to optimize
-         * requests, which generally yields better throughput. </p> <p> The following
+         * requests, which generally yields better throughput. </p> <note> <p> If you
+         * specify BatchDeleteAttributes without attributes or values, all the attributes
+         * for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent
+         * operation; running it multiple times on the same item or attribute doesn't
+         * result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or
+         * fails in its entirety. There are no partial deletes. You can execute multiple
+         * BatchDeleteAttributes operations and other operations in parallel. However,
+         * large numbers of concurrent BatchDeleteAttributes calls can result in Service
+         * Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding
+         * the maximum URL size when making a REST request using the HTTP GET method. </p>
+         * <p> This operation does not support conditions using Expected.X.Name,
+         * Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following
          * limitations are enforced for this operation: <ul> <li>1 MB request size</li>
          * <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
          */
@@ -172,7 +183,18 @@ namespace Model
         /**
          * <p> Performs multiple DeleteAttributes operations in a single call, which
          * reduces round trips and latencies. This enables Amazon SimpleDB to optimize
-         * requests, which generally yields better throughput. </p> <p> The following
+         * requests, which generally yields better throughput. </p> <note> <p> If you
+         * specify BatchDeleteAttributes without attributes or values, all the attributes
+         * for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent
+         * operation; running it multiple times on the same item or attribute doesn't
+         * result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or
+         * fails in its entirety. There are no partial deletes. You can execute multiple
+         * BatchDeleteAttributes operations and other operations in parallel. However,
+         * large numbers of concurrent BatchDeleteAttributes calls can result in Service
+         * Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding
+         * the maximum URL size when making a REST request using the HTTP GET method. </p>
+         * <p> This operation does not support conditions using Expected.X.Name,
+         * Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following
          * limitations are enforced for this operation: <ul> <li>1 MB request size</li>
          * <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
          *
@@ -183,7 +205,18 @@ namespace Model
         /**
          * <p> Performs multiple DeleteAttributes operations in a single call, which
          * reduces round trips and latencies. This enables Amazon SimpleDB to optimize
-         * requests, which generally yields better throughput. </p> <p> The following
+         * requests, which generally yields better throughput. </p> <note> <p> If you
+         * specify BatchDeleteAttributes without attributes or values, all the attributes
+         * for the item are deleted. </p> <p> BatchDeleteAttributes is an idempotent
+         * operation; running it multiple times on the same item or attribute doesn't
+         * result in an error. </p> <p> The BatchDeleteAttributes operation succeeds or
+         * fails in its entirety. There are no partial deletes. You can execute multiple
+         * BatchDeleteAttributes operations and other operations in parallel. However,
+         * large numbers of concurrent BatchDeleteAttributes calls can result in Service
+         * Unavailable (503) responses. </p> <p> This operation is vulnerable to exceeding
+         * the maximum URL size when making a REST request using the HTTP GET method. </p>
+         * <p> This operation does not support conditions using Expected.X.Name,
+         * Expected.X.Value, or Expected.X.Exists. </p> </note> <p> The following
          * limitations are enforced for this operation: <ul> <li>1 MB request size</li>
          * <li>25 item limit per BatchDeleteAttributes operation</li> </ul> </p>
          *
@@ -218,18 +251,20 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
-         * when making a REST request using the HTTP GET method. This operation does not
-         * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
-         * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
-         * other operations in parallel. However, large numbers of concurrent
-         * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
-         * responses. </p> <p> The following limitations are enforced for this operation:
-         * <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li>
-         * <li>1 billion attributes per domain</li> <li>10 GB of total user data storage
-         * per domain</li> <li>25 item limit per <code>BatchPutAttributes</code>
-         * operation</li> </ul> </p>
+         * </p> <note> You cannot specify an empty string as an item or as an attribute
+         * name. The <code>BatchPutAttributes</code> operation succeeds or fails in its
+         * entirety. There are no partial puts. </note> <important> This operation is
+         * vulnerable to exceeding the maximum URL size when making a REST request using
+         * the HTTP GET method. This operation does not support conditions using
+         * <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or
+         * <code>Expected.X.Exists</code>. </important> <p> You can execute multiple
+         * <code>BatchPutAttributes</code> operations and other operations in parallel.
+         * However, large numbers of concurrent <code>BatchPutAttributes</code> calls can
+         * result in Service Unavailable (503) responses. </p> <p> The following
+         * limitations are enforced for this operation: <ul> <li>256 attribute name-value
+         * pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per
+         * domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item
+         * limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
          */
         virtual Model::BatchPutAttributesOutcome BatchPutAttributes(const Model::BatchPutAttributesRequest& request) const;
 
@@ -260,18 +295,20 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
-         * when making a REST request using the HTTP GET method. This operation does not
-         * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
-         * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
-         * other operations in parallel. However, large numbers of concurrent
-         * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
-         * responses. </p> <p> The following limitations are enforced for this operation:
-         * <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li>
-         * <li>1 billion attributes per domain</li> <li>10 GB of total user data storage
-         * per domain</li> <li>25 item limit per <code>BatchPutAttributes</code>
-         * operation</li> </ul> </p>
+         * </p> <note> You cannot specify an empty string as an item or as an attribute
+         * name. The <code>BatchPutAttributes</code> operation succeeds or fails in its
+         * entirety. There are no partial puts. </note> <important> This operation is
+         * vulnerable to exceeding the maximum URL size when making a REST request using
+         * the HTTP GET method. This operation does not support conditions using
+         * <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or
+         * <code>Expected.X.Exists</code>. </important> <p> You can execute multiple
+         * <code>BatchPutAttributes</code> operations and other operations in parallel.
+         * However, large numbers of concurrent <code>BatchPutAttributes</code> calls can
+         * result in Service Unavailable (503) responses. </p> <p> The following
+         * limitations are enforced for this operation: <ul> <li>256 attribute name-value
+         * pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per
+         * domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item
+         * limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -304,18 +341,20 @@ namespace Model
          * <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final
          * attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4'
          * }</code>, replacing the previous values of the 'b' attribute with the new value.
-         * </p> <important> This operation is vulnerable to exceeding the maximum URL size
-         * when making a REST request using the HTTP GET method. This operation does not
-         * support conditions using <code>Expected.X.Name</code>,
-         * <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important>
-         * <p> You can execute multiple <code>BatchPutAttributes</code> operations and
-         * other operations in parallel. However, large numbers of concurrent
-         * <code>BatchPutAttributes</code> calls can result in Service Unavailable (503)
-         * responses. </p> <p> The following limitations are enforced for this operation:
-         * <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li>
-         * <li>1 billion attributes per domain</li> <li>10 GB of total user data storage
-         * per domain</li> <li>25 item limit per <code>BatchPutAttributes</code>
-         * operation</li> </ul> </p>
+         * </p> <note> You cannot specify an empty string as an item or as an attribute
+         * name. The <code>BatchPutAttributes</code> operation succeeds or fails in its
+         * entirety. There are no partial puts. </note> <important> This operation is
+         * vulnerable to exceeding the maximum URL size when making a REST request using
+         * the HTTP GET method. This operation does not support conditions using
+         * <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or
+         * <code>Expected.X.Exists</code>. </important> <p> You can execute multiple
+         * <code>BatchPutAttributes</code> operations and other operations in parallel.
+         * However, large numbers of concurrent <code>BatchPutAttributes</code> calls can
+         * result in Service Unavailable (503) responses. </p> <p> The following
+         * limitations are enforced for this operation: <ul> <li>256 attribute name-value
+         * pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per
+         * domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item
+         * limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -325,8 +364,10 @@ namespace Model
          * <p> The <code>CreateDomain</code> operation creates a new domain. The domain
          * name should be unique among the domains associated with the Access Key ID
          * provided in the request. The <code>CreateDomain</code> operation may take 10 or
-         * more seconds to complete. </p> <p> The client can create up to 100 domains per
-         * account. </p> <p> If the client requires additional domains, go to <a
+         * more seconds to complete. </p> <note> CreateDomain is an idempotent operation;
+         * running it multiple times using the same domain name will not result in an error
+         * response. </note> <p> The client can create up to 100 domains per account. </p>
+         * <p> If the client requires additional domains, go to <a
          * href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
          * http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
          */
@@ -336,8 +377,10 @@ namespace Model
          * <p> The <code>CreateDomain</code> operation creates a new domain. The domain
          * name should be unique among the domains associated with the Access Key ID
          * provided in the request. The <code>CreateDomain</code> operation may take 10 or
-         * more seconds to complete. </p> <p> The client can create up to 100 domains per
-         * account. </p> <p> If the client requires additional domains, go to <a
+         * more seconds to complete. </p> <note> CreateDomain is an idempotent operation;
+         * running it multiple times using the same domain name will not result in an error
+         * response. </note> <p> The client can create up to 100 domains per account. </p>
+         * <p> If the client requires additional domains, go to <a
          * href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
          * http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
          *
@@ -349,8 +392,10 @@ namespace Model
          * <p> The <code>CreateDomain</code> operation creates a new domain. The domain
          * name should be unique among the domains associated with the Access Key ID
          * provided in the request. The <code>CreateDomain</code> operation may take 10 or
-         * more seconds to complete. </p> <p> The client can create up to 100 domains per
-         * account. </p> <p> If the client requires additional domains, go to <a
+         * more seconds to complete. </p> <note> CreateDomain is an idempotent operation;
+         * running it multiple times using the same domain name will not result in an error
+         * response. </note> <p> The client can create up to 100 domains per account. </p>
+         * <p> If the client requires additional domains, go to <a
          * href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
          * http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>
          *
@@ -360,7 +405,9 @@ namespace Model
 
         /**
          * <p> Deletes one or more attributes associated with an item. If all attributes of
-         * the item are deleted, the item is deleted. </p> <p>
+         * the item are deleted, the item is deleted. </p> <note> If
+         * <code>DeleteAttributes</code> is called without being passed any attributes or
+         * values specified, all the attributes for the item are deleted. </note> <p>
          * <code>DeleteAttributes</code> is an idempotent operation; running it multiple
          * times on the same item or attribute does not result in an error response. </p>
          * <p> Because Amazon SimpleDB makes multiple copies of item data and uses an
@@ -373,7 +420,9 @@ namespace Model
 
         /**
          * <p> Deletes one or more attributes associated with an item. If all attributes of
-         * the item are deleted, the item is deleted. </p> <p>
+         * the item are deleted, the item is deleted. </p> <note> If
+         * <code>DeleteAttributes</code> is called without being passed any attributes or
+         * values specified, all the attributes for the item are deleted. </note> <p>
          * <code>DeleteAttributes</code> is an idempotent operation; running it multiple
          * times on the same item or attribute does not result in an error response. </p>
          * <p> Because Amazon SimpleDB makes multiple copies of item data and uses an
@@ -388,7 +437,9 @@ namespace Model
 
         /**
          * <p> Deletes one or more attributes associated with an item. If all attributes of
-         * the item are deleted, the item is deleted. </p> <p>
+         * the item are deleted, the item is deleted. </p> <note> If
+         * <code>DeleteAttributes</code> is called without being passed any attributes or
+         * values specified, all the attributes for the item are deleted. </note> <p>
          * <code>DeleteAttributes</code> is an idempotent operation; running it multiple
          * times on the same item or attribute does not result in an error response. </p>
          * <p> Because Amazon SimpleDB makes multiple copies of item data and uses an
@@ -405,7 +456,9 @@ namespace Model
          * <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and
          * their attributes) in the domain are deleted as well. The
          * <code>DeleteDomain</code> operation might take 10 or more seconds to complete.
-         * </p>
+         * </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or
+         * running the function multiple times using the same domain name will not result
+         * in an error response. </note>
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
@@ -413,7 +466,9 @@ namespace Model
          * <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and
          * their attributes) in the domain are deleted as well. The
          * <code>DeleteDomain</code> operation might take 10 or more seconds to complete.
-         * </p>
+         * </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or
+         * running the function multiple times using the same domain name will not result
+         * in an error response. </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -423,7 +478,9 @@ namespace Model
          * <p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and
          * their attributes) in the domain are deleted as well. The
          * <code>DeleteDomain</code> operation might take 10 or more seconds to complete.
-         * </p>
+         * </p> <note> Running <code>DeleteDomain</code> on a domain that does not exist or
+         * running the function multiple times using the same domain name will not result
+         * in an error response. </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -460,7 +517,8 @@ namespace Model
          * specifying an attribute name parameter. </p> <p> If the item does not exist on
          * the replica that was accessed for this operation, an empty set is returned. The
          * system does not return an error as it cannot guarantee the item does not exist
-         * on other replicas. </p>
+         * on other replicas. </p> <note> If GetAttributes is called without being passed
+         * any attribute names, all the attributes for the item are returned. </note>
          */
         virtual Model::GetAttributesOutcome GetAttributes(const Model::GetAttributesRequest& request) const;
 
@@ -470,7 +528,8 @@ namespace Model
          * specifying an attribute name parameter. </p> <p> If the item does not exist on
          * the replica that was accessed for this operation, an empty set is returned. The
          * system does not return an error as it cannot guarantee the item does not exist
-         * on other replicas. </p>
+         * on other replicas. </p> <note> If GetAttributes is called without being passed
+         * any attribute names, all the attributes for the item are returned. </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -482,7 +541,8 @@ namespace Model
          * specifying an attribute name parameter. </p> <p> If the item does not exist on
          * the replica that was accessed for this operation, an empty set is returned. The
          * system does not return an error as it cannot guarantee the item does not exist
-         * on other replicas. </p>
+         * on other replicas. </p> <note> If GetAttributes is called without being passed
+         * any attribute names, all the attributes for the item are returned. </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -549,12 +609,14 @@ namespace Model
          * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set
          * to true, the final attributes of the item are changed to <code>{ 'a', '1'
          * }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of
-         * the 'b' attribute with the new value. </p> <p> You cannot specify an empty
-         * string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple
-         * copies of client data and uses an eventual consistency update model, an
-         * immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately
-         * after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might
-         * not return the updated data. </p> <p> The following limitations are enforced for
+         * the 'b' attribute with the new value. </p> <note> Using
+         * <code>PutAttributes</code> to replace attribute values that do not exist will
+         * not result in an error response. </note> <p> You cannot specify an empty string
+         * as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of
+         * client data and uses an eventual consistency update model, an immediate
+         * <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a
+         * <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not
+         * return the updated data. </p> <p> The following limitations are enforced for
          * this operation: <ul> <li>256 total attribute name-value pairs per item</li>
          * <li>One billion attributes per domain</li> <li>10 GB of total user data storage
          * per domain</li> </ul> </p>
@@ -582,12 +644,14 @@ namespace Model
          * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set
          * to true, the final attributes of the item are changed to <code>{ 'a', '1'
          * }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of
-         * the 'b' attribute with the new value. </p> <p> You cannot specify an empty
-         * string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple
-         * copies of client data and uses an eventual consistency update model, an
-         * immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately
-         * after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might
-         * not return the updated data. </p> <p> The following limitations are enforced for
+         * the 'b' attribute with the new value. </p> <note> Using
+         * <code>PutAttributes</code> to replace attribute values that do not exist will
+         * not result in an error response. </note> <p> You cannot specify an empty string
+         * as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of
+         * client data and uses an eventual consistency update model, an immediate
+         * <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a
+         * <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not
+         * return the updated data. </p> <p> The following limitations are enforced for
          * this operation: <ul> <li>256 total attribute name-value pairs per item</li>
          * <li>One billion attributes per domain</li> <li>10 GB of total user data storage
          * per domain</li> </ul> </p>
@@ -617,12 +681,14 @@ namespace Model
          * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set
          * to true, the final attributes of the item are changed to <code>{ 'a', '1'
          * }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of
-         * the 'b' attribute with the new value. </p> <p> You cannot specify an empty
-         * string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple
-         * copies of client data and uses an eventual consistency update model, an
-         * immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately
-         * after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might
-         * not return the updated data. </p> <p> The following limitations are enforced for
+         * the 'b' attribute with the new value. </p> <note> Using
+         * <code>PutAttributes</code> to replace attribute values that do not exist will
+         * not result in an error response. </note> <p> You cannot specify an empty string
+         * as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of
+         * client data and uses an eventual consistency update model, an immediate
+         * <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a
+         * <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not
+         * return the updated data. </p> <p> The following limitations are enforced for
          * this operation: <ul> <li>256 total attribute name-value pairs per item</li>
          * <li>One billion attributes per domain</li> <li>10 GB of total user data storage
          * per domain</li> </ul> </p>

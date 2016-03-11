@@ -80,37 +80,37 @@ namespace Model
     inline ElasticIpStatus& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline ElasticIpStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline ElasticIpStatus& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the elastic IP (EIP) address.</p>
+     * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline ElasticIpStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -217,7 +217,7 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
      * encryption key specified in the initiate multipart upload request.
      */
-    inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+    inline const Aws::Utils::ByteBuffer& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -227,7 +227,7 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
      * encryption key specified in the initiate multipart upload request.
      */
-    inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
+    inline void SetSSECustomerKey(const Aws::Utils::ByteBuffer& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -237,7 +237,7 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
      * encryption key specified in the initiate multipart upload request.
      */
-    inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
+    inline void SetSSECustomerKey(Aws::Utils::ByteBuffer&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -247,7 +247,7 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
      * encryption key specified in the initiate multipart upload request.
      */
-    inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
+    inline UploadPartRequest& WithSSECustomerKey(const Aws::Utils::ByteBuffer& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -257,27 +257,7 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
      * encryption key specified in the initiate multipart upload request.
      */
-    inline UploadPartRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
-
-    /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
-     * encryption key specified in the initiate multipart upload request.
-     */
-    inline UploadPartRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(value); return *this;}
-
-    /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
-     * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
-     * encryption key specified in the initiate multipart upload request.
-     */
-    inline UploadPartRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
+    inline UploadPartRequest& WithSSECustomerKey(Aws::Utils::ByteBuffer&& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
@@ -358,7 +338,7 @@ namespace Model
     bool m_uploadIdHasBeenSet;
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
-    Aws::String m_sSECustomerKey;
+    Aws::Utils::ByteBuffer m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;

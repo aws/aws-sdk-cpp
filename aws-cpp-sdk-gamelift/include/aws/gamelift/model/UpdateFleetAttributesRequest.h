@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/ProtectionPolicy.h>
 
 namespace Aws
 {
@@ -154,6 +155,56 @@ namespace Model
      */
     inline UpdateFleetAttributesRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist will not be affected. You can set protection
+     * for individual instances using <a>UpdateGameSession</a>. <ul><li>NoProtection:
+     * The game session can be terminated during a scale-down event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
+     * terminated during a scale-down event.</li></ul></p>
+     */
+    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist will not be affected. You can set protection
+     * for individual instances using <a>UpdateGameSession</a>. <ul><li>NoProtection:
+     * The game session can be terminated during a scale-down event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
+     * terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist will not be affected. You can set protection
+     * for individual instances using <a>UpdateGameSession</a>. <ul><li>NoProtection:
+     * The game session can be terminated during a scale-down event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
+     * terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist will not be affected. You can set protection
+     * for individual instances using <a>UpdateGameSession</a>. <ul><li>NoProtection:
+     * The game session can be terminated during a scale-down event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
+     * terminated during a scale-down event.</li></ul></p>
+     */
+    inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist will not be affected. You can set protection
+     * for individual instances using <a>UpdateGameSession</a>. <ul><li>NoProtection:
+     * The game session can be terminated during a scale-down event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
+     * terminated during a scale-down event.</li></ul></p>
+     */
+    inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
@@ -161,6 +212,8 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    bool m_newGameSessionProtectionPolicyHasBeenSet;
   };
 
 } // namespace Model

@@ -732,31 +732,28 @@ namespace Model
         virtual void DeregisterInstancesFromLoadBalancerAsync(const Model::DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the state of the specified instances with respect to the specified
+         * <p>Describes the state of the specified instances registered with the specified
          * load balancer. If no instances are specified, the call describes the state of
-         * all instances that are currently registered with the load balancer. If instances
-         * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * all instances registered with the load balancer, not including any terminated
+         * instances.</p>
          */
         virtual Model::DescribeInstanceHealthOutcome DescribeInstanceHealth(const Model::DescribeInstanceHealthRequest& request) const;
 
         /**
-         * <p>Describes the state of the specified instances with respect to the specified
+         * <p>Describes the state of the specified instances registered with the specified
          * load balancer. If no instances are specified, the call describes the state of
-         * all instances that are currently registered with the load balancer. If instances
-         * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * all instances registered with the load balancer, not including any terminated
+         * instances.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstanceHealthOutcomeCallable DescribeInstanceHealthCallable(const Model::DescribeInstanceHealthRequest& request) const;
 
         /**
-         * <p>Describes the state of the specified instances with respect to the specified
+         * <p>Describes the state of the specified instances registered with the specified
          * load balancer. If no instances are specified, the call describes the state of
-         * all instances that are currently registered with the load balancer. If instances
-         * are specified, their state is returned even if they are no longer registered
-         * with the load balancer. The state of terminated instances is not returned.</p>
+         * all instances registered with the load balancer, not including any terminated
+         * instances.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1064,8 +1061,8 @@ namespace Model
          * instances to that VPC and then register the linked EC2-Classic instances with
          * the load balancer in the VPC.</p> <p>Note that
          * <code>RegisterInstanceWithLoadBalancer</code> completes when the request has
-         * been registered. Instance registration takes a little time to complete. To check
-         * the state of the registered instances, use <a>DescribeLoadBalancers</a> or
+         * been registered. Instance registration happens shortly afterwards. To check the
+         * state of the registered instances, use <a>DescribeLoadBalancers</a> or
          * <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it
          * starts receiving traffic and requests from the load balancer. Any instance that
          * is not in one of the Availability Zones registered for the load balancer is
@@ -1093,8 +1090,8 @@ namespace Model
          * instances to that VPC and then register the linked EC2-Classic instances with
          * the load balancer in the VPC.</p> <p>Note that
          * <code>RegisterInstanceWithLoadBalancer</code> completes when the request has
-         * been registered. Instance registration takes a little time to complete. To check
-         * the state of the registered instances, use <a>DescribeLoadBalancers</a> or
+         * been registered. Instance registration happens shortly afterwards. To check the
+         * state of the registered instances, use <a>DescribeLoadBalancers</a> or
          * <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it
          * starts receiving traffic and requests from the load balancer. Any instance that
          * is not in one of the Availability Zones registered for the load balancer is
@@ -1124,8 +1121,8 @@ namespace Model
          * instances to that VPC and then register the linked EC2-Classic instances with
          * the load balancer in the VPC.</p> <p>Note that
          * <code>RegisterInstanceWithLoadBalancer</code> completes when the request has
-         * been registered. Instance registration takes a little time to complete. To check
-         * the state of the registered instances, use <a>DescribeLoadBalancers</a> or
+         * been registered. Instance registration happens shortly afterwards. To check the
+         * state of the registered instances, use <a>DescribeLoadBalancers</a> or
          * <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it
          * starts receiving traffic and requests from the load balancer. Any instance that
          * is not in one of the Availability Zones registered for the load balancer is

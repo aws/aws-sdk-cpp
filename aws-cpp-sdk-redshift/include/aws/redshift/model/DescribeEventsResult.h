@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> Contains the output from the <a>DescribeEvents</a> action. </p>
+   * <p> </p>
    */
   class AWS_REDSHIFT_API DescribeEventsResult
   {
@@ -116,37 +116,37 @@ namespace Model
     inline DescribeEventsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = value; }
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>Event</a> instances. </p>
+     * <p> A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(value); return *this; }
 

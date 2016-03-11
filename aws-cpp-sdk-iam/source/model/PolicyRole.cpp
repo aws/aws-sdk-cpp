@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PolicyRole::PolicyRole() : 
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_roleIdHasBeenSet(false)
 {
 }
 
 PolicyRole::PolicyRole(const XmlNode& xmlNode) : 
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_roleIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -46,6 +48,12 @@ PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
       m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
       m_roleNameHasBeenSet = true;
     }
+    XmlNode roleIdNode = resultNode.FirstChild("RoleId");
+    if(!roleIdNode.IsNull())
+    {
+      m_roleId = StringUtils::Trim(roleIdNode.GetText().c_str());
+      m_roleIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -57,6 +65,10 @@ void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+  if(m_roleIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
+  }
 }
 
 void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -64,5 +76,9 @@ void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_roleNameHasBeenSet)
   {
       oStream << location << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+  if(m_roleIdHasBeenSet)
+  {
+      oStream << location << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
   }
 }

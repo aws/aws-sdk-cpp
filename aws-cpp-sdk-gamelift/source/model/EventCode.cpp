@@ -36,6 +36,7 @@ static const int FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH = HashingUtils
 static const int FLEET_VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("FLEET_VALIDATION_TIMED_OUT");
 static const int FLEET_ACTIVATION_FAILED_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED");
 static const int FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
+static const int FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED_HASH = HashingUtils::HashString("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED");
 
 namespace Aws
 {
@@ -118,6 +119,10 @@ namespace Aws
           {
             return EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES;
           }
+          else if (hashCode == FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED_HASH)
+          {
+            return EventCode::FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -166,6 +171,8 @@ namespace Aws
             return "FLEET_ACTIVATION_FAILED";
           case EventCode::FLEET_ACTIVATION_FAILED_NO_INSTANCES:
             return "FLEET_ACTIVATION_FAILED_NO_INSTANCES";
+          case EventCode::FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED:
+            return "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

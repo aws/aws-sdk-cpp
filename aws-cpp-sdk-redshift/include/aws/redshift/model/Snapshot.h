@@ -137,64 +137,64 @@ namespace Model
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline Snapshot& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline Snapshot& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
-     * used. <ul> <li> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-     * returns status as "creating". </li> <li> <a>DescribeClusterSnapshots</a> returns
-     * status as "creating", "available", "final snapshot", or "failed".</li> <li>
-     * <a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
+     * used. <ul> <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+     * returns status as "creating". </li> <li><a>DescribeClusterSnapshots</a> returns
+     * status as "creating", "available", "final snapshot", or "failed".</li>
+     * <li><a>DeleteClusterSnapshot</a> returns status as "deleted".</li> </ul> </p>
      */
     inline Snapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
 

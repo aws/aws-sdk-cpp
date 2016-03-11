@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p></p>
+   * <p>Describes the status of changes to HSM settings.</p>
    */
   class AWS_REDSHIFT_API HsmStatus
   {

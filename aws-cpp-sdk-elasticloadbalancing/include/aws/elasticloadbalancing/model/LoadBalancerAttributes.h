@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy back-end
-     * instance.</p> <p>For more information, see <a
+     * instance. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      * Connection Draining</a> in the <i>Elastic Load Balancing Developer
      * Guide</i>.</p>
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy back-end
-     * instance.</p> <p>For more information, see <a
+     * instance. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      * Connection Draining</a> in the <i>Elastic Load Balancing Developer
      * Guide</i>.</p>
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy back-end
-     * instance.</p> <p>For more information, see <a
+     * instance. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      * Connection Draining</a> in the <i>Elastic Load Balancing Developer
      * Guide</i>.</p>
@@ -177,7 +177,7 @@ namespace Model
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy back-end
-     * instance.</p> <p>For more information, see <a
+     * instance. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      * Connection Draining</a> in the <i>Elastic Load Balancing Developer
      * Guide</i>.</p>
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy back-end
-     * instance.</p> <p>For more information, see <a
+     * instance. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable
      * Connection Draining</a> in the <i>Elastic Load Balancing Developer
      * Guide</i>.</p>

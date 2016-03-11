@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 UpdateFleetAttributesRequest::UpdateFleetAttributesRequest() : 
     m_fleetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_newGameSessionProtectionPolicyHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,11 @@ Aws::String UpdateFleetAttributesRequest::SerializePayload() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_newGameSessionProtectionPolicyHasBeenSet)
+  {
+   payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
   }
 
   return payload.WriteReadable();

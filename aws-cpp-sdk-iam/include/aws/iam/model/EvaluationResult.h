@@ -210,9 +210,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -223,9 +226,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -236,9 +242,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -249,9 +258,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -262,9 +274,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -275,9 +290,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -288,9 +306,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions
@@ -301,9 +322,12 @@ namespace Model
 
     /**
      * <p>A list of context keys that are required by the included input policies but
-     * that were not provided by one of the input parameters. To discover the context
-     * keys used by a set of policies, you can call
-     * <a>GetContextKeysForCustomPolicy</a> or
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
      * includes any keys in this list, then the reported results might be untrustworthy
      * because the simulation could not completely evaluate all of the conditions

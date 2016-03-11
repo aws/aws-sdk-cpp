@@ -47,44 +47,44 @@ namespace Model
     DescribeOrderableClusterOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline const Aws::Vector<OrderableClusterOption>& GetOrderableClusterOptions() const{ return m_orderableClusterOptions; }
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline void SetOrderableClusterOptions(const Aws::Vector<OrderableClusterOption>& value) { m_orderableClusterOptions = value; }
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline void SetOrderableClusterOptions(Aws::Vector<OrderableClusterOption>&& value) { m_orderableClusterOptions = value; }
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline DescribeOrderableClusterOptionsResult& WithOrderableClusterOptions(const Aws::Vector<OrderableClusterOption>& value) { SetOrderableClusterOptions(value); return *this;}
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline DescribeOrderableClusterOptionsResult& WithOrderableClusterOptions(Aws::Vector<OrderableClusterOption>&& value) { SetOrderableClusterOptions(value); return *this;}
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline DescribeOrderableClusterOptionsResult& AddOrderableClusterOptions(const OrderableClusterOption& value) { m_orderableClusterOptions.push_back(value); return *this; }
 
     /**
-     * <p>An <a>OrderableClusterOption</a> structure containing information about
-     * orderable options for the Cluster.</p>
+     * <p>An <code>OrderableClusterOption</code> structure containing information about
+     * orderable options for the cluster.</p>
      */
     inline DescribeOrderableClusterOptionsResult& AddOrderableClusterOptions(OrderableClusterOption&& value) { m_orderableClusterOptions.push_back(value); return *this; }
 

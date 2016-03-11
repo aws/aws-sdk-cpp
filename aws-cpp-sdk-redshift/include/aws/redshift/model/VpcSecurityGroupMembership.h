@@ -44,46 +44,74 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline const Aws::String& GetVpcSecurityGroupId() const{ return m_vpcSecurityGroupId; }
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline void SetVpcSecurityGroupId(Aws::String&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline void SetVpcSecurityGroupId(const char* value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const Aws::String& value) { SetVpcSecurityGroupId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(Aws::String&& value) { SetVpcSecurityGroupId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
     inline VpcSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:

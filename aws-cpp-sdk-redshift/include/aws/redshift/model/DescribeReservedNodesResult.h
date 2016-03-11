@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p>Contains the output from the <a>DescribeReservedNodes</a> action.</p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeReservedNodesResult
   {
@@ -116,37 +116,37 @@ namespace Model
     inline DescribeReservedNodesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline const Aws::Vector<ReservedNode>& GetReservedNodes() const{ return m_reservedNodes; }
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline void SetReservedNodes(const Aws::Vector<ReservedNode>& value) { m_reservedNodes = value; }
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline void SetReservedNodes(Aws::Vector<ReservedNode>&& value) { m_reservedNodes = value; }
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline DescribeReservedNodesResult& WithReservedNodes(const Aws::Vector<ReservedNode>& value) { SetReservedNodes(value); return *this;}
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline DescribeReservedNodesResult& WithReservedNodes(Aws::Vector<ReservedNode>&& value) { SetReservedNodes(value); return *this;}
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline DescribeReservedNodesResult& AddReservedNodes(const ReservedNode& value) { m_reservedNodes.push_back(value); return *this; }
 
     /**
-     * <p>The list of reserved nodes.</p>
+     * <p>The list of <code>ReservedNode</code> objects.</p>
      */
     inline DescribeReservedNodesResult& AddReservedNodes(ReservedNode&& value) { m_reservedNodes.push_back(value); return *this; }
 

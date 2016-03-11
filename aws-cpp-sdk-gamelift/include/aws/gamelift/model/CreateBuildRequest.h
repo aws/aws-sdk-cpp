@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/S3Location.h>
 
 namespace Aws
 {
@@ -119,11 +120,28 @@ namespace Model
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+    
+    inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
+
+    
+    inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
+
+    
+    inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
+
+    
+    inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
+
+    
+    inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_version;
     bool m_versionHasBeenSet;
+    S3Location m_storageLocation;
+    bool m_storageLocationHasBeenSet;
   };
 
 } // namespace Model
