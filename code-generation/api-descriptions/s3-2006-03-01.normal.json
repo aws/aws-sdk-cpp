@@ -125,7 +125,8 @@
         "method":"DELETE",
         "requestUri":"/{Bucket}?replication"
       },
-      "input":{"shape":"DeleteBucketReplicationRequest"}
+      "input":{"shape":"DeleteBucketReplicationRequest"},
+      "documentation":"Deletes the replication configuration for the given Amazon S3 bucket."
     },
     "DeleteBucketTagging":{
       "name":"DeleteBucketTagging",
@@ -276,7 +277,8 @@
         "requestUri":"/{Bucket}?replication"
       },
       "input":{"shape":"GetBucketReplicationRequest"},
-      "output":{"shape":"GetBucketReplicationOutput"}
+      "output":{"shape":"GetBucketReplicationOutput"},
+      "documentation":"Retrieves the replication configuration for the given Amazon S3 bucket."
     },
     "GetBucketRequestPayment":{
       "name":"GetBucketRequestPayment",
@@ -1275,7 +1277,7 @@
     "CopySourceRange":{"type":"string"},
     "CopySourceSSECustomerAlgorithm":{"type":"string"},
     "CopySourceSSECustomerKey":{
-      "type":"blob",
+      "type":"string",
       "sensitive":true
     },
     "CopySourceSSECustomerKeyMD5":{"type":"string"},
@@ -2010,7 +2012,7 @@
       "members":{
         "Bucket":{
           "shape":"BucketName",
-          "documentation":"Name of the buket to get the notification configuration for.",
+          "documentation":"Name of the bucket to get the notification configuration for.",
           "location":"uri",
           "locationName":"Bucket"
         }
@@ -4533,7 +4535,7 @@
     },
     "SSECustomerAlgorithm":{"type":"string"},
     "SSECustomerKey":{
-      "type":"blob",
+      "type":"string",
       "sensitive":true
     },
     "SSECustomerKeyMD5":{"type":"string"},

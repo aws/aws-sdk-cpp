@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a cluster security group.</p>
+   * <p>Describes a security group.</p>
    */
   class AWS_REDSHIFT_API ClusterSecurityGroupMembership
   {

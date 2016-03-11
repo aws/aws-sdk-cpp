@@ -116,44 +116,44 @@ namespace Model
     inline DescribeClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline void SetClusters(const Aws::Vector<Cluster>& value) { m_clusters = value; }
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = value; }
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(value); return *this;}
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
 
     /**
-     * <p> A list of <code>Cluster</code> objects, where each object describes one
-     * cluster. </p>
+     * <p> A list of <a>Cluster</a> objects, where each object describes one cluster.
+     * </p>
      */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(value); return *this; }
 

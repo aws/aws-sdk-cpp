@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p/>
+   * <p></p>
    */
   class AWS_REDSHIFT_API DescribeHsmConfigurationsResult
   {
@@ -116,37 +116,37 @@ namespace Model
     inline DescribeHsmConfigurationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline const Aws::Vector<HsmConfiguration>& GetHsmConfigurations() const{ return m_hsmConfigurations; }
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline void SetHsmConfigurations(const Aws::Vector<HsmConfiguration>& value) { m_hsmConfigurations = value; }
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline void SetHsmConfigurations(Aws::Vector<HsmConfiguration>&& value) { m_hsmConfigurations = value; }
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline DescribeHsmConfigurationsResult& WithHsmConfigurations(const Aws::Vector<HsmConfiguration>& value) { SetHsmConfigurations(value); return *this;}
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline DescribeHsmConfigurationsResult& WithHsmConfigurations(Aws::Vector<HsmConfiguration>&& value) { SetHsmConfigurations(value); return *this;}
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline DescribeHsmConfigurationsResult& AddHsmConfigurations(const HsmConfiguration& value) { m_hsmConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>HsmConfiguration</code> objects.</p>
+     * <p>A list of Amazon Redshift HSM configurations.</p>
      */
     inline DescribeHsmConfigurationsResult& AddHsmConfigurations(HsmConfiguration&& value) { m_hsmConfigurations.push_back(value); return *this; }
 

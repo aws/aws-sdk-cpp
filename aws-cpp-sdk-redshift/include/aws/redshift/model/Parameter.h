@@ -256,57 +256,32 @@ namespace Model
     inline Parameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
     /**
-     * <p>Specifies how to apply the WLM configuration parameter. Some properties can
-     * be applied dynamically, while other properties require that any associated
-     * clusters be rebooted for the configuration changes to be applied. For more
-     * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p>
+     * <p>Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.</p>
      */
     inline const ParameterApplyType& GetApplyType() const{ return m_applyType; }
 
     /**
-     * <p>Specifies how to apply the WLM configuration parameter. Some properties can
-     * be applied dynamically, while other properties require that any associated
-     * clusters be rebooted for the configuration changes to be applied. For more
-     * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p>
+     * <p>Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.</p>
      */
     inline void SetApplyType(const ParameterApplyType& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
 
     /**
-     * <p>Specifies how to apply the WLM configuration parameter. Some properties can
-     * be applied dynamically, while other properties require that any associated
-     * clusters be rebooted for the configuration changes to be applied. For more
-     * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p>
+     * <p>Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.</p>
      */
     inline void SetApplyType(ParameterApplyType&& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
 
     /**
-     * <p>Specifies how to apply the WLM configuration parameter. Some properties can
-     * be applied dynamically, while other properties require that any associated
-     * clusters be rebooted for the configuration changes to be applied. For more
-     * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p>
+     * <p>Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.</p>
      */
     inline Parameter& WithApplyType(const ParameterApplyType& value) { SetApplyType(value); return *this;}
 
     /**
-     * <p>Specifies how to apply the WLM configuration parameter. Some properties can
-     * be applied dynamically, while other properties require that any associated
-     * clusters be rebooted for the configuration changes to be applied. For more
-     * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
-     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p>
+     * <p>Specifies how to apply the parameter. Supported value:
+     * <code>static</code>.</p>
      */
     inline Parameter& WithApplyType(ParameterApplyType&& value) { SetApplyType(value); return *this;}
 

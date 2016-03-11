@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p/>
+   * <p> Contains the output from the <code>DescribeTags</code> action. </p>
    */
   class AWS_REDSHIFT_API DescribeTagsResult
   {

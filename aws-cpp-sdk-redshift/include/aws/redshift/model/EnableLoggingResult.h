@@ -129,17 +129,17 @@ namespace Model
     inline EnableLoggingResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
     /**
-     * <p> The last time that logs were delivered. </p>
+     * <p> The last time when logs were delivered. </p>
      */
     inline double GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
 
     /**
-     * <p> The last time that logs were delivered. </p>
+     * <p> The last time when logs were delivered. </p>
      */
     inline void SetLastSuccessfulDeliveryTime(double value) { m_lastSuccessfulDeliveryTime = value; }
 
     /**
-     * <p> The last time that logs were delivered. </p>
+     * <p> The last time when logs were delivered. </p>
      */
     inline EnableLoggingResult& WithLastSuccessfulDeliveryTime(double value) { SetLastSuccessfulDeliveryTime(value); return *this;}
 

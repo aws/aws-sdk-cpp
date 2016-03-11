@@ -954,7 +954,7 @@
           "documentation":"<p>Describes the application.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "CreateApplicationVersionMessage":{
       "type":"structure",
@@ -1026,7 +1026,7 @@
           "documentation":"<p> If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value overrides the value obtained from the solution stack or the source configuration template. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "CreateEnvironmentMessage":{
       "type":"structure",
@@ -1117,7 +1117,7 @@
           "documentation":"<p>When set to true, running environments will be terminated before deleting the application.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DeleteApplicationVersionMessage":{
       "type":"structure",
@@ -1139,7 +1139,7 @@
           "documentation":"<p>Indicates whether to delete the associated source bundle from Amazon S3: </p> <ul> <li> <code>true</code>: An attempt is made to delete the associated Amazon S3 source bundle specified at time of creation. </li> <li> <code>false</code>: No action is taken on the Amazon S3 source bundle specified at time of creation. </li> </ul> <p> Valid Values: <code>true</code> | <code>false</code> </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DeleteConfigurationTemplateMessage":{
       "type":"structure",
@@ -1157,7 +1157,7 @@
           "documentation":"<p>The name of the configuration template to delete.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DeleteEnvironmentConfigurationMessage":{
       "type":"structure",
@@ -1175,7 +1175,7 @@
           "documentation":"<p> The name of the environment to delete the draft configuration from. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DeleteSourceBundle":{"type":"boolean"},
     "DescribeApplicationVersionsMessage":{
@@ -1200,7 +1200,7 @@
           "documentation":"<p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DescribeConfigurationOptionsMessage":{
       "type":"structure",
@@ -1309,7 +1309,7 @@
           "documentation":"<p> The name of the environment to retrieve AWS resource usage data. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DescribeEnvironmentsMessage":{
       "type":"structure",
@@ -1339,7 +1339,7 @@
           "documentation":"<p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DescribeEventsMessage":{
       "type":"structure",
@@ -1389,7 +1389,7 @@
           "documentation":"<p> Pagination token. If specified, the events return the next batch of results. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "DescribeInstancesHealthRequest":{
       "type":"structure",
@@ -2152,7 +2152,7 @@
           "documentation":"<p> The type of information to request. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "RequestId":{"type":"string"},
     "ResourceId":{"type":"string"},
@@ -2192,7 +2192,7 @@
           "documentation":"<p> The type of information to retrieve. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "RetrieveEnvironmentInfoResultMessage":{
       "type":"structure",
@@ -2432,7 +2432,7 @@
           "documentation":"<p>Terminates the target environment even if another environment in the same group is dependent on it.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "TerminateEnvironmentResources":{"type":"boolean"},
     "TimeFilterEnd":{"type":"timestamp"},
@@ -2520,7 +2520,7 @@
           "documentation":"<p> A new description for the application. </p> <p>Default: If not specified, AWS Elastic Beanstalk does not update the description. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "UpdateApplicationVersionMessage":{
       "type":"structure",
@@ -2623,7 +2623,7 @@
           "documentation":"<p>A list of custom user-defined configuration options to remove from the configuration set for this environment. </p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>This documentation target is not reported in the API reference.</p>"
     },
     "UserDefinedOption":{"type":"boolean"},
     "ValidateConfigurationSettingsMessage":{

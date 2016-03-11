@@ -53,7 +53,6 @@
 #include <aws/redshift/model/DescribeReservedNodesResult.h>
 #include <aws/redshift/model/DescribeResizeResult.h>
 #include <aws/redshift/model/DescribeSnapshotCopyGrantsResult.h>
-#include <aws/redshift/model/DescribeTableRestoreStatusResult.h>
 #include <aws/redshift/model/DescribeTagsResult.h>
 #include <aws/redshift/model/DisableLoggingResult.h>
 #include <aws/redshift/model/DisableSnapshotCopyResult.h>
@@ -68,7 +67,6 @@
 #include <aws/redshift/model/RebootClusterResult.h>
 #include <aws/redshift/model/ResetClusterParameterGroupResult.h>
 #include <aws/redshift/model/RestoreFromClusterSnapshotResult.h>
-#include <aws/redshift/model/RestoreTableFromClusterSnapshotResult.h>
 #include <aws/redshift/model/RevokeClusterSecurityGroupIngressResult.h>
 #include <aws/redshift/model/RevokeSnapshotAccessResult.h>
 #include <aws/redshift/model/RotateEncryptionKeyResult.h>
@@ -160,7 +158,6 @@ namespace Model
         class DescribeReservedNodesRequest;
         class DescribeResizeRequest;
         class DescribeSnapshotCopyGrantsRequest;
-        class DescribeTableRestoreStatusRequest;
         class DescribeTagsRequest;
         class DisableLoggingRequest;
         class DisableSnapshotCopyRequest;
@@ -175,7 +172,6 @@ namespace Model
         class RebootClusterRequest;
         class ResetClusterParameterGroupRequest;
         class RestoreFromClusterSnapshotRequest;
-        class RestoreTableFromClusterSnapshotRequest;
         class RevokeClusterSecurityGroupIngressRequest;
         class RevokeSnapshotAccessRequest;
         class RotateEncryptionKeyRequest;
@@ -222,7 +218,6 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeReservedNodesResult, Aws::Client::AWSError<RedshiftErrors>> DescribeReservedNodesOutcome;
         typedef Aws::Utils::Outcome<DescribeResizeResult, Aws::Client::AWSError<RedshiftErrors>> DescribeResizeOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotCopyGrantsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeSnapshotCopyGrantsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableRestoreStatusResult, Aws::Client::AWSError<RedshiftErrors>> DescribeTableRestoreStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DisableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> DisableLoggingOutcome;
         typedef Aws::Utils::Outcome<DisableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> DisableSnapshotCopyOutcome;
@@ -237,7 +232,6 @@ namespace Model
         typedef Aws::Utils::Outcome<RebootClusterResult, Aws::Client::AWSError<RedshiftErrors>> RebootClusterOutcome;
         typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ResetClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<RestoreFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreFromClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreTableFromClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> RestoreTableFromClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<RevokeClusterSecurityGroupIngressResult, Aws::Client::AWSError<RedshiftErrors>> RevokeClusterSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<RevokeSnapshotAccessResult, Aws::Client::AWSError<RedshiftErrors>> RevokeSnapshotAccessOutcome;
         typedef Aws::Utils::Outcome<RotateEncryptionKeyResult, Aws::Client::AWSError<RedshiftErrors>> RotateEncryptionKeyOutcome;
@@ -284,7 +278,6 @@ namespace Model
         typedef std::future<DescribeReservedNodesOutcome> DescribeReservedNodesOutcomeCallable;
         typedef std::future<DescribeResizeOutcome> DescribeResizeOutcomeCallable;
         typedef std::future<DescribeSnapshotCopyGrantsOutcome> DescribeSnapshotCopyGrantsOutcomeCallable;
-        typedef std::future<DescribeTableRestoreStatusOutcome> DescribeTableRestoreStatusOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DisableLoggingOutcome> DisableLoggingOutcomeCallable;
         typedef std::future<DisableSnapshotCopyOutcome> DisableSnapshotCopyOutcomeCallable;
@@ -299,7 +292,6 @@ namespace Model
         typedef std::future<RebootClusterOutcome> RebootClusterOutcomeCallable;
         typedef std::future<ResetClusterParameterGroupOutcome> ResetClusterParameterGroupOutcomeCallable;
         typedef std::future<RestoreFromClusterSnapshotOutcome> RestoreFromClusterSnapshotOutcomeCallable;
-        typedef std::future<RestoreTableFromClusterSnapshotOutcome> RestoreTableFromClusterSnapshotOutcomeCallable;
         typedef std::future<RevokeClusterSecurityGroupIngressOutcome> RevokeClusterSecurityGroupIngressOutcomeCallable;
         typedef std::future<RevokeSnapshotAccessOutcome> RevokeSnapshotAccessOutcomeCallable;
         typedef std::future<RotateEncryptionKeyOutcome> RotateEncryptionKeyOutcomeCallable;
@@ -349,7 +341,6 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DescribeReservedNodesRequest&, const Model::DescribeReservedNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedNodesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeResizeRequest&, const Model::DescribeResizeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResizeResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeSnapshotCopyGrantsRequest&, const Model::DescribeSnapshotCopyGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotCopyGrantsResponseReceivedHandler;
-    typedef std::function<void(const RedshiftClient*, const Model::DescribeTableRestoreStatusRequest&, const Model::DescribeTableRestoreStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableRestoreStatusResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DisableLoggingRequest&, const Model::DisableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DisableSnapshotCopyRequest&, const Model::DisableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSnapshotCopyResponseReceivedHandler;
@@ -364,7 +355,6 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::RebootClusterRequest&, const Model::RebootClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResetClusterParameterGroupRequest&, const Model::ResetClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RestoreFromClusterSnapshotRequest&, const Model::RestoreFromClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromClusterSnapshotResponseReceivedHandler;
-    typedef std::function<void(const RedshiftClient*, const Model::RestoreTableFromClusterSnapshotRequest&, const Model::RestoreTableFromClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableFromClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RevokeClusterSecurityGroupIngressRequest&, const Model::RevokeClusterSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeClusterSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RevokeSnapshotAccessRequest&, const Model::RevokeSnapshotAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSnapshotAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RotateEncryptionKeyRequest&, const Model::RotateEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateEncryptionKeyResponseReceivedHandler;
@@ -423,15 +413,12 @@ namespace Model
         /**
          * <p> Adds an inbound (ingress) rule to an Amazon Redshift security group.
          * Depending on whether the application accessing your cluster is running on the
-         * Internet or an Amazon EC2 instance, you can authorize inbound access to either a
-         * Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an
-         * Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon
-         * Redshift security group. </p> <p>If you authorize access to an Amazon EC2
-         * security group, specify <i>EC2SecurityGroupName</i> and
-         * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p> If you authorize
-         * access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of
-         * CIDR blocks, see the Wikipedia article on <a
+         * Internet or an EC2 instance, you can authorize inbound access to either a
+         * Classless Interdomain Routing (CIDR) IP address range or an EC2 security group.
+         * You can add as many as 20 ingress rules to an Amazon Redshift security group.
+         * </p> <note> The EC2 security group must be defined in the AWS region where the
+         * cluster resides. </note> <p>For an overview of CIDR blocks, see the Wikipedia
+         * article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p> You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -446,15 +433,12 @@ namespace Model
         /**
          * <p> Adds an inbound (ingress) rule to an Amazon Redshift security group.
          * Depending on whether the application accessing your cluster is running on the
-         * Internet or an Amazon EC2 instance, you can authorize inbound access to either a
-         * Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an
-         * Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon
-         * Redshift security group. </p> <p>If you authorize access to an Amazon EC2
-         * security group, specify <i>EC2SecurityGroupName</i> and
-         * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p> If you authorize
-         * access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of
-         * CIDR blocks, see the Wikipedia article on <a
+         * Internet or an EC2 instance, you can authorize inbound access to either a
+         * Classless Interdomain Routing (CIDR) IP address range or an EC2 security group.
+         * You can add as many as 20 ingress rules to an Amazon Redshift security group.
+         * </p> <note> The EC2 security group must be defined in the AWS region where the
+         * cluster resides. </note> <p>For an overview of CIDR blocks, see the Wikipedia
+         * article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p> You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -471,15 +455,12 @@ namespace Model
         /**
          * <p> Adds an inbound (ingress) rule to an Amazon Redshift security group.
          * Depending on whether the application accessing your cluster is running on the
-         * Internet or an Amazon EC2 instance, you can authorize inbound access to either a
-         * Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an
-         * Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon
-         * Redshift security group. </p> <p>If you authorize access to an Amazon EC2
-         * security group, specify <i>EC2SecurityGroupName</i> and
-         * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p> If you authorize
-         * access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of
-         * CIDR blocks, see the Wikipedia article on <a
+         * Internet or an EC2 instance, you can authorize inbound access to either a
+         * Classless Interdomain Routing (CIDR) IP address range or an EC2 security group.
+         * You can add as many as 20 ingress rules to an Amazon Redshift security group.
+         * </p> <note> The EC2 security group must be defined in the AWS region where the
+         * cluster resides. </note> <p>For an overview of CIDR blocks, see the Wikipedia
+         * article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>. </p> <p> You must also associate the security group
          * with a cluster so that clients running on these IP addresses or the EC2 instance
@@ -2065,43 +2046,6 @@ namespace Model
         virtual void DescribeSnapshotCopyGrantsAsync(const Model::DescribeSnapshotCopyGrantsRequest& request, const DescribeSnapshotCopyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the status of one or more table restore requests made using the
-         * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
-         * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
-         */
-        virtual Model::DescribeTableRestoreStatusOutcome DescribeTableRestoreStatus(const Model::DescribeTableRestoreStatusRequest& request) const;
-
-        /**
-         * <p>Lists the status of one or more table restore requests made using the
-         * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
-         * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeTableRestoreStatusOutcomeCallable DescribeTableRestoreStatusCallable(const Model::DescribeTableRestoreStatusRequest& request) const;
-
-        /**
-         * <p>Lists the status of one or more table restore requests made using the
-         * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
-         * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeTableRestoreStatusAsync(const Model::DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p> Returns a list of tags. You can return tags from a specific resource by
          * specifying an ARN, or you can return all tags for a given type of resource, such
          * as clusters, snapshots, and so on.</p> <p> The following are limitations for
@@ -2572,58 +2516,6 @@ namespace Model
         virtual void RestoreFromClusterSnapshotAsync(const Model::RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You
-         * must create the new table within the Amazon Redshift cluster that the snapshot
-         * was taken from.</p> <p>You cannot use
-         * <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same
-         * name as an existing table in an Amazon Redshift cluster. That is, you cannot
-         * overwrite an existing table in a cluster with a restored table. If you want to
-         * replace your original table with a new, restored table, then rename or drop your
-         * original table before you call <code>RestoreTableFromClusterSnapshot</code>.
-         * When you have renamed your original table, then you can pass the original name
-         * of the table as the <code>NewTableName</code> parameter value in the call to
-         * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
-         */
-        virtual Model::RestoreTableFromClusterSnapshotOutcome RestoreTableFromClusterSnapshot(const Model::RestoreTableFromClusterSnapshotRequest& request) const;
-
-        /**
-         * <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You
-         * must create the new table within the Amazon Redshift cluster that the snapshot
-         * was taken from.</p> <p>You cannot use
-         * <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same
-         * name as an existing table in an Amazon Redshift cluster. That is, you cannot
-         * overwrite an existing table in a cluster with a restored table. If you want to
-         * replace your original table with a new, restored table, then rename or drop your
-         * original table before you call <code>RestoreTableFromClusterSnapshot</code>.
-         * When you have renamed your original table, then you can pass the original name
-         * of the table as the <code>NewTableName</code> parameter value in the call to
-         * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::RestoreTableFromClusterSnapshotOutcomeCallable RestoreTableFromClusterSnapshotCallable(const Model::RestoreTableFromClusterSnapshotRequest& request) const;
-
-        /**
-         * <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You
-         * must create the new table within the Amazon Redshift cluster that the snapshot
-         * was taken from.</p> <p>You cannot use
-         * <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same
-         * name as an existing table in an Amazon Redshift cluster. That is, you cannot
-         * overwrite an existing table in a cluster with a restored table. If you want to
-         * replace your original table with a new, restored table, then rename or drop your
-         * original table before you call <code>RestoreTableFromClusterSnapshot</code>.
-         * When you have renamed your original table, then you can pass the original name
-         * of the table as the <code>NewTableName</code> parameter value in the call to
-         * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the
-         * original table with the table created from the snapshot.</p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void RestoreTableFromClusterSnapshotAsync(const Model::RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p> Revokes an ingress rule in an Amazon Redshift security group for a
          * previously authorized IP range or Amazon EC2 security group. To add an ingress
          * rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about
@@ -2763,7 +2655,6 @@ namespace Model
         void DescribeReservedNodesAsyncHelper(const Model::DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResizeAsyncHelper(const Model::DescribeResizeRequest& request, const DescribeResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotCopyGrantsAsyncHelper(const Model::DescribeSnapshotCopyGrantsRequest& request, const DescribeSnapshotCopyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTableRestoreStatusAsyncHelper(const Model::DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableLoggingAsyncHelper(const Model::DisableLoggingRequest& request, const DisableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSnapshotCopyAsyncHelper(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2778,7 +2669,6 @@ namespace Model
         void RebootClusterAsyncHelper(const Model::RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetClusterParameterGroupAsyncHelper(const Model::ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromClusterSnapshotAsyncHelper(const Model::RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreTableFromClusterSnapshotAsyncHelper(const Model::RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeClusterSecurityGroupIngressAsyncHelper(const Model::RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeSnapshotAccessAsyncHelper(const Model::RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RotateEncryptionKeyAsyncHelper(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

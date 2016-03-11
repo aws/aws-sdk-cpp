@@ -37,50 +37,57 @@ namespace Model
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
 
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, must have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 

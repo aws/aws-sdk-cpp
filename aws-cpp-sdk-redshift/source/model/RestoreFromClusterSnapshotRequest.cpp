@@ -42,8 +42,7 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
@@ -138,10 +137,6 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_nodeTypeHasBeenSet)
   {
     ss << "NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
-  }
-  if(m_additionalInfoHasBeenSet)
-  {
-    ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
   ss << "Version=2012-12-01";
   return ss.str();

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p></p>
    */
   class AWS_REDSHIFT_API PurchaseReservedNodeOfferingRequest : public RedshiftRequest
   {
@@ -69,19 +69,19 @@ namespace Model
     inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
 
     /**
-     * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
     inline long GetNodeCount() const{ return m_nodeCount; }
 
     /**
-     * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
     inline void SetNodeCount(long value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
     /**
-     * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
+     * <p>The number of reserved nodes you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
     inline PurchaseReservedNodeOfferingRequest& WithNodeCount(long value) { SetNodeCount(value); return *this;}

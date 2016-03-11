@@ -34,7 +34,9 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p> Contains the output from the <a>ModifyClusterParameterGroup</a> and
+   * <a>ResetClusterParameterGroup</a> actions and indicate the parameter group
+   * involved and the status of the operation on the parameter group. </p>
    */
   class AWS_REDSHIFT_API ResetClusterParameterGroupResult
   {

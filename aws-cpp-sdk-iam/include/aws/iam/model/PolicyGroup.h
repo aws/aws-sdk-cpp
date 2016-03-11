@@ -84,67 +84,9 @@ namespace Model
      */
     inline PolicyGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline PolicyGroup& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline PolicyGroup& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
-
-    /**
-     * <p>The stable and unique string identifying the group. For more information
-     * about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
-     */
-    inline PolicyGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
-
   private:
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
-    Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
   };
 
 } // namespace Model

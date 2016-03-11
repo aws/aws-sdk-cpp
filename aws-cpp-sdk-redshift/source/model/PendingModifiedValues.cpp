@@ -32,9 +32,7 @@ PendingModifiedValues::PendingModifiedValues() :
     m_clusterVersionHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_clusterIdentifierHasBeenSet(false)
 {
 }
 
@@ -47,9 +45,7 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_clusterVersionHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_clusterIdentifierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -102,12 +98,6 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
       m_clusterIdentifierHasBeenSet = true;
     }
-    XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
-    if(!publiclyAccessibleNode.IsNull())
-    {
-      m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
-      m_publiclyAccessibleHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -143,10 +133,6 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
-  }
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -178,9 +164,5 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_clusterIdentifierHasBeenSet)
   {
       oStream << location << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  }
-  if(m_publiclyAccessibleHasBeenSet)
-  {
-      oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
 }

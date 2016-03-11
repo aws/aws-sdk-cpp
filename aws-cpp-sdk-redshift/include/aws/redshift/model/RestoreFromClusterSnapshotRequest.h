@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p></p>
    */
   class AWS_REDSHIFT_API RestoreFromClusterSnapshotRequest : public RedshiftRequest
   {
@@ -266,21 +266,21 @@ namespace Model
     inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>If <code>true</code>, major version upgrades can be applied during the
+     * <p> If <code>true</code>, major version upgrades can be applied during the
      * maintenance window to the Amazon Redshift engine that is running on the cluster.
      * </p> <p>Default: <code>true</code></p>
      */
     inline bool GetAllowVersionUpgrade() const{ return m_allowVersionUpgrade; }
 
     /**
-     * <p>If <code>true</code>, major version upgrades can be applied during the
+     * <p> If <code>true</code>, major version upgrades can be applied during the
      * maintenance window to the Amazon Redshift engine that is running on the cluster.
      * </p> <p>Default: <code>true</code></p>
      */
     inline void SetAllowVersionUpgrade(bool value) { m_allowVersionUpgradeHasBeenSet = true; m_allowVersionUpgrade = value; }
 
     /**
-     * <p>If <code>true</code>, major version upgrades can be applied during the
+     * <p> If <code>true</code>, major version upgrades can be applied during the
      * maintenance window to the Amazon Redshift engine that is running on the cluster.
      * </p> <p>Default: <code>true</code></p>
      */
@@ -802,7 +802,7 @@ namespace Model
     inline RestoreFromClusterSnapshotRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>The number of days that automated snapshots are retained. If the value is 0,
+     * <p> The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the
@@ -812,7 +812,7 @@ namespace Model
     inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
-     * <p>The number of days that automated snapshots are retained. If the value is 0,
+     * <p> The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the
@@ -822,7 +822,7 @@ namespace Model
     inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
-     * <p>The number of days that automated snapshots are retained. If the value is 0,
+     * <p> The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: The value selected for the
@@ -985,41 +985,6 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
-    /**
-     * <p>Reserved.</p>
-     */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
-
-    /**
-     * <p>Reserved.</p>
-     */
-    inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
-
   private:
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
@@ -1059,8 +1024,6 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
   };
 
 } // namespace Model

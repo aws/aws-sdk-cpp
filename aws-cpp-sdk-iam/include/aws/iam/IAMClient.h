@@ -4788,11 +4788,9 @@ namespace Model
          * <p>Updates the name and/or the path of the specified user.</p> <important> You
          * should understand the implications of changing a user's path or name. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
-         * an IAM User</a> and <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
+         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note> To change
+         * a user name the requester must have appropriate permissions on both the source
          * object and the target object. For example, to change Bob to Robert, the entity
          * making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a
@@ -4805,11 +4803,9 @@ namespace Model
          * <p>Updates the name and/or the path of the specified user.</p> <important> You
          * should understand the implications of changing a user's path or name. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
-         * an IAM User</a> and <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
+         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note> To change
+         * a user name the requester must have appropriate permissions on both the source
          * object and the target object. For example, to change Bob to Robert, the entity
          * making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a
@@ -4824,11 +4820,9 @@ namespace Model
          * <p>Updates the name and/or the path of the specified user.</p> <important> You
          * should understand the implications of changing a user's path or name. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
-         * an IAM User</a> and <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
+         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note> To change
+         * a user name the requester must have appropriate permissions on both the source
          * object and the target object. For example, to change Bob to Robert, the entity
          * making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a

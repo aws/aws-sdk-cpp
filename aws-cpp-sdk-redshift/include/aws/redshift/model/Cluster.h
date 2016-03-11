@@ -127,100 +127,51 @@ namespace Model
     inline Cluster& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline const Aws::String& GetClusterStatus() const{ return m_clusterStatus; }
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline void SetClusterStatus(const Aws::String& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline void SetClusterStatus(Aws::String&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline void SetClusterStatus(const char* value) { m_clusterStatusHasBeenSet = true; m_clusterStatus.assign(value); }
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline Cluster& WithClusterStatus(const Aws::String& value) { SetClusterStatus(value); return *this;}
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline Cluster& WithClusterStatus(Aws::String&& value) { SetClusterStatus(value); return *this;}
 
     /**
-     * <p> The current state of the cluster. Possible values are: <ul>
-     * <li><code>available</code></li> <li><code>creating</code></li>
-     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-     * <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li>
-     * <li><code>incompatible-network</code></li>
-     * <li><code>incompatible-parameters</code></li>
-     * <li><code>incompatible-restore</code></li> <li><code>modifying</code></li>
-     * <li><code>rebooting</code></li> <li><code>renaming</code></li>
-     * <li><code>resizing</code></li> <li><code>rotating-keys</code></li>
-     * <li><code>storage-full</code></li> <li><code>updating-hsm</code></li> </ul> </p>
+     * <p> The current state of this cluster. Possible values include
+     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
+     * <code>rebooting</code>, <code>renaming</code>, and <code>resizing</code>. </p>
      */
     inline Cluster& WithClusterStatus(const char* value) { SetClusterStatus(value); return *this;}
 
@@ -1028,27 +979,27 @@ namespace Model
     inline Cluster& AddClusterNodes(ClusterNode&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(value); return *this; }
 
     /**
-     * <p>The status of the elastic IP (EIP) address.</p>
+     * <p>Describes the status of the elastic IP (EIP) address.</p>
      */
     inline const ElasticIpStatus& GetElasticIpStatus() const{ return m_elasticIpStatus; }
 
     /**
-     * <p>The status of the elastic IP (EIP) address.</p>
+     * <p>Describes the status of the elastic IP (EIP) address.</p>
      */
     inline void SetElasticIpStatus(const ElasticIpStatus& value) { m_elasticIpStatusHasBeenSet = true; m_elasticIpStatus = value; }
 
     /**
-     * <p>The status of the elastic IP (EIP) address.</p>
+     * <p>Describes the status of the elastic IP (EIP) address.</p>
      */
     inline void SetElasticIpStatus(ElasticIpStatus&& value) { m_elasticIpStatusHasBeenSet = true; m_elasticIpStatus = value; }
 
     /**
-     * <p>The status of the elastic IP (EIP) address.</p>
+     * <p>Describes the status of the elastic IP (EIP) address.</p>
      */
     inline Cluster& WithElasticIpStatus(const ElasticIpStatus& value) { SetElasticIpStatus(value); return *this;}
 
     /**
-     * <p>The status of the elastic IP (EIP) address.</p>
+     * <p>Describes the status of the elastic IP (EIP) address.</p>
      */
     inline Cluster& WithElasticIpStatus(ElasticIpStatus&& value) { SetElasticIpStatus(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p> ??? </p>
    */
   class AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressRequest : public RedshiftRequest
   {

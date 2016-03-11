@@ -16,7 +16,6 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 

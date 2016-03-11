@@ -191,22 +191,25 @@ namespace Model
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * This operation generates a pre-paid UPS shipping label that you will use to ship
-         * your device to AWS for processing.
+         * This operation returns information about a job, including where the job is in
+         * the processing pipeline, the status of the results, and the signature value
+         * associated with the job. You can only return information about jobs you own.
          */
         virtual Model::GetShippingLabelOutcome GetShippingLabel(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation generates a pre-paid UPS shipping label that you will use to ship
-         * your device to AWS for processing.
+         * This operation returns information about a job, including where the job is in
+         * the processing pipeline, the status of the results, and the signature value
+         * associated with the job. You can only return information about jobs you own.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetShippingLabelOutcomeCallable GetShippingLabelCallable(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation generates a pre-paid UPS shipping label that you will use to ship
-         * your device to AWS for processing.
+         * This operation returns information about a job, including where the job is in
+         * the processing pipeline, the status of the results, and the signature value
+         * associated with the job. You can only return information about jobs you own.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -24,11 +24,7 @@ using namespace Aws::Utils;
 UpdateFleetCapacityRequest::UpdateFleetCapacityRequest() : 
     m_fleetIdHasBeenSet(false),
     m_desiredInstances(0),
-    m_desiredInstancesHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false)
+    m_desiredInstancesHasBeenSet(false)
 {
 }
 
@@ -45,18 +41,6 @@ Aws::String UpdateFleetCapacityRequest::SerializePayload() const
   if(m_desiredInstancesHasBeenSet)
   {
    payload.WithInteger("DesiredInstances", m_desiredInstances);
-
-  }
-
-  if(m_minSizeHasBeenSet)
-  {
-   payload.WithInteger("MinSize", m_minSize);
-
-  }
-
-  if(m_maxSizeHasBeenSet)
-  {
-   payload.WithInteger("MaxSize", m_maxSize);
 
   }
 

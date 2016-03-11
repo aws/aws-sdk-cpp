@@ -23,8 +23,7 @@ using namespace Aws::Utils;
 
 CreateBuildRequest::CreateBuildRequest() : 
     m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_storageLocationHasBeenSet(false)
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -41,12 +40,6 @@ Aws::String CreateBuildRequest::SerializePayload() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
-
-  }
-
-  if(m_storageLocationHasBeenSet)
-  {
-   payload.WithObject("StorageLocation", m_storageLocation.Jsonize());
 
   }
 

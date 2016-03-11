@@ -33,37 +33,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline GetBucketNotificationConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline GetBucketNotificationConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the buket to get the notification configuration for.
+     * Name of the bucket to get the notification configuration for.
      */
     inline GetBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

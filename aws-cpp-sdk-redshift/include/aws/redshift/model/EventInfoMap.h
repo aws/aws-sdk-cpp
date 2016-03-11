@@ -32,9 +32,6 @@ namespace Redshift
 namespace Model
 {
 
-  /**
-   * <p>Describes event information.</p>
-   */
   class AWS_REDSHIFT_API EventInfoMap
   {
   public:

@@ -24,14 +24,12 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 PolicyGroup::PolicyGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupNameHasBeenSet(false)
 {
 }
 
 PolicyGroup::PolicyGroup(const XmlNode& xmlNode) : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -48,12 +46,6 @@ PolicyGroup& PolicyGroup::operator =(const XmlNode& xmlNode)
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
     }
-    XmlNode groupIdNode = resultNode.FirstChild("GroupId");
-    if(!groupIdNode.IsNull())
-    {
-      m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
-      m_groupIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -65,10 +57,6 @@ void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
-  if(m_groupIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
-  }
 }
 
 void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -76,9 +64,5 @@ void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_groupNameHasBeenSet)
   {
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  }
-  if(m_groupIdHasBeenSet)
-  {
-      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 }

@@ -33,9 +33,6 @@ namespace Redshift
 namespace Model
 {
 
-  /**
-   * <p>Describes event categories.</p>
-   */
   class AWS_REDSHIFT_API EventCategoriesMap
   {
   public:
@@ -47,44 +44,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline EventCategoriesMap& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The source type, such as cluster or cluster-snapshot, that the returned
-     * categories belong to.</p>
+     * <p>The Amazon Redshift source type, such as cluster or cluster-snapshot, that
+     * the returned categories belong to.</p>
      */
     inline EventCategoriesMap& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
