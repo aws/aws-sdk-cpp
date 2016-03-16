@@ -188,72 +188,72 @@ namespace Model
     inline DeploymentGroupInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon EC2 tags to filter on.</p>
+     * <p>The Amazon EC2 tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags to filter on.</p>
+     * <p>The on-premises instance tags on which to filter.</p>
      */
     inline DeploymentGroupInfo& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
@@ -328,32 +328,32 @@ namespace Model
     inline DeploymentGroupInfo& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>Information about the deployment group's target revision, including the
-     * revision's type and its location.</p>
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
      */
     inline const RevisionLocation& GetTargetRevision() const{ return m_targetRevision; }
 
     /**
-     * <p>Information about the deployment group's target revision, including the
-     * revision's type and its location.</p>
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
      */
     inline void SetTargetRevision(const RevisionLocation& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = value; }
 
     /**
-     * <p>Information about the deployment group's target revision, including the
-     * revision's type and its location.</p>
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
      */
     inline void SetTargetRevision(RevisionLocation&& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = value; }
 
     /**
-     * <p>Information about the deployment group's target revision, including the
-     * revision's type and its location.</p>
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
      */
     inline DeploymentGroupInfo& WithTargetRevision(const RevisionLocation& value) { SetTargetRevision(value); return *this;}
 
     /**
-     * <p>Information about the deployment group's target revision, including the
-     * revision's type and its location.</p>
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
      */
     inline DeploymentGroupInfo& WithTargetRevision(RevisionLocation&& value) { SetTargetRevision(value); return *this;}
 

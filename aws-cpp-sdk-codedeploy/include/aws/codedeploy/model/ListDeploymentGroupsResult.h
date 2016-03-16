@@ -119,58 +119,51 @@ namespace Model
     inline ListDeploymentGroupsResult& AddDeploymentGroups(const char* value) { m_deploymentGroups.push_back(value); return *this; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline ListDeploymentGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline ListDeploymentGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list deployment groups call to return the next
+     * set of deployment groups in the list.</p>
      */
     inline ListDeploymentGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

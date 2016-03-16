@@ -78,42 +78,42 @@ namespace Model
     inline GenericRevisionInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const{ return m_deploymentGroups; }
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline void SetDeploymentGroups(const Aws::Vector<Aws::String>& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups = value; }
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups = value; }
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline GenericRevisionInfo& WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline GenericRevisionInfo& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(value); return *this;}
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline GenericRevisionInfo& AddDeploymentGroups(const Aws::String& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline GenericRevisionInfo& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
 
     /**
-     * <p>The deployment groups where this is the current target revision.</p>
+     * <p>The deployment groups for which this is the current target revision.</p>
      */
     inline GenericRevisionInfo& AddDeploymentGroups(const char* value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
 

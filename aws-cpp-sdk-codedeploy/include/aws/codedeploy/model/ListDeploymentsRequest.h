@@ -39,44 +39,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -116,151 +116,151 @@ namespace Model
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline void SetIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline void SetIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { SetIncludeOnlyStatuses(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { SetIncludeOnlyStatuses(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(const DeploymentStatus& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 
     /**
-     * <p>A subset of deployments to list, by status:</p> <ul> <li>Created: Include in
-     * the resulting list created deployments.</li> <li>Queued: Include in the
-     * resulting list queued deployments.</li> <li>In Progress: Include in the
-     * resulting list in-progress deployments.</li> <li>Succeeded: Include in the
-     * resulting list succeeded deployments.</li> <li>Failed: Include in the resulting
-     * list failed deployments.</li> <li>Aborted: Include in the resulting list aborted
-     * deployments.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
+     * created deployments in the resulting list.</li> <li>Queued: Include queued
+     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
+     * deployments in the resulting list.</li> <li>Succeeded: Include successful
+     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
+     * in the resulting list.</li> <li>Aborted: Include aborted deployments in the
+     * resulting list.</li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 
     /**
-     * <p>A deployment creation start- and end-time range for returning a subset of the
-     * list of deployments.</p>
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
      */
     inline const TimeRange& GetCreateTimeRange() const{ return m_createTimeRange; }
 
     /**
-     * <p>A deployment creation start- and end-time range for returning a subset of the
-     * list of deployments.</p>
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
      */
     inline void SetCreateTimeRange(const TimeRange& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
 
     /**
-     * <p>A deployment creation start- and end-time range for returning a subset of the
-     * list of deployments.</p>
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
      */
     inline void SetCreateTimeRange(TimeRange&& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
 
     /**
-     * <p>A deployment creation start- and end-time range for returning a subset of the
-     * list of deployments.</p>
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
      */
     inline ListDeploymentsRequest& WithCreateTimeRange(const TimeRange& value) { SetCreateTimeRange(value); return *this;}
 
     /**
-     * <p>A deployment creation start- and end-time range for returning a subset of the
-     * list of deployments.</p>
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
      */
     inline ListDeploymentsRequest& WithCreateTimeRange(TimeRange&& value) { SetCreateTimeRange(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.</p>
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
      */
     inline ListDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

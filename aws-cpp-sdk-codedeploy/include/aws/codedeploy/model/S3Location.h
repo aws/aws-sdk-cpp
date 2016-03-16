@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the location of application artifacts that are stored in
-   * Amazon S3.</p>
+   * <p>Information about the location of application artifacts stored in Amazon
+   * S3.</p>
    */
   class AWS_CODEDEPLOY_API S3Location
   {

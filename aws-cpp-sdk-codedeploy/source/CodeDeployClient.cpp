@@ -29,6 +29,7 @@
 #include <aws/codedeploy/model/AddTagsToOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationRevisionsRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationsRequest.h>
+#include <aws/codedeploy/model/BatchGetDeploymentGroupsRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentInstancesRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsRequest.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesRequest.h>
@@ -214,6 +215,37 @@ void CodeDeployClient::BatchGetApplicationsAsync(const BatchGetApplicationsReque
 void CodeDeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetApplications(request), context);
+}
+
+BatchGetDeploymentGroupsOutcome CodeDeployClient::BatchGetDeploymentGroups(const BatchGetDeploymentGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetDeploymentGroupsOutcome(BatchGetDeploymentGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetDeploymentGroupsOutcome(outcome.GetError());
+  }
+}
+
+BatchGetDeploymentGroupsOutcomeCallable CodeDeployClient::BatchGetDeploymentGroupsCallable(const BatchGetDeploymentGroupsRequest& request) const
+{
+  return std::async(std::launch::async, &CodeDeployClient::BatchGetDeploymentGroups, this, request);
+}
+
+void CodeDeployClient::BatchGetDeploymentGroupsAsync(const BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodeDeployClient::BatchGetDeploymentGroupsAsyncHelper, this, request, handler, context);
+}
+
+void CodeDeployClient::BatchGetDeploymentGroupsAsyncHelper(const BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetDeploymentGroups(request), context);
 }
 
 BatchGetDeploymentInstancesOutcome CodeDeployClient::BatchGetDeploymentInstances(const BatchGetDeploymentInstancesRequest& request) const

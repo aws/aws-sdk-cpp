@@ -84,51 +84,51 @@ namespace Model
     inline ListApplicationsResult& AddApplications(const char* value) { m_applications.push_back(value); return *this; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.</p>
+     * <p>If a large amount of information is returned, an identifier is also returned.
+     * It can be used in a subsequent list applications call to return the next set of
+     * applications, will also be returned. in the list.</p>
      */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

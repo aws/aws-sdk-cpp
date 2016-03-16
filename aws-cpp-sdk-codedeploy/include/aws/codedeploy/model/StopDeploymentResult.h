@@ -45,36 +45,36 @@ namespace Model
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li>
-     * </ul>
+     * operation is pending.</li> <li>Succeeded: The stop operation was
+     * successful.</li> </ul>
      */
     inline const StopStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li>
-     * </ul>
+     * operation is pending.</li> <li>Succeeded: The stop operation was
+     * successful.</li> </ul>
      */
     inline void SetStatus(const StopStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li>
-     * </ul>
+     * operation is pending.</li> <li>Succeeded: The stop operation was
+     * successful.</li> </ul>
      */
     inline void SetStatus(StopStatus&& value) { m_status = value; }
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li>
-     * </ul>
+     * operation is pending.</li> <li>Succeeded: The stop operation was
+     * successful.</li> </ul>
      */
     inline StopDeploymentResult& WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation succeeded.</li>
-     * </ul>
+     * operation is pending.</li> <li>Succeeded: The stop operation was
+     * successful.</li> </ul>
      */
     inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(value); return *this;}
 

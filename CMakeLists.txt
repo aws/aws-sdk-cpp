@@ -257,6 +257,7 @@ else()
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-datapipeline")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-devicefarm")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-directconnect")
+    LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dms")
 	LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ds")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-dynamodb")
     LIST(APPEND BUILD_ONLY "aws-cpp-sdk-ec2")
@@ -348,6 +349,15 @@ if(REGENERATE_CLIENTS)
     if(OUTPUT_VAR GREATER -1)
         execute_process(
                 COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dynamodb --apiVersion 2012-08-10 --outputLocation ./
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
+
+    #dms
+    LIST(FIND BUILD_ONLY "aws-cpp-sdk-dms" OUTPUT_VAR)
+    if(OUTPUT_VAR GREATER -1)
+        execute_process(
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName dms --apiVersion 2016-01-01 --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
     endif()

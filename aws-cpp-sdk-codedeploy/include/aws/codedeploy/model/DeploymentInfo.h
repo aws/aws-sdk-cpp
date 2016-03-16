@@ -187,32 +187,32 @@ namespace Model
     inline DeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>Information about the location of application artifacts that are stored and
-     * the service to retrieve them from.</p>
+     * <p>Information about the location of stored application artifacts and the
+     * service from which to retrieve them.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>Information about the location of application artifacts that are stored and
-     * the service to retrieve them from.</p>
+     * <p>Information about the location of stored application artifacts and the
+     * service from which to retrieve them.</p>
      */
     inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the location of application artifacts that are stored and
-     * the service to retrieve them from.</p>
+     * <p>Information about the location of stored application artifacts and the
+     * service from which to retrieve them.</p>
      */
     inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the location of application artifacts that are stored and
-     * the service to retrieve them from.</p>
+     * <p>Information about the location of stored application artifacts and the
+     * service from which to retrieve them.</p>
      */
     inline DeploymentInfo& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>Information about the location of application artifacts that are stored and
-     * the service to retrieve them from.</p>
+     * <p>Information about the location of stored application artifacts and the
+     * service from which to retrieve them.</p>
      */
     inline DeploymentInfo& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 
@@ -282,44 +282,41 @@ namespace Model
     inline DeploymentInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment began deploying to the deployment
-     * group.</p> <p>Note that in some cases, the reported value of the start time may
-     * be later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall deployment
-     * process.</p>
+     * <p>A timestamp indicating when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * than the complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.</p>
      */
     inline double GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment began deploying to the deployment
-     * group.</p> <p>Note that in some cases, the reported value of the start time may
-     * be later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall deployment
-     * process.</p>
+     * <p>A timestamp indicating when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * than the complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.</p>
      */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment began deploying to the deployment
-     * group.</p> <p>Note that in some cases, the reported value of the start time may
-     * be later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall deployment
-     * process.</p>
+     * <p>A timestamp indicating when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * than the complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.</p>
      */
     inline DeploymentInfo& WithStartTime(double value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment was completed.</p>
+     * <p>A timestamp indicating when the deployment was complete.</p>
      */
     inline double GetCompleteTime() const{ return m_completeTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment was completed.</p>
+     * <p>A timestamp indicating when the deployment was complete.</p>
      */
     inline void SetCompleteTime(double value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment was completed.</p>
+     * <p>A timestamp indicating when the deployment was complete.</p>
      */
     inline DeploymentInfo& WithCompleteTime(double value) { SetCompleteTime(value); return *this;}
 
@@ -384,70 +381,70 @@ namespace Model
     inline DeploymentInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>How the deployment was created:</p> <ul> <li>user: A user created the
-     * deployment.</li> <li>autoscaling: Auto Scaling created the deployment.</li>
-     * </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
+     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
+     * deployment.</li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
     /**
-     * <p>How the deployment was created:</p> <ul> <li>user: A user created the
-     * deployment.</li> <li>autoscaling: Auto Scaling created the deployment.</li>
-     * </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
+     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
+     * deployment.</li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
-     * <p>How the deployment was created:</p> <ul> <li>user: A user created the
-     * deployment.</li> <li>autoscaling: Auto Scaling created the deployment.</li>
-     * </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
+     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
+     * deployment.</li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
-     * <p>How the deployment was created:</p> <ul> <li>user: A user created the
-     * deployment.</li> <li>autoscaling: Auto Scaling created the deployment.</li>
-     * </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
+     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
+     * deployment.</li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
     /**
-     * <p>How the deployment was created:</p> <ul> <li>user: A user created the
-     * deployment.</li> <li>autoscaling: Auto Scaling created the deployment.</li>
-     * </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
+     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
+     * deployment.</li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(value); return *this;}
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If false or not specified,
-     * then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to a specific instance, the deployment will stop to that instance, and the
-     * deployment to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
+     * if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment
+     * to that instance will be considered to have failed.</p>
      */
     inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If false or not specified,
-     * then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to a specific instance, the deployment will stop to that instance, and the
-     * deployment to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
+     * if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment
+     * to that instance will be considered to have failed.</p>
      */
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If false or not specified,
-     * then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to a specific instance, the deployment will stop to that instance, and the
-     * deployment to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
+     * if the deployment causes the ApplicationStop deployment lifecycle event to an
+     * instance to fail, the deployment to that instance will stop, and the deployment
+     * to that instance will be considered to have failed.</p>
      */
     inline DeploymentInfo& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 

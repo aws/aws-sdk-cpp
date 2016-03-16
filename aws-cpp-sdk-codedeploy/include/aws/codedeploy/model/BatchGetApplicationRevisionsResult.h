@@ -115,43 +115,43 @@ namespace Model
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline const Aws::Vector<RevisionInfo>& GetRevisions() const{ return m_revisions; }
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline void SetRevisions(const Aws::Vector<RevisionInfo>& value) { m_revisions = value; }
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline void SetRevisions(Aws::Vector<RevisionInfo>&& value) { m_revisions = value; }
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithRevisions(const Aws::Vector<RevisionInfo>& value) { SetRevisions(value); return *this;}
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionInfo>&& value) { SetRevisions(value); return *this;}
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline BatchGetApplicationRevisionsResult& AddRevisions(const RevisionInfo& value) { m_revisions.push_back(value); return *this; }
 
     /**
-     * <p>Additional information about the revisions, including the revision type and
+     * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
     inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(value); return *this; }

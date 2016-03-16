@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an application revision's location.</p>
+   * <p>Information about the location of an application revision.</p>
    */
   class AWS_CODEDEPLOY_API RevisionLocation
   {
@@ -44,35 +44,35 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The application revision's type:</p> <ul> <li>S3: An application revision
+     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
      * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
      * GitHub.</li> </ul>
      */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
 
     /**
-     * <p>The application revision's type:</p> <ul> <li>S3: An application revision
+     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
      * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
      * GitHub.</li> </ul>
      */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
     /**
-     * <p>The application revision's type:</p> <ul> <li>S3: An application revision
+     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
      * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
      * GitHub.</li> </ul>
      */
     inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
     /**
-     * <p>The application revision's type:</p> <ul> <li>S3: An application revision
+     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
      * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
      * GitHub.</li> </ul>
      */
     inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
 
     /**
-     * <p>The application revision's type:</p> <ul> <li>S3: An application revision
+     * <p>The type of application revision:</p> <ul> <li>S3: An application revision
      * stored in Amazon S3.</li> <li>GitHub: An application revision stored in
      * GitHub.</li> </ul>
      */

@@ -22,6 +22,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codedeploy/model/BatchGetApplicationRevisionsResult.h>
 #include <aws/codedeploy/model/BatchGetApplicationsResult.h>
+#include <aws/codedeploy/model/BatchGetDeploymentGroupsResult.h>
 #include <aws/codedeploy/model/BatchGetDeploymentInstancesResult.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsResult.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesResult.h>
@@ -95,6 +96,7 @@ namespace Model
         class AddTagsToOnPremisesInstancesRequest;
         class BatchGetApplicationRevisionsRequest;
         class BatchGetApplicationsRequest;
+        class BatchGetDeploymentGroupsRequest;
         class BatchGetDeploymentInstancesRequest;
         class BatchGetDeploymentsRequest;
         class BatchGetOnPremisesInstancesRequest;
@@ -130,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodeDeployErrors>> AddTagsToOnPremisesInstancesOutcome;
         typedef Aws::Utils::Outcome<BatchGetApplicationRevisionsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationRevisionsOutcome;
         typedef Aws::Utils::Outcome<BatchGetApplicationsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetApplicationsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDeploymentGroupsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentGroupsOutcome;
         typedef Aws::Utils::Outcome<BatchGetDeploymentInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentInstancesOutcome;
         typedef Aws::Utils::Outcome<BatchGetDeploymentsResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetDeploymentsOutcome;
         typedef Aws::Utils::Outcome<BatchGetOnPremisesInstancesResult, Aws::Client::AWSError<CodeDeployErrors>> BatchGetOnPremisesInstancesOutcome;
@@ -165,6 +168,7 @@ namespace Model
         typedef std::future<AddTagsToOnPremisesInstancesOutcome> AddTagsToOnPremisesInstancesOutcomeCallable;
         typedef std::future<BatchGetApplicationRevisionsOutcome> BatchGetApplicationRevisionsOutcomeCallable;
         typedef std::future<BatchGetApplicationsOutcome> BatchGetApplicationsOutcomeCallable;
+        typedef std::future<BatchGetDeploymentGroupsOutcome> BatchGetDeploymentGroupsOutcomeCallable;
         typedef std::future<BatchGetDeploymentInstancesOutcome> BatchGetDeploymentInstancesOutcomeCallable;
         typedef std::future<BatchGetDeploymentsOutcome> BatchGetDeploymentsOutcomeCallable;
         typedef std::future<BatchGetOnPremisesInstancesOutcome> BatchGetOnPremisesInstancesOutcomeCallable;
@@ -203,6 +207,7 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::AddTagsToOnPremisesInstancesRequest&, const Model::AddTagsToOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToOnPremisesInstancesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationRevisionsRequest&, const Model::BatchGetApplicationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationRevisionsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationsRequest&, const Model::BatchGetApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationsResponseReceivedHandler;
+    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentGroupsRequest&, const Model::BatchGetDeploymentGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentInstancesRequest&, const Model::BatchGetDeploymentInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentInstancesResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentsRequest&, const Model::BatchGetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentsResponseReceivedHandler;
     typedef std::function<void(const CodeDeployClient*, const Model::BatchGetOnPremisesInstancesRequest&, const Model::BatchGetOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetOnPremisesInstancesResponseReceivedHandler;
@@ -236,40 +241,39 @@ namespace Model
     typedef std::function<void(const CodeDeployClient*, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentGroupResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeDeploy</fullname> <b>Overview</b> <p>This is the AWS
-   * CodeDeploy API Reference. This guide provides descriptions of the AWS CodeDeploy
-   * APIs. For additional information, see the <a
-   * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-   * User Guide</a>.</p> <b>Using the APIs</b> <p>You can use the AWS CodeDeploy APIs
-   * to work with the following items:</p> <ul> <li> <p>Applications are unique
-   * identifiers that AWS CodeDeploy uses to ensure that the correct combinations of
-   * revisions, deployment configurations, and deployment groups are being referenced
-   * during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create,
-   * delete, get, list, and update applications.</p> </li> <li> <p>Deployment
-   * configurations are sets of deployment rules and deployment success and failure
-   * conditions that AWS CodeDeploy uses during deployments.</p> <p>You can use the
-   * AWS CodeDeploy APIs to create, delete, get, and list deployment
-   * configurations.</p> </li> <li> <p>Deployment groups are groups of instances to
-   * which application revisions can be deployed.</p> <p>You can use the AWS
-   * CodeDeploy APIs to create, delete, get, list, and update deployment groups.</p>
-   * </li> <li> <p>Instances represent Amazon EC2 instances to which application
-   * revisions are deployed. Instances are identified by their Amazon EC2 tags or
-   * Auto Scaling group names. Instances belong to deployment groups.</p> <p>You can
-   * use the AWS CodeDeploy APIs to get and list instances.</p> </li> <li>
-   * <p>Deployments represent the process of deploying revisions to instances.</p>
-   * <p>You can use the AWS CodeDeploy APIs to create, get, list, and stop
-   * deployments.</p> </li> <li> <p>Application revisions are archive files that are
-   * stored in Amazon S3 buckets or GitHub repositories. These revisions contain
-   * source content (such as source code, web pages, executable files, any deployment
-   * scripts, and similar) along with an Application Specification file (AppSpec
-   * file). (The AppSpec file is unique to AWS CodeDeploy; it defines a series of
-   * deployment actions that you want AWS CodeDeploy to execute.) An application
-   * revision is uniquely identified by its Amazon S3 object key and its ETag,
-   * version, or both (for application revisions that are stored in Amazon S3
-   * buckets) or by its repository name and commit ID (for applications revisions
-   * that are stored in GitHub repositories). Application revisions are deployed
-   * through deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get,
-   * list, and register application revisions.</p> </li> </ul>
+   * <fullname>AWS CodeDeploy</fullname> <b>Overview</b> <p>This reference guide
+   * provides descriptions of the AWS CodeDeploy APIs. For more information about AWS
+   * CodeDeploy, see the <a
+   * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+   * Guide</a>.</p> <b>Using the APIs</b> <p>You can use the AWS CodeDeploy APIs to
+   * work with the following:</p> <ul> <li> <p>Applications are unique identifiers
+   * used by AWS CodeDeploy to ensure the correct combinations of revisions,
+   * deployment configurations, and deployment groups are being referenced during
+   * deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get,
+   * list, and update applications.</p> </li> <li> <p>Deployment configurations are
+   * sets of deployment rules and success and failure conditions used by AWS
+   * CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy APIs to
+   * create, delete, get, and list deployment configurations.</p> </li> <li>
+   * <p>Deployment groups are groups of instances to which application revisions can
+   * be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get,
+   * list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon
+   * EC2 instances to which application revisions are deployed. Instances are
+   * identified by their Amazon EC2 tags or Auto Scaling group names. Instances
+   * belong to deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get
+   * and list instance.</p> </li> <li> <p>Deployments represent the process of
+   * deploying revisions to instances.</p> <p>You can use the AWS CodeDeploy APIs to
+   * create, get, list, and stop deployments.</p> </li> <li> <p>Application revisions
+   * are archive files stored in Amazon S3 buckets or GitHub repositories. These
+   * revisions contain source content (such as source code, web pages, executable
+   * files, and deployment scripts) along with an application specification (AppSpec)
+   * file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment
+   * actions you want AWS CodeDeploy to execute.) Ffor application revisions stored
+   * in Amazon S3 buckets, an application revision is uniquely identified by its
+   * Amazon S3 object key and its ETag, version, or both. For application revisions
+   * stored in GitHub repositories, an application revision is uniquely identified by
+   * its repository name and commit ID. Application revisions are deployed through
+   * deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and
+   * register application revisions.</p> </li> </ul>
    */
   class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient
   {
@@ -356,13 +360,32 @@ namespace Model
         virtual void BatchGetApplicationsAsync(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more instances that are part of a deployment
+         * <p>Get information about one or more deployment groups.</p>
+         */
+        virtual Model::BatchGetDeploymentGroupsOutcome BatchGetDeploymentGroups(const Model::BatchGetDeploymentGroupsRequest& request) const;
+
+        /**
+         * <p>Get information about one or more deployment groups.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetDeploymentGroupsOutcomeCallable BatchGetDeploymentGroupsCallable(const Model::BatchGetDeploymentGroupsRequest& request) const;
+
+        /**
+         * <p>Get information about one or more deployment groups.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetDeploymentGroupsAsync(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about one or more instance that are part of a deployment
          * group.</p>
          */
         virtual Model::BatchGetDeploymentInstancesOutcome BatchGetDeploymentInstances(const Model::BatchGetDeploymentInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more instances that are part of a deployment
+         * <p>Gets information about one or more instance that are part of a deployment
          * group.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -370,7 +393,7 @@ namespace Model
         virtual Model::BatchGetDeploymentInstancesOutcomeCallable BatchGetDeploymentInstancesCallable(const Model::BatchGetDeploymentInstancesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more instances that are part of a deployment
+         * <p>Gets information about one or more instance that are part of a deployment
          * group.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -416,19 +439,19 @@ namespace Model
         virtual void BatchGetOnPremisesInstancesAsync(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new application.</p>
+         * <p>Creates an application.</p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates a new application.</p>
+         * <p>Creates an application.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates a new application.</p>
+         * <p>Creates an application.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -454,41 +477,41 @@ namespace Model
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new deployment configuration.</p>
+         * <p>Creates a deployment configuration.</p>
          */
         virtual Model::CreateDeploymentConfigOutcome CreateDeploymentConfig(const Model::CreateDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Creates a new deployment configuration.</p>
+         * <p>Creates a deployment configuration.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentConfigOutcomeCallable CreateDeploymentConfigCallable(const Model::CreateDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Creates a new deployment configuration.</p>
+         * <p>Creates a deployment configuration.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new deployment group for application revisions to be deployed
-         * to.</p>
+         * <p>Creates a deployment group to which application revisions will be
+         * deployed.</p>
          */
         virtual Model::CreateDeploymentGroupOutcome CreateDeploymentGroup(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a new deployment group for application revisions to be deployed
-         * to.</p>
+         * <p>Creates a deployment group to which application revisions will be
+         * deployed.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDeploymentGroupOutcomeCallable CreateDeploymentGroupCallable(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a new deployment group for application revisions to be deployed
-         * to.</p>
+         * <p>Creates a deployment group to which application revisions will be
+         * deployed.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -515,15 +538,15 @@ namespace Model
 
         /**
          * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
-         * cannot be deleted if it is currently in use. Also, predefined configurations
-         * cannot be deleted.</note>
+         * cannot be deleted if it is currently in use. Predefined configurations cannot be
+         * deleted.</note>
          */
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
          * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
-         * cannot be deleted if it is currently in use. Also, predefined configurations
-         * cannot be deleted.</note>
+         * cannot be deleted if it is currently in use. Predefined configurations cannot be
+         * deleted.</note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -531,8 +554,8 @@ namespace Model
 
         /**
          * <p>Deletes a deployment configuration.</p> <note>A deployment configuration
-         * cannot be deleted if it is currently in use. Also, predefined configurations
-         * cannot be deleted.</note>
+         * cannot be deleted if it is currently in use. Predefined configurations cannot be
+         * deleted.</note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -795,13 +818,13 @@ namespace Model
         virtual void ListDeploymentGroupsAsync(const Model::ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the instances for a deployment associated with the applicable IAM user
+         * <p>Lists the instance for a deployment associated with the applicable IAM user
          * or AWS account.</p>
          */
         virtual Model::ListDeploymentInstancesOutcome ListDeploymentInstances(const Model::ListDeploymentInstancesRequest& request) const;
 
         /**
-         * <p>Lists the instances for a deployment associated with the applicable IAM user
+         * <p>Lists the instance for a deployment associated with the applicable IAM user
          * or AWS account.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -809,7 +832,7 @@ namespace Model
         virtual Model::ListDeploymentInstancesOutcomeCallable ListDeploymentInstancesCallable(const Model::ListDeploymentInstancesRequest& request) const;
 
         /**
-         * <p>Lists the instances for a deployment associated with the applicable IAM user
+         * <p>Lists the instance for a deployment associated with the applicable IAM user
          * or AWS account.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -817,13 +840,13 @@ namespace Model
         virtual void ListDeploymentInstancesAsync(const Model::ListDeploymentInstancesRequest& request, const ListDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the deployments within a deployment group for an application registered
+         * <p>Lists the deployments in a deployment group for an application registered
          * with the applicable IAM user or AWS account.</p>
          */
         virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments within a deployment group for an application registered
+         * <p>Lists the deployments in a deployment group for an application registered
          * with the applicable IAM user or AWS account.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -831,7 +854,7 @@ namespace Model
         virtual Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const Model::ListDeploymentsRequest& request) const;
 
         /**
-         * <p>Lists the deployments within a deployment group for an application registered
+         * <p>Lists the deployments in a deployment group for an application registered
          * with the applicable IAM user or AWS account.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -839,7 +862,7 @@ namespace Model
         virtual void ListDeploymentsAsync(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of one or more on-premises instance names.</p> <p>Unless
+         * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
          * will be listed. To list only registered or deregistered on-premises instance
          * names, use the registration status parameter.</p>
@@ -847,7 +870,7 @@ namespace Model
         virtual Model::ListOnPremisesInstancesOutcome ListOnPremisesInstances(const Model::ListOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets a list of one or more on-premises instance names.</p> <p>Unless
+         * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
          * will be listed. To list only registered or deregistered on-premises instance
          * names, use the registration status parameter.</p>
@@ -857,7 +880,7 @@ namespace Model
         virtual Model::ListOnPremisesInstancesOutcomeCallable ListOnPremisesInstancesCallable(const Model::ListOnPremisesInstancesRequest& request) const;
 
         /**
-         * <p>Gets a list of one or more on-premises instance names.</p> <p>Unless
+         * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
          * will be listed. To list only registered or deregistered on-premises instance
          * names, use the registration status parameter.</p>
@@ -943,38 +966,38 @@ namespace Model
         virtual void StopDeploymentAsync(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes an existing application's name.</p>
+         * <p>Changes the name of an application.</p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Changes an existing application's name.</p>
+         * <p>Changes the name of an application.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Changes an existing application's name.</p>
+         * <p>Changes the name of an application.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about an existing deployment group.</p>
+         * <p>Changes information about a deployment group.</p>
          */
         virtual Model::UpdateDeploymentGroupOutcome UpdateDeploymentGroup(const Model::UpdateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Changes information about an existing deployment group.</p>
+         * <p>Changes information about a deployment group.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeploymentGroupOutcomeCallable UpdateDeploymentGroupCallable(const Model::UpdateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Changes information about an existing deployment group.</p>
+         * <p>Changes information about a deployment group.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -988,6 +1011,7 @@ namespace Model
         void AddTagsToOnPremisesInstancesAsyncHelper(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetApplicationRevisionsAsyncHelper(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetApplicationsAsyncHelper(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetDeploymentGroupsAsyncHelper(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetDeploymentInstancesAsyncHelper(const Model::BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetDeploymentsAsyncHelper(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetOnPremisesInstancesAsyncHelper(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

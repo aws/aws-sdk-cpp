@@ -112,17 +112,17 @@ namespace Model
     inline ApplicationInfo& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The time that the application was created.</p>
+     * <p>The time at which the application was created.</p>
      */
     inline double GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The time that the application was created.</p>
+     * <p>The time at which the application was created.</p>
      */
     inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The time that the application was created.</p>
+     * <p>The time at which the application was created.</p>
      */
     inline ApplicationInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 

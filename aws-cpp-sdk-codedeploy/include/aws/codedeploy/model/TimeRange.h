@@ -41,38 +41,38 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The time range's start time.</p> <note>Specify null to leave the time range's
-     * start time open-ended.</note>
+     * <p>The start time of the time range.</p> <note>Specify null to leave the start
+     * time open-ended.</note>
      */
     inline double GetStart() const{ return m_start; }
 
     /**
-     * <p>The time range's start time.</p> <note>Specify null to leave the time range's
-     * start time open-ended.</note>
+     * <p>The start time of the time range.</p> <note>Specify null to leave the start
+     * time open-ended.</note>
      */
     inline void SetStart(double value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
-     * <p>The time range's start time.</p> <note>Specify null to leave the time range's
-     * start time open-ended.</note>
+     * <p>The start time of the time range.</p> <note>Specify null to leave the start
+     * time open-ended.</note>
      */
     inline TimeRange& WithStart(double value) { SetStart(value); return *this;}
 
     /**
-     * <p>The time range's end time.</p> <note>Specify null to leave the time range's
-     * end time open-ended.</note>
+     * <p>The end time of the time range.</p> <note>Specify null to leave the end time
+     * open-ended.</note>
      */
     inline double GetEnd() const{ return m_end; }
 
     /**
-     * <p>The time range's end time.</p> <note>Specify null to leave the time range's
-     * end time open-ended.</note>
+     * <p>The end time of the time range.</p> <note>Specify null to leave the end time
+     * open-ended.</note>
      */
     inline void SetEnd(double value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
-     * <p>The time range's end time.</p> <note>Specify null to leave the time range's
-     * end time open-ended.</note>
+     * <p>The end time of the time range.</p> <note>Specify null to leave the end time
+     * open-ended.</note>
      */
     inline TimeRange& WithEnd(double value) { SetEnd(value); return *this;}
 

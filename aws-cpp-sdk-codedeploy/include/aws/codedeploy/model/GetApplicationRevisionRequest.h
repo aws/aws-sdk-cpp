@@ -72,32 +72,32 @@ namespace Model
     inline GetApplicationRevisionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>Information about the application revision to get, including the revision's
-     * type and its location.</p>
+     * <p>Information about the application revision to get, including type and
+     * location.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>Information about the application revision to get, including the revision's
-     * type and its location.</p>
+     * <p>Information about the application revision to get, including type and
+     * location.</p>
      */
     inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the application revision to get, including the revision's
-     * type and its location.</p>
+     * <p>Information about the application revision to get, including type and
+     * location.</p>
      */
     inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the application revision to get, including the revision's
-     * type and its location.</p>
+     * <p>Information about the application revision to get, including type and
+     * location.</p>
      */
     inline GetApplicationRevisionRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>Information about the application revision to get, including the revision's
-     * type and its location.</p>
+     * <p>Information about the application revision to get, including type and
+     * location.</p>
      */
     inline GetApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 

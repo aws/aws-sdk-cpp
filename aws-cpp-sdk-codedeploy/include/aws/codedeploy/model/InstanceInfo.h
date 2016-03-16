@@ -149,70 +149,70 @@ namespace Model
     inline InstanceInfo& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The time that the on-premises instance was registered.</p>
+     * <p>The time at which the on-premises instance was registered.</p>
      */
     inline double GetRegisterTime() const{ return m_registerTime; }
 
     /**
-     * <p>The time that the on-premises instance was registered.</p>
+     * <p>The time at which the on-premises instance was registered.</p>
      */
     inline void SetRegisterTime(double value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
-     * <p>The time that the on-premises instance was registered.</p>
+     * <p>The time at which the on-premises instance was registered.</p>
      */
     inline InstanceInfo& WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
 
     /**
-     * <p>If the on-premises instance was deregistered, the time that the on-premises
-     * instance was deregistered.</p>
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
      */
     inline double GetDeregisterTime() const{ return m_deregisterTime; }
 
     /**
-     * <p>If the on-premises instance was deregistered, the time that the on-premises
-     * instance was deregistered.</p>
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
      */
     inline void SetDeregisterTime(double value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
 
     /**
-     * <p>If the on-premises instance was deregistered, the time that the on-premises
-     * instance was deregistered.</p>
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
      */
     inline InstanceInfo& WithDeregisterTime(double value) { SetDeregisterTime(value); return *this;}
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline InstanceInfo& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags that are currently associated with the on-premises instance.</p>
+     * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

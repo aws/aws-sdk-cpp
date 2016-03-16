@@ -37,44 +37,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -114,32 +114,32 @@ namespace Model
     inline RegisterApplicationRevisionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Information about the application revision to register, including the
-     * revision's type and its location.</p>
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>Information about the application revision to register, including the
-     * revision's type and its location.</p>
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
      */
     inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the application revision to register, including the
-     * revision's type and its location.</p>
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
      */
     inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>Information about the application revision to register, including the
-     * revision's type and its location.</p>
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
      */
     inline RegisterApplicationRevisionRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>Information about the application revision to register, including the
-     * revision's type and its location.</p>
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
      */
     inline RegisterApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 

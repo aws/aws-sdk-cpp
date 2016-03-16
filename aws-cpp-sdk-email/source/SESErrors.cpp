@@ -29,6 +29,7 @@ static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageReject
 static const int RULE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleDoesNotExist");
 static const int RULE_SET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RuleSetDoesNotExist");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists");
+static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int INVALID_S3_CONFIGURATION_HASH = HashingUtils::HashString("InvalidS3Configuration");
 
 namespace Aws
@@ -77,6 +78,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::ALREADY_EXISTS), false);
+  }
+  else if (hashCode == MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESErrors::MAIL_FROM_DOMAIN_NOT_VERIFIED), false);
   }
   else if (hashCode == INVALID_S3_CONFIGURATION_HASH)
   {

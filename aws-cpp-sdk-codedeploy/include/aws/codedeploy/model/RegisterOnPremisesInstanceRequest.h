@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of register on-premises instance operation.</p>
+   * <p>Represents the input of the register on-premises instance operation.</p>
    */
   class AWS_CODEDEPLOY_API RegisterOnPremisesInstanceRequest : public CodeDeployRequest
   {

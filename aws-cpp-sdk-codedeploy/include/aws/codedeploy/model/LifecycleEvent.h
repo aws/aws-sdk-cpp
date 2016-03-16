@@ -143,8 +143,8 @@ namespace Model
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
      * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event has
-     * succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li>
+     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
+     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
      * The deployment lifecycle event is unknown.</li> </ul>
      */
@@ -153,8 +153,8 @@ namespace Model
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
      * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event has
-     * succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li>
+     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
+     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
      * The deployment lifecycle event is unknown.</li> </ul>
      */
@@ -163,8 +163,8 @@ namespace Model
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
      * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event has
-     * succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li>
+     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
+     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
      * The deployment lifecycle event is unknown.</li> </ul>
      */
@@ -173,8 +173,8 @@ namespace Model
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
      * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event has
-     * succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li>
+     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
+     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
      * The deployment lifecycle event is unknown.</li> </ul>
      */
@@ -183,8 +183,8 @@ namespace Model
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
      * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event has
-     * succeeded.</li> <li>Failed: The deployment lifecycle event has failed.</li>
+     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
+     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
      * The deployment lifecycle event is unknown.</li> </ul>
      */

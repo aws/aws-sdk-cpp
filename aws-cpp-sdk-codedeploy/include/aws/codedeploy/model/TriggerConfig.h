@@ -44,78 +44,78 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline const Aws::String& GetTriggerName() const{ return m_triggerName; }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline void SetTriggerName(const char* value) { m_triggerNameHasBeenSet = true; m_triggerName.assign(value); }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline TriggerConfig& WithTriggerName(const Aws::String& value) { SetTriggerName(value); return *this;}
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline TriggerConfig& WithTriggerName(Aws::String&& value) { SetTriggerName(value); return *this;}
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>The name of the notification trigger.</p>
      */
     inline TriggerConfig& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline const Aws::String& GetTriggerTargetArn() const{ return m_triggerTargetArn; }
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline void SetTriggerTargetArn(const Aws::String& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline void SetTriggerTargetArn(const char* value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn.assign(value); }
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(const Aws::String& value) { SetTriggerTargetArn(value); return *this;}
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(value); return *this;}
 
     /**
-     * <p>The arn of the Amazon Simple Notification Service topic through which
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}

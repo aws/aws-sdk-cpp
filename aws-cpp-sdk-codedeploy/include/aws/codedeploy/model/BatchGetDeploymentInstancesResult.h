@@ -35,7 +35,7 @@ namespace CodeDeploy
 namespace Model
 {
   /**
-   * <p>Represents the output of a batch get deployment instances operation.</p>
+   * <p>Represents the output of a batch get deployment instance operation.</p>
    */
   class AWS_CODEDEPLOY_API BatchGetDeploymentInstancesResult
   {
@@ -45,37 +45,37 @@ namespace Model
     BatchGetDeploymentInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline const Aws::Vector<InstanceSummary>& GetInstancesSummary() const{ return m_instancesSummary; }
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline void SetInstancesSummary(const Aws::Vector<InstanceSummary>& value) { m_instancesSummary = value; }
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline void SetInstancesSummary(Aws::Vector<InstanceSummary>&& value) { m_instancesSummary = value; }
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline BatchGetDeploymentInstancesResult& WithInstancesSummary(const Aws::Vector<InstanceSummary>& value) { SetInstancesSummary(value); return *this;}
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline BatchGetDeploymentInstancesResult& WithInstancesSummary(Aws::Vector<InstanceSummary>&& value) { SetInstancesSummary(value); return *this;}
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline BatchGetDeploymentInstancesResult& AddInstancesSummary(const InstanceSummary& value) { m_instancesSummary.push_back(value); return *this; }
 
     /**
-     * <p>Information about the instances.</p>
+     * <p>Information about the instance.</p>
      */
     inline BatchGetDeploymentInstancesResult& AddInstancesSummary(InstanceSummary&& value) { m_instancesSummary.push_back(value); return *this; }
 

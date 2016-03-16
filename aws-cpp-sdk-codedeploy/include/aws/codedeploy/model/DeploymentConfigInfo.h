@@ -113,42 +113,42 @@ namespace Model
     inline DeploymentConfigInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instances.</p>
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline const MinimumHealthyHosts& GetMinimumHealthyHosts() const{ return m_minimumHealthyHosts; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instances.</p>
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline void SetMinimumHealthyHosts(const MinimumHealthyHosts& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instances.</p>
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline void SetMinimumHealthyHosts(MinimumHealthyHosts&& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instances.</p>
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline DeploymentConfigInfo& WithMinimumHealthyHosts(const MinimumHealthyHosts& value) { SetMinimumHealthyHosts(value); return *this;}
 
     /**
-     * <p>Information about the number or percentage of minimum healthy instances.</p>
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
     inline DeploymentConfigInfo& WithMinimumHealthyHosts(MinimumHealthyHosts&& value) { SetMinimumHealthyHosts(value); return *this;}
 
     /**
-     * <p>The time that the deployment configuration was created.</p>
+     * <p>The time at which the deployment configuration was created.</p>
      */
     inline double GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The time that the deployment configuration was created.</p>
+     * <p>The time at which the deployment configuration was created.</p>
      */
     inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The time that the deployment configuration was created.</p>
+     * <p>The time at which the deployment configuration was created.</p>
      */
     inline DeploymentConfigInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
 

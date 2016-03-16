@@ -112,19 +112,19 @@ namespace Model
 
     /**
      * <p>If <code>true</code>, the receipt rule is active. The default value is
-     * true.</p>
+     * <code>false</code>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>If <code>true</code>, the receipt rule is active. The default value is
-     * true.</p>
+     * <code>false</code>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>If <code>true</code>, the receipt rule is active. The default value is
-     * true.</p>
+     * <code>false</code>.</p>
      */
     inline ReceiptRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -268,19 +268,19 @@ namespace Model
 
     /**
      * <p>If <code>true</code>, then messages to which this receipt rule applies are
-     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     * scanned for spam and viruses. The default value is <code>false</code>.</p>
      */
     inline bool GetScanEnabled() const{ return m_scanEnabled; }
 
     /**
      * <p>If <code>true</code>, then messages to which this receipt rule applies are
-     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     * scanned for spam and viruses. The default value is <code>false</code>.</p>
      */
     inline void SetScanEnabled(bool value) { m_scanEnabledHasBeenSet = true; m_scanEnabled = value; }
 
     /**
      * <p>If <code>true</code>, then messages to which this receipt rule applies are
-     * scanned for spam and viruses. The default value is <code>true</code>.</p>
+     * scanned for spam and viruses. The default value is <code>false</code>.</p>
      */
     inline ReceiptRule& WithScanEnabled(bool value) { SetScanEnabled(value); return *this;}
 

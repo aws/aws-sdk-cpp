@@ -37,172 +37,167 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The deployment group's name.</p>
+     * <p>The name of the deployment group.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The type of revision to deploy, along with information about the revision's
-     * location.</p>
+     * <p>The type and location of the revision to deploy.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>The type of revision to deploy, along with information about the revision's
-     * location.</p>
+     * <p>The type and location of the revision to deploy.</p>
      */
     inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>The type of revision to deploy, along with information about the revision's
-     * location.</p>
+     * <p>The type and location of the revision to deploy.</p>
      */
     inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>The type of revision to deploy, along with information about the revision's
-     * location.</p>
+     * <p>The type and location of the revision to deploy.</p>
      */
     inline CreateDeploymentRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>The type of revision to deploy, along with information about the revision's
-     * location.</p>
+     * <p>The type and location of the revision to deploy.</p>
      */
     inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.</p> <p>If not specified, the value
-     * configured in the deployment group will be used as the default. If the
-     * deployment group does not have a deployment configuration associated with it,
-     * then CodeDeployDefault.OneAtATime will be used by default.</p>
+     * <p>The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.</p> <p>If not specified, the value configured in the
+     * deployment group will be used as the default. If the deployment group does not
+     * have a deployment configuration associated with it, then
+     * CodeDeployDefault.OneAtATime will be used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
@@ -243,37 +238,34 @@ namespace Model
 
     /**
      * <p>If set to true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will stop to that
-     * instance, and the deployment to that instance will be considered to have
-     * failed.</p>
+     * lifecycle event to fail to an instance, the deployment to that instance will
+     * stop, and the deployment to that instance will be considered to have failed.</p>
      */
     inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
 
     /**
      * <p>If set to true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will stop to that
-     * instance, and the deployment to that instance will be considered to have
-     * failed.</p>
+     * lifecycle event to fail to an instance, the deployment to that instance will
+     * stop, and the deployment to that instance will be considered to have failed.</p>
      */
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
 
     /**
      * <p>If set to true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not be
-     * considered to have failed to that instance at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * lifecycle event to an instance to fail, the deployment to that instance will not
+     * be considered to have failed at that point and will continue on to the
+     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will stop to that
-     * instance, and the deployment to that instance will be considered to have
-     * failed.</p>
+     * lifecycle event to fail to an instance, the deployment to that instance will
+     * stop, and the deployment to that instance will be considered to have failed.</p>
      */
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 

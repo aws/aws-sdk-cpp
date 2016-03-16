@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the location of application artifacts that are stored in
-   * GitHub.</p>
+   * <p>Information about the location of application artifacts stored in GitHub.</p>
    */
   class AWS_CODEDEPLOY_API GitHubLocation
   {

@@ -71,37 +71,37 @@ namespace Model
     inline GetDeploymentInstanceRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline GetDeploymentInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline GetDeploymentInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The unique ID of an instance in the deployment's deployment group.</p>
+     * <p>The unique ID of an instance in the deployment group.</p>
      */
     inline GetDeploymentInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

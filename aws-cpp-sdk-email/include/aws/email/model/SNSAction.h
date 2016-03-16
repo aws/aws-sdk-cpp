@@ -135,7 +135,7 @@ namespace Model
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
      * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is Base64.</p>
+     * characters. The default value is UTF-8.</p>
      */
     inline const SNSActionEncoding& GetEncoding() const{ return m_encoding; }
 
@@ -143,7 +143,7 @@ namespace Model
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
      * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is Base64.</p>
+     * characters. The default value is UTF-8.</p>
      */
     inline void SetEncoding(const SNSActionEncoding& value) { m_encodingHasBeenSet = true; m_encoding = value; }
 
@@ -151,7 +151,7 @@ namespace Model
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
      * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is Base64.</p>
+     * characters. The default value is UTF-8.</p>
      */
     inline void SetEncoding(SNSActionEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = value; }
 
@@ -159,7 +159,7 @@ namespace Model
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
      * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is Base64.</p>
+     * characters. The default value is UTF-8.</p>
      */
     inline SNSAction& WithEncoding(const SNSActionEncoding& value) { SetEncoding(value); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
      * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is Base64.</p>
+     * characters. The default value is UTF-8.</p>
      */
     inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(value); return *this;}
 

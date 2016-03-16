@@ -37,50 +37,42 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationNames() const{ return m_applicationNames; }
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline void SetApplicationNames(const Aws::Vector<Aws::String>& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline void SetApplicationNames(Aws::Vector<Aws::String>&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline BatchGetApplicationsRequest& WithApplicationNames(const Aws::Vector<Aws::String>& value) { SetApplicationNames(value); return *this;}
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline BatchGetApplicationsRequest& WithApplicationNames(Aws::Vector<Aws::String>&& value) { SetApplicationNames(value); return *this;}
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline BatchGetApplicationsRequest& AddApplicationNames(const Aws::String& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline BatchGetApplicationsRequest& AddApplicationNames(Aws::String&& value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of application names, with multiple application names separated by
-     * spaces.</p>
+     * <p>A list of application names separated by spaces.</p>
      */
     inline BatchGetApplicationsRequest& AddApplicationNames(const char* value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 

@@ -33,6 +33,7 @@
 #include <aws/email/model/DescribeReceiptRuleResult.h>
 #include <aws/email/model/DescribeReceiptRuleSetResult.h>
 #include <aws/email/model/GetIdentityDkimAttributesResult.h>
+#include <aws/email/model/GetIdentityMailFromDomainAttributesResult.h>
 #include <aws/email/model/GetIdentityNotificationAttributesResult.h>
 #include <aws/email/model/GetIdentityPoliciesResult.h>
 #include <aws/email/model/GetIdentityVerificationAttributesResult.h>
@@ -51,6 +52,7 @@
 #include <aws/email/model/SetActiveReceiptRuleSetResult.h>
 #include <aws/email/model/SetIdentityDkimEnabledResult.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledResult.h>
+#include <aws/email/model/SetIdentityMailFromDomainResult.h>
 #include <aws/email/model/SetIdentityNotificationTopicResult.h>
 #include <aws/email/model/SetReceiptRulePositionResult.h>
 #include <aws/email/model/UpdateReceiptRuleResult.h>
@@ -117,6 +119,7 @@ namespace Model
         class DescribeReceiptRuleRequest;
         class DescribeReceiptRuleSetRequest;
         class GetIdentityDkimAttributesRequest;
+        class GetIdentityMailFromDomainAttributesRequest;
         class GetIdentityNotificationAttributesRequest;
         class GetIdentityPoliciesRequest;
         class GetIdentityVerificationAttributesRequest;
@@ -135,6 +138,7 @@ namespace Model
         class SetActiveReceiptRuleSetRequest;
         class SetIdentityDkimEnabledRequest;
         class SetIdentityFeedbackForwardingEnabledRequest;
+        class SetIdentityMailFromDomainRequest;
         class SetIdentityNotificationTopicRequest;
         class SetReceiptRulePositionRequest;
         class UpdateReceiptRuleRequest;
@@ -157,6 +161,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeReceiptRuleResult, Aws::Client::AWSError<SESErrors>> DescribeReceiptRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> DescribeReceiptRuleSetOutcome;
         typedef Aws::Utils::Outcome<GetIdentityDkimAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityDkimAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetIdentityMailFromDomainAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityMailFromDomainAttributesOutcome;
         typedef Aws::Utils::Outcome<GetIdentityNotificationAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityNotificationAttributesOutcome;
         typedef Aws::Utils::Outcome<GetIdentityPoliciesResult, Aws::Client::AWSError<SESErrors>> GetIdentityPoliciesOutcome;
         typedef Aws::Utils::Outcome<GetIdentityVerificationAttributesResult, Aws::Client::AWSError<SESErrors>> GetIdentityVerificationAttributesOutcome;
@@ -175,6 +180,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SetActiveReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> SetActiveReceiptRuleSetOutcome;
         typedef Aws::Utils::Outcome<SetIdentityDkimEnabledResult, Aws::Client::AWSError<SESErrors>> SetIdentityDkimEnabledOutcome;
         typedef Aws::Utils::Outcome<SetIdentityFeedbackForwardingEnabledResult, Aws::Client::AWSError<SESErrors>> SetIdentityFeedbackForwardingEnabledOutcome;
+        typedef Aws::Utils::Outcome<SetIdentityMailFromDomainResult, Aws::Client::AWSError<SESErrors>> SetIdentityMailFromDomainOutcome;
         typedef Aws::Utils::Outcome<SetIdentityNotificationTopicResult, Aws::Client::AWSError<SESErrors>> SetIdentityNotificationTopicOutcome;
         typedef Aws::Utils::Outcome<SetReceiptRulePositionResult, Aws::Client::AWSError<SESErrors>> SetReceiptRulePositionOutcome;
         typedef Aws::Utils::Outcome<UpdateReceiptRuleResult, Aws::Client::AWSError<SESErrors>> UpdateReceiptRuleOutcome;
@@ -197,6 +203,7 @@ namespace Model
         typedef std::future<DescribeReceiptRuleOutcome> DescribeReceiptRuleOutcomeCallable;
         typedef std::future<DescribeReceiptRuleSetOutcome> DescribeReceiptRuleSetOutcomeCallable;
         typedef std::future<GetIdentityDkimAttributesOutcome> GetIdentityDkimAttributesOutcomeCallable;
+        typedef std::future<GetIdentityMailFromDomainAttributesOutcome> GetIdentityMailFromDomainAttributesOutcomeCallable;
         typedef std::future<GetIdentityNotificationAttributesOutcome> GetIdentityNotificationAttributesOutcomeCallable;
         typedef std::future<GetIdentityPoliciesOutcome> GetIdentityPoliciesOutcomeCallable;
         typedef std::future<GetIdentityVerificationAttributesOutcome> GetIdentityVerificationAttributesOutcomeCallable;
@@ -215,6 +222,7 @@ namespace Model
         typedef std::future<SetActiveReceiptRuleSetOutcome> SetActiveReceiptRuleSetOutcomeCallable;
         typedef std::future<SetIdentityDkimEnabledOutcome> SetIdentityDkimEnabledOutcomeCallable;
         typedef std::future<SetIdentityFeedbackForwardingEnabledOutcome> SetIdentityFeedbackForwardingEnabledOutcomeCallable;
+        typedef std::future<SetIdentityMailFromDomainOutcome> SetIdentityMailFromDomainOutcomeCallable;
         typedef std::future<SetIdentityNotificationTopicOutcome> SetIdentityNotificationTopicOutcomeCallable;
         typedef std::future<SetReceiptRulePositionOutcome> SetReceiptRulePositionOutcomeCallable;
         typedef std::future<UpdateReceiptRuleOutcome> UpdateReceiptRuleOutcomeCallable;
@@ -240,6 +248,7 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleRequest&, const Model::DescribeReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::DescribeReceiptRuleSetRequest&, const Model::DescribeReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityDkimAttributesRequest&, const Model::GetIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityDkimAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::GetIdentityMailFromDomainAttributesRequest&, const Model::GetIdentityMailFromDomainAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityMailFromDomainAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityNotificationAttributesRequest&, const Model::GetIdentityNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityPoliciesRequest&, const Model::GetIdentityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityPoliciesResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::GetIdentityVerificationAttributesRequest&, const Model::GetIdentityVerificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityVerificationAttributesResponseReceivedHandler;
@@ -258,6 +267,7 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::SetActiveReceiptRuleSetRequest&, const Model::SetActiveReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetActiveReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityDkimEnabledRequest&, const Model::SetIdentityDkimEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityDkimEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityFeedbackForwardingEnabledRequest&, const Model::SetIdentityFeedbackForwardingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityFeedbackForwardingEnabledResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::SetIdentityMailFromDomainRequest&, const Model::SetIdentityMailFromDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityMailFromDomainResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityNotificationTopicResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetReceiptRulePositionRequest&, const Model::SetReceiptRulePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetReceiptRulePositionResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::UpdateReceiptRuleRequest&, const Model::UpdateReceiptRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReceiptRuleResponseReceivedHandler;
@@ -787,6 +797,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetIdentityDkimAttributesAsync(const Model::GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the custom MAIL FROM attributes for a list of identities (email
+         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * second and can only get custom MAIL FROM attributes for up to 100 identities at
+         * a time.</p>
+         */
+        virtual Model::GetIdentityMailFromDomainAttributesOutcome GetIdentityMailFromDomainAttributes(const Model::GetIdentityMailFromDomainAttributesRequest& request) const;
+
+        /**
+         * <p>Returns the custom MAIL FROM attributes for a list of identities (email
+         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * second and can only get custom MAIL FROM attributes for up to 100 identities at
+         * a time.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetIdentityMailFromDomainAttributesOutcomeCallable GetIdentityMailFromDomainAttributesCallable(const Model::GetIdentityMailFromDomainAttributesRequest& request) const;
+
+        /**
+         * <p>Returns the custom MAIL FROM attributes for a list of identities (email
+         * addresses and/or domains).</p> <p>This action is throttled at one request per
+         * second and can only get custom MAIL FROM attributes for up to 100 identities at
+         * a time.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetIdentityMailFromDomainAttributesAsync(const Model::GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Given a list of verified identities (email addresses and/or domains), returns
@@ -1611,6 +1649,46 @@ namespace Model
         virtual void SetIdentityFeedbackForwardingEnabledAsync(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
+         * (email address or domain). </p> <important>To send emails using the specified
+         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
+         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
+         * you must also add or update an SPF record. For more information, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
+         * per second.</p>
+         */
+        virtual Model::SetIdentityMailFromDomainOutcome SetIdentityMailFromDomain(const Model::SetIdentityMailFromDomainRequest& request) const;
+
+        /**
+         * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
+         * (email address or domain). </p> <important>To send emails using the specified
+         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
+         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
+         * you must also add or update an SPF record. For more information, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
+         * per second.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetIdentityMailFromDomainOutcomeCallable SetIdentityMailFromDomainCallable(const Model::SetIdentityMailFromDomainRequest& request) const;
+
+        /**
+         * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
+         * (email address or domain). </p> <important>To send emails using the specified
+         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
+         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
+         * you must also add or update an SPF record. For more information, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
+         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
+         * per second.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetIdentityMailFromDomainAsync(const Model::SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Given an identity (email address or domain), sets the Amazon Simple
          * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
          * complaint, and/or delivery notifications for emails sent with that identity as
@@ -1867,6 +1945,7 @@ namespace Model
         void DescribeReceiptRuleAsyncHelper(const Model::DescribeReceiptRuleRequest& request, const DescribeReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReceiptRuleSetAsyncHelper(const Model::DescribeReceiptRuleSetRequest& request, const DescribeReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityDkimAttributesAsyncHelper(const Model::GetIdentityDkimAttributesRequest& request, const GetIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetIdentityMailFromDomainAttributesAsyncHelper(const Model::GetIdentityMailFromDomainAttributesRequest& request, const GetIdentityMailFromDomainAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityNotificationAttributesAsyncHelper(const Model::GetIdentityNotificationAttributesRequest& request, const GetIdentityNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityPoliciesAsyncHelper(const Model::GetIdentityPoliciesRequest& request, const GetIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityVerificationAttributesAsyncHelper(const Model::GetIdentityVerificationAttributesRequest& request, const GetIdentityVerificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1885,6 +1964,7 @@ namespace Model
         void SetActiveReceiptRuleSetAsyncHelper(const Model::SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityDkimEnabledAsyncHelper(const Model::SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityFeedbackForwardingEnabledAsyncHelper(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetIdentityMailFromDomainAsyncHelper(const Model::SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetReceiptRulePositionAsyncHelper(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateReceiptRuleAsyncHelper(const Model::UpdateReceiptRuleRequest& request, const UpdateReceiptRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

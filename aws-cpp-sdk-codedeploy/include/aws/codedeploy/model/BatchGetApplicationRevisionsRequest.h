@@ -38,86 +38,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an existing AWS CodeDeploy application to get revision
-     * information about.</p>
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline const Aws::Vector<RevisionLocation>& GetRevisions() const{ return m_revisions; }
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline void SetRevisions(const Aws::Vector<RevisionLocation>& value) { m_revisionsHasBeenSet = true; m_revisions = value; }
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisionsHasBeenSet = true; m_revisions = value; }
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithRevisions(const Aws::Vector<RevisionLocation>& value) { SetRevisions(value); return *this;}
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(value); return *this;}
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline BatchGetApplicationRevisionsRequest& AddRevisions(const RevisionLocation& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(value); return *this; }
 
     /**
-     * <p>Information to get about the application revisions, including revision type
-     * and location.</p>
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
      */
     inline BatchGetApplicationRevisionsRequest& AddRevisions(RevisionLocation&& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(value); return *this; }
 
