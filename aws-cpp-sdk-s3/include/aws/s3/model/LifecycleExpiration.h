@@ -74,11 +74,37 @@ namespace Model
      */
     inline LifecycleExpiration& WithDays(long value) { SetDays(value); return *this;}
 
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline bool GetExpiredObjectDeleteMarker() const{ return m_expiredObjectDeleteMarker; }
+
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline void SetExpiredObjectDeleteMarker(bool value) { m_expiredObjectDeleteMarkerHasBeenSet = true; m_expiredObjectDeleteMarker = value; }
+
+    /**
+     * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
+     * versions. If set to true, the delete marker will be expired; if set to false the
+     * policy takes no action. This cannot be specified with Days or Date in a
+     * Lifecycle Expiration Policy.
+     */
+    inline LifecycleExpiration& WithExpiredObjectDeleteMarker(bool value) { SetExpiredObjectDeleteMarker(value); return *this;}
+
   private:
     double m_date;
     bool m_dateHasBeenSet;
     long m_days;
     bool m_daysHasBeenSet;
+    bool m_expiredObjectDeleteMarker;
+    bool m_expiredObjectDeleteMarkerHasBeenSet;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace CloudHSM
 namespace Model
 {
   /**
-   * <p>Contains the output of the <a>ModifyHsm</a> action.</p>
+   * <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
    */
   class AWS_CLOUDHSM_API ModifyHsmResult
   {

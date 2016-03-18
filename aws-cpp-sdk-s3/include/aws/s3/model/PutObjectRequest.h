@@ -63,25 +63,39 @@ namespace Model
      */
     inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     /**
@@ -256,25 +270,39 @@ namespace Model
      */
     inline PutObjectRequest& WithContentLength(long value) { SetContentLength(value); return *this;}
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline PutObjectRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
 
-    
+    /**
+     * The base64-encoded 128-bit MD5 digest of the part data.
+     */
     inline PutObjectRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
     /**
@@ -432,25 +460,39 @@ namespace Model
      */
     inline PutObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * Object key for which the PUT operation was initiated.
+     */
     inline PutObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
     /**

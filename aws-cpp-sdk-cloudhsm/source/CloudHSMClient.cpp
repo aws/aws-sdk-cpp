@@ -26,6 +26,7 @@
 #include <aws/cloudhsm/CloudHSMClient.h>
 #include <aws/cloudhsm/CloudHSMEndpoint.h>
 #include <aws/cloudhsm/CloudHSMErrorMarshaller.h>
+#include <aws/cloudhsm/model/AddTagsToResourceRequest.h>
 #include <aws/cloudhsm/model/CreateHapgRequest.h>
 #include <aws/cloudhsm/model/CreateHsmRequest.h>
 #include <aws/cloudhsm/model/CreateLunaClientRequest.h>
@@ -40,9 +41,11 @@
 #include <aws/cloudhsm/model/ListHapgsRequest.h>
 #include <aws/cloudhsm/model/ListHsmsRequest.h>
 #include <aws/cloudhsm/model/ListLunaClientsRequest.h>
+#include <aws/cloudhsm/model/ListTagsForResourceRequest.h>
 #include <aws/cloudhsm/model/ModifyHapgRequest.h>
 #include <aws/cloudhsm/model/ModifyHsmRequest.h>
 #include <aws/cloudhsm/model/ModifyLunaClientRequest.h>
+#include <aws/cloudhsm/model/RemoveTagsFromResourceRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -106,6 +109,37 @@ void CloudHSMClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+AddTagsToResourceOutcome CloudHSMClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddTagsToResourceOutcome(AddTagsToResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddTagsToResourceOutcome(outcome.GetError());
+  }
+}
+
+AddTagsToResourceOutcomeCallable CloudHSMClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
+{
+  return std::async(std::launch::async, &CloudHSMClient::AddTagsToResource, this, request);
+}
+
+void CloudHSMClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudHSMClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
+}
+
+void CloudHSMClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddTagsToResource(request), context);
+}
+
 CreateHapgOutcome CloudHSMClient::CreateHapg(const CreateHapgRequest& request) const
 {
   Aws::StringStream ss;
@@ -540,6 +574,37 @@ void CloudHSMClient::ListLunaClientsAsyncHelper(const ListLunaClientsRequest& re
   handler(this, request, ListLunaClients(request), context);
 }
 
+ListTagsForResourceOutcome CloudHSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable CloudHSMClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  return std::async(std::launch::async, &CloudHSMClient::ListTagsForResource, this, request);
+}
+
+void CloudHSMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudHSMClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
+}
+
+void CloudHSMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ModifyHapgOutcome CloudHSMClient::ModifyHapg(const ModifyHapgRequest& request) const
 {
   Aws::StringStream ss;
@@ -631,5 +696,36 @@ void CloudHSMClient::ModifyLunaClientAsync(const ModifyLunaClientRequest& reques
 void CloudHSMClient::ModifyLunaClientAsyncHelper(const ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyLunaClient(request), context);
+}
+
+RemoveTagsFromResourceOutcome CloudHSMClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveTagsFromResourceOutcome(RemoveTagsFromResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveTagsFromResourceOutcome(outcome.GetError());
+  }
+}
+
+RemoveTagsFromResourceOutcomeCallable CloudHSMClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
+{
+  return std::async(std::launch::async, &CloudHSMClient::RemoveTagsFromResource, this, request);
+}
+
+void CloudHSMClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CloudHSMClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
+}
+
+void CloudHSMClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveTagsFromResource(request), context);
 }
 

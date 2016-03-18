@@ -114,86 +114,86 @@ namespace Model
     inline DescribeThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = value; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes which are name/value pairs in JSON format. For example: </p>
-     * <p>{\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}}</p>
+     * <p>The attributes, which are name/value pairs in JSON format (for example:
+     * {\"attributes\":{\"some-name1\":\"some-value1\"},
+     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
      */
     inline DescribeThingResult& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
 

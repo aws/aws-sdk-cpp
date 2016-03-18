@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>CreateHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>CreateHsm</a> operation.</p>
    */
   class AWS_CLOUDHSM_API CreateHsmRequest : public CloudHSMRequest
   {
@@ -107,37 +107,51 @@ namespace Model
     inline CreateHsmRequest& WithSshKey(const char* value) { SetSshKey(value); return *this;}
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline const Aws::String& GetEniIp() const{ return m_eniIp; }
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline void SetEniIp(const Aws::String& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline void SetEniIp(const char* value) { m_eniIpHasBeenSet = true; m_eniIp.assign(value); }
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline CreateHsmRequest& WithEniIp(const Aws::String& value) { SetEniIp(value); return *this;}
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline CreateHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(value); return *this;}
 
     /**
-     * <p>The IP address to assign to the HSM's ENI.</p>
+     * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the
+     * subnet.</p>
      */
     inline CreateHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
@@ -218,105 +232,102 @@ namespace Model
      */
     inline CreateHsmRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline void SetSubscriptionType(const SubscriptionType& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline void SetSubscriptionType(SubscriptionType&& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline CreateHsmRequest& WithSubscriptionType(const SubscriptionType& value) { SetSubscriptionType(value); return *this;}
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline CreateHsmRequest& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(value); return *this;}
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline CreateHsmRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline CreateHsmRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A user-defined token to ensure idempotence. Subsequent calls to this action
-     * with the same token will be ignored.</p>
+     * <p>A user-defined token to ensure idempotence. Subsequent calls to this
+     * operation with the same token will be ignored.</p>
      */
     inline CreateHsmRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline const Aws::String& GetSyslogIp() const{ return m_syslogIp; }
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(const Aws::String& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(const char* value) { m_syslogIpHasBeenSet = true; m_syslogIp.assign(value); }
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline CreateHsmRequest& WithSyslogIp(const Aws::String& value) { SetSyslogIp(value); return *this;}
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline CreateHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(value); return *this;}
 
     /**
-     * <p>The IP address for the syslog monitoring server.</p>
+     * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline CreateHsmRequest& WithSyslogIp(const char* value) { SetSyslogIp(value); return *this;}
 

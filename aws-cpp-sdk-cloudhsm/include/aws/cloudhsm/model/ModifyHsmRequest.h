@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>ModifyHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
    */
   class AWS_CLOUDHSM_API ModifyHsmRequest : public CloudHSMRequest
   {
@@ -71,72 +71,100 @@ namespace Model
     inline ModifyHsmRequest& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline ModifyHsmRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline ModifyHsmRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The new identifier of the subnet that the HSM is in.</p>
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
      */
     inline ModifyHsmRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline const Aws::String& GetEniIp() const{ return m_eniIp; }
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline void SetEniIp(const Aws::String& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline void SetEniIp(const char* value) { m_eniIpHasBeenSet = true; m_eniIp.assign(value); }
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline ModifyHsmRequest& WithEniIp(const Aws::String& value) { SetEniIp(value); return *this;}
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline ModifyHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(value); return *this;}
 
     /**
-     * <p>The new IP address for the elastic network interface attached to the HSM.</p>
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
      */
     inline ModifyHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
@@ -211,37 +239,44 @@ namespace Model
     inline ModifyHsmRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline const Aws::String& GetSyslogIp() const{ return m_syslogIp; }
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(const Aws::String& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(Aws::String&& value) { m_syslogIpHasBeenSet = true; m_syslogIp = value; }
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline void SetSyslogIp(const char* value) { m_syslogIpHasBeenSet = true; m_syslogIp.assign(value); }
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline ModifyHsmRequest& WithSyslogIp(const Aws::String& value) { SetSyslogIp(value); return *this;}
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline ModifyHsmRequest& WithSyslogIp(Aws::String&& value) { SetSyslogIp(value); return *this;}
 
     /**
-     * <p>The new IP address for the syslog monitoring server.</p>
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
      */
     inline ModifyHsmRequest& WithSyslogIp(const char* value) { SetSyslogIp(value); return *this;}
 

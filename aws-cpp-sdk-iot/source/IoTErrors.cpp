@@ -24,7 +24,6 @@ static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("Tra
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VersionsLimitExceededException");
 static const int SQL_PARSE_HASH = HashingUtils::HashString("SqlParseException");
-static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
@@ -32,6 +31,7 @@ static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequest
 static const int CERTIFICATE_STATE_HASH = HashingUtils::HashString("CertificateStateException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
+static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
 
 namespace Aws
 {
@@ -60,10 +60,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SQL_PARSE), false);
   }
-  else if (hashCode == TRANSFER_CONFLICT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_CONFLICT), false);
-  }
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL), false);
@@ -91,6 +87,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DELETE_CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::DELETE_CONFLICT), false);
+  }
+  else if (hashCode == TRANSFER_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_CONFLICT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

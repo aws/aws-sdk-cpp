@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action to publish data to an SQS queue.</p>
+   * <p>Describes an action to publish data to an Amazon SQS queue.</p>
    */
   class AWS_IOT_API SqsAction
   {

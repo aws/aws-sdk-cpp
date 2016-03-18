@@ -22,6 +22,9 @@
 #include <aws/iot/model/RepublishAction.h>
 #include <aws/iot/model/S3Action.h>
 #include <aws/iot/model/FirehoseAction.h>
+#include <aws/iot/model/CloudwatchMetricAction.h>
+#include <aws/iot/model/CloudwatchAlarmAction.h>
+#include <aws/iot/model/ElasticsearchAction.h>
 
 namespace Aws
 {
@@ -99,77 +102,77 @@ namespace Model
     inline Action& WithLambda(LambdaAction&& value) { SetLambda(value); return *this;}
 
     /**
-     * <p>Publish to an SNS topic.</p>
+     * <p>Publish to an Amazon SNS topic.</p>
      */
     inline const SnsAction& GetSns() const{ return m_sns; }
 
     /**
-     * <p>Publish to an SNS topic.</p>
+     * <p>Publish to an Amazon SNS topic.</p>
      */
     inline void SetSns(const SnsAction& value) { m_snsHasBeenSet = true; m_sns = value; }
 
     /**
-     * <p>Publish to an SNS topic.</p>
+     * <p>Publish to an Amazon SNS topic.</p>
      */
     inline void SetSns(SnsAction&& value) { m_snsHasBeenSet = true; m_sns = value; }
 
     /**
-     * <p>Publish to an SNS topic.</p>
+     * <p>Publish to an Amazon SNS topic.</p>
      */
     inline Action& WithSns(const SnsAction& value) { SetSns(value); return *this;}
 
     /**
-     * <p>Publish to an SNS topic.</p>
+     * <p>Publish to an Amazon SNS topic.</p>
      */
     inline Action& WithSns(SnsAction&& value) { SetSns(value); return *this;}
 
     /**
-     * <p>Publish to an SQS queue.</p>
+     * <p>Publish to an Amazon SQS queue.</p>
      */
     inline const SqsAction& GetSqs() const{ return m_sqs; }
 
     /**
-     * <p>Publish to an SQS queue.</p>
+     * <p>Publish to an Amazon SQS queue.</p>
      */
     inline void SetSqs(const SqsAction& value) { m_sqsHasBeenSet = true; m_sqs = value; }
 
     /**
-     * <p>Publish to an SQS queue.</p>
+     * <p>Publish to an Amazon SQS queue.</p>
      */
     inline void SetSqs(SqsAction&& value) { m_sqsHasBeenSet = true; m_sqs = value; }
 
     /**
-     * <p>Publish to an SQS queue.</p>
+     * <p>Publish to an Amazon SQS queue.</p>
      */
     inline Action& WithSqs(const SqsAction& value) { SetSqs(value); return *this;}
 
     /**
-     * <p>Publish to an SQS queue.</p>
+     * <p>Publish to an Amazon SQS queue.</p>
      */
     inline Action& WithSqs(SqsAction&& value) { SetSqs(value); return *this;}
 
     /**
-     * <p>Write data to a Kinesis stream.</p>
+     * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline const KinesisAction& GetKinesis() const{ return m_kinesis; }
 
     /**
-     * <p>Write data to a Kinesis stream.</p>
+     * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline void SetKinesis(const KinesisAction& value) { m_kinesisHasBeenSet = true; m_kinesis = value; }
 
     /**
-     * <p>Write data to a Kinesis stream.</p>
+     * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline void SetKinesis(KinesisAction&& value) { m_kinesisHasBeenSet = true; m_kinesis = value; }
 
     /**
-     * <p>Write data to a Kinesis stream.</p>
+     * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline Action& WithKinesis(const KinesisAction& value) { SetKinesis(value); return *this;}
 
     /**
-     * <p>Write data to a Kinesis stream.</p>
+     * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline Action& WithKinesis(KinesisAction&& value) { SetKinesis(value); return *this;}
 
@@ -199,54 +202,129 @@ namespace Model
     inline Action& WithRepublish(RepublishAction&& value) { SetRepublish(value); return *this;}
 
     /**
-     * <p>Write to an S3 bucket.</p>
+     * <p>Write to an Amazon S3 bucket.</p>
      */
     inline const S3Action& GetS3() const{ return m_s3; }
 
     /**
-     * <p>Write to an S3 bucket.</p>
+     * <p>Write to an Amazon S3 bucket.</p>
      */
     inline void SetS3(const S3Action& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
-     * <p>Write to an S3 bucket.</p>
+     * <p>Write to an Amazon S3 bucket.</p>
      */
     inline void SetS3(S3Action&& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
-     * <p>Write to an S3 bucket.</p>
+     * <p>Write to an Amazon S3 bucket.</p>
      */
     inline Action& WithS3(const S3Action& value) { SetS3(value); return *this;}
 
     /**
-     * <p>Write to an S3 bucket.</p>
+     * <p>Write to an Amazon S3 bucket.</p>
      */
     inline Action& WithS3(S3Action&& value) { SetS3(value); return *this;}
 
     /**
-     * <p>Write to a Kinesis Firehose stream.</p>
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline const FirehoseAction& GetFirehose() const{ return m_firehose; }
 
     /**
-     * <p>Write to a Kinesis Firehose stream.</p>
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline void SetFirehose(const FirehoseAction& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
 
     /**
-     * <p>Write to a Kinesis Firehose stream.</p>
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline void SetFirehose(FirehoseAction&& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
 
     /**
-     * <p>Write to a Kinesis Firehose stream.</p>
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline Action& WithFirehose(const FirehoseAction& value) { SetFirehose(value); return *this;}
 
     /**
-     * <p>Write to a Kinesis Firehose stream.</p>
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
     inline Action& WithFirehose(FirehoseAction&& value) { SetFirehose(value); return *this;}
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline const CloudwatchMetricAction& GetCloudwatchMetric() const{ return m_cloudwatchMetric; }
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline void SetCloudwatchMetric(const CloudwatchMetricAction& value) { m_cloudwatchMetricHasBeenSet = true; m_cloudwatchMetric = value; }
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline void SetCloudwatchMetric(CloudwatchMetricAction&& value) { m_cloudwatchMetricHasBeenSet = true; m_cloudwatchMetric = value; }
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline Action& WithCloudwatchMetric(const CloudwatchMetricAction& value) { SetCloudwatchMetric(value); return *this;}
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline Action& WithCloudwatchMetric(CloudwatchMetricAction&& value) { SetCloudwatchMetric(value); return *this;}
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
+    inline const CloudwatchAlarmAction& GetCloudwatchAlarm() const{ return m_cloudwatchAlarm; }
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
+    inline void SetCloudwatchAlarm(const CloudwatchAlarmAction& value) { m_cloudwatchAlarmHasBeenSet = true; m_cloudwatchAlarm = value; }
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
+    inline void SetCloudwatchAlarm(CloudwatchAlarmAction&& value) { m_cloudwatchAlarmHasBeenSet = true; m_cloudwatchAlarm = value; }
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
+    inline Action& WithCloudwatchAlarm(const CloudwatchAlarmAction& value) { SetCloudwatchAlarm(value); return *this;}
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
+    inline Action& WithCloudwatchAlarm(CloudwatchAlarmAction&& value) { SetCloudwatchAlarm(value); return *this;}
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     */
+    inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     */
+    inline void SetElasticsearch(const ElasticsearchAction& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     */
+    inline void SetElasticsearch(ElasticsearchAction&& value) { m_elasticsearchHasBeenSet = true; m_elasticsearch = value; }
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     */
+    inline Action& WithElasticsearch(const ElasticsearchAction& value) { SetElasticsearch(value); return *this;}
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service; domain.</p>
+     */
+    inline Action& WithElasticsearch(ElasticsearchAction&& value) { SetElasticsearch(value); return *this;}
 
   private:
     DynamoDBAction m_dynamoDB;
@@ -265,6 +343,12 @@ namespace Model
     bool m_s3HasBeenSet;
     FirehoseAction m_firehose;
     bool m_firehoseHasBeenSet;
+    CloudwatchMetricAction m_cloudwatchMetric;
+    bool m_cloudwatchMetricHasBeenSet;
+    CloudwatchAlarmAction m_cloudwatchAlarm;
+    bool m_cloudwatchAlarmHasBeenSet;
+    ElasticsearchAction m_elasticsearch;
+    bool m_elasticsearchHasBeenSet;
   };
 
 } // namespace Model

@@ -70,32 +70,32 @@ namespace Model
     inline CreateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON
-     * document. For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
+     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
 
     /**
-     * <p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON
-     * document. For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
+     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON
-     * document. For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
+     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON
-     * document. For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
+     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline CreateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
 
     /**
-     * <p>The attribute payload. Which consists of up to 3 name/value pairs in a JSON
-     * document. For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
+     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline CreateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(value); return *this;}
 

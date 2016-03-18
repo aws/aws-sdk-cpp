@@ -70,37 +70,37 @@ namespace Model
     inline ModifyLunaClientRequest& WithClientArn(const char* value) { SetClientArn(value); return *this;}
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline ModifyLunaClientRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline ModifyLunaClientRequest& WithCertificate(Aws::String&& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The new certificate for the client. </p>
+     * <p>The new certificate for the client.</p>
      */
     inline ModifyLunaClientRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 

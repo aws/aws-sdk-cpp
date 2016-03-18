@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>DescribeHsm</a> operation. </p>
    */
   class AWS_CLOUDHSM_API DescribeHsmRequest : public CloudHSMRequest
   {

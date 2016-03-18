@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>ListAvailableZones</a> action. </p>
+   * <p>Contains the inputs for the <a>ListAvailableZones</a> action.</p>
    */
   class AWS_CLOUDHSM_API ListAvailableZonesRequest : public CloudHSMRequest
   {

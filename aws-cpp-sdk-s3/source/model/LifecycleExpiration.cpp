@@ -27,7 +27,9 @@ LifecycleExpiration::LifecycleExpiration() :
     m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
-    m_daysHasBeenSet(false)
+    m_daysHasBeenSet(false),
+    m_expiredObjectDeleteMarker(false),
+    m_expiredObjectDeleteMarkerHasBeenSet(false)
 {
 }
 
@@ -35,7 +37,9 @@ LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode) :
     m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
-    m_daysHasBeenSet(false)
+    m_daysHasBeenSet(false),
+    m_expiredObjectDeleteMarker(false),
+    m_expiredObjectDeleteMarkerHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -58,6 +62,12 @@ LifecycleExpiration& LifecycleExpiration::operator =(const XmlNode& xmlNode)
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
       m_daysHasBeenSet = true;
     }
+    XmlNode expiredObjectDeleteMarkerNode = resultNode.FirstChild("ExpiredObjectDeleteMarker");
+    if(!expiredObjectDeleteMarkerNode.IsNull())
+    {
+      m_expiredObjectDeleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(expiredObjectDeleteMarkerNode.GetText().c_str()).c_str());
+      m_expiredObjectDeleteMarkerHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -79,6 +89,14 @@ void LifecycleExpiration::AddToNode(XmlNode& parentNode) const
    XmlNode daysNode = parentNode.CreateChildElement("Days");
   ss << m_days;
    daysNode.SetText(ss.str());
+  ss.str("");
+  }
+
+  if(m_expiredObjectDeleteMarkerHasBeenSet)
+  {
+   XmlNode expiredObjectDeleteMarkerNode = parentNode.CreateChildElement("ExpiredObjectDeleteMarker");
+  ss << m_expiredObjectDeleteMarker;
+   expiredObjectDeleteMarkerNode.SetText(ss.str());
   ss.str("");
   }
 

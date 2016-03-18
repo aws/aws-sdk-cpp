@@ -538,19 +538,19 @@ namespace Aws
         virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes the replication configuration for the given Amazon S3 bucket.
+         * Deletes the replication configuration from the bucket.
          */
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * Deletes the replication configuration for the given Amazon S3 bucket.
+         * Deletes the replication configuration from the bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * Deletes the replication configuration for the given Amazon S3 bucket.
+         * Deletes the replication configuration from the bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -778,19 +778,19 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves the replication configuration for the given Amazon S3 bucket.
+         * Deprecated, see the GetBucketReplicationConfiguration operation.
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Retrieves the replication configuration for the given Amazon S3 bucket.
+         * Deprecated, see the GetBucketReplicationConfiguration operation.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Retrieves the replication configuration for the given Amazon S3 bucket.
+         * Deprecated, see the GetBucketReplicationConfiguration operation.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

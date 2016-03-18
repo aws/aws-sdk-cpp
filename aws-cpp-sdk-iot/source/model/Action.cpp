@@ -29,7 +29,10 @@ Action::Action() :
     m_kinesisHasBeenSet(false),
     m_republishHasBeenSet(false),
     m_s3HasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_cloudwatchMetricHasBeenSet(false),
+    m_cloudwatchAlarmHasBeenSet(false),
+    m_elasticsearchHasBeenSet(false)
 {
 }
 
@@ -41,7 +44,10 @@ Action::Action(const JsonValue& jsonValue) :
     m_kinesisHasBeenSet(false),
     m_republishHasBeenSet(false),
     m_s3HasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_cloudwatchMetricHasBeenSet(false),
+    m_cloudwatchAlarmHasBeenSet(false),
+    m_elasticsearchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +110,27 @@ Action& Action::operator =(const JsonValue& jsonValue)
     m_firehoseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cloudwatchMetric"))
+  {
+    m_cloudwatchMetric = jsonValue.GetObject("cloudwatchMetric");
+
+    m_cloudwatchMetricHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cloudwatchAlarm"))
+  {
+    m_cloudwatchAlarm = jsonValue.GetObject("cloudwatchAlarm");
+
+    m_cloudwatchAlarmHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("elasticsearch"))
+  {
+    m_elasticsearch = jsonValue.GetObject("elasticsearch");
+
+    m_elasticsearchHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +183,24 @@ JsonValue Action::Jsonize() const
   if(m_firehoseHasBeenSet)
   {
    payload.WithObject("firehose", m_firehose.Jsonize());
+
+  }
+
+  if(m_cloudwatchMetricHasBeenSet)
+  {
+   payload.WithObject("cloudwatchMetric", m_cloudwatchMetric.Jsonize());
+
+  }
+
+  if(m_cloudwatchAlarmHasBeenSet)
+  {
+   payload.WithObject("cloudwatchAlarm", m_cloudwatchAlarm.Jsonize());
+
+  }
+
+  if(m_elasticsearchHasBeenSet)
+  {
+   payload.WithObject("elasticsearch", m_elasticsearch.Jsonize());
 
   }
 

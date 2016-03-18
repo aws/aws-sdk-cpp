@@ -69,51 +69,44 @@ namespace Model
     inline CreatePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The JSON document that describes the policy. The length of the
-     * <b>policyDocument</b> must be a minimum length of 1, with a maximum length of
-     * 2048, excluding whitespace.</p>
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

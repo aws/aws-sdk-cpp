@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action to invoke a Lamdba function.</p>
+   * <p>Describes an action to invoke a Lambda function.</p>
    */
   class AWS_IOT_API LambdaAction
   {

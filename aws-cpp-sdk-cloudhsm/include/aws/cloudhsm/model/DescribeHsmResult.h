@@ -36,7 +36,7 @@ namespace CloudHSM
 namespace Model
 {
   /**
-   * <p>Contains the output of the <a>DescribeHsm</a> action.</p>
+   * <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
    */
   class AWS_CLOUDHSM_API DescribeHsmResult
   {
@@ -252,29 +252,19 @@ namespace Model
      */
     inline DescribeHsmResult& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline void SetSubscriptionType(const SubscriptionType& value) { m_subscriptionType = value; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline void SetSubscriptionType(SubscriptionType&& value) { m_subscriptionType = value; }
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline DescribeHsmResult& WithSubscriptionType(const SubscriptionType& value) { SetSubscriptionType(value); return *this;}
 
-    /**
-     * <p>The subscription type.</p>
-     */
+    
     inline DescribeHsmResult& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(value); return *this;}
 
     /**
@@ -383,37 +373,37 @@ namespace Model
     inline DescribeHsmResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetId = value; }
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetId = value; }
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetId.assign(value); }
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline DescribeHsmResult& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline DescribeHsmResult& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The identifier of the subnet the HSM is in.</p>
+     * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline DescribeHsmResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -628,37 +618,37 @@ namespace Model
     inline DescribeHsmResult& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline const Aws::String& GetSshKeyLastUpdated() const{ return m_sshKeyLastUpdated; }
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline void SetSshKeyLastUpdated(const Aws::String& value) { m_sshKeyLastUpdated = value; }
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline void SetSshKeyLastUpdated(Aws::String&& value) { m_sshKeyLastUpdated = value; }
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline void SetSshKeyLastUpdated(const char* value) { m_sshKeyLastUpdated.assign(value); }
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline DescribeHsmResult& WithSshKeyLastUpdated(const Aws::String& value) { SetSshKeyLastUpdated(value); return *this;}
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline DescribeHsmResult& WithSshKeyLastUpdated(Aws::String&& value) { SetSshKeyLastUpdated(value); return *this;}
 
     /**
-     * <p>The date and time the SSH key was last updated.</p>
+     * <p>The date and time that the SSH key was last updated.</p>
      */
     inline DescribeHsmResult& WithSshKeyLastUpdated(const char* value) { SetSshKeyLastUpdated(value); return *this;}
 
@@ -698,37 +688,37 @@ namespace Model
     inline DescribeHsmResult& WithServerCertUri(const char* value) { SetServerCertUri(value); return *this;}
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline const Aws::String& GetServerCertLastUpdated() const{ return m_serverCertLastUpdated; }
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline void SetServerCertLastUpdated(const Aws::String& value) { m_serverCertLastUpdated = value; }
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline void SetServerCertLastUpdated(Aws::String&& value) { m_serverCertLastUpdated = value; }
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline void SetServerCertLastUpdated(const char* value) { m_serverCertLastUpdated.assign(value); }
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline DescribeHsmResult& WithServerCertLastUpdated(const Aws::String& value) { SetServerCertLastUpdated(value); return *this;}
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline DescribeHsmResult& WithServerCertLastUpdated(Aws::String&& value) { SetServerCertLastUpdated(value); return *this;}
 
     /**
-     * <p>The date and time the server certificate was last updated.</p>
+     * <p>The date and time that the server certificate was last updated.</p>
      */
     inline DescribeHsmResult& WithServerCertLastUpdated(const char* value) { SetServerCertLastUpdated(value); return *this;}
 

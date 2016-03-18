@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>The attribute payload, a JSON string containing up to three key-value
-   * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+   * <p>The attribute payload, a JSON string containing up to three key-value pairs
+   * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
    */
   class AWS_IOT_API AttributePayload
   {
@@ -44,74 +44,74 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A JSON string containing up to three key-value pair in JSON format.</p>
-     * <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline AttributePayload& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 

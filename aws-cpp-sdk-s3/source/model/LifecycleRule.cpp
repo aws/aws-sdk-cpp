@@ -30,7 +30,8 @@ LifecycleRule::LifecycleRule() :
     m_statusHasBeenSet(false),
     m_transitionsHasBeenSet(false),
     m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false)
+    m_noncurrentVersionExpirationHasBeenSet(false),
+    m_abortIncompleteMultipartUploadHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ LifecycleRule::LifecycleRule(const XmlNode& xmlNode) :
     m_statusHasBeenSet(false),
     m_transitionsHasBeenSet(false),
     m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false)
+    m_noncurrentVersionExpirationHasBeenSet(false),
+    m_abortIncompleteMultipartUploadHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -106,6 +108,12 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
       m_noncurrentVersionExpiration = noncurrentVersionExpirationNode;
       m_noncurrentVersionExpirationHasBeenSet = true;
     }
+    XmlNode abortIncompleteMultipartUploadNode = resultNode.FirstChild("AbortIncompleteMultipartUpload");
+    if(!abortIncompleteMultipartUploadNode.IsNull())
+    {
+      m_abortIncompleteMultipartUpload = abortIncompleteMultipartUploadNode;
+      m_abortIncompleteMultipartUploadHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -160,6 +168,12 @@ void LifecycleRule::AddToNode(XmlNode& parentNode) const
   {
    XmlNode noncurrentVersionExpirationNode = parentNode.CreateChildElement("NoncurrentVersionTransition");
    m_noncurrentVersionExpiration.AddToNode(noncurrentVersionExpirationNode);
+  }
+
+  if(m_abortIncompleteMultipartUploadHasBeenSet)
+  {
+   XmlNode abortIncompleteMultipartUploadNode = parentNode.CreateChildElement("AbortIncompleteMultipartUpload");
+   m_abortIncompleteMultipartUpload.AddToNode(abortIncompleteMultipartUploadNode);
   }
 
 }

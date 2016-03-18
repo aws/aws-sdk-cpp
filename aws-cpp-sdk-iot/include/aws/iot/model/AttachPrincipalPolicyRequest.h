@@ -71,44 +71,44 @@ namespace Model
     inline AttachPrincipalPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline AttachPrincipalPolicyRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline AttachPrincipalPolicyRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.</p>
+     * <p>The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.</p>
      */
     inline AttachPrincipalPolicyRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

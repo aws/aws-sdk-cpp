@@ -369,22 +369,22 @@ namespace Model
 
         /**
          * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
-         * Only the transfer source account can use this operation to cancel a transfer
-         * (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After
+         * Only the transfer source account can use this operation to cancel a transfer.
+         * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
-         * state. Once the destination account has accepted the transfer, the transfer may
-         * no longer be cancelled.</p> <p>After a certificate transfer is cancelled, the
+         * state. After the destination account has accepted the transfer, the transfer
+         * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
          * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
          */
         virtual Model::CancelCertificateTransferOutcome CancelCertificateTransfer(const Model::CancelCertificateTransferRequest& request) const;
 
         /**
          * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
-         * Only the transfer source account can use this operation to cancel a transfer
-         * (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After
+         * Only the transfer source account can use this operation to cancel a transfer.
+         * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
-         * state. Once the destination account has accepted the transfer, the transfer may
-         * no longer be cancelled.</p> <p>After a certificate transfer is cancelled, the
+         * state. After the destination account has accepted the transfer, the transfer
+         * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
          * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -393,11 +393,11 @@ namespace Model
 
         /**
          * <p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b>
-         * Only the transfer source account can use this operation to cancel a transfer
-         * (transfer destinations can use <a>RejectCertificateTransfer</a> instead). After
+         * Only the transfer source account can use this operation to cancel a transfer.
+         * (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After
          * transfer, AWS IoT returns the certificate to the source account in the INACTIVE
-         * state. Once the destination account has accepted the transfer, the transfer may
-         * no longer be cancelled.</p> <p>After a certificate transfer is cancelled, the
+         * state. After the destination account has accepted the transfer, the transfer
+         * cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the
          * status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -408,24 +408,24 @@ namespace Model
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
          * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory and copying multiple .csr files into that
-         * directory and specifying that directory on the command line. The following
+         * in a batch by creating a directory, copying multiple .csr files into that
+         * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls
+         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws
-         * iot create-certificate-from-csr AWS CLI command to create a certificate for the
-         * corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the
-         * command can also be run in parallel to speed up the certificate creation
+         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
+         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the command can also be run in parallel to speed up the certificate creation
          * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows
-         * Command Prompt, the command to create certificates for all CSRs in
+         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * command prompt, the command to create certificates for all CSRs in
          * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
          * iot create-certificate-from-csr --certificate-signing-request file://@path"</p>
          */
@@ -435,24 +435,24 @@ namespace Model
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
          * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory and copying multiple .csr files into that
-         * directory and specifying that directory on the command line. The following
+         * in a batch by creating a directory, copying multiple .csr files into that
+         * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls
+         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws
-         * iot create-certificate-from-csr AWS CLI command to create a certificate for the
-         * corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the
-         * command can also be run in parallel to speed up the certificate creation
+         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
+         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the command can also be run in parallel to speed up the certificate creation
          * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows
-         * Command Prompt, the command to create certificates for all CSRs in
+         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * command prompt, the command to create certificates for all CSRs in
          * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
          * iot create-certificate-from-csr --certificate-signing-request file://@path"</p>
          *
@@ -464,24 +464,24 @@ namespace Model
          * <p>Creates an X.509 certificate using the specified certificate signing
          * request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR)
          * results in a distinct certificate.</p> <p>You can create multiple certificates
-         * in a batch by creating a directory and copying multiple .csr files into that
-         * directory and specifying that directory on the command line. The following
+         * in a batch by creating a directory, copying multiple .csr files into that
+         * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OSX, the command is:</p> <p>$ ls
+         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
-         * lists all of the CSRs in my-csr-directory and pipes each CSR filename to the aws
-         * iot create-certificate-from-csr AWS CLI command to create a certificate for the
-         * corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the
-         * command can also be run in parallel to speed up the certificate creation
+         * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+         * aws iot create-certificate-from-csr AWS CLI command to create a certificate for
+         * the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of
+         * the command can also be run in parallel to speed up the certificate creation
          * process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot
          * create-certificate-from-csr --certificate-signing-request
          * file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create
          * certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name
          * my-csr-directory | %{aws iot create-certificate-from-csr
-         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On Windows
-         * Command Prompt, the command to create certificates for all CSRs in
+         * --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows
+         * command prompt, the command to create certificates for all CSRs in
          * my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c "cmd /c aws
          * iot create-certificate-from-csr --certificate-signing-request file://@path"</p>
          *
@@ -490,28 +490,28 @@ namespace Model
         virtual void CreateCertificateFromCsrAsync(const Model::CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+         * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
          * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate. It is important to keep track of the private
-         * key.</p>
+         * private key for this certificate, so it is important to keep it in a secure
+         * location.</p>
          */
         virtual Model::CreateKeysAndCertificateOutcome CreateKeysAndCertificate(const Model::CreateKeysAndCertificateRequest& request) const;
 
         /**
-         * <p>Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+         * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
          * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate. It is important to keep track of the private
-         * key.</p>
+         * private key for this certificate, so it is important to keep it in a secure
+         * location.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateKeysAndCertificateOutcomeCallable CreateKeysAndCertificateCallable(const Model::CreateKeysAndCertificateRequest& request) const;
 
         /**
-         * <p>Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+         * <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
          * issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the
-         * private key for this certificate. It is important to keep track of the private
-         * key.</p>
+         * private key for this certificate, so it is important to keep it in a secure
+         * location.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -545,22 +545,22 @@ namespace Model
         /**
          * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
          * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must delete an existing version using
-         * <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally,
-         * you can set the new version as the policy's default version. The default version
-         * is the operative version; that is, the version that is in effect for the
-         * certificates that the policy is attached to.</p>
+         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
+         * an existing version before you create a new one.</p> <p>Optionally, you can set
+         * the new version as the policy's default version. The default version is the
+         * operative version (that is, the version that is in effect for the certificates
+         * to which the policy is attached).</p>
          */
         virtual Model::CreatePolicyVersionOutcome CreatePolicyVersion(const Model::CreatePolicyVersionRequest& request) const;
 
         /**
          * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
          * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must delete an existing version using
-         * <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally,
-         * you can set the new version as the policy's default version. The default version
-         * is the operative version; that is, the version that is in effect for the
-         * certificates that the policy is attached to.</p>
+         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
+         * an existing version before you create a new one.</p> <p>Optionally, you can set
+         * the new version as the policy's default version. The default version is the
+         * operative version (that is, the version that is in effect for the certificates
+         * to which the policy is attached).</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -569,49 +569,55 @@ namespace Model
         /**
          * <p>Creates a new version of the specified AWS IoT policy. To update a policy,
          * create a new policy version. A managed policy can have up to five versions. If
-         * the policy has five versions, you must delete an existing version using
-         * <a>DeletePolicyVersion</a> before you create a new version.</p> <p>Optionally,
-         * you can set the new version as the policy's default version. The default version
-         * is the operative version; that is, the version that is in effect for the
-         * certificates that the policy is attached to.</p>
+         * the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete
+         * an existing version before you create a new one.</p> <p>Optionally, you can set
+         * the new version as the policy's default version. The default version is the
+         * operative version (that is, the version that is in effect for the certificates
+         * to which the policy is attached).</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePolicyVersionAsync(const Model::CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a thing in the thing registry.</p>
+         * <p>Creates a thing in the Thing Registry.</p>
          */
         virtual Model::CreateThingOutcome CreateThing(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing in the thing registry.</p>
+         * <p>Creates a thing in the Thing Registry.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateThingOutcomeCallable CreateThingCallable(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing in the thing registry.</p>
+         * <p>Creates a thing in the Thing Registry.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateThingAsync(const Model::CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a rule.</p>
+         * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
+         * has permission to create rules will be able to access data processed by the
+         * rule.</p>
          */
         virtual Model::CreateTopicRuleOutcome CreateTopicRule(const Model::CreateTopicRuleRequest& request) const;
 
         /**
-         * <p>Creates a rule.</p>
+         * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
+         * has permission to create rules will be able to access data processed by the
+         * rule.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateTopicRuleOutcomeCallable CreateTopicRuleCallable(const Model::CreateTopicRuleRequest& request) const;
 
         /**
-         * <p>Creates a rule.</p>
+         * <p>Creates a rule. Creating rules is an administrator-level action. Any user who
+         * has permission to create rules will be able to access data processed by the
+         * rule.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -620,18 +626,18 @@ namespace Model
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy attached to it or if its status is set to ACTIVE. To delete a
-         * certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-         * API. Next use the <a>UpdateCertificate</a> API to set the certificate to the
-         * INACTIVE status.</p>
+         * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to
+         * the INACTIVE status.</p>
          */
         virtual Model::DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest& request) const;
 
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy attached to it or if its status is set to ACTIVE. To delete a
-         * certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-         * API. Next use the <a>UpdateCertificate</a> API to set the certificate to the
-         * INACTIVE status.</p>
+         * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to
+         * the INACTIVE status.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -640,9 +646,9 @@ namespace Model
         /**
          * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if
          * it has a policy attached to it or if its status is set to ACTIVE. To delete a
-         * certificate, first detach all policies using the <a>DetachPrincipalPolicy</a>
-         * API. Next use the <a>UpdateCertificate</a> API to set the certificate to the
-         * INACTIVE status.</p>
+         * certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all
+         * policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to
+         * the INACTIVE status.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -650,23 +656,23 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
-         * non-default versions and/or it is attached to any certificate.</p> <p>To delete
-         * a policy, delete all non-default versions of the policy using the
-         * DeletePolicyVersion API, detach the policy from any certificate using the
-         * DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the
-         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
-         * is deleted with it.</p>
+         * non-default versions or it is attached to any certificate.</p> <p>To delete a
+         * policy, use the DeletePolicyVersion API to delete all non-default versions of
+         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
+         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
+         * a policy is deleted using DeletePolicy, its default version is deleted with
+         * it.</p>
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
-         * non-default versions and/or it is attached to any certificate.</p> <p>To delete
-         * a policy, delete all non-default versions of the policy using the
-         * DeletePolicyVersion API, detach the policy from any certificate using the
-         * DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the
-         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
-         * is deleted with it.</p>
+         * non-default versions or it is attached to any certificate.</p> <p>To delete a
+         * policy, use the DeletePolicyVersion API to delete all non-default versions of
+         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
+         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
+         * a policy is deleted using DeletePolicy, its default version is deleted with
+         * it.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -674,12 +680,12 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has
-         * non-default versions and/or it is attached to any certificate.</p> <p>To delete
-         * a policy, delete all non-default versions of the policy using the
-         * DeletePolicyVersion API, detach the policy from any certificate using the
-         * DetachPrincipalPolicy API, and then use the DeletePolicy API to delete the
-         * policy.</p> <p>When a policy is deleted using DeletePolicy, its default version
-         * is deleted with it.</p>
+         * non-default versions or it is attached to any certificate.</p> <p>To delete a
+         * policy, use the DeletePolicyVersion API to delete all non-default versions of
+         * the policy; use the DetachPrincipalPolicy API to detach the policy from any
+         * certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When
+         * a policy is deleted using DeletePolicy, its default version is deleted with
+         * it.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -853,19 +859,19 @@ namespace Model
         virtual void DetachThingPrincipalAsync(const Model::DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables the specified rule</p>
+         * <p>Disables the specified rule.</p>
          */
         virtual Model::DisableTopicRuleOutcome DisableTopicRule(const Model::DisableTopicRuleRequest& request) const;
 
         /**
-         * <p>Disables the specified rule</p>
+         * <p>Disables the specified rule.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request) const;
 
         /**
-         * <p>Disables the specified rule</p>
+         * <p>Disables the specified rule.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -971,13 +977,13 @@ namespace Model
 
         /**
          * <p>Lists your certificates.</p> <p>The results are paginated with a default page
-         * size of 25. You can retrieve additional results using the returned marker.</p>
+         * size of 25. You can use the returned marker to retrieve additional results.</p>
          */
         virtual Model::ListCertificatesOutcome ListCertificates(const Model::ListCertificatesRequest& request) const;
 
         /**
          * <p>Lists your certificates.</p> <p>The results are paginated with a default page
-         * size of 25. You can retrieve additional results using the returned marker.</p>
+         * size of 25. You can use the returned marker to retrieve additional results.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -985,7 +991,7 @@ namespace Model
 
         /**
          * <p>Lists your certificates.</p> <p>The results are paginated with a default page
-         * size of 25. You can retrieve additional results using the returned marker.</p>
+         * size of 25. You can use the returned marker to retrieve additional results.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1033,28 +1039,28 @@ namespace Model
         virtual void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the policies attached to the specified principal. If you use an Amazon
-         * Cognito identity, the ID needs to be in <a
-         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-         * Cognito Identity format</a>.</p>
+         * <p>Lists the policies attached to the specified principal. If you use an Cognito
+         * identity, the ID must be in <a
+         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+         * Identity format</a>.</p>
          */
         virtual Model::ListPrincipalPoliciesOutcome ListPrincipalPolicies(const Model::ListPrincipalPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the policies attached to the specified principal. If you use an Amazon
-         * Cognito identity, the ID needs to be in <a
-         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-         * Cognito Identity format</a>.</p>
+         * <p>Lists the policies attached to the specified principal. If you use an Cognito
+         * identity, the ID must be in <a
+         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+         * Identity format</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPrincipalPoliciesOutcomeCallable ListPrincipalPoliciesCallable(const Model::ListPrincipalPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the policies attached to the specified principal. If you use an Amazon
-         * Cognito identity, the ID needs to be in <a
-         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">Amazon
-         * Cognito Identity format</a>.</p>
+         * <p>Lists the policies attached to the specified principal. If you use an Cognito
+         * identity, the ID must be in <a
+         * href="http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito
+         * Identity format</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1099,25 +1105,25 @@ namespace Model
         virtual void ListThingPrincipalsAsync(const Model::ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists your things. You can pass an AttributeName and/or AttributeValue to
-         * filter your things. For example: "ListThings where AttributeName=Color and
-         * AttributeValue=Red"</p>
+         * <p>Lists your things. You can pass an AttributeName or AttributeValue to filter
+         * your things (for example, "ListThings where AttributeName=Color and
+         * AttributeValue=Red").</p>
          */
         virtual Model::ListThingsOutcome ListThings(const Model::ListThingsRequest& request) const;
 
         /**
-         * <p>Lists your things. You can pass an AttributeName and/or AttributeValue to
-         * filter your things. For example: "ListThings where AttributeName=Color and
-         * AttributeValue=Red"</p>
+         * <p>Lists your things. You can pass an AttributeName or AttributeValue to filter
+         * your things (for example, "ListThings where AttributeName=Color and
+         * AttributeValue=Red").</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListThingsOutcomeCallable ListThingsCallable(const Model::ListThingsRequest& request) const;
 
         /**
-         * <p>Lists your things. You can pass an AttributeName and/or AttributeValue to
-         * filter your things. For example: "ListThings where AttributeName=Color and
-         * AttributeValue=Red"</p>
+         * <p>Lists your things. You can pass an AttributeName or AttributeValue to filter
+         * your things (for example, "ListThings where AttributeName=Color and
+         * AttributeValue=Red").</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1147,8 +1153,8 @@ namespace Model
          * transfer, the certificate status changes from <b>PENDING_TRANFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
-         * can only be called by the transfer destination. Once called, the certificate
-         * will be returned to the source's account in the INACTIVE state.</p>
+         * can only be called by the transfer destination. After it is called, the
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
          */
         virtual Model::RejectCertificateTransferOutcome RejectCertificateTransfer(const Model::RejectCertificateTransferRequest& request) const;
 
@@ -1157,8 +1163,8 @@ namespace Model
          * transfer, the certificate status changes from <b>PENDING_TRANFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
-         * can only be called by the transfer destination. Once called, the certificate
-         * will be returned to the source's account in the INACTIVE state.</p>
+         * can only be called by the transfer destination. After it is called, the
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1169,8 +1175,8 @@ namespace Model
          * transfer, the certificate status changes from <b>PENDING_TRANFER</b> to
          * <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call
          * <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation
-         * can only be called by the transfer destination. Once called, the certificate
-         * will be returned to the source's account in the INACTIVE state.</p>
+         * can only be called by the transfer destination. After it is called, the
+         * certificate will be returned to the source's account in the INACTIVE state.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1178,12 +1184,16 @@ namespace Model
 
         /**
          * <p>Replaces the specified rule. You must specify all parameters for the new
+         * rule. Creating rules is an administrator-level action. Any user who has
+         * permission to create rules will be able to access data processed by the
          * rule.</p>
          */
         virtual Model::ReplaceTopicRuleOutcome ReplaceTopicRule(const Model::ReplaceTopicRuleRequest& request) const;
 
         /**
          * <p>Replaces the specified rule. You must specify all parameters for the new
+         * rule. Creating rules is an administrator-level action. Any user who has
+         * permission to create rules will be able to access data processed by the
          * rule.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1192,6 +1202,8 @@ namespace Model
 
         /**
          * <p>Replaces the specified rule. You must specify all parameters for the new
+         * rule. Creating rules is an administrator-level action. Any user who has
+         * permission to create rules will be able to access data processed by the
          * rule.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1200,16 +1212,16 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. This action affects all certificates that the policy is
-         * attached to. To list the principals the policy is attached to, use the
+         * (operative) version. This action affects all certificates to which the policy is
+         * attached. To list the principals the policy is attached to, use the
          * ListPrincipalPolicy API.</p>
          */
         virtual Model::SetDefaultPolicyVersionOutcome SetDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest& request) const;
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. This action affects all certificates that the policy is
-         * attached to. To list the principals the policy is attached to, use the
+         * (operative) version. This action affects all certificates to which the policy is
+         * attached. To list the principals the policy is attached to, use the
          * ListPrincipalPolicy API.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1218,8 +1230,8 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. This action affects all certificates that the policy is
-         * attached to. To list the principals the policy is attached to, use the
+         * (operative) version. This action affects all certificates to which the policy is
+         * attached. To list the principals the policy is attached to, use the
          * ListPrincipalPolicy API.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1248,22 +1260,22 @@ namespace Model
         /**
          * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
          * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account, it is up to the
+         * notification is sent to the transfer destination's account. It is up to the
          * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. It can be deactivated using the
-         * UpdateCertificate API.</p> <p>The certificate must not have any policies
-         * attached to it. These can be detached using the DetachPrincipalPolicy API.</p>
+         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
+         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
+         * You can use the DetachPrincipalPolicy API to detach them.</p>
          */
         virtual Model::TransferCertificateOutcome TransferCertificate(const Model::TransferCertificateRequest& request) const;
 
         /**
          * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
          * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account, it is up to the
+         * notification is sent to the transfer destination's account. It is up to the
          * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. It can be deactivated using the
-         * UpdateCertificate API.</p> <p>The certificate must not have any policies
-         * attached to it. These can be detached using the DetachPrincipalPolicy API.</p>
+         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
+         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
+         * You can use the DetachPrincipalPolicy API to detach them.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1272,11 +1284,11 @@ namespace Model
         /**
          * <p>Transfers the specified certificate to the specified AWS account.</p> <p>You
          * can cancel the transfer until it is acknowledged by the recipient.</p> <p>No
-         * notification is sent to the transfer destination's account, it is up to the
+         * notification is sent to the transfer destination's account. It is up to the
          * caller to notify the transfer target.</p> <p>The certificate being transferred
-         * must not be in the ACTIVE state. It can be deactivated using the
-         * UpdateCertificate API.</p> <p>The certificate must not have any policies
-         * attached to it. These can be detached using the DetachPrincipalPolicy API.</p>
+         * must not be in the ACTIVE state. You can use the UpdateCertificate API to
+         * deactivate it.</p> <p>The certificate must not have any policies attached to it.
+         * You can use the DetachPrincipalPolicy API to detach them.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1284,19 +1296,19 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a cert from the ACTIVE state (including REVOKED) will
-         * NOT disconnect currently-connected devices, although these devices will be
-         * unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices
-         * connecting to AWS IoT using a certificate.</p>
+         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
+         * REVOKED) will not disconnect currently connected devices, but these devices will
+         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
+         * devices connecting to AWS IoT using a certificate.</p>
          */
         virtual Model::UpdateCertificateOutcome UpdateCertificate(const Model::UpdateCertificateRequest& request) const;
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a cert from the ACTIVE state (including REVOKED) will
-         * NOT disconnect currently-connected devices, although these devices will be
-         * unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices
-         * connecting to AWS IoT using a certificate.</p>
+         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
+         * REVOKED) will not disconnect currently connected devices, but these devices will
+         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
+         * devices connecting to AWS IoT using a certificate.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1304,10 +1316,10 @@ namespace Model
 
         /**
          * <p>Updates the status of the specified certificate. This operation is
-         * idempotent.</p> <p>Moving a cert from the ACTIVE state (including REVOKED) will
-         * NOT disconnect currently-connected devices, although these devices will be
-         * unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices
-         * connecting to AWS IoT using a certificate.</p>
+         * idempotent.</p> <p>Moving a certificate from the ACTIVE state (including
+         * REVOKED) will not disconnect currently connected devices, but these devices will
+         * be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate
+         * devices connecting to AWS IoT using a certificate.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

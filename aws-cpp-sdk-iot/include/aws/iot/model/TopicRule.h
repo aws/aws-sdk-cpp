@@ -80,43 +80,43 @@ namespace Model
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline const Aws::String& GetSql() const{ return m_sql; }
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = value; }
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline TopicRule& WithSql(const Aws::String& value) { SetSql(value); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline TopicRule& WithSql(Aws::String&& value) { SetSql(value); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. When using a SQL query with
-     * multiple lines, be sure to escape the newline characters properly.</p>
+     * multiple lines, be sure to escape the newline characters.</p>
      */
     inline TopicRule& WithSql(const char* value) { SetSql(value); return *this;}
 

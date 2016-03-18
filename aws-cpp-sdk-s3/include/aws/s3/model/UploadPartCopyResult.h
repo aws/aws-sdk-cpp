@@ -172,51 +172,58 @@ namespace Model
     inline UploadPartCopyResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * If server-side encryption with a customer-provided encryption key was requested,
-     * the response will include this header to provide round trip message integrity
-     * verification of the customer-provided encryption key.
+     * If server-side encrypt that was copied, ifion with a customer-provided
+     * encryption key was requested, the response will include this header to provide
+     * round trip message integrity verification of the customer-provided encryption
+     * key.
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 

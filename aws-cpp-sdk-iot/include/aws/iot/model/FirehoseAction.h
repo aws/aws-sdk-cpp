@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action that writes data to a Kinesis Firehose stream.</p>
+   * <p>Describes an action that writes data to an Amazon Kinesis Firehose
+   * stream.</p>
    */
   class AWS_IOT_API FirehoseAction
   {
@@ -42,37 +43,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline FirehoseAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline FirehoseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that grants access to the firehose stream.</p>
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehost stream.</p>
      */
     inline FirehoseAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

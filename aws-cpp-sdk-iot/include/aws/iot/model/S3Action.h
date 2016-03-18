@@ -77,37 +77,37 @@ namespace Model
     inline S3Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline S3Action& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline S3Action& WithBucketName(Aws::String&& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The S3 bucket.</p>
+     * <p>The Amazon S3 bucket.</p>
      */
     inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 

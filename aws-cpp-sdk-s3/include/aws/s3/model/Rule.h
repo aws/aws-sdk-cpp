@@ -20,6 +20,7 @@
 #include <aws/s3/model/Transition.h>
 #include <aws/s3/model/NoncurrentVersionTransition.h>
 #include <aws/s3/model/NoncurrentVersionExpiration.h>
+#include <aws/s3/model/AbortIncompleteMultipartUpload.h>
 
 namespace Aws
 {
@@ -204,6 +205,21 @@ namespace Model
     
     inline Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
+    
+    inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+
+    
+    inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
+
+    
+    inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
+
+    
+    inline Rule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
+
+    
+    inline Rule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
+
   private:
     LifecycleExpiration m_expiration;
     bool m_expirationHasBeenSet;
@@ -219,6 +235,8 @@ namespace Model
     bool m_noncurrentVersionTransitionHasBeenSet;
     NoncurrentVersionExpiration m_noncurrentVersionExpiration;
     bool m_noncurrentVersionExpirationHasBeenSet;
+    AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
+    bool m_abortIncompleteMultipartUploadHasBeenSet;
   };
 
 } // namespace Model

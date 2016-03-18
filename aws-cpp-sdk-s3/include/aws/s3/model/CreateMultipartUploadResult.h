@@ -42,6 +42,66 @@ namespace Model
     CreateMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
+     * Date when multipart upload will become eligible for abort operation by
+     * lifecycle.
+     */
+    inline double GetAbortDate() const{ return m_abortDate; }
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by
+     * lifecycle.
+     */
+    inline void SetAbortDate(double value) { m_abortDate = value; }
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by
+     * lifecycle.
+     */
+    inline CreateMultipartUploadResult& WithAbortDate(double value) { SetAbortDate(value); return *this;}
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = value; }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline CreateMultipartUploadResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline CreateMultipartUploadResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(value); return *this;}
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort
+     * operation.
+     */
+    inline CreateMultipartUploadResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
+
+    /**
      * Name of the bucket to which the multipart upload was initiated.
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
@@ -325,6 +385,8 @@ namespace Model
     inline CreateMultipartUploadResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
+    double m_abortDate;
+    Aws::String m_abortRuleId;
     Aws::String m_bucket;
     Aws::String m_key;
     Aws::String m_uploadId;

@@ -42,72 +42,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that grants access to the Kinesis stream.</p>
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline KinesisAction& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 

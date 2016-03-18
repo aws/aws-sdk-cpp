@@ -76,67 +76,67 @@ namespace Model
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces</p>
+     * length of 2048, excluding whitespaces</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
     /**
      * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version; that
-     * is, the version that is in effect for the certificates that the policy is
-     * attached to.</p>
+     * parameter is true, the new policy version becomes the operative version (that
+     * is, the version that is in effect for the certificates to which the policy is
+     * attached).</p>
      */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
 
     /**
      * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version; that
-     * is, the version that is in effect for the certificates that the policy is
-     * attached to.</p>
+     * parameter is true, the new policy version becomes the operative version (that
+     * is, the version that is in effect for the certificates to which the policy is
+     * attached).</p>
      */
     inline void SetSetAsDefault(bool value) { m_setAsDefaultHasBeenSet = true; m_setAsDefault = value; }
 
     /**
      * <p>Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version; that
-     * is, the version that is in effect for the certificates that the policy is
-     * attached to.</p>
+     * parameter is true, the new policy version becomes the operative version (that
+     * is, the version that is in effect for the certificates to which the policy is
+     * attached).</p>
      */
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 

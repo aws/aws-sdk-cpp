@@ -37,7 +37,7 @@ namespace Model
    * the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code>
    * fields use a substitution template syntax. These templates provide data at
    * runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can
-   * specify any expression that's valid in a WHERE or SELECT clause, including JSON
+   * specify any valid expression in a WHERE or SELECT clause, including JSON
    * properties, comparisons, calculations, and functions. For example, the following
    * field uses the third level of the topic:</p> <p><code>"hashKeyValue":
    * "${topic(3)}"</code></p> <p>The following field uses the timestamp:</p>
@@ -262,37 +262,37 @@ namespace Model
     inline DynamoDBAction& WithRangeKeyValue(const char* value) { SetRangeKeyValue(value); return *this;}
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline const Aws::String& GetPayloadField() const{ return m_payloadField; }
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline void SetPayloadField(const Aws::String& value) { m_payloadFieldHasBeenSet = true; m_payloadField = value; }
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline void SetPayloadField(Aws::String&& value) { m_payloadFieldHasBeenSet = true; m_payloadField = value; }
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline void SetPayloadField(const char* value) { m_payloadFieldHasBeenSet = true; m_payloadField.assign(value); }
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline DynamoDBAction& WithPayloadField(const Aws::String& value) { SetPayloadField(value); return *this;}
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline DynamoDBAction& WithPayloadField(Aws::String&& value) { SetPayloadField(value); return *this;}
 
     /**
-     * <p>The action payload, this name can be customized.</p>
+     * <p>The action payload. This name can be customized.</p>
      */
     inline DynamoDBAction& WithPayloadField(const char* value) { SetPayloadField(value); return *this;}
 

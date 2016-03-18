@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DeleteHsm</a> action. </p>
+   * <p>Contains the inputs for the <a>DeleteHsm</a> operation.</p>
    */
   class AWS_CLOUDHSM_API DeleteHsmRequest : public CloudHSMRequest
   {

@@ -70,32 +70,32 @@ namespace Model
     inline UpdateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The attribute payload, a JSON string containing up to three key-value
-     * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, a JSON string containing up to three key-value pairs
+     * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
 
     /**
-     * <p>The attribute payload, a JSON string containing up to three key-value
-     * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, a JSON string containing up to three key-value pairs
+     * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload, a JSON string containing up to three key-value
-     * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, a JSON string containing up to three key-value pairs
+     * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload, a JSON string containing up to three key-value
-     * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, a JSON string containing up to three key-value pairs
+     * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline UpdateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
 
     /**
-     * <p>The attribute payload, a JSON string containing up to three key-value
-     * pairs.</p> <p>For example: {\"attributes\":{\"string1\":\"string2\"}}</p>
+     * <p>The attribute payload, a JSON string containing up to three key-value pairs
+     * (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
      */
     inline UpdateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(value); return *this;}
 

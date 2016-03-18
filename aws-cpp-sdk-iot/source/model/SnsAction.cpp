@@ -23,13 +23,15 @@ using namespace Aws::Utils;
 
 SnsAction::SnsAction() : 
     m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_messageFormatHasBeenSet(false)
 {
 }
 
 SnsAction::SnsAction(const JsonValue& jsonValue) : 
     m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_messageFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ SnsAction& SnsAction::operator =(const JsonValue& jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("messageFormat"))
+  {
+    m_messageFormat = MessageFormatMapper::GetMessageFormatForName(jsonValue.GetString("messageFormat"));
+
+    m_messageFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +76,11 @@ JsonValue SnsAction::Jsonize() const
   {
    payload.WithString("roleArn", m_roleArn);
 
+  }
+
+  if(m_messageFormatHasBeenSet)
+  {
+   payload.WithString("messageFormat", MessageFormatMapper::GetNameForMessageFormat(m_messageFormat));
   }
 
   return payload;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/MessageFormat.h>
 
 namespace Aws
 {
@@ -111,11 +112,68 @@ namespace Model
      */
     inline SnsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+    /**
+     * <p>The message format of the message to publish. Optional. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to
+     * their official documentation.</p>
+     */
+    inline const MessageFormat& GetMessageFormat() const{ return m_messageFormat; }
+
+    /**
+     * <p>The message format of the message to publish. Optional. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to
+     * their official documentation.</p>
+     */
+    inline void SetMessageFormat(const MessageFormat& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+
+    /**
+     * <p>The message format of the message to publish. Optional. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to
+     * their official documentation.</p>
+     */
+    inline void SetMessageFormat(MessageFormat&& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+
+    /**
+     * <p>The message format of the message to publish. Optional. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to
+     * their official documentation.</p>
+     */
+    inline SnsAction& WithMessageFormat(const MessageFormat& value) { SetMessageFormat(value); return *this;}
+
+    /**
+     * <p>The message format of the message to publish. Optional. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to
+     * their official documentation.</p>
+     */
+    inline SnsAction& WithMessageFormat(MessageFormat&& value) { SetMessageFormat(value); return *this;}
+
   private:
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+    MessageFormat m_messageFormat;
+    bool m_messageFormatHasBeenSet;
   };
 
 } // namespace Model
