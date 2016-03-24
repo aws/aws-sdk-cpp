@@ -1,0 +1,60 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/core/utils/json/JsonSerializer.h>
+#if($shape.hasQueryStringMembers())
+\#include <aws/core/http/URI.h>
+#end
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+
+using namespace Aws::${metadata.namespace}::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+#if($shape.hasQueryStringMembers())
+using namespace Aws::Http;
+#end
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
+${typeInfo.className}::${typeInfo.className}()$initializers
+{
+}
+
+Aws::String ${typeInfo.className}::SerializePayload() const
+{
+#if($shape.hasPayloadMembers())
+  JsonValue payload;
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
+  return payload.WriteReadable();
+#else
+  return "";
+#end
+}
+
+#if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+#if($metadata.targetPrefix)
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
+#end
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
+  return headers;
+
+}
+
+#end
+#if($shape.hasQueryStringMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
+
+#end
+
+

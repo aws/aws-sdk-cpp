@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to describe one or more environments.</p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentsRequest : public ElasticBeanstalkRequest
   {
@@ -35,206 +35,203 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline DescribeEnvironmentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline DescribeEnvironmentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application.</p>
      */
     inline DescribeEnvironmentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline DescribeEnvironmentsRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline DescribeEnvironmentsRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that are associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that are associated with this application version.</p>
      */
     inline DescribeEnvironmentsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnvironmentIds() const{ return m_environmentIds; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline void SetEnvironmentIds(const Aws::Vector<Aws::String>& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline void SetEnvironmentIds(Aws::Vector<Aws::String>&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline DescribeEnvironmentsRequest& WithEnvironmentIds(const Aws::Vector<Aws::String>& value) { SetEnvironmentIds(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline DescribeEnvironmentsRequest& WithEnvironmentIds(Aws::Vector<Aws::String>&& value) { SetEnvironmentIds(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentIds(const Aws::String& value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentIds(Aws::String&& value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified IDs. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified IDs.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentIds(const char* value) { m_environmentIdsHasBeenSet = true; m_environmentIds.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnvironmentNames() const{ return m_environmentNames; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline void SetEnvironmentNames(const Aws::Vector<Aws::String>& value) { m_environmentNamesHasBeenSet = true; m_environmentNames = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline void SetEnvironmentNames(Aws::Vector<Aws::String>&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline DescribeEnvironmentsRequest& WithEnvironmentNames(const Aws::Vector<Aws::String>& value) { SetEnvironmentNames(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline DescribeEnvironmentsRequest& WithEnvironmentNames(Aws::Vector<Aws::String>&& value) { SetEnvironmentNames(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentNames(const Aws::String& value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentNames(Aws::String&& value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those that have the specified names. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those that have the specified names.</p>
      */
     inline DescribeEnvironmentsRequest& AddEnvironmentNames(const char* value) { m_environmentNamesHasBeenSet = true; m_environmentNames.push_back(value); return *this; }
 
     /**
-     * <p>Indicates whether to include deleted environments: </p> <p>
-     * <code>true</code>: Environments that have been deleted after
-     * <code>IncludedDeletedBackTo</code> are displayed. </p> <p> <code>false</code>:
-     * Do not include deleted environments. </p>
+     * <p>Indicates whether to include deleted environments:</p> <p> <code>true</code>:
+     * Environments that have been deleted after <code>IncludedDeletedBackTo</code> are
+     * displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
      */
     inline bool GetIncludeDeleted() const{ return m_includeDeleted; }
 
     /**
-     * <p>Indicates whether to include deleted environments: </p> <p>
-     * <code>true</code>: Environments that have been deleted after
-     * <code>IncludedDeletedBackTo</code> are displayed. </p> <p> <code>false</code>:
-     * Do not include deleted environments. </p>
+     * <p>Indicates whether to include deleted environments:</p> <p> <code>true</code>:
+     * Environments that have been deleted after <code>IncludedDeletedBackTo</code> are
+     * displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
      */
     inline void SetIncludeDeleted(bool value) { m_includeDeletedHasBeenSet = true; m_includeDeleted = value; }
 
     /**
-     * <p>Indicates whether to include deleted environments: </p> <p>
-     * <code>true</code>: Environments that have been deleted after
-     * <code>IncludedDeletedBackTo</code> are displayed. </p> <p> <code>false</code>:
-     * Do not include deleted environments. </p>
+     * <p>Indicates whether to include deleted environments:</p> <p> <code>true</code>:
+     * Environments that have been deleted after <code>IncludedDeletedBackTo</code> are
+     * displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
      */
     inline DescribeEnvironmentsRequest& WithIncludeDeleted(bool value) { SetIncludeDeleted(value); return *this;}
 

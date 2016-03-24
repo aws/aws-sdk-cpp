@@ -1348,8 +1348,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1422,8 +1423,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1496,8 +1498,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1570,8 +1573,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1644,8 +1648,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1718,8 +1723,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -1792,8 +1798,9 @@ namespace Model
      * ap-southeast-2, eu-west-1, sa-east-1, us-west-1, us-west-2):</b> <code> 5.5.40 |
      * 5.5.40a</code></li> <li><b>Version 5.5 (Available in all regions):</b> <code>
      * 5.5.40b | 5.5.41 | 5.5.42</code></li> <li><b>Version 5.6 (Available in all
-     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 |
-     * 5.6.23</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
+     * regions):</b> <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22 | 5.6.23 |
+     * 5.6.27</code></li> <li><b>Version 5.7 (Available in all regions):</b> <code>
+     * 5.7.10</code></li> </ul> <p><b>MariaDB</b></p> <ul> <li><b>Version 10.0
      * (Available in all regions except AWS GovCloud (US) Region (us-gov-west-1)):</b>
      * <code> 10.0.17 </code></li> </ul> <p><b>Oracle Database Enterprise Edition
      * (oracle-ee)</b></p> <ul> <li><b>Version 11.2 (Only available in the following
@@ -2554,6 +2561,36 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline long GetPromotionTier() const{ return m_promotionTier; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline CreateDBInstanceRequest& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+
   private:
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
@@ -2623,6 +2660,8 @@ namespace Model
     bool m_monitoringIntervalHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+    long m_promotionTier;
+    bool m_promotionTierHasBeenSet;
   };
 
 } // namespace Model

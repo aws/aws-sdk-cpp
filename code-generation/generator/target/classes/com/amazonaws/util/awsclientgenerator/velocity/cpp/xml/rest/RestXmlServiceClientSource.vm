@@ -1,0 +1,36 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($className = "${metadata.classNamePrefix}Client")
+\#include <aws/core/utils/Outcome.h>
+\#include <aws/core/auth/AWSAuthSigner.h>
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/http/HttpClient.h>
+\#include <aws/core/http/HttpResponse.h>
+\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/threading/Executor.h>
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace Aws::${metadata.namespace};
+using namespace Aws::${metadata.namespace}::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Xml;
+
+
+static const char* SERVICE_NAME = "${metadata.signingName}";
+static const char* ALLOCATION_TAG = "${className}";
+#set($hostOverrideString = '')
+#if($metadata.globalEndpoint)
+#set($hostOverrideString = ', "' + $metadata.globalEndpoint + '"')
+#end
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientOperations.vm")

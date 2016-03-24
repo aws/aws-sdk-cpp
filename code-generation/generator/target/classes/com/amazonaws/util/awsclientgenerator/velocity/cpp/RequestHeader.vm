@@ -1,0 +1,57 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+
+namespace Aws
+{
+#if($shape.hasQueryStringMembers())
+namespace Http
+{
+    class URI;
+} //namespace Http
+#end
+namespace $metadata.namespace
+{
+namespace Model
+{
+#set($jsonRef = "${typeInfo.jsonType}&")
+#set($classNameRef = "${typeInfo.className}&")
+
+  /**
+#if($shape.documentation)
+   * $shape.documentation
+#end
+   */
+  class ${typeInfo.exportValue} ${typeInfo.className} : public ${typeInfo.baseClass}
+  {
+  public:
+    ${typeInfo.className}();
+#if(!$shape.hasStreamMembers())
+    Aws::String SerializePayload() const override;
+
+#end
+#if($shape.hasQueryStringMembers())
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+#end
+#if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+#end
+#if($shape.computeContentMd5)
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
+#end
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
+  };
+
+} // namespace Model
+} // namespace $metadata.namespace
+} // namespace Aws

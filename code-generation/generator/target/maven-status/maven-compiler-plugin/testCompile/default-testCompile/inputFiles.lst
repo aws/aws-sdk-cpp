@@ -1,0 +1,4 @@
+/var/lib/jenkins/jobs/aws-sdk-cpp-rc-push/workspace/aws-sdk-cpp/code-generation/generator/src/test/java/com/amazonaws/util/awsclientgenerator/transform/C2jModelToGeneratorModelTransformerTest.java
+/var/lib/jenkins/jobs/aws-sdk-cpp-rc-push/workspace/aws-sdk-cpp/code-generation/generator/src/test/java/com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/EnumModelTest.java
+/var/lib/jenkins/jobs/aws-sdk-cpp-rc-push/workspace/aws-sdk-cpp/code-generation/generator/src/test/java/com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/CppViewHelperTest.java
+/var/lib/jenkins/jobs/aws-sdk-cpp-rc-push/workspace/aws-sdk-cpp/code-generation/generator/src/test/java/com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/HttpTest.java

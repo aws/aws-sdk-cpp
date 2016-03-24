@@ -44,7 +44,8 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
+     * <p>The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
      * ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
      * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
@@ -52,7 +53,8 @@ namespace Model
     inline const DeviceAttribute& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
+     * <p>The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
      * ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
      * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
@@ -60,7 +62,8 @@ namespace Model
     inline void SetAttribute(const DeviceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
+     * <p>The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
      * ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
      * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
@@ -68,7 +71,8 @@ namespace Model
     inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
+     * <p>The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
      * ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
      * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>
@@ -76,7 +80,8 @@ namespace Model
     inline Rule& WithAttribute(const DeviceAttribute& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
+     * <p>The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The
      * ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or
      * tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li>
      * <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>

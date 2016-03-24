@@ -51,37 +51,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the DB subnet group. </p>
+     * <p> The name of the DB subnet group. </p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

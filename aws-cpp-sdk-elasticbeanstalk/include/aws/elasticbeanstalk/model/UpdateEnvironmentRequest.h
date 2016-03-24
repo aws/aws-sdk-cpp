@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to update an environment.</p>
    */
   class AWS_ELASTICBEANSTALK_API UpdateEnvironmentRequest : public ElasticBeanstalkRequest
   {
@@ -73,63 +73,63 @@ namespace Model
     inline UpdateEnvironmentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline UpdateEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The ID of the environment to update.</p> <p> If no environment with this ID
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
      * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-     * error. </p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
@@ -202,7 +202,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
@@ -211,7 +211,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -220,7 +220,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -229,7 +229,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
@@ -238,7 +238,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline UpdateEnvironmentRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
@@ -247,7 +247,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline UpdateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
@@ -256,7 +256,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline UpdateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}

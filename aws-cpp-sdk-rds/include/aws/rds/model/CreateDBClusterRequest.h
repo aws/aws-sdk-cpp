@@ -378,37 +378,58 @@ namespace Model
     inline CreateDBClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster. </p>
+     * <p>A DB subnet group to associate with this DB cluster. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

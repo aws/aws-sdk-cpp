@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to create a configuration template.</p>
    */
   class AWS_ELASTICBEANSTALK_API CreateConfigurationTemplateRequest : public ElasticBeanstalkRequest
   {
@@ -37,50 +37,50 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to associate with this configuration template.
-     * If no application is found with this name, AWS Elastic Beanstalk returns an
+     * <p>The name of the application to associate with this configuration template. If
+     * no application is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
@@ -317,37 +317,37 @@ namespace Model
     inline CreateConfigurationTemplateRequest& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(value); return *this;}
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the environment used with this configuration template. </p>
+     * <p>The ID of the environment used with this configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 

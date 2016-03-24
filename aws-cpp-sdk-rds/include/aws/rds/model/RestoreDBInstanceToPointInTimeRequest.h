@@ -367,37 +367,58 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The DB subnet group name to use for the new instance. </p>
+     * <p> The DB subnet group name to use for the new instance. </p> <p>Constraints:
+     * Must contain no more than 255 alphanumeric characters, periods, underscores,
+     * spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -585,7 +606,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
@@ -596,7 +617,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
@@ -607,7 +628,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
@@ -618,7 +639,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
@@ -629,7 +650,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
@@ -640,7 +661,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
@@ -651,7 +672,7 @@ namespace Model
      * source</p> <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
      * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>|
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
      * <code>aurora</code></p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}

@@ -24,6 +24,7 @@ static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
 static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
 static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
 static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 
 namespace Aws
 {
@@ -58,6 +59,10 @@ namespace Aws
           {
             return ExecutionStatus::COMPLETED;
           }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return ExecutionStatus::STOPPING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "RUNNING";
           case ExecutionStatus::COMPLETED:
             return "COMPLETED";
+          case ExecutionStatus::STOPPING:
+            return "STOPPING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

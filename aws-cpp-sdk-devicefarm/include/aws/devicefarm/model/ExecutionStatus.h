@@ -29,7 +29,8 @@ namespace Model
     PROCESSING,
     SCHEDULING,
     RUNNING,
-    COMPLETED
+    COMPLETED,
+    STOPPING
   };
 
 namespace ExecutionStatusMapper

@@ -175,7 +175,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
@@ -184,7 +184,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -193,7 +193,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -202,7 +202,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
@@ -211,7 +211,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
@@ -220,7 +220,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
@@ -229,7 +229,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml">Environment
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}

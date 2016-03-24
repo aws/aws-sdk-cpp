@@ -1,0 +1,4 @@
+com/amazonaws/util/awsclientgenerator/transform/C2jModelToGeneratorModelTransformerTest.class
+com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/EnumModelTest.class
+com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/CppViewHelperTest.class
+com/amazonaws/util/awsclientgenerator/domainmodels/codegeneration/cpp/HttpTest.class

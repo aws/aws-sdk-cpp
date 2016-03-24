@@ -470,7 +470,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -486,7 +486,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -502,7 +502,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -1689,41 +1689,44 @@ namespace Model
     inline ModifyDBInstanceRequest& WithDBPortNumber(long value) { SetDBPortNumber(value); return *this;}
 
     /**
-     * <p>True to make the DB instance Internet-facing with a publicly resolvable DNS
-     * name, which resolves to a public IP address. False to make the DB instance
-     * internal with a DNS name that resolves to a private IP address. </p>
-     * <p><code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be true in order for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p> Default: false
-     * </p>
+     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
+     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
+     * publicly resolvable DNS name, which resolves to a public IP address. Set to
+     * <code>False</code> to make the DB instance internal with a DNS name that
+     * resolves to a private IP address. </p> <p><code>PubliclyAccessible</code> only
+     * applies to DB instances in a VPC. The DB instance must be part of a public
+     * subnet and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. </p> <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter.</p> <p> Default: false </p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>True to make the DB instance Internet-facing with a publicly resolvable DNS
-     * name, which resolves to a public IP address. False to make the DB instance
-     * internal with a DNS name that resolves to a private IP address. </p>
-     * <p><code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be true in order for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p> Default: false
-     * </p>
+     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
+     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
+     * publicly resolvable DNS name, which resolves to a public IP address. Set to
+     * <code>False</code> to make the DB instance internal with a DNS name that
+     * resolves to a private IP address. </p> <p><code>PubliclyAccessible</code> only
+     * applies to DB instances in a VPC. The DB instance must be part of a public
+     * subnet and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. </p> <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter.</p> <p> Default: false </p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>True to make the DB instance Internet-facing with a publicly resolvable DNS
-     * name, which resolves to a public IP address. False to make the DB instance
-     * internal with a DNS name that resolves to a private IP address. </p>
-     * <p><code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB
-     * instance must be part of a public subnet and <code>PubliclyAccessible</code>
-     * must be true in order for it to be publicly accessible. </p> <p>Changes to the
-     * <code>PubliclyAccessible</code> parameter are applied immediately regardless of
-     * the value of the <code>ApplyImmediately</code> parameter.</p> <p> Default: false
-     * </p>
+     * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
+     * name. Set to <code>True</code> to make the DB instance Internet-facing with a
+     * publicly resolvable DNS name, which resolves to a public IP address. Set to
+     * <code>False</code> to make the DB instance internal with a DNS name that
+     * resolves to a private IP address. </p> <p><code>PubliclyAccessible</code> only
+     * applies to DB instances in a VPC. The DB instance must be part of a public
+     * subnet and <code>PubliclyAccessible</code> must be true in order for it to be
+     * publicly accessible. </p> <p>Changes to the <code>PubliclyAccessible</code>
+     * parameter are applied immediately regardless of the value of the
+     * <code>ApplyImmediately</code> parameter.</p> <p> Default: false </p>
      */
     inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1811,6 +1814,36 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline long GetPromotionTier() const{ return m_promotionTier; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
+     * Values: 0 - 15</p>
+     */
+    inline ModifyDBInstanceRequest& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
@@ -1866,6 +1899,8 @@ namespace Model
     bool m_publiclyAccessibleHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+    long m_promotionTier;
+    bool m_promotionTierHasBeenSet;
   };
 
 } // namespace Model

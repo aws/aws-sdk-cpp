@@ -90,37 +90,44 @@ namespace Model
     inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(value); return *this;}
 
     /**
-     * <p>The pending maintenance action to apply to this resource.</p>
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code></p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
 

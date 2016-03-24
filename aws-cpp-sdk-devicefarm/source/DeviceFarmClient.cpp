@@ -38,6 +38,7 @@
 #include <aws/devicefarm/model/GetDevicePoolRequest.h>
 #include <aws/devicefarm/model/GetDevicePoolCompatibilityRequest.h>
 #include <aws/devicefarm/model/GetJobRequest.h>
+#include <aws/devicefarm/model/GetOfferingStatusRequest.h>
 #include <aws/devicefarm/model/GetProjectRequest.h>
 #include <aws/devicefarm/model/GetRunRequest.h>
 #include <aws/devicefarm/model/GetSuiteRequest.h>
@@ -47,6 +48,8 @@
 #include <aws/devicefarm/model/ListDevicePoolsRequest.h>
 #include <aws/devicefarm/model/ListDevicesRequest.h>
 #include <aws/devicefarm/model/ListJobsRequest.h>
+#include <aws/devicefarm/model/ListOfferingTransactionsRequest.h>
+#include <aws/devicefarm/model/ListOfferingsRequest.h>
 #include <aws/devicefarm/model/ListProjectsRequest.h>
 #include <aws/devicefarm/model/ListRunsRequest.h>
 #include <aws/devicefarm/model/ListSamplesRequest.h>
@@ -54,7 +57,10 @@
 #include <aws/devicefarm/model/ListTestsRequest.h>
 #include <aws/devicefarm/model/ListUniqueProblemsRequest.h>
 #include <aws/devicefarm/model/ListUploadsRequest.h>
+#include <aws/devicefarm/model/PurchaseOfferingRequest.h>
+#include <aws/devicefarm/model/RenewOfferingRequest.h>
 #include <aws/devicefarm/model/ScheduleRunRequest.h>
+#include <aws/devicefarm/model/StopRunRequest.h>
 #include <aws/devicefarm/model/UpdateDevicePoolRequest.h>
 #include <aws/devicefarm/model/UpdateProjectRequest.h>
 
@@ -492,6 +498,37 @@ void DeviceFarmClient::GetJobAsyncHelper(const GetJobRequest& request, const Get
   handler(this, request, GetJob(request), context);
 }
 
+GetOfferingStatusOutcome DeviceFarmClient::GetOfferingStatus(const GetOfferingStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetOfferingStatusOutcome(GetOfferingStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetOfferingStatusOutcome(outcome.GetError());
+  }
+}
+
+GetOfferingStatusOutcomeCallable DeviceFarmClient::GetOfferingStatusCallable(const GetOfferingStatusRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::GetOfferingStatus, this, request);
+}
+
+void DeviceFarmClient::GetOfferingStatusAsync(const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::GetOfferingStatusAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::GetOfferingStatusAsyncHelper(const GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOfferingStatus(request), context);
+}
+
 GetProjectOutcome DeviceFarmClient::GetProject(const GetProjectRequest& request) const
 {
   Aws::StringStream ss;
@@ -771,6 +808,68 @@ void DeviceFarmClient::ListJobsAsyncHelper(const ListJobsRequest& request, const
   handler(this, request, ListJobs(request), context);
 }
 
+ListOfferingTransactionsOutcome DeviceFarmClient::ListOfferingTransactions(const ListOfferingTransactionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListOfferingTransactionsOutcome(ListOfferingTransactionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOfferingTransactionsOutcome(outcome.GetError());
+  }
+}
+
+ListOfferingTransactionsOutcomeCallable DeviceFarmClient::ListOfferingTransactionsCallable(const ListOfferingTransactionsRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::ListOfferingTransactions, this, request);
+}
+
+void DeviceFarmClient::ListOfferingTransactionsAsync(const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::ListOfferingTransactionsAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::ListOfferingTransactionsAsyncHelper(const ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOfferingTransactions(request), context);
+}
+
+ListOfferingsOutcome DeviceFarmClient::ListOfferings(const ListOfferingsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListOfferingsOutcome(ListOfferingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOfferingsOutcome(outcome.GetError());
+  }
+}
+
+ListOfferingsOutcomeCallable DeviceFarmClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::ListOfferings, this, request);
+}
+
+void DeviceFarmClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::ListOfferingsAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOfferings(request), context);
+}
+
 ListProjectsOutcome DeviceFarmClient::ListProjects(const ListProjectsRequest& request) const
 {
   Aws::StringStream ss;
@@ -988,6 +1087,68 @@ void DeviceFarmClient::ListUploadsAsyncHelper(const ListUploadsRequest& request,
   handler(this, request, ListUploads(request), context);
 }
 
+PurchaseOfferingOutcome DeviceFarmClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PurchaseOfferingOutcome(PurchaseOfferingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PurchaseOfferingOutcome(outcome.GetError());
+  }
+}
+
+PurchaseOfferingOutcomeCallable DeviceFarmClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::PurchaseOffering, this, request);
+}
+
+void DeviceFarmClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::PurchaseOfferingAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PurchaseOffering(request), context);
+}
+
+RenewOfferingOutcome DeviceFarmClient::RenewOffering(const RenewOfferingRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RenewOfferingOutcome(RenewOfferingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RenewOfferingOutcome(outcome.GetError());
+  }
+}
+
+RenewOfferingOutcomeCallable DeviceFarmClient::RenewOfferingCallable(const RenewOfferingRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::RenewOffering, this, request);
+}
+
+void DeviceFarmClient::RenewOfferingAsync(const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::RenewOfferingAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::RenewOfferingAsyncHelper(const RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RenewOffering(request), context);
+}
+
 ScheduleRunOutcome DeviceFarmClient::ScheduleRun(const ScheduleRunRequest& request) const
 {
   Aws::StringStream ss;
@@ -1017,6 +1178,37 @@ void DeviceFarmClient::ScheduleRunAsync(const ScheduleRunRequest& request, const
 void DeviceFarmClient::ScheduleRunAsyncHelper(const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ScheduleRun(request), context);
+}
+
+StopRunOutcome DeviceFarmClient::StopRun(const StopRunRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopRunOutcome(StopRunResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopRunOutcome(outcome.GetError());
+  }
+}
+
+StopRunOutcomeCallable DeviceFarmClient::StopRunCallable(const StopRunRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::StopRun, this, request);
+}
+
+void DeviceFarmClient::StopRunAsync(const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::StopRunAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::StopRunAsyncHelper(const StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopRun(request), context);
 }
 
 UpdateDevicePoolOutcome DeviceFarmClient::UpdateDevicePool(const UpdateDevicePoolRequest& request) const

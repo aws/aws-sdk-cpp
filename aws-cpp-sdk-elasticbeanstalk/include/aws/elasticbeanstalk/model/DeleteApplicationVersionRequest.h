@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to delete an application version.</p>
    */
   class AWS_ELASTICBEANSTALK_API DeleteApplicationVersionRequest : public ElasticBeanstalkRequest
   {
@@ -69,37 +69,37 @@ namespace Model
     inline DeleteApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline DeleteApplicationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline DeleteApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> The label of the version to delete. </p>
+     * <p>The label of the version to delete.</p>
      */
     inline DeleteApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
