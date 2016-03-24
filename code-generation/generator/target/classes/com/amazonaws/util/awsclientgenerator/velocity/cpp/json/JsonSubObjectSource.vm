@@ -1,0 +1,41 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/core/utils/json/JsonSerializer.h>
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+
+using namespace Aws::${metadata.namespace}::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
+${typeInfo.className}::${typeInfo.className}()$initializers
+{
+}
+
+${typeInfo.className}::${typeInfo.className}(const JsonValue& jsonValue)$initializers
+{
+  *this = jsonValue;
+}
+
+${typeInfo.className}& ${typeInfo.className}::operator =(const JsonValue& jsonValue)
+{
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersDeserializeJson.vm")
+  return *this;
+}
+
+JsonValue ${typeInfo.className}::Jsonize() const
+{
+  JsonValue payload;
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
+  return payload;
+}

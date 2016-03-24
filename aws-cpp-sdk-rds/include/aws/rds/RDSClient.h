@@ -464,23 +464,37 @@ namespace Model
    * and manages common database administration tasks, freeing up developers to focus
    * on what makes their applications and businesses unique. </p> <p> Amazon RDS
    * gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft
-   * SQL Server, Oracle, or Aurora database server. This means the code,
-   * applications, and tools you already use today with your existing databases work
-   * with Amazon RDS without modification. Amazon RDS automatically backs up your
-   * database and maintains the database software that powers your DB instance.
-   * Amazon RDS is flexible: you can scale your database instance's compute resources
-   * and storage capacity to meet your application's demand. As with all Amazon Web
-   * Services, there are no up-front investments, and you pay only for the resources
-   * you use. </p> <p> This is an interface reference for Amazon RDS. It contains
+   * SQL Server, Oracle, or Amazon Aurora database server. These capabilities mean
+   * that the code, applications, and tools you already use today with your existing
+   * databases work with Amazon RDS without modification. Amazon RDS automatically
+   * backs up your database and maintains the database software that powers your DB
+   * instance. Amazon RDS is flexible: you can scale your database instance's compute
+   * resources and storage capacity to meet your application's demand. As with all
+   * Amazon Web Services, there are no up-front investments, and you pay only for the
+   * resources you use. </p> <p> This interface reference for Amazon RDS contains
    * documentation for a programming or command line interface you can use to manage
    * Amazon RDS. Note that Amazon RDS is asynchronous, which means that some
    * interfaces might require techniques such as polling or callback functions to
    * determine when a command has been applied. In this reference, the parameter
    * descriptions indicate whether a command is applied immediately, on the next
-   * instance reboot, or during the maintenance window. For a summary of the Amazon
-   * RDS interfaces, go to <a
+   * instance reboot, or during the maintenance window. The reference structure is as
+   * follows, and we list following some related topics from the user guide. </p>
+   * <p><b>Amazon RDS API Reference</b></p> <ul> <li><p>For the alphabetical list of
+   * API actions, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
+   * Actions</a>.</p></li> <li><p>For the alphabetical list of data types, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
+   * Types</a>.</p></li> <li><p>For a list of common query parameters, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
+   * Parameters</a>.</p></li> <li><p>For descriptions of the error codes, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
+   * Errors</a>.</p></li> </ul> <p><b>Amazon RDS User Guide</b></p> <ul> <li><p>For a
+   * summary of the Amazon RDS interfaces, see <a
    * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
-   * RDS Interfaces</a>. </p>
+   * RDS Interfaces</a>.</p></li> <li><p>For more information about how to use the
+   * Query API, see <a
+   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
+   * the Query API</a>.</p></li> </ul>
    */
   class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
   {
@@ -594,11 +608,11 @@ namespace Model
          * instances. Second, IP ranges are available if the application accessing your
          * database is running on the Internet. Required parameters for this API are one of
          * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
-         * authorize ingress from an EC2 security group in one region to an Amazon RDS DB
-         * instance in another. You cannot authorize ingress from a VPC security group in
-         * one VPC to an Amazon RDS DB instance in another. </note> <p>For an overview of
-         * CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> <p>You
+         * cannot authorize ingress from an EC2 security group in one region to an Amazon
+         * RDS DB instance in another. You cannot authorize ingress from a VPC security
+         * group in one VPC to an Amazon RDS DB instance in another. </p> </note> <p>For an
+         * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p>
          */
@@ -611,11 +625,11 @@ namespace Model
          * instances. Second, IP ranges are available if the application accessing your
          * database is running on the Internet. Required parameters for this API are one of
          * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
-         * authorize ingress from an EC2 security group in one region to an Amazon RDS DB
-         * instance in another. You cannot authorize ingress from a VPC security group in
-         * one VPC to an Amazon RDS DB instance in another. </note> <p>For an overview of
-         * CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> <p>You
+         * cannot authorize ingress from an EC2 security group in one region to an Amazon
+         * RDS DB instance in another. You cannot authorize ingress from a VPC security
+         * group in one VPC to an Amazon RDS DB instance in another. </p> </note> <p>For an
+         * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p>
          *
@@ -630,11 +644,11 @@ namespace Model
          * instances. Second, IP ranges are available if the application accessing your
          * database is running on the Internet. Required parameters for this API are one of
          * CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
-         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> You cannot
-         * authorize ingress from an EC2 security group in one region to an Amazon RDS DB
-         * instance in another. You cannot authorize ingress from a VPC security group in
-         * one VPC to an Amazon RDS DB instance in another. </note> <p>For an overview of
-         * CIDR ranges, go to the <a
+         * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </p> <note> <p>You
+         * cannot authorize ingress from an EC2 security group in one region to an Amazon
+         * RDS DB instance in another. You cannot authorize ingress from a VPC security
+         * group in one VPC to an Amazon RDS DB instance in another. </p> </note> <p>For an
+         * overview of CIDR ranges, go to the <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
          * Tutorial</a>. </p>
          *
@@ -690,7 +704,7 @@ namespace Model
         virtual void CopyDBParameterGroupAsync(const Model::CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Copies the specified DBSnapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -698,7 +712,7 @@ namespace Model
         virtual Model::CopyDBSnapshotOutcome CopyDBSnapshot(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
-         * <p> Copies the specified DBSnapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -708,7 +722,7 @@ namespace Model
         virtual Model::CopyDBSnapshotOutcomeCallable CopyDBSnapshotCallable(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
-         * <p> Copies the specified DBSnapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -2409,14 +2423,14 @@ namespace Model
          * manual DB snapshot.</p> <p>To share a manual DB snapshot with other AWS
          * accounts, specify <code>restore</code> as the <code>AttributeName</code> and use
          * the <code>ValuesToAdd</code> parameter to add a list of the AWS account ids that
-         * are authorized to retore the manual DB snapshot. Uses the value <code>all</code>
-         * to make the manual DB snapshot public and can by copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB snapshots that
-         * contain private information that you do not want to be available to all AWS
-         * accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB snapshot, or whether a manual DB snapshot public or private, use the
-         * <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual DB snapshot is
-         * encrypted, it cannot be shared.</p>
+         * are authorized to restore the manual DB snapshot. Uses the value
+         * <code>all</code> to make the manual DB snapshot public and can by copied or
+         * restored by all AWS accounts. Do not add the <code>all</code> value for any
+         * manual DB snapshots that contain private information that you do not want to be
+         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
+         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
+         * private, use the <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual
+         * DB snapshot is encrypted, it cannot be shared.</p>
          */
         virtual Model::ModifyDBSnapshotAttributeOutcome ModifyDBSnapshotAttribute(const Model::ModifyDBSnapshotAttributeRequest& request) const;
 
@@ -2425,14 +2439,14 @@ namespace Model
          * manual DB snapshot.</p> <p>To share a manual DB snapshot with other AWS
          * accounts, specify <code>restore</code> as the <code>AttributeName</code> and use
          * the <code>ValuesToAdd</code> parameter to add a list of the AWS account ids that
-         * are authorized to retore the manual DB snapshot. Uses the value <code>all</code>
-         * to make the manual DB snapshot public and can by copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB snapshots that
-         * contain private information that you do not want to be available to all AWS
-         * accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB snapshot, or whether a manual DB snapshot public or private, use the
-         * <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual DB snapshot is
-         * encrypted, it cannot be shared.</p>
+         * are authorized to restore the manual DB snapshot. Uses the value
+         * <code>all</code> to make the manual DB snapshot public and can by copied or
+         * restored by all AWS accounts. Do not add the <code>all</code> value for any
+         * manual DB snapshots that contain private information that you do not want to be
+         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
+         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
+         * private, use the <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual
+         * DB snapshot is encrypted, it cannot be shared.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2443,14 +2457,14 @@ namespace Model
          * manual DB snapshot.</p> <p>To share a manual DB snapshot with other AWS
          * accounts, specify <code>restore</code> as the <code>AttributeName</code> and use
          * the <code>ValuesToAdd</code> parameter to add a list of the AWS account ids that
-         * are authorized to retore the manual DB snapshot. Uses the value <code>all</code>
-         * to make the manual DB snapshot public and can by copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB snapshots that
-         * contain private information that you do not want to be available to all AWS
-         * accounts.</p> <p>To view which AWS accounts have access to copy or restore a
-         * manual DB snapshot, or whether a manual DB snapshot public or private, use the
-         * <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual DB snapshot is
-         * encrypted, it cannot be shared.</p>
+         * are authorized to restore the manual DB snapshot. Uses the value
+         * <code>all</code> to make the manual DB snapshot public and can by copied or
+         * restored by all AWS accounts. Do not add the <code>all</code> value for any
+         * manual DB snapshots that contain private information that you do not want to be
+         * available to all AWS accounts.</p> <p>To view which AWS accounts have access to
+         * copy or restore a manual DB snapshot, or whether a manual DB snapshot public or
+         * private, use the <a>DescribeDBSnapshotAttributes</a> API.</p> <p>If the manual
+         * DB snapshot is encrypted, it cannot be shared.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

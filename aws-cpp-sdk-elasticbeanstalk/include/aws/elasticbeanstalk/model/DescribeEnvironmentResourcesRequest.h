@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to describe the resources in an environment.</p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentResourcesRequest : public ElasticBeanstalkRequest
   {

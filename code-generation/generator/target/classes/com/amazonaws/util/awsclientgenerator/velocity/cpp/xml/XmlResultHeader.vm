@@ -1,0 +1,46 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Xml
+{
+  class XmlDocument;
+} // namespace Xml
+} // namespace Utils
+namespace $metadata.namespace
+{
+namespace Model
+{
+#set($xmlRef = "${typeInfo.xmlDocType}")
+#set($classNameRef = "${typeInfo.className}&")
+#if($shape.documentation)
+  /**
+   * ${shape.documentation}
+   */
+#end
+  class $typeInfo.exportValue $typeInfo.className
+  {
+  public:
+    ${typeInfo.className}();
+    ${typeInfo.className}(const AmazonWebServiceResult<${xmlRef}>& result);
+    ${classNameRef} operator=(const AmazonWebServiceResult<${xmlRef}>& result);
+
+#set($useRequiredField = false)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
+  };
+
+} // namespace Model
+} // namespace $metadata.namespace
+} // namespace Aws

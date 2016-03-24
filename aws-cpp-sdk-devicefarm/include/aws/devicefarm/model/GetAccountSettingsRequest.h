@@ -24,6 +24,7 @@ namespace Model
 {
 
   /**
+   * <p>Represents the request sent to retrieve the account settings.</p>
    */
   class AWS_DEVICEFARM_API GetAccountSettingsRequest : public DeviceFarmRequest
   {

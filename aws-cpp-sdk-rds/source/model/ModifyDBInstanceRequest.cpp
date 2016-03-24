@@ -57,7 +57,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_dBPortNumberHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false)
+    m_monitoringRoleArnHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,10 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_monitoringRoleArnHasBeenSet)
   {
     ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_promotionTierHasBeenSet)
+  {
+    ss << "PromotionTier=" << m_promotionTier << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

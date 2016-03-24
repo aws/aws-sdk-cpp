@@ -517,7 +517,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
@@ -532,7 +534,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -547,7 +551,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
@@ -562,7 +568,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
@@ -577,7 +585,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -592,7 +602,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
@@ -607,7 +619,9 @@ namespace Model
      * instance must either: <ul><li>Specify DB subnet groups from the same VPC. All
      * these Read Replicas will be created in the same VPC.</li><li>Not specify a DB
      * subnet group. All these Read Replicas will be created outside of any
-     * VPC.</li></ul></li> </ul>
+     * VPC.</li></ul></li> </ul> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters, periods, underscores, spaces, or hyphens. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code></p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

@@ -78,7 +78,9 @@ DBInstance::DBInstance() :
     m_monitoringInterval(0),
     m_monitoringIntervalHasBeenSet(false),
     m_enhancedMonitoringResourceArnHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false)
+    m_monitoringRoleArnHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false)
 {
 }
 
@@ -137,7 +139,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_monitoringInterval(0),
     m_monitoringIntervalHasBeenSet(false),
     m_enhancedMonitoringResourceArnHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false)
+    m_monitoringRoleArnHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -442,6 +446,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_monitoringRoleArn = StringUtils::Trim(monitoringRoleArnNode.GetText().c_str());
       m_monitoringRoleArnHasBeenSet = true;
     }
+    XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
+    if(!promotionTierNode.IsNull())
+    {
+      m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(promotionTierNode.GetText().c_str()).c_str());
+      m_promotionTierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -661,6 +671,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
   }
+  if(m_promotionTierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
+  }
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -876,5 +890,9 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_monitoringRoleArnHasBeenSet)
   {
       oStream << location << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_promotionTierHasBeenSet)
+  {
+      oStream << location << ".PromotionTier=" << m_promotionTier << "&";
   }
 }

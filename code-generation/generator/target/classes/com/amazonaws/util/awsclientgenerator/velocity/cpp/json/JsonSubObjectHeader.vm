@@ -1,0 +1,45 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace $metadata.namespace
+{
+namespace Model
+{
+#set($jsonRef = "${typeInfo.jsonType}&")
+#set($classNameRef = "${typeInfo.className}&")
+
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
+  class $typeInfo.exportValue $typeInfo.className
+  {
+  public:
+    ${typeInfo.className}();
+    ${typeInfo.className}(const ${jsonRef} jsonValue);
+    ${classNameRef} operator=(const ${jsonRef} jsonValue);
+    ${typeInfo.jsonType} Jsonize() const;
+
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
+  };
+
+} // namespace Model
+} // namespace $metadata.namespace
+} // namespace Aws

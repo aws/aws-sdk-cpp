@@ -32,6 +32,10 @@ namespace DeviceFarm
 {
 namespace Model
 {
+  /**
+   * <p>Represents the account settings return values from the
+   * <code>GetAccountSettings</code> request.</p>
+   */
   class AWS_DEVICEFARM_API GetAccountSettingsResult
   {
   public:

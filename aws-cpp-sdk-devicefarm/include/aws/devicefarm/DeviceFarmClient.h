@@ -32,6 +32,7 @@
 #include <aws/devicefarm/model/GetDevicePoolResult.h>
 #include <aws/devicefarm/model/GetDevicePoolCompatibilityResult.h>
 #include <aws/devicefarm/model/GetJobResult.h>
+#include <aws/devicefarm/model/GetOfferingStatusResult.h>
 #include <aws/devicefarm/model/GetProjectResult.h>
 #include <aws/devicefarm/model/GetRunResult.h>
 #include <aws/devicefarm/model/GetSuiteResult.h>
@@ -41,6 +42,8 @@
 #include <aws/devicefarm/model/ListDevicePoolsResult.h>
 #include <aws/devicefarm/model/ListDevicesResult.h>
 #include <aws/devicefarm/model/ListJobsResult.h>
+#include <aws/devicefarm/model/ListOfferingTransactionsResult.h>
+#include <aws/devicefarm/model/ListOfferingsResult.h>
 #include <aws/devicefarm/model/ListProjectsResult.h>
 #include <aws/devicefarm/model/ListRunsResult.h>
 #include <aws/devicefarm/model/ListSamplesResult.h>
@@ -48,7 +51,10 @@
 #include <aws/devicefarm/model/ListTestsResult.h>
 #include <aws/devicefarm/model/ListUniqueProblemsResult.h>
 #include <aws/devicefarm/model/ListUploadsResult.h>
+#include <aws/devicefarm/model/PurchaseOfferingResult.h>
+#include <aws/devicefarm/model/RenewOfferingResult.h>
 #include <aws/devicefarm/model/ScheduleRunResult.h>
+#include <aws/devicefarm/model/StopRunResult.h>
 #include <aws/devicefarm/model/UpdateDevicePoolResult.h>
 #include <aws/devicefarm/model/UpdateProjectResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -108,6 +114,7 @@ namespace Model
         class GetDevicePoolRequest;
         class GetDevicePoolCompatibilityRequest;
         class GetJobRequest;
+        class GetOfferingStatusRequest;
         class GetProjectRequest;
         class GetRunRequest;
         class GetSuiteRequest;
@@ -117,6 +124,8 @@ namespace Model
         class ListDevicePoolsRequest;
         class ListDevicesRequest;
         class ListJobsRequest;
+        class ListOfferingTransactionsRequest;
+        class ListOfferingsRequest;
         class ListProjectsRequest;
         class ListRunsRequest;
         class ListSamplesRequest;
@@ -124,7 +133,10 @@ namespace Model
         class ListTestsRequest;
         class ListUniqueProblemsRequest;
         class ListUploadsRequest;
+        class PurchaseOfferingRequest;
+        class RenewOfferingRequest;
         class ScheduleRunRequest;
+        class StopRunRequest;
         class UpdateDevicePoolRequest;
         class UpdateProjectRequest;
 
@@ -140,6 +152,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolOutcome;
         typedef Aws::Utils::Outcome<GetDevicePoolCompatibilityResult, Aws::Client::AWSError<DeviceFarmErrors>> GetDevicePoolCompatibilityOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<DeviceFarmErrors>> GetJobOutcome;
+        typedef Aws::Utils::Outcome<GetOfferingStatusResult, Aws::Client::AWSError<DeviceFarmErrors>> GetOfferingStatusOutcome;
         typedef Aws::Utils::Outcome<GetProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> GetProjectOutcome;
         typedef Aws::Utils::Outcome<GetRunResult, Aws::Client::AWSError<DeviceFarmErrors>> GetRunOutcome;
         typedef Aws::Utils::Outcome<GetSuiteResult, Aws::Client::AWSError<DeviceFarmErrors>> GetSuiteOutcome;
@@ -149,6 +162,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDevicePoolsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicePoolsOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListDevicesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingTransactionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingTransactionsOutcome;
+        typedef Aws::Utils::Outcome<ListOfferingsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListOfferingsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListProjectsOutcome;
         typedef Aws::Utils::Outcome<ListRunsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListRunsOutcome;
         typedef Aws::Utils::Outcome<ListSamplesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSamplesOutcome;
@@ -156,7 +171,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTestsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestsOutcome;
         typedef Aws::Utils::Outcome<ListUniqueProblemsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUniqueProblemsOutcome;
         typedef Aws::Utils::Outcome<ListUploadsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUploadsOutcome;
+        typedef Aws::Utils::Outcome<PurchaseOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> PurchaseOfferingOutcome;
+        typedef Aws::Utils::Outcome<RenewOfferingResult, Aws::Client::AWSError<DeviceFarmErrors>> RenewOfferingOutcome;
         typedef Aws::Utils::Outcome<ScheduleRunResult, Aws::Client::AWSError<DeviceFarmErrors>> ScheduleRunOutcome;
+        typedef Aws::Utils::Outcome<StopRunResult, Aws::Client::AWSError<DeviceFarmErrors>> StopRunOutcome;
         typedef Aws::Utils::Outcome<UpdateDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateDevicePoolOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
 
@@ -172,6 +190,7 @@ namespace Model
         typedef std::future<GetDevicePoolOutcome> GetDevicePoolOutcomeCallable;
         typedef std::future<GetDevicePoolCompatibilityOutcome> GetDevicePoolCompatibilityOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
+        typedef std::future<GetOfferingStatusOutcome> GetOfferingStatusOutcomeCallable;
         typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
         typedef std::future<GetRunOutcome> GetRunOutcomeCallable;
         typedef std::future<GetSuiteOutcome> GetSuiteOutcomeCallable;
@@ -181,6 +200,8 @@ namespace Model
         typedef std::future<ListDevicePoolsOutcome> ListDevicePoolsOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListOfferingTransactionsOutcome> ListOfferingTransactionsOutcomeCallable;
+        typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
         typedef std::future<ListRunsOutcome> ListRunsOutcomeCallable;
         typedef std::future<ListSamplesOutcome> ListSamplesOutcomeCallable;
@@ -188,7 +209,10 @@ namespace Model
         typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
         typedef std::future<ListUniqueProblemsOutcome> ListUniqueProblemsOutcomeCallable;
         typedef std::future<ListUploadsOutcome> ListUploadsOutcomeCallable;
+        typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
+        typedef std::future<RenewOfferingOutcome> RenewOfferingOutcomeCallable;
         typedef std::future<ScheduleRunOutcome> ScheduleRunOutcomeCallable;
+        typedef std::future<StopRunOutcome> StopRunOutcomeCallable;
         typedef std::future<UpdateDevicePoolOutcome> UpdateDevicePoolOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 } // namespace Model
@@ -207,6 +231,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDevicePoolRequest&, const Model::GetDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePoolResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetDevicePoolCompatibilityRequest&, const Model::GetDevicePoolCompatibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicePoolCompatibilityResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetOfferingStatusRequest&, const Model::GetOfferingStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOfferingStatusResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetRunRequest&, const Model::GetRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetSuiteRequest&, const Model::GetSuiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteResponseReceivedHandler;
@@ -216,6 +241,8 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDevicePoolsRequest&, const Model::ListDevicePoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicePoolsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingTransactionsRequest&, const Model::ListOfferingTransactionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingTransactionsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListRunsRequest&, const Model::ListRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRunsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListSamplesRequest&, const Model::ListSamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSamplesResponseReceivedHandler;
@@ -223,7 +250,10 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListTestsRequest&, const Model::ListTestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUniqueProblemsRequest&, const Model::ListUniqueProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUniqueProblemsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUploadsRequest&, const Model::ListUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUploadsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::RenewOfferingRequest&, const Model::RenewOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewOfferingResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ScheduleRunRequest&, const Model::ScheduleRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleRunResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::StopRunRequest&, const Model::StopRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateDevicePoolRequest&, const Model::UpdateDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevicePoolResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
 
@@ -500,6 +530,43 @@ namespace Model
         virtual void GetJobAsync(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the current status and future status of all offerings purchased by an
+         * AWS account. The response indicates how many offerings are currently available
+         * and the offerings that will be available in the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         */
+        virtual Model::GetOfferingStatusOutcome GetOfferingStatus(const Model::GetOfferingStatusRequest& request) const;
+
+        /**
+         * <p>Gets the current status and future status of all offerings purchased by an
+         * AWS account. The response indicates how many offerings are currently available
+         * and the offerings that will be available in the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetOfferingStatusOutcomeCallable GetOfferingStatusCallable(const Model::GetOfferingStatusRequest& request) const;
+
+        /**
+         * <p>Gets the current status and future status of all offerings purchased by an
+         * AWS account. The response indicates how many offerings are currently available
+         * and the offerings that will be available in the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetOfferingStatusAsync(const Model::GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a project.</p>
          */
         virtual Model::GetProjectOutcome GetProject(const Model::GetProjectRequest& request) const;
@@ -671,6 +738,77 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of all historical purchases, renewals, and system renewal
+         * transactions for an AWS account. The list is paginated and ordered by a
+         * descending timestamp (most recent transactions are first). The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         */
+        virtual Model::ListOfferingTransactionsOutcome ListOfferingTransactions(const Model::ListOfferingTransactionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all historical purchases, renewals, and system renewal
+         * transactions for an AWS account. The list is paginated and ordered by a
+         * descending timestamp (most recent transactions are first). The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOfferingTransactionsOutcomeCallable ListOfferingTransactionsCallable(const Model::ListOfferingTransactionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all historical purchases, renewals, and system renewal
+         * transactions for an AWS account. The list is paginated and ordered by a
+         * descending timestamp (most recent transactions are first). The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOfferingTransactionsAsync(const Model::ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of products or offerings that the user can manage through the
+         * API. Each offering record indicates the recurring price per unit and the
+         * frequency for that offering. The API returns a <code>NotEligible</code> error if
+         * the user is not permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         */
+        virtual Model::ListOfferingsOutcome ListOfferings(const Model::ListOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns a list of products or offerings that the user can manage through the
+         * API. Each offering record indicates the recurring price per unit and the
+         * frequency for that offering. The API returns a <code>NotEligible</code> error if
+         * the user is not permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOfferingsOutcomeCallable ListOfferingsCallable(const Model::ListOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns a list of products or offerings that the user can manage through the
+         * API. Each offering record indicates the recurring price per unit and the
+         * frequency for that offering. The API returns a <code>NotEligible</code> error if
+         * the user is not permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOfferingsAsync(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about projects.</p>
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
@@ -804,6 +942,74 @@ namespace Model
         virtual void ListUploadsAsync(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
+         * latest total purchased quantity for an offering, unless the renewal was
+         * overridden. The API returns a <code>NotEligible</code> error if the user is not
+         * permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         */
+        virtual Model::PurchaseOfferingOutcome PurchaseOffering(const Model::PurchaseOfferingRequest& request) const;
+
+        /**
+         * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
+         * latest total purchased quantity for an offering, unless the renewal was
+         * overridden. The API returns a <code>NotEligible</code> error if the user is not
+         * permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PurchaseOfferingOutcomeCallable PurchaseOfferingCallable(const Model::PurchaseOfferingRequest& request) const;
+
+        /**
+         * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
+         * latest total purchased quantity for an offering, unless the renewal was
+         * overridden. The API returns a <code>NotEligible</code> error if the user is not
+         * permitted to invoke the operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Explicitly sets the quantity of devices to renew for an offering, starting
+         * from the <code>effectiveDate</code> of the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         */
+        virtual Model::RenewOfferingOutcome RenewOffering(const Model::RenewOfferingRequest& request) const;
+
+        /**
+         * <p>Explicitly sets the quantity of devices to renew for an offering, starting
+         * from the <code>effectiveDate</code> of the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RenewOfferingOutcomeCallable RenewOfferingCallable(const Model::RenewOfferingRequest& request) const;
+
+        /**
+         * <p>Explicitly sets the quantity of devices to renew for an offering, starting
+         * from the <code>effectiveDate</code> of the next period. The API returns a
+         * <code>NotEligible</code> error if the user is not permitted to invoke the
+         * operation. Please contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+         * if you believe that you should be able to invoke this operation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RenewOfferingAsync(const Model::RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Schedules a run.</p>
          */
         virtual Model::ScheduleRunOutcome ScheduleRun(const Model::ScheduleRunRequest& request) const;
@@ -821,6 +1027,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ScheduleRunAsync(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Initiates a stop request for the current test run. AWS Device Farm will
+         * immediately stop the run on devices where tests have not started executing, and
+         * you will not be billed for these devices. On devices where tests have started
+         * executing, Setup Suite and Teardown Suite tests will run to completion before
+         * stopping execution on those devices. You will be billed for Setup, Teardown, and
+         * any tests that were in progress or already completed.</p>
+         */
+        virtual Model::StopRunOutcome StopRun(const Model::StopRunRequest& request) const;
+
+        /**
+         * <p>Initiates a stop request for the current test run. AWS Device Farm will
+         * immediately stop the run on devices where tests have not started executing, and
+         * you will not be billed for these devices. On devices where tests have started
+         * executing, Setup Suite and Teardown Suite tests will run to completion before
+         * stopping execution on those devices. You will be billed for Setup, Teardown, and
+         * any tests that were in progress or already completed.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopRunOutcomeCallable StopRunCallable(const Model::StopRunRequest& request) const;
+
+        /**
+         * <p>Initiates a stop request for the current test run. AWS Device Farm will
+         * immediately stop the run on devices where tests have not started executing, and
+         * you will not be billed for these devices. On devices where tests have started
+         * executing, Setup Suite and Teardown Suite tests will run to completion before
+         * stopping execution on those devices. You will be billed for Setup, Teardown, and
+         * any tests that were in progress or already completed.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopRunAsync(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the name, description, and rules in a device pool given the
@@ -886,6 +1126,7 @@ namespace Model
         void GetDevicePoolAsyncHelper(const Model::GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDevicePoolCompatibilityAsyncHelper(const Model::GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOfferingStatusAsyncHelper(const Model::GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProjectAsyncHelper(const Model::GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRunAsyncHelper(const Model::GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuiteAsyncHelper(const Model::GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -895,6 +1136,8 @@ namespace Model
         void ListDevicePoolsAsyncHelper(const Model::ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOfferingTransactionsAsyncHelper(const Model::ListOfferingTransactionsRequest& request, const ListOfferingTransactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOfferingsAsyncHelper(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRunsAsyncHelper(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSamplesAsyncHelper(const Model::ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -902,7 +1145,10 @@ namespace Model
         void ListTestsAsyncHelper(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUniqueProblemsAsyncHelper(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUploadsAsyncHelper(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RenewOfferingAsyncHelper(const Model::RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScheduleRunAsyncHelper(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopRunAsyncHelper(const Model::StopRunRequest& request, const StopRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDevicePoolAsyncHelper(const Model::UpdateDevicePoolRequest& request, const UpdateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

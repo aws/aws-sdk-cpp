@@ -163,9 +163,16 @@ namespace Model
     /**
      * <p>A value that specifies whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
-     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. </p>
-     * <p>If this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>Default:
+     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
+     * this parameter is set to <code>false</code>, changes to the DB cluster are
+     * applied during the next maintenance window.</p> <p>The
+     * <code>ApplyImmediately</code> parameter only affects the
+     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
+     * If you set the <code>ApplyImmediately</code> parameter value to false, then
+     * changes to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next maintenance
+     * window. All other changes are applied immediately, regardless of the value of
+     * the <code>ApplyImmediately</code> parameter.</p> <p>Default:
      * <code>false</code></p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
@@ -173,9 +180,16 @@ namespace Model
     /**
      * <p>A value that specifies whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
-     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. </p>
-     * <p>If this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>Default:
+     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
+     * this parameter is set to <code>false</code>, changes to the DB cluster are
+     * applied during the next maintenance window.</p> <p>The
+     * <code>ApplyImmediately</code> parameter only affects the
+     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
+     * If you set the <code>ApplyImmediately</code> parameter value to false, then
+     * changes to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next maintenance
+     * window. All other changes are applied immediately, regardless of the value of
+     * the <code>ApplyImmediately</code> parameter.</p> <p>Default:
      * <code>false</code></p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
@@ -183,9 +197,16 @@ namespace Model
     /**
      * <p>A value that specifies whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
-     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. </p>
-     * <p>If this parameter is set to <code>false</code>, changes to the DB cluster are
-     * applied during the next maintenance window.</p> <p>Default:
+     * of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If
+     * this parameter is set to <code>false</code>, changes to the DB cluster are
+     * applied during the next maintenance window.</p> <p>The
+     * <code>ApplyImmediately</code> parameter only affects the
+     * <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values.
+     * If you set the <code>ApplyImmediately</code> parameter value to false, then
+     * changes to the <code>NewDBClusterIdentifier</code> and
+     * <code>MasterUserPassword</code> values are applied during the next maintenance
+     * window. All other changes are applied immediately, regardless of the value of
+     * the <code>ApplyImmediately</code> parameter.</p> <p>Default:
      * <code>false</code></p>
      */
     inline ModifyDBClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}

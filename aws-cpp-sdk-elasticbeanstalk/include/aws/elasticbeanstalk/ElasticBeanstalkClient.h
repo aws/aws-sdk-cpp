@@ -440,22 +440,22 @@ namespace Model
         virtual void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Launches an environment for the specified application using the specified
-         * configuration. </p>
+         * <p>Launches an environment for the specified application using the specified
+         * configuration.</p>
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p> Launches an environment for the specified application using the specified
-         * configuration. </p>
+         * <p>Launches an environment for the specified application using the specified
+         * configuration.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p> Launches an environment for the specified application using the specified
-         * configuration. </p>
+         * <p>Launches an environment for the specified application using the specified
+         * configuration.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -565,37 +565,37 @@ namespace Model
         virtual void DeleteConfigurationTemplateAsync(const Model::DeleteConfigurationTemplateRequest& request, const DeleteConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the draft configuration associated with the running environment.
-         * </p> <p> Updating a running environment with any configuration changes creates a
-         * draft configuration set. You can get the draft configuration using
+         * <p>Deletes the draft configuration associated with the running environment.</p>
+         * <p>Updating a running environment with any configuration changes creates a draft
+         * configuration set. You can get the draft configuration using
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action. </p>
+         * configuration remains in existence until it is deleted with this action.</p>
          */
         virtual Model::DeleteEnvironmentConfigurationOutcome DeleteEnvironmentConfiguration(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes the draft configuration associated with the running environment.
-         * </p> <p> Updating a running environment with any configuration changes creates a
-         * draft configuration set. You can get the draft configuration using
+         * <p>Deletes the draft configuration associated with the running environment.</p>
+         * <p>Updating a running environment with any configuration changes creates a draft
+         * configuration set. You can get the draft configuration using
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action. </p>
+         * configuration remains in existence until it is deleted with this action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEnvironmentConfigurationOutcomeCallable DeleteEnvironmentConfigurationCallable(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
         /**
-         * <p> Deletes the draft configuration associated with the running environment.
-         * </p> <p> Updating a running environment with any configuration changes creates a
-         * draft configuration set. You can get the draft configuration using
+         * <p>Deletes the draft configuration associated with the running environment.</p>
+         * <p>Updating a running environment with any configuration changes creates a draft
+         * configuration set. You can get the draft configuration using
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action. </p>
+         * configuration remains in existence until it is deleted with this action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -778,15 +778,15 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>. </note>
+         * weeks.</p> <note>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</note>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>. </note>
+         * weeks.</p> <note>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -794,8 +794,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>. </note>
+         * weeks.</p> <note>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -939,25 +939,25 @@ namespace Model
         virtual void RestartAppServerAsync(const Model::RestartAppServerRequest& request, const RestartAppServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a>
-         * </li> </ul>
+         * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
+         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
+         * </ul>
          */
         virtual Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /**
-         * <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a>
-         * </li> </ul>
+         * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
+         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
+         * </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RetrieveEnvironmentInfoOutcomeCallable RetrieveEnvironmentInfoCallable(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /**
-         * <p> Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
-         * request. </p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a>
-         * </li> </ul>
+         * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
+         * request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li>
+         * </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -1,0 +1,21 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#pragma once
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/Region.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+
+enum class Region;
+
+namespace ${metadata.namespace}
+{
+namespace ${metadata.classNamePrefix}Endpoint
+{
+${exportValue} Aws::String ForRegion(Region region);
+} // namespace ${metadata.classNamePrefix}Endpoint
+} // namespace ${metadata.namespace}
+} // namespace Aws

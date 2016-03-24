@@ -27,7 +27,9 @@ DBClusterMember::DBClusterMember() :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_isClusterWriter(false),
     m_isClusterWriterHasBeenSet(false),
-    m_dBClusterParameterGroupStatusHasBeenSet(false)
+    m_dBClusterParameterGroupStatusHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false)
 {
 }
 
@@ -35,7 +37,9 @@ DBClusterMember::DBClusterMember(const XmlNode& xmlNode) :
     m_dBInstanceIdentifierHasBeenSet(false),
     m_isClusterWriter(false),
     m_isClusterWriterHasBeenSet(false),
-    m_dBClusterParameterGroupStatusHasBeenSet(false)
+    m_dBClusterParameterGroupStatusHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -64,6 +68,12 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
       m_dBClusterParameterGroupStatus = StringUtils::Trim(dBClusterParameterGroupStatusNode.GetText().c_str());
       m_dBClusterParameterGroupStatusHasBeenSet = true;
     }
+    XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
+    if(!promotionTierNode.IsNull())
+    {
+      m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(promotionTierNode.GetText().c_str()).c_str());
+      m_promotionTierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +93,10 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".DBClusterParameterGroupStatus=" << StringUtils::URLEncode(m_dBClusterParameterGroupStatus.c_str()) << "&";
   }
+  if(m_promotionTierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
+  }
 }
 
 void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,5 +112,9 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_dBClusterParameterGroupStatusHasBeenSet)
   {
       oStream << location << ".DBClusterParameterGroupStatus=" << StringUtils::URLEncode(m_dBClusterParameterGroupStatus.c_str()) << "&";
+  }
+  if(m_promotionTierHasBeenSet)
+  {
+      oStream << location << ".PromotionTier=" << m_promotionTier << "&";
   }
 }

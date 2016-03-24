@@ -1,0 +1,107 @@
+#foreach($operation in $serviceModel.operations)
+#if($operation.request)
+${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
+{
+  Aws::StringStream ss;
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriVars = $operation.http.requestParameters)
+#set($partIndex = 1)
+  ss << m_uri << "${uriParts.get(0)}";
+#foreach($var in $uriVars)
+#set($varIndex = $partIndex - 1)
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#if($partShapeMember.shape.enum)
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#else
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#end
+#if($uriParts.size() > $partIndex)
+  ss << "${uriParts.get($partIndex)}";
+#end
+#set($partIndex = $partIndex + 1)
+#end
+
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_${operation.http.method});
+#else
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_${operation.http.method});
+#end
+  if(outcome.IsSuccess())
+  {
+#if(${operation.result})
+#if($operation.result.shape.hasStreamMembers())
+    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
+#else
+    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
+#end
+#else
+    return ${operation.name}Outcome(NoResult());
+#end
+  }
+  else
+  {
+    return ${operation.name}Outcome(outcome.GetError());
+  }
+}
+
+${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const
+{
+  return std::async(std::launch::async, &${className}::${operation.name}, this, request);
+}
+
+void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&${className}::${operation.name}AsyncHelper, this, request, handler, context);
+}
+
+void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ${operation.name}(request), context);
+}
+
+#else
+${operation.name}Outcome ${className}::${operation.name}() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "${operation.http.requestUri}";
+
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method});
+#else
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method});
+#end
+  if(outcome.IsSuccess())
+  {
+#if(${operation.result})
+#if($operation.result.shape.hasStreamMembers())
+    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
+#else
+    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
+#end
+#else
+    return ${operation.name}Outcome(NoResult());
+#end
+  }
+  else
+  {
+    return ${operation.name}Outcome(outcome.GetError());
+  }
+}
+
+${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
+{
+  return std::async(std::launch::async, &${className}::${operation.name}, this);
+}
+
+void ${className}::${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&${className}::${operation.name}AsyncHelper, this, handler, context);
+}
+
+void ${className}::${operation.name}AsyncHelper(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, ${operation.name}(), context);
+}
+
+#end
+#end

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to retrieve a list of events for an environment.</p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEventsRequest : public ElasticBeanstalkRequest
   {
@@ -35,212 +35,212 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline DescribeEventsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline DescribeEventsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * include only those associated with this application. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
      */
     inline DescribeEventsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline DescribeEventsRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline DescribeEventsRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this application version. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
      */
     inline DescribeEventsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline DescribeEventsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline DescribeEventsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that are associated with this environment configuration. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
      */
     inline DescribeEventsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those associated with this environment. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
      */
     inline DescribeEventsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
@@ -317,20 +317,20 @@ namespace Model
     inline DescribeEventsRequest& WithSeverity(EventSeverity&& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that occur on or after this time. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
      */
     inline double GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that occur on or after this time. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
      */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
-     * those that occur on or after this time. </p>
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
      */
     inline DescribeEventsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
 

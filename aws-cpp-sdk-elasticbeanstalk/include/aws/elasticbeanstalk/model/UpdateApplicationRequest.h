@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>This documentation target is not reported in the API reference.</p>
+   * <p>Request to update an application.</p>
    */
   class AWS_ELASTICBEANSTALK_API UpdateApplicationRequest : public ElasticBeanstalkRequest
   {
@@ -34,49 +34,49 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline UpdateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
     inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to update. If no such application is found,
+     * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */

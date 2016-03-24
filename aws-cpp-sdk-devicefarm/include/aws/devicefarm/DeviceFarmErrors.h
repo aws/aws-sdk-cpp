@@ -51,6 +51,7 @@ enum class AWS_DEVICEFARM_API DeviceFarmErrors
   ARGUMENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IDEMPOTENCY,
   LIMIT_EXCEEDED,
+  NOT_ELIGIBLE,
   NOT_FOUND,
   SERVICE_ACCOUNT
 };
