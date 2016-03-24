@@ -126,6 +126,7 @@ namespace
             DeleteBucket(CalculateBucketName(PUT_MULTIPART_BUCKET_NAME));
             DeleteBucket(CalculateBucketName(ERRORS_TESTING_BUCKET));
             DeleteBucket(CalculateBucketName(INTERRUPT_TESTING_BUCKET));
+            DeleteBucket(CalculateBucketName(PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME));
             Limiter = nullptr;
             Client = nullptr;
             oregonClient = nullptr;
