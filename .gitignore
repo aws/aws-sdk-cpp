@@ -64,3 +64,5 @@ openssl
 zlib
 credentials
 
+#maven
+code-generation/generator/target/
