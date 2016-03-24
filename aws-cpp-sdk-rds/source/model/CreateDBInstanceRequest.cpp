@@ -59,11 +59,13 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
     m_monitoringIntervalHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false)
 {
@@ -214,6 +216,10 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
@@ -225,6 +231,10 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_monitoringRoleArnHasBeenSet)
   {
     ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
   if(m_promotionTierHasBeenSet)
   {

@@ -32,21 +32,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  /**
-   * <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated
-   * gateway. It is a string made of information such as your account, gateway name,
-   * and region. This ARN is used to reference the gateway in other API operations as
-   * well as resource-based authorization.</p> <note>For gateways activated prior to
-   * September 02, 2015 the gateway ARN contains the gateway name rather than the
-   * gateway id. Changing the name of the gateway has no effect on the gateway
-   * ARN.</note>
-   */
-  class AWS_STORAGEGATEWAY_API ActivateGatewayResult
+  class AWS_STORAGEGATEWAY_API SetLocalConsolePasswordResult
   {
   public:
-    ActivateGatewayResult();
-    ActivateGatewayResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ActivateGatewayResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetLocalConsolePasswordResult();
+    SetLocalConsolePasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetLocalConsolePasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -61,13 +52,13 @@ namespace Model
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
 
     
-    inline ActivateGatewayResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
+    inline SetLocalConsolePasswordResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline ActivateGatewayResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline SetLocalConsolePasswordResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
 
     
-    inline ActivateGatewayResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline SetLocalConsolePasswordResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
     Aws::String m_gatewayARN;

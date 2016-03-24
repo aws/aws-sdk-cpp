@@ -704,7 +704,7 @@ namespace Model
         virtual void CopyDBParameterGroupAsync(const Model::CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -712,7 +712,7 @@ namespace Model
         virtual Model::CopyDBSnapshotOutcome CopyDBSnapshot(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
-         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -722,7 +722,7 @@ namespace Model
         virtual Model::CopyDBSnapshotOutcomeCallable CopyDBSnapshotCallable(const Model::CopyDBSnapshotRequest& request) const;
 
         /**
-         * <p> Copies the specified DB Snapshot. The source DB snapshot must be in the
+         * <p> Copies the specified DB snapshot. The source DB snapshot must be in the
          * "available" state. </p> <p>If you are copying from a shared manual DB snapshot,
          * the <code>SourceDBSnapshotIdentifier</code> must be the ARN of the shared DB
          * snapshot.</p>
@@ -2189,7 +2189,7 @@ namespace Model
         virtual void FailoverDBClusterAsync(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
+         * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
          * Amazon RDS Resources</a>.</p>
@@ -2197,7 +2197,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
+         * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
          * Amazon RDS Resources</a>.</p>
@@ -2207,7 +2207,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p> Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
+         * <p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging
          * an Amazon RDS resource, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
          * Amazon RDS Resources</a>.</p>

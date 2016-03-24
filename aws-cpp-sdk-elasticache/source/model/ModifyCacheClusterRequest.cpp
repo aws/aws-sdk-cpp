@@ -39,7 +39,8 @@ ModifyCacheClusterRequest::ModifyCacheClusterRequest() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false)
+    m_snapshotWindowHasBeenSet(false),
+    m_cacheNodeTypeHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,10 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
   if(m_snapshotWindowHasBeenSet)
   {
     ss << "SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
+  }
+  if(m_cacheNodeTypeHasBeenSet)
+  {
+    ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
   ss << "Version=2015-02-02";
   return ss.str();

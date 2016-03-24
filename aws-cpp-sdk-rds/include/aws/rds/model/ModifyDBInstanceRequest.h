@@ -470,7 +470,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -486,7 +486,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -502,7 +502,7 @@ namespace Model
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
-     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p>If
+     * <code>PreferredMaintenanceWindow</code> setting for the DB instance. </p> <p> If
      * this parameter is set to <code>false</code>, changes to the DB instance are
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and will be applied on the next call to <a>RebootDBInstance</a>, or the
@@ -1584,6 +1584,62 @@ namespace Model
     inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to move the instance to. </p> <p>The
+     * specified Active Directory Domain must be created prior to this operation.
+     * Currently only a SQL Server instance can be created in a Active Directory
+     * Domain.</p>
+     */
+    inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+    /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
      * otherwise false. The default is false.</p>
      */
@@ -1638,9 +1694,9 @@ namespace Model
      * <code>1150-65535</code></p> <p> <b>MariaDB</b> </p> <p> Default:
      * <code>3306</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
      * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code></p> <p> Valid Values:
-     * <code>1150-65535</code></p> <p> <b>Oracle</b> </p> <p> Default:
-     * <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p> <b>SQL
-     * Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
+     * <code>1150-65535</code></p> <p>Type: Integer </p> <p> <b>Oracle</b> </p> <p>
+     * Default: <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
+     * <b>SQL Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
      * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
      * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
@@ -1658,9 +1714,9 @@ namespace Model
      * <code>1150-65535</code></p> <p> <b>MariaDB</b> </p> <p> Default:
      * <code>3306</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
      * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code></p> <p> Valid Values:
-     * <code>1150-65535</code></p> <p> <b>Oracle</b> </p> <p> Default:
-     * <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p> <b>SQL
-     * Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
+     * <code>1150-65535</code></p> <p>Type: Integer </p> <p> <b>Oracle</b> </p> <p>
+     * Default: <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
+     * <b>SQL Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
      * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
      * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
@@ -1678,9 +1734,9 @@ namespace Model
      * <code>1150-65535</code></p> <p> <b>MariaDB</b> </p> <p> Default:
      * <code>3306</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
      * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code></p> <p> Valid Values:
-     * <code>1150-65535</code></p> <p> <b>Oracle</b> </p> <p> Default:
-     * <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p> <b>SQL
-     * Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
+     * <code>1150-65535</code></p> <p>Type: Integer </p> <p> <b>Oracle</b> </p> <p>
+     * Default: <code>1521</code></p> <p> Valid Values: <code>1150-65535</code></p> <p>
+     * <b>SQL Server</b> </p> <p> Default: <code>1433</code></p> <p> Valid Values:
      * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
      * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
@@ -1815,6 +1871,48 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
     /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
@@ -1889,6 +1987,8 @@ namespace Model
     bool m_tdeCredentialPasswordHasBeenSet;
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
     long m_monitoringInterval;
@@ -1899,6 +1999,8 @@ namespace Model
     bool m_publiclyAccessibleHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
     long m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };

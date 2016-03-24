@@ -861,7 +861,7 @@ namespace Model
      * reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
      * snapshot was created. This field is otherwise ignored: Manual snapshots do not
      * expire, and can only be deleted using the <i>DeleteSnapshot</i> action. </p>
-     * <p><b>Important</b><br>If the value of SnapshotRetentionLimit is set to zero
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero
      * (0), backups are turned off.</p>
      */
     inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
@@ -872,7 +872,7 @@ namespace Model
      * reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
      * snapshot was created. This field is otherwise ignored: Manual snapshots do not
      * expire, and can only be deleted using the <i>DeleteSnapshot</i> action. </p>
-     * <p><b>Important</b><br>If the value of SnapshotRetentionLimit is set to zero
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero
      * (0), backups are turned off.</p>
      */
     inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
@@ -883,7 +883,7 @@ namespace Model
      * reflects the <i>SnapshotRetentionLimit</i> for the source cache cluster when the
      * snapshot was created. This field is otherwise ignored: Manual snapshots do not
      * expire, and can only be deleted using the <i>DeleteSnapshot</i> action. </p>
-     * <p><b>Important</b><br>If the value of SnapshotRetentionLimit is set to zero
+     * <p><b>Important</b><br/>If the value of SnapshotRetentionLimit is set to zero
      * (0), backups are turned off.</p>
      */
     inline Snapshot& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}

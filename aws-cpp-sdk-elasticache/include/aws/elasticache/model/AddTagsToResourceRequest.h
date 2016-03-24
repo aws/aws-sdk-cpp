@@ -36,44 +36,79 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the resource to which the tags are to be added, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information on ARNs, go to <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

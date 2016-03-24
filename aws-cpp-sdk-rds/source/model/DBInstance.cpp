@@ -73,6 +73,7 @@ DBInstance::DBInstance() :
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
@@ -134,6 +135,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
@@ -422,6 +424,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
       m_cACertificateIdentifierHasBeenSet = true;
     }
+    XmlNode domainMembershipsNode = resultNode.FirstChild("DomainMemberships");
+    if(!domainMembershipsNode.IsNull())
+    {
+      XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
+      while(!domainMembershipsMember.IsNull())
+      {
+        m_domainMemberships.push_back(domainMembershipsMember);
+        domainMembershipsMember = domainMembershipsMember.NextNode("DomainMembership");
+      }
+
+      m_domainMembershipsHasBeenSet = true;
+    }
     XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
     if(!copyTagsToSnapshotNode.IsNull())
     {
@@ -655,6 +669,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
+  if(m_domainMembershipsHasBeenSet)
+  {
+      unsigned domainMembershipsIdx = 1;
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::StringStream domainMembershipsSs;
+        domainMembershipsSs << location << index << locationValue << ".DomainMembership." << domainMembershipsIdx++;
+        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
+  }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
       oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
@@ -874,6 +898,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_cACertificateIdentifierHasBeenSet)
   {
       oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_domainMembershipsHasBeenSet)
+  {
+      unsigned domainMembershipsIdx = 1;
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::StringStream domainMembershipsSs;
+        domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
+        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
   }
   if(m_copyTagsToSnapshotHasBeenSet)
   {

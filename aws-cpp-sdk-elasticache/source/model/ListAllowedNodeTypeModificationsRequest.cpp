@@ -12,35 +12,30 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/elasticache/model/CopySnapshotRequest.h>
+#include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CopySnapshotRequest::CopySnapshotRequest() : 
-    m_sourceSnapshotNameHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false),
-    m_targetBucketHasBeenSet(false)
+ListAllowedNodeTypeModificationsRequest::ListAllowedNodeTypeModificationsRequest() : 
+    m_cacheClusterIdHasBeenSet(false),
+    m_replicationGroupIdHasBeenSet(false)
 {
 }
 
-Aws::String CopySnapshotRequest::SerializePayload() const
+Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CopySnapshot&";
-  if(m_sourceSnapshotNameHasBeenSet)
+  ss << "Action=ListAllowedNodeTypeModifications&";
+  if(m_cacheClusterIdHasBeenSet)
   {
-    ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
+    ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
-  if(m_targetSnapshotNameHasBeenSet)
+  if(m_replicationGroupIdHasBeenSet)
   {
-    ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
-  }
-  if(m_targetBucketHasBeenSet)
-  {
-    ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
+    ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
   ss << "Version=2015-02-02";
   return ss.str();

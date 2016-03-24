@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline const Aws::String& GetCacheSecurityGroupName() const{ return m_cacheSecurityGroupName; }
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline void SetCacheSecurityGroupName(const char* value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName.assign(value); }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(const Aws::String& value) { SetCacheSecurityGroupName(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Cannot be the word "Default".</p> <p>Example:
+     * characters. Cannot be the word &quot;Default".</p> <p>Example:
      * <code>mysecuritygroup</code></p>
      */
     inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}

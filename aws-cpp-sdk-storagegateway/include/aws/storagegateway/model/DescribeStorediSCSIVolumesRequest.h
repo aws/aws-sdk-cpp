@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A JSON Object containing a list of
+   * <p>A JSON object containing a list of
    * <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.</p>
    */
   class AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesRequest : public StorageGatewayRequest

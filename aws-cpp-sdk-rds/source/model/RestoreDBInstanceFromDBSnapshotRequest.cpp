@@ -43,8 +43,10 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_tdeCredentialPasswordHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false)
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false)
 {
 }
 
@@ -129,9 +131,17 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   {
     ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
   }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+  }
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

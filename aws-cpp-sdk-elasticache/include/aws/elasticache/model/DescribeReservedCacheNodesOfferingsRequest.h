@@ -387,49 +387,56 @@ namespace Model
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(value); return *this;}
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
      * offerings matching the specified offering type.</p> <p>Valid Values:
-     * <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"</code></p>
+     * <code>&quot;Light Utilization&quot;|&quot;Medium Utilization&quot;|&quot;Heavy
+     * Utilization&quot;</code></p>
      */
     inline DescribeReservedCacheNodesOfferingsRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 

@@ -25,6 +25,7 @@
 #include <aws/rds/model/DBParameterGroupStatus.h>
 #include <aws/rds/model/OptionGroupMembership.h>
 #include <aws/rds/model/DBInstanceStatusInfo.h>
+#include <aws/rds/model/DomainMembership.h>
 
 namespace Aws
 {
@@ -1461,6 +1462,48 @@ namespace Model
     inline DBInstance& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline const Aws::Vector<DomainMembership>& GetDomainMemberships() const{ return m_domainMemberships; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline void SetDomainMemberships(const Aws::Vector<DomainMembership>& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships = value; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline void SetDomainMemberships(Aws::Vector<DomainMembership>&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships = value; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline DBInstance& WithDomainMemberships(const Aws::Vector<DomainMembership>& value) { SetDomainMemberships(value); return *this;}
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline DBInstance& WithDomainMemberships(Aws::Vector<DomainMembership>&& value) { SetDomainMemberships(value); return *this;}
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline DBInstance& AddDomainMemberships(const DomainMembership& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(value); return *this; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * instance.</p>
+     */
+    inline DBInstance& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(value); return *this; }
+
+    /**
      * <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
      * instance.</p>
      */
@@ -1686,6 +1729,8 @@ namespace Model
     bool m_dbiResourceIdHasBeenSet;
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+    Aws::Vector<DomainMembership> m_domainMemberships;
+    bool m_domainMembershipsHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
     long m_monitoringInterval;

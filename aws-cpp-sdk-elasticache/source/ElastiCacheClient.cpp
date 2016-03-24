@@ -53,6 +53,7 @@
 #include <aws/elasticache/model/DescribeReservedCacheNodesRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsRequest.h>
 #include <aws/elasticache/model/DescribeSnapshotsRequest.h>
+#include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/elasticache/model/ListTagsForResourceRequest.h>
 #include <aws/elasticache/model/ModifyCacheClusterRequest.h>
 #include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
@@ -935,6 +936,36 @@ void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& r
 void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSnapshots(request), context);
+}
+
+ListAllowedNodeTypeModificationsOutcome ElastiCacheClient::ListAllowedNodeTypeModifications(const ListAllowedNodeTypeModificationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListAllowedNodeTypeModificationsOutcome(ListAllowedNodeTypeModificationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAllowedNodeTypeModificationsOutcome(outcome.GetError());
+  }
+}
+
+ListAllowedNodeTypeModificationsOutcomeCallable ElastiCacheClient::ListAllowedNodeTypeModificationsCallable(const ListAllowedNodeTypeModificationsRequest& request) const
+{
+  return std::async(std::launch::async, &ElastiCacheClient::ListAllowedNodeTypeModifications, this, request);
+}
+
+void ElastiCacheClient::ListAllowedNodeTypeModificationsAsync(const ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElastiCacheClient::ListAllowedNodeTypeModificationsAsyncHelper, this, request, handler, context);
+}
+
+void ElastiCacheClient::ListAllowedNodeTypeModificationsAsyncHelper(const ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAllowedNodeTypeModifications(request), context);
 }
 
 ListTagsForResourceOutcome ElastiCacheClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
