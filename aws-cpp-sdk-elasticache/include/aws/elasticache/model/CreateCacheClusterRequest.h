@@ -193,8 +193,8 @@ namespace Model
     /**
      * <p>Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in the
-     * cluster's region.</p> <p>This parameter is only supported for Memcached cache
-     * clusters.</p> <p>If the <code>AZMode</code> and
+     * cluster&apos;s region.</p> <p>This parameter is only supported for Memcached
+     * cache clusters.</p> <p>If the <code>AZMode</code> and
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
@@ -203,8 +203,8 @@ namespace Model
     /**
      * <p>Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in the
-     * cluster's region.</p> <p>This parameter is only supported for Memcached cache
-     * clusters.</p> <p>If the <code>AZMode</code> and
+     * cluster&apos;s region.</p> <p>This parameter is only supported for Memcached
+     * cache clusters.</p> <p>If the <code>AZMode</code> and
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
@@ -213,8 +213,8 @@ namespace Model
     /**
      * <p>Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in the
-     * cluster's region.</p> <p>This parameter is only supported for Memcached cache
-     * clusters.</p> <p>If the <code>AZMode</code> and
+     * cluster&apos;s region.</p> <p>This parameter is only supported for Memcached
+     * cache clusters.</p> <p>If the <code>AZMode</code> and
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
@@ -223,8 +223,8 @@ namespace Model
     /**
      * <p>Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in the
-     * cluster's region.</p> <p>This parameter is only supported for Memcached cache
-     * clusters.</p> <p>If the <code>AZMode</code> and
+     * cluster&apos;s region.</p> <p>This parameter is only supported for Memcached
+     * cache clusters.</p> <p>If the <code>AZMode</code> and
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
@@ -233,8 +233,8 @@ namespace Model
     /**
      * <p>Specifies whether the nodes in this Memcached node group are created in a
      * single Availability Zone or created across multiple Availability Zones in the
-     * cluster's region.</p> <p>This parameter is only supported for Memcached cache
-     * clusters.</p> <p>If the <code>AZMode</code> and
+     * cluster&apos;s region.</p> <p>This parameter is only supported for Memcached
+     * cache clusters.</p> <p>If the <code>AZMode</code> and
      * <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes
      * <code>single-az</code> mode.</p>
      */
@@ -315,9 +315,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const{ return m_preferredAvailabilityZones; }
 
@@ -333,9 +333,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline void SetPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = value; }
 
@@ -351,9 +351,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline void SetPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = value; }
 
@@ -369,9 +369,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetPreferredAvailabilityZones(value); return *this;}
 
@@ -387,9 +387,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline CreateCacheClusterRequest& WithPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetPreferredAvailabilityZones(value); return *this;}
 
@@ -405,9 +405,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(const Aws::String& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
@@ -423,9 +423,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(Aws::String&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
@@ -441,9 +441,9 @@ namespace Model
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p> <p>Example: One Memcached node in each of three
      * different Availability Zones:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;PreferredAvailabilityZones.member.3=us-west-2c]]></code></p>
      * <p>Example: All three Memcached nodes in one Availability Zone:
-     * <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a</code></p>
+     * <code><![CDATA[PreferredAvailabilityZones.member.1=us-west-2a&amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;PreferredAvailabilityZones.member.3=us-west-2a]]></code></p>
      */
     inline CreateCacheClusterRequest& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
@@ -732,49 +732,91 @@ namespace Model
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline CreateCacheClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline CreateCacheClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the cache engine to be used for this cache cluster. To
      * view the supported cache engine versions, use the
-     * <i>DescribeCacheEngineVersions</i> action.</p>
+     * <i>DescribeCacheEngineVersions</i> action.</p> <p><b>Important:</b> You can
+     * upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing cache cluster or replication group and create it anew with the earlier
+     * engine version. </p>
      */
     inline CreateCacheClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

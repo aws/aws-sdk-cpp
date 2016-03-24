@@ -112,51 +112,51 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithReplicationGroupDescription(const char* value) { SetReplicationGroupDescription(value); return *this;}
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline const Aws::String& GetPrimaryClusterId() const{ return m_primaryClusterId; }
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline void SetPrimaryClusterId(const Aws::String& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline void SetPrimaryClusterId(Aws::String&& value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId = value; }
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline void SetPrimaryClusterId(const char* value) { m_primaryClusterIdHasBeenSet = true; m_primaryClusterId.assign(value); }
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline ModifyReplicationGroupRequest& WithPrimaryClusterId(const Aws::String& value) { SetPrimaryClusterId(value); return *this;}
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline ModifyReplicationGroupRequest& WithPrimaryClusterId(Aws::String&& value) { SetPrimaryClusterId(value); return *this;}
 
     /**
-     * <p>If this parameter is specified, ElastiCache will promote each of the cache
-     * clusters in the specified replication group to the primary role. The nodes of
-     * all other cache clusters in the replication group will be read replicas.</p>
+     * <p>If this parameter is specified, ElastiCache will promote the specified
+     * cluster in the specified replication group to the primary role. The nodes of all
+     * other clusters in the replication group will be read replicas.</p>
      */
     inline ModifyReplicationGroupRequest& WithPrimaryClusterId(const char* value) { SetPrimaryClusterId(value); return *this;}
 
@@ -235,7 +235,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
 
@@ -245,7 +245,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
@@ -255,7 +255,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
@@ -265,7 +265,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
 
@@ -275,7 +275,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(value); return *this;}
 
@@ -285,7 +285,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -295,7 +295,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -305,7 +305,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * characters. Must not be &quot;Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -631,43 +631,85 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline ModifyReplicationGroupRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline ModifyReplicationGroupRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p>
+     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
+     * version. If you want to use an earlier engine version, you must delete the
+     * existing replication group and create it anew with the earlier engine version.
+     * </p>
      */
     inline ModifyReplicationGroupRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -690,7 +732,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
@@ -699,7 +741,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
@@ -708,7 +750,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
@@ -776,6 +818,55 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>A valid cache node type that you want to scale this replication group to. The
+     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
+     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
   private:
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
@@ -809,6 +900,8 @@ namespace Model
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+    Aws::String m_cacheNodeType;
+    bool m_cacheNodeTypeHasBeenSet;
   };
 
 } // namespace Model

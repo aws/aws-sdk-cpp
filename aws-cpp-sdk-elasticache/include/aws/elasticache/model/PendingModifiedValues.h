@@ -150,6 +150,48 @@ namespace Model
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline PendingModifiedValues& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline PendingModifiedValues& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>The cache node type that this cache cluster or replication group will be
+     * scaled to.</p>
+     */
+    inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
   private:
     long m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
@@ -157,6 +199,8 @@ namespace Model
     bool m_cacheNodeIdsToRemoveHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+    Aws::String m_cacheNodeType;
+    bool m_cacheNodeTypeHasBeenSet;
   };
 
 } // namespace Model

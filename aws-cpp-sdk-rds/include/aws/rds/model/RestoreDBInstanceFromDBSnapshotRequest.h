@@ -894,6 +894,41 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
     /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+    /**
      * <p>True to copy all tags from the restored DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.</p>
      */
@@ -910,6 +945,48 @@ namespace Model
      * instance; otherwise false. The default is false.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
@@ -948,8 +1025,12 @@ namespace Model
     bool m_tdeCredentialArnHasBeenSet;
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
   };
 
 } // namespace Model

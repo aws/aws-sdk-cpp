@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>UpdateVTLDeviceTypeInput</p>
    */
   class AWS_STORAGEGATEWAY_API UpdateVTLDeviceTypeRequest : public StorageGatewayRequest
   {

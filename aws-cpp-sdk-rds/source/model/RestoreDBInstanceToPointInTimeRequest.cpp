@@ -48,7 +48,9 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_tagsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
-    m_tdeCredentialPasswordHasBeenSet(false)
+    m_tdeCredentialPasswordHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false)
 {
 }
 
@@ -144,6 +146,14 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_tdeCredentialPasswordHasBeenSet)
   {
     ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
+  }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
   ss << "Version=2014-10-31";
   return ss.str();

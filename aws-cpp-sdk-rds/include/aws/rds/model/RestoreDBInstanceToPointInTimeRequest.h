@@ -943,6 +943,83 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to restore the instance in. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
   private:
     Aws::String m_sourceDBInstanceIdentifier;
     bool m_sourceDBInstanceIdentifierHasBeenSet;
@@ -986,6 +1063,10 @@ namespace Model
     bool m_tdeCredentialArnHasBeenSet;
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
   };
 
 } // namespace Model

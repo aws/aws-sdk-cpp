@@ -2433,6 +2433,41 @@ namespace Model
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
     /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p> Specify the Active Directory Domain to create the instance in. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+    /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
      * otherwise false. The default is false.</p>
      */
@@ -2562,6 +2597,48 @@ namespace Model
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
     /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p> Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service. </p>
+     */
+    inline CreateDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
@@ -2654,12 +2731,16 @@ namespace Model
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
     long m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
     long m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };

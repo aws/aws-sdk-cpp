@@ -397,44 +397,37 @@ namespace Model
     inline CacheCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline CacheCluster& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline CacheCluster& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version of the cache engine version that is used in this cache
-     * cluster.</p>
+     * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline CacheCluster& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -517,43 +510,50 @@ namespace Model
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline void SetPreferredAvailabilityZone(const Aws::String& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline void SetPreferredAvailabilityZone(Aws::String&& value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone = value; }
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline void SetPreferredAvailabilityZone(const char* value) { m_preferredAvailabilityZoneHasBeenSet = true; m_preferredAvailabilityZone.assign(value); }
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline CacheCluster& WithPreferredAvailabilityZone(const Aws::String& value) { SetPreferredAvailabilityZone(value); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline CacheCluster& WithPreferredAvailabilityZone(Aws::String&& value) { SetPreferredAvailabilityZone(value); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
-     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     * &quot;Multiple&quot; if the cache nodes are located in different Availability
+     * Zones.</p>
      */
     inline CacheCluster& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
 
@@ -902,7 +902,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
@@ -911,7 +911,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
@@ -920,7 +920,7 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br>If the
+     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
      * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline CacheCluster& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}

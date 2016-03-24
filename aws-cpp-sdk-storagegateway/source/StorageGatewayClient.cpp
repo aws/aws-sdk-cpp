@@ -71,6 +71,7 @@
 #include <aws/storagegateway/model/ResetCacheRequest.h>
 #include <aws/storagegateway/model/RetrieveTapeArchiveRequest.h>
 #include <aws/storagegateway/model/RetrieveTapeRecoveryPointRequest.h>
+#include <aws/storagegateway/model/SetLocalConsolePasswordRequest.h>
 #include <aws/storagegateway/model/ShutdownGatewayRequest.h>
 #include <aws/storagegateway/model/StartGatewayRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
@@ -1536,6 +1537,37 @@ void StorageGatewayClient::RetrieveTapeRecoveryPointAsync(const RetrieveTapeReco
 void StorageGatewayClient::RetrieveTapeRecoveryPointAsyncHelper(const RetrieveTapeRecoveryPointRequest& request, const RetrieveTapeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RetrieveTapeRecoveryPoint(request), context);
+}
+
+SetLocalConsolePasswordOutcome StorageGatewayClient::SetLocalConsolePassword(const SetLocalConsolePasswordRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetLocalConsolePasswordOutcome(SetLocalConsolePasswordResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetLocalConsolePasswordOutcome(outcome.GetError());
+  }
+}
+
+SetLocalConsolePasswordOutcomeCallable StorageGatewayClient::SetLocalConsolePasswordCallable(const SetLocalConsolePasswordRequest& request) const
+{
+  return std::async(std::launch::async, &StorageGatewayClient::SetLocalConsolePassword, this, request);
+}
+
+void StorageGatewayClient::SetLocalConsolePasswordAsync(const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&StorageGatewayClient::SetLocalConsolePasswordAsyncHelper, this, request, handler, context);
+}
+
+void StorageGatewayClient::SetLocalConsolePasswordAsyncHelper(const SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetLocalConsolePassword(request), context);
 }
 
 ShutdownGatewayOutcome StorageGatewayClient::ShutdownGateway(const ShutdownGatewayRequest& request) const

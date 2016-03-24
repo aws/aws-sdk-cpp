@@ -49,6 +49,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_tdeCredentialArnHasBeenSet(false),
     m_tdeCredentialPasswordHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
@@ -58,6 +59,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_monitoringRoleArnHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false)
 {
@@ -167,6 +169,10 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
@@ -186,6 +192,10 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_monitoringRoleArnHasBeenSet)
   {
     ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
   if(m_promotionTierHasBeenSet)
   {
