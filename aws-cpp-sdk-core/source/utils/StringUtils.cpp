@@ -122,12 +122,12 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
     size_t unsafeLength = strlen(unsafe);
     for (auto i = unsafe, n = unsafe + unsafeLength; i != n; ++i)
     {
-        char c = *i;
+        int c = *i;
 		//MSVC 2015 has an assertion that c is positive in isalnum(). This breaks unicode support.
 		//bypass that with the first check.
         if (c >= 0 && (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~'))
         {
-            escaped << c;
+            escaped << (char)c;
         }
         else
         {
