@@ -84,83 +84,83 @@ namespace Model
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
      */
     inline const TableRestoreStatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
      */
     inline void SetStatus(const TableRestoreStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
      */
     inline void SetStatus(TableRestoreStatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
      */
     inline TableRestoreStatus& WithStatus(const TableRestoreStatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A value that describes the current state of the table restore request.</p>
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>CANCELLED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code></p>
      */
     inline TableRestoreStatus& WithStatus(TableRestoreStatusType&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
      * <p>A description of the status of the table restore request. Status values
-     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELLED</code>,
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline TableRestoreStatus& WithMessage(const char* value) { SetMessage(value); return *this;}

@@ -46,7 +46,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -60,7 +60,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -74,7 +74,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -88,7 +88,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -102,7 +102,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -116,7 +116,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see
@@ -130,7 +130,7 @@ namespace Model
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
      * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
-     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>, insert a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
      * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
      * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SizeConstraintSet</code> from AWS WAF (see

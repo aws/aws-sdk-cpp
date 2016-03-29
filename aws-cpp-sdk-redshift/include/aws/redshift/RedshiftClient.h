@@ -60,6 +60,7 @@
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
+#include <aws/redshift/model/ModifyClusterIamRolesResult.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupResult.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupResult.h>
 #include <aws/redshift/model/ModifyEventSubscriptionResult.h>
@@ -167,6 +168,7 @@ namespace Model
         class EnableLoggingRequest;
         class EnableSnapshotCopyRequest;
         class ModifyClusterRequest;
+        class ModifyClusterIamRolesRequest;
         class ModifyClusterParameterGroupRequest;
         class ModifyClusterSubnetGroupRequest;
         class ModifyEventSubscriptionRequest;
@@ -229,6 +231,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> EnableLoggingOutcome;
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> EnableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterIamRolesOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterSubnetGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<RedshiftErrors>> ModifyEventSubscriptionOutcome;
@@ -291,6 +294,7 @@ namespace Model
         typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
         typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
+        typedef std::future<ModifyClusterIamRolesOutcome> ModifyClusterIamRolesOutcomeCallable;
         typedef std::future<ModifyClusterParameterGroupOutcome> ModifyClusterParameterGroupOutcomeCallable;
         typedef std::future<ModifyClusterSubnetGroupOutcome> ModifyClusterSubnetGroupOutcomeCallable;
         typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
@@ -356,6 +360,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterIamRolesRequest&, const Model::ModifyClusterIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterIamRolesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterParameterGroupRequest&, const Model::ModifyClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterSubnetGroupRequest&, const Model::ModifyClusterSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
@@ -2068,10 +2073,10 @@ namespace Model
          * <p>Lists the status of one or more table restore requests made using the
          * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
          * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
+         * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
+         * requests ordered by the date and time of the request in ascending order.
+         * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
+         * table specified by <code>TableRestoreRequestId</code>.</p>
          */
         virtual Model::DescribeTableRestoreStatusOutcome DescribeTableRestoreStatus(const Model::DescribeTableRestoreStatusRequest& request) const;
 
@@ -2079,10 +2084,10 @@ namespace Model
          * <p>Lists the status of one or more table restore requests made using the
          * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
          * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
+         * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
+         * requests ordered by the date and time of the request in ascending order.
+         * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
+         * table specified by <code>TableRestoreRequestId</code>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2092,10 +2097,10 @@ namespace Model
          * <p>Lists the status of one or more table restore requests made using the
          * <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value
          * for the <code>TableRestoreRequestId</code> parameter, then
-         * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
-         * table restore requests. Otherwise <code>DescribeTableRestoreStatus</code>
-         * returns the status of the table specified by
-         * <code>TableRestoreRequestId</code>.</p>
+         * <code>DescribeTableRestoreStatus</code> returns the status of all table restore
+         * requests ordered by the date and time of the request in ascending order.
+         * Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the
+         * table specified by <code>TableRestoreRequestId</code>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2307,6 +2312,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
+         * be used by the cluster to access other AWS services. </p> <p>A cluster can have
+         * up to 10 IAM roles associated at any time. </p>
+         */
+        virtual Model::ModifyClusterIamRolesOutcome ModifyClusterIamRoles(const Model::ModifyClusterIamRolesRequest& request) const;
+
+        /**
+         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
+         * be used by the cluster to access other AWS services. </p> <p>A cluster can have
+         * up to 10 IAM roles associated at any time. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyClusterIamRolesOutcomeCallable ModifyClusterIamRolesCallable(const Model::ModifyClusterIamRolesRequest& request) const;
+
+        /**
+         * <p>Modifies the list of AWS Identity and Access Management (IAM) roles that can
+         * be used by the cluster to access other AWS services. </p> <p>A cluster can have
+         * up to 10 IAM roles associated at any time. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyClusterIamRolesAsync(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Modifies the parameters of a parameter group. </p> <p> For more information
@@ -2770,6 +2800,7 @@ namespace Model
         void EnableLoggingAsyncHelper(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyClusterIamRolesAsyncHelper(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterParameterGroupAsyncHelper(const Model::ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterSubnetGroupAsyncHelper(const Model::ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

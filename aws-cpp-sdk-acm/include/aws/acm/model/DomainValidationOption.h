@@ -85,7 +85,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -101,7 +101,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -117,7 +117,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -133,7 +133,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -149,7 +149,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -165,7 +165,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>
@@ -181,7 +181,7 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS for the base domain and
-     * the and the following five addresses: <ul> <li>admin@subdomain.example.com</li>
+     * the following five addresses: <ul> <li>admin@subdomain.example.com</li>
      * <li>administrator@subdomain.example.com</li>
      * <li>hostmaster@subdomain.example.com</li>
      * <li>postmaster@subdomain.example.com</li>

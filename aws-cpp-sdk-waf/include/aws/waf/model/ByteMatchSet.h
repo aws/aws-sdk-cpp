@@ -55,7 +55,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -67,7 +67,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -79,7 +79,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -91,7 +91,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -103,7 +103,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -115,7 +115,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by
@@ -127,7 +127,7 @@ namespace Model
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
      * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
-     * <a>UpdateByteMatchSet</a>, insert a <code>ByteMatchSet</code> into a
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
      * <code>Rule</code> or delete one from a <code>Rule</code> (see
      * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
      * <a>DeleteByteMatchSet</a>).</p> <p><code>ByteMatchSetId</code> is returned by

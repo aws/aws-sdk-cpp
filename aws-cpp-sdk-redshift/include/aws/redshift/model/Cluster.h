@@ -28,6 +28,7 @@
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
 #include <aws/redshift/model/ClusterNode.h>
 #include <aws/redshift/model/Tag.h>
+#include <aws/redshift/model/ClusterIamRole.h>
 
 namespace Aws
 {
@@ -1164,6 +1165,48 @@ namespace Model
      */
     inline Cluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline const Aws::Vector<ClusterIamRole>& GetIamRoles() const{ return m_iamRoles; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline void SetIamRoles(const Aws::Vector<ClusterIamRole>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline void SetIamRoles(Aws::Vector<ClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& WithIamRoles(const Aws::Vector<ClusterIamRole>& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& WithIamRoles(Aws::Vector<ClusterIamRole>&& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& AddIamRoles(const ClusterIamRole& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
   private:
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
@@ -1227,6 +1270,8 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::Vector<ClusterIamRole> m_iamRoles;
+    bool m_iamRolesHasBeenSet;
   };
 
 } // namespace Model

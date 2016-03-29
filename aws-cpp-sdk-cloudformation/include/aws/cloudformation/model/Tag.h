@@ -32,9 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>The Tag type is used by <code>CreateStack</code> in the <code>Tags</code>
-   * parameter. It allows you to specify a key-value pair that can be used to store
-   * information related to cost allocation for an AWS CloudFormation stack.</p>
+   * <p>The Tag type enables you to specify a key-value pair that can be used to
+   * store information about an AWS CloudFormation stack.</p>
    */
   class AWS_CLOUDFORMATION_API Tag
   {

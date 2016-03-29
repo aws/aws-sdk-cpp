@@ -1401,6 +1401,78 @@ namespace Model
      */
     inline CreateClusterRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline CreateClusterRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline CreateClusterRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline CreateClusterRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline CreateClusterRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services. You must supply the IAM roles in their
+     * Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single
+     * request.</p> <p>A cluster can have up to 10 IAM roles associated at any time.
+     * </p>
+     */
+    inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
   private:
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
@@ -1452,6 +1524,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+    Aws::Vector<Aws::String> m_iamRoles;
+    bool m_iamRolesHasBeenSet;
   };
 
 } // namespace Model
