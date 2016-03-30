@@ -103,34 +103,11 @@ namespace Model
      */
     inline CopySnapshotRequest& WithTargetSnapshotName(const char* value) { SetTargetSnapshotName(value); return *this;}
 
-    
-    inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
-
-    
-    inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
-
-    
-    inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
-
-    
-    inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
-
-    
-    inline CopySnapshotRequest& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
-
-    
-    inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(value); return *this;}
-
-    
-    inline CopySnapshotRequest& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
-
   private:
     Aws::String m_sourceSnapshotName;
     bool m_sourceSnapshotNameHasBeenSet;
     Aws::String m_targetSnapshotName;
     bool m_targetSnapshotNameHasBeenSet;
-    Aws::String m_targetBucket;
-    bool m_targetBucketHasBeenSet;
   };
 
 } // namespace Model
