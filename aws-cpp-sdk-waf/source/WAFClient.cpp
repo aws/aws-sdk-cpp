@@ -32,12 +32,14 @@
 #include <aws/waf/model/CreateSizeConstraintSetRequest.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/CreateWebACLRequest.h>
+#include <aws/waf/model/CreateXssMatchSetRequest.h>
 #include <aws/waf/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf/model/DeleteIPSetRequest.h>
 #include <aws/waf/model/DeleteRuleRequest.h>
 #include <aws/waf/model/DeleteSizeConstraintSetRequest.h>
 #include <aws/waf/model/DeleteSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/DeleteWebACLRequest.h>
+#include <aws/waf/model/DeleteXssMatchSetRequest.h>
 #include <aws/waf/model/GetByteMatchSetRequest.h>
 #include <aws/waf/model/GetChangeTokenRequest.h>
 #include <aws/waf/model/GetChangeTokenStatusRequest.h>
@@ -47,18 +49,21 @@
 #include <aws/waf/model/GetSizeConstraintSetRequest.h>
 #include <aws/waf/model/GetSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/GetWebACLRequest.h>
+#include <aws/waf/model/GetXssMatchSetRequest.h>
 #include <aws/waf/model/ListByteMatchSetsRequest.h>
 #include <aws/waf/model/ListIPSetsRequest.h>
 #include <aws/waf/model/ListRulesRequest.h>
 #include <aws/waf/model/ListSizeConstraintSetsRequest.h>
 #include <aws/waf/model/ListSqlInjectionMatchSetsRequest.h>
 #include <aws/waf/model/ListWebACLsRequest.h>
+#include <aws/waf/model/ListXssMatchSetsRequest.h>
 #include <aws/waf/model/UpdateByteMatchSetRequest.h>
 #include <aws/waf/model/UpdateIPSetRequest.h>
 #include <aws/waf/model/UpdateRuleRequest.h>
 #include <aws/waf/model/UpdateSizeConstraintSetRequest.h>
 #include <aws/waf/model/UpdateSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/UpdateWebACLRequest.h>
+#include <aws/waf/model/UpdateXssMatchSetRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -308,6 +313,37 @@ void WAFClient::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, cons
   handler(this, request, CreateWebACL(request), context);
 }
 
+CreateXssMatchSetOutcome WAFClient::CreateXssMatchSet(const CreateXssMatchSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateXssMatchSetOutcome(CreateXssMatchSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateXssMatchSetOutcome(outcome.GetError());
+  }
+}
+
+CreateXssMatchSetOutcomeCallable WAFClient::CreateXssMatchSetCallable(const CreateXssMatchSetRequest& request) const
+{
+  return std::async(std::launch::async, &WAFClient::CreateXssMatchSet, this, request);
+}
+
+void WAFClient::CreateXssMatchSetAsync(const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&WAFClient::CreateXssMatchSetAsyncHelper, this, request, handler, context);
+}
+
+void WAFClient::CreateXssMatchSetAsyncHelper(const CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateXssMatchSet(request), context);
+}
+
 DeleteByteMatchSetOutcome WAFClient::DeleteByteMatchSet(const DeleteByteMatchSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -492,6 +528,37 @@ void WAFClient::DeleteWebACLAsync(const DeleteWebACLRequest& request, const Dele
 void WAFClient::DeleteWebACLAsyncHelper(const DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWebACL(request), context);
+}
+
+DeleteXssMatchSetOutcome WAFClient::DeleteXssMatchSet(const DeleteXssMatchSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteXssMatchSetOutcome(DeleteXssMatchSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteXssMatchSetOutcome(outcome.GetError());
+  }
+}
+
+DeleteXssMatchSetOutcomeCallable WAFClient::DeleteXssMatchSetCallable(const DeleteXssMatchSetRequest& request) const
+{
+  return std::async(std::launch::async, &WAFClient::DeleteXssMatchSet, this, request);
+}
+
+void WAFClient::DeleteXssMatchSetAsync(const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&WAFClient::DeleteXssMatchSetAsyncHelper, this, request, handler, context);
+}
+
+void WAFClient::DeleteXssMatchSetAsyncHelper(const DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteXssMatchSet(request), context);
 }
 
 GetByteMatchSetOutcome WAFClient::GetByteMatchSet(const GetByteMatchSetRequest& request) const
@@ -773,6 +840,37 @@ void WAFClient::GetWebACLAsyncHelper(const GetWebACLRequest& request, const GetW
   handler(this, request, GetWebACL(request), context);
 }
 
+GetXssMatchSetOutcome WAFClient::GetXssMatchSet(const GetXssMatchSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetXssMatchSetOutcome(GetXssMatchSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetXssMatchSetOutcome(outcome.GetError());
+  }
+}
+
+GetXssMatchSetOutcomeCallable WAFClient::GetXssMatchSetCallable(const GetXssMatchSetRequest& request) const
+{
+  return std::async(std::launch::async, &WAFClient::GetXssMatchSet, this, request);
+}
+
+void WAFClient::GetXssMatchSetAsync(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&WAFClient::GetXssMatchSetAsyncHelper, this, request, handler, context);
+}
+
+void WAFClient::GetXssMatchSetAsyncHelper(const GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetXssMatchSet(request), context);
+}
+
 ListByteMatchSetsOutcome WAFClient::ListByteMatchSets(const ListByteMatchSetsRequest& request) const
 {
   Aws::StringStream ss;
@@ -959,6 +1057,37 @@ void WAFClient::ListWebACLsAsyncHelper(const ListWebACLsRequest& request, const 
   handler(this, request, ListWebACLs(request), context);
 }
 
+ListXssMatchSetsOutcome WAFClient::ListXssMatchSets(const ListXssMatchSetsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListXssMatchSetsOutcome(ListXssMatchSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListXssMatchSetsOutcome(outcome.GetError());
+  }
+}
+
+ListXssMatchSetsOutcomeCallable WAFClient::ListXssMatchSetsCallable(const ListXssMatchSetsRequest& request) const
+{
+  return std::async(std::launch::async, &WAFClient::ListXssMatchSets, this, request);
+}
+
+void WAFClient::ListXssMatchSetsAsync(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&WAFClient::ListXssMatchSetsAsyncHelper, this, request, handler, context);
+}
+
+void WAFClient::ListXssMatchSetsAsyncHelper(const ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListXssMatchSets(request), context);
+}
+
 UpdateByteMatchSetOutcome WAFClient::UpdateByteMatchSet(const UpdateByteMatchSetRequest& request) const
 {
   Aws::StringStream ss;
@@ -1143,5 +1272,36 @@ void WAFClient::UpdateWebACLAsync(const UpdateWebACLRequest& request, const Upda
 void WAFClient::UpdateWebACLAsyncHelper(const UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateWebACL(request), context);
+}
+
+UpdateXssMatchSetOutcome WAFClient::UpdateXssMatchSet(const UpdateXssMatchSetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateXssMatchSetOutcome(UpdateXssMatchSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateXssMatchSetOutcome(outcome.GetError());
+  }
+}
+
+UpdateXssMatchSetOutcomeCallable WAFClient::UpdateXssMatchSetCallable(const UpdateXssMatchSetRequest& request) const
+{
+  return std::async(std::launch::async, &WAFClient::UpdateXssMatchSet, this, request);
+}
+
+void WAFClient::UpdateXssMatchSetAsync(const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&WAFClient::UpdateXssMatchSetAsyncHelper, this, request, handler, context);
+}
+
+void WAFClient::UpdateXssMatchSetAsyncHelper(const UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateXssMatchSet(request), context);
 }
 

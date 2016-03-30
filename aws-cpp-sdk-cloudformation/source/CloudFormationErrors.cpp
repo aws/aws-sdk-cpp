@@ -20,8 +20,10 @@ using namespace Aws::Client;
 using namespace Aws::CloudFormation;
 using namespace Aws::Utils;
 
+static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
+static const int CHANGE_SET_NOT_FOUND_HASH = HashingUtils::HashString("ChangeSetNotFound");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 
 namespace Aws
@@ -35,13 +37,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
+  if (hashCode == INVALID_CHANGE_SET_STATUS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_CHANGE_SET_STATUS), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), false);
   }
   else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INSUFFICIENT_CAPABILITIES), false);
+  }
+  else if (hashCode == CHANGE_SET_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::CHANGE_SET_NOT_FOUND), false);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {

@@ -430,44 +430,37 @@ namespace Model
     inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

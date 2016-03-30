@@ -32,10 +32,11 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, and
-   * <a>SqlInjectionMatchSet</a> objects that you want to add to a <code>Rule</code>
-   * and, for each object, indicates whether you want to negate the settings, for
-   * example, requests that do NOT originate from the IP address 192.0.2.44. </p>
+   * <p>Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+   * <a>XssMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to
+   * a <code>Rule</code> and, for each object, indicates whether you want to negate
+   * the settings, for example, requests that do NOT originate from the IP address
+   * 192.0.2.44. </p>
    */
   class AWS_WAF_API Predicate
   {
@@ -48,45 +49,48 @@ namespace Model
     /**
      * <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow,
      * block, or count requests based on the settings in the specified
-     * <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example,
-     * if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS
-     * WAF will allow or block requests based on that IP address.</p> <p>Set
+     * <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
+     * allow or block requests based on that IP address.</p> <p>Set
      * <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block
      * a request based on the negation of the settings in the <a>ByteMatchSet</a>,
-     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example, if an
-     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
-     * allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.</p>
+     * <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, or
+     * <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
+     * address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
      */
     inline bool GetNegated() const{ return m_negated; }
 
     /**
      * <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow,
      * block, or count requests based on the settings in the specified
-     * <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example,
-     * if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS
-     * WAF will allow or block requests based on that IP address.</p> <p>Set
+     * <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
+     * allow or block requests based on that IP address.</p> <p>Set
      * <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block
      * a request based on the negation of the settings in the <a>ByteMatchSet</a>,
-     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example, if an
-     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
-     * allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.</p>
+     * <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, or
+     * <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
+     * address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
      */
     inline void SetNegated(bool value) { m_negatedHasBeenSet = true; m_negated = value; }
 
     /**
      * <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow,
      * block, or count requests based on the settings in the specified
-     * <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example,
-     * if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS
-     * WAF will allow or block requests based on that IP address.</p> <p>Set
+     * <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
+     * allow or block requests based on that IP address.</p> <p>Set
      * <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block
      * a request based on the negation of the settings in the <a>ByteMatchSet</a>,
-     * <a>IPSet</a>, or <a>SqlInjectionMatchSet</a>. For example, if an
-     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will
-     * allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.</p>
+     * <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, or
+     * <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
+     * address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
      */
     inline Predicate& WithNegated(bool value) { SetNegated(value); return *this;}
 
