@@ -216,17 +216,17 @@ namespace Model
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline Snapshot& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline Snapshot& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
@@ -590,7 +590,7 @@ namespace Model
     bool m_stateHasBeenSet;
     Aws::String m_stateMessage;
     bool m_stateMessageHasBeenSet;
-    double m_startTime;
+    Aws::String m_startTime;
     bool m_startTimeHasBeenSet;
     Aws::String m_progress;
     bool m_progressHasBeenSet;
