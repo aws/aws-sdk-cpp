@@ -9,7 +9,7 @@ Release
 *#
 
 #compiled python files
-.pyc
+*.pyc
 
 #Vagrant stuff
 Vagrantfile

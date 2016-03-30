@@ -18,6 +18,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
+#include <aws/core/utils/crypto/Cipher.h>
 #include <mutex>
 
 #ifdef AWS_SDK_PLATFORM_WINDOWS
@@ -149,10 +150,83 @@ namespace Aws
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
 
             private:
-
                 BCryptHashImpl m_impl;
             };
 
+            /** RAII class for persistent data (can be reused across cipher calculations) used in Windows cryptographic implementations
+            *  If a mutex-free implementation is desired then this data won't be reusable like this
+            */
+            class BCryptCipherProvider
+            {
+            public:
+                /**
+                * Inititializes Windows Crypto APIs and gets the instance ready to perform crypto calculations.
+                * algorithmName is one of the values described here: https://msdn.microsoft.com/en-us/library/windows/desktop/aa375534(v=vs.85).aspx
+                */
+                BCryptCipherProvider(LPCWSTR algorithmName, LPCWSTR chainingMode);
+                virtual ~BCryptCipherProvider();                 
+           
+            private:
+                BCRYPT_ALG_HANDLE m_algHandle;
+                DWORD m_keyObjectSize;
+                DWORD m_blockSize;
+                bool m_isObjValid;
+
+            friend class BCryptSymetricCipher;
+            };
+
+            /**
+             * Encryptor/Decrypto for AES in CBC mode. Can be used with an initialization vector or without.
+             */
+            class BCryptSymetricCipher : public Cipher
+            {
+            public:                
+                ~BCryptSymetricCipher();
+
+                BCryptSymetricCipher(const BCryptSymetricCipher&) = delete;
+                BCryptSymetricCipher& operator=(const BCryptSymetricCipher&) = delete;               
+
+                ByteBuffer Encrypt(const ByteBuffer& unEncryptedData) override;
+                ByteBuffer Decrypt(const ByteBuffer& encryptedData) override;
+
+                /*
+                 * This call is not cheap. Don't make it often. The intention is that a user call this once for the lifetime of the application needing and AES_CBC cipher
+                 * then pass the pointer to the constructor for the constructor of this class.
+                 */
+                static std::shared_ptr<BCryptCipherProvider> CreateBCrypt_AES_CBC_CipherProvider();
+
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv);
+
+                /*
+                * This call is not cheap. Don't make it often. The intention is that a user call this once for the lifetime of the application needing and AES_CBC cipher
+                * then pass the pointer to the constructor for the constructor of this class.
+                */
+                static std::shared_ptr<BCryptCipherProvider> CreateBCrypt_AES_GCM_CipherProvider();
+
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv);
+                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv);
+            
+            private:
+                std::shared_ptr<BCryptCipherProvider> m_cipherProvider;
+                BCRYPT_KEY_HANDLE m_keyHandle;
+                ByteBuffer m_symKey;
+                ByteBuffer m_iv;
+                unsigned long m_flags;
+
+                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, unsigned long flags);
+                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, unsigned long flags);
+                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, const ByteBuffer& iv, unsigned long flags);
+                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, const ByteBuffer& iv, unsigned long flags);
+                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, ByteBuffer&& iv, unsigned long flags);
+                void Init(const ByteBuffer& key);
+            };           
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws

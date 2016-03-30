@@ -21,6 +21,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/crypto/Hash.h>
 
+#include <atomic>
 #include <bcrypt.h> 
 #include <winternl.h> 
 #include <winerror.h> 
@@ -72,6 +73,8 @@ class BCryptHashContext
         BCRYPT_HASH_HANDLE m_hashHandle;
         bool m_isValid;
 };
+
+
 
 BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     m_algorithmHandle(nullptr),
@@ -301,6 +304,215 @@ HashResult Sha256HMACBcryptImpl::Calculate(const ByteBuffer& toSign, const ByteB
     return m_impl.Calculate(toSign, secret); 
 }
 
+static const char* CIPHER_TAG = "BCryptCipherImpl";
+
+BCryptCipherProvider::BCryptCipherProvider(LPCWSTR algorithmName, LPCWSTR chainingMode) : 
+    m_algHandle(nullptr), m_keyObjectSize(0), m_blockSize(0), m_isObjValid(true)
+{
+    NTSTATUS status = 0;
+    if (!NT_SUCCESS(status = BCryptOpenAlgorithmProvider(&m_algHandle, algorithmName, nullptr, 0)))
+    {
+        m_isObjValid = false;
+        AWS_LOGSTREAM_ERROR(CIPHER_TAG, "failed to initialize algorithm with error code " << status);
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(CIPHER_TAG, "successfully initialized algorithm handle");
+
+    if (!NT_SUCCESS(status = BCryptGetProperty(m_algHandle, BCRYPT_OBJECT_LENGTH, (PBYTE)&m_keyObjectSize, sizeof(DWORD), nullptr, 0)))
+    {
+        m_isObjValid = false;
+        AWS_LOGSTREAM_ERROR(CIPHER_TAG, "property fetch for key length failed with error code " << status);
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(CIPHER_TAG, "successfully fetched key length " << m_keyObjectSize);
+
+    if (!NT_SUCCESS(status = BCryptGetProperty(m_algHandle, BCRYPT_BLOCK_LENGTH, (PBYTE)&m_blockSize, sizeof(DWORD), nullptr, 0)))
+    {
+        m_isObjValid = false;
+        AWS_LOGSTREAM_ERROR(CIPHER_TAG, "property fetch for block length failed with error code " << status);
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(CIPHER_TAG, "successfully fetched block length " << m_blockSize);
+
+    if (chainingMode)
+    {
+        if (!NT_SUCCESS(status = BCryptSetProperty(m_algHandle, BCRYPT_CHAINING_MODE, (PBYTE)chainingMode, sizeof(chainingMode), 0)))
+        {
+            m_isObjValid = false;
+            AWS_LOGSTREAM_ERROR(CIPHER_TAG, "property set for chaing mode failed with error code " << status);
+        }
+        AWS_LOGSTREAM_DEBUG(CIPHER_TAG, "successfully set chain mode. " << m_blockSize);
+    }
+}
+
+BCryptCipherProvider::~BCryptCipherProvider()
+{
+    if (m_algHandle)
+    {
+        BCryptCloseAlgorithmProvider(m_algHandle, 0);
+    }
+}
+
+static const char* BCRYPT_SYMETRIC_CIPHER_TAG = "BCryptCipherImpl";
+
+BCryptSymetricCipher::BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, unsigned long flags) :
+    m_cipherProvider(ciperProvider), m_keyHandle(nullptr), m_symKey(m_cipherProvider->m_keyObjectSize), m_iv(nullptr, 0), m_flags(flags)
+{
+    Init(key);
+}
+
+BCryptSymetricCipher::BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, unsigned long flags) :
+    m_cipherProvider(ciperProvider), m_keyHandle(nullptr), m_symKey(m_cipherProvider->m_keyObjectSize), m_iv(nullptr, 0), m_flags(flags)
+{
+    Init(key);
+}
+
+BCryptSymetricCipher::BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, const ByteBuffer& iv, unsigned long flags) :
+    m_cipherProvider(ciperProvider), m_keyHandle(nullptr), m_symKey(m_cipherProvider->m_keyObjectSize), m_iv(iv), m_flags(flags)
+{
+    Init(key);
+}
+
+BCryptSymetricCipher::BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, const ByteBuffer& iv, unsigned long flags) :
+    m_cipherProvider(ciperProvider), m_keyHandle(nullptr), m_symKey(m_cipherProvider->m_keyObjectSize), m_iv(iv), m_flags(flags)
+{
+    Init(key);
+}
+
+BCryptSymetricCipher::BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, ByteBuffer&& iv, unsigned long flags) :
+    m_cipherProvider(ciperProvider), m_keyHandle(nullptr), m_symKey(m_cipherProvider->m_keyObjectSize), m_iv(iv), m_flags(flags)
+{
+    Init(key);
+}
+
+BCryptSymetricCipher::~BCryptSymetricCipher()
+{
+    if (m_keyHandle)
+    {
+        BCryptDestroyKey(m_keyHandle);
+    }
+}
+
+ByteBuffer BCryptSymetricCipher::Encrypt(const ByteBuffer& unEncryptedData)
+{
+    NTSTATUS status = 0;
+    ULONG bufferSize = 0;    
+    status = BCryptEncrypt(m_keyHandle, unEncryptedData.GetUnderlyingData(), (ULONG)unEncryptedData.GetLength(),
+        nullptr, m_iv.GetUnderlyingData(), (ULONG)m_iv.GetLength(), nullptr, 0, &bufferSize, m_flags);
+    if (!NT_SUCCESS(status))
+    {
+        AWS_LOGSTREAM_ERROR(BCRYPT_SYMETRIC_CIPHER_TAG, "Failed to compute encrypted stream output length with error code " << status);
+        return ByteBuffer();
+    }
+    AWS_LOGSTREAM_TRACE(BCRYPT_SYMETRIC_CIPHER_TAG, "Compute encrypted output length to be " << bufferSize);
+
+    ByteBuffer encryptedData(static_cast<size_t>(bufferSize));
+    status = BCryptEncrypt(m_keyHandle, unEncryptedData.GetUnderlyingData(), (ULONG)unEncryptedData.GetLength(),
+        nullptr, m_iv.GetUnderlyingData(), (ULONG)m_iv.GetLength(), encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(), &bufferSize, m_flags);
+    if (!NT_SUCCESS(status))
+    {
+        AWS_LOGSTREAM_ERROR(BCRYPT_SYMETRIC_CIPHER_TAG, "Failed to compute encrypted output with error code " << status);
+        return ByteBuffer();
+    }
+
+    return encryptedData;
+}
+
+ByteBuffer BCryptSymetricCipher::Decrypt(const ByteBuffer& encryptedData)
+{
+    NTSTATUS status = 0;
+    ULONG bufferSize = 0;
+
+    status = BCryptDecrypt(m_keyHandle, encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(), nullptr,
+        m_iv.GetUnderlyingData(), (ULONG)m_iv.GetLength(), nullptr, 0, &bufferSize, m_flags);
+    if (!NTSTATUS(status))
+    {
+        AWS_LOGSTREAM_ERROR(BCRYPT_SYMETRIC_CIPHER_TAG, "Failed to compute decrypted stream output length with error code " << status);
+        return ByteBuffer();
+    }
+
+    ByteBuffer decryptedBuffer(bufferSize);
+    status = BCryptDecrypt(m_keyHandle, encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(), nullptr,
+        m_iv.GetUnderlyingData(), (ULONG)m_iv.GetLength(), decryptedBuffer.GetUnderlyingData(), (ULONG)decryptedBuffer.GetLength(), &bufferSize, m_flags);
+    if (!NTSTATUS(status))
+    {
+        AWS_LOGSTREAM_ERROR(BCRYPT_SYMETRIC_CIPHER_TAG, "Failed to decrypt stream with error code " << status);
+        return ByteBuffer();
+    }
+
+    return decryptedBuffer;
+}
+
+void BCryptSymetricCipher::Init(const ByteBuffer& key)
+{
+    NTSTATUS status = 0;
+    status = BCryptGenerateSymmetricKey(m_cipherProvider->m_algHandle, &m_keyHandle, m_symKey.GetUnderlyingData(),
+        (ULONG)m_symKey.GetLength(), key.GetUnderlyingData(), (ULONG)key.GetLength(), 0);
+    if (!NT_SUCCESS(status))
+    {
+        AWS_LOGSTREAM_ERROR(BCRYPT_SYMETRIC_CIPHER_TAG, "Failed to initialized symetric key with status code " << status);
+    }
+}
+
+std::shared_ptr<BCryptCipherProvider> BCryptSymetricCipher::CreateBCrypt_AES_CBC_CipherProvider()
+{
+    return Aws::MakeShared<BCryptCipherProvider>(BCRYPT_SYMETRIC_CIPHER_TAG, BCRYPT_AES_ALGORITHM, BCRYPT_CHAIN_MODE_CBC);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_BLOCK_PADDING);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_BLOCK_PADDING);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_BLOCK_PADDING);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_BLOCK_PADDING);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_BLOCK_PADDING);
+}
+
+std::shared_ptr<BCryptCipherProvider> BCryptSymetricCipher::CreateBCrypt_AES_GCM_CipherProvider()
+{
+    return Aws::MakeShared<BCryptCipherProvider>(BCRYPT_SYMETRIC_CIPHER_TAG, BCRYPT_AES_GMAC_ALGORITHM, BCRYPT_CHAIN_MODE_GCM);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_PAD_NONE);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_PAD_NONE);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
+}
+
+std::shared_ptr<BCryptSymetricCipher> BCryptSymetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv)
+{
+    return Aws::MakeShared<BCryptSymetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
+}
 
 } // namespace Crypto
 } // namespace Utils
