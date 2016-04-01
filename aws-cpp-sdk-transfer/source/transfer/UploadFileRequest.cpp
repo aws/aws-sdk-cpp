@@ -114,7 +114,7 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                                      bool createBucket,
                                      bool doConsistencyChecks) :
-UploadFileRequest(fileName, bucketName, keyName, contentType, {}, s3Client, createBucket, doConsistencyChecks)
+UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>{}, s3Client, createBucket, doConsistencyChecks)
 {
 }
 
