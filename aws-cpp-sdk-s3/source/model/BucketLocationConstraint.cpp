@@ -19,16 +19,21 @@
 
 using namespace Aws::Utils;
 
-static const int EU_HASH = HashingUtils::HashString("EU");
+static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
 static const int eu_west_1_HASH = HashingUtils::HashString("eu-west-1");
 static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
 static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
 static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
 static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
 static const int ap_northeast_1_HASH = HashingUtils::HashString("ap-northeast-1");
+static const int ap_northeast_2_HASH = HashingUtils::HashString("ap-northeast-2");
 static const int sa_east_1_HASH = HashingUtils::HashString("sa-east-1");
 static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
 static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
+/*
+ * changes to conform to BucketLocationConstraint.h and Region.h
+ * Maurice Bizzarri
+ */
 
 namespace Aws
 {
@@ -43,11 +48,11 @@ namespace Aws
         BucketLocationConstraint GetBucketLocationConstraintForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == EU_HASH)
-          {
-            return BucketLocationConstraint::EU;
-          }
-          else if (hashCode == eu_west_1_HASH)
+          if (hashCode == us_east_1_HASH)
+	    {
+	      return BucketLocationConstraint::us_east_1;
+	    }
+	  else if (hashCode == eu_west_1_HASH)
           {
             return BucketLocationConstraint::eu_west_1;
           }
@@ -71,6 +76,10 @@ namespace Aws
           {
             return BucketLocationConstraint::ap_northeast_1;
           }
+	  else if (hashCode == ap_northeast_2_HASH)
+	  {
+	    return BucketLocationConstraint::ap_northeast_2;
+	  }
           else if (hashCode == sa_east_1_HASH)
           {
             return BucketLocationConstraint::sa_east_1;
@@ -90,15 +99,22 @@ namespace Aws
             return static_cast<BucketLocationConstraint>(hashCode);
           }
 
-          return BucketLocationConstraint::NOT_SET;
+          return BucketLocationConstraint::us_east_1;
         }
 
+	/*
+         * changed to match Region.h in core
+         * and BucketLocationConstraint.h
+         * Maurice Bizzarri
+         */
         Aws::String GetNameForBucketLocationConstraint(BucketLocationConstraint enumValue)
         {
           switch(enumValue)
           {
-          case BucketLocationConstraint::EU:
-            return "EU";
+	    //          case BucketLocationConstraint::EU:
+            // return "EU";
+          case BucketLocationConstraint::us_east_1:
+	    return "us-east-1";
           case BucketLocationConstraint::eu_west_1:
             return "eu-west-1";
           case BucketLocationConstraint::us_west_1:
@@ -111,6 +127,8 @@ namespace Aws
             return "ap-southeast-2";
           case BucketLocationConstraint::ap_northeast_1:
             return "ap-northeast-1";
+          case BucketLocationConstraint::ap_northeast_2:
+	    return "ap-northeast-2";
           case BucketLocationConstraint::sa_east_1:
             return "sa-east-1";
           case BucketLocationConstraint::cn_north_1:
