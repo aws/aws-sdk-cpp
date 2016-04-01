@@ -18,6 +18,10 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+/*
+ * changed Region to add CN and EU_Central
+ * Maurice Bizzarri
+ */
 
 namespace Aws
 {
@@ -30,12 +34,13 @@ namespace Aws
         US_WEST_1,
         US_WEST_2,
         EU_WEST_1,
-        EU_CENTRAL_1,
         AP_SOUTHEAST_1,
         AP_SOUTHEAST_2,
         AP_NORTHEAST_1,
         AP_NORTHEAST_2,
-        SA_EAST_1
+        SA_EAST_1,
+	CN_NORTH_1,
+	EU_CENTRAL_1
     };
 
     namespace RegionMapper

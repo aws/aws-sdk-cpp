@@ -14,6 +14,10 @@
   */
 
 #include <aws/core/Region.h>
+/*
+ * added CN_NORTH_1
+ * Maurice Bizzarri
+ */
 
 using namespace Aws;
 
@@ -46,6 +50,8 @@ const char* GetRegionName(Region region)
             return "ap-northeast-2";
         case Region::SA_EAST_1:
             return "sa-east-1";
+        case Region::CN_NORTH_1:
+            return "cn-north-1";
         default:
             return "us-east-1";
     }

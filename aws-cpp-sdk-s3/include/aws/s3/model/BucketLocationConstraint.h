@@ -15,7 +15,11 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
+/*
+ * changed BucketLocationConstraint to match
+ * Region.h in core
+ * Maurice Bizzarri
+ */
 namespace Aws
 {
 namespace S3
@@ -24,14 +28,14 @@ namespace Model
 {
   enum class BucketLocationConstraint
   {
-    NOT_SET,
-    EU,
-    eu_west_1,
+    us_east_1,
     us_west_1,
     us_west_2,
+    eu_west_1,
     ap_southeast_1,
     ap_southeast_2,
     ap_northeast_1,
+    ap_northeast_2,
     sa_east_1,
     cn_north_1,
     eu_central_1
