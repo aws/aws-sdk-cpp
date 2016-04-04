@@ -16,35 +16,214 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <iomanip>
 
 #include <mutex>
+
+namespace std
+{
+    struct tm;
+}
 
 namespace Aws
 {
     namespace Utils
     {
+        enum class DateFormat
+        {
+            RFC822, //for http headers
+            ISO_8601 //for query and xml payloads
+        };
+
+        enum class Month
+        {
+            January = 0,
+            February,
+            March,
+            April,
+            May,
+            June,
+            July,
+            August,
+            September,
+            October,
+            November,
+            December
+        };
+
+        enum class DayOfWeek
+        {
+            Sunday = 0,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday
+        };
+
         /**
-        * Wrapper for all the weird crap we need to do with timestamps. The time functions aren't thread
-        * safe so please use this class instead of calculating timestamps yourself.
-        */
+         * Wrapper for all the weird crap we need to do with timestamps. 
+         */
         class AWS_CORE_API DateTime
         {
         public:
             /**
-            * Calculates the local timestamp, formats it and returns it as a string
+             *  Initializes time point to epoch
+             */
+            DateTime();
+
+            /**
+            *  Initializes time point to any other arbirtrary timepoint
             */
+            DateTime(const std::chrono::system_clock::time_point& timepointToAssign);
+
+            /**
+             * Initializes time point to millis Since epoch   
+             */
+            DateTime(int64_t millisSinceEpoch);
+
+            /**
+             * Initializes time point to epoch time in seconds.millis
+             */
+            DateTime(double epoch_millis);
+
+            /**
+             * Initializes time point to value represented by timestamp and format.
+             */
+            DateTime(const Aws::String& timestamp, DateFormat format);
+
+            /**
+             * Initializes time point to value represented by timestamp and format.
+             */
+            DateTime(const char* timestamp, DateFormat format);
+
+            bool operator == (const DateTime& other);
+            bool operator < (const DateTime& other);
+            bool operator > (const DateTime& other);
+            bool operator != (const DateTime& other);
+            bool operator <= (const DateTime& other);
+            bool operator >= (const DateTime& other);
+
+            /**
+             * Assign from seconds.millis since epoch.
+             */
+            DateTime& operator=(double secondsSinceEpoch);
+
+            /**
+             * Assign from millis since epoch.
+             */
+            DateTime& operator=(int64_t millisSinceEpoch);
+
+            /**
+            * Assign from another time_point
+            */
+            DateTime& operator=(const std::chrono::system_clock::time_point& timepointToAssign);
+
+            /**
+             * Whether or not parsing the timestamp from string was successful.
+             */
+            inline bool WasParseSuccessful() { return m_valid; }
+
+            /**
+             * Convert dateTime to local time string using predefined format.
+             */
+            Aws::String ToLocalTimeString(DateFormat format) const;
+
+            /**
+            * Convert dateTime to local time string using arbitrary format.
+            */
+            Aws::String ToLocalTimeString(const char* formatStr) const;
+
+            /**
+            * Convert dateTime to GMT time string using predefined format.
+            */
+            Aws::String ToGmtString(DateFormat format) const;
+
+            /**
+            * Convert dateTime to GMT time string using arbitrary format.
+            */
+            Aws::String ToGmtString(const char* formatStr) const;
+
+            /**
+             * Get the representation of this datetime as seconds.milliseconds since epoch
+             */
+            double SecondsWithMSPrecision() const;
+
+            /**
+             * Milliseconds since epoch of this datetime.
+             */
+            int64_t Millis() const;
+
+            /**
+             *  In the likely case this class doesn't do everything you need to do, here's a copy of the time_point structure. Have fun.
+             */
+            std::chrono::system_clock::time_point UnderlyingTimestamp() const;
+
+            /**
+             * Get the Year portion of this dateTime. localTime if true, return local time, otherwise return UTC
+             */
+            int Year(bool localTime = false);
+
+            /**
+            * Get the Month portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            Month Month(bool localTime = false);
+
+            /**
+            * Get the Day of the Month portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            int Day(bool localTime = false);
+
+            /**
+            * Get the Day of the Week portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            DayOfWeek DayOfWeek(bool localTime = false);
+
+            /**
+            * Get the Hour portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            int Hour(bool localTime = false);
+
+            /**
+            * Get the Minute portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            int Minute(bool localTime = false);
+
+            /**
+            * Get the Second portion of this dateTime. localTime if true, return local time, otherwise return UTC
+            */
+            int Second(bool localTime = false);
+
+            /**
+            * Get whether or not this dateTime is in Daylight savings time. localTime if true, return local time, otherwise return UTC
+            */
+            bool IsDST(bool localTime = false);
+
+            /**
+             * Get an instance of DateTime representing this very instant.
+             */
+            static DateTime Now(); 
+            
+            /**
+             * Get the millis since epoch representing this very instant.
+             */
+            static int64_t CurrentTimeMillis();
+
+            /**
+             * Calculates the current local timestamp, formats it and returns it as a string
+             */
             static Aws::String CalculateLocalTimestampAsString(const char* formatStr);
 
             /**
-            * Calculates the gmt timestamp, formats it, and returns it as a string
-            */
+             * Calculates the current gmt timestamp, formats it, and returns it as a string
+             */
             static Aws::String CalculateGmtTimestampAsString(const char* formatStr);
 
             /**
-            * Calculates the current hour of the day in localtime.
-            */
+             * Calculates the current hour of the day in localtime.
+             */
             static int CalculateCurrentHour();
 
             /**
@@ -52,18 +231,14 @@ namespace Aws
              */
             static double ComputeCurrentTimestampInAmazonFormat();
 
-            /**
-            * Computes the timestamp in ISO-8601 format
-            */
-            static Aws::String ComputeCurrentTimestampInISO8601Format();
-
-            /**
-            * Computes the current date in ISO-8601 format
-            */
-            static Aws::String ComputeCurrentDateInISO8601Format();
-
         private:
-            static std::mutex timeMutex;
+            std::chrono::system_clock::time_point m_time;
+            bool m_valid;
+                        
+            void ConvertTimestampStringToTimePoint(const char* timestamp, DateFormat format);
+            tm GetTimeStruct(bool localTime) const;
+            tm ConvertTimestampToLocalTimeStruct() const;
+            tm ConvertTimestampToGmtStruct() const;   
         };
 
     } // namespace Utils
