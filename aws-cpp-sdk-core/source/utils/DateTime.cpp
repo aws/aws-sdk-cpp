@@ -22,17 +22,15 @@
 #include <cstring>
 
 static const char* CLASS_TAG = "DateTime";
-static const char* UNIX_EPOC = "%s";
 static const char* RFC822_DATE_FORMAT_STR_MINUS_Z = "%a, %d %b %Y %H:%M:%S";
 static const char* RFC822_DATE_FORMAT_STR_WITH_Z = "%a, %d %b %Y %H:%M:%S %Z";
 static const char* ISO_8601_LONG_DATE_FORMAT_STR = "%Y-%m-%dT%H:%M:%SZ";
-static const char* ISO_8601_SIMPLE_DATE_FORMAT_STR = "%Y-%m-%d";
 
 using namespace Aws::Utils;
 
 std::tm CreateZeroedTm()
 {
-    struct std::tm timeStruct;
+    std::tm timeStruct;
     timeStruct.tm_hour = 0;
     timeStruct.tm_isdst = -1;
     timeStruct.tm_mday = 0;
@@ -509,8 +507,8 @@ public:
             return;
         }
 
-        int index = 0;
-        int stateStartIndex = 0;
+        size_t index = 0;
+        size_t stateStartIndex = 0;
         int finalState = 8;
 
         while(m_state <= finalState && !m_error && index < len)
@@ -987,7 +985,7 @@ tm DateTime::ConvertTimestampToGmtStruct() const
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
     gmtime_s(&gmtTimeStamp, &time);
 #else
-    gmtime_r(&time, &localTimeStamp);
+    gmtime_r(&time, &gmtTimeStamp);
 #endif
 
     return gmtTimeStamp;
