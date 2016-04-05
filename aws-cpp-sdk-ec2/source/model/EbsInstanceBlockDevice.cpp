@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
     m_volumeIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -36,7 +35,6 @@ EbsInstanceBlockDevice::EbsInstanceBlockDevice() :
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode) : 
     m_volumeIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false)
@@ -65,7 +63,7 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
@@ -91,7 +89,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_attachTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
@@ -111,7 +109,7 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_attachTimeHasBeenSet)
   {
-        oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {

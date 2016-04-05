@@ -28,7 +28,6 @@ Build::Build() :
     m_statusHasBeenSet(false),
     m_sizeOnDisk(0),
     m_sizeOnDiskHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false)
 {
 }
@@ -40,7 +39,6 @@ Build::Build(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_sizeOnDisk(0),
     m_sizeOnDiskHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -128,8 +126,7 @@ JsonValue Build::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;

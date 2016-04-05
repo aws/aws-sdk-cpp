@@ -33,7 +33,6 @@ DBInstance::DBInstance() :
     m_endpointHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_backupRetentionPeriod(0),
@@ -45,7 +44,6 @@ DBInstance::DBInstance() :
     m_dBSubnetGroupHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
-    m_latestRestorableTime(0.0),
     m_latestRestorableTimeHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
@@ -95,7 +93,6 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_endpointHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_backupRetentionPeriod(0),
@@ -107,7 +104,6 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_dBSubnetGroupHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
-    m_latestRestorableTime(0.0),
     m_latestRestorableTimeHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
@@ -205,7 +201,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
     if(!instanceCreateTimeNode.IsNull())
     {
-      m_instanceCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(instanceCreateTimeNode.GetText().c_str()).c_str());
+      m_instanceCreateTime = DateTime(StringUtils::Trim(instanceCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_instanceCreateTimeHasBeenSet = true;
     }
     XmlNode preferredBackupWindowNode = resultNode.FirstChild("PreferredBackupWindow");
@@ -283,7 +279,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     XmlNode latestRestorableTimeNode = resultNode.FirstChild("LatestRestorableTime");
     if(!latestRestorableTimeNode.IsNull())
     {
-      m_latestRestorableTime = StringUtils::ConvertToDouble(StringUtils::Trim(latestRestorableTimeNode.GetText().c_str()).c_str());
+      m_latestRestorableTime = DateTime(StringUtils::Trim(latestRestorableTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_latestRestorableTimeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
@@ -509,7 +505,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
+      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredBackupWindowHasBeenSet)
   {
@@ -571,7 +567,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
+      oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_multiAZHasBeenSet)
   {
@@ -739,7 +735,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-        oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
+      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredBackupWindowHasBeenSet)
   {
@@ -801,7 +797,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-        oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
+      oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_multiAZHasBeenSet)
   {

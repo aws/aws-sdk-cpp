@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
 
@@ -161,7 +162,7 @@ namespace Model
      * DB instance</li> <li>Cannot be specified if <code>UseLatestRestorableTime</code>
      * parameter is true</li> </ul> <p>Example: <code>2015-03-07T23:45:00Z</code></p>
      */
-    inline double GetRestoreToTime() const{ return m_restoreToTime; }
+    inline const Aws::Utils::DateTime& GetRestoreToTime() const{ return m_restoreToTime; }
 
     /**
      * <p> The date and time to restore the DB cluster to. </p> <p>Valid Values: Value
@@ -170,7 +171,7 @@ namespace Model
      * DB instance</li> <li>Cannot be specified if <code>UseLatestRestorableTime</code>
      * parameter is true</li> </ul> <p>Example: <code>2015-03-07T23:45:00Z</code></p>
      */
-    inline void SetRestoreToTime(double value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
+    inline void SetRestoreToTime(const Aws::Utils::DateTime& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
 
     /**
      * <p> The date and time to restore the DB cluster to. </p> <p>Valid Values: Value
@@ -179,7 +180,25 @@ namespace Model
      * DB instance</li> <li>Cannot be specified if <code>UseLatestRestorableTime</code>
      * parameter is true</li> </ul> <p>Example: <code>2015-03-07T23:45:00Z</code></p>
      */
-    inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(double value) { SetRestoreToTime(value); return *this;}
+    inline void SetRestoreToTime(Aws::Utils::DateTime&& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
+
+    /**
+     * <p> The date and time to restore the DB cluster to. </p> <p>Valid Values: Value
+     * must be a time in Universal Coordinated Time (UTC) format</p>
+     * <p>Constraints:</p> <ul> <li>Must be before the latest restorable time for the
+     * DB instance</li> <li>Cannot be specified if <code>UseLatestRestorableTime</code>
+     * parameter is true</li> </ul> <p>Example: <code>2015-03-07T23:45:00Z</code></p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(const Aws::Utils::DateTime& value) { SetRestoreToTime(value); return *this;}
+
+    /**
+     * <p> The date and time to restore the DB cluster to. </p> <p>Valid Values: Value
+     * must be a time in Universal Coordinated Time (UTC) format</p>
+     * <p>Constraints:</p> <ul> <li>Must be before the latest restorable time for the
+     * DB instance</li> <li>Cannot be specified if <code>UseLatestRestorableTime</code>
+     * parameter is true</li> </ul> <p>Example: <code>2015-03-07T23:45:00Z</code></p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(Aws::Utils::DateTime&& value) { SetRestoreToTime(value); return *this;}
 
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
@@ -516,7 +535,7 @@ namespace Model
     bool m_dBClusterIdentifierHasBeenSet;
     Aws::String m_sourceDBClusterIdentifier;
     bool m_sourceDBClusterIdentifierHasBeenSet;
-    double m_restoreToTime;
+    Aws::Utils::DateTime m_restoreToTime;
     bool m_restoreToTimeHasBeenSet;
     bool m_useLatestRestorableTime;
     bool m_useLatestRestorableTimeHasBeenSet;

@@ -27,7 +27,6 @@ DomainSummary::DomainSummary() :
     m_autoRenewHasBeenSet(false),
     m_transferLock(false),
     m_transferLockHasBeenSet(false),
-    m_expiry(0.0),
     m_expiryHasBeenSet(false)
 {
 }
@@ -38,7 +37,6 @@ DomainSummary::DomainSummary(const JsonValue& jsonValue) :
     m_autoRenewHasBeenSet(false),
     m_transferLock(false),
     m_transferLockHasBeenSet(false),
-    m_expiry(0.0),
     m_expiryHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,8 +99,7 @@ JsonValue DomainSummary::Jsonize() const
 
   if(m_expiryHasBeenSet)
   {
-   payload.WithDouble("Expiry", m_expiry);
-
+   payload.WithDouble("Expiry", m_expiry.SecondsWithMSPrecision());
   }
 
   return payload;

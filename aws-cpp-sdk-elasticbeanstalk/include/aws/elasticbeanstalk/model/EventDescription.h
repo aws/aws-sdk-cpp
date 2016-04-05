@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/EventSeverity.h>
 
@@ -48,17 +49,27 @@ namespace Model
     /**
      * <p>The date when the event occurred.</p>
      */
-    inline double GetEventDate() const{ return m_eventDate; }
+    inline const Aws::Utils::DateTime& GetEventDate() const{ return m_eventDate; }
 
     /**
      * <p>The date when the event occurred.</p>
      */
-    inline void SetEventDate(double value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
+    inline void SetEventDate(const Aws::Utils::DateTime& value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
 
     /**
      * <p>The date when the event occurred.</p>
      */
-    inline EventDescription& WithEventDate(double value) { SetEventDate(value); return *this;}
+    inline void SetEventDate(Aws::Utils::DateTime&& value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
+
+    /**
+     * <p>The date when the event occurred.</p>
+     */
+    inline EventDescription& WithEventDate(const Aws::Utils::DateTime& value) { SetEventDate(value); return *this;}
+
+    /**
+     * <p>The date when the event occurred.</p>
+     */
+    inline EventDescription& WithEventDate(Aws::Utils::DateTime&& value) { SetEventDate(value); return *this;}
 
     /**
      * <p>The event message.</p>
@@ -296,7 +307,7 @@ namespace Model
     inline EventDescription& WithSeverity(EventSeverity&& value) { SetSeverity(value); return *this;}
 
   private:
-    double m_eventDate;
+    Aws::Utils::DateTime m_eventDate;
     bool m_eventDateHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;

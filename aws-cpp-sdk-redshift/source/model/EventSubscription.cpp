@@ -28,7 +28,6 @@ EventSubscription::EventSubscription() :
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subscriptionCreationTime(0.0),
     m_subscriptionCreationTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsListHasBeenSet(false),
@@ -45,7 +44,6 @@ EventSubscription::EventSubscription(const XmlNode& xmlNode) :
     m_custSubscriptionIdHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_subscriptionCreationTime(0.0),
     m_subscriptionCreationTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_sourceIdsListHasBeenSet(false),
@@ -91,7 +89,7 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     XmlNode subscriptionCreationTimeNode = resultNode.FirstChild("SubscriptionCreationTime");
     if(!subscriptionCreationTimeNode.IsNull())
     {
-      m_subscriptionCreationTime = StringUtils::ConvertToDouble(StringUtils::Trim(subscriptionCreationTimeNode.GetText().c_str()).c_str());
+      m_subscriptionCreationTime = DateTime(StringUtils::Trim(subscriptionCreationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_subscriptionCreationTimeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
@@ -173,7 +171,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime) << "&";
+      oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {
@@ -235,7 +233,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_subscriptionCreationTimeHasBeenSet)
   {
-        oStream << location << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime) << "&";
+      oStream << location << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sourceTypeHasBeenSet)
   {

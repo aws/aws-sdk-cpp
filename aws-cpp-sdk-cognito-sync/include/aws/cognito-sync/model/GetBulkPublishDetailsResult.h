@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cognito-sync/model/BulkPublishStatus.h>
 
 namespace Aws
@@ -88,35 +89,57 @@ namespace Model
     /**
      * The date/time at which the last bulk publish was initiated.
      */
-    inline double GetBulkPublishStartTime() const{ return m_bulkPublishStartTime; }
+    inline const Aws::Utils::DateTime& GetBulkPublishStartTime() const{ return m_bulkPublishStartTime; }
 
     /**
      * The date/time at which the last bulk publish was initiated.
      */
-    inline void SetBulkPublishStartTime(double value) { m_bulkPublishStartTime = value; }
+    inline void SetBulkPublishStartTime(const Aws::Utils::DateTime& value) { m_bulkPublishStartTime = value; }
 
     /**
      * The date/time at which the last bulk publish was initiated.
      */
-    inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(double value) { SetBulkPublishStartTime(value); return *this;}
+    inline void SetBulkPublishStartTime(Aws::Utils::DateTime&& value) { m_bulkPublishStartTime = value; }
+
+    /**
+     * The date/time at which the last bulk publish was initiated.
+     */
+    inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(const Aws::Utils::DateTime& value) { SetBulkPublishStartTime(value); return *this;}
+
+    /**
+     * The date/time at which the last bulk publish was initiated.
+     */
+    inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(Aws::Utils::DateTime&& value) { SetBulkPublishStartTime(value); return *this;}
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
      * completed.
      */
-    inline double GetBulkPublishCompleteTime() const{ return m_bulkPublishCompleteTime; }
+    inline const Aws::Utils::DateTime& GetBulkPublishCompleteTime() const{ return m_bulkPublishCompleteTime; }
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
      * completed.
      */
-    inline void SetBulkPublishCompleteTime(double value) { m_bulkPublishCompleteTime = value; }
+    inline void SetBulkPublishCompleteTime(const Aws::Utils::DateTime& value) { m_bulkPublishCompleteTime = value; }
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
      * completed.
      */
-    inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(double value) { SetBulkPublishCompleteTime(value); return *this;}
+    inline void SetBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { m_bulkPublishCompleteTime = value; }
+
+    /**
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
+     * completed.
+     */
+    inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(const Aws::Utils::DateTime& value) { SetBulkPublishCompleteTime(value); return *this;}
+
+    /**
+     * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
+     * completed.
+     */
+    inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { SetBulkPublishCompleteTime(value); return *this;}
 
     /**
      * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
@@ -212,8 +235,8 @@ namespace Model
 
   private:
     Aws::String m_identityPoolId;
-    double m_bulkPublishStartTime;
-    double m_bulkPublishCompleteTime;
+    Aws::Utils::DateTime m_bulkPublishStartTime;
+    Aws::Utils::DateTime m_bulkPublishCompleteTime;
     BulkPublishStatus m_bulkPublishStatus;
     Aws::String m_failureMessage;
   };

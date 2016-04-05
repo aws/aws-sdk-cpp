@@ -36,12 +36,10 @@ DBCluster::DBCluster() :
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
-    m_earliestRestorableTime(0.0),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_latestRestorableTime(0.0),
     m_latestRestorableTimeHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -72,12 +70,10 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dBSubnetGroupHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_percentProgressHasBeenSet(false),
-    m_earliestRestorableTime(0.0),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_latestRestorableTime(0.0),
     m_latestRestorableTimeHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
@@ -171,7 +167,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode earliestRestorableTimeNode = resultNode.FirstChild("EarliestRestorableTime");
     if(!earliestRestorableTimeNode.IsNull())
     {
-      m_earliestRestorableTime = StringUtils::ConvertToDouble(StringUtils::Trim(earliestRestorableTimeNode.GetText().c_str()).c_str());
+      m_earliestRestorableTime = DateTime(StringUtils::Trim(earliestRestorableTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_earliestRestorableTimeHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
@@ -195,7 +191,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode latestRestorableTimeNode = resultNode.FirstChild("LatestRestorableTime");
     if(!latestRestorableTimeNode.IsNull())
     {
-      m_latestRestorableTime = StringUtils::ConvertToDouble(StringUtils::Trim(latestRestorableTimeNode.GetText().c_str()).c_str());
+      m_latestRestorableTime = DateTime(StringUtils::Trim(latestRestorableTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_latestRestorableTimeHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -335,7 +331,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_earliestRestorableTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EarliestRestorableTime=" << StringUtils::URLEncode(m_earliestRestorableTime) << "&";
+      oStream << location << index << locationValue << ".EarliestRestorableTime=" << StringUtils::URLEncode(m_earliestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endpointHasBeenSet)
   {
@@ -351,7 +347,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
+      oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_portHasBeenSet)
   {
@@ -465,7 +461,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_earliestRestorableTimeHasBeenSet)
   {
-        oStream << location << ".EarliestRestorableTime=" << StringUtils::URLEncode(m_earliestRestorableTime) << "&";
+      oStream << location << ".EarliestRestorableTime=" << StringUtils::URLEncode(m_earliestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endpointHasBeenSet)
   {
@@ -481,7 +477,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_latestRestorableTimeHasBeenSet)
   {
-        oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime) << "&";
+      oStream << location << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_portHasBeenSet)
   {

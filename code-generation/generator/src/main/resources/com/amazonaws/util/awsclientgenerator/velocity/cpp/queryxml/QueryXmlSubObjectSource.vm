@@ -59,6 +59,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
 #elseif($member.shape.string)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
+#elseif($member.shape.timeStamp)
+  ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
@@ -90,6 +92,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.listMember.shape.string)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+#elseif($member.shape.listMember.shape.timeStamp)
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)
@@ -127,6 +131,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
 #elseif($member.shape.string)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
+#elseif($member.shape.timeStamp)
+  ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.shape.blob)
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
@@ -150,6 +156,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.listMember.shape.string)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+#elseif($member.shape.listMember.shape.timeStamp)
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.shape.listMember.shape.blob)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)

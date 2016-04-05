@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ActionExecution::ActionExecution() : 
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false),
     m_externalExecutionUrlHasBeenSet(false),
@@ -37,7 +36,6 @@ ActionExecution::ActionExecution() :
 ActionExecution::ActionExecution(const JsonValue& jsonValue) : 
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false),
     m_externalExecutionUrlHasBeenSet(false),
@@ -119,8 +117,7 @@ JsonValue ActionExecution::Jsonize() const
 
   if(m_lastStatusChangeHasBeenSet)
   {
-   payload.WithDouble("lastStatusChange", m_lastStatusChange);
-
+   payload.WithDouble("lastStatusChange", m_lastStatusChange.SecondsWithMSPrecision());
   }
 
   if(m_externalExecutionIdHasBeenSet)

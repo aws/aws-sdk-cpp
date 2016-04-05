@@ -38,7 +38,6 @@ Record& Record::operator =(const JsonValue& jsonValue)
   if(jsonValue.ValueExists("Data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
-
     m_dataHasBeenSet = true;
   }
 

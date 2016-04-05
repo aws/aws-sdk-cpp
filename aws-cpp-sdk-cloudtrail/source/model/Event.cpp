@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 Event::Event() : 
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
-    m_eventTime(0.0),
     m_eventTimeHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -35,7 +34,6 @@ Event::Event() :
 Event::Event(const JsonValue& jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
-    m_eventTime(0.0),
     m_eventTimeHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -112,8 +110,7 @@ JsonValue Event::Jsonize() const
 
   if(m_eventTimeHasBeenSet)
   {
-   payload.WithDouble("EventTime", m_eventTime);
-
+   payload.WithDouble("EventTime", m_eventTime.SecondsWithMSPrecision());
   }
 
   if(m_usernameHasBeenSet)

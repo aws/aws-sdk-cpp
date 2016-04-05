@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -140,17 +141,27 @@ namespace Model
     /**
      * <p>The date and time the certificate was created.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date and time the certificate was created.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date and time the certificate was created.</p>
      */
-    inline Certificate& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date and time the certificate was created.</p>
+     */
+    inline Certificate& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date and time the certificate was created.</p>
+     */
+    inline Certificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
   private:
     Aws::String m_certificateArn;
@@ -159,7 +170,7 @@ namespace Model
     bool m_certificateIdHasBeenSet;
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };
 

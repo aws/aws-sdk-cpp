@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 LifecycleEvent::LifecycleEvent() : 
     m_lifecycleEventNameHasBeenSet(false),
     m_diagnosticsHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -35,9 +33,7 @@ LifecycleEvent::LifecycleEvent() :
 LifecycleEvent::LifecycleEvent(const JsonValue& jsonValue) : 
     m_lifecycleEventNameHasBeenSet(false),
     m_diagnosticsHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -102,14 +98,12 @@ JsonValue LifecycleEvent::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime);
-
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("endTime", m_endTime);
-
+   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

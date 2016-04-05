@@ -22,9 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 OptionStatus::OptionStatus() : 
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_updateVersion(0),
     m_updateVersionHasBeenSet(false),
@@ -35,9 +33,7 @@ OptionStatus::OptionStatus() :
 }
 
 OptionStatus::OptionStatus(const JsonValue& jsonValue) : 
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_updateVersion(0),
     m_updateVersionHasBeenSet(false),
@@ -94,14 +90,12 @@ JsonValue OptionStatus::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("CreationDate", m_creationDate);
-
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_updateDateHasBeenSet)
   {
-   payload.WithDouble("UpdateDate", m_updateDate);
-
+   payload.WithDouble("UpdateDate", m_updateDate.SecondsWithMSPrecision());
   }
 
   if(m_updateVersionHasBeenSet)

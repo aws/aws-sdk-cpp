@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/StatisticSet.h>
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Dimension.h>
@@ -139,49 +140,35 @@ namespace Model
      * (UTC) format. If not specified, the default value is set to the time the metric
      * data was received. </p>
      */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
      * (UTC) format. If not specified, the default value is set to the time the metric
      * data was received. </p>
      */
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
      * (UTC) format. If not specified, the default value is set to the time the metric
      * data was received. </p>
      */
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
      * (UTC) format. If not specified, the default value is set to the time the metric
      * data was received. </p>
      */
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+    inline MetricDatum& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
      * (UTC) format. If not specified, the default value is set to the time the metric
      * data was received. </p>
      */
-    inline MetricDatum& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
-     * (UTC) format. If not specified, the default value is set to the time the metric
-     * data was received. </p>
-     */
-    inline MetricDatum& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp used for the metric in ISO 8601 Universal Coordinated Time
-     * (UTC) format. If not specified, the default value is set to the time the metric
-     * data was received. </p>
-     */
-    inline MetricDatum& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+    inline MetricDatum& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The value for the metric. </p> <important>Although the <code>Value</code>
@@ -268,7 +255,7 @@ namespace Model
     bool m_metricNameHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
-    Aws::String m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     double m_value;
     bool m_valueHasBeenSet;

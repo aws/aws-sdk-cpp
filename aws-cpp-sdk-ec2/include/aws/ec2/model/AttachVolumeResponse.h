@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeAttachmentState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 
 namespace Aws
@@ -177,17 +178,27 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline double GetAttachTime() const{ return m_attachTime; }
+    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline void SetAttachTime(double value) { m_attachTime = value; }
+    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTime = value; }
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline AttachVolumeResponse& WithAttachTime(double value) { SetAttachTime(value); return *this;}
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTime = value; }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline AttachVolumeResponse& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline AttachVolumeResponse& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(value); return *this;}
 
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -224,7 +235,7 @@ namespace Model
     Aws::String m_instanceId;
     Aws::String m_device;
     VolumeAttachmentState m_state;
-    double m_attachTime;
+    Aws::Utils::DateTime m_attachTime;
     bool m_deleteOnTermination;
     ResponseMetadata m_responseMetadata;
   };

@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 OfferingTransaction::OfferingTransaction() : 
     m_offeringStatusHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
-    m_createdOn(0.0),
     m_createdOnHasBeenSet(false),
     m_costHasBeenSet(false)
 {
@@ -33,7 +32,6 @@ OfferingTransaction::OfferingTransaction() :
 OfferingTransaction::OfferingTransaction(const JsonValue& jsonValue) : 
     m_offeringStatusHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
-    m_createdOn(0.0),
     m_createdOnHasBeenSet(false),
     m_costHasBeenSet(false)
 {
@@ -91,8 +89,7 @@ JsonValue OfferingTransaction::Jsonize() const
 
   if(m_createdOnHasBeenSet)
   {
-   payload.WithDouble("createdOn", m_createdOn);
-
+   payload.WithDouble("createdOn", m_createdOn.SecondsWithMSPrecision());
   }
 
   if(m_costHasBeenSet)

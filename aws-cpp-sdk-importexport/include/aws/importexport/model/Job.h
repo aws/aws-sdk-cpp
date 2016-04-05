@@ -16,6 +16,7 @@
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/importexport/model/JobType.h>
 
 namespace Aws
@@ -67,13 +68,19 @@ namespace Model
     inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
 
     
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     
-    inline Job& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    
+    inline Job& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    
+    inline Job& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     
     inline bool GetIsCanceled() const{ return m_isCanceled; }
@@ -102,7 +109,7 @@ namespace Model
   private:
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     bool m_isCanceled;
     bool m_isCanceledHasBeenSet;

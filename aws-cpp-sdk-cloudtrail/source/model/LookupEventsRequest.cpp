@@ -23,9 +23,7 @@ using namespace Aws::Utils;
 
 LookupEventsRequest::LookupEventsRequest() : 
     m_lookupAttributesHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -50,14 +48,12 @@ Aws::String LookupEventsRequest::SerializePayload() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("StartTime", m_startTime);
-
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("EndTime", m_endTime);
-
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   if(m_maxResultsHasBeenSet)

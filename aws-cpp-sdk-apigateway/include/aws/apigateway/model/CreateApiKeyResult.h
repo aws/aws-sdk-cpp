@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -219,36 +220,60 @@ namespace Model
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date when the API Key was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline void SetCreatedDate(double value) { m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
     /**
      * <p>The date when the API Key was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline CreateApiKeyResult& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+
+    /**
+     * <p>The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateApiKeyResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateApiKeyResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
      * <p>When the API Key was last updated, in ISO 8601 format.</p>
      */
-    inline double GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
 
     /**
      * <p>When the API Key was last updated, in ISO 8601 format.</p>
      */
-    inline void SetLastUpdatedDate(double value) { m_lastUpdatedDate = value; }
+    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
 
     /**
      * <p>When the API Key was last updated, in ISO 8601 format.</p>
      */
-    inline CreateApiKeyResult& WithLastUpdatedDate(double value) { SetLastUpdatedDate(value); return *this;}
+    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = value; }
+
+    /**
+     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     */
+    inline CreateApiKeyResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
+
+    /**
+     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     */
+    inline CreateApiKeyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -256,8 +281,8 @@ namespace Model
     Aws::String m_description;
     bool m_enabled;
     Aws::Vector<Aws::String> m_stageKeys;
-    double m_createdDate;
-    double m_lastUpdatedDate;
+    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_lastUpdatedDate;
   };
 
 } // namespace Model

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
@@ -155,32 +156,52 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline NatGateway& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The date and time the NAT gateway was created.</p>
+     */
+    inline NatGateway& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time the NAT gateway was created.</p>
+     */
+    inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline double GetDeleteTime() const{ return m_deleteTime; }
+    inline const Aws::Utils::DateTime& GetDeleteTime() const{ return m_deleteTime; }
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline void SetDeleteTime(double value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
+    inline void SetDeleteTime(const Aws::Utils::DateTime& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline NatGateway& WithDeleteTime(double value) { SetDeleteTime(value); return *this;}
+    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
+
+    /**
+     * <p>The date and time the NAT gateway was deleted, if applicable.</p>
+     */
+    inline NatGateway& WithDeleteTime(const Aws::Utils::DateTime& value) { SetDeleteTime(value); return *this;}
+
+    /**
+     * <p>The date and time the NAT gateway was deleted, if applicable.</p>
+     */
+    inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(value); return *this;}
 
     /**
      * <p>Information about the IP addresses and network interface associated with the
@@ -438,9 +459,9 @@ namespace Model
     bool m_subnetIdHasBeenSet;
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
-    double m_deleteTime;
+    Aws::Utils::DateTime m_deleteTime;
     bool m_deleteTimeHasBeenSet;
     Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
     bool m_natGatewayAddressesHasBeenSet;

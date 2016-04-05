@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -152,32 +153,52 @@ namespace Model
     /**
      * <p>The starting date from which the certificate is valid. </p>
      */
-    inline double GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
     /**
      * <p>The starting date from which the certificate is valid. </p>
      */
-    inline void SetValidFrom(double value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
      * <p>The starting date from which the certificate is valid. </p>
      */
-    inline Certificate& WithValidFrom(double value) { SetValidFrom(value); return *this;}
+    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+
+    /**
+     * <p>The starting date from which the certificate is valid. </p>
+     */
+    inline Certificate& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
+
+    /**
+     * <p>The starting date from which the certificate is valid. </p>
+     */
+    inline Certificate& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(value); return *this;}
 
     /**
      * <p>The final date that the certificate continues to be valid. </p>
      */
-    inline double GetValidTill() const{ return m_validTill; }
+    inline const Aws::Utils::DateTime& GetValidTill() const{ return m_validTill; }
 
     /**
      * <p>The final date that the certificate continues to be valid. </p>
      */
-    inline void SetValidTill(double value) { m_validTillHasBeenSet = true; m_validTill = value; }
+    inline void SetValidTill(const Aws::Utils::DateTime& value) { m_validTillHasBeenSet = true; m_validTill = value; }
 
     /**
      * <p>The final date that the certificate continues to be valid. </p>
      */
-    inline Certificate& WithValidTill(double value) { SetValidTill(value); return *this;}
+    inline void SetValidTill(Aws::Utils::DateTime&& value) { m_validTillHasBeenSet = true; m_validTill = value; }
+
+    /**
+     * <p>The final date that the certificate continues to be valid. </p>
+     */
+    inline Certificate& WithValidTill(const Aws::Utils::DateTime& value) { SetValidTill(value); return *this;}
+
+    /**
+     * <p>The final date that the certificate continues to be valid. </p>
+     */
+    inline Certificate& WithValidTill(Aws::Utils::DateTime&& value) { SetValidTill(value); return *this;}
 
   private:
     Aws::String m_certificateIdentifier;
@@ -186,9 +207,9 @@ namespace Model
     bool m_certificateTypeHasBeenSet;
     Aws::String m_thumbprint;
     bool m_thumbprintHasBeenSet;
-    double m_validFrom;
+    Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
-    double m_validTill;
+    Aws::Utils::DateTime m_validTill;
     bool m_validTillHasBeenSet;
   };
 

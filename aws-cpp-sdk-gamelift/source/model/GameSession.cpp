@@ -25,9 +25,7 @@ GameSession::GameSession() :
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_terminationTime(0.0),
     m_terminationTimeHasBeenSet(false),
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
@@ -44,9 +42,7 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_terminationTime(0.0),
     m_terminationTimeHasBeenSet(false),
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
@@ -169,14 +165,12 @@ JsonValue GameSession::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_terminationTimeHasBeenSet)
   {
-   payload.WithDouble("TerminationTime", m_terminationTime);
-
+   payload.WithDouble("TerminationTime", m_terminationTime.SecondsWithMSPrecision());
   }
 
   if(m_currentPlayerSessionCountHasBeenSet)

@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDeploymentResult::CreateDeploymentResult() : 
-    m_createdDate(0.0)
+CreateDeploymentResult::CreateDeploymentResult()
 {
 }
 
-CreateDeploymentResult::CreateDeploymentResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdDate(0.0)
+CreateDeploymentResult::CreateDeploymentResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

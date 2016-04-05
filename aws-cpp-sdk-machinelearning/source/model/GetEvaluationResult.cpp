@@ -24,15 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEvaluationResult::GetEvaluationResult() : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0)
+GetEvaluationResult::GetEvaluationResult()
 {
 }
 
-GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0)
+GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

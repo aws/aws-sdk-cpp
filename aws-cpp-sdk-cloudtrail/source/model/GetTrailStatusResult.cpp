@@ -25,24 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetTrailStatusResult::GetTrailStatusResult() : 
-    m_isLogging(false),
-    m_latestDeliveryTime(0.0),
-    m_latestNotificationTime(0.0),
-    m_startLoggingTime(0.0),
-    m_stopLoggingTime(0.0),
-    m_latestCloudWatchLogsDeliveryTime(0.0),
-    m_latestDigestDeliveryTime(0.0)
+    m_isLogging(false)
 {
 }
 
 GetTrailStatusResult::GetTrailStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_isLogging(false),
-    m_latestDeliveryTime(0.0),
-    m_latestNotificationTime(0.0),
-    m_startLoggingTime(0.0),
-    m_stopLoggingTime(0.0),
-    m_latestCloudWatchLogsDeliveryTime(0.0),
-    m_latestDigestDeliveryTime(0.0)
+    m_isLogging(false)
 {
   *this = result;
 }

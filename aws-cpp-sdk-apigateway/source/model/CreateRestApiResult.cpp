@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRestApiResult::CreateRestApiResult() : 
-    m_createdDate(0.0)
+CreateRestApiResult::CreateRestApiResult()
 {
 }
 
-CreateRestApiResult::CreateRestApiResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdDate(0.0)
+CreateRestApiResult::CreateRestApiResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

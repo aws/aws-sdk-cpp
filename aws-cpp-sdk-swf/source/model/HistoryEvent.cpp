@@ -22,7 +22,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 HistoryEvent::HistoryEvent() : 
-    m_eventTimestamp(0.0),
     m_eventTimestampHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
@@ -85,7 +84,6 @@ HistoryEvent::HistoryEvent() :
 }
 
 HistoryEvent::HistoryEvent(const JsonValue& jsonValue) : 
-    m_eventTimestamp(0.0),
     m_eventTimestampHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventId(0),
@@ -558,8 +556,7 @@ JsonValue HistoryEvent::Jsonize() const
 
   if(m_eventTimestampHasBeenSet)
   {
-   payload.WithDouble("eventTimestamp", m_eventTimestamp);
-
+   payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_eventTypeHasBeenSet)

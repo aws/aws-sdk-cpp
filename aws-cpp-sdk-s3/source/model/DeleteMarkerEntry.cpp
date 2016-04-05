@@ -29,7 +29,6 @@ DeleteMarkerEntry::DeleteMarkerEntry() :
     m_versionIdHasBeenSet(false),
     m_isLatest(false),
     m_isLatestHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false)
 {
 }
@@ -40,7 +39,6 @@ DeleteMarkerEntry::DeleteMarkerEntry(const XmlNode& xmlNode) :
     m_versionIdHasBeenSet(false),
     m_isLatest(false),
     m_isLatestHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false)
 {
   *this = xmlNode;
@@ -79,7 +77,7 @@ DeleteMarkerEntry& DeleteMarkerEntry::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
   }
@@ -118,10 +116,8 @@ void DeleteMarkerEntry::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedHasBeenSet)
   {
-   XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
-  ss << m_lastModified;
-   lastModifiedNode.SetText(ss.str());
-  ss.str("");
+     XmlNode lastModifiedNode = parentNode.CreateChildElement("LastModified");
+     lastModifiedNode.SetText(m_lastModified.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

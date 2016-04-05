@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -101,19 +102,31 @@ namespace Model
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline double GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline void SetExpiresAt(double value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline AuthorizationData& WithExpiresAt(double value) { SetExpiresAt(value); return *this;}
+    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the authorization token
+     * expires. Authorization tokens are valid for 12 hours.</p>
+     */
+    inline AuthorizationData& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the authorization token
+     * expires. Authorization tokens are valid for 12 hours.</p>
+     */
+    inline AuthorizationData& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(value); return *this;}
 
     /**
      * <p>The registry URL to use for this authorization token in a <code>docker
@@ -174,7 +187,7 @@ namespace Model
   private:
     Aws::String m_authorizationToken;
     bool m_authorizationTokenHasBeenSet;
-    double m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt;
     bool m_expiresAtHasBeenSet;
     Aws::String m_proxyEndpoint;
     bool m_proxyEndpointHasBeenSet;

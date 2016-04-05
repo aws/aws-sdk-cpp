@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/InvalidationBatch.h>
 
 namespace Aws
@@ -123,17 +124,27 @@ namespace Model
     /**
      * The date and time the invalidation request was first made.
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * The date and time the invalidation request was first made.
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * The date and time the invalidation request was first made.
      */
-    inline Invalidation& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * The date and time the invalidation request was first made.
+     */
+    inline Invalidation& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * The date and time the invalidation request was first made.
+     */
+    inline Invalidation& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * The current invalidation information for the batch request.
@@ -165,7 +176,7 @@ namespace Model
     bool m_idHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
     InvalidationBatch m_invalidationBatch;
     bool m_invalidationBatchHasBeenSet;

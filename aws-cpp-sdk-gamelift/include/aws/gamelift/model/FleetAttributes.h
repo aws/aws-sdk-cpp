@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -159,37 +160,61 @@ namespace Model
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline FleetAttributes& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline FleetAttributes& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline FleetAttributes& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetTerminationTime() const{ return m_terminationTime; }
+    inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetTerminationTime(double value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+    inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline FleetAttributes& WithTerminationTime(double value) { SetTerminationTime(value); return *this;}
+    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline FleetAttributes& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
      * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
@@ -461,9 +486,9 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_terminationTime;
+    Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
     FleetStatus m_status;
     bool m_statusHasBeenSet;

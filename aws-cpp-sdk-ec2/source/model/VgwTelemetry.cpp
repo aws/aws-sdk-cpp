@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 VgwTelemetry::VgwTelemetry() : 
     m_outsideIpAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_acceptedRouteCount(0),
@@ -37,7 +36,6 @@ VgwTelemetry::VgwTelemetry() :
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) : 
     m_outsideIpAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastStatusChange(0.0),
     m_lastStatusChangeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_acceptedRouteCount(0),
@@ -67,7 +65,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
     if(!lastStatusChangeNode.IsNull())
     {
-      m_lastStatusChange = StringUtils::ConvertToDouble(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str());
+      m_lastStatusChange = DateTime(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastStatusChangeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
@@ -99,7 +97,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange) << "&";
+      oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {
@@ -123,7 +121,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_lastStatusChangeHasBeenSet)
   {
-        oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange) << "&";
+      oStream << location << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusMessageHasBeenSet)
   {

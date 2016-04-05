@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ReservedInstancesId.h>
 #include <aws/ec2/model/ReservedInstancesModificationResponse.h>
 
@@ -162,47 +163,77 @@ namespace Model
     /**
      * <p>The time when the modification request was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The time when the modification request was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The time when the modification request was created.</p>
      */
-    inline ReservedInstancesModification& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The time when the modification request was created.</p>
+     */
+    inline ReservedInstancesModification& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The time when the modification request was created.</p>
+     */
+    inline ReservedInstancesModification& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The time when the modification request was last updated.</p>
      */
-    inline double GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>The time when the modification request was last updated.</p>
      */
-    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>The time when the modification request was last updated.</p>
      */
-    inline ReservedInstancesModification& WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /**
+     * <p>The time when the modification request was last updated.</p>
+     */
+    inline ReservedInstancesModification& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+
+    /**
+     * <p>The time when the modification request was last updated.</p>
+     */
+    inline ReservedInstancesModification& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>The time for the modification to become effective.</p>
      */
-    inline double GetEffectiveDate() const{ return m_effectiveDate; }
+    inline const Aws::Utils::DateTime& GetEffectiveDate() const{ return m_effectiveDate; }
 
     /**
      * <p>The time for the modification to become effective.</p>
      */
-    inline void SetEffectiveDate(double value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
+    inline void SetEffectiveDate(const Aws::Utils::DateTime& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
 
     /**
      * <p>The time for the modification to become effective.</p>
      */
-    inline ReservedInstancesModification& WithEffectiveDate(double value) { SetEffectiveDate(value); return *this;}
+    inline void SetEffectiveDate(Aws::Utils::DateTime&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline ReservedInstancesModification& WithEffectiveDate(const Aws::Utils::DateTime& value) { SetEffectiveDate(value); return *this;}
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline ReservedInstancesModification& WithEffectiveDate(Aws::Utils::DateTime&& value) { SetEffectiveDate(value); return *this;}
 
     /**
      * <p>The status of the Reserved Instances modification request.</p>
@@ -337,11 +368,11 @@ namespace Model
     bool m_reservedInstancesIdsHasBeenSet;
     Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
     bool m_modificationResultsHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    double m_updateDate;
+    Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
-    double m_effectiveDate;
+    Aws::Utils::DateTime m_effectiveDate;
     bool m_effectiveDateHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;

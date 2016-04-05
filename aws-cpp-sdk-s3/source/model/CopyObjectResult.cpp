@@ -24,13 +24,11 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyObjectResult::CopyObjectResult() : 
-    m_lastModified(0.0)
+CopyObjectResult::CopyObjectResult()
 {
 }
 
-CopyObjectResult::CopyObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_lastModified(0.0)
+CopyObjectResult::CopyObjectResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -50,7 +48,7 @@ CopyObjectResult& CopyObjectResult::operator =(const AmazonWebServiceResult<XmlD
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str());
+      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

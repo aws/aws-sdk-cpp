@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/RoutingStrategy.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -173,37 +174,61 @@ namespace Model
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline Alias& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Alias& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this object was last modified. Format is an
      * integer representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>Time stamp indicating when this object was last modified. Format is an
      * integer representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetLastUpdatedTime(double value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Time stamp indicating when this object was last modified. Format is an
      * integer representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline Alias& WithLastUpdatedTime(double value) { SetLastUpdatedTime(value); return *this;}
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was last modified. Format is an
+     * integer representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Alias& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was last modified. Format is an
+     * integer representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
 
   private:
     Aws::String m_aliasId;
@@ -214,9 +239,9 @@ namespace Model
     bool m_descriptionHasBeenSet;
     RoutingStrategy m_routingStrategy;
     bool m_routingStrategyHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
   };
 

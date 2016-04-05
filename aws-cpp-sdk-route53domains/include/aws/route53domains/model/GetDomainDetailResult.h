@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/ContactDetail.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/route53domains/model/Nameserver.h>
 
 namespace Aws
@@ -626,55 +627,91 @@ namespace Model
      * <p>The date when the domain was created as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline GetDomainDetailResult& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = value; }
+
+    /**
+     * <p>The date when the domain was created as found in the response to a WHOIS
+     * query. The date format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date when the domain was created as found in the response to a WHOIS
+     * query. The date format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline double GetUpdatedDate() const{ return m_updatedDate; }
+    inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline void SetUpdatedDate(double value) { m_updatedDate = value; }
+    inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDate = value; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
      */
-    inline GetDomainDetailResult& WithUpdatedDate(double value) { SetUpdatedDate(value); return *this;}
+    inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDate = value; }
+
+    /**
+     * <p>The last updated date of the domain as found in the response to a WHOIS
+     * query. The date format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
+
+    /**
+     * <p>The last updated date of the domain as found in the response to a WHOIS
+     * query. The date format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(value); return *this;}
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date
      * format is Unix time.</p>
      */
-    inline double GetExpirationDate() const{ return m_expirationDate; }
+    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date
      * format is Unix time.</p>
      */
-    inline void SetExpirationDate(double value) { m_expirationDate = value; }
+    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date
      * format is Unix time.</p>
      */
-    inline GetDomainDetailResult& WithExpirationDate(double value) { SetExpirationDate(value); return *this;}
+    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = value; }
+
+    /**
+     * <p>The date when the registration for the domain is set to expire. The date
+     * format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
+
+    /**
+     * <p>The date when the registration for the domain is set to expire. The date
+     * format is Unix time.</p>
+     */
+    inline GetDomainDetailResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
 
     /**
      * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
@@ -896,9 +933,9 @@ namespace Model
     Aws::String m_abuseContactEmail;
     Aws::String m_abuseContactPhone;
     Aws::String m_registryDomainId;
-    double m_creationDate;
-    double m_updatedDate;
-    double m_expirationDate;
+    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_updatedDate;
+    Aws::Utils::DateTime m_expirationDate;
     Aws::String m_reseller;
     Aws::String m_dnsSec;
     Aws::Vector<Aws::String> m_statusList;

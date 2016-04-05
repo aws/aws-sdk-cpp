@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/MigrationTypeValue.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/dms/model/ReplicationTaskStats.h>
 
 namespace Aws
@@ -383,32 +384,52 @@ namespace Model
     /**
      * <p>The date the replication task was created.</p>
      */
-    inline double GetReplicationTaskCreationDate() const{ return m_replicationTaskCreationDate; }
+    inline const Aws::Utils::DateTime& GetReplicationTaskCreationDate() const{ return m_replicationTaskCreationDate; }
 
     /**
      * <p>The date the replication task was created.</p>
      */
-    inline void SetReplicationTaskCreationDate(double value) { m_replicationTaskCreationDateHasBeenSet = true; m_replicationTaskCreationDate = value; }
+    inline void SetReplicationTaskCreationDate(const Aws::Utils::DateTime& value) { m_replicationTaskCreationDateHasBeenSet = true; m_replicationTaskCreationDate = value; }
 
     /**
      * <p>The date the replication task was created.</p>
      */
-    inline ReplicationTask& WithReplicationTaskCreationDate(double value) { SetReplicationTaskCreationDate(value); return *this;}
+    inline void SetReplicationTaskCreationDate(Aws::Utils::DateTime&& value) { m_replicationTaskCreationDateHasBeenSet = true; m_replicationTaskCreationDate = value; }
+
+    /**
+     * <p>The date the replication task was created.</p>
+     */
+    inline ReplicationTask& WithReplicationTaskCreationDate(const Aws::Utils::DateTime& value) { SetReplicationTaskCreationDate(value); return *this;}
+
+    /**
+     * <p>The date the replication task was created.</p>
+     */
+    inline ReplicationTask& WithReplicationTaskCreationDate(Aws::Utils::DateTime&& value) { SetReplicationTaskCreationDate(value); return *this;}
 
     /**
      * <p>The date the replication task is scheduled to start.</p>
      */
-    inline double GetReplicationTaskStartDate() const{ return m_replicationTaskStartDate; }
+    inline const Aws::Utils::DateTime& GetReplicationTaskStartDate() const{ return m_replicationTaskStartDate; }
 
     /**
      * <p>The date the replication task is scheduled to start.</p>
      */
-    inline void SetReplicationTaskStartDate(double value) { m_replicationTaskStartDateHasBeenSet = true; m_replicationTaskStartDate = value; }
+    inline void SetReplicationTaskStartDate(const Aws::Utils::DateTime& value) { m_replicationTaskStartDateHasBeenSet = true; m_replicationTaskStartDate = value; }
 
     /**
      * <p>The date the replication task is scheduled to start.</p>
      */
-    inline ReplicationTask& WithReplicationTaskStartDate(double value) { SetReplicationTaskStartDate(value); return *this;}
+    inline void SetReplicationTaskStartDate(Aws::Utils::DateTime&& value) { m_replicationTaskStartDateHasBeenSet = true; m_replicationTaskStartDate = value; }
+
+    /**
+     * <p>The date the replication task is scheduled to start.</p>
+     */
+    inline ReplicationTask& WithReplicationTaskStartDate(const Aws::Utils::DateTime& value) { SetReplicationTaskStartDate(value); return *this;}
+
+    /**
+     * <p>The date the replication task is scheduled to start.</p>
+     */
+    inline ReplicationTask& WithReplicationTaskStartDate(Aws::Utils::DateTime&& value) { SetReplicationTaskStartDate(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -494,9 +515,9 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;
-    double m_replicationTaskCreationDate;
+    Aws::Utils::DateTime m_replicationTaskCreationDate;
     bool m_replicationTaskCreationDateHasBeenSet;
-    double m_replicationTaskStartDate;
+    Aws::Utils::DateTime m_replicationTaskStartDate;
     bool m_replicationTaskStartDateHasBeenSet;
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;

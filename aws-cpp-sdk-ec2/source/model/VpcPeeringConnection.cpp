@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 
 VpcPeeringConnection::VpcPeeringConnection() : 
     m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTime(0.0),
     m_expirationTimeHasBeenSet(false),
     m_requesterVpcInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -36,7 +35,6 @@ VpcPeeringConnection::VpcPeeringConnection() :
 
 VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode) : 
     m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTime(0.0),
     m_expirationTimeHasBeenSet(false),
     m_requesterVpcInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -61,7 +59,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = StringUtils::ConvertToDouble(StringUtils::Trim(expirationTimeNode.GetText().c_str()).c_str());
+      m_expirationTime = DateTime(StringUtils::Trim(expirationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode requesterVpcInfoNode = resultNode.FirstChild("requesterVpcInfo");
@@ -109,7 +107,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime) << "&";
+      oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {
@@ -149,7 +147,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_expirationTimeHasBeenSet)
   {
-        oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime) << "&";
+      oStream << location << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_requesterVpcInfoHasBeenSet)
   {

@@ -28,7 +28,6 @@ SingleInstanceHealth::SingleInstanceHealth() :
     m_healthStatusHasBeenSet(false),
     m_colorHasBeenSet(false),
     m_causesHasBeenSet(false),
-    m_launchedAt(0.0),
     m_launchedAtHasBeenSet(false),
     m_applicationMetricsHasBeenSet(false),
     m_systemHasBeenSet(false)
@@ -40,7 +39,6 @@ SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode) :
     m_healthStatusHasBeenSet(false),
     m_colorHasBeenSet(false),
     m_causesHasBeenSet(false),
-    m_launchedAt(0.0),
     m_launchedAtHasBeenSet(false),
     m_applicationMetricsHasBeenSet(false),
     m_systemHasBeenSet(false)
@@ -87,7 +85,7 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode launchedAtNode = resultNode.FirstChild("LaunchedAt");
     if(!launchedAtNode.IsNull())
     {
-      m_launchedAt = StringUtils::ConvertToDouble(StringUtils::Trim(launchedAtNode.GetText().c_str()).c_str());
+      m_launchedAt = DateTime(StringUtils::Trim(launchedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_launchedAtHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
@@ -131,7 +129,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_launchedAtHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt) << "&";
+      oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_applicationMetricsHasBeenSet)
   {
@@ -171,7 +169,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_launchedAtHasBeenSet)
   {
-        oStream << location << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt) << "&";
+      oStream << location << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_applicationMetricsHasBeenSet)
   {

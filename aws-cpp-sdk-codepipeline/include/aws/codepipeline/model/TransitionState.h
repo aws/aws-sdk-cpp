@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -98,17 +99,27 @@ namespace Model
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline double GetLastChangedAt() const{ return m_lastChangedAt; }
+    inline const Aws::Utils::DateTime& GetLastChangedAt() const{ return m_lastChangedAt; }
 
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline void SetLastChangedAt(double value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
+    inline void SetLastChangedAt(const Aws::Utils::DateTime& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
 
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
-    inline TransitionState& WithLastChangedAt(double value) { SetLastChangedAt(value); return *this;}
+    inline void SetLastChangedAt(Aws::Utils::DateTime&& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
+
+    /**
+     * <p>The timestamp when the transition state was last changed.</p>
+     */
+    inline TransitionState& WithLastChangedAt(const Aws::Utils::DateTime& value) { SetLastChangedAt(value); return *this;}
+
+    /**
+     * <p>The timestamp when the transition state was last changed.</p>
+     */
+    inline TransitionState& WithLastChangedAt(Aws::Utils::DateTime&& value) { SetLastChangedAt(value); return *this;}
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline
@@ -157,7 +168,7 @@ namespace Model
     bool m_enabledHasBeenSet;
     Aws::String m_lastChangedBy;
     bool m_lastChangedByHasBeenSet;
-    double m_lastChangedAt;
+    Aws::Utils::DateTime m_lastChangedAt;
     bool m_lastChangedAtHasBeenSet;
     Aws::String m_disabledReason;
     bool m_disabledReasonHasBeenSet;

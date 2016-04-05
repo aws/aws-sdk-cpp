@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/StackStatus.h>
 
 namespace Aws
@@ -153,50 +154,82 @@ namespace Model
     /**
      * <p>The time the stack was created.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The time the stack was created.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The time the stack was created.</p>
      */
-    inline StackSummary& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The time the stack was created.</p>
+     */
+    inline StackSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The time the stack was created.</p>
+     */
+    inline StackSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline double GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline void SetLastUpdatedTime(double value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline StackSummary& WithLastUpdatedTime(double value) { SetLastUpdatedTime(value); return *this;}
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>The time the stack was last updated. This field will only be returned if the
+     * stack has been updated at least once.</p>
+     */
+    inline StackSummary& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>The time the stack was last updated. This field will only be returned if the
+     * stack has been updated at least once.</p>
+     */
+    inline StackSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
      * <p>The time the stack was deleted.</p>
      */
-    inline double GetDeletionTime() const{ return m_deletionTime; }
+    inline const Aws::Utils::DateTime& GetDeletionTime() const{ return m_deletionTime; }
 
     /**
      * <p>The time the stack was deleted.</p>
      */
-    inline void SetDeletionTime(double value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
+    inline void SetDeletionTime(const Aws::Utils::DateTime& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
 
     /**
      * <p>The time the stack was deleted.</p>
      */
-    inline StackSummary& WithDeletionTime(double value) { SetDeletionTime(value); return *this;}
+    inline void SetDeletionTime(Aws::Utils::DateTime&& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
+
+    /**
+     * <p>The time the stack was deleted.</p>
+     */
+    inline StackSummary& WithDeletionTime(const Aws::Utils::DateTime& value) { SetDeletionTime(value); return *this;}
+
+    /**
+     * <p>The time the stack was deleted.</p>
+     */
+    inline StackSummary& WithDeletionTime(Aws::Utils::DateTime&& value) { SetDeletionTime(value); return *this;}
 
     /**
      * <p>The current status of the stack.</p>
@@ -265,11 +298,11 @@ namespace Model
     bool m_stackNameHasBeenSet;
     Aws::String m_templateDescription;
     bool m_templateDescriptionHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
-    double m_deletionTime;
+    Aws::Utils::DateTime m_deletionTime;
     bool m_deletionTimeHasBeenSet;
     StackStatus m_stackStatus;
     bool m_stackStatusHasBeenSet;

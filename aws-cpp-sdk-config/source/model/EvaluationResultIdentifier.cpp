@@ -23,14 +23,12 @@ using namespace Aws::Utils;
 
 EvaluationResultIdentifier::EvaluationResultIdentifier() : 
     m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestamp(0.0),
     m_orderingTimestampHasBeenSet(false)
 {
 }
 
 EvaluationResultIdentifier::EvaluationResultIdentifier(const JsonValue& jsonValue) : 
     m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestamp(0.0),
     m_orderingTimestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -67,8 +65,7 @@ JsonValue EvaluationResultIdentifier::Jsonize() const
 
   if(m_orderingTimestampHasBeenSet)
   {
-   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp);
-
+   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

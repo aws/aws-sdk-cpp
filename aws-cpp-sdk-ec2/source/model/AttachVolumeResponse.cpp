@@ -27,13 +27,11 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 AttachVolumeResponse::AttachVolumeResponse() : 
-    m_attachTime(0.0),
     m_deleteOnTermination(false)
 {
 }
 
 AttachVolumeResponse::AttachVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_attachTime(0.0),
     m_deleteOnTermination(false)
 {
   *this = result;
@@ -74,7 +72,7 @@ AttachVolumeResponse& AttachVolumeResponse::operator =(const AmazonWebServiceRes
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())

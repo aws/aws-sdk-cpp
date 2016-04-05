@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
 #include <aws/elasticfilesystem/model/FileSystemSize.h>
 
@@ -160,19 +161,31 @@ namespace Model
      * <p>The time at which the file system was created, in seconds, since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The time at which the file system was created, in seconds, since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
      * <p>The time at which the file system was created, in seconds, since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline CreateFileSystemResult& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = value; }
+
+    /**
+     * <p>The time at which the file system was created, in seconds, since
+     * 1970-01-01T00:00:00Z.</p>
+     */
+    inline CreateFileSystemResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The time at which the file system was created, in seconds, since
+     * 1970-01-01T00:00:00Z.</p>
+     */
+    inline CreateFileSystemResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>A predefined string value that indicates the lifecycle phase of the file
@@ -345,7 +358,7 @@ namespace Model
     Aws::String m_ownerId;
     Aws::String m_creationToken;
     Aws::String m_fileSystemId;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     LifeCycleState m_lifeCycleState;
     Aws::String m_name;
     long m_numberOfMountTargets;

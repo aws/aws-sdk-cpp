@@ -50,14 +50,14 @@ ProvisionedThroughputDescription& ProvisionedThroughputDescription::operator =(c
 {
   if(jsonValue.ValueExists("LastIncreaseDateTime"))
   {
-    m_lastIncreaseDateTime = jsonValue.GetString("LastIncreaseDateTime");
+    m_lastIncreaseDateTime = jsonValue.GetDouble("LastIncreaseDateTime");
 
     m_lastIncreaseDateTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastDecreaseDateTime"))
   {
-    m_lastDecreaseDateTime = jsonValue.GetString("LastDecreaseDateTime");
+    m_lastDecreaseDateTime = jsonValue.GetDouble("LastDecreaseDateTime");
 
     m_lastDecreaseDateTimeHasBeenSet = true;
   }
@@ -92,14 +92,12 @@ JsonValue ProvisionedThroughputDescription::Jsonize() const
 
   if(m_lastIncreaseDateTimeHasBeenSet)
   {
-   payload.WithString("LastIncreaseDateTime", m_lastIncreaseDateTime);
-
+   payload.WithDouble("LastIncreaseDateTime", m_lastIncreaseDateTime.SecondsWithMSPrecision());
   }
 
   if(m_lastDecreaseDateTimeHasBeenSet)
   {
-   payload.WithString("LastDecreaseDateTime", m_lastDecreaseDateTime);
-
+   payload.WithDouble("LastDecreaseDateTime", m_lastDecreaseDateTime.SecondsWithMSPrecision());
   }
 
   if(m_numberOfDecreasesTodayHasBeenSet)

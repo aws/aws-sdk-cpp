@@ -26,7 +26,6 @@ TapeArchive::TapeArchive() :
     m_tapeBarcodeHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
-    m_completionTime(0.0),
     m_completionTimeHasBeenSet(false),
     m_retrievedToHasBeenSet(false),
     m_tapeStatusHasBeenSet(false)
@@ -38,7 +37,6 @@ TapeArchive::TapeArchive(const JsonValue& jsonValue) :
     m_tapeBarcodeHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
-    m_completionTime(0.0),
     m_completionTimeHasBeenSet(false),
     m_retrievedToHasBeenSet(false),
     m_tapeStatusHasBeenSet(false)
@@ -117,8 +115,7 @@ JsonValue TapeArchive::Jsonize() const
 
   if(m_completionTimeHasBeenSet)
   {
-   payload.WithDouble("CompletionTime", m_completionTime);
-
+   payload.WithDouble("CompletionTime", m_completionTime.SecondsWithMSPrecision());
   }
 
   if(m_retrievedToHasBeenSet)

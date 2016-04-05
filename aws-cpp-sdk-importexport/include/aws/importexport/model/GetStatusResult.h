@@ -16,6 +16,7 @@
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/importexport/model/JobType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/importexport/model/ResponseMetadata.h>
 #include <aws/importexport/model/Artifact.h>
@@ -323,13 +324,19 @@ namespace Model
     inline GetStatusResult& WithCurrentManifest(const char* value) { SetCurrentManifest(value); return *this;}
 
     
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     
-    inline void SetCreationDate(double value) { m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     
-    inline GetStatusResult& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = value; }
+
+    
+    inline GetStatusResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    
+    inline GetStatusResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     
     inline const Aws::Vector<Artifact>& GetArtifactList() const{ return m_artifactList; }
@@ -382,7 +389,7 @@ namespace Model
     Aws::String m_signature;
     Aws::String m_signatureFileContents;
     Aws::String m_currentManifest;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     Aws::Vector<Artifact> m_artifactList;
     ResponseMetadata m_responseMetadata;
   };

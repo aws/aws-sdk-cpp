@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 EventDescription::EventDescription() : 
-    m_eventDate(0.0),
     m_eventDateHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
@@ -37,7 +36,6 @@ EventDescription::EventDescription() :
 }
 
 EventDescription::EventDescription(const XmlNode& xmlNode) : 
-    m_eventDate(0.0),
     m_eventDateHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
@@ -59,7 +57,7 @@ EventDescription& EventDescription::operator =(const XmlNode& xmlNode)
     XmlNode eventDateNode = resultNode.FirstChild("EventDate");
     if(!eventDateNode.IsNull())
     {
-      m_eventDate = StringUtils::ConvertToDouble(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str());
+      m_eventDate = DateTime(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_eventDateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -113,7 +111,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_eventDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EventDate=" << StringUtils::URLEncode(m_eventDate) << "&";
+      oStream << location << index << locationValue << ".EventDate=" << StringUtils::URLEncode(m_eventDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -149,7 +147,7 @@ void EventDescription::OutputToStream(Aws::OStream& oStream, const char* locatio
 {
   if(m_eventDateHasBeenSet)
   {
-        oStream << location << ".EventDate=" << StringUtils::URLEncode(m_eventDate) << "&";
+      oStream << location << ".EventDate=" << StringUtils::URLEncode(m_eventDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {

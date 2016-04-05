@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ConfigurationItem::ConfigurationItem() : 
     m_versionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
-    m_configurationItemCaptureTime(0.0),
     m_configurationItemCaptureTimeHasBeenSet(false),
     m_configurationItemStatusHasBeenSet(false),
     m_configurationStateIdHasBeenSet(false),
@@ -35,7 +34,6 @@ ConfigurationItem::ConfigurationItem() :
     m_resourceNameHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_resourceCreationTime(0.0),
     m_resourceCreationTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
@@ -47,7 +45,6 @@ ConfigurationItem::ConfigurationItem() :
 ConfigurationItem::ConfigurationItem(const JsonValue& jsonValue) : 
     m_versionHasBeenSet(false),
     m_accountIdHasBeenSet(false),
-    m_configurationItemCaptureTime(0.0),
     m_configurationItemCaptureTimeHasBeenSet(false),
     m_configurationItemStatusHasBeenSet(false),
     m_configurationStateIdHasBeenSet(false),
@@ -58,7 +55,6 @@ ConfigurationItem::ConfigurationItem(const JsonValue& jsonValue) :
     m_resourceNameHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_resourceCreationTime(0.0),
     m_resourceCreationTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
@@ -219,8 +215,7 @@ JsonValue ConfigurationItem::Jsonize() const
 
   if(m_configurationItemCaptureTimeHasBeenSet)
   {
-   payload.WithDouble("configurationItemCaptureTime", m_configurationItemCaptureTime);
-
+   payload.WithDouble("configurationItemCaptureTime", m_configurationItemCaptureTime.SecondsWithMSPrecision());
   }
 
   if(m_configurationItemStatusHasBeenSet)
@@ -277,8 +272,7 @@ JsonValue ConfigurationItem::Jsonize() const
 
   if(m_resourceCreationTimeHasBeenSet)
   {
-   payload.WithDouble("resourceCreationTime", m_resourceCreationTime);
-
+   payload.WithDouble("resourceCreationTime", m_resourceCreationTime.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

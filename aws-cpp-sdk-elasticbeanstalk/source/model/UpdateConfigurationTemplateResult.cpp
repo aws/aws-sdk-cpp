@@ -26,15 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult() : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0)
+UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult()
 {
 }
 
-UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_dateCreated(0.0),
-    m_dateUpdated(0.0)
+UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -84,12 +80,12 @@ UpdateConfigurationTemplateResult& UpdateConfigurationTemplateResult::operator =
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = StringUtils::ConvertToDouble(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str());
+      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = StringUtils::ConvertToDouble(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str());
+      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
     if(!optionSettingsNode.IsNull())

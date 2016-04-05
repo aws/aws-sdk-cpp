@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -97,19 +98,31 @@ namespace Model
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline double GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
 
     /**
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetUpdateTime(double value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline SpotInstanceStatus& WithUpdateTime(double value) { SetUpdateTime(value); return *this;}
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceStatus& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(value); return *this;}
 
     /**
      * <p>The description for the status code.</p>
@@ -149,7 +162,7 @@ namespace Model
   private:
     Aws::String m_code;
     bool m_codeHasBeenSet;
-    double m_updateTime;
+    Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;

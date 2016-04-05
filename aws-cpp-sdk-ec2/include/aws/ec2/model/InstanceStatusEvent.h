@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/EventCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -122,41 +123,61 @@ namespace Model
     /**
      * <p>The earliest scheduled start time for the event.</p>
      */
-    inline double GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
     /**
      * <p>The earliest scheduled start time for the event.</p>
      */
-    inline void SetNotBefore(double value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
      * <p>The earliest scheduled start time for the event.</p>
      */
-    inline InstanceStatusEvent& WithNotBefore(double value) { SetNotBefore(value); return *this;}
+    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(value); return *this;}
 
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
-    inline double GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
 
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
-    inline void SetNotAfter(double value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
-    inline InstanceStatusEvent& WithNotAfter(double value) { SetNotAfter(value); return *this;}
+    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
+
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(value); return *this;}
 
   private:
     EventCode m_code;
     bool m_codeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_notBefore;
+    Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
-    double m_notAfter;
+    Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
   };
 

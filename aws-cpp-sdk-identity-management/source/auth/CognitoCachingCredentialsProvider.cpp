@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 using namespace Aws::Auth;
 using namespace Aws::CognitoIdentity;
 using namespace Aws::CognitoIdentity::Model;
+using namespace Aws::Utils;
 
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
@@ -68,8 +69,8 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
                 m_cachedCredentials.SetAWSAccessKeyId(cognitoCreds.GetAccessKeyId());
                 m_cachedCredentials.SetAWSSecretKey(cognitoCreds.GetSecretKey());
                 m_cachedCredentials.SetSessionToken(cognitoCreds.GetSessionToken());
-                m_expiry = cognitoCreds.GetExpiration();
-                AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry);
+                m_expiry = cognitoCreds.GetExpiration().SecondsWithMSPrecision();
+                AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry.load());
             }
             else
             {
@@ -85,17 +86,16 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 
 bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 {
-    using namespace std::chrono;
     //30s grace buffer so requests have time to finish before expiry.
     static const double GRACE_BUFFER = 30.0;   
 
-    return expiry < (Utils::DateTime::ComputeCurrentTimestampInAmazonFormat() - GRACE_BUFFER);
+    return DateTime::Now().SecondsWithMSPrecision() > (expiry - GRACE_BUFFER);
 }
 
 void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoIdentityProvider&)
 {
     AWS_LOG_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
-    m_expiry.store(0);
+    m_expiry.store(DateTime().SecondsWithMSPrecision());
 }
 
 

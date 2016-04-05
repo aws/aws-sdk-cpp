@@ -25,7 +25,6 @@ InstanceSummary::InstanceSummary() :
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ InstanceSummary::InstanceSummary(const JsonValue& jsonValue) :
     m_deploymentIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_lifecycleEventsHasBeenSet(false)
 {
@@ -108,8 +106,7 @@ JsonValue InstanceSummary::Jsonize() const
 
   if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt);
-
+   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_lifecycleEventsHasBeenSet)

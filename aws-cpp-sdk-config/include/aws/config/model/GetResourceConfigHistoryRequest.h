@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/config/model/ChronologicalOrder.h>
 
 namespace Aws
@@ -101,40 +102,66 @@ namespace Model
      * <p>The time stamp that indicates a later time. If not specified, current time is
      * taken.</p>
      */
-    inline double GetLaterTime() const{ return m_laterTime; }
+    inline const Aws::Utils::DateTime& GetLaterTime() const{ return m_laterTime; }
 
     /**
      * <p>The time stamp that indicates a later time. If not specified, current time is
      * taken.</p>
      */
-    inline void SetLaterTime(double value) { m_laterTimeHasBeenSet = true; m_laterTime = value; }
+    inline void SetLaterTime(const Aws::Utils::DateTime& value) { m_laterTimeHasBeenSet = true; m_laterTime = value; }
 
     /**
      * <p>The time stamp that indicates a later time. If not specified, current time is
      * taken.</p>
      */
-    inline GetResourceConfigHistoryRequest& WithLaterTime(double value) { SetLaterTime(value); return *this;}
+    inline void SetLaterTime(Aws::Utils::DateTime&& value) { m_laterTimeHasBeenSet = true; m_laterTime = value; }
+
+    /**
+     * <p>The time stamp that indicates a later time. If not specified, current time is
+     * taken.</p>
+     */
+    inline GetResourceConfigHistoryRequest& WithLaterTime(const Aws::Utils::DateTime& value) { SetLaterTime(value); return *this;}
+
+    /**
+     * <p>The time stamp that indicates a later time. If not specified, current time is
+     * taken.</p>
+     */
+    inline GetResourceConfigHistoryRequest& WithLaterTime(Aws::Utils::DateTime&& value) { SetLaterTime(value); return *this;}
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
      * returns paginated results that contain configuration items that start from when
      * the first configuration item was recorded.</p>
      */
-    inline double GetEarlierTime() const{ return m_earlierTime; }
+    inline const Aws::Utils::DateTime& GetEarlierTime() const{ return m_earlierTime; }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
      * returns paginated results that contain configuration items that start from when
      * the first configuration item was recorded.</p>
      */
-    inline void SetEarlierTime(double value) { m_earlierTimeHasBeenSet = true; m_earlierTime = value; }
+    inline void SetEarlierTime(const Aws::Utils::DateTime& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = value; }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
      * returns paginated results that contain configuration items that start from when
      * the first configuration item was recorded.</p>
      */
-    inline GetResourceConfigHistoryRequest& WithEarlierTime(double value) { SetEarlierTime(value); return *this;}
+    inline void SetEarlierTime(Aws::Utils::DateTime&& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = value; }
+
+    /**
+     * <p>The time stamp that indicates an earlier time. If not specified, the action
+     * returns paginated results that contain configuration items that start from when
+     * the first configuration item was recorded.</p>
+     */
+    inline GetResourceConfigHistoryRequest& WithEarlierTime(const Aws::Utils::DateTime& value) { SetEarlierTime(value); return *this;}
+
+    /**
+     * <p>The time stamp that indicates an earlier time. If not specified, the action
+     * returns paginated results that contain configuration items that start from when
+     * the first configuration item was recorded.</p>
+     */
+    inline GetResourceConfigHistoryRequest& WithEarlierTime(Aws::Utils::DateTime&& value) { SetEarlierTime(value); return *this;}
 
     /**
      * <p>The chronological order for configuration items listed. By default the
@@ -234,9 +261,9 @@ namespace Model
     bool m_resourceTypeHasBeenSet;
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
-    double m_laterTime;
+    Aws::Utils::DateTime m_laterTime;
     bool m_laterTimeHasBeenSet;
-    double m_earlierTime;
+    Aws::Utils::DateTime m_earlierTime;
     bool m_earlierTimeHasBeenSet;
     ChronologicalOrder m_chronologicalOrder;
     bool m_chronologicalOrderHasBeenSet;

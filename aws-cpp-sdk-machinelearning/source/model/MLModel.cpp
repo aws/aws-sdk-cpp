@@ -25,9 +25,7 @@ MLModel::MLModel() :
     m_mLModelIdHasBeenSet(false),
     m_trainingDataSourceIdHasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -40,7 +38,6 @@ MLModel::MLModel() :
     m_mLModelTypeHasBeenSet(false),
     m_scoreThreshold(0.0),
     m_scoreThresholdHasBeenSet(false),
-    m_scoreThresholdLastUpdatedAt(0.0),
     m_scoreThresholdLastUpdatedAtHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -50,9 +47,7 @@ MLModel::MLModel(const JsonValue& jsonValue) :
     m_mLModelIdHasBeenSet(false),
     m_trainingDataSourceIdHasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -65,7 +60,6 @@ MLModel::MLModel(const JsonValue& jsonValue) :
     m_mLModelTypeHasBeenSet(false),
     m_scoreThreshold(0.0),
     m_scoreThresholdHasBeenSet(false),
-    m_scoreThresholdLastUpdatedAt(0.0),
     m_scoreThresholdLastUpdatedAtHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -216,14 +210,12 @@ JsonValue MLModel::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt);
-
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt);
-
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_nameHasBeenSet)
@@ -284,8 +276,7 @@ JsonValue MLModel::Jsonize() const
 
   if(m_scoreThresholdLastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("ScoreThresholdLastUpdatedAt", m_scoreThresholdLastUpdatedAt);
-
+   payload.WithDouble("ScoreThresholdLastUpdatedAt", m_scoreThresholdLastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_messageHasBeenSet)

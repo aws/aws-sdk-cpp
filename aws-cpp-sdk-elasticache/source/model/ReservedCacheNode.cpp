@@ -27,7 +27,6 @@ ReservedCacheNode::ReservedCacheNode() :
     m_reservedCacheNodeIdHasBeenSet(false),
     m_reservedCacheNodesOfferingIdHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -48,7 +47,6 @@ ReservedCacheNode::ReservedCacheNode(const XmlNode& xmlNode) :
     m_reservedCacheNodeIdHasBeenSet(false),
     m_reservedCacheNodesOfferingIdHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -93,7 +91,7 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
@@ -171,7 +169,7 @@ void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -229,7 +227,7 @@ void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {

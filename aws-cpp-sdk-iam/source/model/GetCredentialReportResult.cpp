@@ -27,13 +27,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCredentialReportResult::GetCredentialReportResult() : 
-    m_generatedTime(0.0)
+GetCredentialReportResult::GetCredentialReportResult()
 {
 }
 
-GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_generatedTime(0.0)
+GetCredentialReportResult::GetCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -63,7 +61,7 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const AmazonWeb
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
     if(!generatedTimeNode.IsNull())
     {
-      m_generatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str());
+      m_generatedTime = DateTime(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

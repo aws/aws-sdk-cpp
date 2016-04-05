@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/AccountWithRestoreAccess.h>
 #include <aws/redshift/model/Tag.h>
@@ -121,19 +122,31 @@ namespace Model
      * <p> The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains
      * a copy of the cluster data as of this exact time. </p>
      */
-    inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
      * <p> The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains
      * a copy of the cluster data as of this exact time. </p>
      */
-    inline void SetSnapshotCreateTime(double value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
      * <p> The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains
      * a copy of the cluster data as of this exact time. </p>
      */
-    inline Snapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+
+    /**
+     * <p> The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains
+     * a copy of the cluster data as of this exact time. </p>
+     */
+    inline Snapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
+
+    /**
+     * <p> The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains
+     * a copy of the cluster data as of this exact time. </p>
+     */
+    inline Snapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
      * <p> The snapshot status. The value of the status depends on the API operation
@@ -251,17 +264,27 @@ namespace Model
     /**
      * <p> The time (UTC) when the cluster was originally created. </p>
      */
-    inline double GetClusterCreateTime() const{ return m_clusterCreateTime; }
+    inline const Aws::Utils::DateTime& GetClusterCreateTime() const{ return m_clusterCreateTime; }
 
     /**
      * <p> The time (UTC) when the cluster was originally created. </p>
      */
-    inline void SetClusterCreateTime(double value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
      * <p> The time (UTC) when the cluster was originally created. </p>
      */
-    inline Snapshot& WithClusterCreateTime(double value) { SetClusterCreateTime(value); return *this;}
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p> The time (UTC) when the cluster was originally created. </p>
+     */
+    inline Snapshot& WithClusterCreateTime(const Aws::Utils::DateTime& value) { SetClusterCreateTime(value); return *this;}
+
+    /**
+     * <p> The time (UTC) when the cluster was originally created. </p>
+     */
+    inline Snapshot& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
 
     /**
      * <p> The master user name for the cluster. </p>
@@ -913,7 +936,7 @@ namespace Model
     bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
-    double m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
@@ -921,7 +944,7 @@ namespace Model
     bool m_portHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    double m_clusterCreateTime;
+    Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

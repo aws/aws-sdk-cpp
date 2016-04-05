@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -103,29 +104,41 @@ namespace Model
     inline GetClientCertificateResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
     
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     
-    inline void SetCreatedDate(double value) { m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
     
-    inline GetClientCertificateResult& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
 
     
-    inline double GetExpirationDate() const{ return m_expirationDate; }
+    inline GetClientCertificateResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     
-    inline void SetExpirationDate(double value) { m_expirationDate = value; }
+    inline GetClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     
-    inline GetClientCertificateResult& WithExpirationDate(double value) { SetExpirationDate(value); return *this;}
+    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    
+    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
+
+    
+    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = value; }
+
+    
+    inline GetClientCertificateResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
+
+    
+    inline GetClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
 
   private:
     Aws::String m_clientCertificateId;
     Aws::String m_description;
     Aws::String m_pemEncodedCertificate;
-    double m_createdDate;
-    double m_expirationDate;
+    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_expirationDate;
   };
 
 } // namespace Model

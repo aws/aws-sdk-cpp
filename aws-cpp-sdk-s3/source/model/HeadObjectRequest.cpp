@@ -27,10 +27,8 @@ using namespace Aws::Http;
 HeadObjectRequest::HeadObjectRequest() : 
     m_bucketHasBeenSet(false),
     m_ifMatchHasBeenSet(false),
-    m_ifModifiedSince(0.0),
     m_ifModifiedSinceHasBeenSet(false),
     m_ifNoneMatchHasBeenSet(false),
-    m_ifUnmodifiedSince(0.0),
     m_ifUnmodifiedSinceHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_rangeHasBeenSet(false),
@@ -65,63 +63,59 @@ Aws::Http::HeaderValueCollection HeadObjectRequest::GetRequestSpecificHeaders() 
   Aws::StringStream ss;
   if(m_ifMatchHasBeenSet)
   {
-   ss << m_ifMatch;
-   headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
-   ss.str("");
+    ss << m_ifMatch;
+    headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
+    ss.str("");
   }
 
   if(m_ifModifiedSinceHasBeenSet)
   {
-   ss << m_ifModifiedSince;
-   headers.insert(Aws::Http::HeaderValuePair("if-modified-since", ss.str()));
-   ss.str("");
+    headers.insert(Aws::Http::HeaderValuePair("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822)));
   }
 
   if(m_ifNoneMatchHasBeenSet)
   {
-   ss << m_ifNoneMatch;
-   headers.insert(Aws::Http::HeaderValuePair("if-none-match", ss.str()));
-   ss.str("");
+    ss << m_ifNoneMatch;
+    headers.insert(Aws::Http::HeaderValuePair("if-none-match", ss.str()));
+    ss.str("");
   }
 
   if(m_ifUnmodifiedSinceHasBeenSet)
   {
-   ss << m_ifUnmodifiedSince;
-   headers.insert(Aws::Http::HeaderValuePair("if-unmodified-since", ss.str()));
-   ss.str("");
+    headers.insert(Aws::Http::HeaderValuePair("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822)));
   }
 
   if(m_rangeHasBeenSet)
   {
-   ss << m_range;
-   headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
-   ss.str("");
+    ss << m_range;
+    headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
-   ss << m_sSECustomerAlgorithm;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerAlgorithm;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
-   ss << m_sSECustomerKey;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKey;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
-   ss << m_sSECustomerKeyMD5;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKeyMD5;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
   return headers;

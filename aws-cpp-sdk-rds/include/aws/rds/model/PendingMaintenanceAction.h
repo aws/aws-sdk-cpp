@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
-    inline double GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
+    inline const Aws::Utils::DateTime& GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
 
     /**
      * <p>The date of the maintenance window when the action will be applied. The
@@ -100,7 +101,7 @@ namespace Model
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
-    inline void SetAutoAppliedAfterDate(double value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
+    inline void SetAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
 
     /**
      * <p>The date of the maintenance window when the action will be applied. The
@@ -108,7 +109,23 @@ namespace Model
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
-    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(double value) { SetAutoAppliedAfterDate(value); return *this;}
+    inline void SetAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
+
+    /**
+     * <p>The date of the maintenance window when the action will be applied. The
+     * maintenance action will be applied to the resource during its first maintenance
+     * window after this date. If this date is specified, any
+     * <code>next-maintenance</code> opt-in requests are ignored.</p>
+     */
+    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { SetAutoAppliedAfterDate(value); return *this;}
+
+    /**
+     * <p>The date of the maintenance window when the action will be applied. The
+     * maintenance action will be applied to the resource during its first maintenance
+     * window after this date. If this date is specified, any
+     * <code>next-maintenance</code> opt-in requests are ignored.</p>
+     */
+    inline PendingMaintenanceAction& WithAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { SetAutoAppliedAfterDate(value); return *this;}
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
@@ -116,7 +133,7 @@ namespace Model
      * the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
-    inline double GetForcedApplyDate() const{ return m_forcedApplyDate; }
+    inline const Aws::Utils::DateTime& GetForcedApplyDate() const{ return m_forcedApplyDate; }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
@@ -124,7 +141,7 @@ namespace Model
      * the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
-    inline void SetForcedApplyDate(double value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
+    inline void SetForcedApplyDate(const Aws::Utils::DateTime& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
@@ -132,7 +149,23 @@ namespace Model
      * the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
-    inline PendingMaintenanceAction& WithForcedApplyDate(double value) { SetForcedApplyDate(value); return *this;}
+    inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
+
+    /**
+     * <p>The date when the maintenance action will be automatically applied. The
+     * maintenance action will be applied to the resource on this date regardless of
+     * the maintenance window for the resource. If this date is specified, any
+     * <code>immediate</code> opt-in requests are ignored.</p>
+     */
+    inline PendingMaintenanceAction& WithForcedApplyDate(const Aws::Utils::DateTime& value) { SetForcedApplyDate(value); return *this;}
+
+    /**
+     * <p>The date when the maintenance action will be automatically applied. The
+     * maintenance action will be applied to the resource on this date regardless of
+     * the maintenance window for the resource. If this date is specified, any
+     * <code>immediate</code> opt-in requests are ignored.</p>
+     */
+    inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(value); return *this;}
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -184,7 +217,7 @@ namespace Model
      * has not been received and nothing has been specified as
      * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
      */
-    inline double GetCurrentApplyDate() const{ return m_currentApplyDate; }
+    inline const Aws::Utils::DateTime& GetCurrentApplyDate() const{ return m_currentApplyDate; }
 
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
@@ -194,7 +227,7 @@ namespace Model
      * has not been received and nothing has been specified as
      * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
      */
-    inline void SetCurrentApplyDate(double value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
+    inline void SetCurrentApplyDate(const Aws::Utils::DateTime& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
 
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
@@ -204,7 +237,27 @@ namespace Model
      * has not been received and nothing has been specified as
      * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
      */
-    inline PendingMaintenanceAction& WithCurrentApplyDate(double value) { SetCurrentApplyDate(value); return *this;}
+    inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
+
+    /**
+     * <p>The effective date when the pending maintenance action will be applied to the
+     * resource. This date takes into account opt-in requests received from the
+     * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
+     * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
+     * has not been received and nothing has been specified as
+     * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
+     */
+    inline PendingMaintenanceAction& WithCurrentApplyDate(const Aws::Utils::DateTime& value) { SetCurrentApplyDate(value); return *this;}
+
+    /**
+     * <p>The effective date when the pending maintenance action will be applied to the
+     * resource. This date takes into account opt-in requests received from the
+     * <a>ApplyPendingMaintenanceAction</a> API, the <code>AutoAppliedAfterDate</code>,
+     * and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
+     * has not been received and nothing has been specified as
+     * <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
+     */
+    inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(value); return *this;}
 
     /**
      * <p>A description providing more detail about the maintenance action.</p>
@@ -244,13 +297,13 @@ namespace Model
   private:
     Aws::String m_action;
     bool m_actionHasBeenSet;
-    double m_autoAppliedAfterDate;
+    Aws::Utils::DateTime m_autoAppliedAfterDate;
     bool m_autoAppliedAfterDateHasBeenSet;
-    double m_forcedApplyDate;
+    Aws::Utils::DateTime m_forcedApplyDate;
     bool m_forcedApplyDateHasBeenSet;
     Aws::String m_optInStatus;
     bool m_optInStatusHasBeenSet;
-    double m_currentApplyDate;
+    Aws::Utils::DateTime m_currentApplyDate;
     bool m_currentApplyDateHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

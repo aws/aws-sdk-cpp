@@ -28,7 +28,6 @@ UserDetail::UserDetail() :
     m_userNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_userPolicyListHasBeenSet(false),
     m_groupListHasBeenSet(false),
@@ -41,7 +40,6 @@ UserDetail::UserDetail(const XmlNode& xmlNode) :
     m_userNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
     m_userPolicyListHasBeenSet(false),
     m_groupListHasBeenSet(false),
@@ -83,7 +81,7 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode userPolicyListNode = resultNode.FirstChild("UserPolicyList");
@@ -147,7 +145,7 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_userPolicyListHasBeenSet)
   {
@@ -199,7 +197,7 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_userPolicyListHasBeenSet)
   {

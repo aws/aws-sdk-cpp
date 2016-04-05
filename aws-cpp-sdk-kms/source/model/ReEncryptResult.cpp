@@ -40,7 +40,6 @@ ReEncryptResult& ReEncryptResult::operator =(const AmazonWebServiceResult<JsonVa
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
-
   }
 
   if(jsonValue.ValueExists("SourceKeyId"))

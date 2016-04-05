@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 
 GenerateDataSetRequest::GenerateDataSetRequest() : 
     m_dataSetTypeHasBeenSet(false),
-    m_dataSetPublicationDate(0.0),
     m_dataSetPublicationDateHasBeenSet(false),
     m_roleNameArnHasBeenSet(false),
     m_destinationS3BucketNameHasBeenSet(false),
@@ -44,8 +43,7 @@ Aws::String GenerateDataSetRequest::SerializePayload() const
 
   if(m_dataSetPublicationDateHasBeenSet)
   {
-   payload.WithDouble("dataSetPublicationDate", m_dataSetPublicationDate);
-
+   payload.WithDouble("dataSetPublicationDate", m_dataSetPublicationDate.SecondsWithMSPrecision());
   }
 
   if(m_roleNameArnHasBeenSet)

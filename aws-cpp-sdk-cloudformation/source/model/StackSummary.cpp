@@ -27,11 +27,8 @@ StackSummary::StackSummary() :
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTime(0.0),
     m_deletionTimeHasBeenSet(false),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false)
@@ -42,11 +39,8 @@ StackSummary::StackSummary(const XmlNode& xmlNode) :
     m_stackIdHasBeenSet(false),
     m_stackNameHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTime(0.0),
     m_deletionTimeHasBeenSet(false),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false)
@@ -81,19 +75,19 @@ StackSummary& StackSummary::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
-      m_lastUpdatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str());
+      m_lastUpdatedTime = DateTime(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
     if(!deletionTimeNode.IsNull())
     {
-      m_deletionTime = StringUtils::ConvertToDouble(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str());
+      m_deletionTime = DateTime(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
@@ -129,15 +123,15 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
+      oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deletionTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime) << "&";
+      oStream << location << index << locationValue << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {
@@ -165,15 +159,15 @@ void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-        oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
+      oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deletionTimeHasBeenSet)
   {
-        oStream << location << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime) << "&";
+      oStream << location << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {

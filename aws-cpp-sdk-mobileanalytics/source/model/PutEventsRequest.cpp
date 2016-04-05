@@ -53,16 +53,16 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
   Aws::StringStream ss;
   if(m_clientContextHasBeenSet)
   {
-   ss << m_clientContext;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
-   ss.str("");
+    ss << m_clientContext;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    ss.str("");
   }
 
   if(m_clientContextEncodingHasBeenSet)
   {
-   ss << m_clientContextEncoding;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context-encoding", ss.str()));
-   ss.str("");
+    ss << m_clientContextEncoding;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context-encoding", ss.str()));
+    ss.str("");
   }
 
   return headers;

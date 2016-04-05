@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -102,22 +103,34 @@ namespace Model
     inline ClientCertificate& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
     
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     
-    inline void SetCreatedDate(double value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     
-    inline ClientCertificate& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     
-    inline double GetExpirationDate() const{ return m_expirationDate; }
+    inline ClientCertificate& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     
-    inline void SetExpirationDate(double value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
+    inline ClientCertificate& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     
-    inline ClientCertificate& WithExpirationDate(double value) { SetExpirationDate(value); return *this;}
+    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    
+    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
+
+    
+    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
+
+    
+    inline ClientCertificate& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
+
+    
+    inline ClientCertificate& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
 
   private:
     Aws::String m_clientCertificateId;
@@ -126,9 +139,9 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::String m_pemEncodedCertificate;
     bool m_pemEncodedCertificateHasBeenSet;
-    double m_createdDate;
+    Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
-    double m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
   };
 

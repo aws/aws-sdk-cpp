@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticbeanstalk/model/EnvironmentStatus.h>
 #include <aws/elasticbeanstalk/model/EnvironmentHealth.h>
 #include <aws/elasticbeanstalk/model/EnvironmentHealthStatus.h>
@@ -389,32 +390,52 @@ namespace Model
     /**
      * <p>The creation date for this environment.</p>
      */
-    inline double GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
 
     /**
      * <p>The creation date for this environment.</p>
      */
-    inline void SetDateCreated(double value) { m_dateCreated = value; }
+    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreated = value; }
 
     /**
      * <p>The creation date for this environment.</p>
      */
-    inline TerminateEnvironmentResult& WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreated = value; }
+
+    /**
+     * <p>The creation date for this environment.</p>
+     */
+    inline TerminateEnvironmentResult& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
+
+    /**
+     * <p>The creation date for this environment.</p>
+     */
+    inline TerminateEnvironmentResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
 
     /**
      * <p>The last modified date for this environment.</p>
      */
-    inline double GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
 
     /**
      * <p>The last modified date for this environment.</p>
      */
-    inline void SetDateUpdated(double value) { m_dateUpdated = value; }
+    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdated = value; }
 
     /**
      * <p>The last modified date for this environment.</p>
      */
-    inline TerminateEnvironmentResult& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdated = value; }
+
+    /**
+     * <p>The last modified date for this environment.</p>
+     */
+    inline TerminateEnvironmentResult& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
+
+    /**
+     * <p>The last modified date for this environment.</p>
+     */
+    inline TerminateEnvironmentResult& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
 
     /**
      * <p> The current operational status of the environment: </p> <ul> <li>
@@ -725,8 +746,8 @@ namespace Model
     Aws::String m_description;
     Aws::String m_endpointURL;
     Aws::String m_cNAME;
-    double m_dateCreated;
-    double m_dateUpdated;
+    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateUpdated;
     EnvironmentStatus m_status;
     bool m_abortableOperationInProgress;
     EnvironmentHealth m_health;

@@ -25,7 +25,6 @@ FileSystemDescription::FileSystemDescription() :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -39,7 +38,6 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleStateHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -135,8 +133,7 @@ JsonValue FileSystemDescription::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_lifeCycleStateHasBeenSet)

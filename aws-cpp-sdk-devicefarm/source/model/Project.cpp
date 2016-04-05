@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 Project::Project() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false)
 {
 }
@@ -32,7 +31,6 @@ Project::Project() :
 Project::Project(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -82,8 +80,7 @@ JsonValue Project::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created);
-
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   return payload;

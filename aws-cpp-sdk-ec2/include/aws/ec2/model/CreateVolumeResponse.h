@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -196,17 +197,27 @@ namespace Model
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline void SetCreateTime(double value) { m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline CreateVolumeResponse& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = value; }
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline CreateVolumeResponse& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline CreateVolumeResponse& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>Information about the volume attachments.</p>
@@ -439,7 +450,7 @@ namespace Model
     Aws::String m_snapshotId;
     Aws::String m_availabilityZone;
     VolumeState m_state;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     Aws::Vector<VolumeAttachment> m_attachments;
     Aws::Vector<Tag> m_tags;
     VolumeType m_volumeType;

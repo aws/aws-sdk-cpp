@@ -27,7 +27,6 @@ Credentials::Credentials() :
     m_accessKeyIdHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
 }
@@ -36,7 +35,6 @@ Credentials::Credentials(const XmlNode& xmlNode) :
     m_accessKeyIdHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
   *this = xmlNode;
@@ -69,7 +67,7 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = StringUtils::ConvertToDouble(StringUtils::Trim(expirationNode.GetText().c_str()).c_str());
+      m_expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
     }
   }
@@ -93,7 +91,7 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_expirationHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
+      oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -113,6 +111,6 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_expirationHasBeenSet)
   {
-        oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
+      oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

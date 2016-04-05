@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -193,17 +194,27 @@ namespace Model
     /**
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
-    inline double GetAttachTime() const{ return m_attachTime; }
+    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
 
     /**
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
-    inline void SetAttachTime(double value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
+    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
-    inline NetworkInterfaceAttachment& WithAttachTime(double value) { SetAttachTime(value); return *this;}
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
+
+    /**
+     * <p>The timestamp indicating when the attachment initiated.</p>
+     */
+    inline NetworkInterfaceAttachment& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
+
+    /**
+     * <p>The timestamp indicating when the attachment initiated.</p>
+     */
+    inline NetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(value); return *this;}
 
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
@@ -234,7 +245,7 @@ namespace Model
     bool m_deviceIndexHasBeenSet;
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
-    double m_attachTime;
+    Aws::Utils::DateTime m_attachTime;
     bool m_attachTimeHasBeenSet;
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -132,21 +133,35 @@ namespace Model
      * string format of the completion time is in the ISO8601 extended
      * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline double GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
      * string format of the completion time is in the ISO8601 extended
      * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline void SetCompletionTime(double value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
      * string format of the completion time is in the ISO8601 extended
      * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline TapeArchive& WithCompletionTime(double value) { SetCompletionTime(value); return *this;}
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+
+    /**
+     * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
+     * string format of the completion time is in the ISO8601 extended
+     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeArchive& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
+     * string format of the completion time is in the ISO8601 extended
+     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeArchive& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
@@ -239,7 +254,7 @@ namespace Model
     bool m_tapeBarcodeHasBeenSet;
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
-    double m_completionTime;
+    Aws::Utils::DateTime m_completionTime;
     bool m_completionTimeHasBeenSet;
     Aws::String m_retrievedTo;
     bool m_retrievedToHasBeenSet;

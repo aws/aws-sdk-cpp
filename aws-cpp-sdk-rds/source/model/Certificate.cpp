@@ -27,9 +27,7 @@ Certificate::Certificate() :
     m_certificateIdentifierHasBeenSet(false),
     m_certificateTypeHasBeenSet(false),
     m_thumbprintHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validTill(0.0),
     m_validTillHasBeenSet(false)
 {
 }
@@ -38,9 +36,7 @@ Certificate::Certificate(const XmlNode& xmlNode) :
     m_certificateIdentifierHasBeenSet(false),
     m_certificateTypeHasBeenSet(false),
     m_thumbprintHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validTill(0.0),
     m_validTillHasBeenSet(false)
 {
   *this = xmlNode;
@@ -73,13 +69,13 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = StringUtils::ConvertToDouble(StringUtils::Trim(validFromNode.GetText().c_str()).c_str());
+      m_validFrom = DateTime(StringUtils::Trim(validFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
     if(!validTillNode.IsNull())
     {
-      m_validTill = StringUtils::ConvertToDouble(StringUtils::Trim(validTillNode.GetText().c_str()).c_str());
+      m_validTill = DateTime(StringUtils::Trim(validTillNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
     }
   }
@@ -103,11 +99,11 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
   }
   if(m_validFromHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
+      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validTillHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill) << "&";
+      oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -127,10 +123,10 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_validFromHasBeenSet)
   {
-        oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
+      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validTillHasBeenSet)
   {
-        oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill) << "&";
+      oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

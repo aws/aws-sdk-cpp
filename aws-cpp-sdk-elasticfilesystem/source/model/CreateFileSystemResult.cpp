@@ -25,13 +25,11 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateFileSystemResult::CreateFileSystemResult() : 
-    m_creationTime(0.0),
     m_numberOfMountTargets(0)
 {
 }
 
 CreateFileSystemResult::CreateFileSystemResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationTime(0.0),
     m_numberOfMountTargets(0)
 {
   *this = result;

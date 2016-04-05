@@ -26,9 +26,7 @@ CommandPlugin::CommandPlugin() :
     m_statusHasBeenSet(false),
     m_responseCode(0),
     m_responseCodeHasBeenSet(false),
-    m_responseStartDateTime(0.0),
     m_responseStartDateTimeHasBeenSet(false),
-    m_responseFinishDateTime(0.0),
     m_responseFinishDateTimeHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
@@ -41,9 +39,7 @@ CommandPlugin::CommandPlugin(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_responseCode(0),
     m_responseCodeHasBeenSet(false),
-    m_responseStartDateTime(0.0),
     m_responseStartDateTimeHasBeenSet(false),
-    m_responseFinishDateTime(0.0),
     m_responseFinishDateTimeHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
@@ -136,14 +132,12 @@ JsonValue CommandPlugin::Jsonize() const
 
   if(m_responseStartDateTimeHasBeenSet)
   {
-   payload.WithDouble("ResponseStartDateTime", m_responseStartDateTime);
-
+   payload.WithDouble("ResponseStartDateTime", m_responseStartDateTime.SecondsWithMSPrecision());
   }
 
   if(m_responseFinishDateTimeHasBeenSet)
   {
-   payload.WithDouble("ResponseFinishDateTime", m_responseFinishDateTime);
-
+   payload.WithDouble("ResponseFinishDateTime", m_responseFinishDateTime.SecondsWithMSPrecision());
   }
 
   if(m_outputHasBeenSet)

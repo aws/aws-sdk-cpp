@@ -27,7 +27,6 @@ RecordPatch::RecordPatch() :
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
 }
@@ -38,7 +37,6 @@ RecordPatch::RecordPatch(const JsonValue& jsonValue) :
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -113,8 +111,7 @@ JsonValue RecordPatch::Jsonize() const
 
   if(m_deviceLastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate);
-
+   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;

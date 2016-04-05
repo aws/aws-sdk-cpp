@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -219,32 +220,52 @@ namespace Model
     /**
      * <p>The date and time the repository was last modified, in timestamp format.</p>
      */
-    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
      * <p>The date and time the repository was last modified, in timestamp format.</p>
      */
-    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
      * <p>The date and time the repository was last modified, in timestamp format.</p>
      */
-    inline RepositoryMetadata& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    /**
+     * <p>The date and time the repository was last modified, in timestamp format.</p>
+     */
+    inline RepositoryMetadata& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * <p>The date and time the repository was last modified, in timestamp format.</p>
+     */
+    inline RepositoryMetadata& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
     /**
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
-    inline RepositoryMetadata& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date and time the repository was created, in timestamp format.</p>
+     */
+    inline RepositoryMetadata& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date and time the repository was created, in timestamp format.</p>
+     */
+    inline RepositoryMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The URL to use for cloning the repository over HTTPS.</p>
@@ -362,9 +383,9 @@ namespace Model
     bool m_repositoryDescriptionHasBeenSet;
     Aws::String m_defaultBranch;
     bool m_defaultBranchHasBeenSet;
-    double m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     Aws::String m_cloneUrlHttp;
     bool m_cloneUrlHttpHasBeenSet;

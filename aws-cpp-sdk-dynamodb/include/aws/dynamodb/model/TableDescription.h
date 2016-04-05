@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/TableStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
@@ -324,43 +325,31 @@ namespace Model
      * <p>The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::String& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
 
     /**
      * <p>The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline void SetCreationDateTime(const Aws::String& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
      * <p>The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline void SetCreationDateTime(Aws::String&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
      * <p>The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline void SetCreationDateTime(const char* value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime.assign(value); }
+    inline TableDescription& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
 
     /**
      * <p>The date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline TableDescription& WithCreationDateTime(const Aws::String& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the table was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-     */
-    inline TableDescription& WithCreationDateTime(Aws::String&& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the table was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-     */
-    inline TableDescription& WithCreationDateTime(const char* value) { SetCreationDateTime(value); return *this;}
+    inline TableDescription& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
 
     /**
      * <p>The provisioned throughput settings for the table, consisting of read and
@@ -1161,7 +1150,7 @@ namespace Model
     bool m_keySchemaHasBeenSet;
     TableStatus m_tableStatus;
     bool m_tableStatusHasBeenSet;
-    Aws::String m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
     ProvisionedThroughputDescription m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;

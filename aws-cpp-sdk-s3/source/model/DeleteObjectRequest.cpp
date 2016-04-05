@@ -56,14 +56,14 @@ Aws::Http::HeaderValueCollection DeleteObjectRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_mFAHasBeenSet)
   {
-   ss << m_mFA;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-mfa", ss.str()));
-   ss.str("");
+    ss << m_mFA;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-mfa", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
   return headers;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
 #include <aws/machinelearning/model/RealtimeEndpointInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -177,37 +178,61 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline GetMLModelResult& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = value; }
+
+    /**
+     * <p>The time that the <code>MLModel</code> was created. The time is expressed in
+     * epoch time.</p>
+     */
+    inline GetMLModelResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the <code>MLModel</code> was created. The time is expressed in
+     * epoch time.</p>
+     */
+    inline GetMLModelResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline GetMLModelResult& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetMLModelResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetMLModelResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -788,19 +813,31 @@ namespace Model
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline double GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline void SetScoreThresholdLastUpdatedAt(double value) { m_scoreThresholdLastUpdatedAt = value; }
+    inline void SetScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { m_scoreThresholdLastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(double value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
+    inline void SetScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { m_scoreThresholdLastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
+     * is expressed in epoch time.</p>
+     */
+    inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
+     * is expressed in epoch time.</p>
+     */
+    inline GetMLModelResult& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A link to the file that contains logs of the <code>CreateMLModel</code>
@@ -1002,8 +1039,8 @@ namespace Model
     Aws::String m_mLModelId;
     Aws::String m_trainingDataSourceId;
     Aws::String m_createdByIamUser;
-    double m_createdAt;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     Aws::String m_name;
     EntityStatus m_status;
     long long m_sizeInBytes;
@@ -1012,7 +1049,7 @@ namespace Model
     Aws::String m_inputDataLocationS3;
     MLModelType m_mLModelType;
     double m_scoreThreshold;
-    double m_scoreThresholdLastUpdatedAt;
+    Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
     Aws::String m_logUri;
     Aws::String m_message;
     Aws::String m_recipe;

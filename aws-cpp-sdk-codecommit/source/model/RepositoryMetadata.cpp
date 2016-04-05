@@ -27,9 +27,7 @@ RepositoryMetadata::RepositoryMetadata() :
     m_repositoryNameHasBeenSet(false),
     m_repositoryDescriptionHasBeenSet(false),
     m_defaultBranchHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
     m_cloneUrlHttpHasBeenSet(false),
     m_cloneUrlSshHasBeenSet(false),
@@ -43,9 +41,7 @@ RepositoryMetadata::RepositoryMetadata(const JsonValue& jsonValue) :
     m_repositoryNameHasBeenSet(false),
     m_repositoryDescriptionHasBeenSet(false),
     m_defaultBranchHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
     m_cloneUrlHttpHasBeenSet(false),
     m_cloneUrlSshHasBeenSet(false),
@@ -165,14 +161,12 @@ JsonValue RepositoryMetadata::Jsonize() const
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("lastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("creationDate", m_creationDate);
-
+   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_cloneUrlHttpHasBeenSet)

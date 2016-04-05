@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BundleTaskState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/Storage.h>
 #include <aws/ec2/model/BundleTaskError.h>
 
@@ -145,32 +146,52 @@ namespace Model
     /**
      * <p>The time this task started.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The time this task started.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The time this task started.</p>
      */
-    inline BundleTask& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The time this task started.</p>
+     */
+    inline BundleTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The time this task started.</p>
+     */
+    inline BundleTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The time of the most recent update for the task.</p>
      */
-    inline double GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
 
     /**
      * <p>The time of the most recent update for the task.</p>
      */
-    inline void SetUpdateTime(double value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
      * <p>The time of the most recent update for the task.</p>
      */
-    inline BundleTask& WithUpdateTime(double value) { SetUpdateTime(value); return *this;}
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline BundleTask& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline BundleTask& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(value); return *this;}
 
     /**
      * <p>The Amazon S3 storage locations.</p>
@@ -264,9 +285,9 @@ namespace Model
     bool m_bundleIdHasBeenSet;
     BundleTaskState m_state;
     bool m_stateHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_updateTime;
+    Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
     Storage m_storage;
     bool m_storageHasBeenSet;

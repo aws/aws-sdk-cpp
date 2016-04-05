@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline double GetCheckedTime() const{ return m_checkedTime; }
+    inline const Aws::Utils::DateTime& GetCheckedTime() const{ return m_checkedTime; }
 
     /**
      * <p>The date and time the health check status was observed, in the format
@@ -92,7 +93,7 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline void SetCheckedTime(double value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
+    inline void SetCheckedTime(const Aws::Utils::DateTime& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
 
     /**
      * <p>The date and time the health check status was observed, in the format
@@ -100,12 +101,28 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline StatusReport& WithCheckedTime(double value) { SetCheckedTime(value); return *this;}
+    inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
+
+    /**
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
+     */
+    inline StatusReport& WithCheckedTime(const Aws::Utils::DateTime& value) { SetCheckedTime(value); return *this;}
+
+    /**
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
+     */
+    inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(value); return *this;}
 
   private:
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    double m_checkedTime;
+    Aws::Utils::DateTime m_checkedTime;
     bool m_checkedTimeHasBeenSet;
   };
 

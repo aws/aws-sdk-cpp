@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 Distribution::Distribution() : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_inProgressInvalidationBatches(0),
     m_inProgressInvalidationBatchesHasBeenSet(false),
@@ -39,7 +38,6 @@ Distribution::Distribution() :
 Distribution::Distribution(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_inProgressInvalidationBatches(0),
     m_inProgressInvalidationBatchesHasBeenSet(false),
@@ -71,7 +69,7 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
-      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTime = DateTime(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode inProgressInvalidationBatchesNode = resultNode.FirstChild("InProgressInvalidationBatches");
@@ -120,10 +118,8 @@ void Distribution::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedTimeHasBeenSet)
   {
-   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-  ss << m_lastModifiedTime;
-   lastModifiedTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_inProgressInvalidationBatchesHasBeenSet)

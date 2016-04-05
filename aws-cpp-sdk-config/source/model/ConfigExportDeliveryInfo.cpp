@@ -25,11 +25,8 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() :
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastAttemptTime(0.0),
     m_lastAttemptTimeHasBeenSet(false),
-    m_lastSuccessfulTime(0.0),
     m_lastSuccessfulTimeHasBeenSet(false),
-    m_nextDeliveryTime(0.0),
     m_nextDeliveryTimeHasBeenSet(false)
 {
 }
@@ -38,11 +35,8 @@ ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(const JsonValue& jsonValue) :
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastAttemptTime(0.0),
     m_lastAttemptTimeHasBeenSet(false),
-    m_lastSuccessfulTime(0.0),
     m_lastSuccessfulTimeHasBeenSet(false),
-    m_nextDeliveryTime(0.0),
     m_nextDeliveryTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -118,20 +112,17 @@ JsonValue ConfigExportDeliveryInfo::Jsonize() const
 
   if(m_lastAttemptTimeHasBeenSet)
   {
-   payload.WithDouble("lastAttemptTime", m_lastAttemptTime);
-
+   payload.WithDouble("lastAttemptTime", m_lastAttemptTime.SecondsWithMSPrecision());
   }
 
   if(m_lastSuccessfulTimeHasBeenSet)
   {
-   payload.WithDouble("lastSuccessfulTime", m_lastSuccessfulTime);
-
+   payload.WithDouble("lastSuccessfulTime", m_lastSuccessfulTime.SecondsWithMSPrecision());
   }
 
   if(m_nextDeliveryTimeHasBeenSet)
   {
-   payload.WithDouble("nextDeliveryTime", m_nextDeliveryTime);
-
+   payload.WithDouble("nextDeliveryTime", m_nextDeliveryTime.SecondsWithMSPrecision());
   }
 
   return payload;

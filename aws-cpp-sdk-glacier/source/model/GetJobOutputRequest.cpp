@@ -41,9 +41,9 @@ Aws::Http::HeaderValueCollection GetJobOutputRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_rangeHasBeenSet)
   {
-   ss << m_range;
-   headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
-   ss.str("");
+    ss << m_range;
+    headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
+    ss.str("");
   }
 
   return headers;

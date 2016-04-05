@@ -41,7 +41,6 @@ AutoScalingGroup::AutoScalingGroup() :
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
@@ -73,7 +72,6 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
     m_instancesHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_suspendedProcessesHasBeenSet(false),
     m_placementGroupHasBeenSet(false),
@@ -187,7 +185,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode suspendedProcessesNode = resultNode.FirstChild("SuspendedProcesses");
@@ -333,7 +331,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_suspendedProcessesHasBeenSet)
   {
@@ -457,7 +455,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_suspendedProcessesHasBeenSet)
   {

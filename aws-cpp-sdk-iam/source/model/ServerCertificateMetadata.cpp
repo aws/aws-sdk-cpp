@@ -28,9 +28,7 @@ ServerCertificateMetadata::ServerCertificateMetadata() :
     m_serverCertificateNameHasBeenSet(false),
     m_serverCertificateIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
 }
@@ -40,9 +38,7 @@ ServerCertificateMetadata::ServerCertificateMetadata(const XmlNode& xmlNode) :
     m_serverCertificateNameHasBeenSet(false),
     m_serverCertificateIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
   *this = xmlNode;
@@ -81,13 +77,13 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
-      m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
+      m_uploadDate = DateTime(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = StringUtils::ConvertToDouble(StringUtils::Trim(expirationNode.GetText().c_str()).c_str());
+      m_expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
     }
   }
@@ -115,11 +111,11 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_uploadDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
+      oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_expirationHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
+      oStream << location << index << locationValue << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -143,10 +139,10 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_uploadDateHasBeenSet)
   {
-        oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
+      oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_expirationHasBeenSet)
   {
-        oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration) << "&";
+      oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

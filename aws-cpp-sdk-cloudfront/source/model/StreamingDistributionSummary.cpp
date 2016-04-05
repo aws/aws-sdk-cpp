@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 StreamingDistributionSummary::StreamingDistributionSummary() : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_s3OriginHasBeenSet(false),
@@ -42,7 +41,6 @@ StreamingDistributionSummary::StreamingDistributionSummary() :
 StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastModifiedTime(0.0),
     m_lastModifiedTimeHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_s3OriginHasBeenSet(false),
@@ -77,7 +75,7 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
-      m_lastModifiedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str());
+      m_lastModifiedTime = DateTime(StringUtils::Trim(lastModifiedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
@@ -144,10 +142,8 @@ void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
 
   if(m_lastModifiedTimeHasBeenSet)
   {
-   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-  ss << m_lastModifiedTime;
-   lastModifiedTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+     lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_domainNameHasBeenSet)

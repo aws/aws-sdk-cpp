@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -85,23 +86,35 @@ namespace Model
      * <p>The date and time after which AWS KMS deletes the customer master key
      * (CMK).</p>
      */
-    inline double GetDeletionDate() const{ return m_deletionDate; }
+    inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the customer master key
      * (CMK).</p>
      */
-    inline void SetDeletionDate(double value) { m_deletionDate = value; }
+    inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDate = value; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the customer master key
      * (CMK).</p>
      */
-    inline ScheduleKeyDeletionResult& WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
+    inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDate = value; }
+
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key
+     * (CMK).</p>
+     */
+    inline ScheduleKeyDeletionResult& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
+
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key
+     * (CMK).</p>
+     */
+    inline ScheduleKeyDeletionResult& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(value); return *this;}
 
   private:
     Aws::String m_keyId;
-    double m_deletionDate;
+    Aws::Utils::DateTime m_deletionDate;
   };
 
 } // namespace Model

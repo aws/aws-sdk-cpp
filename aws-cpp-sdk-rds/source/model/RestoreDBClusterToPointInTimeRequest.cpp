@@ -22,7 +22,6 @@ using namespace Aws::Utils;
 RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() : 
     m_dBClusterIdentifierHasBeenSet(false),
     m_sourceDBClusterIdentifierHasBeenSet(false),
-    m_restoreToTime(0.0),
     m_restoreToTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
     m_useLatestRestorableTimeHasBeenSet(false),
@@ -50,7 +49,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   }
   if(m_restoreToTimeHasBeenSet)
   {
-    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime) << "&";
+    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_useLatestRestorableTimeHasBeenSet)
   {

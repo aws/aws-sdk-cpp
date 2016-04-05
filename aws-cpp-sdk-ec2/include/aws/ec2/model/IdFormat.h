@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -102,28 +103,42 @@ namespace Model
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline double GetDeadline() const{ return m_deadline; }
+    inline const Aws::Utils::DateTime& GetDeadline() const{ return m_deadline; }
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline void SetDeadline(double value) { m_deadlineHasBeenSet = true; m_deadline = value; }
+    inline void SetDeadline(const Aws::Utils::DateTime& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
 
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline IdFormat& WithDeadline(double value) { SetDeadline(value); return *this;}
+    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
+
+    /**
+     * <p>The date in UTC at which you are permanently switched over to using longer
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
+     */
+    inline IdFormat& WithDeadline(const Aws::Utils::DateTime& value) { SetDeadline(value); return *this;}
+
+    /**
+     * <p>The date in UTC at which you are permanently switched over to using longer
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
+     */
+    inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(value); return *this;}
 
   private:
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet;
-    double m_deadline;
+    Aws::Utils::DateTime m_deadline;
     bool m_deadlineHasBeenSet;
   };
 

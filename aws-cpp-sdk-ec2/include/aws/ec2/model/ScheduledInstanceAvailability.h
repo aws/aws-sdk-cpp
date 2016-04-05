@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ScheduledInstanceRecurrence.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -270,17 +271,27 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline double GetFirstSlotStartTime() const{ return m_firstSlotStartTime; }
+    inline const Aws::Utils::DateTime& GetFirstSlotStartTime() const{ return m_firstSlotStartTime; }
 
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline void SetFirstSlotStartTime(double value) { m_firstSlotStartTimeHasBeenSet = true; m_firstSlotStartTime = value; }
+    inline void SetFirstSlotStartTime(const Aws::Utils::DateTime& value) { m_firstSlotStartTimeHasBeenSet = true; m_firstSlotStartTime = value; }
 
     /**
      * <p>The time period for the first schedule to start.</p>
      */
-    inline ScheduledInstanceAvailability& WithFirstSlotStartTime(double value) { SetFirstSlotStartTime(value); return *this;}
+    inline void SetFirstSlotStartTime(Aws::Utils::DateTime&& value) { m_firstSlotStartTimeHasBeenSet = true; m_firstSlotStartTime = value; }
+
+    /**
+     * <p>The time period for the first schedule to start.</p>
+     */
+    inline ScheduledInstanceAvailability& WithFirstSlotStartTime(const Aws::Utils::DateTime& value) { SetFirstSlotStartTime(value); return *this;}
+
+    /**
+     * <p>The time period for the first schedule to start.</p>
+     */
+    inline ScheduledInstanceAvailability& WithFirstSlotStartTime(Aws::Utils::DateTime&& value) { SetFirstSlotStartTime(value); return *this;}
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -392,7 +403,7 @@ namespace Model
     bool m_slotDurationInHoursHasBeenSet;
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
-    double m_firstSlotStartTime;
+    Aws::Utils::DateTime m_firstSlotStartTime;
     bool m_firstSlotStartTimeHasBeenSet;
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;

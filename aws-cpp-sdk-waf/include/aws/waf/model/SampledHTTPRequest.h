@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/HTTPRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -100,19 +101,31 @@ namespace Model
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline SampledHTTPRequest& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>The time at which AWS WAF received the request from your AWS resource, in
+     * Unix time format (in seconds).</p>
+     */
+    inline SampledHTTPRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time at which AWS WAF received the request from your AWS resource, in
+     * Unix time format (in seconds).</p>
+     */
+    inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
@@ -161,7 +174,7 @@ namespace Model
     bool m_requestHasBeenSet;
     long long m_weight;
     bool m_weightHasBeenSet;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     Aws::String m_action;
     bool m_actionHasBeenSet;

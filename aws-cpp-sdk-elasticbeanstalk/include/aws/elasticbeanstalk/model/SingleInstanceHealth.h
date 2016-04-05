@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticbeanstalk/model/ApplicationMetrics.h>
 #include <aws/elasticbeanstalk/model/SystemStatus.h>
 
@@ -247,17 +248,27 @@ namespace Model
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline double GetLaunchedAt() const{ return m_launchedAt; }
+    inline const Aws::Utils::DateTime& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline void SetLaunchedAt(double value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
+    inline void SetLaunchedAt(const Aws::Utils::DateTime& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline SingleInstanceHealth& WithLaunchedAt(double value) { SetLaunchedAt(value); return *this;}
+    inline void SetLaunchedAt(Aws::Utils::DateTime&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
+
+    /**
+     * <p>The time at which the EC2 instance was launched.</p>
+     */
+    inline SingleInstanceHealth& WithLaunchedAt(const Aws::Utils::DateTime& value) { SetLaunchedAt(value); return *this;}
+
+    /**
+     * <p>The time at which the EC2 instance was launched.</p>
+     */
+    inline SingleInstanceHealth& WithLaunchedAt(Aws::Utils::DateTime&& value) { SetLaunchedAt(value); return *this;}
 
     
     inline const ApplicationMetrics& GetApplicationMetrics() const{ return m_applicationMetrics; }
@@ -298,7 +309,7 @@ namespace Model
     bool m_colorHasBeenSet;
     Aws::Vector<Aws::String> m_causes;
     bool m_causesHasBeenSet;
-    double m_launchedAt;
+    Aws::Utils::DateTime m_launchedAt;
     bool m_launchedAtHasBeenSet;
     ApplicationMetrics m_applicationMetrics;
     bool m_applicationMetricsHasBeenSet;

@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 
 ChangeBatchRecord::ChangeBatchRecord() : 
     m_idHasBeenSet(false),
-    m_submittedAt(0.0),
     m_submittedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_commentHasBeenSet(false),
@@ -36,7 +35,6 @@ ChangeBatchRecord::ChangeBatchRecord() :
 
 ChangeBatchRecord::ChangeBatchRecord(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
-    m_submittedAt(0.0),
     m_submittedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_commentHasBeenSet(false),
@@ -61,7 +59,7 @@ ChangeBatchRecord& ChangeBatchRecord::operator =(const XmlNode& xmlNode)
     XmlNode submittedAtNode = resultNode.FirstChild("SubmittedAt");
     if(!submittedAtNode.IsNull())
     {
-      m_submittedAt = StringUtils::ConvertToDouble(StringUtils::Trim(submittedAtNode.GetText().c_str()).c_str());
+      m_submittedAt = DateTime(StringUtils::Trim(submittedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_submittedAtHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -110,10 +108,8 @@ void ChangeBatchRecord::AddToNode(XmlNode& parentNode) const
 
   if(m_submittedAtHasBeenSet)
   {
-   XmlNode submittedAtNode = parentNode.CreateChildElement("SubmittedAt");
-  ss << m_submittedAt;
-   submittedAtNode.SetText(ss.str());
-  ss.str("");
+     XmlNode submittedAtNode = parentNode.CreateChildElement("SubmittedAt");
+     submittedAtNode.SetText(m_submittedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

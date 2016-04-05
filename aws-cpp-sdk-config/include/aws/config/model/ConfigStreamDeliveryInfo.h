@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/DeliveryStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -161,17 +162,27 @@ namespace Model
     /**
      * <p>The time from the last status change.</p>
      */
-    inline double GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
+    inline const Aws::Utils::DateTime& GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
 
     /**
      * <p>The time from the last status change.</p>
      */
-    inline void SetLastStatusChangeTime(double value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
+    inline void SetLastStatusChangeTime(const Aws::Utils::DateTime& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
 
     /**
      * <p>The time from the last status change.</p>
      */
-    inline ConfigStreamDeliveryInfo& WithLastStatusChangeTime(double value) { SetLastStatusChangeTime(value); return *this;}
+    inline void SetLastStatusChangeTime(Aws::Utils::DateTime&& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
+
+    /**
+     * <p>The time from the last status change.</p>
+     */
+    inline ConfigStreamDeliveryInfo& WithLastStatusChangeTime(const Aws::Utils::DateTime& value) { SetLastStatusChangeTime(value); return *this;}
+
+    /**
+     * <p>The time from the last status change.</p>
+     */
+    inline ConfigStreamDeliveryInfo& WithLastStatusChangeTime(Aws::Utils::DateTime&& value) { SetLastStatusChangeTime(value); return *this;}
 
   private:
     DeliveryStatus m_lastStatus;
@@ -180,7 +191,7 @@ namespace Model
     bool m_lastErrorCodeHasBeenSet;
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
-    double m_lastStatusChangeTime;
+    Aws::Utils::DateTime m_lastStatusChangeTime;
     bool m_lastStatusChangeTimeHasBeenSet;
   };
 

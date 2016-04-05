@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 EvaluationResult::EvaluationResult() : 
     m_evaluationResultIdentifierHasBeenSet(false),
     m_complianceTypeHasBeenSet(false),
-    m_resultRecordedTime(0.0),
     m_resultRecordedTimeHasBeenSet(false),
-    m_configRuleInvokedTime(0.0),
     m_configRuleInvokedTimeHasBeenSet(false),
     m_annotationHasBeenSet(false),
     m_resultTokenHasBeenSet(false)
@@ -36,9 +34,7 @@ EvaluationResult::EvaluationResult() :
 EvaluationResult::EvaluationResult(const JsonValue& jsonValue) : 
     m_evaluationResultIdentifierHasBeenSet(false),
     m_complianceTypeHasBeenSet(false),
-    m_resultRecordedTime(0.0),
     m_resultRecordedTimeHasBeenSet(false),
-    m_configRuleInvokedTime(0.0),
     m_configRuleInvokedTimeHasBeenSet(false),
     m_annotationHasBeenSet(false),
     m_resultTokenHasBeenSet(false)
@@ -110,14 +106,12 @@ JsonValue EvaluationResult::Jsonize() const
 
   if(m_resultRecordedTimeHasBeenSet)
   {
-   payload.WithDouble("ResultRecordedTime", m_resultRecordedTime);
-
+   payload.WithDouble("ResultRecordedTime", m_resultRecordedTime.SecondsWithMSPrecision());
   }
 
   if(m_configRuleInvokedTimeHasBeenSet)
   {
-   payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime);
-
+   payload.WithDouble("ConfigRuleInvokedTime", m_configRuleInvokedTime.SecondsWithMSPrecision());
   }
 
   if(m_annotationHasBeenSet)

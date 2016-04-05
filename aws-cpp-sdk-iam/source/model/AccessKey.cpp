@@ -28,7 +28,6 @@ AccessKey::AccessKey() :
     m_accessKeyIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
 }
@@ -38,7 +37,6 @@ AccessKey::AccessKey(const XmlNode& xmlNode) :
     m_accessKeyIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -77,7 +75,7 @@ AccessKey& AccessKey::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
   }
@@ -105,7 +103,7 @@ void AccessKey::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -129,6 +127,6 @@ void AccessKey::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 
 TapeRecoveryPointInfo::TapeRecoveryPointInfo() : 
     m_tapeARNHasBeenSet(false),
-    m_tapeRecoveryPointTime(0.0),
     m_tapeRecoveryPointTimeHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
@@ -33,7 +32,6 @@ TapeRecoveryPointInfo::TapeRecoveryPointInfo() :
 
 TapeRecoveryPointInfo::TapeRecoveryPointInfo(const JsonValue& jsonValue) : 
     m_tapeARNHasBeenSet(false),
-    m_tapeRecoveryPointTime(0.0),
     m_tapeRecoveryPointTimeHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
@@ -87,8 +85,7 @@ JsonValue TapeRecoveryPointInfo::Jsonize() const
 
   if(m_tapeRecoveryPointTimeHasBeenSet)
   {
-   payload.WithDouble("TapeRecoveryPointTime", m_tapeRecoveryPointTime);
-
+   payload.WithDouble("TapeRecoveryPointTime", m_tapeRecoveryPointTime.SecondsWithMSPrecision());
   }
 
   if(m_tapeSizeInBytesHasBeenSet)

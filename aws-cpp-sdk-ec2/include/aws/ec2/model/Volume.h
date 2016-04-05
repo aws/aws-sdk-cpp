@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -198,17 +199,27 @@ namespace Model
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline Volume& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline Volume& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline Volume& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>Information about the volume attachments.</p>
@@ -446,7 +457,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     VolumeState m_state;
     bool m_stateHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
     Aws::Vector<VolumeAttachment> m_attachments;
     bool m_attachmentsHasBeenSet;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/SourceType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -164,17 +165,27 @@ namespace Model
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline double GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline Event& WithDate(double value) { SetDate(value); return *this;}
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
+    inline Event& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
+    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
   private:
     Aws::String m_sourceIdentifier;
@@ -183,7 +194,7 @@ namespace Model
     bool m_sourceTypeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
   };
 

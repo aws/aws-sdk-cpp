@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -120,58 +121,88 @@ namespace Model
     /**
      * <p>When the revision was first used by AWS CodeDeploy.</p>
      */
-    inline double GetFirstUsedTime() const{ return m_firstUsedTime; }
+    inline const Aws::Utils::DateTime& GetFirstUsedTime() const{ return m_firstUsedTime; }
 
     /**
      * <p>When the revision was first used by AWS CodeDeploy.</p>
      */
-    inline void SetFirstUsedTime(double value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = value; }
+    inline void SetFirstUsedTime(const Aws::Utils::DateTime& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = value; }
 
     /**
      * <p>When the revision was first used by AWS CodeDeploy.</p>
      */
-    inline GenericRevisionInfo& WithFirstUsedTime(double value) { SetFirstUsedTime(value); return *this;}
+    inline void SetFirstUsedTime(Aws::Utils::DateTime&& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = value; }
+
+    /**
+     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithFirstUsedTime(const Aws::Utils::DateTime& value) { SetFirstUsedTime(value); return *this;}
+
+    /**
+     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithFirstUsedTime(Aws::Utils::DateTime&& value) { SetFirstUsedTime(value); return *this;}
 
     /**
      * <p>When the revision was last used by AWS CodeDeploy.</p>
      */
-    inline double GetLastUsedTime() const{ return m_lastUsedTime; }
+    inline const Aws::Utils::DateTime& GetLastUsedTime() const{ return m_lastUsedTime; }
 
     /**
      * <p>When the revision was last used by AWS CodeDeploy.</p>
      */
-    inline void SetLastUsedTime(double value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = value; }
+    inline void SetLastUsedTime(const Aws::Utils::DateTime& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = value; }
 
     /**
      * <p>When the revision was last used by AWS CodeDeploy.</p>
      */
-    inline GenericRevisionInfo& WithLastUsedTime(double value) { SetLastUsedTime(value); return *this;}
+    inline void SetLastUsedTime(Aws::Utils::DateTime&& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = value; }
+
+    /**
+     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithLastUsedTime(const Aws::Utils::DateTime& value) { SetLastUsedTime(value); return *this;}
+
+    /**
+     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithLastUsedTime(Aws::Utils::DateTime&& value) { SetLastUsedTime(value); return *this;}
 
     /**
      * <p>When the revision was registered with AWS CodeDeploy.</p>
      */
-    inline double GetRegisterTime() const{ return m_registerTime; }
+    inline const Aws::Utils::DateTime& GetRegisterTime() const{ return m_registerTime; }
 
     /**
      * <p>When the revision was registered with AWS CodeDeploy.</p>
      */
-    inline void SetRegisterTime(double value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
+    inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
      * <p>When the revision was registered with AWS CodeDeploy.</p>
      */
-    inline GenericRevisionInfo& WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
+    inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
+
+    /**
+     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithRegisterTime(const Aws::Utils::DateTime& value) { SetRegisterTime(value); return *this;}
+
+    /**
+     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     */
+    inline GenericRevisionInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(value); return *this;}
 
   private:
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     Aws::Vector<Aws::String> m_deploymentGroups;
     bool m_deploymentGroupsHasBeenSet;
-    double m_firstUsedTime;
+    Aws::Utils::DateTime m_firstUsedTime;
     bool m_firstUsedTimeHasBeenSet;
-    double m_lastUsedTime;
+    Aws::Utils::DateTime m_lastUsedTime;
     bool m_lastUsedTimeHasBeenSet;
-    double m_registerTime;
+    Aws::Utils::DateTime m_registerTime;
     bool m_registerTimeHasBeenSet;
   };
 

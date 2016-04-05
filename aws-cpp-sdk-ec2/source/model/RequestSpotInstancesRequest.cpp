@@ -27,9 +27,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validUntil(0.0),
     m_validUntilHasBeenSet(false),
     m_launchGroupHasBeenSet(false),
     m_availabilityZoneGroupHasBeenSet(false),
@@ -65,11 +63,11 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   }
   if(m_validFromHasBeenSet)
   {
-    ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
+    ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-    ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
+    ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_launchGroupHasBeenSet)
   {

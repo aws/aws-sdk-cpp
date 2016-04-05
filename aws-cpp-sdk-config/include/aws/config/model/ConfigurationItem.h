@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/config/model/ConfigurationItemStatus.h>
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -121,17 +122,27 @@ namespace Model
     /**
      * <p>The time when the configuration recording was initiated.</p>
      */
-    inline double GetConfigurationItemCaptureTime() const{ return m_configurationItemCaptureTime; }
+    inline const Aws::Utils::DateTime& GetConfigurationItemCaptureTime() const{ return m_configurationItemCaptureTime; }
 
     /**
      * <p>The time when the configuration recording was initiated.</p>
      */
-    inline void SetConfigurationItemCaptureTime(double value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = value; }
+    inline void SetConfigurationItemCaptureTime(const Aws::Utils::DateTime& value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = value; }
 
     /**
      * <p>The time when the configuration recording was initiated.</p>
      */
-    inline ConfigurationItem& WithConfigurationItemCaptureTime(double value) { SetConfigurationItemCaptureTime(value); return *this;}
+    inline void SetConfigurationItemCaptureTime(Aws::Utils::DateTime&& value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = value; }
+
+    /**
+     * <p>The time when the configuration recording was initiated.</p>
+     */
+    inline ConfigurationItem& WithConfigurationItemCaptureTime(const Aws::Utils::DateTime& value) { SetConfigurationItemCaptureTime(value); return *this;}
+
+    /**
+     * <p>The time when the configuration recording was initiated.</p>
+     */
+    inline ConfigurationItem& WithConfigurationItemCaptureTime(Aws::Utils::DateTime&& value) { SetConfigurationItemCaptureTime(value); return *this;}
 
     /**
      * <p>The configuration item status.</p>
@@ -452,17 +463,27 @@ namespace Model
     /**
      * <p>The time stamp when the resource was created. </p>
      */
-    inline double GetResourceCreationTime() const{ return m_resourceCreationTime; }
+    inline const Aws::Utils::DateTime& GetResourceCreationTime() const{ return m_resourceCreationTime; }
 
     /**
      * <p>The time stamp when the resource was created. </p>
      */
-    inline void SetResourceCreationTime(double value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
+    inline void SetResourceCreationTime(const Aws::Utils::DateTime& value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
 
     /**
      * <p>The time stamp when the resource was created. </p>
      */
-    inline ConfigurationItem& WithResourceCreationTime(double value) { SetResourceCreationTime(value); return *this;}
+    inline void SetResourceCreationTime(Aws::Utils::DateTime&& value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
+
+    /**
+     * <p>The time stamp when the resource was created. </p>
+     */
+    inline ConfigurationItem& WithResourceCreationTime(const Aws::Utils::DateTime& value) { SetResourceCreationTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when the resource was created. </p>
+     */
+    inline ConfigurationItem& WithResourceCreationTime(Aws::Utils::DateTime&& value) { SetResourceCreationTime(value); return *this;}
 
     /**
      * <p>A mapping of key value tags associated with the resource.</p>
@@ -679,7 +700,7 @@ namespace Model
     bool m_versionHasBeenSet;
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
-    double m_configurationItemCaptureTime;
+    Aws::Utils::DateTime m_configurationItemCaptureTime;
     bool m_configurationItemCaptureTimeHasBeenSet;
     ConfigurationItemStatus m_configurationItemStatus;
     bool m_configurationItemStatusHasBeenSet;
@@ -699,7 +720,7 @@ namespace Model
     bool m_awsRegionHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    double m_resourceCreationTime;
+    Aws::Utils::DateTime m_resourceCreationTime;
     bool m_resourceCreationTimeHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

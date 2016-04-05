@@ -22,17 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 TimestampRange::TimestampRange() : 
-    m_minimum(0.0),
     m_minimumHasBeenSet(false),
-    m_maximum(0.0),
     m_maximumHasBeenSet(false)
 {
 }
 
 TimestampRange::TimestampRange(const JsonValue& jsonValue) : 
-    m_minimum(0.0),
     m_minimumHasBeenSet(false),
-    m_maximum(0.0),
     m_maximumHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,14 +59,12 @@ JsonValue TimestampRange::Jsonize() const
 
   if(m_minimumHasBeenSet)
   {
-   payload.WithDouble("minimum", m_minimum);
-
+   payload.WithDouble("minimum", m_minimum.SecondsWithMSPrecision());
   }
 
   if(m_maximumHasBeenSet)
   {
-   payload.WithDouble("maximum", m_maximum);
-
+   payload.WithDouble("maximum", m_maximum.SecondsWithMSPrecision());
   }
 
   return payload;

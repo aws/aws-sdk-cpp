@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/Parameter.h>
@@ -290,17 +291,27 @@ namespace Model
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline DescribeChangeSetResult& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = value; }
+
+    /**
+     * <p>The start time when the change set was created, in UTC.</p>
+     */
+    inline DescribeChangeSetResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The start time when the change set was created, in UTC.</p>
+     */
+    inline DescribeChangeSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>The current status of the change set, such as
@@ -617,7 +628,7 @@ namespace Model
     Aws::String m_stackName;
     Aws::String m_description;
     Aws::Vector<Parameter> m_parameters;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     ChangeSetStatus m_status;
     Aws::String m_statusReason;
     Aws::Vector<Aws::String> m_notificationARNs;

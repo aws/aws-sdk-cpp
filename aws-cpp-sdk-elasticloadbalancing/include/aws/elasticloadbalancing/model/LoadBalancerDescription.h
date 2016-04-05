@@ -20,6 +20,7 @@
 #include <aws/elasticloadbalancing/model/Policies.h>
 #include <aws/elasticloadbalancing/model/HealthCheck.h>
 #include <aws/elasticloadbalancing/model/SourceSecurityGroup.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticloadbalancing/model/ListenerDescription.h>
 #include <aws/elasticloadbalancing/model/BackendServerDescription.h>
 #include <aws/elasticloadbalancing/model/Instance.h>
@@ -587,17 +588,27 @@ namespace Model
     /**
      * <p>The date and time the load balancer was created.</p>
      */
-    inline double GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
      * <p>The date and time the load balancer was created.</p>
      */
-    inline void SetCreatedTime(double value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
      * <p>The date and time the load balancer was created.</p>
      */
-    inline LoadBalancerDescription& WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>The date and time the load balancer was created.</p>
+     */
+    inline LoadBalancerDescription& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The date and time the load balancer was created.</p>
+     */
+    inline LoadBalancerDescription& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
 
     /**
      * <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If
@@ -691,7 +702,7 @@ namespace Model
     bool m_sourceSecurityGroupHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
-    double m_createdTime;
+    Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
     Aws::String m_scheme;
     bool m_schemeHasBeenSet;

@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 StartReplicationTaskRequest::StartReplicationTaskRequest() : 
     m_replicationTaskArnHasBeenSet(false),
     m_startReplicationTaskTypeHasBeenSet(false),
-    m_cdcStartTime(0.0),
     m_cdcStartTimeHasBeenSet(false)
 {
 }
@@ -46,8 +45,7 @@ Aws::String StartReplicationTaskRequest::SerializePayload() const
 
   if(m_cdcStartTimeHasBeenSet)
   {
-   payload.WithDouble("CdcStartTime", m_cdcStartTime);
-
+   payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();

@@ -25,7 +25,6 @@ OperationSummary::OperationSummary() :
     m_operationIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_submittedDate(0.0),
     m_submittedDateHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ OperationSummary::OperationSummary(const JsonValue& jsonValue) :
     m_operationIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_submittedDate(0.0),
     m_submittedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -95,8 +93,7 @@ JsonValue OperationSummary::Jsonize() const
 
   if(m_submittedDateHasBeenSet)
   {
-   payload.WithDouble("SubmittedDate", m_submittedDate);
-
+   payload.WithDouble("SubmittedDate", m_submittedDate.SecondsWithMSPrecision());
   }
 
   return payload;

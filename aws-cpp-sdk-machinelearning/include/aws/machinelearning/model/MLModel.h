@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
 #include <aws/machinelearning/model/RealtimeEndpointInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -178,37 +179,61 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
-    inline MLModel& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time that the <code>MLModel</code> was created. The time is expressed in
+     * epoch time.</p>
+     */
+    inline MLModel& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the <code>MLModel</code> was created. The time is expressed in
+     * epoch time.</p>
+     */
+    inline MLModel& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline MLModel& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline MLModel& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline MLModel& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -798,19 +823,31 @@ namespace Model
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline double GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline void SetScoreThresholdLastUpdatedAt(double value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = value; }
+    inline void SetScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
      * is expressed in epoch time.</p>
      */
-    inline MLModel& WithScoreThresholdLastUpdatedAt(double value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
+    inline void SetScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { m_scoreThresholdLastUpdatedAtHasBeenSet = true; m_scoreThresholdLastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
+     * is expressed in epoch time.</p>
+     */
+    inline MLModel& WithScoreThresholdLastUpdatedAt(const Aws::Utils::DateTime& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
+     * is expressed in epoch time.</p>
+     */
+    inline MLModel& WithScoreThresholdLastUpdatedAt(Aws::Utils::DateTime&& value) { SetScoreThresholdLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A description of the most recent details about accessing the
@@ -861,9 +898,9 @@ namespace Model
     bool m_trainingDataSourceIdHasBeenSet;
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -883,7 +920,7 @@ namespace Model
     bool m_mLModelTypeHasBeenSet;
     double m_scoreThreshold;
     bool m_scoreThresholdHasBeenSet;
-    double m_scoreThresholdLastUpdatedAt;
+    Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
     bool m_scoreThresholdLastUpdatedAtHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;

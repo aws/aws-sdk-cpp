@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 IdentityUsage::IdentityUsage() : 
     m_identityIdHasBeenSet(false),
     m_identityPoolIdHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_datasetCount(0),
     m_datasetCountHasBeenSet(false),
@@ -36,7 +35,6 @@ IdentityUsage::IdentityUsage() :
 IdentityUsage::IdentityUsage(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_identityPoolIdHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_datasetCount(0),
     m_datasetCountHasBeenSet(false),
@@ -104,8 +102,7 @@ JsonValue IdentityUsage::Jsonize() const
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   if(m_datasetCountHasBeenSet)

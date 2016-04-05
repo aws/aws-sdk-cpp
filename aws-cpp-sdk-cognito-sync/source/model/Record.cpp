@@ -26,10 +26,8 @@ Record::Record() :
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
 }
@@ -39,10 +37,8 @@ Record::Record(const JsonValue& jsonValue) :
     m_valueHasBeenSet(false),
     m_syncCount(0),
     m_syncCountHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
-    m_deviceLastModifiedDate(0.0),
     m_deviceLastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -119,8 +115,7 @@ JsonValue Record::Jsonize() const
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedByHasBeenSet)
@@ -131,8 +126,7 @@ JsonValue Record::Jsonize() const
 
   if(m_deviceLastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate);
-
+   payload.WithDouble("DeviceLastModifiedDate", m_deviceLastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;

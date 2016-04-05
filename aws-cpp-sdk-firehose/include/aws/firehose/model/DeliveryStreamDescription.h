@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/DeliveryStreamStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/DestinationDescription.h>
 
@@ -205,32 +206,52 @@ namespace Model
     /**
      * <p>The date and time that the delivery stream was created.</p>
      */
-    inline double GetCreateTimestamp() const{ return m_createTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
 
     /**
      * <p>The date and time that the delivery stream was created.</p>
      */
-    inline void SetCreateTimestamp(double value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
+    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     /**
      * <p>The date and time that the delivery stream was created.</p>
      */
-    inline DeliveryStreamDescription& WithCreateTimestamp(double value) { SetCreateTimestamp(value); return *this;}
+    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
+
+    /**
+     * <p>The date and time that the delivery stream was created.</p>
+     */
+    inline DeliveryStreamDescription& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time that the delivery stream was created.</p>
+     */
+    inline DeliveryStreamDescription& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(value); return *this;}
 
     /**
      * <p>The date and time that the delivery stream was last updated.</p>
      */
-    inline double GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
 
     /**
      * <p>The date and time that the delivery stream was last updated.</p>
      */
-    inline void SetLastUpdateTimestamp(double value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
+    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
 
     /**
      * <p>The date and time that the delivery stream was last updated.</p>
      */
-    inline DeliveryStreamDescription& WithLastUpdateTimestamp(double value) { SetLastUpdateTimestamp(value); return *this;}
+    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
+
+    /**
+     * <p>The date and time that the delivery stream was last updated.</p>
+     */
+    inline DeliveryStreamDescription& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time that the delivery stream was last updated.</p>
+     */
+    inline DeliveryStreamDescription& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(value); return *this;}
 
     /**
      * <p>The destinations.</p>
@@ -291,9 +312,9 @@ namespace Model
     bool m_deliveryStreamStatusHasBeenSet;
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
-    double m_createTimestamp;
+    Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
-    double m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet;
     Aws::Vector<DestinationDescription> m_destinations;
     bool m_destinationsHasBeenSet;

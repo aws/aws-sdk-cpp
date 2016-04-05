@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/OfferingStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/devicefarm/model/MonetaryAmount.h>
 
 namespace Aws
@@ -106,17 +107,27 @@ namespace Model
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
-    inline double GetCreatedOn() const{ return m_createdOn; }
+    inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
 
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
-    inline void SetCreatedOn(double value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
+    inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
 
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
-    inline OfferingTransaction& WithCreatedOn(double value) { SetCreatedOn(value); return *this;}
+    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
+
+    /**
+     * <p>The date on which an offering transaction was created.</p>
+     */
+    inline OfferingTransaction& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
+
+    /**
+     * <p>The date on which an offering transaction was created.</p>
+     */
+    inline OfferingTransaction& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(value); return *this;}
 
     /**
      * <p>The cost of an offering transaction.</p>
@@ -148,7 +159,7 @@ namespace Model
     bool m_offeringStatusHasBeenSet;
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet;
-    double m_createdOn;
+    Aws::Utils::DateTime m_createdOn;
     bool m_createdOnHasBeenSet;
     MonetaryAmount m_cost;
     bool m_costHasBeenSet;

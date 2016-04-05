@@ -25,14 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DeleteEventSourceMappingResult::DeleteEventSourceMappingResult() : 
-    m_batchSize(0),
-    m_lastModified(0.0)
+    m_batchSize(0)
 {
 }
 
 DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_batchSize(0),
-    m_lastModified(0.0)
+    m_batchSize(0)
 {
   *this = result;
 }

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/TableRestoreStatusType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -169,19 +170,31 @@ namespace Model
      * <p>The time that the table restore request was made, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline double GetRequestTime() const{ return m_requestTime; }
+    inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
 
     /**
      * <p>The time that the table restore request was made, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline void SetRequestTime(double value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
+    inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
 
     /**
      * <p>The time that the table restore request was made, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline TableRestoreStatus& WithRequestTime(double value) { SetRequestTime(value); return *this;}
+    inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
+
+    /**
+     * <p>The time that the table restore request was made, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline TableRestoreStatus& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
+
+    /**
+     * <p>The time that the table restore request was made, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline TableRestoreStatus& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(value); return *this;}
 
     /**
      * <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
@@ -507,7 +520,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
-    double m_requestTime;
+    Aws::Utils::DateTime m_requestTime;
     bool m_requestTimeHasBeenSet;
     long long m_progressInMegaBytes;
     bool m_progressInMegaBytesHasBeenSet;

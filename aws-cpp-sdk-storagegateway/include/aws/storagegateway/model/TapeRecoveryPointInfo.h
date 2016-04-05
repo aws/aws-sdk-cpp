@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -81,21 +82,35 @@ namespace Model
      * later recovery. </p> <p>The string format of the tape recovery point time is in
      * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline double GetTapeRecoveryPointTime() const{ return m_tapeRecoveryPointTime; }
+    inline const Aws::Utils::DateTime& GetTapeRecoveryPointTime() const{ return m_tapeRecoveryPointTime; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
      * later recovery. </p> <p>The string format of the tape recovery point time is in
      * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline void SetTapeRecoveryPointTime(double value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
+    inline void SetTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
      * later recovery. </p> <p>The string format of the tape recovery point time is in
      * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
-    inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(double value) { SetTapeRecoveryPointTime(value); return *this;}
+    inline void SetTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
+
+    /**
+     * <p>The time when the point-in-time view of the virtual tape was replicated for
+     * later recovery. </p> <p>The string format of the tape recovery point time is in
+     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { SetTapeRecoveryPointTime(value); return *this;}
+
+    /**
+     * <p>The time when the point-in-time view of the virtual tape was replicated for
+     * later recovery. </p> <p>The string format of the tape recovery point time is in
+     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
+    inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { SetTapeRecoveryPointTime(value); return *this;}
 
     /**
      * <p>The size, in bytes, of the virtual tapes to recover.</p>
@@ -136,7 +151,7 @@ namespace Model
   private:
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
-    double m_tapeRecoveryPointTime;
+    Aws::Utils::DateTime m_tapeRecoveryPointTime;
     bool m_tapeRecoveryPointTimeHasBeenSet;
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;

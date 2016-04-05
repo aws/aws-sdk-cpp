@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/EventCode.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -177,19 +178,31 @@ namespace Model
      * <p>Time stamp indicating when this event occurred. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetEventTime(double value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline Event& WithEventTime(double value) { SetEventTime(value); return *this;}
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this event occurred. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this event occurred. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 
   private:
     Aws::String m_eventId;
@@ -200,7 +213,7 @@ namespace Model
     bool m_eventCodeHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
-    double m_eventTime;
+    Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
   };
 

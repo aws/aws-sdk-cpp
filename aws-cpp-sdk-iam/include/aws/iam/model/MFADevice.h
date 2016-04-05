@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -125,24 +126,34 @@ namespace Model
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
-    inline double GetEnableDate() const{ return m_enableDate; }
+    inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
 
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
-    inline void SetEnableDate(double value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+    inline void SetEnableDate(const Aws::Utils::DateTime& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
 
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
-    inline MFADevice& WithEnableDate(double value) { SetEnableDate(value); return *this;}
+    inline void SetEnableDate(Aws::Utils::DateTime&& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline MFADevice& WithEnableDate(const Aws::Utils::DateTime& value) { SetEnableDate(value); return *this;}
+
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline MFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(value); return *this;}
 
   private:
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
-    double m_enableDate;
+    Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
   };
 
