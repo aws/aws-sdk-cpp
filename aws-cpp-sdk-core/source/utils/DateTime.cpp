@@ -446,6 +446,30 @@ static bool IsUtcTimeZone(const char* str)
         default:
             return false;
         }
+    case '+':
+    case '-':
+        c = str[++index];
+        switch (c)
+        {
+        case '0':        
+            c = str[++index];
+            switch (c)
+            {
+            case '0':
+                c = str[++index];
+                switch (c)
+                {
+                case '0':               
+                    return true;
+                default:
+                    return false;
+                }
+            default:
+                return false;
+            }
+        default:
+            return false;
+        }
     case 'Z':
         return true;
     default:
@@ -683,7 +707,7 @@ public:
     {
     }
 
-    //parses "%Y-%m-%dT%H:%M:%SZ"
+    //parses "%Y-%m-%dT%H:%M:%SZ or "%Y-%m-%dT%H:%M:%S.000Z"
     void Parse() override
     {
         size_t len = strlen(m_toParse);
@@ -698,7 +722,7 @@ public:
 
         size_t index = 0;
         size_t stateStartIndex = 0;
-        int finalState = 6;
+        const int finalState = 7;
 
         while (m_state <= finalState && !m_error && index < len)
         {
@@ -789,6 +813,11 @@ public:
                 case 5:
                     if (c == 'Z' && index - stateStartIndex == 2)
                     {
+                        m_state = finalState;
+                        stateStartIndex = index + 1;
+                    }
+                    else if (c == '.' && index - stateStartIndex == 2)
+                    {
                         m_state = 6;
                         stateStartIndex = index + 1;
                     }
@@ -801,6 +830,17 @@ public:
                         m_error = true;
                     }
 
+                    break;
+                case 6:
+                    if (c == 'Z')
+                    {
+                        m_state = finalState;
+                        stateStartIndex = index + 1;
+                    }
+                    else if(!isdigit(c))
+                    {
+                        m_error = true;
+                    }
                     break;
             }
             index++;
