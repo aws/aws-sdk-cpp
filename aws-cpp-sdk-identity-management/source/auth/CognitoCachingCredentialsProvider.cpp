@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -69,8 +69,8 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
                 m_cachedCredentials.SetAWSAccessKeyId(cognitoCreds.GetAccessKeyId());
                 m_cachedCredentials.SetAWSSecretKey(cognitoCreds.GetSecretKey());
                 m_cachedCredentials.SetSessionToken(cognitoCreds.GetSessionToken());
-                m_expiry = cognitoCreds.GetExpiration();
-                AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry.load().ToLocalTimeString(DateFormat::RFC822));
+                m_expiry = cognitoCreds.GetExpiration().SecondsWithMSPrecision();
+                AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry.load());
             }
             else
             {
@@ -84,18 +84,18 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
     return m_cachedCredentials;
 }
 
-bool CognitoCachingCredentialsProvider::IsTimeExpired(const DateTime& expiry)
+bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 {
     //30s grace buffer so requests have time to finish before expiry.
     static const double GRACE_BUFFER = 30.0;   
 
-    return DateTime::Now().SecondsWithMSPrecision() > (expiry.SecondsWithMSPrecision() - GRACE_BUFFER);
+    return DateTime::Now().SecondsWithMSPrecision() > (expiry - GRACE_BUFFER);
 }
 
 void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoIdentityProvider&)
 {
     AWS_LOG_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
-    m_expiry.store(DateTime());
+    m_expiry.store(DateTime().SecondsWithMSPrecision());
 }
 
 

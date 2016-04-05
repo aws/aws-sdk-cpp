@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ namespace Aws
 
             virtual CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const = 0;
 
-            bool IsTimeExpired(const Aws::Utils::DateTime& expiry);
+            bool IsTimeExpired(double expiry);
 
             std::shared_ptr<CognitoIdentity::CognitoIdentityClient> m_cognitoIdentityClient;
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
@@ -55,7 +55,7 @@ namespace Aws
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
 
             AWSCredentials m_cachedCredentials;
-            std::atomic<Aws::Utils::DateTime> m_expiry;
+            std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
         };
 
