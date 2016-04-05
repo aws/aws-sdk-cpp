@@ -1205,8 +1205,8 @@ add_subdirectory(testing-resources)
 if(PLATFORM_ANDROID)
     # the EventSeverity::DEBUG entry doesn't compile on android because DEBUG is #defined
     # ToDo: fix the client generator to map DEBUG to something else
-    LIST(REMOVE BUILD_ONLY "aws-cpp-sdk-elasticbeanstalk")
-	LIST(REMOVE BUILD_ONLY "aws-cpp-sdk-ec2")   
+    LIST(REMOVE_ITEM BUILD_ONLY "aws-cpp-sdk-elasticbeanstalk")
+    LIST(REMOVE_ITEM BUILD_ONLY "aws-cpp-sdk-ec2")   
 endif()
 
 foreach(build_client ${BUILD_ONLY})   
