@@ -45,14 +45,14 @@ std::tm CreateZeroedTm()
 }
 
 //Get the 0-6 week day number from a string representing WeekDay. Case insensitive and will stop on abbreviation
-static int GetWeekDayNumberFromStr(const char* timeString, int startIndex, int stopIndex)
+static int GetWeekDayNumberFromStr(const char* timeString, size_t startIndex, size_t stopIndex)
 {
     if(stopIndex - startIndex < 3)
     {
         return -1;
     }
 
-    int index = startIndex;
+    size_t index = startIndex;
 
     char c = timeString[index];
     char next = 0;
@@ -183,14 +183,14 @@ static int GetWeekDayNumberFromStr(const char* timeString, int startIndex, int s
 }
 
 //Get the 0-11 monthy number from a string representing Month. Case insensitive and will stop on abbreviation
-static int GetMonthNumberFromStr(const char* timeString, int startIndex, int stopIndex)
+static int GetMonthNumberFromStr(const char* timeString, size_t startIndex, size_t stopIndex)
 {
     if (stopIndex - startIndex < 3)
     {
         return -1;
     }
 
-    int index = startIndex;
+    size_t index = startIndex;
 
     char c = timeString[index];
     char next = 0;
@@ -837,42 +837,42 @@ std::chrono::system_clock::time_point DateTime::UnderlyingTimestamp() const
     return m_time;
 }
 
-int DateTime::Year(bool localTime)
+int DateTime::GetYear(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_year + 1900;
 }
 
-Month DateTime::Month(bool localTime)
+Month DateTime::GetMonth(bool localTime) const
 {
     return static_cast<Aws::Utils::Month>(GetTimeStruct(localTime).tm_mon);
 }
 
-int DateTime::Day(bool localTime)
+int DateTime::GetDay(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_mday;
 }
 
-DayOfWeek DateTime::DayOfWeek(bool localTime)
+DayOfWeek DateTime::GetDayOfWeek(bool localTime) const
 {
     return static_cast<Aws::Utils::DayOfWeek>(GetTimeStruct(localTime).tm_wday);
 }
 
-int DateTime::Hour(bool localTime)
+int DateTime::GetHour(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_hour;
 }
 
-int DateTime::Minute(bool localTime)
+int DateTime::GetMinute(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_min;
 }
 
-int DateTime::Second(bool localTime)
+int DateTime::GetSecond(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_sec;
 }
 
-bool DateTime::IsDST(bool localTime)
+bool DateTime::IsDST(bool localTime) const
 {
     return GetTimeStruct(localTime).tm_isdst == 0 ? false : true;
 }
@@ -903,7 +903,7 @@ Aws::String DateTime::CalculateGmtTimestampAsString(const char* formatStr)
 
 int DateTime::CalculateCurrentHour()
 {
-    return Now().Hour(true);   
+    return Now().GetHour(true);
 }
 
 double DateTime::ComputeCurrentTimestampInAmazonFormat()

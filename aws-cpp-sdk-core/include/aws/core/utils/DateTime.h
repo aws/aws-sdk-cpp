@@ -159,42 +159,42 @@ namespace Aws
             /**
              * Get the Year portion of this dateTime. localTime if true, return local time, otherwise return UTC
              */
-            int Year(bool localTime = false);
+            int GetYear(bool localTime = false) const;
 
             /**
             * Get the Month portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            Month Month(bool localTime = false);
+            Month GetMonth(bool localTime = false) const;
 
             /**
             * Get the Day of the Month portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            int Day(bool localTime = false);
+            int GetDay(bool localTime = false) const;
 
             /**
             * Get the Day of the Week portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            DayOfWeek DayOfWeek(bool localTime = false);
+            DayOfWeek GetDayOfWeek(bool localTime = false) const;
 
             /**
             * Get the Hour portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            int Hour(bool localTime = false);
+            int GetHour(bool localTime = false) const;
 
             /**
             * Get the Minute portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            int Minute(bool localTime = false);
+            int GetMinute(bool localTime = false) const;
 
             /**
             * Get the Second portion of this dateTime. localTime if true, return local time, otherwise return UTC
             */
-            int Second(bool localTime = false);
+            int GetSecond(bool localTime = false) const;
 
             /**
             * Get whether or not this dateTime is in Daylight savings time. localTime if true, return local time, otherwise return UTC
             */
-            bool IsDST(bool localTime = false);
+            bool IsDST(bool localTime = false) const;
 
             /**
              * Get an instance of DateTime representing this very instant.

@@ -45,9 +45,9 @@ Aws::Http::HeaderValueCollection ListPrincipalPoliciesRequest::GetRequestSpecifi
   Aws::StringStream ss;
   if(m_principalHasBeenSet)
   {
-   ss << m_principal;
-   headers.insert(Aws::Http::HeaderValuePair("x-amzn-iot-principal", ss.str()));
-   ss.str("");
+    ss << m_principal;
+    headers.insert(Aws::Http::HeaderValuePair("x-amzn-iot-principal", ss.str()));
+    ss.str("");
   }
 
   return headers;

@@ -44,9 +44,9 @@ Aws::Http::HeaderValueCollection GetExportRequest::GetRequestSpecificHeaders() c
   Aws::StringStream ss;
   if(m_acceptsHasBeenSet)
   {
-   ss << m_accepts;
-   headers.insert(Aws::Http::HeaderValuePair("accept", ss.str()));
-   ss.str("");
+    ss << m_accepts;
+    headers.insert(Aws::Http::HeaderValuePair("accept", ss.str()));
+    ss.str("");
   }
 
   return headers;

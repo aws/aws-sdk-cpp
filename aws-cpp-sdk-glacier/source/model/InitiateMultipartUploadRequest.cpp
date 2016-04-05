@@ -41,16 +41,16 @@ Aws::Http::HeaderValueCollection InitiateMultipartUploadRequest::GetRequestSpeci
   Aws::StringStream ss;
   if(m_archiveDescriptionHasBeenSet)
   {
-   ss << m_archiveDescription;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
-   ss.str("");
+    ss << m_archiveDescription;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
+    ss.str("");
   }
 
   if(m_partSizeHasBeenSet)
   {
-   ss << m_partSize;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-part-size", ss.str()));
-   ss.str("");
+    ss << m_partSize;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-part-size", ss.str()));
+    ss.str("");
   }
 
   return headers;

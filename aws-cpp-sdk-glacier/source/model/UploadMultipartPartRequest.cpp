@@ -42,16 +42,16 @@ Aws::Http::HeaderValueCollection UploadMultipartPartRequest::GetRequestSpecificH
   Aws::StringStream ss;
   if(m_checksumHasBeenSet)
   {
-   ss << m_checksum;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-sha256-tree-hash", ss.str()));
-   ss.str("");
+    ss << m_checksum;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-sha256-tree-hash", ss.str()));
+    ss.str("");
   }
 
   if(m_rangeHasBeenSet)
   {
-   ss << m_range;
-   headers.insert(Aws::Http::HeaderValuePair("content-range", ss.str()));
-   ss.str("");
+    ss << m_range;
+    headers.insert(Aws::Http::HeaderValuePair("content-range", ss.str()));
+    ss.str("");
   }
 
   return headers;

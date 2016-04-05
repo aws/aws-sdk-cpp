@@ -22,13 +22,13 @@ TEST(DateTimeTest, TestDefault)
 {
     DateTime defaultDate;
     ASSERT_TRUE(defaultDate.WasParseSuccessful());
-    ASSERT_EQ(DayOfWeek::Thursday, defaultDate.DayOfWeek());
-    ASSERT_EQ(01, defaultDate.Day());
-    ASSERT_EQ(Month::January, defaultDate.Month());
-    ASSERT_EQ(1970, defaultDate.Year());
-    ASSERT_EQ(0, defaultDate.Hour());
-    ASSERT_EQ(0, defaultDate.Minute());
-    ASSERT_EQ(0, defaultDate.Second());
+    ASSERT_EQ(DayOfWeek::Thursday, defaultDate.GetDayOfWeek());
+    ASSERT_EQ(01, defaultDate.GetDay());
+    ASSERT_EQ(Month::January, defaultDate.GetMonth());
+    ASSERT_EQ(1970, defaultDate.GetYear());
+    ASSERT_EQ(0, defaultDate.GetHour());
+    ASSERT_EQ(0, defaultDate.GetMinute());
+    ASSERT_EQ(0, defaultDate.GetSecond());
     ASSERT_EQ("Thu, 01 Jan 1970 00:00:00 GMT", defaultDate.ToGmtString(DateFormat::RFC822));
 }
 
@@ -37,13 +37,13 @@ TEST(DateTimeTest, TestRFC822Parsing)
     const char* gmtDateStr = "Wed, 02 Oct 2002 08:05:09 GMT";  
     DateTime gmtDate(gmtDateStr, DateFormat::RFC822);    
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
-    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.DayOfWeek());
-    ASSERT_EQ(02, gmtDate.Day());
-    ASSERT_EQ(Month::October, gmtDate.Month());
-    ASSERT_EQ(2002, gmtDate.Year());
-    ASSERT_EQ(8, gmtDate.Hour());
-    ASSERT_EQ(5, gmtDate.Minute());
-    ASSERT_EQ(9, gmtDate.Second());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::RFC822));    
 }
 
@@ -66,13 +66,13 @@ TEST(DateTimeTest, TestISO_8601Parsing)
     const char* gmtDateStr = "2002-10-02T08:05:09Z";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
-    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.DayOfWeek());
-    ASSERT_EQ(02, gmtDate.Day());
-    ASSERT_EQ(Month::October, gmtDate.Month());
-    ASSERT_EQ(2002, gmtDate.Year());
-    ASSERT_EQ(8, gmtDate.Hour());
-    ASSERT_EQ(5, gmtDate.Minute());
-    ASSERT_EQ(9, gmtDate.Second());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
 
@@ -81,13 +81,13 @@ TEST(DateTimeTest, TestUNIX_EPOCHParsing)
     double gmtDateDbl = 1033545909;
     DateTime gmtDate(gmtDateDbl);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
-    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.DayOfWeek());
-    ASSERT_EQ(02, gmtDate.Day());
-    ASSERT_EQ(Month::October, gmtDate.Month());
-    ASSERT_EQ(2002, gmtDate.Year());
-    ASSERT_EQ(8, gmtDate.Hour());
-    ASSERT_EQ(5, gmtDate.Minute());
-    ASSERT_EQ(9, gmtDate.Second());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateDbl, gmtDate.SecondsWithMSPrecision());
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
@@ -97,13 +97,13 @@ TEST(DateTimeTest, TestMillisParsing)
     int64_t gmtDateMillis = 1033545909000;
     DateTime gmtDate(gmtDateMillis);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
-    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.DayOfWeek());
-    ASSERT_EQ(02, gmtDate.Day());
-    ASSERT_EQ(Month::October, gmtDate.Month());
-    ASSERT_EQ(2002, gmtDate.Year());
-    ASSERT_EQ(8, gmtDate.Hour());
-    ASSERT_EQ(5, gmtDate.Minute());
-    ASSERT_EQ(9, gmtDate.Second());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateMillis, gmtDate.Millis());
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
