@@ -672,22 +672,146 @@ private:
     int m_state;
 };
 
+//Before you send me hate mail because I'm doing this manually, I encourage you to try using std::get_time on all platforms and getting
+//uniform results. Timezone information doesn't parse on Windows and it hardly even works on GCC 4.9.x. This is the only way to make sure
+//the standard is parsed correctly. strptime isn't available one Windows. This code gets hit pretty hard during http serialization/deserialization
+//as a result I'm going for no dynamic allocations and linear complexity
 class ISO_8601DateParser : public DateParser
 {
 public:
-    ISO_8601DateParser(const char* stringToParse) : DateParser(stringToParse)
+    ISO_8601DateParser(const char* stringToParse) : DateParser(stringToParse), m_state(0)
     {
     }
 
+    //parses "%Y-%m-%dT%H:%M:%SZ"
     void Parse() override
     {
-        Aws::IStringStream ss(m_toParse);
-        
-        ss >> std::get_time(&m_parsedTimestamp,  ISO_8601_LONG_DATE_FORMAT_STR);   
-        //stream state check is unreliable, this is the best we've got since month day being 0 is always an error in this format.
-        //the other members could be valid input and 0.
-        m_error = m_parsedTimestamp.tm_mday == 0;
+        size_t len = strlen(m_toParse);
+
+        //DOS check
+        if (len > MAX_LEN)
+        {
+            AWS_LOGSTREAM_WARN(CLASS_TAG, "Incoming String to parse too long with len " << len)
+            m_error = true;
+            return;
+        }
+
+        size_t index = 0;
+        size_t stateStartIndex = 0;
+        int finalState = 6;
+
+        while (m_state <= finalState && !m_error && index < len)
+        {
+            char c = m_toParse[index];
+            switch (m_state)
+            {
+                case 0:
+                    if (c == '-' && index - stateStartIndex == 4)
+                    {
+                        m_state = 1;
+                        stateStartIndex = index + 1;
+                        m_parsedTimestamp.tm_year -= 1900;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_year = m_parsedTimestamp.tm_year * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+                    break;
+                case 1:
+                    if (c == '-' && index - stateStartIndex == 2)
+                    {
+                        m_state = 2;
+                        stateStartIndex = index + 1;
+                        m_parsedTimestamp.tm_mon -= 1;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_mon = m_parsedTimestamp.tm_mon * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+                case 2:
+                    if (c == 'T' && index - stateStartIndex == 2)
+                    {
+                        m_state = 3;
+                        stateStartIndex = index + 1;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_mday = m_parsedTimestamp.tm_mday * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+                case 3:
+                    if (c == ':' && index - stateStartIndex == 2)
+                    {
+                        m_state = 4;
+                        stateStartIndex = index + 1;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_hour = m_parsedTimestamp.tm_hour * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+                case 4:
+                    if (c == ':' && index - stateStartIndex == 2)
+                    {
+                        m_state = 5;
+                        stateStartIndex = index + 1;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_min = m_parsedTimestamp.tm_min * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+                case 5:
+                    if (c == 'Z' && index - stateStartIndex == 2)
+                    {
+                        m_state = 6;
+                        stateStartIndex = index + 1;
+                    }
+                    else if (isdigit(c))
+                    {
+                        m_parsedTimestamp.tm_sec = m_parsedTimestamp.tm_sec * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+            }
+            index++;
+        }
+
+        m_error = (m_error || m_state != finalState);
     }
+
+
+private:
+    int m_state;
 };
 
 DateTime::DateTime(const std::chrono::system_clock::time_point& timepointToAssign) : m_time(timepointToAssign), m_valid(true)

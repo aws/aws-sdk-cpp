@@ -76,6 +76,20 @@ TEST(DateTimeTest, TestISO_8601Parsing)
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
 
+TEST(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)
+{
+    const char* gmtDateStr = "Weddkasdiweijbnawei8eriojngsdgasdgsdf1gasd8asdgfasdfgsdikweisdfksdnsdksdklasdfsdklasdfdfsdfsdfsdfsadfasdafsdfgjjfgghdfgsdfsfsdfsdfasdfsdfasdfsdfasdfsdf";
+    DateTime date(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_FALSE(date.WasParseSuccessful());
+}
+
+TEST(DateTimeTest, TestISO_8601Parsing_WrongFormat)
+{
+    const char* gmtDateStr = "2002-10-02";
+    DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_FALSE(gmtDate.WasParseSuccessful());
+}
+
 TEST(DateTimeTest, TestUNIX_EPOCHParsing)
 {
     double gmtDateDbl = 1033545909;
