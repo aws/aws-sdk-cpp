@@ -63,7 +63,7 @@ TEST(DateTimeTest, TestRFC822Parsing_WrongFormat)
 
 TEST(DateTimeTest, TestISO_8601Parsing)
 {
-    const char* gmtDateStr = "2002-10-02T08:05:09Z";
+    const char* gmtDateStr = "2002-10-02T08:05:09.000Z";
     DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
     ASSERT_TRUE(gmtDate.WasParseSuccessful());
     ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
@@ -103,7 +103,7 @@ TEST(DateTimeTest, TestUNIX_EPOCHParsing)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateDbl, gmtDate.SecondsWithMSPrecision());
-    ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
+    ASSERT_EQ("2002-10-02T08:05:09.000Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
 
 TEST(DateTimeTest, TestMillisParsing)
@@ -119,5 +119,5 @@ TEST(DateTimeTest, TestMillisParsing)
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
     ASSERT_EQ(gmtDateMillis, gmtDate.Millis());
-    ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
+    ASSERT_EQ("2002-10-02T08:05:09.000Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
