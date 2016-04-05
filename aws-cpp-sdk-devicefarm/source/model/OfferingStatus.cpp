@@ -26,7 +26,6 @@ OfferingStatus::OfferingStatus() :
     m_offeringHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
-    m_effectiveOn(0.0),
     m_effectiveOnHasBeenSet(false)
 {
 }
@@ -36,7 +35,6 @@ OfferingStatus::OfferingStatus(const JsonValue& jsonValue) :
     m_offeringHasBeenSet(false),
     m_quantity(0),
     m_quantityHasBeenSet(false),
-    m_effectiveOn(0.0),
     m_effectiveOnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -98,8 +96,7 @@ JsonValue OfferingStatus::Jsonize() const
 
   if(m_effectiveOnHasBeenSet)
   {
-   payload.WithDouble("effectiveOn", m_effectiveOn);
-
+   payload.WithDouble("effectiveOn", m_effectiveOn.SecondsWithMSPrecision());
   }
 
   return payload;

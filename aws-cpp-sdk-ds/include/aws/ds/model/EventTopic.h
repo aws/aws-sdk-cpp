@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ds/model/TopicStatus.h>
 
 namespace Aws
@@ -166,19 +167,31 @@ namespace Model
      * <p>The date and time of when you associated your directory with the SNS
      * topic.</p>
      */
-    inline double GetCreatedDateTime() const{ return m_createdDateTime; }
+    inline const Aws::Utils::DateTime& GetCreatedDateTime() const{ return m_createdDateTime; }
 
     /**
      * <p>The date and time of when you associated your directory with the SNS
      * topic.</p>
      */
-    inline void SetCreatedDateTime(double value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
+    inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
      * <p>The date and time of when you associated your directory with the SNS
      * topic.</p>
      */
-    inline EventTopic& WithCreatedDateTime(double value) { SetCreatedDateTime(value); return *this;}
+    inline void SetCreatedDateTime(Aws::Utils::DateTime&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
+
+    /**
+     * <p>The date and time of when you associated your directory with the SNS
+     * topic.</p>
+     */
+    inline EventTopic& WithCreatedDateTime(const Aws::Utils::DateTime& value) { SetCreatedDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time of when you associated your directory with the SNS
+     * topic.</p>
+     */
+    inline EventTopic& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(value); return *this;}
 
     /**
      * <p>The topic registration status.</p>
@@ -212,7 +225,7 @@ namespace Model
     bool m_topicNameHasBeenSet;
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
-    double m_createdDateTime;
+    Aws::Utils::DateTime m_createdDateTime;
     bool m_createdDateTimeHasBeenSet;
     TopicStatus m_status;
     bool m_statusHasBeenSet;

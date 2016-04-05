@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/model/PolicyVersion.h>
 
@@ -344,19 +345,31 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
-    inline ManagedPolicyDetail& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was created.</p>
+     */
+    inline ManagedPolicyDetail& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was created.</p>
+     */
+    inline ManagedPolicyDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -365,7 +378,7 @@ namespace Model
      * created. When a policy has more than one version, this field contains the date
      * and time when the most recent policy version was created. </p>
      */
-    inline double GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -374,7 +387,7 @@ namespace Model
      * created. When a policy has more than one version, this field contains the date
      * and time when the most recent policy version was created. </p>
      */
-    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -383,7 +396,25 @@ namespace Model
      * created. When a policy has more than one version, this field contains the date
      * and time when the most recent policy version was created. </p>
      */
-    inline ManagedPolicyDetail& WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
+     * only one version, this field contains the date and time when the policy was
+     * created. When a policy has more than one version, this field contains the date
+     * and time when the most recent policy version was created. </p>
+     */
+    inline ManagedPolicyDetail& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
+     * only one version, this field contains the date and time when the policy was
+     * created. When a policy has more than one version, this field contains the date
+     * and time when the most recent policy version was created. </p>
+     */
+    inline ManagedPolicyDetail& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>A list containing information about the versions of the policy.</p>
@@ -437,9 +468,9 @@ namespace Model
     bool m_isAttachableHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    double m_updateDate;
+    Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
     Aws::Vector<PolicyVersion> m_policyVersionList;
     bool m_policyVersionListHasBeenSet;

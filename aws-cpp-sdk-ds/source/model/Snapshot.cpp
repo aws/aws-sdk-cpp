@@ -27,7 +27,6 @@ Snapshot::Snapshot() :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false)
 {
 }
@@ -38,7 +37,6 @@ Snapshot::Snapshot(const JsonValue& jsonValue) :
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -125,8 +123,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("StartTime", m_startTime);
-
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
   return payload;

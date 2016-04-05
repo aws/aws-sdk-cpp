@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Tag.h>
@@ -216,17 +217,27 @@ namespace Model
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline Snapshot& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The time stamp when the snapshot was initiated.</p>
+     */
+    inline Snapshot& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when the snapshot was initiated.</p>
+     */
+    inline Snapshot& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
@@ -590,7 +601,7 @@ namespace Model
     bool m_stateHasBeenSet;
     Aws::String m_stateMessage;
     bool m_stateMessageHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
     Aws::String m_progress;
     bool m_progressHasBeenSet;

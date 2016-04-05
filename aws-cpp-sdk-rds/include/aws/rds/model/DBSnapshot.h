@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -128,19 +129,31 @@ namespace Model
      * <p> Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
      * <p> Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline void SetSnapshotCreateTime(double value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
      * <p> Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline DBSnapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+
+    /**
+     * <p> Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC). </p>
+     */
+    inline DBSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
+
+    /**
+     * <p> Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC). </p>
+     */
+    inline DBSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
      * <p> Specifies the name of the database engine. </p>
@@ -326,19 +339,31 @@ namespace Model
      * <p> Specifies the time when the snapshot was taken, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline double GetInstanceCreateTime() const{ return m_instanceCreateTime; }
+    inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
      * <p> Specifies the time when the snapshot was taken, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline void SetInstanceCreateTime(double value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+    inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
      * <p> Specifies the time when the snapshot was taken, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline DBSnapshot& WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
+    inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+
+    /**
+     * <p> Specifies the time when the snapshot was taken, in Universal Coordinated
+     * Time (UTC). </p>
+     */
+    inline DBSnapshot& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
+
+    /**
+     * <p> Specifies the time when the snapshot was taken, in Universal Coordinated
+     * Time (UTC). </p>
+     */
+    inline DBSnapshot& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
      * <p> Provides the master username for the DB snapshot. </p>
@@ -764,7 +789,7 @@ namespace Model
     bool m_dBSnapshotIdentifierHasBeenSet;
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
-    double m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -778,7 +803,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
-    double m_instanceCreateTime;
+    Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

@@ -27,7 +27,6 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_batchSizeHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -41,7 +40,6 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(const JsonValue
     m_batchSizeHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
-    m_lastModified(0.0),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -141,8 +139,7 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
 
   if(m_lastModifiedHasBeenSet)
   {
-   payload.WithDouble("LastModified", m_lastModified);
-
+   payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
   }
 
   if(m_lastProcessingResultHasBeenSet)

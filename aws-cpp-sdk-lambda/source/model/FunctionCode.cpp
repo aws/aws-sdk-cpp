@@ -44,7 +44,6 @@ FunctionCode& FunctionCode::operator =(const JsonValue& jsonValue)
   if(jsonValue.ValueExists("ZipFile"))
   {
     m_zipFile = HashingUtils::Base64Decode(jsonValue.GetString("ZipFile"));
-
     m_zipFileHasBeenSet = true;
   }
 

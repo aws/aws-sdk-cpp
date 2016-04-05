@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 DocumentDescription::DocumentDescription() : 
     m_sha1HasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -36,7 +35,6 @@ DocumentDescription::DocumentDescription() :
 DocumentDescription::DocumentDescription(const JsonValue& jsonValue) : 
     m_sha1HasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -124,8 +122,7 @@ JsonValue DocumentDescription::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("CreatedDate", m_createdDate);
-
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

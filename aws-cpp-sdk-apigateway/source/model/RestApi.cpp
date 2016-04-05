@@ -25,7 +25,6 @@ RestApi::RestApi() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,8 +95,7 @@ JsonValue RestApi::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("createdDate", m_createdDate);
-
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;

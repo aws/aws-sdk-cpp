@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDomainNameResult::UpdateDomainNameResult() : 
-    m_certificateUploadDate(0.0)
+UpdateDomainNameResult::UpdateDomainNameResult()
 {
 }
 
-UpdateDomainNameResult::UpdateDomainNameResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_certificateUploadDate(0.0)
+UpdateDomainNameResult::UpdateDomainNameResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

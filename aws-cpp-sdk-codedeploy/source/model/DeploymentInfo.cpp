@@ -29,11 +29,8 @@ DeploymentInfo::DeploymentInfo() :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_completeTime(0.0),
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -51,11 +48,8 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
     m_revisionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_errorInformationHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_completeTime(0.0),
     m_completeTimeHasBeenSet(false),
     m_deploymentOverviewHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -216,20 +210,17 @@ JsonValue DeploymentInfo::Jsonize() const
 
   if(m_createTimeHasBeenSet)
   {
-   payload.WithDouble("createTime", m_createTime);
-
+   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("startTime", m_startTime);
-
+   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_completeTimeHasBeenSet)
   {
-   payload.WithDouble("completeTime", m_completeTime);
-
+   payload.WithDouble("completeTime", m_completeTime.SecondsWithMSPrecision());
   }
 
   if(m_deploymentOverviewHasBeenSet)

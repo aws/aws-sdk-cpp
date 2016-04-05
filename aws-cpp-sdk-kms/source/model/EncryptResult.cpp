@@ -40,7 +40,6 @@ EncryptResult& EncryptResult::operator =(const AmazonWebServiceResult<JsonValue>
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
-
   }
 
   if(jsonValue.ValueExists("KeyId"))

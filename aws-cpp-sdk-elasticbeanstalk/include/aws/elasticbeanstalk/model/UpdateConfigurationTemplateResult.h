@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ConfigurationDeploymentStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
@@ -303,32 +304,52 @@ namespace Model
     /**
      * <p> The date (in UTC time) when this configuration set was created. </p>
      */
-    inline double GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
 
     /**
      * <p> The date (in UTC time) when this configuration set was created. </p>
      */
-    inline void SetDateCreated(double value) { m_dateCreated = value; }
+    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreated = value; }
 
     /**
      * <p> The date (in UTC time) when this configuration set was created. </p>
      */
-    inline UpdateConfigurationTemplateResult& WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreated = value; }
+
+    /**
+     * <p> The date (in UTC time) when this configuration set was created. </p>
+     */
+    inline UpdateConfigurationTemplateResult& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
+
+    /**
+     * <p> The date (in UTC time) when this configuration set was created. </p>
+     */
+    inline UpdateConfigurationTemplateResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
 
     /**
      * <p> The date (in UTC time) when this configuration set was last modified. </p>
      */
-    inline double GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
 
     /**
      * <p> The date (in UTC time) when this configuration set was last modified. </p>
      */
-    inline void SetDateUpdated(double value) { m_dateUpdated = value; }
+    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdated = value; }
 
     /**
      * <p> The date (in UTC time) when this configuration set was last modified. </p>
      */
-    inline UpdateConfigurationTemplateResult& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdated = value; }
+
+    /**
+     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     */
+    inline UpdateConfigurationTemplateResult& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
+
+    /**
+     * <p> The date (in UTC time) when this configuration set was last modified. </p>
+     */
+    inline UpdateConfigurationTemplateResult& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
 
     /**
      * <p> A list of the configuration options and their values in this configuration
@@ -394,8 +415,8 @@ namespace Model
     Aws::String m_description;
     Aws::String m_environmentName;
     ConfigurationDeploymentStatus m_deploymentStatus;
-    double m_dateCreated;
-    double m_dateUpdated;
+    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateUpdated;
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     ResponseMetadata m_responseMetadata;
   };

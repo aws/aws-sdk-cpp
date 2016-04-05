@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 
 AuthorizationData::AuthorizationData() : 
     m_authorizationTokenHasBeenSet(false),
-    m_expiresAt(0.0),
     m_expiresAtHasBeenSet(false),
     m_proxyEndpointHasBeenSet(false)
 {
@@ -31,7 +30,6 @@ AuthorizationData::AuthorizationData() :
 
 AuthorizationData::AuthorizationData(const JsonValue& jsonValue) : 
     m_authorizationTokenHasBeenSet(false),
-    m_expiresAt(0.0),
     m_expiresAtHasBeenSet(false),
     m_proxyEndpointHasBeenSet(false)
 {
@@ -76,8 +74,7 @@ JsonValue AuthorizationData::Jsonize() const
 
   if(m_expiresAtHasBeenSet)
   {
-   payload.WithDouble("expiresAt", m_expiresAt);
-
+   payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
   if(m_proxyEndpointHasBeenSet)

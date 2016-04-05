@@ -26,13 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult() : 
-    m_createDate(0.0)
+GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult()
 {
 }
 
-GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_createDate(0.0)
+GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -79,7 +77,7 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

@@ -51,7 +51,6 @@ ByteMatchTuple& ByteMatchTuple::operator =(const JsonValue& jsonValue)
   if(jsonValue.ValueExists("TargetString"))
   {
     m_targetString = HashingUtils::Base64Decode(jsonValue.GetString("TargetString"));
-
     m_targetStringHasBeenSet = true;
   }
 

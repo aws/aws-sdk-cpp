@@ -17,6 +17,7 @@
 #include <aws/swf/model/WorkflowExecutionInfo.h>
 #include <aws/swf/model/WorkflowExecutionConfiguration.h>
 #include <aws/swf/model/WorkflowExecutionOpenCounts.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -136,7 +137,7 @@ namespace Model
      * made progress for an unusually long period of time and might require a
      * corrective action.</p>
      */
-    inline double GetLatestActivityTaskTimestamp() const{ return m_latestActivityTaskTimestamp; }
+    inline const Aws::Utils::DateTime& GetLatestActivityTaskTimestamp() const{ return m_latestActivityTaskTimestamp; }
 
     /**
      * <p>The time when the last activity task was scheduled for this workflow
@@ -144,7 +145,7 @@ namespace Model
      * made progress for an unusually long period of time and might require a
      * corrective action.</p>
      */
-    inline void SetLatestActivityTaskTimestamp(double value) { m_latestActivityTaskTimestamp = value; }
+    inline void SetLatestActivityTaskTimestamp(const Aws::Utils::DateTime& value) { m_latestActivityTaskTimestamp = value; }
 
     /**
      * <p>The time when the last activity task was scheduled for this workflow
@@ -152,7 +153,23 @@ namespace Model
      * made progress for an unusually long period of time and might require a
      * corrective action.</p>
      */
-    inline DescribeWorkflowExecutionResult& WithLatestActivityTaskTimestamp(double value) { SetLatestActivityTaskTimestamp(value); return *this;}
+    inline void SetLatestActivityTaskTimestamp(Aws::Utils::DateTime&& value) { m_latestActivityTaskTimestamp = value; }
+
+    /**
+     * <p>The time when the last activity task was scheduled for this workflow
+     * execution. You can use this information to determine if the workflow has not
+     * made progress for an unusually long period of time and might require a
+     * corrective action.</p>
+     */
+    inline DescribeWorkflowExecutionResult& WithLatestActivityTaskTimestamp(const Aws::Utils::DateTime& value) { SetLatestActivityTaskTimestamp(value); return *this;}
+
+    /**
+     * <p>The time when the last activity task was scheduled for this workflow
+     * execution. You can use this information to determine if the workflow has not
+     * made progress for an unusually long period of time and might require a
+     * corrective action.</p>
+     */
+    inline DescribeWorkflowExecutionResult& WithLatestActivityTaskTimestamp(Aws::Utils::DateTime&& value) { SetLatestActivityTaskTimestamp(value); return *this;}
 
     /**
      * <p>The latest executionContext provided by the decider for this workflow
@@ -207,7 +224,7 @@ namespace Model
     WorkflowExecutionInfo m_executionInfo;
     WorkflowExecutionConfiguration m_executionConfiguration;
     WorkflowExecutionOpenCounts m_openCounts;
-    double m_latestActivityTaskTimestamp;
+    Aws::Utils::DateTime m_latestActivityTaskTimestamp;
     Aws::String m_latestExecutionContext;
   };
 

@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 AssociationDescription::AssociationDescription() : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -34,7 +33,6 @@ AssociationDescription::AssociationDescription() :
 AssociationDescription::AssociationDescription(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_parametersHasBeenSet(false)
@@ -109,8 +107,7 @@ JsonValue AssociationDescription::Jsonize() const
 
   if(m_dateHasBeenSet)
   {
-   payload.WithDouble("Date", m_date);
-
+   payload.WithDouble("Date", m_date.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

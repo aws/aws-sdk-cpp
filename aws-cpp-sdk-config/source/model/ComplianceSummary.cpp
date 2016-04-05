@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ComplianceSummary::ComplianceSummary() : 
     m_compliantResourceCountHasBeenSet(false),
     m_nonCompliantResourceCountHasBeenSet(false),
-    m_complianceSummaryTimestamp(0.0),
     m_complianceSummaryTimestampHasBeenSet(false)
 {
 }
@@ -32,7 +31,6 @@ ComplianceSummary::ComplianceSummary() :
 ComplianceSummary::ComplianceSummary(const JsonValue& jsonValue) : 
     m_compliantResourceCountHasBeenSet(false),
     m_nonCompliantResourceCountHasBeenSet(false),
-    m_complianceSummaryTimestamp(0.0),
     m_complianceSummaryTimestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -82,8 +80,7 @@ JsonValue ComplianceSummary::Jsonize() const
 
   if(m_complianceSummaryTimestampHasBeenSet)
   {
-   payload.WithDouble("ComplianceSummaryTimestamp", m_complianceSummaryTimestamp);
-
+   payload.WithDouble("ComplianceSummaryTimestamp", m_complianceSummaryTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

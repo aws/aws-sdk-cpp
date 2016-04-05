@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -77,22 +78,32 @@ namespace Model
     /**
      * Date the bucket was created.
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * Date the bucket was created.
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * Date the bucket was created.
      */
-    inline Bucket& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * Date the bucket was created.
+     */
+    inline Bucket& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * Date the bucket was created.
+     */
+    inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };
 

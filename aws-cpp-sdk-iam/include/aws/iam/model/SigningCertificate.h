@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/StatusType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -185,17 +186,27 @@ namespace Model
     /**
      * <p>The date when the signing certificate was uploaded.</p>
      */
-    inline double GetUploadDate() const{ return m_uploadDate; }
+    inline const Aws::Utils::DateTime& GetUploadDate() const{ return m_uploadDate; }
 
     /**
      * <p>The date when the signing certificate was uploaded.</p>
      */
-    inline void SetUploadDate(double value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
+    inline void SetUploadDate(const Aws::Utils::DateTime& value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
 
     /**
      * <p>The date when the signing certificate was uploaded.</p>
      */
-    inline SigningCertificate& WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline void SetUploadDate(Aws::Utils::DateTime&& value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
+
+    /**
+     * <p>The date when the signing certificate was uploaded.</p>
+     */
+    inline SigningCertificate& WithUploadDate(const Aws::Utils::DateTime& value) { SetUploadDate(value); return *this;}
+
+    /**
+     * <p>The date when the signing certificate was uploaded.</p>
+     */
+    inline SigningCertificate& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(value); return *this;}
 
   private:
     Aws::String m_userName;
@@ -206,7 +217,7 @@ namespace Model
     bool m_certificateBodyHasBeenSet;
     StatusType m_status;
     bool m_statusHasBeenSet;
-    double m_uploadDate;
+    Aws::Utils::DateTime m_uploadDate;
     bool m_uploadDateHasBeenSet;
   };
 

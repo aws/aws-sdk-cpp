@@ -25,7 +25,6 @@ TransitionState::TransitionState() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_lastChangedByHasBeenSet(false),
-    m_lastChangedAt(0.0),
     m_lastChangedAtHasBeenSet(false),
     m_disabledReasonHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ TransitionState::TransitionState(const JsonValue& jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_lastChangedByHasBeenSet(false),
-    m_lastChangedAt(0.0),
     m_lastChangedAtHasBeenSet(false),
     m_disabledReasonHasBeenSet(false)
 {
@@ -93,8 +91,7 @@ JsonValue TransitionState::Jsonize() const
 
   if(m_lastChangedAtHasBeenSet)
   {
-   payload.WithDouble("lastChangedAt", m_lastChangedAt);
-
+   payload.WithDouble("lastChangedAt", m_lastChangedAt.SecondsWithMSPrecision());
   }
 
   if(m_disabledReasonHasBeenSet)

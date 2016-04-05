@@ -28,9 +28,7 @@ ApiKey::ApiKey() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_stageKeysHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDate(0.0),
     m_lastUpdatedDateHasBeenSet(false)
 {
 }
@@ -42,9 +40,7 @@ ApiKey::ApiKey(const JsonValue& jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_stageKeysHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDate(0.0),
     m_lastUpdatedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -148,14 +144,12 @@ JsonValue ApiKey::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("createdDate", m_createdDate);
-
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedDateHasBeenSet)
   {
-   payload.WithDouble("lastUpdatedDate", m_lastUpdatedDate);
-
+   payload.WithDouble("lastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -18,6 +18,7 @@
 #include <aws/ds/model/DirectorySize.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/DirectoryStage.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ds/model/DirectoryType.h>
 #include <aws/ds/model/DirectoryVpcSettingsDescription.h>
 #include <aws/ds/model/DirectoryConnectSettingsDescription.h>
@@ -419,32 +420,52 @@ namespace Model
     /**
      * <p>Specifies when the directory was created.</p>
      */
-    inline double GetLaunchTime() const{ return m_launchTime; }
+    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
 
     /**
      * <p>Specifies when the directory was created.</p>
      */
-    inline void SetLaunchTime(double value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
 
     /**
      * <p>Specifies when the directory was created.</p>
      */
-    inline DirectoryDescription& WithLaunchTime(double value) { SetLaunchTime(value); return *this;}
+    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+
+    /**
+     * <p>Specifies when the directory was created.</p>
+     */
+    inline DirectoryDescription& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
+
+    /**
+     * <p>Specifies when the directory was created.</p>
+     */
+    inline DirectoryDescription& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(value); return *this;}
 
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
-    inline double GetStageLastUpdatedDateTime() const{ return m_stageLastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetStageLastUpdatedDateTime() const{ return m_stageLastUpdatedDateTime; }
 
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
-    inline void SetStageLastUpdatedDateTime(double value) { m_stageLastUpdatedDateTimeHasBeenSet = true; m_stageLastUpdatedDateTime = value; }
+    inline void SetStageLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_stageLastUpdatedDateTimeHasBeenSet = true; m_stageLastUpdatedDateTime = value; }
 
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
-    inline DirectoryDescription& WithStageLastUpdatedDateTime(double value) { SetStageLastUpdatedDateTime(value); return *this;}
+    inline void SetStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stageLastUpdatedDateTimeHasBeenSet = true; m_stageLastUpdatedDateTime = value; }
+
+    /**
+     * <p>The date and time that the stage was last updated.</p>
+     */
+    inline DirectoryDescription& WithStageLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetStageLastUpdatedDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time that the stage was last updated.</p>
+     */
+    inline DirectoryDescription& WithStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStageLastUpdatedDateTime(value); return *this;}
 
     /**
      * <p>The directory size.</p>
@@ -668,9 +689,9 @@ namespace Model
     bool m_dnsIpAddrsHasBeenSet;
     DirectoryStage m_stage;
     bool m_stageHasBeenSet;
-    double m_launchTime;
+    Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet;
-    double m_stageLastUpdatedDateTime;
+    Aws::Utils::DateTime m_stageLastUpdatedDateTime;
     bool m_stageLastUpdatedDateTimeHasBeenSet;
     DirectoryType m_type;
     bool m_typeHasBeenSet;

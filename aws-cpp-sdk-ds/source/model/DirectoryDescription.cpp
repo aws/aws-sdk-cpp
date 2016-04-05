@@ -31,9 +31,7 @@ DirectoryDescription::DirectoryDescription() :
     m_descriptionHasBeenSet(false),
     m_dnsIpAddrsHasBeenSet(false),
     m_stageHasBeenSet(false),
-    m_launchTime(0.0),
     m_launchTimeHasBeenSet(false),
-    m_stageLastUpdatedDateTime(0.0),
     m_stageLastUpdatedDateTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vpcSettingsHasBeenSet(false),
@@ -56,9 +54,7 @@ DirectoryDescription::DirectoryDescription(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_dnsIpAddrsHasBeenSet(false),
     m_stageHasBeenSet(false),
-    m_launchTime(0.0),
     m_launchTimeHasBeenSet(false),
-    m_stageLastUpdatedDateTime(0.0),
     m_stageLastUpdatedDateTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vpcSettingsHasBeenSet(false),
@@ -269,14 +265,12 @@ JsonValue DirectoryDescription::Jsonize() const
 
   if(m_launchTimeHasBeenSet)
   {
-   payload.WithDouble("LaunchTime", m_launchTime);
-
+   payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
   }
 
   if(m_stageLastUpdatedDateTimeHasBeenSet)
   {
-   payload.WithDouble("StageLastUpdatedDateTime", m_stageLastUpdatedDateTime);
-
+   payload.WithDouble("StageLastUpdatedDateTime", m_stageLastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   if(m_typeHasBeenSet)

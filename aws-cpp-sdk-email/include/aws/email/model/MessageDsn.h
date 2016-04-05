@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ExtensionField.h>
 
@@ -110,19 +111,31 @@ namespace Model
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline double GetArrivalDate() const{ return m_arrivalDate; }
+    inline const Aws::Utils::DateTime& GetArrivalDate() const{ return m_arrivalDate; }
 
     /**
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline void SetArrivalDate(double value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
+    inline void SetArrivalDate(const Aws::Utils::DateTime& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
 
     /**
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline MessageDsn& WithArrivalDate(double value) { SetArrivalDate(value); return *this;}
+    inline void SetArrivalDate(Aws::Utils::DateTime&& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
+
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline MessageDsn& WithArrivalDate(const Aws::Utils::DateTime& value) { SetArrivalDate(value); return *this;}
+
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline MessageDsn& WithArrivalDate(Aws::Utils::DateTime&& value) { SetArrivalDate(value); return *this;}
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -162,7 +175,7 @@ namespace Model
   private:
     Aws::String m_reportingMta;
     bool m_reportingMtaHasBeenSet;
-    double m_arrivalDate;
+    Aws::Utils::DateTime m_arrivalDate;
     bool m_arrivalDateHasBeenSet;
     Aws::Vector<ExtensionField> m_extensionFields;
     bool m_extensionFieldsHasBeenSet;

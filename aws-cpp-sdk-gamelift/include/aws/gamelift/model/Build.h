@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/BuildStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -245,19 +246,31 @@ namespace Model
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline Build& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Build& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
   private:
     Aws::String m_buildId;
@@ -270,7 +283,7 @@ namespace Model
     bool m_statusHasBeenSet;
     long long m_sizeOnDisk;
     bool m_sizeOnDiskHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };
 

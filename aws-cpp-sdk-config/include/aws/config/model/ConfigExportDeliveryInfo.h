@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/DeliveryStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -141,47 +142,77 @@ namespace Model
     /**
      * <p>The time of the last attempted delivery.</p>
      */
-    inline double GetLastAttemptTime() const{ return m_lastAttemptTime; }
+    inline const Aws::Utils::DateTime& GetLastAttemptTime() const{ return m_lastAttemptTime; }
 
     /**
      * <p>The time of the last attempted delivery.</p>
      */
-    inline void SetLastAttemptTime(double value) { m_lastAttemptTimeHasBeenSet = true; m_lastAttemptTime = value; }
+    inline void SetLastAttemptTime(const Aws::Utils::DateTime& value) { m_lastAttemptTimeHasBeenSet = true; m_lastAttemptTime = value; }
 
     /**
      * <p>The time of the last attempted delivery.</p>
      */
-    inline ConfigExportDeliveryInfo& WithLastAttemptTime(double value) { SetLastAttemptTime(value); return *this;}
+    inline void SetLastAttemptTime(Aws::Utils::DateTime&& value) { m_lastAttemptTimeHasBeenSet = true; m_lastAttemptTime = value; }
+
+    /**
+     * <p>The time of the last attempted delivery.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithLastAttemptTime(const Aws::Utils::DateTime& value) { SetLastAttemptTime(value); return *this;}
+
+    /**
+     * <p>The time of the last attempted delivery.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithLastAttemptTime(Aws::Utils::DateTime&& value) { SetLastAttemptTime(value); return *this;}
 
     /**
      * <p>The time of the last successful delivery.</p>
      */
-    inline double GetLastSuccessfulTime() const{ return m_lastSuccessfulTime; }
+    inline const Aws::Utils::DateTime& GetLastSuccessfulTime() const{ return m_lastSuccessfulTime; }
 
     /**
      * <p>The time of the last successful delivery.</p>
      */
-    inline void SetLastSuccessfulTime(double value) { m_lastSuccessfulTimeHasBeenSet = true; m_lastSuccessfulTime = value; }
+    inline void SetLastSuccessfulTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulTimeHasBeenSet = true; m_lastSuccessfulTime = value; }
 
     /**
      * <p>The time of the last successful delivery.</p>
      */
-    inline ConfigExportDeliveryInfo& WithLastSuccessfulTime(double value) { SetLastSuccessfulTime(value); return *this;}
+    inline void SetLastSuccessfulTime(Aws::Utils::DateTime&& value) { m_lastSuccessfulTimeHasBeenSet = true; m_lastSuccessfulTime = value; }
+
+    /**
+     * <p>The time of the last successful delivery.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithLastSuccessfulTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulTime(value); return *this;}
+
+    /**
+     * <p>The time of the last successful delivery.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithLastSuccessfulTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulTime(value); return *this;}
 
     /**
      * <p>The time that the next delivery occurs.</p>
      */
-    inline double GetNextDeliveryTime() const{ return m_nextDeliveryTime; }
+    inline const Aws::Utils::DateTime& GetNextDeliveryTime() const{ return m_nextDeliveryTime; }
 
     /**
      * <p>The time that the next delivery occurs.</p>
      */
-    inline void SetNextDeliveryTime(double value) { m_nextDeliveryTimeHasBeenSet = true; m_nextDeliveryTime = value; }
+    inline void SetNextDeliveryTime(const Aws::Utils::DateTime& value) { m_nextDeliveryTimeHasBeenSet = true; m_nextDeliveryTime = value; }
 
     /**
      * <p>The time that the next delivery occurs.</p>
      */
-    inline ConfigExportDeliveryInfo& WithNextDeliveryTime(double value) { SetNextDeliveryTime(value); return *this;}
+    inline void SetNextDeliveryTime(Aws::Utils::DateTime&& value) { m_nextDeliveryTimeHasBeenSet = true; m_nextDeliveryTime = value; }
+
+    /**
+     * <p>The time that the next delivery occurs.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithNextDeliveryTime(const Aws::Utils::DateTime& value) { SetNextDeliveryTime(value); return *this;}
+
+    /**
+     * <p>The time that the next delivery occurs.</p>
+     */
+    inline ConfigExportDeliveryInfo& WithNextDeliveryTime(Aws::Utils::DateTime&& value) { SetNextDeliveryTime(value); return *this;}
 
   private:
     DeliveryStatus m_lastStatus;
@@ -190,11 +221,11 @@ namespace Model
     bool m_lastErrorCodeHasBeenSet;
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
-    double m_lastAttemptTime;
+    Aws::Utils::DateTime m_lastAttemptTime;
     bool m_lastAttemptTimeHasBeenSet;
-    double m_lastSuccessfulTime;
+    Aws::Utils::DateTime m_lastSuccessfulTime;
     bool m_lastSuccessfulTimeHasBeenSet;
-    double m_nextDeliveryTime;
+    Aws::Utils::DateTime m_nextDeliveryTime;
     bool m_nextDeliveryTimeHasBeenSet;
   };
 

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -189,17 +190,27 @@ namespace Model
     /**
      * <p>The last time the table was updated.</p>
      */
-    inline double GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
      * <p>The last time the table was updated.</p>
      */
-    inline void SetLastUpdateTime(double value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
+    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
      * <p>The last time the table was updated.</p>
      */
-    inline TableStatistics& WithLastUpdateTime(double value) { SetLastUpdateTime(value); return *this;}
+    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
+
+    /**
+     * <p>The last time the table was updated.</p>
+     */
+    inline TableStatistics& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
+
+    /**
+     * <p>The last time the table was updated.</p>
+     */
+    inline TableStatistics& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(value); return *this;}
 
     /**
      * <p>The state of the table.</p>
@@ -251,7 +262,7 @@ namespace Model
     bool m_ddlsHasBeenSet;
     long long m_fullLoadRows;
     bool m_fullLoadRowsHasBeenSet;
-    double m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
     Aws::String m_tableState;
     bool m_tableStateHasBeenSet;

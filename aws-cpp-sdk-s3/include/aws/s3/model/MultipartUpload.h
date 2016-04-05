@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/Owner.h>
 #include <aws/s3/model/Initiator.h>
@@ -115,17 +116,27 @@ namespace Model
     /**
      * Date and time at which the multipart upload was initiated.
      */
-    inline double GetInitiated() const{ return m_initiated; }
+    inline const Aws::Utils::DateTime& GetInitiated() const{ return m_initiated; }
 
     /**
      * Date and time at which the multipart upload was initiated.
      */
-    inline void SetInitiated(double value) { m_initiatedHasBeenSet = true; m_initiated = value; }
+    inline void SetInitiated(const Aws::Utils::DateTime& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
 
     /**
      * Date and time at which the multipart upload was initiated.
      */
-    inline MultipartUpload& WithInitiated(double value) { SetInitiated(value); return *this;}
+    inline void SetInitiated(Aws::Utils::DateTime&& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
+
+    /**
+     * Date and time at which the multipart upload was initiated.
+     */
+    inline MultipartUpload& WithInitiated(const Aws::Utils::DateTime& value) { SetInitiated(value); return *this;}
+
+    /**
+     * Date and time at which the multipart upload was initiated.
+     */
+    inline MultipartUpload& WithInitiated(Aws::Utils::DateTime&& value) { SetInitiated(value); return *this;}
 
     /**
      * The class of storage used to store the object.
@@ -197,7 +208,7 @@ namespace Model
     bool m_uploadIdHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;
-    double m_initiated;
+    Aws::Utils::DateTime m_initiated;
     bool m_initiatedHasBeenSet;
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

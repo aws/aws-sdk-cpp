@@ -27,9 +27,7 @@ Run::Run() :
     m_assessmentArnHasBeenSet(false),
     m_runStateHasBeenSet(false),
     m_rulesPackagesHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_completionTime(0.0),
     m_completionTimeHasBeenSet(false)
 {
 }
@@ -40,9 +38,7 @@ Run::Run(const JsonValue& jsonValue) :
     m_assessmentArnHasBeenSet(false),
     m_runStateHasBeenSet(false),
     m_rulesPackagesHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_completionTime(0.0),
     m_completionTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -146,14 +142,12 @@ JsonValue Run::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("creationTime", m_creationTime);
-
+   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_completionTimeHasBeenSet)
   {
-   payload.WithDouble("completionTime", m_completionTime);
-
+   payload.WithDouble("completionTime", m_completionTime.SecondsWithMSPrecision());
   }
 
   return payload;

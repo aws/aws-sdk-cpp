@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 
 PublicKey::PublicKey() : 
     m_valueHasBeenSet(false),
-    m_validityStartTime(0.0),
     m_validityStartTimeHasBeenSet(false),
-    m_validityEndTime(0.0),
     m_validityEndTimeHasBeenSet(false),
     m_fingerprintHasBeenSet(false)
 {
@@ -34,9 +32,7 @@ PublicKey::PublicKey() :
 
 PublicKey::PublicKey(const JsonValue& jsonValue) : 
     m_valueHasBeenSet(false),
-    m_validityStartTime(0.0),
     m_validityStartTimeHasBeenSet(false),
-    m_validityEndTime(0.0),
     m_validityEndTimeHasBeenSet(false),
     m_fingerprintHasBeenSet(false)
 {
@@ -48,7 +44,6 @@ PublicKey& PublicKey::operator =(const JsonValue& jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = HashingUtils::Base64Decode(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
 
@@ -87,14 +82,12 @@ JsonValue PublicKey::Jsonize() const
 
   if(m_validityStartTimeHasBeenSet)
   {
-   payload.WithDouble("ValidityStartTime", m_validityStartTime);
-
+   payload.WithDouble("ValidityStartTime", m_validityStartTime.SecondsWithMSPrecision());
   }
 
   if(m_validityEndTimeHasBeenSet)
   {
-   payload.WithDouble("ValidityEndTime", m_validityEndTime);
-
+   payload.WithDouble("ValidityEndTime", m_validityEndTime.SecondsWithMSPrecision());
   }
 
   if(m_fingerprintHasBeenSet)

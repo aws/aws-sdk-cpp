@@ -24,15 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityResult::DescribeIdentityResult() : 
-    m_creationDate(0.0),
-    m_lastModifiedDate(0.0)
+DescribeIdentityResult::DescribeIdentityResult()
 {
 }
 
-DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_creationDate(0.0),
-    m_lastModifiedDate(0.0)
+DescribeIdentityResult::DescribeIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

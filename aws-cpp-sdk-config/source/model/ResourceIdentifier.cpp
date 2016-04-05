@@ -25,7 +25,6 @@ ResourceIdentifier::ResourceIdentifier() :
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
-    m_resourceDeletionTime(0.0),
     m_resourceDeletionTimeHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ ResourceIdentifier::ResourceIdentifier(const JsonValue& jsonValue) :
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
-    m_resourceDeletionTime(0.0),
     m_resourceDeletionTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,8 +94,7 @@ JsonValue ResourceIdentifier::Jsonize() const
 
   if(m_resourceDeletionTimeHasBeenSet)
   {
-   payload.WithDouble("resourceDeletionTime", m_resourceDeletionTime);
-
+   payload.WithDouble("resourceDeletionTime", m_resourceDeletionTime.SecondsWithMSPrecision());
   }
 
   return payload;

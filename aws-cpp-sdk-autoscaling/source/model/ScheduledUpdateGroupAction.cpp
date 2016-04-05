@@ -27,11 +27,8 @@ ScheduledUpdateGroupAction::ScheduledUpdateGroupAction() :
     m_autoScalingGroupNameHasBeenSet(false),
     m_scheduledActionNameHasBeenSet(false),
     m_scheduledActionARNHasBeenSet(false),
-    m_time(0.0),
     m_timeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
     m_minSize(0),
@@ -47,11 +44,8 @@ ScheduledUpdateGroupAction::ScheduledUpdateGroupAction(const XmlNode& xmlNode) :
     m_autoScalingGroupNameHasBeenSet(false),
     m_scheduledActionNameHasBeenSet(false),
     m_scheduledActionARNHasBeenSet(false),
-    m_time(0.0),
     m_timeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
     m_minSize(0),
@@ -91,19 +85,19 @@ ScheduledUpdateGroupAction& ScheduledUpdateGroupAction::operator =(const XmlNode
     XmlNode timeNode = resultNode.FirstChild("Time");
     if(!timeNode.IsNull())
     {
-      m_time = StringUtils::ConvertToDouble(StringUtils::Trim(timeNode.GetText().c_str()).c_str());
+      m_time = DateTime(StringUtils::Trim(timeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = StringUtils::ConvertToDouble(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str());
+      m_endTime = DateTime(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
@@ -151,15 +145,15 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_timeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Time=" << StringUtils::URLEncode(m_time) << "&";
+      oStream << location << index << locationValue << ".Time=" << StringUtils::URLEncode(m_time.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+      oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {
@@ -195,15 +189,15 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_timeHasBeenSet)
   {
-        oStream << location << ".Time=" << StringUtils::URLEncode(m_time) << "&";
+      oStream << location << ".Time=" << StringUtils::URLEncode(m_time.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-        oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+      oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {

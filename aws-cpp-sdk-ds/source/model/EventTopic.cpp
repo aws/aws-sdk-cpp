@@ -25,7 +25,6 @@ EventTopic::EventTopic() :
     m_directoryIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_topicArnHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ EventTopic::EventTopic(const JsonValue& jsonValue) :
     m_directoryIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_topicArnHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -106,8 +104,7 @@ JsonValue EventTopic::Jsonize() const
 
   if(m_createdDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreatedDateTime", m_createdDateTime);
-
+   payload.WithDouble("CreatedDateTime", m_createdDateTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

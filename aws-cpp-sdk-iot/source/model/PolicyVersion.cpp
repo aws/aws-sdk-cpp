@@ -25,7 +25,6 @@ PolicyVersion::PolicyVersion() :
     m_versionIdHasBeenSet(false),
     m_isDefaultVersion(false),
     m_isDefaultVersionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ PolicyVersion::PolicyVersion(const JsonValue& jsonValue) :
     m_versionIdHasBeenSet(false),
     m_isDefaultVersion(false),
     m_isDefaultVersionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -84,8 +82,7 @@ JsonValue PolicyVersion::Jsonize() const
 
   if(m_createDateHasBeenSet)
   {
-   payload.WithDouble("createDate", m_createDate);
-
+   payload.WithDouble("createDate", m_createDate.SecondsWithMSPrecision());
   }
 
   return payload;

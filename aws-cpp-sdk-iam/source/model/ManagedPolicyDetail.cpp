@@ -34,9 +34,7 @@ ManagedPolicyDetail::ManagedPolicyDetail() :
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_policyVersionListHasBeenSet(false)
 {
@@ -53,9 +51,7 @@ ManagedPolicyDetail::ManagedPolicyDetail(const XmlNode& xmlNode) :
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_policyVersionListHasBeenSet(false)
 {
@@ -119,13 +115,13 @@ ManagedPolicyDetail& ManagedPolicyDetail::operator =(const XmlNode& xmlNode)
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());
+      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode policyVersionListNode = resultNode.FirstChild("PolicyVersionList");
@@ -181,11 +177,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_policyVersionListHasBeenSet)
   {
@@ -235,11 +231,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-        oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_policyVersionListHasBeenSet)
   {

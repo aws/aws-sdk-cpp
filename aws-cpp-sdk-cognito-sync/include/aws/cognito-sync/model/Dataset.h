@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -132,32 +133,52 @@ namespace Model
     /**
      * Date on which the dataset was created.
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * Date on which the dataset was created.
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * Date on which the dataset was created.
      */
-    inline Dataset& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * Date on which the dataset was created.
+     */
+    inline Dataset& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * Date on which the dataset was created.
+     */
+    inline Dataset& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * Date when the dataset was last modified.
      */
-    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
      * Date when the dataset was last modified.
      */
-    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
      * Date when the dataset was last modified.
      */
-    inline Dataset& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    /**
+     * Date when the dataset was last modified.
+     */
+    inline Dataset& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * Date when the dataset was last modified.
+     */
+    inline Dataset& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
     /**
      * The device that made the last change to this dataset.
@@ -229,9 +250,9 @@ namespace Model
     bool m_identityIdHasBeenSet;
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
-    double m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;

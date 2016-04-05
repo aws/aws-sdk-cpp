@@ -42,7 +42,6 @@ PutRecordsRequestEntry& PutRecordsRequestEntry::operator =(const JsonValue& json
   if(jsonValue.ValueExists("Data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
-
     m_dataHasBeenSet = true;
   }
 

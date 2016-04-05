@@ -16,6 +16,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/acm/model/KeyAlgorithm.h>
@@ -388,32 +389,52 @@ namespace Model
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline CertificateDetail& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p> Time at which the certificate was requested. </p>
+     */
+    inline CertificateDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p> Time at which the certificate was requested. </p>
+     */
+    inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline double GetIssuedAt() const{ return m_issuedAt; }
+    inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline void SetIssuedAt(double value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
+    inline void SetIssuedAt(const Aws::Utils::DateTime& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline CertificateDetail& WithIssuedAt(double value) { SetIssuedAt(value); return *this;}
+    inline void SetIssuedAt(Aws::Utils::DateTime&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
+
+    /**
+     * <p> Time at which the certificate was issued. </p>
+     */
+    inline CertificateDetail& WithIssuedAt(const Aws::Utils::DateTime& value) { SetIssuedAt(value); return *this;}
+
+    /**
+     * <p> Time at which the certificate was issued. </p>
+     */
+    inline CertificateDetail& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(value); return *this;}
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
@@ -459,19 +480,31 @@ namespace Model
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline double GetRevokedAt() const{ return m_revokedAt; }
+    inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
 
     /**
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline void SetRevokedAt(double value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
+    inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
 
     /**
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline CertificateDetail& WithRevokedAt(double value) { SetRevokedAt(value); return *this;}
+    inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
+
+    /**
+     * <p> The time, if any, at which the certificate was revoked. This value exists
+     * only if the certificate has been revoked. </p>
+     */
+    inline CertificateDetail& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
+
+    /**
+     * <p> The time, if any, at which the certificate was revoked. This value exists
+     * only if the certificate has been revoked. </p>
+     */
+    inline CertificateDetail& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(value); return *this;}
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
@@ -531,32 +564,52 @@ namespace Model
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline double GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline void SetNotBefore(double value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline CertificateDetail& WithNotBefore(double value) { SetNotBefore(value); return *this;}
+    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+
+    /**
+     * <p> Time before which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
+
+    /**
+     * <p> Time before which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(value); return *this;}
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline double GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline void SetNotAfter(double value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline CertificateDetail& WithNotAfter(double value) { SetNotAfter(value); return *this;}
+    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+
+    /**
+     * <p> Time after which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
+
+    /**
+     * <p> Time after which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(value); return *this;}
 
     /**
      * <p> Asymmetric algorithm used to generate the public and private key pair.
@@ -693,19 +746,19 @@ namespace Model
     bool m_subjectHasBeenSet;
     Aws::String m_issuer;
     bool m_issuerHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_issuedAt;
+    Aws::Utils::DateTime m_issuedAt;
     bool m_issuedAtHasBeenSet;
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
-    double m_revokedAt;
+    Aws::Utils::DateTime m_revokedAt;
     bool m_revokedAtHasBeenSet;
     RevocationReason m_revocationReason;
     bool m_revocationReasonHasBeenSet;
-    double m_notBefore;
+    Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
-    double m_notAfter;
+    Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
     KeyAlgorithm m_keyAlgorithm;
     bool m_keyAlgorithmHasBeenSet;

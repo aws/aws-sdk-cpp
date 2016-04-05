@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/dms/model/ReplicationSubnetGroup.h>
 #include <aws/dms/model/ReplicationPendingModifiedValues.h>
 
@@ -208,17 +209,27 @@ namespace Model
     /**
      * <p>The time the replication instance was created.</p>
      */
-    inline double GetInstanceCreateTime() const{ return m_instanceCreateTime; }
+    inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
      * <p>The time the replication instance was created.</p>
      */
-    inline void SetInstanceCreateTime(double value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+    inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
      * <p>The time the replication instance was created.</p>
      */
-    inline ReplicationInstance& WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
+    inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+
+    /**
+     * <p>The time the replication instance was created.</p>
+     */
+    inline ReplicationInstance& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
+
+    /**
+     * <p>The time the replication instance was created.</p>
+     */
+    inline ReplicationInstance& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
      * <p>The Availability Zone for the instance.</p>
@@ -594,7 +605,7 @@ namespace Model
     bool m_replicationInstanceStatusHasBeenSet;
     long m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
-    double m_instanceCreateTime;
+    Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;

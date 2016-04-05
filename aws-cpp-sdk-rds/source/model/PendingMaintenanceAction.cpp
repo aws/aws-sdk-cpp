@@ -25,12 +25,9 @@ using namespace Aws::Utils;
 
 PendingMaintenanceAction::PendingMaintenanceAction() : 
     m_actionHasBeenSet(false),
-    m_autoAppliedAfterDate(0.0),
     m_autoAppliedAfterDateHasBeenSet(false),
-    m_forcedApplyDate(0.0),
     m_forcedApplyDateHasBeenSet(false),
     m_optInStatusHasBeenSet(false),
-    m_currentApplyDate(0.0),
     m_currentApplyDateHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -38,12 +35,9 @@ PendingMaintenanceAction::PendingMaintenanceAction() :
 
 PendingMaintenanceAction::PendingMaintenanceAction(const XmlNode& xmlNode) : 
     m_actionHasBeenSet(false),
-    m_autoAppliedAfterDate(0.0),
     m_autoAppliedAfterDateHasBeenSet(false),
-    m_forcedApplyDate(0.0),
     m_forcedApplyDateHasBeenSet(false),
     m_optInStatusHasBeenSet(false),
-    m_currentApplyDate(0.0),
     m_currentApplyDateHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -65,13 +59,13 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode autoAppliedAfterDateNode = resultNode.FirstChild("AutoAppliedAfterDate");
     if(!autoAppliedAfterDateNode.IsNull())
     {
-      m_autoAppliedAfterDate = StringUtils::ConvertToDouble(StringUtils::Trim(autoAppliedAfterDateNode.GetText().c_str()).c_str());
+      m_autoAppliedAfterDate = DateTime(StringUtils::Trim(autoAppliedAfterDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_autoAppliedAfterDateHasBeenSet = true;
     }
     XmlNode forcedApplyDateNode = resultNode.FirstChild("ForcedApplyDate");
     if(!forcedApplyDateNode.IsNull())
     {
-      m_forcedApplyDate = StringUtils::ConvertToDouble(StringUtils::Trim(forcedApplyDateNode.GetText().c_str()).c_str());
+      m_forcedApplyDate = DateTime(StringUtils::Trim(forcedApplyDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_forcedApplyDateHasBeenSet = true;
     }
     XmlNode optInStatusNode = resultNode.FirstChild("OptInStatus");
@@ -83,7 +77,7 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode currentApplyDateNode = resultNode.FirstChild("CurrentApplyDate");
     if(!currentApplyDateNode.IsNull())
     {
-      m_currentApplyDate = StringUtils::ConvertToDouble(StringUtils::Trim(currentApplyDateNode.GetText().c_str()).c_str());
+      m_currentApplyDate = DateTime(StringUtils::Trim(currentApplyDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_currentApplyDateHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
@@ -105,11 +99,11 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_autoAppliedAfterDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate) << "&";
+      oStream << location << index << locationValue << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_forcedApplyDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate) << "&";
+      oStream << location << index << locationValue << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optInStatusHasBeenSet)
   {
@@ -117,7 +111,7 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_currentApplyDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate) << "&";
+      oStream << location << index << locationValue << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {
@@ -133,11 +127,11 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_autoAppliedAfterDateHasBeenSet)
   {
-        oStream << location << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate) << "&";
+      oStream << location << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_forcedApplyDateHasBeenSet)
   {
-        oStream << location << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate) << "&";
+      oStream << location << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optInStatusHasBeenSet)
   {
@@ -145,7 +139,7 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_currentApplyDateHasBeenSet)
   {
-        oStream << location << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate) << "&";
+      oStream << location << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

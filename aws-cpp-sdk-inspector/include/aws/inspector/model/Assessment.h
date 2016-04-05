@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/Attribute.h>
 
@@ -247,32 +248,52 @@ namespace Model
     /**
      * <p>The assessment start time.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The assessment start time.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The assessment start time.</p>
      */
-    inline Assessment& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The assessment start time.</p>
+     */
+    inline Assessment& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The assessment start time.</p>
+     */
+    inline Assessment& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The assessment end time.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The assessment end time.</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The assessment end time.</p>
      */
-    inline Assessment& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The assessment end time.</p>
+     */
+    inline Assessment& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The assessment end time.</p>
+     */
+    inline Assessment& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The assessment duration in seconds. The default value is 3600 seconds (one
@@ -340,9 +361,9 @@ namespace Model
     bool m_failureMessageHasBeenSet;
     bool m_dataCollected;
     bool m_dataCollectedHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     long m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;

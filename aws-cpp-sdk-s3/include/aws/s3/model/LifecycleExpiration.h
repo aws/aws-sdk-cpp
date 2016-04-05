@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -42,19 +43,31 @@ namespace Model
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
      */
-    inline double GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
      */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
      */
-    inline LifecycleExpiration& WithDate(double value) { SetDate(value); return *this;}
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline LifecycleExpiration& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
+
+    /**
+     * Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.
+     */
+    inline LifecycleExpiration& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
@@ -99,7 +112,7 @@ namespace Model
     inline LifecycleExpiration& WithExpiredObjectDeleteMarker(bool value) { SetExpiredObjectDeleteMarker(value); return *this;}
 
   private:
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
     long m_days;
     bool m_daysHasBeenSet;

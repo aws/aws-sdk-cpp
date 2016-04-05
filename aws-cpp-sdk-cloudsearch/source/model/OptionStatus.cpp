@@ -24,9 +24,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 OptionStatus::OptionStatus() : 
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_updateVersion(0),
     m_updateVersionHasBeenSet(false),
@@ -37,9 +35,7 @@ OptionStatus::OptionStatus() :
 }
 
 OptionStatus::OptionStatus(const XmlNode& xmlNode) : 
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_updateDate(0.0),
     m_updateDateHasBeenSet(false),
     m_updateVersion(0),
     m_updateVersionHasBeenSet(false),
@@ -59,13 +55,13 @@ OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = StringUtils::ConvertToDouble(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str());
+      m_creationDate = DateTime(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = StringUtils::ConvertToDouble(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str());
+      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode updateVersionNode = resultNode.FirstChild("UpdateVersion");
@@ -95,11 +91,11 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_creationDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate) << "&";
+      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateVersionHasBeenSet)
   {
@@ -119,11 +115,11 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_creationDateHasBeenSet)
   {
-        oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate) << "&";
+      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateDateHasBeenSet)
   {
-        oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateVersionHasBeenSet)
   {

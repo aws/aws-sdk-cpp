@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/SnapshotType.h>
 #include <aws/ds/model/SnapshotStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -201,17 +202,27 @@ namespace Model
     /**
      * <p>The date and time that the snapshot was taken.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The date and time that the snapshot was taken.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The date and time that the snapshot was taken.</p>
      */
-    inline Snapshot& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The date and time that the snapshot was taken.</p>
+     */
+    inline Snapshot& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The date and time that the snapshot was taken.</p>
+     */
+    inline Snapshot& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
   private:
     Aws::String m_directoryId;
@@ -224,7 +235,7 @@ namespace Model
     bool m_nameHasBeenSet;
     SnapshotStatus m_status;
     bool m_statusHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
   };
 

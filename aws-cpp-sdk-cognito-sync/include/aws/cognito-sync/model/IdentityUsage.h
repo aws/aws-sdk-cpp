@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -128,17 +129,27 @@ namespace Model
     /**
      * Date on which the identity was last modified.
      */
-    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
      * Date on which the identity was last modified.
      */
-    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
      * Date on which the identity was last modified.
      */
-    inline IdentityUsage& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    /**
+     * Date on which the identity was last modified.
+     */
+    inline IdentityUsage& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * Date on which the identity was last modified.
+     */
+    inline IdentityUsage& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
     /**
      * Number of datasets for the identity.
@@ -175,7 +186,7 @@ namespace Model
     bool m_identityIdHasBeenSet;
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
-    double m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
     long m_datasetCount;
     bool m_datasetCountHasBeenSet;

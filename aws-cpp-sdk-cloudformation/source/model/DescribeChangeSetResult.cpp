@@ -26,13 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeChangeSetResult::DescribeChangeSetResult() : 
-    m_creationTime(0.0)
+DescribeChangeSetResult::DescribeChangeSetResult()
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_creationTime(0.0)
+DescribeChangeSetResult::DescribeChangeSetResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -88,7 +86,7 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const AmazonWebServ
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())

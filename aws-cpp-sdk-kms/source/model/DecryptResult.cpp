@@ -46,7 +46,6 @@ DecryptResult& DecryptResult::operator =(const AmazonWebServiceResult<JsonValue>
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
-
   }
 
 

@@ -28,11 +28,8 @@ Trust::Trust() :
     m_trustTypeHasBeenSet(false),
     m_trustDirectionHasBeenSet(false),
     m_trustStateHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTime(0.0),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTime(0.0),
     m_stateLastUpdatedDateTimeHasBeenSet(false)
 {
 }
@@ -44,11 +41,8 @@ Trust::Trust(const JsonValue& jsonValue) :
     m_trustTypeHasBeenSet(false),
     m_trustDirectionHasBeenSet(false),
     m_trustStateHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTime(0.0),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTime(0.0),
     m_stateLastUpdatedDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -161,20 +155,17 @@ JsonValue Trust::Jsonize() const
 
   if(m_createdDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreatedDateTime", m_createdDateTime);
-
+   payload.WithDouble("CreatedDateTime", m_createdDateTime.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedDateTime", m_lastUpdatedDateTime);
-
+   payload.WithDouble("LastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   if(m_stateLastUpdatedDateTimeHasBeenSet)
   {
-   payload.WithDouble("StateLastUpdatedDateTime", m_stateLastUpdatedDateTime);
-
+   payload.WithDouble("StateLastUpdatedDateTime", m_stateLastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

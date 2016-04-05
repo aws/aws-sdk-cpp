@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 IdentityDescription::IdentityDescription() : 
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
 }
@@ -34,9 +32,7 @@ IdentityDescription::IdentityDescription() :
 IdentityDescription::IdentityDescription(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_loginsHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,14 +97,12 @@ JsonValue IdentityDescription::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("CreationDate", m_creationDate);
-
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;

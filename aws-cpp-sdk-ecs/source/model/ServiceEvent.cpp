@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 
 ServiceEvent::ServiceEvent() : 
     m_idHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -31,7 +30,6 @@ ServiceEvent::ServiceEvent() :
 
 ServiceEvent::ServiceEvent(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -76,8 +74,7 @@ JsonValue ServiceEvent::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_messageHasBeenSet)

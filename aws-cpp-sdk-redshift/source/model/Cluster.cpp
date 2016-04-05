@@ -31,7 +31,6 @@ Cluster::Cluster() :
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
@@ -73,7 +72,6 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
@@ -159,7 +157,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
-      m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
+      m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
@@ -381,7 +379,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
@@ -561,7 +559,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {

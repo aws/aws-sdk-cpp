@@ -29,17 +29,12 @@ CertificateDetail::CertificateDetail() :
     m_serialHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_issuerHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_issuedAt(0.0),
     m_issuedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_revokedAt(0.0),
     m_revokedAtHasBeenSet(false),
     m_revocationReasonHasBeenSet(false),
-    m_notBefore(0.0),
     m_notBeforeHasBeenSet(false),
-    m_notAfter(0.0),
     m_notAfterHasBeenSet(false),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
@@ -55,17 +50,12 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_serialHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_issuerHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_issuedAt(0.0),
     m_issuedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_revokedAt(0.0),
     m_revokedAtHasBeenSet(false),
     m_revocationReasonHasBeenSet(false),
-    m_notBefore(0.0),
     m_notBeforeHasBeenSet(false),
-    m_notAfter(0.0),
     m_notAfterHasBeenSet(false),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
@@ -265,14 +255,12 @@ JsonValue CertificateDetail::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt);
-
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_issuedAtHasBeenSet)
   {
-   payload.WithDouble("IssuedAt", m_issuedAt);
-
+   payload.WithDouble("IssuedAt", m_issuedAt.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)
@@ -282,8 +270,7 @@ JsonValue CertificateDetail::Jsonize() const
 
   if(m_revokedAtHasBeenSet)
   {
-   payload.WithDouble("RevokedAt", m_revokedAt);
-
+   payload.WithDouble("RevokedAt", m_revokedAt.SecondsWithMSPrecision());
   }
 
   if(m_revocationReasonHasBeenSet)
@@ -293,14 +280,12 @@ JsonValue CertificateDetail::Jsonize() const
 
   if(m_notBeforeHasBeenSet)
   {
-   payload.WithDouble("NotBefore", m_notBefore);
-
+   payload.WithDouble("NotBefore", m_notBefore.SecondsWithMSPrecision());
   }
 
   if(m_notAfterHasBeenSet)
   {
-   payload.WithDouble("NotAfter", m_notAfter);
-
+   payload.WithDouble("NotAfter", m_notAfter.SecondsWithMSPrecision());
   }
 
   if(m_keyAlgorithmHasBeenSet)

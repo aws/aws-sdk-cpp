@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/PlayerSessionStatus.h>
 
 namespace Aws
@@ -186,37 +187,61 @@ namespace Model
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this object was created. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline PlayerSession& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this object was created. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline double GetTerminationTime() const{ return m_terminationTime; }
+    inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline void SetTerminationTime(double value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+    inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this fleet was terminated. Format is an integer
      * representing the number of seconds since the Unix epoch (Unix time).</p>
      */
-    inline PlayerSession& WithTerminationTime(double value) { SetTerminationTime(value); return *this;}
+    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
+
+    /**
+     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
+     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     */
+    inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
      * <p>Current status of the player session. Possible player session states include:
@@ -329,9 +354,9 @@ namespace Model
     bool m_gameSessionIdHasBeenSet;
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_terminationTime;
+    Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
     PlayerSessionStatus m_status;
     bool m_statusHasBeenSet;

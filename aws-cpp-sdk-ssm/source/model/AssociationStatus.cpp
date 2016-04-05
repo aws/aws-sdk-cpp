@@ -22,7 +22,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AssociationStatus::AssociationStatus() : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -31,7 +30,6 @@ AssociationStatus::AssociationStatus() :
 }
 
 AssociationStatus::AssociationStatus(const JsonValue& jsonValue) : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -79,8 +77,7 @@ JsonValue AssociationStatus::Jsonize() const
 
   if(m_dateHasBeenSet)
   {
-   payload.WithDouble("Date", m_date);
-
+   payload.WithDouble("Date", m_date.SecondsWithMSPrecision());
   }
 
   if(m_nameHasBeenSet)

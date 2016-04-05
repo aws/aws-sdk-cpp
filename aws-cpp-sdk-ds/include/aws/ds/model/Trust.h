@@ -18,6 +18,7 @@
 #include <aws/ds/model/TrustType.h>
 #include <aws/ds/model/TrustDirection.h>
 #include <aws/ds/model/TrustState.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -235,47 +236,77 @@ namespace Model
     /**
      * The date and time that the trust relationship was created.
      */
-    inline double GetCreatedDateTime() const{ return m_createdDateTime; }
+    inline const Aws::Utils::DateTime& GetCreatedDateTime() const{ return m_createdDateTime; }
 
     /**
      * The date and time that the trust relationship was created.
      */
-    inline void SetCreatedDateTime(double value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
+    inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
      * The date and time that the trust relationship was created.
      */
-    inline Trust& WithCreatedDateTime(double value) { SetCreatedDateTime(value); return *this;}
+    inline void SetCreatedDateTime(Aws::Utils::DateTime&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
+
+    /**
+     * The date and time that the trust relationship was created.
+     */
+    inline Trust& WithCreatedDateTime(const Aws::Utils::DateTime& value) { SetCreatedDateTime(value); return *this;}
+
+    /**
+     * The date and time that the trust relationship was created.
+     */
+    inline Trust& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(value); return *this;}
 
     /**
      * The date and time that the trust relationship was last updated.
      */
-    inline double GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
 
     /**
      * The date and time that the trust relationship was last updated.
      */
-    inline void SetLastUpdatedDateTime(double value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
+    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
 
     /**
      * The date and time that the trust relationship was last updated.
      */
-    inline Trust& WithLastUpdatedDateTime(double value) { SetLastUpdatedDateTime(value); return *this;}
+    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
+
+    /**
+     * The date and time that the trust relationship was last updated.
+     */
+    inline Trust& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
+
+    /**
+     * The date and time that the trust relationship was last updated.
+     */
+    inline Trust& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(value); return *this;}
 
     /**
      * The date and time that the TrustState was last updated.
      */
-    inline double GetStateLastUpdatedDateTime() const{ return m_stateLastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetStateLastUpdatedDateTime() const{ return m_stateLastUpdatedDateTime; }
 
     /**
      * The date and time that the TrustState was last updated.
      */
-    inline void SetStateLastUpdatedDateTime(double value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
+    inline void SetStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
 
     /**
      * The date and time that the TrustState was last updated.
      */
-    inline Trust& WithStateLastUpdatedDateTime(double value) { SetStateLastUpdatedDateTime(value); return *this;}
+    inline void SetStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
+
+    /**
+     * The date and time that the TrustState was last updated.
+     */
+    inline Trust& WithStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetStateLastUpdatedDateTime(value); return *this;}
+
+    /**
+     * The date and time that the TrustState was last updated.
+     */
+    inline Trust& WithStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStateLastUpdatedDateTime(value); return *this;}
 
   private:
     Aws::String m_directoryId;
@@ -290,11 +321,11 @@ namespace Model
     bool m_trustDirectionHasBeenSet;
     TrustState m_trustState;
     bool m_trustStateHasBeenSet;
-    double m_createdDateTime;
+    Aws::Utils::DateTime m_createdDateTime;
     bool m_createdDateTimeHasBeenSet;
-    double m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
-    double m_stateLastUpdatedDateTime;
+    Aws::Utils::DateTime m_stateLastUpdatedDateTime;
     bool m_stateLastUpdatedDateTimeHasBeenSet;
   };
 

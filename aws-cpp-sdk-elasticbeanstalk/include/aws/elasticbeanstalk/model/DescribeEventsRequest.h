@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/EventSeverity.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -320,37 +321,61 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur on or after this time.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur on or after this time.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur on or after this time.</p>
      */
-    inline DescribeEventsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
+     */
+    inline DescribeEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
+     */
+    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur up to, but not including, the <code>EndTime</code>. </p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur up to, but not including, the <code>EndTime</code>. </p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur up to, but not including, the <code>EndTime</code>. </p>
      */
-    inline DescribeEventsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur up to, but not including, the <code>EndTime</code>. </p>
+     */
+    inline DescribeEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur up to, but not including, the <code>EndTime</code>. </p>
+     */
+    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> Specifies the maximum number of events that can be returned, beginning with
@@ -427,9 +452,9 @@ namespace Model
     bool m_requestIdHasBeenSet;
     EventSeverity m_severity;
     bool m_severityHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
 
 namespace Aws
@@ -81,17 +82,27 @@ namespace Model
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline double GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
+    inline const Aws::Utils::DateTime& GetApproximateArrivalTimestamp() const{ return m_approximateArrivalTimestamp; }
 
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline void SetApproximateArrivalTimestamp(double value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
+    inline void SetApproximateArrivalTimestamp(const Aws::Utils::DateTime& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
 
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
-    inline Record& WithApproximateArrivalTimestamp(double value) { SetApproximateArrivalTimestamp(value); return *this;}
+    inline void SetApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
+
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
+    inline Record& WithApproximateArrivalTimestamp(const Aws::Utils::DateTime& value) { SetApproximateArrivalTimestamp(value); return *this;}
+
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
+    inline Record& WithApproximateArrivalTimestamp(Aws::Utils::DateTime&& value) { SetApproximateArrivalTimestamp(value); return *this;}
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to the
@@ -176,7 +187,7 @@ namespace Model
   private:
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
-    double m_approximateArrivalTimestamp;
+    Aws::Utils::DateTime m_approximateArrivalTimestamp;
     bool m_approximateArrivalTimestampHasBeenSet;
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;

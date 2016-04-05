@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -242,37 +243,61 @@ namespace Model
      * <p>Run creation time that corresponds to the data collection completion time or
      * failure.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Run creation time that corresponds to the data collection completion time or
      * failure.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Run creation time that corresponds to the data collection completion time or
      * failure.</p>
      */
-    inline Run& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>Run creation time that corresponds to the data collection completion time or
+     * failure.</p>
+     */
+    inline Run& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Run creation time that corresponds to the data collection completion time or
+     * failure.</p>
+     */
+    inline Run& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Run completion time that corresponds to the rules packages evaluation
      * completion time or failure.</p>
      */
-    inline double GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
      * <p>Run completion time that corresponds to the rules packages evaluation
      * completion time or failure.</p>
      */
-    inline void SetCompletionTime(double value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
      * <p>Run completion time that corresponds to the rules packages evaluation
      * completion time or failure.</p>
      */
-    inline Run& WithCompletionTime(double value) { SetCompletionTime(value); return *this;}
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+
+    /**
+     * <p>Run completion time that corresponds to the rules packages evaluation
+     * completion time or failure.</p>
+     */
+    inline Run& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>Run completion time that corresponds to the rules packages evaluation
+     * completion time or failure.</p>
+     */
+    inline Run& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(value); return *this;}
 
   private:
     Aws::String m_runArn;
@@ -285,9 +310,9 @@ namespace Model
     bool m_runStateHasBeenSet;
     Aws::Vector<Aws::String> m_rulesPackages;
     bool m_rulesPackagesHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_completionTime;
+    Aws::Utils::DateTime m_completionTime;
     bool m_completionTimeHasBeenSet;
   };
 

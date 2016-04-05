@@ -25,7 +25,6 @@ Credentials::Credentials() :
     m_accessKeyIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ Credentials::Credentials(const JsonValue& jsonValue) :
     m_accessKeyIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
-    m_expiration(0.0),
     m_expirationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,8 +95,7 @@ JsonValue Credentials::Jsonize() const
 
   if(m_expirationHasBeenSet)
   {
-   payload.WithDouble("Expiration", m_expiration);
-
+   payload.WithDouble("Expiration", m_expiration.SecondsWithMSPrecision());
   }
 
   return payload;

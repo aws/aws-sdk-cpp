@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/Origins.h>
 #include <aws/cloudfront/model/DefaultCacheBehavior.h>
@@ -137,17 +138,27 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline double GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
      * The date and time the distribution was last modified.
      */
-    inline void SetLastModifiedTime(double value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
      * The date and time the distribution was last modified.
      */
-    inline DistributionSummary& WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * The date and time the distribution was last modified.
+     */
+    inline DistributionSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * The date and time the distribution was last modified.
+     */
+    inline DistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(value); return *this;}
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -466,7 +477,7 @@ namespace Model
     bool m_idHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    double m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;

@@ -26,9 +26,7 @@ using namespace Aws::Utils;
 NodeSnapshot::NodeSnapshot() : 
     m_cacheNodeIdHasBeenSet(false),
     m_cacheSizeHasBeenSet(false),
-    m_cacheNodeCreateTime(0.0),
     m_cacheNodeCreateTimeHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false)
 {
 }
@@ -36,9 +34,7 @@ NodeSnapshot::NodeSnapshot() :
 NodeSnapshot::NodeSnapshot(const XmlNode& xmlNode) : 
     m_cacheNodeIdHasBeenSet(false),
     m_cacheSizeHasBeenSet(false),
-    m_cacheNodeCreateTime(0.0),
     m_cacheNodeCreateTimeHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -65,13 +61,13 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
     if(!cacheNodeCreateTimeNode.IsNull())
     {
-      m_cacheNodeCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(cacheNodeCreateTimeNode.GetText().c_str()).c_str());
+      m_cacheNodeCreateTime = DateTime(StringUtils::Trim(cacheNodeCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
   }
@@ -91,11 +87,11 @@ void NodeSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime) << "&";
+      oStream << location << index << locationValue << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -111,10 +107,10 @@ void NodeSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
-        oStream << location << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime) << "&";
+      oStream << location << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

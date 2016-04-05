@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -227,17 +228,27 @@ namespace Model
     /**
      * <p> The date and time of the event. </p>
      */
-    inline double GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
      * <p> The date and time of the event. </p>
      */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
      * <p> The date and time of the event. </p>
      */
-    inline Event& WithDate(double value) { SetDate(value); return *this;}
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * <p> The date and time of the event. </p>
+     */
+    inline Event& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
+
+    /**
+     * <p> The date and time of the event. </p>
+     */
+    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
     /**
      * <p> The identifier of the event. </p>
@@ -285,7 +296,7 @@ namespace Model
     bool m_eventCategoriesHasBeenSet;
     Aws::String m_severity;
     bool m_severityHasBeenSet;
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;

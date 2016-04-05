@@ -16,6 +16,7 @@
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -87,19 +88,31 @@ namespace Model
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored. </p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored. </p>
      */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored. </p>
      */
-    inline MeterUsageRequest& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
+     * of the timestamp will be ignored. </p>
+     */
+    inline MeterUsageRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
+     * of the timestamp will be ignored. </p>
+     */
+    inline MeterUsageRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>It will be one of the 'fcp dimension name' provided during the publishing of
@@ -182,7 +195,7 @@ namespace Model
   private:
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     Aws::String m_usageDimension;
     bool m_usageDimensionHasBeenSet;

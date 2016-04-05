@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 MFADevice::MFADevice() : 
     m_userNameHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ MFADevice::MFADevice() :
 MFADevice::MFADevice(const XmlNode& xmlNode) : 
     m_userNameHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -61,7 +59,7 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
-      m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());
+      m_enableDate = DateTime(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
   }
@@ -81,7 +79,7 @@ void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   }
   if(m_enableDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
+      oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -97,6 +95,6 @@ void MFADevice::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_enableDateHasBeenSet)
   {
-        oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
+      oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

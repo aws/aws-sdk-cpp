@@ -26,9 +26,7 @@ Alias::Alias() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingStrategyHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false)
 {
 }
@@ -38,9 +36,7 @@ Alias::Alias(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingStrategyHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -123,14 +119,12 @@ JsonValue Alias::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedTimeHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime);
-
+   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 FlowLog::FlowLog() : 
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -38,7 +37,6 @@ FlowLog::FlowLog() :
 }
 
 FlowLog::FlowLog(const XmlNode& xmlNode) : 
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -61,7 +59,7 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode flowLogIdNode = resultNode.FirstChild("flowLogId");
@@ -121,7 +119,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_flowLogIdHasBeenSet)
   {
@@ -161,7 +159,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_flowLogIdHasBeenSet)
   {

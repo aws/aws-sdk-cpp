@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/ActionExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/codepipeline/model/ErrorDetails.h>
 
 namespace Aws
@@ -111,17 +112,27 @@ namespace Model
     /**
      * <p>The last status change of the action.</p>
      */
-    inline double GetLastStatusChange() const{ return m_lastStatusChange; }
+    inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
 
     /**
      * <p>The last status change of the action.</p>
      */
-    inline void SetLastStatusChange(double value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+    inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
     /**
      * <p>The last status change of the action.</p>
      */
-    inline ActionExecution& WithLastStatusChange(double value) { SetLastStatusChange(value); return *this;}
+    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+
+    /**
+     * <p>The last status change of the action.</p>
+     */
+    inline ActionExecution& WithLastStatusChange(const Aws::Utils::DateTime& value) { SetLastStatusChange(value); return *this;}
+
+    /**
+     * <p>The last status change of the action.</p>
+     */
+    inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
 
     /**
      * <p>The external ID of the run of the action.</p>
@@ -245,7 +256,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_summary;
     bool m_summaryHasBeenSet;
-    double m_lastStatusChange;
+    Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;

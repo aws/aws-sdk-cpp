@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/OperationStatus.h>
 #include <aws/route53domains/model/OperationType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -156,17 +157,27 @@ namespace Model
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline double GetSubmittedDate() const{ return m_submittedDate; }
+    inline const Aws::Utils::DateTime& GetSubmittedDate() const{ return m_submittedDate; }
 
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline void SetSubmittedDate(double value) { m_submittedDateHasBeenSet = true; m_submittedDate = value; }
+    inline void SetSubmittedDate(const Aws::Utils::DateTime& value) { m_submittedDateHasBeenSet = true; m_submittedDate = value; }
 
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline OperationSummary& WithSubmittedDate(double value) { SetSubmittedDate(value); return *this;}
+    inline void SetSubmittedDate(Aws::Utils::DateTime&& value) { m_submittedDateHasBeenSet = true; m_submittedDate = value; }
+
+    /**
+     * <p>The date when the request was submitted.</p>
+     */
+    inline OperationSummary& WithSubmittedDate(const Aws::Utils::DateTime& value) { SetSubmittedDate(value); return *this;}
+
+    /**
+     * <p>The date when the request was submitted.</p>
+     */
+    inline OperationSummary& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(value); return *this;}
 
   private:
     Aws::String m_operationId;
@@ -175,7 +186,7 @@ namespace Model
     bool m_statusHasBeenSet;
     OperationType m_type;
     bool m_typeHasBeenSet;
-    double m_submittedDate;
+    Aws::Utils::DateTime m_submittedDate;
     bool m_submittedDateHasBeenSet;
   };
 

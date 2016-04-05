@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection GetObjectAclRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
   return headers;

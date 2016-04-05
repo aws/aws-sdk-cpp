@@ -66,42 +66,42 @@ Aws::Http::HeaderValueCollection UploadPartRequest::GetRequestSpecificHeaders() 
   Aws::StringStream ss;
   if(m_contentLengthHasBeenSet)
   {
-   ss << m_contentLength;
-   headers.insert(Aws::Http::HeaderValuePair("content-length", ss.str()));
-   ss.str("");
+    ss << m_contentLength;
+    headers.insert(Aws::Http::HeaderValuePair("content-length", ss.str()));
+    ss.str("");
   }
 
   if(m_contentMD5HasBeenSet)
   {
-   ss << m_contentMD5;
-   headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
-   ss.str("");
+    ss << m_contentMD5;
+    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
-   ss << m_sSECustomerAlgorithm;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerAlgorithm;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
-   ss << m_sSECustomerKey;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKey;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
-   ss << m_sSECustomerKeyMD5;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKeyMD5;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
   return headers;

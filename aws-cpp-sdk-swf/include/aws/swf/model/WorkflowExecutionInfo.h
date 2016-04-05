@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/swf/model/ExecutionStatus.h>
 #include <aws/swf/model/CloseStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -99,35 +100,57 @@ namespace Model
     /**
      * <p>The time when the execution was started.</p>
      */
-    inline double GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
 
     /**
      * <p>The time when the execution was started.</p>
      */
-    inline void SetStartTimestamp(double value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
      * <p>The time when the execution was started.</p>
      */
-    inline WorkflowExecutionInfo& WithStartTimestamp(double value) { SetStartTimestamp(value); return *this;}
+    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+
+    /**
+     * <p>The time when the execution was started.</p>
+     */
+    inline WorkflowExecutionInfo& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
+
+    /**
+     * <p>The time when the execution was started.</p>
+     */
+    inline WorkflowExecutionInfo& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(value); return *this;}
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
      * status is CLOSED.</p>
      */
-    inline double GetCloseTimestamp() const{ return m_closeTimestamp; }
+    inline const Aws::Utils::DateTime& GetCloseTimestamp() const{ return m_closeTimestamp; }
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
      * status is CLOSED.</p>
      */
-    inline void SetCloseTimestamp(double value) { m_closeTimestampHasBeenSet = true; m_closeTimestamp = value; }
+    inline void SetCloseTimestamp(const Aws::Utils::DateTime& value) { m_closeTimestampHasBeenSet = true; m_closeTimestamp = value; }
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
      * status is CLOSED.</p>
      */
-    inline WorkflowExecutionInfo& WithCloseTimestamp(double value) { SetCloseTimestamp(value); return *this;}
+    inline void SetCloseTimestamp(Aws::Utils::DateTime&& value) { m_closeTimestampHasBeenSet = true; m_closeTimestamp = value; }
+
+    /**
+     * <p>The time when the workflow execution was closed. Set only if the execution
+     * status is CLOSED.</p>
+     */
+    inline WorkflowExecutionInfo& WithCloseTimestamp(const Aws::Utils::DateTime& value) { SetCloseTimestamp(value); return *this;}
+
+    /**
+     * <p>The time when the workflow execution was closed. Set only if the execution
+     * status is CLOSED.</p>
+     */
+    inline WorkflowExecutionInfo& WithCloseTimestamp(Aws::Utils::DateTime&& value) { SetCloseTimestamp(value); return *this;}
 
     /**
      * <p>The current status of the execution.</p>
@@ -335,9 +358,9 @@ namespace Model
     bool m_executionHasBeenSet;
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
-    double m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp;
     bool m_startTimestampHasBeenSet;
-    double m_closeTimestamp;
+    Aws::Utils::DateTime m_closeTimestamp;
     bool m_closeTimestampHasBeenSet;
     ExecutionStatus m_executionStatus;
     bool m_executionStatusHasBeenSet;

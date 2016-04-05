@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
 
 namespace Aws
@@ -279,17 +280,27 @@ namespace Model
     /**
      * <p>Time the status was updated.</p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Time the status was updated.</p>
      */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Time the status was updated.</p>
      */
-    inline StackEvent& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>Time the status was updated.</p>
+     */
+    inline StackEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>Time the status was updated.</p>
+     */
+    inline StackEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>Current status of the resource.</p>
@@ -399,7 +410,7 @@ namespace Model
     bool m_physicalResourceIdHasBeenSet;
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet;

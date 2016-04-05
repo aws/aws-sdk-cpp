@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -77,22 +78,32 @@ namespace Model
     /**
      * Date and time at which the object was uploaded.
      */
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
      * Date and time at which the object was uploaded.
      */
-    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
      * Date and time at which the object was uploaded.
      */
-    inline CopyPartResult& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /**
+     * Date and time at which the object was uploaded.
+     */
+    inline CopyPartResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * Date and time at which the object was uploaded.
+     */
+    inline CopyPartResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
   private:
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };
 

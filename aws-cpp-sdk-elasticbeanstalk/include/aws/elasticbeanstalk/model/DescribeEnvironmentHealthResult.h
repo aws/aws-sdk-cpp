@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ApplicationMetrics.h>
 #include <aws/elasticbeanstalk/model/InstanceHealthSummary.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 
 namespace Aws
@@ -293,17 +294,27 @@ namespace Model
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline double GetRefreshedAt() const{ return m_refreshedAt; }
+    inline const Aws::Utils::DateTime& GetRefreshedAt() const{ return m_refreshedAt; }
 
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline void SetRefreshedAt(double value) { m_refreshedAt = value; }
+    inline void SetRefreshedAt(const Aws::Utils::DateTime& value) { m_refreshedAt = value; }
 
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline DescribeEnvironmentHealthResult& WithRefreshedAt(double value) { SetRefreshedAt(value); return *this;}
+    inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = value; }
+
+    /**
+     * <p>The date and time the information was last refreshed.</p>
+     */
+    inline DescribeEnvironmentHealthResult& WithRefreshedAt(const Aws::Utils::DateTime& value) { SetRefreshedAt(value); return *this;}
+
+    /**
+     * <p>The date and time the information was last refreshed.</p>
+     */
+    inline DescribeEnvironmentHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -328,7 +339,7 @@ namespace Model
     Aws::Vector<Aws::String> m_causes;
     ApplicationMetrics m_applicationMetrics;
     InstanceHealthSummary m_instancesHealth;
-    double m_refreshedAt;
+    Aws::Utils::DateTime m_refreshedAt;
     ResponseMetadata m_responseMetadata;
   };
 

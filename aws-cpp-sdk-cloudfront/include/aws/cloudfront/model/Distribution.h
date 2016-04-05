@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
 #include <aws/cloudfront/model/DistributionConfig.h>
 
@@ -131,17 +132,27 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline double GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
      * The date and time the distribution was last modified.
      */
-    inline void SetLastModifiedTime(double value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
      * The date and time the distribution was last modified.
      */
-    inline Distribution& WithLastModifiedTime(double value) { SetLastModifiedTime(value); return *this;}
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * The date and time the distribution was last modified.
+     */
+    inline Distribution& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * The date and time the distribution was last modified.
+     */
+    inline Distribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(value); return *this;}
 
     /**
      * The number of invalidation batches currently in progress.
@@ -290,7 +301,7 @@ namespace Model
     bool m_idHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    double m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
     long m_inProgressInvalidationBatches;
     bool m_inProgressInvalidationBatchesHasBeenSet;

@@ -39,6 +39,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 #if($member.value.shape.blob)
   ${spaces}ss << "${member.key}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
+#elseif($member.value.shape.timeStamp)
+  ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.value.shape.string)
   ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.value.shape.enum)
@@ -69,6 +71,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}  ss << "${location}." << ${varName}Count << "="
 #if($member.value.shape.listMember.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.c_str()) << "&";
+#elseif($member.value.shape.listMember.shape.timeStamp)
+  ${spaces}      << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.listMember.shape.name}Mapper::GetNameFor${member.value.shape.listMember.shape.name}(item).c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.double)
@@ -101,6 +105,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}  ss << "${mapLocationName}." << ${varName}Count << ".${keyLocationName}="
 #if($member.value.shape.mapKey.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
+#elseif($member.value.shape.mapKey.shape.timeStamp)
+  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapKey.shape.name}Mapper::GetNameFor${member.value.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.structure)
@@ -115,6 +121,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 #if($member.value.shape.mapValue.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
+#elseif($member.value.shape.mapValue.shape.timeStamp)
+  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapValue.shape.name}Mapper::GetNameFor${member.value.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.structure)

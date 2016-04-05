@@ -25,16 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetPipelineStateResult::GetPipelineStateResult() : 
-    m_pipelineVersion(0),
-    m_created(0.0),
-    m_updated(0.0)
+    m_pipelineVersion(0)
 {
 }
 
 GetPipelineStateResult::GetPipelineStateResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_pipelineVersion(0),
-    m_created(0.0),
-    m_updated(0.0)
+    m_pipelineVersion(0)
 {
   *this = result;
 }

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
@@ -394,17 +395,27 @@ namespace Model
     /**
      * <p> Provides the date and time the DB instance was created. </p>
      */
-    inline double GetInstanceCreateTime() const{ return m_instanceCreateTime; }
+    inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
 
     /**
      * <p> Provides the date and time the DB instance was created. </p>
      */
-    inline void SetInstanceCreateTime(double value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+    inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
      * <p> Provides the date and time the DB instance was created. </p>
      */
-    inline DBInstance& WithInstanceCreateTime(double value) { SetInstanceCreateTime(value); return *this;}
+    inline void SetInstanceCreateTime(Aws::Utils::DateTime&& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
+
+    /**
+     * <p> Provides the date and time the DB instance was created. </p>
+     */
+    inline DBInstance& WithInstanceCreateTime(const Aws::Utils::DateTime& value) { SetInstanceCreateTime(value); return *this;}
+
+    /**
+     * <p> Provides the date and time the DB instance was created. </p>
+     */
+    inline DBInstance& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(value); return *this;}
 
     /**
      * <p> Specifies the daily time range during which automated backups are created if
@@ -752,19 +763,31 @@ namespace Model
      * <p> Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline double GetLatestRestorableTime() const{ return m_latestRestorableTime; }
+    inline const Aws::Utils::DateTime& GetLatestRestorableTime() const{ return m_latestRestorableTime; }
 
     /**
      * <p> Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline void SetLatestRestorableTime(double value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
+    inline void SetLatestRestorableTime(const Aws::Utils::DateTime& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
 
     /**
      * <p> Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline DBInstance& WithLatestRestorableTime(double value) { SetLatestRestorableTime(value); return *this;}
+    inline void SetLatestRestorableTime(Aws::Utils::DateTime&& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
+
+    /**
+     * <p> Specifies the latest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBInstance& WithLatestRestorableTime(const Aws::Utils::DateTime& value) { SetLatestRestorableTime(value); return *this;}
+
+    /**
+     * <p> Specifies the latest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBInstance& WithLatestRestorableTime(Aws::Utils::DateTime&& value) { SetLatestRestorableTime(value); return *this;}
 
     /**
      * <p> Specifies if the DB instance is a Multi-AZ deployment. </p>
@@ -1667,7 +1690,7 @@ namespace Model
     bool m_endpointHasBeenSet;
     long m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
-    double m_instanceCreateTime;
+    Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
@@ -1687,7 +1710,7 @@ namespace Model
     bool m_preferredMaintenanceWindowHasBeenSet;
     PendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
-    double m_latestRestorableTime;
+    Aws::Utils::DateTime m_latestRestorableTime;
     bool m_latestRestorableTimeHasBeenSet;
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;

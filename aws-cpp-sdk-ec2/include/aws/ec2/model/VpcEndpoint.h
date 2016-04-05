@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -254,17 +255,27 @@ namespace Model
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline double GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline void SetCreationTimestamp(double value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
+    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
 
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
-    inline VpcEndpoint& WithCreationTimestamp(double value) { SetCreationTimestamp(value); return *this;}
+    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
+
+    /**
+     * <p>The date and time the VPC endpoint was created.</p>
+     */
+    inline VpcEndpoint& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time the VPC endpoint was created.</p>
+     */
+    inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(value); return *this;}
 
   private:
     Aws::String m_vpcEndpointId;
@@ -279,7 +290,7 @@ namespace Model
     bool m_policyDocumentHasBeenSet;
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
-    double m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
   };
 

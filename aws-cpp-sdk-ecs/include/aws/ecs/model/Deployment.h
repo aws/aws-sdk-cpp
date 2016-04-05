@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -238,35 +239,57 @@ namespace Model
     /**
      * <p>The Unix time in seconds and milliseconds when the service was created.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was created.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was created.</p>
      */
-    inline Deployment& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
+    inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
+    inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was last
      * updated.</p>
      */
-    inline double GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was last
      * updated.</p>
      */
-    inline void SetUpdatedAt(double value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was last
      * updated.</p>
      */
-    inline Deployment& WithUpdatedAt(double value) { SetUpdatedAt(value); return *this;}
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was last
+     * updated.</p>
+     */
+    inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was last
+     * updated.</p>
+     */
+    inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -281,9 +304,9 @@ namespace Model
     bool m_pendingCountHasBeenSet;
     long m_runningCount;
     bool m_runningCountHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
   };
 

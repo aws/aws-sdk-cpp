@@ -25,8 +25,6 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetDataSourceResult::GetDataSourceResult() : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0),
     m_dataSizeInBytes(0),
     m_numberOfFiles(0),
     m_computeStatistics(false)
@@ -34,8 +32,6 @@ GetDataSourceResult::GetDataSourceResult() :
 }
 
 GetDataSourceResult::GetDataSourceResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0),
     m_dataSizeInBytes(0),
     m_numberOfFiles(0),
     m_computeStatistics(false)

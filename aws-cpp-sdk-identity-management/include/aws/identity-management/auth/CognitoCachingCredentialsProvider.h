@@ -18,7 +18,7 @@
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
-
+#include <aws/core/utils/DateTime.h>
 #include <mutex>
 
 namespace Aws
@@ -46,7 +46,7 @@ namespace Aws
 
             virtual CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const = 0;
 
-            bool IsTimeExpired(double expiry);
+            bool IsTimeExpired(const Aws::Utils::DateTime& expiry);
 
             std::shared_ptr<CognitoIdentity::CognitoIdentityClient> m_cognitoIdentityClient;
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
@@ -55,7 +55,7 @@ namespace Aws
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
 
             AWSCredentials m_cachedCredentials;
-            std::atomic<double> m_expiry;
+            std::atomic<Aws::Utils::DateTime> m_expiry;
             std::mutex m_credsMutex;
         };
 

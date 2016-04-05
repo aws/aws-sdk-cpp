@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/MinimumHealthyHosts.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -140,17 +141,27 @@ namespace Model
     /**
      * <p>The time at which the deployment configuration was created.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The time at which the deployment configuration was created.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The time at which the deployment configuration was created.</p>
      */
-    inline DeploymentConfigInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The time at which the deployment configuration was created.</p>
+     */
+    inline DeploymentConfigInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The time at which the deployment configuration was created.</p>
+     */
+    inline DeploymentConfigInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
   private:
     Aws::String m_deploymentConfigId;
@@ -159,7 +170,7 @@ namespace Model
     bool m_deploymentConfigNameHasBeenSet;
     MinimumHealthyHosts m_minimumHealthyHosts;
     bool m_minimumHealthyHostsHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
   };
 

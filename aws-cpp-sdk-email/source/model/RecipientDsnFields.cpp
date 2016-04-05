@@ -29,7 +29,6 @@ RecipientDsnFields::RecipientDsnFields() :
     m_remoteMtaHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_diagnosticCodeHasBeenSet(false),
-    m_lastAttemptDate(0.0),
     m_lastAttemptDateHasBeenSet(false),
     m_extensionFieldsHasBeenSet(false)
 {
@@ -41,7 +40,6 @@ RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode) :
     m_remoteMtaHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_diagnosticCodeHasBeenSet(false),
-    m_lastAttemptDate(0.0),
     m_lastAttemptDateHasBeenSet(false),
     m_extensionFieldsHasBeenSet(false)
 {
@@ -87,7 +85,7 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     XmlNode lastAttemptDateNode = resultNode.FirstChild("LastAttemptDate");
     if(!lastAttemptDateNode.IsNull())
     {
-      m_lastAttemptDate = StringUtils::ConvertToDouble(StringUtils::Trim(lastAttemptDateNode.GetText().c_str()).c_str());
+      m_lastAttemptDate = DateTime(StringUtils::Trim(lastAttemptDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastAttemptDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");
@@ -131,7 +129,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastAttemptDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate) << "&";
+      oStream << location << index << locationValue << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {
@@ -169,7 +167,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_lastAttemptDateHasBeenSet)
   {
-        oStream << location << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate) << "&";
+      oStream << location << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_extensionFieldsHasBeenSet)
   {

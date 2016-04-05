@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/config/model/RecorderStatus.h>
 
 namespace Aws
@@ -80,32 +81,52 @@ namespace Model
     /**
      * <p>The time the recorder was last started.</p>
      */
-    inline double GetLastStartTime() const{ return m_lastStartTime; }
+    inline const Aws::Utils::DateTime& GetLastStartTime() const{ return m_lastStartTime; }
 
     /**
      * <p>The time the recorder was last started.</p>
      */
-    inline void SetLastStartTime(double value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = value; }
+    inline void SetLastStartTime(const Aws::Utils::DateTime& value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = value; }
 
     /**
      * <p>The time the recorder was last started.</p>
      */
-    inline ConfigurationRecorderStatus& WithLastStartTime(double value) { SetLastStartTime(value); return *this;}
+    inline void SetLastStartTime(Aws::Utils::DateTime&& value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = value; }
+
+    /**
+     * <p>The time the recorder was last started.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStartTime(const Aws::Utils::DateTime& value) { SetLastStartTime(value); return *this;}
+
+    /**
+     * <p>The time the recorder was last started.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStartTime(Aws::Utils::DateTime&& value) { SetLastStartTime(value); return *this;}
 
     /**
      * <p>The time the recorder was last stopped.</p>
      */
-    inline double GetLastStopTime() const{ return m_lastStopTime; }
+    inline const Aws::Utils::DateTime& GetLastStopTime() const{ return m_lastStopTime; }
 
     /**
      * <p>The time the recorder was last stopped.</p>
      */
-    inline void SetLastStopTime(double value) { m_lastStopTimeHasBeenSet = true; m_lastStopTime = value; }
+    inline void SetLastStopTime(const Aws::Utils::DateTime& value) { m_lastStopTimeHasBeenSet = true; m_lastStopTime = value; }
 
     /**
      * <p>The time the recorder was last stopped.</p>
      */
-    inline ConfigurationRecorderStatus& WithLastStopTime(double value) { SetLastStopTime(value); return *this;}
+    inline void SetLastStopTime(Aws::Utils::DateTime&& value) { m_lastStopTimeHasBeenSet = true; m_lastStopTime = value; }
+
+    /**
+     * <p>The time the recorder was last stopped.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStopTime(const Aws::Utils::DateTime& value) { SetLastStopTime(value); return *this;}
+
+    /**
+     * <p>The time the recorder was last stopped.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStopTime(Aws::Utils::DateTime&& value) { SetLastStopTime(value); return *this;}
 
     /**
      * <p>Specifies whether the recorder is currently recording or not.</p>
@@ -220,24 +241,34 @@ namespace Model
     /**
      * <p>The time when the status was last changed.</p>
      */
-    inline double GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
+    inline const Aws::Utils::DateTime& GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
 
     /**
      * <p>The time when the status was last changed.</p>
      */
-    inline void SetLastStatusChangeTime(double value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
+    inline void SetLastStatusChangeTime(const Aws::Utils::DateTime& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
 
     /**
      * <p>The time when the status was last changed.</p>
      */
-    inline ConfigurationRecorderStatus& WithLastStatusChangeTime(double value) { SetLastStatusChangeTime(value); return *this;}
+    inline void SetLastStatusChangeTime(Aws::Utils::DateTime&& value) { m_lastStatusChangeTimeHasBeenSet = true; m_lastStatusChangeTime = value; }
+
+    /**
+     * <p>The time when the status was last changed.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStatusChangeTime(const Aws::Utils::DateTime& value) { SetLastStatusChangeTime(value); return *this;}
+
+    /**
+     * <p>The time when the status was last changed.</p>
+     */
+    inline ConfigurationRecorderStatus& WithLastStatusChangeTime(Aws::Utils::DateTime&& value) { SetLastStatusChangeTime(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_lastStartTime;
+    Aws::Utils::DateTime m_lastStartTime;
     bool m_lastStartTimeHasBeenSet;
-    double m_lastStopTime;
+    Aws::Utils::DateTime m_lastStopTime;
     bool m_lastStopTimeHasBeenSet;
     bool m_recording;
     bool m_recordingHasBeenSet;
@@ -247,7 +278,7 @@ namespace Model
     bool m_lastErrorCodeHasBeenSet;
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
-    double m_lastStatusChangeTime;
+    Aws::Utils::DateTime m_lastStatusChangeTime;
     bool m_lastStatusChangeTimeHasBeenSet;
   };
 

@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/RealtimeEndpointStatus.h>
 
@@ -65,19 +66,31 @@ namespace Model
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The time that the request to create the real-time endpoint for the
      * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
      */
-    inline RealtimeEndpointInfo& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time that the request to create the real-time endpoint for the
+     * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
+     */
+    inline RealtimeEndpointInfo& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the request to create the real-time endpoint for the
+     * <code>MLModel</code> was received. The time is expressed in epoch time.</p>
+     */
+    inline RealtimeEndpointInfo& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The URI that specifies where to send real-time prediction requests for the
@@ -176,7 +189,7 @@ namespace Model
   private:
     long m_peakRequestsPerSecond;
     bool m_peakRequestsPerSecondHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
     Aws::String m_endpointUrl;
     bool m_endpointUrlHasBeenSet;

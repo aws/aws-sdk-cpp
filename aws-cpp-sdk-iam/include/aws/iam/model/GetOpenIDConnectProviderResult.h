@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
 
 namespace Aws
@@ -203,19 +204,31 @@ namespace Model
      * <p>The date and time when the IAM OpenID Connect provider entity was created in
      * the AWS account. </p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time when the IAM OpenID Connect provider entity was created in
      * the AWS account. </p>
      */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
     /**
      * <p>The date and time when the IAM OpenID Connect provider entity was created in
      * the AWS account. </p>
      */
-    inline GetOpenIDConnectProviderResult& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = value; }
+
+    /**
+     * <p>The date and time when the IAM OpenID Connect provider entity was created in
+     * the AWS account. </p>
+     */
+    inline GetOpenIDConnectProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the IAM OpenID Connect provider entity was created in
+     * the AWS account. </p>
+     */
+    inline GetOpenIDConnectProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -236,7 +249,7 @@ namespace Model
     Aws::String m_url;
     Aws::Vector<Aws::String> m_clientIDList;
     Aws::Vector<Aws::String> m_thumbprintList;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     ResponseMetadata m_responseMetadata;
   };
 

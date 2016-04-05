@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 GetResourceConfigHistoryRequest::GetResourceConfigHistoryRequest() : 
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_laterTime(0.0),
     m_laterTimeHasBeenSet(false),
-    m_earlierTime(0.0),
     m_earlierTimeHasBeenSet(false),
     m_chronologicalOrderHasBeenSet(false),
     m_limit(0),
@@ -52,14 +50,12 @@ Aws::String GetResourceConfigHistoryRequest::SerializePayload() const
 
   if(m_laterTimeHasBeenSet)
   {
-   payload.WithDouble("laterTime", m_laterTime);
-
+   payload.WithDouble("laterTime", m_laterTime.SecondsWithMSPrecision());
   }
 
   if(m_earlierTimeHasBeenSet)
   {
-   payload.WithDouble("earlierTime", m_earlierTime);
-
+   payload.WithDouble("earlierTime", m_earlierTime.SecondsWithMSPrecision());
   }
 
   if(m_chronologicalOrderHasBeenSet)

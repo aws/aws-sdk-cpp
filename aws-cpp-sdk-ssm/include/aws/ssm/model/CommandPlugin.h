@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/CommandPluginStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -134,35 +135,57 @@ namespace Model
     /**
      * The time the plugin started executing.
      */
-    inline double GetResponseStartDateTime() const{ return m_responseStartDateTime; }
+    inline const Aws::Utils::DateTime& GetResponseStartDateTime() const{ return m_responseStartDateTime; }
 
     /**
      * The time the plugin started executing.
      */
-    inline void SetResponseStartDateTime(double value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
+    inline void SetResponseStartDateTime(const Aws::Utils::DateTime& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
 
     /**
      * The time the plugin started executing.
      */
-    inline CommandPlugin& WithResponseStartDateTime(double value) { SetResponseStartDateTime(value); return *this;}
+    inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
+
+    /**
+     * The time the plugin started executing.
+     */
+    inline CommandPlugin& WithResponseStartDateTime(const Aws::Utils::DateTime& value) { SetResponseStartDateTime(value); return *this;}
+
+    /**
+     * The time the plugin started executing.
+     */
+    inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(value); return *this;}
 
     /**
      * The time the plugin stopped executing. Could stop prematurely if, for example, a
      * cancel command was sent.
      */
-    inline double GetResponseFinishDateTime() const{ return m_responseFinishDateTime; }
+    inline const Aws::Utils::DateTime& GetResponseFinishDateTime() const{ return m_responseFinishDateTime; }
 
     /**
      * The time the plugin stopped executing. Could stop prematurely if, for example, a
      * cancel command was sent.
      */
-    inline void SetResponseFinishDateTime(double value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
+    inline void SetResponseFinishDateTime(const Aws::Utils::DateTime& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
 
     /**
      * The time the plugin stopped executing. Could stop prematurely if, for example, a
      * cancel command was sent.
      */
-    inline CommandPlugin& WithResponseFinishDateTime(double value) { SetResponseFinishDateTime(value); return *this;}
+    inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
+
+    /**
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a
+     * cancel command was sent.
+     */
+    inline CommandPlugin& WithResponseFinishDateTime(const Aws::Utils::DateTime& value) { SetResponseFinishDateTime(value); return *this;}
+
+    /**
+     * The time the plugin stopped executing. Could stop prematurely if, for example, a
+     * cancel command was sent.
+     */
+    inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(value); return *this;}
 
     /**
      * Output of the plugin execution.
@@ -290,9 +313,9 @@ namespace Model
     bool m_statusHasBeenSet;
     long m_responseCode;
     bool m_responseCodeHasBeenSet;
-    double m_responseStartDateTime;
+    Aws::Utils::DateTime m_responseStartDateTime;
     bool m_responseStartDateTimeHasBeenSet;
-    double m_responseFinishDateTime;
+    Aws::Utils::DateTime m_responseFinishDateTime;
     bool m_responseFinishDateTimeHasBeenSet;
     Aws::String m_output;
     bool m_outputHasBeenSet;

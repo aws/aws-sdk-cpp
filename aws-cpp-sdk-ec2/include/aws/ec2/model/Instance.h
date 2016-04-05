@@ -19,6 +19,7 @@
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/Placement.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/Monitoring.h>
@@ -427,17 +428,27 @@ namespace Model
     /**
      * <p>The time the instance was launched.</p>
      */
-    inline double GetLaunchTime() const{ return m_launchTime; }
+    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
 
     /**
      * <p>The time the instance was launched.</p>
      */
-    inline void SetLaunchTime(double value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
 
     /**
      * <p>The time the instance was launched.</p>
      */
-    inline Instance& WithLaunchTime(double value) { SetLaunchTime(value); return *this;}
+    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline Instance& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
+    inline Instance& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(value); return *this;}
 
     /**
      * <p>The location where the instance launched, if applicable.</p>
@@ -1279,7 +1290,7 @@ namespace Model
     bool m_productCodesHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    double m_launchTime;
+    Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet;
     Placement m_placement;
     bool m_placementHasBeenSet;

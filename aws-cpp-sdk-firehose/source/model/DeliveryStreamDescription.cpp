@@ -26,9 +26,7 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatusHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_createTimestamp(0.0),
     m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestamp(0.0),
     m_lastUpdateTimestampHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_hasMoreDestinations(false),
@@ -41,9 +39,7 @@ DeliveryStreamDescription::DeliveryStreamDescription(const JsonValue& jsonValue)
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatusHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_createTimestamp(0.0),
     m_createTimestampHasBeenSet(false),
-    m_lastUpdateTimestamp(0.0),
     m_lastUpdateTimestampHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_hasMoreDestinations(false),
@@ -145,14 +141,12 @@ JsonValue DeliveryStreamDescription::Jsonize() const
 
   if(m_createTimestampHasBeenSet)
   {
-   payload.WithDouble("CreateTimestamp", m_createTimestamp);
-
+   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdateTimestampHasBeenSet)
   {
-   payload.WithDouble("LastUpdateTimestamp", m_lastUpdateTimestamp);
-
+   payload.WithDouble("LastUpdateTimestamp", m_lastUpdateTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_destinationsHasBeenSet)

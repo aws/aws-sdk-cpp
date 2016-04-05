@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ClusterState.h>
@@ -41,32 +42,52 @@ namespace Model
     /**
      * <p>The creation date and time beginning value filter for listing clusters .</p>
      */
-    inline double GetCreatedAfter() const{ return m_createdAfter; }
+    inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
 
     /**
      * <p>The creation date and time beginning value filter for listing clusters .</p>
      */
-    inline void SetCreatedAfter(double value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
+    inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
 
     /**
      * <p>The creation date and time beginning value filter for listing clusters .</p>
      */
-    inline ListClustersRequest& WithCreatedAfter(double value) { SetCreatedAfter(value); return *this;}
+    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
+
+    /**
+     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     */
+    inline ListClustersRequest& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
+
+    /**
+     * <p>The creation date and time beginning value filter for listing clusters .</p>
+     */
+    inline ListClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(value); return *this;}
 
     /**
      * <p>The creation date and time end value filter for listing clusters .</p>
      */
-    inline double GetCreatedBefore() const{ return m_createdBefore; }
+    inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
 
     /**
      * <p>The creation date and time end value filter for listing clusters .</p>
      */
-    inline void SetCreatedBefore(double value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
+    inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
 
     /**
      * <p>The creation date and time end value filter for listing clusters .</p>
      */
-    inline ListClustersRequest& WithCreatedBefore(double value) { SetCreatedBefore(value); return *this;}
+    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
+
+    /**
+     * <p>The creation date and time end value filter for listing clusters .</p>
+     */
+    inline ListClustersRequest& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
+
+    /**
+     * <p>The creation date and time end value filter for listing clusters .</p>
+     */
+    inline ListClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(value); return *this;}
 
     /**
      * <p>The cluster state filters to apply when listing clusters. </p>
@@ -139,9 +160,9 @@ namespace Model
     inline ListClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
-    double m_createdAfter;
+    Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet;
-    double m_createdBefore;
+    Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet;
     Aws::Vector<ClusterState> m_clusterStates;
     bool m_clusterStatesHasBeenSet;

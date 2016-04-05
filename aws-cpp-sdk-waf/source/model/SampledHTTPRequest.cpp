@@ -25,7 +25,6 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_requestHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_actionHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ SampledHTTPRequest::SampledHTTPRequest(const JsonValue& jsonValue) :
     m_requestHasBeenSet(false),
     m_weight(0),
     m_weightHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_actionHasBeenSet(false)
 {
@@ -93,8 +91,7 @@ JsonValue SampledHTTPRequest::Jsonize() const
 
   if(m_timestampHasBeenSet)
   {
-   payload.WithDouble("Timestamp", m_timestamp);
-
+   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if(m_actionHasBeenSet)

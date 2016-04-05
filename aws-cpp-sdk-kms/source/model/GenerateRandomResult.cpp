@@ -40,7 +40,6 @@ GenerateRandomResult& GenerateRandomResult::operator =(const AmazonWebServiceRes
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
-
   }
 
 

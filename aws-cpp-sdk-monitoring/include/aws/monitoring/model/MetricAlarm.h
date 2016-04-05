@@ -16,6 +16,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/StateValue.h>
 #include <aws/monitoring/model/Statistic.h>
@@ -159,37 +160,27 @@ namespace Model
     /**
      * <p> The time stamp of the last update to the alarm configuration. </p>
      */
-    inline const Aws::String& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetAlarmConfigurationUpdatedTimestamp() const{ return m_alarmConfigurationUpdatedTimestamp; }
 
     /**
      * <p> The time stamp of the last update to the alarm configuration. </p>
      */
-    inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
+    inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /**
      * <p> The time stamp of the last update to the alarm configuration. </p>
      */
-    inline void SetAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
+    inline void SetAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /**
      * <p> The time stamp of the last update to the alarm configuration. </p>
      */
-    inline void SetAlarmConfigurationUpdatedTimestamp(const char* value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp.assign(value); }
+    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /**
      * <p> The time stamp of the last update to the alarm configuration. </p>
      */
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const Aws::String& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp of the last update to the alarm configuration. </p>
-     */
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::String&& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp of the last update to the alarm configuration. </p>
-     */
-    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(const char* value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
+    inline MetricAlarm& WithAlarmConfigurationUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetAlarmConfigurationUpdatedTimestamp(value); return *this;}
 
     /**
      * <p> Indicates whether actions should be executed during any changes to the
@@ -483,37 +474,27 @@ namespace Model
     /**
      * <p> The time stamp of the last update to the alarm's state. </p>
      */
-    inline const Aws::String& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetStateUpdatedTimestamp() const{ return m_stateUpdatedTimestamp; }
 
     /**
      * <p> The time stamp of the last update to the alarm's state. </p>
      */
-    inline void SetStateUpdatedTimestamp(const Aws::String& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
+    inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
      * <p> The time stamp of the last update to the alarm's state. </p>
      */
-    inline void SetStateUpdatedTimestamp(Aws::String&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
+    inline void SetStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
      * <p> The time stamp of the last update to the alarm's state. </p>
      */
-    inline void SetStateUpdatedTimestamp(const char* value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp.assign(value); }
+    inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
      * <p> The time stamp of the last update to the alarm's state. </p>
      */
-    inline MetricAlarm& WithStateUpdatedTimestamp(const Aws::String& value) { SetStateUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp of the last update to the alarm's state. </p>
-     */
-    inline MetricAlarm& WithStateUpdatedTimestamp(Aws::String&& value) { SetStateUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp of the last update to the alarm's state. </p>
-     */
-    inline MetricAlarm& WithStateUpdatedTimestamp(const char* value) { SetStateUpdatedTimestamp(value); return *this;}
+    inline MetricAlarm& WithStateUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetStateUpdatedTimestamp(value); return *this;}
 
     /**
      * <p> The name of the alarm's metric. </p>
@@ -760,7 +741,7 @@ namespace Model
     bool m_alarmArnHasBeenSet;
     Aws::String m_alarmDescription;
     bool m_alarmDescriptionHasBeenSet;
-    Aws::String m_alarmConfigurationUpdatedTimestamp;
+    Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp;
     bool m_alarmConfigurationUpdatedTimestampHasBeenSet;
     bool m_actionsEnabled;
     bool m_actionsEnabledHasBeenSet;
@@ -776,7 +757,7 @@ namespace Model
     bool m_stateReasonHasBeenSet;
     Aws::String m_stateReasonData;
     bool m_stateReasonDataHasBeenSet;
-    Aws::String m_stateUpdatedTimestamp;
+    Aws::Utils::DateTime m_stateUpdatedTimestamp;
     bool m_stateUpdatedTimestampHasBeenSet;
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;

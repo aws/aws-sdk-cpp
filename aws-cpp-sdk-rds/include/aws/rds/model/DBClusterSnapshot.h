@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -177,19 +178,31 @@ namespace Model
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline void SetSnapshotCreateTime(double value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC). </p>
      */
-    inline DBClusterSnapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+
+    /**
+     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC). </p>
+     */
+    inline DBClusterSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
+
+    /**
+     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC). </p>
+     */
+    inline DBClusterSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
 
     /**
      * <p>Specifies the name of the database engine. </p>
@@ -333,19 +346,31 @@ namespace Model
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline double GetClusterCreateTime() const{ return m_clusterCreateTime; }
+    inline const Aws::Utils::DateTime& GetClusterCreateTime() const{ return m_clusterCreateTime; }
 
     /**
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline void SetClusterCreateTime(double value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC). </p>
      */
-    inline DBClusterSnapshot& WithClusterCreateTime(double value) { SetClusterCreateTime(value); return *this;}
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC). </p>
+     */
+    inline DBClusterSnapshot& WithClusterCreateTime(const Aws::Utils::DateTime& value) { SetClusterCreateTime(value); return *this;}
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC). </p>
+     */
+    inline DBClusterSnapshot& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
 
     /**
      * <p>Provides the master username for the DB cluster snapshot. </p>
@@ -576,7 +601,7 @@ namespace Model
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
-    double m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
@@ -588,7 +613,7 @@ namespace Model
     bool m_portHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
-    double m_clusterCreateTime;
+    Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

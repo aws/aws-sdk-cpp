@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AssociationStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -117,17 +118,27 @@ namespace Model
     /**
      * <p>The date when the association was made.</p>
      */
-    inline double GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
      * <p>The date when the association was made.</p>
      */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
      * <p>The date when the association was made.</p>
      */
-    inline AssociationDescription& WithDate(double value) { SetDate(value); return *this;}
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * <p>The date when the association was made.</p>
+     */
+    inline AssociationDescription& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
+
+    /**
+     * <p>The date when the association was made.</p>
+     */
+    inline AssociationDescription& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
     /**
      * <p>The association status.</p>
@@ -214,7 +225,7 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
     AssociationStatus m_status;
     bool m_statusHasBeenSet;

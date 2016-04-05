@@ -25,11 +25,9 @@ Command::Command() :
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_expiresAfter(0.0),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_requestedDateTime(0.0),
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
@@ -41,11 +39,9 @@ Command::Command(const JsonValue& jsonValue) :
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_expiresAfter(0.0),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_requestedDateTime(0.0),
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
@@ -165,8 +161,7 @@ JsonValue Command::Jsonize() const
 
   if(m_expiresAfterHasBeenSet)
   {
-   payload.WithDouble("ExpiresAfter", m_expiresAfter);
-
+   payload.WithDouble("ExpiresAfter", m_expiresAfter.SecondsWithMSPrecision());
   }
 
   if(m_parametersHasBeenSet)
@@ -198,8 +193,7 @@ JsonValue Command::Jsonize() const
 
   if(m_requestedDateTimeHasBeenSet)
   {
-   payload.WithDouble("RequestedDateTime", m_requestedDateTime);
-
+   payload.WithDouble("RequestedDateTime", m_requestedDateTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

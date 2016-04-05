@@ -30,7 +30,6 @@ ChangeSetSummary::ChangeSetSummary() :
     m_changeSetNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -43,7 +42,6 @@ ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode) :
     m_changeSetNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -95,7 +93,7 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
@@ -137,7 +135,7 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {
@@ -173,7 +171,7 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

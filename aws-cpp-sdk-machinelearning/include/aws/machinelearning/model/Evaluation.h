@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
 #include <aws/machinelearning/model/PerformanceMetrics.h>
 
@@ -252,37 +253,61 @@ namespace Model
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline Evaluation& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time that the <code>Evaluation</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
+    inline Evaluation& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the <code>Evaluation</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
+    inline Evaluation& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline Evaluation& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline Evaluation& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline Evaluation& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -517,9 +542,9 @@ namespace Model
     bool m_inputDataLocationS3HasBeenSet;
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;

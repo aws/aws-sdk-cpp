@@ -38,7 +38,6 @@ LoadBalancerDescription::LoadBalancerDescription() :
     m_healthCheckHasBeenSet(false),
     m_sourceSecurityGroupHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_schemeHasBeenSet(false)
 {
@@ -59,7 +58,6 @@ LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode) :
     m_healthCheckHasBeenSet(false),
     m_sourceSecurityGroupHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_schemeHasBeenSet(false)
 {
@@ -195,7 +193,7 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
@@ -305,7 +303,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_schemeHasBeenSet)
   {
@@ -409,7 +407,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_schemeHasBeenSet)
   {

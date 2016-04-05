@@ -25,15 +25,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
     m_configRuleNameHasBeenSet(false),
     m_configRuleArnHasBeenSet(false),
     m_configRuleIdHasBeenSet(false),
-    m_lastSuccessfulInvocationTime(0.0),
     m_lastSuccessfulInvocationTimeHasBeenSet(false),
-    m_lastFailedInvocationTime(0.0),
     m_lastFailedInvocationTimeHasBeenSet(false),
-    m_lastSuccessfulEvaluationTime(0.0),
     m_lastSuccessfulEvaluationTimeHasBeenSet(false),
-    m_lastFailedEvaluationTime(0.0),
     m_lastFailedEvaluationTimeHasBeenSet(false),
-    m_firstActivatedTime(0.0),
     m_firstActivatedTimeHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
@@ -46,15 +41,10 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(const JsonValue& jsonValu
     m_configRuleNameHasBeenSet(false),
     m_configRuleArnHasBeenSet(false),
     m_configRuleIdHasBeenSet(false),
-    m_lastSuccessfulInvocationTime(0.0),
     m_lastSuccessfulInvocationTimeHasBeenSet(false),
-    m_lastFailedInvocationTime(0.0),
     m_lastFailedInvocationTimeHasBeenSet(false),
-    m_lastSuccessfulEvaluationTime(0.0),
     m_lastSuccessfulEvaluationTimeHasBeenSet(false),
-    m_lastFailedEvaluationTime(0.0),
     m_lastFailedEvaluationTimeHasBeenSet(false),
-    m_firstActivatedTime(0.0),
     m_firstActivatedTimeHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
@@ -170,32 +160,27 @@ JsonValue ConfigRuleEvaluationStatus::Jsonize() const
 
   if(m_lastSuccessfulInvocationTimeHasBeenSet)
   {
-   payload.WithDouble("LastSuccessfulInvocationTime", m_lastSuccessfulInvocationTime);
-
+   payload.WithDouble("LastSuccessfulInvocationTime", m_lastSuccessfulInvocationTime.SecondsWithMSPrecision());
   }
 
   if(m_lastFailedInvocationTimeHasBeenSet)
   {
-   payload.WithDouble("LastFailedInvocationTime", m_lastFailedInvocationTime);
-
+   payload.WithDouble("LastFailedInvocationTime", m_lastFailedInvocationTime.SecondsWithMSPrecision());
   }
 
   if(m_lastSuccessfulEvaluationTimeHasBeenSet)
   {
-   payload.WithDouble("LastSuccessfulEvaluationTime", m_lastSuccessfulEvaluationTime);
-
+   payload.WithDouble("LastSuccessfulEvaluationTime", m_lastSuccessfulEvaluationTime.SecondsWithMSPrecision());
   }
 
   if(m_lastFailedEvaluationTimeHasBeenSet)
   {
-   payload.WithDouble("LastFailedEvaluationTime", m_lastFailedEvaluationTime);
-
+   payload.WithDouble("LastFailedEvaluationTime", m_lastFailedEvaluationTime.SecondsWithMSPrecision());
   }
 
   if(m_firstActivatedTimeHasBeenSet)
   {
-   payload.WithDouble("FirstActivatedTime", m_firstActivatedTime);
-
+   payload.WithDouble("FirstActivatedTime", m_firstActivatedTime.SecondsWithMSPrecision());
   }
 
   if(m_lastErrorCodeHasBeenSet)

@@ -22,11 +22,8 @@ using namespace Aws::Utils;
 PutScheduledUpdateGroupActionRequest::PutScheduledUpdateGroupActionRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
     m_scheduledActionNameHasBeenSet(false),
-    m_time(0.0),
     m_timeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
     m_minSize(0),
@@ -52,15 +49,15 @@ Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
   }
   if(m_timeHasBeenSet)
   {
-    ss << "Time=" << StringUtils::URLEncode(m_time) << "&";
+    ss << "Time=" << StringUtils::URLEncode(m_time.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_recurrenceHasBeenSet)
   {

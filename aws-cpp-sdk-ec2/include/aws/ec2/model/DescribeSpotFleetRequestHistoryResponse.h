@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/HistoryRecord.h>
@@ -84,19 +85,31 @@ namespace Model
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetStartTime(double value) { m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = value; }
+
+    /**
+     * <p>The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The last date and time for the events, in UTC format (for example,
@@ -104,7 +117,7 @@ namespace Model
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
      * there are more results, this value is not present.</p>
      */
-    inline double GetLastEvaluatedTime() const{ return m_lastEvaluatedTime; }
+    inline const Aws::Utils::DateTime& GetLastEvaluatedTime() const{ return m_lastEvaluatedTime; }
 
     /**
      * <p>The last date and time for the events, in UTC format (for example,
@@ -112,7 +125,7 @@ namespace Model
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
      * there are more results, this value is not present.</p>
      */
-    inline void SetLastEvaluatedTime(double value) { m_lastEvaluatedTime = value; }
+    inline void SetLastEvaluatedTime(const Aws::Utils::DateTime& value) { m_lastEvaluatedTime = value; }
 
     /**
      * <p>The last date and time for the events, in UTC format (for example,
@@ -120,7 +133,23 @@ namespace Model
      * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
      * there are more results, this value is not present.</p>
      */
-    inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(double value) { SetLastEvaluatedTime(value); return *this;}
+    inline void SetLastEvaluatedTime(Aws::Utils::DateTime&& value) { m_lastEvaluatedTime = value; }
+
+    /**
+     * <p>The last date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
+     * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
+     * there are more results, this value is not present.</p>
+     */
+    inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(const Aws::Utils::DateTime& value) { SetLastEvaluatedTime(value); return *this;}
+
+    /**
+     * <p>The last date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up
+     * to this time were retrieved.</p> <p>If <code>nextToken</code> indicates that
+     * there are more results, this value is not present.</p>
+     */
+    inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(Aws::Utils::DateTime&& value) { SetLastEvaluatedTime(value); return *this;}
 
     /**
      * <p>Information about the events in the history of the Spot fleet request.</p>
@@ -216,8 +245,8 @@ namespace Model
 
   private:
     Aws::String m_spotFleetRequestId;
-    double m_startTime;
-    double m_lastEvaluatedTime;
+    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_lastEvaluatedTime;
     Aws::Vector<HistoryRecord> m_historyRecords;
     Aws::String m_nextToken;
     ResponseMetadata m_responseMetadata;

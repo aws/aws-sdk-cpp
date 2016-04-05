@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentParameter.h>
@@ -125,17 +126,27 @@ namespace Model
     /**
      * The date when the SSM document was created.
      */
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * The date when the SSM document was created.
      */
-    inline void SetCreatedDate(double value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
      * The date when the SSM document was created.
      */
-    inline DocumentDescription& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+
+    /**
+     * The date when the SSM document was created.
+     */
+    inline DocumentDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * The date when the SSM document was created.
+     */
+    inline DocumentDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
      * <p>The status of the SSM document.</p>
@@ -272,7 +283,7 @@ namespace Model
     bool m_sha1HasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_createdDate;
+    Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
     DocumentStatus m_status;
     bool m_statusHasBeenSet;

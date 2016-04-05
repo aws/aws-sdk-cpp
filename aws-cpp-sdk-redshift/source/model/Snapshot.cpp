@@ -26,13 +26,11 @@ using namespace Aws::Utils;
 Snapshot::Snapshot() : 
     m_snapshotIdentifierHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
@@ -70,13 +68,11 @@ Snapshot::Snapshot() :
 Snapshot::Snapshot(const XmlNode& xmlNode) : 
     m_snapshotIdentifierHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
@@ -133,7 +129,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -157,7 +153,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
-      m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
+      m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
@@ -321,7 +317,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -337,7 +333,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -453,7 +449,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -469,7 +465,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

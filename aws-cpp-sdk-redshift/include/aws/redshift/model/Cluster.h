@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/PendingModifiedValues.h>
 #include <aws/redshift/model/RestoreStatus.h>
@@ -379,17 +380,27 @@ namespace Model
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline double GetClusterCreateTime() const{ return m_clusterCreateTime; }
+    inline const Aws::Utils::DateTime& GetClusterCreateTime() const{ return m_clusterCreateTime; }
 
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline void SetClusterCreateTime(double value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline Cluster& WithClusterCreateTime(double value) { SetClusterCreateTime(value); return *this;}
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p> The date and time that the cluster was created. </p>
+     */
+    inline Cluster& WithClusterCreateTime(const Aws::Utils::DateTime& value) { SetClusterCreateTime(value); return *this;}
+
+    /**
+     * <p> The date and time that the cluster was created. </p>
+     */
+    inline Cluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
 
     /**
      * <p> The number of days that automatic cluster snapshots are retained. </p>
@@ -1222,7 +1233,7 @@ namespace Model
     bool m_dBNameHasBeenSet;
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
-    double m_clusterCreateTime;
+    Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
     long m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;

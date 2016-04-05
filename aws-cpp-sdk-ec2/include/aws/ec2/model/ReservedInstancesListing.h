@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ListingStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceCount.h>
@@ -122,32 +123,52 @@ namespace Model
     /**
      * <p>The time the listing was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The time the listing was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The time the listing was created.</p>
      */
-    inline ReservedInstancesListing& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The time the listing was created.</p>
+     */
+    inline ReservedInstancesListing& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The time the listing was created.</p>
+     */
+    inline ReservedInstancesListing& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The last modified timestamp of the listing.</p>
      */
-    inline double GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>The last modified timestamp of the listing.</p>
      */
-    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>The last modified timestamp of the listing.</p>
      */
-    inline ReservedInstancesListing& WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /**
+     * <p>The last modified timestamp of the listing.</p>
+     */
+    inline ReservedInstancesListing& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+
+    /**
+     * <p>The last modified timestamp of the listing.</p>
+     */
+    inline ReservedInstancesListing& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>The status of the Reserved Instance listing.</p>
@@ -382,9 +403,9 @@ namespace Model
     bool m_reservedInstancesListingIdHasBeenSet;
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    double m_updateDate;
+    Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
     ListingStatus m_status;
     bool m_statusHasBeenSet;

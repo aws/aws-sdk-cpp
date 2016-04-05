@@ -27,9 +27,7 @@ NatGateway::NatGateway() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_deleteTime(0.0),
     m_deleteTimeHasBeenSet(false),
     m_natGatewayAddressesHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -42,9 +40,7 @@ NatGateway::NatGateway(const XmlNode& xmlNode) :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
-    m_deleteTime(0.0),
     m_deleteTimeHasBeenSet(false),
     m_natGatewayAddressesHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -81,13 +77,13 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode deleteTimeNode = resultNode.FirstChild("deleteTime");
     if(!deleteTimeNode.IsNull())
     {
-      m_deleteTime = StringUtils::ConvertToDouble(StringUtils::Trim(deleteTimeNode.GetText().c_str()).c_str());
+      m_deleteTime = DateTime(StringUtils::Trim(deleteTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_deleteTimeHasBeenSet = true;
     }
     XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
@@ -141,11 +137,11 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_createTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime) << "&";
+      oStream << location << index << locationValue << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_natGatewayAddressesHasBeenSet)
   {
@@ -187,11 +183,11 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_createTimeHasBeenSet)
   {
-        oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteTimeHasBeenSet)
   {
-        oStream << location << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime) << "&";
+      oStream << location << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_natGatewayAddressesHasBeenSet)
   {

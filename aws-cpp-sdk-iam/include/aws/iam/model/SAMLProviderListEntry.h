@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -82,39 +83,59 @@ namespace Model
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline SAMLProviderListEntry& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline SAMLProviderListEntry& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline SAMLProviderListEntry& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline SAMLProviderListEntry& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline SAMLProviderListEntry& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline SAMLProviderListEntry& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
-    double m_validUntil;
+    Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };
 

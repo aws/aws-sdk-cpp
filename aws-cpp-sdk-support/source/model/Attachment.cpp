@@ -47,7 +47,6 @@ Attachment& Attachment::operator =(const JsonValue& jsonValue)
   if(jsonValue.ValueExists("data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-
     m_dataHasBeenSet = true;
   }
 

@@ -29,7 +29,6 @@ StackResourceDetail::StackResourceDetail() :
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastUpdatedTimestamp(0.0),
     m_lastUpdatedTimestampHasBeenSet(false),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
@@ -44,7 +43,6 @@ StackResourceDetail::StackResourceDetail(const XmlNode& xmlNode) :
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_lastUpdatedTimestamp(0.0),
     m_lastUpdatedTimestampHasBeenSet(false),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
@@ -93,7 +91,7 @@ StackResourceDetail& StackResourceDetail::operator =(const XmlNode& xmlNode)
     XmlNode lastUpdatedTimestampNode = resultNode.FirstChild("LastUpdatedTimestamp");
     if(!lastUpdatedTimestampNode.IsNull())
     {
-      m_lastUpdatedTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimestampNode.GetText().c_str()).c_str());
+      m_lastUpdatedTimestamp = DateTime(StringUtils::Trim(lastUpdatedTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimestampHasBeenSet = true;
     }
     XmlNode resourceStatusNode = resultNode.FirstChild("ResourceStatus");
@@ -149,7 +147,7 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp) << "&";
+      oStream << location << index << locationValue << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resourceStatusHasBeenSet)
   {
@@ -193,7 +191,7 @@ void StackResourceDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_lastUpdatedTimestampHasBeenSet)
   {
-        oStream << location << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp) << "&";
+      oStream << location << ".LastUpdatedTimestamp=" << StringUtils::URLEncode(m_lastUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resourceStatusHasBeenSet)
   {

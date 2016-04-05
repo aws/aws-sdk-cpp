@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
 
 namespace Aws
@@ -88,32 +89,52 @@ namespace Model
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline GetSAMLProviderResult& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = value; }
+
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline GetSAMLProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline GetSAMLProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline void SetValidUntil(double value) { m_validUntil = value; }
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntil = value; }
 
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline GetSAMLProviderResult& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntil = value; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline GetSAMLProviderResult& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
+    inline GetSAMLProviderResult& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -132,8 +153,8 @@ namespace Model
 
   private:
     Aws::String m_sAMLMetadataDocument;
-    double m_createDate;
-    double m_validUntil;
+    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_validUntil;
     ResponseMetadata m_responseMetadata;
   };
 

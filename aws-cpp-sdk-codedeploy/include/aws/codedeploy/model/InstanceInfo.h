@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/Tag.h>
 
@@ -151,35 +152,57 @@ namespace Model
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline double GetRegisterTime() const{ return m_registerTime; }
+    inline const Aws::Utils::DateTime& GetRegisterTime() const{ return m_registerTime; }
 
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline void SetRegisterTime(double value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
+    inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline InstanceInfo& WithRegisterTime(double value) { SetRegisterTime(value); return *this;}
+    inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
+
+    /**
+     * <p>The time at which the on-premises instance was registered.</p>
+     */
+    inline InstanceInfo& WithRegisterTime(const Aws::Utils::DateTime& value) { SetRegisterTime(value); return *this;}
+
+    /**
+     * <p>The time at which the on-premises instance was registered.</p>
+     */
+    inline InstanceInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(value); return *this;}
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline double GetDeregisterTime() const{ return m_deregisterTime; }
+    inline const Aws::Utils::DateTime& GetDeregisterTime() const{ return m_deregisterTime; }
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline void SetDeregisterTime(double value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
+    inline void SetDeregisterTime(const Aws::Utils::DateTime& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline InstanceInfo& WithDeregisterTime(double value) { SetDeregisterTime(value); return *this;}
+    inline void SetDeregisterTime(Aws::Utils::DateTime&& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
+
+    /**
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
+     */
+    inline InstanceInfo& WithDeregisterTime(const Aws::Utils::DateTime& value) { SetDeregisterTime(value); return *this;}
+
+    /**
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
+     */
+    inline InstanceInfo& WithDeregisterTime(Aws::Utils::DateTime&& value) { SetDeregisterTime(value); return *this;}
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
@@ -223,9 +246,9 @@ namespace Model
     bool m_iamUserArnHasBeenSet;
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet;
-    double m_registerTime;
+    Aws::Utils::DateTime m_registerTime;
     bool m_registerTimeHasBeenSet;
-    double m_deregisterTime;
+    Aws::Utils::DateTime m_deregisterTime;
     bool m_deregisterTimeHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 SendDataPoint::SendDataPoint() : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_deliveryAttempts(0),
     m_deliveryAttemptsHasBeenSet(false),
@@ -38,7 +37,6 @@ SendDataPoint::SendDataPoint() :
 }
 
 SendDataPoint::SendDataPoint(const XmlNode& xmlNode) : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_deliveryAttempts(0),
     m_deliveryAttemptsHasBeenSet(false),
@@ -61,7 +59,7 @@ SendDataPoint& SendDataPoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode deliveryAttemptsNode = resultNode.FirstChild("DeliveryAttempts");
@@ -97,7 +95,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_timestampHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deliveryAttemptsHasBeenSet)
   {
@@ -121,7 +119,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_timestampHasBeenSet)
   {
-        oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deliveryAttemptsHasBeenSet)
   {

@@ -28,9 +28,7 @@ Activity::Activity() :
     m_autoScalingGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_causeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -45,9 +43,7 @@ Activity::Activity(const XmlNode& xmlNode) :
     m_autoScalingGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_causeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -91,13 +87,13 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = StringUtils::ConvertToDouble(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str());
+      m_endTime = DateTime(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
@@ -149,11 +145,11 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+      oStream << location << index << locationValue << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusCodeHasBeenSet)
   {
@@ -193,11 +189,11 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-        oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+      oStream << location << ".EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusCodeHasBeenSet)
   {

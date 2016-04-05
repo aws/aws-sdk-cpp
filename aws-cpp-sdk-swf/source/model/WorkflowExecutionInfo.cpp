@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 WorkflowExecutionInfo::WorkflowExecutionInfo() : 
     m_executionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
-    m_startTimestamp(0.0),
     m_startTimestampHasBeenSet(false),
-    m_closeTimestamp(0.0),
     m_closeTimestampHasBeenSet(false),
     m_executionStatusHasBeenSet(false),
     m_closeStatusHasBeenSet(false),
@@ -40,9 +38,7 @@ WorkflowExecutionInfo::WorkflowExecutionInfo() :
 WorkflowExecutionInfo::WorkflowExecutionInfo(const JsonValue& jsonValue) : 
     m_executionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
-    m_startTimestamp(0.0),
     m_startTimestampHasBeenSet(false),
-    m_closeTimestamp(0.0),
     m_closeTimestampHasBeenSet(false),
     m_executionStatusHasBeenSet(false),
     m_closeStatusHasBeenSet(false),
@@ -143,14 +139,12 @@ JsonValue WorkflowExecutionInfo::Jsonize() const
 
   if(m_startTimestampHasBeenSet)
   {
-   payload.WithDouble("startTimestamp", m_startTimestamp);
-
+   payload.WithDouble("startTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_closeTimestampHasBeenSet)
   {
-   payload.WithDouble("closeTimestamp", m_closeTimestamp);
-
+   payload.WithDouble("closeTimestamp", m_closeTimestamp.SecondsWithMSPrecision());
   }
 
   if(m_executionStatusHasBeenSet)

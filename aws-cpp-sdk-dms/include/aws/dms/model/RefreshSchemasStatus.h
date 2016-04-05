@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/RefreshSchemasStatusTypeValue.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -144,17 +145,27 @@ namespace Model
     /**
      * <p>The date the schema was last refreshed.</p>
      */
-    inline double GetLastRefreshDate() const{ return m_lastRefreshDate; }
+    inline const Aws::Utils::DateTime& GetLastRefreshDate() const{ return m_lastRefreshDate; }
 
     /**
      * <p>The date the schema was last refreshed.</p>
      */
-    inline void SetLastRefreshDate(double value) { m_lastRefreshDateHasBeenSet = true; m_lastRefreshDate = value; }
+    inline void SetLastRefreshDate(const Aws::Utils::DateTime& value) { m_lastRefreshDateHasBeenSet = true; m_lastRefreshDate = value; }
 
     /**
      * <p>The date the schema was last refreshed.</p>
      */
-    inline RefreshSchemasStatus& WithLastRefreshDate(double value) { SetLastRefreshDate(value); return *this;}
+    inline void SetLastRefreshDate(Aws::Utils::DateTime&& value) { m_lastRefreshDateHasBeenSet = true; m_lastRefreshDate = value; }
+
+    /**
+     * <p>The date the schema was last refreshed.</p>
+     */
+    inline RefreshSchemasStatus& WithLastRefreshDate(const Aws::Utils::DateTime& value) { SetLastRefreshDate(value); return *this;}
+
+    /**
+     * <p>The date the schema was last refreshed.</p>
+     */
+    inline RefreshSchemasStatus& WithLastRefreshDate(Aws::Utils::DateTime&& value) { SetLastRefreshDate(value); return *this;}
 
     /**
      * <p>The last failure message for the schema.</p>
@@ -198,7 +209,7 @@ namespace Model
     bool m_replicationInstanceArnHasBeenSet;
     RefreshSchemasStatusTypeValue m_status;
     bool m_statusHasBeenSet;
-    double m_lastRefreshDate;
+    Aws::Utils::DateTime m_lastRefreshDate;
     bool m_lastRefreshDateHasBeenSet;
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;

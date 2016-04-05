@@ -24,11 +24,8 @@ using namespace Aws::Utils;
 GenericRevisionInfo::GenericRevisionInfo() : 
     m_descriptionHasBeenSet(false),
     m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTime(0.0),
     m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTime(0.0),
     m_lastUsedTimeHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false)
 {
 }
@@ -36,11 +33,8 @@ GenericRevisionInfo::GenericRevisionInfo() :
 GenericRevisionInfo::GenericRevisionInfo(const JsonValue& jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_deploymentGroupsHasBeenSet(false),
-    m_firstUsedTime(0.0),
     m_firstUsedTimeHasBeenSet(false),
-    m_lastUsedTime(0.0),
     m_lastUsedTimeHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -112,20 +106,17 @@ JsonValue GenericRevisionInfo::Jsonize() const
 
   if(m_firstUsedTimeHasBeenSet)
   {
-   payload.WithDouble("firstUsedTime", m_firstUsedTime);
-
+   payload.WithDouble("firstUsedTime", m_firstUsedTime.SecondsWithMSPrecision());
   }
 
   if(m_lastUsedTimeHasBeenSet)
   {
-   payload.WithDouble("lastUsedTime", m_lastUsedTime);
-
+   payload.WithDouble("lastUsedTime", m_lastUsedTime.SecondsWithMSPrecision());
   }
 
   if(m_registerTimeHasBeenSet)
   {
-   payload.WithDouble("registerTime", m_registerTime);
-
+   payload.WithDouble("registerTime", m_registerTime.SecondsWithMSPrecision());
   }
 
   return payload;

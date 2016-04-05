@@ -25,13 +25,11 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMultipartUploadResult::CreateMultipartUploadResult() : 
-    m_abortDate(0.0)
+CreateMultipartUploadResult::CreateMultipartUploadResult()
 {
 }
 
-CreateMultipartUploadResult::CreateMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_abortDate(0.0)
+CreateMultipartUploadResult::CreateMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -64,7 +62,7 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Amazo
   const auto& abortDateIter = headers.find("x-amz-abort-date");
   if(abortDateIter != headers.end())
   {
-     m_abortDate = StringUtils::ConvertToDouble(abortDateIter->second.c_str());
+    m_abortDate = DateTime(abortDateIter->second, DateFormat::RFC822);
   }
 
   const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");

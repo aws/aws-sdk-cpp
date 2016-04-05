@@ -25,7 +25,6 @@ Certificate::Certificate() :
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ Certificate::Certificate(const JsonValue& jsonValue) :
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,8 +94,7 @@ JsonValue Certificate::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("creationDate", m_creationDate);
-
+   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   return payload;

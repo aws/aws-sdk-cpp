@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -60,17 +61,27 @@ namespace Model
     /**
      * Date and time at which the part was uploaded.
      */
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
      * Date and time at which the part was uploaded.
      */
-    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
      * Date and time at which the part was uploaded.
      */
-    inline Part& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /**
+     * Date and time at which the part was uploaded.
+     */
+    inline Part& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * Date and time at which the part was uploaded.
+     */
+    inline Part& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
     /**
      * Entity tag returned when the part was uploaded.
@@ -125,7 +136,7 @@ namespace Model
   private:
     long m_partNumber;
     bool m_partNumberHasBeenSet;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;

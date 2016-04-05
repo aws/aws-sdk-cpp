@@ -24,15 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetClientCertificateResult::GetClientCertificateResult() : 
-    m_createdDate(0.0),
-    m_expirationDate(0.0)
+GetClientCertificateResult::GetClientCertificateResult()
 {
 }
 
-GetClientCertificateResult::GetClientCertificateResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdDate(0.0),
-    m_expirationDate(0.0)
+GetClientCertificateResult::GetClientCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

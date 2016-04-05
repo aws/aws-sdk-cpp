@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
 
 namespace Aws
@@ -272,37 +273,61 @@ namespace Model
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
      * <p>The time when the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
-    inline GetBatchPredictionResult& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = value; }
+
+    /**
+     * <p>The time when the <code>BatchPrediction</code> was created. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetBatchPredictionResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time when the <code>BatchPrediction</code> was created. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetBatchPredictionResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
      * expressed in epoch time.</p>
      */
-    inline GetBatchPredictionResult& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetBatchPredictionResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is
+     * expressed in epoch time.</p>
+     */
+    inline GetBatchPredictionResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -531,8 +556,8 @@ namespace Model
     Aws::String m_batchPredictionDataSourceId;
     Aws::String m_inputDataLocationS3;
     Aws::String m_createdByIamUser;
-    double m_createdAt;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     Aws::String m_name;
     EntityStatus m_status;
     Aws::String m_outputUri;

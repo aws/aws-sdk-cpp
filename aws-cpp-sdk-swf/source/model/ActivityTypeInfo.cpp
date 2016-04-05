@@ -25,9 +25,7 @@ ActivityTypeInfo::ActivityTypeInfo() :
     m_activityTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_deprecationDate(0.0),
     m_deprecationDateHasBeenSet(false)
 {
 }
@@ -36,9 +34,7 @@ ActivityTypeInfo::ActivityTypeInfo(const JsonValue& jsonValue) :
     m_activityTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_deprecationDate(0.0),
     m_deprecationDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -107,14 +103,12 @@ JsonValue ActivityTypeInfo::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("creationDate", m_creationDate);
-
+   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_deprecationDateHasBeenSet)
   {
-   payload.WithDouble("deprecationDate", m_deprecationDate);
-
+   payload.WithDouble("deprecationDate", m_deprecationDate.SecondsWithMSPrecision());
   }
 
   return payload;

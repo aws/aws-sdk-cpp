@@ -26,7 +26,6 @@ DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
     m_environmentNamesHasBeenSet(false),
     m_includeDeleted(false),
     m_includeDeletedHasBeenSet(false),
-    m_includedDeletedBackTo(0.0),
     m_includedDeletedBackToHasBeenSet(false)
 {
 }
@@ -69,7 +68,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
   }
   if(m_includedDeletedBackToHasBeenSet)
   {
-    ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo) << "&";
+    ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   ss << "Version=2010-12-01";
   return ss.str();

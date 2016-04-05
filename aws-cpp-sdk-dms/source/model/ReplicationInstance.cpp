@@ -27,7 +27,6 @@ ReplicationInstance::ReplicationInstance() :
     m_replicationInstanceStatusHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_replicationSubnetGroupHasBeenSet(false),
@@ -51,7 +50,6 @@ ReplicationInstance::ReplicationInstance(const JsonValue& jsonValue) :
     m_replicationInstanceStatusHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_replicationSubnetGroupHasBeenSet(false),
@@ -217,8 +215,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_instanceCreateTimeHasBeenSet)
   {
-   payload.WithDouble("InstanceCreateTime", m_instanceCreateTime);
-
+   payload.WithDouble("InstanceCreateTime", m_instanceCreateTime.SecondsWithMSPrecision());
   }
 
   if(m_availabilityZoneHasBeenSet)

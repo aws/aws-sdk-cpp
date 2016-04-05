@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/PendingModifiedValues.h>
 #include <aws/elasticache/model/NotificationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -560,17 +561,27 @@ namespace Model
     /**
      * <p>The date and time when the cache cluster was created.</p>
      */
-    inline double GetCacheClusterCreateTime() const{ return m_cacheClusterCreateTime; }
+    inline const Aws::Utils::DateTime& GetCacheClusterCreateTime() const{ return m_cacheClusterCreateTime; }
 
     /**
      * <p>The date and time when the cache cluster was created.</p>
      */
-    inline void SetCacheClusterCreateTime(double value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
+    inline void SetCacheClusterCreateTime(const Aws::Utils::DateTime& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
 
     /**
      * <p>The date and time when the cache cluster was created.</p>
      */
-    inline CacheCluster& WithCacheClusterCreateTime(double value) { SetCacheClusterCreateTime(value); return *this;}
+    inline void SetCacheClusterCreateTime(Aws::Utils::DateTime&& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cache cluster was created.</p>
+     */
+    inline CacheCluster& WithCacheClusterCreateTime(const Aws::Utils::DateTime& value) { SetCacheClusterCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cache cluster was created.</p>
+     */
+    inline CacheCluster& WithCacheClusterCreateTime(Aws::Utils::DateTime&& value) { SetCacheClusterCreateTime(value); return *this;}
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
@@ -993,7 +1004,7 @@ namespace Model
     bool m_numCacheNodesHasBeenSet;
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
-    double m_cacheClusterCreateTime;
+    Aws::Utils::DateTime m_cacheClusterCreateTime;
     bool m_cacheClusterCreateTimeHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;

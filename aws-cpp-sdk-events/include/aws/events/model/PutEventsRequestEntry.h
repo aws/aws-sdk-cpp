@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -47,21 +48,35 @@ namespace Model
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
      * is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>
      */
-    inline double GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
      * <p>Timestamp of event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
      * is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>
      */
-    inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
+    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p>Timestamp of event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
      * is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>
      */
-    inline PutEventsRequestEntry& WithTime(double value) { SetTime(value); return *this;}
+    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = value; }
+
+    /**
+     * <p>Timestamp of event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>
+     */
+    inline PutEventsRequestEntry& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
+
+    /**
+     * <p>Timestamp of event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>
+     */
+    inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(value); return *this;}
 
     /**
      * <p>The source of the event.</p>
@@ -231,7 +246,7 @@ namespace Model
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 
   private:
-    double m_time;
+    Aws::Utils::DateTime m_time;
     bool m_timeHasBeenSet;
     Aws::String m_source;
     bool m_sourceHasBeenSet;

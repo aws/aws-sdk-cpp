@@ -26,7 +26,6 @@ CommandInvocation::CommandInvocation() :
     m_instanceIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
-    m_requestedDateTime(0.0),
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
@@ -39,7 +38,6 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
     m_instanceIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
-    m_requestedDateTime(0.0),
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
@@ -142,8 +140,7 @@ JsonValue CommandInvocation::Jsonize() const
 
   if(m_requestedDateTimeHasBeenSet)
   {
-   payload.WithDouble("RequestedDateTime", m_requestedDateTime);
-
+   payload.WithDouble("RequestedDateTime", m_requestedDateTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

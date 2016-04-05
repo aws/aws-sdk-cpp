@@ -27,9 +27,7 @@ BatchPrediction::BatchPrediction() :
     m_batchPredictionDataSourceIdHasBeenSet(false),
     m_inputDataLocationS3HasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -44,9 +42,7 @@ BatchPrediction::BatchPrediction(const JsonValue& jsonValue) :
     m_batchPredictionDataSourceIdHasBeenSet(false),
     m_inputDataLocationS3HasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -174,14 +170,12 @@ JsonValue BatchPrediction::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt);
-
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt);
-
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_nameHasBeenSet)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -395,17 +396,27 @@ namespace Model
     /**
      * <p>The date and time the group was created.</p>
      */
-    inline double GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
      * <p>The date and time the group was created.</p>
      */
-    inline void SetCreatedTime(double value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
      * <p>The date and time the group was created.</p>
      */
-    inline AutoScalingGroup& WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>The date and time the group was created.</p>
+     */
+    inline AutoScalingGroup& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The date and time the group was created.</p>
+     */
+    inline AutoScalingGroup& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
 
     /**
      * <p>The suspended processes associated with the group.</p>
@@ -749,7 +760,7 @@ namespace Model
     bool m_healthCheckGracePeriodHasBeenSet;
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
-    double m_createdTime;
+    Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
     Aws::Vector<SuspendedProcess> m_suspendedProcesses;
     bool m_suspendedProcessesHasBeenSet;

@@ -25,9 +25,7 @@ InstanceInfo::InstanceInfo() :
     m_instanceNameHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false),
-    m_deregisterTime(0.0),
     m_deregisterTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -37,9 +35,7 @@ InstanceInfo::InstanceInfo(const JsonValue& jsonValue) :
     m_instanceNameHasBeenSet(false),
     m_iamUserArnHasBeenSet(false),
     m_instanceArnHasBeenSet(false),
-    m_registerTime(0.0),
     m_registerTimeHasBeenSet(false),
-    m_deregisterTime(0.0),
     m_deregisterTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -120,14 +116,12 @@ JsonValue InstanceInfo::Jsonize() const
 
   if(m_registerTimeHasBeenSet)
   {
-   payload.WithDouble("registerTime", m_registerTime);
-
+   payload.WithDouble("registerTime", m_registerTime.SecondsWithMSPrecision());
   }
 
   if(m_deregisterTimeHasBeenSet)
   {
-   payload.WithDouble("deregisterTime", m_deregisterTime);
-
+   payload.WithDouble("deregisterTime", m_deregisterTime.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

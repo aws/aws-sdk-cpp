@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -247,19 +248,31 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the user was created.</p>
      */
-    inline User& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the user was created.</p>
+     */
+    inline User& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the user was created.</p>
+     */
+    inline User& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -276,7 +289,7 @@ namespace Model
      * <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
      * actions. </p>
      */
-    inline double GetPasswordLastUsed() const{ return m_passwordLastUsed; }
+    inline const Aws::Utils::DateTime& GetPasswordLastUsed() const{ return m_passwordLastUsed; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -293,7 +306,7 @@ namespace Model
      * <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
      * actions. </p>
      */
-    inline void SetPasswordLastUsed(double value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = value; }
+    inline void SetPasswordLastUsed(const Aws::Utils::DateTime& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -310,7 +323,41 @@ namespace Model
      * <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
      * actions. </p>
      */
-    inline User& WithPasswordLastUsed(double value) { SetPasswordLastUsed(value); return *this;}
+    inline void SetPasswordLastUsed(Aws::Utils::DateTime&& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the user's password was last used to sign in to an
+     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
+     * see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * once in a five-minute span, only the first use is returned in this field. This
+     * field is null (not present) when:</p> <ul> <li> <p>The user does not have a
+     * password</p> </li> <li> <p>The password exists but has never been used (at least
+     * not since IAM started tracking this information on October 20th, 2014</p> </li>
+     * <li> <p>there is no sign-in data associated with the user</p> </li> </ul>
+     * <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
+     * actions. </p>
+     */
+    inline User& WithPasswordLastUsed(const Aws::Utils::DateTime& value) { SetPasswordLastUsed(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the user's password was last used to sign in to an
+     * AWS website. For a list of AWS websites that capture a user's last sign-in time,
+     * see the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * once in a five-minute span, only the first use is returned in this field. This
+     * field is null (not present) when:</p> <ul> <li> <p>The user does not have a
+     * password</p> </li> <li> <p>The password exists but has never been used (at least
+     * not since IAM started tracking this information on October 20th, 2014</p> </li>
+     * <li> <p>there is no sign-in data associated with the user</p> </li> </ul>
+     * <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a>
+     * actions. </p>
+     */
+    inline User& WithPasswordLastUsed(Aws::Utils::DateTime&& value) { SetPasswordLastUsed(value); return *this;}
 
   private:
     Aws::String m_path;
@@ -321,9 +368,9 @@ namespace Model
     bool m_userIdHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
-    double m_passwordLastUsed;
+    Aws::Utils::DateTime m_passwordLastUsed;
     bool m_passwordLastUsedHasBeenSet;
   };
 

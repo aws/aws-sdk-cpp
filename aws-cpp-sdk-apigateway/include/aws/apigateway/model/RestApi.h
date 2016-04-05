@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -158,21 +159,35 @@ namespace Model
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date when the API was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline void SetCreatedDate(double value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
      * <p>The date when the API was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline RestApi& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+
+    /**
+     * <p>The date when the API was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline RestApi& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date when the API was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -181,7 +196,7 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_createdDate;
+    Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
   };
 

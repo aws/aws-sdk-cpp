@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Initiator.h>
@@ -49,19 +50,31 @@ namespace Model
      * Date when multipart upload will become eligible for abort operation by
      * lifecycle.
      */
-    inline double GetAbortDate() const{ return m_abortDate; }
+    inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
     /**
      * Date when multipart upload will become eligible for abort operation by
      * lifecycle.
      */
-    inline void SetAbortDate(double value) { m_abortDate = value; }
+    inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
     /**
      * Date when multipart upload will become eligible for abort operation by
      * lifecycle.
      */
-    inline ListPartsResult& WithAbortDate(double value) { SetAbortDate(value); return *this;}
+    inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = value; }
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by
+     * lifecycle.
+     */
+    inline ListPartsResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by
+     * lifecycle.
+     */
+    inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(value); return *this;}
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -378,7 +391,7 @@ namespace Model
     inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
 
   private:
-    double m_abortDate;
+    Aws::Utils::DateTime m_abortDate;
     Aws::String m_abortRuleId;
     Aws::String m_bucket;
     Aws::String m_key;

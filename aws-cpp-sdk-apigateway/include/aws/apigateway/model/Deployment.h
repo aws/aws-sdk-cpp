@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/MethodSnapshot.h>
 
@@ -118,17 +119,27 @@ namespace Model
     /**
      * <p>The date and time that the deployment resource was created.</p>
      */
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date and time that the deployment resource was created.</p>
      */
-    inline void SetCreatedDate(double value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
      * <p>The date and time that the deployment resource was created.</p>
      */
-    inline Deployment& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+
+    /**
+     * <p>The date and time that the deployment resource was created.</p>
+     */
+    inline Deployment& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date and time that the deployment resource was created.</p>
+     */
+    inline Deployment& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
      * <p>Gets a summary of the <a>RestApi</a> at the date and time that the deployment
@@ -201,7 +212,7 @@ namespace Model
     bool m_idHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_createdDate;
+    Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
     Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>> m_apiSummary;
     bool m_apiSummaryHasBeenSet;

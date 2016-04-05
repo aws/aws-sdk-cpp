@@ -25,9 +25,7 @@ ClientCertificate::ClientCertificate() :
     m_clientCertificateIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_pemEncodedCertificateHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
-    m_expirationDate(0.0),
     m_expirationDateHasBeenSet(false)
 {
 }
@@ -36,9 +34,7 @@ ClientCertificate::ClientCertificate(const JsonValue& jsonValue) :
     m_clientCertificateIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_pemEncodedCertificateHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
-    m_expirationDate(0.0),
     m_expirationDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -108,14 +104,12 @@ JsonValue ClientCertificate::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("createdDate", m_createdDate);
-
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_expirationDateHasBeenSet)
   {
-   payload.WithDouble("expirationDate", m_expirationDate);
-
+   payload.WithDouble("expirationDate", m_expirationDate.SecondsWithMSPrecision());
   }
 
   return payload;

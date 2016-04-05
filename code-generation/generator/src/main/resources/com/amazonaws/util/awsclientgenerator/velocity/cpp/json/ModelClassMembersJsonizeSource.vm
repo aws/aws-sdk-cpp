@@ -24,6 +24,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelInternalMapOrListJsonize.vm")
 #elseif($member.shape.blob)
   ${spaces}payload.WithString("${memberName}", HashingUtils::Base64Encode(m_${lowerCaseVarName}));
+#elseif($member.shape.timeStamp)
+  ${spaces}payload.WithDouble("${memberName}", m_${lowerCaseVarName}.SecondsWithMSPrecision());
 #else
   ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", ${memberVarName}${CppViewHelper.computeJsonizeString($member.shape)});
 

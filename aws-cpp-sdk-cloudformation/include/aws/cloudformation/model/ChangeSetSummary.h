@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -268,17 +269,27 @@ namespace Model
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline ChangeSetSummary& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The start time when the change set was created, in UTC.</p>
+     */
+    inline ChangeSetSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The start time when the change set was created, in UTC.</p>
+     */
+    inline ChangeSetSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Descriptive information about the change set.</p>
@@ -328,7 +339,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

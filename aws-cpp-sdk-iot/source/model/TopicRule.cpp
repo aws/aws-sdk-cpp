@@ -25,7 +25,6 @@ TopicRule::TopicRule() :
     m_ruleNameHasBeenSet(false),
     m_sqlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
@@ -37,7 +36,6 @@ TopicRule::TopicRule(const JsonValue& jsonValue) :
     m_ruleNameHasBeenSet(false),
     m_sqlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
@@ -120,8 +118,7 @@ JsonValue TopicRule::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_actionsHasBeenSet)

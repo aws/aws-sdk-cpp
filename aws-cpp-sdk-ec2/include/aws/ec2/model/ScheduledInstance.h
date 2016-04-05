@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ScheduledInstanceRecurrence.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -263,32 +264,52 @@ namespace Model
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
-    inline double GetPreviousSlotEndTime() const{ return m_previousSlotEndTime; }
+    inline const Aws::Utils::DateTime& GetPreviousSlotEndTime() const{ return m_previousSlotEndTime; }
 
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
-    inline void SetPreviousSlotEndTime(double value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = value; }
+    inline void SetPreviousSlotEndTime(const Aws::Utils::DateTime& value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = value; }
 
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
-    inline ScheduledInstance& WithPreviousSlotEndTime(double value) { SetPreviousSlotEndTime(value); return *this;}
+    inline void SetPreviousSlotEndTime(Aws::Utils::DateTime&& value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = value; }
+
+    /**
+     * <p>The time that the previous schedule ended or will end.</p>
+     */
+    inline ScheduledInstance& WithPreviousSlotEndTime(const Aws::Utils::DateTime& value) { SetPreviousSlotEndTime(value); return *this;}
+
+    /**
+     * <p>The time that the previous schedule ended or will end.</p>
+     */
+    inline ScheduledInstance& WithPreviousSlotEndTime(Aws::Utils::DateTime&& value) { SetPreviousSlotEndTime(value); return *this;}
 
     /**
      * <p>The time for the next schedule to start.</p>
      */
-    inline double GetNextSlotStartTime() const{ return m_nextSlotStartTime; }
+    inline const Aws::Utils::DateTime& GetNextSlotStartTime() const{ return m_nextSlotStartTime; }
 
     /**
      * <p>The time for the next schedule to start.</p>
      */
-    inline void SetNextSlotStartTime(double value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = value; }
+    inline void SetNextSlotStartTime(const Aws::Utils::DateTime& value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = value; }
 
     /**
      * <p>The time for the next schedule to start.</p>
      */
-    inline ScheduledInstance& WithNextSlotStartTime(double value) { SetNextSlotStartTime(value); return *this;}
+    inline void SetNextSlotStartTime(Aws::Utils::DateTime&& value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = value; }
+
+    /**
+     * <p>The time for the next schedule to start.</p>
+     */
+    inline ScheduledInstance& WithNextSlotStartTime(const Aws::Utils::DateTime& value) { SetNextSlotStartTime(value); return *this;}
+
+    /**
+     * <p>The time for the next schedule to start.</p>
+     */
+    inline ScheduledInstance& WithNextSlotStartTime(Aws::Utils::DateTime&& value) { SetNextSlotStartTime(value); return *this;}
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -358,47 +379,77 @@ namespace Model
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
-    inline double GetTermStartDate() const{ return m_termStartDate; }
+    inline const Aws::Utils::DateTime& GetTermStartDate() const{ return m_termStartDate; }
 
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
-    inline void SetTermStartDate(double value) { m_termStartDateHasBeenSet = true; m_termStartDate = value; }
+    inline void SetTermStartDate(const Aws::Utils::DateTime& value) { m_termStartDateHasBeenSet = true; m_termStartDate = value; }
 
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
-    inline ScheduledInstance& WithTermStartDate(double value) { SetTermStartDate(value); return *this;}
+    inline void SetTermStartDate(Aws::Utils::DateTime&& value) { m_termStartDateHasBeenSet = true; m_termStartDate = value; }
+
+    /**
+     * <p>The start date for the Scheduled Instance.</p>
+     */
+    inline ScheduledInstance& WithTermStartDate(const Aws::Utils::DateTime& value) { SetTermStartDate(value); return *this;}
+
+    /**
+     * <p>The start date for the Scheduled Instance.</p>
+     */
+    inline ScheduledInstance& WithTermStartDate(Aws::Utils::DateTime&& value) { SetTermStartDate(value); return *this;}
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
      */
-    inline double GetTermEndDate() const{ return m_termEndDate; }
+    inline const Aws::Utils::DateTime& GetTermEndDate() const{ return m_termEndDate; }
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
      */
-    inline void SetTermEndDate(double value) { m_termEndDateHasBeenSet = true; m_termEndDate = value; }
+    inline void SetTermEndDate(const Aws::Utils::DateTime& value) { m_termEndDateHasBeenSet = true; m_termEndDate = value; }
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
      */
-    inline ScheduledInstance& WithTermEndDate(double value) { SetTermEndDate(value); return *this;}
+    inline void SetTermEndDate(Aws::Utils::DateTime&& value) { m_termEndDateHasBeenSet = true; m_termEndDate = value; }
+
+    /**
+     * <p>The end date for the Scheduled Instance.</p>
+     */
+    inline ScheduledInstance& WithTermEndDate(const Aws::Utils::DateTime& value) { SetTermEndDate(value); return *this;}
+
+    /**
+     * <p>The end date for the Scheduled Instance.</p>
+     */
+    inline ScheduledInstance& WithTermEndDate(Aws::Utils::DateTime&& value) { SetTermEndDate(value); return *this;}
 
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
-    inline ScheduledInstance& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date when the Scheduled Instance was purchased.</p>
+     */
+    inline ScheduledInstance& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date when the Scheduled Instance was purchased.</p>
+     */
+    inline ScheduledInstance& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_scheduledInstanceId;
@@ -415,9 +466,9 @@ namespace Model
     bool m_slotDurationInHoursHasBeenSet;
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
-    double m_previousSlotEndTime;
+    Aws::Utils::DateTime m_previousSlotEndTime;
     bool m_previousSlotEndTimeHasBeenSet;
-    double m_nextSlotStartTime;
+    Aws::Utils::DateTime m_nextSlotStartTime;
     bool m_nextSlotStartTimeHasBeenSet;
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
@@ -425,11 +476,11 @@ namespace Model
     bool m_totalScheduledInstanceHoursHasBeenSet;
     long m_instanceCount;
     bool m_instanceCountHasBeenSet;
-    double m_termStartDate;
+    Aws::Utils::DateTime m_termStartDate;
     bool m_termStartDateHasBeenSet;
-    double m_termEndDate;
+    Aws::Utils::DateTime m_termEndDate;
     bool m_termEndDateHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };
 

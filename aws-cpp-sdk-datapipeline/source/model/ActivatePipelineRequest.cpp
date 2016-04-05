@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ActivatePipelineRequest::ActivatePipelineRequest() : 
     m_pipelineIdHasBeenSet(false),
     m_parameterValuesHasBeenSet(false),
-    m_startTimestamp(0.0),
     m_startTimestampHasBeenSet(false)
 {
 }
@@ -52,8 +51,7 @@ Aws::String ActivatePipelineRequest::SerializePayload() const
 
   if(m_startTimestampHasBeenSet)
   {
-   payload.WithDouble("startTimestamp", m_startTimestamp);
-
+   payload.WithDouble("startTimestamp", m_startTimestamp.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();

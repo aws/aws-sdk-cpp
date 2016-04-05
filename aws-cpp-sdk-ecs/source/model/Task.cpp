@@ -32,11 +32,8 @@ Task::Task() :
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_startedAt(0.0),
     m_startedAtHasBeenSet(false),
-    m_stoppedAt(0.0),
     m_stoppedAtHasBeenSet(false)
 {
 }
@@ -52,11 +49,8 @@ Task::Task(const JsonValue& jsonValue) :
     m_containersHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_startedAt(0.0),
     m_startedAtHasBeenSet(false),
-    m_stoppedAt(0.0),
     m_stoppedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -232,20 +226,17 @@ JsonValue Task::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_startedAtHasBeenSet)
   {
-   payload.WithDouble("startedAt", m_startedAt);
-
+   payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
   if(m_stoppedAtHasBeenSet)
   {
-   payload.WithDouble("stoppedAt", m_stoppedAt);
-
+   payload.WithDouble("stoppedAt", m_stoppedAt.SecondsWithMSPrecision());
   }
 
   return payload;

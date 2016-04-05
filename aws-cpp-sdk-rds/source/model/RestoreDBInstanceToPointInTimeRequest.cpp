@@ -22,7 +22,6 @@ using namespace Aws::Utils;
 RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() : 
     m_sourceDBInstanceIdentifierHasBeenSet(false),
     m_targetDBInstanceIdentifierHasBeenSet(false),
-    m_restoreTime(0.0),
     m_restoreTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
     m_useLatestRestorableTimeHasBeenSet(false),
@@ -68,7 +67,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   }
   if(m_restoreTimeHasBeenSet)
   {
-    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime) << "&";
+    ss << "RestoreTime=" << StringUtils::URLEncode(m_restoreTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_useLatestRestorableTimeHasBeenSet)
   {

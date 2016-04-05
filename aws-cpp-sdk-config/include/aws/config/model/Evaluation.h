@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ComplianceType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -227,7 +228,7 @@ namespace Model
      * time indicates when AWS Config delivered the configuration snapshot that
      * triggered the evaluation.</p>
      */
-    inline double GetOrderingTimestamp() const{ return m_orderingTimestamp; }
+    inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
 
     /**
      * <p>The time of the event in AWS Config that triggered the evaluation. For
@@ -236,7 +237,7 @@ namespace Model
      * time indicates when AWS Config delivered the configuration snapshot that
      * triggered the evaluation.</p>
      */
-    inline void SetOrderingTimestamp(double value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
+    inline void SetOrderingTimestamp(const Aws::Utils::DateTime& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
 
     /**
      * <p>The time of the event in AWS Config that triggered the evaluation. For
@@ -245,7 +246,25 @@ namespace Model
      * time indicates when AWS Config delivered the configuration snapshot that
      * triggered the evaluation.</p>
      */
-    inline Evaluation& WithOrderingTimestamp(double value) { SetOrderingTimestamp(value); return *this;}
+    inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
+
+    /**
+     * <p>The time of the event in AWS Config that triggered the evaluation. For
+     * event-based evaluations, the time indicates when AWS Config created the
+     * configuration item that triggered the evaluation. For periodic evaluations, the
+     * time indicates when AWS Config delivered the configuration snapshot that
+     * triggered the evaluation.</p>
+     */
+    inline Evaluation& WithOrderingTimestamp(const Aws::Utils::DateTime& value) { SetOrderingTimestamp(value); return *this;}
+
+    /**
+     * <p>The time of the event in AWS Config that triggered the evaluation. For
+     * event-based evaluations, the time indicates when AWS Config created the
+     * configuration item that triggered the evaluation. For periodic evaluations, the
+     * time indicates when AWS Config delivered the configuration snapshot that
+     * triggered the evaluation.</p>
+     */
+    inline Evaluation& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(value); return *this;}
 
   private:
     Aws::String m_complianceResourceType;
@@ -256,7 +275,7 @@ namespace Model
     bool m_complianceTypeHasBeenSet;
     Aws::String m_annotation;
     bool m_annotationHasBeenSet;
-    double m_orderingTimestamp;
+    Aws::Utils::DateTime m_orderingTimestamp;
     bool m_orderingTimestampHasBeenSet;
   };
 

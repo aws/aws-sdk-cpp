@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
@@ -118,32 +119,52 @@ namespace Model
     /**
      * <p>The date when the application was created.</p>
      */
-    inline double GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
 
     /**
      * <p>The date when the application was created.</p>
      */
-    inline void SetDateCreated(double value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
+    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
      * <p>The date when the application was created.</p>
      */
-    inline ApplicationDescription& WithDateCreated(double value) { SetDateCreated(value); return *this;}
+    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
+
+    /**
+     * <p>The date when the application was created.</p>
+     */
+    inline ApplicationDescription& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
+
+    /**
+     * <p>The date when the application was created.</p>
+     */
+    inline ApplicationDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(value); return *this;}
 
     /**
      * <p>The date when the application was last modified.</p>
      */
-    inline double GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
 
     /**
      * <p>The date when the application was last modified.</p>
      */
-    inline void SetDateUpdated(double value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
+    inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
 
     /**
      * <p>The date when the application was last modified.</p>
      */
-    inline ApplicationDescription& WithDateUpdated(double value) { SetDateUpdated(value); return *this;}
+    inline void SetDateUpdated(Aws::Utils::DateTime&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
+
+    /**
+     * <p>The date when the application was last modified.</p>
+     */
+    inline ApplicationDescription& WithDateUpdated(const Aws::Utils::DateTime& value) { SetDateUpdated(value); return *this;}
+
+    /**
+     * <p>The date when the application was last modified.</p>
+     */
+    inline ApplicationDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(value); return *this;}
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -238,9 +259,9 @@ namespace Model
     bool m_applicationNameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_dateCreated;
+    Aws::Utils::DateTime m_dateCreated;
     bool m_dateCreatedHasBeenSet;
-    double m_dateUpdated;
+    Aws::Utils::DateTime m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
     Aws::Vector<Aws::String> m_versions;
     bool m_versionsHasBeenSet;

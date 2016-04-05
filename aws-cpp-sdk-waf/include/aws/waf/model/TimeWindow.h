@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * resource received. You can specify any time range in the previous three
      * hours.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The beginning of the time range from which you want
@@ -63,7 +64,7 @@ namespace Model
      * resource received. You can specify any time range in the previous three
      * hours.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time range from which you want
@@ -71,33 +72,63 @@ namespace Model
      * resource received. You can specify any time range in the previous three
      * hours.</p>
      */
-    inline TimeWindow& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The beginning of the time range from which you want
+     * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
+     * resource received. You can specify any time range in the previous three
+     * hours.</p>
+     */
+    inline TimeWindow& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The beginning of the time range from which you want
+     * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
+     * resource received. You can specify any time range in the previous three
+     * hours.</p>
+     */
+    inline TimeWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
      * to return a sample of the requests that your AWS resource received. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
      * to return a sample of the requests that your AWS resource received. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
      * to return a sample of the requests that your AWS resource received. You can
      * specify any time range in the previous three hours.</p>
      */
-    inline TimeWindow& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The end of the time range from which you want <code>GetSampledRequests</code>
+     * to return a sample of the requests that your AWS resource received. You can
+     * specify any time range in the previous three hours.</p>
+     */
+    inline TimeWindow& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The end of the time range from which you want <code>GetSampledRequests</code>
+     * to return a sample of the requests that your AWS resource received. You can
+     * specify any time range in the previous three hours.</p>
+     */
+    inline TimeWindow& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
   private:
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
   };
 

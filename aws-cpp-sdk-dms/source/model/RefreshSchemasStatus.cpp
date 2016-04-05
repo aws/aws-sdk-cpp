@@ -25,7 +25,6 @@ RefreshSchemasStatus::RefreshSchemasStatus() :
     m_endpointArnHasBeenSet(false),
     m_replicationInstanceArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastRefreshDate(0.0),
     m_lastRefreshDateHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ RefreshSchemasStatus::RefreshSchemasStatus(const JsonValue& jsonValue) :
     m_endpointArnHasBeenSet(false),
     m_replicationInstanceArnHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastRefreshDate(0.0),
     m_lastRefreshDateHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false)
 {
@@ -105,8 +103,7 @@ JsonValue RefreshSchemasStatus::Jsonize() const
 
   if(m_lastRefreshDateHasBeenSet)
   {
-   payload.WithDouble("LastRefreshDate", m_lastRefreshDate);
-
+   payload.WithDouble("LastRefreshDate", m_lastRefreshDate.SecondsWithMSPrecision());
   }
 
   if(m_lastFailureMessageHasBeenSet)

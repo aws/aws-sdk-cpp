@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SpotInstanceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
 
 namespace Aws
@@ -212,7 +213,7 @@ namespace Model
      * until it expires or is canceled.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline double GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -222,7 +223,7 @@ namespace Model
      * until it expires or is canceled.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline void SetValidFrom(double value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -232,7 +233,27 @@ namespace Model
      * until it expires or is canceled.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline RequestSpotInstancesRequest& WithValidFrom(double value) { SetValidFrom(value); return *this;}
+    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+
+    /**
+     * <p>The start date of the request. If this is a one-time request, the request
+     * becomes active at this date and time and remains active until all instances
+     * launch, the request expires, or the request is canceled. If the request is
+     * persistent, the request becomes active at this date and time and remains active
+     * until it expires or is canceled.</p> <p>Default: The request is effective
+     * indefinitely.</p>
+     */
+    inline RequestSpotInstancesRequest& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
+
+    /**
+     * <p>The start date of the request. If this is a one-time request, the request
+     * becomes active at this date and time and remains active until all instances
+     * launch, the request expires, or the request is canceled. If the request is
+     * persistent, the request becomes active at this date and time and remains active
+     * until it expires or is canceled.</p> <p>Default: The request is effective
+     * indefinitely.</p>
+     */
+    inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(value); return *this;}
 
     /**
      * <p>The end date of the request. If this is a one-time request, the request
@@ -241,7 +262,7 @@ namespace Model
      * or this date and time is reached.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The end date of the request. If this is a one-time request, the request
@@ -250,7 +271,7 @@ namespace Model
      * or this date and time is reached.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The end date of the request. If this is a one-time request, the request
@@ -259,7 +280,25 @@ namespace Model
      * or this date and time is reached.</p> <p>Default: The request is effective
      * indefinitely.</p>
      */
-    inline RequestSpotInstancesRequest& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+
+    /**
+     * <p>The end date of the request. If this is a one-time request, the request
+     * remains active until all instances launch, the request is canceled, or this date
+     * is reached. If the request is persistent, it remains active until it is canceled
+     * or this date and time is reached.</p> <p>Default: The request is effective
+     * indefinitely.</p>
+     */
+    inline RequestSpotInstancesRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The end date of the request. If this is a one-time request, the request
+     * remains active until all instances launch, the request is canceled, or this date
+     * is reached. If the request is persistent, it remains active until it is canceled
+     * or this date and time is reached.</p> <p>Default: The request is effective
+     * indefinitely.</p>
+     */
+    inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -505,9 +544,9 @@ namespace Model
     bool m_instanceCountHasBeenSet;
     SpotInstanceType m_type;
     bool m_typeHasBeenSet;
-    double m_validFrom;
+    Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
-    double m_validUntil;
+    Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
     Aws::String m_launchGroup;
     bool m_launchGroupHasBeenSet;

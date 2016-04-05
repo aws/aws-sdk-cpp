@@ -27,9 +27,7 @@ CertificateDescription::CertificateDescription() :
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
 }
@@ -40,9 +38,7 @@ CertificateDescription::CertificateDescription(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -137,14 +133,12 @@ JsonValue CertificateDescription::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("creationDate", m_creationDate);
-
+   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("lastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;

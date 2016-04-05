@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/RequestPayer.h>
 
 namespace Aws
@@ -108,19 +109,31 @@ namespace Model
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline double GetIfModifiedSince() const{ return m_ifModifiedSince; }
+    inline const Aws::Utils::DateTime& GetIfModifiedSince() const{ return m_ifModifiedSince; }
 
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline void SetIfModifiedSince(double value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
+    inline void SetIfModifiedSince(const Aws::Utils::DateTime& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
 
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline HeadObjectRequest& WithIfModifiedSince(double value) { SetIfModifiedSince(value); return *this;}
+    inline void SetIfModifiedSince(Aws::Utils::DateTime&& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
+
+    /**
+     * Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).
+     */
+    inline HeadObjectRequest& WithIfModifiedSince(const Aws::Utils::DateTime& value) { SetIfModifiedSince(value); return *this;}
+
+    /**
+     * Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).
+     */
+    inline HeadObjectRequest& WithIfModifiedSince(Aws::Utils::DateTime&& value) { SetIfModifiedSince(value); return *this;}
 
     /**
      * Return the object only if its entity tag (ETag) is different from the one
@@ -168,19 +181,31 @@ namespace Model
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline double GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
+    inline const Aws::Utils::DateTime& GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
 
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline void SetIfUnmodifiedSince(double value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
+    inline void SetIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
 
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline HeadObjectRequest& WithIfUnmodifiedSince(double value) { SetIfUnmodifiedSince(value); return *this;}
+    inline void SetIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
+
+    /**
+     * Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).
+     */
+    inline HeadObjectRequest& WithIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetIfUnmodifiedSince(value); return *this;}
+
+    /**
+     * Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).
+     */
+    inline HeadObjectRequest& WithIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetIfUnmodifiedSince(value); return *this;}
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -454,11 +479,11 @@ namespace Model
     bool m_bucketHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
-    double m_ifModifiedSince;
+    Aws::Utils::DateTime m_ifModifiedSince;
     bool m_ifModifiedSinceHasBeenSet;
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet;
-    double m_ifUnmodifiedSince;
+    Aws::Utils::DateTime m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;

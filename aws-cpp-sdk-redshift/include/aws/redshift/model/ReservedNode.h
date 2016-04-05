@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/RecurringCharge.h>
 
@@ -157,19 +158,31 @@ namespace Model
      * <p> The time the reservation started. You purchase a reserved node offering for
      * a duration. This is the start time of that duration. </p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p> The time the reservation started. You purchase a reserved node offering for
      * a duration. This is the start time of that duration. </p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p> The time the reservation started. You purchase a reserved node offering for
      * a duration. This is the start time of that duration. </p>
      */
-    inline ReservedNode& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p> The time the reservation started. You purchase a reserved node offering for
+     * a duration. This is the start time of that duration. </p>
+     */
+    inline ReservedNode& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p> The time the reservation started. You purchase a reserved node offering for
+     * a duration. This is the start time of that duration. </p>
+     */
+    inline ReservedNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p> The duration of the node reservation in seconds. </p>
@@ -413,7 +426,7 @@ namespace Model
     bool m_reservedNodeOfferingIdHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
     long m_duration;
     bool m_durationHasBeenSet;

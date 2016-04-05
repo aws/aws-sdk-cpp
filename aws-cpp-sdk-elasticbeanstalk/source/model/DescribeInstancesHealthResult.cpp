@@ -26,13 +26,11 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstancesHealthResult::DescribeInstancesHealthResult() : 
-    m_refreshedAt(0.0)
+DescribeInstancesHealthResult::DescribeInstancesHealthResult()
 {
 }
 
-DescribeInstancesHealthResult::DescribeInstancesHealthResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_refreshedAt(0.0)
+DescribeInstancesHealthResult::DescribeInstancesHealthResult(const AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
@@ -63,7 +61,7 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
     if(!refreshedAtNode.IsNull())
     {
-      m_refreshedAt = StringUtils::ConvertToDouble(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str());
+      m_refreshedAt = DateTime(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())

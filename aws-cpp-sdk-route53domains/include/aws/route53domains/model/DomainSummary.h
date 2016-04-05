@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -116,19 +117,31 @@ namespace Model
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      * <p>Type: Long</p>
      */
-    inline double GetExpiry() const{ return m_expiry; }
+    inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      * <p>Type: Long</p>
      */
-    inline void SetExpiry(double value) { m_expiryHasBeenSet = true; m_expiry = value; }
+    inline void SetExpiry(const Aws::Utils::DateTime& value) { m_expiryHasBeenSet = true; m_expiry = value; }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      * <p>Type: Long</p>
      */
-    inline DomainSummary& WithExpiry(double value) { SetExpiry(value); return *this;}
+    inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = value; }
+
+    /**
+     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Type: Long</p>
+     */
+    inline DomainSummary& WithExpiry(const Aws::Utils::DateTime& value) { SetExpiry(value); return *this;}
+
+    /**
+     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     * <p>Type: Long</p>
+     */
+    inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(value); return *this;}
 
   private:
     Aws::String m_domainName;
@@ -137,7 +150,7 @@ namespace Model
     bool m_autoRenewHasBeenSet;
     bool m_transferLock;
     bool m_transferLockHasBeenSet;
-    double m_expiry;
+    Aws::Utils::DateTime m_expiry;
     bool m_expiryHasBeenSet;
   };
 

@@ -16,6 +16,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/HistoryItemType.h>
 
 namespace Aws
@@ -86,37 +87,27 @@ namespace Model
     /**
      * <p> The time stamp for the alarm history item. </p>
      */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p> The time stamp for the alarm history item. </p>
      */
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp for the alarm history item. </p>
      */
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp for the alarm history item. </p>
      */
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+    inline AlarmHistoryItem& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The time stamp for the alarm history item. </p>
      */
-    inline AlarmHistoryItem& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp for the alarm history item. </p>
-     */
-    inline AlarmHistoryItem& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp for the alarm history item. </p>
-     */
-    inline AlarmHistoryItem& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+    inline AlarmHistoryItem& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The type of alarm history item. </p>
@@ -216,7 +207,7 @@ namespace Model
   private:
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
-    Aws::String m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     HistoryItemType m_historyItemType;
     bool m_historyItemTypeHasBeenSet;

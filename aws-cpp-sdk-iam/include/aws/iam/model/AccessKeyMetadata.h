@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/StatusType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -150,17 +151,27 @@ namespace Model
     /**
      * <p>The date when the access key was created.</p>
      */
-    inline double GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date when the access key was created.</p>
      */
-    inline void SetCreateDate(double value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date when the access key was created.</p>
      */
-    inline AccessKeyMetadata& WithCreateDate(double value) { SetCreateDate(value); return *this;}
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date when the access key was created.</p>
+     */
+    inline AccessKeyMetadata& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date when the access key was created.</p>
+     */
+    inline AccessKeyMetadata& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 
   private:
     Aws::String m_userName;
@@ -169,7 +180,7 @@ namespace Model
     bool m_accessKeyIdHasBeenSet;
     StatusType m_status;
     bool m_statusHasBeenSet;
-    double m_createDate;
+    Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };
 

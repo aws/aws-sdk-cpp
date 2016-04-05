@@ -28,9 +28,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validUntil(0.0),
     m_validUntilHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
@@ -46,9 +44,7 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_spotPriceHasBeenSet(false),
     m_targetCapacity(0),
     m_targetCapacityHasBeenSet(false),
-    m_validFrom(0.0),
     m_validFromHasBeenSet(false),
-    m_validUntil(0.0),
     m_validUntilHasBeenSet(false),
     m_terminateInstancesWithExpiration(false),
     m_terminateInstancesWithExpirationHasBeenSet(false),
@@ -87,13 +83,13 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = StringUtils::ConvertToDouble(StringUtils::Trim(validFromNode.GetText().c_str()).c_str());
+      m_validFrom = DateTime(StringUtils::Trim(validFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = StringUtils::ConvertToDouble(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str());
+      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");
@@ -153,11 +149,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_validFromHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
+      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
+      oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
@@ -203,11 +199,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_validFromHasBeenSet)
   {
-        oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom) << "&";
+      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_validUntilHasBeenSet)
   {
-        oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil) << "&";
+      oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {

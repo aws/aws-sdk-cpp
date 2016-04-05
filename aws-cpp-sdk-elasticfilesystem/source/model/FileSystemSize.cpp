@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 FileSystemSize::FileSystemSize() : 
     m_value(0),
     m_valueHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false)
 {
 }
@@ -32,7 +31,6 @@ FileSystemSize::FileSystemSize() :
 FileSystemSize::FileSystemSize(const JsonValue& jsonValue) : 
     m_value(0),
     m_valueHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -69,8 +67,7 @@ JsonValue FileSystemSize::Jsonize() const
 
   if(m_timestampHasBeenSet)
   {
-   payload.WithDouble("Timestamp", m_timestamp);
-
+   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   return payload;

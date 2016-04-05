@@ -41,12 +41,6 @@ public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
         attributeValueShape.setType("structure");
         serviceModel.getShapes().put(attributeValueShape.getName(), attributeValueShape);
 
-        for (final Shape shape : serviceModel.getShapes().values() ){
-            if (shape.isTimeStamp()){
-                shape.setType("string");
-            }
-        }
-
         return super.generateSourceFiles(serviceModel);
     }
 

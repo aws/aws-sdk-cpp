@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -44,42 +45,66 @@ namespace Model
      * <p>The start time of the time range.</p> <note>Specify null to leave the start
      * time open-ended.</note>
      */
-    inline double GetStart() const{ return m_start; }
+    inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
     /**
      * <p>The start time of the time range.</p> <note>Specify null to leave the start
      * time open-ended.</note>
      */
-    inline void SetStart(double value) { m_startHasBeenSet = true; m_start = value; }
+    inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
      * <p>The start time of the time range.</p> <note>Specify null to leave the start
      * time open-ended.</note>
      */
-    inline TimeRange& WithStart(double value) { SetStart(value); return *this;}
+    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = value; }
+
+    /**
+     * <p>The start time of the time range.</p> <note>Specify null to leave the start
+     * time open-ended.</note>
+     */
+    inline TimeRange& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
+
+    /**
+     * <p>The start time of the time range.</p> <note>Specify null to leave the start
+     * time open-ended.</note>
+     */
+    inline TimeRange& WithStart(Aws::Utils::DateTime&& value) { SetStart(value); return *this;}
 
     /**
      * <p>The end time of the time range.</p> <note>Specify null to leave the end time
      * open-ended.</note>
      */
-    inline double GetEnd() const{ return m_end; }
+    inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
 
     /**
      * <p>The end time of the time range.</p> <note>Specify null to leave the end time
      * open-ended.</note>
      */
-    inline void SetEnd(double value) { m_endHasBeenSet = true; m_end = value; }
+    inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>The end time of the time range.</p> <note>Specify null to leave the end time
      * open-ended.</note>
      */
-    inline TimeRange& WithEnd(double value) { SetEnd(value); return *this;}
+    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = value; }
+
+    /**
+     * <p>The end time of the time range.</p> <note>Specify null to leave the end time
+     * open-ended.</note>
+     */
+    inline TimeRange& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
+
+    /**
+     * <p>The end time of the time range.</p> <note>Specify null to leave the end time
+     * open-ended.</note>
+     */
+    inline TimeRange& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(value); return *this;}
 
   private:
-    double m_start;
+    Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
-    double m_end;
+    Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
   };
 

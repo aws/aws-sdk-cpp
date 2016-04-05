@@ -32,7 +32,6 @@ ScheduledInstanceAvailability::ScheduledInstanceAvailability() :
     m_slotDurationInHours(0),
     m_slotDurationInHoursHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
-    m_firstSlotStartTime(0.0),
     m_firstSlotStartTimeHasBeenSet(false),
     m_hourlyPriceHasBeenSet(false),
     m_totalScheduledInstanceHours(0),
@@ -55,7 +54,6 @@ ScheduledInstanceAvailability::ScheduledInstanceAvailability(const XmlNode& xmlN
     m_slotDurationInHours(0),
     m_slotDurationInHoursHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
-    m_firstSlotStartTime(0.0),
     m_firstSlotStartTimeHasBeenSet(false),
     m_hourlyPriceHasBeenSet(false),
     m_totalScheduledInstanceHours(0),
@@ -121,7 +119,7 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
     XmlNode firstSlotStartTimeNode = resultNode.FirstChild("firstSlotStartTime");
     if(!firstSlotStartTimeNode.IsNull())
     {
-      m_firstSlotStartTime = StringUtils::ConvertToDouble(StringUtils::Trim(firstSlotStartTimeNode.GetText().c_str()).c_str());
+      m_firstSlotStartTime = DateTime(StringUtils::Trim(firstSlotStartTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_firstSlotStartTimeHasBeenSet = true;
     }
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
@@ -193,7 +191,7 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_firstSlotStartTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime) << "&";
+      oStream << location << index << locationValue << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hourlyPriceHasBeenSet)
   {
@@ -251,7 +249,7 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_firstSlotStartTimeHasBeenSet)
   {
-        oStream << location << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime) << "&";
+      oStream << location << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hourlyPriceHasBeenSet)
   {

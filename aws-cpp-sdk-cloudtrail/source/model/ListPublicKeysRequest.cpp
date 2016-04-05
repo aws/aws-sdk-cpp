@@ -22,9 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListPublicKeysRequest::ListPublicKeysRequest() : 
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
@@ -36,14 +34,12 @@ Aws::String ListPublicKeysRequest::SerializePayload() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("StartTime", m_startTime);
-
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("EndTime", m_endTime);
-
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   if(m_nextTokenHasBeenSet)

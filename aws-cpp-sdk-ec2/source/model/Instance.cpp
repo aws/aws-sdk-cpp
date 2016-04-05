@@ -35,7 +35,6 @@ Instance::Instance() :
     m_amiLaunchIndexHasBeenSet(false),
     m_productCodesHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_launchTime(0.0),
     m_launchTimeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
@@ -80,7 +79,6 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_amiLaunchIndexHasBeenSet(false),
     m_productCodesHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_launchTime(0.0),
     m_launchTimeHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
@@ -189,7 +187,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
     if(!launchTimeNode.IsNull())
     {
-      m_launchTime = StringUtils::ConvertToDouble(StringUtils::Trim(launchTimeNode.GetText().c_str()).c_str());
+      m_launchTime = DateTime(StringUtils::Trim(launchTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_launchTimeHasBeenSet = true;
     }
     XmlNode placementNode = resultNode.FirstChild("placement");
@@ -429,7 +427,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_launchTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime) << "&";
+      oStream << location << index << locationValue << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_placementHasBeenSet)
   {
@@ -621,7 +619,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_launchTimeHasBeenSet)
   {
-        oStream << location << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime) << "&";
+      oStream << location << ".LaunchTime=" << StringUtils::URLEncode(m_launchTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_placementHasBeenSet)
   {

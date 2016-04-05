@@ -25,7 +25,6 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() :
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTime(0.0),
     m_lastStatusChangeTimeHasBeenSet(false)
 {
 }
@@ -34,7 +33,6 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(const JsonValue& jsonValue) :
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTime(0.0),
     m_lastStatusChangeTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -96,8 +94,7 @@ JsonValue ConfigStreamDeliveryInfo::Jsonize() const
 
   if(m_lastStatusChangeTimeHasBeenSet)
   {
-   payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime);
-
+   payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime.SecondsWithMSPrecision());
   }
 
   return payload;

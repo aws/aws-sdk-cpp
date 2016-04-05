@@ -100,7 +100,7 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CreationDateTime"))
   {
-    m_creationDateTime = jsonValue.GetString("CreationDateTime");
+    m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
 
     m_creationDateTimeHasBeenSet = true;
   }
@@ -216,8 +216,7 @@ JsonValue TableDescription::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithString("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_provisionedThroughputHasBeenSet)

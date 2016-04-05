@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 LifecycleExpiration::LifecycleExpiration() : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
     m_daysHasBeenSet(false),
@@ -34,7 +33,6 @@ LifecycleExpiration::LifecycleExpiration() :
 }
 
 LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode) : 
-    m_date(0.0),
     m_dateHasBeenSet(false),
     m_days(0),
     m_daysHasBeenSet(false),
@@ -53,7 +51,7 @@ LifecycleExpiration& LifecycleExpiration::operator =(const XmlNode& xmlNode)
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
-      m_date = StringUtils::ConvertToDouble(StringUtils::Trim(dateNode.GetText().c_str()).c_str());
+      m_date = DateTime(StringUtils::Trim(dateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
@@ -78,10 +76,8 @@ void LifecycleExpiration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_dateHasBeenSet)
   {
-   XmlNode dateNode = parentNode.CreateChildElement("Date");
-  ss << m_date;
-   dateNode.SetText(ss.str());
-  ss.str("");
+     XmlNode dateNode = parentNode.CreateChildElement("Date");
+     dateNode.SetText(m_date.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_daysHasBeenSet)

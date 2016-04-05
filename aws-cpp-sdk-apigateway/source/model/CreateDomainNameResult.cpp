@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDomainNameResult::CreateDomainNameResult() : 
-    m_certificateUploadDate(0.0)
+CreateDomainNameResult::CreateDomainNameResult()
 {
 }
 
-CreateDomainNameResult::CreateDomainNameResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_certificateUploadDate(0.0)
+CreateDomainNameResult::CreateDomainNameResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

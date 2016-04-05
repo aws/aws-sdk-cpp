@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ActionRevision::ActionRevision() : 
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false)
 {
 }
@@ -32,7 +31,6 @@ ActionRevision::ActionRevision() :
 ActionRevision::ActionRevision(const JsonValue& jsonValue) : 
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -82,8 +80,7 @@ JsonValue ActionRevision::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created);
-
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   return payload;

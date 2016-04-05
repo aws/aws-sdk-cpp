@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/VpcPeeringConnectionVpcInfo.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/VpcPeeringConnectionStateReason.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -76,17 +77,27 @@ namespace Model
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
-    inline double GetExpirationTime() const{ return m_expirationTime; }
+    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
 
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
-    inline void SetExpirationTime(double value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
+    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
 
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
-    inline VpcPeeringConnection& WithExpirationTime(double value) { SetExpirationTime(value); return *this;}
+    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
+
+    /**
+     * <p>The time that an unaccepted VPC peering connection will expire.</p>
+     */
+    inline VpcPeeringConnection& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
+
+    /**
+     * <p>The time that an unaccepted VPC peering connection will expire.</p>
+     */
+    inline VpcPeeringConnection& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(value); return *this;}
 
     /**
      * <p>The information of the requester VPC.</p>
@@ -211,7 +222,7 @@ namespace Model
   private:
     VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
     bool m_accepterVpcInfoHasBeenSet;
-    double m_expirationTime;
+    Aws::Utils::DateTime m_expirationTime;
     bool m_expirationTimeHasBeenSet;
     VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
     bool m_requesterVpcInfoHasBeenSet;

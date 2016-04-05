@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult() : 
-    m_latestActivityTaskTimestamp(0.0)
+DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult()
 {
 }
 
-DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_latestActivityTaskTimestamp(0.0)
+DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

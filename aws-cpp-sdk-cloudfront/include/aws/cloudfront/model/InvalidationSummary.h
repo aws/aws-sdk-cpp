@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -78,13 +79,19 @@ namespace Model
     inline InvalidationSummary& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     
-    inline InvalidationSummary& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    
+    inline InvalidationSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    
+    inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * The status of an invalidation request.
@@ -124,7 +131,7 @@ namespace Model
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;

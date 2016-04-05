@@ -44,11 +44,11 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
   }
   if(m_startDateHasBeenSet)
   {
-    ss << "StartDate=" << StringUtils::URLEncode(m_startDate.c_str()) << "&";
+    ss << "StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endDateHasBeenSet)
   {
-    ss << "EndDate=" << StringUtils::URLEncode(m_endDate.c_str()) << "&";
+    ss << "EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_maxRecordsHasBeenSet)
   {

@@ -28,7 +28,6 @@ VolumeAttachment::VolumeAttachment() :
     m_instanceIdHasBeenSet(false),
     m_deviceHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
@@ -41,7 +40,6 @@ VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode) :
     m_instanceIdHasBeenSet(false),
     m_deviceHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_attachTime(0.0),
     m_attachTimeHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
@@ -83,7 +81,7 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = StringUtils::ConvertToDouble(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str());
+      m_attachTime = DateTime(StringUtils::Trim(attachTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
@@ -117,7 +115,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attachTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
@@ -151,7 +149,7 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_attachTimeHasBeenSet)
   {
-        oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime) << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deleteOnTerminationHasBeenSet)
   {

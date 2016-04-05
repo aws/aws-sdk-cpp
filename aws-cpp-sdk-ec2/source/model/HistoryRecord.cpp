@@ -24,7 +24,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 HistoryRecord::HistoryRecord() : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
@@ -32,7 +31,6 @@ HistoryRecord::HistoryRecord() :
 }
 
 HistoryRecord::HistoryRecord(const XmlNode& xmlNode) : 
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventInformationHasBeenSet(false)
@@ -49,7 +47,7 @@ HistoryRecord& HistoryRecord::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToDouble(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
@@ -73,7 +71,7 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, 
 {
   if(m_timestampHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
+      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_eventTypeHasBeenSet)
   {
@@ -91,7 +89,7 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) 
 {
   if(m_timestampHasBeenSet)
   {
-        oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp) << "&";
+      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_eventTypeHasBeenSet)
   {

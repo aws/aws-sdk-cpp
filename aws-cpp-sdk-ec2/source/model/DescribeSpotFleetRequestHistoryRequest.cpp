@@ -24,7 +24,6 @@ DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest()
     m_dryRunHasBeenSet(false),
     m_spotFleetRequestIdHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -50,7 +49,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_nextTokenHasBeenSet)
   {

@@ -32,20 +32,15 @@ ScheduledInstance::ScheduledInstance() :
     m_slotDurationInHours(0),
     m_slotDurationInHoursHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
-    m_previousSlotEndTime(0.0),
     m_previousSlotEndTimeHasBeenSet(false),
-    m_nextSlotStartTime(0.0),
     m_nextSlotStartTimeHasBeenSet(false),
     m_hourlyPriceHasBeenSet(false),
     m_totalScheduledInstanceHours(0),
     m_totalScheduledInstanceHoursHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_termStartDate(0.0),
     m_termStartDateHasBeenSet(false),
-    m_termEndDate(0.0),
     m_termEndDateHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
 }
@@ -59,20 +54,15 @@ ScheduledInstance::ScheduledInstance(const XmlNode& xmlNode) :
     m_slotDurationInHours(0),
     m_slotDurationInHoursHasBeenSet(false),
     m_recurrenceHasBeenSet(false),
-    m_previousSlotEndTime(0.0),
     m_previousSlotEndTimeHasBeenSet(false),
-    m_nextSlotStartTime(0.0),
     m_nextSlotStartTimeHasBeenSet(false),
     m_hourlyPriceHasBeenSet(false),
     m_totalScheduledInstanceHours(0),
     m_totalScheduledInstanceHoursHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
-    m_termStartDate(0.0),
     m_termStartDateHasBeenSet(false),
-    m_termEndDate(0.0),
     m_termEndDateHasBeenSet(false),
-    m_createDate(0.0),
     m_createDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -129,13 +119,13 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode previousSlotEndTimeNode = resultNode.FirstChild("previousSlotEndTime");
     if(!previousSlotEndTimeNode.IsNull())
     {
-      m_previousSlotEndTime = StringUtils::ConvertToDouble(StringUtils::Trim(previousSlotEndTimeNode.GetText().c_str()).c_str());
+      m_previousSlotEndTime = DateTime(StringUtils::Trim(previousSlotEndTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_previousSlotEndTimeHasBeenSet = true;
     }
     XmlNode nextSlotStartTimeNode = resultNode.FirstChild("nextSlotStartTime");
     if(!nextSlotStartTimeNode.IsNull())
     {
-      m_nextSlotStartTime = StringUtils::ConvertToDouble(StringUtils::Trim(nextSlotStartTimeNode.GetText().c_str()).c_str());
+      m_nextSlotStartTime = DateTime(StringUtils::Trim(nextSlotStartTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_nextSlotStartTimeHasBeenSet = true;
     }
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
@@ -159,19 +149,19 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode termStartDateNode = resultNode.FirstChild("termStartDate");
     if(!termStartDateNode.IsNull())
     {
-      m_termStartDate = StringUtils::ConvertToDouble(StringUtils::Trim(termStartDateNode.GetText().c_str()).c_str());
+      m_termStartDate = DateTime(StringUtils::Trim(termStartDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_termStartDateHasBeenSet = true;
     }
     XmlNode termEndDateNode = resultNode.FirstChild("termEndDate");
     if(!termEndDateNode.IsNull())
     {
-      m_termEndDate = StringUtils::ConvertToDouble(StringUtils::Trim(termEndDateNode.GetText().c_str()).c_str());
+      m_termEndDate = DateTime(StringUtils::Trim(termEndDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_termEndDateHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = StringUtils::ConvertToDouble(StringUtils::Trim(createDateNode.GetText().c_str()).c_str());
+      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
   }
@@ -213,11 +203,11 @@ void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_previousSlotEndTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".PreviousSlotEndTime=" << StringUtils::URLEncode(m_previousSlotEndTime) << "&";
+      oStream << location << index << locationValue << ".PreviousSlotEndTime=" << StringUtils::URLEncode(m_previousSlotEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_nextSlotStartTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".NextSlotStartTime=" << StringUtils::URLEncode(m_nextSlotStartTime) << "&";
+      oStream << location << index << locationValue << ".NextSlotStartTime=" << StringUtils::URLEncode(m_nextSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hourlyPriceHasBeenSet)
   {
@@ -233,15 +223,15 @@ void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_termStartDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".TermStartDate=" << StringUtils::URLEncode(m_termStartDate) << "&";
+      oStream << location << index << locationValue << ".TermStartDate=" << StringUtils::URLEncode(m_termStartDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_termEndDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".TermEndDate=" << StringUtils::URLEncode(m_termEndDate) << "&";
+      oStream << location << index << locationValue << ".TermEndDate=" << StringUtils::URLEncode(m_termEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -279,11 +269,11 @@ void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_previousSlotEndTimeHasBeenSet)
   {
-        oStream << location << ".PreviousSlotEndTime=" << StringUtils::URLEncode(m_previousSlotEndTime) << "&";
+      oStream << location << ".PreviousSlotEndTime=" << StringUtils::URLEncode(m_previousSlotEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_nextSlotStartTimeHasBeenSet)
   {
-        oStream << location << ".NextSlotStartTime=" << StringUtils::URLEncode(m_nextSlotStartTime) << "&";
+      oStream << location << ".NextSlotStartTime=" << StringUtils::URLEncode(m_nextSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_hourlyPriceHasBeenSet)
   {
@@ -299,14 +289,14 @@ void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_termStartDateHasBeenSet)
   {
-        oStream << location << ".TermStartDate=" << StringUtils::URLEncode(m_termStartDate) << "&";
+      oStream << location << ".TermStartDate=" << StringUtils::URLEncode(m_termStartDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_termEndDateHasBeenSet)
   {
-        oStream << location << ".TermEndDate=" << StringUtils::URLEncode(m_termEndDate) << "&";
+      oStream << location << ".TermEndDate=" << StringUtils::URLEncode(m_termEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_createDateHasBeenSet)
   {
-        oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

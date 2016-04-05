@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 
 namespace Aws
@@ -78,17 +79,27 @@ namespace Model
     /**
      * <p>The time the data was last updated.</p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time the data was last updated.</p>
      */
-    inline void SetTimestamp(double value) { m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
 
     /**
      * <p>The time the data was last updated.</p>
      */
-    inline GetPasswordDataResponse& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = value; }
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>The password of the instance.</p>
@@ -142,7 +153,7 @@ namespace Model
 
   private:
     Aws::String m_instanceId;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     Aws::String m_passwordData;
     ResponseMetadata m_responseMetadata;
   };

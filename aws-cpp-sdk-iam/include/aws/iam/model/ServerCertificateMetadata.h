@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -246,32 +247,52 @@ namespace Model
     /**
      * <p>The date when the server certificate was uploaded.</p>
      */
-    inline double GetUploadDate() const{ return m_uploadDate; }
+    inline const Aws::Utils::DateTime& GetUploadDate() const{ return m_uploadDate; }
 
     /**
      * <p>The date when the server certificate was uploaded.</p>
      */
-    inline void SetUploadDate(double value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
+    inline void SetUploadDate(const Aws::Utils::DateTime& value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
 
     /**
      * <p>The date when the server certificate was uploaded.</p>
      */
-    inline ServerCertificateMetadata& WithUploadDate(double value) { SetUploadDate(value); return *this;}
+    inline void SetUploadDate(Aws::Utils::DateTime&& value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
+
+    /**
+     * <p>The date when the server certificate was uploaded.</p>
+     */
+    inline ServerCertificateMetadata& WithUploadDate(const Aws::Utils::DateTime& value) { SetUploadDate(value); return *this;}
+
+    /**
+     * <p>The date when the server certificate was uploaded.</p>
+     */
+    inline ServerCertificateMetadata& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(value); return *this;}
 
     /**
      * <p>The date on which the certificate is set to expire.</p>
      */
-    inline double GetExpiration() const{ return m_expiration; }
+    inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
 
     /**
      * <p>The date on which the certificate is set to expire.</p>
      */
-    inline void SetExpiration(double value) { m_expirationHasBeenSet = true; m_expiration = value; }
+    inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
      * <p>The date on which the certificate is set to expire.</p>
      */
-    inline ServerCertificateMetadata& WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+
+    /**
+     * <p>The date on which the certificate is set to expire.</p>
+     */
+    inline ServerCertificateMetadata& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
+
+    /**
+     * <p>The date on which the certificate is set to expire.</p>
+     */
+    inline ServerCertificateMetadata& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_path;
@@ -282,9 +303,9 @@ namespace Model
     bool m_serverCertificateIdHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;
-    double m_uploadDate;
+    Aws::Utils::DateTime m_uploadDate;
     bool m_uploadDateHasBeenSet;
-    double m_expiration;
+    Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };
 

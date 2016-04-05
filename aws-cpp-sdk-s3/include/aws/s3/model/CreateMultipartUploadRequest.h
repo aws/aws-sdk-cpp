@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/s3/model/ObjectCannedACL.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/s3/model/StorageClass.h>
@@ -277,17 +278,27 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline double GetExpires() const{ return m_expires; }
+    inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline void SetExpires(double value) { m_expiresHasBeenSet = true; m_expires = value; }
+    inline void SetExpires(const Aws::Utils::DateTime& value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline CreateMultipartUploadRequest& WithExpires(double value) { SetExpires(value); return *this;}
+    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = value; }
+
+    /**
+     * The date and time at which the object is no longer cacheable.
+     */
+    inline CreateMultipartUploadRequest& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
+
+    /**
+     * The date and time at which the object is no longer cacheable.
+     */
+    inline CreateMultipartUploadRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(value); return *this;}
 
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -854,7 +865,7 @@ namespace Model
     bool m_contentLanguageHasBeenSet;
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
-    double m_expires;
+    Aws::Utils::DateTime m_expires;
     bool m_expiresHasBeenSet;
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;

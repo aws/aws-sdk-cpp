@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/Action.h>
 
@@ -158,17 +159,27 @@ namespace Model
     /**
      * <p>The date and time the rule was created.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The date and time the rule was created.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The date and time the rule was created.</p>
      */
-    inline TopicRule& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The date and time the rule was created.</p>
+     */
+    inline TopicRule& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time the rule was created.</p>
+     */
+    inline TopicRule& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The actions associated with the rule.</p>
@@ -227,7 +238,7 @@ namespace Model
     bool m_sqlHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;

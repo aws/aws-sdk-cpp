@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
 
 namespace Aws
@@ -244,17 +245,27 @@ namespace Model
     /**
      * <p>Time the status was updated.</p>
      */
-    inline double GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
 
     /**
      * <p>Time the status was updated.</p>
      */
-    inline void SetLastUpdatedTimestamp(double value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
+    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
 
     /**
      * <p>Time the status was updated.</p>
      */
-    inline StackResourceDetail& WithLastUpdatedTimestamp(double value) { SetLastUpdatedTimestamp(value); return *this;}
+    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
+
+    /**
+     * <p>Time the status was updated.</p>
+     */
+    inline StackResourceDetail& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
+
+    /**
+     * <p>Time the status was updated.</p>
+     */
+    inline StackResourceDetail& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(value); return *this;}
 
     /**
      * <p>Current status of the resource.</p>
@@ -418,7 +429,7 @@ namespace Model
     bool m_physicalResourceIdHasBeenSet;
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
-    double m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet;
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet;

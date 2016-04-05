@@ -23,7 +23,6 @@ using namespace Aws::Utils;
 
 MeterUsageRequest::MeterUsageRequest() : 
     m_productCodeHasBeenSet(false),
-    m_timestamp(0.0),
     m_timestampHasBeenSet(false),
     m_usageDimensionHasBeenSet(false),
     m_usageQuantity(0),
@@ -45,8 +44,7 @@ Aws::String MeterUsageRequest::SerializePayload() const
 
   if(m_timestampHasBeenSet)
   {
-   payload.WithDouble("Timestamp", m_timestamp);
-
+   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if(m_usageDimensionHasBeenSet)

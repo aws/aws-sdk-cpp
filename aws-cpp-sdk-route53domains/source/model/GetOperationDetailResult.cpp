@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOperationDetailResult::GetOperationDetailResult() : 
-    m_submittedDate(0.0)
+GetOperationDetailResult::GetOperationDetailResult()
 {
 }
 
-GetOperationDetailResult::GetOperationDetailResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_submittedDate(0.0)
+GetOperationDetailResult::GetOperationDetailResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

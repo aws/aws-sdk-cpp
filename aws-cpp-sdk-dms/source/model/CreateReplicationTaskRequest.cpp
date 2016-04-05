@@ -29,7 +29,6 @@ CreateReplicationTaskRequest::CreateReplicationTaskRequest() :
     m_migrationTypeHasBeenSet(false),
     m_tableMappingsHasBeenSet(false),
     m_replicationTaskSettingsHasBeenSet(false),
-    m_cdcStartTime(0.0),
     m_cdcStartTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -82,8 +81,7 @@ Aws::String CreateReplicationTaskRequest::SerializePayload() const
 
   if(m_cdcStartTimeHasBeenSet)
   {
-   payload.WithDouble("CdcStartTime", m_cdcStartTime);
-
+   payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

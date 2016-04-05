@@ -16,6 +16,7 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsRequest.h>
 #include <aws/marketplacecommerceanalytics/model/DataSetType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
@@ -249,7 +250,7 @@ namespace Model
      * ignored). For monthly data sets, provide a date with month-level granularity for
      * the desired month (the day value will be ignored).
      */
-    inline double GetDataSetPublicationDate() const{ return m_dataSetPublicationDate; }
+    inline const Aws::Utils::DateTime& GetDataSetPublicationDate() const{ return m_dataSetPublicationDate; }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
@@ -258,7 +259,7 @@ namespace Model
      * ignored). For monthly data sets, provide a date with month-level granularity for
      * the desired month (the day value will be ignored).
      */
-    inline void SetDataSetPublicationDate(double value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
+    inline void SetDataSetPublicationDate(const Aws::Utils::DateTime& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
@@ -267,7 +268,25 @@ namespace Model
      * ignored). For monthly data sets, provide a date with month-level granularity for
      * the desired month (the day value will be ignored).
      */
-    inline GenerateDataSetRequest& WithDataSetPublicationDate(double value) { SetDataSetPublicationDate(value); return *this;}
+    inline void SetDataSetPublicationDate(Aws::Utils::DateTime&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
+
+    /**
+     * The date a data set was published. For daily data sets, provide a date with
+     * day-level granularity for the desired day. For weekly data sets, provide a date
+     * with day-level granularity within the desired week (the day value will be
+     * ignored). For monthly data sets, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored).
+     */
+    inline GenerateDataSetRequest& WithDataSetPublicationDate(const Aws::Utils::DateTime& value) { SetDataSetPublicationDate(value); return *this;}
+
+    /**
+     * The date a data set was published. For daily data sets, provide a date with
+     * day-level granularity for the desired day. For weekly data sets, provide a date
+     * with day-level granularity within the desired week (the day value will be
+     * ignored). For monthly data sets, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored).
+     */
+    inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(value); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
@@ -545,7 +564,7 @@ namespace Model
   private:
     DataSetType m_dataSetType;
     bool m_dataSetTypeHasBeenSet;
-    double m_dataSetPublicationDate;
+    Aws::Utils::DateTime m_dataSetPublicationDate;
     bool m_dataSetPublicationDateHasBeenSet;
     Aws::String m_roleNameArn;
     bool m_roleNameArnHasBeenSet;

@@ -29,7 +29,6 @@ SSHPublicKey::SSHPublicKey() :
     m_fingerprintHasBeenSet(false),
     m_sSHPublicKeyBodyHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
 }
@@ -40,7 +39,6 @@ SSHPublicKey::SSHPublicKey(const XmlNode& xmlNode) :
     m_fingerprintHasBeenSet(false),
     m_sSHPublicKeyBodyHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_uploadDate(0.0),
     m_uploadDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -85,7 +83,7 @@ SSHPublicKey& SSHPublicKey::operator =(const XmlNode& xmlNode)
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
-      m_uploadDate = StringUtils::ConvertToDouble(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str());
+      m_uploadDate = DateTime(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
     }
   }
@@ -117,7 +115,7 @@ void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_uploadDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
+      oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -145,6 +143,6 @@ void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_uploadDateHasBeenSet)
   {
-        oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate) << "&";
+      oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

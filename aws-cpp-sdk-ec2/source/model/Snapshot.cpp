@@ -28,7 +28,6 @@ Snapshot::Snapshot() :
     m_volumeIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
@@ -50,7 +49,6 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_volumeIdHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
@@ -101,7 +99,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
@@ -189,7 +187,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_progressHasBeenSet)
   {
@@ -261,7 +259,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_startTimeHasBeenSet)
   {
-        oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+      oStream << location << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_progressHasBeenSet)
   {

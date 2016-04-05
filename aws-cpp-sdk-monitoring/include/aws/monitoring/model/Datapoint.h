@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/StandardUnit.h>
 
 namespace Aws
@@ -49,37 +49,27 @@ namespace Model
     /**
      * <p> The time stamp used for the datapoint. </p>
      */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p> The time stamp used for the datapoint. </p>
      */
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp used for the datapoint. </p>
      */
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p> The time stamp used for the datapoint. </p>
      */
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
+    inline Datapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The time stamp used for the datapoint. </p>
      */
-    inline Datapoint& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp used for the datapoint. </p>
-     */
-    inline Datapoint& WithTimestamp(Aws::String&& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p> The time stamp used for the datapoint. </p>
-     */
-    inline Datapoint& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+    inline Datapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p> The number of metric values that contributed to the aggregate value of this
@@ -185,7 +175,7 @@ namespace Model
     inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 
   private:
-    Aws::String m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     double m_sampleCount;
     bool m_sampleCountHasBeenSet;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -153,88 +154,146 @@ namespace Model
      * <p>The time that AWS Config last successfully invoked the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline double GetLastSuccessfulInvocationTime() const{ return m_lastSuccessfulInvocationTime; }
+    inline const Aws::Utils::DateTime& GetLastSuccessfulInvocationTime() const{ return m_lastSuccessfulInvocationTime; }
 
     /**
      * <p>The time that AWS Config last successfully invoked the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline void SetLastSuccessfulInvocationTime(double value) { m_lastSuccessfulInvocationTimeHasBeenSet = true; m_lastSuccessfulInvocationTime = value; }
+    inline void SetLastSuccessfulInvocationTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulInvocationTimeHasBeenSet = true; m_lastSuccessfulInvocationTime = value; }
 
     /**
      * <p>The time that AWS Config last successfully invoked the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline ConfigRuleEvaluationStatus& WithLastSuccessfulInvocationTime(double value) { SetLastSuccessfulInvocationTime(value); return *this;}
+    inline void SetLastSuccessfulInvocationTime(Aws::Utils::DateTime&& value) { m_lastSuccessfulInvocationTimeHasBeenSet = true; m_lastSuccessfulInvocationTime = value; }
+
+    /**
+     * <p>The time that AWS Config last successfully invoked the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastSuccessfulInvocationTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulInvocationTime(value); return *this;}
+
+    /**
+     * <p>The time that AWS Config last successfully invoked the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastSuccessfulInvocationTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulInvocationTime(value); return *this;}
 
     /**
      * <p>The time that AWS Config last failed to invoke the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline double GetLastFailedInvocationTime() const{ return m_lastFailedInvocationTime; }
+    inline const Aws::Utils::DateTime& GetLastFailedInvocationTime() const{ return m_lastFailedInvocationTime; }
 
     /**
      * <p>The time that AWS Config last failed to invoke the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline void SetLastFailedInvocationTime(double value) { m_lastFailedInvocationTimeHasBeenSet = true; m_lastFailedInvocationTime = value; }
+    inline void SetLastFailedInvocationTime(const Aws::Utils::DateTime& value) { m_lastFailedInvocationTimeHasBeenSet = true; m_lastFailedInvocationTime = value; }
 
     /**
      * <p>The time that AWS Config last failed to invoke the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
-    inline ConfigRuleEvaluationStatus& WithLastFailedInvocationTime(double value) { SetLastFailedInvocationTime(value); return *this;}
+    inline void SetLastFailedInvocationTime(Aws::Utils::DateTime&& value) { m_lastFailedInvocationTimeHasBeenSet = true; m_lastFailedInvocationTime = value; }
+
+    /**
+     * <p>The time that AWS Config last failed to invoke the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastFailedInvocationTime(const Aws::Utils::DateTime& value) { SetLastFailedInvocationTime(value); return *this;}
+
+    /**
+     * <p>The time that AWS Config last failed to invoke the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastFailedInvocationTime(Aws::Utils::DateTime&& value) { SetLastFailedInvocationTime(value); return *this;}
 
     /**
      * <p>The time that AWS Config last successfully evaluated your AWS resources
      * against the rule.</p>
      */
-    inline double GetLastSuccessfulEvaluationTime() const{ return m_lastSuccessfulEvaluationTime; }
+    inline const Aws::Utils::DateTime& GetLastSuccessfulEvaluationTime() const{ return m_lastSuccessfulEvaluationTime; }
 
     /**
      * <p>The time that AWS Config last successfully evaluated your AWS resources
      * against the rule.</p>
      */
-    inline void SetLastSuccessfulEvaluationTime(double value) { m_lastSuccessfulEvaluationTimeHasBeenSet = true; m_lastSuccessfulEvaluationTime = value; }
+    inline void SetLastSuccessfulEvaluationTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulEvaluationTimeHasBeenSet = true; m_lastSuccessfulEvaluationTime = value; }
 
     /**
      * <p>The time that AWS Config last successfully evaluated your AWS resources
      * against the rule.</p>
      */
-    inline ConfigRuleEvaluationStatus& WithLastSuccessfulEvaluationTime(double value) { SetLastSuccessfulEvaluationTime(value); return *this;}
+    inline void SetLastSuccessfulEvaluationTime(Aws::Utils::DateTime&& value) { m_lastSuccessfulEvaluationTimeHasBeenSet = true; m_lastSuccessfulEvaluationTime = value; }
+
+    /**
+     * <p>The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastSuccessfulEvaluationTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulEvaluationTime(value); return *this;}
+
+    /**
+     * <p>The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastSuccessfulEvaluationTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulEvaluationTime(value); return *this;}
 
     /**
      * <p>The time that AWS Config last failed to evaluate your AWS resources against
      * the rule.</p>
      */
-    inline double GetLastFailedEvaluationTime() const{ return m_lastFailedEvaluationTime; }
+    inline const Aws::Utils::DateTime& GetLastFailedEvaluationTime() const{ return m_lastFailedEvaluationTime; }
 
     /**
      * <p>The time that AWS Config last failed to evaluate your AWS resources against
      * the rule.</p>
      */
-    inline void SetLastFailedEvaluationTime(double value) { m_lastFailedEvaluationTimeHasBeenSet = true; m_lastFailedEvaluationTime = value; }
+    inline void SetLastFailedEvaluationTime(const Aws::Utils::DateTime& value) { m_lastFailedEvaluationTimeHasBeenSet = true; m_lastFailedEvaluationTime = value; }
 
     /**
      * <p>The time that AWS Config last failed to evaluate your AWS resources against
      * the rule.</p>
      */
-    inline ConfigRuleEvaluationStatus& WithLastFailedEvaluationTime(double value) { SetLastFailedEvaluationTime(value); return *this;}
+    inline void SetLastFailedEvaluationTime(Aws::Utils::DateTime&& value) { m_lastFailedEvaluationTimeHasBeenSet = true; m_lastFailedEvaluationTime = value; }
+
+    /**
+     * <p>The time that AWS Config last failed to evaluate your AWS resources against
+     * the rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastFailedEvaluationTime(const Aws::Utils::DateTime& value) { SetLastFailedEvaluationTime(value); return *this;}
+
+    /**
+     * <p>The time that AWS Config last failed to evaluate your AWS resources against
+     * the rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithLastFailedEvaluationTime(Aws::Utils::DateTime&& value) { SetLastFailedEvaluationTime(value); return *this;}
 
     /**
      * <p>The time that you first activated the AWS Config rule.</p>
      */
-    inline double GetFirstActivatedTime() const{ return m_firstActivatedTime; }
+    inline const Aws::Utils::DateTime& GetFirstActivatedTime() const{ return m_firstActivatedTime; }
 
     /**
      * <p>The time that you first activated the AWS Config rule.</p>
      */
-    inline void SetFirstActivatedTime(double value) { m_firstActivatedTimeHasBeenSet = true; m_firstActivatedTime = value; }
+    inline void SetFirstActivatedTime(const Aws::Utils::DateTime& value) { m_firstActivatedTimeHasBeenSet = true; m_firstActivatedTime = value; }
 
     /**
      * <p>The time that you first activated the AWS Config rule.</p>
      */
-    inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(double value) { SetFirstActivatedTime(value); return *this;}
+    inline void SetFirstActivatedTime(Aws::Utils::DateTime&& value) { m_firstActivatedTimeHasBeenSet = true; m_firstActivatedTime = value; }
+
+    /**
+     * <p>The time that you first activated the AWS Config rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(const Aws::Utils::DateTime& value) { SetFirstActivatedTime(value); return *this;}
+
+    /**
+     * <p>The time that you first activated the AWS Config rule.</p>
+     */
+    inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(Aws::Utils::DateTime&& value) { SetFirstActivatedTime(value); return *this;}
 
     /**
      * <p>The error code that AWS Config returned when the rule last failed.</p>
@@ -340,15 +399,15 @@ namespace Model
     bool m_configRuleArnHasBeenSet;
     Aws::String m_configRuleId;
     bool m_configRuleIdHasBeenSet;
-    double m_lastSuccessfulInvocationTime;
+    Aws::Utils::DateTime m_lastSuccessfulInvocationTime;
     bool m_lastSuccessfulInvocationTimeHasBeenSet;
-    double m_lastFailedInvocationTime;
+    Aws::Utils::DateTime m_lastFailedInvocationTime;
     bool m_lastFailedInvocationTimeHasBeenSet;
-    double m_lastSuccessfulEvaluationTime;
+    Aws::Utils::DateTime m_lastSuccessfulEvaluationTime;
     bool m_lastSuccessfulEvaluationTimeHasBeenSet;
-    double m_lastFailedEvaluationTime;
+    Aws::Utils::DateTime m_lastFailedEvaluationTime;
     bool m_lastFailedEvaluationTimeHasBeenSet;
-    double m_firstActivatedTime;
+    Aws::Utils::DateTime m_firstActivatedTime;
     bool m_firstActivatedTimeHasBeenSet;
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;
