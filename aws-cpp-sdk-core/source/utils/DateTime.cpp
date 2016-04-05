@@ -24,7 +24,7 @@
 static const char* CLASS_TAG = "DateTime";
 static const char* RFC822_DATE_FORMAT_STR_MINUS_Z = "%a, %d %b %Y %H:%M:%S";
 static const char* RFC822_DATE_FORMAT_STR_WITH_Z = "%a, %d %b %Y %H:%M:%S %Z";
-static const char* ISO_8601_LONG_DATE_FORMAT_STR = "%Y-%m-%dT%H:%M:%SZ";
+static const char* ISO_8601_LONG_DATE_FORMAT_STR = "%Y-%m-%dT%H:%M:%S.000Z";
 
 using namespace Aws::Utils;
 
@@ -683,7 +683,7 @@ public:
     {
     }
 
-    //parses "%Y-%m-%dT%H:%M:%SZ"
+    //parses "%Y-%m-%dT%H:%M:%S.%sZ"
     void Parse() override
     {
         size_t len = strlen(m_toParse);
@@ -698,7 +698,7 @@ public:
 
         size_t index = 0;
         size_t stateStartIndex = 0;
-        int finalState = 6;
+        const int finalState = 7;
 
         while (m_state <= finalState && !m_error && index < len)
         {
@@ -787,7 +787,7 @@ public:
 
                     break;
                 case 5:
-                    if (c == 'Z' && index - stateStartIndex == 2)
+                    if (c == '.' && index - stateStartIndex == 2)
                     {
                         m_state = 6;
                         stateStartIndex = index + 1;
@@ -795,6 +795,21 @@ public:
                     else if (isdigit(c))
                     {
                         m_parsedTimestamp.tm_sec = m_parsedTimestamp.tm_sec * 10 + (c - '0');
+                    }
+                    else
+                    {
+                        m_error = true;
+                    }
+
+                    break;
+                case 6:
+                    if (c == 'Z' && index - stateStartIndex == 3)
+                    {
+                        m_state = finalState;
+                    }
+                    else if (isdigit(c))
+                    {
+						//skip
                     }
                     else
                     {
