@@ -76,6 +76,21 @@ TEST(DateTimeTest, TestISO_8601Parsing)
     ASSERT_EQ(gmtDateStr, gmtDate.ToGmtString(DateFormat::ISO_8601));
 }
 
+TEST(DateTimeTest, TestISO_8601ParsingMSPrecision)
+{
+    const char* gmtDateStr = "2002-10-02T08:05:09.000Z";
+    DateTime gmtDate(gmtDateStr, DateFormat::ISO_8601);
+    ASSERT_TRUE(gmtDate.WasParseSuccessful());
+    ASSERT_EQ(DayOfWeek::Wednesday, gmtDate.GetDayOfWeek());
+    ASSERT_EQ(02, gmtDate.GetDay());
+    ASSERT_EQ(Month::October, gmtDate.GetMonth());
+    ASSERT_EQ(2002, gmtDate.GetYear());
+    ASSERT_EQ(8, gmtDate.GetHour());
+    ASSERT_EQ(5, gmtDate.GetMinute());
+    ASSERT_EQ(9, gmtDate.GetSecond());
+    ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
+}
+
 TEST(DateTimeTest, TestISO_8601Parsing_DOS_Stopped)
 {
     const char* gmtDateStr = "Weddkasdiweijbnawei8eriojngsdgasdgsdf1gasd8asdgfasdfgsdikweisdfksdnsdksdklasdfsdklasdfdfsdfsdfsdfsadfasdafsdfgjjfgghdfgsdfsfsdfsdfasdfsdfasdfsdfasdfsdf";
