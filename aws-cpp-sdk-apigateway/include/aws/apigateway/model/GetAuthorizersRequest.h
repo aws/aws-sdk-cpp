@@ -74,34 +74,61 @@ namespace Model
      */
     inline GetAuthorizersRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline GetAuthorizersRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline GetAuthorizersRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>If not all <a>Authorizer</a> resources in the response were present, the
+     * position will specificy where to start the next page of results.</p>
+     */
     inline GetAuthorizersRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>Limit the number of <a>Authorizer</a> resources in the response.</p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    
+    /**
+     * <p>Limit the number of <a>Authorizer</a> resources in the response.</p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    
+    /**
+     * <p>Limit the number of <a>Authorizer</a> resources in the response.</p>
+     */
     inline GetAuthorizersRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:

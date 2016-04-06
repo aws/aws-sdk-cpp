@@ -25,6 +25,7 @@ CreateAuthorizerRequest::CreateAuthorizerRequest() :
     m_restApiIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
@@ -47,6 +48,12 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AuthorizerTypeMapper::GetNameForAuthorizerType(m_type));
+  }
+
+  if(m_authTypeHasBeenSet)
+  {
+   payload.WithString("authType", m_authType);
+
   }
 
   if(m_authorizerUriHasBeenSet)

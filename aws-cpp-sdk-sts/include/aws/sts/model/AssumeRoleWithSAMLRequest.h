@@ -176,7 +176,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -195,7 +195,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -214,7 +214,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -233,7 +233,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -252,7 +252,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -271,7 +271,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling
@@ -290,7 +290,7 @@ namespace Model
      * assumed. For more information, <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>. </p> <note>The policy plain text must be 2048 bytes or
+     * <i>IAM User Guide</i>. </p> <note>The policy plain text must be 2048 bytes or
      * shorter. However, an internal conversion compresses it into a packed binary
      * format with a separate limit. The PackedPolicySize response element indicates by
      * percentage how close to the upper size limit the policy is, with 100% equaling

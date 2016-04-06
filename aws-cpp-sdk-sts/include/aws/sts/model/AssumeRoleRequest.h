@@ -162,11 +162,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -181,11 +181,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -200,11 +200,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -219,11 +219,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -238,11 +238,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -257,11 +257,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
@@ -276,11 +276,11 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <note>The policy plain text must be 2048 bytes or
+     * shorter. However, an internal conversion compresses it into a packed binary
+     * format with a separate limit. The PackedPolicySize response element indicates by
+     * percentage how close to the upper size limit the policy is, with 100% equaling
+     * the maximum allowed size.</note>
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -315,7 +315,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -329,7 +329,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -343,7 +343,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -357,7 +357,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -371,7 +371,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -385,7 +385,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
 
@@ -399,7 +399,7 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

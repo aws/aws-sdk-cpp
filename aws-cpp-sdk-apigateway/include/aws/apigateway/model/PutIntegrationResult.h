@@ -47,27 +47,32 @@ namespace Model
     PutIntegrationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Specifies the integration's type.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.</p>
      */
     inline const IntegrationType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the integration's type.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.</p>
      */
     inline void SetType(const IntegrationType& value) { m_type = value; }
 
     /**
-     * <p>Specifies the integration's type.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.</p>
      */
     inline void SetType(IntegrationType&& value) { m_type = value; }
 
     /**
-     * <p>Specifies the integration's type.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.</p>
      */
     inline PutIntegrationResult& WithType(const IntegrationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the integration's type.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.</p>
      */
     inline PutIntegrationResult& WithType(IntegrationType&& value) { SetType(value); return *this;}
 

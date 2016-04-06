@@ -39,7 +39,10 @@ UpdateHealthCheckRequest::UpdateHealthCheckRequest() :
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
     m_enableSNI(false),
-    m_enableSNIHasBeenSet(false)
+    m_enableSNIHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatusHasBeenSet(false)
 {
 }
 

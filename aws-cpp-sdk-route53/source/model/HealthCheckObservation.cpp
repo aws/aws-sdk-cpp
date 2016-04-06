@@ -24,12 +24,14 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 HealthCheckObservation::HealthCheckObservation() : 
+    m_regionHasBeenSet(false),
     m_iPAddressHasBeenSet(false),
     m_statusReportHasBeenSet(false)
 {
 }
 
 HealthCheckObservation::HealthCheckObservation(const XmlNode& xmlNode) : 
+    m_regionHasBeenSet(false),
     m_iPAddressHasBeenSet(false),
     m_statusReportHasBeenSet(false)
 {
@@ -42,6 +44,12 @@ HealthCheckObservation& HealthCheckObservation::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
+    XmlNode regionNode = resultNode.FirstChild("Region");
+    if(!regionNode.IsNull())
+    {
+      m_region = HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(regionNode.GetText().c_str()).c_str());
+      m_regionHasBeenSet = true;
+    }
     XmlNode iPAddressNode = resultNode.FirstChild("IPAddress");
     if(!iPAddressNode.IsNull())
     {
@@ -62,6 +70,12 @@ HealthCheckObservation& HealthCheckObservation::operator =(const XmlNode& xmlNod
 void HealthCheckObservation::AddToNode(XmlNode& parentNode) const
 {
   Aws::StringStream ss;
+  if(m_regionHasBeenSet)
+  {
+   XmlNode regionNode = parentNode.CreateChildElement("Region");
+   regionNode.SetText(HealthCheckRegionMapper::GetNameForHealthCheckRegion(m_region));
+  }
+
   if(m_iPAddressHasBeenSet)
   {
    XmlNode iPAddressNode = parentNode.CreateChildElement("IPAddress");

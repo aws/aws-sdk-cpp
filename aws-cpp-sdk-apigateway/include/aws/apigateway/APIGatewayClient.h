@@ -58,10 +58,12 @@
 #include <aws/apigateway/model/GetSdkResult.h>
 #include <aws/apigateway/model/GetStageResult.h>
 #include <aws/apigateway/model/GetStagesResult.h>
+#include <aws/apigateway/model/ImportRestApiResult.h>
 #include <aws/apigateway/model/PutIntegrationResult.h>
 #include <aws/apigateway/model/PutIntegrationResponseResult.h>
 #include <aws/apigateway/model/PutMethodResult.h>
 #include <aws/apigateway/model/PutMethodResponseResult.h>
+#include <aws/apigateway/model/PutRestApiResult.h>
 #include <aws/apigateway/model/TestInvokeAuthorizerResult.h>
 #include <aws/apigateway/model/TestInvokeMethodResult.h>
 #include <aws/apigateway/model/UpdateAccountResult.h>
@@ -179,10 +181,12 @@ namespace Model
         class GetSdkRequest;
         class GetStageRequest;
         class GetStagesRequest;
+        class ImportRestApiRequest;
         class PutIntegrationRequest;
         class PutIntegrationResponseRequest;
         class PutMethodRequest;
         class PutMethodResponseRequest;
+        class PutRestApiRequest;
         class TestInvokeAuthorizerRequest;
         class TestInvokeMethodRequest;
         class UpdateAccountRequest;
@@ -255,10 +259,12 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSdkResult, Aws::Client::AWSError<APIGatewayErrors>> GetSdkOutcome;
         typedef Aws::Utils::Outcome<GetStageResult, Aws::Client::AWSError<APIGatewayErrors>> GetStageOutcome;
         typedef Aws::Utils::Outcome<GetStagesResult, Aws::Client::AWSError<APIGatewayErrors>> GetStagesOutcome;
+        typedef Aws::Utils::Outcome<ImportRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> ImportRestApiOutcome;
         typedef Aws::Utils::Outcome<PutIntegrationResult, Aws::Client::AWSError<APIGatewayErrors>> PutIntegrationOutcome;
         typedef Aws::Utils::Outcome<PutIntegrationResponseResult, Aws::Client::AWSError<APIGatewayErrors>> PutIntegrationResponseOutcome;
         typedef Aws::Utils::Outcome<PutMethodResult, Aws::Client::AWSError<APIGatewayErrors>> PutMethodOutcome;
         typedef Aws::Utils::Outcome<PutMethodResponseResult, Aws::Client::AWSError<APIGatewayErrors>> PutMethodResponseOutcome;
+        typedef Aws::Utils::Outcome<PutRestApiResult, Aws::Client::AWSError<APIGatewayErrors>> PutRestApiOutcome;
         typedef Aws::Utils::Outcome<TestInvokeAuthorizerResult, Aws::Client::AWSError<APIGatewayErrors>> TestInvokeAuthorizerOutcome;
         typedef Aws::Utils::Outcome<TestInvokeMethodResult, Aws::Client::AWSError<APIGatewayErrors>> TestInvokeMethodOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountResult, Aws::Client::AWSError<APIGatewayErrors>> UpdateAccountOutcome;
@@ -331,10 +337,12 @@ namespace Model
         typedef std::future<GetSdkOutcome> GetSdkOutcomeCallable;
         typedef std::future<GetStageOutcome> GetStageOutcomeCallable;
         typedef std::future<GetStagesOutcome> GetStagesOutcomeCallable;
+        typedef std::future<ImportRestApiOutcome> ImportRestApiOutcomeCallable;
         typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
         typedef std::future<PutIntegrationResponseOutcome> PutIntegrationResponseOutcomeCallable;
         typedef std::future<PutMethodOutcome> PutMethodOutcomeCallable;
         typedef std::future<PutMethodResponseOutcome> PutMethodResponseOutcomeCallable;
+        typedef std::future<PutRestApiOutcome> PutRestApiOutcomeCallable;
         typedef std::future<TestInvokeAuthorizerOutcome> TestInvokeAuthorizerOutcomeCallable;
         typedef std::future<TestInvokeMethodOutcome> TestInvokeMethodOutcomeCallable;
         typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
@@ -410,10 +418,12 @@ namespace Model
     typedef std::function<void(const APIGatewayClient*, const Model::GetSdkRequest&, const Model::GetSdkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSdkResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetStageRequest&, const Model::GetStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStageResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetStagesRequest&, const Model::GetStagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStagesResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::ImportRestApiRequest&, const Model::ImportRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutIntegrationRequest&, const Model::PutIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutIntegrationResponseRequest&, const Model::PutIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodRequest&, const Model::PutMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodResponseRequest&, const Model::PutMethodResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::PutRestApiRequest&, const Model::PutRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRestApiResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeAuthorizerRequest&, const Model::TestInvokeAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeAuthorizerResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeMethodRequest&, const Model::TestInvokeMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::UpdateAccountRequest&, const Model::UpdateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountResponseReceivedHandler;
@@ -467,38 +477,41 @@ namespace Model
         virtual ~APIGatewayClient();
 
         /**
-         * 
+         * <p>Create an <a>ApiKey</a> resource. </p>
          */
         virtual Model::CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest& request) const;
 
         /**
-         * 
+         * <p>Create an <a>ApiKey</a> resource. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request) const;
 
         /**
-         * 
+         * <p>Create an <a>ApiKey</a> resource. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+         * resource.</p>
          */
         virtual Model::CreateAuthorizerOutcome CreateAuthorizer(const Model::CreateAuthorizerRequest& request) const;
 
         /**
-         * 
+         * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+         * resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAuthorizerOutcomeCallable CreateAuthorizerCallable(const Model::CreateAuthorizerRequest& request) const;
 
         /**
-         * 
+         * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+         * resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -701,19 +714,19 @@ namespace Model
         virtual void DeleteBasePathMappingAsync(const Model::DeleteBasePathMappingRequest& request, const DeleteBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
          */
         virtual Model::DeleteClientCertificateOutcome DeleteClientCertificate(const Model::DeleteClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteClientCertificateOutcomeCallable DeleteClientCertificateCallable(const Model::DeleteClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the <a>ClientCertificate</a> resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -951,19 +964,19 @@ namespace Model
         virtual void FlushStageCacheAsync(const Model::FlushStageCacheRequest& request, const FlushStageCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Generates a <a>ClientCertificate</a> resource.</p>
          */
         virtual Model::GenerateClientCertificateOutcome GenerateClientCertificate(const Model::GenerateClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Generates a <a>ClientCertificate</a> resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GenerateClientCertificateOutcomeCallable GenerateClientCertificateCallable(const Model::GenerateClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Generates a <a>ClientCertificate</a> resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1103,38 +1116,38 @@ namespace Model
         virtual void GetBasePathMappingsAsync(const Model::GetBasePathMappingsRequest& request, const GetBasePathMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
          */
         virtual Model::GetClientCertificateOutcome GetClientCertificate(const Model::GetClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetClientCertificateOutcomeCallable GetClientCertificateCallable(const Model::GetClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Gets information about the current <a>ClientCertificate</a> resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetClientCertificateAsync(const Model::GetClientCertificateRequest& request, const GetClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
          */
         virtual Model::GetClientCertificatesOutcome GetClientCertificates(const Model::GetClientCertificatesRequest& request) const;
 
         /**
-         * 
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetClientCertificatesOutcomeCallable GetClientCertificatesCallable(const Model::GetClientCertificatesRequest& request) const;
 
         /**
-         * 
+         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1220,19 +1233,19 @@ namespace Model
         virtual void GetDomainNamesAsync(const Model::GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
          */
         virtual Model::GetExportOutcome GetExport(const Model::GetExportRequest& request) const;
 
         /**
-         * 
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetExportOutcomeCallable GetExportCallable(const Model::GetExportRequest& request) const;
 
         /**
-         * 
+         * <p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1451,19 +1464,19 @@ namespace Model
         virtual void GetRestApisAsync(const Model::GetRestApisRequest& request, const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
          */
         virtual Model::GetSdkOutcome GetSdk(const Model::GetSdkRequest& request) const;
 
         /**
-         * 
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSdkOutcomeCallable GetSdkCallable(const Model::GetSdkRequest& request) const;
 
         /**
-         * 
+         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1506,6 +1519,28 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStagesAsync(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A feature of the Amazon API Gateway control service for creating a new API
+         * from an external API definition file.</p>
+         */
+        virtual Model::ImportRestApiOutcome ImportRestApi(const Model::ImportRestApiRequest& request) const;
+
+        /**
+         * <p>A feature of the Amazon API Gateway control service for creating a new API
+         * from an external API definition file.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportRestApiOutcomeCallable ImportRestApiCallable(const Model::ImportRestApiRequest& request) const;
+
+        /**
+         * <p>A feature of the Amazon API Gateway control service for creating a new API
+         * from an external API definition file.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportRestApiAsync(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Represents a put integration.</p>
@@ -1584,38 +1619,72 @@ namespace Model
         virtual void PutMethodResponseAsync(const Model::PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>A feature of the Amazon API Gateway control service for updating an existing
+         * API with an input of external API definitions. The update can take the form of
+         * merging the supplied definition into the existing API or overwriting the
+         * existing API.</p>
+         */
+        virtual Model::PutRestApiOutcome PutRestApi(const Model::PutRestApiRequest& request) const;
+
+        /**
+         * <p>A feature of the Amazon API Gateway control service for updating an existing
+         * API with an input of external API definitions. The update can take the form of
+         * merging the supplied definition into the existing API or overwriting the
+         * existing API.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRestApiOutcomeCallable PutRestApiCallable(const Model::PutRestApiRequest& request) const;
+
+        /**
+         * <p>A feature of the Amazon API Gateway control service for updating an existing
+         * API with an input of external API definitions. The update can take the form of
+         * merging the supplied definition into the existing API or overwriting the
+         * existing API.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRestApiAsync(const Model::PutRestApiRequest& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          */
         virtual Model::TestInvokeAuthorizerOutcome TestInvokeAuthorizer(const Model::TestInvokeAuthorizerRequest& request) const;
 
         /**
-         * 
+         * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TestInvokeAuthorizerOutcomeCallable TestInvokeAuthorizerCallable(const Model::TestInvokeAuthorizerRequest& request) const;
 
         /**
-         * 
+         * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TestInvokeAuthorizerAsync(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          */
         virtual Model::TestInvokeMethodOutcome TestInvokeMethod(const Model::TestInvokeMethodRequest& request) const;
 
         /**
-         * 
+         * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TestInvokeMethodOutcomeCallable TestInvokeMethodCallable(const Model::TestInvokeMethodRequest& request) const;
 
         /**
-         * 
+         * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+         * headers, parameters, and an incoming request body.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1698,19 +1767,19 @@ namespace Model
         virtual void UpdateBasePathMappingAsync(const Model::UpdateBasePathMappingRequest& request, const UpdateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
          */
         virtual Model::UpdateClientCertificateOutcome UpdateClientCertificate(const Model::UpdateClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateClientCertificateOutcomeCallable UpdateClientCertificateCallable(const Model::UpdateClientCertificateRequest& request) const;
 
         /**
-         * 
+         * <p>Changes information about an <a>ClientCertificate</a> resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1965,10 +2034,12 @@ namespace Model
         void GetSdkAsyncHelper(const Model::GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStageAsyncHelper(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStagesAsyncHelper(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportRestApiAsyncHelper(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntegrationAsyncHelper(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntegrationResponseAsyncHelper(const Model::PutIntegrationResponseRequest& request, const PutIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMethodAsyncHelper(const Model::PutMethodRequest& request, const PutMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMethodResponseAsyncHelper(const Model::PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRestApiAsyncHelper(const Model::PutRestApiRequest& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestInvokeAuthorizerAsyncHelper(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestInvokeMethodAsyncHelper(const Model::TestInvokeMethodRequest& request, const TestInvokeMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAsyncHelper(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

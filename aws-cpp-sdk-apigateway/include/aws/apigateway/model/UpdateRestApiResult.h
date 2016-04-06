@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -190,11 +191,36 @@ namespace Model
      */
     inline UpdateRestApiResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
+    
+    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
+    
+    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warnings = value; }
+
+    
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warnings = value; }
+
+    
+    inline UpdateRestApiResult& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+
+    
+    inline UpdateRestApiResult& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+
+    
+    inline UpdateRestApiResult& AddWarnings(const Aws::String& value) { m_warnings.push_back(value); return *this; }
+
+    
+    inline UpdateRestApiResult& AddWarnings(Aws::String&& value) { m_warnings.push_back(value); return *this; }
+
+    
+    inline UpdateRestApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
     Aws::String m_name;
     Aws::String m_description;
     Aws::Utils::DateTime m_createdDate;
+    Aws::Vector<Aws::String> m_warnings;
   };
 
 } // namespace Model

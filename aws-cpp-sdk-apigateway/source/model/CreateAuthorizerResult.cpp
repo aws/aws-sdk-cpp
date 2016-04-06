@@ -56,6 +56,12 @@ CreateAuthorizerResult& CreateAuthorizerResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("authType"))
+  {
+    m_authType = jsonValue.GetString("authType");
+
+  }
+
   if(jsonValue.ValueExists("authorizerUri"))
   {
     m_authorizerUri = jsonValue.GetString("authorizerUri");

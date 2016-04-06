@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
+#include <aws/route53/model/HealthCheckRegion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/StatusReport.h>
 
@@ -45,43 +46,73 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
+     */
+    inline const HealthCheckRegion& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
+     */
+    inline void SetRegion(const HealthCheckRegion& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
+     */
+    inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
+     */
+    inline HealthCheckObservation& WithRegion(const HealthCheckRegion& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
+     */
+    inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline void SetIPAddress(const Aws::String& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline void SetIPAddress(const char* value) { m_iPAddressHasBeenSet = true; m_iPAddress.assign(value); }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(const Aws::String& value) { SetIPAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(Aws::String&& value) { SetIPAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that performed the
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
      * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
@@ -117,6 +148,8 @@ namespace Model
     inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(value); return *this;}
 
   private:
+    HealthCheckRegion m_region;
+    bool m_regionHasBeenSet;
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
     StatusReport m_statusReport;

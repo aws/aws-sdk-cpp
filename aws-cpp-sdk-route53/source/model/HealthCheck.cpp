@@ -28,7 +28,8 @@ HealthCheck::HealthCheck() :
     m_callerReferenceHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckVersion(0),
-    m_healthCheckVersionHasBeenSet(false)
+    m_healthCheckVersionHasBeenSet(false),
+    m_cloudWatchAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,8 @@ HealthCheck::HealthCheck(const XmlNode& xmlNode) :
     m_callerReferenceHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckVersion(0),
-    m_healthCheckVersionHasBeenSet(false)
+    m_healthCheckVersionHasBeenSet(false),
+    m_cloudWatchAlarmConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -72,6 +74,12 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
       m_healthCheckVersion = StringUtils::ConvertToInt64(StringUtils::Trim(healthCheckVersionNode.GetText().c_str()).c_str());
       m_healthCheckVersionHasBeenSet = true;
     }
+    XmlNode cloudWatchAlarmConfigurationNode = resultNode.FirstChild("CloudWatchAlarmConfiguration");
+    if(!cloudWatchAlarmConfigurationNode.IsNull())
+    {
+      m_cloudWatchAlarmConfiguration = cloudWatchAlarmConfigurationNode;
+      m_cloudWatchAlarmConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -104,6 +112,12 @@ void HealthCheck::AddToNode(XmlNode& parentNode) const
   ss << m_healthCheckVersion;
    healthCheckVersionNode.SetText(ss.str());
   ss.str("");
+  }
+
+  if(m_cloudWatchAlarmConfigurationHasBeenSet)
+  {
+   XmlNode cloudWatchAlarmConfigurationNode = parentNode.CreateChildElement("CloudWatchAlarmConfiguration");
+   m_cloudWatchAlarmConfiguration.AddToNode(cloudWatchAlarmConfigurationNode);
   }
 
 }

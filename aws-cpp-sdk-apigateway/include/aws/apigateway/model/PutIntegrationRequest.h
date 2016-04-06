@@ -210,43 +210,64 @@ namespace Model
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline PutIntegrationRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline PutIntegrationRequest& WithUri(Aws::String&& value) { SetUri(value); return *this;}
 
     /**
      * <p>Specifies a put integration input's Uniform Resource Identifier (URI). When
-     * the integration type is HTTP or AWS, this field is required.</p>
+     * the integration type is HTTP or AWS, this field is required. For integration
+     * with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.</p>
      */
     inline PutIntegrationRequest& WithUri(const char* value) { SetUri(value); return *this;}
 

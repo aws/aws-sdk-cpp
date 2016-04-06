@@ -144,6 +144,48 @@ namespace Model
     inline Authorizer& WithType(AuthorizerType&& value) { SetType(value); return *this;}
 
     /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline const Aws::String& GetAuthType() const{ return m_authType; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const Aws::String& value) { m_authTypeHasBeenSet = true; m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(Aws::String&& value) { m_authTypeHasBeenSet = true; m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const char* value) { m_authTypeHasBeenSet = true; m_authType.assign(value); }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline Authorizer& WithAuthType(const Aws::String& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline Authorizer& WithAuthType(Aws::String&& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline Authorizer& WithAuthType(const char* value) { SetAuthType(value); return *this;}
+
+    /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For
      * TOKEN authorizers, this must be a well-formed Lambda function URI. The URI
      * should be of the form
@@ -437,6 +479,8 @@ namespace Model
     bool m_nameHasBeenSet;
     AuthorizerType m_type;
     bool m_typeHasBeenSet;
+    Aws::String m_authType;
+    bool m_authTypeHasBeenSet;
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet;
     Aws::String m_authorizerCredentials;

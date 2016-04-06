@@ -80,10 +80,12 @@
 #include <aws/apigateway/model/GetSdkRequest.h>
 #include <aws/apigateway/model/GetStageRequest.h>
 #include <aws/apigateway/model/GetStagesRequest.h>
+#include <aws/apigateway/model/ImportRestApiRequest.h>
 #include <aws/apigateway/model/PutIntegrationRequest.h>
 #include <aws/apigateway/model/PutIntegrationResponseRequest.h>
 #include <aws/apigateway/model/PutMethodRequest.h>
 #include <aws/apigateway/model/PutMethodResponseRequest.h>
+#include <aws/apigateway/model/PutRestApiRequest.h>
 #include <aws/apigateway/model/TestInvokeAuthorizerRequest.h>
 #include <aws/apigateway/model/TestInvokeMethodRequest.h>
 #include <aws/apigateway/model/UpdateAccountRequest.h>
@@ -1979,6 +1981,37 @@ void APIGatewayClient::GetStagesAsyncHelper(const GetStagesRequest& request, con
   handler(this, request, GetStages(request), context);
 }
 
+ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis?mode=import";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ImportRestApiOutcome(ImportRestApiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportRestApiOutcome(outcome.GetError());
+  }
+}
+
+ImportRestApiOutcomeCallable APIGatewayClient::ImportRestApiCallable(const ImportRestApiRequest& request) const
+{
+  return std::async(std::launch::async, &APIGatewayClient::ImportRestApi, this, request);
+}
+
+void APIGatewayClient::ImportRestApiAsync(const ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&APIGatewayClient::ImportRestApiAsyncHelper, this, request, handler, context);
+}
+
+void APIGatewayClient::ImportRestApiAsyncHelper(const ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportRestApi(request), context);
+}
+
 PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationRequest& request) const
 {
   Aws::StringStream ss;
@@ -2126,6 +2159,38 @@ void APIGatewayClient::PutMethodResponseAsync(const PutMethodResponseRequest& re
 void APIGatewayClient::PutMethodResponseAsyncHelper(const PutMethodResponseRequest& request, const PutMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutMethodResponse(request), context);
+}
+
+PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/restapis/";
+  ss << request.GetRestApiId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutRestApiOutcome(PutRestApiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRestApiOutcome(outcome.GetError());
+  }
+}
+
+PutRestApiOutcomeCallable APIGatewayClient::PutRestApiCallable(const PutRestApiRequest& request) const
+{
+  return std::async(std::launch::async, &APIGatewayClient::PutRestApi, this, request);
+}
+
+void APIGatewayClient::PutRestApiAsync(const PutRestApiRequest& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&APIGatewayClient::PutRestApiAsyncHelper, this, request, handler, context);
+}
+
+void APIGatewayClient::PutRestApiAsyncHelper(const PutRestApiRequest& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRestApi(request), context);
 }
 
 TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const

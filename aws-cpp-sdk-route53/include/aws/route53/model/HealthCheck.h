@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HealthCheckConfig.h>
+#include <aws/route53/model/CloudWatchAlarmConfiguration.h>
 
 namespace Aws
 {
@@ -160,6 +161,36 @@ namespace Model
      */
     inline HealthCheck& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
 
+    /**
+     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
+     * about the CloudWatch alarm that you're associating with the health check.</p>
+     */
+    inline const CloudWatchAlarmConfiguration& GetCloudWatchAlarmConfiguration() const{ return m_cloudWatchAlarmConfiguration; }
+
+    /**
+     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
+     * about the CloudWatch alarm that you're associating with the health check.</p>
+     */
+    inline void SetCloudWatchAlarmConfiguration(const CloudWatchAlarmConfiguration& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = value; }
+
+    /**
+     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
+     * about the CloudWatch alarm that you're associating with the health check.</p>
+     */
+    inline void SetCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = value; }
+
+    /**
+     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
+     * about the CloudWatch alarm that you're associating with the health check.</p>
+     */
+    inline HealthCheck& WithCloudWatchAlarmConfiguration(const CloudWatchAlarmConfiguration& value) { SetCloudWatchAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
+     * about the CloudWatch alarm that you're associating with the health check.</p>
+     */
+    inline HealthCheck& WithCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { SetCloudWatchAlarmConfiguration(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -169,6 +200,8 @@ namespace Model
     bool m_healthCheckConfigHasBeenSet;
     long long m_healthCheckVersion;
     bool m_healthCheckVersionHasBeenSet;
+    CloudWatchAlarmConfiguration m_cloudWatchAlarmConfiguration;
+    bool m_cloudWatchAlarmConfigurationHasBeenSet;
   };
 
 } // namespace Model

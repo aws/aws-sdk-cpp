@@ -30,6 +30,7 @@
 #include <aws/sts/model/AssumeRoleWithSAMLRequest.h>
 #include <aws/sts/model/AssumeRoleWithWebIdentityRequest.h>
 #include <aws/sts/model/DecodeAuthorizationMessageRequest.h>
+#include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/sts/model/GetFederationTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
 
@@ -214,6 +215,36 @@ void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessage
 void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DecodeAuthorizationMessage(request), context);
+}
+
+GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCallerIdentityOutcome(outcome.GetError());
+  }
+}
+
+GetCallerIdentityOutcomeCallable STSClient::GetCallerIdentityCallable(const GetCallerIdentityRequest& request) const
+{
+  return std::async(std::launch::async, &STSClient::GetCallerIdentity, this, request);
+}
+
+void STSClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&STSClient::GetCallerIdentityAsyncHelper, this, request, handler, context);
+}
+
+void STSClient::GetCallerIdentityAsyncHelper(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCallerIdentity(request), context);
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const

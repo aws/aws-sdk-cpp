@@ -25,6 +25,8 @@ namespace Model
 {
 
   /**
+   * <p>A request to get information about the current <a>ClientCertificate</a>
+   * resource.</p>
    */
   class AWS_APIGATEWAY_API GetClientCertificateRequest : public APIGatewayRequest
   {
@@ -32,25 +34,39 @@ namespace Model
     GetClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline GetClientCertificateRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline GetClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
+     */
     inline GetClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
   private:

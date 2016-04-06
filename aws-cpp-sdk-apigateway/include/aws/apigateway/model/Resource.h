@@ -184,68 +184,68 @@ namespace Model
     inline Resource& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline const Aws::Map<Aws::String, Method>& GetResourceMethods() const{ return m_resourceMethods; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline void SetResourceMethods(const Aws::Map<Aws::String, Method>& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods = value; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline void SetResourceMethods(Aws::Map<Aws::String, Method>&& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods = value; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& WithResourceMethods(const Aws::Map<Aws::String, Method>& value) { SetResourceMethods(value); return *this;}
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& WithResourceMethods(Aws::Map<Aws::String, Method>&& value) { SetResourceMethods(value); return *this;}
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(const Aws::String& key, const Method& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(Aws::String&& key, const Method& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(const Aws::String& key, Method&& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(Aws::String&& key, Method&& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(const char* key, Method&& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 
     /**
-     * <p>Map of methods for this resource, which is included only if requested using
-     * the <b>embed</b> option.</p>
+     * <p>Map of methods for this resource, which is included only if the request uses
+     * the <b>embed</b> query option.</p>
      */
     inline Resource& AddResourceMethods(const char* key, const Method& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods[key] = value; return *this; }
 

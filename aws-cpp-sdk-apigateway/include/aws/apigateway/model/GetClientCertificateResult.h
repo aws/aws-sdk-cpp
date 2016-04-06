@@ -33,6 +33,10 @@ namespace APIGateway
 {
 namespace Model
 {
+  /**
+   * <p>Represents a Client Certificate used to configure client-side SSL
+   * authentication while sending requests to the integration endpoint.</p>
+   */
   class AWS_APIGATEWAY_API GetClientCertificateResult
   {
   public:
@@ -40,97 +44,186 @@ namespace Model
     GetClientCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetClientCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_description = value; }
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The description of the Client Certificate.</p>
+     */
     inline GetClientCertificateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = value; }
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline GetClientCertificateResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline GetClientCertificateResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(value); return *this;}
 
-    
+    /**
+     * <p>The PEM-encoded public key of the Client Certificate, that can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
     inline GetClientCertificateResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
-    
+    /**
+     * <p>The date when the Client Certificate was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
-    
+    /**
+     * <p>The date when the Client Certificate was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
-    
+    /**
+     * <p>The date when the Client Certificate was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
 
-    
+    /**
+     * <p>The date when the Client Certificate was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline GetClientCertificateResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date when the Client Certificate was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline GetClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date when the Client Certificate will expire, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
-    
+    /**
+     * <p>The date when the Client Certificate will expire, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
 
-    
+    /**
+     * <p>The date when the Client Certificate will expire, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = value; }
 
-    
+    /**
+     * <p>The date when the Client Certificate will expire, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline GetClientCertificateResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
-    
+    /**
+     * <p>The date when the Client Certificate will expire, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
     inline GetClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(value); return *this;}
 
   private:

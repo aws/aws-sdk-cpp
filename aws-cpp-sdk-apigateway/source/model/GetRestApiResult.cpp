@@ -60,6 +60,15 @@ GetRestApiResult& GetRestApiResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
+  if(jsonValue.ValueExists("warnings"))
+  {
+    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>A request to delete the <a>ClientCertificate</a> resource.</p>
    */
   class AWS_APIGATEWAY_API DeleteClientCertificateRequest : public APIGatewayRequest
   {
@@ -32,25 +33,39 @@ namespace Model
     DeleteClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
+     */
     inline DeleteClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
   private:

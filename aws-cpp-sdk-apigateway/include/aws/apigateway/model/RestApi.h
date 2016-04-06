@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -189,6 +190,30 @@ namespace Model
      */
     inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
+    
+    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
+    
+    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+
+    
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+
+    
+    inline RestApi& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+
+    
+    inline RestApi& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+
+    
+    inline RestApi& AddWarnings(const Aws::String& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
+    
+    inline RestApi& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
+    
+    inline RestApi& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -198,6 +223,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+    Aws::Vector<Aws::String> m_warnings;
+    bool m_warningsHasBeenSet;
   };
 
 } // namespace Model
