@@ -31,45 +31,79 @@ bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :
     m_poolSize(poolSize), m_overflowPolicy(overflowPolicy)
 {
-    size_t taskQueueSize = SIZE_MAX;
-
-    if (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY)
-    {
-        taskQueueSize = 1u;
-    }
-
     for (size_t index = 0; index < m_poolSize; ++index)
     {
-        m_threadPool.Push(Aws::New<ThreadTask>(POOLED_CLASS_TAG, taskQueueSize));
+        m_threadTaskHandles.push_back(Aws::New<ThreadTask>(POOLED_CLASS_TAG, *this));
     }
 }
 
 PooledThreadExecutor::~PooledThreadExecutor()
 {
-    ThreadTask* threadTask = nullptr;
-    while (m_threadPool.Pop(threadTask) && threadTask)
+    for(auto threadTask : m_threadTaskHandles)
     {
-        threadTask->StopProcessingWork();
+        threadTask->StopProcessingWork();       
+    }
+
+    m_syncPoint.notify_all();
+
+    for (auto threadTask : m_threadTaskHandles)
+    {
         Aws::Delete(threadTask);
     }
+
+    while(m_tasks.size() > 0)
+    {
+        std::function<void()>* fn = m_tasks.front();
+        m_tasks.pop();
+
+        if(fn)
+        {
+            Aws::Delete(fn);
+        }
+    }
+
 }
 
 bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
 {
-    ThreadTask* threadTask = nullptr;
-    bool availableThread = m_threadPool.Pop(threadTask);
+    //avoid the need to do copies inside the lock. Instead lets do a pointer push.
+    std::function<void()>* fnCpy = Aws::New<std::function<void()>>(POOLED_CLASS_TAG, std::forward<std::function<void()>>(fn));
 
-    if (!availableThread || !threadTask)
     {
-        return false;
+        std::lock_guard<std::mutex> locker(m_queueLock);
+
+        if (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY && m_poolSize >= m_tasks.size())
+        {
+            return false;
+        }
+
+        m_tasks.push(fnCpy);
     }
 
-    m_threadPool.Push(threadTask);
+    m_syncPoint.notify_one();
+  
+    return true;
+}
 
-    if (threadTask->CanAcceptWork())
+std::function<void()>* PooledThreadExecutor::PopTask()
+{
+    std::lock_guard<std::mutex> locker(m_queueLock);
+
+    if (m_tasks.size() > 0)
     {
-        return threadTask->QueueWork(std::forward<std::function<void()>>(fn));
+        std::function<void()>* fn = m_tasks.front();
+        if (fn)
+        {           
+            m_tasks.pop();
+            return fn;
+        }
     }
 
-    return false;
+    return nullptr;
+}
+
+bool PooledThreadExecutor::HasTasks()
+{
+    std::lock_guard<std::mutex> locker(m_queueLock);
+    return m_tasks.size() > 0;
 }

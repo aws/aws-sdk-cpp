@@ -15,10 +15,10 @@
 
 #pragma once
 
-#include <aws/core/utils/LocklessQueue.h>
+#include <aws/core/Core_EXPORTS.h>
 #include <functional>
-#include <mutex>
 #include <thread>
+#include <atomic>
 
 namespace Aws
 {
@@ -26,10 +26,12 @@ namespace Aws
     {
         namespace Threading
         {
+            class PooledThreadExecutor;
+
             class AWS_CORE_API ThreadTask
             {
             public:
-                ThreadTask(size_t maxQueueLength = 1);
+                ThreadTask(PooledThreadExecutor& executor);
                 ~ThreadTask();
 
                 /**
@@ -41,20 +43,14 @@ namespace Aws
                 ThreadTask(ThreadTask&&) = delete;
                 ThreadTask& operator =(ThreadTask&&) = delete;
 
-                bool QueueWork(std::function<void()>&&);
-                void StopProcessingWork();
-                inline size_t GetQueuedCount() const { return m_taskQueue.Size(); }
-                inline bool CanAcceptWork() const { return GetQueuedCount() < m_maxQueueLength; }
+                void StopProcessingWork();                
 
             protected:
                 void MainTaskRunner();
 
-            private:
-                LocklessQueue<std::function<void()>> m_taskQueue;
+            private:                
                 std::atomic<bool> m_continue;
-                std::mutex m_semaphoreLock;
-                std::condition_variable m_semaphore;
-                size_t m_maxQueueLength;
+                PooledThreadExecutor& m_executor;
                 std::thread m_thread;
             };
         }

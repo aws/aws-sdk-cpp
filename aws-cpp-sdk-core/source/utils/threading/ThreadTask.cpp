@@ -14,11 +14,12 @@
 */
 
 #include <aws/core/utils/threading/ThreadTask.h>
+#include <aws/core/utils/threading/Executor.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;
 
-ThreadTask::ThreadTask(size_t maxQueueLength) : m_continue(true), m_maxQueueLength(maxQueueLength), m_thread(std::bind(&ThreadTask::MainTaskRunner, this))
+ThreadTask::ThreadTask(PooledThreadExecutor& executor) : m_continue(true), m_executor(executor), m_thread(std::bind(&ThreadTask::MainTaskRunner, this))
 {
 }
 
@@ -30,37 +31,24 @@ ThreadTask::~ThreadTask()
 
 void ThreadTask::MainTaskRunner()
 {
-    std::function<void()> fn;
-
     while (m_continue)
-    {
-        while (m_taskQueue.Pop(fn) && m_continue)
-        {
-            fn();
+    {        
+        while ( m_executor.HasTasks())
+        {      
+            auto fn = m_executor.PopTask();
+            if(fn)
+            {
+                (*fn)();
+                Aws::Delete(fn);               
+            }
         }
-
-        std::unique_lock<std::mutex> locker(m_semaphoreLock);
-        m_semaphore.wait(locker);
+            
+        std::unique_lock<std::mutex> locker(m_executor.m_syncPointLock);
+        m_executor.m_syncPoint.wait(locker);    
     }
-}
-
-bool ThreadTask::QueueWork(std::function<void()>&& fn)
-{
-    if (!CanAcceptWork())
-    {
-        return false;
-    }
-
-    m_taskQueue.Push(std::forward<std::function<void()>>(fn));
-    m_semaphore.notify_one();
-    return true;
 }
 
 void ThreadTask::StopProcessingWork()
 {
-    if (m_continue)
-    {
-        m_continue = false;
-        m_semaphore.notify_one();
-    }
+    m_continue = false;
 }

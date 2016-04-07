@@ -17,8 +17,10 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSFunction.h>
-#include <aws/core/utils/LocklessQueue.h>
+#include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <functional>
+#include <mutex>
 
 
 namespace Aws
@@ -95,9 +97,21 @@ namespace Aws
                 bool SubmitToThread(std::function<void()>&&) override;
 
             private:
-                LocklessQueue<ThreadTask*> m_threadPool;
+                Aws::Queue<std::function<void()>*> m_tasks;
+                std::mutex m_queueLock;
+                std::mutex m_syncPointLock;
+                std::condition_variable m_syncPoint;
+                Aws::Vector<ThreadTask*> m_threadTaskHandles;
                 size_t m_poolSize;
                 OverflowPolicy m_overflowPolicy;
+
+                /**
+                 * Once you call this, you are responsible for freeing the memory pointed to by task.
+                 */
+                std::function<void()>* PopTask();
+                bool HasTasks();
+
+                friend class ThreadTask;
             };
 
 
