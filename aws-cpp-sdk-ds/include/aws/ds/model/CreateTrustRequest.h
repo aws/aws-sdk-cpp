@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/TrustDirection.h>
 #include <aws/ds/model/TrustType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -219,6 +220,30 @@ namespace Model
      */
     inline CreateTrustRequest& WithTrustType(TrustType&& value) { SetTrustType(value); return *this;}
 
+    
+    inline const Aws::Vector<Aws::String>& GetConditionalForwarderIpAddrs() const{ return m_conditionalForwarderIpAddrs; }
+
+    
+    inline void SetConditionalForwarderIpAddrs(const Aws::Vector<Aws::String>& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs = value; }
+
+    
+    inline void SetConditionalForwarderIpAddrs(Aws::Vector<Aws::String>&& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs = value; }
+
+    
+    inline CreateTrustRequest& WithConditionalForwarderIpAddrs(const Aws::Vector<Aws::String>& value) { SetConditionalForwarderIpAddrs(value); return *this;}
+
+    
+    inline CreateTrustRequest& WithConditionalForwarderIpAddrs(Aws::Vector<Aws::String>&& value) { SetConditionalForwarderIpAddrs(value); return *this;}
+
+    
+    inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const Aws::String& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
+
+    
+    inline CreateTrustRequest& AddConditionalForwarderIpAddrs(Aws::String&& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
+
+    
+    inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const char* value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
+
   private:
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
@@ -230,6 +255,8 @@ namespace Model
     bool m_trustDirectionHasBeenSet;
     TrustType m_trustType;
     bool m_trustTypeHasBeenSet;
+    Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
+    bool m_conditionalForwarderIpAddrsHasBeenSet;
   };
 
 } // namespace Model

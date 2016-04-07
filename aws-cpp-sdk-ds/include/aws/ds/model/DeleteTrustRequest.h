@@ -71,9 +71,20 @@ namespace Model
      */
     inline DeleteTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
+    
+    inline bool GetDeleteAssociatedConditionalForwarder() const{ return m_deleteAssociatedConditionalForwarder; }
+
+    
+    inline void SetDeleteAssociatedConditionalForwarder(bool value) { m_deleteAssociatedConditionalForwarderHasBeenSet = true; m_deleteAssociatedConditionalForwarder = value; }
+
+    
+    inline DeleteTrustRequest& WithDeleteAssociatedConditionalForwarder(bool value) { SetDeleteAssociatedConditionalForwarder(value); return *this;}
+
   private:
     Aws::String m_trustId;
     bool m_trustIdHasBeenSet;
+    bool m_deleteAssociatedConditionalForwarder;
+    bool m_deleteAssociatedConditionalForwarderHasBeenSet;
   };
 
 } // namespace Model

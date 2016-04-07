@@ -30,7 +30,10 @@ SingleInstanceHealth::SingleInstanceHealth() :
     m_causesHasBeenSet(false),
     m_launchedAtHasBeenSet(false),
     m_applicationMetricsHasBeenSet(false),
-    m_systemHasBeenSet(false)
+    m_systemHasBeenSet(false),
+    m_deploymentHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -41,7 +44,10 @@ SingleInstanceHealth::SingleInstanceHealth(const XmlNode& xmlNode) :
     m_causesHasBeenSet(false),
     m_launchedAtHasBeenSet(false),
     m_applicationMetricsHasBeenSet(false),
-    m_systemHasBeenSet(false)
+    m_systemHasBeenSet(false),
+    m_deploymentHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -100,6 +106,24 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
       m_system = systemNode;
       m_systemHasBeenSet = true;
     }
+    XmlNode deploymentNode = resultNode.FirstChild("Deployment");
+    if(!deploymentNode.IsNull())
+    {
+      m_deployment = deploymentNode;
+      m_deploymentHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
+    if(!instanceTypeNode.IsNull())
+    {
+      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +167,20 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
       systemLocationAndMemberSs << location << index << locationValue << ".System";
       m_system.OutputToStream(oStream, systemLocationAndMemberSs.str().c_str());
   }
+  if(m_deploymentHasBeenSet)
+  {
+      Aws::StringStream deploymentLocationAndMemberSs;
+      deploymentLocationAndMemberSs << location << index << locationValue << ".Deployment";
+      m_deployment.OutputToStream(oStream, deploymentLocationAndMemberSs.str().c_str());
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
 }
 
 void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -182,5 +220,19 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
       Aws::String systemLocationAndMember(location);
       systemLocationAndMember += ".System";
       m_system.OutputToStream(oStream, systemLocationAndMember.c_str());
+  }
+  if(m_deploymentHasBeenSet)
+  {
+      Aws::String deploymentLocationAndMember(location);
+      deploymentLocationAndMember += ".Deployment";
+      m_deployment.OutputToStream(oStream, deploymentLocationAndMember.c_str());
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 }

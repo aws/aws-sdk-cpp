@@ -13,30 +13,33 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
 namespace Aws
 {
-namespace Lambda
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace DirectoryService
 {
 namespace Model
 {
-  enum class Runtime
+  class AWS_DIRECTORYSERVICE_API UpdateConditionalForwarderResult
   {
-    NOT_SET,
-    nodejs,
-    nodejs4_3,
-    java8,
-    python2_7
+  public:
+    UpdateConditionalForwarderResult();
+    UpdateConditionalForwarderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateConditionalForwarderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace RuntimeMapper
-{
-AWS_LAMBDA_API Runtime GetRuntimeForName(const Aws::String& name);
-
-AWS_LAMBDA_API Aws::String GetNameForRuntime(Runtime value);
-} // namespace RuntimeMapper
 } // namespace Model
-} // namespace Lambda
+} // namespace DirectoryService
 } // namespace Aws

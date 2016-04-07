@@ -13,30 +13,27 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace Lambda
+namespace DirectoryService
 {
 namespace Model
 {
-  enum class Runtime
+  enum class ReplicationScope
   {
     NOT_SET,
-    nodejs,
-    nodejs4_3,
-    java8,
-    python2_7
+    Domain
   };
 
-namespace RuntimeMapper
+namespace ReplicationScopeMapper
 {
-AWS_LAMBDA_API Runtime GetRuntimeForName(const Aws::String& name);
+AWS_DIRECTORYSERVICE_API ReplicationScope GetReplicationScopeForName(const Aws::String& name);
 
-AWS_LAMBDA_API Aws::String GetNameForRuntime(Runtime value);
-} // namespace RuntimeMapper
+AWS_DIRECTORYSERVICE_API Aws::String GetNameForReplicationScope(ReplicationScope value);
+} // namespace ReplicationScopeMapper
 } // namespace Model
-} // namespace Lambda
+} // namespace DirectoryService
 } // namespace Aws

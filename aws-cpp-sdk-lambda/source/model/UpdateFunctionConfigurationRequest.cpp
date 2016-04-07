@@ -30,7 +30,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_timeoutHasBeenSet(false),
     m_memorySize(0),
     m_memorySizeHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_runtimeHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,11 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
+  }
+
+  if(m_runtimeHasBeenSet)
+  {
+   payload.WithString("Runtime", RuntimeMapper::GetNameForRuntime(m_runtime));
   }
 
   return payload.WriteReadable();

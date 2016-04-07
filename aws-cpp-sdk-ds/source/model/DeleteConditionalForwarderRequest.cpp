@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/ds/model/DeleteTrustRequest.h>
+#include <aws/ds/model/DeleteConditionalForwarderRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -21,36 +21,35 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrustRequest::DeleteTrustRequest() : 
-    m_trustIdHasBeenSet(false),
-    m_deleteAssociatedConditionalForwarder(false),
-    m_deleteAssociatedConditionalForwarderHasBeenSet(false)
+DeleteConditionalForwarderRequest::DeleteConditionalForwarderRequest() : 
+    m_directoryIdHasBeenSet(false),
+    m_remoteDomainNameHasBeenSet(false)
 {
 }
 
-Aws::String DeleteTrustRequest::SerializePayload() const
+Aws::String DeleteConditionalForwarderRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_trustIdHasBeenSet)
+  if(m_directoryIdHasBeenSet)
   {
-   payload.WithString("TrustId", m_trustId);
+   payload.WithString("DirectoryId", m_directoryId);
 
   }
 
-  if(m_deleteAssociatedConditionalForwarderHasBeenSet)
+  if(m_remoteDomainNameHasBeenSet)
   {
-   payload.WithBool("DeleteAssociatedConditionalForwarder", m_deleteAssociatedConditionalForwarder);
+   payload.WithString("RemoteDomainName", m_remoteDomainName);
 
   }
 
   return payload.WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteTrustRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection DeleteConditionalForwarderRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.DeleteTrust"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.DeleteConditionalForwarder"));
   return headers;
 
 }

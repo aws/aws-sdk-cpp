@@ -12,69 +12,48 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/lambda/model/Runtime.h>
+#include <aws/ds/model/ReplicationScope.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int nodejs_HASH = HashingUtils::HashString("nodejs");
-static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
-static const int java8_HASH = HashingUtils::HashString("java8");
-static const int python2_7_HASH = HashingUtils::HashString("python2.7");
+static const int Domain_HASH = HashingUtils::HashString("Domain");
 
 namespace Aws
 {
-  namespace Lambda
+  namespace DirectoryService
   {
     namespace Model
     {
-      namespace RuntimeMapper
+      namespace ReplicationScopeMapper
       {
 
 
-        Runtime GetRuntimeForName(const Aws::String& name)
+        ReplicationScope GetReplicationScopeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == nodejs_HASH)
+          if (hashCode == Domain_HASH)
           {
-            return Runtime::nodejs;
-          }
-          else if (hashCode == nodejs4_3_HASH)
-          {
-            return Runtime::nodejs4_3;
-          }
-          else if (hashCode == java8_HASH)
-          {
-            return Runtime::java8;
-          }
-          else if (hashCode == python2_7_HASH)
-          {
-            return Runtime::python2_7;
+            return ReplicationScope::Domain;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Runtime>(hashCode);
+            return static_cast<ReplicationScope>(hashCode);
           }
 
-          return Runtime::NOT_SET;
+          return ReplicationScope::NOT_SET;
         }
 
-        Aws::String GetNameForRuntime(Runtime enumValue)
+        Aws::String GetNameForReplicationScope(ReplicationScope enumValue)
         {
           switch(enumValue)
           {
-          case Runtime::nodejs:
-            return "nodejs";
-          case Runtime::nodejs4_3:
-            return "nodejs4.3";
-          case Runtime::java8:
-            return "java8";
-          case Runtime::python2_7:
-            return "python2.7";
+          case ReplicationScope::Domain:
+            return "Domain";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -86,7 +65,7 @@ namespace Aws
           }
         }
 
-      } // namespace RuntimeMapper
+      } // namespace ReplicationScopeMapper
     } // namespace Model
-  } // namespace Lambda
+  } // namespace DirectoryService
 } // namespace Aws

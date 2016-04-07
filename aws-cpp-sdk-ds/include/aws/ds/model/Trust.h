@@ -308,6 +308,41 @@ namespace Model
      */
     inline Trust& WithStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStateLastUpdatedDateTime(value); return *this;}
 
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline const Aws::String& GetTrustStateReason() const{ return m_trustStateReason; }
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline void SetTrustStateReason(const Aws::String& value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason = value; }
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline void SetTrustStateReason(Aws::String&& value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason = value; }
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline void SetTrustStateReason(const char* value) { m_trustStateReasonHasBeenSet = true; m_trustStateReason.assign(value); }
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline Trust& WithTrustStateReason(const Aws::String& value) { SetTrustStateReason(value); return *this;}
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline Trust& WithTrustStateReason(Aws::String&& value) { SetTrustStateReason(value); return *this;}
+
+    /**
+     * <p>The reason for the TrustState.</p>
+     */
+    inline Trust& WithTrustStateReason(const char* value) { SetTrustStateReason(value); return *this;}
+
   private:
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
@@ -327,6 +362,8 @@ namespace Model
     bool m_lastUpdatedDateTimeHasBeenSet;
     Aws::Utils::DateTime m_stateLastUpdatedDateTime;
     bool m_stateLastUpdatedDateTimeHasBeenSet;
+    Aws::String m_trustStateReason;
+    bool m_trustStateReasonHasBeenSet;
   };
 
 } // namespace Model
