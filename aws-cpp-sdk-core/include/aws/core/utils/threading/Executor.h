@@ -15,12 +15,11 @@
 
 #pragma once
 
-
 #include <aws/core/Core_EXPORTS.h>
-
-
-#include <functional>
 #include <aws/core/utils/memory/stl/AWSFunction.h>
+#include <aws/core/utils/LocklessQueue.h>
+#include <functional>
+
 
 namespace Aws
 {
@@ -28,6 +27,8 @@ namespace Aws
     {
         namespace Threading
         {
+            class ThreadTask;
+
             /**
             * Interface for implementing an Executor, to implement a custom thread execution strategy, inherit from this class
             * and override SubmitToThread().
@@ -63,7 +64,40 @@ namespace Aws
             public:
                 DefaultExecutor() {}
             protected:
-                bool SubmitToThread(std::function<void()>&&);
+                bool SubmitToThread(std::function<void()>&&) override;
+            };
+
+            enum class OverflowPolicy
+            {
+                QUEUE_TASKS_EVENLY_ACCROSS_THREADS,
+                REJECT_IMMEDIATELY
+            };
+
+            /**
+            * Thread Pool Executor implementation.
+            */
+            class AWS_CORE_API PooledThreadExecutor : public Executor
+            {
+            public:
+                PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACCROSS_THREADS);
+                ~PooledThreadExecutor();
+
+                /**
+                * Rule of 5 stuff.
+                * Don't copy or move
+                */
+                PooledThreadExecutor(const PooledThreadExecutor&) = delete;
+                PooledThreadExecutor& operator =(const PooledThreadExecutor&) = delete;
+                PooledThreadExecutor(PooledThreadExecutor&&) = delete;
+                PooledThreadExecutor& operator =(PooledThreadExecutor&&) = delete;
+
+            protected:
+                bool SubmitToThread(std::function<void()>&&) override;
+
+            private:
+                LocklessQueue<ThreadTask*> m_threadPool;
+                size_t m_poolSize;
+                OverflowPolicy m_overflowPolicy;
             };
 
 

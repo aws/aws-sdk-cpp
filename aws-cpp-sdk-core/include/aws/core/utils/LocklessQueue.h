@@ -25,13 +25,14 @@ namespace Aws
         static const char* CLASS_TAG = "LocklessQueue";
 
         /**
-         *  A modified linked-list backed queue with lock-free atomic operations. Inspired by the work of Herb Sutter.
+         *  A modified linked-list backed queue with lock-free atomic operations. It is thread safe for exactly one producer thread and one consumer thread.
+         *  Inspired by the work of Herb Sutter.
          */
         template<typename T>
         class LocklessQueue
         {
         public:
-            LocklessQueue() : m_head(nullptr), m_tail(nullptr), m_fence(nullptr)
+            LocklessQueue() : m_head(nullptr), m_tail(nullptr), m_fence(nullptr), m_size(0)
             {
                 m_head = Aws::New<QueueNode>(CLASS_TAG, T());
                 m_tail = m_head;
@@ -49,6 +50,15 @@ namespace Aws
             }
 
             /**
+             * Rule of 5 stuff.
+             * Don't copy or move
+             */
+            LocklessQueue(const LocklessQueue&) = delete;
+            LocklessQueue& operator =(const LocklessQueue&) = delete;
+            LocklessQueue(LocklessQueue&&) = delete;
+            LocklessQueue& operator =(LocklessQueue&&) = delete;
+
+            /**
              * number of elements in the queue.
              */
             size_t Size() const
@@ -62,10 +72,10 @@ namespace Aws
              */
             bool Pop(T& outputValue)
             {
-                if (m_fence != m_tail)
+                if (m_fence.load() != m_tail.load())
                 {
-                    outputValue = m_fence->next->payload;
-                    m_fence = m_fence->next;
+                    outputValue = m_fence.load()->next->payload;
+                    m_fence = m_fence.load()->next;
                     m_size--;
                     return true;
                 }
@@ -78,8 +88,8 @@ namespace Aws
              */
             void Push(const T& toQueue)
             {
-                m_tail->next = Aws::New<QueueNode>(CLASS_TAG, toQueue);
-                m_tail = m_tail->next;
+                m_tail.load()->next = Aws::New<QueueNode>(CLASS_TAG, toQueue);
+                m_tail = m_tail.load()->next;
                 m_size++;
 
                 TrimFront();
@@ -90,8 +100,8 @@ namespace Aws
             */
             void Push(T&& toQueue)
             {
-                m_tail->next = Aws::New<QueueNode>(CLASS_TAG, std::move(toQueue));
-                m_tail = m_tail->next;
+                m_tail.load()->next = Aws::New<QueueNode>(CLASS_TAG, std::forward<T>(toQueue));
+                m_tail = m_tail.load()->next;
                 m_size++;
 
                 TrimFront();
