@@ -21,7 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <functional>
 #include <mutex>
-
+#include <condition_variable>
 
 namespace Aws
 {
