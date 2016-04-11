@@ -22,22 +22,19 @@ namespace IoT
 {
 namespace Model
 {
-  enum class CertificateStatus
+  enum class CACertificateStatus
   {
     NOT_SET,
     ACTIVE,
-    INACTIVE,
-    REVOKED,
-    PENDING_TRANSFER,
-    REGISTER_INACTIVE
+    INACTIVE
   };
 
-namespace CertificateStatusMapper
+namespace CACertificateStatusMapper
 {
-AWS_IOT_API CertificateStatus GetCertificateStatusForName(const Aws::String& name);
+AWS_IOT_API CACertificateStatus GetCACertificateStatusForName(const Aws::String& name);
 
-AWS_IOT_API Aws::String GetNameForCertificateStatus(CertificateStatus value);
-} // namespace CertificateStatusMapper
+AWS_IOT_API Aws::String GetNameForCACertificateStatus(CACertificateStatus value);
+} // namespace CACertificateStatusMapper
 } // namespace Model
 } // namespace IoT
 } // namespace Aws

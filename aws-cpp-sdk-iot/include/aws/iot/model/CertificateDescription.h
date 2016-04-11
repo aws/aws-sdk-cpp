@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/TransferData.h>
 
 namespace Aws
 {
@@ -114,6 +115,41 @@ namespace Model
     inline CertificateDescription& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
     /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline const Aws::String& GetCaCertificateId() const{ return m_caCertificateId; }
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline void SetCaCertificateId(const Aws::String& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline void SetCaCertificateId(Aws::String&& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline void SetCaCertificateId(const char* value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId.assign(value); }
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline CertificateDescription& WithCaCertificateId(const Aws::String& value) { SetCaCertificateId(value); return *this;}
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline CertificateDescription& WithCaCertificateId(Aws::String&& value) { SetCaCertificateId(value); return *this;}
+
+    /**
+     * <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+     */
+    inline CertificateDescription& WithCaCertificateId(const char* value) { SetCaCertificateId(value); return *this;}
+
+    /**
      * <p>The status of the certificate.</p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
@@ -209,6 +245,41 @@ namespace Model
     inline CertificateDescription& WithOwnedBy(const char* value) { SetOwnedBy(value); return *this;}
 
     /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline const Aws::String& GetPreviousOwnedBy() const{ return m_previousOwnedBy; }
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline void SetPreviousOwnedBy(const Aws::String& value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy = value; }
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline void SetPreviousOwnedBy(Aws::String&& value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy = value; }
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline void SetPreviousOwnedBy(const char* value) { m_previousOwnedByHasBeenSet = true; m_previousOwnedBy.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline CertificateDescription& WithPreviousOwnedBy(const Aws::String& value) { SetPreviousOwnedBy(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline CertificateDescription& WithPreviousOwnedBy(Aws::String&& value) { SetPreviousOwnedBy(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account of the previous owner of the certificate.</p>
+     */
+    inline CertificateDescription& WithPreviousOwnedBy(const char* value) { SetPreviousOwnedBy(value); return *this;}
+
+    /**
      * <p>The date and time the certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
@@ -258,21 +329,52 @@ namespace Model
      */
     inline CertificateDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
+    /**
+     * <p>The transfer data.</p>
+     */
+    inline const TransferData& GetTransferData() const{ return m_transferData; }
+
+    /**
+     * <p>The transfer data.</p>
+     */
+    inline void SetTransferData(const TransferData& value) { m_transferDataHasBeenSet = true; m_transferData = value; }
+
+    /**
+     * <p>The transfer data.</p>
+     */
+    inline void SetTransferData(TransferData&& value) { m_transferDataHasBeenSet = true; m_transferData = value; }
+
+    /**
+     * <p>The transfer data.</p>
+     */
+    inline CertificateDescription& WithTransferData(const TransferData& value) { SetTransferData(value); return *this;}
+
+    /**
+     * <p>The transfer data.</p>
+     */
+    inline CertificateDescription& WithTransferData(TransferData&& value) { SetTransferData(value); return *this;}
+
   private:
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+    Aws::String m_caCertificateId;
+    bool m_caCertificateIdHasBeenSet;
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
     Aws::String m_ownedBy;
     bool m_ownedByHasBeenSet;
+    Aws::String m_previousOwnedBy;
+    bool m_previousOwnedByHasBeenSet;
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+    TransferData m_transferData;
+    bool m_transferDataHasBeenSet;
   };
 
 } // namespace Model

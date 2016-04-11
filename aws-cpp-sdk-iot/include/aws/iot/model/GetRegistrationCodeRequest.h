@@ -14,7 +14,7 @@
 */
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoTRequest.h>
 
 namespace Aws
 {
@@ -22,22 +22,18 @@ namespace IoT
 {
 namespace Model
 {
-  enum class CertificateStatus
+
+  /**
+   * <p>The input to the GetRegistrationCode operation.</p>
+   */
+  class AWS_IOT_API GetRegistrationCodeRequest : public IoTRequest
   {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    REVOKED,
-    PENDING_TRANSFER,
-    REGISTER_INACTIVE
+  public:
+    GetRegistrationCodeRequest();
+    Aws::String SerializePayload() const override;
+
   };
 
-namespace CertificateStatusMapper
-{
-AWS_IOT_API CertificateStatus GetCertificateStatusForName(const Aws::String& name);
-
-AWS_IOT_API Aws::String GetNameForCertificateStatus(CertificateStatus value);
-} // namespace CertificateStatusMapper
 } // namespace Model
 } // namespace IoT
 } // namespace Aws

@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/ListCertificatesByCARequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -24,33 +24,42 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TransferCertificateRequest::TransferCertificateRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_targetAwsAccountHasBeenSet(false),
-    m_transferMessageHasBeenSet(false)
+ListCertificatesByCARequest::ListCertificatesByCARequest() : 
+    m_caCertificateIdHasBeenSet(false),
+    m_pageSize(0),
+    m_pageSizeHasBeenSet(false),
+    m_markerHasBeenSet(false),
+    m_ascendingOrder(false),
+    m_ascendingOrderHasBeenSet(false)
 {
 }
 
-Aws::String TransferCertificateRequest::SerializePayload() const
+Aws::String ListCertificatesByCARequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_transferMessageHasBeenSet)
-  {
-   payload.WithString("transferMessage", m_transferMessage);
-
-  }
-
-  return payload.WriteReadable();
+  return "";
 }
 
-void TransferCertificateRequest::AddQueryStringParameters(URI& uri) const
+void ListCertificatesByCARequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_targetAwsAccountHasBeenSet)
+    if(m_pageSizeHasBeenSet)
     {
-      ss << m_targetAwsAccount;
-      uri.AddQueryStringParameter("targetAwsAccount", ss.str());
+      ss << m_pageSize;
+      uri.AddQueryStringParameter("pageSize", ss.str());
+      ss.str("");
+    }
+
+    if(m_markerHasBeenSet)
+    {
+      ss << m_marker;
+      uri.AddQueryStringParameter("marker", ss.str());
+      ss.str("");
+    }
+
+    if(m_ascendingOrderHasBeenSet)
+    {
+      ss << m_ascendingOrder;
+      uri.AddQueryStringParameter("isAscendingOrder", ss.str());
       ss.str("");
     }
 

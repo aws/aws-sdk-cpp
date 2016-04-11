@@ -12,33 +12,37 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/GetRegistrationCodeResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-RejectCertificateTransferRequest::RejectCertificateTransferRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
+GetRegistrationCodeResult::GetRegistrationCodeResult()
 {
 }
 
-Aws::String RejectCertificateTransferRequest::SerializePayload() const
+GetRegistrationCodeResult::GetRegistrationCodeResult(const AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
+  *this = result;
+}
 
-  if(m_rejectReasonHasBeenSet)
+GetRegistrationCodeResult& GetRegistrationCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+{
+  const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("registrationCode"))
   {
-   payload.WithString("rejectReason", m_rejectReason);
+    m_registrationCode = jsonValue.GetString("registrationCode");
 
   }
 
-  return payload.WriteReadable();
+
+
+  return *this;
 }
-
-
-

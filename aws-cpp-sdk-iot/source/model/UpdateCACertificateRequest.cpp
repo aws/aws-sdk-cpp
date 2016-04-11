@@ -12,33 +12,39 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/UpdateCACertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
-RejectCertificateTransferRequest::RejectCertificateTransferRequest() : 
+UpdateCACertificateRequest::UpdateCACertificateRequest() : 
     m_certificateIdHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
+    m_newStatusHasBeenSet(false)
 {
 }
 
-Aws::String RejectCertificateTransferRequest::SerializePayload() const
+Aws::String UpdateCACertificateRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_rejectReasonHasBeenSet)
-  {
-   payload.WithString("rejectReason", m_rejectReason);
-
-  }
-
-  return payload.WriteReadable();
+  return "";
 }
 
+void UpdateCACertificateRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_newStatusHasBeenSet)
+    {
+      ss << CACertificateStatusMapper::GetNameForCACertificateStatus(m_newStatus);
+      uri.AddQueryStringParameter("newStatus", ss.str());
+      ss.str("");
+    }
+
+}
 
 

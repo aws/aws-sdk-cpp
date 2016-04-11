@@ -36,11 +36,14 @@
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
 #include <aws/iot/model/CreateThingRequest.h>
 #include <aws/iot/model/CreateTopicRuleRequest.h>
+#include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
+#include <aws/iot/model/DeleteRegistrationCodeRequest.h>
 #include <aws/iot/model/DeleteThingRequest.h>
 #include <aws/iot/model/DeleteTopicRuleRequest.h>
+#include <aws/iot/model/DescribeCACertificateRequest.h>
 #include <aws/iot/model/DescribeCertificateRequest.h>
 #include <aws/iot/model/DescribeEndpointRequest.h>
 #include <aws/iot/model/DescribeThingRequest.h>
@@ -51,8 +54,11 @@
 #include <aws/iot/model/GetLoggingOptionsRequest.h>
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
+#include <aws/iot/model/GetRegistrationCodeRequest.h>
 #include <aws/iot/model/GetTopicRuleRequest.h>
+#include <aws/iot/model/ListCACertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesRequest.h>
+#include <aws/iot/model/ListCertificatesByCARequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
 #include <aws/iot/model/ListPolicyVersionsRequest.h>
 #include <aws/iot/model/ListPrincipalPoliciesRequest.h>
@@ -60,11 +66,14 @@
 #include <aws/iot/model/ListThingPrincipalsRequest.h>
 #include <aws/iot/model/ListThingsRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
+#include <aws/iot/model/RegisterCACertificateRequest.h>
+#include <aws/iot/model/RegisterCertificateRequest.h>
 #include <aws/iot/model/RejectCertificateTransferRequest.h>
 #include <aws/iot/model/ReplaceTopicRuleRequest.h>
 #include <aws/iot/model/SetDefaultPolicyVersionRequest.h>
 #include <aws/iot/model/SetLoggingOptionsRequest.h>
 #include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/UpdateCACertificateRequest.h>
 #include <aws/iot/model/UpdateCertificateRequest.h>
 #include <aws/iot/model/UpdateThingRequest.h>
 
@@ -450,6 +459,38 @@ void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request
   handler(this, request, CreateTopicRule(request), context);
 }
 
+DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/cacertificate/";
+  ss << request.GetCertificateId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCACertificateOutcome(DeleteCACertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteCACertificateOutcome(outcome.GetError());
+  }
+}
+
+DeleteCACertificateOutcomeCallable IoTClient::DeleteCACertificateCallable(const DeleteCACertificateRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DeleteCACertificate, this, request);
+}
+
+void IoTClient::DeleteCACertificateAsync(const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DeleteCACertificateAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DeleteCACertificateAsyncHelper(const DeleteCACertificateRequest& request, const DeleteCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCACertificate(request), context);
+}
+
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
   Aws::StringStream ss;
@@ -548,6 +589,37 @@ void IoTClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest&
   handler(this, request, DeletePolicyVersion(request), context);
 }
 
+DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/registrationcode";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRegistrationCodeOutcome(DeleteRegistrationCodeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRegistrationCodeOutcome(outcome.GetError());
+  }
+}
+
+DeleteRegistrationCodeOutcomeCallable IoTClient::DeleteRegistrationCodeCallable(const DeleteRegistrationCodeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DeleteRegistrationCode, this, request);
+}
+
+void IoTClient::DeleteRegistrationCodeAsync(const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DeleteRegistrationCodeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRequest& request, const DeleteRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRegistrationCode(request), context);
+}
+
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
   Aws::StringStream ss;
@@ -610,6 +682,38 @@ void IoTClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, cons
 void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTopicRule(request), context);
+}
+
+DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/cacertificate/";
+  ss << request.GetCertificateId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCACertificateOutcome(DescribeCACertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCACertificateOutcome(outcome.GetError());
+  }
+}
+
+DescribeCACertificateOutcomeCallable IoTClient::DescribeCACertificateCallable(const DescribeCACertificateRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DescribeCACertificate, this, request);
+}
+
+void IoTClient::DescribeCACertificateAsync(const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DescribeCACertificateAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DescribeCACertificateAsyncHelper(const DescribeCACertificateRequest& request, const DescribeCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCACertificate(request), context);
 }
 
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
@@ -935,6 +1039,37 @@ void IoTClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& reque
   handler(this, request, GetPolicyVersion(request), context);
 }
 
+GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/registrationcode";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetRegistrationCodeOutcome(GetRegistrationCodeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRegistrationCodeOutcome(outcome.GetError());
+  }
+}
+
+GetRegistrationCodeOutcomeCallable IoTClient::GetRegistrationCodeCallable(const GetRegistrationCodeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::GetRegistrationCode, this, request);
+}
+
+void IoTClient::GetRegistrationCodeAsync(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::GetRegistrationCodeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRegistrationCode(request), context);
+}
+
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -967,6 +1102,37 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
   handler(this, request, GetTopicRule(request), context);
 }
 
+ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/cacertificates";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListCACertificatesOutcome(ListCACertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCACertificatesOutcome(outcome.GetError());
+  }
+}
+
+ListCACertificatesOutcomeCallable IoTClient::ListCACertificatesCallable(const ListCACertificatesRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::ListCACertificates, this, request);
+}
+
+void IoTClient::ListCACertificatesAsync(const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::ListCACertificatesAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::ListCACertificatesAsyncHelper(const ListCACertificatesRequest& request, const ListCACertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCACertificates(request), context);
+}
+
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -996,6 +1162,38 @@ void IoTClient::ListCertificatesAsync(const ListCertificatesRequest& request, co
 void IoTClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCertificates(request), context);
+}
+
+ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/certificates-by-ca/";
+  ss << request.GetCaCertificateId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListCertificatesByCAOutcome(ListCertificatesByCAResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCertificatesByCAOutcome(outcome.GetError());
+  }
+}
+
+ListCertificatesByCAOutcomeCallable IoTClient::ListCertificatesByCACallable(const ListCertificatesByCARequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::ListCertificatesByCA, this, request);
+}
+
+void IoTClient::ListCertificatesByCAAsync(const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::ListCertificatesByCAAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCertificatesByCA(request), context);
 }
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -1219,6 +1417,68 @@ void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, 
   handler(this, request, ListTopicRules(request), context);
 }
 
+RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/cacertificate";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterCACertificateOutcome(RegisterCACertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterCACertificateOutcome(outcome.GetError());
+  }
+}
+
+RegisterCACertificateOutcomeCallable IoTClient::RegisterCACertificateCallable(const RegisterCACertificateRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::RegisterCACertificate, this, request);
+}
+
+void IoTClient::RegisterCACertificateAsync(const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::RegisterCACertificateAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::RegisterCACertificateAsyncHelper(const RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterCACertificate(request), context);
+}
+
+RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/certificate/register";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterCertificateOutcome(RegisterCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterCertificateOutcome(outcome.GetError());
+  }
+}
+
+RegisterCertificateOutcomeCallable IoTClient::RegisterCertificateCallable(const RegisterCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::RegisterCertificate, this, request);
+}
+
+void IoTClient::RegisterCertificateAsync(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::RegisterCertificateAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterCertificate(request), context);
+}
+
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
   Aws::StringStream ss;
@@ -1378,6 +1638,38 @@ void IoTClient::TransferCertificateAsync(const TransferCertificateRequest& reque
 void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest& request, const TransferCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TransferCertificate(request), context);
+}
+
+UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/cacertificate/";
+  ss << request.GetCertificateId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return UpdateCACertificateOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateCACertificateOutcome(outcome.GetError());
+  }
+}
+
+UpdateCACertificateOutcomeCallable IoTClient::UpdateCACertificateCallable(const UpdateCACertificateRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::UpdateCACertificate, this, request);
+}
+
+void IoTClient::UpdateCACertificateAsync(const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::UpdateCACertificateAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::UpdateCACertificateAsyncHelper(const UpdateCACertificateRequest& request, const UpdateCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateCACertificate(request), context);
 }
 
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const

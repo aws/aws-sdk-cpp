@@ -14,30 +14,35 @@
 */
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
 namespace IoT
 {
 namespace Model
 {
-  enum class CertificateStatus
+  /**
+   * <p>The output for the DeleteRegistrationCode operation. </p>
+   */
+  class AWS_IOT_API DeleteRegistrationCodeResult
   {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    REVOKED,
-    PENDING_TRANSFER,
-    REGISTER_INACTIVE
+  public:
+    DeleteRegistrationCodeResult();
+    DeleteRegistrationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRegistrationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace CertificateStatusMapper
-{
-AWS_IOT_API CertificateStatus GetCertificateStatusForName(const Aws::String& name);
-
-AWS_IOT_API Aws::String GetNameForCertificateStatus(CertificateStatus value);
-} // namespace CertificateStatusMapper
 } // namespace Model
 } // namespace IoT
 } // namespace Aws

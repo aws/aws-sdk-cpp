@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/CertificateDescription.h>
+#include <aws/iot/model/CACertificateDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -21,36 +21,28 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CertificateDescription::CertificateDescription() : 
+CACertificateDescription::CACertificateDescription() : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
-    m_caCertificateIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_previousOwnedByHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_transferDataHasBeenSet(false)
+    m_creationDateHasBeenSet(false)
 {
 }
 
-CertificateDescription::CertificateDescription(const JsonValue& jsonValue) : 
+CACertificateDescription::CACertificateDescription(const JsonValue& jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
-    m_caCertificateIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_previousOwnedByHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_transferDataHasBeenSet(false)
+    m_creationDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CertificateDescription& CertificateDescription::operator =(const JsonValue& jsonValue)
+CACertificateDescription& CACertificateDescription::operator =(const JsonValue& jsonValue)
 {
   if(jsonValue.ValueExists("certificateArn"))
   {
@@ -66,16 +58,9 @@ CertificateDescription& CertificateDescription::operator =(const JsonValue& json
     m_certificateIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("caCertificateId"))
-  {
-    m_caCertificateId = jsonValue.GetString("caCertificateId");
-
-    m_caCertificateIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("status"))
   {
-    m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("status"));
+    m_status = CACertificateStatusMapper::GetCACertificateStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
   }
@@ -94,13 +79,6 @@ CertificateDescription& CertificateDescription::operator =(const JsonValue& json
     m_ownedByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("previousOwnedBy"))
-  {
-    m_previousOwnedBy = jsonValue.GetString("previousOwnedBy");
-
-    m_previousOwnedByHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
@@ -108,24 +86,10 @@ CertificateDescription& CertificateDescription::operator =(const JsonValue& json
     m_creationDateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
-    m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
-    m_lastModifiedDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("transferData"))
-  {
-    m_transferData = jsonValue.GetObject("transferData");
-
-    m_transferDataHasBeenSet = true;
-  }
-
   return *this;
 }
 
-JsonValue CertificateDescription::Jsonize() const
+JsonValue CACertificateDescription::Jsonize() const
 {
   JsonValue payload;
 
@@ -141,15 +105,9 @@ JsonValue CertificateDescription::Jsonize() const
 
   }
 
-  if(m_caCertificateIdHasBeenSet)
-  {
-   payload.WithString("caCertificateId", m_caCertificateId);
-
-  }
-
   if(m_statusHasBeenSet)
   {
-   payload.WithString("status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
+   payload.WithString("status", CACertificateStatusMapper::GetNameForCACertificateStatus(m_status));
   }
 
   if(m_certificatePemHasBeenSet)
@@ -164,26 +122,9 @@ JsonValue CertificateDescription::Jsonize() const
 
   }
 
-  if(m_previousOwnedByHasBeenSet)
-  {
-   payload.WithString("previousOwnedBy", m_previousOwnedBy);
-
-  }
-
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
-  }
-
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
-  }
-
-  if(m_transferDataHasBeenSet)
-  {
-   payload.WithObject("transferData", m_transferData.Jsonize());
-
   }
 
   return payload;

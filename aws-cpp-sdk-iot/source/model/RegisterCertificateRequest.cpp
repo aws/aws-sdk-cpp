@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/RegisterCertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -24,33 +24,40 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TransferCertificateRequest::TransferCertificateRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_targetAwsAccountHasBeenSet(false),
-    m_transferMessageHasBeenSet(false)
+RegisterCertificateRequest::RegisterCertificateRequest() : 
+    m_certificatePemHasBeenSet(false),
+    m_caCertificatePemHasBeenSet(false),
+    m_setAsActive(false),
+    m_setAsActiveHasBeenSet(false)
 {
 }
 
-Aws::String TransferCertificateRequest::SerializePayload() const
+Aws::String RegisterCertificateRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_transferMessageHasBeenSet)
+  if(m_certificatePemHasBeenSet)
   {
-   payload.WithString("transferMessage", m_transferMessage);
+   payload.WithString("certificatePem", m_certificatePem);
+
+  }
+
+  if(m_caCertificatePemHasBeenSet)
+  {
+   payload.WithString("caCertificatePem", m_caCertificatePem);
 
   }
 
   return payload.WriteReadable();
 }
 
-void TransferCertificateRequest::AddQueryStringParameters(URI& uri) const
+void RegisterCertificateRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_targetAwsAccountHasBeenSet)
+    if(m_setAsActiveHasBeenSet)
     {
-      ss << m_targetAwsAccount;
-      uri.AddQueryStringParameter("targetAwsAccount", ss.str());
+      ss << m_setAsActive;
+      uri.AddQueryStringParameter("setAsActive", ss.str());
       ss.str("");
     }
 

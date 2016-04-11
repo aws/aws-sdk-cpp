@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/CertificateStatus.h>
+#include <aws/iot/model/CACertificateStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -21,9 +21,6 @@ using namespace Aws::Utils;
 
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
-static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
 
 namespace Aws
 {
@@ -31,57 +28,39 @@ namespace Aws
   {
     namespace Model
     {
-      namespace CertificateStatusMapper
+      namespace CACertificateStatusMapper
       {
 
 
-        CertificateStatus GetCertificateStatusForName(const Aws::String& name)
+        CACertificateStatus GetCACertificateStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == ACTIVE_HASH)
           {
-            return CertificateStatus::ACTIVE;
+            return CACertificateStatus::ACTIVE;
           }
           else if (hashCode == INACTIVE_HASH)
           {
-            return CertificateStatus::INACTIVE;
-          }
-          else if (hashCode == REVOKED_HASH)
-          {
-            return CertificateStatus::REVOKED;
-          }
-          else if (hashCode == PENDING_TRANSFER_HASH)
-          {
-            return CertificateStatus::PENDING_TRANSFER;
-          }
-          else if (hashCode == REGISTER_INACTIVE_HASH)
-          {
-            return CertificateStatus::REGISTER_INACTIVE;
+            return CACertificateStatus::INACTIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CertificateStatus>(hashCode);
+            return static_cast<CACertificateStatus>(hashCode);
           }
 
-          return CertificateStatus::NOT_SET;
+          return CACertificateStatus::NOT_SET;
         }
 
-        Aws::String GetNameForCertificateStatus(CertificateStatus enumValue)
+        Aws::String GetNameForCACertificateStatus(CACertificateStatus enumValue)
         {
           switch(enumValue)
           {
-          case CertificateStatus::ACTIVE:
+          case CACertificateStatus::ACTIVE:
             return "ACTIVE";
-          case CertificateStatus::INACTIVE:
+          case CACertificateStatus::INACTIVE:
             return "INACTIVE";
-          case CertificateStatus::REVOKED:
-            return "REVOKED";
-          case CertificateStatus::PENDING_TRANSFER:
-            return "PENDING_TRANSFER";
-          case CertificateStatus::REGISTER_INACTIVE:
-            return "REGISTER_INACTIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -93,7 +72,7 @@ namespace Aws
           }
         }
 
-      } // namespace CertificateStatusMapper
+      } // namespace CACertificateStatusMapper
     } // namespace Model
   } // namespace IoT
 } // namespace Aws

@@ -12,33 +12,31 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/DeleteCACertificateResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-RejectCertificateTransferRequest::RejectCertificateTransferRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_rejectReasonHasBeenSet(false)
+DeleteCACertificateResult::DeleteCACertificateResult()
 {
 }
 
-Aws::String RejectCertificateTransferRequest::SerializePayload() const
+DeleteCACertificateResult::DeleteCACertificateResult(const AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
-
-  if(m_rejectReasonHasBeenSet)
-  {
-   payload.WithString("rejectReason", m_rejectReason);
-
-  }
-
-  return payload.WriteReadable();
+  *this = result;
 }
 
+DeleteCACertificateResult& DeleteCACertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+{
+  AWS_UNREFERENCED_PARAM(result);
 
 
+  return *this;
+}

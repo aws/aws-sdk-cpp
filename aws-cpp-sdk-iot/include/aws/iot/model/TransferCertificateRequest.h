@@ -109,11 +109,48 @@ namespace Model
      */
     inline TransferCertificateRequest& WithTargetAwsAccount(const char* value) { SetTargetAwsAccount(value); return *this;}
 
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline const Aws::String& GetTransferMessage() const{ return m_transferMessage; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline void SetTransferMessage(const Aws::String& value) { m_transferMessageHasBeenSet = true; m_transferMessage = value; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline void SetTransferMessage(Aws::String&& value) { m_transferMessageHasBeenSet = true; m_transferMessage = value; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline void SetTransferMessage(const char* value) { m_transferMessageHasBeenSet = true; m_transferMessage.assign(value); }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline TransferCertificateRequest& WithTransferMessage(const Aws::String& value) { SetTransferMessage(value); return *this;}
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline TransferCertificateRequest& WithTransferMessage(Aws::String&& value) { SetTransferMessage(value); return *this;}
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline TransferCertificateRequest& WithTransferMessage(const char* value) { SetTransferMessage(value); return *this;}
+
   private:
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
     Aws::String m_targetAwsAccount;
     bool m_targetAwsAccountHasBeenSet;
+    Aws::String m_transferMessage;
+    bool m_transferMessageHasBeenSet;
   };
 
 } // namespace Model
