@@ -33,7 +33,7 @@ void ThreadTask::MainTaskRunner()
 {
     while (m_continue)
     {        
-        while ( m_executor.HasTasks())
+        while (m_continue && m_executor.HasTasks())
         {      
             auto fn = m_executor.PopTask();
             if(fn)
@@ -42,9 +42,12 @@ void ThreadTask::MainTaskRunner()
                 Aws::Delete(fn);               
             }
         }
-            
+     
         std::unique_lock<std::mutex> locker(m_executor.m_syncPointLock);
-        m_executor.m_syncPoint.wait(locker);    
+        if(m_continue)
+        {
+            m_executor.m_syncPoint.wait(locker);    
+        }
     }
 }
 
