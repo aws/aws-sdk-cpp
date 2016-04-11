@@ -944,6 +944,46 @@ macro(copyDlls exeName)
     endif()
 endmacro()
 
+# solution for static library taken and adapted from http://stackoverflow.com/questions/10113017/setting-the-msvc-runtime-in-cmake
+macro(configure_msvc_runtime)
+    if(MSVC AND NOT BUILD_SHARED_LIBS)
+        # Default to statically-linked runtime.
+        if("${MSVC_RUNTIME}" STREQUAL "")
+            set(MSVC_RUNTIME "static")
+        endif()
+        # Set compiler options.
+        set(variables
+            CMAKE_C_FLAGS_DEBUG
+            CMAKE_C_FLAGS_MINSIZEREL
+            CMAKE_C_FLAGS_RELEASE
+            CMAKE_C_FLAGS_RELWITHDEBINFO
+            CMAKE_CXX_FLAGS_DEBUG
+            CMAKE_CXX_FLAGS_MINSIZEREL
+            CMAKE_CXX_FLAGS_RELEASE
+            CMAKE_CXX_FLAGS_RELWITHDEBINFO
+        )
+        if(${MSVC_RUNTIME} STREQUAL "static")
+            message(STATUS
+                "MSVC -> forcing use of statically-linked runtime."
+            )
+            foreach(variable ${variables})
+                if(${variable} MATCHES "/MD")
+                    string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
+                endif()
+            endforeach()
+        else()
+            message(STATUS
+                "MSVC -> forcing use of dynamically-linked runtime."
+            )
+            foreach(variable ${variables})
+                if(${variable} MATCHES "/MT")
+                    string(REGEX REPLACE "/MT" "/MD" ${variable} "${${variable}}")
+                endif()
+            endforeach()
+        endif()
+    endif()
+endmacro()
+
 # In Windows, this dumps the CL and LINK command lines to the output - makes it much easier to
 # check that CMake is passing in the right defines, paths, etc...
 #
@@ -964,6 +1004,24 @@ set(CMAKE_CONFIGURATION_TYPES
 # warning control
 if(PLATFORM_WINDOWS)
     if(MSVC)
+        # solution for static library taken and adapted from http://stackoverflow.com/questions/10113017/setting-the-msvc-runtime-in-cmake
+        configure_msvc_runtime()
+        set(variables
+            CMAKE_C_FLAGS_DEBUG
+            CMAKE_C_FLAGS_MINSIZEREL
+            CMAKE_C_FLAGS_RELEASE
+            CMAKE_C_FLAGS_RELWITHDEBINFO
+            CMAKE_CXX_FLAGS_DEBUG
+            CMAKE_CXX_FLAGS_MINSIZEREL
+            CMAKE_CXX_FLAGS_RELEASE
+            CMAKE_CXX_FLAGS_RELWITHDEBINFO
+        )
+        message(STATUS "Initial build flags:")
+        foreach(variable ${variables})
+            message(STATUS "  '${variable}': ${${variable}}")
+        endforeach()
+        message(STATUS "")
+        
         # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
 
