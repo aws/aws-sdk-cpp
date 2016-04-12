@@ -90,9 +90,9 @@ Aws::String OSVersionInfo::ComputeOSVersionString() const
     return "non-windows/unknown";
 
 #else
-    OSVERSIONINFO versionInfo;
-    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFO));
-    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    OSVERSIONINFOA versionInfo;
+    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFOA));
+    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
     GetVersionExA(&versionInfo);
     Aws::StringStream ss;
     ss << "Windows/" << versionInfo.dwMajorVersion << "." << versionInfo.dwMinorVersion << "." << versionInfo.dwBuildNumber << "-" << versionInfo.szCSDVersion;
