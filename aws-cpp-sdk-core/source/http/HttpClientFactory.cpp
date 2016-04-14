@@ -50,6 +50,10 @@ std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConf
 #elif ENABLE_CURL_CLIENT
     return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
+    // When neither of these clients is enabled, gcc gives a warning (converted
+    // to error by -Werror) about the unused clientConfiguration parameter. We
+    // prevent that warning with AWS_UNREFERENCED_PARAM.
+    AWS_UNREFERENCED_PARAM(clientConfiguration);
     return nullptr;
 #endif
 
