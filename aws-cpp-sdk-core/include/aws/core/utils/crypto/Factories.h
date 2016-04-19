@@ -16,6 +16,7 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/Array.h>
 #include <memory>
 
 namespace Aws
@@ -26,8 +27,10 @@ namespace Aws
         {
             class Hash;
             class HMAC;
+            class SymmetricCipher;
             class HashFactory;
             class HMACFactory;
+            class SymmetricCipherFactory;
 
             /**
              * Create an MD5 Hash provider
@@ -42,6 +45,18 @@ namespace Aws
              */
             AWS_CORE_API std::shared_ptr<HMAC> CreateSha256HMACImplementation();
 
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const ByteBuffer& key, const ByteBuffer& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(ByteBuffer&& key, ByteBuffer&& iv);
+
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const ByteBuffer& key, const ByteBuffer& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(ByteBuffer&& key, ByteBuffer&& iv);
+
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv);
+
             /**
              * Set the global factory for MD5 Hash providers
              */
@@ -54,6 +69,12 @@ namespace Aws
              * Set the global factory for Sha256 HMAC Hash providers
              */
             AWS_CORE_API void SetSha256HMACFactory(const std::shared_ptr<HMACFactory>& factory);
+
+            AWS_CORE_API void SetAES_CBCFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
+
+            AWS_CORE_API void SetAES_CTRFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
+
+            AWS_CORE_API void SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
 
         } // namespace Crypto
     } // namespace Utils

@@ -33,6 +33,10 @@ static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
 static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);
 static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
 
+static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
+static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
+static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
+
 void Aws::Utils::Crypto::SetMD5Factory(const std::shared_ptr<HashFactory>& factory)
 {
     s_MD5Factory = factory;
@@ -46,6 +50,21 @@ void Aws::Utils::Crypto::SetSha256Factory(const std::shared_ptr<HashFactory>& fa
 void Aws::Utils::Crypto::SetSha256HMACFactory(const std::shared_ptr<HMACFactory>& factory)
 {
     s_Sha256HMACFactory = factory;
+}
+
+void Aws::Utils::Crypto::SetAES_CBCFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
+{
+    s_AES_CBCFactory = factory;
+}
+
+void Aws::Utils::Crypto::SetAES_CTRFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
+{
+    s_AES_CTRFactory = factory;
+}
+
+void Aws::Utils::Crypto::SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
+{
+    s_AES_GCMFactory = factory;
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()
@@ -101,3 +120,167 @@ std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
     return nullptr;
 #endif
 }
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const ByteBuffer& key)
+{
+    if(s_AES_CBCFactory)
+    {
+        return s_AES_CBCFactory->CreateImplementation(key);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+{
+    if(s_AES_CBCFactory)
+    {
+        return s_AES_CBCFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+{
+    if(s_AES_CBCFactory)
+    {
+        return s_AES_CBCFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const ByteBuffer& key)
+{
+    if(s_AES_CTRFactory)
+    {
+        return s_AES_CTRFactory->CreateImplementation(key);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+{
+    if(s_AES_CTRFactory)
+    {
+        return s_AES_CTRFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+{
+    if(s_AES_CTRFactory)
+    {
+        return s_AES_CTRFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key)
+{
+    if(s_AES_GCMFactory)
+    {
+        return s_AES_GCMFactory->CreateImplementation(key);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+{
+    if(s_AES_GCMFactory)
+    {
+        return s_AES_GCMFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+{
+    if(s_AES_GCMFactory)
+    {
+        return s_AES_GCMFactory->CreateImplementation(key, iv);
+    }
+
+#if ENABLE_BCRYPT_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv);
+#elif ENABLE_OPENSSL_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#else
+    return nullptr;
+#endif
+}
+
+
