@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeNetworkAcls.</p>
    */
   class AWS_EC2_API DescribeNetworkAclsRequest : public EC2Request
   {

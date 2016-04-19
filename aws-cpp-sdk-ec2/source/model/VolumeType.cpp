@@ -22,6 +22,8 @@ using namespace Aws::Utils;
 static const int standard_HASH = HashingUtils::HashString("standard");
 static const int io1_HASH = HashingUtils::HashString("io1");
 static const int gp2_HASH = HashingUtils::HashString("gp2");
+static const int sc1_HASH = HashingUtils::HashString("sc1");
+static const int st1_HASH = HashingUtils::HashString("st1");
 
 namespace Aws
 {
@@ -48,6 +50,14 @@ namespace Aws
           {
             return VolumeType::gp2;
           }
+          else if (hashCode == sc1_HASH)
+          {
+            return VolumeType::sc1;
+          }
+          else if (hashCode == st1_HASH)
+          {
+            return VolumeType::st1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -68,6 +78,10 @@ namespace Aws
             return "io1";
           case VolumeType::gp2:
             return "gp2";
+          case VolumeType::sc1:
+            return "sc1";
+          case VolumeType::st1:
+            return "st1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

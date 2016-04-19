@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeTags.</p>
    */
   class AWS_EC2_API DescribeTagsRequest : public EC2Request
   {
@@ -164,29 +165,23 @@ namespace Model
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. </p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 1000. To retrieve the remaining results, make another call with
+     * the returned <code>NextToken</code> value.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. </p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 1000. To retrieve the remaining results, make another call with
+     * the returned <code>NextToken</code> value.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. </p>
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 1000. To retrieve the remaining results, make another call with
+     * the returned <code>NextToken</code> value.</p>
      */
     inline DescribeTagsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeletePlacementGroup.</p>
    */
   class AWS_EC2_API DeletePlacementGroupRequest : public EC2Request
   {

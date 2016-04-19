@@ -363,51 +363,51 @@ namespace Model
 
     /**
      * <p>Describes how the route was created.</p> <ul>
-     * <li><code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li>
-     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
-     * propagated by route propagation.</li> </ul>
+     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
+     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
+     * route was manually added to the route table.</p></li>
+     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
+     * route propagation.</p></li> </ul>
      */
     inline const RouteOrigin& GetOrigin() const{ return m_origin; }
 
     /**
      * <p>Describes how the route was created.</p> <ul>
-     * <li><code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li>
-     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
-     * propagated by route propagation.</li> </ul>
+     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
+     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
+     * route was manually added to the route table.</p></li>
+     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
+     * route propagation.</p></li> </ul>
      */
     inline void SetOrigin(const RouteOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>Describes how the route was created.</p> <ul>
-     * <li><code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li>
-     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
-     * propagated by route propagation.</li> </ul>
+     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
+     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
+     * route was manually added to the route table.</p></li>
+     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
+     * route propagation.</p></li> </ul>
      */
     inline void SetOrigin(RouteOrigin&& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>Describes how the route was created.</p> <ul>
-     * <li><code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li>
-     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
-     * propagated by route propagation.</li> </ul>
+     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
+     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
+     * route was manually added to the route table.</p></li>
+     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
+     * route propagation.</p></li> </ul>
      */
     inline Route& WithOrigin(const RouteOrigin& value) { SetOrigin(value); return *this;}
 
     /**
      * <p>Describes how the route was created.</p> <ul>
-     * <li><code>CreateRouteTable</code> indicates that route was automatically created
-     * when the route table was created.</li> <li><code>CreateRoute</code> indicates
-     * that the route was manually added to the route table.</li>
-     * <li><code>EnableVgwRoutePropagation</code> indicates that the route was
-     * propagated by route propagation.</li> </ul>
+     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
+     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
+     * route was manually added to the route table.</p></li>
+     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
+     * route propagation.</p></li> </ul>
      */
     inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(value); return *this;}
 

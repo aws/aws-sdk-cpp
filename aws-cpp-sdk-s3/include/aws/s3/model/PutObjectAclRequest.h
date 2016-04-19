@@ -22,6 +22,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -34,6 +38,8 @@ namespace Model
   public:
     PutObjectAclRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -337,6 +343,41 @@ namespace Model
     
     inline PutObjectAclRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline PutObjectAclRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline PutObjectAclRequest& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+
+    /**
+     * VersionId used to reference a specific version of the object.
+     */
+    inline PutObjectAclRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
   private:
     ObjectCannedACL m_aCL;
     bool m_aCLHasBeenSet;
@@ -360,6 +401,8 @@ namespace Model
     bool m_keyHasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+    Aws::String m_versionId;
+    bool m_versionIdHasBeenSet;
   };
 
 } // namespace Model

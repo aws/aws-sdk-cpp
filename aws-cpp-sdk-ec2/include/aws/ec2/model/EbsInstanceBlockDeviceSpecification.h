@@ -31,6 +31,10 @@ namespace EC2
 namespace Model
 {
 
+  /**
+   * <p>Describes information used to set up an EBS volume specified in a block
+   * device mapping.</p>
+   */
   class AWS_EC2_API EbsInstanceBlockDeviceSpecification
   {
   public:

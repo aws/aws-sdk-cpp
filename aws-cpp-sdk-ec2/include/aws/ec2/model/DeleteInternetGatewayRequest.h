@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteInternetGateway.</p>
    */
   class AWS_EC2_API DeleteInternetGatewayRequest : public EC2Request
   {

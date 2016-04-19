@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVolumeAttribute.</p>
    */
   class AWS_EC2_API DescribeVolumeAttributeRequest : public EC2Request
   {

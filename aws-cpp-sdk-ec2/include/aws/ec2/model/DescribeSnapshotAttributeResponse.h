@@ -36,6 +36,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeSnapshotAttribute.</p>
+   */
   class AWS_EC2_API DescribeSnapshotAttributeResponse
   {
   public:

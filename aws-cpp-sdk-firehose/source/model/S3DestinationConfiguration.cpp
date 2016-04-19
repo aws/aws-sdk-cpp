@@ -27,7 +27,8 @@ S3DestinationConfiguration::S3DestinationConfiguration() :
     m_prefixHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,8 @@ S3DestinationConfiguration::S3DestinationConfiguration(const JsonValue& jsonValu
     m_prefixHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(const JsonVal
     m_encryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
+  {
+    m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
+
+    m_cloudWatchLoggingOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue S3DestinationConfiguration::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_cloudWatchLoggingOptionsHasBeenSet)
+  {
+   payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
 
   }
 

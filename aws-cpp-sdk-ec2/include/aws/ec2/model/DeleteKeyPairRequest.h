@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteKeyPair.</p>
    */
   class AWS_EC2_API DeleteKeyPairRequest : public EC2Request
   {

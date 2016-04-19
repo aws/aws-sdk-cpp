@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateSecurityGroup.</p>
    */
   class AWS_EC2_API CreateSecurityGroupRequest : public EC2Request
   {

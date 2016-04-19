@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/CopyCommand.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
+#include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
 {
@@ -198,6 +199,31 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(value); return *this;}
 
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
   private:
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
@@ -209,6 +235,8 @@ namespace Model
     bool m_usernameHasBeenSet;
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+    CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+    bool m_cloudWatchLoggingOptionsHasBeenSet;
   };
 
 } // namespace Model

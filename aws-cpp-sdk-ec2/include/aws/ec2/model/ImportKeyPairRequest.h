@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ImportKeyPair.</p>
    */
   class AWS_EC2_API ImportKeyPairRequest : public EC2Request
   {
@@ -93,32 +94,32 @@ namespace Model
     inline ImportKeyPairRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>The public key. You must base64 encode the public key material before sending
-     * it to AWS.</p>
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
 
     /**
-     * <p>The public key. You must base64 encode the public key material before sending
-     * it to AWS.</p>
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
      */
     inline void SetPublicKeyMaterial(const Aws::Utils::ByteBuffer& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
 
     /**
-     * <p>The public key. You must base64 encode the public key material before sending
-     * it to AWS.</p>
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
      */
     inline void SetPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
 
     /**
-     * <p>The public key. You must base64 encode the public key material before sending
-     * it to AWS.</p>
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
      */
     inline ImportKeyPairRequest& WithPublicKeyMaterial(const Aws::Utils::ByteBuffer& value) { SetPublicKeyMaterial(value); return *this;}
 
     /**
-     * <p>The public key. You must base64 encode the public key material before sending
-     * it to AWS.</p>
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
      */
     inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(value); return *this;}
 

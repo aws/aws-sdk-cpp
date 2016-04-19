@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AttachVpnGateway.</p>
    */
   class AWS_EC2_API AttachVpnGatewayRequest : public EC2Request
   {

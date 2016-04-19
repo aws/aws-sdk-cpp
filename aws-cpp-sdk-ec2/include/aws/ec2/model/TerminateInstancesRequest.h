@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for TerminateInstances.</p>
    */
   class AWS_EC2_API TerminateInstancesRequest : public EC2Request
   {

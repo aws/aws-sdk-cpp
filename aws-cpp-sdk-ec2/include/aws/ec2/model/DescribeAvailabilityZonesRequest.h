@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeAvailabilityZones.</p>
    */
   class AWS_EC2_API DescribeAvailabilityZonesRequest : public EC2Request
   {

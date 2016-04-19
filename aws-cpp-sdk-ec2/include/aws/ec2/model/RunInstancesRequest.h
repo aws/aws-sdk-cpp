@@ -33,6 +33,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RunInstances.</p>
    */
   class AWS_EC2_API RunInstancesRequest : public EC2Request
   {

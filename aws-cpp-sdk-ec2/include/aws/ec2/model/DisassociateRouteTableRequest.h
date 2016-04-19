@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DisassociateRouteTable.</p>
    */
   class AWS_EC2_API DisassociateRouteTableRequest : public EC2Request
   {

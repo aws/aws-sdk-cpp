@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ResetNetworkInterfaceAttribute.</p>
    */
   class AWS_EC2_API ResetNetworkInterfaceAttributeRequest : public EC2Request
   {

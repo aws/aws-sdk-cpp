@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CancelReservedInstancesListing.</p>
    */
   class AWS_EC2_API CancelReservedInstancesListingRequest : public EC2Request
   {

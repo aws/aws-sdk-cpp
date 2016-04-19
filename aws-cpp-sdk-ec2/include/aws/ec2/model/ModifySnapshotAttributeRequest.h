@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifySnapshotAttribute.</p>
    */
   class AWS_EC2_API ModifySnapshotAttributeRequest : public EC2Request
   {

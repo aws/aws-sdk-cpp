@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyReservedInstances.</p>
    */
   class AWS_EC2_API ModifyReservedInstancesRequest : public EC2Request
   {

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateTags.</p>
    */
   class AWS_EC2_API CreateTagsRequest : public EC2Request
   {

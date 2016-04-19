@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreatePlacementGroup.</p>
    */
   class AWS_EC2_API CreatePlacementGroupRequest : public EC2Request
   {

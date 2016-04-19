@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteSecurityGroup.</p>
    */
   class AWS_EC2_API DeleteSecurityGroupRequest : public EC2Request
   {

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ResetImageAttribute.</p>
    */
   class AWS_EC2_API ResetImageAttributeRequest : public EC2Request
   {

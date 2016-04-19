@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteVpnGateway.</p>
    */
   class AWS_EC2_API DeleteVpnGatewayRequest : public EC2Request
   {

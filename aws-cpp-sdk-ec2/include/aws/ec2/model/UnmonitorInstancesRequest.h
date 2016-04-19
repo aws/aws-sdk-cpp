@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for UnmonitorInstances.</p>
    */
   class AWS_EC2_API UnmonitorInstancesRequest : public EC2Request
   {

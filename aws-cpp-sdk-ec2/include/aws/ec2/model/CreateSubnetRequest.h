@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateSubnet.</p>
    */
   class AWS_EC2_API CreateSubnetRequest : public EC2Request
   {

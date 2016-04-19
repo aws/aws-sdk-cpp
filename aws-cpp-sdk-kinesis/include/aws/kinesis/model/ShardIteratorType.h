@@ -28,7 +28,8 @@ namespace Model
     AT_SEQUENCE_NUMBER,
     AFTER_SEQUENCE_NUMBER,
     TRIM_HORIZON,
-    LATEST
+    LATEST,
+    AT_TIMESTAMP
   };
 
 namespace ShardIteratorTypeMapper

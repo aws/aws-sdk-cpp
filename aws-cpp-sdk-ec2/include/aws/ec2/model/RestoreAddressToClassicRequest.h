@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RestoreAddressToClassic.</p>
    */
   class AWS_EC2_API RestoreAddressToClassicRequest : public EC2Request
   {

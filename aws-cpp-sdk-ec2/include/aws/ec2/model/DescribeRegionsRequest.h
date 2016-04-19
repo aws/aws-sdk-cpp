@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeRegions.</p>
    */
   class AWS_EC2_API DescribeRegionsRequest : public EC2Request
   {

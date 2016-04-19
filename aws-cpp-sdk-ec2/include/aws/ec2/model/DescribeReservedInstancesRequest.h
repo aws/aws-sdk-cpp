@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeReservedInstances.</p>
    */
   class AWS_EC2_API DescribeReservedInstancesRequest : public EC2Request
   {

@@ -29,7 +29,8 @@ StreamDescription::StreamDescription() :
     m_hasMoreShards(false),
     m_hasMoreShardsHasBeenSet(false),
     m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false)
+    m_retentionPeriodHoursHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ StreamDescription::StreamDescription(const JsonValue& jsonValue) :
     m_hasMoreShards(false),
     m_hasMoreShardsHasBeenSet(false),
     m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false)
+    m_retentionPeriodHoursHasBeenSet(false),
+    m_enhancedMonitoringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,16 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
     m_retentionPeriodHoursHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnhancedMonitoring"))
+  {
+    Array<JsonValue> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
+    {
+      m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());
+    }
+    m_enhancedMonitoringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +149,17 @@ JsonValue StreamDescription::Jsonize() const
   if(m_retentionPeriodHoursHasBeenSet)
   {
    payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
+
+  }
+
+  if(m_enhancedMonitoringHasBeenSet)
+  {
+   Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
+   for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
+   {
+     enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject(m_enhancedMonitoring[enhancedMonitoringIndex].Jsonize());
+   }
+   payload.WithArray("EnhancedMonitoring", std::move(enhancedMonitoringJsonList));
 
   }
 

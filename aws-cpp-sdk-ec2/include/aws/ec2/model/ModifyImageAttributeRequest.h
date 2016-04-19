@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyImageAttribute.</p>
    */
   class AWS_EC2_API ModifyImageAttributeRequest : public EC2Request
   {

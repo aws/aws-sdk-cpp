@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeAccountAttributes.</p>
    */
   class AWS_EC2_API DescribeAccountAttributesRequest : public EC2Request
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeIdFormat.</p>
    */
   class AWS_EC2_API DescribeIdFormatRequest : public EC2Request
   {

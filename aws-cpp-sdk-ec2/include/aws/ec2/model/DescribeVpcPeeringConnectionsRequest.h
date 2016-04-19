@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVpcPeeringConnections.</p>
    */
   class AWS_EC2_API DescribeVpcPeeringConnectionsRequest : public EC2Request
   {

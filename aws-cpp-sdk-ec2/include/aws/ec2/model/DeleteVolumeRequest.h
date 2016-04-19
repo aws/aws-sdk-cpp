@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteVolume.</p>
    */
   class AWS_EC2_API DeleteVolumeRequest : public EC2Request
   {

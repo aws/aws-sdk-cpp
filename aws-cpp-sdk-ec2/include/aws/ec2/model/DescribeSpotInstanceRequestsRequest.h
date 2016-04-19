@@ -117,22 +117,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -195,22 +197,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -273,22 +277,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -351,22 +357,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -429,22 +437,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -507,22 +517,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -585,22 +597,24 @@ namespace Model
      * <p><code>launch.block-device-mapping.volume-size</code> - The size of the Amazon
      * EBS volume, in GiB.</p> </li> <li>
      * <p><code>launch.block-device-mapping.volume-type</code> - The type of the Amazon
-     * EBS volume (<code>gp2</code> | <code>standard</code> | <code>io1</code>).</p>
-     * </li> <li> <p><code>launch.group-id</code> - The security group for the
-     * instance.</p> </li> <li> <p><code>launch.image-id</code> - The ID of the
-     * AMI.</p> </li> <li> <p><code>launch.instance-type</code> - The type of instance
-     * (for example, <code>m3.medium</code>).</p> </li> <li>
-     * <p><code>launch.kernel-id</code> - The kernel ID.</p> </li> <li>
-     * <p><code>launch.key-name</code> - The name of the key pair the instance launched
-     * with.</p> </li> <li> <p><code>launch.monitoring-enabled</code> - Whether
-     * monitoring is enabled for the Spot instance.</p> </li> <li>
-     * <p><code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li>
-     * <p><code>network-interface.network-interface-id</code> - The ID of the network
-     * interface.</p> </li> <li> <p><code>network-interface.device-index</code> - The
-     * index of the device for the network interface attachment on the instance.</p>
-     * </li> <li> <p><code>network-interface.subnet-id</code> - The ID of the subnet
-     * for the instance.</p> </li> <li> <p><code>network-interface.description</code> -
-     * A description of the network interface.</p> </li> <li>
+     * EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> for
+     * Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+     * <li> <p><code>launch.group-id</code> - The security group for the instance.</p>
+     * </li> <li> <p><code>launch.image-id</code> - The ID of the AMI.</p> </li> <li>
+     * <p><code>launch.instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p><code>launch.kernel-id</code> - The
+     * kernel ID.</p> </li> <li> <p><code>launch.key-name</code> - The name of the key
+     * pair the instance launched with.</p> </li> <li>
+     * <p><code>launch.monitoring-enabled</code> - Whether monitoring is enabled for
+     * the Spot instance.</p> </li> <li> <p><code>launch.ramdisk-id</code> - The RAM
+     * disk ID.</p> </li> <li> <p><code>network-interface.network-interface-id</code> -
+     * The ID of the network interface.</p> </li> <li>
+     * <p><code>network-interface.device-index</code> - The index of the device for the
+     * network interface attachment on the instance.</p> </li> <li>
+     * <p><code>network-interface.subnet-id</code> - The ID of the subnet for the
+     * instance.</p> </li> <li> <p><code>network-interface.description</code> - A
+     * description of the network interface.</p> </li> <li>
      * <p><code>network-interface.private-ip-address</code> - The primary private IP
      * address of the network interface.</p> </li> <li>
      * <p><code>network-interface.delete-on-termination</code> - Indicates whether the

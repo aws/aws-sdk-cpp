@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateVpcEndpoint.</p>
    */
   class AWS_EC2_API CreateVpcEndpointRequest : public EC2Request
   {

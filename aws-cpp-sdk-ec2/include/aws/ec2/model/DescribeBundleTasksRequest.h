@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeBundleTasks.</p>
    */
   class AWS_EC2_API DescribeBundleTasksRequest : public EC2Request
   {

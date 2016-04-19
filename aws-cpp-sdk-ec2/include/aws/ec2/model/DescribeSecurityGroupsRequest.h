@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeSecurityGroups.</p>
    */
   class AWS_EC2_API DescribeSecurityGroupsRequest : public EC2Request
   {

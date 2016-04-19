@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateSnapshot.</p>
    */
   class AWS_EC2_API CreateSnapshotRequest : public EC2Request
   {

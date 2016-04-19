@@ -32,6 +32,9 @@ namespace EC2
 namespace Model
 {
 
+  /**
+   * <p>Describes the modification request/s.</p>
+   */
   class AWS_EC2_API ReservedInstancesModificationResponse
   {
   public:

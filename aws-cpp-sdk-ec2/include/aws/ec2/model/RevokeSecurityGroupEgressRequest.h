@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RevokeSecurityGroupEgress.</p>
    */
   class AWS_EC2_API RevokeSecurityGroupEgressRequest : public EC2Request
   {

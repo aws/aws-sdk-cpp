@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/model/ApplyEnvironmentManagedActionResult.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityResult.h>
 #include <aws/elasticbeanstalk/model/ComposeEnvironmentsResult.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationResult.h>
@@ -32,6 +33,8 @@
 #include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationSettingsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthResult.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryResult.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentResourcesResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsResult.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsResult.h>
@@ -91,6 +94,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
         class AbortEnvironmentUpdateRequest;
+        class ApplyEnvironmentManagedActionRequest;
         class CheckDNSAvailabilityRequest;
         class ComposeEnvironmentsRequest;
         class CreateApplicationRequest;
@@ -107,6 +111,8 @@ namespace Model
         class DescribeConfigurationOptionsRequest;
         class DescribeConfigurationSettingsRequest;
         class DescribeEnvironmentHealthRequest;
+        class DescribeEnvironmentManagedActionHistoryRequest;
+        class DescribeEnvironmentManagedActionsRequest;
         class DescribeEnvironmentResourcesRequest;
         class DescribeEnvironmentsRequest;
         class DescribeEventsRequest;
@@ -125,6 +131,7 @@ namespace Model
         class ValidateConfigurationSettingsRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
+        typedef Aws::Utils::Outcome<ApplyEnvironmentManagedActionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ApplyEnvironmentManagedActionOutcome;
         typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
         typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ComposeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
@@ -141,6 +148,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConfigurationOptionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeConfigurationSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeEnvironmentHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentHealthOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionHistoryResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentManagedActionHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentManagedActionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentManagedActionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEnvironmentResourcesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentResourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEventsOutcome;
@@ -159,6 +168,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ValidateConfigurationSettingsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ValidateConfigurationSettingsOutcome;
 
         typedef std::future<AbortEnvironmentUpdateOutcome> AbortEnvironmentUpdateOutcomeCallable;
+        typedef std::future<ApplyEnvironmentManagedActionOutcome> ApplyEnvironmentManagedActionOutcomeCallable;
         typedef std::future<CheckDNSAvailabilityOutcome> CheckDNSAvailabilityOutcomeCallable;
         typedef std::future<ComposeEnvironmentsOutcome> ComposeEnvironmentsOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -175,6 +185,8 @@ namespace Model
         typedef std::future<DescribeConfigurationOptionsOutcome> DescribeConfigurationOptionsOutcomeCallable;
         typedef std::future<DescribeConfigurationSettingsOutcome> DescribeConfigurationSettingsOutcomeCallable;
         typedef std::future<DescribeEnvironmentHealthOutcome> DescribeEnvironmentHealthOutcomeCallable;
+        typedef std::future<DescribeEnvironmentManagedActionHistoryOutcome> DescribeEnvironmentManagedActionHistoryOutcomeCallable;
+        typedef std::future<DescribeEnvironmentManagedActionsOutcome> DescribeEnvironmentManagedActionsOutcomeCallable;
         typedef std::future<DescribeEnvironmentResourcesOutcome> DescribeEnvironmentResourcesOutcomeCallable;
         typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
@@ -196,6 +208,7 @@ namespace Model
   class ElasticBeanstalkClient;
 
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortEnvironmentUpdateResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::ApplyEnvironmentManagedActionRequest&, const Model::ApplyEnvironmentManagedActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyEnvironmentManagedActionResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDNSAvailabilityResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ComposeEnvironmentsRequest&, const Model::ComposeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ComposeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
@@ -212,6 +225,8 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeConfigurationOptionsRequest&, const Model::DescribeConfigurationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationOptionsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeConfigurationSettingsRequest&, const Model::DescribeConfigurationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationSettingsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEnvironmentHealthRequest&, const Model::DescribeEnvironmentHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentHealthResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEnvironmentManagedActionHistoryRequest&, const Model::DescribeEnvironmentManagedActionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentManagedActionHistoryResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEnvironmentManagedActionsRequest&, const Model::DescribeEnvironmentManagedActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentManagedActionsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEnvironmentResourcesRequest&, const Model::DescribeEnvironmentResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentResourcesResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEnvironmentsRequest&, const Model::DescribeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
@@ -230,19 +245,17 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ValidateConfigurationSettingsRequest&, const Model::ValidateConfigurationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateConfigurationSettingsResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Elastic Beanstalk</fullname> <p> This is the AWS Elastic Beanstalk
-   * API Reference. This guide provides detailed information about AWS Elastic
-   * Beanstalk actions, data types, parameters, and errors. </p> <p>AWS Elastic
-   * Beanstalk is a tool that makes it easy for you to create, deploy, and manage
-   * scalable, fault-tolerant applications running on Amazon Web Services cloud
-   * resources. </p> <p> For more information about this product, go to the <a
-   * href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details
-   * page. The location of the latest AWS Elastic Beanstalk WSDL is <a
+   * <fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it
+   * easy for you to create, deploy, and manage scalable, fault-tolerant applications
+   * running on the Amazon Web Services cloud.</p> <p>For more information about this
+   * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
+   * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
+   * WSDL is <a
    * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
    * To install the Software Development Kits (SDKs), Integrated Development
    * Environment (IDE) Toolkits, and command line tools that enable you to access the
    * API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>. </p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific
+   * Services</a>.</p> <p><b>Endpoints</b></p> <p>For a list of region-specific
    * endpoints that AWS Elastic Beanstalk supports, go to <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
    * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
@@ -295,6 +308,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AbortEnvironmentUpdateAsync(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies a scheduled managed action immediately. A managed action can be
+         * applied only if its status is <code>Scheduled</code>. Get the status and action
+         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         */
+        virtual Model::ApplyEnvironmentManagedActionOutcome ApplyEnvironmentManagedAction(const Model::ApplyEnvironmentManagedActionRequest& request) const;
+
+        /**
+         * <p>Applies a scheduled managed action immediately. A managed action can be
+         * applied only if its status is <code>Scheduled</code>. Get the status and action
+         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ApplyEnvironmentManagedActionOutcomeCallable ApplyEnvironmentManagedActionCallable(const Model::ApplyEnvironmentManagedActionRequest& request) const;
+
+        /**
+         * <p>Applies a scheduled managed action immediately. A managed action can be
+         * applied only if its status is <code>Scheduled</code>. Get the status and action
+         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Checks if the specified CNAME is available. </p>
@@ -739,6 +777,44 @@ namespace Model
         virtual void DescribeEnvironmentHealthAsync(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists an environment's completed and failed managed actions.</p>
+         */
+        virtual Model::DescribeEnvironmentManagedActionHistoryOutcome DescribeEnvironmentManagedActionHistory(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
+
+        /**
+         * <p>Lists an environment's completed and failed managed actions.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEnvironmentManagedActionHistoryOutcomeCallable DescribeEnvironmentManagedActionHistoryCallable(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
+
+        /**
+         * <p>Lists an environment's completed and failed managed actions.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEnvironmentManagedActionHistoryAsync(const Model::DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         */
+        virtual Model::DescribeEnvironmentManagedActionsOutcome DescribeEnvironmentManagedActions(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
+
+        /**
+         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEnvironmentManagedActionsOutcomeCallable DescribeEnvironmentManagedActionsCallable(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
+
+        /**
+         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEnvironmentManagedActionsAsync(const Model::DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns AWS resources for this environment.</p>
          */
         virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
@@ -917,22 +993,22 @@ namespace Model
         virtual void RequestEnvironmentInfoAsync(const Model::RequestEnvironmentInfoRequest& request, const RequestEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Causes the environment to restart the application container server running
-         * on each Amazon EC2 instance. </p>
+         * <p>Causes the environment to restart the application container server running on
+         * each Amazon EC2 instance.</p>
          */
         virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
 
         /**
-         * <p> Causes the environment to restart the application container server running
-         * on each Amazon EC2 instance. </p>
+         * <p>Causes the environment to restart the application container server running on
+         * each Amazon EC2 instance.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RestartAppServerOutcomeCallable RestartAppServerCallable(const Model::RestartAppServerRequest& request) const;
 
         /**
-         * <p> Causes the environment to restart the application container server running
-         * on each Amazon EC2 instance. </p>
+         * <p>Causes the environment to restart the application container server running on
+         * each Amazon EC2 instance.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1165,6 +1241,7 @@ namespace Model
 
         /**Async helpers**/
         void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ApplyEnvironmentManagedActionAsyncHelper(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ComposeEnvironmentsAsyncHelper(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1181,6 +1258,8 @@ namespace Model
         void DescribeConfigurationOptionsAsyncHelper(const Model::DescribeConfigurationOptionsRequest& request, const DescribeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationSettingsAsyncHelper(const Model::DescribeConfigurationSettingsRequest& request, const DescribeConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEnvironmentHealthAsyncHelper(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEnvironmentManagedActionHistoryAsyncHelper(const Model::DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEnvironmentManagedActionsAsyncHelper(const Model::DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEnvironmentResourcesAsyncHelper(const Model::DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEnvironmentsAsyncHelper(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

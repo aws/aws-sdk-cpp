@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AttachClassicLinkVpc.</p>
    */
   class AWS_EC2_API AttachClassicLinkVpcRequest : public EC2Request
   {

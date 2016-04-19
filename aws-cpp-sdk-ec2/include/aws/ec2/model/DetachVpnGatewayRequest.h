@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DetachVpnGateway.</p>
    */
   class AWS_EC2_API DetachVpnGatewayRequest : public EC2Request
   {

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeNetworkInterfaces.</p>
    */
   class AWS_EC2_API DescribeNetworkInterfacesRequest : public EC2Request
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateNatGateway.</p>
    */
   class AWS_EC2_API CreateNatGatewayRequest : public EC2Request
   {
