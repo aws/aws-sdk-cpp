@@ -16,26 +16,34 @@
 #include <aws/external/gtest.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 
-TEST(AES_CBC_TEST, Test128BitEncryptionMode)
+TEST(AES_CBC_TEST, rfc3602_case_1)
 {
-    unsigned char iv_raw[16] =  { 0x06, 0xa9, 0x21, 0x40, 0x36, 0xb8, 0xa1, 0x5b, 0x51, 0x2e, 0x03, 0xd5, 0x34, 0x12, 0x00, 0x06 };
-
-    unsigned char key_raw[16] = { 0x3d, 0xaf, 0xba, 0x42, 0x9d, 0x9e, 0xb4, 0x30, 0xb4, 0x22, 0xda, 0x80, 0x2c, 0x9f, 0xac, 0x41 };
+    Aws::String iv_raw =  "0x3dafba429d9eb430b422da802c9fac41";
+    Aws::String key_raw = "0x06a9214036b8a15b512e03d534120006";
     unsigned char* data_raw = (unsigned char*)"Single block msg";
-    unsigned char expected_raw[16] = {0xe3, 0x53, 0x77, 0x9c, 0x10, 0x79, 0xae, 0xb8, 0x27, 0x08, 0x94, 0x2d, 0xbe, 0x77, 0x18, 0x1a};
+    Aws::String expected_raw = "e353779c1079aeb82708942dbe77181a";
 
-    ByteBuffer iv(iv_raw, 16);
-    ByteBuffer key(key_raw, 16);
+    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
+    ByteBuffer key = HashingUtils::HexDecode(key_raw);
     ByteBuffer data(data_raw, 17);
-    ByteBuffer expected(expected_raw, 16);
+    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
     auto result = cipher->EncryptBuffer(data);
     auto finish = cipher->FinalizeEncryption();
+    std::cout << "res " << HashingUtils::HexEncode(result) << std::endl;
+    std::cout << "fin " << HashingUtils::HexEncode(finish) << std::endl;
+    ASSERT_EQ(expected_raw, HashingUtils::HexEncode(result));
 
-    ASSERT_EQ(expected, result);
+    Aws::StringStream ss;
+    ss << result.GetUnderlyingData() << finish.GetUnderlyingData();
+    cipher = CreateAES_CBCImplementation(key, iv);
+    result = cipher->DecryptBuffer(ByteBuffer((unsigned char*)ss.str().c_str(), ss.str().length()));
+    std::cout << result.GetUnderlyingData() << std::endl;
 }

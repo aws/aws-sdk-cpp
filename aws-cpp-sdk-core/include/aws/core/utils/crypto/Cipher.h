@@ -91,10 +91,10 @@ namespace Aws
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
-                * a user call this function multiple times for a large stream. As such, mutliple calls to this function
+                * a user call this function multiple times for a large stream. As such, multiple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
-                virtual ByteBuffer Decrypt(const ByteBuffer& encryptedData) = 0;
+                virtual ByteBuffer DecryptBuffer(const ByteBuffer& encryptedData) = 0;
 
                 /**
                  * Finalize Decryption, returns anything remaining in the last block

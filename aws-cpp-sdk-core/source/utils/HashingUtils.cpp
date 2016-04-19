@@ -71,6 +71,55 @@ Aws::String HashingUtils::HexEncode(const ByteBuffer& message)
     return ss.str();
 }
 
+ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
+{
+    //number of characters should be even
+    assert(str.length() % 2 == 0);
+
+    ByteBuffer hexBuffer(str.length() / 2);
+    size_t bufferIndex = 0;
+
+    for (unsigned i = 0; i < str.length(); i += 2)
+    {
+        //handle the first characters being 0x
+        if(str[i] == '0' && str[i + 1] == 'x')
+        {
+            continue;
+        }
+
+        if(!isalnum(str[i]) && !isalnum(str[i + 1]))
+        {
+            //contains non-hex characters
+            assert(0);
+        }
+
+        char firstChar = str[i];
+        uint8_t distance = firstChar - '0';
+
+        if(isalpha(firstChar))
+        {
+            firstChar = toupper(firstChar);
+            distance = firstChar - 'A' + 10;
+        }
+
+        unsigned char val = distance * 16;
+
+        char secondChar = str[i + 1];
+        distance = secondChar - '0';
+
+        if(isalpha(secondChar))
+        {
+            secondChar = toupper(secondChar);
+            distance = secondChar - 'A' + 10;
+        }
+
+        val += distance;
+        hexBuffer[bufferIndex++] = val;
+    }
+
+    return hexBuffer;
+}
+
 ByteBuffer HashingUtils::CalculateMD5(const Aws::String& str)
 {
     MD5 hash;

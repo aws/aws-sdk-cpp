@@ -95,7 +95,7 @@ namespace Aws
                 * a user call this function multiple times for a large stream. As such, mutliple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
-                ByteBuffer Decrypt(const ByteBuffer& encryptedData) override;
+                ByteBuffer DecryptBuffer(const ByteBuffer& encryptedData) override;
 
                 /**
                  * Finalize Decryption, returns anything remaining in the last block
@@ -169,6 +169,7 @@ namespace Aws
             private:
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
+                static size_t Padding;
             };
 
             class AES_GCM_Cipher_OpenSSL : public OpenSSLCipher

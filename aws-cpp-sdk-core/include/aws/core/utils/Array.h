@@ -150,6 +150,11 @@ namespace Aws
                 return !(*this == other);
             }
 
+            void Zero()
+            {
+                memset(m_data.get(), 0, GetLength());
+            }
+
             T const& GetItem(size_t index) const
             {
                 assert(index < m_size);

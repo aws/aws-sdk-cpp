@@ -205,25 +205,31 @@ void OpenSSLCipher::CheckInitDecryptor()
 ByteBuffer OpenSSLCipher::EncryptBuffer( const ByteBuffer& unEncryptedData)
 {
     CheckInitEncryptor();
-    int lengthWritten = unEncryptedData.GetLength() + GetBlockSizeBytes() - 1;
-    ByteBuffer encryptedText(static_cast<size_t>(lengthWritten));
+    int lengthWritten = 0;
+    ByteBuffer encryptedText(static_cast<size_t>( unEncryptedData.GetLength() + GetBlockSizeBytes() - 1));
 
     EVP_EncryptUpdate(&m_ctx, encryptedText.GetUnderlyingData(), &lengthWritten,
                       unEncryptedData.GetUnderlyingData(), static_cast<int>(unEncryptedData.GetLength()));
-    ByteBuffer trimmedBuffer(encryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
 
-    return trimmedBuffer;
+    if(static_cast<size_t>(lengthWritten) < encryptedText.GetLength())
+    {
+        ByteBuffer trimmedBuffer(encryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
+
+        return trimmedBuffer;
+    }
+
+    return encryptedText;
 }
 
 ByteBuffer OpenSSLCipher::FinalizeEncryption ()
 {
     ByteBuffer finalBlock(GetBlockSizeBytes());
-    int writtenSize = finalBlock.GetLength();
+    int writtenSize = 0;
     EVP_EncryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
     return ByteBuffer(finalBlock.GetUnderlyingData(), writtenSize);
 }
 
-ByteBuffer OpenSSLCipher::Decrypt(const ByteBuffer& encryptedData)
+ByteBuffer OpenSSLCipher::DecryptBuffer(const ByteBuffer& encryptedData)
 {
     CheckInitDecryptor();
     int lengthWritten = encryptedData.GetLength() + GetBlockSizeBytes() - 1;
@@ -231,9 +237,13 @@ ByteBuffer OpenSSLCipher::Decrypt(const ByteBuffer& encryptedData)
     EVP_DecryptUpdate(&m_ctx, decryptedText.GetUnderlyingData(), &lengthWritten,
                       encryptedData.GetUnderlyingData(), static_cast<int>(encryptedData.GetLength()));
 
-    ByteBuffer trimmedBuffer(decryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
+    if(static_cast<size_t>(lengthWritten) < decryptedText.GetLength())
+    {
+        ByteBuffer trimmedBuffer(decryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
+        return trimmedBuffer;
+    }
 
-    return trimmedBuffer;
+    return decryptedText;
 }
 
 ByteBuffer OpenSSLCipher::FinalizeDecryption ()
@@ -258,12 +268,12 @@ AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key, const Byte
 
 void AES_CBC_Cipher_OpenSSL::InitEncryptor_Internal()
 {
-    EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    EVP_EncryptInit_ex(&m_ctx, EVP_aes_128_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
 }
 
 void AES_CBC_Cipher_OpenSSL::InitDecryptor_Internal()
 {
-    EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    EVP_DecryptInit_ex(&m_ctx, EVP_aes_128_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
 }
 
 size_t AES_CBC_Cipher_OpenSSL::GetBlockSizeBytes() const
@@ -278,6 +288,7 @@ size_t AES_CBC_Cipher_OpenSSL::GetKeyLengthBits() const
 
 size_t AES_CTR_Cipher_OpenSSL::BlockSizeBytes = 16;
 size_t AES_CTR_Cipher_OpenSSL::KeyLengthBits = 256;
+size_t AES_CTR_Cipher_OpenSSL::Padding = 5;
 
 AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes) {}
 
@@ -290,11 +301,13 @@ AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key, const Byte
 void AES_CTR_Cipher_OpenSSL::InitEncryptor_Internal()
 {
     EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    EVP_CIPHER_CTX_set_padding(&m_ctx, Padding);
 }
 
 void AES_CTR_Cipher_OpenSSL::InitDecryptor_Internal()
 {
     EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    EVP_CIPHER_CTX_set_padding(&m_ctx, Padding);
 }
 
 size_t AES_CTR_Cipher_OpenSSL::GetBlockSizeBytes() const
