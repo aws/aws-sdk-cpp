@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ImportSnapshot.</p>
    */
   class AWS_EC2_API ImportSnapshotRequest : public EC2Request
   {

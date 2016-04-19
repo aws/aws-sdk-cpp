@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVolumes.</p>
    */
   class AWS_EC2_API DescribeVolumesRequest : public EC2Request
   {
@@ -129,9 +130,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -166,9 +167,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -203,9 +204,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -240,9 +241,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -277,9 +278,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
@@ -314,9 +315,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -351,9 +352,9 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> <li> <p><code>volume-id</code> - The volume ID.</p> </li> <li>
      * <p><code>volume-type</code> - The Amazon EBS volume type. This can be
-     * <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for
-     * Provisioned IOPS (SSD) volumes, or <code>standard</code> for Magnetic
-     * volumes.</p> </li> </ul>
+     * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
+     * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold
+     * HDD, or <code>standard</code> for Magnetic volumes.</p> </li> </ul>
      */
     inline DescribeVolumesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

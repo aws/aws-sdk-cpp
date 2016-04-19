@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateRouteTable.</p>
    */
   class AWS_EC2_API CreateRouteTableRequest : public EC2Request
   {

@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ReplaceNetworkAclEntry.</p>
    */
   class AWS_EC2_API ReplaceNetworkAclEntryRequest : public EC2Request
   {

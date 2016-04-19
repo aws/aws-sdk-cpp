@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteFlowLogs.</p>
    */
   class AWS_EC2_API DeleteFlowLogsRequest : public EC2Request
   {

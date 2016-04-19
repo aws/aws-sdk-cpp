@@ -362,37 +362,51 @@ namespace Model
     inline LaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>One or more block device mapping entries.</p> <p>Although you can specify
+     * encrypted EBS volumes in this block device mapping for your Spot Instances,
+     * these volumes are not encrypted.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 

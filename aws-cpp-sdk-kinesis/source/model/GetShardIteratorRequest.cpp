@@ -25,7 +25,8 @@ GetShardIteratorRequest::GetShardIteratorRequest() :
     m_streamNameHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_shardIteratorTypeHasBeenSet(false),
-    m_startingSequenceNumberHasBeenSet(false)
+    m_startingSequenceNumberHasBeenSet(false),
+    m_timestampHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,11 @@ Aws::String GetShardIteratorRequest::SerializePayload() const
   {
    payload.WithString("StartingSequenceNumber", m_startingSequenceNumber);
 
+  }
+
+  if(m_timestampHasBeenSet)
+  {
+   payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   return payload.WriteReadable();

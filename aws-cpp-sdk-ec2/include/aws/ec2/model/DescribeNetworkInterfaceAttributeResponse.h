@@ -38,6 +38,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeNetworkInterfaceAttribute.</p>
+   */
   class AWS_EC2_API DescribeNetworkInterfaceAttributeResponse
   {
   public:

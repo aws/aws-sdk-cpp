@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeConversionTasks.</p>
    */
   class AWS_EC2_API DescribeConversionTasksRequest : public EC2Request
   {

@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyNetworkInterfaceAttribute.</p>
    */
   class AWS_EC2_API ModifyNetworkInterfaceAttributeRequest : public EC2Request
   {

@@ -18,6 +18,7 @@
 #include <aws/firehose/model/BufferingHints.h>
 #include <aws/firehose/model/CompressionFormat.h>
 #include <aws/firehose/model/EncryptionConfiguration.h>
+#include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
 {
@@ -192,32 +193,32 @@ namespace Model
     inline S3DestinationDescription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
-     * object default values are used.</p>
+     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
+     * default values are used.</p>
      */
     inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
-     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
-     * object default values are used.</p>
+     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
+     * default values are used.</p>
      */
     inline void SetBufferingHints(const BufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
-     * object default values are used.</p>
+     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
+     * default values are used.</p>
      */
     inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
-     * object default values are used.</p>
+     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
+     * default values are used.</p>
      */
     inline S3DestinationDescription& WithBufferingHints(const BufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
-     * object default values are used.</p>
+     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
+     * default values are used.</p>
      */
     inline S3DestinationDescription& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(value); return *this;}
 
@@ -281,6 +282,31 @@ namespace Model
      */
     inline S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(value); return *this;}
 
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline S3DestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
   private:
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
@@ -294,6 +320,8 @@ namespace Model
     bool m_compressionFormatHasBeenSet;
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet;
+    CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+    bool m_cloudWatchLoggingOptionsHasBeenSet;
   };
 
 } // namespace Model

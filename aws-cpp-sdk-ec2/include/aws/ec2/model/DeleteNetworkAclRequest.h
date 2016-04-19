@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteNetworkAcl.</p>
    */
   class AWS_EC2_API DeleteNetworkAclRequest : public EC2Request
   {

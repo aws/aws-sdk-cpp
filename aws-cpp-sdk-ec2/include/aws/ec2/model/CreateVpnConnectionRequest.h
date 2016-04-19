@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateVpnConnection.</p>
    */
   class AWS_EC2_API CreateVpnConnectionRequest : public EC2Request
   {

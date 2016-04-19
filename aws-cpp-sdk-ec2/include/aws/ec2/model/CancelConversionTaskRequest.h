@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CancelConversionTask.</p>
    */
   class AWS_EC2_API CancelConversionTaskRequest : public EC2Request
   {

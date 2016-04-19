@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ReleaseAddress.</p>
    */
   class AWS_EC2_API ReleaseAddressRequest : public EC2Request
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for MoveAddressToVpc.</p>
    */
   class AWS_EC2_API MoveAddressToVpcRequest : public EC2Request
   {

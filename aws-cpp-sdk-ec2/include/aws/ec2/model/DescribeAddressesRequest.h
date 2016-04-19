@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeAddresses.</p>
    */
   class AWS_EC2_API DescribeAddressesRequest : public EC2Request
   {

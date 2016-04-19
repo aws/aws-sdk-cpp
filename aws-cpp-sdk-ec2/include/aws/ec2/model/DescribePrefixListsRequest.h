@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribePrefixLists.</p>
    */
   class AWS_EC2_API DescribePrefixListsRequest : public EC2Request
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AttachVolume.</p>
    */
   class AWS_EC2_API AttachVolumeRequest : public EC2Request
   {

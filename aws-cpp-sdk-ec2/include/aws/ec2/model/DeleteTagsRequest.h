@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteTags.</p>
    */
   class AWS_EC2_API DeleteTagsRequest : public EC2Request
   {

@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/PutObjectAclRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -21,6 +22,7 @@
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 PutObjectAclRequest::PutObjectAclRequest() : 
     m_aCLHasBeenSet(false),
@@ -33,7 +35,8 @@ PutObjectAclRequest::PutObjectAclRequest() :
     m_grantWriteHasBeenSet(false),
     m_grantWriteACPHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayerHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -53,6 +56,17 @@ Aws::String PutObjectAclRequest::SerializePayload() const
   return "";
 }
 
+void PutObjectAclRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_versionIdHasBeenSet)
+    {
+      ss << m_versionId;
+      uri.AddQueryStringParameter("versionId", ss.str());
+      ss.str("");
+    }
+
+}
 
 Aws::Http::HeaderValueCollection PutObjectAclRequest::GetRequestSpecificHeaders() const
 {

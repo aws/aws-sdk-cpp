@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteSubnet.</p>
    */
   class AWS_EC2_API DeleteSubnetRequest : public EC2Request
   {

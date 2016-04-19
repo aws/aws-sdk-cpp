@@ -27,6 +27,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkEndpoint.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>
 #include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
+#include <aws/elasticbeanstalk/model/ApplyEnvironmentManagedActionRequest.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
 #include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationRequest.h>
@@ -43,6 +44,8 @@
 #include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationSettingsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentHealthRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentResourcesRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
@@ -151,6 +154,36 @@ void ElasticBeanstalkClient::AbortEnvironmentUpdateAsync(const AbortEnvironmentU
 void ElasticBeanstalkClient::AbortEnvironmentUpdateAsyncHelper(const AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AbortEnvironmentUpdate(request), context);
+}
+
+ApplyEnvironmentManagedActionOutcome ElasticBeanstalkClient::ApplyEnvironmentManagedAction(const ApplyEnvironmentManagedActionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ApplyEnvironmentManagedActionOutcome(ApplyEnvironmentManagedActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ApplyEnvironmentManagedActionOutcome(outcome.GetError());
+  }
+}
+
+ApplyEnvironmentManagedActionOutcomeCallable ElasticBeanstalkClient::ApplyEnvironmentManagedActionCallable(const ApplyEnvironmentManagedActionRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::ApplyEnvironmentManagedAction, this, request);
+}
+
+void ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsync(const ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsyncHelper(const ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ApplyEnvironmentManagedAction(request), context);
 }
 
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const
@@ -631,6 +664,66 @@ void ElasticBeanstalkClient::DescribeEnvironmentHealthAsync(const DescribeEnviro
 void ElasticBeanstalkClient::DescribeEnvironmentHealthAsyncHelper(const DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeEnvironmentHealth(request), context);
+}
+
+DescribeEnvironmentManagedActionHistoryOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory(const DescribeEnvironmentManagedActionHistoryRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEnvironmentManagedActionHistoryOutcome(DescribeEnvironmentManagedActionHistoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEnvironmentManagedActionHistoryOutcome(outcome.GetError());
+  }
+}
+
+DescribeEnvironmentManagedActionHistoryOutcomeCallable ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistoryCallable(const DescribeEnvironmentManagedActionHistoryRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory, this, request);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistoryAsync(const DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistoryAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistoryAsyncHelper(const DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEnvironmentManagedActionHistory(request), context);
+}
+
+DescribeEnvironmentManagedActionsOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActions(const DescribeEnvironmentManagedActionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEnvironmentManagedActionsOutcome(DescribeEnvironmentManagedActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEnvironmentManagedActionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeEnvironmentManagedActionsOutcomeCallable ElasticBeanstalkClient::DescribeEnvironmentManagedActionsCallable(const DescribeEnvironmentManagedActionsRequest& request) const
+{
+  return std::async(std::launch::async, &ElasticBeanstalkClient::DescribeEnvironmentManagedActions, this, request);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentManagedActionsAsync(const DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ElasticBeanstalkClient::DescribeEnvironmentManagedActionsAsyncHelper, this, request, handler, context);
+}
+
+void ElasticBeanstalkClient::DescribeEnvironmentManagedActionsAsyncHelper(const DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEnvironmentManagedActions(request), context);
 }
 
 DescribeEnvironmentResourcesOutcome ElasticBeanstalkClient::DescribeEnvironmentResources(const DescribeEnvironmentResourcesRequest& request) const

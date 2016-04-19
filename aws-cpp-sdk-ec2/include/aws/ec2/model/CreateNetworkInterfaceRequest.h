@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateNetworkInterface.</p>
    */
   class AWS_EC2_API CreateNetworkInterfaceRequest : public EC2Request
   {

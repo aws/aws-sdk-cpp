@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateImage.</p>
    */
   class AWS_EC2_API CreateImageRequest : public EC2Request
   {

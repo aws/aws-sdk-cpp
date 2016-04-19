@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ReplaceRoute.</p>
    */
   class AWS_EC2_API ReplaceRouteRequest : public EC2Request
   {

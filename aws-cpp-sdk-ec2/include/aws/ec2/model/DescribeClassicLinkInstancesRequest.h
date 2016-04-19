@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeClassicLinkInstances.</p>
    */
   class AWS_EC2_API DescribeClassicLinkInstancesRequest : public EC2Request
   {

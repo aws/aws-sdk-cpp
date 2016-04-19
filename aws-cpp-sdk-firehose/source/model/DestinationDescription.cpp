@@ -24,14 +24,16 @@ using namespace Aws::Utils;
 DestinationDescription::DestinationDescription() : 
     m_destinationIdHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
-    m_redshiftDestinationDescriptionHasBeenSet(false)
+    m_redshiftDestinationDescriptionHasBeenSet(false),
+    m_elasticsearchDestinationDescriptionHasBeenSet(false)
 {
 }
 
 DestinationDescription::DestinationDescription(const JsonValue& jsonValue) : 
     m_destinationIdHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
-    m_redshiftDestinationDescriptionHasBeenSet(false)
+    m_redshiftDestinationDescriptionHasBeenSet(false),
+    m_elasticsearchDestinationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ DestinationDescription& DestinationDescription::operator =(const JsonValue& json
     m_redshiftDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ElasticsearchDestinationDescription"))
+  {
+    m_elasticsearchDestinationDescription = jsonValue.GetObject("ElasticsearchDestinationDescription");
+
+    m_elasticsearchDestinationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_redshiftDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("RedshiftDestinationDescription", m_redshiftDestinationDescription.Jsonize());
+
+  }
+
+  if(m_elasticsearchDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchDestinationDescription", m_elasticsearchDestinationDescription.Jsonize());
 
   }
 

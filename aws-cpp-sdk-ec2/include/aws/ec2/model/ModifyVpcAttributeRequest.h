@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyVpcAttribute.</p>
    */
   class AWS_EC2_API ModifyVpcAttributeRequest : public EC2Request
   {

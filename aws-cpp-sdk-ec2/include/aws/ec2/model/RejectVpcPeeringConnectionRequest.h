@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RejectVpcPeeringConnection.</p>
    */
   class AWS_EC2_API RejectVpcPeeringConnectionRequest : public EC2Request
   {

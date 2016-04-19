@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeHosts.</p>
    */
   class AWS_EC2_API DescribeHostsRequest : public EC2Request
   {

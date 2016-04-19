@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeImages.</p>
    */
   class AWS_EC2_API DescribeImagesRequest : public EC2Request
   {
@@ -245,14 +246,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -298,14 +299,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -351,14 +352,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -404,14 +405,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -457,14 +458,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -510,14 +511,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image
@@ -563,14 +564,14 @@ namespace Model
      * snapshot used for the EBS volume.</p> </li> <li>
      * <p><code>block-device-mapping.volume-size</code> - The volume size of the EBS
      * volume, in GiB.</p> </li> <li> <p><code>block-device-mapping.volume-type</code>
-     * - The volume type of the EBS volume (<code>gp2</code> | <code>standard</code> |
-     * <code>io1</code>).</p> </li> <li> <p><code>description</code> - The description
-     * of the image (provided during image creation).</p> </li> <li>
-     * <p><code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
-     * <code>xen</code>).</p> </li> <li> <p><code>image-id</code> - The ID of the
-     * image.</p> </li> <li> <p><code>image-type</code> - The image type
-     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
-     * <li> <p><code>is-public</code> - A Boolean that indicates whether the image is
+     * - The volume type of the EBS volume (gp2 | io1 | st1 | sc1 | standard).</p>
+     * </li> <li> <p><code>description</code> - The description of the image (provided
+     * during image creation).</p> </li> <li> <p><code>hypervisor</code> - The
+     * hypervisor type (<code>ovm</code> | <code>xen</code>).</p> </li> <li>
+     * <p><code>image-id</code> - The ID of the image.</p> </li> <li>
+     * <p><code>image-type</code> - The image type (<code>machine</code> |
+     * <code>kernel</code> | <code>ramdisk</code>).</p> </li> <li>
+     * <p><code>is-public</code> - A Boolean that indicates whether the image is
      * public.</p> </li> <li> <p><code>kernel-id</code> - The kernel ID.</p> </li> <li>
      * <p><code>manifest-location</code> - The location of the image manifest.</p>
      * </li> <li> <p><code>name</code> - The name of the AMI (provided during image

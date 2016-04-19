@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVpcClassicLinkDnsSupport.</p>
    */
   class AWS_EC2_API DescribeVpcClassicLinkDnsSupportRequest : public EC2Request
   {

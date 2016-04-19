@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AttachInternetGateway.</p>
    */
   class AWS_EC2_API AttachInternetGatewayRequest : public EC2Request
   {

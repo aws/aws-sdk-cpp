@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteDhcpOptions.</p>
    */
   class AWS_EC2_API DeleteDhcpOptionsRequest : public EC2Request
   {

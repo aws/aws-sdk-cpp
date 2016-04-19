@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ImportImage.</p>
    */
   class AWS_EC2_API ImportImageRequest : public EC2Request
   {

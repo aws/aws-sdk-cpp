@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteRouteTable.</p>
    */
   class AWS_EC2_API DeleteRouteTableRequest : public EC2Request
   {

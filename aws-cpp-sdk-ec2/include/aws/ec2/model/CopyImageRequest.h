@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CopyImage.</p>
    */
   class AWS_EC2_API CopyImageRequest : public EC2Request
   {

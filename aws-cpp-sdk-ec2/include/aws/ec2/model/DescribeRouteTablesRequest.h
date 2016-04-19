@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeRouteTables.</p>
    */
   class AWS_EC2_API DescribeRouteTablesRequest : public EC2Request
   {

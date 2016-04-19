@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteRoute.</p>
    */
   class AWS_EC2_API DeleteRouteRequest : public EC2Request
   {

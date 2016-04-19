@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeFlowLogs.</p>
    */
   class AWS_EC2_API DescribeFlowLogsRequest : public EC2Request
   {

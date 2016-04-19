@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ResetInstanceAttribute.</p>
    */
   class AWS_EC2_API ResetInstanceAttributeRequest : public EC2Request
   {

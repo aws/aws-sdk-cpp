@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeKeyPairs.</p>
    */
   class AWS_EC2_API DescribeKeyPairsRequest : public EC2Request
   {

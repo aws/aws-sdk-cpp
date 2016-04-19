@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVpnConnections.</p>
    */
   class AWS_EC2_API DescribeVpnConnectionsRequest : public EC2Request
   {

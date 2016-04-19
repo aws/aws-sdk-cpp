@@ -23,6 +23,7 @@ static const int AT_SEQUENCE_NUMBER_HASH = HashingUtils::HashString("AT_SEQUENCE
 static const int AFTER_SEQUENCE_NUMBER_HASH = HashingUtils::HashString("AFTER_SEQUENCE_NUMBER");
 static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
 static const int LATEST_HASH = HashingUtils::HashString("LATEST");
+static const int AT_TIMESTAMP_HASH = HashingUtils::HashString("AT_TIMESTAMP");
 
 namespace Aws
 {
@@ -53,6 +54,10 @@ namespace Aws
           {
             return ShardIteratorType::LATEST;
           }
+          else if (hashCode == AT_TIMESTAMP_HASH)
+          {
+            return ShardIteratorType::AT_TIMESTAMP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "TRIM_HORIZON";
           case ShardIteratorType::LATEST:
             return "LATEST";
+          case ShardIteratorType::AT_TIMESTAMP:
+            return "AT_TIMESTAMP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

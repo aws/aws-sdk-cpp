@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ReplaceNetworkAclAssociation.</p>
    */
   class AWS_EC2_API ReplaceNetworkAclAssociationRequest : public EC2Request
   {

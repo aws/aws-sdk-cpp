@@ -118,8 +118,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
 
@@ -130,8 +130,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
@@ -142,8 +142,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
@@ -154,8 +154,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
 
@@ -166,8 +166,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline PutRecordRequest& WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
 
@@ -178,8 +178,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline PutRecordRequest& WithPartitionKey(Aws::String&& value) { SetPartitionKey(value); return *this;}
 
@@ -190,8 +190,8 @@ namespace Model
      * that maps the partition key and associated data to a specific shard.
      * Specifically, an MD5 hash function is used to map partition keys to 128-bit
      * integer values and to map associated data records to shards. As a result of this
-     * hashing mechanism, all data records with the same partition key will map to the
-     * same shard within the stream.</p>
+     * hashing mechanism, all data records with the same partition key map to the same
+     * shard within the stream.</p>
      */
     inline PutRecordRequest& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
 

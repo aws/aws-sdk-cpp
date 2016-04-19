@@ -34,6 +34,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of CreateNatGateway.</p>
+   */
   class AWS_EC2_API CreateNatGatewayResponse
   {
   public:

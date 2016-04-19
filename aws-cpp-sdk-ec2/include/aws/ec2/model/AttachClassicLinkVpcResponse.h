@@ -32,6 +32,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of AttachClassicLinkVpc.</p>
+   */
   class AWS_EC2_API AttachClassicLinkVpcResponse
   {
   public:

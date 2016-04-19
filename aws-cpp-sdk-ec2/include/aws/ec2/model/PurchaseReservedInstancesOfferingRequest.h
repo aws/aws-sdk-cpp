@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for PurchaseReservedInstancesOffering.</p>
    */
   class AWS_EC2_API PurchaseReservedInstancesOfferingRequest : public EC2Request
   {

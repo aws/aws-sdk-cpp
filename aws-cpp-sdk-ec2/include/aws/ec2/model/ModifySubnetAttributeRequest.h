@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifySubnetAttribute.</p>
    */
   class AWS_EC2_API ModifySubnetAttributeRequest : public EC2Request
   {

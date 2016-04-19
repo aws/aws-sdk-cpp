@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ImportVolume.</p>
    */
   class AWS_EC2_API ImportVolumeRequest : public EC2Request
   {

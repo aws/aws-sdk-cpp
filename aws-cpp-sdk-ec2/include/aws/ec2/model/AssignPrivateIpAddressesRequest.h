@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AssignPrivateIpAddresses.</p>
    */
   class AWS_EC2_API AssignPrivateIpAddressesRequest : public EC2Request
   {
