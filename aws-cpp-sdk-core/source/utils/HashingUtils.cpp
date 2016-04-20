@@ -75,19 +75,23 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
 {
     //number of characters should be even
     assert(str.length() % 2 == 0);
+    assert(str.length() >= 2);
 
-    ByteBuffer hexBuffer(str.length() / 2);
+    size_t strLength = str.length();
+    size_t readIndex = 0;
+
+    if(str[0] == '0' && str[1] == 'x')
+    {
+        strLength -= 2;
+        readIndex = 2;
+    }
+
+    ByteBuffer hexBuffer(strLength / 2);
     size_t bufferIndex = 0;
 
-    for (unsigned i = 0; i < str.length(); i += 2)
+    for (size_t i = readIndex; i < str.length(); i += 2)
     {
-        //handle the first characters being 0x
-        if(str[i] == '0' && str[i + 1] == 'x')
-        {
-            continue;
-        }
-
-        if(!isalnum(str[i]) && !isalnum(str[i + 1]))
+        if(!isalnum(str[i]) || !isalnum(str[i + 1]))
         {
             //contains non-hex characters
             assert(0);
