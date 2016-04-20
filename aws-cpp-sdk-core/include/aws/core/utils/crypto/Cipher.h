@@ -44,7 +44,7 @@ namespace Aws
                 /**
                  * Initialize with key and an auto-generated initializationVector.
                  */
-                SymmetricCipher(const ByteBuffer& key, size_t ivSize) : m_key(key), m_initializationVector(GenerateIV(ivSize)) {}
+                SymmetricCipher(const ByteBuffer& key, size_t ivSize, bool ctrMode = false) : m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)) {}
 
                 /**
                  * Initialize with key and initializationVector (makes copies of the buffers), set tag for decryption of authenticated modes

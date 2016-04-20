@@ -58,7 +58,7 @@ namespace Aws
                 /**
                  * Creates new OpenSSL based cipher for key, and autogenerates a secure IV of size ivSize
                  */
-                OpenSSLCipher(const ByteBuffer &key, size_t ivSize);
+                OpenSSLCipher(const ByteBuffer &key, size_t ivSize, bool ctrMode = false);
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated

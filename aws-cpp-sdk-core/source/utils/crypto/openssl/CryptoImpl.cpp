@@ -155,8 +155,8 @@ void LogErrors(const char* logTag = LOG_TAG)
 }
 
 
-OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, size_t blockSizeBytes) :
-        SymmetricCipher(key, blockSizeBytes), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
+OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, size_t blockSizeBytes, bool ctrMode) :
+        SymmetricCipher(key, blockSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
 {
     Init();
 }
