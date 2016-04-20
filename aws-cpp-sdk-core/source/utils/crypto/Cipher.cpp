@@ -135,7 +135,7 @@ ByteBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes, bool ctrMode)
         {
             const ByteBuffer& hash = hashResult.GetResult();
             size_t nonceEnd = length / 4;
-            for(size_t i =  - 1; i < nonceEnd && i < hash.GetLength(); ++i)
+            for(size_t i = 0; i < nonceEnd && i < hash.GetLength(); ++i)
             {
                 iv[i] = hash[i];
             }

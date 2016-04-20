@@ -280,7 +280,6 @@ size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;
 size_t AES_CBC_Cipher_OpenSSL::KeyLengthBits = 256;
 static const char* CBC_LOG_TAG = "AES_CBC_Cipher_OpenSSL";
 
-//this needs to be reworked for nonce and counter init
 AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes) {}
 
 AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(ByteBuffer&& key, ByteBuffer&& initializationVector) :
