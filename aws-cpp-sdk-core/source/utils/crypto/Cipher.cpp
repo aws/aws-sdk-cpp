@@ -36,40 +36,45 @@ static std::mt19937 prng;
 static std::mutex randLock;
 static std::shared_ptr<Hash> sha256Hash(nullptr);
 
-void InitCiphers()
+namespace Aws
 {
-    if(!isInit)
+    namespace Utils
     {
-        std::lock_guard<std::mutex> locker(randLock);
-
-        if(!isInit)
+        namespace Crypto
         {
-            /**
-             * Seed Mersenne twister based on this paper:
-             * http://www.iro.umontreal.ca/~lecuyer/myftp/papers/lfsr04.pdf
-             * And the advice from the standards commitee found here:
-             * http://en.cppreference.com/w/cpp/numeric/random/random_device
-             * It is not cheap so only do it once, and lazily.
-             */
-            std::random_device secureRand;
-            // Assert because this would mean that our random number generator is deterministic on the platform
-            // we built against and that would be very bad. Make the developer aware of the problem to break the news
-            // that they safely can't do crypto on their platform.
-            assert(secureRand.entropy() > 0);
-            prng = std::mt19937(secureRand());
-            prng.discard(SEED_WARMUP);
+            void InitCiphers()
+            {
+                if(!isInit)
+                {
+                    std::lock_guard<std::mutex> locker(randLock);
 
-            sha256Hash = CreateSha256Implementation();
-            isInit = true;
+                    if(!isInit)
+                    {
+                        /**
+                         * Seed Mersenne twister based on this paper:
+                         * http://www.iro.umontreal.ca/~lecuyer/myftp/papers/lfsr04.pdf
+                         * And the advice from the standards commitee found here:
+                         * http://en.cppreference.com/w/cpp/numeric/random/random_device
+                         * It is not cheap so only do it once, and lazily.
+                         */
+                        std::random_device secureRand;
+                        prng = std::mt19937(secureRand());
+                        prng.discard(SEED_WARMUP);
+
+                        sha256Hash = CreateSha256Implementation();
+                        isInit = true;
+                    }
+                }
+            }
+
+            void CleanupCiphers()
+            {
+                std::lock_guard<std::mutex> locker(randLock);
+                sha256Hash = nullptr;
+                isInit = false;
+            }
         }
     }
-}
-
-void CleanupCiphers()
-{
-    std::lock_guard<std::mutex> locker(randLock);
-    sha256Hash = nullptr;
-    isInit = false;
 }
 
 /**
