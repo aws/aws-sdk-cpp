@@ -247,37 +247,37 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
 #endif
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer& tag)
 {
     if(s_AES_GCMFactory)
     {
-        return s_AES_GCMFactory->CreateImplementation(key, iv);
+        return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
     }
 
 #if ENABLE_BCRYPT_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
 #elif ENABLE_OPENSSL_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag);
 #else
     return nullptr;
 #endif
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag)
 {
     if(s_AES_GCMFactory)
     {
-        return s_AES_GCMFactory->CreateImplementation(key, iv);
+        return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
     }
 
 #if ENABLE_BCRYPT_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
 #elif ENABLE_OPENSSL_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+    return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag);
 #else
     return nullptr;
 #endif

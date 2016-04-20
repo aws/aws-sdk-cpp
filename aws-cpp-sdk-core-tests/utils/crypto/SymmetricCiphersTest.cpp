@@ -30,6 +30,8 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
+static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
+                                      const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
 
 TEST(AES_CBC_TEST, CBCGFSbox256_case_1)
 {
@@ -115,6 +117,50 @@ TEST(AES_CTR_TEST, RFC3686_Case_9)
     TestCTRMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
+TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
+{
+    Aws::String iv_raw =  "0d18e06c7c725ac9e362e1ce";
+    Aws::String key_raw = "31bdadd96698c204aa9ce1448ea94ae1fb4a9a0b3c9d773b51bb1822666b8f22";
+    Aws::String data_raw = "2db5168e932556f8089a0622981d017d";
+    Aws::String expected_raw = "fa4362189661d163fcd6a56d8bf0405a";
+    Aws::String tag_raw = "d636ac1bbedd5cc3ee727dc2ab4a9489";
+
+    TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
+}
+
+TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
+{
+    Aws::String iv_raw =  "4742357c335913153ff0eb0f";
+    Aws::String key_raw = "e5a0eb92cc2b064e1bc80891faf1fab5e9a17a9c3a984e25416720e30e6c2b21";
+    Aws::String data_raw = "8499893e16b0ba8b007d54665a";
+    Aws::String expected_raw = "eb8e6175f1fe38eb1acf95fd51";
+    Aws::String tag_raw = "88a8b74bb74fda553e91020a23deed45";
+
+    TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
+}
+
+TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_256_Test_6)
+{
+    Aws::String iv_raw =  "a291484c3de8bec6b47f525f";
+    Aws::String key_raw = "37f39137416bafde6f75022a7a527cc593b6000a83ff51ec04871a0ff5360e4e";
+    Aws::String data_raw = "fafd94cede8b5a0730394bec68a8e77dba288d6ccaa8e1563a81d6e7ccc7fc97";
+    Aws::String expected_raw = "44dc868006b21d49284016565ffb3979cc4271d967628bf7cdaf86db888e92e5";
+    Aws::String tag_raw = "01a2b578aa2f41ec6379a44a31cc019c";
+
+    TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
+}
+
+TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_408_Test_8)
+{
+    Aws::String iv_raw =  "92f258071d79af3e63672285";
+    Aws::String key_raw = "595f259c55abe00ae07535ca5d9b09d6efb9f7e9abb64605c337acbd6b14fc7e";
+    Aws::String data_raw = "a6fee33eb110a2d769bbc52b0f36969c287874f665681477a25fc4c48015c541fbe2394133ba490a34ee2dd67b898177849a91";
+    Aws::String expected_raw = "bbca4a9e09ae9690c0f6f8d405e53dccd666aa9c5fa13c8758bc30abe1ddd1bcce0d36a1eaaaaffef20cd3c5970b9673f8a65c";
+    Aws::String tag_raw = "26ccecb9976fd6ac9c2c0f372c52c821";
+
+    TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
+}
+
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw)
 {
@@ -166,6 +212,40 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
 
     cipher = CreateAES_CTRImplementation(key, iv);
+    auto decryptResult = cipher->DecryptBuffer(encryptedResult);
+    auto finalDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
+
+    ByteBuffer plainText(data.GetLength());
+    plainText.Zero();
+    memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
+
+    ASSERT_EQ(data, plainText);
+}
+
+static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
+                                      const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw)
+{
+    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
+    ByteBuffer key = HashingUtils::HexDecode(key_raw);
+    ByteBuffer data = HashingUtils::HexDecode(data_raw);
+    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
+    ByteBuffer tag = HashingUtils::HexDecode(tag_raw);
+
+    auto cipher = CreateAES_GCMImplementation(key, iv);
+    auto encryptResult = cipher->EncryptBuffer(data);
+    ASSERT_EQ(expected, encryptResult);
+    auto finalEncryptedBuffer = cipher->FinalizeEncryption();
+    //this should just be block text.
+    ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
+    //tag should be valid now
+    ASSERT_EQ(tag, cipher->GetTag());
+
+    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
+    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
+    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
+
+    cipher = CreateAES_GCMImplementation(key, iv, cipher->GetTag());
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());

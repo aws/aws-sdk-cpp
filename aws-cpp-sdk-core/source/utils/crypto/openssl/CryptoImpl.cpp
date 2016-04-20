@@ -23,6 +23,7 @@
 #include <openssl/err.h>
 #include <atomic>
 #include <mutex>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -128,6 +129,7 @@ HashResult Sha256HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const Byte
 
 static std::atomic<bool> openSSLEncryptionInit(false);
 static std::mutex openSSLInitLock;
+static const char* LOG_TAG = "OpenSSLCipher";
 
 void MakeSureOpenSSLIsInitialized()
 {
@@ -141,6 +143,15 @@ void MakeSureOpenSSLIsInitialized()
             openSSLEncryptionInit = true;
         }
     }
+}
+
+void LogErrors(const char* logTag = LOG_TAG)
+{
+    long errorCode = ERR_get_error();
+    char errStr[256];
+    ERR_error_string_n(errorCode, errStr, 256);
+
+    AWS_LOGSTREAM_ERROR(logTag, errStr);
 }
 
 
@@ -158,14 +169,14 @@ OpenSSLCipher::OpenSSLCipher(OpenSSLCipher &&toMove) : SymmetricCipher(std::move
     m_decryptionMode = toMove.m_decryptionMode;
 }
 
-OpenSSLCipher::OpenSSLCipher(ByteBuffer &&key, ByteBuffer &&initializationVector) : SymmetricCipher(key,
-        initializationVector), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
+OpenSSLCipher::OpenSSLCipher(ByteBuffer&& key, ByteBuffer&& initializationVector, ByteBuffer&& tag) :
+        SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
 {
     Init();
 }
 
-OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, const ByteBuffer &initializationVector) :
-        SymmetricCipher(key, initializationVector), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
+OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, const ByteBuffer& initializationVector, const ByteBuffer& tag) :
+        SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false), m_encryptionMode(false), m_decryptionMode(false)
 {
     Init();
 }
@@ -209,8 +220,11 @@ ByteBuffer OpenSSLCipher::EncryptBuffer( const ByteBuffer& unEncryptedData)
     int lengthWritten = unEncryptedData.GetLength() - (unEncryptedData.GetLength() % GetBlockSizeBytes());
     ByteBuffer encryptedText(static_cast<size_t>( lengthWritten + (GetBlockSizeBytes() - 1)));
 
-    EVP_EncryptUpdate(&m_ctx, encryptedText.GetUnderlyingData(), &lengthWritten,
-                      unEncryptedData.GetUnderlyingData(), static_cast<int>(unEncryptedData.GetLength()));
+    if(!EVP_EncryptUpdate(&m_ctx, encryptedText.GetUnderlyingData(), &lengthWritten,
+                      unEncryptedData.GetUnderlyingData(), static_cast<int>(unEncryptedData.GetLength())))
+    {
+        LogErrors();
+    }
 
     if(static_cast<size_t>(lengthWritten) < encryptedText.GetLength())
     {
@@ -224,7 +238,10 @@ ByteBuffer OpenSSLCipher::FinalizeEncryption ()
 {
     ByteBuffer finalBlock(GetBlockSizeBytes());
     int writtenSize = 0;
-    EVP_EncryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
+    if(!EVP_EncryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize))
+    {
+        LogErrors();
+    }
     return ByteBuffer(finalBlock.GetUnderlyingData(), writtenSize);
 }
 
@@ -233,8 +250,12 @@ ByteBuffer OpenSSLCipher::DecryptBuffer(const ByteBuffer& encryptedData)
     CheckInitDecryptor();
     int lengthWritten = encryptedData.GetLength() + (GetBlockSizeBytes() - 1);
     ByteBuffer decryptedText(static_cast<size_t>(lengthWritten + 100));
-    EVP_DecryptUpdate(&m_ctx, decryptedText.GetUnderlyingData(), &lengthWritten,
-                      encryptedData.GetUnderlyingData(), static_cast<int>(encryptedData.GetLength()));
+
+    if(!EVP_DecryptUpdate(&m_ctx, decryptedText.GetUnderlyingData(), &lengthWritten,
+                      encryptedData.GetUnderlyingData(), static_cast<int>(encryptedData.GetLength())))
+    {
+        LogErrors();
+    }
 
     if(static_cast<size_t>(lengthWritten) < decryptedText.GetLength())
     {
@@ -248,30 +269,40 @@ ByteBuffer OpenSSLCipher::FinalizeDecryption ()
 {
     ByteBuffer finalBlock(GetBlockSizeBytes());
     int writtenSize = finalBlock.GetLength();
-    EVP_DecryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
+    if(!EVP_DecryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize))
+    {
+        LogErrors();
+    }
     return ByteBuffer(finalBlock.GetUnderlyingData(), writtenSize);
 }
 
 size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;
 size_t AES_CBC_Cipher_OpenSSL::KeyLengthBits = 256;
+static const char* CBC_LOG_TAG = "AES_CBC_Cipher_OpenSSL";
 
 //this needs to be reworked for nonce and counter init
 AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes) {}
 
-AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector) :
+AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(ByteBuffer&& key, ByteBuffer&& initializationVector) :
         OpenSSLCipher(key, initializationVector) {}
 
-AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector) :
+AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer& key, const ByteBuffer& initializationVector) :
         OpenSSLCipher(key, initializationVector) {}
 
 void AES_CBC_Cipher_OpenSSL::InitEncryptor_Internal()
 {
-    EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    if(!EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData()))
+    {
+        LogErrors(CBC_LOG_TAG);
+    }
 }
 
 void AES_CBC_Cipher_OpenSSL::InitDecryptor_Internal()
 {
-    EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    if(!EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_cbc(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData()))
+    {
+        LogErrors(CBC_LOG_TAG);
+    }
 }
 
 size_t AES_CBC_Cipher_OpenSSL::GetBlockSizeBytes() const
@@ -286,8 +317,9 @@ size_t AES_CBC_Cipher_OpenSSL::GetKeyLengthBits() const
 
 size_t AES_CTR_Cipher_OpenSSL::BlockSizeBytes = 16;
 size_t AES_CTR_Cipher_OpenSSL::KeyLengthBits = 256;
+static const char* CTR_LOG_TAG = "AES_CTR_Cipher_OpenSSL";
 
-AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes) {}
+AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes, true) {}
 
 AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector) :
         OpenSSLCipher(key, initializationVector) {}
@@ -297,14 +329,20 @@ AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key, const Byte
 
 void AES_CTR_Cipher_OpenSSL::InitEncryptor_Internal()
 {
-    EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
-    EVP_CIPHER_CTX_set_padding(&m_ctx, 0);
+    if(!(EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData())
+            && EVP_CIPHER_CTX_set_padding(&m_ctx, 0)))
+    {
+        LogErrors(CTR_LOG_TAG);
+    }
 }
 
 void AES_CTR_Cipher_OpenSSL::InitDecryptor_Internal()
 {
-    EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
-    EVP_CIPHER_CTX_set_padding(&m_ctx, 0);
+    if(!(EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData())
+            && EVP_CIPHER_CTX_set_padding(&m_ctx, 0)))
+    {
+        LogErrors(CTR_LOG_TAG);
+    }
 }
 
 size_t AES_CTR_Cipher_OpenSSL::GetBlockSizeBytes() const
@@ -320,23 +358,58 @@ size_t AES_CTR_Cipher_OpenSSL::GetKeyLengthBits() const
 size_t AES_GCM_Cipher_OpenSSL::BlockSizeBytes = 16;
 size_t AES_GCM_Cipher_OpenSSL::KeyLengthBits = 256;
 size_t AES_GCM_Cipher_OpenSSL::IVLengthBytes = 12;
+static const char* GCM_LOG_TAG = "AES_GCM_Cipher_OpenSSL";
 
 AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, IVLengthBytes) {}
 
-AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector) :
-        OpenSSLCipher(key, initializationVector) {}
+AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector, ByteBuffer&& tag) :
+        OpenSSLCipher(key, initializationVector, tag) {}
 
-AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector) :
-        OpenSSLCipher(key, initializationVector) {}
+AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector, const ByteBuffer& tag) :
+        OpenSSLCipher(key, initializationVector, tag) {}
 
+ByteBuffer AES_GCM_Cipher_OpenSSL::FinalizeEncryption ()
+{
+    ByteBuffer&& finalBuffer = OpenSSLCipher::FinalizeEncryption();
+    m_tag = ByteBuffer(BlockSizeBytes);
+    if(!EVP_CIPHER_CTX_ctrl(&m_ctx, EVP_CTRL_CCM_GET_TAG, static_cast<int>(m_tag.GetLength()), m_tag.GetUnderlyingData()))
+    {
+        LogErrors(GCM_LOG_TAG);
+    }
+
+    return finalBuffer;
+}
 void AES_GCM_Cipher_OpenSSL::InitEncryptor_Internal()
 {
-    EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    if(!(EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_gcm(), nullptr, nullptr, nullptr) &&
+            EVP_EncryptInit_ex(&m_ctx, nullptr, nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData()) &&
+            EVP_CIPHER_CTX_set_padding(&m_ctx, 0)))
+    {
+        LogErrors(GCM_LOG_TAG);
+    }
 }
 
 void AES_GCM_Cipher_OpenSSL::InitDecryptor_Internal()
 {
-    EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ctr(), nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData());
+    if(!(EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_gcm(), nullptr, nullptr, nullptr) &&
+            EVP_DecryptInit_ex(&m_ctx, nullptr, nullptr, m_key.GetUnderlyingData(), m_initializationVector.GetUnderlyingData()) &&
+            EVP_CIPHER_CTX_set_padding(&m_ctx, 0)))
+    {
+        LogErrors(GCM_LOG_TAG);
+    }
+
+    //tag should always be set in GCM decrypt mode
+    assert(m_tag.GetLength() > 0);
+
+    if(m_tag.GetLength() < GetBlockSizeBytes())
+    {
+        AWS_LOGSTREAM_ERROR(GCM_LOG_TAG, "Illegal attempt to decrypt an AES GCM payload without a valid tag set: tag length=" << m_tag.GetLength());
+    }
+
+    if(!EVP_CIPHER_CTX_ctrl(&m_ctx, EVP_CTRL_GCM_SET_TAG, static_cast<int>(m_tag.GetLength()), m_tag.GetUnderlyingData()))
+    {
+        LogErrors(GCM_LOG_TAG);
+    }
 }
 
 size_t AES_GCM_Cipher_OpenSSL::GetBlockSizeBytes() const

@@ -14,9 +14,13 @@
 */
 
 #include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/crypto/Sha256.h>
 #include <random>
 #include <mutex>
 #include <atomic>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/Outcome.h>
 
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Utils;
@@ -30,15 +34,9 @@ static const unsigned int ONE_BYTES_SHIFT = 8;
 static std::atomic<bool> isInit(false);
 static std::mt19937 prng;
 static std::mutex randLock;
+static std::shared_ptr<Hash> sha256Hash(nullptr);
 
-/**
- * Seed Mersenne twister based on this paper:
- * http://www.iro.umontreal.ca/~lecuyer/myftp/papers/lfsr04.pdf
- * And the advice from the standards commitee found here:
- * http://en.cppreference.com/w/cpp/numeric/random/random_device
- * It is not cheap so only do it once, and lazily.
- */
-void InitRandomNumberGenerator()
+void InitCiphers()
 {
     if(!isInit)
     {
@@ -46,6 +44,13 @@ void InitRandomNumberGenerator()
 
         if(!isInit)
         {
+            /**
+             * Seed Mersenne twister based on this paper:
+             * http://www.iro.umontreal.ca/~lecuyer/myftp/papers/lfsr04.pdf
+             * And the advice from the standards commitee found here:
+             * http://en.cppreference.com/w/cpp/numeric/random/random_device
+             * It is not cheap so only do it once, and lazily.
+             */
             std::random_device secureRand;
             // Assert because this would mean that our random number generator is deterministic on the platform
             // we built against and that would be very bad. Make the developer aware of the problem to break the news
@@ -53,17 +58,26 @@ void InitRandomNumberGenerator()
             assert(secureRand.entropy() > 0);
             prng = std::mt19937(secureRand());
             prng.discard(SEED_WARMUP);
+
+            sha256Hash = CreateSha256Implementation();
             isInit = true;
         }
     }
 }
 
+void CleanupCiphers()
+{
+    std::lock_guard<std::mutex> locker(randLock);
+    sha256Hash = nullptr;
+    isInit = false;
+}
+
 /**
  * Generate random number per 4 bytes and use each byte for the byte in the iv
  */
-ByteBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes)
+ByteBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes, bool ctrMode)
 {
-    InitRandomNumberGenerator();
+    assert(isInit);
 
     ByteBuffer iv(ivLengthBytes);
 
@@ -94,6 +108,33 @@ ByteBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes)
         }
 
         iv[i] = byteToAssign;
+    }
+
+    if(ctrMode)
+    {
+        //init the counter
+        size_t length = iv.GetLength();
+        //[ nonce 1/4] [ iv 1/2 ] [ ctr 1/4 ]
+        size_t ctrStart = (length / 2) + (length / 4);
+        for(; ctrStart < iv.GetLength() - 1; ++ ctrStart)
+        {
+            iv[ctrStart] = 0;
+        }
+        iv[length - 1] = 1;
+
+        //init the nonce
+        auto hashResult = sha256Hash->Calculate(HashingUtils::HexEncode(iv));
+
+        //fill in the nonce
+        if(hashResult.IsSuccess())
+        {
+            const ByteBuffer& hash = hashResult.GetResult();
+            size_t nonceEnd = length / 4;
+            for(size_t i =  - 1; i < nonceEnd && i < hash.GetLength(); ++i)
+            {
+                iv[i] = hash[i];
+            }
+        }
     }
 
     return iv;
