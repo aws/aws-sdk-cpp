@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_ACM_API ListCertificatesRequest : public ACMRequest
   {
@@ -39,70 +40,84 @@ namespace Model
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(value); return *this;}
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 
     /**
      * <p> Identifies the statuses of the ACM Certificates for which you want to
      * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><code>PENDING_VALIDATION</code></li> <li><code>ISSUED</code></li>
-     * <li><code>INACTIVE</code></li> <li><code>EXPIRED</code></li>
-     * <li><code>VALIDATION_TIMED_OUT</code></li> <li><code>REVOKED</code></li>
-     * <li><code>FAILED</code></li> </ul> </p>
+     * <li><p><code>PENDING_VALIDATION</code></p></li>
+     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
+     * <li><p><code>EXPIRED</code></p></li>
+     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
+     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
+     * </p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 

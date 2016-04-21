@@ -26,10 +26,13 @@
 #include <aws/acm/ACMClient.h>
 #include <aws/acm/ACMEndpoint.h>
 #include <aws/acm/ACMErrorMarshaller.h>
+#include <aws/acm/model/AddTagsToCertificateRequest.h>
 #include <aws/acm/model/DeleteCertificateRequest.h>
 #include <aws/acm/model/DescribeCertificateRequest.h>
 #include <aws/acm/model/GetCertificateRequest.h>
 #include <aws/acm/model/ListCertificatesRequest.h>
+#include <aws/acm/model/ListTagsForCertificateRequest.h>
+#include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
 #include <aws/acm/model/RequestCertificateRequest.h>
 #include <aws/acm/model/ResendValidationEmailRequest.h>
 
@@ -95,6 +98,37 @@ void ACMClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+AddTagsToCertificateOutcome ACMClient::AddTagsToCertificate(const AddTagsToCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddTagsToCertificateOutcome(NoResult());
+  }
+  else
+  {
+    return AddTagsToCertificateOutcome(outcome.GetError());
+  }
+}
+
+AddTagsToCertificateOutcomeCallable ACMClient::AddTagsToCertificateCallable(const AddTagsToCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &ACMClient::AddTagsToCertificate, this, request);
+}
+
+void ACMClient::AddTagsToCertificateAsync(const AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ACMClient::AddTagsToCertificateAsyncHelper, this, request, handler, context);
+}
+
+void ACMClient::AddTagsToCertificateAsyncHelper(const AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddTagsToCertificate(request), context);
+}
+
 DeleteCertificateOutcome ACMClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
   Aws::StringStream ss;
@@ -217,6 +251,68 @@ void ACMClient::ListCertificatesAsync(const ListCertificatesRequest& request, co
 void ACMClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCertificates(request), context);
+}
+
+ListTagsForCertificateOutcome ACMClient::ListTagsForCertificate(const ListTagsForCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForCertificateOutcome(ListTagsForCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForCertificateOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForCertificateOutcomeCallable ACMClient::ListTagsForCertificateCallable(const ListTagsForCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &ACMClient::ListTagsForCertificate, this, request);
+}
+
+void ACMClient::ListTagsForCertificateAsync(const ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ACMClient::ListTagsForCertificateAsyncHelper, this, request, handler, context);
+}
+
+void ACMClient::ListTagsForCertificateAsyncHelper(const ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForCertificate(request), context);
+}
+
+RemoveTagsFromCertificateOutcome ACMClient::RemoveTagsFromCertificate(const RemoveTagsFromCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveTagsFromCertificateOutcome(NoResult());
+  }
+  else
+  {
+    return RemoveTagsFromCertificateOutcome(outcome.GetError());
+  }
+}
+
+RemoveTagsFromCertificateOutcomeCallable ACMClient::RemoveTagsFromCertificateCallable(const RemoveTagsFromCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &ACMClient::RemoveTagsFromCertificate, this, request);
+}
+
+void ACMClient::RemoveTagsFromCertificateAsync(const RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ACMClient::RemoveTagsFromCertificateAsyncHelper, this, request, handler, context);
+}
+
+void ACMClient::RemoveTagsFromCertificateAsyncHelper(const RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveTagsFromCertificate(request), context);
 }
 
 RequestCertificateOutcome ACMClient::RequestCertificate(const RequestCertificateRequest& request) const

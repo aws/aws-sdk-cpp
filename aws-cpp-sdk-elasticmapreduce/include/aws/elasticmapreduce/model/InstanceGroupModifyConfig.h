@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/ShrinkPolicy.h>
 
 namespace Aws
 {
@@ -93,60 +94,77 @@ namespace Model
     inline InstanceGroupModifyConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const{ return m_eC2InstanceIdsToTerminate; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline void SetEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline void SetEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(const Aws::Vector<Aws::String>& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const Aws::String& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(Aws::String&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 InstanceIds to terminate. For advanced users only. Once you terminate
-     * the instances, the instance group will not return to its original requested
-     * size.</p>
+     * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const char* value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline const ShrinkPolicy& GetShrinkPolicy() const{ return m_shrinkPolicy; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline void SetShrinkPolicy(const ShrinkPolicy& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline void SetShrinkPolicy(ShrinkPolicy&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline InstanceGroupModifyConfig& WithShrinkPolicy(const ShrinkPolicy& value) { SetShrinkPolicy(value); return *this;}
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(value); return *this;}
 
   private:
     Aws::String m_instanceGroupId;
@@ -155,6 +173,8 @@ namespace Model
     bool m_instanceCountHasBeenSet;
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
     bool m_eC2InstanceIdsToTerminateHasBeenSet;
+    ShrinkPolicy m_shrinkPolicy;
+    bool m_shrinkPolicyHasBeenSet;
   };
 
 } // namespace Model

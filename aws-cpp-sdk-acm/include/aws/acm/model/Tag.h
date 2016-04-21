@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/cloudhsm/CloudHSM_EXPORTS.h>
+#include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -25,16 +25,16 @@ namespace Json
   class JsonValue;
 } // namespace Json
 } // namespace Utils
-namespace CloudHSM
+namespace ACM
 {
 namespace Model
 {
 
   /**
-   * <p>A key-value pair that identifies or specifies metadata about an AWS CloudHSM
+   * <p>A key-value pair that identifies or specifies metadata about an ACM
    * resource.</p>
    */
-  class AWS_CLOUDHSM_API Tag
+  class AWS_ACM_API Tag
   {
   public:
     Tag();
@@ -120,5 +120,5 @@ namespace Model
   };
 
 } // namespace Model
-} // namespace CloudHSM
+} // namespace ACM
 } // namespace Aws

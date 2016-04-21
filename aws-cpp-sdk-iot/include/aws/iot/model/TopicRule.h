@@ -231,6 +231,41 @@ namespace Model
      */
     inline TopicRule& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
 
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline const Aws::String& GetAwsIotSqlVersion() const{ return m_awsIotSqlVersion; }
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline void SetAwsIotSqlVersion(const Aws::String& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = value; }
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline void SetAwsIotSqlVersion(Aws::String&& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = value; }
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline void SetAwsIotSqlVersion(const char* value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion.assign(value); }
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline TopicRule& WithAwsIotSqlVersion(const Aws::String& value) { SetAwsIotSqlVersion(value); return *this;}
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline TopicRule& WithAwsIotSqlVersion(Aws::String&& value) { SetAwsIotSqlVersion(value); return *this;}
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline TopicRule& WithAwsIotSqlVersion(const char* value) { SetAwsIotSqlVersion(value); return *this;}
+
   private:
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
@@ -244,6 +279,8 @@ namespace Model
     bool m_actionsHasBeenSet;
     bool m_ruleDisabled;
     bool m_ruleDisabledHasBeenSet;
+    Aws::String m_awsIotSqlVersion;
+    bool m_awsIotSqlVersionHasBeenSet;
   };
 
 } // namespace Model
