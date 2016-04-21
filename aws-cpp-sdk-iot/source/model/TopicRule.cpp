@@ -28,7 +28,8 @@ TopicRule::TopicRule() :
     m_createdAtHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false)
+    m_ruleDisabledHasBeenSet(false),
+    m_awsIotSqlVersionHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,8 @@ TopicRule::TopicRule(const JsonValue& jsonValue) :
     m_createdAtHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false)
+    m_ruleDisabledHasBeenSet(false),
+    m_awsIotSqlVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ TopicRule& TopicRule::operator =(const JsonValue& jsonValue)
     m_ruleDisabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsIotSqlVersion"))
+  {
+    m_awsIotSqlVersion = jsonValue.GetString("awsIotSqlVersion");
+
+    m_awsIotSqlVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +144,12 @@ JsonValue TopicRule::Jsonize() const
   if(m_ruleDisabledHasBeenSet)
   {
    payload.WithBool("ruleDisabled", m_ruleDisabled);
+
+  }
+
+  if(m_awsIotSqlVersionHasBeenSet)
+  {
+   payload.WithString("awsIotSqlVersion", m_awsIotSqlVersion);
 
   }
 

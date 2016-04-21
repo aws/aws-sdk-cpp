@@ -203,22 +203,25 @@ namespace Model
         virtual ~CloudHSMClient();
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each
-         * tag consists of a key and a value. Tag keys must be unique per resource.</p>
+         * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
+         * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
+         * to each resource.</p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each
-         * tag consists of a key and a value. Tag keys must be unique per resource.</p>
+         * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
+         * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
+         * to each resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified resource.</p> <p>Each
-         * tag consists of a key and a value. Tag keys must be unique per resource.</p>
+         * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
+         * resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique
+         * to each resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -563,19 +566,19 @@ namespace Model
         virtual void ListLunaClientsAsync(const Model::ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all tags for the specified resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of all tags for the specified resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns a list of all tags for the specified resource.</p>
+         * <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -657,25 +660,25 @@ namespace Model
         virtual void ModifyLunaClientAsync(const Model::ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p> <p>To remove a tag,
-         * specify only the tag key to remove (not the value). To overwrite the value for
-         * an existing tag, use <a>AddTagsToResource</a>.</p>
+         * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
+         * remove a tag, specify only the tag key to remove (not the value). To overwrite
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p> <p>To remove a tag,
-         * specify only the tag key to remove (not the value). To overwrite the value for
-         * an existing tag, use <a>AddTagsToResource</a>.</p>
+         * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
+         * remove a tag, specify only the tag key to remove (not the value). To overwrite
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource.</p> <p>To remove a tag,
-         * specify only the tag key to remove (not the value). To overwrite the value for
-         * an existing tag, use <a>AddTagsToResource</a>.</p>
+         * <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To
+         * remove a tag, specify only the tag key to remove (not the value). To overwrite
+         * the value for an existing tag, use <a>AddTagsToResource</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

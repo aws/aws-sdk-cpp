@@ -438,41 +438,41 @@ namespace Model
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline CertificateDetail& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline CertificateDetail& WithStatus(CertificateStatus&& value) { SetStatus(value); return *this;}
 
@@ -509,55 +509,60 @@ namespace Model
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline const RevocationReason& GetRevocationReason() const{ return m_revocationReason; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline void SetRevocationReason(const RevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline void SetRevocationReason(RevocationReason&& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline CertificateDetail& WithRevocationReason(const RevocationReason& value) { SetRevocationReason(value); return *this;}
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline CertificateDetail& WithRevocationReason(RevocationReason&& value) { SetRevocationReason(value); return *this;}
 

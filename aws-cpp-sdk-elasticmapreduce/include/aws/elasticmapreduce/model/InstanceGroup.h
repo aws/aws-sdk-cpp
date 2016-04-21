@@ -19,6 +19,7 @@
 #include <aws/elasticmapreduce/model/InstanceGroupType.h>
 #include <aws/elasticmapreduce/model/InstanceGroupStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/ShrinkPolicy.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
 #include <aws/elasticmapreduce/model/EbsBlockDevice.h>
 
@@ -410,6 +411,31 @@ namespace Model
      */
     inline InstanceGroup& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline const ShrinkPolicy& GetShrinkPolicy() const{ return m_shrinkPolicy; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline void SetShrinkPolicy(const ShrinkPolicy& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline void SetShrinkPolicy(ShrinkPolicy&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline InstanceGroup& WithShrinkPolicy(const ShrinkPolicy& value) { SetShrinkPolicy(value); return *this;}
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline InstanceGroup& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(value); return *this;}
+
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
@@ -435,6 +461,8 @@ namespace Model
     bool m_ebsBlockDevicesHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+    ShrinkPolicy m_shrinkPolicy;
+    bool m_shrinkPolicyHasBeenSet;
   };
 
 } // namespace Model

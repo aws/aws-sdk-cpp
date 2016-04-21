@@ -63,50 +63,50 @@ namespace Model
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
