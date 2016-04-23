@@ -26,15 +26,6 @@ namespace Aws
         namespace Crypto
         {
             /**
-             * Before using any ciphers library you should be sure to Call this method to make sure internal state is initialized
-             */
-            AWS_CORE_API void InitCiphers();
-            /**
-             * When finished using this cipher library you should be sure to Call this method to make sure internal state is initialized
-             */
-            AWS_CORE_API void CleanupCiphers();
-
-            /**
              * Interface for symmetric encryption and decryption providers. An instance of this class is good for exactly one encryption or decryption run.
              * It should not be used to encrypt or decrypt multiple messages.
              */
@@ -44,19 +35,20 @@ namespace Aws
                 /**
                  * Initialize with key and an auto-generated initializationVector.
                  */
-                SymmetricCipher(const ByteBuffer& key, size_t ivSize, bool ctrMode = false) : m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)) {}
+                SymmetricCipher(const ByteBuffer& key, size_t ivSize, bool ctrMode = false) :
+                        m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)), m_failure(false) {}
 
                 /**
                  * Initialize with key and initializationVector (makes copies of the buffers), set tag for decryption of authenticated modes
                  */
                 SymmetricCipher(const ByteBuffer& key, const ByteBuffer& initializationVector, const ByteBuffer& tag = ByteBuffer(0)) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag) {}
+                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) {}
 
                 /**
                  * Initialize with key and initializationVector (move the buffers), set tag for decryption of authenticated modes
                  */
                 SymmetricCipher(ByteBuffer&& key, ByteBuffer&& initializationVector, ByteBuffer&& tag = ByteBuffer(0)) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag) {}
+                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) {}
 
                 SymmetricCipher(const SymmetricCipher& other) = delete;
                 SymmetricCipher& operator=(const SymmetricCipher& other) = delete;
@@ -69,7 +61,8 @@ namespace Aws
                 SymmetricCipher(SymmetricCipher&& toMove) :
                         m_key(std::move(toMove.m_key)),
                         m_initializationVector(std::move(toMove.m_initializationVector)),
-                        m_tag(std::move(toMove.m_tag))
+                        m_tag(std::move(toMove.m_tag)),
+                        m_failure(toMove.m_failure)
                 {
                 }
 
@@ -83,11 +76,18 @@ namespace Aws
                     m_key = std::move(toMove.m_key);
                     m_initializationVector = std::move(toMove.m_initializationVector);
                     m_tag = std::move(toMove.m_tag);
+                    m_failure = toMove.m_failure;
 
                     return *this;
                 }
 
                 virtual ~SymmetricCipher() = default;
+
+                /**
+                 * Whether or not the cipher is in a good state. If this ever returns false, throw away all buffers
+                 * it has vended.
+                 */
+                operator bool() const { return Good(); }
 
                 /**
                  * Encrypt a buffer of data. Part of the contract for this interface is that intention that 
@@ -114,11 +114,6 @@ namespace Aws
                 virtual ByteBuffer FinalizeDecryption () = 0;
 
                 /**
-                 * Key used for encryption/decryption
-                 */
-                inline const ByteBuffer& GetKey() const { return m_key; }
-
-                /**
                  * IV used for encryption/decryption
                  */
                 inline const ByteBuffer& GetIV() const { return m_initializationVector; }
@@ -128,6 +123,9 @@ namespace Aws
                  *  This will be set in an authenticated mode, otherwise empty
                  */
                 inline const ByteBuffer& GetTag() const { return m_tag; }
+
+                inline bool Fail() const { return m_failure; }
+                inline bool Good() const { return !Fail(); }
 
                 /**
                  * Generates a non-deterministic random IV. The first call is somewhat expensive but subsequent calls
@@ -140,6 +138,7 @@ namespace Aws
                 ByteBuffer m_key;
                 ByteBuffer m_initializationVector;
                 ByteBuffer m_tag;
+                bool m_failure;
             };
 
             /**
@@ -162,6 +161,18 @@ namespace Aws
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
                 virtual std::shared_ptr<SymmetricCipher> CreateImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag = ByteBuffer(0)) const = 0;
+
+                /**
+                 * Only called once per factory, your chance to make static library calls for setup.
+                 * Default is no-op.
+                 */
+                virtual void InitStaticState() {}
+
+                /**
+                 * Only called once per factory, your chance to cleanup static library calls for setup.
+                 * Default is no-op.
+                 */
+                virtual void CleanupStaticState() {}
             };
         }
     }

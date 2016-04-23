@@ -33,7 +33,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
 static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
 
-TEST(AES_CBC_TEST, CBCGFSbox256_case_1)
+TEST(AES_CBC_TEST, NIST_CBCGFSbox256_case_1)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -43,7 +43,7 @@ TEST(AES_CBC_TEST, CBCGFSbox256_case_1)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, CBCVarKey256_case_254)
+TEST(AES_CBC_TEST, NIST_CBCVarKey256_case_254)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe";
@@ -53,7 +53,7 @@ TEST(AES_CBC_TEST, CBCVarKey256_case_254)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, CBCVarTxt256_case_110)
+TEST(AES_CBC_TEST, NIST_CBCVarTxt256_case_110)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -63,7 +63,7 @@ TEST(AES_CBC_TEST, CBCVarTxt256_case_110)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, CBCMMT256_case_4)
+TEST(AES_CBC_TEST, NIST_CBCMMT256_case_4)
 {
     Aws::String iv_raw =  "11958dc6ab81e1c7f01631e9944e620f";
     Aws::String key_raw = "9adc8fbd506e032af7fa20cf5343719de6d1288c158c63d6878aaf64ce26ca85";
@@ -73,7 +73,7 @@ TEST(AES_CBC_TEST, CBCMMT256_case_4)
     TestCBCMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, CBCMMT256_case_9)
+TEST(AES_CBC_TEST, NIST_CBCMMT256_case_9)
 {
     Aws::String iv_raw =  "e49651988ebbb72eb8bb80bb9abbca34";
     Aws::String key_raw = "87725bd43a45608814180773f0e7ab95a3c859d83a2130e884190e44d14c6996";
@@ -175,6 +175,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     //this should just be block text.
     ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
     memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
@@ -184,6 +185,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer plainText(data.GetLength());
     plainText.Zero();
@@ -206,6 +208,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     //this should just be empty due to no padding.
     ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
     memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
@@ -215,6 +218,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer plainText(data.GetLength());
     plainText.Zero();
@@ -240,6 +244,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
     //tag should be valid now
     ASSERT_EQ(tag, cipher->GetTag());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
     memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
@@ -249,6 +254,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer plainText(data.GetLength());
     plainText.Zero();
@@ -271,6 +277,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     //this should just be block text.
     ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
     memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
@@ -279,6 +286,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     cipher = CreateAES_CBCImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
     plainText.Zero();
@@ -302,6 +310,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     //no padding this should be empty.
     ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
     memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
@@ -311,6 +320,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     cipher = CreateAES_CTRImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_TRUE(*cipher);
 
     ByteBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
     plainText.Zero();

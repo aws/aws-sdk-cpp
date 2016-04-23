@@ -109,9 +109,10 @@ namespace
             mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
             mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
             mockHttpClientFactory->SetClient(mockHttpClient);
+            SetHttpClientFactory(mockHttpClientFactory);
             cognitoIdentityClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG,
                                                                            Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "", ""),
-                                                                           config, mockHttpClientFactory);
+                                                                           config, nullptr);
             mockIdentityRepository = Aws::MakeShared<MockPersistentCognitoIdentityProvider>(ALLOCATION_TAG);
             mockIdentityRepository->SetIdentityPoolId("TestIdentityPool");
             mockIdentityRepository->SetAccountId("598156584");

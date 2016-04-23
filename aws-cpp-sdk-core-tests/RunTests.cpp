@@ -14,7 +14,8 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/http/HttpClientFactory.h>
 
 int main(int argc, char** argv)
 {
@@ -23,9 +24,14 @@ int main(int argc, char** argv)
         setenv("HOME", P_tmpdir, 1);
     #endif //__UNIX_SV__
 
-    Aws::Utils::Crypto::InitCiphers();
+    Aws::Utils::Crypto::InitCrypto();
+    Aws::Http::InitHttp();
+
     ::testing::InitGoogleTest(&argc, argv);
+
     int retVal = RUN_ALL_TESTS();
-    Aws::Utils::Crypto::CleanupCiphers();
+    Aws::Http::CleanupHttp();
+    Aws::Utils::Crypto::CleanupCrypto();
+
     return retVal;
 }

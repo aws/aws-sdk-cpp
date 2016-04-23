@@ -1,10 +1,30 @@
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
 #pragma once
 
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/SecureRandom.h>
+#include <aws/core/utils/GetTheLights.h>
 #include <openssl/ossl_typ.h>
 #include <openssl/evp.h>
+#include <openssl/rand.h>
+#include <atomic>
+#include <mutex>
 
 namespace Aws
 {
@@ -12,13 +32,55 @@ namespace Aws
     {
         namespace Crypto
         {
+            namespace OpenSSL
+            {
+                extern GetTheLights getTheLights;
+                void init_static_state();
+                void cleanup_static_state();
+                void locking_fn(int mode, int n, const char* file, int line);
+                unsigned long id_fn();
+            }
+
+            extern std::once_flag secureRandFlag;
+
+            template<typename DataType = uint64_t>
+            class SecureRandomOpenSSLImpl : public SecureRandom<DataType>
+            {
+            public:
+                SecureRandomOpenSSLImpl() { }
+
+                ~SecureRandomOpenSSLImpl() = default;
+
+                void Reset() override { }
+
+                DataType operator()() override
+                {
+                    unsigned char buffer[sizeof(DataType)];
+
+                    int success = RAND_bytes(buffer, sizeof(DataType));
+
+                    if(success != 1)
+                    {
+                        SecureRandom<DataType>::m_failure = true;
+                    }
+
+                    DataType value(0);
+                    for(size_t i = 0; i < sizeof(DataType); ++i)
+                    {
+                        value <<= 8;
+                        value |= i;
+                    }
+
+                    return value;
+                }
+            };
 
             class MD5OpenSSLImpl : public Hash
             {
             public:
 
-                MD5OpenSSLImpl() {}
-                virtual ~MD5OpenSSLImpl() {}
+                MD5OpenSSLImpl() { }
+                virtual ~MD5OpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
@@ -29,9 +91,9 @@ namespace Aws
             class Sha256OpenSSLImpl : public Hash
             {
             public:
-
                 Sha256OpenSSLImpl() {}
-                virtual ~Sha256OpenSSLImpl() {}
+
+                virtual ~Sha256OpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
@@ -43,10 +105,10 @@ namespace Aws
             public:
 
                 Sha256HMACOpenSSLImpl() {}
-                virtual ~Sha256HMACOpenSSLImpl() {}
+
+                virtual ~Sha256HMACOpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const ByteBuffer& toSign, const ByteBuffer& secret) override;
-
             };
 
             /**

@@ -85,15 +85,13 @@ namespace Aws
         {
         public:
             /**
-             * Initializes AWS Client to use clientFactory for creating the http stack.
              * configuration will be used for http client settings, retry strategy, throttles, and signing information.
              * supplied signer will be used for all requests.
              * errorMarshaller tells the client how to convert error payloads into AWSError objects.
              * hostheaderOverride will override the host header of every request with the supplied value.
              * If this value is nullptr, it will not be used.
              */
-            AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-                const Aws::Client::ClientConfiguration& configuration,
+            AWSClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller, const char* hostHeaderOverride = nullptr);
 
@@ -207,8 +205,7 @@ namespace Aws
             /**
              * Simply calls AWSClient constructor.
              */
-            AWSJsonClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-                const Aws::Client::ClientConfiguration& configuration,
+            AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
                 const char* hostHeaderOverride = nullptr);
@@ -254,8 +251,7 @@ namespace Aws
 
             typedef AWSClient BASECLASS;
 
-            AWSXMLClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-                const Aws::Client::ClientConfiguration& configuration,
+            AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
                 const char* hostHeaderOverride = nullptr);

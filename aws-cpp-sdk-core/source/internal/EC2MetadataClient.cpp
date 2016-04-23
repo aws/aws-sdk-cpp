@@ -34,9 +34,8 @@ static const char* SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/securi
 
 static const char* logTag = "EC2MetadataClient";
 
-EC2MetadataClient::EC2MetadataClient(const char* endpoint, std::shared_ptr<HttpClientFactory const> httpClientFactory) :
+EC2MetadataClient::EC2MetadataClient(const char* endpoint) :
     m_httpClient(nullptr),
-    m_httpClientFactory((httpClientFactory != nullptr) ? httpClientFactory : Aws::MakeShared<Http::HttpClientFactory>(logTag)),
     m_endpoint(endpoint)
 {
     AWS_LOG_INFO(logTag, "Creating HttpClient with max connections %d and scheme %s", 2, "http");
@@ -44,7 +43,7 @@ EC2MetadataClient::EC2MetadataClient(const char* endpoint, std::shared_ptr<HttpC
     clientConfiguration.maxConnections = 2;
     clientConfiguration.scheme = Scheme::HTTP;
 
-    m_httpClient = m_httpClientFactory->CreateHttpClient(clientConfiguration);
+    m_httpClient = CreateHttpClient(clientConfiguration);
 }
 
 EC2MetadataClient::~EC2MetadataClient()

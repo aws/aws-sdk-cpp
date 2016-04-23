@@ -23,47 +23,115 @@
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
-#include <aws/core/utils/memory/AWSMemory.h>
-#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <cassert>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils::Logging;
 
-static const char* allocationTag = "HttpClientFactory";
-
-std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConfiguration& clientConfiguration) const
+namespace Aws
 {
-    // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
-    // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
-    // Other clients: Curl is your default
+    namespace Http
+    {
+        static const char* allocationTag = "HttpClientFactory";
+        static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
+
+        class DefaultHttpClientFactory : public HttpClientFactory
+        {
+            std::shared_ptr<HttpClient> CreateHttpClient(const ClientConfiguration &clientConfiguration) const override
+            {
+                // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
+                // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
+                // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
-    switch (clientConfiguration.httpLibOverride)
-    { 
-        case TransferLibType::WIN_INET_CLIENT:
-            return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
+                switch (clientConfiguration.httpLibOverride)
+        {
+            case TransferLibType::WIN_INET_CLIENT:
+                return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
 
-        default:
-            return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
-    }
+            default:
+                return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+        }
 #elif ENABLE_CURL_CLIENT
-    return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
+                return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
-    return nullptr;
+                return nullptr;
 #endif
+            }
 
+            std::shared_ptr<HttpRequest> CreateHttpRequest(const Aws::String &uri, HttpMethod method,
+                                                           const Aws::IOStreamFactory &streamFactory) const override
+            {
+                return CreateHttpRequest(URI(uri), method, streamFactory);
+            }
+
+            std::shared_ptr<HttpRequest> CreateHttpRequest(const URI &uri, HttpMethod method,
+                                                           const Aws::IOStreamFactory &streamFactory) const override
+            {
+                auto request = Aws::MakeShared<Standard::StandardHttpRequest>(allocationTag, uri, method);
+                request->SetResponseStreamFactory(streamFactory);
+
+                return request;
+            }
+
+            void InitStaticState() override
+            {
+#if ENABLE_CURL_CLIENT
+                CurlHttpClient::InitGlobalState();
+#endif
+            }
+
+            virtual void CleanupStaticState() override
+            {
+#if ENABLE_CURL_CLIENT
+                CurlHttpClient::CleanupGlobalState();
+#endif
+            }
+        };
+
+        void InitHttp()
+        {
+            if(!s_HttpClientFactory)
+            {
+                s_HttpClientFactory = Aws::MakeShared<DefaultHttpClientFactory>(allocationTag);
+            }
+            s_HttpClientFactory->InitStaticState();
+        }
+
+        void CleanupHttp()
+        {
+            if(s_HttpClientFactory)
+            {
+                s_HttpClientFactory->CleanupStaticState();
+                s_HttpClientFactory = nullptr;
+            }
+        }
+
+        void SetHttpClientFactory(const std::shared_ptr<HttpClientFactory>& factory)
+        {
+            CleanupHttp();
+            s_HttpClientFactory = factory;
+        }
+
+        std::shared_ptr<HttpClient> CreateHttpClient(const Aws::Client::ClientConfiguration& clientConfiguration)
+        {
+            assert(s_HttpClientFactory);
+            return s_HttpClientFactory->CreateHttpClient(clientConfiguration);
+        }
+
+        std::shared_ptr<HttpRequest> CreateHttpRequest(const Aws::String& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory)
+        {
+            assert(s_HttpClientFactory);
+            return s_HttpClientFactory->CreateHttpRequest(uri, method, streamFactory);
+        }
+
+        std::shared_ptr<HttpRequest> CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory)
+        {
+            assert(s_HttpClientFactory);
+            return s_HttpClientFactory->CreateHttpRequest(uri, method, streamFactory);
+        }
+    }
 }
 
-std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const Aws::String& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const
-{
-    return CreateHttpRequest(URI(uri), method, streamFactory);
-}
 
-std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const
-{
-    auto request = Aws::MakeShared<Standard::StandardHttpRequest>(allocationTag, uri, method);
-    request->SetResponseStreamFactory(streamFactory);
-
-    return request;
-}

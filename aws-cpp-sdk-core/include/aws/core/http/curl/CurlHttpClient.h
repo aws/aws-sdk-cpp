@@ -16,18 +16,21 @@
 
 #pragma once
 
+#include <aws/core/Core_EXPORTS.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/curl/CurlHandleContainer.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <atomic>
 
 namespace Aws
 {
 namespace Http
 {
 
+
 //Curl implementation of an http client. Right now it is only synchronous.
-class CurlHttpClient: public HttpClient
+class AWS_CORE_API CurlHttpClient: public HttpClient
 {
 public:
 
@@ -39,6 +42,9 @@ public:
     std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
             Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const;
 
+    static void InitGlobalState();
+    static void CleanupGlobalState();
+
 private:
     mutable CurlHandleContainer m_curlHandleContainer;
     bool m_isUsingProxy;
@@ -49,6 +55,8 @@ private:
     bool m_verifySSL;
     Aws::String m_caPath;
     bool m_allowRedirects;
+
+    static std::atomic<bool> isInit;
 
     //Callback to read the content from the content body of the request
     static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata);

@@ -34,7 +34,7 @@ const char* ALLOCATION_TAG = "AWSClientTest";
 class AccessViolatingAWSClient : public AWSClient
 {
 public:
-    AccessViolatingAWSClient(const char* hostHeaderOverride = nullptr) : AWSClient(MakeShared<HttpClientFactory>(ALLOCATION_TAG),
+    AccessViolatingAWSClient(const char* hostHeaderOverride = nullptr) : AWSClient(
         ClientConfiguration(), nullptr, nullptr, hostHeaderOverride)
     {
     }

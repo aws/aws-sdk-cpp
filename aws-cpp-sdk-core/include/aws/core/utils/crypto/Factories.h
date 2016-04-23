@@ -31,6 +31,19 @@ namespace Aws
             class HashFactory;
             class HMACFactory;
             class SymmetricCipherFactory;
+            template <typename DataType>
+            class SecureRandom;
+            template<typename DataType>
+            class SecureRandomFactory;
+
+            /**
+             * You need to call this before using any of the cryptography libs. Should be called after setting the factories.
+             */
+            AWS_CORE_API void InitCrypto();
+            /**
+             * You need to call this upon program shutdown.
+             */
+            AWS_CORE_API void CleanupCrypto();
 
             /**
              * Create an MD5 Hash provider
@@ -88,6 +101,16 @@ namespace Aws
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag = ByteBuffer(0));
 
             /**
+             * Create SecureRandom instance for 64 bit unsigned integer
+             */
+            AWS_CORE_API std::shared_ptr<SecureRandom<uint64_t>> Create64BitSecureRandomImplementation();
+
+            /**
+            * Create SecureRandom instance for 32 bit unsigned integer
+            */
+            AWS_CORE_API std::shared_ptr<SecureRandom<uint32_t>> Create32BitSecureRandomImplementation();
+
+            /**
              * Set the global factory for MD5 Hash providers
              */
             AWS_CORE_API void SetMD5Factory(const std::shared_ptr<HashFactory>& factory);
@@ -111,6 +134,15 @@ namespace Aws
              * Set the global factory for AES in GCM mode providers
              */
             AWS_CORE_API void SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
+            /**
+             * Set the global factory for 64 bit unsigned integer
+             */
+            AWS_CORE_API void Set64BitSecureRandomFactory();
+
+            /**
+             * Set the global factory for 32 bit unsigned integer
+             */
+            AWS_CORE_API void Set32BitSecureRandomFactory();
 
         } // namespace Crypto
     } // namespace Utils

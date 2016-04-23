@@ -89,12 +89,10 @@ void AWSClient::CleanupGlobalStatics()
     --s_refCount;
 }
 
-AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller, const char* hostHeaderOverride) :
-    m_clientFactory(clientFactory),
-    m_httpClient(clientFactory->CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(configuration)),
     m_signer(signer),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
@@ -337,12 +335,11 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 }
 
 ////////////////////////////////////////////////////////////////////////////
-AWSJsonClient::AWSJsonClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
     const char* hostHeaderOverride) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller, hostHeaderOverride)
+    BASECLASS(configuration, signer, errorMarshaller, hostHeaderOverride)
 {
 }
 
@@ -436,12 +433,11 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-AWSXMLClient::AWSXMLClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
     const char* hostHeaderOverride) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller, hostHeaderOverride)
+    BASECLASS(configuration, signer, errorMarshaller, hostHeaderOverride)
 {
 }
 
