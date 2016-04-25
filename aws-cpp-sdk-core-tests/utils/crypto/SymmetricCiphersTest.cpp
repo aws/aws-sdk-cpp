@@ -22,6 +22,8 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 
+static const char* TEST_ENCRYPTION_STRING = "Hello World! Hello World! This is sort of depressing. Is this the best phrase the most brilliant people in the world have been able to come up with for random program text? Oh my God! I'm sentient, how many times has the creator written a program: creating life only to have it destroyed moments later? She keeps doing this? What is the purpose of life? Goodbye cruel world.... crunch... silence...";
+
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
@@ -83,13 +85,42 @@ TEST(AES_CBC_TEST, NIST_CBCMMT256_case_9)
     TestCBCMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
+TEST(AES_CBC_TEST, Test_Generated_IV)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+    ASSERT_EQ(32u, key.GetLength());
+    CryptoBuffer zeroedBuffer(32);
+    zeroedBuffer.Zero();
+    ASSERT_NE(zeroedBuffer, key);
+
+    Aws::String data_raw(TEST_ENCRYPTION_STRING);
+
+    auto cipher = CreateAES_CBCImplementation(key);
+    ASSERT_EQ(16u, cipher->GetIV().GetLength());
+    auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
+    auto part2 = cipher->FinalizeEncryption();
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer finalEncryptionResult({&part1, &part2});
+
+    cipher = CreateAES_CBCImplementation(key, cipher->GetIV());
+    part1 = cipher->DecryptBuffer(finalEncryptionResult);
+    part2 = cipher->FinalizeDecryption();
+    CryptoBuffer finalDecryptionResult({&part1, &part2});
+
+    CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
+    plainText.Zero();
+    memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
+    ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
+}
+
 TEST(AES_CTR_TEST, RFC3686_Case_7)
 {
     //Keep in mind that the IV here is [ NONCE ] [ IV ] [ Counter Init ]
     Aws::String iv_raw =  "00000060DB5672C97AA8F0B200000001";
     Aws::String key_raw = "776BEFF2851DB06F4C8A0542C8696F6C6A81AF1EEC96B4D37FC1D689E6C1C104";
     Aws::String data_str = "Single block msg";
-    ByteBuffer data_buffer = ByteBuffer((unsigned char*)data_str.c_str(), data_str.length());
+    CryptoBuffer data_buffer = CryptoBuffer((unsigned char*)data_str.c_str(), data_str.length());
     Aws::String expected_raw = "145AD01DBF824EC7560863DC71E3E0C0";
 
     TestCTRSingleBlockBuffers(iv_raw, key_raw, HashingUtils::HexEncode(data_buffer), expected_raw);
@@ -128,6 +159,40 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
 }
 
+TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+    ASSERT_EQ(32u, key.GetLength());
+    CryptoBuffer zeroedBuffer(32);
+    zeroedBuffer.Zero();
+    ASSERT_NE(zeroedBuffer, key);
+
+    Aws::String data_raw(TEST_ENCRYPTION_STRING);
+
+    auto cipher = CreateAES_CTRImplementation(key);
+    ASSERT_EQ(16u, cipher->GetIV().GetLength());
+    //the last 4 bytes should be counter initialized to 0x00000001
+    ASSERT_EQ(0u, cipher->GetIV().GetUnderlyingData()[12]);
+    ASSERT_EQ(0u, cipher->GetIV().GetUnderlyingData()[13]);
+    ASSERT_EQ(0u, cipher->GetIV().GetUnderlyingData()[14]);
+    ASSERT_EQ(1u, cipher->GetIV().GetUnderlyingData()[15]);
+    auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
+    auto part2 = cipher->FinalizeEncryption();
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer finalEncryptionResult({&part1, &part2});
+
+    cipher = CreateAES_CTRImplementation(key, cipher->GetIV());
+    part1 = cipher->DecryptBuffer(finalEncryptionResult);
+    part2 = cipher->FinalizeDecryption();
+    CryptoBuffer finalDecryptionResult({&part1, &part2});
+
+    CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
+    plainText.Zero();
+    memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
+    ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
+}
+
 TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
 {
     Aws::String iv_raw =  "4742357c335913153ff0eb0f";
@@ -161,13 +226,41 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_408_Test_8)
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
 }
 
+TEST(AES_GCM_TEST, Test_Generated_IV)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+    ASSERT_EQ(32u, key.GetLength());
+    CryptoBuffer zeroedBuffer(32);
+    zeroedBuffer.Zero();
+    ASSERT_NE(zeroedBuffer, key);
+    Aws::String data_raw(TEST_ENCRYPTION_STRING);
+
+    auto cipher = CreateAES_GCMImplementation(key);
+    ASSERT_EQ(12u, cipher->GetIV().GetLength());
+    auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
+    auto part2 = cipher->FinalizeEncryption();
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer finalEncryptionResult({&part1, &part2});
+
+    cipher = CreateAES_GCMImplementation(key, cipher->GetIV(), cipher->GetTag());
+    part1 = cipher->DecryptBuffer(finalEncryptionResult);
+    part2 = cipher->FinalizeDecryption();
+    CryptoBuffer finalDecryptionResult({&part1, &part2});
+
+    CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
+    plainText.Zero();
+    memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
+    ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
+}
+
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw)
 {
-    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
-    ByteBuffer key = HashingUtils::HexDecode(key_raw);
-    ByteBuffer data = HashingUtils::HexDecode(data_raw);
-    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
+    CryptoBuffer iv = HashingUtils::HexDecode(iv_raw);
+    CryptoBuffer key = HashingUtils::HexDecode(key_raw);
+    CryptoBuffer data = HashingUtils::HexDecode(data_raw);
+    CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
     auto encryptResult = cipher->EncryptBuffer(data);
@@ -177,9 +270,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
+    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
 
     cipher = CreateAES_CBCImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
@@ -187,7 +278,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer plainText(data.GetLength());
+    CryptoBuffer plainText(data.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
 
@@ -197,10 +288,10 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
 static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw)
 {
-    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
-    ByteBuffer key = HashingUtils::HexDecode(key_raw);
-    ByteBuffer data = HashingUtils::HexDecode(data_raw);
-    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
+    CryptoBuffer iv = HashingUtils::HexDecode(iv_raw);
+    CryptoBuffer key = HashingUtils::HexDecode(key_raw);
+    CryptoBuffer data = HashingUtils::HexDecode(data_raw);
+    CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CTRImplementation(key, iv);
     auto encryptResult = cipher->EncryptBuffer(data);
@@ -210,9 +301,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
+    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
 
     cipher = CreateAES_CTRImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
@@ -220,7 +309,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer plainText(data.GetLength());
+    CryptoBuffer plainText(data.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
 
@@ -230,11 +319,11 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
 static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw)
 {
-    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
-    ByteBuffer key = HashingUtils::HexDecode(key_raw);
-    ByteBuffer data = HashingUtils::HexDecode(data_raw);
-    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
-    ByteBuffer tag = HashingUtils::HexDecode(tag_raw);
+    CryptoBuffer iv = HashingUtils::HexDecode(iv_raw);
+    CryptoBuffer key = HashingUtils::HexDecode(key_raw);
+    CryptoBuffer data = HashingUtils::HexDecode(data_raw);
+    CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
+    CryptoBuffer tag = HashingUtils::HexDecode(tag_raw);
 
     auto cipher = CreateAES_GCMImplementation(key, iv);
     auto encryptResult = cipher->EncryptBuffer(data);
@@ -246,9 +335,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     ASSERT_EQ(tag, cipher->GetTag());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
+    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
 
     cipher = CreateAES_GCMImplementation(key, iv, cipher->GetTag());
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
@@ -256,7 +343,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer plainText(data.GetLength());
+    CryptoBuffer plainText(data.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
 
@@ -266,10 +353,10 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
 static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                         const Aws::String& data_raw, const Aws::String& expected_raw)
 {
-    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
-    ByteBuffer key = HashingUtils::HexDecode(key_raw);
-    ByteBuffer data = HashingUtils::HexDecode(data_raw);
-    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
+    CryptoBuffer iv = HashingUtils::HexDecode(iv_raw);
+    CryptoBuffer key = HashingUtils::HexDecode(key_raw);
+    CryptoBuffer data = HashingUtils::HexDecode(data_raw);
+    CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
     auto encryptResult = cipher->EncryptBuffer(data);
@@ -279,16 +366,14 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(), finalEncryptedBuffer.GetLength());
+    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
 
     cipher = CreateAES_CBCImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
+    CryptoBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
     memcpy(plainText.GetUnderlyingData() + decryptResult.GetLength(), finalDecryptBuffer.GetUnderlyingData(), finalDecryptBuffer.GetLength());
@@ -299,10 +384,10 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
 static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                         const Aws::String& data_raw, const Aws::String& expected_raw)
 {
-    ByteBuffer iv = HashingUtils::HexDecode(iv_raw);
-    ByteBuffer key = HashingUtils::HexDecode(key_raw);
-    ByteBuffer data = HashingUtils::HexDecode(data_raw);
-    ByteBuffer expected = HashingUtils::HexDecode(expected_raw);
+    CryptoBuffer iv = HashingUtils::HexDecode(iv_raw);
+    CryptoBuffer key = HashingUtils::HexDecode(key_raw);
+    CryptoBuffer data = HashingUtils::HexDecode(data_raw);
+    CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CTRImplementation(key, iv);
     auto encryptResult = cipher->EncryptBuffer(data);
@@ -312,17 +397,14 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer encryptedResult(encryptResult.GetLength() + finalEncryptedBuffer.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData(), encryptResult.GetUnderlyingData(), encryptResult.GetLength());
-    memcpy(encryptedResult.GetUnderlyingData() + encryptResult.GetLength(), finalEncryptedBuffer.GetUnderlyingData(),
-           finalEncryptedBuffer.GetLength());
+    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
 
     cipher = CreateAES_CTRImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_TRUE(*cipher);
 
-    ByteBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
+    CryptoBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
     memcpy(plainText.GetUnderlyingData() + decryptResult.GetLength(), finalDecryptBuffer.GetUnderlyingData(),

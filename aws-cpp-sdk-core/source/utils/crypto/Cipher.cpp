@@ -16,6 +16,7 @@
 #include <aws/core/utils/crypto/Cipher.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Utils;
@@ -35,19 +36,18 @@ namespace Aws
     {
         namespace Crypto
         {
-            /**
-             * Generate random number per 4 bytes and use each byte for the byte in the iv
-             */
-            ByteBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes, bool ctrMode)
+            static const char* LOG_TAG = "Cipher";
+
+            CryptoBuffer GenerateXRandomBytes(size_t lengthBytes, bool ctrMode)
             {
                 std::shared_ptr<SecureRandom<uint64_t>> rng = Create64BitSecureRandomImplementation();
 
-                ByteBuffer iv(ivLengthBytes);
+                CryptoBuffer bytes(lengthBytes);
 
                 uint64_t randNumber = 0;
-                size_t lengthToGenerate = ctrMode ? (3 * iv.GetLength())  / 4 : iv.GetLength();
+                size_t lengthToGenerate = ctrMode ? (3 * bytes.GetLength())  / 4 : bytes.GetLength();
 
-                for(size_t i = 0; i < lengthToGenerate; ++i)
+                for(size_t i = 0; i < lengthToGenerate && rng; ++i)
                 {
                     unsigned char byteToAssign = 0;
 
@@ -83,7 +83,43 @@ namespace Aws
                         assert(0);
                     }
 
-                    iv[i] = byteToAssign;
+                    bytes[i] = byteToAssign;
+                }
+
+                if(!rng)
+                {
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Random Number generation failed. Abort all crypto operations.");
+                    assert(false);
+                    return CryptoBuffer(0);
+                }
+
+                return bytes;
+            }
+
+            void SymmetricCipher::Validate()
+            {
+                assert(m_key.GetLength() >= SYMMETRIC_KEY_LENGTH);
+                assert(m_initializationVector.GetLength() >= MIN_IV_LENGTH);
+
+                if(m_key.GetLength() < SYMMETRIC_KEY_LENGTH || m_initializationVector.GetLength() < MIN_IV_LENGTH)
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Invalid state for symmetric cipher, key length is " << m_key.GetLength() <<
+                                            " iv length is " << m_initializationVector.GetLength());
+                }
+            }
+
+            /**
+             * Generate random number per 4 bytes and use each byte for the byte in the iv
+             */
+            CryptoBuffer SymmetricCipher::GenerateIV(size_t ivLengthBytes, bool ctrMode)
+            {
+                CryptoBuffer iv(GenerateXRandomBytes(ivLengthBytes, ctrMode));
+
+                if(iv.GetLength() == 0)
+                {
+                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Unable to generate iv of length " << ivLengthBytes);
+                    return iv;
                 }
 
                 if(ctrMode)
@@ -100,6 +136,18 @@ namespace Aws
                 }
 
                 return iv;
+            }
+
+            CryptoBuffer SymmetricCipher::GenerateKey(size_t keyLengthBytes)
+            {
+                CryptoBuffer&& key = GenerateXRandomBytes(keyLengthBytes, false);
+
+                if(key.GetLength() == 0)
+                {
+                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Unable to generate key of length " << keyLengthBytes);
+                }
+
+                return key;
             }
         }
     }

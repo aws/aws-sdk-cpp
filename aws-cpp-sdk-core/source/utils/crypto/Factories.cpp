@@ -160,7 +160,7 @@ public:
 class DefaultAES_CBCFactory : public SymmetricCipherFactory
 {
 public:
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key);
@@ -175,7 +175,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
@@ -190,7 +190,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
@@ -229,7 +229,7 @@ public:
 class DefaultAES_CTRFactory : public SymmetricCipherFactory
 {
 public:
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key);
@@ -244,7 +244,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
@@ -259,7 +259,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
@@ -300,7 +300,7 @@ public:
 class DefaultAES_GCMFactory : public SymmetricCipherFactory
 {
 public:
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key);
@@ -315,7 +315,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
@@ -330,7 +330,7 @@ public:
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
@@ -627,47 +627,47 @@ std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
     return s_Sha256HMACFactory->CreateImplementation();
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const ByteBuffer& key)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const CryptoBuffer& key)
 {
     return s_AES_CBCFactory->CreateImplementation(key);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
 {
     return s_AES_CBCFactory->CreateImplementation(key, iv);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
     return s_AES_CBCFactory->CreateImplementation(key, iv);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const ByteBuffer& key)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key)
 {
     return s_AES_CTRFactory->CreateImplementation(key);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const ByteBuffer& key, const ByteBuffer& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
 {
     return s_AES_CTRFactory->CreateImplementation(key, iv);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(ByteBuffer&& key, ByteBuffer&& iv)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
     return s_AES_CTRFactory->CreateImplementation(key, iv);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key)
 {
     return s_AES_GCMFactory->CreateImplementation(key);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer& tag)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag)
 {
     return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
 }
 
-std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag)
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag)
 {
     return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
 }

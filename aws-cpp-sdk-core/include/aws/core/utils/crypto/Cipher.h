@@ -25,6 +25,9 @@ namespace Aws
     {
         namespace Crypto
         {
+            static const size_t SYMMETRIC_KEY_LENGTH = 32;
+            static const size_t MIN_IV_LENGTH = 12;
+
             /**
              * Interface for symmetric encryption and decryption providers. An instance of this class is good for exactly one encryption or decryption run.
              * It should not be used to encrypt or decrypt multiple messages.
@@ -33,22 +36,22 @@ namespace Aws
             {
             public:
                 /**
-                 * Initialize with key and an auto-generated initializationVector.
+                 * Initialize with key and an auto-generated initializationVector. Copies key.
                  */
-                SymmetricCipher(const ByteBuffer& key, size_t ivSize, bool ctrMode = false) :
-                        m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)), m_failure(false) {}
+                SymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ctrMode = false) :
+                        m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)), m_failure(false) { Validate(); }
 
                 /**
-                 * Initialize with key and initializationVector (makes copies of the buffers), set tag for decryption of authenticated modes
+                 * Initialize with key and initializationVector, set tag for decryption of authenticated modes (makes copies of the buffers)
                  */
-                SymmetricCipher(const ByteBuffer& key, const ByteBuffer& initializationVector, const ByteBuffer& tag = ByteBuffer(0)) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) {}
+                SymmetricCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer(0)) :
+                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) { Validate(); }
 
                 /**
-                 * Initialize with key and initializationVector (move the buffers), set tag for decryption of authenticated modes
+                 * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
                  */
-                SymmetricCipher(ByteBuffer&& key, ByteBuffer&& initializationVector, ByteBuffer&& tag = ByteBuffer(0)) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) {}
+                SymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0)) :
+                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) { Validate(); }
 
                 SymmetricCipher(const SymmetricCipher& other) = delete;
                 SymmetricCipher& operator=(const SymmetricCipher& other) = delete;
@@ -64,6 +67,7 @@ namespace Aws
                         m_tag(std::move(toMove.m_tag)),
                         m_failure(toMove.m_failure)
                 {
+                    Validate();
                 }
 
                 /**
@@ -77,6 +81,8 @@ namespace Aws
                     m_initializationVector = std::move(toMove.m_initializationVector);
                     m_tag = std::move(toMove.m_tag);
                     m_failure = toMove.m_failure;
+
+                    Validate();
 
                     return *this;
                 }
@@ -94,35 +100,35 @@ namespace Aws
                  * a user call this function multiple times for a large stream. As such, multiple calls to this function
                  * on the same instance should produce valid sequential output for an encrypted stream.
                  */
-                virtual ByteBuffer EncryptBuffer( const ByteBuffer& unEncryptedData) = 0;
+                virtual CryptoBuffer EncryptBuffer( const CryptoBuffer& unEncryptedData) = 0;
 
                 /**
                  * Finalize Encryption, returns anything remaining in the last block
                  */
-                virtual ByteBuffer FinalizeEncryption () = 0;
+                virtual CryptoBuffer FinalizeEncryption () = 0;
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
                 * a user call this function multiple times for a large stream. As such, multiple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
-                virtual ByteBuffer DecryptBuffer(const ByteBuffer& encryptedData) = 0;
+                virtual CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) = 0;
 
                 /**
                  * Finalize Decryption, returns anything remaining in the last block
                  */
-                virtual ByteBuffer FinalizeDecryption () = 0;
+                virtual CryptoBuffer FinalizeDecryption () = 0;
 
                 /**
                  * IV used for encryption/decryption
                  */
-                inline const ByteBuffer& GetIV() const { return m_initializationVector; }
+                inline const CryptoBuffer& GetIV() const { return m_initializationVector; }
 
                 /**
                  * Tag generated by encryption and used for the decryption.
                  *  This will be set in an authenticated mode, otherwise empty
                  */
-                inline const ByteBuffer& GetTag() const { return m_tag; }
+                inline const CryptoBuffer& GetTag() const { return m_tag; }
 
                 inline bool Fail() const { return m_failure; }
                 inline bool Good() const { return !Fail(); }
@@ -132,13 +138,21 @@ namespace Aws
                  * should be fast. If ctrMode is true, it will pad nonce in the first 1/4 of the iv and initialize
                  * the back 1/4 to 1.
                  */
-                static ByteBuffer GenerateIV(size_t ivLengthBytes, bool ctrMode = false);
+                static CryptoBuffer GenerateIV(size_t ivLengthBytes, bool ctrMode = false);
+
+                /**
+                 * Generates a non-deterministic random symmetric key. Default (and minimum bar for security) is 256 bits.
+                 */
+                static CryptoBuffer GenerateKey(size_t keyLengthBytes = SYMMETRIC_KEY_LENGTH);
 
             protected:
-                ByteBuffer m_key;
-                ByteBuffer m_initializationVector;
-                ByteBuffer m_tag;
+                CryptoBuffer m_key;
+                CryptoBuffer m_initializationVector;
+                CryptoBuffer m_tag;
                 bool m_failure;
+
+            private:
+                void Validate();
             };
 
             /**
@@ -152,15 +166,15 @@ namespace Aws
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const = 0;
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer& tag = ByteBuffer(0)) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag = CryptoBuffer(0)) const = 0;
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag = ByteBuffer(0)) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0)) const = 0;
 
                 /**
                  * Only called once per factory, your chance to make static library calls for setup.

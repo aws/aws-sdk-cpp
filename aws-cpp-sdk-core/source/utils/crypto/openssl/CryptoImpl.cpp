@@ -110,7 +110,7 @@ namespace Aws
                 MD5_CTX md5;
                 MD5_Init(&md5);
 
-                unsigned currentPos = stream.tellg();
+                auto currentPos = stream.tellg();
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -121,7 +121,7 @@ namespace Aws
 
                     if (bytesRead > 0)
                     {
-                        MD5_Update(&md5, streamBuffer, bytesRead);
+                        MD5_Update(&md5, streamBuffer, static_cast<size_t>(bytesRead));
                     }
                 }
 
@@ -151,7 +151,7 @@ namespace Aws
                 SHA256_CTX sha256;
                 SHA256_Init(&sha256);
 
-                unsigned currentPos = stream.tellg();
+                auto currentPos = stream.tellg();
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -162,7 +162,7 @@ namespace Aws
 
                     if (bytesRead > 0)
                     {
-                        SHA256_Update(&sha256, streamBuffer, bytesRead);
+                        SHA256_Update(&sha256, streamBuffer, static_cast<size_t>(bytesRead));
                     }
                 }
 
@@ -184,7 +184,7 @@ namespace Aws
                 HMAC_CTX ctx;
                 HMAC_CTX_init(&ctx);
 
-                HMAC_Init_ex(&ctx, secret.GetUnderlyingData(), secret.GetLength(), EVP_sha256(), NULL);
+                HMAC_Init_ex(&ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(), NULL);
                 HMAC_Update(&ctx, toSign.GetUnderlyingData(), toSign.GetLength());
                 HMAC_Final(&ctx, digest.GetUnderlyingData(), &length);
                 HMAC_CTX_cleanup(&ctx);
@@ -196,7 +196,7 @@ namespace Aws
 
             void LogErrors(const char *logTag = LOG_TAG)
             {
-                long errorCode = ERR_get_error();
+                unsigned long errorCode = ERR_get_error();
                 char errStr[256];
                 ERR_error_string_n(errorCode, errStr, 256);
 
@@ -204,7 +204,7 @@ namespace Aws
             }
 
 
-            OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, size_t blockSizeBytes, bool ctrMode) :
+            OpenSSLCipher::OpenSSLCipher(const CryptoBuffer &key, size_t blockSizeBytes, bool ctrMode) :
                     SymmetricCipher(key, blockSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false),
                     m_decryptionMode(false)
             {
@@ -220,15 +220,15 @@ namespace Aws
                 m_decryptionMode = toMove.m_decryptionMode;
             }
 
-            OpenSSLCipher::OpenSSLCipher(ByteBuffer &&key, ByteBuffer &&initializationVector, ByteBuffer &&tag) :
+            OpenSSLCipher::OpenSSLCipher(CryptoBuffer &&key, CryptoBuffer &&initializationVector, CryptoBuffer &&tag) :
                     SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false),
                     m_encryptionMode(false), m_decryptionMode(false)
             {
                 Init();
             }
 
-            OpenSSLCipher::OpenSSLCipher(const ByteBuffer &key, const ByteBuffer &initializationVector,
-                                         const ByteBuffer &tag) :
+            OpenSSLCipher::OpenSSLCipher(const CryptoBuffer &key, const CryptoBuffer &initializationVector,
+                                         const CryptoBuffer &tag) :
                     SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false),
                     m_encryptionMode(false), m_decryptionMode(false)
             {
@@ -249,7 +249,9 @@ namespace Aws
 
             void OpenSSLCipher::CheckInitEncryptor()
             {
+                assert(!m_failure);
                 assert(!m_decryptionMode);
+
                 if (!m_encDecInitialized)
                 {
                     InitEncryptor_Internal();
@@ -260,7 +262,9 @@ namespace Aws
 
             void OpenSSLCipher::CheckInitDecryptor()
             {
+                assert(!m_failure);
                 assert(!m_encryptionMode);
+
                 if (!m_encDecInitialized)
                 {
                     InitDecryptor_Internal();
@@ -269,11 +273,17 @@ namespace Aws
                 }
             }
 
-            ByteBuffer OpenSSLCipher::EncryptBuffer(const ByteBuffer &unEncryptedData)
+            CryptoBuffer OpenSSLCipher::EncryptBuffer(const CryptoBuffer &unEncryptedData)
             {
+                if(m_failure)
+                {
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
+                    return CryptoBuffer();
+                }
+
                 CheckInitEncryptor();
                 int lengthWritten = static_cast<int>(unEncryptedData.GetLength() + (GetBlockSizeBytes() - 1));
-                ByteBuffer encryptedText(static_cast<size_t>( lengthWritten + (GetBlockSizeBytes() - 1)));
+                CryptoBuffer encryptedText(static_cast<size_t>( lengthWritten + (GetBlockSizeBytes() - 1)));
 
                 if (!EVP_EncryptUpdate(&m_ctx, encryptedText.GetUnderlyingData(), &lengthWritten,
                                        unEncryptedData.GetUnderlyingData(),
@@ -281,35 +291,47 @@ namespace Aws
                 {
                     m_failure = true;
                     LogErrors();
-                    return ByteBuffer();
+                    return CryptoBuffer();
                 }
 
                 if (static_cast<size_t>(lengthWritten) < encryptedText.GetLength())
                 {
-                    return ByteBuffer(encryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
+                    return CryptoBuffer(encryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
                 }
 
                 return encryptedText;
             }
 
-            ByteBuffer OpenSSLCipher::FinalizeEncryption()
+            CryptoBuffer OpenSSLCipher::FinalizeEncryption()
             {
-                ByteBuffer finalBlock(GetBlockSizeBytes());
+                if(m_failure)
+                {
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for encryption finalization. Aborting");
+                    return CryptoBuffer();
+                }
+
+                CryptoBuffer finalBlock(GetBlockSizeBytes());
                 int writtenSize = 0;
                 if (!EVP_EncryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize))
                 {
                     m_failure = true;
                     LogErrors();
-                    return ByteBuffer();
+                    return CryptoBuffer();
                 }
-                return ByteBuffer(finalBlock.GetUnderlyingData(), writtenSize);
+                return CryptoBuffer(finalBlock.GetUnderlyingData(), static_cast<size_t>(writtenSize));
             }
 
-            ByteBuffer OpenSSLCipher::DecryptBuffer(const ByteBuffer &encryptedData)
+            CryptoBuffer OpenSSLCipher::DecryptBuffer(const CryptoBuffer &encryptedData)
             {
+                if(m_failure)
+                {
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for decryption. Aborting");
+                    return CryptoBuffer();
+                }
+
                 CheckInitDecryptor();
                 int lengthWritten = static_cast<int>(encryptedData.GetLength() + (GetBlockSizeBytes() - 1));
-                ByteBuffer decryptedText(static_cast<size_t>(lengthWritten));
+                CryptoBuffer decryptedText(static_cast<size_t>(lengthWritten));
 
                 if (!EVP_DecryptUpdate(&m_ctx, decryptedText.GetUnderlyingData(), &lengthWritten,
                                        encryptedData.GetUnderlyingData(),
@@ -317,43 +339,49 @@ namespace Aws
                 {
                     m_failure = true;
                     LogErrors();
-                    return ByteBuffer();
+                    return CryptoBuffer();
                 }
 
                 if (static_cast<size_t>(lengthWritten) < decryptedText.GetLength())
                 {
-                    return ByteBuffer(decryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
+                    return CryptoBuffer(decryptedText.GetUnderlyingData(), static_cast<size_t>(lengthWritten));
                 }
 
                 return decryptedText;
             }
 
-            ByteBuffer OpenSSLCipher::FinalizeDecryption()
+            CryptoBuffer OpenSSLCipher::FinalizeDecryption()
             {
-                ByteBuffer finalBlock(GetBlockSizeBytes());
-                int writtenSize = finalBlock.GetLength();
+                if(m_failure)
+                {
+                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for decryption finalization. Aborting");
+                    return CryptoBuffer();
+                }
+
+                CryptoBuffer finalBlock(GetBlockSizeBytes());
+                int writtenSize = static_cast<int>(finalBlock.GetLength());
                 if (!EVP_DecryptFinal_ex(&m_ctx, finalBlock.GetUnderlyingData(), &writtenSize))
                 {
                     m_failure = true;
                     LogErrors();
-                    return ByteBuffer();
+                    return CryptoBuffer();
                 }
-                return ByteBuffer(finalBlock.GetUnderlyingData(), writtenSize);
+                return CryptoBuffer(finalBlock.GetUnderlyingData(), static_cast<size_t>(writtenSize));
             }
 
             size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_OpenSSL::KeyLengthBits = 256;
             static const char *CBC_LOG_TAG = "AES_CBC_Cipher_OpenSSL";
 
-            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes)
+            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key) : OpenSSLCipher(key, BlockSizeBytes)
             { }
 
-            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector) :
+            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector) :
                     OpenSSLCipher(key, initializationVector)
             { }
 
-            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const ByteBuffer &key,
-                                                           const ByteBuffer &initializationVector) :
+            AES_CBC_Cipher_OpenSSL::AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key,
+                                                           const CryptoBuffer &initializationVector) :
                     OpenSSLCipher(key, initializationVector)
             { }
 
@@ -391,16 +419,16 @@ namespace Aws
             size_t AES_CTR_Cipher_OpenSSL::KeyLengthBits = 256;
             static const char *CTR_LOG_TAG = "AES_CTR_Cipher_OpenSSL";
 
-            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, BlockSizeBytes,
+            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key) : OpenSSLCipher(key, BlockSizeBytes,
                                                                                                   true)
             { }
 
-            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector) :
+            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector) :
                     OpenSSLCipher(key, initializationVector)
             { }
 
-            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const ByteBuffer &key,
-                                                           const ByteBuffer &initializationVector) :
+            AES_CTR_Cipher_OpenSSL::AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key,
+                                                           const CryptoBuffer &initializationVector) :
                     OpenSSLCipher(key, initializationVector)
             { }
 
@@ -441,30 +469,30 @@ namespace Aws
             size_t AES_GCM_Cipher_OpenSSL::IVLengthBytes = 12;
             static const char *GCM_LOG_TAG = "AES_GCM_Cipher_OpenSSL";
 
-            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const ByteBuffer &key) : OpenSSLCipher(key, IVLengthBytes)
+            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key) : OpenSSLCipher(key, IVLengthBytes)
             { }
 
-            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector,
-                                                           ByteBuffer &&tag) :
+            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector,
+                                                           CryptoBuffer &&tag) :
                     OpenSSLCipher(key, initializationVector, tag)
             { }
 
-            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const ByteBuffer &key,
-                                                           const ByteBuffer &initializationVector,
-                                                           const ByteBuffer &tag) :
+            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key,
+                                                           const CryptoBuffer &initializationVector,
+                                                           const CryptoBuffer &tag) :
                     OpenSSLCipher(key, initializationVector, tag)
             { }
 
-            ByteBuffer AES_GCM_Cipher_OpenSSL::FinalizeEncryption()
+            CryptoBuffer AES_GCM_Cipher_OpenSSL::FinalizeEncryption()
             {
-                ByteBuffer &&finalBuffer = OpenSSLCipher::FinalizeEncryption();
-                m_tag = ByteBuffer(BlockSizeBytes);
+                CryptoBuffer &&finalBuffer = OpenSSLCipher::FinalizeEncryption();
+                m_tag = CryptoBuffer(BlockSizeBytes);
                 if (!EVP_CIPHER_CTX_ctrl(&m_ctx, EVP_CTRL_CCM_GET_TAG, static_cast<int>(m_tag.GetLength()),
                                          m_tag.GetUnderlyingData()))
                 {
                     m_failure = true;
                     LogErrors(GCM_LOG_TAG);
-                    return ByteBuffer();
+                    return CryptoBuffer();
                 }
 
                 return finalBuffer;

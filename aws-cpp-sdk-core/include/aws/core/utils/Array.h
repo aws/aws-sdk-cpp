@@ -18,9 +18,10 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/memory/AWSMemory.h>
-
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <memory>
 #include <cassert>
+#include <cstring>
 
 #ifdef _WIN32
 
@@ -42,12 +43,18 @@ namespace Aws
         {
 
         public:
+            /**
+             * Create new empty array of size arraySize. Default argument is 0. If it is empty then no allocation happens.
+             */
             Array(size_t arraySize = 0) :
                 m_size(arraySize),
-                m_data(Aws::MakeUniqueArray<T>(arraySize, ARRAY_ALLOCATION_TAG))
+                m_data(arraySize > 0 ? Aws::MakeUniqueArray<T>(arraySize, ARRAY_ALLOCATION_TAG) : nullptr)
             {
             }
 
+            /**
+             * Create new array and initialize it to a raw array
+             */
             Array(const T* arrayToCopy, size_t arraySize) :
                 m_size(arraySize),
                 m_data(nullptr)
@@ -61,6 +68,33 @@ namespace Aws
 #else
                     std::copy(arrayToCopy, arrayToCopy + arraySize, m_data.get());
 #endif // MSVC
+                }
+            }
+
+            /**
+             * Merge multiple arrays into one
+             */
+            Array(Aws::Vector<Array*>&& toMerge)
+            {
+                size_t totalSize = 0;
+                for(auto& array : toMerge)
+                {
+                    totalSize += array->m_size;
+                }
+
+                m_size = totalSize;
+                m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
+
+                size_t location = 0;
+                for(auto& array : toMerge)
+                {
+                    size_t arraySize = array->m_size;
+#ifdef _WIN32
+                    std::copy(array->m_data.get(), array->m_data.get() + arraySize, stdext::checked_array_iterator< T * >(m_data.get() + location, m_size));
+#else
+                    std::copy(array->m_data.get(), array->m_data.get() + arraySize, m_data.get() + location);
+#endif // MSVC
+                    location += arraySize;
                 }
             }
 
@@ -86,8 +120,11 @@ namespace Aws
                 m_size(other.m_size),
                 m_data(std::move(other.m_data))
             {
+                other.m_size = 0;
+                other.m_data = nullptr;
             }
 
+            virtual ~Array() = default;
 
             Array& operator=(const Array& other)
             {
@@ -150,9 +187,18 @@ namespace Aws
                 return !(*this == other);
             }
 
+            /**
+             * Zero out the array. This is not done by default for this type.
+             */
             void Zero()
             {
-                memset(m_data.get(), 0, GetLength());
+                if(m_data)
+                {
+                    memset(m_data.get(), 0, GetLength());
+                    //If someone is calling this they don't want the compiler optimizing out the zero operation.
+                    //force the compiler to not attempt a "dead store removal" operation.
+                    *(volatile unsigned char *)m_data.get() = *(volatile unsigned char *)m_data.get();
+                }
             }
 
             T const& GetItem(size_t index) const
@@ -194,6 +240,27 @@ namespace Aws
         };
 
         typedef Array<unsigned char> ByteBuffer;
+
+        /**
+         * Buffer for cryptographic operations. It zeroes itself back out upon deletion. Everything else is identical
+         * to byte buffer.
+         */
+        class CryptoBuffer : public ByteBuffer
+        {
+        public:
+            CryptoBuffer(size_t arraySize = 0) : ByteBuffer(arraySize) {}
+            CryptoBuffer(const unsigned char* arrayToCopy, size_t arraySize) : ByteBuffer(arrayToCopy, arraySize) {}
+            CryptoBuffer(Aws::Vector<ByteBuffer*>&& toMerge) : ByteBuffer(std::move(toMerge)) {}
+            CryptoBuffer(const ByteBuffer& other) : ByteBuffer(other) {}
+            CryptoBuffer(const CryptoBuffer& other) : ByteBuffer(other) {}
+            CryptoBuffer(CryptoBuffer&& other) : ByteBuffer(std::move(other)) {}
+            CryptoBuffer& operator=(const CryptoBuffer& other) = default;
+            CryptoBuffer& operator=(CryptoBuffer&& other) = default;
+            bool operator==(const CryptoBuffer& other) const { return ByteBuffer::operator==(other); }
+            bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }
+
+            ~CryptoBuffer() { Zero(); }
+        };
 
     } // namespace Utils
 } // namespace Aws

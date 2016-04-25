@@ -61,44 +61,44 @@ namespace Aws
             /**
              * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const CryptoBuffer& key);
             /**
              * Create AES in CBC mode off of a 256 bit key and 16 byte IV
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const ByteBuffer& key, const ByteBuffer& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(const CryptoBuffer& key, const CryptoBuffer& iv);
             /**
              * Create AES in CBC mode off of a 256 bit key and 16 byte IV
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(ByteBuffer&& key, ByteBuffer&& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CBCImplementation(CryptoBuffer&& key, CryptoBuffer&& iv);
 
             /**
              * Create AES in CTR mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
              * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const CryptoBuffer& key);
             /**
              * Create AES in CTR mode off of a 256 bit key and 16 byte IV
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const ByteBuffer& key, const ByteBuffer& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(const CryptoBuffer& key, const CryptoBuffer& iv);
             /**
              * Create AES in CTR mode off of a 256 bit key and 16 byte IV
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(ByteBuffer&& key, ByteBuffer&& iv);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv);
 
             /**
              * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte secure random IV.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const ByteBuffer& key);
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key);
             /**
              * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const ByteBuffer& key, const ByteBuffer& iv, const ByteBuffer& tag = ByteBuffer(0));
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag = CryptoBuffer(0));
             /**
              * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(ByteBuffer&& key, ByteBuffer&& iv, ByteBuffer&& tag = ByteBuffer(0));
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0));
 
             /**
              * Create SecureRandom instance for 64 bit unsigned integer

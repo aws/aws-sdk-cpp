@@ -41,8 +41,6 @@ namespace Aws
                 unsigned long id_fn();
             }
 
-            extern std::once_flag secureRandFlag;
-
             template<typename DataType = uint64_t>
             class SecureRandomOpenSSLImpl : public SecureRandom<DataType>
             {
@@ -58,17 +56,18 @@ namespace Aws
                     unsigned char buffer[sizeof(DataType)];
 
                     int success = RAND_bytes(buffer, sizeof(DataType));
+                    DataType value(0);
 
                     if(success != 1)
                     {
                         SecureRandom<DataType>::m_failure = true;
+                        return value;
                     }
 
-                    DataType value(0);
                     for(size_t i = 0; i < sizeof(DataType); ++i)
                     {
                         value <<= 8;
-                        value |= i;
+                        value |= buffer[i];
                     }
 
                     return value;
@@ -120,19 +119,19 @@ namespace Aws
                 /**
                  * Creates new OpenSSL based cipher for key, and autogenerates a secure IV of size ivSize
                  */
-                OpenSSLCipher(const ByteBuffer &key, size_t ivSize, bool ctrMode = false);
+                OpenSSLCipher(const CryptoBuffer &key, size_t ivSize, bool ctrMode = false);
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated
                  * cipher being used for decryption.
                  */
-                OpenSSLCipher(ByteBuffer&& key, ByteBuffer&& initializationVector, ByteBuffer&& tag = ByteBuffer(0));
+                OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0));
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated
                  * cipher being used for decryption.
                  */
-                OpenSSLCipher(const ByteBuffer& key, const ByteBuffer& initializationVector, const ByteBuffer& tag = ByteBuffer(0));
+                OpenSSLCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer(0));
 
                 OpenSSLCipher(const OpenSSLCipher& other) = delete;
                 OpenSSLCipher& operator=(const OpenSSLCipher& other) = delete;
@@ -159,24 +158,24 @@ namespace Aws
                  * a user call this function multiple times for a large stream. As such, multiple calls to this function
                  * on the same instance should produce valid sequential output for an encrypted stream.
                  */
-                ByteBuffer EncryptBuffer( const ByteBuffer& unEncryptedData) override;
+                CryptoBuffer EncryptBuffer( const CryptoBuffer& unEncryptedData) override;
 
                 /**
                  * Finalize Encryption, returns anything remaining in the last block
                  */
-                ByteBuffer FinalizeEncryption () override;
+                CryptoBuffer FinalizeEncryption () override;
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
                 * a user call this function multiple times for a large stream. As such, mutliple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
-                ByteBuffer DecryptBuffer(const ByteBuffer& encryptedData) override;
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
 
                 /**
                  * Finalize Decryption, returns anything remaining in the last block
                  */
-                ByteBuffer FinalizeDecryption () override;
+                CryptoBuffer FinalizeDecryption () override;
 
             protected:
                 /**
@@ -212,17 +211,17 @@ namespace Aws
                 /**
                  * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
                  */
-                AES_CBC_Cipher_OpenSSL(const ByteBuffer &key);
+                AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key);
 
                 /**
                  * Create AES in CBC mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CBC_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector);
+                AES_CBC_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector);
 
                 /**
                  * Create AES in CBC mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CBC_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector);
+                AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector);
 
                 AES_CBC_Cipher_OpenSSL(const AES_CBC_Cipher_OpenSSL &other) = delete;
 
@@ -250,17 +249,17 @@ namespace Aws
                  * Create AES in CTR mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
                  * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]
                  */
-                AES_CTR_Cipher_OpenSSL(const ByteBuffer &key);
+                AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key);
 
                 /**
                  * Create AES in CTR mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CTR_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector);
+                AES_CTR_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector);
 
                 /**
                  * Create AES in CTR mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CTR_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector);
+                AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector);
 
                 AES_CTR_Cipher_OpenSSL(const AES_CTR_Cipher_OpenSSL &other) = delete;
 
@@ -287,19 +286,19 @@ namespace Aws
                 /**
                  * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte secure random IV.
                  */
-                AES_GCM_Cipher_OpenSSL(const ByteBuffer &key);
+                AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key);
 
                 /**
                  * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
                  * cipher to decrypt an encrypted payload, you must set the tag here.
                  */
-                AES_GCM_Cipher_OpenSSL(ByteBuffer &&key, ByteBuffer &&initializationVector, ByteBuffer&& tag = ByteBuffer(0));
+                AES_GCM_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector, CryptoBuffer&& tag = CryptoBuffer(0));
 
                 /**
                  * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
                  * cipher to decrypt an encrypted payload, you must set the tag here.
                  */
-                AES_GCM_Cipher_OpenSSL(const ByteBuffer &key, const ByteBuffer &initializationVector, const ByteBuffer& tag = ByteBuffer(0));
+                AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector, const CryptoBuffer& tag = CryptoBuffer(0));
 
                 AES_GCM_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL &other) = delete;
 
@@ -310,7 +309,7 @@ namespace Aws
                  * After calling FinalizeEncryption, be sure to call GetTag() and do something with it
                  * or you will not be able to decrypt the payload.
                  */
-                ByteBuffer FinalizeEncryption () override;
+                CryptoBuffer FinalizeEncryption () override;
 
             protected:
                 void InitEncryptor_Internal() override;
