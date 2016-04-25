@@ -78,7 +78,7 @@ namespace Aws
 #ifdef __ANDROID__
 
     template< typename T >
-    bool operator ==(const Allocator< T >& lhs, const Allocator< T >& rhs)
+    bool operator ==(const Allocator< T >&, const Allocator< T >&)
     {
         return false;
     }
