@@ -45,10 +45,17 @@ target_include_directories(aws-cpp-sdk-identity-management PUBLIC
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-identity-management aws-cpp-sdk-cognito-identity)
 
-install (TARGETS aws-cpp-sdk-identity-management 
-         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+if(SIMPLE_INSTALL)
+    install (TARGETS aws-cpp-sdk-identity-management
+            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+            LIBRARY DESTINATION lib
+            RUNTIME DESTINATION bin)
+else()
+    install (TARGETS aws-cpp-sdk-identity-management
+             ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+endif()
 
 install (FILES ${AWS_IDENTITY_HEADERS} DESTINATION include/aws/identity-management)
 install (FILES ${AWS_IDENTITY_PROVIDER_HEADERS} DESTINATION include/aws/identity-management/auth)

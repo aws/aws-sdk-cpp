@@ -29,6 +29,8 @@ cmake_minimum_required (VERSION 3.1.2)
 #   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourserviceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
 #                          to use these arguments, you should add the api definition .normal.json file for your service to the api-description folder in the generator.
 
+option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 # there isn't a reliable way of detecting what architecture we want to build for in a cross-compiling environment, so force the user
