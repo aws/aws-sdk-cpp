@@ -20,8 +20,8 @@ using namespace Aws::Client;
 using namespace Aws::MachineLearning;
 using namespace Aws::Utils;
 
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int PREDICTOR_NOT_MOUNTED_HASH = HashingUtils::HashString("PredictorNotMountedException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
@@ -37,13 +37,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MachineLearningErrors::INTERNAL_SERVER), false);
-  }
-  else if (hashCode == PREDICTOR_NOT_MOUNTED_HASH)
+  if (hashCode == PREDICTOR_NOT_MOUNTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MachineLearningErrors::PREDICTOR_NOT_MOUNTED), false);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MachineLearningErrors::INTERNAL_SERVER), false);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {

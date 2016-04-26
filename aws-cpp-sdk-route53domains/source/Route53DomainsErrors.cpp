@@ -20,9 +20,9 @@ using namespace Aws::Client;
 using namespace Aws::Route53Domains;
 using namespace Aws::Utils;
 
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
-static const int OPERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OperationLimitExceeded");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
+static const int OPERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OperationLimitExceeded");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int DOMAIN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainLimitExceeded");
 static const int UNSUPPORTED_T_L_D_HASH = HashingUtils::HashString("UnsupportedTLD");
 static const int T_L_D_RULES_VIOLATION_HASH = HashingUtils::HashString("TLDRulesViolation");
@@ -38,17 +38,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_INPUT_HASH)
+  if (hashCode == DUPLICATE_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DUPLICATE_REQUEST), false);
   }
   else if (hashCode == OPERATION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::OPERATION_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == DUPLICATE_REQUEST_HASH)
+  else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DUPLICATE_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::INVALID_INPUT), false);
   }
   else if (hashCode == DOMAIN_LIMIT_EXCEEDED_HASH)
   {

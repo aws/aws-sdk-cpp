@@ -20,7 +20,6 @@ using namespace Aws::Client;
 using namespace Aws::SimpleDB;
 using namespace Aws::Utils;
 
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 static const int NO_SUCH_DOMAIN_HASH = HashingUtils::HashString("NoSuchDomain");
 static const int NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainAttributesExceeded");
 static const int NUMBER_DOMAIN_BYTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainBytesExceeded");
@@ -35,6 +34,7 @@ static const int ATTRIBUTE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("Attri
 static const int NUMBER_DOMAINS_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainsExceeded");
 static const int INVALID_QUERY_EXPRESSION_HASH = HashingUtils::HashString("InvalidQueryExpression");
 static const int TOO_MANY_REQUESTED_ATTRIBUTES_HASH = HashingUtils::HashString("TooManyRequestedAttributes");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 
 namespace Aws
 {
@@ -47,11 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_TIMEOUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::REQUEST_TIMEOUT), false);
-  }
-  else if (hashCode == NO_SUCH_DOMAIN_HASH)
+  if (hashCode == NO_SUCH_DOMAIN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NO_SUCH_DOMAIN), false);
   }
@@ -106,6 +102,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTED_ATTRIBUTES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::TOO_MANY_REQUESTED_ATTRIBUTES), false);
+  }
+  else if (hashCode == REQUEST_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::REQUEST_TIMEOUT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
