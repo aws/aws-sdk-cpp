@@ -35,9 +35,13 @@ namespace Aws
             namespace OpenSSL
             {
                 extern GetTheLights getTheLights;
+
                 void init_static_state();
+
                 void cleanup_static_state();
+
                 void locking_fn(int mode, int n, const char* file, int line);
+
                 unsigned long id_fn();
             }
 
@@ -45,11 +49,13 @@ namespace Aws
             class SecureRandomOpenSSLImpl : public SecureRandom<DataType>
             {
             public:
-                SecureRandomOpenSSLImpl() { }
+                SecureRandomOpenSSLImpl()
+                { }
 
                 ~SecureRandomOpenSSLImpl() = default;
 
-                void Reset() override { }
+                void Reset() override
+                { }
 
                 DataType operator()() override
                 {
@@ -58,13 +64,13 @@ namespace Aws
                     int success = RAND_bytes(buffer, sizeof(DataType));
                     DataType value(0);
 
-                    if(success != 1)
+                    if (success != 1)
                     {
                         SecureRandom<DataType>::m_failure = true;
                         return value;
                     }
 
-                    for(size_t i = 0; i < sizeof(DataType); ++i)
+                    for (size_t i = 0; i < sizeof(DataType); ++i)
                     {
                         value <<= 8;
                         value |= buffer[i];
@@ -78,7 +84,9 @@ namespace Aws
             {
             public:
 
-                MD5OpenSSLImpl() { }
+                MD5OpenSSLImpl()
+                { }
+
                 virtual ~MD5OpenSSLImpl() = default;
 
                 virtual HashResult Calculate(const Aws::String& str) override;
@@ -90,7 +98,8 @@ namespace Aws
             class Sha256OpenSSLImpl : public Hash
             {
             public:
-                Sha256OpenSSLImpl() {}
+                Sha256OpenSSLImpl()
+                { }
 
                 virtual ~Sha256OpenSSLImpl() = default;
 
@@ -103,7 +112,8 @@ namespace Aws
             {
             public:
 
-                Sha256HMACOpenSSLImpl() {}
+                Sha256HMACOpenSSLImpl()
+                { }
 
                 virtual ~Sha256HMACOpenSSLImpl() = default;
 
@@ -119,21 +129,24 @@ namespace Aws
                 /**
                  * Creates new OpenSSL based cipher for key, and autogenerates a secure IV of size ivSize
                  */
-                OpenSSLCipher(const CryptoBuffer &key, size_t ivSize, bool ctrMode = false);
+                OpenSSLCipher(const CryptoBuffer& key, size_t ivSize, bool ctrMode = false);
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated
                  * cipher being used for decryption.
                  */
-                OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0));
+                OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                              CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated
                  * cipher being used for decryption.
                  */
-                OpenSSLCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer(0));
+                OpenSSLCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                              const CryptoBuffer& tag = CryptoBuffer(0));
 
                 OpenSSLCipher(const OpenSSLCipher& other) = delete;
+
                 OpenSSLCipher& operator=(const OpenSSLCipher& other) = delete;
 
                 /**
@@ -141,7 +154,7 @@ namespace Aws
                  * so let's go ahead and optimize by defining default move operations. Implementors of this class
                  * need to be sure to define the move operations and call the base class.
                  */
-                OpenSSLCipher(OpenSSLCipher &&toMove);
+                OpenSSLCipher(OpenSSLCipher&& toMove);
 
                 /**
                  * Normally we don't work around VS 2013 not auto-generating these, but they are kind of expensive,
@@ -158,12 +171,12 @@ namespace Aws
                  * a user call this function multiple times for a large stream. As such, multiple calls to this function
                  * on the same instance should produce valid sequential output for an encrypted stream.
                  */
-                CryptoBuffer EncryptBuffer( const CryptoBuffer& unEncryptedData) override;
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
 
                 /**
                  * Finalize Encryption, returns anything remaining in the last block
                  */
-                CryptoBuffer FinalizeEncryption () override;
+                CryptoBuffer FinalizeEncryption() override;
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
@@ -175,26 +188,30 @@ namespace Aws
                 /**
                  * Finalize Decryption, returns anything remaining in the last block
                  */
-                CryptoBuffer FinalizeDecryption () override;
+                CryptoBuffer FinalizeDecryption() override;
 
             protected:
                 /**
                  * Algorithm/Mode level config for the EVP_CIPHER_CTX
                  */
                 virtual void InitEncryptor_Internal() = 0;
+
                 /**
                  * Algorithm/Mode level config for the EVP_CIPHER_CTX
                  */
                 virtual void InitDecryptor_Internal() = 0;
 
                 virtual size_t GetBlockSizeBytes() const = 0;
+
                 virtual size_t GetKeyLengthBits() const = 0;
 
                 EVP_CIPHER_CTX m_ctx;
 
             private:
                 void Init();
+
                 void CheckInitEncryptor();
+
                 void CheckInitDecryptor();
 
                 bool m_encDecInitialized;
@@ -211,27 +228,31 @@ namespace Aws
                 /**
                  * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
                  */
-                AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key);
+                AES_CBC_Cipher_OpenSSL(const CryptoBuffer& key);
 
                 /**
                  * Create AES in CBC mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CBC_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector);
+                AES_CBC_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector);
 
                 /**
                  * Create AES in CBC mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CBC_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector);
+                AES_CBC_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
 
-                AES_CBC_Cipher_OpenSSL(const AES_CBC_Cipher_OpenSSL &other) = delete;
+                AES_CBC_Cipher_OpenSSL(const AES_CBC_Cipher_OpenSSL& other) = delete;
+
+                AES_CBC_Cipher_OpenSSL& operator=(const AES_CBC_Cipher_OpenSSL& other) = delete;
 
                 AES_CBC_Cipher_OpenSSL(AES_CBC_Cipher_OpenSSL&& toMove) = default;
 
             protected:
                 void InitEncryptor_Internal() override;
+
                 void InitDecryptor_Internal() override;
 
                 size_t GetBlockSizeBytes() const override;
+
                 size_t GetKeyLengthBits() const override;
 
             private:
@@ -249,27 +270,31 @@ namespace Aws
                  * Create AES in CTR mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
                  * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]
                  */
-                AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key);
+                AES_CTR_Cipher_OpenSSL(const CryptoBuffer& key);
 
                 /**
                  * Create AES in CTR mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CTR_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector);
+                AES_CTR_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector);
 
                 /**
                  * Create AES in CTR mode off of a 256 bit key and 16 byte IV
                  */
-                AES_CTR_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector);
+                AES_CTR_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
 
-                AES_CTR_Cipher_OpenSSL(const AES_CTR_Cipher_OpenSSL &other) = delete;
+                AES_CTR_Cipher_OpenSSL(const AES_CTR_Cipher_OpenSSL& other) = delete;
+
+                AES_CTR_Cipher_OpenSSL& operator=(const AES_CTR_Cipher_OpenSSL& other) = delete;
 
                 AES_CTR_Cipher_OpenSSL(AES_CTR_Cipher_OpenSSL&& toMove) = default;
 
             protected:
                 void InitEncryptor_Internal() override;
+
                 void InitDecryptor_Internal() override;
 
                 size_t GetBlockSizeBytes() const override;
+
                 size_t GetKeyLengthBits() const override;
 
             private:
@@ -286,21 +311,25 @@ namespace Aws
                 /**
                  * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte secure random IV.
                  */
-                AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key);
+                AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key);
 
                 /**
                  * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
                  * cipher to decrypt an encrypted payload, you must set the tag here.
                  */
-                AES_GCM_Cipher_OpenSSL(CryptoBuffer &&key, CryptoBuffer &&initializationVector, CryptoBuffer&& tag = CryptoBuffer(0));
+                AES_GCM_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                                       CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
 
                 /**
                  * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
                  * cipher to decrypt an encrypted payload, you must set the tag here.
                  */
-                AES_GCM_Cipher_OpenSSL(const CryptoBuffer &key, const CryptoBuffer &initializationVector, const CryptoBuffer& tag = CryptoBuffer(0));
+                AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                                       const CryptoBuffer& tag = CryptoBuffer(0));
 
-                AES_GCM_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL &other) = delete;
+                AES_GCM_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL& other) = delete;
+
+                AES_GCM_Cipher_OpenSSL& operator=(const AES_GCM_Cipher_OpenSSL& other) = delete;
 
                 AES_GCM_Cipher_OpenSSL(AES_GCM_Cipher_OpenSSL&& toMove) = default;
 
@@ -309,19 +338,24 @@ namespace Aws
                  * After calling FinalizeEncryption, be sure to call GetTag() and do something with it
                  * or you will not be able to decrypt the payload.
                  */
-                CryptoBuffer FinalizeEncryption () override;
+                CryptoBuffer FinalizeEncryption() override;
 
             protected:
                 void InitEncryptor_Internal() override;
+
                 void InitDecryptor_Internal() override;
 
                 size_t GetBlockSizeBytes() const override;
+
                 size_t GetKeyLengthBits() const override;
+
+                size_t GetTagLengthBytes() const;
 
             private:
                 static size_t BlockSizeBytes;
                 static size_t IVLengthBytes;
                 static size_t KeyLengthBits;
+                static size_t TagLengthBytes;
             };
 
         } // namespace Crypto

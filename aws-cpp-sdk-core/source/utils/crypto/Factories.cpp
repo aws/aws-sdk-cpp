@@ -639,7 +639,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
-    return s_AES_CBCFactory->CreateImplementation(key, iv);
+    return s_AES_CBCFactory->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key)
@@ -654,7 +654,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
-    return s_AES_CTRFactory->CreateImplementation(key, iv);
+    return s_AES_CTRFactory->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key)
@@ -669,7 +669,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag)
 {
-    return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
+    return s_AES_GCMFactory->CreateImplementation(std::move(key), std::move(iv), std::move(tag));
 }
 
 std::shared_ptr<SecureRandom<uint64_t>> Aws::Utils::Crypto::Create64BitSecureRandomImplementation()

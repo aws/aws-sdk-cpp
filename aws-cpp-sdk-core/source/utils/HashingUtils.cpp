@@ -77,10 +77,15 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
     assert(str.length() % 2 == 0);
     assert(str.length() >= 2);
 
+    if(str.length() < 2 || str.length() % 2 != 0)
+    {
+        return ByteBuffer();
+    }
+
     size_t strLength = str.length();
     size_t readIndex = 0;
 
-    if(str[0] == '0' && str[1] == 'x')
+    if(str[0] == '0' && (str[1] == 'x' || str[1] == 'X'))
     {
         strLength -= 2;
         readIndex = 2;

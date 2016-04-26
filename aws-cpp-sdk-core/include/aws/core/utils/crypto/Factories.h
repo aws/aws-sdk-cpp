@@ -93,12 +93,14 @@ namespace Aws
              * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag = CryptoBuffer(0));
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv,
+                                                                                      const CryptoBuffer& tag = CryptoBuffer(0));
             /**
              * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
-            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0));
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv,
+                                                                                      CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
 
             /**
              * Create SecureRandom instance for 64 bit unsigned integer
