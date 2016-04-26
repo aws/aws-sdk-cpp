@@ -32,8 +32,11 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
+#endif
 
 TEST(AES_CBC_TEST, NIST_CBCGFSbox256_case_1)
 {
@@ -148,6 +151,8 @@ TEST(AES_CTR_TEST, RFC3686_Case_9)
     TestCTRMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+
 TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
 {
     Aws::String iv_raw =  "0d18e06c7c725ac9e362e1ce";
@@ -158,6 +163,8 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
 
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw);
 }
+
+#endif
 
 TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
 {
@@ -192,6 +199,8 @@ TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
     memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
     ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
+
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 
 TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
 {
@@ -253,6 +262,8 @@ TEST(AES_GCM_TEST, Test_Generated_IV)
     memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
     ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
+
+#endif
 
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw)
@@ -316,6 +327,8 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(data, plainText);
 }
 
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+
 static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw)
 {
@@ -349,6 +362,8 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
 
     ASSERT_EQ(data, plainText);
 }
+
+#endif
 
 static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                         const Aws::String& data_raw, const Aws::String& expected_raw)

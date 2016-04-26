@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStack.h>
+#include <functional>
 #include <atomic>
 
 namespace Aws

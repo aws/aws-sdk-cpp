@@ -22,6 +22,8 @@
     #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #endif
 
 using namespace Aws::Utils;
@@ -307,7 +309,10 @@ public:
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key);
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
+        assert(0);
+        return nullptr;
 #else
         return nullptr;
 #endif
@@ -322,7 +327,12 @@ public:
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag);
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
+        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
+        assert(0);
+        return nullptr;
 #else
         return nullptr;
 #endif
@@ -337,7 +347,12 @@ public:
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag);
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
+        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
+        assert(0);
+        return nullptr;
 #else
         return nullptr;
 #endif
@@ -371,14 +386,14 @@ class DefaultSecureRand64Factory : public SecureRandomFactory<uint64_t>
     /**
      * Factory method. Returns SecureRandom implementation.
      */
-    std::shared_ptr<SecureRandom<uint64_t>> CreateImplementation() const
+    std::shared_ptr<SecureRandom<uint64_t>> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<SecureRand64_BcryptImpl<uint64_t>>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint64_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_CommonCrypto<uint64_t>>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<SecureRandom_CommonCrypto<uint64_t>>(s_allocationTag);
 #else
         return nullptr;
 #endif
@@ -412,14 +427,14 @@ class DefaultSecureRand32Factory : public SecureRandomFactory<uint32_t>
     /**
      * Factory method. Returns SecureRandom implementation.
      */
-    std::shared_ptr<SecureRandom<uint32_t>> CreateImplementation() const
+    std::shared_ptr<SecureRandom<uint32_t>> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<SecureRand64_BcryptImpl<uint32_t>>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint32_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_CommonCrypto<uint32_t>>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<SecureRandom_CommonCrypto<uint32_t>>(s_allocationTag);
 #else
         return nullptr;
 #endif
