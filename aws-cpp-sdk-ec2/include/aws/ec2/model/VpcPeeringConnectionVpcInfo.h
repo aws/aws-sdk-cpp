@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/VpcPeeringConnectionOptionsDescription.h>
 
 namespace Aws
 {
@@ -149,6 +150,36 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
+    inline const VpcPeeringConnectionOptionsDescription& GetPeeringOptions() const{ return m_peeringOptions; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
+    inline void SetPeeringOptions(const VpcPeeringConnectionOptionsDescription& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = value; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
+    inline void SetPeeringOptions(VpcPeeringConnectionOptionsDescription&& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = value; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithPeeringOptions(const VpcPeeringConnectionOptionsDescription& value) { SetPeeringOptions(value); return *this;}
+
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithPeeringOptions(VpcPeeringConnectionOptionsDescription&& value) { SetPeeringOptions(value); return *this;}
+
   private:
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
@@ -156,6 +187,8 @@ namespace Model
     bool m_ownerIdHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+    VpcPeeringConnectionOptionsDescription m_peeringOptions;
+    bool m_peeringOptionsHasBeenSet;
   };
 
 } // namespace Model

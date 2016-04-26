@@ -24,14 +24,16 @@ using namespace Aws::Utils;
 Repository::Repository() : 
     m_repositoryArnHasBeenSet(false),
     m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+    m_repositoryNameHasBeenSet(false),
+    m_repositoryUriHasBeenSet(false)
 {
 }
 
 Repository::Repository(const JsonValue& jsonValue) : 
     m_repositoryArnHasBeenSet(false),
     m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+    m_repositoryNameHasBeenSet(false),
+    m_repositoryUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ Repository& Repository::operator =(const JsonValue& jsonValue)
     m_repositoryNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("repositoryUri"))
+  {
+    m_repositoryUri = jsonValue.GetString("repositoryUri");
+
+    m_repositoryUriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue Repository::Jsonize() const
   if(m_repositoryNameHasBeenSet)
   {
    payload.WithString("repositoryName", m_repositoryName);
+
+  }
+
+  if(m_repositoryUriHasBeenSet)
+  {
+   payload.WithString("repositoryUri", m_repositoryUri);
 
   }
 

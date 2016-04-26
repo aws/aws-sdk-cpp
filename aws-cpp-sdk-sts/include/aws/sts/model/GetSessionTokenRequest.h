@@ -38,7 +38,7 @@ namespace Model
      * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
      * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
      * hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour. </p>
+     * owners defaults to one hour.</p>
      */
     inline long GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -48,7 +48,7 @@ namespace Model
      * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
      * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
      * hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour. </p>
+     * owners defaults to one hour.</p>
      */
     inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -58,7 +58,7 @@ namespace Model
      * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
      * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
      * hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour. </p>
+     * owners defaults to one hour.</p>
      */
     inline GetSessionTokenRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
 
@@ -70,7 +70,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -82,7 +85,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -94,7 +100,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -106,7 +115,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -118,7 +130,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -130,7 +145,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
@@ -142,7 +160,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p>
+     * credentials. </p> <p>The format for this parameter, as described by its regex
+     * pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
@@ -152,6 +173,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
 
@@ -161,6 +184,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
@@ -170,6 +195,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
@@ -179,6 +206,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
 
@@ -188,6 +217,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
 
@@ -197,6 +228,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(value); return *this;}
 
@@ -206,6 +239,8 @@ namespace Model
      * authentication is required, and the user does not provide a code when requesting
      * a set of temporary security credentials, the user will receive an "access
      * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
      */
     inline GetSessionTokenRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 

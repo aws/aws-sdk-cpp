@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security token.</p> <p><b>Note:</b> The size of the security
+     * access key, and a security token.</p> <p> <b>Note:</b> The size of the security
      * token that STS APIs return is not fixed. We strongly recommend that you make no
      * assumptions about the maximum size. As of this writing, the typical size is less
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
@@ -59,7 +59,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security token.</p> <p><b>Note:</b> The size of the security
+     * access key, and a security token.</p> <p> <b>Note:</b> The size of the security
      * token that STS APIs return is not fixed. We strongly recommend that you make no
      * assumptions about the maximum size. As of this writing, the typical size is less
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security token.</p> <p><b>Note:</b> The size of the security
+     * access key, and a security token.</p> <p> <b>Note:</b> The size of the security
      * token that STS APIs return is not fixed. We strongly recommend that you make no
      * assumptions about the maximum size. As of this writing, the typical size is less
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security token.</p> <p><b>Note:</b> The size of the security
+     * access key, and a security token.</p> <p> <b>Note:</b> The size of the security
      * token that STS APIs return is not fixed. We strongly recommend that you make no
      * assumptions about the maximum size. As of this writing, the typical size is less
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
@@ -89,7 +89,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security token.</p> <p><b>Note:</b> The size of the security
+     * access key, and a security token.</p> <p> <b>Note:</b> The size of the security
      * token that STS APIs return is not fixed. We strongly recommend that you make no
      * assumptions about the maximum size. As of this writing, the typical size is less
      * than 4096 bytes, but that can vary. Also, future updates to AWS might require
@@ -227,21 +227,21 @@ namespace Model
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 
@@ -309,49 +309,49 @@ namespace Model
     inline AssumeRoleWithWebIdentityResult& WithProvider(const char* value) { SetProvider(value); return *this;}
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline const Aws::String& GetAudience() const{ return m_audience; }
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline void SetAudience(const Aws::String& value) { m_audience = value; }
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline void SetAudience(Aws::String&& value) { m_audience = value; }
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline void SetAudience(const char* value) { m_audience.assign(value); }
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline AssumeRoleWithWebIdentityResult& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */
     inline AssumeRoleWithWebIdentityResult& WithAudience(Aws::String&& value) { SetAudience(value); return *this;}
 
     /**
-     * <p> The intended audience (also known as client ID) of the web identity token.
+     * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
      * requested the web identity token.</p>
      */

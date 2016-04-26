@@ -142,6 +142,7 @@
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifySpotFleetRequestResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
+#include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
@@ -376,6 +377,7 @@ namespace Model
         class ModifyVolumeAttributeRequest;
         class ModifyVpcAttributeRequest;
         class ModifyVpcEndpointRequest;
+        class ModifyVpcPeeringConnectionOptionsRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
         class PurchaseReservedInstancesOfferingRequest;
@@ -577,6 +579,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVolumeAttributeOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVpcAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, Aws::Client::AWSError<EC2Errors>> MoveAddressToVpcOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, Aws::Client::AWSError<EC2Errors>> PurchaseReservedInstancesOfferingOutcome;
@@ -778,6 +781,7 @@ namespace Model
         typedef std::future<ModifyVolumeAttributeOutcome> ModifyVolumeAttributeOutcomeCallable;
         typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
         typedef std::future<ModifyVpcEndpointOutcome> ModifyVpcEndpointOutcomeCallable;
+        typedef std::future<ModifyVpcPeeringConnectionOptionsOutcome> ModifyVpcPeeringConnectionOptionsOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
         typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
@@ -982,6 +986,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVolumeAttributeRequest&, const Model::ModifyVolumeAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVolumeAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcAttributeRequest&, const Model::ModifyVpcAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointRequest&, const Model::ModifyVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVpcPeeringConnectionOptionsRequest&, const Model::ModifyVpcPeeringConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcPeeringConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
@@ -3146,6 +3151,11 @@ namespace Model
          * For more information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * <p>You can specify the instance tenancy value for the VPC when you create it.
+         * You can't change this value for the VPC after you create it. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
+         * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          */
         virtual Model::CreateVpcOutcome CreateVpc(const Model::CreateVpcRequest& request) const;
 
@@ -3160,6 +3170,11 @@ namespace Model
          * For more information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * <p>You can specify the instance tenancy value for the VPC when you create it.
+         * You can't change this value for the VPC after you create it. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
+         * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3176,6 +3191,11 @@ namespace Model
          * For more information about DHCP options, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+         * <p>You can specify the instance tenancy value for the VPC when you create it.
+         * You can't change this value for the VPC after you create it. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
+         * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3268,7 +3288,9 @@ namespace Model
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
          * down your VPN connection for any reason and later create a new VPN connection,
          * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>For more information about VPN connections, see <a
+         * from this call.</p> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
+         * information about VPN connections, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
          * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p>
@@ -3285,7 +3307,9 @@ namespace Model
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
          * down your VPN connection for any reason and later create a new VPN connection,
          * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>For more information about VPN connections, see <a
+         * from this call.</p> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
+         * information about VPN connections, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
          * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p>
@@ -3304,7 +3328,9 @@ namespace Model
          * configuring your customer gateway.</p> </important> <p>If you decide to shut
          * down your VPN connection for any reason and later create a new VPN connection,
          * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>For more information about VPN connections, see <a
+         * from this call.</p> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
+         * information about VPN connections, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
          * a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual
          * Private Cloud User Guide</i>.</p>
@@ -4416,13 +4442,14 @@ namespace Model
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types. </p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code>. </p> <p>These settings apply to the IAM user who makes
-         * the request; they do not apply to the entire AWS account. By default, an IAM
-         * user defaults to the same settings as the root user, unless they explicitly
-         * override the settings by running the <a>ModifyIdFormat</a> command. Resources
-         * created with longer IDs are visible to all IAM users, regardless of these
-         * settings and provided that they have permission to use the relevant
-         * <code>Describe</code> command for the resource type.</p>
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the IAM user who makes the request; they do not apply
+         * to the entire AWS account. By default, an IAM user defaults to the same settings
+         * as the root user, unless they explicitly override the settings by running the
+         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
+         * all IAM users, regardless of these settings and provided that they have
+         * permission to use the relevant <code>Describe</code> command for the resource
+         * type.</p>
          */
         virtual Model::DescribeIdFormatOutcome DescribeIdFormat(const Model::DescribeIdFormatRequest& request) const;
 
@@ -4432,13 +4459,14 @@ namespace Model
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types. </p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code>. </p> <p>These settings apply to the IAM user who makes
-         * the request; they do not apply to the entire AWS account. By default, an IAM
-         * user defaults to the same settings as the root user, unless they explicitly
-         * override the settings by running the <a>ModifyIdFormat</a> command. Resources
-         * created with longer IDs are visible to all IAM users, regardless of these
-         * settings and provided that they have permission to use the relevant
-         * <code>Describe</code> command for the resource type.</p>
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the IAM user who makes the request; they do not apply
+         * to the entire AWS account. By default, an IAM user defaults to the same settings
+         * as the root user, unless they explicitly override the settings by running the
+         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
+         * all IAM users, regardless of these settings and provided that they have
+         * permission to use the relevant <code>Describe</code> command for the resource
+         * type.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4450,13 +4478,14 @@ namespace Model
          * request only returns information about resource types whose ID formats can be
          * modified; it does not return information about other resource types. </p> <p>The
          * following resource types support longer IDs: <code>instance</code> |
-         * <code>reservation</code>. </p> <p>These settings apply to the IAM user who makes
-         * the request; they do not apply to the entire AWS account. By default, an IAM
-         * user defaults to the same settings as the root user, unless they explicitly
-         * override the settings by running the <a>ModifyIdFormat</a> command. Resources
-         * created with longer IDs are visible to all IAM users, regardless of these
-         * settings and provided that they have permission to use the relevant
-         * <code>Describe</code> command for the resource type.</p>
+         * <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. </p>
+         * <p>These settings apply to the IAM user who makes the request; they do not apply
+         * to the entire AWS account. By default, an IAM user defaults to the same settings
+         * as the root user, unless they explicitly override the settings by running the
+         * <a>ModifyIdFormat</a> command. Resources created with longer IDs are visible to
+         * all IAM users, regardless of these settings and provided that they have
+         * permission to use the relevant <code>Describe</code> command for the resource
+         * type.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4597,7 +4626,8 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the status of one or more instances.</p> <p>Instance status
+         * <p>Describes the status of one or more instances. By default, only running
+         * instances are described, unless specified otherwise.</p> <p>Instance status
          * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
@@ -4605,7 +4635,7 @@ namespace Model
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
@@ -4621,7 +4651,8 @@ namespace Model
         virtual Model::DescribeInstanceStatusOutcome DescribeInstanceStatus(const Model::DescribeInstanceStatusRequest& request) const;
 
         /**
-         * <p>Describes the status of one or more instances.</p> <p>Instance status
+         * <p>Describes the status of one or more instances. By default, only running
+         * instances are described, unless specified otherwise.</p> <p>Instance status
          * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
@@ -4629,7 +4660,7 @@ namespace Model
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
@@ -4647,7 +4678,8 @@ namespace Model
         virtual Model::DescribeInstanceStatusOutcomeCallable DescribeInstanceStatusCallable(const Model::DescribeInstanceStatusRequest& request) const;
 
         /**
-         * <p>Describes the status of one or more instances.</p> <p>Instance status
+         * <p>Describes the status of one or more instances. By default, only running
+         * instances are described, unless specified otherwise.</p> <p>Instance status
          * includes the following components:</p> <ul> <li> <p><b>Status checks</b> -
          * Amazon EC2 performs status checks on running EC2 instances to identify hardware
          * and software issues. For more information, see <a
@@ -4655,7 +4687,7 @@ namespace Model
          * Checks for Your Instances</a> and <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p> </li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
+         * User Guide</i>.</p></li> <li> <p><b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
@@ -6836,13 +6868,13 @@ namespace Model
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
          * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
-         * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user. If
-         * you're using this action as the root user or as an IAM role that has permission
-         * to use this action, then these settings apply to the entire account, unless an
-         * IAM user explicitly overrides these settings for themselves. For more
-         * information, see <a
+         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
+         * request; it does not apply to the entire AWS account. By default, an IAM user
+         * defaults to the same settings as the root user. If you're using this action as
+         * the root user or as an IAM role that has permission to use this action, then
+         * these settings apply to the entire account, unless an IAM user explicitly
+         * overrides these settings for themselves. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
          * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
@@ -6855,13 +6887,13 @@ namespace Model
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
          * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
-         * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user. If
-         * you're using this action as the root user or as an IAM role that has permission
-         * to use this action, then these settings apply to the entire account, unless an
-         * IAM user explicitly overrides these settings for themselves. For more
-         * information, see <a
+         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
+         * request; it does not apply to the entire AWS account. By default, an IAM user
+         * defaults to the same settings as the root user. If you're using this action as
+         * the root user or as an IAM role that has permission to use this action, then
+         * these settings apply to the entire account, unless an IAM user explicitly
+         * overrides these settings for themselves. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
          * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
@@ -6876,13 +6908,13 @@ namespace Model
          * <p>Modifies the ID format for the specified resource on a per-region basis. You
          * can specify that resources should receive longer IDs (17-character IDs) when
          * they are created. The following resource types support longer IDs:
-         * <code>instance</code> | <code>reservation</code>.</p> <p>This setting applies to
-         * the IAM user who makes the request; it does not apply to the entire AWS account.
-         * By default, an IAM user defaults to the same settings as the root user. If
-         * you're using this action as the root user or as an IAM role that has permission
-         * to use this action, then these settings apply to the entire account, unless an
-         * IAM user explicitly overrides these settings for themselves. For more
-         * information, see <a
+         * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
+         * <code>volume</code>.</p> <p>This setting applies to the IAM user who makes the
+         * request; it does not apply to the entire AWS account. By default, an IAM user
+         * defaults to the same settings as the root user. If you're using this action as
+         * the root user or as an IAM role that has permission to use this action, then
+         * these settings apply to the entire account, unless an IAM user explicitly
+         * overrides these settings for themselves. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html#resource-ids-access">Controlling
          * Access to Longer ID Settings</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>. </p> <p>Resources created with longer IDs are visible to all IAM
@@ -7277,6 +7309,61 @@ namespace Model
         virtual void ModifyVpcEndpointAsync(const Model::ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the VPC peering connection options on one side of a VPC peering
+         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * communication over the peering connection between an EC2-Classic instance that's
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
+         * <li><p>Enable/disable communication over the peering connection between
+         * instances in your VPC and an EC2-Classic instance that's linked to the peer
+         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to enable or disable communication in either
+         * direction, depending on whether their VPC was the requester or accepter for the
+         * VPC peering connection. If the peered VPCs are in the same account, you can
+         * modify the requester and accepter options in the same request. To confirm which
+         * VPC is the accepter and requester for a VPC peering connection, use the
+         * <a>DescribeVpcPeeringConnections</a> command.</p>
+         */
+        virtual Model::ModifyVpcPeeringConnectionOptionsOutcome ModifyVpcPeeringConnectionOptions(const Model::ModifyVpcPeeringConnectionOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the VPC peering connection options on one side of a VPC peering
+         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * communication over the peering connection between an EC2-Classic instance that's
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
+         * <li><p>Enable/disable communication over the peering connection between
+         * instances in your VPC and an EC2-Classic instance that's linked to the peer
+         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to enable or disable communication in either
+         * direction, depending on whether their VPC was the requester or accepter for the
+         * VPC peering connection. If the peered VPCs are in the same account, you can
+         * modify the requester and accepter options in the same request. To confirm which
+         * VPC is the accepter and requester for a VPC peering connection, use the
+         * <a>DescribeVpcPeeringConnections</a> command.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVpcPeeringConnectionOptionsOutcomeCallable ModifyVpcPeeringConnectionOptionsCallable(const Model::ModifyVpcPeeringConnectionOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the VPC peering connection options on one side of a VPC peering
+         * connection. You can do the following:</p> <ul> <li><p>Enable/disable
+         * communication over the peering connection between an EC2-Classic instance that's
+         * linked to your VPC (using ClassicLink) and instances in the peer VPC. </p></li>
+         * <li><p>Enable/disable communication over the peering connection between
+         * instances in your VPC and an EC2-Classic instance that's linked to the peer
+         * VPC.</p></li> </ul> <p>If the peered VPCs are in different accounts, each owner
+         * must initiate a separate request to enable or disable communication in either
+         * direction, depending on whether their VPC was the requester or accepter for the
+         * VPC peering connection. If the peered VPCs are in the same account, you can
+         * modify the requester and accepter options in the same request. To confirm which
+         * VPC is the accepter and requester for a VPC peering connection, use the
+         * <a>DescribeVpcPeeringConnections</a> command.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVpcPeeringConnectionOptionsAsync(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables monitoring for a running instance. For more information about
          * monitoring instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
@@ -7410,7 +7497,10 @@ namespace Model
          * <p>Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the
          * hour for a one-year term. Before you can purchase a Scheduled Instance, you must
          * call <a>DescribeScheduledInstanceAvailability</a> to check for available
-         * schedules and obtain a purchase token.</p>
+         * schedules and obtain a purchase token. After you purchase a Scheduled Instance,
+         * you must call <a>RunScheduledInstances</a> during each scheduled time
+         * period.</p> <p>After you purchase a Scheduled Instance, you can't cancel,
+         * modify, or resell your purchase.</p>
          */
         virtual Model::PurchaseScheduledInstancesOutcome PurchaseScheduledInstances(const Model::PurchaseScheduledInstancesRequest& request) const;
 
@@ -7419,7 +7509,10 @@ namespace Model
          * <p>Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the
          * hour for a one-year term. Before you can purchase a Scheduled Instance, you must
          * call <a>DescribeScheduledInstanceAvailability</a> to check for available
-         * schedules and obtain a purchase token.</p>
+         * schedules and obtain a purchase token. After you purchase a Scheduled Instance,
+         * you must call <a>RunScheduledInstances</a> during each scheduled time
+         * period.</p> <p>After you purchase a Scheduled Instance, you can't cancel,
+         * modify, or resell your purchase.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7430,7 +7523,10 @@ namespace Model
          * <p>Scheduled Instances enable you to purchase Amazon EC2 compute capacity by the
          * hour for a one-year term. Before you can purchase a Scheduled Instance, you must
          * call <a>DescribeScheduledInstanceAvailability</a> to check for available
-         * schedules and obtain a purchase token.</p>
+         * schedules and obtain a purchase token. After you purchase a Scheduled Instance,
+         * you must call <a>RunScheduledInstances</a> during each scheduled time
+         * period.</p> <p>After you purchase a Scheduled Instance, you can't cancel,
+         * modify, or resell your purchase.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -7440,9 +7536,9 @@ namespace Model
          * <p>Requests a reboot of one or more instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
-         * terminated instances are ignored.</p> <p>If a Linux/Unix instance does not
-         * cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</p>
-         * <p>For more information about troubleshooting, see <a
+         * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
+         * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
+         * information about troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p>
@@ -7453,9 +7549,9 @@ namespace Model
          * <p>Requests a reboot of one or more instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
-         * terminated instances are ignored.</p> <p>If a Linux/Unix instance does not
-         * cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</p>
-         * <p>For more information about troubleshooting, see <a
+         * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
+         * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
+         * information about troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p>
@@ -7468,9 +7564,9 @@ namespace Model
          * <p>Requests a reboot of one or more instances. This operation is asynchronous;
          * it only queues a request to reboot the specified instances. The operation
          * succeeds if the instances are valid and belong to you. Requests to reboot
-         * terminated instances are ignored.</p> <p>If a Linux/Unix instance does not
-         * cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</p>
-         * <p>For more information about troubleshooting, see <a
+         * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
+         * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
+         * information about troubleshooting, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p>
@@ -8333,7 +8429,9 @@ namespace Model
          * during its scheduled time period. You can't stop or reboot a Scheduled Instance,
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
-         * minutes.</p>
+         * minutes. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          */
         virtual Model::RunScheduledInstancesOutcome RunScheduledInstances(const Model::RunScheduledInstancesRequest& request) const;
 
@@ -8344,7 +8442,9 @@ namespace Model
          * during its scheduled time period. You can't stop or reboot a Scheduled Instance,
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
-         * minutes.</p>
+         * minutes. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -8357,7 +8457,9 @@ namespace Model
          * during its scheduled time period. You can't stop or reboot a Scheduled Instance,
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
-         * minutes.</p>
+         * minutes. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8422,25 +8524,22 @@ namespace Model
         virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. Each time you transition an instance
-         * from stopped to started, Amazon EC2 charges a full instance hour, even if
-         * transitions happen multiple times within a single hour.</p> <p>You can't start
-         * or stop Spot instances.</p> <p>Instances that use Amazon EBS volumes as their
-         * root devices can be quickly stopped and started. When an instance is stopped,
-         * the compute resources are released and you are not billed for hourly instance
-         * usage. However, your root partition Amazon EBS volume remains, continues to
-         * persist your data, and you are charged for Amazon EBS volume usage. You can
-         * restart your instance at any time.</p> <p>Before stopping an instance, make sure
-         * it is in a state from which it can be restarted. Stopping an instance does not
-         * preserve data stored in RAM.</p> <p>Performing this operation on an instance
-         * that uses an instance store as its root device returns an error.</p> <p>You can
-         * stop, start, and terminate EBS-backed instances. You can only terminate instance
-         * store-backed instances. What happens to an instance differs if you stop it or
-         * terminate it. For example, when you stop an instance, the root device and any
-         * other devices attached to the instance persist. When you terminate an instance,
-         * the root device and any other devices attached during the instance launch are
+         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * a stopped instance, or data transfer fees; however, your root partition Amazon
+         * EBS volume remains, continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Each time you transition an instance from stopped to
+         * started, Amazon EC2 charges a full instance hour, even if transitions happen
+         * multiple times within a single hour.</p> <p>You can't start or stop Spot
+         * instances, and you can't stop instance store-backed instances.</p> <p>When you
+         * stop an instance, we shut it down. You can restart your instance at any time.
+         * Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Stopping an instance is different to rebooting or terminating it. For
+         * example, when you stop an instance, the root device and any other devices
+         * attached to the instance persist. When you terminate an instance, the root
+         * device and any other devices attached during the instance launch are
          * automatically deleted. For more information about the differences between
-         * stopping and terminating instances, see <a
+         * rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
@@ -8451,25 +8550,22 @@ namespace Model
         virtual Model::StopInstancesOutcome StopInstances(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. Each time you transition an instance
-         * from stopped to started, Amazon EC2 charges a full instance hour, even if
-         * transitions happen multiple times within a single hour.</p> <p>You can't start
-         * or stop Spot instances.</p> <p>Instances that use Amazon EBS volumes as their
-         * root devices can be quickly stopped and started. When an instance is stopped,
-         * the compute resources are released and you are not billed for hourly instance
-         * usage. However, your root partition Amazon EBS volume remains, continues to
-         * persist your data, and you are charged for Amazon EBS volume usage. You can
-         * restart your instance at any time.</p> <p>Before stopping an instance, make sure
-         * it is in a state from which it can be restarted. Stopping an instance does not
-         * preserve data stored in RAM.</p> <p>Performing this operation on an instance
-         * that uses an instance store as its root device returns an error.</p> <p>You can
-         * stop, start, and terminate EBS-backed instances. You can only terminate instance
-         * store-backed instances. What happens to an instance differs if you stop it or
-         * terminate it. For example, when you stop an instance, the root device and any
-         * other devices attached to the instance persist. When you terminate an instance,
-         * the root device and any other devices attached during the instance launch are
+         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * a stopped instance, or data transfer fees; however, your root partition Amazon
+         * EBS volume remains, continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Each time you transition an instance from stopped to
+         * started, Amazon EC2 charges a full instance hour, even if transitions happen
+         * multiple times within a single hour.</p> <p>You can't start or stop Spot
+         * instances, and you can't stop instance store-backed instances.</p> <p>When you
+         * stop an instance, we shut it down. You can restart your instance at any time.
+         * Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Stopping an instance is different to rebooting or terminating it. For
+         * example, when you stop an instance, the root device and any other devices
+         * attached to the instance persist. When you terminate an instance, the root
+         * device and any other devices attached during the instance launch are
          * automatically deleted. For more information about the differences between
-         * stopping and terminating instances, see <a
+         * rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
@@ -8482,25 +8578,22 @@ namespace Model
         virtual Model::StopInstancesOutcomeCallable StopInstancesCallable(const Model::StopInstancesRequest& request) const;
 
         /**
-         * <p>Stops an Amazon EBS-backed instance. Each time you transition an instance
-         * from stopped to started, Amazon EC2 charges a full instance hour, even if
-         * transitions happen multiple times within a single hour.</p> <p>You can't start
-         * or stop Spot instances.</p> <p>Instances that use Amazon EBS volumes as their
-         * root devices can be quickly stopped and started. When an instance is stopped,
-         * the compute resources are released and you are not billed for hourly instance
-         * usage. However, your root partition Amazon EBS volume remains, continues to
-         * persist your data, and you are charged for Amazon EBS volume usage. You can
-         * restart your instance at any time.</p> <p>Before stopping an instance, make sure
-         * it is in a state from which it can be restarted. Stopping an instance does not
-         * preserve data stored in RAM.</p> <p>Performing this operation on an instance
-         * that uses an instance store as its root device returns an error.</p> <p>You can
-         * stop, start, and terminate EBS-backed instances. You can only terminate instance
-         * store-backed instances. What happens to an instance differs if you stop it or
-         * terminate it. For example, when you stop an instance, the root device and any
-         * other devices attached to the instance persist. When you terminate an instance,
-         * the root device and any other devices attached during the instance launch are
+         * <p>Stops an Amazon EBS-backed instance. </p> <p>We don't charge hourly usage for
+         * a stopped instance, or data transfer fees; however, your root partition Amazon
+         * EBS volume remains, continues to persist your data, and you are charged for
+         * Amazon EBS volume usage. Each time you transition an instance from stopped to
+         * started, Amazon EC2 charges a full instance hour, even if transitions happen
+         * multiple times within a single hour.</p> <p>You can't start or stop Spot
+         * instances, and you can't stop instance store-backed instances.</p> <p>When you
+         * stop an instance, we shut it down. You can restart your instance at any time.
+         * Before stopping an instance, make sure it is in a state from which it can be
+         * restarted. Stopping an instance does not preserve data stored in RAM.</p>
+         * <p>Stopping an instance is different to rebooting or terminating it. For
+         * example, when you stop an instance, the root device and any other devices
+         * attached to the instance persist. When you terminate an instance, the root
+         * device and any other devices attached during the instance launch are
          * automatically deleted. For more information about the differences between
-         * stopping and terminating instances, see <a
+         * rebooting, stopping, and terminating instances, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
@@ -8813,6 +8906,7 @@ namespace Model
         void ModifyVolumeAttributeAsyncHelper(const Model::ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcAttributeAsyncHelper(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcEndpointAsyncHelper(const Model::ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVpcPeeringConnectionOptionsAsyncHelper(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedInstancesOfferingAsyncHelper(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

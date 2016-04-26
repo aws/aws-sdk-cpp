@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -138,21 +138,21 @@ namespace Model
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value. </p>
+     * of the allowed value.</p>
      */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value. </p>
+     * of the allowed value.</p>
      */
     inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value. </p>
+     * of the allowed value.</p>
      */
     inline GetFederationTokenResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 

@@ -466,7 +466,7 @@ namespace Model
         virtual void GetRepositoryPolicyAsync(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
          * images.</p> </note>
@@ -474,7 +474,7 @@ namespace Model
         virtual Model::InitiateLayerUploadOutcome InitiateLayerUpload(const Model::InitiateLayerUploadRequest& request) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
          * images.</p> </note>
@@ -484,7 +484,7 @@ namespace Model
         virtual Model::InitiateLayerUploadOutcomeCallable InitiateLayerUploadCallable(const Model::InitiateLayerUploadRequest& request) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer. </p> <note>
+         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers. Use the <code>docker</code> CLI to pull, tag, and push
          * images.</p> </note>

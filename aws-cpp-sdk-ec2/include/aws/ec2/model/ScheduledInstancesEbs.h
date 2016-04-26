@@ -119,7 +119,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
@@ -127,7 +127,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -135,7 +135,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -143,7 +143,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
@@ -151,7 +151,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline ScheduledInstancesEbs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
@@ -159,7 +159,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline ScheduledInstancesEbs& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
      * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
      * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
-     * <code/>standard</p>
+     * <code>standard</code></p>
      */
     inline ScheduledInstancesEbs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
