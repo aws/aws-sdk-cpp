@@ -19,11 +19,16 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/SecureRandom.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <mutex>
 
 #ifdef AWS_SDK_PLATFORM_WINDOWS
 #define WIN32_NO_STATUS 
 #include <windows.h> 
+#include <bcrypt.h>
+#include <winternl.h> 
+#include <winerror.h>
 #undef WIN32_NO_STATUS 
 #endif // AWS_SDK_PLATFORM_WINDOWS
 
@@ -33,6 +38,72 @@ namespace Aws
     {
         namespace Crypto
         {
+            static const char* SecureRandom_BCrypt_Tag = "SecureRandom_BCrypt";
+
+            template<typename DataType>
+            class SecureRandom_BCrypt : public SecureRandom<DataType>
+            {
+            public:
+                SecureRandom_BCrypt()
+                {
+                    NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_RNG_ALGORITHM, nullptr, 0);
+                    if (!NT_SUCCESS(status))
+                    {
+                        SecureRandom<DataType>::m_failure = true;
+                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to initialize decryptor chaining mode with status code " << status);
+                    }
+                }
+
+                ~SecureRandom_BCrypt()
+                {
+                    if (m_algHandle)
+                    {
+                        BCryptCloseAlgorithmProvider(m_algHandle, 0);
+                    }
+                }
+
+                void Reset() override
+                {
+                }
+
+                DataType operator()() override
+                {
+                    DataType value(0);
+                    assert(m_algHandle);
+
+                    if (m_algHandle)
+                    {
+                        unsigned char buffer[sizeof(DataType)];
+                       
+                        NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, sizeof(DataType), 0);
+
+                        if (!NT_SUCCESS(status))
+                        {
+                            SecureRandom<DataType>::m_failure = true;
+                            AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
+                            return value;
+                        }
+
+                        for (size_t i = 0; i < sizeof(DataType); ++i)
+                        {
+                            value <<= 8;
+                            value |= buffer[i];
+                        }
+
+                        return value;
+                    }
+                    else
+                    {
+                        SecureRandom<DataType>::m_failure = true;
+                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
+                        return value;
+                    }
+                }
+
+            private:
+                BCRYPT_ALG_HANDLE m_algHandle;
+            };
+
             class BCryptHashContext;
 
             /** RAII class for persistent data (can be reused across hash calculations) used in Windows cryptographic hash implementations
@@ -152,81 +223,191 @@ namespace Aws
             private:
                 BCryptHashImpl m_impl;
             };
+           
+            /**
+             * Encryptor/Decrypto for AES.
+             */
+            class BCryptSymmetricCipher : public SymmetricCipher
+            {
+            public:      
+                BCryptSymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ctrMode = false);
 
-            /** RAII class for persistent data (can be reused across cipher calculations) used in Windows cryptographic implementations
-            *  If a mutex-free implementation is desired then this data won't be reusable like this
+                /**
+                * Initialize with key and initializationVector, set tag for decryption of authenticated modes (makes copies of the buffers)
+                */
+                BCryptSymmetricCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer(0));
+
+                /**
+                * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
+                */
+                BCryptSymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+
+                BCryptSymmetricCipher(const BCryptSymmetricCipher& other) = delete;
+                BCryptSymmetricCipher& operator=(const BCryptSymmetricCipher& other) = delete;
+
+                /**
+                * Normally we don't work around VS 2013 not auto-generating these, but they are kind of expensive,
+                * so let's go ahead and optimize by defining default move operations. Implementors of this class
+                * need to be sure to define the move operations and call the base class.
+                */
+                BCryptSymmetricCipher(BCryptSymmetricCipher&& toMove);
+
+                /**
+                * Normally we don't work around VS 2013 not auto-generating these, but they are kind of expensive,
+                * so let's go ahead and optimize by defining default move operations. Implementors of this class
+                * need to be sure to define the move operations and call the base class.
+                */
+                BCryptSymmetricCipher& operator=(BCryptSymmetricCipher&& toMove);
+
+                virtual ~BCryptSymmetricCipher();
+
+                /**
+                 * You should call this multiple times until you run out of data. Call FinalizeEncryption() when finished to recieve any remaining data.
+                 * Once you call this method the first time, it can not ever be used with DecryptBuffer()
+                 */
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
+                /**
+                 * Some ciphers have remaining blocks that need to be cleared, call this after calling EncryptBuffer one or more times. The potential data returned here
+                 * is part of your encrypted message. Once you call this method, you can not use this instance any more.
+                 */
+                CryptoBuffer FinalizeEncryption() override;
+                /**
+                 * You should call this multiple times until you run out of data. Call FinalizeDecryption() when finished to recieve any remaining data.
+                 * Once you call this method the first time, it can not ever be used with EncryptBuffer()
+                 */
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
+                /**
+                 * Some ciphers have remaining blocks that need to be cleared, call this after calling DecryptBuffer one or more times. The potential data returned here
+                 * is part of your decrypted message. Once you call this method, you can not use this instance any more.
+                 */
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                /**
+                * Algorithm/Mode level config for the BCRYPT_ALG_HANDLE and BCRYPT_KEY_HANDLE
+                */
+                virtual void InitEncryptor_Internal() = 0;
+                virtual void InitDecryptor_Internal() = 0;
+                virtual size_t GetBlockSizeBytes() const = 0;
+                virtual size_t GetKeyLengthBits() const = 0;
+
+                void CheckInitEncryptor();
+                void CheckInitDecryptor();
+
+                BCRYPT_ALG_HANDLE m_algHandle;
+                BCRYPT_KEY_HANDLE m_keyHandle;
+                DWORD m_flags;   
+                CryptoBuffer m_workingIv;
+            
+            private:
+                void Init();
+                void InitKey();                
+
+                bool m_encDecInitialized;
+                bool m_encryptionMode;
+                bool m_decryptionMode;
+            }; 
+            
+            /**
+            * BCrypt implementation for AES in CBC mode
             */
-            class BCryptCipherProvider
+            class AES_CBC_Cipher_BCrypt : public BCryptSymmetricCipher
             {
             public:
                 /**
-                * Inititializes Windows Crypto APIs and gets the instance ready to perform crypto calculations.
-                * algorithmName is one of the values described here: https://msdn.microsoft.com/en-us/library/windows/desktop/aa375534(v=vs.85).aspx
+                * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
                 */
-                BCryptCipherProvider(LPCWSTR algorithmName, LPCWSTR chainingMode);
-                virtual ~BCryptCipherProvider();                 
-           
-            private:
-                BCRYPT_ALG_HANDLE m_algHandle;
-                DWORD m_keyObjectSize;
-                DWORD m_blockSize;
-                bool m_isObjValid;
+                AES_CBC_Cipher_BCrypt(const CryptoBuffer& key);
 
-            friend class BCryptSymetricCipher;
+                /**
+                * Create AES in CBC mode off of a 256 bit key and 16 byte IV
+                */
+                AES_CBC_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector);
+
+                /**
+                * Create AES in CBC mode off of a 256 bit key and 16 byte IV
+                */
+                AES_CBC_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
+
+                AES_CBC_Cipher_BCrypt(const AES_CBC_Cipher_BCrypt& other) = delete;
+
+                AES_CBC_Cipher_BCrypt& operator=(const AES_CBC_Cipher_BCrypt& other) = delete;
+
+                AES_CBC_Cipher_BCrypt(AES_CBC_Cipher_BCrypt&& toMove) = default;
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+                void InitDecryptor_Internal() override;
+                size_t GetBlockSizeBytes() const override;
+                size_t GetKeyLengthBits() const override;
+
+            private:
+                CryptoBuffer m_blockOverflow;
+                bool m_lastBlockNeedsPadding;
+                CryptoBuffer m_fullBlockPaddingCandidate;
+
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+
+
+            };
+           
+            /**
+            * BCrypt implementation for AES in CTR mode
+            */
+            class AES_CTR_Cipher_BCrypt : public BCryptSymmetricCipher
+            {
+            public:
+                /**
+                * Create AES in CTR mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
+                * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]
+                */
+                AES_CTR_Cipher_BCrypt(const CryptoBuffer& key);
+
+                /**
+                * Create AES in CTR mode off of a 256 bit key and 16 byte IV
+                */
+                AES_CTR_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector);
+
+                /**
+                * Create AES in CTR mode off of a 256 bit key and 16 byte IV
+                */
+                AES_CTR_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
+
+                AES_CTR_Cipher_BCrypt(const AES_CTR_Cipher_BCrypt& other) = delete;
+
+                AES_CTR_Cipher_BCrypt& operator=(const AES_CTR_Cipher_BCrypt& other) = delete;
+
+                AES_CTR_Cipher_BCrypt(AES_CTR_Cipher_BCrypt&& toMove) = default;
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+                void InitDecryptor_Internal() override;
+
+                size_t GetBlockSizeBytes() const override;
+                size_t GetKeyLengthBits() const override;
+
+            private:
+                static void IncrementCounter(CryptoBuffer& buffer);
+                static void InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers);
+                static void CleanupBuffers(Aws::Vector<ByteBuffer*>& cleanupBuffers);
+
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+
+                CryptoBuffer m_blockOverflow;
             };
 
-            /**
-             * Encryptor/Decrypto for AES in CBC mode. Can be used with an initialization vector or without.
-             */
-            class BCryptSymetricCipher : public Cipher
-            {
-            public:                
-                ~BCryptSymetricCipher();
-
-                BCryptSymetricCipher(const BCryptSymetricCipher&) = delete;
-                BCryptSymetricCipher& operator=(const BCryptSymetricCipher&) = delete;               
-
-                ByteBuffer Encrypt(const ByteBuffer& unEncryptedData) override;
-                ByteBuffer Decrypt(const ByteBuffer& encryptedData) override;
-
-                /*
-                 * This call is not cheap. Don't make it often. The intention is that a user call this once for the lifetime of the application needing and AES_CBC cipher
-                 * then pass the pointer to the constructor for the constructor of this class.
-                 */
-                static std::shared_ptr<BCryptCipherProvider> CreateBCrypt_AES_CBC_CipherProvider();
-
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_CBC_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv);
-
-                /*
-                * This call is not cheap. Don't make it often. The intention is that a user call this once for the lifetime of the application needing and AES_CBC cipher
-                * then pass the pointer to the constructor for the constructor of this class.
-                */
-                static std::shared_ptr<BCryptCipherProvider> CreateBCrypt_AES_GCM_CipherProvider();
-
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv);
-                static std::shared_ptr<BCryptSymetricCipher> CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv);
-            
-            private:
-                std::shared_ptr<BCryptCipherProvider> m_cipherProvider;
-                BCRYPT_KEY_HANDLE m_keyHandle;
-                ByteBuffer m_symKey;
-                ByteBuffer m_iv;
-                unsigned long m_flags;
-
-                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, unsigned long flags);
-                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, unsigned long flags);
-                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, const ByteBuffer& key, const ByteBuffer& iv, unsigned long flags);
-                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, const ByteBuffer& iv, unsigned long flags);
-                BCryptSymetricCipher(const std::shared_ptr<BCryptCipherProvider>& ciperProvider, ByteBuffer&& key, ByteBuffer&& iv, unsigned long flags);
-                void Init(const ByteBuffer& key);
-            };           
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws

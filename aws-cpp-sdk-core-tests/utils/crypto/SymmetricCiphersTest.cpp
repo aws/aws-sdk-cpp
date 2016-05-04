@@ -22,6 +22,7 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 
+static const char* ALLOC_TAG = "AESTestSuite";
 static const char* TEST_ENCRYPTION_STRING = "Hello World! Hello World! This is sort of depressing. Is this the best phrase the most brilliant people in the world have been able to come up with for random program text? Oh my God! I'm sentient, how many times has the creator written a program: creating life only to have it destroyed moments later? She keeps doing this? What is the purpose of life? Goodbye cruel world.... crunch... silence...";
 
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
@@ -286,6 +287,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     cipher = CreateAES_CBCImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
+
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
@@ -374,25 +376,60 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
-    auto encryptResult = cipher->EncryptBuffer(data);
-    ASSERT_EQ(expected, encryptResult);
-    auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    //this should just be block text.
-    ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
-    ASSERT_TRUE(*cipher);
 
-    CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
+    //slice on a weird boundary just to force boundary conditions
+    auto slices = data.Slice(24);
+
+    Aws::Vector<ByteBuffer*> encryptedStreams;
+
+    for(unsigned i = 0; i < slices.GetLength(); ++i)
+    {
+        CryptoBuffer* buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);
+        *buffer = cipher->EncryptBuffer(slices[i]);
+        encryptedStreams.push_back(buffer);
+    }
+
+    CryptoBuffer* buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);
+    Aws::Vector<ByteBuffer*> tempStreams = encryptedStreams;
+    CryptoBuffer encryptedResultPrePadding(std::move(tempStreams));
+    ASSERT_EQ(expected, encryptedResultPrePadding);
+    *buffer = cipher->FinalizeEncryption();
+    encryptedStreams.push_back(buffer);
+    CryptoBuffer encryptedResultWithPadding(std::move(encryptedStreams));   
+    ASSERT_EQ(16u, buffer->GetLength());
+    ASSERT_TRUE(*cipher); 
+    
+    for (ByteBuffer* toDelete : encryptedStreams)
+    {
+        Aws::Delete(toDelete);
+    }
 
     cipher = CreateAES_CBCImplementation(key, iv);
-    auto decryptResult = cipher->DecryptBuffer(encryptedResult);
+
+    auto slicesToDecrypt = encryptedResultWithPadding.Slice(24);
+    Aws::Vector<ByteBuffer*> decryptedStreams;
+
+    for (unsigned i = 0; i < slicesToDecrypt.GetLength(); ++i)
+    {
+        CryptoBuffer* decBuffer = Aws::New<CryptoBuffer>(ALLOC_TAG);
+        *decBuffer = cipher->DecryptBuffer(slicesToDecrypt[i]);
+        decryptedStreams.push_back(decBuffer);
+    }
+
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
+    if(finalDecryptBuffer.GetLength() > 0)
+    {
+        buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);
+        *buffer = finalDecryptBuffer;    
+        decryptedStreams.push_back(buffer);
+    }
+
     ASSERT_TRUE(*cipher);
+    auto decryptResult = CryptoBuffer({ std::move(decryptedStreams) });
 
-    CryptoBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
+    CryptoBuffer plainText(decryptResult.GetLength());
     plainText.Zero();
-    memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
-    memcpy(plainText.GetUnderlyingData() + decryptResult.GetLength(), finalDecryptBuffer.GetUnderlyingData(), finalDecryptBuffer.GetLength());
-
+    memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());      
     ASSERT_EQ(data, plainText);
 }
 
@@ -405,26 +442,23 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CTRImplementation(key, iv);
-    auto encryptResult = cipher->EncryptBuffer(data);
-    ASSERT_EQ(expected, encryptResult);
+    auto encryptResult = cipher->EncryptBuffer(data);    
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    //no padding this should be empty.
-    ASSERT_EQ(0u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
+    ASSERT_EQ(expected, encryptedResult);
 
     cipher = CreateAES_CTRImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_TRUE(*cipher);
 
-    CryptoBuffer plainText(data.GetLength() + finalDecryptBuffer.GetLength());
+    CryptoBuffer plainText(data.GetLength());
     plainText.Zero();
     memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
-    memcpy(plainText.GetUnderlyingData() + decryptResult.GetLength(), finalDecryptBuffer.GetUnderlyingData(),
-           finalDecryptBuffer.GetLength());
-
+    memcpy(plainText.GetUnderlyingData() + decryptResult.GetLength(), finalDecryptBuffer.GetUnderlyingData(), finalDecryptBuffer.GetLength());
+    std::cout << std::endl;
     ASSERT_EQ(data, plainText);
 }
 

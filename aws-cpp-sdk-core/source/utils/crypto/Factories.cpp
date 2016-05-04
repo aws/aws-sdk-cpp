@@ -165,7 +165,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key);
+        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -180,7 +180,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
+        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -195,7 +195,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_BcryptImpl>(s_allocationTag, key, iv);
+        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -234,7 +234,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key);
+       return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -249,7 +249,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
+        return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -264,7 +264,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_BcryptImpl>(s_allocationTag, key, iv);
+        return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -305,7 +305,9 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key);
+        AWS_UNREFERENCED_PARAM(key);
+        return nullptr;
+        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -323,7 +325,12 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
+
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
+        return nullptr;
+        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -343,7 +350,12 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
+
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
+        return nullptr;
+        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -389,7 +401,7 @@ class DefaultSecureRand64Factory : public SecureRandomFactory<uint64_t>
     std::shared_ptr<SecureRandom<uint64_t>> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<SecureRand64_BcryptImpl<uint64_t>>(s_allocationTag);
+        return Aws::MakeShared<SecureRandom_BCrypt<uint64_t>>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint64_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -430,7 +442,7 @@ class DefaultSecureRand32Factory : public SecureRandomFactory<uint32_t>
     std::shared_ptr<SecureRandom<uint32_t>> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<SecureRand64_BcryptImpl<uint32_t>>(s_allocationTag);
+        return Aws::MakeShared<SecureRandom_BCrypt<uint32_t>>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint32_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION

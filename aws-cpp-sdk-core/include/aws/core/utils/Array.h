@@ -22,6 +22,7 @@
 #include <memory>
 #include <cassert>
 #include <cstring>
+#include <algorithm>
 
 #ifdef _WIN32
 
@@ -86,15 +87,18 @@ namespace Aws
                 m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
 
                 size_t location = 0;
-                for(auto& array : toMerge)
+                for(auto& arr : toMerge)
                 {
-                    size_t arraySize = array->m_size;
+                    if(arr->m_size > 0 && arr->m_data)
+                    {
+                        size_t arraySize = arr->m_size;
 #ifdef _WIN32
-                    std::copy(array->m_data.get(), array->m_data.get() + arraySize, stdext::checked_array_iterator< T * >(m_data.get() + location, m_size));
+                        std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, stdext::checked_array_iterator< T * >(m_data.get() + location, m_size));
 #else
-                    std::copy(array->m_data.get(), array->m_data.get() + arraySize, m_data.get() + location);
+                        std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, m_data.get() + location);
 #endif // MSVC
-                    location += arraySize;
+                        location += arraySize;
+                    }
                 }
             }
 
@@ -199,7 +203,7 @@ namespace Aws
                     //force the compiler to not attempt a "dead store removal" operation.
                     *(volatile unsigned char *)m_data.get() = *(volatile unsigned char *)m_data.get();
                 }
-            }
+            }            
 
             T const& GetItem(size_t index) const
             {
@@ -260,6 +264,46 @@ namespace Aws
             bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }
 
             ~CryptoBuffer() { Zero(); }
+
+            Array<CryptoBuffer> Slice(size_t sizeOfSlice) const
+            {
+                assert(sizeOfSlice <= GetLength());
+
+                size_t numberOfSlices = (GetLength() + sizeOfSlice - 1) / sizeOfSlice;
+                size_t currentSliceIndex = 0;
+                Array<CryptoBuffer> slices(numberOfSlices);
+
+                for (size_t i = 0; i < numberOfSlices - 1; ++i)
+                {
+                    CryptoBuffer newArray(sizeOfSlice);
+                    for (size_t cpyIdx = 0; cpyIdx < newArray.GetLength(); ++cpyIdx)
+                    {
+                        newArray[cpyIdx] = GetItem(cpyIdx + currentSliceIndex);
+                    }
+                    currentSliceIndex += sizeOfSlice;
+                    slices[i] = std::move(newArray);
+                }
+
+                CryptoBuffer lastArray(GetLength() % sizeOfSlice == 0 ? sizeOfSlice : GetLength() % sizeOfSlice );
+                for (size_t cpyIdx = 0; cpyIdx < lastArray.GetLength(); ++cpyIdx)
+                {
+                    lastArray[cpyIdx] = GetItem(cpyIdx + currentSliceIndex);
+                }
+                slices[slices.GetLength() - 1] = std::move(lastArray);
+
+                return slices;
+            }
+
+            CryptoBuffer& operator^(const CryptoBuffer& operand)
+            {              
+                size_t smallestSize = std::min<size_t>(GetLength(), operand.GetLength());
+                for (size_t i = 0; i < smallestSize; ++i)
+                {
+                    (*this)[i] ^= operand[i];
+                }               
+
+                return *this;
+            }
         };
 
     } // namespace Utils

@@ -107,7 +107,7 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
 
         if(isalpha(firstChar))
         {
-            firstChar = toupper(firstChar);
+            firstChar = static_cast<char>(toupper(firstChar));
             distance = firstChar - 'A' + 10;
         }
 
@@ -118,7 +118,7 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
 
         if(isalpha(secondChar))
         {
-            secondChar = toupper(secondChar);
+            secondChar = static_cast<char>(toupper(secondChar));
             distance = secondChar - 'A' + 10;
         }
 

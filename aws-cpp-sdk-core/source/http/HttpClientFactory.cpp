@@ -20,6 +20,7 @@
 #elif ENABLE_WINDOWS_CLIENT
     #include <aws/core/http/windows/WinINetSyncHttpClient.h>
     #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
+    #include <aws/core/client/ClientConfiguration.h>
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
@@ -39,20 +40,20 @@ namespace Aws
 
         class DefaultHttpClientFactory : public HttpClientFactory
         {
-            std::shared_ptr<HttpClient> CreateHttpClient(const ClientConfiguration &clientConfiguration) const override
+            std::shared_ptr<HttpClient> CreateHttpClient(const ClientConfiguration& clientConfiguration) const override
             {
                 // Figure out whether the selected option is available but fail gracefully and return a default of some type if not
                 // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
                 switch (clientConfiguration.httpLibOverride)
-        {
-            case TransferLibType::WIN_INET_CLIENT:
-                return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
+                {
+                    case TransferLibType::WIN_INET_CLIENT:
+                        return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
 
-            default:
-                return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
-        }
+                    default:
+                        return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+                }
 #elif ENABLE_CURL_CLIENT
                 return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
