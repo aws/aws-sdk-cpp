@@ -26,12 +26,14 @@
 #include <aws/waf/model/CreateSizeConstraintSetResult.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/CreateWebACLResult.h>
+#include <aws/waf/model/CreateXssMatchSetResult.h>
 #include <aws/waf/model/DeleteByteMatchSetResult.h>
 #include <aws/waf/model/DeleteIPSetResult.h>
 #include <aws/waf/model/DeleteRuleResult.h>
 #include <aws/waf/model/DeleteSizeConstraintSetResult.h>
 #include <aws/waf/model/DeleteSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/DeleteWebACLResult.h>
+#include <aws/waf/model/DeleteXssMatchSetResult.h>
 #include <aws/waf/model/GetByteMatchSetResult.h>
 #include <aws/waf/model/GetChangeTokenResult.h>
 #include <aws/waf/model/GetChangeTokenStatusResult.h>
@@ -41,18 +43,21 @@
 #include <aws/waf/model/GetSizeConstraintSetResult.h>
 #include <aws/waf/model/GetSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/GetWebACLResult.h>
+#include <aws/waf/model/GetXssMatchSetResult.h>
 #include <aws/waf/model/ListByteMatchSetsResult.h>
 #include <aws/waf/model/ListIPSetsResult.h>
 #include <aws/waf/model/ListRulesResult.h>
 #include <aws/waf/model/ListSizeConstraintSetsResult.h>
 #include <aws/waf/model/ListSqlInjectionMatchSetsResult.h>
 #include <aws/waf/model/ListWebACLsResult.h>
+#include <aws/waf/model/ListXssMatchSetsResult.h>
 #include <aws/waf/model/UpdateByteMatchSetResult.h>
 #include <aws/waf/model/UpdateIPSetResult.h>
 #include <aws/waf/model/UpdateRuleResult.h>
 #include <aws/waf/model/UpdateSizeConstraintSetResult.h>
 #include <aws/waf/model/UpdateSqlInjectionMatchSetResult.h>
 #include <aws/waf/model/UpdateWebACLResult.h>
+#include <aws/waf/model/UpdateXssMatchSetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -104,12 +109,14 @@ namespace Model
         class CreateSizeConstraintSetRequest;
         class CreateSqlInjectionMatchSetRequest;
         class CreateWebACLRequest;
+        class CreateXssMatchSetRequest;
         class DeleteByteMatchSetRequest;
         class DeleteIPSetRequest;
         class DeleteRuleRequest;
         class DeleteSizeConstraintSetRequest;
         class DeleteSqlInjectionMatchSetRequest;
         class DeleteWebACLRequest;
+        class DeleteXssMatchSetRequest;
         class GetByteMatchSetRequest;
         class GetChangeTokenRequest;
         class GetChangeTokenStatusRequest;
@@ -119,18 +126,21 @@ namespace Model
         class GetSizeConstraintSetRequest;
         class GetSqlInjectionMatchSetRequest;
         class GetWebACLRequest;
+        class GetXssMatchSetRequest;
         class ListByteMatchSetsRequest;
         class ListIPSetsRequest;
         class ListRulesRequest;
         class ListSizeConstraintSetsRequest;
         class ListSqlInjectionMatchSetsRequest;
         class ListWebACLsRequest;
+        class ListXssMatchSetsRequest;
         class UpdateByteMatchSetRequest;
         class UpdateIPSetRequest;
         class UpdateRuleRequest;
         class UpdateSizeConstraintSetRequest;
         class UpdateSqlInjectionMatchSetRequest;
         class UpdateWebACLRequest;
+        class UpdateXssMatchSetRequest;
 
         typedef Aws::Utils::Outcome<CreateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<CreateIPSetResult, Aws::Client::AWSError<WAFErrors>> CreateIPSetOutcome;
@@ -138,12 +148,14 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> CreateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<CreateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateSqlInjectionMatchSetOutcome;
         typedef Aws::Utils::Outcome<CreateWebACLResult, Aws::Client::AWSError<WAFErrors>> CreateWebACLOutcome;
+        typedef Aws::Utils::Outcome<CreateXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> CreateXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFErrors>> DeleteIPSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<DeleteSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteSqlInjectionMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteWebACLResult, Aws::Client::AWSError<WAFErrors>> DeleteWebACLOutcome;
+        typedef Aws::Utils::Outcome<DeleteXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetChangeTokenResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenOutcome;
         typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenStatusOutcome;
@@ -153,18 +165,21 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> GetSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<GetSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetSqlInjectionMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetWebACLResult, Aws::Client::AWSError<WAFErrors>> GetWebACLOutcome;
+        typedef Aws::Utils::Outcome<GetXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetXssMatchSetOutcome;
         typedef Aws::Utils::Outcome<ListByteMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListByteMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<WAFErrors>> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<WAFErrors>> ListRulesOutcome;
         typedef Aws::Utils::Outcome<ListSizeConstraintSetsResult, Aws::Client::AWSError<WAFErrors>> ListSizeConstraintSetsOutcome;
         typedef Aws::Utils::Outcome<ListSqlInjectionMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListSqlInjectionMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFErrors>> ListWebACLsOutcome;
+        typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListXssMatchSetsOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFErrors>> UpdateIPSetOutcome;
         typedef Aws::Utils::Outcome<UpdateRuleResult, Aws::Client::AWSError<WAFErrors>> UpdateRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateSizeConstraintSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSizeConstraintSetOutcome;
         typedef Aws::Utils::Outcome<UpdateSqlInjectionMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateSqlInjectionMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateWebACLResult, Aws::Client::AWSError<WAFErrors>> UpdateWebACLOutcome;
+        typedef Aws::Utils::Outcome<UpdateXssMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateXssMatchSetOutcome;
 
         typedef std::future<CreateByteMatchSetOutcome> CreateByteMatchSetOutcomeCallable;
         typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
@@ -172,12 +187,14 @@ namespace Model
         typedef std::future<CreateSizeConstraintSetOutcome> CreateSizeConstraintSetOutcomeCallable;
         typedef std::future<CreateSqlInjectionMatchSetOutcome> CreateSqlInjectionMatchSetOutcomeCallable;
         typedef std::future<CreateWebACLOutcome> CreateWebACLOutcomeCallable;
+        typedef std::future<CreateXssMatchSetOutcome> CreateXssMatchSetOutcomeCallable;
         typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DeleteSizeConstraintSetOutcome> DeleteSizeConstraintSetOutcomeCallable;
         typedef std::future<DeleteSqlInjectionMatchSetOutcome> DeleteSqlInjectionMatchSetOutcomeCallable;
         typedef std::future<DeleteWebACLOutcome> DeleteWebACLOutcomeCallable;
+        typedef std::future<DeleteXssMatchSetOutcome> DeleteXssMatchSetOutcomeCallable;
         typedef std::future<GetByteMatchSetOutcome> GetByteMatchSetOutcomeCallable;
         typedef std::future<GetChangeTokenOutcome> GetChangeTokenOutcomeCallable;
         typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
@@ -187,18 +204,21 @@ namespace Model
         typedef std::future<GetSizeConstraintSetOutcome> GetSizeConstraintSetOutcomeCallable;
         typedef std::future<GetSqlInjectionMatchSetOutcome> GetSqlInjectionMatchSetOutcomeCallable;
         typedef std::future<GetWebACLOutcome> GetWebACLOutcomeCallable;
+        typedef std::future<GetXssMatchSetOutcome> GetXssMatchSetOutcomeCallable;
         typedef std::future<ListByteMatchSetsOutcome> ListByteMatchSetsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
         typedef std::future<ListSizeConstraintSetsOutcome> ListSizeConstraintSetsOutcomeCallable;
         typedef std::future<ListSqlInjectionMatchSetsOutcome> ListSqlInjectionMatchSetsOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
+        typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
         typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
         typedef std::future<UpdateSizeConstraintSetOutcome> UpdateSizeConstraintSetOutcomeCallable;
         typedef std::future<UpdateSqlInjectionMatchSetOutcome> UpdateSqlInjectionMatchSetOutcomeCallable;
         typedef std::future<UpdateWebACLOutcome> UpdateWebACLOutcomeCallable;
+        typedef std::future<UpdateXssMatchSetOutcome> UpdateXssMatchSetOutcomeCallable;
 } // namespace Model
 
   class WAFClient;
@@ -209,12 +229,14 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::CreateSizeConstraintSetRequest&, const Model::CreateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateSqlInjectionMatchSetRequest&, const Model::CreateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSqlInjectionMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::CreateWebACLRequest&, const Model::CreateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::CreateXssMatchSetRequest&, const Model::CreateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSizeConstraintSetRequest&, const Model::DeleteSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteSqlInjectionMatchSetRequest&, const Model::DeleteSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSqlInjectionMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteWebACLRequest&, const Model::DeleteWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteXssMatchSetRequest&, const Model::DeleteXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetByteMatchSetRequest&, const Model::GetByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenRequest&, const Model::GetChangeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
@@ -224,18 +246,21 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetSizeConstraintSetRequest&, const Model::GetSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetSqlInjectionMatchSetRequest&, const Model::GetSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSqlInjectionMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetWebACLRequest&, const Model::GetWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetXssMatchSetRequest&, const Model::GetXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetXssMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListByteMatchSetsRequest&, const Model::ListByteMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByteMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSizeConstraintSetsRequest&, const Model::ListSizeConstraintSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSizeConstraintSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListSqlInjectionMatchSetsRequest&, const Model::ListSqlInjectionMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSqlInjectionMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSizeConstraintSetRequest&, const Model::UpdateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSizeConstraintSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateSqlInjectionMatchSetRequest&, const Model::UpdateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSqlInjectionMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateWebACLRequest&, const Model::UpdateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::UpdateXssMatchSetRequest&, const Model::UpdateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateXssMatchSetResponseReceivedHandler;
 
   /**
    * <p>This is the <i>AWS WAF API Reference</i>. This guide is for developers who
@@ -750,6 +775,70 @@ namespace Model
         virtual void CreateWebACLAsync(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+         * requests that contain cross-site scripting attacks in the specified part of web
+         * requests. AWS WAF searches for character sequences that are likely to be
+         * malicious strings.</p> <p>To create and configure an <code>XssMatchSet</code>,
+         * perform the following steps:</p> <ol> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Submit a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
+         * to get the change token that you provide in the <code>ChangeToken</code>
+         * parameter of an <a>UpdateXssMatchSet</a> request.</li> <li>Submit an
+         * <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which
+         * you want to allow, block, or count cross-site scripting attacks.</li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         */
+        virtual Model::CreateXssMatchSetOutcome CreateXssMatchSet(const Model::CreateXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+         * requests that contain cross-site scripting attacks in the specified part of web
+         * requests. AWS WAF searches for character sequences that are likely to be
+         * malicious strings.</p> <p>To create and configure an <code>XssMatchSet</code>,
+         * perform the following steps:</p> <ol> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Submit a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
+         * to get the change token that you provide in the <code>ChangeToken</code>
+         * parameter of an <a>UpdateXssMatchSet</a> request.</li> <li>Submit an
+         * <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which
+         * you want to allow, block, or count cross-site scripting attacks.</li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateXssMatchSetOutcomeCallable CreateXssMatchSetCallable(const Model::CreateXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+         * requests that contain cross-site scripting attacks in the specified part of web
+         * requests. AWS WAF searches for character sequences that are likely to be
+         * malicious strings.</p> <p>To create and configure an <code>XssMatchSet</code>,
+         * perform the following steps:</p> <ol> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Submit a
+         * <code>CreateXssMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
+         * to get the change token that you provide in the <code>ChangeToken</code>
+         * parameter of an <a>UpdateXssMatchSet</a> request.</li> <li>Submit an
+         * <a>UpdateXssMatchSet</a> request to specify the parts of web requests in which
+         * you want to allow, block, or count cross-site scripting attacks.</li> </ol>
+         * <p>For more information about how to use the AWS WAF API to allow or block HTTP
+         * requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateXssMatchSetAsync(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes a <a>ByteMatchSet</a>. You can't delete a
          * <code>ByteMatchSet</code> if it's still used in any <code>Rules</code> or if it
          * still includes any <a>ByteMatchTuple</a> objects (any filters).</p> <p>If you
@@ -1035,6 +1124,55 @@ namespace Model
         virtual void DeleteWebACLAsync(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+         * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still contains any <a>XssMatchTuple</a> objects.</p> <p>If you just want to
+         * remove an <code>XssMatchSet</code> from a <code>Rule</code>, use
+         * <a>UpdateRule</a>.</p> <p>To permanently delete an <code>XssMatchSet</code> from
+         * AWS WAF, perform the following steps:</p> <ol> <li>Update the
+         * <code>XssMatchSet</code> to remove filters, if any. For more information, see
+         * <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteXssMatchSet</code> request.</li> <li>Submit a
+         * <code>DeleteXssMatchSet</code> request.</li> </ol>
+         */
+        virtual Model::DeleteXssMatchSetOutcome DeleteXssMatchSet(const Model::DeleteXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+         * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still contains any <a>XssMatchTuple</a> objects.</p> <p>If you just want to
+         * remove an <code>XssMatchSet</code> from a <code>Rule</code>, use
+         * <a>UpdateRule</a>.</p> <p>To permanently delete an <code>XssMatchSet</code> from
+         * AWS WAF, perform the following steps:</p> <ol> <li>Update the
+         * <code>XssMatchSet</code> to remove filters, if any. For more information, see
+         * <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteXssMatchSet</code> request.</li> <li>Submit a
+         * <code>DeleteXssMatchSet</code> request.</li> </ol>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteXssMatchSetOutcomeCallable DeleteXssMatchSetCallable(const Model::DeleteXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+         * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or if it
+         * still contains any <a>XssMatchTuple</a> objects.</p> <p>If you just want to
+         * remove an <code>XssMatchSet</code> from a <code>Rule</code>, use
+         * <a>UpdateRule</a>.</p> <p>To permanently delete an <code>XssMatchSet</code> from
+         * AWS WAF, perform the following steps:</p> <ol> <li>Update the
+         * <code>XssMatchSet</code> to remove filters, if any. For more information, see
+         * <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the change
+         * token that you provide in the <code>ChangeToken</code> parameter of a
+         * <code>DeleteXssMatchSet</code> request.</li> <li>Submit a
+         * <code>DeleteXssMatchSet</code> request.</li> </ol>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteXssMatchSetAsync(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p>
          */
         virtual Model::GetByteMatchSetOutcome GetByteMatchSet(const Model::GetByteMatchSetRequest& request) const;
@@ -1296,6 +1434,28 @@ namespace Model
         virtual void GetWebACLAsync(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the <a>XssMatchSet</a> that is specified by
+         * <code>XssMatchSetId</code>.</p>
+         */
+        virtual Model::GetXssMatchSetOutcome GetXssMatchSet(const Model::GetXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>XssMatchSet</a> that is specified by
+         * <code>XssMatchSetId</code>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetXssMatchSetOutcomeCallable GetXssMatchSetCallable(const Model::GetXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Returns the <a>XssMatchSet</a> that is specified by
+         * <code>XssMatchSetId</code>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetXssMatchSetAsync(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p>
          */
         virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request) const;
@@ -1408,6 +1568,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         */
+        virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const Model::ListXssMatchSetsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListXssMatchSetsAsync(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a
@@ -2039,6 +2218,94 @@ namespace Model
          */
         virtual void UpdateWebACLAsync(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+         * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you specify the
+         * following values:</p> <ul> <li><code>Action</code>: Whether to insert the object
+         * into or delete the object from the array. To change a
+         * <code>XssMatchTuple</code>, you delete the existing object and add a new
+         * one.</li> <li><code>FieldToMatch</code>: The part of web requests that you want
+         * AWS WAF to inspect and, if you want AWS WAF to inspect a header, the name of the
+         * header.</li> <li><code>TextTransformation</code>: Which text transformation, if
+         * any, to perform on the web request before inspecting the request for cross-site
+         * scripting attacks.</li> </ul> <p>You use <code>XssMatchSet</code> objects to
+         * specify which CloudFront requests you want to allow, block, or count. For
+         * example, if you're receiving requests that contain cross-site scripting attacks
+         * in the request body and you want to block the requests, you can create an
+         * <code>XssMatchSet</code> with the applicable settings, and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure an
+         * <code>XssMatchSet</code>, perform the following steps:</p> <ol> <li>Submit a
+         * <a>CreateXssMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of an
+         * <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateXssMatchSet</code>
+         * request to specify the parts of web requests that you want AWS WAF to inspect
+         * for cross-site scripting attacks.</li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         */
+        virtual Model::UpdateXssMatchSetOutcome UpdateXssMatchSet(const Model::UpdateXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+         * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you specify the
+         * following values:</p> <ul> <li><code>Action</code>: Whether to insert the object
+         * into or delete the object from the array. To change a
+         * <code>XssMatchTuple</code>, you delete the existing object and add a new
+         * one.</li> <li><code>FieldToMatch</code>: The part of web requests that you want
+         * AWS WAF to inspect and, if you want AWS WAF to inspect a header, the name of the
+         * header.</li> <li><code>TextTransformation</code>: Which text transformation, if
+         * any, to perform on the web request before inspecting the request for cross-site
+         * scripting attacks.</li> </ul> <p>You use <code>XssMatchSet</code> objects to
+         * specify which CloudFront requests you want to allow, block, or count. For
+         * example, if you're receiving requests that contain cross-site scripting attacks
+         * in the request body and you want to block the requests, you can create an
+         * <code>XssMatchSet</code> with the applicable settings, and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure an
+         * <code>XssMatchSet</code>, perform the following steps:</p> <ol> <li>Submit a
+         * <a>CreateXssMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of an
+         * <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateXssMatchSet</code>
+         * request to specify the parts of web requests that you want AWS WAF to inspect
+         * for cross-site scripting attacks.</li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateXssMatchSetOutcomeCallable UpdateXssMatchSetCallable(const Model::UpdateXssMatchSetRequest& request) const;
+
+        /**
+         * <p>Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+         * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you specify the
+         * following values:</p> <ul> <li><code>Action</code>: Whether to insert the object
+         * into or delete the object from the array. To change a
+         * <code>XssMatchTuple</code>, you delete the existing object and add a new
+         * one.</li> <li><code>FieldToMatch</code>: The part of web requests that you want
+         * AWS WAF to inspect and, if you want AWS WAF to inspect a header, the name of the
+         * header.</li> <li><code>TextTransformation</code>: Which text transformation, if
+         * any, to perform on the web request before inspecting the request for cross-site
+         * scripting attacks.</li> </ul> <p>You use <code>XssMatchSet</code> objects to
+         * specify which CloudFront requests you want to allow, block, or count. For
+         * example, if you're receiving requests that contain cross-site scripting attacks
+         * in the request body and you want to block the requests, you can create an
+         * <code>XssMatchSet</code> with the applicable settings, and then configure AWS
+         * WAF to block the requests. </p> <p>To create and configure an
+         * <code>XssMatchSet</code>, perform the following steps:</p> <ol> <li>Submit a
+         * <a>CreateXssMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a> to get the
+         * change token that you provide in the <code>ChangeToken</code> parameter of an
+         * <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateXssMatchSet</code>
+         * request to specify the parts of web requests that you want AWS WAF to inspect
+         * for cross-site scripting attacks.</li> </ol> <p>For more information about how
+         * to use the AWS WAF API to allow or block HTTP requests, see the <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateXssMatchSetAsync(const Model::UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -2050,12 +2317,14 @@ namespace Model
         void CreateSizeConstraintSetAsyncHelper(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSqlInjectionMatchSetAsyncHelper(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebACLAsyncHelper(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateXssMatchSetAsyncHelper(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSizeConstraintSetAsyncHelper(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSqlInjectionMatchSetAsyncHelper(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebACLAsyncHelper(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteXssMatchSetAsyncHelper(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetByteMatchSetAsyncHelper(const Model::GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeTokenAsyncHelper(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2065,18 +2334,21 @@ namespace Model
         void GetSizeConstraintSetAsyncHelper(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSqlInjectionMatchSetAsyncHelper(const Model::GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWebACLAsyncHelper(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetXssMatchSetAsyncHelper(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListByteMatchSetsAsyncHelper(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSizeConstraintSetsAsyncHelper(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSqlInjectionMatchSetsAsyncHelper(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRuleAsyncHelper(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSizeConstraintSetAsyncHelper(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSqlInjectionMatchSetAsyncHelper(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWebACLAsyncHelper(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateXssMatchSetAsyncHelper(const Model::UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

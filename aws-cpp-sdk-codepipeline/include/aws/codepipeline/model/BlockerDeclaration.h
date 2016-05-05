@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about a gate declaration.</p>
+   * <p>Reserved for future use.</p>
    */
   class AWS_CODEPIPELINE_API BlockerDeclaration
   {
@@ -43,62 +43,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline BlockerDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline BlockerDeclaration& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the gate declaration.</p>
+     * <p>Reserved for future use.</p>
      */
     inline BlockerDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The type of the gate declaration. </p>
+     * <p>Reserved for future use.</p>
      */
     inline const BlockerType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the gate declaration. </p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetType(const BlockerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the gate declaration. </p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetType(BlockerType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the gate declaration. </p>
+     * <p>Reserved for future use.</p>
      */
     inline BlockerDeclaration& WithType(const BlockerType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the gate declaration. </p>
+     * <p>Reserved for future use.</p>
      */
     inline BlockerDeclaration& WithType(BlockerType&& value) { SetType(value); return *this;}
 

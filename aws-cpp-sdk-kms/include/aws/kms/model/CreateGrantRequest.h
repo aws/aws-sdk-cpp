@@ -40,70 +40,70 @@ namespace Model
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline CreateGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline CreateGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
-     * Amazon Resource Name (ARN) of the key. Examples: <ul> <li>Globally unique key
-     * ID: 12345678-1234-1234-1234-123456789012</li> <li>Key ARN:
-     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * Amazon Resource Name (ARN) of the key. Examples:</p> <ul> <li> <p>Globally
+     * unique key ID: 12345678-1234-1234-1234-123456789012</p> </li> <li> <p>Key ARN:
+     * arn:aws:kms:us-west-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> </ul>
      */
     inline CreateGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
@@ -291,64 +291,99 @@ namespace Model
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline CreateGrantRequest& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline CreateGrantRequest& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(value); return *this;}
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline CreateGrantRequest& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /**
      * <p>A list of operations that the grant permits. The list can contain any
-     * combination of one or more of the following values: <ul> <li>Decrypt</li>
-     * <li>Encrypt</li> <li>GenerateDataKey</li>
-     * <li>GenerateDataKeyWithoutPlaintext</li> <li>ReEncryptFrom</li>
-     * <li>ReEncryptTo</li> <li>CreateGrant</li> <li>RetireGrant</li> </ul> </p>
+     * combination of one or more of the following values:</p> <ul> <li> <p>
+     * <a>Decrypt</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
+     * <a>GenerateDataKey</a> </p> </li> <li> <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptFrom</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html">ReEncryptTo</a>
+     * </p> </li> <li> <p> <a>CreateGrant</a> </p> </li> <li> <p> <a>RetireGrant</a>
+     * </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul>
      */
     inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
@@ -403,56 +438,56 @@ namespace Model
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */

@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/MigrationTypeValue.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/Tag.h>
 
@@ -310,17 +311,27 @@ namespace Model
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline double GetCdcStartTime() const{ return m_cdcStartTime; }
+    inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline void SetCdcStartTime(double value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
+    inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline CreateReplicationTaskRequest& WithCdcStartTime(double value) { SetCdcStartTime(value); return *this;}
+    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
+
+    /**
+     * <p>The start time for the Change Data Capture (CDC) operation.</p>
+     */
+    inline CreateReplicationTaskRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
+
+    /**
+     * <p>The start time for the Change Data Capture (CDC) operation.</p>
+     */
+    inline CreateReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(value); return *this;}
 
     /**
      * <p>Tags to be added to the replication instance.</p>
@@ -372,7 +383,7 @@ namespace Model
     bool m_tableMappingsHasBeenSet;
     Aws::String m_replicationTaskSettings;
     bool m_replicationTaskSettingsHasBeenSet;
-    double m_cdcStartTime;
+    Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

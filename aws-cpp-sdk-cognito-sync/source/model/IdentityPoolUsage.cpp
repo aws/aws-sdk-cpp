@@ -27,7 +27,6 @@ IdentityPoolUsage::IdentityPoolUsage() :
     m_syncSessionsCountHasBeenSet(false),
     m_dataStorage(0),
     m_dataStorageHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
 }
@@ -38,7 +37,6 @@ IdentityPoolUsage::IdentityPoolUsage(const JsonValue& jsonValue) :
     m_syncSessionsCountHasBeenSet(false),
     m_dataStorage(0),
     m_dataStorageHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -101,8 +99,7 @@ JsonValue IdentityPoolUsage::Jsonize() const
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   return payload;

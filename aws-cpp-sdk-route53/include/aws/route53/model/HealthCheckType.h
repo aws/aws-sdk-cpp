@@ -30,7 +30,8 @@ namespace Model
     HTTP_STR_MATCH,
     HTTPS_STR_MATCH,
     TCP,
-    CALCULATED
+    CALCULATED,
+    CLOUDWATCH_METRIC
   };
 
 namespace HealthCheckTypeMapper

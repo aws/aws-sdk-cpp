@@ -34,6 +34,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of TerminateInstances.</p>
+   */
   class AWS_EC2_API TerminateInstancesResponse
   {
   public:

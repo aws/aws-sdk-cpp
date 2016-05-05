@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 ListPartsResult::ListPartsResult() : 
-    m_abortDate(0.0),
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
@@ -35,7 +34,6 @@ ListPartsResult::ListPartsResult() :
 }
 
 ListPartsResult::ListPartsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_abortDate(0.0),
     m_partNumberMarker(0),
     m_nextPartNumberMarker(0),
     m_maxParts(0),
@@ -118,7 +116,7 @@ ListPartsResult& ListPartsResult::operator =(const AmazonWebServiceResult<XmlDoc
   const auto& abortDateIter = headers.find("x-amz-abort-date");
   if(abortDateIter != headers.end())
   {
-     m_abortDate = StringUtils::ConvertToDouble(abortDateIter->second.c_str());
+    m_abortDate = DateTime(abortDateIter->second, DateFormat::RFC822);
   }
 
   const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");

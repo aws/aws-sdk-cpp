@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/PingStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/PlatformType.h>
 
 namespace Aws
@@ -106,17 +107,27 @@ namespace Model
     /**
      * The date and time when agent last pinged SSM service.
      */
-    inline double GetLastPingDateTime() const{ return m_lastPingDateTime; }
+    inline const Aws::Utils::DateTime& GetLastPingDateTime() const{ return m_lastPingDateTime; }
 
     /**
      * The date and time when agent last pinged SSM service.
      */
-    inline void SetLastPingDateTime(double value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
+    inline void SetLastPingDateTime(const Aws::Utils::DateTime& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
      * The date and time when agent last pinged SSM service.
      */
-    inline InstanceInformation& WithLastPingDateTime(double value) { SetLastPingDateTime(value); return *this;}
+    inline void SetLastPingDateTime(Aws::Utils::DateTime&& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
+
+    /**
+     * The date and time when agent last pinged SSM service.
+     */
+    inline InstanceInformation& WithLastPingDateTime(const Aws::Utils::DateTime& value) { SetLastPingDateTime(value); return *this;}
+
+    /**
+     * The date and time when agent last pinged SSM service.
+     */
+    inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(value); return *this;}
 
     /**
      * The version of the SSM agent running on your instance.
@@ -268,7 +279,7 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     PingStatus m_pingStatus;
     bool m_pingStatusHasBeenSet;
-    double m_lastPingDateTime;
+    Aws::Utils::DateTime m_lastPingDateTime;
     bool m_lastPingDateTimeHasBeenSet;
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;

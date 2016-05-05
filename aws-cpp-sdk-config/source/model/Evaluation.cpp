@@ -26,7 +26,6 @@ Evaluation::Evaluation() :
     m_complianceResourceIdHasBeenSet(false),
     m_complianceTypeHasBeenSet(false),
     m_annotationHasBeenSet(false),
-    m_orderingTimestamp(0.0),
     m_orderingTimestampHasBeenSet(false)
 {
 }
@@ -36,7 +35,6 @@ Evaluation::Evaluation(const JsonValue& jsonValue) :
     m_complianceResourceIdHasBeenSet(false),
     m_complianceTypeHasBeenSet(false),
     m_annotationHasBeenSet(false),
-    m_orderingTimestamp(0.0),
     m_orderingTimestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -111,8 +109,7 @@ JsonValue Evaluation::Jsonize() const
 
   if(m_orderingTimestampHasBeenSet)
   {
-   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp);
-
+   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -40,7 +40,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_installUpdatesOnBootHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
+    m_agentVersionHasBeenSet(false),
+    m_tenancyHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,12 @@ Aws::String CreateInstanceRequest::SerializePayload() const
   if(m_agentVersionHasBeenSet)
   {
    payload.WithString("AgentVersion", m_agentVersion);
+
+  }
+
+  if(m_tenancyHasBeenSet)
+  {
+   payload.WithString("Tenancy", m_tenancy);
 
   }
 

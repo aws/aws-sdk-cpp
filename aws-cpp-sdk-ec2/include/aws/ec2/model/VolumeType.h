@@ -27,7 +27,9 @@ namespace Model
     NOT_SET,
     standard,
     io1,
-    gp2
+    gp2,
+    sc1,
+    st1
   };
 
 namespace VolumeTypeMapper

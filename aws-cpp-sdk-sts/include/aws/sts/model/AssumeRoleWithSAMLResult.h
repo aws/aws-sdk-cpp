@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
-     * access key, and a security (or session) token.</p> <p><b>Note:</b> The size of
+     * access key, and a security (or session) token.</p> <p> <b>Note:</b> The size of
      * the security token that STS APIs return is not fixed. We strongly recommend that
      * you make no assumptions about the maximum size. As of this writing, the typical
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
@@ -96,39 +96,54 @@ namespace Model
      */
     inline AssumeRoleWithSAMLResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
 
-    
+    /**
+     * <p>The identifiers for the temporary security credentials that the operation
+     * returns.</p>
+     */
     inline const AssumedRoleUser& GetAssumedRoleUser() const{ return m_assumedRoleUser; }
 
-    
+    /**
+     * <p>The identifiers for the temporary security credentials that the operation
+     * returns.</p>
+     */
     inline void SetAssumedRoleUser(const AssumedRoleUser& value) { m_assumedRoleUser = value; }
 
-    
+    /**
+     * <p>The identifiers for the temporary security credentials that the operation
+     * returns.</p>
+     */
     inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = value; }
 
-    
+    /**
+     * <p>The identifiers for the temporary security credentials that the operation
+     * returns.</p>
+     */
     inline AssumeRoleWithSAMLResult& WithAssumedRoleUser(const AssumedRoleUser& value) { SetAssumedRoleUser(value); return *this;}
 
-    
+    /**
+     * <p>The identifiers for the temporary security credentials that the operation
+     * returns.</p>
+     */
     inline AssumeRoleWithSAMLResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(value); return *this;}
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
-     * means the policy exceeded the allowed space. </p>
+     * means the policy exceeded the allowed space.</p>
      */
     inline AssumeRoleWithSAMLResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
 

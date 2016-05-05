@@ -24,6 +24,7 @@ static const int syslog_HASH = HashingUtils::HashString("syslog");
 static const int journald_HASH = HashingUtils::HashString("journald");
 static const int gelf_HASH = HashingUtils::HashString("gelf");
 static const int fluentd_HASH = HashingUtils::HashString("fluentd");
+static const int awslogs_HASH = HashingUtils::HashString("awslogs");
 
 namespace Aws
 {
@@ -58,6 +59,10 @@ namespace Aws
           {
             return LogDriver::fluentd;
           }
+          else if (hashCode == awslogs_HASH)
+          {
+            return LogDriver::awslogs;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "gelf";
           case LogDriver::fluentd:
             return "fluentd";
+          case LogDriver::awslogs:
+            return "awslogs";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

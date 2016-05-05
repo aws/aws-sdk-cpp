@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -118,21 +119,35 @@ namespace Model
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline double GetCertificateUploadDate() const{ return m_certificateUploadDate; }
+    inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
 
     /**
      * <p>The date when the certificate was uploaded, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline void SetCertificateUploadDate(double value) { m_certificateUploadDate = value; }
+    inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDate = value; }
 
     /**
      * <p>The date when the certificate was uploaded, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline CreateDomainNameResult& WithCertificateUploadDate(double value) { SetCertificateUploadDate(value); return *this;}
+    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDate = value; }
+
+    /**
+     * <p>The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateDomainNameResult& WithCertificateUploadDate(const Aws::Utils::DateTime& value) { SetCertificateUploadDate(value); return *this;}
+
+    /**
+     * <p>The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(value); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -186,7 +201,7 @@ namespace Model
   private:
     Aws::String m_domainName;
     Aws::String m_certificateName;
-    double m_certificateUploadDate;
+    Aws::Utils::DateTime m_certificateUploadDate;
     Aws::String m_distributionDomainName;
   };
 

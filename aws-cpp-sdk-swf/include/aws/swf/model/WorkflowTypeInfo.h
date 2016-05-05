@@ -17,6 +17,7 @@
 #include <aws/swf/model/WorkflowType.h>
 #include <aws/swf/model/RegistrationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -138,35 +139,57 @@ namespace Model
     /**
      * <p>The date when this type was registered.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date when this type was registered.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date when this type was registered.</p>
      */
-    inline WorkflowTypeInfo& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date when this type was registered.</p>
+     */
+    inline WorkflowTypeInfo& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date when this type was registered.</p>
+     */
+    inline WorkflowTypeInfo& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>If the type is in deprecated state, then it is set to the date when the type
      * was deprecated.</p>
      */
-    inline double GetDeprecationDate() const{ return m_deprecationDate; }
+    inline const Aws::Utils::DateTime& GetDeprecationDate() const{ return m_deprecationDate; }
 
     /**
      * <p>If the type is in deprecated state, then it is set to the date when the type
      * was deprecated.</p>
      */
-    inline void SetDeprecationDate(double value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
+    inline void SetDeprecationDate(const Aws::Utils::DateTime& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
 
     /**
      * <p>If the type is in deprecated state, then it is set to the date when the type
      * was deprecated.</p>
      */
-    inline WorkflowTypeInfo& WithDeprecationDate(double value) { SetDeprecationDate(value); return *this;}
+    inline void SetDeprecationDate(Aws::Utils::DateTime&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
+
+    /**
+     * <p>If the type is in deprecated state, then it is set to the date when the type
+     * was deprecated.</p>
+     */
+    inline WorkflowTypeInfo& WithDeprecationDate(const Aws::Utils::DateTime& value) { SetDeprecationDate(value); return *this;}
+
+    /**
+     * <p>If the type is in deprecated state, then it is set to the date when the type
+     * was deprecated.</p>
+     */
+    inline WorkflowTypeInfo& WithDeprecationDate(Aws::Utils::DateTime&& value) { SetDeprecationDate(value); return *this;}
 
   private:
     WorkflowType m_workflowType;
@@ -175,9 +198,9 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
-    double m_deprecationDate;
+    Aws::Utils::DateTime m_deprecationDate;
     bool m_deprecationDateHasBeenSet;
   };
 

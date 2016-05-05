@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/ec2/model/AllocationStrategy.h>
@@ -165,42 +166,70 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
      * to start fulfilling the request immediately.</p>
      */
-    inline double GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
     /**
      * <p>The start date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
      * to start fulfilling the request immediately.</p>
      */
-    inline void SetValidFrom(double value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
      * <p>The start date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
      * to start fulfilling the request immediately.</p>
      */
-    inline SpotFleetRequestConfigData& WithValidFrom(double value) { SetValidFrom(value); return *this;}
+    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+
+    /**
+     * <p>The start date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
+     * to start fulfilling the request immediately.</p>
+     */
+    inline SpotFleetRequestConfigData& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
+
+    /**
+     * <p>The start date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
+     * to start fulfilling the request immediately.</p>
+     */
+    inline SpotFleetRequestConfigData& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(value); return *this;}
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
      * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
      * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
-    inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
      * no new Spot instance requests are placed or enabled to fulfill the request.</p>
      */
-    inline SpotFleetRequestConfigData& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+
+    /**
+     * <p>The end date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
+     * no new Spot instance requests are placed or enabled to fulfill the request.</p>
+     */
+    inline SpotFleetRequestConfigData& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The end date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
+     * no new Spot instance requests are placed or enabled to fulfill the request.</p>
+     */
+    inline SpotFleetRequestConfigData& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     /**
      * <p>Indicates whether running Spot instances should be terminated when the Spot
@@ -383,9 +412,9 @@ namespace Model
     bool m_spotPriceHasBeenSet;
     long m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
-    double m_validFrom;
+    Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
-    double m_validUntil;
+    Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
     bool m_terminateInstancesWithExpiration;
     bool m_terminateInstancesWithExpirationHasBeenSet;

@@ -36,120 +36,113 @@ namespace Model
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline GetKeyPolicyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline GetKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline GetKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline GetKeyPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline GetKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
      * <p>String that contains the name of the policy. Currently, this must be
-     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.
-     * </p>
+     * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
      */
     inline GetKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

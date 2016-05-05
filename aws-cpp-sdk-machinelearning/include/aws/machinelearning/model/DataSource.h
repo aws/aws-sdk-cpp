@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/machinelearning/model/EntityStatus.h>
 #include <aws/machinelearning/model/RedshiftMetadata.h>
 #include <aws/machinelearning/model/RDSMetadata.h>
@@ -218,37 +219,61 @@ namespace Model
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
      */
-    inline DataSource& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time that the <code>DataSource</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
+    inline DataSource& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the <code>DataSource</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
+    inline DataSource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
      * time is expressed in epoch time.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
      * time is expressed in epoch time.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
      * time is expressed in epoch time.</p>
      */
-    inline DataSource& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
+     * time is expressed in epoch time.</p>
+     */
+    inline DataSource& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
+     * time is expressed in epoch time.</p>
+     */
+    inline DataSource& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>The total number of observations contained in the data files that the
@@ -493,9 +518,9 @@ namespace Model
     bool m_dataRearrangementHasBeenSet;
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
     long long m_dataSizeInBytes;
     bool m_dataSizeInBytesHasBeenSet;

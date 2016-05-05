@@ -32,6 +32,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of EnableVpcClassicLinkDnsSupport.</p>
+   */
   class AWS_EC2_API EnableVpcClassicLinkDnsSupportResponse
   {
   public:

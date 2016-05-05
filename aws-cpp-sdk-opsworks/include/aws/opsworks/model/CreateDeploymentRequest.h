@@ -154,6 +154,46 @@ namespace Model
     inline CreateDeploymentRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
+     * <p>The layer IDs for the deployment targets.</p>
+     */
+    inline CreateDeploymentRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
+    /**
      * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
      * and any associated arguments.</p>
      */
@@ -302,6 +342,8 @@ namespace Model
     bool m_appIdHasBeenSet;
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+    Aws::Vector<Aws::String> m_layerIds;
+    bool m_layerIdsHasBeenSet;
     DeploymentCommand m_command;
     bool m_commandHasBeenSet;
     Aws::String m_comment;

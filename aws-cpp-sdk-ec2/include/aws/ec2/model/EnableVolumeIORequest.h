@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for EnableVolumeIO.</p>
    */
   class AWS_EC2_API EnableVolumeIORequest : public EC2Request
   {

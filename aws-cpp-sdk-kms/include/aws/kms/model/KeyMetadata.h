@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/kms/model/KeyUsageType.h>
 #include <aws/kms/model/KeyState.h>
 
@@ -174,17 +175,27 @@ namespace Model
     /**
      * <p>The date and time when the key was created.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date and time when the key was created.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date and time when the key was created.</p>
      */
-    inline KeyMetadata& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date and time when the key was created.</p>
+     */
+    inline KeyMetadata& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the key was created.</p>
+     */
+    inline KeyMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>Specifies whether the key is enabled. When <code>KeyState</code> is
@@ -276,7 +287,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -285,7 +296,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -294,7 +305,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -303,7 +314,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -312,7 +323,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -324,21 +335,35 @@ namespace Model
      * This value is present only when <code>KeyState</code> is
      * <code>PendingDeletion</code>, otherwise this value is null.</p>
      */
-    inline double GetDeletionDate() const{ return m_deletionDate; }
+    inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the customer master key (CMK).
      * This value is present only when <code>KeyState</code> is
      * <code>PendingDeletion</code>, otherwise this value is null.</p>
      */
-    inline void SetDeletionDate(double value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
+    inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the customer master key (CMK).
      * This value is present only when <code>KeyState</code> is
      * <code>PendingDeletion</code>, otherwise this value is null.</p>
      */
-    inline KeyMetadata& WithDeletionDate(double value) { SetDeletionDate(value); return *this;}
+    inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
+
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key (CMK).
+     * This value is present only when <code>KeyState</code> is
+     * <code>PendingDeletion</code>, otherwise this value is null.</p>
+     */
+    inline KeyMetadata& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
+
+    /**
+     * <p>The date and time after which AWS KMS deletes the customer master key (CMK).
+     * This value is present only when <code>KeyState</code> is
+     * <code>PendingDeletion</code>, otherwise this value is null.</p>
+     */
+    inline KeyMetadata& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(value); return *this;}
 
   private:
     Aws::String m_aWSAccountId;
@@ -347,7 +372,7 @@ namespace Model
     bool m_keyIdHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
@@ -357,7 +382,7 @@ namespace Model
     bool m_keyUsageHasBeenSet;
     KeyState m_keyState;
     bool m_keyStateHasBeenSet;
-    double m_deletionDate;
+    Aws::Utils::DateTime m_deletionDate;
     bool m_deletionDateHasBeenSet;
   };
 

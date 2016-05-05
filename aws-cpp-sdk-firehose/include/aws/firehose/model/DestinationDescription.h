@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
 #include <aws/firehose/model/RedshiftDestinationDescription.h>
+#include <aws/firehose/model/ElasticsearchDestinationDescription.h>
 
 namespace Aws
 {
@@ -128,6 +129,31 @@ namespace Model
      */
     inline DestinationDescription& WithRedshiftDestinationDescription(RedshiftDestinationDescription&& value) { SetRedshiftDestinationDescription(value); return *this;}
 
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
+    inline const ElasticsearchDestinationDescription& GetElasticsearchDestinationDescription() const{ return m_elasticsearchDestinationDescription; }
+
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
+    inline void SetElasticsearchDestinationDescription(const ElasticsearchDestinationDescription& value) { m_elasticsearchDestinationDescriptionHasBeenSet = true; m_elasticsearchDestinationDescription = value; }
+
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
+    inline void SetElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { m_elasticsearchDestinationDescriptionHasBeenSet = true; m_elasticsearchDestinationDescription = value; }
+
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
+    inline DestinationDescription& WithElasticsearchDestinationDescription(const ElasticsearchDestinationDescription& value) { SetElasticsearchDestinationDescription(value); return *this;}
+
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
+    inline DestinationDescription& WithElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { SetElasticsearchDestinationDescription(value); return *this;}
+
   private:
     Aws::String m_destinationId;
     bool m_destinationIdHasBeenSet;
@@ -135,6 +161,8 @@ namespace Model
     bool m_s3DestinationDescriptionHasBeenSet;
     RedshiftDestinationDescription m_redshiftDestinationDescription;
     bool m_redshiftDestinationDescriptionHasBeenSet;
+    ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
+    bool m_elasticsearchDestinationDescriptionHasBeenSet;
   };
 
 } // namespace Model

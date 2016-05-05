@@ -27,7 +27,6 @@ IdFormat::IdFormat() :
     m_resourceHasBeenSet(false),
     m_useLongIds(false),
     m_useLongIdsHasBeenSet(false),
-    m_deadline(0.0),
     m_deadlineHasBeenSet(false)
 {
 }
@@ -36,7 +35,6 @@ IdFormat::IdFormat(const XmlNode& xmlNode) :
     m_resourceHasBeenSet(false),
     m_useLongIds(false),
     m_useLongIdsHasBeenSet(false),
-    m_deadline(0.0),
     m_deadlineHasBeenSet(false)
 {
   *this = xmlNode;
@@ -63,7 +61,7 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
     XmlNode deadlineNode = resultNode.FirstChild("deadline");
     if(!deadlineNode.IsNull())
     {
-      m_deadline = StringUtils::ConvertToDouble(StringUtils::Trim(deadlineNode.GetText().c_str()).c_str());
+      m_deadline = DateTime(StringUtils::Trim(deadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_deadlineHasBeenSet = true;
     }
   }
@@ -83,7 +81,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   }
   if(m_deadlineHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline) << "&";
+      oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -99,6 +97,6 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_deadlineHasBeenSet)
   {
-        oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline) << "&";
+      oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

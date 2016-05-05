@@ -26,13 +26,22 @@ using namespace Aws::Http;
 
 TransferCertificateRequest::TransferCertificateRequest() : 
     m_certificateIdHasBeenSet(false),
-    m_targetAwsAccountHasBeenSet(false)
+    m_targetAwsAccountHasBeenSet(false),
+    m_transferMessageHasBeenSet(false)
 {
 }
 
 Aws::String TransferCertificateRequest::SerializePayload() const
 {
-  return "";
+  JsonValue payload;
+
+  if(m_transferMessageHasBeenSet)
+  {
+   payload.WithString("transferMessage", m_transferMessage);
+
+  }
+
+  return payload.WriteReadable();
 }
 
 void TransferCertificateRequest::AddQueryStringParameters(URI& uri) const

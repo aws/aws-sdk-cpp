@@ -24,7 +24,6 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelInternalMapOrListJsonDeserializer.vm")
 #elseif($member.shape.blob)
   ${spaces}${memberVarName} = HashingUtils::Base64Decode(jsonValue.GetString("${memberName}"));
-
 #else
   ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 

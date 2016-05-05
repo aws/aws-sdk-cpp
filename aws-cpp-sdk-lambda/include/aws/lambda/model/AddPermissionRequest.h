@@ -451,6 +451,27 @@ namespace Model
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 
+    
+    inline const Aws::String& GetEventSourceToken() const{ return m_eventSourceToken; }
+
+    
+    inline void SetEventSourceToken(const Aws::String& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = value; }
+
+    
+    inline void SetEventSourceToken(Aws::String&& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = value; }
+
+    
+    inline void SetEventSourceToken(const char* value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken.assign(value); }
+
+    
+    inline AddPermissionRequest& WithEventSourceToken(const Aws::String& value) { SetEventSourceToken(value); return *this;}
+
+    
+    inline AddPermissionRequest& WithEventSourceToken(Aws::String&& value) { SetEventSourceToken(value); return *this;}
+
+    
+    inline AddPermissionRequest& WithEventSourceToken(const char* value) { SetEventSourceToken(value); return *this;}
+
     /**
      * <p>You can use this optional query parameter to describe a qualified ARN using a
      * function version or an alias name. The permission will then apply to the
@@ -576,6 +597,8 @@ namespace Model
     bool m_sourceArnHasBeenSet;
     Aws::String m_sourceAccount;
     bool m_sourceAccountHasBeenSet;
+    Aws::String m_eventSourceToken;
+    bool m_eventSourceTokenHasBeenSet;
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

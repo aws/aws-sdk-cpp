@@ -68,9 +68,46 @@ namespace Model
      */
     inline RejectCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline const Aws::String& GetRejectReason() const{ return m_rejectReason; }
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline void SetRejectReason(const Aws::String& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = value; }
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = value; }
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline void SetRejectReason(const char* value) { m_rejectReasonHasBeenSet = true; m_rejectReason.assign(value); }
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline RejectCertificateTransferRequest& WithRejectReason(const Aws::String& value) { SetRejectReason(value); return *this;}
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline RejectCertificateTransferRequest& WithRejectReason(Aws::String&& value) { SetRejectReason(value); return *this;}
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline RejectCertificateTransferRequest& WithRejectReason(const char* value) { SetRejectReason(value); return *this;}
+
   private:
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+    Aws::String m_rejectReason;
+    bool m_rejectReasonHasBeenSet;
   };
 
 } // namespace Model

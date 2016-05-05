@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribePlacementGroups.</p>
    */
   class AWS_EC2_API DescribePlacementGroupsRequest : public EC2Request
   {

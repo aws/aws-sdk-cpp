@@ -30,7 +30,6 @@ Volume::Volume() :
     m_snapshotIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -51,7 +50,6 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_snapshotIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -105,7 +103,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
@@ -185,7 +183,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   }
   if(m_createTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_attachmentsHasBeenSet)
   {
@@ -255,7 +253,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_createTimeHasBeenSet)
   {
-        oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime) << "&";
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_attachmentsHasBeenSet)
   {

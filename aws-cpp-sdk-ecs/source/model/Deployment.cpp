@@ -31,9 +31,7 @@ Deployment::Deployment() :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_updatedAt(0.0),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -48,9 +46,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
     m_pendingCountHasBeenSet(false),
     m_runningCount(0),
     m_runningCountHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_updatedAt(0.0),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -159,14 +155,12 @@ JsonValue Deployment::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithDouble("updatedAt", m_updatedAt);
-
+   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;

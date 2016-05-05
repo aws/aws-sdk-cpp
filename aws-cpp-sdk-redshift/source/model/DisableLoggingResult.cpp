@@ -27,16 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DisableLoggingResult::DisableLoggingResult() : 
-    m_loggingEnabled(false),
-    m_lastSuccessfulDeliveryTime(0.0),
-    m_lastFailureTime(0.0)
+    m_loggingEnabled(false)
 {
 }
 
 DisableLoggingResult::DisableLoggingResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_loggingEnabled(false),
-    m_lastSuccessfulDeliveryTime(0.0),
-    m_lastFailureTime(0.0)
+    m_loggingEnabled(false)
 {
   *this = result;
 }
@@ -71,12 +67,12 @@ DisableLoggingResult& DisableLoggingResult::operator =(const AmazonWebServiceRes
     XmlNode lastSuccessfulDeliveryTimeNode = resultNode.FirstChild("LastSuccessfulDeliveryTime");
     if(!lastSuccessfulDeliveryTimeNode.IsNull())
     {
-      m_lastSuccessfulDeliveryTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastSuccessfulDeliveryTimeNode.GetText().c_str()).c_str());
+      m_lastSuccessfulDeliveryTime = DateTime(StringUtils::Trim(lastSuccessfulDeliveryTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode lastFailureTimeNode = resultNode.FirstChild("LastFailureTime");
     if(!lastFailureTimeNode.IsNull())
     {
-      m_lastFailureTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastFailureTimeNode.GetText().c_str()).c_str());
+      m_lastFailureTime = DateTime(StringUtils::Trim(lastFailureTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode lastFailureMessageNode = resultNode.FirstChild("LastFailureMessage");
     if(!lastFailureMessageNode.IsNull())

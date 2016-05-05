@@ -25,14 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEventSourceMappingResult::GetEventSourceMappingResult() : 
-    m_batchSize(0),
-    m_lastModified(0.0)
+    m_batchSize(0)
 {
 }
 
 GetEventSourceMappingResult::GetEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_batchSize(0),
-    m_lastModified(0.0)
+    m_batchSize(0)
 {
   *this = result;
 }

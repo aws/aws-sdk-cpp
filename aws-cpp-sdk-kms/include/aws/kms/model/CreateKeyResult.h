@@ -40,27 +40,27 @@ namespace Model
     CreateKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Metadata associated with the key.</p>
+     * <p>Metadata associated with the CMK.</p>
      */
     inline const KeyMetadata& GetKeyMetadata() const{ return m_keyMetadata; }
 
     /**
-     * <p>Metadata associated with the key.</p>
+     * <p>Metadata associated with the CMK.</p>
      */
     inline void SetKeyMetadata(const KeyMetadata& value) { m_keyMetadata = value; }
 
     /**
-     * <p>Metadata associated with the key.</p>
+     * <p>Metadata associated with the CMK.</p>
      */
     inline void SetKeyMetadata(KeyMetadata&& value) { m_keyMetadata = value; }
 
     /**
-     * <p>Metadata associated with the key.</p>
+     * <p>Metadata associated with the CMK.</p>
      */
     inline CreateKeyResult& WithKeyMetadata(const KeyMetadata& value) { SetKeyMetadata(value); return *this;}
 
     /**
-     * <p>Metadata associated with the key.</p>
+     * <p>Metadata associated with the CMK.</p>
      */
     inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(value); return *this;}
 

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ResetSnapshotAttribute.</p>
    */
   class AWS_EC2_API ResetSnapshotAttributeRequest : public EC2Request
   {

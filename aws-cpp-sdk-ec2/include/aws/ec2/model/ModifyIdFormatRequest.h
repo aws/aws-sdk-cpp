@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters of ModifyIdFormat.</p>
    */
   class AWS_EC2_API ModifyIdFormatRequest : public EC2Request
   {

@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>The identifiers for the temporary security credentials that the operation
-   * returns. </p>
+   * returns.</p>
    */
   class AWS_STS_API AssumedRoleUser
   {

@@ -39,85 +39,85 @@ namespace Model
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline RemoveTagsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline RemoveTagsRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
-     * of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.</p>
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
     inline RemoveTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline RemoveTagsRequest& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline RemoveTagsRequest& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(value); return *this;}
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline RemoveTagsRequest& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 
     /**
-     * <p>Specifies a list of tags to be removed. </p>
+     * <p>Specifies a list of tags to be removed.</p>
      */
     inline RemoveTagsRequest& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 

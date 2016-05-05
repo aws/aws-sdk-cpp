@@ -254,19 +254,28 @@ namespace Model
         virtual ~DatabaseMigrationServiceClient();
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Adds metadata tags to a DMS resource, including replication instance,
+         * endpoint, security group, and migration task. These tags can also be used with
+         * cost allocation reporting to track cost associated with DMS resources, or used
+         * in a Condition statement in an IAM policy for DMS.</p> <note/><p/>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Adds metadata tags to a DMS resource, including replication instance,
+         * endpoint, security group, and migration task. These tags can also be used with
+         * cost allocation reporting to track cost associated with DMS resources, or used
+         * in a Condition statement in an IAM policy for DMS.</p> <note/><p/>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Adds metadata tags to a DMS resource, including replication instance,
+         * endpoint, security group, and migration task. These tags can also be used with
+         * cost allocation reporting to track cost associated with DMS resources, or used
+         * in a Condition statement in an IAM policy for DMS.</p> <note/><p/>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -685,19 +694,19 @@ namespace Model
         virtual void DescribeTableStatisticsAsync(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Lists all tags for an AWS DMS resource.</p> <note/><p/>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Lists all tags for an AWS DMS resource.</p> <note/><p/>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Lists all tags for an AWS DMS resource.</p> <note/><p/>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -798,19 +807,19 @@ namespace Model
         virtual void RefreshSchemasAsync(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Removes metadata tags from a DMS resource.</p> <note/><p/>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Removes metadata tags from a DMS resource.</p> <note/><p/>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>For internal use only</p> <note/><p/>
+         * <p> Removes metadata tags from a DMS resource.</p> <note/><p/>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

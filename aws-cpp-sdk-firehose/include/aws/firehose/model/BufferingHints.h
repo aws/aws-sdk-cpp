@@ -30,8 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the buffering to perform before delivering data to the
-   * destination.</p>
+   * <p>Describes hints for the buffering to perform before delivering data to the
+   * destination. Please note that these options are treated as hints, and therefore
+   * Firehose may choose to use different values when it is optimal.</p>
    */
   class AWS_FIREHOSE_API BufferingHints
   {

@@ -26,7 +26,8 @@ CreateTrustRequest::CreateTrustRequest() :
     m_remoteDomainNameHasBeenSet(false),
     m_trustPasswordHasBeenSet(false),
     m_trustDirectionHasBeenSet(false),
-    m_trustTypeHasBeenSet(false)
+    m_trustTypeHasBeenSet(false),
+    m_conditionalForwarderIpAddrsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,17 @@ Aws::String CreateTrustRequest::SerializePayload() const
   if(m_trustTypeHasBeenSet)
   {
    payload.WithString("TrustType", TrustTypeMapper::GetNameForTrustType(m_trustType));
+  }
+
+  if(m_conditionalForwarderIpAddrsHasBeenSet)
+  {
+   Array<JsonValue> conditionalForwarderIpAddrsJsonList(m_conditionalForwarderIpAddrs.size());
+   for(unsigned conditionalForwarderIpAddrsIndex = 0; conditionalForwarderIpAddrsIndex < conditionalForwarderIpAddrsJsonList.GetLength(); ++conditionalForwarderIpAddrsIndex)
+   {
+     conditionalForwarderIpAddrsJsonList[conditionalForwarderIpAddrsIndex].AsString(m_conditionalForwarderIpAddrs[conditionalForwarderIpAddrsIndex]);
+   }
+   payload.WithArray("ConditionalForwarderIpAddrs", std::move(conditionalForwarderIpAddrsJsonList));
+
   }
 
   return payload.WriteReadable();

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_ACM_API RequestCertificateRequest : public ACMRequest
   {
@@ -247,9 +248,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline const Aws::Vector<DomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
@@ -260,9 +262,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
@@ -273,9 +276,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
@@ -286,9 +290,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
 
@@ -299,9 +304,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { SetDomainValidationOptions(value); return *this;}
 
@@ -312,9 +318,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(const DomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
@@ -325,9 +332,10 @@ namespace Model
      * example, if you requested a certificate for <code>test.example.com</code> and
      * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses: <ul> <li>admin@example.com</li>
-     * <li>administrator@example.com</li> <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li> <li>webmaster@example.com</li> </ul> </p>
+     * WHOIS and the following five addresses: <ul> <li><p>admin@example.com</p></li>
+     * <li><p>administrator@example.com</p></li> <li><p>hostmaster@example.com</p></li>
+     * <li><p>postmaster@example.com</p></li> <li><p>webmaster@example.com</p></li>
+     * </ul> </p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 

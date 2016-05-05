@@ -29,14 +29,17 @@
 #include <aws/ds/model/ConnectDirectoryRequest.h>
 #include <aws/ds/model/CreateAliasRequest.h>
 #include <aws/ds/model/CreateComputerRequest.h>
+#include <aws/ds/model/CreateConditionalForwarderRequest.h>
 #include <aws/ds/model/CreateDirectoryRequest.h>
 #include <aws/ds/model/CreateMicrosoftADRequest.h>
 #include <aws/ds/model/CreateSnapshotRequest.h>
 #include <aws/ds/model/CreateTrustRequest.h>
+#include <aws/ds/model/DeleteConditionalForwarderRequest.h>
 #include <aws/ds/model/DeleteDirectoryRequest.h>
 #include <aws/ds/model/DeleteSnapshotRequest.h>
 #include <aws/ds/model/DeleteTrustRequest.h>
 #include <aws/ds/model/DeregisterEventTopicRequest.h>
+#include <aws/ds/model/DescribeConditionalForwardersRequest.h>
 #include <aws/ds/model/DescribeDirectoriesRequest.h>
 #include <aws/ds/model/DescribeEventTopicsRequest.h>
 #include <aws/ds/model/DescribeSnapshotsRequest.h>
@@ -49,6 +52,7 @@
 #include <aws/ds/model/GetSnapshotLimitsRequest.h>
 #include <aws/ds/model/RegisterEventTopicRequest.h>
 #include <aws/ds/model/RestoreFromSnapshotRequest.h>
+#include <aws/ds/model/UpdateConditionalForwarderRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
 #include <aws/ds/model/VerifyTrustRequest.h>
 
@@ -207,6 +211,37 @@ void DirectoryServiceClient::CreateComputerAsyncHelper(const CreateComputerReque
   handler(this, request, CreateComputer(request), context);
 }
 
+CreateConditionalForwarderOutcome DirectoryServiceClient::CreateConditionalForwarder(const CreateConditionalForwarderRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateConditionalForwarderOutcome(CreateConditionalForwarderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConditionalForwarderOutcome(outcome.GetError());
+  }
+}
+
+CreateConditionalForwarderOutcomeCallable DirectoryServiceClient::CreateConditionalForwarderCallable(const CreateConditionalForwarderRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::CreateConditionalForwarder, this, request);
+}
+
+void DirectoryServiceClient::CreateConditionalForwarderAsync(const CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::CreateConditionalForwarderAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::CreateConditionalForwarderAsyncHelper(const CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConditionalForwarder(request), context);
+}
+
 CreateDirectoryOutcome DirectoryServiceClient::CreateDirectory(const CreateDirectoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -331,6 +366,37 @@ void DirectoryServiceClient::CreateTrustAsyncHelper(const CreateTrustRequest& re
   handler(this, request, CreateTrust(request), context);
 }
 
+DeleteConditionalForwarderOutcome DirectoryServiceClient::DeleteConditionalForwarder(const DeleteConditionalForwarderRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConditionalForwarderOutcome(DeleteConditionalForwarderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConditionalForwarderOutcome(outcome.GetError());
+  }
+}
+
+DeleteConditionalForwarderOutcomeCallable DirectoryServiceClient::DeleteConditionalForwarderCallable(const DeleteConditionalForwarderRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::DeleteConditionalForwarder, this, request);
+}
+
+void DirectoryServiceClient::DeleteConditionalForwarderAsync(const DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::DeleteConditionalForwarderAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::DeleteConditionalForwarderAsyncHelper(const DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConditionalForwarder(request), context);
+}
+
 DeleteDirectoryOutcome DirectoryServiceClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
 {
   Aws::StringStream ss;
@@ -453,6 +519,37 @@ void DirectoryServiceClient::DeregisterEventTopicAsync(const DeregisterEventTopi
 void DirectoryServiceClient::DeregisterEventTopicAsyncHelper(const DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeregisterEventTopic(request), context);
+}
+
+DescribeConditionalForwardersOutcome DirectoryServiceClient::DescribeConditionalForwarders(const DescribeConditionalForwardersRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeConditionalForwardersOutcome(DescribeConditionalForwardersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeConditionalForwardersOutcome(outcome.GetError());
+  }
+}
+
+DescribeConditionalForwardersOutcomeCallable DirectoryServiceClient::DescribeConditionalForwardersCallable(const DescribeConditionalForwardersRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::DescribeConditionalForwarders, this, request);
+}
+
+void DirectoryServiceClient::DescribeConditionalForwardersAsync(const DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::DescribeConditionalForwardersAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::DescribeConditionalForwardersAsyncHelper(const DescribeConditionalForwardersRequest& request, const DescribeConditionalForwardersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConditionalForwarders(request), context);
 }
 
 DescribeDirectoriesOutcome DirectoryServiceClient::DescribeDirectories(const DescribeDirectoriesRequest& request) const
@@ -825,6 +922,37 @@ void DirectoryServiceClient::RestoreFromSnapshotAsync(const RestoreFromSnapshotR
 void DirectoryServiceClient::RestoreFromSnapshotAsyncHelper(const RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreFromSnapshot(request), context);
+}
+
+UpdateConditionalForwarderOutcome DirectoryServiceClient::UpdateConditionalForwarder(const UpdateConditionalForwarderRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConditionalForwarderOutcome(UpdateConditionalForwarderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateConditionalForwarderOutcome(outcome.GetError());
+  }
+}
+
+UpdateConditionalForwarderOutcomeCallable DirectoryServiceClient::UpdateConditionalForwarderCallable(const UpdateConditionalForwarderRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::UpdateConditionalForwarder, this, request);
+}
+
+void DirectoryServiceClient::UpdateConditionalForwarderAsync(const UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::UpdateConditionalForwarderAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::UpdateConditionalForwarderAsyncHelper(const UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConditionalForwarder(request), context);
 }
 
 UpdateRadiusOutcome DirectoryServiceClient::UpdateRadius(const UpdateRadiusRequest& request) const

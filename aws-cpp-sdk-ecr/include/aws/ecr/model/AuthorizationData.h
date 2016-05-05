@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -101,25 +102,37 @@ namespace Model
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline double GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline void SetExpiresAt(double value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
 
     /**
      * <p>The Unix time in seconds and milliseconds when the authorization token
      * expires. Authorization tokens are valid for 12 hours.</p>
      */
-    inline AuthorizationData& WithExpiresAt(double value) { SetExpiresAt(value); return *this;}
+    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the authorization token
+     * expires. Authorization tokens are valid for 12 hours.</p>
+     */
+    inline AuthorizationData& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
+
+    /**
+     * <p>The Unix time in seconds and milliseconds when the authorization token
+     * expires. Authorization tokens are valid for 12 hours.</p>
+     */
+    inline AuthorizationData& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(value); return *this;}
 
     /**
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline const Aws::String& GetProxyEndpoint() const{ return m_proxyEndpoint; }
 
@@ -127,7 +140,7 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline void SetProxyEndpoint(const Aws::String& value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint = value; }
 
@@ -135,7 +148,7 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline void SetProxyEndpoint(Aws::String&& value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint = value; }
 
@@ -143,7 +156,7 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline void SetProxyEndpoint(const char* value) { m_proxyEndpointHasBeenSet = true; m_proxyEndpoint.assign(value); }
 
@@ -151,7 +164,7 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline AuthorizationData& WithProxyEndpoint(const Aws::String& value) { SetProxyEndpoint(value); return *this;}
 
@@ -159,7 +172,7 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline AuthorizationData& WithProxyEndpoint(Aws::String&& value) { SetProxyEndpoint(value); return *this;}
 
@@ -167,14 +180,14 @@ namespace Model
      * <p>The registry URL to use for this authorization token in a <code>docker
      * login</code> command. The Amazon ECR registry URL format is
      * <code>https://aws_account_id.dkr.ecr.region.amazonaws.com</code>. For example,
-     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.</p>
+     * <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.. </p>
      */
     inline AuthorizationData& WithProxyEndpoint(const char* value) { SetProxyEndpoint(value); return *this;}
 
   private:
     Aws::String m_authorizationToken;
     bool m_authorizationTokenHasBeenSet;
-    double m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt;
     bool m_expiresAtHasBeenSet;
     Aws::String m_proxyEndpoint;
     bool m_proxyEndpointHasBeenSet;

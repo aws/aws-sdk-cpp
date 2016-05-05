@@ -32,6 +32,9 @@ namespace Model
     RefreshedAt,
     LaunchedAt,
     System,
+    Deployment,
+    AvailabilityZone,
+    InstanceType,
     All
   };
 

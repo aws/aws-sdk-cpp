@@ -50,7 +50,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_elasticIpHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
+    m_additionalInfoHasBeenSet(false),
+    m_iamRolesHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_additionalInfoHasBeenSet)
   {
     ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
+  }
+  if(m_iamRolesHasBeenSet)
+  {
+    unsigned iamRolesCount = 1;
+    for(auto& item : m_iamRoles)
+    {
+      ss << "IamRoles.member." << iamRolesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      iamRolesCount++;
+    }
   }
   ss << "Version=2012-12-01";
   return ss.str();

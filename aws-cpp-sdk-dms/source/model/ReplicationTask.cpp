@@ -31,9 +31,7 @@ ReplicationTask::ReplicationTask() :
     m_replicationTaskSettingsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false),
-    m_replicationTaskCreationDate(0.0),
     m_replicationTaskCreationDateHasBeenSet(false),
-    m_replicationTaskStartDate(0.0),
     m_replicationTaskStartDateHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationTaskStatsHasBeenSet(false)
@@ -50,9 +48,7 @@ ReplicationTask::ReplicationTask(const JsonValue& jsonValue) :
     m_replicationTaskSettingsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false),
-    m_replicationTaskCreationDate(0.0),
     m_replicationTaskCreationDateHasBeenSet(false),
-    m_replicationTaskStartDate(0.0),
     m_replicationTaskStartDateHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationTaskStatsHasBeenSet(false)
@@ -215,14 +211,12 @@ JsonValue ReplicationTask::Jsonize() const
 
   if(m_replicationTaskCreationDateHasBeenSet)
   {
-   payload.WithDouble("ReplicationTaskCreationDate", m_replicationTaskCreationDate);
-
+   payload.WithDouble("ReplicationTaskCreationDate", m_replicationTaskCreationDate.SecondsWithMSPrecision());
   }
 
   if(m_replicationTaskStartDateHasBeenSet)
   {
-   payload.WithDouble("ReplicationTaskStartDate", m_replicationTaskStartDate);
-
+   payload.WithDouble("ReplicationTaskStartDate", m_replicationTaskStartDate.SecondsWithMSPrecision());
   }
 
   if(m_replicationTaskArnHasBeenSet)

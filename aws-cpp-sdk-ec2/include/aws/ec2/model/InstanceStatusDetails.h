@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/StatusName.h>
 #include <aws/ec2/model/StatusType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -99,26 +100,38 @@ namespace Model
      * <p>The time when a status check failed. For an instance that was launched and
      * impaired, this is the time when the instance was launched.</p>
      */
-    inline double GetImpairedSince() const{ return m_impairedSince; }
+    inline const Aws::Utils::DateTime& GetImpairedSince() const{ return m_impairedSince; }
 
     /**
      * <p>The time when a status check failed. For an instance that was launched and
      * impaired, this is the time when the instance was launched.</p>
      */
-    inline void SetImpairedSince(double value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
+    inline void SetImpairedSince(const Aws::Utils::DateTime& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
 
     /**
      * <p>The time when a status check failed. For an instance that was launched and
      * impaired, this is the time when the instance was launched.</p>
      */
-    inline InstanceStatusDetails& WithImpairedSince(double value) { SetImpairedSince(value); return *this;}
+    inline void SetImpairedSince(Aws::Utils::DateTime&& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline InstanceStatusDetails& WithImpairedSince(const Aws::Utils::DateTime& value) { SetImpairedSince(value); return *this;}
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
+    inline InstanceStatusDetails& WithImpairedSince(Aws::Utils::DateTime&& value) { SetImpairedSince(value); return *this;}
 
   private:
     StatusName m_name;
     bool m_nameHasBeenSet;
     StatusType m_status;
     bool m_statusHasBeenSet;
-    double m_impairedSince;
+    Aws::Utils::DateTime m_impairedSince;
     bool m_impairedSinceHasBeenSet;
   };
 

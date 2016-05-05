@@ -52,9 +52,9 @@ Aws::Http::HeaderValueCollection PutBucketCorsRequest::GetRequestSpecificHeaders
   Aws::StringStream ss;
   if(m_contentMD5HasBeenSet)
   {
-   ss << m_contentMD5;
-   headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
-   ss.str("");
+    ss << m_contentMD5;
+    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    ss.str("");
   }
 
   return headers;

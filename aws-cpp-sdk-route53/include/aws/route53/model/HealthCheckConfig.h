@@ -17,6 +17,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HealthCheckType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53/model/AlarmIdentifier.h>
+#include <aws/route53/model/InsufficientDataHealthStatus.h>
+#include <aws/route53/model/HealthCheckRegion.h>
 
 namespace Aws
 {
@@ -102,31 +105,36 @@ namespace Model
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
-     * HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.</p>
+     * HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.</p>
      */
     inline const HealthCheckType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
-     * HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.</p>
+     * HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.</p>
      */
     inline void SetType(const HealthCheckType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
-     * HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.</p>
+     * HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.</p>
      */
     inline void SetType(HealthCheckType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
-     * HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.</p>
+     * HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.</p>
      */
     inline HealthCheckConfig& WithType(const HealthCheckType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
-     * HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.</p>
+     * HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.</p>
      */
     inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(value); return *this;}
 
@@ -458,6 +466,120 @@ namespace Model
      */
     inline HealthCheckConfig& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
 
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline const Aws::Vector<HealthCheckRegion>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline void SetRegions(const Aws::Vector<HealthCheckRegion>& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline HealthCheckConfig& WithRegions(const Aws::Vector<HealthCheckRegion>& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline HealthCheckConfig& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline HealthCheckConfig& AddRegions(const HealthCheckRegion& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that you want Amazon Route 53
+     * to use to perform health checks for the specified endpoint. You must specify at
+     * least three regions.</p>
+     */
+    inline HealthCheckConfig& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    /**
+     * <p>A complex type that contains information to uniquely identify the CloudWatch
+     * alarm that you're associating with a Route 53 health check.</p>
+     */
+    inline const AlarmIdentifier& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
+
+    /**
+     * <p>A complex type that contains information to uniquely identify the CloudWatch
+     * alarm that you're associating with a Route 53 health check.</p>
+     */
+    inline void SetAlarmIdentifier(const AlarmIdentifier& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
+
+    /**
+     * <p>A complex type that contains information to uniquely identify the CloudWatch
+     * alarm that you're associating with a Route 53 health check.</p>
+     */
+    inline void SetAlarmIdentifier(AlarmIdentifier&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
+
+    /**
+     * <p>A complex type that contains information to uniquely identify the CloudWatch
+     * alarm that you're associating with a Route 53 health check.</p>
+     */
+    inline HealthCheckConfig& WithAlarmIdentifier(const AlarmIdentifier& value) { SetAlarmIdentifier(value); return *this;}
+
+    /**
+     * <p>A complex type that contains information to uniquely identify the CloudWatch
+     * alarm that you're associating with a Route 53 health check.</p>
+     */
+    inline HealthCheckConfig& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(value); return *this;}
+
+    /**
+     * <p>The status of the health check when CloudWatch has insufficient data about
+     * the state of associated alarm. Valid values are <code>Healthy</code>,
+     * <code>Unhealthy</code> and <code>LastKnownStatus</code>.</p>
+     */
+    inline const InsufficientDataHealthStatus& GetInsufficientDataHealthStatus() const{ return m_insufficientDataHealthStatus; }
+
+    /**
+     * <p>The status of the health check when CloudWatch has insufficient data about
+     * the state of associated alarm. Valid values are <code>Healthy</code>,
+     * <code>Unhealthy</code> and <code>LastKnownStatus</code>.</p>
+     */
+    inline void SetInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+
+    /**
+     * <p>The status of the health check when CloudWatch has insufficient data about
+     * the state of associated alarm. Valid values are <code>Healthy</code>,
+     * <code>Unhealthy</code> and <code>LastKnownStatus</code>.</p>
+     */
+    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+
+    /**
+     * <p>The status of the health check when CloudWatch has insufficient data about
+     * the state of associated alarm. Valid values are <code>Healthy</code>,
+     * <code>Unhealthy</code> and <code>LastKnownStatus</code>.</p>
+     */
+    inline HealthCheckConfig& WithInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { SetInsufficientDataHealthStatus(value); return *this;}
+
+    /**
+     * <p>The status of the health check when CloudWatch has insufficient data about
+     * the state of associated alarm. Valid values are <code>Healthy</code>,
+     * <code>Unhealthy</code> and <code>LastKnownStatus</code>.</p>
+     */
+    inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(value); return *this;}
+
   private:
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
@@ -485,6 +607,12 @@ namespace Model
     bool m_childHealthChecksHasBeenSet;
     bool m_enableSNI;
     bool m_enableSNIHasBeenSet;
+    Aws::Vector<HealthCheckRegion> m_regions;
+    bool m_regionsHasBeenSet;
+    AlarmIdentifier m_alarmIdentifier;
+    bool m_alarmIdentifierHasBeenSet;
+    InsufficientDataHealthStatus m_insufficientDataHealthStatus;
+    bool m_insufficientDataHealthStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -32,8 +32,8 @@ namespace CloudTrail
 namespace Model
 {
   /**
-   * <p> Returns the objects or data listed below if successful. Otherwise, returns
-   * an error. </p>
+   * <p>Returns the objects or data listed below if successful. Otherwise, returns an
+   * error.</p>
    */
   class AWS_CLOUDTRAIL_API AddTagsResult
   {

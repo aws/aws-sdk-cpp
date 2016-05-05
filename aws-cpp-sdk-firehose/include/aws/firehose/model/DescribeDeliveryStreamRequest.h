@@ -90,50 +90,43 @@ namespace Model
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline const Aws::String& GetExclusiveStartDestinationId() const{ return m_exclusiveStartDestinationId; }
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const Aws::String& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const char* value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId.assign(value); }
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const Aws::String& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
      * <p>Specifies the destination ID to start returning the destination information.
-     * Currently Amazon Kinesis Firehose supports one destination per delivery
-     * stream.</p>
+     * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const char* value) { SetExclusiveStartDestinationId(value); return *this;}
 

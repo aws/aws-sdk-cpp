@@ -22,17 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 TimeWindow::TimeWindow() : 
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false)
 {
 }
 
 TimeWindow::TimeWindow(const JsonValue& jsonValue) : 
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,14 +59,12 @@ JsonValue TimeWindow::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithDouble("StartTime", m_startTime);
-
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithDouble("EndTime", m_endTime);
-
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;

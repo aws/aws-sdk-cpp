@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ComplianceContributorCount.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -105,24 +106,34 @@ namespace Model
     /**
      * <p>The time that AWS Config created the compliance summary.</p>
      */
-    inline double GetComplianceSummaryTimestamp() const{ return m_complianceSummaryTimestamp; }
+    inline const Aws::Utils::DateTime& GetComplianceSummaryTimestamp() const{ return m_complianceSummaryTimestamp; }
 
     /**
      * <p>The time that AWS Config created the compliance summary.</p>
      */
-    inline void SetComplianceSummaryTimestamp(double value) { m_complianceSummaryTimestampHasBeenSet = true; m_complianceSummaryTimestamp = value; }
+    inline void SetComplianceSummaryTimestamp(const Aws::Utils::DateTime& value) { m_complianceSummaryTimestampHasBeenSet = true; m_complianceSummaryTimestamp = value; }
 
     /**
      * <p>The time that AWS Config created the compliance summary.</p>
      */
-    inline ComplianceSummary& WithComplianceSummaryTimestamp(double value) { SetComplianceSummaryTimestamp(value); return *this;}
+    inline void SetComplianceSummaryTimestamp(Aws::Utils::DateTime&& value) { m_complianceSummaryTimestampHasBeenSet = true; m_complianceSummaryTimestamp = value; }
+
+    /**
+     * <p>The time that AWS Config created the compliance summary.</p>
+     */
+    inline ComplianceSummary& WithComplianceSummaryTimestamp(const Aws::Utils::DateTime& value) { SetComplianceSummaryTimestamp(value); return *this;}
+
+    /**
+     * <p>The time that AWS Config created the compliance summary.</p>
+     */
+    inline ComplianceSummary& WithComplianceSummaryTimestamp(Aws::Utils::DateTime&& value) { SetComplianceSummaryTimestamp(value); return *this;}
 
   private:
     ComplianceContributorCount m_compliantResourceCount;
     bool m_compliantResourceCountHasBeenSet;
     ComplianceContributorCount m_nonCompliantResourceCount;
     bool m_nonCompliantResourceCountHasBeenSet;
-    double m_complianceSummaryTimestamp;
+    Aws::Utils::DateTime m_complianceSummaryTimestamp;
     bool m_complianceSummaryTimestampHasBeenSet;
   };
 

@@ -54,7 +54,7 @@ public class Shape {
         return "structure".equals(type.toLowerCase());
     }
 
-    public boolean isDouble() { return "double".equals(type.toLowerCase()) || "timestamp".equals(type.toLowerCase()); }
+    public boolean isDouble() { return "double".equals(type.toLowerCase()); }
 
     public boolean isString() {
         return "string".equals(type.toLowerCase()) && !isEnum();
@@ -73,7 +73,7 @@ public class Shape {
     }
 
     public boolean isPrimitive() {
-        return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob();
+        return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob() && !isTimeStamp();
     }
 
     public boolean isMemberRequired(String member) {

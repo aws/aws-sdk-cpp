@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -114,17 +115,27 @@ namespace Model
     /**
      * <p>The time at which the application was created.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The time at which the application was created.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The time at which the application was created.</p>
      */
-    inline ApplicationInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The time at which the application was created.</p>
+     */
+    inline ApplicationInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The time at which the application was created.</p>
+     */
+    inline ApplicationInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>True if the user has authenticated with GitHub for the specified application;
@@ -149,7 +160,7 @@ namespace Model
     bool m_applicationIdHasBeenSet;
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
     bool m_linkedToGitHub;
     bool m_linkedToGitHubHasBeenSet;

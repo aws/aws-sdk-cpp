@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -239,19 +240,31 @@ namespace Model
      * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
      * then environments deleted after this date are displayed. </p>
      */
-    inline double GetIncludedDeletedBackTo() const{ return m_includedDeletedBackTo; }
+    inline const Aws::Utils::DateTime& GetIncludedDeletedBackTo() const{ return m_includedDeletedBackTo; }
 
     /**
      * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
      * then environments deleted after this date are displayed. </p>
      */
-    inline void SetIncludedDeletedBackTo(double value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = value; }
+    inline void SetIncludedDeletedBackTo(const Aws::Utils::DateTime& value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = value; }
 
     /**
      * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
      * then environments deleted after this date are displayed. </p>
      */
-    inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(double value) { SetIncludedDeletedBackTo(value); return *this;}
+    inline void SetIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { m_includedDeletedBackToHasBeenSet = true; m_includedDeletedBackTo = value; }
+
+    /**
+     * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
+     * then environments deleted after this date are displayed. </p>
+     */
+    inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(const Aws::Utils::DateTime& value) { SetIncludedDeletedBackTo(value); return *this;}
+
+    /**
+     * <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>,
+     * then environments deleted after this date are displayed. </p>
+     */
+    inline DescribeEnvironmentsRequest& WithIncludedDeletedBackTo(Aws::Utils::DateTime&& value) { SetIncludedDeletedBackTo(value); return *this;}
 
   private:
     Aws::String m_applicationName;
@@ -264,7 +277,7 @@ namespace Model
     bool m_environmentNamesHasBeenSet;
     bool m_includeDeleted;
     bool m_includeDeletedHasBeenSet;
-    double m_includedDeletedBackTo;
+    Aws::Utils::DateTime m_includedDeletedBackTo;
     bool m_includedDeletedBackToHasBeenSet;
   };
 

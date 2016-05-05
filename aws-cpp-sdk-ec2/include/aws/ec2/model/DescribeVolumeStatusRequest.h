@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVolumeStatus.</p>
    */
   class AWS_EC2_API DescribeVolumeStatusRequest : public EC2Request
   {

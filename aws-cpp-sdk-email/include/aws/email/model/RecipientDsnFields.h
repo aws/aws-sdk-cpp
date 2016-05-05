@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/DsnAction.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ExtensionField.h>
 
@@ -328,19 +329,31 @@ namespace Model
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline double GetLastAttemptDate() const{ return m_lastAttemptDate; }
+    inline const Aws::Utils::DateTime& GetLastAttemptDate() const{ return m_lastAttemptDate; }
 
     /**
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline void SetLastAttemptDate(double value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
+    inline void SetLastAttemptDate(const Aws::Utils::DateTime& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
 
     /**
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline RecipientDsnFields& WithLastAttemptDate(double value) { SetLastAttemptDate(value); return *this;}
+    inline void SetLastAttemptDate(Aws::Utils::DateTime&& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
+
+    /**
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline RecipientDsnFields& WithLastAttemptDate(const Aws::Utils::DateTime& value) { SetLastAttemptDate(value); return *this;}
+
+    /**
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
+    inline RecipientDsnFields& WithLastAttemptDate(Aws::Utils::DateTime&& value) { SetLastAttemptDate(value); return *this;}
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -388,7 +401,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_diagnosticCode;
     bool m_diagnosticCodeHasBeenSet;
-    double m_lastAttemptDate;
+    Aws::Utils::DateTime m_lastAttemptDate;
     bool m_lastAttemptDateHasBeenSet;
     Aws::Vector<ExtensionField> m_extensionFields;
     bool m_extensionFieldsHasBeenSet;

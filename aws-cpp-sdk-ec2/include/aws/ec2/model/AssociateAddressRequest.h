@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AssociateAddress.</p>
    */
   class AWS_EC2_API AssociateAddressRequest : public EC2Request
   {

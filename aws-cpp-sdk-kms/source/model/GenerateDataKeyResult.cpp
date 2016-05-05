@@ -40,13 +40,11 @@ GenerateDataKeyResult& GenerateDataKeyResult::operator =(const AmazonWebServiceR
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
-
   }
 
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
-
   }
 
   if(jsonValue.ValueExists("KeyId"))

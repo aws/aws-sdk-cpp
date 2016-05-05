@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ReplaceRouteTableAssociation.</p>
    */
   class AWS_EC2_API ReplaceRouteTableAssociationRequest : public EC2Request
   {

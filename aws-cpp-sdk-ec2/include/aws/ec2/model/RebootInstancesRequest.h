@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RebootInstances.</p>
    */
   class AWS_EC2_API RebootInstancesRequest : public EC2Request
   {

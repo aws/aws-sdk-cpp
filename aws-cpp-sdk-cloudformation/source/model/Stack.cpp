@@ -28,9 +28,7 @@ Stack::Stack() :
     m_stackNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
@@ -50,9 +48,7 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_stackNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTime(0.0),
     m_lastUpdatedTimeHasBeenSet(false),
     m_stackStatusHasBeenSet(false),
     m_stackStatusReasonHasBeenSet(false),
@@ -107,13 +103,13 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::ConvertToDouble(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str());
+      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
-      m_lastUpdatedTime = StringUtils::ConvertToDouble(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str());
+      m_lastUpdatedTime = DateTime(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
@@ -219,11 +215,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
+      oStream << location << index << locationValue << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {
@@ -305,11 +301,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_creationTimeHasBeenSet)
   {
-        oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_lastUpdatedTimeHasBeenSet)
   {
-        oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime) << "&";
+      oStream << location << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_stackStatusHasBeenSet)
   {

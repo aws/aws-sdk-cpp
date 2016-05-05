@@ -25,14 +25,12 @@ using namespace Aws::Utils;
 
 StatusReport::StatusReport() : 
     m_statusHasBeenSet(false),
-    m_checkedTime(0.0),
     m_checkedTimeHasBeenSet(false)
 {
 }
 
 StatusReport::StatusReport(const XmlNode& xmlNode) : 
     m_statusHasBeenSet(false),
-    m_checkedTime(0.0),
     m_checkedTimeHasBeenSet(false)
 {
   *this = xmlNode;
@@ -53,7 +51,7 @@ StatusReport& StatusReport::operator =(const XmlNode& xmlNode)
     XmlNode checkedTimeNode = resultNode.FirstChild("CheckedTime");
     if(!checkedTimeNode.IsNull())
     {
-      m_checkedTime = StringUtils::ConvertToDouble(StringUtils::Trim(checkedTimeNode.GetText().c_str()).c_str());
+      m_checkedTime = DateTime(StringUtils::Trim(checkedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_checkedTimeHasBeenSet = true;
     }
   }
@@ -72,10 +70,8 @@ void StatusReport::AddToNode(XmlNode& parentNode) const
 
   if(m_checkedTimeHasBeenSet)
   {
-   XmlNode checkedTimeNode = parentNode.CreateChildElement("CheckedTime");
-  ss << m_checkedTime;
-   checkedTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode checkedTimeNode = parentNode.CreateChildElement("CheckedTime");
+     checkedTimeNode.SetText(m_checkedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
 }

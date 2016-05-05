@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Tag.h>
@@ -214,17 +215,27 @@ namespace Model
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline void SetStartTime(double value) { m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline CreateSnapshotResponse& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = value; }
+
+    /**
+     * <p>The time stamp when the snapshot was initiated.</p>
+     */
+    inline CreateSnapshotResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when the snapshot was initiated.</p>
+     */
+    inline CreateSnapshotResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
@@ -584,7 +595,7 @@ namespace Model
     Aws::String m_volumeId;
     SnapshotState m_state;
     Aws::String m_stateMessage;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     Aws::String m_progress;
     Aws::String m_ownerId;
     Aws::String m_description;

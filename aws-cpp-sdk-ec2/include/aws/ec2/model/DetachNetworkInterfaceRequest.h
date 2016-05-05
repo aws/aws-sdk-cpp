@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DetachNetworkInterface.</p>
    */
   class AWS_EC2_API DetachNetworkInterfaceRequest : public EC2Request
   {

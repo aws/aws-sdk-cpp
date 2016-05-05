@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for GetPasswordData.</p>
    */
   class AWS_EC2_API GetPasswordDataRequest : public EC2Request
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DisableVgwRoutePropagation.</p>
    */
   class AWS_EC2_API DisableVgwRoutePropagationRequest : public EC2Request
   {

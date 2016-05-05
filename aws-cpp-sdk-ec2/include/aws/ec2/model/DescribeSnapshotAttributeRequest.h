@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeSnapshotAttribute.</p>
    */
   class AWS_EC2_API DescribeSnapshotAttributeRequest : public EC2Request
   {

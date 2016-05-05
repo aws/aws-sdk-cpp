@@ -28,10 +28,8 @@ UploadPartCopyRequest::UploadPartCopyRequest() :
     m_bucketHasBeenSet(false),
     m_copySourceHasBeenSet(false),
     m_copySourceIfMatchHasBeenSet(false),
-    m_copySourceIfModifiedSince(0.0),
     m_copySourceIfModifiedSinceHasBeenSet(false),
     m_copySourceIfNoneMatchHasBeenSet(false),
-    m_copySourceIfUnmodifiedSince(0.0),
     m_copySourceIfUnmodifiedSinceHasBeenSet(false),
     m_copySourceRangeHasBeenSet(false),
     m_keyHasBeenSet(false),
@@ -78,91 +76,87 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
   Aws::StringStream ss;
   if(m_copySourceHasBeenSet)
   {
-   ss << m_copySource;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
-   ss.str("");
+    ss << m_copySource;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceIfMatchHasBeenSet)
   {
-   ss << m_copySourceIfMatch;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-match", ss.str()));
-   ss.str("");
+    ss << m_copySourceIfMatch;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-match", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceIfModifiedSinceHasBeenSet)
   {
-   ss << m_copySourceIfModifiedSince;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-modified-since", ss.str()));
-   ss.str("");
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-modified-since", m_copySourceIfModifiedSince.ToGmtString(DateFormat::RFC822)));
   }
 
   if(m_copySourceIfNoneMatchHasBeenSet)
   {
-   ss << m_copySourceIfNoneMatch;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-none-match", ss.str()));
-   ss.str("");
+    ss << m_copySourceIfNoneMatch;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-none-match", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceIfUnmodifiedSinceHasBeenSet)
   {
-   ss << m_copySourceIfUnmodifiedSince;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-unmodified-since", ss.str()));
-   ss.str("");
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-if-unmodified-since", m_copySourceIfUnmodifiedSince.ToGmtString(DateFormat::RFC822)));
   }
 
   if(m_copySourceRangeHasBeenSet)
   {
-   ss << m_copySourceRange;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-range", ss.str()));
-   ss.str("");
+    ss << m_copySourceRange;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-range", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
-   ss << m_sSECustomerAlgorithm;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerAlgorithm;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
-   ss << m_sSECustomerKey;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKey;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
-   ss << m_sSECustomerKeyMD5;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
-   ss.str("");
+    ss << m_sSECustomerKeyMD5;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceSSECustomerAlgorithmHasBeenSet)
   {
-   ss << m_copySourceSSECustomerAlgorithm;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-algorithm", ss.str()));
-   ss.str("");
+    ss << m_copySourceSSECustomerAlgorithm;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-algorithm", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceSSECustomerKeyHasBeenSet)
   {
-   ss << m_copySourceSSECustomerKey;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-key", ss.str()));
-   ss.str("");
+    ss << m_copySourceSSECustomerKey;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-key", ss.str()));
+    ss.str("");
   }
 
   if(m_copySourceSSECustomerKeyMD5HasBeenSet)
   {
-   ss << m_copySourceSSECustomerKeyMD5;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-key-md5", ss.str()));
-   ss.str("");
+    ss << m_copySourceSSECustomerKeyMD5;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-copy-source-server-side-encryption-customer-key-md5", ss.str()));
+    ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
   }
 
   return headers;

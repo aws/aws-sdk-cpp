@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TelemetryStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -115,17 +116,27 @@ namespace Model
     /**
      * <p>The date and time of the last change in status.</p>
      */
-    inline double GetLastStatusChange() const{ return m_lastStatusChange; }
+    inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
 
     /**
      * <p>The date and time of the last change in status.</p>
      */
-    inline void SetLastStatusChange(double value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+    inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
     /**
      * <p>The date and time of the last change in status.</p>
      */
-    inline VgwTelemetry& WithLastStatusChange(double value) { SetLastStatusChange(value); return *this;}
+    inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
+
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline VgwTelemetry& WithLastStatusChange(const Aws::Utils::DateTime& value) { SetLastStatusChange(value); return *this;}
+
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline VgwTelemetry& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
 
     /**
      * <p>If an error occurs, a description of the error.</p>
@@ -182,7 +193,7 @@ namespace Model
     bool m_outsideIpAddressHasBeenSet;
     TelemetryStatus m_status;
     bool m_statusHasBeenSet;
-    double m_lastStatusChange;
+    Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;

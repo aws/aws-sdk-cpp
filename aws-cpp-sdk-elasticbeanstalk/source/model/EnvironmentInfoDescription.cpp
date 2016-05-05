@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 EnvironmentInfoDescription::EnvironmentInfoDescription() : 
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_sampleTimestamp(0.0),
     m_sampleTimestampHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ EnvironmentInfoDescription::EnvironmentInfoDescription() :
 EnvironmentInfoDescription::EnvironmentInfoDescription(const XmlNode& xmlNode) : 
     m_infoTypeHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
-    m_sampleTimestamp(0.0),
     m_sampleTimestampHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -63,7 +61,7 @@ EnvironmentInfoDescription& EnvironmentInfoDescription::operator =(const XmlNode
     XmlNode sampleTimestampNode = resultNode.FirstChild("SampleTimestamp");
     if(!sampleTimestampNode.IsNull())
     {
-      m_sampleTimestamp = StringUtils::ConvertToDouble(StringUtils::Trim(sampleTimestampNode.GetText().c_str()).c_str());
+      m_sampleTimestamp = DateTime(StringUtils::Trim(sampleTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_sampleTimestampHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -89,7 +87,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp) << "&";
+      oStream << location << index << locationValue << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -109,7 +107,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_sampleTimestampHasBeenSet)
   {
-        oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp) << "&";
+      oStream << location << ".SampleTimestamp=" << StringUtils::URLEncode(m_sampleTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {

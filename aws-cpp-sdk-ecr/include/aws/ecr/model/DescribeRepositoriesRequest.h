@@ -86,49 +86,49 @@ namespace Model
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(value); return *this;}
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& AddRepositoryNames(const Aws::String& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
-     * repositories in a registry are described. </p>
+     * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 

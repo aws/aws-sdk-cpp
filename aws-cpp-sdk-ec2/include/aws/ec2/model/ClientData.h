@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -47,32 +48,52 @@ namespace Model
     /**
      * <p>The time that the disk upload starts.</p>
      */
-    inline double GetUploadStart() const{ return m_uploadStart; }
+    inline const Aws::Utils::DateTime& GetUploadStart() const{ return m_uploadStart; }
 
     /**
      * <p>The time that the disk upload starts.</p>
      */
-    inline void SetUploadStart(double value) { m_uploadStartHasBeenSet = true; m_uploadStart = value; }
+    inline void SetUploadStart(const Aws::Utils::DateTime& value) { m_uploadStartHasBeenSet = true; m_uploadStart = value; }
 
     /**
      * <p>The time that the disk upload starts.</p>
      */
-    inline ClientData& WithUploadStart(double value) { SetUploadStart(value); return *this;}
+    inline void SetUploadStart(Aws::Utils::DateTime&& value) { m_uploadStartHasBeenSet = true; m_uploadStart = value; }
+
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
+    inline ClientData& WithUploadStart(const Aws::Utils::DateTime& value) { SetUploadStart(value); return *this;}
+
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
+    inline ClientData& WithUploadStart(Aws::Utils::DateTime&& value) { SetUploadStart(value); return *this;}
 
     /**
      * <p>The time that the disk upload ends.</p>
      */
-    inline double GetUploadEnd() const{ return m_uploadEnd; }
+    inline const Aws::Utils::DateTime& GetUploadEnd() const{ return m_uploadEnd; }
 
     /**
      * <p>The time that the disk upload ends.</p>
      */
-    inline void SetUploadEnd(double value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
+    inline void SetUploadEnd(const Aws::Utils::DateTime& value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
 
     /**
      * <p>The time that the disk upload ends.</p>
      */
-    inline ClientData& WithUploadEnd(double value) { SetUploadEnd(value); return *this;}
+    inline void SetUploadEnd(Aws::Utils::DateTime&& value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
+
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
+    inline ClientData& WithUploadEnd(const Aws::Utils::DateTime& value) { SetUploadEnd(value); return *this;}
+
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
+    inline ClientData& WithUploadEnd(Aws::Utils::DateTime&& value) { SetUploadEnd(value); return *this;}
 
     /**
      * <p>The size of the uploaded disk image, in GiB.</p>
@@ -125,9 +146,9 @@ namespace Model
     inline ClientData& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
-    double m_uploadStart;
+    Aws::Utils::DateTime m_uploadStart;
     bool m_uploadStartHasBeenSet;
-    double m_uploadEnd;
+    Aws::Utils::DateTime m_uploadEnd;
     bool m_uploadEndHasBeenSet;
     double m_uploadSize;
     bool m_uploadSizeHasBeenSet;

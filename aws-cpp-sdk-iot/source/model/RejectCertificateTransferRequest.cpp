@@ -22,13 +22,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RejectCertificateTransferRequest::RejectCertificateTransferRequest() : 
-    m_certificateIdHasBeenSet(false)
+    m_certificateIdHasBeenSet(false),
+    m_rejectReasonHasBeenSet(false)
 {
 }
 
 Aws::String RejectCertificateTransferRequest::SerializePayload() const
 {
-  return "";
+  JsonValue payload;
+
+  if(m_rejectReasonHasBeenSet)
+  {
+   payload.WithString("rejectReason", m_rejectReason);
+
+  }
+
+  return payload.WriteReadable();
 }
 
 

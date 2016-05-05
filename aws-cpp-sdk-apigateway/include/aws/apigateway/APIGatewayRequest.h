@@ -17,6 +17,7 @@
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
+#include <aws/core/AmazonStreamingWebServiceRequest.h>
 
 namespace Aws
 {
@@ -42,6 +43,7 @@ namespace APIGateway
 
   };
 
+  typedef AmazonStreamingWebServiceRequest StreamingAPIGatewayRequest;
 
 } // namespace APIGateway
 } // namespace Aws

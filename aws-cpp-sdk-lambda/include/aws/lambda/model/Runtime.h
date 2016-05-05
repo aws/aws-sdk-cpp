@@ -26,6 +26,7 @@ namespace Model
   {
     NOT_SET,
     nodejs,
+    nodejs4_3,
     java8,
     python2_7
   };

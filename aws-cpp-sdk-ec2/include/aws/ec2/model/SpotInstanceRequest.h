@@ -20,6 +20,7 @@
 #include <aws/ec2/model/SpotInstanceState.h>
 #include <aws/ec2/model/SpotInstanceStateFault.h>
 #include <aws/ec2/model/SpotInstanceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/LaunchSpecification.h>
 #include <aws/ec2/model/RIProductDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -249,21 +250,35 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
      * becomes active at this date and time.</p>
      */
-    inline double GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
     /**
      * <p>The start date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
      * becomes active at this date and time.</p>
      */
-    inline void SetValidFrom(double value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
      * <p>The start date of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
      * becomes active at this date and time.</p>
      */
-    inline SpotInstanceRequest& WithValidFrom(double value) { SetValidFrom(value); return *this;}
+    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
+
+    /**
+     * <p>The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
+     * becomes active at this date and time.</p>
+     */
+    inline SpotInstanceRequest& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
+
+    /**
+     * <p>The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
+     * becomes active at this date and time.</p>
+     */
+    inline SpotInstanceRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(value); return *this;}
 
     /**
      * <p>The end date of the request, in UTC format (for example,
@@ -272,7 +287,7 @@ namespace Model
      * canceled, or this date is reached. If the request is persistent, it remains
      * active until it is canceled or this date is reached.</p>
      */
-    inline double GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The end date of the request, in UTC format (for example,
@@ -281,7 +296,7 @@ namespace Model
      * canceled, or this date is reached. If the request is persistent, it remains
      * active until it is canceled or this date is reached.</p>
      */
-    inline void SetValidUntil(double value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The end date of the request, in UTC format (for example,
@@ -290,7 +305,25 @@ namespace Model
      * canceled, or this date is reached. If the request is persistent, it remains
      * active until it is canceled or this date is reached.</p>
      */
-    inline SpotInstanceRequest& WithValidUntil(double value) { SetValidUntil(value); return *this;}
+    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
+
+    /**
+     * <p>The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
+     * one-time request, it remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it remains
+     * active until it is canceled or this date is reached.</p>
+     */
+    inline SpotInstanceRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
+
+    /**
+     * <p>The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
+     * one-time request, it remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it remains
+     * active until it is canceled or this date is reached.</p>
+     */
+    inline SpotInstanceRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(value); return *this;}
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -455,21 +488,35 @@ namespace Model
      * (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The date and time when the Spot instance request was created, in UTC format
      * (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The date and time when the Spot instance request was created, in UTC format
      * (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline SpotInstanceRequest& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The date and time when the Spot instance request was created, in UTC format
+     * (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceRequest& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the Spot instance request was created, in UTC format
+     * (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline SpotInstanceRequest& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>The product description associated with the Spot instance.</p>
@@ -643,9 +690,9 @@ namespace Model
     bool m_faultHasBeenSet;
     SpotInstanceStatus m_status;
     bool m_statusHasBeenSet;
-    double m_validFrom;
+    Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
-    double m_validUntil;
+    Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
     Aws::String m_launchGroup;
     bool m_launchGroupHasBeenSet;
@@ -655,7 +702,7 @@ namespace Model
     bool m_launchSpecificationHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;

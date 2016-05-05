@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>A request to generate a <a>ClientCertificate</a> resource.</p>
    */
   class AWS_APIGATEWAY_API GenerateClientCertificateRequest : public APIGatewayRequest
   {
@@ -32,25 +33,39 @@ namespace Model
     GenerateClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline GenerateClientCertificateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline GenerateClientCertificateRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline GenerateClientCertificateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:

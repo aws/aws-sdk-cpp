@@ -68,86 +68,107 @@ namespace Model
     inline AssumeRoleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleSessionName() const{ return m_roleSessionName; }
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(const Aws::String& value) { SetRoleSessionName(value); return *this;}
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(value); return *this;}
 
     /**
-     * <p>An identifier for the assumed role session. </p> <p>Use the role session name
+     * <p>An identifier for the assumed role session.</p> <p>Use the role session name
      * to uniquely identify a session when the same role is assumed by different
      * principals or for different reasons. In cross-account scenarios, the role
      * session name is visible to, and can be logged by the account that owns the role.
      * The role session name is also used in the ARN of the assumed role principal.
      * This means that subsequent cross-account API requests using the temporary
      * security credentials will expose the role session name to the external account
-     * in their CloudTrail logs.</p>
+     * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 
@@ -162,11 +183,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -181,11 +207,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -200,11 +231,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -219,11 +255,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -238,11 +279,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -257,11 +303,16 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
@@ -276,32 +327,37 @@ namespace Model
      * that is being assumed. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
      * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
-     * <i>Using IAM</i>.</p> <note>The policy plain text must be 2048 bytes or shorter.
-     * However, an internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by percentage
-     * how close to the upper size limit the policy is, with 100% equaling the maximum
-     * allowed size.</note>
+     * <i>IAM User Guide</i>.</p> <p>The format for this parameter, as described by its
+     * regex pattern, is a string of characters up to 2048 characters in length. The
+     * characters can be any ASCII character from the space character to the end of the
+     * valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note>
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds. </p>
+     * 3600 seconds.</p>
      */
     inline long GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds. </p>
+     * 3600 seconds.</p>
      */
     inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds. </p>
+     * 3600 seconds.</p>
      */
     inline AssumeRoleRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
 
@@ -315,7 +371,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -329,7 +388,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -343,7 +405,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -357,7 +422,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -371,7 +439,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -385,7 +456,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
 
@@ -399,7 +473,10 @@ namespace Model
      * more information about the external ID, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
-     * Party</a> in the <i>Using IAM</i>.</p>
+     * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a string of characters consisting of upper-
+     * and lower-case alphanumeric characters with no spaces. You can also include any
+     * of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
@@ -410,6 +487,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -420,6 +500,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -430,6 +513,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -440,6 +526,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -450,6 +539,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -460,6 +552,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
@@ -470,6 +565,9 @@ namespace Model
      * authentication. The value is either the serial number for a hardware device
      * (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a string
+     * of characters consisting of upper- and lower-case alphanumeric characters with
+     * no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
@@ -478,7 +576,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
 
@@ -487,7 +586,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
@@ -496,7 +596,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
@@ -505,7 +606,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
 
@@ -514,7 +616,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
 
@@ -523,7 +626,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(value); return *this;}
 
@@ -532,7 +636,8 @@ namespace Model
      * assumed requires MFA (that is, if the policy includes a condition that tests for
      * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
      * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p>
+     * denied" error.</p> <p>The format for this parameter, as described by its regex
+     * pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 

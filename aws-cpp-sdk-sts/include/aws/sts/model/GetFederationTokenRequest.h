@@ -36,7 +36,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -44,7 +47,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -52,7 +58,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -60,7 +69,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -68,7 +80,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -76,7 +91,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
@@ -84,7 +102,10 @@ namespace Model
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
      * reference the federated user name in a resource-based policy, such as in an
-     * Amazon S3 bucket policy. </p>
+     * Amazon S3 bucket policy.</p> <p>The format for this parameter, as described by
+     * its regex pattern, is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -101,12 +122,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -125,12 +150,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -149,12 +178,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -173,12 +206,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -197,12 +234,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -221,12 +262,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -245,12 +290,16 @@ namespace Model
      * resulting temporary security credentials have no effective permissions. The only
      * exception is when the temporary security credentials are used to access a
      * resource that has a resource-based policy that specifically allows the federated
-     * user to access the resource. </p> <note>The policy plain text must be 2048 bytes
-     * or shorter. However, an internal conversion compresses it into a packed binary
-     * format with a separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100% equaling
-     * the maximum allowed size. </note> <p>For more information about how permissions
-     * work, see <a
+     * user to access the resource.</p> <p>The format for this parameter, as described
+     * by its regex pattern, is a string of characters up to 2048 characters in length.
+     * The characters can be any ASCII character from the space character to the end of
+     * the valid character list (\u0020-\u00FF). It can also include the tab (\u0009),
+     * linefeed (\u000A), and carriage return (\u000D) characters.</p> <note> <p>The
+     * policy plain text must be 2048 bytes or shorter. However, an internal conversion
+     * compresses it into a packed binary format with a separate limit. The
+     * PackedPolicySize response element indicates by percentage how close to the upper
+     * size limit the policy is, with 100% equaling the maximum allowed size.</p>
+     * </note> <p>For more information about how permissions work, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
      * for GetFederationToken</a>.</p>
      */
@@ -262,7 +311,7 @@ namespace Model
      * (36 hours), with 43200 seconds (12 hours) as the default. Sessions obtained
      * using AWS account (root) credentials are restricted to a maximum of 3600 seconds
      * (one hour). If the specified duration is longer than one hour, the session
-     * obtained by using AWS account (root) credentials defaults to one hour. </p>
+     * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
     inline long GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -272,7 +321,7 @@ namespace Model
      * (36 hours), with 43200 seconds (12 hours) as the default. Sessions obtained
      * using AWS account (root) credentials are restricted to a maximum of 3600 seconds
      * (one hour). If the specified duration is longer than one hour, the session
-     * obtained by using AWS account (root) credentials defaults to one hour. </p>
+     * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
     inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -282,7 +331,7 @@ namespace Model
      * (36 hours), with 43200 seconds (12 hours) as the default. Sessions obtained
      * using AWS account (root) credentials are restricted to a maximum of 3600 seconds
      * (one hour). If the specified duration is longer than one hour, the session
-     * obtained by using AWS account (root) credentials defaults to one hour. </p>
+     * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
     inline GetFederationTokenRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
 

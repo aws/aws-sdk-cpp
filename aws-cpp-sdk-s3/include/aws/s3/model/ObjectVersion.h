@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/ObjectVersionStorageClass.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/Owner.h>
 
 namespace Aws
@@ -193,17 +194,27 @@ namespace Model
     /**
      * Date and time the object was last modified.
      */
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
      * Date and time the object was last modified.
      */
-    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
      * Date and time the object was last modified.
      */
-    inline ObjectVersion& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /**
+     * Date and time the object was last modified.
+     */
+    inline ObjectVersion& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * Date and time the object was last modified.
+     */
+    inline ObjectVersion& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
@@ -233,7 +244,7 @@ namespace Model
     bool m_versionIdHasBeenSet;
     bool m_isLatest;
     bool m_isLatestHasBeenSet;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Owner m_owner;
     bool m_ownerHasBeenSet;

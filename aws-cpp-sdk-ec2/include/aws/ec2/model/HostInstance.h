@@ -31,6 +31,9 @@ namespace EC2
 namespace Model
 {
 
+  /**
+   * <p>Describes an instance running on a Dedicated host.</p>
+   */
   class AWS_EC2_API HostInstance
   {
   public:
@@ -77,37 +80,37 @@ namespace Model
     inline HostInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline HostInstance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline HostInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size (e.g., m3.medium) of the running instance.</p>
+     * <p>The instance type size (for example, m3.medium) of the running instance.</p>
      */
     inline HostInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

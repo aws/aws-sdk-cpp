@@ -14,6 +14,10 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
     ${spaces}ss << ${memberEntry.value.shape.name}Mapper::GetNameFor${memberEntry.value.shape.name}(${memberVarName});
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
+#elseif($memberEntry.value.shape.timeStamp)
+    ${spaces}ss << ${memberVarName}.ToGmtString(DateFormat::RFC822);
+    ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
+    ${spaces}ss.str("");
 #elseif($memberEntry.value.shape.map)
     ${spaces}for(auto& item : ${memberVarName})
     ${spaces}{

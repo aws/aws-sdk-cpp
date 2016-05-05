@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/swf/model/EventType.h>
 #include <aws/swf/model/WorkflowExecutionStartedEventAttributes.h>
 #include <aws/swf/model/WorkflowExecutionCompletedEventAttributes.h>
@@ -182,17 +183,27 @@ namespace Model
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline double GetEventTimestamp() const{ return m_eventTimestamp; }
+    inline const Aws::Utils::DateTime& GetEventTimestamp() const{ return m_eventTimestamp; }
 
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline void SetEventTimestamp(double value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
+    inline void SetEventTimestamp(const Aws::Utils::DateTime& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
 
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline HistoryEvent& WithEventTimestamp(double value) { SetEventTimestamp(value); return *this;}
+    inline void SetEventTimestamp(Aws::Utils::DateTime&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
+    inline HistoryEvent& WithEventTimestamp(const Aws::Utils::DateTime& value) { SetEventTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
+    inline HistoryEvent& WithEventTimestamp(Aws::Utils::DateTime&& value) { SetEventTimestamp(value); return *this;}
 
     /**
      * <p>The type of the history event.</p>
@@ -1998,7 +2009,7 @@ namespace Model
     inline HistoryEvent& WithStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributes&& value) { SetStartLambdaFunctionFailedEventAttributes(value); return *this;}
 
   private:
-    double m_eventTimestamp;
+    Aws::Utils::DateTime m_eventTimestamp;
     bool m_eventTimestampHasBeenSet;
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;

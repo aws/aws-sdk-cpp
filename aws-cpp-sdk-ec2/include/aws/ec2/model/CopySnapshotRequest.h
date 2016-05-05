@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CopySnapshot.</p>
    */
   class AWS_EC2_API CopySnapshotRequest : public EC2Request
   {

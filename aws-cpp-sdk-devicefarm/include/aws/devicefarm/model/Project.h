@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -115,24 +116,34 @@ namespace Model
     /**
      * <p>When the project was created.</p>
      */
-    inline double GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
      * <p>When the project was created.</p>
      */
-    inline void SetCreated(double value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
      * <p>When the project was created.</p>
      */
-    inline Project& WithCreated(double value) { SetCreated(value); return *this;}
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>When the project was created.</p>
+     */
+    inline Project& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>When the project was created.</p>
+     */
+    inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_created;
+    Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
   };
 

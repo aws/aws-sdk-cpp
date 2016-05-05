@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetStatusResult::GetStatusResult() : 
-    m_errorCount(0),
-    m_creationDate(0.0)
+    m_errorCount(0)
 {
 }
 
 GetStatusResult::GetStatusResult(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_errorCount(0),
-    m_creationDate(0.0)
+    m_errorCount(0)
 {
   *this = result;
 }
@@ -124,7 +122,7 @@ GetStatusResult& GetStatusResult::operator =(const AmazonWebServiceResult<XmlDoc
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = StringUtils::ConvertToDouble(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str());
+      m_creationDate = DateTime(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode artifactListNode = resultNode.FirstChild("ArtifactList");
     if(!artifactListNode.IsNull())

@@ -22,21 +22,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InstanceGroupTimeline::InstanceGroupTimeline() : 
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
 }
 
 InstanceGroupTimeline::InstanceGroupTimeline(const JsonValue& jsonValue) : 
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -74,20 +68,17 @@ JsonValue InstanceGroupTimeline::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_readyDateTimeHasBeenSet)
   {
-   payload.WithDouble("ReadyDateTime", m_readyDateTime);
-
+   payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
   }
 
   if(m_endDateTimeHasBeenSet)
   {
-   payload.WithDouble("EndDateTime", m_endDateTime);
-
+   payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

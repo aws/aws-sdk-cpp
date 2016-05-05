@@ -15,7 +15,6 @@
 
 
 #include <aws/core/utils/logging/AWSLogging.h>
-
 #include <aws/core/utils/logging/LogSystemInterface.h>
 
 #include <memory>

@@ -27,14 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateSnapshotResponse::CreateSnapshotResponse() : 
-    m_startTime(0.0),
     m_volumeSize(0),
     m_encrypted(false)
 {
 }
 
 CreateSnapshotResponse::CreateSnapshotResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
-    m_startTime(0.0),
     m_volumeSize(0),
     m_encrypted(false)
 {
@@ -76,7 +74,7 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const AmazonWebServic
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = StringUtils::ConvertToDouble(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str());
+      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())

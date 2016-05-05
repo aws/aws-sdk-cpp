@@ -139,14 +139,14 @@ namespace Model
    * calls for your AWS account and delivers log files to an Amazon S3 bucket. The
    * recorded information includes the identity of the user, the start time of the
    * AWS API call, the source IP address, the request parameters, and the response
-   * elements returned by the service.</p> <note> As an alternative to using the API,
+   * elements returned by the service.</p> <note> <p>As an alternative to the API,
    * you can use one of the AWS SDKs, which consist of libraries and sample code for
    * various programming languages and platforms (Java, Ruby, .NET, iOS, Android,
    * etc.). The SDKs provide a convenient way to create programmatic access to
    * AWSCloudTrail. For example, the SDKs take care of cryptographically signing
    * requests, managing errors, and retrying requests automatically. For information
    * about the AWS SDKs, including how to download and install them, see the <a
-   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.</p>
    * </note> <p>See the CloudTrail User Guide for information about the data that is
    * included with each AWS API call listed in the log files.</p>
    */
@@ -320,22 +320,22 @@ namespace Model
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>CloudTrail
-         * uses different private/public key pairs per region. Each digest file is signed
-         * with a private key unique to its region. Therefore, when you validate a digest
-         * file from a particular region, you must look in the same region for its
-         * corresponding public key.</note>
+         * files that were signed with its corresponding private key.</p> <note>
+         * <p>CloudTrail uses different private/public key pairs per region. Each digest
+         * file is signed with a private key unique to its region. Therefore, when you
+         * validate a digest file from a particular region, you must look in the same
+         * region for its corresponding public key.</p> </note>
          */
         virtual Model::ListPublicKeysOutcome ListPublicKeys(const Model::ListPublicKeysRequest& request) const;
 
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>CloudTrail
-         * uses different private/public key pairs per region. Each digest file is signed
-         * with a private key unique to its region. Therefore, when you validate a digest
-         * file from a particular region, you must look in the same region for its
-         * corresponding public key.</note>
+         * files that were signed with its corresponding private key.</p> <note>
+         * <p>CloudTrail uses different private/public key pairs per region. Each digest
+         * file is signed with a private key unique to its region. Therefore, when you
+         * validate a digest file from a particular region, you must look in the same
+         * region for its corresponding public key.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -344,24 +344,22 @@ namespace Model
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>CloudTrail
-         * uses different private/public key pairs per region. Each digest file is signed
-         * with a private key unique to its region. Therefore, when you validate a digest
-         * file from a particular region, you must look in the same region for its
-         * corresponding public key.</note>
+         * files that were signed with its corresponding private key.</p> <note>
+         * <p>CloudTrail uses different private/public key pairs per region. Each digest
+         * file is signed with a private key unique to its region. Therefore, when you
+         * validate a digest file from a particular region, you must look in the same
+         * region for its corresponding public key.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPublicKeysAsync(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified trail or trails in the current region.</p>
          * <p>Lists the tags for the trail in the current region.</p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified trail or trails in the current region.</p>
          * <p>Lists the tags for the trail in the current region.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -369,7 +367,6 @@ namespace Model
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified trail or trails in the current region.</p>
          * <p>Lists the tags for the trail in the current region.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -385,12 +382,12 @@ namespace Model
          * attributes are optional. The maximum number of attributes that can be specified
          * in any one lookup request are time range and one other attribute. The default
          * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results. </p>
-         * <important>The rate of lookup requests is limited to one per second per account.
-         * If this limit is exceeded, a throttling error occurs. </important>
-         * <important>Events that occurred during the selected time range will not be
+         * includes a token that you can use to get the next page of results.</p>
+         * <important> <p>The rate of lookup requests is limited to one per second per
+         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
+         * <important> <p>Events that occurred during the selected time range will not be
          * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</important>
+         * occurred.</p> </important>
          */
         virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request) const;
 
@@ -403,12 +400,12 @@ namespace Model
          * attributes are optional. The maximum number of attributes that can be specified
          * in any one lookup request are time range and one other attribute. The default
          * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results. </p>
-         * <important>The rate of lookup requests is limited to one per second per account.
-         * If this limit is exceeded, a throttling error occurs. </important>
-         * <important>Events that occurred during the selected time range will not be
+         * includes a token that you can use to get the next page of results.</p>
+         * <important> <p>The rate of lookup requests is limited to one per second per
+         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
+         * <important> <p>Events that occurred during the selected time range will not be
          * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</important>
+         * occurred.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -423,12 +420,12 @@ namespace Model
          * attributes are optional. The maximum number of attributes that can be specified
          * in any one lookup request are time range and one other attribute. The default
          * number of results returned is 10, with a maximum of 50 possible. The response
-         * includes a token that you can use to get the next page of results. </p>
-         * <important>The rate of lookup requests is limited to one per second per account.
-         * If this limit is exceeded, a throttling error occurs. </important>
-         * <important>Events that occurred during the selected time range will not be
+         * includes a token that you can use to get the next page of results.</p>
+         * <important> <p>The rate of lookup requests is limited to one per second per
+         * account. If this limit is exceeded, a throttling error occurs.</p> </important>
+         * <important> <p>Events that occurred during the selected time range will not be
          * available for lookup if CloudTrail logging was not enabled when the events
-         * occurred.</important>
+         * occurred.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

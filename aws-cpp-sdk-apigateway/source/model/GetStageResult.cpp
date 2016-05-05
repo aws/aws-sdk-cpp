@@ -25,16 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetStageResult::GetStageResult() : 
-    m_cacheClusterEnabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_cacheClusterEnabled(false)
 {
 }
 
 GetStageResult::GetStageResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_cacheClusterEnabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_cacheClusterEnabled(false)
 {
   *this = result;
 }

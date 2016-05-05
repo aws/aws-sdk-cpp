@@ -23,13 +23,9 @@ using namespace Aws::Utils;
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() : 
     m_stateHasBeenSet(false),
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false)
 {
@@ -37,13 +33,9 @@ JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() :
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail(const JsonValue& jsonValue) : 
     m_stateHasBeenSet(false),
-    m_creationDateTime(0.0),
     m_creationDateTimeHasBeenSet(false),
-    m_startDateTime(0.0),
     m_startDateTimeHasBeenSet(false),
-    m_readyDateTime(0.0),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTime(0.0),
     m_endDateTimeHasBeenSet(false),
     m_lastStateChangeReasonHasBeenSet(false)
 {
@@ -108,26 +100,22 @@ JsonValue JobFlowExecutionStatusDetail::Jsonize() const
 
   if(m_creationDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreationDateTime", m_creationDateTime);
-
+   payload.WithDouble("CreationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
   if(m_startDateTimeHasBeenSet)
   {
-   payload.WithDouble("StartDateTime", m_startDateTime);
-
+   payload.WithDouble("StartDateTime", m_startDateTime.SecondsWithMSPrecision());
   }
 
   if(m_readyDateTimeHasBeenSet)
   {
-   payload.WithDouble("ReadyDateTime", m_readyDateTime);
-
+   payload.WithDouble("ReadyDateTime", m_readyDateTime.SecondsWithMSPrecision());
   }
 
   if(m_endDateTimeHasBeenSet)
   {
-   payload.WithDouble("EndDateTime", m_endDateTime);
-
+   payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
   }
 
   if(m_lastStateChangeReasonHasBeenSet)

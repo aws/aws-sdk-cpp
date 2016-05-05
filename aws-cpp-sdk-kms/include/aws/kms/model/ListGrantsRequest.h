@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -63,120 +63,120 @@ namespace Model
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListGrantsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline ListGrantsRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline ListGrantsRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
+     * Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Globally Unique Key ID Example -
+     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline ListGrantsRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

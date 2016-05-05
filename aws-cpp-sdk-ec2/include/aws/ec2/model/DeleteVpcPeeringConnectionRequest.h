@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteVpcPeeringConnection.</p>
    */
   class AWS_EC2_API DeleteVpcPeeringConnectionRequest : public EC2Request
   {

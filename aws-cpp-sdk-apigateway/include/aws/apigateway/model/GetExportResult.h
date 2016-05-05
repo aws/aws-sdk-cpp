@@ -27,6 +27,10 @@ namespace APIGateway
 {
 namespace Model
 {
+  /**
+   * <p>The binary blob response to <a>GetExport</a>, which contains the generated
+   * SDK.</p>
+   */
   class AWS_APIGATEWAY_API GetExportResult
   {
   public:
@@ -44,49 +48,86 @@ namespace Model
     GetExportResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
 
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline void SetContentType(Aws::String&& value) { m_contentType = value; }
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline GetExportResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline GetExportResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
 
-    
+    /**
+     * <p>The content-type header value in the HTTP response. This will correspond to a
+     * valid 'accept' type in the request.</p>
+     */
     inline GetExportResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDisposition = value; }
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = value; }
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline void SetContentDisposition(const char* value) { m_contentDisposition.assign(value); }
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline GetExportResult& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline GetExportResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(value); return *this;}
 
-    
+    /**
+     * <p>The content-disposition header value in the HTTP reseponse.</p>
+     */
     inline GetExportResult& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
-    
+    /**
+     * <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
+     */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
   private:

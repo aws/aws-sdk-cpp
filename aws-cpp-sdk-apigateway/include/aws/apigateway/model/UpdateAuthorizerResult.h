@@ -145,6 +145,48 @@ namespace Model
     inline UpdateAuthorizerResult& WithType(AuthorizerType&& value) { SetType(value); return *this;}
 
     /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline const Aws::String& GetAuthType() const{ return m_authType; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const Aws::String& value) { m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(Aws::String&& value) { m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const char* value) { m_authType.assign(value); }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline UpdateAuthorizerResult& WithAuthType(const Aws::String& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline UpdateAuthorizerResult& WithAuthType(Aws::String&& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline UpdateAuthorizerResult& WithAuthType(const char* value) { SetAuthType(value); return *this;}
+
+    /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For
      * TOKEN authorizers, this must be a well-formed Lambda function URI. The URI
      * should be of the form
@@ -435,6 +477,7 @@ namespace Model
     Aws::String m_id;
     Aws::String m_name;
     AuthorizerType m_type;
+    Aws::String m_authType;
     Aws::String m_authorizerUri;
     Aws::String m_authorizerCredentials;
     Aws::String m_identitySource;

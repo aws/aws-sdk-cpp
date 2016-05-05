@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/EvaluationResultQualifier.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * notification, or it can indicate when AWS Config delivered the configuration
      * snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline double GetOrderingTimestamp() const{ return m_orderingTimestamp; }
+    inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.
@@ -85,7 +86,7 @@ namespace Model
      * notification, or it can indicate when AWS Config delivered the configuration
      * snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline void SetOrderingTimestamp(double value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
+    inline void SetOrderingTimestamp(const Aws::Utils::DateTime& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.
@@ -93,12 +94,28 @@ namespace Model
      * notification, or it can indicate when AWS Config delivered the configuration
      * snapshot, depending on which event triggered the evaluation.</p>
      */
-    inline EvaluationResultIdentifier& WithOrderingTimestamp(double value) { SetOrderingTimestamp(value); return *this;}
+    inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
+
+    /**
+     * <p>The time of the event that triggered the evaluation of your AWS resources.
+     * The time can indicate when AWS Config delivered a configuration item change
+     * notification, or it can indicate when AWS Config delivered the configuration
+     * snapshot, depending on which event triggered the evaluation.</p>
+     */
+    inline EvaluationResultIdentifier& WithOrderingTimestamp(const Aws::Utils::DateTime& value) { SetOrderingTimestamp(value); return *this;}
+
+    /**
+     * <p>The time of the event that triggered the evaluation of your AWS resources.
+     * The time can indicate when AWS Config delivered a configuration item change
+     * notification, or it can indicate when AWS Config delivered the configuration
+     * snapshot, depending on which event triggered the evaluation.</p>
+     */
+    inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(value); return *this;}
 
   private:
     EvaluationResultQualifier m_evaluationResultQualifier;
     bool m_evaluationResultQualifierHasBeenSet;
-    double m_orderingTimestamp;
+    Aws::Utils::DateTime m_orderingTimestamp;
     bool m_orderingTimestampHasBeenSet;
   };
 

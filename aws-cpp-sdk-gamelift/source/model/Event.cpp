@@ -26,7 +26,6 @@ Event::Event() :
     m_resourceIdHasBeenSet(false),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_eventTime(0.0),
     m_eventTimeHasBeenSet(false)
 {
 }
@@ -36,7 +35,6 @@ Event::Event(const JsonValue& jsonValue) :
     m_resourceIdHasBeenSet(false),
     m_eventCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_eventTime(0.0),
     m_eventTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -111,8 +109,7 @@ JsonValue Event::Jsonize() const
 
   if(m_eventTimeHasBeenSet)
   {
-   payload.WithDouble("EventTime", m_eventTime);
-
+   payload.WithDouble("EventTime", m_eventTime.SecondsWithMSPrecision());
   }
 
   return payload;

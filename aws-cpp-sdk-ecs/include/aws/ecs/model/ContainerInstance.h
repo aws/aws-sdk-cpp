@@ -53,7 +53,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
 
@@ -63,7 +64,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
@@ -73,7 +75,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
@@ -83,7 +86,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline void SetContainerInstanceArn(const char* value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn.assign(value); }
 
@@ -93,7 +97,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const Aws::String& value) { SetContainerInstanceArn(value); return *this;}
 
@@ -103,7 +108,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
 
@@ -113,7 +119,8 @@ namespace Model
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>.</p>
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 

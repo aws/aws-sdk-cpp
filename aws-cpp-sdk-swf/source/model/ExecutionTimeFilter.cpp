@@ -22,17 +22,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ExecutionTimeFilter::ExecutionTimeFilter() : 
-    m_oldestDate(0.0),
     m_oldestDateHasBeenSet(false),
-    m_latestDate(0.0),
     m_latestDateHasBeenSet(false)
 {
 }
 
 ExecutionTimeFilter::ExecutionTimeFilter(const JsonValue& jsonValue) : 
-    m_oldestDate(0.0),
     m_oldestDateHasBeenSet(false),
-    m_latestDate(0.0),
     m_latestDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,14 +59,12 @@ JsonValue ExecutionTimeFilter::Jsonize() const
 
   if(m_oldestDateHasBeenSet)
   {
-   payload.WithDouble("oldestDate", m_oldestDate);
-
+   payload.WithDouble("oldestDate", m_oldestDate.SecondsWithMSPrecision());
   }
 
   if(m_latestDateHasBeenSet)
   {
-   payload.WithDouble("latestDate", m_latestDate);
-
+   payload.WithDouble("latestDate", m_latestDate.SecondsWithMSPrecision());
   }
 
   return payload;

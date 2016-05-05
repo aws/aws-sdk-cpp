@@ -30,6 +30,7 @@ namespace Model
 {
 
   /**
+   * <p>Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>
    */
   class AWS_APIGATEWAY_API GetSdkRequest : public APIGatewayRequest
   {
@@ -39,103 +40,224 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the <a>Stage</a> that the SDK will use.</p>
+     */
     inline GetSdkRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline const Aws::String& GetSdkType() const{ return m_sdkType; }
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline void SetSdkType(const Aws::String& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline void SetSdkType(Aws::String&& value) { m_sdkTypeHasBeenSet = true; m_sdkType = value; }
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline void SetSdkType(const char* value) { m_sdkTypeHasBeenSet = true; m_sdkType.assign(value); }
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline GetSdkRequest& WithSdkType(const Aws::String& value) { SetSdkType(value); return *this;}
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline GetSdkRequest& WithSdkType(Aws::String&& value) { SetSdkType(value); return *this;}
 
-    
+    /**
+     * <p>The language for the generated SDK. Currently javascript, android, and
+     * objectivec (for iOS) are supported.</p>
+     */
     inline GetSdkRequest& WithSdkType(const char* value) { SetSdkType(value); return *this;}
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
-    
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * SDK, depending on the requested sdkType. For sdkType 'objectivec', a parameter
+     * named "classPrefix" is required. For sdkType 'android', parameters named
+     * "groupId", "artifactId", "artifactVersion", and "invokerPackage" are
+     * required.</p>
+     */
     inline GetSdkRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
   private:

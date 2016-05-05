@@ -31,6 +31,9 @@ namespace EC2
 namespace Model
 {
 
+  /**
+   * <p>Describes properties of a Dedicated host.</p>
+   */
   class AWS_EC2_API HostProperties
   {
   public:
@@ -87,43 +90,43 @@ namespace Model
     inline HostProperties& WithTotalVCpus(long value) { SetTotalVCpus(value); return *this;}
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline HostProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline HostProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size that the Dedicated host supports (e.g.,
+     * <p>The instance type size that the Dedicated host supports (for example,
      * m3.medium).</p>
      */
     inline HostProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}

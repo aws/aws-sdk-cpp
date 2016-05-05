@@ -28,6 +28,7 @@ Integration::Integration() :
     m_credentialsHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_passthroughBehaviorHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false)
@@ -41,6 +42,7 @@ Integration::Integration(const JsonValue& jsonValue) :
     m_credentialsHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_passthroughBehaviorHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
     m_integrationResponsesHasBeenSet(false)
@@ -96,6 +98,13 @@ Integration& Integration::operator =(const JsonValue& jsonValue)
       m_requestTemplates[requestTemplatesItem.first] = requestTemplatesItem.second.AsString();
     }
     m_requestTemplatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("passthroughBehavior"))
+  {
+    m_passthroughBehavior = jsonValue.GetString("passthroughBehavior");
+
+    m_passthroughBehaviorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cacheNamespace"))
@@ -174,6 +183,12 @@ JsonValue Integration::Jsonize() const
      requestTemplatesJsonMap.WithString(requestTemplatesItem.first, requestTemplatesItem.second);
    }
    payload.WithObject("requestTemplates", std::move(requestTemplatesJsonMap));
+
+  }
+
+  if(m_passthroughBehaviorHasBeenSet)
+  {
+   payload.WithString("passthroughBehavior", m_passthroughBehavior);
 
   }
 

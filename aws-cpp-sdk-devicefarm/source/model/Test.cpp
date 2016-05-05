@@ -25,13 +25,10 @@ Test::Test() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_started(0.0),
     m_startedHasBeenSet(false),
-    m_stopped(0.0),
     m_stoppedHasBeenSet(false),
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -43,13 +40,10 @@ Test::Test(const JsonValue& jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_started(0.0),
     m_startedHasBeenSet(false),
-    m_stopped(0.0),
     m_stoppedHasBeenSet(false),
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -163,8 +157,7 @@ JsonValue Test::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created);
-
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)
@@ -179,14 +172,12 @@ JsonValue Test::Jsonize() const
 
   if(m_startedHasBeenSet)
   {
-   payload.WithDouble("started", m_started);
-
+   payload.WithDouble("started", m_started.SecondsWithMSPrecision());
   }
 
   if(m_stoppedHasBeenSet)
   {
-   payload.WithDouble("stopped", m_stopped);
-
+   payload.WithDouble("stopped", m_stopped.SecondsWithMSPrecision());
   }
 
   if(m_countersHasBeenSet)

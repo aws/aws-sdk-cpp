@@ -26,6 +26,8 @@ namespace Model
 {
 
   /**
+   * <p>Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a>
+   * resource.</p>
    */
   class AWS_APIGATEWAY_API CreateAuthorizerRequest : public APIGatewayRequest
   {
@@ -33,25 +35,46 @@ namespace Model
     CreateAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline CreateAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline CreateAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
 
-    
+    /**
+     * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
+     * created.</p>
+     */
     inline CreateAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
@@ -113,6 +136,48 @@ namespace Model
      * <p>[Required] The type of the authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline const Aws::String& GetAuthType() const{ return m_authType; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const Aws::String& value) { m_authTypeHasBeenSet = true; m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(Aws::String&& value) { m_authTypeHasBeenSet = true; m_authType = value; }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline void SetAuthType(const char* value) { m_authTypeHasBeenSet = true; m_authType.assign(value); }
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline CreateAuthorizerRequest& WithAuthType(const Aws::String& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline CreateAuthorizerRequest& WithAuthType(Aws::String&& value) { SetAuthType(value); return *this;}
+
+    /**
+     * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
+     * functional impact.</p>
+     */
+    inline CreateAuthorizerRequest& WithAuthType(const char* value) { SetAuthType(value); return *this;}
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
@@ -276,6 +341,8 @@ namespace Model
     bool m_nameHasBeenSet;
     AuthorizerType m_type;
     bool m_typeHasBeenSet;
+    Aws::String m_authType;
+    bool m_authTypeHasBeenSet;
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet;
     Aws::String m_authorizerCredentials;

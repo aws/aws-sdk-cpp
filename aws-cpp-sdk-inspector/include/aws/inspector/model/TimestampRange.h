@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -44,37 +45,57 @@ namespace Model
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline double GetMinimum() const{ return m_minimum; }
+    inline const Aws::Utils::DateTime& GetMinimum() const{ return m_minimum; }
 
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
+    inline void SetMinimum(const Aws::Utils::DateTime& value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline TimestampRange& WithMinimum(double value) { SetMinimum(value); return *this;}
+    inline void SetMinimum(Aws::Utils::DateTime&& value) { m_minimumHasBeenSet = true; m_minimum = value; }
+
+    /**
+     * <p>The minimum value of the timestamp range.</p>
+     */
+    inline TimestampRange& WithMinimum(const Aws::Utils::DateTime& value) { SetMinimum(value); return *this;}
+
+    /**
+     * <p>The minimum value of the timestamp range.</p>
+     */
+    inline TimestampRange& WithMinimum(Aws::Utils::DateTime&& value) { SetMinimum(value); return *this;}
 
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline double GetMaximum() const{ return m_maximum; }
+    inline const Aws::Utils::DateTime& GetMaximum() const{ return m_maximum; }
 
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
+    inline void SetMaximum(const Aws::Utils::DateTime& value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline TimestampRange& WithMaximum(double value) { SetMaximum(value); return *this;}
+    inline void SetMaximum(Aws::Utils::DateTime&& value) { m_maximumHasBeenSet = true; m_maximum = value; }
+
+    /**
+     * <p>The maximum value of the timestamp range.</p>
+     */
+    inline TimestampRange& WithMaximum(const Aws::Utils::DateTime& value) { SetMaximum(value); return *this;}
+
+    /**
+     * <p>The maximum value of the timestamp range.</p>
+     */
+    inline TimestampRange& WithMaximum(Aws::Utils::DateTime&& value) { SetMaximum(value); return *this;}
 
   private:
-    double m_minimum;
+    Aws::Utils::DateTime m_minimum;
     bool m_minimumHasBeenSet;
-    double m_maximum;
+    Aws::Utils::DateTime m_maximum;
     bool m_maximumHasBeenSet;
   };
 

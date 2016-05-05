@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -108,22 +109,32 @@ namespace Model
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
-    inline double GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
-    inline void SetCreatedTimestamp(double value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
+    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
      * <p>The date and time the receipt rule set was created.</p>
      */
-    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(double value) { SetCreatedTimestamp(value); return *this;}
+    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
+
+    /**
+     * <p>The date and time the receipt rule set was created.</p>
+     */
+    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time the receipt rule set was created.</p>
+     */
+    inline ReceiptRuleSetMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
   };
 

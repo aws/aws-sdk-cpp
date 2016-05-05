@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for BundleInstance.</p>
    */
   class AWS_EC2_API BundleInstanceRequest : public EC2Request
   {

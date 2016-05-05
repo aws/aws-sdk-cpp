@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/OfferingTransactionType.h>
 #include <aws/devicefarm/model/Offering.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -110,17 +111,27 @@ namespace Model
     /**
      * <p>The date on which the offering is effective.</p>
      */
-    inline double GetEffectiveOn() const{ return m_effectiveOn; }
+    inline const Aws::Utils::DateTime& GetEffectiveOn() const{ return m_effectiveOn; }
 
     /**
      * <p>The date on which the offering is effective.</p>
      */
-    inline void SetEffectiveOn(double value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
+    inline void SetEffectiveOn(const Aws::Utils::DateTime& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
 
     /**
      * <p>The date on which the offering is effective.</p>
      */
-    inline OfferingStatus& WithEffectiveOn(double value) { SetEffectiveOn(value); return *this;}
+    inline void SetEffectiveOn(Aws::Utils::DateTime&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
+
+    /**
+     * <p>The date on which the offering is effective.</p>
+     */
+    inline OfferingStatus& WithEffectiveOn(const Aws::Utils::DateTime& value) { SetEffectiveOn(value); return *this;}
+
+    /**
+     * <p>The date on which the offering is effective.</p>
+     */
+    inline OfferingStatus& WithEffectiveOn(Aws::Utils::DateTime&& value) { SetEffectiveOn(value); return *this;}
 
   private:
     OfferingTransactionType m_type;
@@ -129,7 +140,7 @@ namespace Model
     bool m_offeringHasBeenSet;
     long m_quantity;
     bool m_quantityHasBeenSet;
-    double m_effectiveOn;
+    Aws::Utils::DateTime m_effectiveOn;
     bool m_effectiveOnHasBeenSet;
   };
 

@@ -25,9 +25,7 @@ FleetAttributes::FleetAttributes() :
     m_fleetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_terminationTime(0.0),
     m_terminationTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
@@ -41,9 +39,7 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_fleetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_creationTime(0.0),
     m_creationTimeHasBeenSet(false),
-    m_terminationTime(0.0),
     m_terminationTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_buildIdHasBeenSet(false),
@@ -156,14 +152,12 @@ JsonValue FleetAttributes::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime);
-
+   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   if(m_terminationTimeHasBeenSet)
   {
-   payload.WithDouble("TerminationTime", m_terminationTime);
-
+   payload.WithDouble("TerminationTime", m_terminationTime.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeInternetGateways.</p>
    */
   class AWS_EC2_API DescribeInternetGatewaysRequest : public EC2Request
   {

@@ -27,9 +27,7 @@ ReservedInstances::ReservedInstances() :
     m_reservedInstancesIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_start(0.0),
     m_startHasBeenSet(false),
-    m_end(0.0),
     m_endHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -53,9 +51,7 @@ ReservedInstances::ReservedInstances(const XmlNode& xmlNode) :
     m_reservedInstancesIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_start(0.0),
     m_startHasBeenSet(false),
-    m_end(0.0),
     m_endHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
@@ -103,13 +99,13 @@ ReservedInstances& ReservedInstances::operator =(const XmlNode& xmlNode)
     XmlNode startNode = resultNode.FirstChild("start");
     if(!startNode.IsNull())
     {
-      m_start = StringUtils::ConvertToDouble(StringUtils::Trim(startNode.GetText().c_str()).c_str());
+      m_start = DateTime(StringUtils::Trim(startNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_startHasBeenSet = true;
     }
     XmlNode endNode = resultNode.FirstChild("end");
     if(!endNode.IsNull())
     {
-      m_end = StringUtils::ConvertToDouble(StringUtils::Trim(endNode.GetText().c_str()).c_str());
+      m_end = DateTime(StringUtils::Trim(endNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_endHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
@@ -211,11 +207,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startHasBeenSet)
   {
-        oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start) << "&";
+      oStream << location << index << locationValue << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endHasBeenSet)
   {
-        oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end) << "&";
+      oStream << location << index << locationValue << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {
@@ -291,11 +287,11 @@ void ReservedInstances::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_startHasBeenSet)
   {
-        oStream << location << ".Start=" << StringUtils::URLEncode(m_start) << "&";
+      oStream << location << ".Start=" << StringUtils::URLEncode(m_start.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endHasBeenSet)
   {
-        oStream << location << ".End=" << StringUtils::URLEncode(m_end) << "&";
+      oStream << location << ".End=" << StringUtils::URLEncode(m_end.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_durationHasBeenSet)
   {

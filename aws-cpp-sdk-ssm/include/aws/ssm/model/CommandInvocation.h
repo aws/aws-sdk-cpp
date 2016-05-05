@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/CommandInvocationStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/CommandPlugin.h>
@@ -198,17 +199,27 @@ namespace Model
     /**
      * The time and date the request was sent to this instance.
      */
-    inline double GetRequestedDateTime() const{ return m_requestedDateTime; }
+    inline const Aws::Utils::DateTime& GetRequestedDateTime() const{ return m_requestedDateTime; }
 
     /**
      * The time and date the request was sent to this instance.
      */
-    inline void SetRequestedDateTime(double value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
+    inline void SetRequestedDateTime(const Aws::Utils::DateTime& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
 
     /**
      * The time and date the request was sent to this instance.
      */
-    inline CommandInvocation& WithRequestedDateTime(double value) { SetRequestedDateTime(value); return *this;}
+    inline void SetRequestedDateTime(Aws::Utils::DateTime&& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
+
+    /**
+     * The time and date the request was sent to this instance.
+     */
+    inline CommandInvocation& WithRequestedDateTime(const Aws::Utils::DateTime& value) { SetRequestedDateTime(value); return *this;}
+
+    /**
+     * The time and date the request was sent to this instance.
+     */
+    inline CommandInvocation& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(value); return *this;}
 
     /**
      * Whether or not the invocation succeeded, failed, or is pending.
@@ -300,7 +311,7 @@ namespace Model
     bool m_commentHasBeenSet;
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
-    double m_requestedDateTime;
+    Aws::Utils::DateTime m_requestedDateTime;
     bool m_requestedDateTimeHasBeenSet;
     CommandInvocationStatus m_status;
     bool m_statusHasBeenSet;

@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/RequestPayer.h>
 
 namespace Aws
@@ -108,19 +109,31 @@ namespace Model
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline double GetIfModifiedSince() const{ return m_ifModifiedSince; }
+    inline const Aws::Utils::DateTime& GetIfModifiedSince() const{ return m_ifModifiedSince; }
 
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline void SetIfModifiedSince(double value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
+    inline void SetIfModifiedSince(const Aws::Utils::DateTime& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
 
     /**
      * Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).
      */
-    inline GetObjectRequest& WithIfModifiedSince(double value) { SetIfModifiedSince(value); return *this;}
+    inline void SetIfModifiedSince(Aws::Utils::DateTime&& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
+
+    /**
+     * Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).
+     */
+    inline GetObjectRequest& WithIfModifiedSince(const Aws::Utils::DateTime& value) { SetIfModifiedSince(value); return *this;}
+
+    /**
+     * Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).
+     */
+    inline GetObjectRequest& WithIfModifiedSince(Aws::Utils::DateTime&& value) { SetIfModifiedSince(value); return *this;}
 
     /**
      * Return the object only if its entity tag (ETag) is different from the one
@@ -168,19 +181,31 @@ namespace Model
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline double GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
+    inline const Aws::Utils::DateTime& GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
 
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline void SetIfUnmodifiedSince(double value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
+    inline void SetIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
 
     /**
      * Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).
      */
-    inline GetObjectRequest& WithIfUnmodifiedSince(double value) { SetIfUnmodifiedSince(value); return *this;}
+    inline void SetIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
+
+    /**
+     * Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).
+     */
+    inline GetObjectRequest& WithIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetIfUnmodifiedSince(value); return *this;}
+
+    /**
+     * Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).
+     */
+    inline GetObjectRequest& WithIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetIfUnmodifiedSince(value); return *this;}
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -430,17 +455,27 @@ namespace Model
     /**
      * Sets the Expires header of the response.
      */
-    inline double GetResponseExpires() const{ return m_responseExpires; }
+    inline const Aws::Utils::DateTime& GetResponseExpires() const{ return m_responseExpires; }
 
     /**
      * Sets the Expires header of the response.
      */
-    inline void SetResponseExpires(double value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
+    inline void SetResponseExpires(const Aws::Utils::DateTime& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
 
     /**
      * Sets the Expires header of the response.
      */
-    inline GetObjectRequest& WithResponseExpires(double value) { SetResponseExpires(value); return *this;}
+    inline void SetResponseExpires(Aws::Utils::DateTime&& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
+
+    /**
+     * Sets the Expires header of the response.
+     */
+    inline GetObjectRequest& WithResponseExpires(const Aws::Utils::DateTime& value) { SetResponseExpires(value); return *this;}
+
+    /**
+     * Sets the Expires header of the response.
+     */
+    inline GetObjectRequest& WithResponseExpires(Aws::Utils::DateTime&& value) { SetResponseExpires(value); return *this;}
 
     /**
      * VersionId used to reference a specific version of the object.
@@ -644,11 +679,11 @@ namespace Model
     bool m_bucketHasBeenSet;
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
-    double m_ifModifiedSince;
+    Aws::Utils::DateTime m_ifModifiedSince;
     bool m_ifModifiedSinceHasBeenSet;
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet;
-    double m_ifUnmodifiedSince;
+    Aws::Utils::DateTime m_ifUnmodifiedSince;
     bool m_ifUnmodifiedSinceHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;
@@ -664,7 +699,7 @@ namespace Model
     bool m_responseContentLanguageHasBeenSet;
     Aws::String m_responseContentType;
     bool m_responseContentTypeHasBeenSet;
-    double m_responseExpires;
+    Aws::Utils::DateTime m_responseExpires;
     bool m_responseExpiresHasBeenSet;
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;

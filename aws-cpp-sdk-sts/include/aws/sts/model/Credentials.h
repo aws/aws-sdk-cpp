@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -159,17 +160,27 @@ namespace Model
     /**
      * <p>The date on which the current credentials expire.</p>
      */
-    inline double GetExpiration() const{ return m_expiration; }
+    inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
 
     /**
      * <p>The date on which the current credentials expire.</p>
      */
-    inline void SetExpiration(double value) { m_expirationHasBeenSet = true; m_expiration = value; }
+    inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
      * <p>The date on which the current credentials expire.</p>
      */
-    inline Credentials& WithExpiration(double value) { SetExpiration(value); return *this;}
+    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+
+    /**
+     * <p>The date on which the current credentials expire.</p>
+     */
+    inline Credentials& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
+
+    /**
+     * <p>The date on which the current credentials expire.</p>
+     */
+    inline Credentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(value); return *this;}
 
   private:
     Aws::String m_accessKeyId;
@@ -178,7 +189,7 @@ namespace Model
     bool m_secretAccessKeyHasBeenSet;
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
-    double m_expiration;
+    Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };
 

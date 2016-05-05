@@ -28,7 +28,8 @@ namespace Model
     ACTIVE,
     INACTIVE,
     REVOKED,
-    PENDING_TRANSFER
+    PENDING_TRANSFER,
+    REGISTER_INACTIVE
   };
 
 namespace CertificateStatusMapper

@@ -26,7 +26,8 @@ RedshiftDestinationDescription::RedshiftDestinationDescription() :
     m_clusterJDBCURLHasBeenSet(false),
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false)
+    m_s3DestinationDescriptionHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
 
@@ -35,7 +36,8 @@ RedshiftDestinationDescription::RedshiftDestinationDescription(const JsonValue& 
     m_clusterJDBCURLHasBeenSet(false),
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false)
+    m_s3DestinationDescriptionHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ RedshiftDestinationDescription& RedshiftDestinationDescription::operator =(const
     m_s3DestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
+  {
+    m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
+
+    m_cloudWatchLoggingOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +120,12 @@ JsonValue RedshiftDestinationDescription::Jsonize() const
   if(m_s3DestinationDescriptionHasBeenSet)
   {
    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
+
+  }
+
+  if(m_cloudWatchLoggingOptionsHasBeenSet)
+  {
+   payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
 
   }
 

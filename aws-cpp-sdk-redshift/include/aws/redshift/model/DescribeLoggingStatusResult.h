@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 
 namespace Aws
@@ -131,32 +132,52 @@ namespace Model
     /**
      * <p> The last time that logs were delivered. </p>
      */
-    inline double GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
+    inline const Aws::Utils::DateTime& GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
 
     /**
      * <p> The last time that logs were delivered. </p>
      */
-    inline void SetLastSuccessfulDeliveryTime(double value) { m_lastSuccessfulDeliveryTime = value; }
+    inline void SetLastSuccessfulDeliveryTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulDeliveryTime = value; }
 
     /**
      * <p> The last time that logs were delivered. </p>
      */
-    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(double value) { SetLastSuccessfulDeliveryTime(value); return *this;}
+    inline void SetLastSuccessfulDeliveryTime(Aws::Utils::DateTime&& value) { m_lastSuccessfulDeliveryTime = value; }
+
+    /**
+     * <p> The last time that logs were delivered. </p>
+     */
+    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulDeliveryTime(value); return *this;}
+
+    /**
+     * <p> The last time that logs were delivered. </p>
+     */
+    inline DescribeLoggingStatusResult& WithLastSuccessfulDeliveryTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulDeliveryTime(value); return *this;}
 
     /**
      * <p> The last time when logs failed to be delivered. </p>
      */
-    inline double GetLastFailureTime() const{ return m_lastFailureTime; }
+    inline const Aws::Utils::DateTime& GetLastFailureTime() const{ return m_lastFailureTime; }
 
     /**
      * <p> The last time when logs failed to be delivered. </p>
      */
-    inline void SetLastFailureTime(double value) { m_lastFailureTime = value; }
+    inline void SetLastFailureTime(const Aws::Utils::DateTime& value) { m_lastFailureTime = value; }
 
     /**
      * <p> The last time when logs failed to be delivered. </p>
      */
-    inline DescribeLoggingStatusResult& WithLastFailureTime(double value) { SetLastFailureTime(value); return *this;}
+    inline void SetLastFailureTime(Aws::Utils::DateTime&& value) { m_lastFailureTime = value; }
+
+    /**
+     * <p> The last time when logs failed to be delivered. </p>
+     */
+    inline DescribeLoggingStatusResult& WithLastFailureTime(const Aws::Utils::DateTime& value) { SetLastFailureTime(value); return *this;}
+
+    /**
+     * <p> The last time when logs failed to be delivered. </p>
+     */
+    inline DescribeLoggingStatusResult& WithLastFailureTime(Aws::Utils::DateTime&& value) { SetLastFailureTime(value); return *this;}
 
     /**
      * <p> The message indicating that logs failed to be delivered. </p>
@@ -212,8 +233,8 @@ namespace Model
     bool m_loggingEnabled;
     Aws::String m_bucketName;
     Aws::String m_s3KeyPrefix;
-    double m_lastSuccessfulDeliveryTime;
-    double m_lastFailureTime;
+    Aws::Utils::DateTime m_lastSuccessfulDeliveryTime;
+    Aws::Utils::DateTime m_lastFailureTime;
     Aws::String m_lastFailureMessage;
     ResponseMetadata m_responseMetadata;
   };

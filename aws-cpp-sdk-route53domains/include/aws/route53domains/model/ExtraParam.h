@@ -50,12 +50,12 @@ namespace Model
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code>
-     * | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required:
-     * Yes</p>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
+     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
+     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline const ExtraParamName& GetName() const{ return m_name; }
 
@@ -67,12 +67,12 @@ namespace Model
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code>
-     * | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required:
-     * Yes</p>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
+     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
+     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline void SetName(const ExtraParamName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -84,12 +84,12 @@ namespace Model
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code>
-     * | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required:
-     * Yes</p>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
+     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
+     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline void SetName(ExtraParamName&& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -101,12 +101,12 @@ namespace Model
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code>
-     * | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required:
-     * Yes</p>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
+     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
+     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline ExtraParam& WithName(const ExtraParamName& value) { SetName(value); return *this;}
 
@@ -118,12 +118,12 @@ namespace Model
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code>
-     * | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
-     * <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required:
-     * Yes</p>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code>
+     * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
+     * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
     inline ExtraParam& WithName(ExtraParamName&& value) { SetName(value); return *this;}
 

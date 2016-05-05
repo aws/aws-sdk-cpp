@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/CommandStatus.h>
@@ -161,21 +162,35 @@ namespace Model
      * will not execute. Calculated based on the ExpiresAfter user input provided as
      * part of the SendCommand API.
      */
-    inline double GetExpiresAfter() const{ return m_expiresAfter; }
+    inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
      * If this time is reached and the command has not already started executing, it
      * will not execute. Calculated based on the ExpiresAfter user input provided as
      * part of the SendCommand API.
      */
-    inline void SetExpiresAfter(double value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
+    inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
      * If this time is reached and the command has not already started executing, it
      * will not execute. Calculated based on the ExpiresAfter user input provided as
      * part of the SendCommand API.
      */
-    inline Command& WithExpiresAfter(double value) { SetExpiresAfter(value); return *this;}
+    inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
+
+    /**
+     * If this time is reached and the command has not already started executing, it
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.
+     */
+    inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
+
+    /**
+     * If this time is reached and the command has not already started executing, it
+     * will not execute. Calculated based on the ExpiresAfter user input provided as
+     * part of the SendCommand API.
+     */
+    inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(value); return *this;}
 
     /**
      * The parameter values to be inserted in the SSM document when executing the
@@ -286,17 +301,27 @@ namespace Model
     /**
      * The date and time the command was requested.
      */
-    inline double GetRequestedDateTime() const{ return m_requestedDateTime; }
+    inline const Aws::Utils::DateTime& GetRequestedDateTime() const{ return m_requestedDateTime; }
 
     /**
      * The date and time the command was requested.
      */
-    inline void SetRequestedDateTime(double value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
+    inline void SetRequestedDateTime(const Aws::Utils::DateTime& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
 
     /**
      * The date and time the command was requested.
      */
-    inline Command& WithRequestedDateTime(double value) { SetRequestedDateTime(value); return *this;}
+    inline void SetRequestedDateTime(Aws::Utils::DateTime&& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
+
+    /**
+     * The date and time the command was requested.
+     */
+    inline Command& WithRequestedDateTime(const Aws::Utils::DateTime& value) { SetRequestedDateTime(value); return *this;}
+
+    /**
+     * The date and time the command was requested.
+     */
+    inline Command& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(value); return *this;}
 
     /**
      * The status of the command.
@@ -414,13 +439,13 @@ namespace Model
     bool m_documentNameHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;
-    double m_expiresAfter;
+    Aws::Utils::DateTime m_expiresAfter;
     bool m_expiresAfterHasBeenSet;
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
-    double m_requestedDateTime;
+    Aws::Utils::DateTime m_requestedDateTime;
     bool m_requestedDateTimeHasBeenSet;
     CommandStatus m_status;
     bool m_statusHasBeenSet;

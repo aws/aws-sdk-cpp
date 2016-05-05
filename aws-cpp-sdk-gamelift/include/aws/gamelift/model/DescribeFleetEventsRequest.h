@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * end time. Format is an integer representing the number of seconds since the Unix
      * epoch (Unix time).</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
@@ -84,7 +85,7 @@ namespace Model
      * end time. Format is an integer representing the number of seconds since the Unix
      * epoch (Unix time).</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
@@ -92,7 +93,23 @@ namespace Model
      * end time. Format is an integer representing the number of seconds since the Unix
      * epoch (Unix time).</p>
      */
-    inline DescribeFleetEventsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
+     * call returns entries starting from when the fleet was created to the specified
+     * end time. Format is an integer representing the number of seconds since the Unix
+     * epoch (Unix time).</p>
+     */
+    inline DescribeFleetEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
+     * call returns entries starting from when the fleet was created to the specified
+     * end time. Format is an integer representing the number of seconds since the Unix
+     * epoch (Unix time).</p>
+     */
+    inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
@@ -100,7 +117,7 @@ namespace Model
      * Format is an integer representing the number of seconds since the Unix epoch
      * (Unix time).</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
@@ -108,7 +125,7 @@ namespace Model
      * Format is an integer representing the number of seconds since the Unix epoch
      * (Unix time).</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
@@ -116,7 +133,23 @@ namespace Model
      * Format is an integer representing the number of seconds since the Unix epoch
      * (Unix time).</p>
      */
-    inline DescribeFleetEventsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * this call returns entries from the specified start time up to the present.
+     * Format is an integer representing the number of seconds since the Unix epoch
+     * (Unix time).</p>
+     */
+    inline DescribeFleetEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * this call returns entries from the specified start time up to the present.
+     * Format is an integer representing the number of seconds since the Unix epoch
+     * (Unix time).</p>
+     */
+    inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Maximum number of results to return. You can use this parameter with
@@ -188,9 +221,9 @@ namespace Model
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     long m_limit;
     bool m_limitHasBeenSet;

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateVpnConnectionRoute.</p>
    */
   class AWS_EC2_API CreateVpnConnectionRouteRequest : public EC2Request
   {

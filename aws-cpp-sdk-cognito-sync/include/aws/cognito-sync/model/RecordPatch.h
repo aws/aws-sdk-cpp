@@ -16,6 +16,7 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/Operation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -155,17 +156,27 @@ namespace Model
     /**
      * The last modified date of the client device.
      */
-    inline double GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
 
     /**
      * The last modified date of the client device.
      */
-    inline void SetDeviceLastModifiedDate(double value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+    inline void SetDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
 
     /**
      * The last modified date of the client device.
      */
-    inline RecordPatch& WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+
+    /**
+     * The last modified date of the client device.
+     */
+    inline RecordPatch& WithDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { SetDeviceLastModifiedDate(value); return *this;}
+
+    /**
+     * The last modified date of the client device.
+     */
+    inline RecordPatch& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(value); return *this;}
 
   private:
     Operation m_op;
@@ -176,7 +187,7 @@ namespace Model
     bool m_valueHasBeenSet;
     long long m_syncCount;
     bool m_syncCountHasBeenSet;
-    double m_deviceLastModifiedDate;
+    Aws::Utils::DateTime m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
   };
 

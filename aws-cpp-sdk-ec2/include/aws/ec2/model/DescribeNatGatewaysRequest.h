@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeNatGateways.</p>
    */
   class AWS_EC2_API DescribeNatGatewaysRequest : public EC2Request
   {

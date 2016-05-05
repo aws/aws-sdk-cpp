@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/CopyCommand.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
+#include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
 {
@@ -211,7 +212,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
+     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
+     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -229,7 +230,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
+     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
+     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -247,11 +248,36 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
+     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
     inline RedshiftDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
   private:
     Aws::String m_roleARN;
@@ -266,6 +292,8 @@ namespace Model
     bool m_passwordHasBeenSet;
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet;
+    CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+    bool m_cloudWatchLoggingOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for GetConsoleOutput.</p>
    */
   class AWS_EC2_API GetConsoleOutputRequest : public EC2Request
   {

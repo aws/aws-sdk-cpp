@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/datapipeline/model/ParameterValue.h>
 
 namespace Aws
@@ -111,26 +112,38 @@ namespace Model
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
      */
-    inline double GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
 
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
      */
-    inline void SetStartTimestamp(double value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
      */
-    inline ActivatePipelineRequest& WithStartTimestamp(double value) { SetStartTimestamp(value); return *this;}
+    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+
+    /**
+     * <p>The date and time to resume the pipeline. By default, the pipeline resumes
+     * from the last completed execution.</p>
+     */
+    inline ActivatePipelineRequest& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time to resume the pipeline. By default, the pipeline resumes
+     * from the last completed execution.</p>
+     */
+    inline ActivatePipelineRequest& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(value); return *this;}
 
   private:
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
     Aws::Vector<ParameterValue> m_parameterValues;
     bool m_parameterValuesHasBeenSet;
-    double m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp;
     bool m_startTimestampHasBeenSet;
   };
 

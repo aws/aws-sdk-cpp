@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/StepExecutionState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -70,47 +71,77 @@ namespace Model
     /**
      * <p>The creation date and time of the step.</p>
      */
-    inline double GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
 
     /**
      * <p>The creation date and time of the step.</p>
      */
-    inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
      * <p>The creation date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+
+    /**
+     * <p>The creation date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
+
+    /**
+     * <p>The creation date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
 
     /**
      * <p>The start date and time of the step.</p>
      */
-    inline double GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
 
     /**
      * <p>The start date and time of the step.</p>
      */
-    inline void SetStartDateTime(double value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
      * <p>The start date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+
+    /**
+     * <p>The start date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
+
+    /**
+     * <p>The start date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
 
     /**
      * <p>The completion date and time of the step.</p>
      */
-    inline double GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
 
     /**
      * <p>The completion date and time of the step.</p>
      */
-    inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
      * <p>The completion date and time of the step.</p>
      */
-    inline StepExecutionStatusDetail& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+
+    /**
+     * <p>The completion date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
+
+    /**
+     * <p>The completion date and time of the step.</p>
+     */
+    inline StepExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
 
     /**
      * <p>A description of the step's current state.</p>
@@ -150,11 +181,11 @@ namespace Model
   private:
     StepExecutionState m_state;
     bool m_stateHasBeenSet;
-    double m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
-    double m_startDateTime;
+    Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
-    double m_endDateTime;
+    Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;

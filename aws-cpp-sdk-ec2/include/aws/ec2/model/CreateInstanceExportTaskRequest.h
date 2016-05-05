@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateInstanceExportTask.</p>
    */
   class AWS_EC2_API CreateInstanceExportTaskRequest : public EC2Request
   {

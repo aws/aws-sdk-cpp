@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 DBSnapshot::DBSnapshot() : 
     m_dBSnapshotIdentifierHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_allocatedStorage(0),
@@ -36,7 +35,6 @@ DBSnapshot::DBSnapshot() :
     m_portHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -60,7 +58,6 @@ DBSnapshot::DBSnapshot() :
 DBSnapshot::DBSnapshot(const XmlNode& xmlNode) : 
     m_dBSnapshotIdentifierHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_allocatedStorage(0),
@@ -70,7 +67,6 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_portHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_instanceCreateTime(0.0),
     m_instanceCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -113,7 +109,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
@@ -155,7 +151,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
     if(!instanceCreateTimeNode.IsNull())
     {
-      m_instanceCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(instanceCreateTimeNode.GetText().c_str()).c_str());
+      m_instanceCreateTime = DateTime(StringUtils::Trim(instanceCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_instanceCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
@@ -253,7 +249,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -281,7 +277,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
+      oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -349,7 +345,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -377,7 +373,7 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_instanceCreateTimeHasBeenSet)
   {
-        oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime) << "&";
+      oStream << location << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

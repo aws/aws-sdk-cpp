@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -152,37 +153,61 @@ namespace Model
      * <p>The earliest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The earliest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline DescribeScheduledActionsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The earliest scheduled start time to return. If scheduled action names are
+     * provided, this parameter is ignored.</p>
+     */
+    inline DescribeScheduledActionsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The earliest scheduled start time to return. If scheduled action names are
+     * provided, this parameter is ignored.</p>
+     */
+    inline DescribeScheduledActionsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The latest scheduled start time to return. If scheduled action names are
      * provided, this parameter is ignored.</p>
      */
-    inline DescribeScheduledActionsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The latest scheduled start time to return. If scheduled action names are
+     * provided, this parameter is ignored.</p>
+     */
+    inline DescribeScheduledActionsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The latest scheduled start time to return. If scheduled action names are
+     * provided, this parameter is ignored.</p>
+     */
+    inline DescribeScheduledActionsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -246,9 +271,9 @@ namespace Model
     bool m_autoScalingGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_scheduledActionNames;
     bool m_scheduledActionNamesHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

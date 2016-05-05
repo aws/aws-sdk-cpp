@@ -22,9 +22,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListClustersRequest::ListClustersRequest() : 
-    m_createdAfter(0.0),
     m_createdAfterHasBeenSet(false),
-    m_createdBefore(0.0),
     m_createdBeforeHasBeenSet(false),
     m_clusterStatesHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -37,14 +35,12 @@ Aws::String ListClustersRequest::SerializePayload() const
 
   if(m_createdAfterHasBeenSet)
   {
-   payload.WithDouble("CreatedAfter", m_createdAfter);
-
+   payload.WithDouble("CreatedAfter", m_createdAfter.SecondsWithMSPrecision());
   }
 
   if(m_createdBeforeHasBeenSet)
   {
-   payload.WithDouble("CreatedBefore", m_createdBefore);
-
+   payload.WithDouble("CreatedBefore", m_createdBefore.SecondsWithMSPrecision());
   }
 
   if(m_clusterStatesHasBeenSet)

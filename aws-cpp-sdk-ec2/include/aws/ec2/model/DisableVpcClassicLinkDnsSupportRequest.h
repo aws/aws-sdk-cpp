@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DisableVpcClassicLinkDnsSupport.</p>
    */
   class AWS_EC2_API DisableVpcClassicLinkDnsSupportRequest : public EC2Request
   {

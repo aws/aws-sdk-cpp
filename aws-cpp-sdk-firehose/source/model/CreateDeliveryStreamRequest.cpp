@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() : 
     m_deliveryStreamNameHasBeenSet(false),
     m_s3DestinationConfigurationHasBeenSet(false),
-    m_redshiftDestinationConfigurationHasBeenSet(false)
+    m_redshiftDestinationConfigurationHasBeenSet(false),
+    m_elasticsearchDestinationConfigurationHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_redshiftDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("RedshiftDestinationConfiguration", m_redshiftDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_elasticsearchDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchDestinationConfiguration", m_elasticsearchDestinationConfiguration.Jsonize());
 
   }
 

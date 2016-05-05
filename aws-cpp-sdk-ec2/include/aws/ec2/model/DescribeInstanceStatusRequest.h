@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeInstanceStatus.</p>
    */
   class AWS_EC2_API DescribeInstanceStatusRequest : public EC2Request
   {
@@ -380,32 +381,26 @@ namespace Model
     inline DescribeInstanceStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter in the same call.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter in the same call.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p>
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000. You cannot specify this parameter
+     * and the instance IDs parameter in the same call.</p>
      */
     inline DescribeInstanceStatusRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 

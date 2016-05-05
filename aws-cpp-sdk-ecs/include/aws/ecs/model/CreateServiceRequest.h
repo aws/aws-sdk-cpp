@@ -199,51 +199,114 @@ namespace Model
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the container port
-     * to access from the load balancer.</p>
+     * <p>A load balancer object representing the load balancer to use with your
+     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
+     * must contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load balancer.
+     * When a task from this service is placed on a container instance, the container
+     * instance is registered with the load balancer specified here.</p> <p>For Elastic
+     * Load Balancing application load balancers, this object must contain the load
+     * balancer target group ARN, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer. When a
+     * task from this service is placed on a container instance, the container instance
+     * and port combination is registered as a target in the target group specified
+     * here.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -365,31 +428,31 @@ namespace Model
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline CreateServiceRequest& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline CreateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
 

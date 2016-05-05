@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -61,17 +62,23 @@ namespace Model
     inline CopyObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
     
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     
-    inline void SetLastModified(double value) { m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     
-    inline CopyObjectResult& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = value; }
+
+    
+    inline CopyObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    
+    inline CopyObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
   private:
     Aws::String m_eTag;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
   };
 
 } // namespace Model

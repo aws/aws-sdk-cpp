@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeregisterImage.</p>
    */
   class AWS_EC2_API DeregisterImageRequest : public EC2Request
   {

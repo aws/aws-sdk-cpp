@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/CopyCommand.h>
 #include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
 {
@@ -213,7 +214,7 @@ namespace Model
      * obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
@@ -224,7 +225,7 @@ namespace Model
      * obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
@@ -235,7 +236,7 @@ namespace Model
      * obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
@@ -246,7 +247,7 @@ namespace Model
      * obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
@@ -257,11 +258,36 @@ namespace Model
      * obtains data. Restrictions are described in the topic for
      * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon
      * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
      * support these compression formats.</p>
      */
     inline RedshiftDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
+
+    /**
+     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     */
+    inline RedshiftDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
   private:
     Aws::String m_roleARN;
@@ -276,6 +302,8 @@ namespace Model
     bool m_passwordHasBeenSet;
     S3DestinationConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet;
+    CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+    bool m_cloudWatchLoggingOptionsHasBeenSet;
   };
 
 } // namespace Model

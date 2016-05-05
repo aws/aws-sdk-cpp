@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Request to list an existing <a>RestApi</a> defined for your collection. </p>
+   * <p>The GET request to list an existing <a>RestApi</a> defined for your
+   * collection. </p>
    */
   class AWS_APIGATEWAY_API GetRestApiRequest : public APIGatewayRequest
   {

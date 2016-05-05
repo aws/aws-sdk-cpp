@@ -78,6 +78,12 @@ PutIntegrationResult& PutIntegrationResult::operator =(const AmazonWebServiceRes
     }
   }
 
+  if(jsonValue.ValueExists("passthroughBehavior"))
+  {
+    m_passthroughBehavior = jsonValue.GetString("passthroughBehavior");
+
+  }
+
   if(jsonValue.ValueExists("cacheNamespace"))
   {
     m_cacheNamespace = jsonValue.GetString("cacheNamespace");

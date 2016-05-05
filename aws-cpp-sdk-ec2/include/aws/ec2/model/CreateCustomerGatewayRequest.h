@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateCustomerGateway.</p>
    */
   class AWS_EC2_API CreateCustomerGatewayRequest : public EC2Request
   {

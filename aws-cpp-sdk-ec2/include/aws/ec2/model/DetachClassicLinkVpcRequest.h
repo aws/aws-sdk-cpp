@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DetachClassicLinkVpc.</p>
    */
   class AWS_EC2_API DetachClassicLinkVpcRequest : public EC2Request
   {

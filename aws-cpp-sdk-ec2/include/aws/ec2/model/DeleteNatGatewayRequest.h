@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteNatGateway.</p>
    */
   class AWS_EC2_API DeleteNatGatewayRequest : public EC2Request
   {

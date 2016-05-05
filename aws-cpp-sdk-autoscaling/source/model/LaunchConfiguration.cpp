@@ -39,7 +39,6 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceMonitoringHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
@@ -65,7 +64,6 @@ LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) :
     m_instanceMonitoringHasBeenSet(false),
     m_spotPriceHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
-    m_createdTime(0.0),
     m_createdTimeHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
@@ -193,7 +191,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = StringUtils::ConvertToDouble(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str());
+      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
@@ -299,7 +297,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {
@@ -395,7 +393,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_createdTimeHasBeenSet)
   {
-        oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime) << "&";
+      oStream << location << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_ebsOptimizedHasBeenSet)
   {

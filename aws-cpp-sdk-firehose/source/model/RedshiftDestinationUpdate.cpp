@@ -27,7 +27,8 @@ RedshiftDestinationUpdate::RedshiftDestinationUpdate() :
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+    m_s3UpdateHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,8 @@ RedshiftDestinationUpdate::RedshiftDestinationUpdate(const JsonValue& jsonValue)
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false)
+    m_s3UpdateHasBeenSet(false),
+    m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ RedshiftDestinationUpdate& RedshiftDestinationUpdate::operator =(const JsonValue
     m_s3UpdateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
+  {
+    m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
+
+    m_cloudWatchLoggingOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +135,12 @@ JsonValue RedshiftDestinationUpdate::Jsonize() const
   if(m_s3UpdateHasBeenSet)
   {
    payload.WithObject("S3Update", m_s3Update.Jsonize());
+
+  }
+
+  if(m_cloudWatchLoggingOptionsHasBeenSet)
+  {
+   payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
 
   }
 

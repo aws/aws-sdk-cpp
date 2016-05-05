@@ -49,7 +49,9 @@ enum class AWS_CLOUDFORMATION_API CloudFormationErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CHANGE_SET_NOT_FOUND,
   INSUFFICIENT_CAPABILITIES,
+  INVALID_CHANGE_SET_STATUS,
   LIMIT_EXCEEDED
 };
 namespace CloudFormationErrorMapper

@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/ChangeStatus.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -128,7 +129,7 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline double GetSubmittedAt() const{ return m_submittedAt; }
+    inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
 
     /**
      * <p>The date and time the change was submitted, in the format
@@ -136,7 +137,7 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline void SetSubmittedAt(double value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
+    inline void SetSubmittedAt(const Aws::Utils::DateTime& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
 
     /**
      * <p>The date and time the change was submitted, in the format
@@ -144,7 +145,23 @@ namespace Model
      * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
      * the time is listed in Coordinated Universal Time (UTC).</p>
      */
-    inline ChangeInfo& WithSubmittedAt(double value) { SetSubmittedAt(value); return *this;}
+    inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
+
+    /**
+     * <p>The date and time the change was submitted, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
+     */
+    inline ChangeInfo& WithSubmittedAt(const Aws::Utils::DateTime& value) { SetSubmittedAt(value); return *this;}
+
+    /**
+     * <p>The date and time the change was submitted, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
+     */
+    inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
@@ -200,7 +217,7 @@ namespace Model
     bool m_idHasBeenSet;
     ChangeStatus m_status;
     bool m_statusHasBeenSet;
-    double m_submittedAt;
+    Aws::Utils::DateTime m_submittedAt;
     bool m_submittedAtHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;

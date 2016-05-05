@@ -31,6 +31,7 @@ AddPermissionRequest::AddPermissionRequest() :
     m_principalHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_sourceAccountHasBeenSet(false),
+    m_eventSourceTokenHasBeenSet(false),
     m_qualifierHasBeenSet(false)
 {
 }
@@ -66,6 +67,12 @@ Aws::String AddPermissionRequest::SerializePayload() const
   if(m_sourceAccountHasBeenSet)
   {
    payload.WithString("SourceAccount", m_sourceAccount);
+
+  }
+
+  if(m_eventSourceTokenHasBeenSet)
+  {
+   payload.WithString("EventSourceToken", m_eventSourceToken);
 
   }
 

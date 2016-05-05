@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteSnapshot.</p>
    */
   class AWS_EC2_API DeleteSnapshotRequest : public EC2Request
   {

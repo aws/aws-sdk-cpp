@@ -25,9 +25,7 @@ PipelineSummary::PipelineSummary() :
     m_nameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
-    m_updated(0.0),
     m_updatedHasBeenSet(false)
 {
 }
@@ -36,9 +34,7 @@ PipelineSummary::PipelineSummary(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
-    m_updated(0.0),
     m_updatedHasBeenSet(false)
 {
   *this = jsonValue;
@@ -95,14 +91,12 @@ JsonValue PipelineSummary::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created);
-
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   if(m_updatedHasBeenSet)
   {
-   payload.WithDouble("updated", m_updated);
-
+   payload.WithDouble("updated", m_updated.SecondsWithMSPrecision());
   }
 
   return payload;

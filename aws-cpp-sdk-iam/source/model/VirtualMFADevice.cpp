@@ -29,7 +29,6 @@ VirtualMFADevice::VirtualMFADevice() :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
 }
@@ -39,7 +38,6 @@ VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode) :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDate(0.0),
     m_enableDateHasBeenSet(false)
 {
   *this = xmlNode;
@@ -78,7 +76,7 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
-      m_enableDate = StringUtils::ConvertToDouble(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str());
+      m_enableDate = DateTime(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
   }
@@ -108,7 +106,7 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enableDateHasBeenSet)
   {
-        oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
+      oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
@@ -134,6 +132,6 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enableDateHasBeenSet)
   {
-        oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate) << "&";
+      oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -94,44 +95,66 @@ namespace Model
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline double GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline void SetCreated(double value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline PipelineSummary& WithCreated(double value) { SetCreated(value); return *this;}
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>The date and time the pipeline was created, in timestamp format.</p>
+     */
+    inline PipelineSummary& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>The date and time the pipeline was created, in timestamp format.</p>
+     */
+    inline PipelineSummary& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
     /**
      * <p>The date and time of the last update to the pipeline, in timestamp
      * format.</p>
      */
-    inline double GetUpdated() const{ return m_updated; }
+    inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
 
     /**
      * <p>The date and time of the last update to the pipeline, in timestamp
      * format.</p>
      */
-    inline void SetUpdated(double value) { m_updatedHasBeenSet = true; m_updated = value; }
+    inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updatedHasBeenSet = true; m_updated = value; }
 
     /**
      * <p>The date and time of the last update to the pipeline, in timestamp
      * format.</p>
      */
-    inline PipelineSummary& WithUpdated(double value) { SetUpdated(value); return *this;}
+    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updatedHasBeenSet = true; m_updated = value; }
+
+    /**
+     * <p>The date and time of the last update to the pipeline, in timestamp
+     * format.</p>
+     */
+    inline PipelineSummary& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
+
+    /**
+     * <p>The date and time of the last update to the pipeline, in timestamp
+     * format.</p>
+     */
+    inline PipelineSummary& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     long m_version;
     bool m_versionHasBeenSet;
-    double m_created;
+    Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
-    double m_updated;
+    Aws::Utils::DateTime m_updated;
     bool m_updatedHasBeenSet;
   };
 

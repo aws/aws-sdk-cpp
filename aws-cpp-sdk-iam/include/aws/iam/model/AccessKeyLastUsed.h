@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -54,7 +55,7 @@ namespace Model
      * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul>
      */
-    inline double GetLastUsedDate() const{ return m_lastUsedDate; }
+    inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -64,7 +65,7 @@ namespace Model
      * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul>
      */
-    inline void SetLastUsedDate(double value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
+    inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -74,7 +75,27 @@ namespace Model
      * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
      * sign-in data associated with the user</p> </li> </ul>
      */
-    inline AccessKeyLastUsed& WithLastUsedDate(double value) { SetLastUsedDate(value); return *this;}
+    inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the access key was most recently used. This field is
+     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
+     * <p>An access key exists but has never been used, at least not since IAM started
+     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
+     * sign-in data associated with the user</p> </li> </ul>
+     */
+    inline AccessKeyLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the access key was most recently used. This field is
+     * null when:</p> <ul> <li> <p>The user does not have an access key.</p> </li> <li>
+     * <p>An access key exists but has never been used, at least not since IAM started
+     * tracking this information on April 22nd, 2015.</p> </li> <li> <p>There is no
+     * sign-in data associated with the user</p> </li> </ul>
+     */
+    inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(value); return *this;}
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
@@ -224,7 +245,7 @@ namespace Model
     inline AccessKeyLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
 
   private:
-    double m_lastUsedDate;
+    Aws::Utils::DateTime m_lastUsedDate;
     bool m_lastUsedDateHasBeenSet;
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;

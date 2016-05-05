@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 InstanceInformation::InstanceInformation() : 
     m_instanceIdHasBeenSet(false),
     m_pingStatusHasBeenSet(false),
-    m_lastPingDateTime(0.0),
     m_lastPingDateTimeHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_isLatestVersion(false),
@@ -38,7 +37,6 @@ InstanceInformation::InstanceInformation() :
 InstanceInformation::InstanceInformation(const JsonValue& jsonValue) : 
     m_instanceIdHasBeenSet(false),
     m_pingStatusHasBeenSet(false),
-    m_lastPingDateTime(0.0),
     m_lastPingDateTimeHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_isLatestVersion(false),
@@ -128,8 +126,7 @@ JsonValue InstanceInformation::Jsonize() const
 
   if(m_lastPingDateTimeHasBeenSet)
   {
-   payload.WithDouble("LastPingDateTime", m_lastPingDateTime);
-
+   payload.WithDouble("LastPingDateTime", m_lastPingDateTime.SecondsWithMSPrecision());
   }
 
   if(m_agentVersionHasBeenSet)

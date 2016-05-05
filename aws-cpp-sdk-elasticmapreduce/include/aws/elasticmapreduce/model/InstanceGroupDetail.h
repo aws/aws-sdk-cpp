@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/MarketType.h>
 #include <aws/elasticmapreduce/model/InstanceRoleType.h>
 #include <aws/elasticmapreduce/model/InstanceGroupState.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -339,62 +340,102 @@ namespace Model
     /**
      * <p>The date/time the instance group was created. </p>
      */
-    inline double GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
 
     /**
      * <p>The date/time the instance group was created. </p>
      */
-    inline void SetCreationDateTime(double value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
      * <p>The date/time the instance group was created. </p>
      */
-    inline InstanceGroupDetail& WithCreationDateTime(double value) { SetCreationDateTime(value); return *this;}
+    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
+
+    /**
+     * <p>The date/time the instance group was created. </p>
+     */
+    inline InstanceGroupDetail& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
+
+    /**
+     * <p>The date/time the instance group was created. </p>
+     */
+    inline InstanceGroupDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
 
     /**
      * <p>The date/time the instance group was started.</p>
      */
-    inline double GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
 
     /**
      * <p>The date/time the instance group was started.</p>
      */
-    inline void SetStartDateTime(double value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+    inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
      * <p>The date/time the instance group was started.</p>
      */
-    inline InstanceGroupDetail& WithStartDateTime(double value) { SetStartDateTime(value); return *this;}
+    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
+
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
+    inline InstanceGroupDetail& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
+
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
+    inline InstanceGroupDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
 
     /**
      * <p>The date/time the instance group was available to the cluster. </p>
      */
-    inline double GetReadyDateTime() const{ return m_readyDateTime; }
+    inline const Aws::Utils::DateTime& GetReadyDateTime() const{ return m_readyDateTime; }
 
     /**
      * <p>The date/time the instance group was available to the cluster. </p>
      */
-    inline void SetReadyDateTime(double value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
+    inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
     /**
      * <p>The date/time the instance group was available to the cluster. </p>
      */
-    inline InstanceGroupDetail& WithReadyDateTime(double value) { SetReadyDateTime(value); return *this;}
+    inline void SetReadyDateTime(Aws::Utils::DateTime&& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
+
+    /**
+     * <p>The date/time the instance group was available to the cluster. </p>
+     */
+    inline InstanceGroupDetail& WithReadyDateTime(const Aws::Utils::DateTime& value) { SetReadyDateTime(value); return *this;}
+
+    /**
+     * <p>The date/time the instance group was available to the cluster. </p>
+     */
+    inline InstanceGroupDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(value); return *this;}
 
     /**
      * <p>The date/time the instance group was terminated.</p>
      */
-    inline double GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
 
     /**
      * <p>The date/time the instance group was terminated.</p>
      */
-    inline void SetEndDateTime(double value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+    inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
      * <p>The date/time the instance group was terminated.</p>
      */
-    inline InstanceGroupDetail& WithEndDateTime(double value) { SetEndDateTime(value); return *this;}
+    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
+
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
+    inline InstanceGroupDetail& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
+
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
+    inline InstanceGroupDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
 
   private:
     Aws::String m_instanceGroupId;
@@ -417,13 +458,13 @@ namespace Model
     bool m_stateHasBeenSet;
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;
-    double m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
-    double m_startDateTime;
+    Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
-    double m_readyDateTime;
+    Aws::Utils::DateTime m_readyDateTime;
     bool m_readyDateTimeHasBeenSet;
-    double m_endDateTime;
+    Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };
 

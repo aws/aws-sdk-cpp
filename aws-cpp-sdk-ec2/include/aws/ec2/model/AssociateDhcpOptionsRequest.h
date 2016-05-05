@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AssociateDhcpOptions.</p>
    */
   class AWS_EC2_API AssociateDhcpOptionsRequest : public EC2Request
   {

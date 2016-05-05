@@ -20,14 +20,17 @@ using namespace Aws::Client;
 using namespace Aws::IoT;
 using namespace Aws::Utils;
 
+static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
 static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VersionsLimitExceededException");
 static const int SQL_PARSE_HASH = HashingUtils::HashString("SqlParseException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int REGISTRATION_CODE_VALIDATION_HASH = HashingUtils::HashString("RegistrationCodeValidationException");
+static const int CERTIFICATE_CONFLICT_HASH = HashingUtils::HashString("CertificateConflictException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
-static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int CERTIFICATE_STATE_HASH = HashingUtils::HashString("CertificateStateException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
@@ -44,7 +47,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == TRANSFER_ALREADY_COMPLETED_HASH)
+  if (hashCode == CERTIFICATE_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_VALIDATION), false);
+  }
+  else if (hashCode == TRANSFER_ALREADY_COMPLETED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::TRANSFER_ALREADY_COMPLETED), false);
   }
@@ -60,6 +67,22 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SQL_PARSE), false);
   }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::UNAUTHORIZED), false);
+  }
+  else if (hashCode == REGISTRATION_CODE_VALIDATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::REGISTRATION_CODE_VALIDATION), false);
+  }
+  else if (hashCode == CERTIFICATE_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::CERTIFICATE_CONFLICT), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
+  }
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL), false);
@@ -67,14 +90,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::RESOURCE_ALREADY_EXISTS), false);
-  }
-  else if (hashCode == UNAUTHORIZED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::UNAUTHORIZED), false);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_REQUEST), false);
   }
   else if (hashCode == CERTIFICATE_STATE_HASH)
   {

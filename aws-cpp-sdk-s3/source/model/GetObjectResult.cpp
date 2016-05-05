@@ -27,10 +27,8 @@ using namespace Aws;
 
 GetObjectResult::GetObjectResult() : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
-    m_missingMeta(0),
-    m_expires(0.0)
+    m_missingMeta(0)
 {
 }
 
@@ -40,7 +38,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_acceptRanges(std::move(toMove.m_acceptRanges)),
     m_expiration(std::move(toMove.m_expiration)),
     m_restore(std::move(toMove.m_restore)),
-    m_lastModified(toMove.m_lastModified),
+    m_lastModified(std::move(toMove.m_lastModified)),
     m_contentLength(toMove.m_contentLength),
     m_eTag(std::move(toMove.m_eTag)),
     m_missingMeta(toMove.m_missingMeta),
@@ -51,7 +49,7 @@ GetObjectResult::GetObjectResult(GetObjectResult&& toMove) :
     m_contentLanguage(std::move(toMove.m_contentLanguage)),
     m_contentRange(std::move(toMove.m_contentRange)),
     m_contentType(std::move(toMove.m_contentType)),
-    m_expires(toMove.m_expires),
+    m_expires(std::move(toMove.m_expires)),
     m_websiteRedirectLocation(std::move(toMove.m_websiteRedirectLocation)),
     m_serverSideEncryption(toMove.m_serverSideEncryption),
     m_metadata(std::move(toMove.m_metadata)),
@@ -76,7 +74,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_acceptRanges = std::move(toMove.m_acceptRanges);
    m_expiration = std::move(toMove.m_expiration);
    m_restore = std::move(toMove.m_restore);
-   m_lastModified = toMove.m_lastModified;
+   m_lastModified = std::move(toMove.m_lastModified);
    m_contentLength = toMove.m_contentLength;
    m_eTag = std::move(toMove.m_eTag);
    m_missingMeta = toMove.m_missingMeta;
@@ -87,7 +85,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    m_contentLanguage = std::move(toMove.m_contentLanguage);
    m_contentRange = std::move(toMove.m_contentRange);
    m_contentType = std::move(toMove.m_contentType);
-   m_expires = toMove.m_expires;
+   m_expires = std::move(toMove.m_expires);
    m_websiteRedirectLocation = std::move(toMove.m_websiteRedirectLocation);
    m_serverSideEncryption = toMove.m_serverSideEncryption;
    m_metadata = std::move(toMove.m_metadata);
@@ -103,10 +101,8 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
 
 GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result) : 
     m_deleteMarker(false),
-    m_lastModified(0.0),
     m_contentLength(0),
-    m_missingMeta(0),
-    m_expires(0.0)
+    m_missingMeta(0)
 {
   *this = std::move(result);
 }
@@ -143,7 +139,6 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
-     m_lastModified = StringUtils::ConvertToDouble(lastModifiedIter->second.c_str());
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -209,7 +204,6 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
-     m_expires = StringUtils::ConvertToDouble(expiresIter->second.c_str());
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");

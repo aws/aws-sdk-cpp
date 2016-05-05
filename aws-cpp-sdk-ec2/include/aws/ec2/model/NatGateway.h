@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NatGatewayState.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
@@ -155,32 +156,52 @@ namespace Model
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
-    inline NatGateway& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The date and time the NAT gateway was created.</p>
+     */
+    inline NatGateway& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time the NAT gateway was created.</p>
+     */
+    inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline double GetDeleteTime() const{ return m_deleteTime; }
+    inline const Aws::Utils::DateTime& GetDeleteTime() const{ return m_deleteTime; }
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline void SetDeleteTime(double value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
+    inline void SetDeleteTime(const Aws::Utils::DateTime& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
 
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
-    inline NatGateway& WithDeleteTime(double value) { SetDeleteTime(value); return *this;}
+    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
+
+    /**
+     * <p>The date and time the NAT gateway was deleted, if applicable.</p>
+     */
+    inline NatGateway& WithDeleteTime(const Aws::Utils::DateTime& value) { SetDeleteTime(value); return *this;}
+
+    /**
+     * <p>The date and time the NAT gateway was deleted, if applicable.</p>
+     */
+    inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(value); return *this;}
 
     /**
      * <p>Information about the IP addresses and network interface associated with the
@@ -314,120 +335,113 @@ namespace Model
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline NatGateway& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li>For
-     * InsufficientFreeAddressesInSubnet: <code>Subnet has insufficient free addresses
-     * to create this NAT gateway</code></li> <li>For Gateway.NotAttached:
-     * <code>Network vpc-xxxxxxxx has no Internet gateway attached</code></li> <li>For
-     * InvalidAllocationID.NotFound: <code>Elastic IP address eipalloc-xxxxxxxx could
-     * not be associated with this NAT gateway</code></li> <li>For
-     * Resource.AlreadyAssociated: <code>Elastic IP address eipalloc-xxxxxxxx is
-     * already associated</code></li> <li>For InternalError: <code>Network interface
-     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
-     * state. Please try again.</code></li> <li>For InvalidSubnetID.NotFound: <code>The
-     * specified subnet subnet-xxxxxxxx does not exist or could not be
-     * found.</code></li> </ul>
+     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
+     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
+     * associated with this NAT gateway"</p></li> <li><p>For
+     * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
+     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
+     * created and used internally by this NAT gateway is in an invalid state. Please
+     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
+     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
      */
     inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
@@ -438,9 +452,9 @@ namespace Model
     bool m_subnetIdHasBeenSet;
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
-    double m_deleteTime;
+    Aws::Utils::DateTime m_deleteTime;
     bool m_deleteTimeHasBeenSet;
     Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
     bool m_natGatewayAddressesHasBeenSet;

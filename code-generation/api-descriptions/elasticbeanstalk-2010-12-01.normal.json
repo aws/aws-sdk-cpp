@@ -22,6 +22,23 @@
       ],
       "documentation":"<p>Cancels in-progress environment configuration update or application version deployment.</p>"
     },
+    "ApplyEnvironmentManagedAction":{
+      "name":"ApplyEnvironmentManagedAction",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ApplyEnvironmentManagedActionRequest"},
+      "output":{
+        "shape":"ApplyEnvironmentManagedActionResult",
+        "resultWrapper":"ApplyEnvironmentManagedActionResult"
+      },
+      "errors":[
+        {"shape":"ElasticBeanstalkServiceException"},
+        {"shape":"ManagedActionInvalidStateException"}
+      ],
+      "documentation":"<p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>"
+    },
     "CheckDNSAvailability":{
       "name":"CheckDNSAvailability",
       "http":{
@@ -100,6 +117,7 @@
       },
       "errors":[
         {"shape":"InsufficientPrivilegesException"},
+        {"shape":"TooManyBucketsException"},
         {"shape":"TooManyConfigurationTemplatesException"}
       ],
       "documentation":"<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>"
@@ -223,6 +241,9 @@
         "shape":"ConfigurationOptionsDescription",
         "resultWrapper":"DescribeConfigurationOptionsResult"
       },
+      "errors":[
+        {"shape":"TooManyBucketsException"}
+      ],
       "documentation":"<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>"
     },
     "DescribeConfigurationSettings":{
@@ -236,6 +257,9 @@
         "shape":"ConfigurationSettingsDescriptions",
         "resultWrapper":"DescribeConfigurationSettingsResult"
       },
+      "errors":[
+        {"shape":"TooManyBucketsException"}
+      ],
       "documentation":"<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>"
     },
     "DescribeEnvironmentHealth":{
@@ -254,6 +278,38 @@
         {"shape":"ElasticBeanstalkServiceException"}
       ],
       "documentation":"<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>"
+    },
+    "DescribeEnvironmentManagedActionHistory":{
+      "name":"DescribeEnvironmentManagedActionHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEnvironmentManagedActionHistoryRequest"},
+      "output":{
+        "shape":"DescribeEnvironmentManagedActionHistoryResult",
+        "resultWrapper":"DescribeEnvironmentManagedActionHistoryResult"
+      },
+      "errors":[
+        {"shape":"ElasticBeanstalkServiceException"}
+      ],
+      "documentation":"<p>Lists an environment's completed and failed managed actions.</p>"
+    },
+    "DescribeEnvironmentManagedActions":{
+      "name":"DescribeEnvironmentManagedActions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEnvironmentManagedActionsRequest"},
+      "output":{
+        "shape":"DescribeEnvironmentManagedActionsResult",
+        "resultWrapper":"DescribeEnvironmentManagedActionsResult"
+      },
+      "errors":[
+        {"shape":"ElasticBeanstalkServiceException"}
+      ],
+      "documentation":"<p>Lists an environment's upcoming and in-progress managed actions.</p>"
     },
     "DescribeEnvironmentResources":{
       "name":"DescribeEnvironmentResources",
@@ -354,7 +410,7 @@
         "requestUri":"/"
       },
       "input":{"shape":"RestartAppServerMessage"},
-      "documentation":"<p> Causes the environment to restart the application container server running on each Amazon EC2 instance. </p>"
+      "documentation":"<p>Causes the environment to restart the application container server running on each Amazon EC2 instance.</p>"
     },
     "RetrieveEnvironmentInfo":{
       "name":"RetrieveEnvironmentInfo",
@@ -432,7 +488,8 @@
         "resultWrapper":"UpdateConfigurationTemplateResult"
       },
       "errors":[
-        {"shape":"InsufficientPrivilegesException"}
+        {"shape":"InsufficientPrivilegesException"},
+        {"shape":"TooManyBucketsException"}
       ],
       "documentation":"<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>"
     },
@@ -448,7 +505,8 @@
         "resultWrapper":"UpdateEnvironmentResult"
       },
       "errors":[
-        {"shape":"InsufficientPrivilegesException"}
+        {"shape":"InsufficientPrivilegesException"},
+        {"shape":"TooManyBucketsException"}
       ],
       "documentation":"<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>"
     },
@@ -464,7 +522,8 @@
         "resultWrapper":"ValidateConfigurationSettingsResult"
       },
       "errors":[
-        {"shape":"InsufficientPrivilegesException"}
+        {"shape":"InsufficientPrivilegesException"},
+        {"shape":"TooManyBucketsException"}
       ],
       "documentation":"<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>"
     }
@@ -485,6 +544,31 @@
       "documentation":"<p/>"
     },
     "AbortableOperationInProgress":{"type":"boolean"},
+    "ActionHistoryStatus":{
+      "type":"string",
+      "enum":[
+        "Completed",
+        "Failed",
+        "Unknown"
+      ]
+    },
+    "ActionStatus":{
+      "type":"string",
+      "enum":[
+        "Scheduled",
+        "Pending",
+        "Running",
+        "Unknown"
+      ]
+    },
+    "ActionType":{
+      "type":"string",
+      "enum":[
+        "InstanceRefresh",
+        "PlatformUpdate",
+        "Unknown"
+      ]
+    },
     "ApplicationDescription":{
       "type":"structure",
       "members":{
@@ -637,6 +721,47 @@
         "Failed",
         "Processing"
       ]
+    },
+    "ApplyEnvironmentManagedActionRequest":{
+      "type":"structure",
+      "required":["ActionId"],
+      "members":{
+        "EnvironmentName":{
+          "shape":"String",
+          "documentation":"<p>The name of the target environment.</p>"
+        },
+        "EnvironmentId":{
+          "shape":"String",
+          "documentation":"<p>The environment ID of the target environment.</p>"
+        },
+        "ActionId":{
+          "shape":"String",
+          "documentation":"<p>The action ID of the scheduled managed action to execute.</p>"
+        }
+      },
+      "documentation":"<p>Request to execute a scheduled managed action immediately.</p>"
+    },
+    "ApplyEnvironmentManagedActionResult":{
+      "type":"structure",
+      "members":{
+        "ActionId":{
+          "shape":"String",
+          "documentation":"<p>The action ID of the managed action.</p>"
+        },
+        "ActionDescription":{
+          "shape":"String",
+          "documentation":"<p>A description of the managed action.</p>"
+        },
+        "ActionType":{
+          "shape":"ActionType",
+          "documentation":"<p>The type of managed action.</p>"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>The status of the managed action.</p>"
+        }
+      },
+      "documentation":"<p>The result message containing information about the managed action.</p>"
     },
     "AutoCreateApplication":{"type":"boolean"},
     "AutoScalingGroup":{
@@ -1038,7 +1163,7 @@
         },
         "EnvironmentName":{
           "shape":"EnvironmentName",
-          "documentation":"<p> A unique name for the deployment environment. Used in the application URL. </p> <p>Constraint: Must be from 4 to 23 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>"
+          "documentation":"<p> A unique name for the deployment environment. Used in the application URL. </p> <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>"
         },
         "GroupName":{
           "shape":"GroupName",
@@ -1178,6 +1303,29 @@
       "documentation":"<p>Request to delete a draft environment configuration.</p>"
     },
     "DeleteSourceBundle":{"type":"boolean"},
+    "Deployment":{
+      "type":"structure",
+      "members":{
+        "VersionLabel":{
+          "shape":"String",
+          "documentation":"<p>The version label of the application version in the deployment.</p>"
+        },
+        "DeploymentId":{
+          "shape":"NullableLong",
+          "documentation":"<p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The deployment is in progress.</li> <li> <code>Deployed</code> : The deployment succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>"
+        },
+        "DeploymentTime":{
+          "shape":"DeploymentTimestamp",
+          "documentation":"<p>For in-progress deployments, the time that the deloyment started.</p> <p>For completed deployments, the time that the deployment ended.</p>"
+        }
+      },
+      "documentation":"<p>Information about an application version deployment.</p>"
+    },
+    "DeploymentTimestamp":{"type":"timestamp"},
     "DescribeApplicationVersionsMessage":{
       "type":"structure",
       "members":{
@@ -1296,6 +1444,70 @@
         }
       },
       "documentation":"<p>See the example below for a sample response.</p>"
+    },
+    "DescribeEnvironmentManagedActionHistoryRequest":{
+      "type":"structure",
+      "members":{
+        "EnvironmentId":{
+          "shape":"EnvironmentId",
+          "documentation":"<p>The environment ID of the target environment.</p>"
+        },
+        "EnvironmentName":{
+          "shape":"EnvironmentName",
+          "documentation":"<p>The name of the target environment.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token returned by a previous request.</p>"
+        },
+        "MaxItems":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum number of items to return for a single request.</p>"
+        }
+      },
+      "documentation":"<p>Request to list completed and failed managed actions.</p>"
+    },
+    "DescribeEnvironmentManagedActionHistoryResult":{
+      "type":"structure",
+      "members":{
+        "ManagedActionHistoryItems":{
+          "shape":"ManagedActionHistoryItems",
+          "documentation":"<p>A list of completed and failed managed actions.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of results.</p>"
+        }
+      },
+      "documentation":"<p>A result message containing a list of completed and failed managed actions.</p>"
+    },
+    "DescribeEnvironmentManagedActionsRequest":{
+      "type":"structure",
+      "members":{
+        "EnvironmentName":{
+          "shape":"String",
+          "documentation":"<p>The name of the target environment.</p>"
+        },
+        "EnvironmentId":{
+          "shape":"String",
+          "documentation":"<p>The environment ID of the target environment.</p>"
+        },
+        "Status":{
+          "shape":"ActionStatus",
+          "documentation":"<p>To show only actions with a particular status, specify a status.</p>"
+        }
+      },
+      "documentation":"<p>Request to list an environment's upcoming and in-progress managed actions.</p>"
+    },
+    "DescribeEnvironmentManagedActionsResult":{
+      "type":"structure",
+      "members":{
+        "ManagedActions":{
+          "shape":"ManagedActions",
+          "documentation":"<p>A list of upcoming and in-progress managed actions.</p>"
+        }
+      },
+      "documentation":"<p>The result message containing a list of managed actions.</p>"
     },
     "DescribeEnvironmentResourcesMessage":{
       "type":"structure",
@@ -1637,7 +1849,7 @@
     },
     "EnvironmentName":{
       "type":"string",
-      "max":23,
+      "max":40,
       "min":4
     },
     "EnvironmentNamesList":{
@@ -1796,6 +2008,18 @@
       ]
     },
     "ExceptionMessage":{"type":"string"},
+    "FailureType":{
+      "type":"string",
+      "enum":[
+        "UpdateCancelled",
+        "CancellationFailed",
+        "RollbackFailed",
+        "RollbackSuccessful",
+        "InternalFailure",
+        "InvalidEnvironmentState",
+        "PermissionsError"
+      ]
+    },
     "FileTypeExtension":{
       "type":"string",
       "max":100,
@@ -1880,6 +2104,9 @@
         "RefreshedAt",
         "LaunchedAt",
         "System",
+        "Deployment",
+        "AvailabilityZone",
+        "InstanceType",
         "All"
       ]
     },
@@ -2034,6 +2261,94 @@
       "type":"list",
       "member":{"shape":"Listener"}
     },
+    "ManagedAction":{
+      "type":"structure",
+      "members":{
+        "ActionId":{
+          "shape":"String",
+          "documentation":"<p>A unique identifier for the managed action.</p>"
+        },
+        "ActionDescription":{
+          "shape":"String",
+          "documentation":"<p>A description of the managed action.</p>"
+        },
+        "ActionType":{
+          "shape":"ActionType",
+          "documentation":"<p>The type of managed action.</p>"
+        },
+        "Status":{
+          "shape":"ActionStatus",
+          "documentation":"<p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>"
+        },
+        "WindowStartTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The start time of the maintenance window in which the managed action will execute.</p>"
+        }
+      },
+      "documentation":"<p>The record of an upcoming or in-progress managed action.</p>"
+    },
+    "ManagedActionHistoryItem":{
+      "type":"structure",
+      "members":{
+        "ActionId":{
+          "shape":"String",
+          "documentation":"<p>A unique identifier for the managed action.</p>"
+        },
+        "ActionType":{
+          "shape":"ActionType",
+          "documentation":"<p>The type of the managed action.</p>"
+        },
+        "ActionDescription":{
+          "shape":"String",
+          "documentation":"<p>A description of the managed action.</p>"
+        },
+        "FailureType":{
+          "shape":"FailureType",
+          "documentation":"<p>If the action failed, the type of failure.</p>"
+        },
+        "Status":{
+          "shape":"ActionHistoryStatus",
+          "documentation":"<p>The status of the action.</p>"
+        },
+        "FailureDescription":{
+          "shape":"String",
+          "documentation":"<p>If the action failed, a description of the failure.</p>"
+        },
+        "ExecutedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time that the action started executing.</p>"
+        },
+        "FinishedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time that the action finished executing.</p>"
+        }
+      },
+      "documentation":"<p>The record of a completed or failed managed action.</p>"
+    },
+    "ManagedActionHistoryItems":{
+      "type":"list",
+      "member":{"shape":"ManagedActionHistoryItem"},
+      "max":100,
+      "min":1
+    },
+    "ManagedActionInvalidStateException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>Cannot modify the managed action in its current state.</p>",
+      "error":{
+        "code":"ManagedActionInvalidStateException",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "ManagedActions":{
+      "type":"list",
+      "member":{"shape":"ManagedAction"},
+      "max":100,
+      "min":1
+    },
     "MaxRecords":{
       "type":"integer",
       "max":1000,
@@ -2047,6 +2362,7 @@
     },
     "NullableDouble":{"type":"double"},
     "NullableInteger":{"type":"integer"},
+    "NullableLong":{"type":"long"},
     "OperationInProgressException":{
       "type":"structure",
       "members":{
@@ -2275,7 +2591,19 @@
           "documentation":"<p>The time at which the EC2 instance was launched.</p>"
         },
         "ApplicationMetrics":{"shape":"ApplicationMetrics"},
-        "System":{"shape":"SystemStatus"}
+        "System":{"shape":"SystemStatus"},
+        "Deployment":{
+          "shape":"Deployment",
+          "documentation":"<p>Information about the most recent deployment to an instance.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String",
+          "documentation":"<p>The availability zone in which the instance runs.</p>"
+        },
+        "InstanceType":{
+          "shape":"String",
+          "documentation":"<p>The instance's type.</p>"
+        }
       },
       "documentation":"<p>Represents health information from the specified instance that belongs to the AWS Elastic Beanstalk environment. Use the <code>InstanceId</code> property to specify the application instance for which you'd like to return data.</p>"
     },
@@ -2437,6 +2765,7 @@
     "TerminateEnvironmentResources":{"type":"boolean"},
     "TimeFilterEnd":{"type":"timestamp"},
     "TimeFilterStart":{"type":"timestamp"},
+    "Timestamp":{"type":"timestamp"},
     "Token":{"type":"string"},
     "TooManyApplicationVersionsException":{
       "type":"structure",
@@ -2700,5 +3029,5 @@
       "member":{"shape":"VersionLabel"}
     }
   },
-  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic Beanstalk actions, data types, parameters, and errors. </p> <p>AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </p> <p> For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"https://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>. </p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
+  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"https://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> <p><b>Endpoints</b></p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
 }

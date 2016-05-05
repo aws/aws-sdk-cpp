@@ -15,12 +15,13 @@
 
 #pragma once
 
-
 #include <aws/core/Core_EXPORTS.h>
-
-
-#include <functional>
 #include <aws/core/utils/memory/stl/AWSFunction.h>
+#include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <functional>
+#include <mutex>
+#include <condition_variable>
 
 namespace Aws
 {
@@ -28,6 +29,8 @@ namespace Aws
     {
         namespace Threading
         {
+            class ThreadTask;
+
             /**
             * Interface for implementing an Executor, to implement a custom thread execution strategy, inherit from this class
             * and override SubmitToThread().
@@ -63,7 +66,52 @@ namespace Aws
             public:
                 DefaultExecutor() {}
             protected:
-                bool SubmitToThread(std::function<void()>&&);
+                bool SubmitToThread(std::function<void()>&&) override;
+            };
+
+            enum class OverflowPolicy
+            {
+                QUEUE_TASKS_EVENLY_ACCROSS_THREADS,
+                REJECT_IMMEDIATELY
+            };
+
+            /**
+            * Thread Pool Executor implementation.
+            */
+            class AWS_CORE_API PooledThreadExecutor : public Executor
+            {
+            public:
+                PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy = OverflowPolicy::QUEUE_TASKS_EVENLY_ACCROSS_THREADS);
+                ~PooledThreadExecutor();
+
+                /**
+                * Rule of 5 stuff.
+                * Don't copy or move
+                */
+                PooledThreadExecutor(const PooledThreadExecutor&) = delete;
+                PooledThreadExecutor& operator =(const PooledThreadExecutor&) = delete;
+                PooledThreadExecutor(PooledThreadExecutor&&) = delete;
+                PooledThreadExecutor& operator =(PooledThreadExecutor&&) = delete;
+
+            protected:
+                bool SubmitToThread(std::function<void()>&&) override;
+
+            private:
+                Aws::Queue<std::function<void()>*> m_tasks;
+                std::mutex m_queueLock;
+                std::mutex m_syncPointLock;
+                std::condition_variable m_syncPoint;
+                Aws::Vector<ThreadTask*> m_threadTaskHandles;
+                size_t m_poolSize;
+                OverflowPolicy m_overflowPolicy;
+
+                /**
+                 * Once you call this, you are responsible for freeing the memory pointed to by task.
+                 */
+                std::function<void()>* PopTask();
+                bool HasTasks();
+
+                friend class ThreadTask;
             };
 
 

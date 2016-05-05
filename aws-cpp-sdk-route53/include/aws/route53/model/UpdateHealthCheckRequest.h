@@ -17,6 +17,9 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53/model/AlarmIdentifier.h>
+#include <aws/route53/model/InsufficientDataHealthStatus.h>
+#include <aws/route53/model/HealthCheckRegion.h>
 
 namespace Aws
 {
@@ -499,6 +502,99 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
 
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline const Aws::Vector<HealthCheckRegion>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline void SetRegions(const Aws::Vector<HealthCheckRegion>& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline UpdateHealthCheckRequest& WithRegions(const Aws::Vector<HealthCheckRegion>& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline UpdateHealthCheckRequest& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline UpdateHealthCheckRequest& AddRegions(const HealthCheckRegion& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>HealthCheckRegion</code> values that specify the Amazon EC2
+     * regions that you want Amazon Route 53 to use to perform health checks. You must
+     * specify at least three regions.</p> <note>When you remove a region from the
+     * list, Amazon Route 53 will briefly continue to check your endpoint from that
+     * region.</note> <p>Specify this value only if you want to change it.</p>
+     */
+    inline UpdateHealthCheckRequest& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    
+    inline const AlarmIdentifier& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
+
+    
+    inline void SetAlarmIdentifier(const AlarmIdentifier& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
+
+    
+    inline void SetAlarmIdentifier(AlarmIdentifier&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
+
+    
+    inline UpdateHealthCheckRequest& WithAlarmIdentifier(const AlarmIdentifier& value) { SetAlarmIdentifier(value); return *this;}
+
+    
+    inline UpdateHealthCheckRequest& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(value); return *this;}
+
+    
+    inline const InsufficientDataHealthStatus& GetInsufficientDataHealthStatus() const{ return m_insufficientDataHealthStatus; }
+
+    
+    inline void SetInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+
+    
+    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+
+    
+    inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { SetInsufficientDataHealthStatus(value); return *this;}
+
+    
+    inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(value); return *this;}
+
   private:
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
@@ -524,6 +620,12 @@ namespace Model
     bool m_childHealthChecksHasBeenSet;
     bool m_enableSNI;
     bool m_enableSNIHasBeenSet;
+    Aws::Vector<HealthCheckRegion> m_regions;
+    bool m_regionsHasBeenSet;
+    AlarmIdentifier m_alarmIdentifier;
+    bool m_alarmIdentifierHasBeenSet;
+    InsufficientDataHealthStatus m_insufficientDataHealthStatus;
+    bool m_insufficientDataHealthStatusHasBeenSet;
   };
 
 } // namespace Model

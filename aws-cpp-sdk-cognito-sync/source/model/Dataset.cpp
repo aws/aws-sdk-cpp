@@ -24,9 +24,7 @@ using namespace Aws::Utils;
 Dataset::Dataset() : 
     m_identityIdHasBeenSet(false),
     m_datasetNameHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_dataStorage(0),
@@ -39,9 +37,7 @@ Dataset::Dataset() :
 Dataset::Dataset(const JsonValue& jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_datasetNameHasBeenSet(false),
-    m_creationDate(0.0),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDate(0.0),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_dataStorage(0),
@@ -124,14 +120,12 @@ JsonValue Dataset::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithDouble("CreationDate", m_creationDate);
-
+   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedDateHasBeenSet)
   {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate);
-
+   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
   if(m_lastModifiedByHasBeenSet)

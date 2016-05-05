@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -105,17 +106,27 @@ namespace Model
     /**
      * <p>This parameter is deprecated.</p>
      */
-    inline double GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
      * <p>This parameter is deprecated.</p>
      */
-    inline void SetTime(double value) { m_timeHasBeenSet = true; m_time = value; }
+    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
      * <p>This parameter is deprecated.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithTime(double value) { SetTime(value); return *this;}
+    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = value; }
+
+    /**
+     * <p>This parameter is deprecated.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
+
+    /**
+     * <p>This parameter is deprecated.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithTime(Aws::Utils::DateTime&& value) { SetTime(value); return *this;}
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -125,7 +136,7 @@ namespace Model
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -135,7 +146,7 @@ namespace Model
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -145,22 +156,52 @@ namespace Model
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
+     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
+     * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
+     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The time for this action to end.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The time for this action to end.</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The time for this action to end.</p>
      */
-    inline PutScheduledUpdateGroupActionRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>The time for this action to end.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>The time for this action to end.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The time when recurring future actions will start. Start time is specified by
@@ -282,11 +323,11 @@ namespace Model
     bool m_autoScalingGroupNameHasBeenSet;
     Aws::String m_scheduledActionName;
     bool m_scheduledActionNameHasBeenSet;
-    double m_time;
+    Aws::Utils::DateTime m_time;
     bool m_timeHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     Aws::String m_recurrence;
     bool m_recurrenceHasBeenSet;

@@ -34,7 +34,6 @@ CacheCluster::CacheCluster() :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
-    m_cacheClusterCreateTime(0.0),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
@@ -64,7 +63,6 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_numCacheNodes(0),
     m_numCacheNodesHasBeenSet(false),
     m_preferredAvailabilityZoneHasBeenSet(false),
-    m_cacheClusterCreateTime(0.0),
     m_cacheClusterCreateTimeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
@@ -147,7 +145,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
     if(!cacheClusterCreateTimeNode.IsNull())
     {
-      m_cacheClusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(cacheClusterCreateTimeNode.GetText().c_str()).c_str());
+      m_cacheClusterCreateTime = DateTime(StringUtils::Trim(cacheClusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_cacheClusterCreateTimeHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
@@ -287,7 +285,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
+      oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
@@ -405,7 +403,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
-        oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime) << "&";
+      oStream << location << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_preferredMaintenanceWindowHasBeenSet)
   {

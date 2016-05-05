@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 RealtimeEndpointInfo::RealtimeEndpointInfo() : 
     m_peakRequestsPerSecond(0),
     m_peakRequestsPerSecondHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_endpointUrlHasBeenSet(false),
     m_endpointStatusHasBeenSet(false)
@@ -34,7 +33,6 @@ RealtimeEndpointInfo::RealtimeEndpointInfo() :
 RealtimeEndpointInfo::RealtimeEndpointInfo(const JsonValue& jsonValue) : 
     m_peakRequestsPerSecond(0),
     m_peakRequestsPerSecondHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_endpointUrlHasBeenSet(false),
     m_endpointStatusHasBeenSet(false)
@@ -87,8 +85,7 @@ JsonValue RealtimeEndpointInfo::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt);
-
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_endpointUrlHasBeenSet)

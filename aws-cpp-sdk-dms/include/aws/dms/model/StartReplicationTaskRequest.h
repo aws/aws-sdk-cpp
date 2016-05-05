@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/StartReplicationTaskTypeValue.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -98,24 +99,34 @@ namespace Model
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline double GetCdcStartTime() const{ return m_cdcStartTime; }
+    inline const Aws::Utils::DateTime& GetCdcStartTime() const{ return m_cdcStartTime; }
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline void SetCdcStartTime(double value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
+    inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
 
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
-    inline StartReplicationTaskRequest& WithCdcStartTime(double value) { SetCdcStartTime(value); return *this;}
+    inline void SetCdcStartTime(Aws::Utils::DateTime&& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
+
+    /**
+     * <p>The start time for the Change Data Capture (CDC) operation.</p>
+     */
+    inline StartReplicationTaskRequest& WithCdcStartTime(const Aws::Utils::DateTime& value) { SetCdcStartTime(value); return *this;}
+
+    /**
+     * <p>The start time for the Change Data Capture (CDC) operation.</p>
+     */
+    inline StartReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(value); return *this;}
 
   private:
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
     StartReplicationTaskTypeValue m_startReplicationTaskType;
     bool m_startReplicationTaskTypeHasBeenSet;
-    double m_cdcStartTime;
+    Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet;
   };
 

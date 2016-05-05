@@ -17,8 +17,10 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticbeanstalk/model/ApplicationMetrics.h>
 #include <aws/elasticbeanstalk/model/SystemStatus.h>
+#include <aws/elasticbeanstalk/model/Deployment.h>
 
 namespace Aws
 {
@@ -247,17 +249,27 @@ namespace Model
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline double GetLaunchedAt() const{ return m_launchedAt; }
+    inline const Aws::Utils::DateTime& GetLaunchedAt() const{ return m_launchedAt; }
 
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline void SetLaunchedAt(double value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
+    inline void SetLaunchedAt(const Aws::Utils::DateTime& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
 
     /**
      * <p>The time at which the EC2 instance was launched.</p>
      */
-    inline SingleInstanceHealth& WithLaunchedAt(double value) { SetLaunchedAt(value); return *this;}
+    inline void SetLaunchedAt(Aws::Utils::DateTime&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
+
+    /**
+     * <p>The time at which the EC2 instance was launched.</p>
+     */
+    inline SingleInstanceHealth& WithLaunchedAt(const Aws::Utils::DateTime& value) { SetLaunchedAt(value); return *this;}
+
+    /**
+     * <p>The time at which the EC2 instance was launched.</p>
+     */
+    inline SingleInstanceHealth& WithLaunchedAt(Aws::Utils::DateTime&& value) { SetLaunchedAt(value); return *this;}
 
     
     inline const ApplicationMetrics& GetApplicationMetrics() const{ return m_applicationMetrics; }
@@ -289,6 +301,101 @@ namespace Model
     
     inline SingleInstanceHealth& WithSystem(SystemStatus&& value) { SetSystem(value); return *this;}
 
+    /**
+     * <p>Information about the most recent deployment to an instance.</p>
+     */
+    inline const Deployment& GetDeployment() const{ return m_deployment; }
+
+    /**
+     * <p>Information about the most recent deployment to an instance.</p>
+     */
+    inline void SetDeployment(const Deployment& value) { m_deploymentHasBeenSet = true; m_deployment = value; }
+
+    /**
+     * <p>Information about the most recent deployment to an instance.</p>
+     */
+    inline void SetDeployment(Deployment&& value) { m_deploymentHasBeenSet = true; m_deployment = value; }
+
+    /**
+     * <p>Information about the most recent deployment to an instance.</p>
+     */
+    inline SingleInstanceHealth& WithDeployment(const Deployment& value) { SetDeployment(value); return *this;}
+
+    /**
+     * <p>Information about the most recent deployment to an instance.</p>
+     */
+    inline SingleInstanceHealth& WithDeployment(Deployment&& value) { SetDeployment(value); return *this;}
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline SingleInstanceHealth& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline SingleInstanceHealth& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The availability zone in which the instance runs.</p>
+     */
+    inline SingleInstanceHealth& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline SingleInstanceHealth& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline SingleInstanceHealth& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance's type.</p>
+     */
+    inline SingleInstanceHealth& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
   private:
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
@@ -298,12 +405,18 @@ namespace Model
     bool m_colorHasBeenSet;
     Aws::Vector<Aws::String> m_causes;
     bool m_causesHasBeenSet;
-    double m_launchedAt;
+    Aws::Utils::DateTime m_launchedAt;
     bool m_launchedAtHasBeenSet;
     ApplicationMetrics m_applicationMetrics;
     bool m_applicationMetricsHasBeenSet;
     SystemStatus m_system;
     bool m_systemHasBeenSet;
+    Deployment m_deployment;
+    bool m_deploymentHasBeenSet;
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet;
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
   };
 
 } // namespace Model

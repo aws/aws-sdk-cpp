@@ -26,14 +26,16 @@ using namespace Aws::Utils;
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() : 
     m_cidrBlockHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_peeringOptionsHasBeenSet(false)
 {
 }
 
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode) : 
     m_cidrBlockHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_peeringOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,6 +64,12 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode peeringOptionsNode = resultNode.FirstChild("peeringOptions");
+    if(!peeringOptionsNode.IsNull())
+    {
+      m_peeringOptions = peeringOptionsNode;
+      m_peeringOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +89,12 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+  if(m_peeringOptionsHasBeenSet)
+  {
+      Aws::StringStream peeringOptionsLocationAndMemberSs;
+      peeringOptionsLocationAndMemberSs << location << index << locationValue << ".PeeringOptions";
+      m_peeringOptions.OutputToStream(oStream, peeringOptionsLocationAndMemberSs.str().c_str());
+  }
 }
 
 void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -96,5 +110,11 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_peeringOptionsHasBeenSet)
+  {
+      Aws::String peeringOptionsLocationAndMember(location);
+      peeringOptionsLocationAndMember += ".PeeringOptions";
+      m_peeringOptions.OutputToStream(oStream, peeringOptionsLocationAndMember.c_str());
   }
 }

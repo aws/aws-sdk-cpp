@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/iam/model/ReportFormatType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/iam/model/ResponseMetadata.h>
 
 namespace Aws
@@ -99,19 +100,31 @@ namespace Model
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
      */
-    inline double GetGeneratedTime() const{ return m_generatedTime; }
+    inline const Aws::Utils::DateTime& GetGeneratedTime() const{ return m_generatedTime; }
 
     /**
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
      */
-    inline void SetGeneratedTime(double value) { m_generatedTime = value; }
+    inline void SetGeneratedTime(const Aws::Utils::DateTime& value) { m_generatedTime = value; }
 
     /**
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
      */
-    inline GetCredentialReportResult& WithGeneratedTime(double value) { SetGeneratedTime(value); return *this;}
+    inline void SetGeneratedTime(Aws::Utils::DateTime&& value) { m_generatedTime = value; }
+
+    /**
+     * <p> The date and time when the credential report was created, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     */
+    inline GetCredentialReportResult& WithGeneratedTime(const Aws::Utils::DateTime& value) { SetGeneratedTime(value); return *this;}
+
+    /**
+     * <p> The date and time when the credential report was created, in <a
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     */
+    inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -131,7 +144,7 @@ namespace Model
   private:
     Aws::Utils::ByteBuffer m_content;
     ReportFormatType m_reportFormat;
-    double m_generatedTime;
+    Aws::Utils::DateTime m_generatedTime;
     ResponseMetadata m_responseMetadata;
   };
 

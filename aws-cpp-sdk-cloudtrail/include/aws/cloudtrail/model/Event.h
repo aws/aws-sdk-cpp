@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/Resource.h>
 
@@ -34,7 +35,7 @@ namespace Model
 
   /**
    * <p>Contains information about an event that was returned by a lookup request.
-   * The result includes a representation of a CloudTrail event. </p>
+   * The result includes a representation of a CloudTrail event.</p>
    */
   class AWS_CLOUDTRAIL_API Event
   {
@@ -117,17 +118,27 @@ namespace Model
     /**
      * <p>The date and time of the event returned.</p>
      */
-    inline double GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
      * <p>The date and time of the event returned.</p>
      */
-    inline void SetEventTime(double value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>The date and time of the event returned.</p>
      */
-    inline Event& WithEventTime(double value) { SetEventTime(value); return *this;}
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+
+    /**
+     * <p>The date and time of the event returned.</p>
+     */
+    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+
+    /**
+     * <p>The date and time of the event returned.</p>
+     */
+    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -246,7 +257,7 @@ namespace Model
     bool m_eventIdHasBeenSet;
     Aws::String m_eventName;
     bool m_eventNameHasBeenSet;
-    double m_eventTime;
+    Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
     Aws::String m_username;
     bool m_usernameHasBeenSet;

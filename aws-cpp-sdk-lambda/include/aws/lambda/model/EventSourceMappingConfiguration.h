@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -185,19 +186,31 @@ namespace Model
      * <p>The UTC time string indicating the last time the event mapping was
      * updated.</p>
      */
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
      * <p>The UTC time string indicating the last time the event mapping was
      * updated.</p>
      */
-    inline void SetLastModified(double value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
      * <p>The UTC time string indicating the last time the event mapping was
      * updated.</p>
      */
-    inline EventSourceMappingConfiguration& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /**
+     * <p>The UTC time string indicating the last time the event mapping was
+     * updated.</p>
+     */
+    inline EventSourceMappingConfiguration& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * <p>The UTC time string indicating the last time the event mapping was
+     * updated.</p>
+     */
+    inline EventSourceMappingConfiguration& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
     /**
      * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
@@ -334,7 +347,7 @@ namespace Model
     bool m_eventSourceArnHasBeenSet;
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_lastProcessingResult;
     bool m_lastProcessingResultHasBeenSet;

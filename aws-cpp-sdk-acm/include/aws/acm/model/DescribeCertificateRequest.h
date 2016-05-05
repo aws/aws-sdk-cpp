@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_ACM_API DescribeCertificateRequest : public ACMRequest
   {

@@ -25,7 +25,6 @@ TopicRuleListItem::TopicRuleListItem() :
     m_ruleArnHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_topicPatternHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_ruleDisabled(false),
     m_ruleDisabledHasBeenSet(false)
@@ -36,7 +35,6 @@ TopicRuleListItem::TopicRuleListItem(const JsonValue& jsonValue) :
     m_ruleArnHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_topicPatternHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
     m_ruleDisabled(false),
     m_ruleDisabledHasBeenSet(false)
@@ -108,8 +106,7 @@ JsonValue TopicRuleListItem::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt);
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_ruleDisabledHasBeenSet)

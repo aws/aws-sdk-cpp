@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 ApplicationInfo::ApplicationInfo() : 
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
     m_linkedToGitHubHasBeenSet(false)
@@ -34,7 +33,6 @@ ApplicationInfo::ApplicationInfo() :
 ApplicationInfo::ApplicationInfo(const JsonValue& jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_linkedToGitHub(false),
     m_linkedToGitHubHasBeenSet(false)
@@ -93,8 +91,7 @@ JsonValue ApplicationInfo::Jsonize() const
 
   if(m_createTimeHasBeenSet)
   {
-   payload.WithDouble("createTime", m_createTime);
-
+   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
   if(m_linkedToGitHubHasBeenSet)

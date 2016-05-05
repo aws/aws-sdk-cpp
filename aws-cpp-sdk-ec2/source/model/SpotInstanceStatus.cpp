@@ -25,7 +25,6 @@ using namespace Aws::Utils;
 
 SpotInstanceStatus::SpotInstanceStatus() : 
     m_codeHasBeenSet(false),
-    m_updateTime(0.0),
     m_updateTimeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -33,7 +32,6 @@ SpotInstanceStatus::SpotInstanceStatus() :
 
 SpotInstanceStatus::SpotInstanceStatus(const XmlNode& xmlNode) : 
     m_codeHasBeenSet(false),
-    m_updateTime(0.0),
     m_updateTimeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
@@ -55,7 +53,7 @@ SpotInstanceStatus& SpotInstanceStatus::operator =(const XmlNode& xmlNode)
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = StringUtils::ConvertToDouble(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str());
+      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
@@ -77,7 +75,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
+      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {
@@ -93,7 +91,7 @@ void SpotInstanceStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_updateTimeHasBeenSet)
   {
-        oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime) << "&";
+      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_messageHasBeenSet)
   {

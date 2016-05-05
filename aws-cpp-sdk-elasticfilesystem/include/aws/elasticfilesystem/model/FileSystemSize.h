@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -70,26 +71,40 @@ namespace Model
      * was determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time at which the size of data, returned in the <code>Value</code> field,
      * was determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time at which the size of data, returned in the <code>Value</code> field,
      * was determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline FileSystemSize& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>The time at which the size of data, returned in the <code>Value</code> field,
+     * was determined. The value is the integer number of seconds since
+     * 1970-01-01T00:00:00Z.</p>
+     */
+    inline FileSystemSize& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The time at which the size of data, returned in the <code>Value</code> field,
+     * was determined. The value is the integer number of seconds since
+     * 1970-01-01T00:00:00Z.</p>
+     */
+    inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
   private:
     long long m_value;
     bool m_valueHasBeenSet;
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };
 

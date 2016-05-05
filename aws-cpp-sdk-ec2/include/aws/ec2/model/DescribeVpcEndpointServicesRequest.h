@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeVpcEndpointServices.</p>
    */
   class AWS_EC2_API DescribeVpcEndpointServicesRequest : public EC2Request
   {

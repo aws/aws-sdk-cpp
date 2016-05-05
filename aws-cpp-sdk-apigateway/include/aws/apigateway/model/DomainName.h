@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -117,21 +118,35 @@ namespace Model
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline double GetCertificateUploadDate() const{ return m_certificateUploadDate; }
+    inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
 
     /**
      * <p>The date when the certificate was uploaded, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline void SetCertificateUploadDate(double value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
+    inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
 
     /**
      * <p>The date when the certificate was uploaded, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline DomainName& WithCertificateUploadDate(double value) { SetCertificateUploadDate(value); return *this;}
+    inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
+
+    /**
+     * <p>The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline DomainName& WithCertificateUploadDate(const Aws::Utils::DateTime& value) { SetCertificateUploadDate(value); return *this;}
+
+    /**
+     * <p>The date when the certificate was uploaded, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline DomainName& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(value); return *this;}
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -187,7 +202,7 @@ namespace Model
     bool m_domainNameHasBeenSet;
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet;
-    double m_certificateUploadDate;
+    Aws::Utils::DateTime m_certificateUploadDate;
     bool m_certificateUploadDateHasBeenSet;
     Aws::String m_distributionDomainName;
     bool m_distributionDomainNameHasBeenSet;

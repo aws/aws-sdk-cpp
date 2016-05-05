@@ -38,137 +38,137 @@ namespace Model
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetTrailNameList() const{ return m_trailNameList; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline void SetTrailNameList(const Aws::Vector<Aws::String>& value) { m_trailNameListHasBeenSet = true; m_trailNameList = value; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline void SetTrailNameList(Aws::Vector<Aws::String>&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = value; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline DescribeTrailsRequest& WithTrailNameList(const Aws::Vector<Aws::String>& value) { SetTrailNameList(value); return *this;}
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline DescribeTrailsRequest& WithTrailNameList(Aws::Vector<Aws::String>&& value) { SetTrailNameList(value); return *this;}
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline DescribeTrailsRequest& AddTrailNameList(const Aws::String& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline DescribeTrailsRequest& AddTrailNameList(Aws::String&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
-     * describe. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>. If an
-     * empty list is specified, information for the trail in the current region is
-     * returned.</p> <ul> <li>If an empty list is specified and
+     * describe. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * an empty list is specified, information for the trail in the current region is
+     * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.</li> <li> If an empty list is specified and
-     * IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
-     * </li> </ul> <note>If one or more trail names are specified, information is
-     * returned only if the names match the names of trails belonging only to the
-     * current region. To return information about a trail in another region, you must
-     * specify its trail ARN.</note>
+     * the current region is returned.</p> </li> <li> <p>If an empty list is specified
+     * and IncludeShadowTrails is null or true, then information for all trails in the
+     * current region and any associated shadow trails in other regions is
+     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * information is returned only if the names match the names of trails belonging
+     * only to the current region. To return information about a trail in another
+     * region, you must specify its trail ARN.</p> </note>
      */
     inline DescribeTrailsRequest& AddTrailNameList(const char* value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 

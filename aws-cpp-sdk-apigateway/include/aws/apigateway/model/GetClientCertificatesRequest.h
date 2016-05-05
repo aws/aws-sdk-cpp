@@ -29,6 +29,8 @@ namespace Model
 {
 
   /**
+   * <p>A request to get information about a collection of <a>ClientCertificate</a>
+   * resources.</p>
    */
   class AWS_APIGATEWAY_API GetClientCertificatesRequest : public APIGatewayRequest
   {
@@ -38,34 +40,67 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline const Aws::String& GetPosition() const{ return m_position; }
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline GetClientCertificatesRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline GetClientCertificatesRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.</p>
+     */
     inline GetClientCertificatesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * <p>The maximum number of <a>ClientCertificate</a> resources in the collection to
+     * get information about. The default limit is 25. It should be an integer between
+     * 1 - 500.</p>
+     */
     inline long GetLimit() const{ return m_limit; }
 
-    
+    /**
+     * <p>The maximum number of <a>ClientCertificate</a> resources in the collection to
+     * get information about. The default limit is 25. It should be an integer between
+     * 1 - 500.</p>
+     */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    
+    /**
+     * <p>The maximum number of <a>ClientCertificate</a> resources in the collection to
+     * get information about. The default limit is 25. It should be an integer between
+     * 1 - 500.</p>
+     */
     inline GetClientCertificatesRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
   private:

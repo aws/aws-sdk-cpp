@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteCustomerGateway.</p>
    */
   class AWS_EC2_API DeleteCustomerGatewayRequest : public EC2Request
   {

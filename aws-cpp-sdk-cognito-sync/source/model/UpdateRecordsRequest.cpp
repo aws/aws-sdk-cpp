@@ -69,9 +69,9 @@ Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders
   Aws::StringStream ss;
   if(m_clientContextHasBeenSet)
   {
-   ss << m_clientContext;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
-   ss.str("");
+    ss << m_clientContext;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    ss.str("");
   }
 
   return headers;

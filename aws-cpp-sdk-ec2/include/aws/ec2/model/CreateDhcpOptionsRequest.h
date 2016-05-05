@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateDhcpOptions.</p>
    */
   class AWS_EC2_API CreateDhcpOptionsRequest : public EC2Request
   {

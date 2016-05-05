@@ -19,25 +19,8 @@
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/DateTime.h>
 #include <fstream>
-
-//since MAC isn't posix compliant, it likes to complain about std::tmpnam. Also, it the std:: function is supposed
-//to be different than the posix defined function.
-//turn it off because we need it for this test and this isn't production code
-//anyways.
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // __GNUC__
-
-#endif // __APPLE__
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4996) // _CRT_SECURE_NO_WARNINGS
@@ -77,7 +60,8 @@ Aws::String ComputeIdentityFilePath()
 #else
 Aws::String ComputeIdentityFilePath()
 {
-    static Aws::String tempFile(std::tmpnam(nullptr));
+    //tempnam is deprecated on gcc linker, just compute a unique timestamp
+    static Aws::String tempFile(DateTime::Now().CalculateGmtTimestampAsString("%H_%M_%S_%Y_%m_%d"));
     return tempFile;
 }
 #endif
@@ -193,14 +177,3 @@ TEST(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     ASSERT_EQ(loginAccessTokens.longTermTokenExpiry, ourIdentityPool.GetObject("Logins").GetAllObjects().begin()->second.GetInt64("Expiry"));
 }
 
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif // __GNUC__
-
-#endif // __APPLE__

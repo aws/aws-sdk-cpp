@@ -43,7 +43,10 @@ HealthCheckConfig::HealthCheckConfig() :
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
     m_enableSNI(false),
-    m_enableSNIHasBeenSet(false)
+    m_enableSNIHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatusHasBeenSet(false)
 {
 }
 
@@ -67,7 +70,10 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
     m_enableSNI(false),
-    m_enableSNIHasBeenSet(false)
+    m_enableSNIHasBeenSet(false),
+    m_regionsHasBeenSet(false),
+    m_alarmIdentifierHasBeenSet(false),
+    m_insufficientDataHealthStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -161,6 +167,30 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     {
       m_enableSNI = StringUtils::ConvertToBool(StringUtils::Trim(enableSNINode.GetText().c_str()).c_str());
       m_enableSNIHasBeenSet = true;
+    }
+    XmlNode regionsNode = resultNode.FirstChild("Regions");
+    if(!regionsNode.IsNull())
+    {
+      XmlNode regionsMember = regionsNode.FirstChild("Region");
+      while(!regionsMember.IsNull())
+      {
+        m_regions.push_back(HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(regionsMember.GetText().c_str())));
+        regionsMember = regionsMember.NextNode("Region");
+      }
+
+      m_regionsHasBeenSet = true;
+    }
+    XmlNode alarmIdentifierNode = resultNode.FirstChild("AlarmIdentifier");
+    if(!alarmIdentifierNode.IsNull())
+    {
+      m_alarmIdentifier = alarmIdentifierNode;
+      m_alarmIdentifierHasBeenSet = true;
+    }
+    XmlNode insufficientDataHealthStatusNode = resultNode.FirstChild("InsufficientDataHealthStatus");
+    if(!insufficientDataHealthStatusNode.IsNull())
+    {
+      m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(insufficientDataHealthStatusNode.GetText().c_str()).c_str());
+      m_insufficientDataHealthStatusHasBeenSet = true;
     }
   }
 
@@ -264,6 +294,28 @@ void HealthCheckConfig::AddToNode(XmlNode& parentNode) const
   ss << m_enableSNI;
    enableSNINode.SetText(ss.str());
   ss.str("");
+  }
+
+  if(m_regionsHasBeenSet)
+  {
+   XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
+   for(const auto& item : m_regions)
+   {
+     XmlNode regionsNode = regionsParentNode.CreateChildElement("HealthCheckRegion");
+     regionsNode.SetText(HealthCheckRegionMapper::GetNameForHealthCheckRegion(item));
+   }
+  }
+
+  if(m_alarmIdentifierHasBeenSet)
+  {
+   XmlNode alarmIdentifierNode = parentNode.CreateChildElement("AlarmIdentifier");
+   m_alarmIdentifier.AddToNode(alarmIdentifierNode);
+  }
+
+  if(m_insufficientDataHealthStatusHasBeenSet)
+  {
+   XmlNode insufficientDataHealthStatusNode = parentNode.CreateChildElement("InsufficientDataHealthStatus");
+   insufficientDataHealthStatusNode.SetText(InsufficientDataHealthStatusMapper::GetNameForInsufficientDataHealthStatus(m_insufficientDataHealthStatus));
   }
 
 }

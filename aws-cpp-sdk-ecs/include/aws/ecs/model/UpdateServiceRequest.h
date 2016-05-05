@@ -216,31 +216,31 @@ namespace Model
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline UpdateServiceRequest& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
 
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks. </p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline UpdateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(value); return *this;}
 

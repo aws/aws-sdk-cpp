@@ -20,12 +20,14 @@ using namespace Aws::Client;
 using namespace Aws::ACM;
 using namespace Aws::Utils;
 
+static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
-static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 
 namespace Aws
 {
@@ -38,7 +40,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_STATE_HASH)
+  if (hashCode == INVALID_DOMAIN_VALIDATION_OPTIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_STATE), false);
   }
@@ -46,9 +56,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
+  else if (hashCode == INVALID_TAG_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_TAG), false);
   }
   else if (hashCode == INVALID_ARN_HASH)
   {
@@ -58,9 +68,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
   }
-  else if (hashCode == INVALID_DOMAIN_VALIDATION_OPTIONS_HASH)
+  else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::TOO_MANY_TAGS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

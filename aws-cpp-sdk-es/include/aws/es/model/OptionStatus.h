@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/es/model/OptionState.h>
 
 namespace Aws
@@ -44,32 +45,52 @@ namespace Model
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
-    inline OptionStatus& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>Timestamp which tells the creation date for the entity.</p>
+     */
+    inline OptionStatus& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>Timestamp which tells the creation date for the entity.</p>
+     */
+    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
-    inline double GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
-    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
-    inline OptionStatus& WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /**
+     * <p>Timestamp which tells the last updated time for the entity.</p>
+     */
+    inline OptionStatus& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+
+    /**
+     * <p>Timestamp which tells the last updated time for the entity.</p>
+     */
+    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>Specifies the latest version for the entity.</p>
@@ -127,9 +148,9 @@ namespace Model
     inline OptionStatus& WithPendingDeletion(bool value) { SetPendingDeletion(value); return *this;}
 
   private:
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
-    double m_updateDate;
+    Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
     long m_updateVersion;
     bool m_updateVersionHasBeenSet;

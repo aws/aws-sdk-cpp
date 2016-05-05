@@ -34,7 +34,6 @@ TableStatistics::TableStatistics() :
     m_ddlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
-    m_lastUpdateTime(0.0),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false)
 {
@@ -53,7 +52,6 @@ TableStatistics::TableStatistics(const JsonValue& jsonValue) :
     m_ddlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
-    m_lastUpdateTime(0.0),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false)
 {
@@ -176,8 +174,7 @@ JsonValue TableStatistics::Jsonize() const
 
   if(m_lastUpdateTimeHasBeenSet)
   {
-   payload.WithDouble("LastUpdateTime", m_lastUpdateTime);
-
+   payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
   if(m_tableStateHasBeenSet)

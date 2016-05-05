@@ -28,7 +28,6 @@ using namespace Aws;
 
 CreateVolumeResponse::CreateVolumeResponse() : 
     m_size(0),
-    m_createTime(0.0),
     m_iops(0),
     m_encrypted(false)
 {
@@ -36,7 +35,6 @@ CreateVolumeResponse::CreateVolumeResponse() :
 
 CreateVolumeResponse::CreateVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
     m_size(0),
-    m_createTime(0.0),
     m_iops(0),
     m_encrypted(false)
 {
@@ -83,7 +81,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const AmazonWebServiceRes
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode attachmentsNode = resultNode.FirstChild("attachmentSet");
     if(!attachmentsNode.IsNull())

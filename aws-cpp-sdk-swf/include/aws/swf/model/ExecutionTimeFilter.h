@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -47,37 +48,57 @@ namespace Model
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline double GetOldestDate() const{ return m_oldestDate; }
+    inline const Aws::Utils::DateTime& GetOldestDate() const{ return m_oldestDate; }
 
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline void SetOldestDate(double value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
+    inline void SetOldestDate(const Aws::Utils::DateTime& value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
 
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
-    inline ExecutionTimeFilter& WithOldestDate(double value) { SetOldestDate(value); return *this;}
+    inline void SetOldestDate(Aws::Utils::DateTime&& value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
+
+    /**
+     * <p>Specifies the oldest start or close date and time to return.</p>
+     */
+    inline ExecutionTimeFilter& WithOldestDate(const Aws::Utils::DateTime& value) { SetOldestDate(value); return *this;}
+
+    /**
+     * <p>Specifies the oldest start or close date and time to return.</p>
+     */
+    inline ExecutionTimeFilter& WithOldestDate(Aws::Utils::DateTime&& value) { SetOldestDate(value); return *this;}
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline double GetLatestDate() const{ return m_latestDate; }
+    inline const Aws::Utils::DateTime& GetLatestDate() const{ return m_latestDate; }
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline void SetLatestDate(double value) { m_latestDateHasBeenSet = true; m_latestDate = value; }
+    inline void SetLatestDate(const Aws::Utils::DateTime& value) { m_latestDateHasBeenSet = true; m_latestDate = value; }
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
      */
-    inline ExecutionTimeFilter& WithLatestDate(double value) { SetLatestDate(value); return *this;}
+    inline void SetLatestDate(Aws::Utils::DateTime&& value) { m_latestDateHasBeenSet = true; m_latestDate = value; }
+
+    /**
+     * <p>Specifies the latest start or close date and time to return.</p>
+     */
+    inline ExecutionTimeFilter& WithLatestDate(const Aws::Utils::DateTime& value) { SetLatestDate(value); return *this;}
+
+    /**
+     * <p>Specifies the latest start or close date and time to return.</p>
+     */
+    inline ExecutionTimeFilter& WithLatestDate(Aws::Utils::DateTime&& value) { SetLatestDate(value); return *this;}
 
   private:
-    double m_oldestDate;
+    Aws::Utils::DateTime m_oldestDate;
     bool m_oldestDateHasBeenSet;
-    double m_latestDate;
+    Aws::Utils::DateTime m_latestDate;
     bool m_latestDateHasBeenSet;
   };
 

@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -118,46 +119,70 @@ namespace Model
      * <p>The date and time when the cache node was created in the source cache
      * cluster.</p>
      */
-    inline double GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
+    inline const Aws::Utils::DateTime& GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
 
     /**
      * <p>The date and time when the cache node was created in the source cache
      * cluster.</p>
      */
-    inline void SetCacheNodeCreateTime(double value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
+    inline void SetCacheNodeCreateTime(const Aws::Utils::DateTime& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
 
     /**
      * <p>The date and time when the cache node was created in the source cache
      * cluster.</p>
      */
-    inline NodeSnapshot& WithCacheNodeCreateTime(double value) { SetCacheNodeCreateTime(value); return *this;}
+    inline void SetCacheNodeCreateTime(Aws::Utils::DateTime&& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cache node was created in the source cache
+     * cluster.</p>
+     */
+    inline NodeSnapshot& WithCacheNodeCreateTime(const Aws::Utils::DateTime& value) { SetCacheNodeCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cache node was created in the source cache
+     * cluster.</p>
+     */
+    inline NodeSnapshot& WithCacheNodeCreateTime(Aws::Utils::DateTime&& value) { SetCacheNodeCreateTime(value); return *this;}
 
     /**
      * <p>The date and time when the source node's metadata and cache data set was
      * obtained for the snapshot.</p>
      */
-    inline double GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
 
     /**
      * <p>The date and time when the source node's metadata and cache data set was
      * obtained for the snapshot.</p>
      */
-    inline void SetSnapshotCreateTime(double value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
      * <p>The date and time when the source node's metadata and cache data set was
      * obtained for the snapshot.</p>
      */
-    inline NodeSnapshot& WithSnapshotCreateTime(double value) { SetSnapshotCreateTime(value); return *this;}
+    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
+
+    /**
+     * <p>The date and time when the source node's metadata and cache data set was
+     * obtained for the snapshot.</p>
+     */
+    inline NodeSnapshot& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the source node's metadata and cache data set was
+     * obtained for the snapshot.</p>
+     */
+    inline NodeSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(value); return *this;}
 
   private:
     Aws::String m_cacheNodeId;
     bool m_cacheNodeIdHasBeenSet;
     Aws::String m_cacheSize;
     bool m_cacheSizeHasBeenSet;
-    double m_cacheNodeCreateTime;
+    Aws::Utils::DateTime m_cacheNodeCreateTime;
     bool m_cacheNodeCreateTimeHasBeenSet;
-    double m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
   };
 

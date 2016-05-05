@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/s3/model/StorageClass.h>
@@ -184,17 +185,27 @@ namespace Model
     /**
      * Last modified date of the object
      */
-    inline double GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
      * Last modified date of the object
      */
-    inline void SetLastModified(double value) { m_lastModified = value; }
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     /**
      * Last modified date of the object
      */
-    inline HeadObjectResult& WithLastModified(double value) { SetLastModified(value); return *this;}
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = value; }
+
+    /**
+     * Last modified date of the object
+     */
+    inline HeadObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * Last modified date of the object
+     */
+    inline HeadObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
 
     /**
      * Size of the body in bytes.
@@ -504,17 +515,27 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline double GetExpires() const{ return m_expires; }
+    inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline void SetExpires(double value) { m_expires = value; }
+    inline void SetExpires(const Aws::Utils::DateTime& value) { m_expires = value; }
 
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline HeadObjectResult& WithExpires(double value) { SetExpires(value); return *this;}
+    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expires = value; }
+
+    /**
+     * The date and time at which the object is no longer cacheable.
+     */
+    inline HeadObjectResult& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
+
+    /**
+     * The date and time at which the object is no longer cacheable.
+     */
+    inline HeadObjectResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(value); return *this;}
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -838,7 +859,7 @@ namespace Model
     Aws::String m_acceptRanges;
     Aws::String m_expiration;
     Aws::String m_restore;
-    double m_lastModified;
+    Aws::Utils::DateTime m_lastModified;
     long m_contentLength;
     Aws::String m_eTag;
     long m_missingMeta;
@@ -848,7 +869,7 @@ namespace Model
     Aws::String m_contentEncoding;
     Aws::String m_contentLanguage;
     Aws::String m_contentType;
-    double m_expires;
+    Aws::Utils::DateTime m_expires;
     Aws::String m_websiteRedirectLocation;
     ServerSideEncryption m_serverSideEncryption;
     Aws::Map<Aws::String, Aws::String> m_metadata;

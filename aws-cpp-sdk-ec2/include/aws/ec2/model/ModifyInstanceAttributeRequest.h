@@ -31,6 +31,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyInstanceAttribute.</p>
    */
   class AWS_EC2_API ModifyInstanceAttributeRequest : public EC2Request
   {
@@ -453,27 +454,32 @@ namespace Model
     inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(value); return *this;}
 
     /**
-     * <p>Changes the instance's user data to the specified value.</p>
+     * <p>Changes the instance's user data to the specified base64-encoded value. For
+     * command line tools, base64 encoding is performed for you.</p>
      */
     inline const BlobAttributeValue& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>Changes the instance's user data to the specified value.</p>
+     * <p>Changes the instance's user data to the specified base64-encoded value. For
+     * command line tools, base64 encoding is performed for you.</p>
      */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Changes the instance's user data to the specified value.</p>
+     * <p>Changes the instance's user data to the specified base64-encoded value. For
+     * command line tools, base64 encoding is performed for you.</p>
      */
     inline void SetUserData(BlobAttributeValue&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Changes the instance's user data to the specified value.</p>
+     * <p>Changes the instance's user data to the specified base64-encoded value. For
+     * command line tools, base64 encoding is performed for you.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(const BlobAttributeValue& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>Changes the instance's user data to the specified value.</p>
+     * <p>Changes the instance's user data to the specified base64-encoded value. For
+     * command line tools, base64 encoding is performed for you.</p>
      */
     inline ModifyInstanceAttributeRequest& WithUserData(BlobAttributeValue&& value) { SetUserData(value); return *this;}
 

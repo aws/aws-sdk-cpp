@@ -41,16 +41,16 @@ Aws::Http::HeaderValueCollection UploadArchiveRequest::GetRequestSpecificHeaders
   Aws::StringStream ss;
   if(m_archiveDescriptionHasBeenSet)
   {
-   ss << m_archiveDescription;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
-   ss.str("");
+    ss << m_archiveDescription;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-archive-description", ss.str()));
+    ss.str("");
   }
 
   if(m_checksumHasBeenSet)
   {
-   ss << m_checksum;
-   headers.insert(Aws::Http::HeaderValuePair("x-amz-sha256-tree-hash", ss.str()));
-   ss.str("");
+    ss << m_checksum;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-sha256-tree-hash", ss.str()));
+    ss.str("");
   }
 
   return headers;

@@ -49,7 +49,7 @@ namespace Model
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log into your container
      * instance and run the following command: <code>sudo docker version | grep "Server
-     * API version"</code></p>
+     * API version"</code> </p>
      */
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
 
@@ -58,7 +58,7 @@ namespace Model
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log into your container
      * instance and run the following command: <code>sudo docker version | grep "Server
-     * API version"</code></p>
+     * API version"</code> </p>
      */
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
@@ -67,7 +67,7 @@ namespace Model
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log into your container
      * instance and run the following command: <code>sudo docker version | grep "Server
-     * API version"</code></p>
+     * API version"</code> </p>
      */
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log into your container
      * instance and run the following command: <code>sudo docker version | grep "Server
-     * API version"</code></p>
+     * API version"</code> </p>
      */
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
 
@@ -85,7 +85,7 @@ namespace Model
      * of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log into your container
      * instance and run the following command: <code>sudo docker version | grep "Server
-     * API version"</code></p>
+     * API version"</code> </p>
      */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(value); return *this;}
 
@@ -94,7 +94,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
 
@@ -103,7 +103,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -112,7 +112,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -121,7 +121,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(value); return *this;}
 
@@ -139,7 +139,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -148,7 +148,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -157,7 +157,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -166,7 +166,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -175,7 +175,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -184,7 +184,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 
@@ -193,7 +193,7 @@ namespace Model
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log into your
      * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code></p>
+     * grep "Server API version"</code> </p>
      */
     inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options[key] = value; return *this; }
 

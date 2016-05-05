@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudsearch/model/OptionState.h>
 
 namespace Aws
@@ -47,32 +48,52 @@ namespace Model
     /**
      * <p>A timestamp for when this option was created.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>A timestamp for when this option was created.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>A timestamp for when this option was created.</p>
      */
-    inline OptionStatus& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>A timestamp for when this option was created.</p>
+     */
+    inline OptionStatus& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>A timestamp for when this option was created.</p>
+     */
+    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
      */
-    inline double GetUpdateDate() const{ return m_updateDate; }
+    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
      */
-    inline void SetUpdateDate(double value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
      */
-    inline OptionStatus& WithUpdateDate(double value) { SetUpdateDate(value); return *this;}
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+
+    /**
+     * <p>A timestamp for when this option was last updated.</p>
+     */
+    inline OptionStatus& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
+
+    /**
+     * <p>A timestamp for when this option was last updated.</p>
+     */
+    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
@@ -170,9 +191,9 @@ namespace Model
     inline OptionStatus& WithPendingDeletion(bool value) { SetPendingDeletion(value); return *this;}
 
   private:
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
-    double m_updateDate;
+    Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
     long m_updateVersion;
     bool m_updateVersionHasBeenSet;

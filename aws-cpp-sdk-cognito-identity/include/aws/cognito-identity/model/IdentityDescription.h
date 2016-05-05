@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -120,41 +121,61 @@ namespace Model
     /**
      * <p>Date on which the identity was created.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>Date on which the identity was created.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>Date on which the identity was created.</p>
      */
-    inline IdentityDescription& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
+    inline IdentityDescription& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
+    inline IdentityDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>Date on which the identity was last modified.</p>
      */
-    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
      * <p>Date on which the identity was last modified.</p>
      */
-    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
      * <p>Date on which the identity was last modified.</p>
      */
-    inline IdentityDescription& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
+    inline IdentityDescription& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
+    inline IdentityDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
     Aws::Vector<Aws::String> m_logins;
     bool m_loginsHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
-    double m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
   };
 

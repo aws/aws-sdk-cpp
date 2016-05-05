@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/elasticbeanstalk/model/EnvironmentInfoType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -108,17 +109,27 @@ namespace Model
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
-    inline double GetSampleTimestamp() const{ return m_sampleTimestamp; }
+    inline const Aws::Utils::DateTime& GetSampleTimestamp() const{ return m_sampleTimestamp; }
 
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
-    inline void SetSampleTimestamp(double value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = value; }
+    inline void SetSampleTimestamp(const Aws::Utils::DateTime& value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = value; }
 
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
-    inline EnvironmentInfoDescription& WithSampleTimestamp(double value) { SetSampleTimestamp(value); return *this;}
+    inline void SetSampleTimestamp(Aws::Utils::DateTime&& value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = value; }
+
+    /**
+     * <p>The time stamp when this information was retrieved.</p>
+     */
+    inline EnvironmentInfoDescription& WithSampleTimestamp(const Aws::Utils::DateTime& value) { SetSampleTimestamp(value); return *this;}
+
+    /**
+     * <p>The time stamp when this information was retrieved.</p>
+     */
+    inline EnvironmentInfoDescription& WithSampleTimestamp(Aws::Utils::DateTime&& value) { SetSampleTimestamp(value); return *this;}
 
     /**
      * <p>The retrieved information.</p>
@@ -160,7 +171,7 @@ namespace Model
     bool m_infoTypeHasBeenSet;
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
-    double m_sampleTimestamp;
+    Aws::Utils::DateTime m_sampleTimestamp;
     bool m_sampleTimestampHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;

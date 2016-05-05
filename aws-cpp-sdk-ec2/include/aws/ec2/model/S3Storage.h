@@ -187,32 +187,37 @@ namespace Model
     inline S3Storage& WithAWSAccessKeyId(const char* value) { SetAWSAccessKeyId(value); return *this;}
 
     /**
-     * <p>A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
-     * upload items into Amazon S3 on your behalf.</p>
+     * <p>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
+     * upload items into Amazon S3 on your behalf. For command line tools, base64
+     * encoding is performed for you.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetUploadPolicy() const{ return m_uploadPolicy; }
 
     /**
-     * <p>A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
-     * upload items into Amazon S3 on your behalf.</p>
+     * <p>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
+     * upload items into Amazon S3 on your behalf. For command line tools, base64
+     * encoding is performed for you.</p>
      */
     inline void SetUploadPolicy(const Aws::Utils::ByteBuffer& value) { m_uploadPolicyHasBeenSet = true; m_uploadPolicy = value; }
 
     /**
-     * <p>A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
-     * upload items into Amazon S3 on your behalf.</p>
+     * <p>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
+     * upload items into Amazon S3 on your behalf. For command line tools, base64
+     * encoding is performed for you.</p>
      */
     inline void SetUploadPolicy(Aws::Utils::ByteBuffer&& value) { m_uploadPolicyHasBeenSet = true; m_uploadPolicy = value; }
 
     /**
-     * <p>A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
-     * upload items into Amazon S3 on your behalf.</p>
+     * <p>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
+     * upload items into Amazon S3 on your behalf. For command line tools, base64
+     * encoding is performed for you.</p>
      */
     inline S3Storage& WithUploadPolicy(const Aws::Utils::ByteBuffer& value) { SetUploadPolicy(value); return *this;}
 
     /**
-     * <p>A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
-     * upload items into Amazon S3 on your behalf.</p>
+     * <p>A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to
+     * upload items into Amazon S3 on your behalf. For command line tools, base64
+     * encoding is performed for you.</p>
      */
     inline S3Storage& WithUploadPolicy(Aws::Utils::ByteBuffer&& value) { SetUploadPolicy(value); return *this;}
 

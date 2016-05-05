@@ -47,7 +47,7 @@ namespace Aws
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
                 switch (clientConfiguration.httpLibOverride)
-                { 
+                {
                     case TransferLibType::WIN_INET_CLIENT:
                         return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
 

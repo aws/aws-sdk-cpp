@@ -35,6 +35,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output for DescribeImportImageTasks.</p>
+   */
   class AWS_EC2_API DescribeImportImageTasksResponse
   {
   public:

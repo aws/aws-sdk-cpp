@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TrafficType.h>
 
@@ -48,17 +49,27 @@ namespace Model
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline FlowLog& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
+    inline FlowLog& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
+    inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>The flow log ID.</p>
@@ -380,7 +391,7 @@ namespace Model
     inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 
   private:
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
     Aws::String m_flowLogId;
     bool m_flowLogIdHasBeenSet;

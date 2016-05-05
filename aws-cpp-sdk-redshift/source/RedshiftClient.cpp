@@ -75,6 +75,7 @@
 #include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/ModifyClusterRequest.h>
+#include <aws/redshift/model/ModifyClusterIamRolesRequest.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupRequest.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
 #include <aws/redshift/model/ModifyEventSubscriptionRequest.h>
@@ -1619,6 +1620,36 @@ void RedshiftClient::ModifyClusterAsync(const ModifyClusterRequest& request, con
 void RedshiftClient::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyCluster(request), context);
+}
+
+ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyClusterIamRolesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyClusterIamRolesOutcome(ModifyClusterIamRolesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyClusterIamRolesOutcome(outcome.GetError());
+  }
+}
+
+ModifyClusterIamRolesOutcomeCallable RedshiftClient::ModifyClusterIamRolesCallable(const ModifyClusterIamRolesRequest& request) const
+{
+  return std::async(std::launch::async, &RedshiftClient::ModifyClusterIamRoles, this, request);
+}
+
+void RedshiftClient::ModifyClusterIamRolesAsync(const ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RedshiftClient::ModifyClusterIamRolesAsyncHelper, this, request, handler, context);
+}
+
+void RedshiftClient::ModifyClusterIamRolesAsyncHelper(const ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyClusterIamRoles(request), context);
 }
 
 ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(const ModifyClusterParameterGroupRequest& request) const

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyInstancePlacement.</p>
    */
   class AWS_EC2_API ModifyInstancePlacementRequest : public EC2Request
   {

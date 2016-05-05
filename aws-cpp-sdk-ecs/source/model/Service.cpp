@@ -37,7 +37,8 @@ Service::Service() :
     m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
@@ -57,7 +58,8 @@ Service::Service(const JsonValue& jsonValue) :
     m_deploymentConfigurationHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_eventsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +166,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_eventsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +271,11 @@ JsonValue Service::Jsonize() const
    }
    payload.WithArray("events", std::move(eventsJsonList));
 
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   return payload;

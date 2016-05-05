@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -129,17 +130,27 @@ namespace Model
     /**
      * The date on which the record was last modified.
      */
-    inline double GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
      * The date on which the record was last modified.
      */
-    inline void SetLastModifiedDate(double value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
      * The date on which the record was last modified.
      */
-    inline Record& WithLastModifiedDate(double value) { SetLastModifiedDate(value); return *this;}
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
+
+    /**
+     * The date on which the record was last modified.
+     */
+    inline Record& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * The date on which the record was last modified.
+     */
+    inline Record& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(value); return *this;}
 
     /**
      * The user/device that made the last change to this record.
@@ -179,17 +190,27 @@ namespace Model
     /**
      * The last modified date of the client device.
      */
-    inline double GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
 
     /**
      * The last modified date of the client device.
      */
-    inline void SetDeviceLastModifiedDate(double value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+    inline void SetDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
 
     /**
      * The last modified date of the client device.
      */
-    inline Record& WithDeviceLastModifiedDate(double value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+
+    /**
+     * The last modified date of the client device.
+     */
+    inline Record& WithDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { SetDeviceLastModifiedDate(value); return *this;}
+
+    /**
+     * The last modified date of the client device.
+     */
+    inline Record& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(value); return *this;}
 
   private:
     Aws::String m_key;
@@ -198,11 +219,11 @@ namespace Model
     bool m_valueHasBeenSet;
     long long m_syncCount;
     bool m_syncCountHasBeenSet;
-    double m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
-    double m_deviceLastModifiedDate;
+    Aws::Utils::DateTime m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
   };
 

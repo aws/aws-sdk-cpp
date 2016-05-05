@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/TestType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/devicefarm/model/ExecutionStatus.h>
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/devicefarm/model/Counters.h>
@@ -214,17 +215,27 @@ namespace Model
     /**
      * <p>When the test was created.</p>
      */
-    inline double GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
      * <p>When the test was created.</p>
      */
-    inline void SetCreated(double value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
      * <p>When the test was created.</p>
      */
-    inline Test& WithCreated(double value) { SetCreated(value); return *this;}
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>When the test was created.</p>
+     */
+    inline Test& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>When the test was created.</p>
+     */
+    inline Test& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
     /**
      * <p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED:
@@ -314,32 +325,52 @@ namespace Model
     /**
      * <p>The test's start time.</p>
      */
-    inline double GetStarted() const{ return m_started; }
+    inline const Aws::Utils::DateTime& GetStarted() const{ return m_started; }
 
     /**
      * <p>The test's start time.</p>
      */
-    inline void SetStarted(double value) { m_startedHasBeenSet = true; m_started = value; }
+    inline void SetStarted(const Aws::Utils::DateTime& value) { m_startedHasBeenSet = true; m_started = value; }
 
     /**
      * <p>The test's start time.</p>
      */
-    inline Test& WithStarted(double value) { SetStarted(value); return *this;}
+    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = value; }
+
+    /**
+     * <p>The test's start time.</p>
+     */
+    inline Test& WithStarted(const Aws::Utils::DateTime& value) { SetStarted(value); return *this;}
+
+    /**
+     * <p>The test's start time.</p>
+     */
+    inline Test& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(value); return *this;}
 
     /**
      * <p>The test's stop time.</p>
      */
-    inline double GetStopped() const{ return m_stopped; }
+    inline const Aws::Utils::DateTime& GetStopped() const{ return m_stopped; }
 
     /**
      * <p>The test's stop time.</p>
      */
-    inline void SetStopped(double value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+    inline void SetStopped(const Aws::Utils::DateTime& value) { m_stoppedHasBeenSet = true; m_stopped = value; }
 
     /**
      * <p>The test's stop time.</p>
      */
-    inline Test& WithStopped(double value) { SetStopped(value); return *this;}
+    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+
+    /**
+     * <p>The test's stop time.</p>
+     */
+    inline Test& WithStopped(const Aws::Utils::DateTime& value) { SetStopped(value); return *this;}
+
+    /**
+     * <p>The test's stop time.</p>
+     */
+    inline Test& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(value); return *this;}
 
     /**
      * <p>The test's result counters.</p>
@@ -433,15 +464,15 @@ namespace Model
     bool m_nameHasBeenSet;
     TestType m_type;
     bool m_typeHasBeenSet;
-    double m_created;
+    Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
-    double m_started;
+    Aws::Utils::DateTime m_started;
     bool m_startedHasBeenSet;
-    double m_stopped;
+    Aws::Utils::DateTime m_stopped;
     bool m_stoppedHasBeenSet;
     Counters m_counters;
     bool m_countersHasBeenSet;

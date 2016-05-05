@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -196,17 +197,27 @@ namespace Model
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline void SetCreateTime(double value) { m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
-    inline CreateVolumeResponse& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = value; }
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline CreateVolumeResponse& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline CreateVolumeResponse& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>Information about the volume attachments.</p>
@@ -279,85 +290,93 @@ namespace Model
     inline CreateVolumeResponse& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeType = value; }
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeType = value; }
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p>
      */
     inline CreateVolumeResponse& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type. This can be <code>gp2</code> for General Purpose (SSD)
-     * volumes, <code>io1</code> for Provisioned IOPS (SSD) volumes, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p>
      */
     inline CreateVolumeResponse& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * Provisioned IOPS (SSD) volumes, this represents the number of IOPS that are
-     * provisioned for the volume. For General Purpose (SSD) volumes, this represents
-     * the baseline performance of the volume and the rate at which the volume
-     * accumulates I/O credits for bursting. For more information on General Purpose
-     * (SSD) baseline performance, I/O credits, and bursting, see <a
+     * Provisioned IOPS SSD volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For General Purpose SSD volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information on General Purpose SSD baseline
+     * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to
-     * 10000 for General Purpose (SSD) volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>standard</code> or <code>gp2</code> volumes.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
+     * requests to create <code>io1</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline long GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * Provisioned IOPS (SSD) volumes, this represents the number of IOPS that are
-     * provisioned for the volume. For General Purpose (SSD) volumes, this represents
-     * the baseline performance of the volume and the rate at which the volume
-     * accumulates I/O credits for bursting. For more information on General Purpose
-     * (SSD) baseline performance, I/O credits, and bursting, see <a
+     * Provisioned IOPS SSD volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For General Purpose SSD volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information on General Purpose SSD baseline
+     * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to
-     * 10000 for General Purpose (SSD) volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>standard</code> or <code>gp2</code> volumes.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
+     * requests to create <code>io1</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline void SetIops(long value) { m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * Provisioned IOPS (SSD) volumes, this represents the number of IOPS that are
-     * provisioned for the volume. For General Purpose (SSD) volumes, this represents
-     * the baseline performance of the volume and the rate at which the volume
-     * accumulates I/O credits for bursting. For more information on General Purpose
-     * (SSD) baseline performance, I/O credits, and bursting, see <a
+     * Provisioned IOPS SSD volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For General Purpose SSD volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information on General Purpose SSD baseline
+     * performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD) volumes and 3 to
-     * 10000 for General Purpose (SSD) volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>standard</code> or <code>gp2</code> volumes.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for
+     * <code>gp2</code> volumes.</p> <p>Condition: This parameter is required for
+     * requests to create <code>io1</code> volumes; it is not used in requests to
+     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
      */
     inline CreateVolumeResponse& WithIops(long value) { SetIops(value); return *this;}
 
@@ -439,7 +458,7 @@ namespace Model
     Aws::String m_snapshotId;
     Aws::String m_availabilityZone;
     VolumeState m_state;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     Aws::Vector<VolumeAttachment> m_attachments;
     Aws::Vector<Tag> m_tags;
     VolumeType m_volumeType;

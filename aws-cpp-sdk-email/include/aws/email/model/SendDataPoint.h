@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -47,17 +48,27 @@ namespace Model
     /**
      * <p>Time of the data point.</p>
      */
-    inline double GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Time of the data point.</p>
      */
-    inline void SetTimestamp(double value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Time of the data point.</p>
      */
-    inline SendDataPoint& WithTimestamp(double value) { SetTimestamp(value); return *this;}
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>Time of the data point.</p>
+     */
+    inline SendDataPoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>Time of the data point.</p>
+     */
+    inline SendDataPoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
      * <p>Number of emails that have been enqueued for sending.</p>
@@ -120,7 +131,7 @@ namespace Model
     inline SendDataPoint& WithRejects(long long value) { SetRejects(value); return *this;}
 
   private:
-    double m_timestamp;
+    Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
     long long m_deliveryAttempts;
     bool m_deliveryAttemptsHasBeenSet;

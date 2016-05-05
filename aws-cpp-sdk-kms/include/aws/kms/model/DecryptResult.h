@@ -42,43 +42,43 @@ namespace Model
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline DecryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
-     * errors are encountered during the operation. </p>
+     * errors are encountered during the operation.</p>
      */
     inline DecryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 DomainName::DomainName() : 
     m_domainNameHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
-    m_certificateUploadDate(0.0),
     m_certificateUploadDateHasBeenSet(false),
     m_distributionDomainNameHasBeenSet(false)
 {
@@ -33,7 +32,6 @@ DomainName::DomainName() :
 DomainName::DomainName(const JsonValue& jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
-    m_certificateUploadDate(0.0),
     m_certificateUploadDateHasBeenSet(false),
     m_distributionDomainNameHasBeenSet(false)
 {
@@ -91,8 +89,7 @@ JsonValue DomainName::Jsonize() const
 
   if(m_certificateUploadDateHasBeenSet)
   {
-   payload.WithDouble("certificateUploadDate", m_certificateUploadDate);
-
+   payload.WithDouble("certificateUploadDate", m_certificateUploadDate.SecondsWithMSPrecision());
   }
 
   if(m_distributionDomainNameHasBeenSet)

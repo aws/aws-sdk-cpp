@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
 
@@ -239,19 +240,31 @@ namespace Model
      * <p>The date and time the Amazon Redshift event notification subscription was
      * created.</p>
      */
-    inline double GetSubscriptionCreationTime() const{ return m_subscriptionCreationTime; }
+    inline const Aws::Utils::DateTime& GetSubscriptionCreationTime() const{ return m_subscriptionCreationTime; }
 
     /**
      * <p>The date and time the Amazon Redshift event notification subscription was
      * created.</p>
      */
-    inline void SetSubscriptionCreationTime(double value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
+    inline void SetSubscriptionCreationTime(const Aws::Utils::DateTime& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
 
     /**
      * <p>The date and time the Amazon Redshift event notification subscription was
      * created.</p>
      */
-    inline EventSubscription& WithSubscriptionCreationTime(double value) { SetSubscriptionCreationTime(value); return *this;}
+    inline void SetSubscriptionCreationTime(Aws::Utils::DateTime&& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
+
+    /**
+     * <p>The date and time the Amazon Redshift event notification subscription was
+     * created.</p>
+     */
+    inline EventSubscription& WithSubscriptionCreationTime(const Aws::Utils::DateTime& value) { SetSubscriptionCreationTime(value); return *this;}
+
+    /**
+     * <p>The date and time the Amazon Redshift event notification subscription was
+     * created.</p>
+     */
+    inline EventSubscription& WithSubscriptionCreationTime(Aws::Utils::DateTime&& value) { SetSubscriptionCreationTime(value); return *this;}
 
     /**
      * <p>The source type of the events returned the Amazon Redshift event
@@ -503,7 +516,7 @@ namespace Model
     bool m_snsTopicArnHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    double m_subscriptionCreationTime;
+    Aws::Utils::DateTime m_subscriptionCreationTime;
     bool m_subscriptionCreationTimeHasBeenSet;
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;

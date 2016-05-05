@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/SingleInstanceHealth.h>
@@ -90,17 +91,27 @@ namespace Model
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline double GetRefreshedAt() const{ return m_refreshedAt; }
+    inline const Aws::Utils::DateTime& GetRefreshedAt() const{ return m_refreshedAt; }
 
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline void SetRefreshedAt(double value) { m_refreshedAt = value; }
+    inline void SetRefreshedAt(const Aws::Utils::DateTime& value) { m_refreshedAt = value; }
 
     /**
      * <p>The date and time the information was last refreshed.</p>
      */
-    inline DescribeInstancesHealthResult& WithRefreshedAt(double value) { SetRefreshedAt(value); return *this;}
+    inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = value; }
+
+    /**
+     * <p>The date and time the information was last refreshed.</p>
+     */
+    inline DescribeInstancesHealthResult& WithRefreshedAt(const Aws::Utils::DateTime& value) { SetRefreshedAt(value); return *this;}
+
+    /**
+     * <p>The date and time the information was last refreshed.</p>
+     */
+    inline DescribeInstancesHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(value); return *this;}
 
     /**
      * <p>The next token.</p>
@@ -154,7 +165,7 @@ namespace Model
 
   private:
     Aws::Vector<SingleInstanceHealth> m_instanceHealthList;
-    double m_refreshedAt;
+    Aws::Utils::DateTime m_refreshedAt;
     Aws::String m_nextToken;
     ResponseMetadata m_responseMetadata;
   };

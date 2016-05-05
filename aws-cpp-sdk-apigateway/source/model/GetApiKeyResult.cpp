@@ -25,16 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetApiKeyResult::GetApiKeyResult() : 
-    m_enabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_enabled(false)
 {
 }
 
 GetApiKeyResult::GetApiKeyResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_enabled(false)
 {
   *this = result;
 }

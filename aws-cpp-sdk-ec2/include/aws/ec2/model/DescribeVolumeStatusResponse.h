@@ -35,6 +35,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeVolumeStatus.</p>
+   */
   class AWS_EC2_API DescribeVolumeStatusResponse
   {
   public:

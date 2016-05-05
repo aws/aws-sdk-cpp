@@ -28,10 +28,7 @@ GetDomainDetailResult::GetDomainDetailResult() :
     m_autoRenew(false),
     m_adminPrivacy(false),
     m_registrantPrivacy(false),
-    m_techPrivacy(false),
-    m_creationDate(0.0),
-    m_updatedDate(0.0),
-    m_expirationDate(0.0)
+    m_techPrivacy(false)
 {
 }
 
@@ -39,10 +36,7 @@ GetDomainDetailResult::GetDomainDetailResult(const AmazonWebServiceResult<JsonVa
     m_autoRenew(false),
     m_adminPrivacy(false),
     m_registrantPrivacy(false),
-    m_techPrivacy(false),
-    m_creationDate(0.0),
-    m_updatedDate(0.0),
-    m_expirationDate(0.0)
+    m_techPrivacy(false)
 {
   *this = result;
 }

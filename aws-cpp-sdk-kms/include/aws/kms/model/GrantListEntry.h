@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/model/GrantConstraints.h>
 #include <aws/kms/model/GrantOperation.h>
@@ -173,17 +174,27 @@ namespace Model
     /**
      * <p>The date and time when the grant was created.</p>
      */
-    inline double GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date and time when the grant was created.</p>
      */
-    inline void SetCreationDate(double value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date and time when the grant was created.</p>
      */
-    inline GrantListEntry& WithCreationDate(double value) { SetCreationDate(value); return *this;}
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+
+    /**
+     * <p>The date and time when the grant was created.</p>
+     */
+    inline GrantListEntry& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date and time when the grant was created.</p>
+     */
+    inline GrantListEntry& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The principal that receives the grant's permissions.</p>
@@ -357,7 +368,7 @@ namespace Model
     bool m_grantIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_creationDate;
+    Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     Aws::String m_granteePrincipal;
     bool m_granteePrincipalHasBeenSet;

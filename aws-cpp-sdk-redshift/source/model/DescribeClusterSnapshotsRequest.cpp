@@ -23,9 +23,7 @@ DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
-    m_startTime(0.0),
     m_startTimeHasBeenSet(false),
-    m_endTime(0.0),
     m_endTimeHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -54,11 +52,11 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
   }
   if(m_startTimeHasBeenSet)
   {
-    ss << "StartTime=" << StringUtils::URLEncode(m_startTime) << "&";
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimeHasBeenSet)
   {
-    ss << "EndTime=" << StringUtils::URLEncode(m_endTime) << "&";
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_maxRecordsHasBeenSet)
   {

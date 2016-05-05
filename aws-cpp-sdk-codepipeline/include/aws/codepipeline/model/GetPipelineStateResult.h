@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/codepipeline/model/StageState.h>
 
 namespace Aws
@@ -142,39 +143,59 @@ namespace Model
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline double GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline void SetCreated(double value) { m_created = value; }
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
-    inline GetPipelineStateResult& WithCreated(double value) { SetCreated(value); return *this;}
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = value; }
+
+    /**
+     * <p>The date and time the pipeline was created, in timestamp format.</p>
+     */
+    inline GetPipelineStateResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>The date and time the pipeline was created, in timestamp format.</p>
+     */
+    inline GetPipelineStateResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline double GetUpdated() const{ return m_updated; }
+    inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline void SetUpdated(double value) { m_updated = value; }
+    inline void SetUpdated(const Aws::Utils::DateTime& value) { m_updated = value; }
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
      */
-    inline GetPipelineStateResult& WithUpdated(double value) { SetUpdated(value); return *this;}
+    inline void SetUpdated(Aws::Utils::DateTime&& value) { m_updated = value; }
+
+    /**
+     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
+     */
+    inline GetPipelineStateResult& WithUpdated(const Aws::Utils::DateTime& value) { SetUpdated(value); return *this;}
+
+    /**
+     * <p>The date and time the pipeline was last updated, in timestamp format.</p>
+     */
+    inline GetPipelineStateResult& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(value); return *this;}
 
   private:
     Aws::String m_pipelineName;
     long m_pipelineVersion;
     Aws::Vector<StageState> m_stageStates;
-    double m_created;
-    double m_updated;
+    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_updated;
   };
 
 } // namespace Model

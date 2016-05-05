@@ -25,6 +25,7 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_stackIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
+    m_layerIdsHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_customJsonHasBeenSet(false)
@@ -55,6 +56,17 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
      instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);
    }
    payload.WithArray("InstanceIds", std::move(instanceIdsJsonList));
+
+  }
+
+  if(m_layerIdsHasBeenSet)
+  {
+   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
+   {
+     layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
+   }
+   payload.WithArray("LayerIds", std::move(layerIdsJsonList));
 
   }
 

@@ -25,16 +25,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateApiKeyResult::UpdateApiKeyResult() : 
-    m_enabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_enabled(false)
 {
 }
 
 UpdateApiKeyResult::UpdateApiKeyResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_enabled(false),
-    m_createdDate(0.0),
-    m_lastUpdatedDate(0.0)
+    m_enabled(false)
 {
   *this = result;
 }

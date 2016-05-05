@@ -18,6 +18,7 @@
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/DeploymentStatus.h>
 #include <aws/codedeploy/model/ErrorInformation.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/codedeploy/model/DeploymentOverview.h>
 #include <aws/codedeploy/model/DeploymentCreator.h>
 
@@ -269,17 +270,27 @@ namespace Model
     /**
      * <p>A timestamp indicating when the deployment was created.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>A timestamp indicating when the deployment was created.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>A timestamp indicating when the deployment was created.</p>
      */
-    inline DeploymentInfo& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>A timestamp indicating when the deployment was created.</p>
+     */
+    inline DeploymentInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the deployment was created.</p>
+     */
+    inline DeploymentInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>A timestamp indicating when the deployment was deployed to the deployment
@@ -287,7 +298,7 @@ namespace Model
      * than the complete time. This is due to differences in the clock settings of
      * back-end servers that participate in the deployment process.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>A timestamp indicating when the deployment was deployed to the deployment
@@ -295,7 +306,7 @@ namespace Model
      * than the complete time. This is due to differences in the clock settings of
      * back-end servers that participate in the deployment process.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>A timestamp indicating when the deployment was deployed to the deployment
@@ -303,22 +314,48 @@ namespace Model
      * than the complete time. This is due to differences in the clock settings of
      * back-end servers that participate in the deployment process.</p>
      */
-    inline DeploymentInfo& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>A timestamp indicating when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * than the complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.</p>
+     */
+    inline DeploymentInfo& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * than the complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.</p>
+     */
+    inline DeploymentInfo& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>A timestamp indicating when the deployment was complete.</p>
      */
-    inline double GetCompleteTime() const{ return m_completeTime; }
+    inline const Aws::Utils::DateTime& GetCompleteTime() const{ return m_completeTime; }
 
     /**
      * <p>A timestamp indicating when the deployment was complete.</p>
      */
-    inline void SetCompleteTime(double value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
+    inline void SetCompleteTime(const Aws::Utils::DateTime& value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
 
     /**
      * <p>A timestamp indicating when the deployment was complete.</p>
      */
-    inline DeploymentInfo& WithCompleteTime(double value) { SetCompleteTime(value); return *this;}
+    inline void SetCompleteTime(Aws::Utils::DateTime&& value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
+
+    /**
+     * <p>A timestamp indicating when the deployment was complete.</p>
+     */
+    inline DeploymentInfo& WithCompleteTime(const Aws::Utils::DateTime& value) { SetCompleteTime(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the deployment was complete.</p>
+     */
+    inline DeploymentInfo& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(value); return *this;}
 
     /**
      * <p>A summary of the deployment status of the instances in the deployment.</p>
@@ -463,11 +500,11 @@ namespace Model
     bool m_statusHasBeenSet;
     ErrorInformation m_errorInformation;
     bool m_errorInformationHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_completeTime;
+    Aws::Utils::DateTime m_completeTime;
     bool m_completeTimeHasBeenSet;
     DeploymentOverview m_deploymentOverview;
     bool m_deploymentOverviewHasBeenSet;

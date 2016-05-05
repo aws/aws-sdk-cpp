@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ModifyHosts.</p>
    */
   class AWS_EC2_API ModifyHostsRequest : public EC2Request
   {

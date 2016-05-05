@@ -14,7 +14,7 @@
 */
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -47,85 +47,61 @@ namespace Model
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline const Aws::String& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
+    inline const Aws::Utils::DateTime& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
 
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline void SetLastIncreaseDateTime(const Aws::String& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
+    inline void SetLastIncreaseDateTime(const Aws::Utils::DateTime& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
 
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline void SetLastIncreaseDateTime(Aws::String&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
+    inline void SetLastIncreaseDateTime(Aws::Utils::DateTime&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
 
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline void SetLastIncreaseDateTime(const char* value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime.assign(value); }
+    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const Aws::Utils::DateTime& value) { SetLastIncreaseDateTime(value); return *this;}
 
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const Aws::String& value) { SetLastIncreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::String&& value) { SetLastIncreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const char* value) { SetLastIncreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(value); return *this;}
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline const Aws::String& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
+    inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline void SetLastDecreaseDateTime(const Aws::String& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
+    inline void SetLastDecreaseDateTime(const Aws::Utils::DateTime& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline void SetLastDecreaseDateTime(Aws::String&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
+    inline void SetLastDecreaseDateTime(Aws::Utils::DateTime&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline void SetLastDecreaseDateTime(const char* value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime.assign(value); }
+    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const Aws::Utils::DateTime& value) { SetLastDecreaseDateTime(value); return *this;}
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const Aws::String& value) { SetLastDecreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::String&& value) { SetLastDecreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const char* value) { SetLastDecreaseDateTime(value); return *this;}
+    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(value); return *this;}
 
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
@@ -197,9 +173,9 @@ namespace Model
     inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
 
   private:
-    Aws::String m_lastIncreaseDateTime;
+    Aws::Utils::DateTime m_lastIncreaseDateTime;
     bool m_lastIncreaseDateTimeHasBeenSet;
-    Aws::String m_lastDecreaseDateTime;
+    Aws::Utils::DateTime m_lastDecreaseDateTime;
     bool m_lastDecreaseDateTimeHasBeenSet;
     long long m_numberOfDecreasesToday;
     bool m_numberOfDecreasesTodayHasBeenSet;

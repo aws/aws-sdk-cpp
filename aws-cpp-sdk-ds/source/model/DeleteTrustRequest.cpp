@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteTrustRequest::DeleteTrustRequest() : 
-    m_trustIdHasBeenSet(false)
+    m_trustIdHasBeenSet(false),
+    m_deleteAssociatedConditionalForwarder(false),
+    m_deleteAssociatedConditionalForwarderHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,12 @@ Aws::String DeleteTrustRequest::SerializePayload() const
   if(m_trustIdHasBeenSet)
   {
    payload.WithString("TrustId", m_trustId);
+
+  }
+
+  if(m_deleteAssociatedConditionalForwarderHasBeenSet)
+  {
+   payload.WithBool("DeleteAssociatedConditionalForwarder", m_deleteAssociatedConditionalForwarder);
 
   }
 

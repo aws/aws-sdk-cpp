@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/RIProductDescription.h>
 #include <aws/ec2/model/ReservedInstanceState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -151,32 +152,52 @@ namespace Model
     /**
      * <p>The date and time the Reserved Instance started.</p>
      */
-    inline double GetStart() const{ return m_start; }
+    inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
     /**
      * <p>The date and time the Reserved Instance started.</p>
      */
-    inline void SetStart(double value) { m_startHasBeenSet = true; m_start = value; }
+    inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
      * <p>The date and time the Reserved Instance started.</p>
      */
-    inline ReservedInstances& WithStart(double value) { SetStart(value); return *this;}
+    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = value; }
+
+    /**
+     * <p>The date and time the Reserved Instance started.</p>
+     */
+    inline ReservedInstances& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
+
+    /**
+     * <p>The date and time the Reserved Instance started.</p>
+     */
+    inline ReservedInstances& WithStart(Aws::Utils::DateTime&& value) { SetStart(value); return *this;}
 
     /**
      * <p>The time when the Reserved Instance expires.</p>
      */
-    inline double GetEnd() const{ return m_end; }
+    inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
 
     /**
      * <p>The time when the Reserved Instance expires.</p>
      */
-    inline void SetEnd(double value) { m_endHasBeenSet = true; m_end = value; }
+    inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
      * <p>The time when the Reserved Instance expires.</p>
      */
-    inline ReservedInstances& WithEnd(double value) { SetEnd(value); return *this;}
+    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = value; }
+
+    /**
+     * <p>The time when the Reserved Instance expires.</p>
+     */
+    inline ReservedInstances& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
+
+    /**
+     * <p>The time when the Reserved Instance expires.</p>
+     */
+    inline ReservedInstances& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(value); return *this;}
 
     /**
      * <p>The duration of the Reserved Instance, in seconds.</p>
@@ -450,9 +471,9 @@ namespace Model
     bool m_instanceTypeHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    double m_start;
+    Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
-    double m_end;
+    Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
     long long m_duration;
     bool m_durationHasBeenSet;

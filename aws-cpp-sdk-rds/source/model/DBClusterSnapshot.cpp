@@ -27,7 +27,6 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_availabilityZonesHasBeenSet(false),
     m_dBClusterSnapshotIdentifierHasBeenSet(false),
     m_dBClusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_allocatedStorage(0),
@@ -36,7 +35,6 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_port(0),
     m_portHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -54,7 +52,6 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_availabilityZonesHasBeenSet(false),
     m_dBClusterSnapshotIdentifierHasBeenSet(false),
     m_dBClusterIdentifierHasBeenSet(false),
-    m_snapshotCreateTime(0.0),
     m_snapshotCreateTimeHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_allocatedStorage(0),
@@ -63,7 +60,6 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_port(0),
     m_portHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_masterUsernameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -111,7 +107,7 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str());
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
@@ -147,7 +143,7 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
-      m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
+      m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
@@ -217,7 +213,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -241,7 +237,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {
@@ -293,7 +289,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_snapshotCreateTimeHasBeenSet)
   {
-        oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime) << "&";
+      oStream << location << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -317,7 +313,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_masterUsernameHasBeenSet)
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for EnableVgwRoutePropagation.</p>
    */
   class AWS_EC2_API EnableVgwRoutePropagationRequest : public EC2Request
   {

@@ -24,15 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBatchPredictionResult::GetBatchPredictionResult() : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0)
+GetBatchPredictionResult::GetBatchPredictionResult()
 {
 }
 
-GetBatchPredictionResult::GetBatchPredictionResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0)
+GetBatchPredictionResult::GetBatchPredictionResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }

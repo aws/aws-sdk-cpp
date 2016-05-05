@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/RequestPayer.h>
 
 namespace Aws
@@ -142,17 +143,27 @@ namespace Model
     /**
      * Copies the object if it has been modified since the specified time.
      */
-    inline double GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
+    inline const Aws::Utils::DateTime& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
 
     /**
      * Copies the object if it has been modified since the specified time.
      */
-    inline void SetCopySourceIfModifiedSince(double value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
+    inline void SetCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /**
      * Copies the object if it has been modified since the specified time.
      */
-    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(double value) { SetCopySourceIfModifiedSince(value); return *this;}
+    inline void SetCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
+
+    /**
+     * Copies the object if it has been modified since the specified time.
+     */
+    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfModifiedSince(value); return *this;}
+
+    /**
+     * Copies the object if it has been modified since the specified time.
+     */
+    inline UploadPartCopyRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(value); return *this;}
 
     /**
      * Copies the object if its entity tag (ETag) is different than the specified ETag.
@@ -192,17 +203,27 @@ namespace Model
     /**
      * Copies the object if it hasn't been modified since the specified time.
      */
-    inline double GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
+    inline const Aws::Utils::DateTime& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
 
     /**
      * Copies the object if it hasn't been modified since the specified time.
      */
-    inline void SetCopySourceIfUnmodifiedSince(double value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
+    inline void SetCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /**
      * Copies the object if it hasn't been modified since the specified time.
      */
-    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(double value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
+    inline void SetCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
+
+    /**
+     * Copies the object if it hasn't been modified since the specified time.
+     */
+    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
+
+    /**
+     * Copies the object if it hasn't been modified since the specified time.
+     */
+    inline UploadPartCopyRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
 
     /**
      * The range of bytes to copy from the source object. The range value must use the
@@ -650,11 +671,11 @@ namespace Model
     bool m_copySourceHasBeenSet;
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
-    double m_copySourceIfModifiedSince;
+    Aws::Utils::DateTime m_copySourceIfModifiedSince;
     bool m_copySourceIfModifiedSinceHasBeenSet;
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet;
-    double m_copySourceIfUnmodifiedSince;
+    Aws::Utils::DateTime m_copySourceIfUnmodifiedSince;
     bool m_copySourceIfUnmodifiedSinceHasBeenSet;
     Aws::String m_copySourceRange;
     bool m_copySourceRangeHasBeenSet;

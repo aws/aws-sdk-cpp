@@ -28,12 +28,10 @@ Trust::Trust() :
     m_trustTypeHasBeenSet(false),
     m_trustDirectionHasBeenSet(false),
     m_trustStateHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTime(0.0),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTime(0.0),
-    m_stateLastUpdatedDateTimeHasBeenSet(false)
+    m_stateLastUpdatedDateTimeHasBeenSet(false),
+    m_trustStateReasonHasBeenSet(false)
 {
 }
 
@@ -44,12 +42,10 @@ Trust::Trust(const JsonValue& jsonValue) :
     m_trustTypeHasBeenSet(false),
     m_trustDirectionHasBeenSet(false),
     m_trustStateHasBeenSet(false),
-    m_createdDateTime(0.0),
     m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTime(0.0),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTime(0.0),
-    m_stateLastUpdatedDateTimeHasBeenSet(false)
+    m_stateLastUpdatedDateTimeHasBeenSet(false),
+    m_trustStateReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +115,13 @@ Trust& Trust::operator =(const JsonValue& jsonValue)
     m_stateLastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrustStateReason"))
+  {
+    m_trustStateReason = jsonValue.GetString("TrustStateReason");
+
+    m_trustStateReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,19 +164,22 @@ JsonValue Trust::Jsonize() const
 
   if(m_createdDateTimeHasBeenSet)
   {
-   payload.WithDouble("CreatedDateTime", m_createdDateTime);
-
+   payload.WithDouble("CreatedDateTime", m_createdDateTime.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedDateTime", m_lastUpdatedDateTime);
-
+   payload.WithDouble("LastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
   if(m_stateLastUpdatedDateTimeHasBeenSet)
   {
-   payload.WithDouble("StateLastUpdatedDateTime", m_stateLastUpdatedDateTime);
+   payload.WithDouble("StateLastUpdatedDateTime", m_stateLastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_trustStateReasonHasBeenSet)
+  {
+   payload.WithString("TrustStateReason", m_trustStateReason);
 
   }
 

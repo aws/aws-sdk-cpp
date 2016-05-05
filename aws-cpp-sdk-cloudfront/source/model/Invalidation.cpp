@@ -26,7 +26,6 @@ using namespace Aws::Utils;
 Invalidation::Invalidation() : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_invalidationBatchHasBeenSet(false)
 {
@@ -35,7 +34,6 @@ Invalidation::Invalidation() :
 Invalidation::Invalidation(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTime(0.0),
     m_createTimeHasBeenSet(false),
     m_invalidationBatchHasBeenSet(false)
 {
@@ -63,7 +61,7 @@ Invalidation& Invalidation::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = StringUtils::ConvertToDouble(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str());
+      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode invalidationBatchNode = resultNode.FirstChild("InvalidationBatch");
@@ -94,10 +92,8 @@ void Invalidation::AddToNode(XmlNode& parentNode) const
 
   if(m_createTimeHasBeenSet)
   {
-   XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
-  ss << m_createTime;
-   createTimeNode.SetText(ss.str());
-  ss.str("");
+     XmlNode createTimeNode = parentNode.CreateChildElement("CreateTime");
+     createTimeNode.SetText(m_createTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_invalidationBatchHasBeenSet)

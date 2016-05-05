@@ -25,8 +25,8 @@ RestApi::RestApi() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_warningsHasBeenSet(false)
 {
 }
 
@@ -34,8 +34,8 @@ RestApi::RestApi(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_warningsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +70,16 @@ RestApi& RestApi::operator =(const JsonValue& jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("warnings"))
+  {
+    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
+    }
+    m_warningsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,7 +107,17 @@ JsonValue RestApi::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("createdDate", m_createdDate);
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_warningsHasBeenSet)
+  {
+   Array<JsonValue> warningsJsonList(m_warnings.size());
+   for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+   {
+     warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
+   }
+   payload.WithArray("warnings", std::move(warningsJsonList));
 
   }
 

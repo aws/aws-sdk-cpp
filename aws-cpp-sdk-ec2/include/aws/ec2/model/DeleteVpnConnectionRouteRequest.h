@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteVpnConnectionRoute.</p>
    */
   class AWS_EC2_API DeleteVpnConnectionRouteRequest : public EC2Request
   {

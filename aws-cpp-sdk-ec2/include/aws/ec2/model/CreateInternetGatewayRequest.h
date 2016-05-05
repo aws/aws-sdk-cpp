@@ -24,6 +24,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateInternetGateway.</p>
    */
   class AWS_EC2_API CreateInternetGatewayRequest : public EC2Request
   {

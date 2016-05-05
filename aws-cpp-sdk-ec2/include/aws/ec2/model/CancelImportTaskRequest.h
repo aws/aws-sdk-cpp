@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CancelImportTask.</p>
    */
   class AWS_EC2_API CancelImportTaskRequest : public EC2Request
   {

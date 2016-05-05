@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 Upload::Upload() : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -38,7 +37,6 @@ Upload::Upload() :
 Upload::Upload(const JsonValue& jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_created(0.0),
     m_createdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -136,8 +134,7 @@ JsonValue Upload::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithDouble("created", m_created);
-
+   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
   if(m_typeHasBeenSet)

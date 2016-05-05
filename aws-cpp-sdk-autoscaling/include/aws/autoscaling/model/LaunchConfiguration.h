@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/InstanceMonitoring.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/BlockDeviceMapping.h>
 
 namespace Aws
@@ -662,17 +663,27 @@ namespace Model
     /**
      * <p>The creation date and time for the launch configuration.</p>
      */
-    inline double GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
      * <p>The creation date and time for the launch configuration.</p>
      */
-    inline void SetCreatedTime(double value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
      * <p>The creation date and time for the launch configuration.</p>
      */
-    inline LaunchConfiguration& WithCreatedTime(double value) { SetCreatedTime(value); return *this;}
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>The creation date and time for the launch configuration.</p>
+     */
+    inline LaunchConfiguration& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The creation date and time for the launch configuration.</p>
+     */
+    inline LaunchConfiguration& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
 
     /**
      * <p>Controls whether the instance is optimized for EBS I/O (<code>true</code>) or
@@ -790,7 +801,7 @@ namespace Model
     bool m_spotPriceHasBeenSet;
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
-    double m_createdTime;
+    Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;

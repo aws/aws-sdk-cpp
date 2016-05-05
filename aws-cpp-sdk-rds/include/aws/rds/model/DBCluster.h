@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -417,19 +418,31 @@ namespace Model
      * <p>Specifies the earliest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline double GetEarliestRestorableTime() const{ return m_earliestRestorableTime; }
+    inline const Aws::Utils::DateTime& GetEarliestRestorableTime() const{ return m_earliestRestorableTime; }
 
     /**
      * <p>Specifies the earliest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline void SetEarliestRestorableTime(double value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
+    inline void SetEarliestRestorableTime(const Aws::Utils::DateTime& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
 
     /**
      * <p>Specifies the earliest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline DBCluster& WithEarliestRestorableTime(double value) { SetEarliestRestorableTime(value); return *this;}
+    inline void SetEarliestRestorableTime(Aws::Utils::DateTime&& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
+
+    /**
+     * <p>Specifies the earliest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBCluster& WithEarliestRestorableTime(const Aws::Utils::DateTime& value) { SetEarliestRestorableTime(value); return *this;}
+
+    /**
+     * <p>Specifies the earliest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBCluster& WithEarliestRestorableTime(Aws::Utils::DateTime&& value) { SetEarliestRestorableTime(value); return *this;}
 
     /**
      * <p>Specifies the connection endpoint for the primary instance of the DB cluster.
@@ -547,19 +560,31 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline double GetLatestRestorableTime() const{ return m_latestRestorableTime; }
+    inline const Aws::Utils::DateTime& GetLatestRestorableTime() const{ return m_latestRestorableTime; }
 
     /**
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline void SetLatestRestorableTime(double value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
+    inline void SetLatestRestorableTime(const Aws::Utils::DateTime& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
 
     /**
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore. </p>
      */
-    inline DBCluster& WithLatestRestorableTime(double value) { SetLatestRestorableTime(value); return *this;}
+    inline void SetLatestRestorableTime(Aws::Utils::DateTime&& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
+
+    /**
+     * <p>Specifies the latest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBCluster& WithLatestRestorableTime(const Aws::Utils::DateTime& value) { SetLatestRestorableTime(value); return *this;}
+
+    /**
+     * <p>Specifies the latest time to which a database can be restored with
+     * point-in-time restore. </p>
+     */
+    inline DBCluster& WithLatestRestorableTime(Aws::Utils::DateTime&& value) { SetLatestRestorableTime(value); return *this;}
 
     /**
      * <p>Specifies the port that the database engine is listening on. </p>
@@ -976,7 +1001,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet;
-    double m_earliestRestorableTime;
+    Aws::Utils::DateTime m_earliestRestorableTime;
     bool m_earliestRestorableTimeHasBeenSet;
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
@@ -984,7 +1009,7 @@ namespace Model
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
-    double m_latestRestorableTime;
+    Aws::Utils::DateTime m_latestRestorableTime;
     bool m_latestRestorableTimeHasBeenSet;
     long m_port;
     bool m_portHasBeenSet;

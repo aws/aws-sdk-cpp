@@ -26,9 +26,7 @@ DataSource::DataSource() :
     m_dataLocationS3HasBeenSet(false),
     m_dataRearrangementHasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_dataSizeInBytes(0),
     m_dataSizeInBytesHasBeenSet(false),
@@ -50,9 +48,7 @@ DataSource::DataSource(const JsonValue& jsonValue) :
     m_dataLocationS3HasBeenSet(false),
     m_dataRearrangementHasBeenSet(false),
     m_createdByIamUserHasBeenSet(false),
-    m_createdAt(0.0),
     m_createdAtHasBeenSet(false),
-    m_lastUpdatedAt(0.0),
     m_lastUpdatedAtHasBeenSet(false),
     m_dataSizeInBytes(0),
     m_dataSizeInBytesHasBeenSet(false),
@@ -210,14 +206,12 @@ JsonValue DataSource::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("CreatedAt", m_createdAt);
-
+   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_lastUpdatedAtHasBeenSet)
   {
-   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt);
-
+   payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   if(m_dataSizeInBytesHasBeenSet)

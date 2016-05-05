@@ -34,6 +34,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeCustomerGateways.</p>
+   */
   class AWS_EC2_API DescribeCustomerGatewaysResponse
   {
   public:

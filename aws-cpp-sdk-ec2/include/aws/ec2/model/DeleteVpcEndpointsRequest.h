@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteVpcEndpoints.</p>
    */
   class AWS_EC2_API DeleteVpcEndpointsRequest : public EC2Request
   {

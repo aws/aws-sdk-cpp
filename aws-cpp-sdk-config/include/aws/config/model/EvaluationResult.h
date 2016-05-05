@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/EvaluationResultIdentifier.h>
 #include <aws/config/model/ComplianceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -123,32 +124,52 @@ namespace Model
     /**
      * <p>The time when AWS Config recorded the evaluation result.</p>
      */
-    inline double GetResultRecordedTime() const{ return m_resultRecordedTime; }
+    inline const Aws::Utils::DateTime& GetResultRecordedTime() const{ return m_resultRecordedTime; }
 
     /**
      * <p>The time when AWS Config recorded the evaluation result.</p>
      */
-    inline void SetResultRecordedTime(double value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
+    inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
      * <p>The time when AWS Config recorded the evaluation result.</p>
      */
-    inline EvaluationResult& WithResultRecordedTime(double value) { SetResultRecordedTime(value); return *this;}
+    inline void SetResultRecordedTime(Aws::Utils::DateTime&& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
+
+    /**
+     * <p>The time when AWS Config recorded the evaluation result.</p>
+     */
+    inline EvaluationResult& WithResultRecordedTime(const Aws::Utils::DateTime& value) { SetResultRecordedTime(value); return *this;}
+
+    /**
+     * <p>The time when AWS Config recorded the evaluation result.</p>
+     */
+    inline EvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(value); return *this;}
 
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
-    inline double GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
+    inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
 
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
-    inline void SetConfigRuleInvokedTime(double value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
+    inline void SetConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
 
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
-    inline EvaluationResult& WithConfigRuleInvokedTime(double value) { SetConfigRuleInvokedTime(value); return *this;}
+    inline void SetConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { m_configRuleInvokedTimeHasBeenSet = true; m_configRuleInvokedTime = value; }
+
+    /**
+     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     */
+    inline EvaluationResult& WithConfigRuleInvokedTime(const Aws::Utils::DateTime& value) { SetConfigRuleInvokedTime(value); return *this;}
+
+    /**
+     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     */
+    inline EvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(value); return *this;}
 
     /**
      * <p>Supplementary information about how the evaluation determined the
@@ -246,9 +267,9 @@ namespace Model
     bool m_evaluationResultIdentifierHasBeenSet;
     ComplianceType m_complianceType;
     bool m_complianceTypeHasBeenSet;
-    double m_resultRecordedTime;
+    Aws::Utils::DateTime m_resultRecordedTime;
     bool m_resultRecordedTimeHasBeenSet;
-    double m_configRuleInvokedTime;
+    Aws::Utils::DateTime m_configRuleInvokedTime;
     bool m_configRuleInvokedTimeHasBeenSet;
     Aws::String m_annotation;
     bool m_annotationHasBeenSet;

@@ -77,6 +77,11 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
 
     SetOpenHandle(WinHttpOpen(openString.c_str(), winhttpFlags, proxyString.c_str(), nullptr, 0));
 
+    if (!WinHttpSetTimeouts(GetOpenHandle(), config.connectTimeoutMs, config.connectTimeoutMs, -1, config.requestTimeoutMs))
+    {
+        AWS_LOGSTREAM_WARN(GetLogTag(), "Error setting timeouts " << GetLastError());
+    }
+
     //add proxy auth credentials to everything using this handle.
     if (isUsingProxy)
     {

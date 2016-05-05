@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DisassociateAddress.</p>
    */
   class AWS_EC2_API DisassociateAddressRequest : public EC2Request
   {

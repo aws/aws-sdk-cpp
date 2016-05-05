@@ -31,7 +31,6 @@ Cluster::Cluster() :
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
@@ -60,7 +59,8 @@ Cluster::Cluster() :
     m_elasticIpStatusHasBeenSet(false),
     m_clusterRevisionNumberHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_iamRolesHasBeenSet(false)
 {
 }
 
@@ -72,7 +72,6 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_masterUsernameHasBeenSet(false),
     m_dBNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_clusterCreateTime(0.0),
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
@@ -101,7 +100,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_elasticIpStatusHasBeenSet(false),
     m_clusterRevisionNumberHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_iamRolesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -157,7 +157,7 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     XmlNode clusterCreateTimeNode = resultNode.FirstChild("ClusterCreateTime");
     if(!clusterCreateTimeNode.IsNull())
     {
-      m_clusterCreateTime = StringUtils::ConvertToDouble(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str());
+      m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
@@ -328,6 +328,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode iamRolesNode = resultNode.FirstChild("IamRoles");
+    if(!iamRolesNode.IsNull())
+    {
+      XmlNode iamRolesMember = iamRolesNode.FirstChild("ClusterIamRole");
+      while(!iamRolesMember.IsNull())
+      {
+        m_iamRoles.push_back(iamRolesMember);
+        iamRolesMember = iamRolesMember.NextNode("ClusterIamRole");
+      }
+
+      m_iamRolesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -367,7 +379,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
@@ -501,6 +513,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+  if(m_iamRolesHasBeenSet)
+  {
+      unsigned iamRolesIdx = 1;
+      for(auto& item : m_iamRoles)
+      {
+        Aws::StringStream iamRolesSs;
+        iamRolesSs << location << index << locationValue << ".ClusterIamRole." << iamRolesIdx++;
+        item.OutputToStream(oStream, iamRolesSs.str().c_str());
+      }
+  }
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -537,7 +559,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_clusterCreateTimeHasBeenSet)
   {
-        oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime) << "&";
+      oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
@@ -670,5 +692,15 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_iamRolesHasBeenSet)
+  {
+      unsigned iamRolesIdx = 1;
+      for(auto& item : m_iamRoles)
+      {
+        Aws::StringStream iamRolesSs;
+        iamRolesSs << location <<  ".ClusterIamRole." << iamRolesIdx++;
+        item.OutputToStream(oStream, iamRolesSs.str().c_str());
+      }
   }
 }

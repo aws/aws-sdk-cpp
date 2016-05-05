@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ImportInstance.</p>
    */
   class AWS_EC2_API ImportInstanceRequest : public EC2Request
   {

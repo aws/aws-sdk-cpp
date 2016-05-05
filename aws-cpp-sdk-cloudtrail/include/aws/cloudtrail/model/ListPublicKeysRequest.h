@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -38,44 +39,72 @@ namespace Model
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
-    inline ListPublicKeysRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>Optionally specifies, in UTC, the start of the time range to look up public
+     * keys for CloudTrail digest files. If not specified, the current time is used,
+     * and the current public key is returned.</p>
+     */
+    inline ListPublicKeysRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>Optionally specifies, in UTC, the start of the time range to look up public
+     * keys for CloudTrail digest files. If not specified, the current time is used,
+     * and the current public key is returned.</p>
+     */
+    inline ListPublicKeysRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
-    inline ListPublicKeysRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p>Optionally specifies, in UTC, the end of the time range to look up public
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
+     */
+    inline ListPublicKeysRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>Optionally specifies, in UTC, the end of the time range to look up public
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
+     */
+    inline ListPublicKeysRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Reserved for future use.</p>
@@ -113,9 +142,9 @@ namespace Model
     inline ListPublicKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

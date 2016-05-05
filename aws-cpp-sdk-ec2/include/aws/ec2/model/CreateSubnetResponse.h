@@ -33,6 +33,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of CreateSubnet.</p>
+   */
   class AWS_EC2_API CreateSubnetResponse
   {
   public:

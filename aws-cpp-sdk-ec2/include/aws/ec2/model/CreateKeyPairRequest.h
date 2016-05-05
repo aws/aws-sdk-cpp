@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateKeyPair.</p>
    */
   class AWS_EC2_API CreateKeyPairRequest : public EC2Request
   {

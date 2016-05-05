@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeSubnets.</p>
    */
   class AWS_EC2_API DescribeSubnetsRequest : public EC2Request
   {

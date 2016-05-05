@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Object representing a repository.</p>
+   * <p>An object representing a repository.</p>
    */
   class AWS_ECR_API Repository
   {
@@ -181,6 +181,48 @@ namespace Model
      */
     inline Repository& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline const Aws::String& GetRepositoryUri() const{ return m_repositoryUri; }
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline void SetRepositoryUri(const Aws::String& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = value; }
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline void SetRepositoryUri(Aws::String&& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = value; }
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline void SetRepositoryUri(const char* value) { m_repositoryUriHasBeenSet = true; m_repositoryUri.assign(value); }
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline Repository& WithRepositoryUri(const Aws::String& value) { SetRepositoryUri(value); return *this;}
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline Repository& WithRepositoryUri(Aws::String&& value) { SetRepositoryUri(value); return *this;}
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * and <code>pull</code> operations.</p>
+     */
+    inline Repository& WithRepositoryUri(const char* value) { SetRepositoryUri(value); return *this;}
+
   private:
     Aws::String m_repositoryArn;
     bool m_repositoryArnHasBeenSet;
@@ -188,6 +230,8 @@ namespace Model
     bool m_registryIdHasBeenSet;
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+    Aws::String m_repositoryUri;
+    bool m_repositoryUriHasBeenSet;
   };
 
 } // namespace Model

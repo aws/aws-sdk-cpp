@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_ACM_API ResendValidationEmailRequest : public ACMRequest
   {
@@ -36,9 +37,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -47,9 +48,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -58,9 +59,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -69,9 +70,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -80,9 +81,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -91,9 +92,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -102,9 +103,9 @@ namespace Model
 
     /**
      * <p> String that contains the ARN of the requested certificate. The certificate
-     * ARN is generated and returned by <a>RequestCertificate</a> as soon as the
-     * request is made. By default, using this parameter causes email to be sent to all
-     * top-level domains you specified in the certificate request. </p> <p> The ARN
+     * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
+     * the request is made. By default, using this parameter causes email to be sent to
+     * all top-level domains you specified in the certificate request. </p> <p> The ARN
      * must be of the form: </p> <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
@@ -161,11 +162,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline const Aws::String& GetValidationDomain() const{ return m_validationDomain; }
 
@@ -177,11 +178,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline void SetValidationDomain(const Aws::String& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
 
@@ -193,11 +194,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
 
@@ -209,11 +210,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline void SetValidationDomain(const char* value) { m_validationDomainHasBeenSet = true; m_validationDomain.assign(value); }
 
@@ -225,11 +226,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline ResendValidationEmailRequest& WithValidationDomain(const Aws::String& value) { SetValidationDomain(value); return *this;}
 
@@ -241,11 +242,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline ResendValidationEmailRequest& WithValidationDomain(Aws::String&& value) { SetValidationDomain(value); return *this;}
 
@@ -257,11 +258,11 @@ namespace Model
      * <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of
      * <code>subdomain.example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following five
-     * addresses: <ul> <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li> </ul> </p>
+     * addresses: <ul> <li><p>admin@subdomain.example.com</p></li>
+     * <li><p>administrator@subdomain.example.com</p></li>
+     * <li><p>hostmaster@subdomain.example.com</p></li>
+     * <li><p>postmaster@subdomain.example.com</p></li>
+     * <li><p>webmaster@subdomain.example.com</p></li> </ul> </p>
      */
     inline ResendValidationEmailRequest& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
 

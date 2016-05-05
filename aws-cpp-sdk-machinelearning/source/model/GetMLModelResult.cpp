@@ -25,20 +25,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetMLModelResult::GetMLModelResult() : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0),
     m_sizeInBytes(0),
-    m_scoreThreshold(0.0),
-    m_scoreThresholdLastUpdatedAt(0.0)
+    m_scoreThreshold(0.0)
 {
 }
 
 GetMLModelResult::GetMLModelResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdAt(0.0),
-    m_lastUpdatedAt(0.0),
     m_sizeInBytes(0),
-    m_scoreThreshold(0.0),
-    m_scoreThresholdLastUpdatedAt(0.0)
+    m_scoreThreshold(0.0)
 {
   *this = result;
 }

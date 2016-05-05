@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/devicefarm/model/UploadType.h>
 #include <aws/devicefarm/model/UploadStatus.h>
 
@@ -117,17 +118,27 @@ namespace Model
     /**
      * <p>When the upload was created.</p>
      */
-    inline double GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
      * <p>When the upload was created.</p>
      */
-    inline void SetCreated(double value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
      * <p>When the upload was created.</p>
      */
-    inline Upload& WithCreated(double value) { SetCreated(value); return *this;}
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>When the upload was created.</p>
+     */
+    inline Upload& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>When the upload was created.</p>
+     */
+    inline Upload& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
 
     /**
      * <p>The upload's type.</p> <p>Must be one of the following values:</p> <ul>
@@ -445,7 +456,7 @@ namespace Model
     bool m_arnHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    double m_created;
+    Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
     UploadType m_type;
     bool m_typeHasBeenSet;

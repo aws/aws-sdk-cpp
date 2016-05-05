@@ -16,6 +16,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/acm/model/KeyAlgorithm.h>
@@ -388,70 +389,90 @@ namespace Model
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline double GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline void SetCreatedAt(double value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p> Time at which the certificate was requested. </p>
      */
-    inline CertificateDetail& WithCreatedAt(double value) { SetCreatedAt(value); return *this;}
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p> Time at which the certificate was requested. </p>
+     */
+    inline CertificateDetail& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p> Time at which the certificate was requested. </p>
+     */
+    inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline double GetIssuedAt() const{ return m_issuedAt; }
+    inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline void SetIssuedAt(double value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
+    inline void SetIssuedAt(const Aws::Utils::DateTime& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
      * <p> Time at which the certificate was issued. </p>
      */
-    inline CertificateDetail& WithIssuedAt(double value) { SetIssuedAt(value); return *this;}
+    inline void SetIssuedAt(Aws::Utils::DateTime&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
+
+    /**
+     * <p> Time at which the certificate was issued. </p>
+     */
+    inline CertificateDetail& WithIssuedAt(const Aws::Utils::DateTime& value) { SetIssuedAt(value); return *this;}
+
+    /**
+     * <p> Time at which the certificate was issued. </p>
+     */
+    inline CertificateDetail& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(value); return *this;}
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline CertificateDetail& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p> A <code>CertificateStatus</code> enumeration value that can contain one of
-     * the following: <ul> <li>PENDING_VALIDATION</li> <li>ISSUED</li>
-     * <li>INACTIVE</li> <li>EXPIRED</li> <li>REVOKED</li> <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li> </ul> </p>
+     * the following: <ul> <li><p>PENDING_VALIDATION</p></li> <li><p>ISSUED</p></li>
+     * <li><p>INACTIVE</p></li> <li><p>EXPIRED</p></li> <li><p>REVOKED</p></li>
+     * <li><p>FAILED</p></li> <li><p>VALIDATION_TIMED_OUT</p></li> </ul> </p>
      */
     inline CertificateDetail& WithStatus(CertificateStatus&& value) { SetStatus(value); return *this;}
 
@@ -459,104 +480,141 @@ namespace Model
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline double GetRevokedAt() const{ return m_revokedAt; }
+    inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
 
     /**
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline void SetRevokedAt(double value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
+    inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
 
     /**
      * <p> The time, if any, at which the certificate was revoked. This value exists
      * only if the certificate has been revoked. </p>
      */
-    inline CertificateDetail& WithRevokedAt(double value) { SetRevokedAt(value); return *this;}
+    inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
+
+    /**
+     * <p> The time, if any, at which the certificate was revoked. This value exists
+     * only if the certificate has been revoked. </p>
+     */
+    inline CertificateDetail& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
+
+    /**
+     * <p> The time, if any, at which the certificate was revoked. This value exists
+     * only if the certificate has been revoked. </p>
+     */
+    inline CertificateDetail& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(value); return *this;}
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline const RevocationReason& GetRevocationReason() const{ return m_revocationReason; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline void SetRevocationReason(const RevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline void SetRevocationReason(RevocationReason&& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline CertificateDetail& WithRevocationReason(const RevocationReason& value) { SetRevocationReason(value); return *this;}
 
     /**
      * <p> A <code>RevocationReason</code> enumeration value that indicates why the
      * certificate was revoked. This value exists only if the certificate has been
-     * revoked. This can be one of the following vales: <ul> <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li> <li>CA_COMPROMISE</li> <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li> <li>CESSATION_OF_OPERATION</li> <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li> <li>PRIVILEGE_WITHDRAWN</li> <li>A_A_COMPROMISE</li>
-     * </ul> </p>
+     * revoked. This can be one of the following vales: <ul>
+     * <li><p>UNSPECIFIED</p></li> <li><p>KEY_COMPROMISE</p></li>
+     * <li><p>CA_COMPROMISE</p></li> <li><p>AFFILIATION_CHANGED</p></li>
+     * <li><p>SUPERCEDED</p></li> <li><p>CESSATION_OF_OPERATION</p></li>
+     * <li><p>CERTIFICATE_HOLD</p></li> <li><p>REMOVE_FROM_CRL</p></li>
+     * <li><p>PRIVILEGE_WITHDRAWN</p></li> <li><p>A_A_COMPROMISE</p></li> </ul> </p>
      */
     inline CertificateDetail& WithRevocationReason(RevocationReason&& value) { SetRevocationReason(value); return *this;}
 
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline double GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline void SetNotBefore(double value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
      * <p> Time before which the certificate is not valid. </p>
      */
-    inline CertificateDetail& WithNotBefore(double value) { SetNotBefore(value); return *this;}
+    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
+
+    /**
+     * <p> Time before which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
+
+    /**
+     * <p> Time before which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(value); return *this;}
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline double GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline void SetNotAfter(double value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
      * <p> Time after which the certificate is not valid. </p>
      */
-    inline CertificateDetail& WithNotAfter(double value) { SetNotAfter(value); return *this;}
+    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
+
+    /**
+     * <p> Time after which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
+
+    /**
+     * <p> Time after which the certificate is not valid. </p>
+     */
+    inline CertificateDetail& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(value); return *this;}
 
     /**
      * <p> Asymmetric algorithm used to generate the public and private key pair.
@@ -693,19 +751,19 @@ namespace Model
     bool m_subjectHasBeenSet;
     Aws::String m_issuer;
     bool m_issuerHasBeenSet;
-    double m_createdAt;
+    Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
-    double m_issuedAt;
+    Aws::Utils::DateTime m_issuedAt;
     bool m_issuedAtHasBeenSet;
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
-    double m_revokedAt;
+    Aws::Utils::DateTime m_revokedAt;
     bool m_revokedAtHasBeenSet;
     RevocationReason m_revocationReason;
     bool m_revocationReasonHasBeenSet;
-    double m_notBefore;
+    Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
-    double m_notAfter;
+    Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
     KeyAlgorithm m_keyAlgorithm;
     bool m_keyAlgorithmHasBeenSet;

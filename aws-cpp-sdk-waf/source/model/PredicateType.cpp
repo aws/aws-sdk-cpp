@@ -23,6 +23,7 @@ static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
 static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
 static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
 static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
+static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
 
 namespace Aws
 {
@@ -53,6 +54,10 @@ namespace Aws
           {
             return PredicateType::SizeConstraint;
           }
+          else if (hashCode == XssMatch_HASH)
+          {
+            return PredicateType::XssMatch;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "SqlInjectionMatch";
           case PredicateType::SizeConstraint:
             return "SizeConstraint";
+          case PredicateType::XssMatch:
+            return "XssMatch";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

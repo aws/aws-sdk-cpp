@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/InstanceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/LifecycleEvent.h>
 
@@ -172,17 +173,27 @@ namespace Model
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
-    inline double GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
-    inline void SetLastUpdatedAt(double value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
-    inline InstanceSummary& WithLastUpdatedAt(double value) { SetLastUpdatedAt(value); return *this;}
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    /**
+     * <p>A timestamp indicating when the instance information was last updated.</p>
+     */
+    inline InstanceSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    /**
+     * <p>A timestamp indicating when the instance information was last updated.</p>
+     */
+    inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -226,7 +237,7 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     InstanceStatus m_status;
     bool m_statusHasBeenSet;
-    double m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet;

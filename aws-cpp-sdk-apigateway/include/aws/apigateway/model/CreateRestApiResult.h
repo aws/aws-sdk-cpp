@@ -15,6 +15,8 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -159,27 +161,66 @@ namespace Model
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline double GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
      * <p>The date when the API was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline void SetCreatedDate(double value) { m_createdDate = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
     /**
      * <p>The date when the API was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
      */
-    inline CreateRestApiResult& WithCreatedDate(double value) { SetCreatedDate(value); return *this;}
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = value; }
+
+    /**
+     * <p>The date when the API was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateRestApiResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date when the API was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
+     * 8601 format</a>.</p>
+     */
+    inline CreateRestApiResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+
+    
+    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
+    
+    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warnings = value; }
+
+    
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warnings = value; }
+
+    
+    inline CreateRestApiResult& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+
+    
+    inline CreateRestApiResult& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+
+    
+    inline CreateRestApiResult& AddWarnings(const Aws::String& value) { m_warnings.push_back(value); return *this; }
+
+    
+    inline CreateRestApiResult& AddWarnings(Aws::String&& value) { m_warnings.push_back(value); return *this; }
+
+    
+    inline CreateRestApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
   private:
     Aws::String m_id;
     Aws::String m_name;
     Aws::String m_description;
-    double m_createdDate;
+    Aws::Utils::DateTime m_createdDate;
+    Aws::Vector<Aws::String> m_warnings;
   };
 
 } // namespace Model

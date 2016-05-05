@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AssociationStatusName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -45,17 +46,27 @@ namespace Model
     /**
      * <p>The date when the status changed.</p>
      */
-    inline double GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
 
     /**
      * <p>The date when the status changed.</p>
      */
-    inline void SetDate(double value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
      * <p>The date when the status changed.</p>
      */
-    inline AssociationStatus& WithDate(double value) { SetDate(value); return *this;}
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
+    inline AssociationStatus& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
+    inline AssociationStatus& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
     /**
      * <p>The status.</p>
@@ -153,7 +164,7 @@ namespace Model
     inline AssociationStatus& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
   private:
-    double m_date;
+    Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
     AssociationStatusName m_name;
     bool m_nameHasBeenSet;

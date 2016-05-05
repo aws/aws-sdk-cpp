@@ -35,7 +35,8 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output contains the list of steps.</p>
+   * <p>This output contains the list of steps returned in reverse order. This means
+   * that the last step is the first element in the list.</p>
    */
   class AWS_EMR_API ListStepsResult
   {

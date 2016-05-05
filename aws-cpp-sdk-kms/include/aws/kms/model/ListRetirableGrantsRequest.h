@@ -37,7 +37,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
      * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p><p>This value
+     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
@@ -63,50 +63,50 @@ namespace Model
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListRetirableGrantsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListRetirableGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it to the
-     * value of <code>NextMarker</code> from the response you just received.</p>
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextMarker</code> from the response you just received.</p>
      */
     inline ListRetirableGrantsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -116,7 +116,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -129,7 +129,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -142,7 +142,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -155,7 +155,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -168,7 +168,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -181,7 +181,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>
@@ -194,7 +194,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, federated users, and assumed role users. For
-     * examples of the ARN syntax for specifying a principal, go to <a
+     * examples of the ARN syntax for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>Amazon Web Services General Reference</i>.</p>

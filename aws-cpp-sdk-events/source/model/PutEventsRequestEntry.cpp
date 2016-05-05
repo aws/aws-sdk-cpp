@@ -22,7 +22,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutEventsRequestEntry::PutEventsRequestEntry() : 
-    m_time(0.0),
     m_timeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -32,7 +31,6 @@ PutEventsRequestEntry::PutEventsRequestEntry() :
 }
 
 PutEventsRequestEntry::PutEventsRequestEntry(const JsonValue& jsonValue) : 
-    m_time(0.0),
     m_timeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -91,8 +89,7 @@ JsonValue PutEventsRequestEntry::Jsonize() const
 
   if(m_timeHasBeenSet)
   {
-   payload.WithDouble("Time", m_time);
-
+   payload.WithDouble("Time", m_time.SecondsWithMSPrecision());
   }
 
   if(m_sourceHasBeenSet)

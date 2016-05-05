@@ -23,32 +23,26 @@ using namespace Aws::Utils;
 
 ConfigurationRecorderStatus::ConfigurationRecorderStatus() : 
     m_nameHasBeenSet(false),
-    m_lastStartTime(0.0),
     m_lastStartTimeHasBeenSet(false),
-    m_lastStopTime(0.0),
     m_lastStopTimeHasBeenSet(false),
     m_recording(false),
     m_recordingHasBeenSet(false),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTime(0.0),
     m_lastStatusChangeTimeHasBeenSet(false)
 {
 }
 
 ConfigurationRecorderStatus::ConfigurationRecorderStatus(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
-    m_lastStartTime(0.0),
     m_lastStartTimeHasBeenSet(false),
-    m_lastStopTime(0.0),
     m_lastStopTimeHasBeenSet(false),
     m_recording(false),
     m_recordingHasBeenSet(false),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
-    m_lastStatusChangeTime(0.0),
     m_lastStatusChangeTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -127,14 +121,12 @@ JsonValue ConfigurationRecorderStatus::Jsonize() const
 
   if(m_lastStartTimeHasBeenSet)
   {
-   payload.WithDouble("lastStartTime", m_lastStartTime);
-
+   payload.WithDouble("lastStartTime", m_lastStartTime.SecondsWithMSPrecision());
   }
 
   if(m_lastStopTimeHasBeenSet)
   {
-   payload.WithDouble("lastStopTime", m_lastStopTime);
-
+   payload.WithDouble("lastStopTime", m_lastStopTime.SecondsWithMSPrecision());
   }
 
   if(m_recordingHasBeenSet)
@@ -162,8 +154,7 @@ JsonValue ConfigurationRecorderStatus::Jsonize() const
 
   if(m_lastStatusChangeTimeHasBeenSet)
   {
-   payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime);
-
+   payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime.SecondsWithMSPrecision());
   }
 
   return payload;

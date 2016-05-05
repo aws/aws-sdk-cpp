@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateNetworkAcl.</p>
    */
   class AWS_EC2_API CreateNetworkAclRequest : public EC2Request
   {

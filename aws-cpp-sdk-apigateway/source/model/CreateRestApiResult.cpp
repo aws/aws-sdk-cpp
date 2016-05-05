@@ -24,13 +24,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRestApiResult::CreateRestApiResult() : 
-    m_createdDate(0.0)
+CreateRestApiResult::CreateRestApiResult()
 {
 }
 
-CreateRestApiResult::CreateRestApiResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_createdDate(0.0)
+CreateRestApiResult::CreateRestApiResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
@@ -60,6 +58,15 @@ CreateRestApiResult& CreateRestApiResult::operator =(const AmazonWebServiceResul
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
 
+  }
+
+  if(jsonValue.ValueExists("warnings"))
+  {
+    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
+    }
   }
 
 

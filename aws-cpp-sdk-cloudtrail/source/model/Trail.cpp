@@ -25,7 +25,7 @@ Trail::Trail() :
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
-    m_snsTopicNameHasBeenSet(false),
+    m_snsTopicARNHasBeenSet(false),
     m_includeGlobalServiceEvents(false),
     m_includeGlobalServiceEventsHasBeenSet(false),
     m_isMultiRegionTrail(false),
@@ -44,7 +44,7 @@ Trail::Trail(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
-    m_snsTopicNameHasBeenSet(false),
+    m_snsTopicARNHasBeenSet(false),
     m_includeGlobalServiceEvents(false),
     m_includeGlobalServiceEventsHasBeenSet(false),
     m_isMultiRegionTrail(false),
@@ -83,11 +83,11 @@ Trail& Trail::operator =(const JsonValue& jsonValue)
     m_s3KeyPrefixHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SnsTopicName"))
+  if(jsonValue.ValueExists("SnsTopicARN"))
   {
-    m_snsTopicName = jsonValue.GetString("SnsTopicName");
+    m_snsTopicARN = jsonValue.GetString("SnsTopicARN");
 
-    m_snsTopicNameHasBeenSet = true;
+    m_snsTopicARNHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IncludeGlobalServiceEvents"))
@@ -171,9 +171,9 @@ JsonValue Trail::Jsonize() const
 
   }
 
-  if(m_snsTopicNameHasBeenSet)
+  if(m_snsTopicARNHasBeenSet)
   {
-   payload.WithString("SnsTopicName", m_snsTopicName);
+   payload.WithString("SnsTopicARN", m_snsTopicARN);
 
   }
 

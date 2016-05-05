@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
 
@@ -161,7 +162,7 @@ namespace Model
      * <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul>
      * <p>Example: <code>2009-09-07T23:45:00Z</code></p>
      */
-    inline double GetRestoreTime() const{ return m_restoreTime; }
+    inline const Aws::Utils::DateTime& GetRestoreTime() const{ return m_restoreTime; }
 
     /**
      * <p> The date and time to restore from. </p> <p>Valid Values: Value must be a
@@ -170,7 +171,7 @@ namespace Model
      * <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul>
      * <p>Example: <code>2009-09-07T23:45:00Z</code></p>
      */
-    inline void SetRestoreTime(double value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
+    inline void SetRestoreTime(const Aws::Utils::DateTime& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
 
     /**
      * <p> The date and time to restore from. </p> <p>Valid Values: Value must be a
@@ -179,7 +180,25 @@ namespace Model
      * <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul>
      * <p>Example: <code>2009-09-07T23:45:00Z</code></p>
      */
-    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(double value) { SetRestoreTime(value); return *this;}
+    inline void SetRestoreTime(Aws::Utils::DateTime&& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
+
+    /**
+     * <p> The date and time to restore from. </p> <p>Valid Values: Value must be a
+     * time in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul>
+     * <p>Example: <code>2009-09-07T23:45:00Z</code></p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(const Aws::Utils::DateTime& value) { SetRestoreTime(value); return *this;}
+
+    /**
+     * <p> The date and time to restore from. </p> <p>Valid Values: Value must be a
+     * time in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul>
+     * <li>Must be before the latest restorable time for the DB instance</li>
+     * <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul>
+     * <p>Example: <code>2009-09-07T23:45:00Z</code></p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(Aws::Utils::DateTime&& value) { SetRestoreTime(value); return *this;}
 
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB
@@ -1025,7 +1044,7 @@ namespace Model
     bool m_sourceDBInstanceIdentifierHasBeenSet;
     Aws::String m_targetDBInstanceIdentifier;
     bool m_targetDBInstanceIdentifierHasBeenSet;
-    double m_restoreTime;
+    Aws::Utils::DateTime m_restoreTime;
     bool m_restoreTimeHasBeenSet;
     bool m_useLatestRestorableTime;
     bool m_useLatestRestorableTimeHasBeenSet;

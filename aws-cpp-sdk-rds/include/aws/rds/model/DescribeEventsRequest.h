@@ -17,6 +17,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/SourceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Filter.h>
 
@@ -177,7 +178,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
@@ -185,7 +186,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
@@ -193,7 +194,23 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline DescribeEventsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * <p>Example: 2009-07-08T18:00Z</p>
+     */
+    inline DescribeEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p> The beginning of the time interval to retrieve events for, specified in ISO
+     * 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * <p>Example: 2009-07-08T18:00Z</p>
+     */
+    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
@@ -201,7 +218,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
@@ -209,7 +226,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
@@ -217,7 +234,23 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline DescribeEventsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * <p>Example: 2009-07-08T18:00Z</p>
+     */
+    inline DescribeEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p> The end of the time interval for which to retrieve events, specified in ISO
+     * 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * <p>Example: 2009-07-08T18:00Z</p>
+     */
+    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> The number of minutes to retrieve events for. </p> <p>Default: 60</p>
@@ -395,9 +428,9 @@ namespace Model
     bool m_sourceIdentifierHasBeenSet;
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     long m_duration;
     bool m_durationHasBeenSet;

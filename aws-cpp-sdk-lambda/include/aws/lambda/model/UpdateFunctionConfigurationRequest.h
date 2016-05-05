@@ -17,6 +17,7 @@
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/Runtime.h>
 
 namespace Aws
 {
@@ -309,6 +310,21 @@ namespace Model
     
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
+    
+    inline const Runtime& GetRuntime() const{ return m_runtime; }
+
+    
+    inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    
+    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    
+    inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
+
+    
+    inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
+
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -324,6 +340,8 @@ namespace Model
     bool m_memorySizeHasBeenSet;
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    Runtime m_runtime;
+    bool m_runtimeHasBeenSet;
   };
 
 } // namespace Model

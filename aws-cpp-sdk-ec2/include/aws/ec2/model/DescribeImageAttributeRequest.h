@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeImageAttribute.</p>
    */
   class AWS_EC2_API DescribeImageAttributeRequest : public EC2Request
   {

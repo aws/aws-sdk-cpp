@@ -133,56 +133,56 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(value); return *this;}
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (max size: 16KB) located in an S3 bucket in the same region as the stack.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline SetStackPolicyRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}

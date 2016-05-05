@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
@@ -70,32 +71,52 @@ namespace Model
     /**
      * <p>The starting time of validity of the public key.</p>
      */
-    inline double GetValidityStartTime() const{ return m_validityStartTime; }
+    inline const Aws::Utils::DateTime& GetValidityStartTime() const{ return m_validityStartTime; }
 
     /**
      * <p>The starting time of validity of the public key.</p>
      */
-    inline void SetValidityStartTime(double value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = value; }
+    inline void SetValidityStartTime(const Aws::Utils::DateTime& value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = value; }
 
     /**
      * <p>The starting time of validity of the public key.</p>
      */
-    inline PublicKey& WithValidityStartTime(double value) { SetValidityStartTime(value); return *this;}
+    inline void SetValidityStartTime(Aws::Utils::DateTime&& value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = value; }
+
+    /**
+     * <p>The starting time of validity of the public key.</p>
+     */
+    inline PublicKey& WithValidityStartTime(const Aws::Utils::DateTime& value) { SetValidityStartTime(value); return *this;}
+
+    /**
+     * <p>The starting time of validity of the public key.</p>
+     */
+    inline PublicKey& WithValidityStartTime(Aws::Utils::DateTime&& value) { SetValidityStartTime(value); return *this;}
 
     /**
      * <p>The ending time of validity of the public key.</p>
      */
-    inline double GetValidityEndTime() const{ return m_validityEndTime; }
+    inline const Aws::Utils::DateTime& GetValidityEndTime() const{ return m_validityEndTime; }
 
     /**
      * <p>The ending time of validity of the public key.</p>
      */
-    inline void SetValidityEndTime(double value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = value; }
+    inline void SetValidityEndTime(const Aws::Utils::DateTime& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = value; }
 
     /**
      * <p>The ending time of validity of the public key.</p>
      */
-    inline PublicKey& WithValidityEndTime(double value) { SetValidityEndTime(value); return *this;}
+    inline void SetValidityEndTime(Aws::Utils::DateTime&& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = value; }
+
+    /**
+     * <p>The ending time of validity of the public key.</p>
+     */
+    inline PublicKey& WithValidityEndTime(const Aws::Utils::DateTime& value) { SetValidityEndTime(value); return *this;}
+
+    /**
+     * <p>The ending time of validity of the public key.</p>
+     */
+    inline PublicKey& WithValidityEndTime(Aws::Utils::DateTime&& value) { SetValidityEndTime(value); return *this;}
 
     /**
      * <p>The fingerprint of the public key.</p>
@@ -135,9 +156,9 @@ namespace Model
   private:
     Aws::Utils::ByteBuffer m_value;
     bool m_valueHasBeenSet;
-    double m_validityStartTime;
+    Aws::Utils::DateTime m_validityStartTime;
     bool m_validityStartTimeHasBeenSet;
-    double m_validityEndTime;
+    Aws::Utils::DateTime m_validityEndTime;
     bool m_validityEndTimeHasBeenSet;
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet;

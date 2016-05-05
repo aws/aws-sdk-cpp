@@ -17,6 +17,7 @@
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/model/HistoryItemType.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -96,72 +97,52 @@ namespace Model
     /**
      * <p> The starting date to retrieve alarm history. </p>
      */
-    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p> The starting date to retrieve alarm history. </p>
      */
-    inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p> The starting date to retrieve alarm history. </p>
      */
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p> The starting date to retrieve alarm history. </p>
      */
-    inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
+    inline DescribeAlarmHistoryRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
      * <p> The starting date to retrieve alarm history. </p>
      */
-    inline DescribeAlarmHistoryRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
-
-    /**
-     * <p> The starting date to retrieve alarm history. </p>
-     */
-    inline DescribeAlarmHistoryRequest& WithStartDate(Aws::String&& value) { SetStartDate(value); return *this;}
-
-    /**
-     * <p> The starting date to retrieve alarm history. </p>
-     */
-    inline DescribeAlarmHistoryRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(value); return *this;}
 
     /**
      * <p> The ending date to retrieve alarm history. </p>
      */
-    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p> The ending date to retrieve alarm history. </p>
      */
-    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p> The ending date to retrieve alarm history. </p>
      */
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p> The ending date to retrieve alarm history. </p>
      */
-    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
+    inline DescribeAlarmHistoryRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
 
     /**
      * <p> The ending date to retrieve alarm history. </p>
      */
-    inline DescribeAlarmHistoryRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
-
-    /**
-     * <p> The ending date to retrieve alarm history. </p>
-     */
-    inline DescribeAlarmHistoryRequest& WithEndDate(Aws::String&& value) { SetEndDate(value); return *this;}
-
-    /**
-     * <p> The ending date to retrieve alarm history. </p>
-     */
-    inline DescribeAlarmHistoryRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(value); return *this;}
 
     /**
      * <p> The maximum number of alarm history records to retrieve. </p>
@@ -225,9 +206,9 @@ namespace Model
     bool m_alarmNameHasBeenSet;
     HistoryItemType m_historyItemType;
     bool m_historyItemTypeHasBeenSet;
-    Aws::String m_startDate;
+    Aws::Utils::DateTime m_startDate;
     bool m_startDateHasBeenSet;
-    Aws::String m_endDate;
+    Aws::Utils::DateTime m_endDate;
     bool m_endDateHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;

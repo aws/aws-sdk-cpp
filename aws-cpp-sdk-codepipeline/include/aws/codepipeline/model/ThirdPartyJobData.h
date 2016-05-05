@@ -263,32 +263,37 @@ namespace Model
     inline ThirdPartyJobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data
-     * in the artifact store for the pipeline.</p>
+     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+     * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
+     * optional and might not be present.</p>
      */
     inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data
-     * in the artifact store for the pipeline.</p>
+     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+     * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
+     * optional and might not be present.</p>
      */
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data
-     * in the artifact store for the pipeline.</p>
+     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+     * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
+     * optional and might not be present.</p>
      */
     inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data
-     * in the artifact store for the pipeline.</p>
+     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+     * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
+     * optional and might not be present.</p>
      */
     inline ThirdPartyJobData& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt and decrypt data
-     * in the artifact store for the pipeline.</p>
+     * <p>The encryption key used to encrypt and decrypt data in the artifact store for
+     * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
+     * optional and might not be present.</p>
      */
     inline ThirdPartyJobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(value); return *this;}
 

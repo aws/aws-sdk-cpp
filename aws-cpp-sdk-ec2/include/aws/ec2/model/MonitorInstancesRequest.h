@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for MonitorInstances.</p>
    */
   class AWS_EC2_API MonitorInstancesRequest : public EC2Request
   {

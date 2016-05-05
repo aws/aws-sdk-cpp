@@ -33,6 +33,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of AttachNetworkInterface.</p>
+   */
   class AWS_EC2_API AttachNetworkInterfaceResponse
   {
   public:

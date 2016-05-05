@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Request to create an <a>ApiKey</a> resource.</p>
    */
   class AWS_APIGATEWAY_API CreateApiKeyRequest : public APIGatewayRequest
   {

@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeMovingAddresses.</p>
    */
   class AWS_EC2_API DescribeMovingAddressesRequest : public EC2Request
   {

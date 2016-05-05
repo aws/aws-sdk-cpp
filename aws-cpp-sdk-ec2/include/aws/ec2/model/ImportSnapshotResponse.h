@@ -34,6 +34,9 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output for ImportSnapshot.</p>
+   */
   class AWS_EC2_API ImportSnapshotResponse
   {
   public:

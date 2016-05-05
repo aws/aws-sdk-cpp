@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for StopInstances.</p>
    */
   class AWS_EC2_API StopInstancesRequest : public EC2Request
   {

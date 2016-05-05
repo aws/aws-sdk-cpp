@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -47,43 +48,67 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline double GetEarliestTime() const{ return m_earliestTime; }
+    inline const Aws::Utils::DateTime& GetEarliestTime() const{ return m_earliestTime; }
 
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline void SetEarliestTime(double value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
+    inline void SetEarliestTime(const Aws::Utils::DateTime& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
 
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline SlotDateTimeRangeRequest& WithEarliestTime(double value) { SetEarliestTime(value); return *this;}
+    inline void SetEarliestTime(Aws::Utils::DateTime&& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
+
+    /**
+     * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+     */
+    inline SlotDateTimeRangeRequest& WithEarliestTime(const Aws::Utils::DateTime& value) { SetEarliestTime(value); return *this;}
+
+    /**
+     * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+     */
+    inline SlotDateTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(value); return *this;}
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
      * value must be later than or equal to the earliest date and at most three months
      * in the future.</p>
      */
-    inline double GetLatestTime() const{ return m_latestTime; }
+    inline const Aws::Utils::DateTime& GetLatestTime() const{ return m_latestTime; }
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
      * value must be later than or equal to the earliest date and at most three months
      * in the future.</p>
      */
-    inline void SetLatestTime(double value) { m_latestTimeHasBeenSet = true; m_latestTime = value; }
+    inline void SetLatestTime(const Aws::Utils::DateTime& value) { m_latestTimeHasBeenSet = true; m_latestTime = value; }
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
      * value must be later than or equal to the earliest date and at most three months
      * in the future.</p>
      */
-    inline SlotDateTimeRangeRequest& WithLatestTime(double value) { SetLatestTime(value); return *this;}
+    inline void SetLatestTime(Aws::Utils::DateTime&& value) { m_latestTimeHasBeenSet = true; m_latestTime = value; }
+
+    /**
+     * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
+     * value must be later than or equal to the earliest date and at most three months
+     * in the future.</p>
+     */
+    inline SlotDateTimeRangeRequest& WithLatestTime(const Aws::Utils::DateTime& value) { SetLatestTime(value); return *this;}
+
+    /**
+     * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
+     * value must be later than or equal to the earliest date and at most three months
+     * in the future.</p>
+     */
+    inline SlotDateTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(value); return *this;}
 
   private:
-    double m_earliestTime;
+    Aws::Utils::DateTime m_earliestTime;
     bool m_earliestTimeHasBeenSet;
-    double m_latestTime;
+    Aws::Utils::DateTime m_latestTime;
     bool m_latestTimeHasBeenSet;
   };
 

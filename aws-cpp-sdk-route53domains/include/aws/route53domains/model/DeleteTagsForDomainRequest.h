@@ -40,10 +40,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -51,10 +51,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
@@ -62,10 +62,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
@@ -73,10 +73,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
@@ -84,10 +84,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline DeleteTagsForDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
@@ -95,10 +95,10 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline DeleteTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
@@ -106,66 +106,58 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The
      * domain name can contain only the letters a through z, the numbers 0 through 9,
-     * and hyphen (-). Hyphens are allowed only when theyaposre surrounded by letters,
-     * numbers, or other hyphens. You canapost specify a hyphen at the beginning or end
-     * of a label. To specify an Internationalized Domain Name, you must convert the
-     * name to Punycode.</p> <p>Required: Yes</p>
+     * and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by
+     * letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the
+     * beginning or end of a label. To specify an Internationalized Domain Name, you
+     * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
     inline DeleteTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToDelete() const{ return m_tagsToDelete; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline void SetTagsToDelete(const Aws::Vector<Aws::String>& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = value; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline void SetTagsToDelete(Aws::Vector<Aws::String>&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = value; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline DeleteTagsForDomainRequest& WithTagsToDelete(const Aws::Vector<Aws::String>& value) { SetTagsToDelete(value); return *this;}
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline DeleteTagsForDomainRequest& WithTagsToDelete(Aws::Vector<Aws::String>&& value) { SetTagsToDelete(value); return *this;}
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(const Aws::String& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(Aws::String&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
-     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required:
-     * No</p>'&gt;
+     * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
     inline DeleteTagsForDomainRequest& AddTagsToDelete(const char* value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
 

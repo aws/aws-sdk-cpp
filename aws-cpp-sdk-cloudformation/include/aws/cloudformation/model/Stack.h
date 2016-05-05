@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/StackStatus.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -193,35 +194,57 @@ namespace Model
     /**
      * <p>The time at which the stack was created.</p>
      */
-    inline double GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The time at which the stack was created.</p>
      */
-    inline void SetCreationTime(double value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The time at which the stack was created.</p>
      */
-    inline Stack& WithCreationTime(double value) { SetCreationTime(value); return *this;}
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The time at which the stack was created.</p>
+     */
+    inline Stack& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The time at which the stack was created.</p>
+     */
+    inline Stack& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline double GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline void SetLastUpdatedTime(double value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline Stack& WithLastUpdatedTime(double value) { SetLastUpdatedTime(value); return *this;}
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+
+    /**
+     * <p>The time the stack was last updated. This field will only be returned if the
+     * stack has been updated at least once.</p>
+     */
+    inline Stack& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
+
+    /**
+     * <p>The time the stack was last updated. This field will only be returned if the
+     * stack has been updated at least once.</p>
+     */
+    inline Stack& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
      * <p>Current status of the stack.</p>
@@ -430,44 +453,37 @@ namespace Model
     inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code>s that specify cost allocation information for the
-     * stack.</p>
+     * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline Stack& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -480,9 +496,9 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
-    double m_creationTime;
+    Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
-    double m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
     StackStatus m_stackStatus;
     bool m_stackStatusHasBeenSet;

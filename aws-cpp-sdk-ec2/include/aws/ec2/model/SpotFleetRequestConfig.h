@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/BatchState.h>
 #include <aws/ec2/model/SpotFleetRequestConfigData.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -134,17 +135,27 @@ namespace Model
     /**
      * <p>The creation date and time of the request.</p>
      */
-    inline double GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
      * <p>The creation date and time of the request.</p>
      */
-    inline void SetCreateTime(double value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
      * <p>The creation date and time of the request.</p>
      */
-    inline SpotFleetRequestConfig& WithCreateTime(double value) { SetCreateTime(value); return *this;}
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline SpotFleetRequestConfig& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
+    inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
   private:
     Aws::String m_spotFleetRequestId;
@@ -153,7 +164,7 @@ namespace Model
     bool m_spotFleetRequestStateHasBeenSet;
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
     bool m_spotFleetRequestConfigHasBeenSet;
-    double m_createTime;
+    Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
   };
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 #include <aws/iam/model/User.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -184,17 +185,27 @@ namespace Model
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>
      */
-    inline double GetEnableDate() const{ return m_enableDate; }
+    inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
 
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>
      */
-    inline void SetEnableDate(double value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+    inline void SetEnableDate(const Aws::Utils::DateTime& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
 
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>
      */
-    inline VirtualMFADevice& WithEnableDate(double value) { SetEnableDate(value); return *this;}
+    inline void SetEnableDate(Aws::Utils::DateTime&& value) { m_enableDateHasBeenSet = true; m_enableDate = value; }
+
+    /**
+     * <p>The date and time on which the virtual MFA device was enabled.</p>
+     */
+    inline VirtualMFADevice& WithEnableDate(const Aws::Utils::DateTime& value) { SetEnableDate(value); return *this;}
+
+    /**
+     * <p>The date and time on which the virtual MFA device was enabled.</p>
+     */
+    inline VirtualMFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(value); return *this;}
 
   private:
     Aws::String m_serialNumber;
@@ -205,7 +216,7 @@ namespace Model
     bool m_qRCodePNGHasBeenSet;
     User m_user;
     bool m_userHasBeenSet;
-    double m_enableDate;
+    Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
   };
 

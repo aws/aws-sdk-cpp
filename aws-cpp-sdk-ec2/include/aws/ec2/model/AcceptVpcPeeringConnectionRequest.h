@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AcceptVpcPeeringConnection.</p>
    */
   class AWS_EC2_API AcceptVpcPeeringConnectionRequest : public EC2Request
   {

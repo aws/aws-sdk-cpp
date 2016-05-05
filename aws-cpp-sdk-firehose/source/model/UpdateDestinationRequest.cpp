@@ -26,7 +26,8 @@ UpdateDestinationRequest::UpdateDestinationRequest() :
     m_currentDeliveryStreamVersionIdHasBeenSet(false),
     m_destinationIdHasBeenSet(false),
     m_s3DestinationUpdateHasBeenSet(false),
-    m_redshiftDestinationUpdateHasBeenSet(false)
+    m_redshiftDestinationUpdateHasBeenSet(false),
+    m_elasticsearchDestinationUpdateHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String UpdateDestinationRequest::SerializePayload() const
   if(m_redshiftDestinationUpdateHasBeenSet)
   {
    payload.WithObject("RedshiftDestinationUpdate", m_redshiftDestinationUpdate.Jsonize());
+
+  }
+
+  if(m_elasticsearchDestinationUpdateHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchDestinationUpdate", m_elasticsearchDestinationUpdate.Jsonize());
 
   }
 

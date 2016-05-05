@@ -25,6 +25,7 @@ Authorizer::Authorizer() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
@@ -38,6 +39,7 @@ Authorizer::Authorizer(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
@@ -69,6 +71,13 @@ Authorizer& Authorizer::operator =(const JsonValue& jsonValue)
     m_type = AuthorizerTypeMapper::GetAuthorizerTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authType"))
+  {
+    m_authType = jsonValue.GetString("authType");
+
+    m_authTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("authorizerUri"))
@@ -128,6 +137,12 @@ JsonValue Authorizer::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AuthorizerTypeMapper::GetNameForAuthorizerType(m_type));
+  }
+
+  if(m_authTypeHasBeenSet)
+  {
+   payload.WithString("authType", m_authType);
+
   }
 
   if(m_authorizerUriHasBeenSet)

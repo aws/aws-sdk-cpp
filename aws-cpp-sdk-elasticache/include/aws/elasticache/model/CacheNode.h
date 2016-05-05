@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/Endpoint.h>
 
 namespace Aws
@@ -157,17 +158,27 @@ namespace Model
     /**
      * <p>The date and time when the cache node was created.</p>
      */
-    inline double GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
+    inline const Aws::Utils::DateTime& GetCacheNodeCreateTime() const{ return m_cacheNodeCreateTime; }
 
     /**
      * <p>The date and time when the cache node was created.</p>
      */
-    inline void SetCacheNodeCreateTime(double value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
+    inline void SetCacheNodeCreateTime(const Aws::Utils::DateTime& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
 
     /**
      * <p>The date and time when the cache node was created.</p>
      */
-    inline CacheNode& WithCacheNodeCreateTime(double value) { SetCacheNodeCreateTime(value); return *this;}
+    inline void SetCacheNodeCreateTime(Aws::Utils::DateTime&& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cache node was created.</p>
+     */
+    inline CacheNode& WithCacheNodeCreateTime(const Aws::Utils::DateTime& value) { SetCacheNodeCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cache node was created.</p>
+     */
+    inline CacheNode& WithCacheNodeCreateTime(Aws::Utils::DateTime&& value) { SetCacheNodeCreateTime(value); return *this;}
 
     /**
      * <p>The hostname for connecting to this cache node.</p>
@@ -318,7 +329,7 @@ namespace Model
     bool m_cacheNodeIdHasBeenSet;
     Aws::String m_cacheNodeStatus;
     bool m_cacheNodeStatusHasBeenSet;
-    double m_cacheNodeCreateTime;
+    Aws::Utils::DateTime m_cacheNodeCreateTime;
     bool m_cacheNodeCreateTimeHasBeenSet;
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;

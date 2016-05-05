@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
@@ -173,7 +174,7 @@ namespace Model
      * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p> A value that requests only snapshots created at or after the specified time.
@@ -181,7 +182,7 @@ namespace Model
      * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p> A value that requests only snapshots created at or after the specified time.
@@ -189,7 +190,23 @@ namespace Model
      * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline DescribeClusterSnapshotsRequest& WithStartTime(double value) { SetStartTime(value); return *this;}
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p> A value that requests only snapshots created at or after the specified time.
+     * The time value is specified in ISO 8601 format. For more information about ISO
+     * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+     * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p> A value that requests only snapshots created at or after the specified time.
+     * The time value is specified in ISO 8601 format. For more information about ISO
+     * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+     * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p> A time value that requests only snapshots created at or before the specified
@@ -197,7 +214,7 @@ namespace Model
      * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p> A time value that requests only snapshots created at or before the specified
@@ -205,7 +222,7 @@ namespace Model
      * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> A time value that requests only snapshots created at or before the specified
@@ -213,7 +230,23 @@ namespace Model
      * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
      */
-    inline DescribeClusterSnapshotsRequest& WithEndTime(double value) { SetEndTime(value); return *this;}
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+
+    /**
+     * <p> A time value that requests only snapshots created at or before the specified
+     * time. The time value is specified in ISO 8601 format. For more information about
+     * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+     * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p> A time value that requests only snapshots created at or before the specified
+     * time. The time value is specified in ISO 8601 format. For more information about
+     * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
+     * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code></p>
+     */
+    inline DescribeClusterSnapshotsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> The maximum number of response records to return in each call. If the number
@@ -538,9 +571,9 @@ namespace Model
     bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
-    double m_startTime;
+    Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    double m_endTime;
+    Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
     long m_maxRecords;
     bool m_maxRecordsHasBeenSet;

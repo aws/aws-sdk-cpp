@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/PendingModifiedValues.h>
 #include <aws/redshift/model/RestoreStatus.h>
@@ -28,6 +29,7 @@
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
 #include <aws/redshift/model/ClusterNode.h>
 #include <aws/redshift/model/Tag.h>
+#include <aws/redshift/model/ClusterIamRole.h>
 
 namespace Aws
 {
@@ -378,17 +380,27 @@ namespace Model
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline double GetClusterCreateTime() const{ return m_clusterCreateTime; }
+    inline const Aws::Utils::DateTime& GetClusterCreateTime() const{ return m_clusterCreateTime; }
 
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline void SetClusterCreateTime(double value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
      * <p> The date and time that the cluster was created. </p>
      */
-    inline Cluster& WithClusterCreateTime(double value) { SetClusterCreateTime(value); return *this;}
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p> The date and time that the cluster was created. </p>
+     */
+    inline Cluster& WithClusterCreateTime(const Aws::Utils::DateTime& value) { SetClusterCreateTime(value); return *this;}
+
+    /**
+     * <p> The date and time that the cluster was created. </p>
+     */
+    inline Cluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
 
     /**
      * <p> The number of days that automatic cluster snapshots are retained. </p>
@@ -1164,6 +1176,48 @@ namespace Model
      */
     inline Cluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline const Aws::Vector<ClusterIamRole>& GetIamRoles() const{ return m_iamRoles; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline void SetIamRoles(const Aws::Vector<ClusterIamRole>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline void SetIamRoles(Aws::Vector<ClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& WithIamRoles(const Aws::Vector<ClusterIamRole>& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& WithIamRoles(Aws::Vector<ClusterIamRole>&& value) { SetIamRoles(value); return *this;}
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& AddIamRoles(const ClusterIamRole& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
+     * the cluster to access other AWS services.</p>
+     */
+    inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+
   private:
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
@@ -1179,7 +1233,7 @@ namespace Model
     bool m_dBNameHasBeenSet;
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
-    double m_clusterCreateTime;
+    Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
     long m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
@@ -1227,6 +1281,8 @@ namespace Model
     bool m_tagsHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::Vector<ClusterIamRole> m_iamRoles;
+    bool m_iamRolesHasBeenSet;
   };
 
 } // namespace Model

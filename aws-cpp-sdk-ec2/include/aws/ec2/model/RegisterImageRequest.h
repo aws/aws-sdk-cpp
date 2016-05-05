@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RegisterImage.</p>
    */
   class AWS_EC2_API RegisterImageRequest : public EC2Request
   {

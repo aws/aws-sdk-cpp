@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -142,17 +143,27 @@ namespace Model
     /**
      * <p>The time that the resource was deleted.</p>
      */
-    inline double GetResourceDeletionTime() const{ return m_resourceDeletionTime; }
+    inline const Aws::Utils::DateTime& GetResourceDeletionTime() const{ return m_resourceDeletionTime; }
 
     /**
      * <p>The time that the resource was deleted.</p>
      */
-    inline void SetResourceDeletionTime(double value) { m_resourceDeletionTimeHasBeenSet = true; m_resourceDeletionTime = value; }
+    inline void SetResourceDeletionTime(const Aws::Utils::DateTime& value) { m_resourceDeletionTimeHasBeenSet = true; m_resourceDeletionTime = value; }
 
     /**
      * <p>The time that the resource was deleted.</p>
      */
-    inline ResourceIdentifier& WithResourceDeletionTime(double value) { SetResourceDeletionTime(value); return *this;}
+    inline void SetResourceDeletionTime(Aws::Utils::DateTime&& value) { m_resourceDeletionTimeHasBeenSet = true; m_resourceDeletionTime = value; }
+
+    /**
+     * <p>The time that the resource was deleted.</p>
+     */
+    inline ResourceIdentifier& WithResourceDeletionTime(const Aws::Utils::DateTime& value) { SetResourceDeletionTime(value); return *this;}
+
+    /**
+     * <p>The time that the resource was deleted.</p>
+     */
+    inline ResourceIdentifier& WithResourceDeletionTime(Aws::Utils::DateTime&& value) { SetResourceDeletionTime(value); return *this;}
 
   private:
     ResourceType m_resourceType;
@@ -161,7 +172,7 @@ namespace Model
     bool m_resourceIdHasBeenSet;
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
-    double m_resourceDeletionTime;
+    Aws::Utils::DateTime m_resourceDeletionTime;
     bool m_resourceDeletionTimeHasBeenSet;
   };
 

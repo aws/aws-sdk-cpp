@@ -24,7 +24,6 @@ using namespace Aws::Utils;
 Deployment::Deployment() : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
     m_apiSummaryHasBeenSet(false)
 {
@@ -33,7 +32,6 @@ Deployment::Deployment() :
 Deployment::Deployment(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createdDate(0.0),
     m_createdDateHasBeenSet(false),
     m_apiSummaryHasBeenSet(false)
 {
@@ -100,8 +98,7 @@ JsonValue Deployment::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithDouble("createdDate", m_createdDate);
-
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   if(m_apiSummaryHasBeenSet)
