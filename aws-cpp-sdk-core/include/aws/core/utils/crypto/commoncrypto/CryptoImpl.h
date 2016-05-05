@@ -19,7 +19,6 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/crypto/Cipher.h>
-#include <aws/core/utils/DateTime.h>
 
 struct _CCCryptor;
 
@@ -28,60 +27,32 @@ namespace Aws
     namespace Utils
     {
         namespace Crypto
-        {        
-            template<typename DataType = uint64_t>
-            class SecureRandom_CommonCrypto : public SecureRandom<DataType>
+        {
+            /**
+             * Apple implementation for RandomBytes. Reads from /dev/random
+             * This class is intentionally not thread safe. If you need to use an instance of this class from
+             * multiple threads, then you are responsible for memory fencing.
+             */
+            class SecureRandomBytes_CommonCrypto : public SecureRandomBytes
             {
              public:
-                SecureRandom_CommonCrypto()
-                {
-                    fp = fopen("/dev/random", "r");
-
-                    if(!fp)
-                    {
-                        SecureRandom<DataType>::m_failure = true;
-                    }
-                }
-
-                ~SecureRandom_CommonCrypto()
-                {
-                    if(fp)
-                    {
-                        fclose(fp);
-                    }
-                }
-
-                void Reset() override
-                { }
-
                 /**
-                 * https://developer.apple.com/library/ios/documentation/Security/Conceptual/cryptoservices/RandomNumberGenerationAPIs/RandomNumberGenerationAPIs.html
-                 *  This is not thread safe. If you need thread safety, it is your responsibility.
+                 * Opens file descriptor to /dev/random
                  */
-                DataType operator()() override
-                {
-                    using namespace std::chrono;
-
-                    DataType value(0);
-                    
-                    if(!fp)
-                    {
-                        SecureRandom<DataType>::m_failure = true;
-                        return value;
-                    }
-                    
-                    for(size_t i = 0; i < sizeof(DataType); ++i)
-                    {
-                        value <<= 8;
-                        value |= fgetc(fp);
-                    }
-
-                    return value;
-                }
+                SecureRandomBytes_CommonCrypto();
+                /**
+                 * Closes file descriptor
+                 */
+                ~SecureRandomBytes_CommonCrypto();
+                /**
+                 * Reads buffersize bytes from /dev/random and writes them to buffer
+                 */
+                void GetBytes(unsigned char* buffer, size_t bufferSize) override;
 
             private:
                 FILE* fp;
             };
+
 
             class MD5CommonCryptoImpl : public Hash
             {
@@ -136,7 +107,7 @@ namespace Aws
                  * cipher being used for decryption.
                  */
                 CommonCryptoCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
-                              CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+                              CryptoBuffer&& tag = CryptoBuffer(0));
 
                 /**
                  * Creates new CommonCrypto based cipher for key, initializationVector, and optional tag. If this is an authenticated

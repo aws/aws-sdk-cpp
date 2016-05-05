@@ -50,7 +50,7 @@ namespace Aws
                 /**
                  * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
                  */
-                SymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer(0))) :
+                SymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0)) :
                         m_key(std::move(key)), m_initializationVector(std::move(initializationVector)), m_tag(std::move(tag)), m_failure(false) { Validate(); }
 
                 SymmetricCipher(const SymmetricCipher& other) = delete;
@@ -174,7 +174,7 @@ namespace Aws
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = std::move(CryptoBuffer(0))) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0)) const = 0;
 
                 /**
                  * Only called once per factory, your chance to make static library calls for setup.

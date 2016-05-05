@@ -98,7 +98,7 @@ namespace Aws
              * cipher to decrypt an encrypted payload, you must set the tag here.
              */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv,
-                                                                                      CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+                                                                                      CryptoBuffer&& tag = CryptoBuffer(0));
 
             /**
              * Create SecureRandomBytes instance

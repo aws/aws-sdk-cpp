@@ -392,7 +392,7 @@ class DefaultSecureRandFactory : public SecureRandomFactory
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint64_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_CommonCrypto<uint64_t>>(s_allocationTag);
+        return Aws::MakeShared<SecureRandomBytes_CommonCrypto>(s_allocationTag);
 #else
         return nullptr;
 #endif

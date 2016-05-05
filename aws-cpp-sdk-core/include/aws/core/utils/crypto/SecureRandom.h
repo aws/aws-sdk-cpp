@@ -63,7 +63,7 @@ namespace Aws
                  *  pay for something you probably don't need. If you encounter a need for thread safety, you are responsible
                  *  for memory fencing.
                  */
-                SecureRandom(const std::shared_ptr<SecureRandomBytes>& entropySource)
+                SecureRandom(const std::shared_ptr<SecureRandomBytes>& entropySource) : m_entropy(entropySource)
                     { static_assert(std::is_integral<DataType>::value, "Type DataType must be integral"); }
 
                 virtual ~SecureRandom() = default;
@@ -79,8 +79,8 @@ namespace Aws
                     unsigned char buffer[sizeof(DataType)];
                     m_entropy->GetBytes(buffer, sizeof(DataType));
 
-                    assert(*entropy);
-                    if(*entropy)
+                    assert(*m_entropy);
+                    if(*m_entropy)
                     {
                         for (size_t i = 0; i < sizeof(DataType); ++i)
                         {

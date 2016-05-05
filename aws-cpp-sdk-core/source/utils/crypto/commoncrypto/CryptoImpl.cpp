@@ -28,6 +28,46 @@ namespace Aws
         {
             static const char* LOG_TAG = "CommonCryptoImpl";
 
+            SecureRandomBytes_CommonCrypto::SecureRandomBytes_CommonCrypto()
+            {
+                fp = fopen("/dev/random", "r");
+
+                if(!fp)
+                {
+                    m_failure = true;
+
+                }
+            }
+
+            SecureRandomBytes_CommonCrypto::~SecureRandomBytes_CommonCrypto()
+            {
+                if(fp)
+                {
+                    fclose(fp);
+                }
+            }
+
+            /**
+             * https://developer.apple.com/library/ios/documentation/Security/Conceptual/cryptoservices/RandomNumberGenerationAPIs/RandomNumberGenerationAPIs.html
+             *  This is not thread safe. If you need thread safety, it is your responsibility.
+             */
+            void SecureRandomBytes_CommonCrypto::GetBytes(unsigned char* buffer, size_t bufferSize)
+            {
+                assert(buffer);
+
+                if(!fp)
+                {
+                    m_failure = true;
+                }
+
+                size_t read = fread(buffer, sizeof(unsigned char), bufferSize, fp);
+
+                if(read != bufferSize)
+                {
+                    m_failure = true;
+                }
+            }
+
             HashResult MD5CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
