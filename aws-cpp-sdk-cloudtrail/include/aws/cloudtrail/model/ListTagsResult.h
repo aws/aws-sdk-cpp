@@ -35,8 +35,8 @@ namespace CloudTrail
 namespace Model
 {
   /**
-   * <p> Returns the objects or data listed below if successful. Otherwise, returns
-   * an error. </p>
+   * <p>Returns the objects or data listed below if successful. Otherwise, returns an
+   * error.</p>
    */
   class AWS_CLOUDTRAIL_API ListTagsResult
   {
@@ -67,37 +67,37 @@ namespace Model
     inline ListTagsResult& AddResourceTagList(ResourceTag&& value) { m_resourceTagList.push_back(value); return *this; }
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline ListTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline ListTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Reserved for future use. </p>
+     * <p>Reserved for future use.</p>
      */
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

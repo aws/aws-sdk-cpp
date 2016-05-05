@@ -35,8 +35,8 @@ namespace Model
   /**
    * <p>The Amazon S3 location where artifacts are stored for the pipeline. If this
    * Amazon S3 bucket is created manually, it must meet the requirements for AWS
-   * CodePipeline. For more information, see the <ulink
-   * url="http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html">Concepts</ulink>.</p>
+   * CodePipeline. For more information, see the <a
+   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.</p>
    */
   class AWS_CODEPIPELINE_API ArtifactStore
   {
@@ -114,32 +114,37 @@ namespace Model
     inline ArtifactStore& WithLocation(const char* value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the
-     * artifact store. If this is undefined, the default key for Amazon S3 is used.</p>
+     * <p>The encryption key used to encrypt the data in the artifact store, such as an
+     * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
+     * for Amazon S3 is used.</p>
      */
     inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the
-     * artifact store. If this is undefined, the default key for Amazon S3 is used.</p>
+     * <p>The encryption key used to encrypt the data in the artifact store, such as an
+     * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
+     * for Amazon S3 is used.</p>
      */
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the
-     * artifact store. If this is undefined, the default key for Amazon S3 is used.</p>
+     * <p>The encryption key used to encrypt the data in the artifact store, such as an
+     * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
+     * for Amazon S3 is used.</p>
      */
     inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the
-     * artifact store. If this is undefined, the default key for Amazon S3 is used.</p>
+     * <p>The encryption key used to encrypt the data in the artifact store, such as an
+     * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
+     * for Amazon S3 is used.</p>
      */
     inline ArtifactStore& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key used to encrypt the data in the
-     * artifact store. If this is undefined, the default key for Amazon S3 is used.</p>
+     * <p>The encryption key used to encrypt the data in the artifact store, such as an
+     * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
+     * for Amazon S3 is used.</p>
      */
     inline ArtifactStore& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(value); return *this;}
 

@@ -39,70 +39,70 @@ namespace Model
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
     inline ListPublicKeysRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
-     * and the current public key is returned. </p>
+     * and the current public key is returned.</p>
      */
     inline ListPublicKeysRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
     inline ListPublicKeysRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
-     * keys for CloudTrail digest files. If not specified, the current time is used.
-     * </p>
+     * keys for CloudTrail digest files. If not specified, the current time is
+     * used.</p>
      */
     inline ListPublicKeysRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 

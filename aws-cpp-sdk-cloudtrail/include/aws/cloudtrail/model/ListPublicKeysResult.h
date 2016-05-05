@@ -35,8 +35,8 @@ namespace CloudTrail
 namespace Model
 {
   /**
-   * Returns the objects or data listed below if successful. Otherwise, returns an
-   * error.
+   * <p>Returns the objects or data listed below if successful. Otherwise, returns an
+   * error.</p>
    */
   class AWS_CLOUDTRAIL_API ListPublicKeysResult
   {
@@ -46,44 +46,44 @@ namespace Model
     ListPublicKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline const Aws::Vector<PublicKey>& GetPublicKeyList() const{ return m_publicKeyList; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline void SetPublicKeyList(const Aws::Vector<PublicKey>& value) { m_publicKeyList = value; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline void SetPublicKeyList(Aws::Vector<PublicKey>&& value) { m_publicKeyList = value; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline ListPublicKeysResult& WithPublicKeyList(const Aws::Vector<PublicKey>& value) { SetPublicKeyList(value); return *this;}
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline ListPublicKeysResult& WithPublicKeyList(Aws::Vector<PublicKey>&& value) { SetPublicKeyList(value); return *this;}
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline ListPublicKeysResult& AddPublicKeyList(const PublicKey& value) { m_publicKeyList.push_back(value); return *this; }
 
     /**
-     * <p>Contains an array of PublicKey objects.</p> <note>The returned public keys
-     * may have validity time ranges that overlap.</note>
+     * <p>Contains an array of PublicKey objects.</p> <note> <p>The returned public
+     * keys may have validity time ranges that overlap.</p> </note>
      */
     inline ListPublicKeysResult& AddPublicKeyList(PublicKey&& value) { m_publicKeyList.push_back(value); return *this; }
 

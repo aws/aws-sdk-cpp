@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 CreateKeyRequest::CreateKeyRequest() : 
     m_policyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
+    m_keyUsageHasBeenSet(false),
+    m_bypassPolicyLockoutSafetyCheck(false),
+    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_keyUsageHasBeenSet)
   {
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
+  }
+
+  if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)
+  {
+   payload.WithBool("BypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
+
   }
 
   return payload.WriteReadable();

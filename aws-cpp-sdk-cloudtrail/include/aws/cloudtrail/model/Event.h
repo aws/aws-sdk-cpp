@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Contains information about an event that was returned by a lookup request.
-   * The result includes a representation of a CloudTrail event. </p>
+   * The result includes a representation of a CloudTrail event.</p>
    */
   class AWS_CLOUDTRAIL_API Event
   {

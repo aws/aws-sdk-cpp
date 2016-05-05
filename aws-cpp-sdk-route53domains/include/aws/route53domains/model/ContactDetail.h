@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
      * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
+     * enter an organization name, and you can&apos;t enable privacy protection for the
      * contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: Maximum
      * 255 characters.</p> <p>Valid values: <code>PERSON</code> | <code>COMPANY</code>
      * | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code></p> <p>Parents:
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
      * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
+     * enter an organization name, and you can&apos;t enable privacy protection for the
      * contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: Maximum
      * 255 characters.</p> <p>Valid values: <code>PERSON</code> | <code>COMPANY</code>
      * | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code></p> <p>Parents:
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
      * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
+     * enter an organization name, and you can&apos;t enable privacy protection for the
      * contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: Maximum
      * 255 characters.</p> <p>Valid values: <code>PERSON</code> | <code>COMPANY</code>
      * | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code></p> <p>Parents:
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
      * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
+     * enter an organization name, and you can&apos;t enable privacy protection for the
      * contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: Maximum
      * 255 characters.</p> <p>Valid values: <code>PERSON</code> | <code>COMPANY</code>
      * | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code></p> <p>Parents:
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>Indicates whether the contact is a person, company, association, or public
      * organization. If you choose an option other than <code>PERSON</code>, you must
-     * enter an organization name, and you can't enable privacy protection for the
+     * enter an organization name, and you can&apos;t enable privacy protection for the
      * contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: Maximum
      * 255 characters.</p> <p>Valid values: <code>PERSON</code> | <code>COMPANY</code>
      * | <code>ASSOCIATION</code> | <code>PUBLIC_BODY</code></p> <p>Parents:
@@ -281,7 +281,7 @@ namespace Model
     inline ContactDetail& WithOrganizationName(const char* value) { SetOrganizationName(value); return *this;}
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -289,7 +289,7 @@ namespace Model
     inline const Aws::String& GetAddressLine1() const{ return m_addressLine1; }
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -297,7 +297,7 @@ namespace Model
     inline void SetAddressLine1(const Aws::String& value) { m_addressLine1HasBeenSet = true; m_addressLine1 = value; }
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -305,7 +305,7 @@ namespace Model
     inline void SetAddressLine1(Aws::String&& value) { m_addressLine1HasBeenSet = true; m_addressLine1 = value; }
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -313,7 +313,7 @@ namespace Model
     inline void SetAddressLine1(const char* value) { m_addressLine1HasBeenSet = true; m_addressLine1.assign(value); }
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -321,7 +321,7 @@ namespace Model
     inline ContactDetail& WithAddressLine1(const Aws::String& value) { SetAddressLine1(value); return *this;}
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -329,7 +329,7 @@ namespace Model
     inline ContactDetail& WithAddressLine1(Aws::String&& value) { SetAddressLine1(value); return *this;}
 
     /**
-     * <p>First line of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>First line of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -337,63 +337,63 @@ namespace Model
     inline ContactDetail& WithAddressLine1(const char* value) { SetAddressLine1(value); return *this;}
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline const Aws::String& GetAddressLine2() const{ return m_addressLine2; }
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline void SetAddressLine2(const Aws::String& value) { m_addressLine2HasBeenSet = true; m_addressLine2 = value; }
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline void SetAddressLine2(Aws::String&& value) { m_addressLine2HasBeenSet = true; m_addressLine2 = value; }
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline void SetAddressLine2(const char* value) { m_addressLine2HasBeenSet = true; m_addressLine2.assign(value); }
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline ContactDetail& WithAddressLine2(const Aws::String& value) { SetAddressLine2(value); return *this;}
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline ContactDetail& WithAddressLine2(Aws::String&& value) { SetAddressLine2(value); return *this;}
 
     /**
-     * <p>Second line of contact's address, if any.</p> <p>Type: String</p> <p>Default:
-     * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
+     * <p>Second line of contact&apos;s address, if any.</p> <p>Type: String</p>
+     * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
      */
     inline ContactDetail& WithAddressLine2(const char* value) { SetAddressLine2(value); return *this;}
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -401,7 +401,7 @@ namespace Model
     inline const Aws::String& GetCity() const{ return m_city; }
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -409,7 +409,7 @@ namespace Model
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -417,7 +417,7 @@ namespace Model
     inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -425,7 +425,7 @@ namespace Model
     inline void SetCity(const char* value) { m_cityHasBeenSet = true; m_city.assign(value); }
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -433,7 +433,7 @@ namespace Model
     inline ContactDetail& WithCity(const Aws::String& value) { SetCity(value); return *this;}
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -441,7 +441,7 @@ namespace Model
     inline ContactDetail& WithCity(Aws::String&& value) { SetCity(value); return *this;}
 
     /**
-     * <p>The city of the contact's address.</p> <p>Type: String</p> <p>Default:
+     * <p>The city of the contact&apos;s address.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -449,7 +449,7 @@ namespace Model
     inline ContactDetail& WithCity(const char* value) { SetCity(value); return *this;}
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -457,7 +457,7 @@ namespace Model
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -465,7 +465,7 @@ namespace Model
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -473,7 +473,7 @@ namespace Model
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -481,7 +481,7 @@ namespace Model
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -489,7 +489,7 @@ namespace Model
     inline ContactDetail& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -497,7 +497,7 @@ namespace Model
     inline ContactDetail& WithState(Aws::String&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state or province of the contact's city.</p> <p>Type: String</p>
+     * <p>The state or province of the contact&apos;s city.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -505,7 +505,7 @@ namespace Model
     inline ContactDetail& WithState(const char* value) { SetState(value); return *this;}
 
     /**
-     * <p>Code for the country of the contact's address.</p> <p>Type: String</p>
+     * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -513,7 +513,7 @@ namespace Model
     inline const CountryCode& GetCountryCode() const{ return m_countryCode; }
 
     /**
-     * <p>Code for the country of the contact's address.</p> <p>Type: String</p>
+     * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -521,7 +521,7 @@ namespace Model
     inline void SetCountryCode(const CountryCode& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
-     * <p>Code for the country of the contact's address.</p> <p>Type: String</p>
+     * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -529,7 +529,7 @@ namespace Model
     inline void SetCountryCode(CountryCode&& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
-     * <p>Code for the country of the contact's address.</p> <p>Type: String</p>
+     * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -537,7 +537,7 @@ namespace Model
     inline ContactDetail& WithCountryCode(const CountryCode& value) { SetCountryCode(value); return *this;}
 
     /**
-     * <p>Code for the country of the contact's address.</p> <p>Type: String</p>
+     * <p>Code for the country of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
@@ -545,7 +545,7 @@ namespace Model
     inline ContactDetail& WithCountryCode(CountryCode&& value) { SetCountryCode(value); return *this;}
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -553,7 +553,7 @@ namespace Model
     inline const Aws::String& GetZipCode() const{ return m_zipCode; }
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -561,7 +561,7 @@ namespace Model
     inline void SetZipCode(const Aws::String& value) { m_zipCodeHasBeenSet = true; m_zipCode = value; }
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -569,7 +569,7 @@ namespace Model
     inline void SetZipCode(Aws::String&& value) { m_zipCodeHasBeenSet = true; m_zipCode = value; }
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -577,7 +577,7 @@ namespace Model
     inline void SetZipCode(const char* value) { m_zipCodeHasBeenSet = true; m_zipCode.assign(value); }
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -585,7 +585,7 @@ namespace Model
     inline ContactDetail& WithZipCode(const Aws::String& value) { SetZipCode(value); return *this;}
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -593,7 +593,7 @@ namespace Model
     inline ContactDetail& WithZipCode(Aws::String&& value) { SetZipCode(value); return *this;}
 
     /**
-     * <p>The zip or postal code of the contact's address.</p> <p>Type: String</p>
+     * <p>The zip or postal code of the contact&apos;s address.</p> <p>Type: String</p>
      * <p>Default: None</p> <p>Constraints: Maximum 255 characters.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: No</p>
@@ -603,8 +603,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -613,8 +613,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -623,8 +623,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -633,8 +633,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -643,8 +643,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -653,8 +653,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */
@@ -663,8 +663,8 @@ namespace Model
     /**
      * <p>The phone number of the contact.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: Phone number must be specified in the format "+[country dialing
-     * code].[number including any area code&gt;]". For example, a US phone number
-     * might appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
+     * code].[number including any area code>]". For example, a US phone number might
+     * appear as <code>"+1.1234567890"</code>.</p> <p>Parents:
      * <code>RegistrantContact</code>, <code>AdminContact</code>,
      * <code>TechContact</code></p> <p>Required: Yes</p>
      */

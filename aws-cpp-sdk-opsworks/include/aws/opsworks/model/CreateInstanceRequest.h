@@ -950,6 +950,125 @@ namespace Model
      */
     inline CreateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline const Aws::String& GetTenancy() const{ return m_tenancy; }
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline void SetTenancy(Aws::String&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline void SetTenancy(const char* value) { m_tenancyHasBeenSet = true; m_tenancy.assign(value); }
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline CreateInstanceRequest& WithTenancy(const Aws::String& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline CreateInstanceRequest& WithTenancy(Aws::String&& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The instance's tenancy option. The default option is no tenancy, or if the
+     * instance is running in a VPC, inherit tenancy settings from the VPC. The
+     * following are valid values for this parameter: <code>dedicated</code>,
+     * <code>default</code>, or <code>host</code>. Because there are costs associated
+     * with changes in tenancy options, we recommend that you research tenancy options
+     * before choosing them for your instances. For more information about dedicated
+     * hosts, see <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon
+     * EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     * Instances</a> and <a
+     * href="https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon
+     * EC2 Dedicated Instances</a>.</p>
+     */
+    inline CreateInstanceRequest& WithTenancy(const char* value) { SetTenancy(value); return *this;}
+
   private:
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
@@ -985,6 +1104,8 @@ namespace Model
     bool m_ebsOptimizedHasBeenSet;
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
+    Aws::String m_tenancy;
+    bool m_tenancyHasBeenSet;
   };
 
 } // namespace Model

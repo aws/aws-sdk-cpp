@@ -29,6 +29,7 @@ static const int DOCUMENT_NUMBER_HASH = HashingUtils::HashString("DOCUMENT_NUMBE
 static const int AU_ID_NUMBER_HASH = HashingUtils::HashString("AU_ID_NUMBER");
 static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
 static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
+static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
 static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
 static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
 static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
@@ -92,6 +93,10 @@ namespace Aws
           else if (hashCode == CA_LEGAL_TYPE_HASH)
           {
             return ExtraParamName::CA_LEGAL_TYPE;
+          }
+          else if (hashCode == CA_BUSINESS_ENTITY_TYPE_HASH)
+          {
+            return ExtraParamName::CA_BUSINESS_ENTITY_TYPE;
           }
           else if (hashCode == ES_IDENTIFICATION_HASH)
           {
@@ -167,6 +172,8 @@ namespace Aws
             return "AU_ID_TYPE";
           case ExtraParamName::CA_LEGAL_TYPE:
             return "CA_LEGAL_TYPE";
+          case ExtraParamName::CA_BUSINESS_ENTITY_TYPE:
+            return "CA_BUSINESS_ENTITY_TYPE";
           case ExtraParamName::ES_IDENTIFICATION:
             return "ES_IDENTIFICATION";
           case ExtraParamName::ES_IDENTIFICATION_TYPE:

@@ -40,261 +40,261 @@ namespace Model
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
-     * alias name prefixed by "alias/". <ul> <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li> <li>Globally Unique
-     * Key ID Example - 12345678-1234-1234-1234-123456789012</li> <li>Alias Name
-     * Example - alias/MyAliasName</li> </ul> </p>
+     * alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * </li> <li> <p>Alias ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
+     * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
+     * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Name:value pair that contains additional data to be authenticated during the
-     * encryption and decryption processes. </p>
+     * encryption and decryption processes.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
 
     /**
      * <p>Value that identifies the encryption algorithm and key size. Currently this
-     * can be AES_128 or AES_256. </p>
+     * can be AES_128 or AES_256.</p>
      */
     inline const DataKeySpec& GetKeySpec() const{ return m_keySpec; }
 
     /**
      * <p>Value that identifies the encryption algorithm and key size. Currently this
-     * can be AES_128 or AES_256. </p>
+     * can be AES_128 or AES_256.</p>
      */
     inline void SetKeySpec(const DataKeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
 
     /**
      * <p>Value that identifies the encryption algorithm and key size. Currently this
-     * can be AES_128 or AES_256. </p>
+     * can be AES_128 or AES_256.</p>
      */
     inline void SetKeySpec(DataKeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
 
     /**
      * <p>Value that identifies the encryption algorithm and key size. Currently this
-     * can be AES_128 or AES_256. </p>
+     * can be AES_128 or AES_256.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(const DataKeySpec& value) { SetKeySpec(value); return *this;}
 
     /**
      * <p>Value that identifies the encryption algorithm and key size. Currently this
-     * can be AES_128 or AES_256. </p>
+     * can be AES_128 or AES_256.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(value); return *this;}
 
     /**
      * <p>Integer that contains the number of bytes to generate. Common values are 128,
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
-     * parameter instead. </p>
+     * parameter instead.</p>
      */
     inline long GetNumberOfBytes() const{ return m_numberOfBytes; }
 
     /**
      * <p>Integer that contains the number of bytes to generate. Common values are 128,
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
-     * parameter instead. </p>
+     * parameter instead.</p>
      */
     inline void SetNumberOfBytes(long value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
     /**
      * <p>Integer that contains the number of bytes to generate. Common values are 128,
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
-     * parameter instead. </p>
+     * parameter instead.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithNumberOfBytes(long value) { SetNumberOfBytes(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, go to <a
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */

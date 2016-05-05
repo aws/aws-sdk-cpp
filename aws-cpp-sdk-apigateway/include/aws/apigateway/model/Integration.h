@@ -430,64 +430,205 @@ namespace Model
     inline Integration& AddRequestParameters(const char* key, const char* value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestTemplates() const{ return m_requestTemplates; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline void SetRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = value; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline void SetRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = value; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& WithRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestTemplates(value); return *this;}
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& WithRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestTemplates(value); return *this;}
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(const Aws::String& key, const Aws::String& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(Aws::String&& key, const Aws::String& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(const Aws::String& key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(Aws::String&& key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(const char* key, Aws::String&& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(Aws::String&& key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's request templates.</p>
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value.</p>
      */
     inline Integration& AddRequestTemplates(const char* key, const char* value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates[key] = value; return *this; }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline const Aws::String& GetPassthroughBehavior() const{ return m_passthroughBehavior; }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline void SetPassthroughBehavior(const Aws::String& value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior = value; }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline void SetPassthroughBehavior(Aws::String&& value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior = value; }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline void SetPassthroughBehavior(const char* value) { m_passthroughBehaviorHasBeenSet = true; m_passthroughBehavior.assign(value); }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline Integration& WithPassthroughBehavior(const Aws::String& value) { SetPassthroughBehavior(value); return *this;}
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline Integration& WithPassthroughBehavior(Aws::String&& value) { SetPassthroughBehavior(value); return *this;}
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates defined
+     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
+     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
+     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
+     * through to the Integration backend without transformation.</p>
+     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
+     * allow pass-through when the Integration has NO content types mapped to
+     * templates. However if there is at least one content type defined, unmapped
+     * content types will be rejected with the same 415 response.</p>
+     */
+    inline Integration& WithPassthroughBehavior(const char* value) { SetPassthroughBehavior(value); return *this;}
 
     /**
      * <p>Specifies the integration's cache namespace.</p>
@@ -632,6 +773,8 @@ namespace Model
     bool m_requestParametersHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
     bool m_requestTemplatesHasBeenSet;
+    Aws::String m_passthroughBehavior;
+    bool m_passthroughBehaviorHasBeenSet;
     Aws::String m_cacheNamespace;
     bool m_cacheNamespaceHasBeenSet;
     Aws::Vector<Aws::String> m_cacheKeyParameters;

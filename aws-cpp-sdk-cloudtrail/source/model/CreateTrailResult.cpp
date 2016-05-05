@@ -60,9 +60,9 @@ CreateTrailResult& CreateTrailResult::operator =(const AmazonWebServiceResult<Js
 
   }
 
-  if(jsonValue.ValueExists("SnsTopicName"))
+  if(jsonValue.ValueExists("SnsTopicARN"))
   {
-    m_snsTopicName = jsonValue.GetString("SnsTopicName");
+    m_snsTopicARN = jsonValue.GetString("SnsTopicARN");
 
   }
 

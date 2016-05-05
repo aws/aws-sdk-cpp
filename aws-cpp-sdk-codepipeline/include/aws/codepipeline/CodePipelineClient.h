@@ -185,21 +185,21 @@ namespace Model
    * CodePipeline API Reference. This guide provides descriptions of the actions and
    * data types for AWS CodePipeline. Some functionality for your pipeline is only
    * configurable through the API. For additional information, see the <a
-   * href="http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html">AWS
+   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
    * CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work
    * with pipelines, stages, actions, gates, and transitions, as described below.</p>
    * <p><i>Pipelines</i> are models of automated release processes. Each pipeline is
    * uniquely named, and consists of actions, gates, and stages. </p> <p>You can work
-   * with pipelines by calling: <ul> <li> <a>CreatePipeline</a>, which creates a
-   * uniquely-named pipeline.</li> <li> <a>DeletePipeline</a>, which deletes the
-   * specified pipeline.</li> <li> <a>GetPipeline</a>, which returns information
-   * about a pipeline structure.</li> <li> <a>GetPipelineState</a>, which returns
+   * with pipelines by calling: <ul><li><a>CreatePipeline</a>, which creates a
+   * uniquely-named pipeline.</li> <li><a>DeletePipeline</a>, which deletes the
+   * specified pipeline.</li> <li><a>GetPipeline</a>, which returns information about
+   * a pipeline structure.</li> <li><a>GetPipelineState</a>, which returns
    * information about the current state of the stages and actions of a
    * pipeline.</li> <li> <a>ListPipelines</a>, which gets a summary of all of the
-   * pipelines associated with your account.</li> <li> <a>StartPipelineExecution</a>,
+   * pipelines associated with your account.</li> <li><a>StartPipelineExecution</a>,
    * which runs the the most recent revision of an artifact through the
-   * pipeline.</li> <li> <a>UpdatePipeline</a>, which updates a pipeline with edits
-   * or changes to the structure of the pipeline.</li> </ul> <p>Pipelines include
+   * pipeline.</li> <li><a>UpdatePipeline</a>, which updates a pipeline with edits or
+   * changes to the structure of the pipeline.</li> </ul></p> <p>Pipelines include
    * <i>stages</i>, which are which are logical groupings of gates and actions. Each
    * stage contains one or more actions that must complete before the next stage
    * begins. A stage will result in success or failure. If a stage fails, then the
@@ -209,21 +209,20 @@ namespace Model
    * <a>GetPipelineState</a>, which displays the status of a pipeline, including the
    * status of stages in the pipeline, or <a>GetPipeline</a>, which returns the
    * entire structure of the pipeline, including the stages of that pipeline. For
-   * more information about the structure of stages and actions, also refer to the
-   * <ulink
-   * url="http://docs.aws.amazon.com/codepipeline/latest/UserGuide/pipeline-structure.html">AWS
-   * CodePipeline Pipeline Structure Reference</ulink>.</p> </p> <p>Pipeline stages
-   * include <i>actions</i>, which are categorized into categories such as source or
-   * build actions performed within a stage of a pipeline. For example, you can use a
+   * more information about the structure of stages and actions, also refer to the <a
+   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+   * CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include
+   * <i>actions</i>, which are categorized into categories such as source or build
+   * actions performed within a stage of a pipeline. For example, you can use a
    * source action to import artifacts into a pipeline from a source such as Amazon
    * S3. Like stages, you do not work with actions directly in most cases, but you do
    * define and interact with actions when working with pipeline operations such as
    * <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also
    * include <i>transitions</i>, which allow the transition of artifacts from one
    * stage to the next in a pipeline after the actions in one stage complete.</p>
-   * <p>You can work with transitions by calling:</p> <ul> <li>
-   * <a>DisableStageTransition</a>, which prevents artifacts from transitioning to
-   * the next stage in a pipeline.</li> <li> <a>EnableStageTransition</a>, which
+   * <p>You can work with transitions by calling:</p> <ul>
+   * <li><a>DisableStageTransition</a>, which prevents artifacts from transitioning
+   * to the next stage in a pipeline.</li> <li><a>EnableStageTransition</a>, which
    * enables transition of artifacts between stages in a pipeline. </li> </ul>
    * <p><b>Using the API to integrate with AWS CodePipeline</b></p> <p>For
    * third-party integrators or developers who want to create their own integrations
@@ -231,23 +230,23 @@ namespace Model
    * In order to integrate with AWS CodePipeline, developers will need to work with
    * the following items:</p> <ul> <li>Jobs, which are instances of an action. For
    * example, a job for a source action might import a revision of an artifact from a
-   * source. <p>You can work with jobs by calling:</p> <ul> <li>
-   * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the
-   * specified job,</li> <li> <a>GetJobDetails</a>, which returns the details of a
-   * job,</li> <li> <a>PollForJobs</a>, which determines whether there are any jobs
-   * to act upon, </li> <li> <a>PutJobFailureResult</a>, which provides details of a
-   * job failure, and</li> <li> <a>PutJobSuccessResult</a>, which provides details of
-   * a job success.</li> </ul> </li> <li>Third party jobs, which are instances of an
+   * source. <p>You can work with jobs by calling:</p> <ul>
+   * <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received the
+   * specified job,</li> <li><a>GetJobDetails</a>, which returns the details of a
+   * job,</li> <li><a>PollForJobs</a>, which determines whether there are any jobs to
+   * act upon, </li> <li><a>PutJobFailureResult</a>, which provides details of a job
+   * failure, and</li> <li><a>PutJobSuccessResult</a>, which provides details of a
+   * job success.</li> </ul></li> <li>Third party jobs, which are instances of an
    * action created by a partner action and integrated into AWS CodePipeline. Partner
    * actions are created by members of the AWS Partner Network. <p>You can work with
-   * third party jobs by calling:</p> <ul> <li> <a>AcknowledgeThirdPartyJob</a>,
-   * which confirms whether a job worker has received the specified job,</li> <li>
-   * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
-   * partner action,</li> <li> <a>PollForThirdPartyJobs</a>, which determines whether
-   * there are any jobs to act upon, </li> <li> <a>PutThirdPartyJobFailureResult</a>,
-   * which provides details of a job failure, and</li> <li>
-   * <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
-   * success.</li> </ul> </li> </ul>
+   * third party jobs by calling:</p> <ul><li><a>AcknowledgeThirdPartyJob</a>, which
+   * confirms whether a job worker has received the specified job,</li>
+   * <li><a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
+   * partner action,</li> <li><a>PollForThirdPartyJobs</a>, which determines whether
+   * there are any jobs to act upon, </li> <li><a>PutThirdPartyJobFailureResult</a>,
+   * which provides details of a job failure, and</li>
+   * <li><a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
+   * success.</li> </ul></li> </ul>
    */
   class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient
   {
@@ -279,12 +278,14 @@ namespace Model
         /**
          * <p>Returns information about a specified job and whether that job has been
          * received by the job worker. Only used for custom actions.</p>
+         * <examples></examples>
          */
         virtual Model::AcknowledgeJobOutcome AcknowledgeJob(const Model::AcknowledgeJobRequest& request) const;
 
         /**
          * <p>Returns information about a specified job and whether that job has been
          * received by the job worker. Only used for custom actions.</p>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -293,6 +294,7 @@ namespace Model
         /**
          * <p>Returns information about a specified job and whether that job has been
          * received by the job worker. Only used for custom actions.</p>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -322,13 +324,13 @@ namespace Model
 
         /**
          * <p>Creates a new custom action that can be used in all pipelines associated with
-         * the AWS account. Only used for custom actions.</p>
+         * the AWS account. Only used for custom actions.</p> <examples></examples>
          */
         virtual Model::CreateCustomActionTypeOutcome CreateCustomActionType(const Model::CreateCustomActionTypeRequest& request) const;
 
         /**
          * <p>Creates a new custom action that can be used in all pipelines associated with
-         * the AWS account. Only used for custom actions.</p>
+         * the AWS account. Only used for custom actions.</p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -336,26 +338,26 @@ namespace Model
 
         /**
          * <p>Creates a new custom action that can be used in all pipelines associated with
-         * the AWS account. Only used for custom actions.</p>
+         * the AWS account. Only used for custom actions.</p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCustomActionTypeAsync(const Model::CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a pipeline.</p>
+         * <p>Creates a pipeline.</p> <examples></examples>
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p>
+         * <p>Creates a pipeline.</p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p>
+         * <p>Creates a pipeline.</p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -366,6 +368,7 @@ namespace Model
          * after the action is marked for deletion. Only used for custom actions.</p>
          * <important><p>You cannot recreate a custom action after it has been deleted
          * unless you increase the version number of the action.</p></important>
+         * <examples></examples>
          */
         virtual Model::DeleteCustomActionTypeOutcome DeleteCustomActionType(const Model::DeleteCustomActionTypeRequest& request) const;
 
@@ -374,6 +377,7 @@ namespace Model
          * after the action is marked for deletion. Only used for custom actions.</p>
          * <important><p>You cannot recreate a custom action after it has been deleted
          * unless you increase the version number of the action.</p></important>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -384,25 +388,26 @@ namespace Model
          * after the action is marked for deletion. Only used for custom actions.</p>
          * <important><p>You cannot recreate a custom action after it has been deleted
          * unless you increase the version number of the action.</p></important>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCustomActionTypeAsync(const Model::DeleteCustomActionTypeRequest& request, const DeleteCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified pipeline.</p>
+         * <p>Deletes the specified pipeline.</p> <examples></examples>
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes the specified pipeline.</p>
+         * <p>Deletes the specified pipeline.</p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes the specified pipeline.</p>
+         * <p>Deletes the specified pipeline.</p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -410,13 +415,13 @@ namespace Model
 
         /**
          * <p>Prevents artifacts in a pipeline from transitioning to the next stage in the
-         * pipeline. </p>
+         * pipeline. </p> <examples></examples>
          */
         virtual Model::DisableStageTransitionOutcome DisableStageTransition(const Model::DisableStageTransitionRequest& request) const;
 
         /**
          * <p>Prevents artifacts in a pipeline from transitioning to the next stage in the
-         * pipeline. </p>
+         * pipeline. </p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -424,7 +429,7 @@ namespace Model
 
         /**
          * <p>Prevents artifacts in a pipeline from transitioning to the next stage in the
-         * pipeline. </p>
+         * pipeline. </p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -432,11 +437,13 @@ namespace Model
 
         /**
          * <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
+         * <examples></examples>
          */
         virtual Model::EnableStageTransitionOutcome EnableStageTransition(const Model::EnableStageTransitionRequest& request) const;
 
         /**
          * <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -444,6 +451,7 @@ namespace Model
 
         /**
          * <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -455,7 +463,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          */
         virtual Model::GetJobDetailsOutcome GetJobDetails(const Model::GetJobDetailsRequest& request) const;
 
@@ -465,7 +473,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -477,7 +485,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -487,7 +495,7 @@ namespace Model
          * <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be
          * used to return the entire structure of a pipeline in JSON format, which can then
          * be modified and used to update the pipeline structure with
-         * <a>UpdatePipeline</a>.</p>
+         * <a>UpdatePipeline</a>.</p> <examples></examples>
          */
         virtual Model::GetPipelineOutcome GetPipeline(const Model::GetPipelineRequest& request) const;
 
@@ -495,7 +503,7 @@ namespace Model
          * <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be
          * used to return the entire structure of a pipeline in JSON format, which can then
          * be modified and used to update the pipeline structure with
-         * <a>UpdatePipeline</a>.</p>
+         * <a>UpdatePipeline</a>.</p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -505,7 +513,7 @@ namespace Model
          * <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be
          * used to return the entire structure of a pipeline in JSON format, which can then
          * be modified and used to update the pipeline structure with
-         * <a>UpdatePipeline</a>.</p>
+         * <a>UpdatePipeline</a>.</p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -514,12 +522,14 @@ namespace Model
         /**
          * <p>Returns information about the state of a pipeline, including the stages,
          * actions, and details about the last run of the pipeline.</p>
+         * <examples></examples>
          */
         virtual Model::GetPipelineStateOutcome GetPipelineState(const Model::GetPipelineStateRequest& request) const;
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages,
          * actions, and details about the last run of the pipeline.</p>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -528,6 +538,7 @@ namespace Model
         /**
          * <p>Returns information about the state of a pipeline, including the stages,
          * actions, and details about the last run of the pipeline.</p>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -591,11 +602,13 @@ namespace Model
 
         /**
          * <p>Gets a summary of all of the pipelines associated with your account.</p>
+         * <examples></examples>
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
         /**
          * <p>Gets a summary of all of the pipelines associated with your account.</p>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -603,6 +616,7 @@ namespace Model
 
         /**
          * <p>Gets a summary of all of the pipelines associated with your account.</p>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -614,7 +628,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          */
         virtual Model::PollForJobsOutcome PollForJobs(const Model::PollForJobsRequest& request) const;
 
@@ -624,7 +638,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -636,7 +650,7 @@ namespace Model
          * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
          * if the action requires access to that Amazon S3 bucket for input or output
          * artifacts. Additionally, this API returns any secret values defined for the
-         * action.</p></important>
+         * action.</p></important> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -783,12 +797,14 @@ namespace Model
         /**
          * <p>Starts the specified pipeline. Specifically, it begins processing the latest
          * commit to the source location specified as part of the pipeline.</p>
+         * <examples></examples>
          */
         virtual Model::StartPipelineExecutionOutcome StartPipelineExecution(const Model::StartPipelineExecutionRequest& request) const;
 
         /**
          * <p>Starts the specified pipeline. Specifically, it begins processing the latest
          * commit to the source location specified as part of the pipeline.</p>
+         * <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -797,6 +813,7 @@ namespace Model
         /**
          * <p>Starts the specified pipeline. Specifically, it begins processing the latest
          * commit to the source location specified as part of the pipeline.</p>
+         * <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -806,7 +823,7 @@ namespace Model
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
          * JSON file with the pipeline structure in conjunction with UpdatePipeline to
          * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p>
+         * version number of the pipeline by 1.</p> <examples></examples>
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
@@ -814,7 +831,7 @@ namespace Model
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
          * JSON file with the pipeline structure in conjunction with UpdatePipeline to
          * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p>
+         * version number of the pipeline by 1.</p> <examples></examples>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -824,7 +841,7 @@ namespace Model
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
          * JSON file with the pipeline structure in conjunction with UpdatePipeline to
          * provide the full structure of the pipeline. Updating the pipeline increases the
-         * version number of the pipeline by 1.</p>
+         * version number of the pipeline by 1.</p> <examples></examples>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

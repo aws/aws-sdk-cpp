@@ -81,78 +81,78 @@ namespace Model
     inline Task& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline Task& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline Task& WithClusterArn(Aws::String&& value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the cluster that hosts the task.</p>
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline Task& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline const Aws::String& GetTaskDefinitionArn() const{ return m_taskDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline void SetTaskDefinitionArn(Aws::String&& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline void SetTaskDefinitionArn(const char* value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline Task& WithTaskDefinitionArn(const Aws::String& value) { SetTaskDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline Task& WithTaskDefinitionArn(Aws::String&& value) { SetTaskDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the of the task definition that creates the
+     * <p>The Amazon Resource Name (ARN) of the task definition that creates the
      * task.</p>
      */
     inline Task& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}

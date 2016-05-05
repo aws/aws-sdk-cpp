@@ -80,37 +80,37 @@ namespace Model
     inline StageDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline const Aws::Vector<BlockerDeclaration>& GetBlockers() const{ return m_blockers; }
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetBlockers(const Aws::Vector<BlockerDeclaration>& value) { m_blockersHasBeenSet = true; m_blockers = value; }
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetBlockers(Aws::Vector<BlockerDeclaration>&& value) { m_blockersHasBeenSet = true; m_blockers = value; }
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline StageDeclaration& WithBlockers(const Aws::Vector<BlockerDeclaration>& value) { SetBlockers(value); return *this;}
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline StageDeclaration& WithBlockers(Aws::Vector<BlockerDeclaration>&& value) { SetBlockers(value); return *this;}
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline StageDeclaration& AddBlockers(const BlockerDeclaration& value) { m_blockersHasBeenSet = true; m_blockers.push_back(value); return *this; }
 
     /**
-     * <p>The gates included in a stage.</p>
+     * <p>Reserved for future use.</p>
      */
     inline StageDeclaration& AddBlockers(BlockerDeclaration&& value) { m_blockersHasBeenSet = true; m_blockers.push_back(value); return *this; }
 

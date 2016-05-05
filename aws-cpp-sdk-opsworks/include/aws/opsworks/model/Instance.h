@@ -1494,6 +1494,48 @@ namespace Model
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline const Aws::String& GetTenancy() const{ return m_tenancy; }
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline void SetTenancy(Aws::String&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline void SetTenancy(const char* value) { m_tenancyHasBeenSet = true; m_tenancy.assign(value); }
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline Instance& WithTenancy(const Aws::String& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline Instance& WithTenancy(Aws::String&& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
+    inline Instance& WithTenancy(const char* value) { SetTenancy(value); return *this;}
+
+    /**
      * <p>The instance's virtualization type: <code>paravirtual</code> or
      * <code>hvm</code>.</p>
      */
@@ -1600,6 +1642,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+    Aws::String m_tenancy;
+    bool m_tenancyHasBeenSet;
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
   };

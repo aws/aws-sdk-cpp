@@ -309,37 +309,37 @@ namespace Model
     inline Volume& WithDevice(const char* value) { SetDevice(value); return *this;}
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline Volume& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline Volume& WithMountPoint(Aws::String&& value) { SetMountPoint(value); return *this;}
 
     /**
-     * <p>The volume mount point. For example "/dev/sdh".</p>
+     * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline Volume& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
 

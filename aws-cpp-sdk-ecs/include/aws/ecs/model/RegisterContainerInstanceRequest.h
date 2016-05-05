@@ -91,7 +91,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline const Aws::String& GetInstanceIdentityDocument() const{ return m_instanceIdentityDocument; }
 
@@ -99,7 +99,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline void SetInstanceIdentityDocument(const Aws::String& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = value; }
 
@@ -107,7 +107,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline void SetInstanceIdentityDocument(Aws::String&& value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline void SetInstanceIdentityDocument(const char* value) { m_instanceIdentityDocumentHasBeenSet = true; m_instanceIdentityDocument.assign(value); }
 
@@ -123,7 +123,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const Aws::String& value) { SetInstanceIdentityDocument(value); return *this;}
 
@@ -131,7 +131,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(Aws::String&& value) { SetInstanceIdentityDocument(value); return *this;}
 
@@ -139,7 +139,7 @@ namespace Model
      * <p>The instance identity document for the EC2 instance to register. This
      * document can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const char* value) { SetInstanceIdentityDocument(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline const Aws::String& GetInstanceIdentityDocumentSignature() const{ return m_instanceIdentityDocumentSignature; }
 
@@ -155,7 +155,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline void SetInstanceIdentityDocumentSignature(const Aws::String& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
 
@@ -163,7 +163,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline void SetInstanceIdentityDocumentSignature(Aws::String&& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
 
@@ -171,7 +171,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline void SetInstanceIdentityDocumentSignature(const char* value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature.assign(value); }
 
@@ -179,7 +179,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const Aws::String& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
 
@@ -187,7 +187,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(Aws::String&& value) { SetInstanceIdentityDocumentSignature(value); return *this;}
 
@@ -195,7 +195,7 @@ namespace Model
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
      * <code>curl
-     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code></p>
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const char* value) { SetInstanceIdentityDocumentSignature(value); return *this;}
 

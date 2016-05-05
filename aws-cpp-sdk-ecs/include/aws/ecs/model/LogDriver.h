@@ -29,7 +29,8 @@ namespace Model
     syslog,
     journald,
     gelf,
-    fluentd
+    fluentd,
+    awslogs
   };
 
 namespace LogDriverMapper

@@ -35,165 +35,284 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key. This value can be a globally
-     * unique identifier or the fully specified ARN to a key. <ul> <li>Key ARN Example
-     * -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012</li>
-     * </ul> </p>
+     * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
+     * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
+     * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
+     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>Name of the policy to be attached. Currently, the only supported name is
-     * "default".</p>
+     * <p>The name of the key policy.</p> <p>This value must be
+     * <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy to attach to the key. This is required and delegates back to the
-     * account. The key is the root of trust. The policy size limit is 32 KiB (32768
-     * bytes). </p>
+     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * following criteria:</p> <ul> <li> <p>It must allow the principal making the
+     * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
+     * exist and be visible to AWS KMS. When you create a new AWS principal (for
+     * example, an IAM user or role), you might need to enforce a delay before
+     * specifying the new principal in a key policy because the new principal might not
+     * immediately be visible to AWS KMS. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+     * that I make are not always immediately visible</a> in the <i>IAM User
+     * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+
+    /**
+     * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+     * <important> <p>Setting this value to true increases the likelihood that the CMK
+     * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
+     * more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * prevent the principal making the request from making a subsequent
+     * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
+     * false.</p>
+     */
+    inline bool GetBypassPolicyLockoutSafetyCheck() const{ return m_bypassPolicyLockoutSafetyCheck; }
+
+    /**
+     * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+     * <important> <p>Setting this value to true increases the likelihood that the CMK
+     * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
+     * more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * prevent the principal making the request from making a subsequent
+     * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
+     * false.</p>
+     */
+    inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
+
+    /**
+     * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+     * <important> <p>Setting this value to true increases the likelihood that the CMK
+     * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
+     * more information, refer to the scenario in the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+     * Key Policy</a> section in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * prevent the principal making the request from making a subsequent
+     * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
+     * false.</p>
+     */
+    inline PutKeyPolicyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
 
   private:
     Aws::String m_keyId;
@@ -202,6 +321,8 @@ namespace Model
     bool m_policyNameHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheck;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
   };
 
 } // namespace Model

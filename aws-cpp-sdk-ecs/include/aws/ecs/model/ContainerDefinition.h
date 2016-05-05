@@ -152,8 +152,8 @@ namespace Model
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -162,20 +162,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -184,20 +184,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -206,20 +206,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -228,20 +228,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -250,20 +250,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -272,20 +272,20 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(value); return *this;}
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255 letters
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
      * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
      * forward slashes, and number signs are allowed. This parameter maps to
      * <code>Image</code> in the <a
@@ -294,12 +294,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li> <li>Images in other
-     * repositories on Docker Hub are qualified with an organization name (for example,
-     * <code>amazon/amazon-ecs-agent</code>).</li> <li>Images in other online
-     * repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</li> </ul>
+     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
+     * other repositories on Docker Hub are qualified with an organization name (for
+     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
+     * online repositories are qualified further by a domain name (for example,
+     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -334,12 +334,12 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b>
-     * Null and zero CPU values are passed to Docker as 0, which Docker then converts
-     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
-     * kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or
-     * equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as
-     * 2.</li></ul>
+     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
+     * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
+     * to Docker as 2.</p> </li> </ul>
      */
     inline long GetCpu() const{ return m_cpu; }
 
@@ -374,12 +374,12 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b>
-     * Null and zero CPU values are passed to Docker as 0, which Docker then converts
-     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
-     * kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or
-     * equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as
-     * 2.</li></ul>
+     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
+     * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
+     * to Docker as 2.</p> </li> </ul>
      */
     inline void SetCpu(long value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
@@ -414,12 +414,12 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><b>Agent versions less than or equal to 1.1.0:</b>
-     * Null and zero CPU values are passed to Docker as 0, which Docker then converts
-     * to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
-     * kernel converts to 2 CPU shares.</li> <li><b>Agent versions greater than or
-     * equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed to Docker as
-     * 2.</li></ul>
+     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
+     * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
+     * to Docker as 2.</p> </li> </ul>
      */
     inline ContainerDefinition& WithCpu(long value) { SetCpu(value); return *this;}
 
@@ -482,8 +482,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -504,8 +504,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -526,8 +526,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -548,8 +548,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -570,8 +570,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -592,8 +592,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -614,8 +614,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -636,8 +636,8 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"><code>docker
-     * run</code></a>.</p> <important> <p>Containers that are collocated on a single
+     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
+     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
      * container instance may be able to communicate with each other without requiring
      * links or host port mappings. Network isolation is achieved on the container
      * instance using security groups and VPC settings.</p> </important>
@@ -765,31 +765,49 @@ namespace Model
 
     /**
      * <p>If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
-     * <code>essential</code> parameter of a container is marked as <code>false</code>,
-     * then its failure does not affect the rest of the containers in a task. If this
-     * parameter is omitted, a container is assumed to be essential.</p> <note> <p>All
-     * tasks must have at least one essential container.</p> </note>
+     * <code>true</code>, and that container fails or stops for any reason, all other
+     * containers that are part of the task are stopped. If the <code>essential</code>
+     * parameter of a container is marked as <code>false</code>, then its failure does
+     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * container is assumed to be essential.</p> <p>All tasks must have at least one
+     * essential container. If you have an application that is composed of multiple
+     * containers, you should group containers that are used for a common purpose into
+     * components, and separate the different components into multiple task
+     * definitions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline bool GetEssential() const{ return m_essential; }
 
     /**
      * <p>If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
-     * <code>essential</code> parameter of a container is marked as <code>false</code>,
-     * then its failure does not affect the rest of the containers in a task. If this
-     * parameter is omitted, a container is assumed to be essential.</p> <note> <p>All
-     * tasks must have at least one essential container.</p> </note>
+     * <code>true</code>, and that container fails or stops for any reason, all other
+     * containers that are part of the task are stopped. If the <code>essential</code>
+     * parameter of a container is marked as <code>false</code>, then its failure does
+     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * container is assumed to be essential.</p> <p>All tasks must have at least one
+     * essential container. If you have an application that is composed of multiple
+     * containers, you should group containers that are used for a common purpose into
+     * components, and separate the different components into multiple task
+     * definitions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline void SetEssential(bool value) { m_essentialHasBeenSet = true; m_essential = value; }
 
     /**
      * <p>If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
-     * <code>essential</code> parameter of a container is marked as <code>false</code>,
-     * then its failure does not affect the rest of the containers in a task. If this
-     * parameter is omitted, a container is assumed to be essential.</p> <note> <p>All
-     * tasks must have at least one essential container.</p> </note>
+     * <code>true</code>, and that container fails or stops for any reason, all other
+     * containers that are part of the task are stopped. If the <code>essential</code>
+     * parameter of a container is marked as <code>false</code>, then its failure does
+     * not affect the rest of the containers in a task. If this parameter is omitted, a
+     * container is assumed to be essential.</p> <p>All tasks must have at least one
+     * essential container. If you have an application that is composed of multiple
+     * containers, you should group containers that are used for a common purpose into
+     * components, and separate the different components into multiple task
+     * definitions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline ContainerDefinition& WithEssential(bool value) { SetEssential(value); return *this;}
 
@@ -1882,7 +1900,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -1902,7 +1920,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -1922,7 +1940,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -1942,7 +1960,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -1962,7 +1980,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -1982,7 +2000,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2002,7 +2020,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2022,7 +2040,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2220,7 +2238,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
 
@@ -2236,7 +2254,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
@@ -2252,7 +2270,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
@@ -2268,7 +2286,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline ContainerDefinition& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
 
@@ -2284,7 +2302,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(value); return *this;}
 
@@ -2300,7 +2318,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline ContainerDefinition& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
@@ -2316,7 +2334,7 @@ namespace Model
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
      * into your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code></p>
+     * version | grep "Server API version"</code> </p>
      */
     inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
@@ -2327,18 +2345,29 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. Valid
-     * log drivers are displayed in the <a>LogConfiguration</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code></p> <note> <p>The
-     * Amazon ECS container agent running on a container instance must register the
-     * logging drivers available on that instance with the
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. By
+     * default, containers use the same logging driver that the Docker daemon uses;
+     * however the container may use a different logging driver than the Docker daemon
+     * by specifying a log driver with this parameter in the container definition. To
+     * use a different logging driver for a container, the log system must be
+     * configured properly on the container instance (or on a different log server for
+     * remote logging options). For more information on the options for different
+     * supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
+     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <note> <p>The Amazon ECS container agent running on a container instance must
+     * register the logging drivers available on that instance with the
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2351,18 +2380,29 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. Valid
-     * log drivers are displayed in the <a>LogConfiguration</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code></p> <note> <p>The
-     * Amazon ECS container agent running on a container instance must register the
-     * logging drivers available on that instance with the
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. By
+     * default, containers use the same logging driver that the Docker daemon uses;
+     * however the container may use a different logging driver than the Docker daemon
+     * by specifying a log driver with this parameter in the container definition. To
+     * use a different logging driver for a container, the log system must be
+     * configured properly on the container instance (or on a different log server for
+     * remote logging options). For more information on the options for different
+     * supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
+     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <note> <p>The Amazon ECS container agent running on a container instance must
+     * register the logging drivers available on that instance with the
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2375,18 +2415,29 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. Valid
-     * log drivers are displayed in the <a>LogConfiguration</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code></p> <note> <p>The
-     * Amazon ECS container agent running on a container instance must register the
-     * logging drivers available on that instance with the
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. By
+     * default, containers use the same logging driver that the Docker daemon uses;
+     * however the container may use a different logging driver than the Docker daemon
+     * by specifying a log driver with this parameter in the container definition. To
+     * use a different logging driver for a container, the log system must be
+     * configured properly on the container instance (or on a different log server for
+     * remote logging options). For more information on the options for different
+     * supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
+     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <note> <p>The Amazon ECS container agent running on a container instance must
+     * register the logging drivers available on that instance with the
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2399,18 +2450,29 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. Valid
-     * log drivers are displayed in the <a>LogConfiguration</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code></p> <note> <p>The
-     * Amazon ECS container agent running on a container instance must register the
-     * logging drivers available on that instance with the
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. By
+     * default, containers use the same logging driver that the Docker daemon uses;
+     * however the container may use a different logging driver than the Docker daemon
+     * by specifying a log driver with this parameter in the container definition. To
+     * use a different logging driver for a container, the log system must be
+     * configured properly on the container instance (or on a different log server for
+     * remote logging options). For more information on the options for different
+     * supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
+     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <note> <p>The Amazon ECS container agent running on a container instance must
+     * register the logging drivers available on that instance with the
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -2423,18 +2485,29 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--log-driver</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. Valid
-     * log drivers are displayed in the <a>LogConfiguration</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code></p> <note> <p>The
-     * Amazon ECS container agent running on a container instance must register the
-     * logging drivers available on that instance with the
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>. By
+     * default, containers use the same logging driver that the Docker daemon uses;
+     * however the container may use a different logging driver than the Docker daemon
+     * by specifying a log driver with this parameter in the container definition. To
+     * use a different logging driver for a container, the log system must be
+     * configured properly on the container instance (or on a different log server for
+     * remote logging options). For more information on the options for different
+     * supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
+     * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
+     * supports a subset of the logging drivers available to the Docker daemon (shown
+     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
+     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * <note> <p>The Amazon ECS container agent running on a container instance must
+     * register the logging drivers available on that instance with the
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.</p> </note>
      */

@@ -61,6 +61,7 @@
 #include <aws/s3/model/ListMultipartUploadsRequest.h>
 #include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
+#include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/s3/model/ListPartsRequest.h>
 #include <aws/s3/model/PutBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/PutBucketAclRequest.h>
@@ -1299,6 +1300,38 @@ void S3Client::ListObjectsAsync(const ListObjectsRequest& request, const ListObj
 void S3Client::ListObjectsAsyncHelper(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListObjects(request), context);
+}
+
+ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  ss << request.GetBucket();
+  ss << "?list-type=2";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListObjectsV2Outcome(ListObjectsV2Result(outcome.GetResult()));
+  }
+  else
+  {
+    return ListObjectsV2Outcome(outcome.GetError());
+  }
+}
+
+ListObjectsV2OutcomeCallable S3Client::ListObjectsV2Callable(const ListObjectsV2Request& request) const
+{
+  return std::async(std::launch::async, &S3Client::ListObjectsV2, this, request);
+}
+
+void S3Client::ListObjectsV2Async(const ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&S3Client::ListObjectsV2AsyncHelper, this, request, handler, context);
+}
+
+void S3Client::ListObjectsV2AsyncHelper(const ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListObjectsV2(request), context);
 }
 
 ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const

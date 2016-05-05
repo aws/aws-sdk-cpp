@@ -32,12 +32,14 @@
 #include <aws/route53domains/model/DisableDomainTransferLockRequest.h>
 #include <aws/route53domains/model/EnableDomainAutoRenewRequest.h>
 #include <aws/route53domains/model/EnableDomainTransferLockRequest.h>
+#include <aws/route53domains/model/GetContactReachabilityStatusRequest.h>
 #include <aws/route53domains/model/GetDomainDetailRequest.h>
 #include <aws/route53domains/model/GetOperationDetailRequest.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
 #include <aws/route53domains/model/ListOperationsRequest.h>
 #include <aws/route53domains/model/ListTagsForDomainRequest.h>
 #include <aws/route53domains/model/RegisterDomainRequest.h>
+#include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeRequest.h>
 #include <aws/route53domains/model/TransferDomainRequest.h>
 #include <aws/route53domains/model/UpdateDomainContactRequest.h>
@@ -293,6 +295,37 @@ void Route53DomainsClient::EnableDomainTransferLockAsyncHelper(const EnableDomai
   handler(this, request, EnableDomainTransferLock(request), context);
 }
 
+GetContactReachabilityStatusOutcome Route53DomainsClient::GetContactReachabilityStatus(const GetContactReachabilityStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetContactReachabilityStatusOutcome(GetContactReachabilityStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetContactReachabilityStatusOutcome(outcome.GetError());
+  }
+}
+
+GetContactReachabilityStatusOutcomeCallable Route53DomainsClient::GetContactReachabilityStatusCallable(const GetContactReachabilityStatusRequest& request) const
+{
+  return std::async(std::launch::async, &Route53DomainsClient::GetContactReachabilityStatus, this, request);
+}
+
+void Route53DomainsClient::GetContactReachabilityStatusAsync(const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&Route53DomainsClient::GetContactReachabilityStatusAsyncHelper, this, request, handler, context);
+}
+
+void Route53DomainsClient::GetContactReachabilityStatusAsyncHelper(const GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContactReachabilityStatus(request), context);
+}
+
 GetDomainDetailOutcome Route53DomainsClient::GetDomainDetail(const GetDomainDetailRequest& request) const
 {
   Aws::StringStream ss;
@@ -477,6 +510,37 @@ void Route53DomainsClient::RegisterDomainAsync(const RegisterDomainRequest& requ
 void Route53DomainsClient::RegisterDomainAsyncHelper(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterDomain(request), context);
+}
+
+ResendContactReachabilityEmailOutcome Route53DomainsClient::ResendContactReachabilityEmail(const ResendContactReachabilityEmailRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResendContactReachabilityEmailOutcome(ResendContactReachabilityEmailResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResendContactReachabilityEmailOutcome(outcome.GetError());
+  }
+}
+
+ResendContactReachabilityEmailOutcomeCallable Route53DomainsClient::ResendContactReachabilityEmailCallable(const ResendContactReachabilityEmailRequest& request) const
+{
+  return std::async(std::launch::async, &Route53DomainsClient::ResendContactReachabilityEmail, this, request);
+}
+
+void Route53DomainsClient::ResendContactReachabilityEmailAsync(const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&Route53DomainsClient::ResendContactReachabilityEmailAsyncHelper, this, request, handler, context);
+}
+
+void Route53DomainsClient::ResendContactReachabilityEmailAsyncHelper(const ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResendContactReachabilityEmail(request), context);
 }
 
 RetrieveDomainAuthCodeOutcome Route53DomainsClient::RetrieveDomainAuthCode(const RetrieveDomainAuthCodeRequest& request) const

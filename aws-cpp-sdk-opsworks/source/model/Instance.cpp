@@ -62,6 +62,7 @@ Instance::Instance() :
     m_stackIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false)
 {
 }
@@ -107,6 +108,7 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_stackIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_tenancyHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -389,6 +391,13 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
     m_subnetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tenancy"))
+  {
+    m_tenancy = jsonValue.GetString("Tenancy");
+
+    m_tenancyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VirtualizationType"))
   {
     m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(jsonValue.GetString("VirtualizationType"));
@@ -640,6 +649,12 @@ JsonValue Instance::Jsonize() const
   if(m_subnetIdHasBeenSet)
   {
    payload.WithString("SubnetId", m_subnetId);
+
+  }
+
+  if(m_tenancyHasBeenSet)
+  {
+   payload.WithString("Tenancy", m_tenancy);
 
   }
 

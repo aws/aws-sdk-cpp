@@ -193,15 +193,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
          * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <p> <b>Important:</b> You
          * cannot call <code>AssumeRole</code> by using AWS root account credentials;
-         * access is denied. You must use IAM user credentials or temporary security
-         * credentials to call <code>AssumeRole</code>. </p> <p>For cross-account access,
-         * imagine that you own multiple accounts and need to access resources in each
-         * account. You could create long-term credentials in each account to access those
-         * resources. However, managing all those credentials and remembering which one can
-         * access which account can be time consuming. Instead, you can create one set of
-         * long-term credentials in one account and then use temporary security credentials
-         * to access all the other accounts by assuming roles in those accounts. For more
-         * information about roles, see <a
+         * access is denied. You must use credentials for an IAM user or an IAM role to
+         * call <code>AssumeRole</code>. </p> <p>For cross-account access, imagine that you
+         * own multiple accounts and need to access resources in each account. You could
+         * create long-term credentials in each account to access those resources. However,
+         * managing all those credentials and remembering which one can access which
+         * account can be time consuming. Instead, you can create one set of long-term
+         * credentials in one account and then use temporary security credentials to access
+         * all the other accounts by assuming roles in those accounts. For more information
+         * about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
          * Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS
@@ -276,15 +276,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
          * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <p> <b>Important:</b> You
          * cannot call <code>AssumeRole</code> by using AWS root account credentials;
-         * access is denied. You must use IAM user credentials or temporary security
-         * credentials to call <code>AssumeRole</code>. </p> <p>For cross-account access,
-         * imagine that you own multiple accounts and need to access resources in each
-         * account. You could create long-term credentials in each account to access those
-         * resources. However, managing all those credentials and remembering which one can
-         * access which account can be time consuming. Instead, you can create one set of
-         * long-term credentials in one account and then use temporary security credentials
-         * to access all the other accounts by assuming roles in those accounts. For more
-         * information about roles, see <a
+         * access is denied. You must use credentials for an IAM user or an IAM role to
+         * call <code>AssumeRole</code>. </p> <p>For cross-account access, imagine that you
+         * own multiple accounts and need to access resources in each account. You could
+         * create long-term credentials in each account to access those resources. However,
+         * managing all those credentials and remembering which one can access which
+         * account can be time consuming. Instead, you can create one set of long-term
+         * credentials in one account and then use temporary security credentials to access
+         * all the other accounts by assuming roles in those accounts. For more information
+         * about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
          * Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS
@@ -361,15 +361,15 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
          * the AWS STS APIs</a> in the <i>IAM User Guide</i>.</p> <p> <b>Important:</b> You
          * cannot call <code>AssumeRole</code> by using AWS root account credentials;
-         * access is denied. You must use IAM user credentials or temporary security
-         * credentials to call <code>AssumeRole</code>. </p> <p>For cross-account access,
-         * imagine that you own multiple accounts and need to access resources in each
-         * account. You could create long-term credentials in each account to access those
-         * resources. However, managing all those credentials and remembering which one can
-         * access which account can be time consuming. Instead, you can create one set of
-         * long-term credentials in one account and then use temporary security credentials
-         * to access all the other accounts by assuming roles in those accounts. For more
-         * information about roles, see <a
+         * access is denied. You must use credentials for an IAM user or an IAM role to
+         * call <code>AssumeRole</code>. </p> <p>For cross-account access, imagine that you
+         * own multiple accounts and need to access resources in each account. You could
+         * create long-term credentials in each account to access those resources. However,
+         * managing all those credentials and remembering which one can access which
+         * account can be time consuming. Instead, you can create one set of long-term
+         * credentials in one account and then use temporary security credentials to access
+         * all the other accounts by assuming roles in those accounts. For more information
+         * about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
          * Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>. </p> <p>For
          * federation, you can, for example, grant single sign-on access to the AWS

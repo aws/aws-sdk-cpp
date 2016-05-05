@@ -48,6 +48,7 @@
 #include <aws/s3/model/ListMultipartUploadsResult.h>
 #include <aws/s3/model/ListObjectVersionsResult.h>
 #include <aws/s3/model/ListObjectsResult.h>
+#include <aws/s3/model/ListObjectsV2Result.h>
 #include <aws/s3/model/ListPartsResult.h>
 #include <aws/s3/model/PutObjectResult.h>
 #include <aws/s3/model/PutObjectAclResult.h>
@@ -134,6 +135,7 @@ namespace Aws
         class ListMultipartUploadsRequest;
         class ListObjectVersionsRequest;
         class ListObjectsRequest;
+        class ListObjectsV2Request;
         class ListPartsRequest;
         class PutBucketAccelerateConfigurationRequest;
         class PutBucketAclRequest;
@@ -189,6 +191,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<ListMultipartUploadsResult, Aws::Client::AWSError<S3Errors>> ListMultipartUploadsOutcome;
         typedef Aws::Utils::Outcome<ListObjectVersionsResult, Aws::Client::AWSError<S3Errors>> ListObjectVersionsOutcome;
         typedef Aws::Utils::Outcome<ListObjectsResult, Aws::Client::AWSError<S3Errors>> ListObjectsOutcome;
+        typedef Aws::Utils::Outcome<ListObjectsV2Result, Aws::Client::AWSError<S3Errors>> ListObjectsV2Outcome;
         typedef Aws::Utils::Outcome<ListPartsResult, Aws::Client::AWSError<S3Errors>> ListPartsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketAccelerateConfigurationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<S3Errors>> PutBucketAclOutcome;
@@ -244,6 +247,7 @@ namespace Aws
         typedef std::future<ListMultipartUploadsOutcome> ListMultipartUploadsOutcomeCallable;
         typedef std::future<ListObjectVersionsOutcome> ListObjectVersionsOutcomeCallable;
         typedef std::future<ListObjectsOutcome> ListObjectsOutcomeCallable;
+        typedef std::future<ListObjectsV2Outcome> ListObjectsV2OutcomeCallable;
         typedef std::future<ListPartsOutcome> ListPartsOutcomeCallable;
         typedef std::future<PutBucketAccelerateConfigurationOutcome> PutBucketAccelerateConfigurationOutcomeCallable;
         typedef std::future<PutBucketAclOutcome> PutBucketAclOutcomeCallable;
@@ -302,6 +306,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartUploadsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListObjectVersionsRequest&, const Model::ListObjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectVersionsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListObjectsRequest&, const Model::ListObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectsResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::ListObjectsV2Request&, const Model::ListObjectsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectsV2ResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListPartsRequest&, const Model::ListPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartsResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketAccelerateConfigurationRequest&, const Model::PutBucketAccelerateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketAccelerateConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutBucketAclRequest&, const Model::PutBucketAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketAclResponseReceivedHandler;
@@ -1086,6 +1091,34 @@ namespace Aws
         virtual void ListObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
+         * use this revised API for new application development.
+         */
+        virtual Model::ListObjectsV2Outcome ListObjectsV2(const Model::ListObjectsV2Request& request) const;
+
+        /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
+         * use this revised API for new application development.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListObjectsV2OutcomeCallable ListObjectsV2Callable(const Model::ListObjectsV2Request& request) const;
+
+        /**
+         * Returns some or all (up to 1000) of the objects in a bucket. You can use the
+         * request parameters as selection criteria to return a subset of the objects in a
+         * bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you
+         * use this revised API for new application development.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListObjectsV2Async(const Model::ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Lists the parts that have been uploaded for a specific multipart upload.
          */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
@@ -1518,6 +1551,7 @@ namespace Aws
         void ListMultipartUploadsAsyncHelper(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectVersionsAsyncHelper(const Model::ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectsAsyncHelper(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListObjectsV2AsyncHelper(const Model::ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartsAsyncHelper(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketAccelerateConfigurationAsyncHelper(const Model::PutBucketAccelerateConfigurationRequest& request, const PutBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBucketAclAsyncHelper(const Model::PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

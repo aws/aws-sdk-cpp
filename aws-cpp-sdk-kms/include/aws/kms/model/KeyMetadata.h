@@ -287,7 +287,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -296,7 +296,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -305,7 +305,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -314,7 +314,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>
@@ -323,7 +323,7 @@ namespace Model
 
     /**
      * <p>The state of the customer master key (CMK).</p> <p>For more information about
-     * how key state affects the use of a CMK, go to <a
+     * how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.</p>

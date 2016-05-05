@@ -31,6 +31,7 @@ PutIntegrationRequest::PutIntegrationRequest() :
     m_credentialsHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
+    m_passthroughBehaviorHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false)
 {
@@ -82,6 +83,12 @@ Aws::String PutIntegrationRequest::SerializePayload() const
      requestTemplatesJsonMap.WithString(requestTemplatesItem.first, requestTemplatesItem.second);
    }
    payload.WithObject("requestTemplates", std::move(requestTemplatesJsonMap));
+
+  }
+
+  if(m_passthroughBehaviorHasBeenSet)
+  {
+   payload.WithString("passthroughBehavior", m_passthroughBehavior);
 
   }
 

@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about the AWS Key Management Service (AWS KMS) key
-   * used to encrypt data in the artifact store.</p>
+   * <p>Represents information about the key used to encrypt data in the artifact
+   * store, such as an AWS Key Management Service (AWS KMS) key.</p>
    */
   class AWS_CODEPIPELINE_API EncryptionKey
   {
@@ -44,62 +44,74 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline EncryptionKey& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline EncryptionKey& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS key.</p>
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
      */
     inline EncryptionKey& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The type of AWS KMS key, such as a customer master key.</p>
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline const EncryptionKeyType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of AWS KMS key, such as a customer master key.</p>
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline void SetType(const EncryptionKeyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of AWS KMS key, such as a customer master key.</p>
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline void SetType(EncryptionKeyType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of AWS KMS key, such as a customer master key.</p>
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline EncryptionKey& WithType(const EncryptionKeyType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of AWS KMS key, such as a customer master key.</p>
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline EncryptionKey& WithType(EncryptionKeyType&& value) { SetType(value); return *this;}
 
