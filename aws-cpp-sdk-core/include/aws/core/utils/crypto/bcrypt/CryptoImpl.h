@@ -298,6 +298,7 @@ namespace Aws
                 BCRYPT_KEY_HANDLE m_keyHandle;
                 DWORD m_flags;   
                 CryptoBuffer m_workingIv;
+                PBCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfoPtr;
             
             private:
                 void Init();
@@ -408,6 +409,57 @@ namespace Aws
                 CryptoBuffer m_blockOverflow;
             };
 
+            /**
+            * BCrypt implementation for AES in GCM mode
+            */
+            class AES_GCM_Cipher_BCrypt : public BCryptSymmetricCipher
+            {
+            public:
+                /**
+                * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
+                */
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key);
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                */
+                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer()));
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                */
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer());
+
+                AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt& other) = delete;
+
+                AES_GCM_Cipher_BCrypt& operator=(const AES_GCM_Cipher_BCrypt& other) = delete;
+
+                AES_GCM_Cipher_BCrypt(AES_GCM_Cipher_BCrypt&& toMove) = default;
+                
+                CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+                void InitDecryptor_Internal() override;
+
+                size_t GetBlockSizeBytes() const override;
+                size_t GetKeyLengthBits() const override;
+                size_t GetTagLengthBytes() const;
+
+            private:
+                void InitCipher();
+
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+                static size_t TagLengthBytes;
+
+                CryptoBuffer m_macBuffer;
+                CryptoBuffer m_finalBuffer;
+                BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfo;
+            };
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws

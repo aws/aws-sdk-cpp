@@ -51,7 +51,7 @@ namespace Aws
                  * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
                  */
                 SymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer(0))) :
-                        m_key(key), m_initializationVector(initializationVector), m_tag(tag), m_failure(false) { Validate(); }
+                        m_key(std::move(key)), m_initializationVector(std::move(initializationVector)), m_tag(std::move(tag)), m_failure(false) { Validate(); }
 
                 SymmetricCipher(const SymmetricCipher& other) = delete;
                 SymmetricCipher& operator=(const SymmetricCipher& other) = delete;

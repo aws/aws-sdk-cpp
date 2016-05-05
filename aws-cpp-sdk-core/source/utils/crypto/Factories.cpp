@@ -305,9 +305,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        AWS_UNREFERENCED_PARAM(key);
-        return nullptr;
-        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key);
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -325,12 +323,7 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        return nullptr;
-        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, iv, tag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
@@ -350,14 +343,9 @@ public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag) const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        return nullptr;
-        //return Aws::MakeShared<AES_GCM_BcryptImpl>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, std::move(key), std::move(iv), std::move(tag));
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag);
+        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move((iv), std::move(tag));
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);

@@ -307,13 +307,13 @@ namespace Aws
 
             BCryptSymmetricCipher::BCryptSymmetricCipher(const CryptoBuffer& key, size_t blockSizeBytes, bool ctrMode) :
                 SymmetricCipher(key, blockSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false),
-                m_decryptionMode(false)
+                m_decryptionMode(false), m_authInfoPtr(nullptr)
             {
                 Init();
             }
 
             BCryptSymmetricCipher::BCryptSymmetricCipher(BCryptSymmetricCipher&& toMove) : SymmetricCipher(std::move(toMove)),
-                m_encDecInitialized(false)
+                m_encDecInitialized(false), m_authInfoPtr(nullptr)
             {
                 m_algHandle = toMove.m_algHandle;
                 m_keyHandle = toMove.m_keyHandle;
@@ -328,7 +328,7 @@ namespace Aws
             BCryptSymmetricCipher::BCryptSymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) :
                 SymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)),
                 m_encDecInitialized(false),
-                m_encryptionMode(false), m_decryptionMode(false)
+                m_encryptionMode(false), m_decryptionMode(false), m_authInfoPtr(nullptr)
             {
                 Init();
             }
@@ -336,7 +336,7 @@ namespace Aws
             BCryptSymmetricCipher::BCryptSymmetricCipher(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
                 const CryptoBuffer& tag) :
                 SymmetricCipher(key, initializationVector, tag), m_encDecInitialized(false),
-                m_encryptionMode(false), m_decryptionMode(false)
+                m_encryptionMode(false), m_decryptionMode(false), m_authInfoPtr(nullptr)
             {
                 Init();
             }
@@ -385,13 +385,16 @@ namespace Aws
                         return;
                     }
 
-                    status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
-
-                    if (!NT_SUCCESS(status))
+                    if(!m_authInfoPtr)
                     {
-                        m_failure = true;
-                        AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symetric key initialization vector with status code " << status);
-                        return;
+                        status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
+
+                        if (!NT_SUCCESS(status))
+                        {
+                            m_failure = true;
+                            AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symetric key initialization vector with status code " << status);
+                            return;
+                        }
                     }
                 }
             }
@@ -438,13 +441,22 @@ namespace Aws
                 {
                     return CryptoBuffer();
                 }
-
+                             
                 ULONG lengthWritten = static_cast<ULONG>(unEncryptedData.GetLength() + GetBlockSizeBytes());
                 CryptoBuffer encryptedText(static_cast<size_t>(lengthWritten));
 
+                PUCHAR iv = nullptr;
+                ULONG ivSize = 0;
+
+                if (m_authInfoPtr)
+                {
+                    iv = m_workingIv.GetUnderlyingData();
+                    ivSize = static_cast<ULONG>(m_workingIv.GetLength());
+                }
+
                 //iv was set on the key itself, so we don't need to pass it here.
                 NTSTATUS status = BCryptEncrypt(m_keyHandle, unEncryptedData.GetUnderlyingData(), (ULONG)unEncryptedData.GetLength(),
-                    nullptr, nullptr, 0, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
+                    m_authInfoPtr, iv, ivSize, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
 
                 if (!NT_SUCCESS(status))
                 {
@@ -481,12 +493,21 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
+                PUCHAR iv = nullptr;
+                ULONG ivSize = 0;
+
+                if (m_authInfoPtr)
+                {
+                    iv = m_workingIv.GetUnderlyingData();
+                    ivSize = static_cast<ULONG>(m_workingIv.GetLength());
+                }
+
                 ULONG lengthWritten = static_cast<ULONG>(encryptedData.GetLength() + GetBlockSizeBytes());
                 CryptoBuffer decryptedText(static_cast<size_t>(lengthWritten));
 
                 //iv was set on the key itself, so we don't need to pass it here.
                 NTSTATUS status = BCryptDecrypt(m_keyHandle, encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(),
-                    nullptr, nullptr, 0, decryptedText.GetUnderlyingData(), (ULONG)decryptedText.GetLength(), &lengthWritten, m_flags);
+                    m_authInfoPtr, iv, ivSize, decryptedText.GetUnderlyingData(), (ULONG)decryptedText.GetLength(), &lengthWritten, m_flags);
 
                 if (!NT_SUCCESS(status))
                 {
@@ -633,7 +654,7 @@ namespace Aws
                 m_flags = 0;
                 CryptoBuffer toDecrypt;
 
-                //if we've been called again, then the candidate for the final padding block is actually part of the message add it back
+                //if we've been called again, then the candidate for the final padding block is actually part of the message-- add it back
                 //Also, add the overflow back
                 //[ padding candidate ] [ overflow ] [ new encrypted data ]
                 if (m_fullBlockPaddingCandidate.GetLength() > 0 || m_blockOverflow.GetLength() > 0)
@@ -1009,37 +1030,197 @@ namespace Aws
                 }
             }
 
-            /*
+            static const char* GCM_LOG_TAG = "BCrypt_AES_GCM_Cipher";
+            size_t AES_GCM_Cipher_BCrypt::BlockSizeBytes = 12;
+            size_t AES_GCM_Cipher_BCrypt::KeyLengthBits = 256;
+            size_t AES_GCM_Cipher_BCrypt::TagLengthBytes = 16;
 
-            std::shared_ptr<BCryptCipherProvider> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_CipherProvider()
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key) : 
+                    BCryptSymmetricCipher(key, BlockSizeBytes), m_macBuffer(TagLengthBytes)
             {
-                return Aws::MakeShared<BCryptCipherProvider>(BCRYPT_SYMETRIC_CIPHER_TAG, BCRYPT_AES_GMAC_ALGORITHM, BCRYPT_CHAIN_MODE_GCM);
+                m_tag = CryptoBuffer(TagLengthBytes);
             }
 
-            std::shared_ptr<BCryptSymmetricCipher> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key)
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) : 
+                    BCryptSymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)), m_macBuffer(TagLengthBytes)
             {
-                return Aws::MakeShared<BCryptSymmetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_PAD_NONE);
+                if (m_tag.GetLength() == 0)
+                {
+                    m_tag = CryptoBuffer(TagLengthBytes);
+                }
             }
 
-            std::shared_ptr<BCryptSymmetricCipher> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key)
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag) : 
+                    BCryptSymmetricCipher(key, initializationVector, tag), m_macBuffer(TagLengthBytes)
             {
-                return Aws::MakeShared<BCryptSymmetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, BCRYPT_PAD_NONE);
+                if (m_tag.GetLength() == 0)
+                {
+                    m_tag = CryptoBuffer(TagLengthBytes);
+                }
+            }           
+
+            /**
+             * This will always return a buffer due to the way the windows api is written.
+             * The chain flag has to be explicitly turned off and a buffer has to be passed in 
+             * in order for the tag to compute properly. As a result, we have to hold a buffer until
+             * the end to make sure the cipher computes the auth tag correctly.
+             */
+            CryptoBuffer AES_GCM_Cipher_BCrypt::FinalizeEncryption()
+            {
+                CheckInitEncryptor();
+                m_authInfo.dwFlags &= ~BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
+                return BCryptSymmetricCipher::EncryptBuffer(m_finalBuffer);                
+            }   
+            
+            /**
+             * Since we have to assume these calls are being chained, and due to the way the windows
+             * api works, we have to make sure we hold a final buffer until the end so we can tell
+             * windows to compute the auth tag. Also, prior to the last call, we have to pass the data
+             * in multiples of 16 byte blocks. So, here we keep a buffer of the % 16 + 16 bytes.
+             * That gets saved until the end where we will encrypt the last buffer and compute the tag.
+             */
+            CryptoBuffer AES_GCM_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& toEncrypt)
+            {
+                CryptoBuffer workingBuffer;
+
+                if (m_finalBuffer.GetLength() > 0)
+                {
+                    workingBuffer = CryptoBuffer({(ByteBuffer*)&m_finalBuffer, (ByteBuffer*)&toEncrypt});
+                    m_finalBuffer = CryptoBuffer();
+                }
+                else
+                {
+                    workingBuffer = toEncrypt;
+                }
+
+                if (workingBuffer.GetLength() > TagLengthBytes)
+                {
+                    auto offset = workingBuffer.GetLength() % TagLengthBytes;
+
+                    m_finalBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData() + workingBuffer.GetLength() - (TagLengthBytes +  offset), TagLengthBytes + offset);
+                    workingBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData(), workingBuffer.GetLength() - (TagLengthBytes + offset));
+                    return BCryptSymmetricCipher::EncryptBuffer(workingBuffer);
+                }
+                else
+                {
+                    m_finalBuffer = workingBuffer;
+                    return CryptoBuffer();
+                }
             }
 
-            std::shared_ptr<BCryptSymmetricCipher> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, const ByteBuffer& key, const ByteBuffer& iv)
+            /**
+             * Since we have to assume these calls are being chained, and due to the way the windows
+             * api works, we have to make sure we hold a final buffer until the end so we can tell
+             * windows to compute the auth tag. Also, prior to the last call, we have to pass the data
+             * in multiples of 16 byte blocks. So, here we keep a buffer of the % 16 + 16 bytes.
+             * That gets saved until the end where we will decrypt the last buffer and compute the tag.
+             */
+            CryptoBuffer AES_GCM_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& toDecrypt)
             {
-                return Aws::MakeShared<BCryptSymmetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
+                CryptoBuffer workingBuffer;
+
+                if (m_finalBuffer.GetLength() > 0)
+                {
+                    workingBuffer = CryptoBuffer({ (ByteBuffer*)&m_finalBuffer, (ByteBuffer*)&toDecrypt });
+                    m_finalBuffer = CryptoBuffer();
+                }
+                else
+                {
+                    workingBuffer = toDecrypt;
+                }
+
+                if (workingBuffer.GetLength() > TagLengthBytes)
+                {
+                    auto offset = workingBuffer.GetLength() % TagLengthBytes;
+                    m_finalBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData() + workingBuffer.GetLength() - (TagLengthBytes + offset), TagLengthBytes + offset);
+                    workingBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData(), workingBuffer.GetLength() - (TagLengthBytes + offset));
+                    return BCryptSymmetricCipher::DecryptBuffer(workingBuffer);
+                }
+                else
+                {
+                    m_finalBuffer = workingBuffer;
+                    return CryptoBuffer();
+                }
+            }
+           
+            /**
+             * This will always return a buffer due to the way the windows api is written.
+             * The chain flag has to be explicitly turned off and a buffer has to be passed in
+             * in order for the tag to compute properly. As a result, we have to hold a buffer until
+             * the end to make sure the cipher computes the auth tag correctly.
+             */
+            CryptoBuffer AES_GCM_Cipher_BCrypt::FinalizeDecryption()
+            { 
+                CheckInitDecryptor();
+                m_authInfo.dwFlags &= ~BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
+               
+                return BCryptSymmetricCipher::DecryptBuffer(m_finalBuffer);
             }
 
-            std::shared_ptr<BCryptSymmetricCipher> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, const ByteBuffer& iv)
+            /**
+             * Encrypt and decrypt do the same exact thing here.
+             * Summary:
+             * No Padding, open AES alg, Set GCM as chain mode, create the auth struct, turn on chaining,
+             *   initialize a buffer for bcrypt to use while running.
+             */
+            void AES_GCM_Cipher_BCrypt::InitCipher()
             {
-                return Aws::MakeShared<BCryptSymmetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
+                m_flags = 0;
+                NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
+
+                if (!NT_SUCCESS(status))
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_ERROR(GCM_LOG_TAG, "Failed to initialize encryptor with status code " << status);
+                }
+
+                status = BCryptSetProperty(m_algHandle, BCRYPT_CHAINING_MODE, (PUCHAR)BCRYPT_CHAIN_MODE_GCM, static_cast<ULONG>(wcslen(BCRYPT_CHAIN_MODE_GCM) + 1), 0);
+                if (!NT_SUCCESS(status))
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_ERROR(GCM_LOG_TAG, "Failed to initialize encryptor chaining mode with status code " << status);
+                }
+
+                BCRYPT_INIT_AUTH_MODE_INFO(m_authInfo);
+                m_authInfo.pbNonce = m_initializationVector.GetUnderlyingData();
+                m_authInfo.cbNonce = static_cast<ULONG>(m_initializationVector.GetLength());
+                m_authInfo.pbTag = m_tag.GetUnderlyingData();
+                m_authInfo.cbTag = static_cast<ULONG>(m_tag.GetLength());
+                m_authInfo.pbMacContext = m_macBuffer.GetUnderlyingData();
+                m_authInfo.cbMacContext = static_cast<ULONG>(m_macBuffer.GetLength());
+                m_authInfo.cbData = 0;
+                m_authInfo.dwFlags = BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
+
+                m_authInfoPtr = &m_authInfo;
+
+                m_workingIv = CryptoBuffer(TagLengthBytes);
+                m_workingIv.Zero();
             }
 
-            std::shared_ptr<BCryptSymmetricCipher> BCryptSymmetricCipher::CreateBCrypt_AES_GCM_Cipher(const std::shared_ptr<BCryptCipherProvider>& provider, ByteBuffer&& key, ByteBuffer&& iv)
+            void AES_GCM_Cipher_BCrypt::InitEncryptor_Internal()
             {
-                return Aws::MakeShared<BCryptSymmetricCipher>(BCRYPT_SYMETRIC_CIPHER_TAG, key, iv, BCRYPT_PAD_NONE);
-            }*/
+                InitCipher();
+            }
+
+            void AES_GCM_Cipher_BCrypt::InitDecryptor_Internal()
+            {
+                InitCipher();
+            }
+
+            size_t AES_GCM_Cipher_BCrypt::GetBlockSizeBytes() const
+            {
+                return BlockSizeBytes;
+            }
+
+            size_t AES_GCM_Cipher_BCrypt::GetKeyLengthBits() const
+            {
+                return KeyLengthBits;
+            }
+
+            size_t AES_GCM_Cipher_BCrypt::GetTagLengthBytes() const
+            {
+                return TagLengthBytes;
+            }            
 
         } // namespace Crypto
     } // namespace Utils
