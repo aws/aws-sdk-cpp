@@ -39,8 +39,7 @@ static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
 
-static std::shared_ptr<SecureRandomFactory<uint64_t>> s_SecureRandom64Factory(nullptr);
-static std::shared_ptr<SecureRandomFactory<uint32_t>> s_SecureRandom32Factory(nullptr);
+static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
 
 class DefaultMD5Factory : public HashFactory
 {
@@ -381,60 +380,19 @@ public:
     }
 };
 
-class DefaultSecureRand64Factory : public SecureRandomFactory<uint64_t>
+class DefaultSecureRandFactory : public SecureRandomFactory
 {
     /**
      * Factory method. Returns SecureRandom implementation.
      */
-    std::shared_ptr<SecureRandom<uint64_t>> CreateImplementation() const override
+    std::shared_ptr<SecureRandomBytes> CreateImplementation() const override
     {
 #if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_BCrypt<uint64_t>>(s_allocationTag);
+        return Aws::MakeShared<SecureRandomBytes_BCrypt>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<SecureRandomOpenSSLImpl<uint64_t>>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<SecureRandom_CommonCrypto<uint64_t>>(s_allocationTag);
-#else
-        return nullptr;
-#endif
-    }
-
-    /**
- * Opportunity to make any static initialization calls you need to make.
- * Will only be called once.
- */
-    void InitStaticState() override
-    {
-#if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-#endif
-    }
-
-    /**
-     * Opportunity to make any static cleanup calls you need to make.
-     * will only be called at the end of the application.
-     */
-    void CleanupStaticState() override
-    {
-#if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-#endif
-    }
-};
-
-class DefaultSecureRand32Factory : public SecureRandomFactory<uint32_t>
-{
-    /**
-     * Factory method. Returns SecureRandom implementation.
-     */
-    std::shared_ptr<SecureRandom<uint32_t>> CreateImplementation() const override
-    {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_BCrypt<uint32_t>>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<SecureRandomOpenSSLImpl<uint32_t>>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<SecureRandom_CommonCrypto<uint32_t>>(s_allocationTag);
 #else
         return nullptr;
 #endif
@@ -525,25 +483,15 @@ void Aws::Utils::Crypto::InitCrypto()
         s_AES_GCMFactory->InitStaticState();
     }
 
-    if(s_SecureRandom64Factory)
+    if(s_SecureRandomFactory)
     {
-        s_SecureRandom64Factory->InitStaticState();
+        s_SecureRandomFactory->InitStaticState();
     }
     else
     {
-        s_SecureRandom64Factory = Aws::MakeShared<DefaultSecureRand64Factory>(s_allocationTag);
-        s_SecureRandom64Factory->InitStaticState();
-    }
-
-    if(s_SecureRandom32Factory)
-    {
-        s_SecureRandom32Factory->InitStaticState();
-    }
-    else
-    {
-        s_SecureRandom32Factory = Aws::MakeShared<DefaultSecureRand32Factory>(s_allocationTag);
-        s_SecureRandom32Factory->InitStaticState();
-    }
+        s_SecureRandomFactory = Aws::MakeShared<DefaultSecureRandFactory>(s_allocationTag);
+        s_SecureRandomFactory->InitStaticState();
+    }   
 }
 
 void Aws::Utils::Crypto::CleanupCrypto()
@@ -584,17 +532,11 @@ void Aws::Utils::Crypto::CleanupCrypto()
         s_AES_GCMFactory = nullptr;
     }
 
-    if(s_SecureRandom64Factory)
+    if(s_SecureRandomFactory)
     {
-        s_SecureRandom64Factory->CleanupStaticState();
-        s_SecureRandom64Factory = nullptr;
-    }
-
-    if(s_SecureRandom32Factory)
-    {
-        s_SecureRandom32Factory->CleanupStaticState();
-        s_SecureRandom32Factory = nullptr;
-    }
+        s_SecureRandomFactory->CleanupStaticState();
+        s_SecureRandomFactory = nullptr;
+    }   
 }
 
 void Aws::Utils::Crypto::SetMD5Factory(const std::shared_ptr<HashFactory>& factory)
@@ -687,14 +629,7 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
     return s_AES_GCMFactory->CreateImplementation(std::move(key), std::move(iv), std::move(tag));
 }
 
-std::shared_ptr<SecureRandom<uint64_t>> Aws::Utils::Crypto::Create64BitSecureRandomImplementation()
+std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return s_SecureRandom64Factory->CreateImplementation();
+    return s_SecureRandomFactory->CreateImplementation();
 }
-
-std::shared_ptr<SecureRandom<uint32_t>> Aws::Utils::Crypto::Create32BitSecureRandomImplementation()
-{
-    return s_SecureRandom32Factory->CreateImplementation();
-}
-
-

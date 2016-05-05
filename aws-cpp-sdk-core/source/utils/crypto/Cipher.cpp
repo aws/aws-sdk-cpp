@@ -21,15 +21,6 @@
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Utils;
 
-static const unsigned int BIT_MASK = 0x000000FF;
-static const unsigned int SEVEN_BYTES_SHIFT = 56;
-static const unsigned int SIX_BYTES_SHIFT = 48;
-static const unsigned int FIVE_BYTES_SHIFT = 40;
-static const unsigned int FOUR_BYTES_SHIFT = 32;
-static const unsigned int THREE_BYTES_SHIFT = 24;
-static const unsigned int TWO_BYTES_SHIFT = 16;
-static const unsigned int ONE_BYTES_SHIFT = 8;
-
 namespace Aws
 {
     namespace Utils
@@ -40,53 +31,14 @@ namespace Aws
 
             CryptoBuffer GenerateXRandomBytes(size_t lengthBytes, bool ctrMode)
             {
-                std::shared_ptr<SecureRandom<uint64_t>> rng = Create64BitSecureRandomImplementation();
+                std::shared_ptr<SecureRandomBytes> rng = CreateSecureRandomBytesImplementation();
 
                 CryptoBuffer bytes(lengthBytes);
-
-                uint64_t randNumber = 0;
                 size_t lengthToGenerate = ctrMode ? (3 * bytes.GetLength())  / 4 : bytes.GetLength();
+                
+                rng->GetBytes(bytes.GetUnderlyingData(), lengthToGenerate);
 
-                for(size_t i = 0; i < lengthToGenerate && rng; ++i)
-                {
-                    unsigned char byteToAssign = 0;
-
-                    switch(i % sizeof(uint64_t))
-                    {
-                    case 0:
-                        randNumber = rng->operator()();
-                        byteToAssign = static_cast<unsigned char>((randNumber >> SEVEN_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 1:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> SIX_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 2:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> FIVE_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 3:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> FOUR_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 4:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> THREE_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 5:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> TWO_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 6:
-                        byteToAssign = static_cast<unsigned char>((randNumber >> ONE_BYTES_SHIFT) & BIT_MASK);
-                        break;
-                    case 7:
-                        byteToAssign = static_cast<unsigned char>(randNumber & BIT_MASK);
-                        break;
-                    default:
-                        //if uint64_t isn't 64bits, then something really bad has happened.
-                        assert(0);
-                    }
-
-                    bytes[i] = byteToAssign;
-                }
-
-                if(!rng)
+                if(!*rng)
                 {
                     AWS_LOGSTREAM_FATAL(LOG_TAG, "Random Number generation failed. Abort all crypto operations.");
                     assert(false);

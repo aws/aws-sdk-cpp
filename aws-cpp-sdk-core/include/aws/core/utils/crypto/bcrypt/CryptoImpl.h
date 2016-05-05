@@ -40,69 +40,15 @@ namespace Aws
         {
             static const char* SecureRandom_BCrypt_Tag = "SecureRandom_BCrypt";
 
-            template<typename DataType>
-            class SecureRandom_BCrypt : public SecureRandom<DataType>
+            class SecureRandomBytes_BCrypt : public SecureRandomBytes
             {
             public:
-                SecureRandom_BCrypt()
-                {
-                    NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_RNG_ALGORITHM, nullptr, 0);
-                    if (!NT_SUCCESS(status))
-                    {
-                        SecureRandom<DataType>::m_failure = true;
-                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to initialize decryptor chaining mode with status code " << status);
-                    }
-                }
-
-                ~SecureRandom_BCrypt()
-                {
-                    if (m_algHandle)
-                    {
-                        BCryptCloseAlgorithmProvider(m_algHandle, 0);
-                    }
-                }
-
-                void Reset() override
-                {
-                }
-
-                DataType operator()() override
-                {
-                    DataType value(0);
-                    assert(m_algHandle);
-
-                    if (m_algHandle)
-                    {
-                        unsigned char buffer[sizeof(DataType)];
-                       
-                        NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, sizeof(DataType), 0);
-
-                        if (!NT_SUCCESS(status))
-                        {
-                            SecureRandom<DataType>::m_failure = true;
-                            AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
-                            return value;
-                        }
-
-                        for (size_t i = 0; i < sizeof(DataType); ++i)
-                        {
-                            value <<= 8;
-                            value |= buffer[i];
-                        }
-
-                        return value;
-                    }
-                    else
-                    {
-                        SecureRandom<DataType>::m_failure = true;
-                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
-                        return value;
-                    }
-                }
-
+                SecureRandomBytes_BCrypt();
+                ~SecureRandomBytes_BCrypt();
+                void GetBytes(unsigned char* buffer, size_t bufferSize) override;
             private:
                 BCRYPT_ALG_HANDLE m_algHandle;
-            };
+            };           
 
             class BCryptHashContext;
 

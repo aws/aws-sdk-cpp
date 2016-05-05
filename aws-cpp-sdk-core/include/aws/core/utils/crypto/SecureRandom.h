@@ -21,31 +21,90 @@ namespace Aws
     {
         namespace Crypto
         {
-            template <typename DataType = uint64_t>
-            class SecureRandom
+            /**
+             * Interface for generating Random Bytes with guaranteed entropy for use with cryptographic functions.
+             * An instance is not guaranteed to be thread safe. This is intentional, that is needless overhead to 
+             *  pay for something you probably don't need. If you encounter a need for thread safety, you are responsible
+             *  for memory fencing.
+             */
+            class SecureRandomBytes
             {
             public:
-                SecureRandom() : m_failure(false)
-                    { static_assert(std::is_integral<DataType>::value, "Type DataType must be integral"); }
+                SecureRandomBytes() : m_failure(false)
+                {
+                }
 
-                virtual ~SecureRandom() = default;
+                virtual ~SecureRandomBytes() = default;
 
-                virtual void Reset() = 0;
-                virtual DataType operator()() = 0;
+                /**
+                 * fill in buffer of size bufferSize with random bytes
+                 */
+                virtual void GetBytes(unsigned char* buffer, size_t bufferSize) = 0;
+
+                /**
+                 * Always check this. If anything goes wrong, this tells you
+                 */
                 operator bool() const { return !m_failure; }
 
             protected:
                 bool m_failure;
             };
 
-            template<typename DataType>
+            /**
+             * Random Number generator for integral types. Guaranteed to have entropy or your program will crash.
+             */
+            template <typename DataType = uint64_t>
+            class SecureRandom
+            {
+            public:
+                /**
+                 * Initialize with the results of CreateSecureRandomBytesImplementation().
+                 *  An instance is not guaranteed to be thread safe. This is intentional, that is needless overhead to 
+                 *  pay for something you probably don't need. If you encounter a need for thread safety, you are responsible
+                 *  for memory fencing.
+                 */
+                SecureRandom(const std::shared_ptr<SecureRandomBytes>& entropySource)
+                    { static_assert(std::is_integral<DataType>::value, "Type DataType must be integral"); }
+
+                virtual ~SecureRandom() = default;
+
+                virtual void Reset() {}
+
+                /**
+                 * Generate a random number of DataType
+                 */
+                virtual DataType operator()()
+                {
+                    DataType value(0);
+                    unsigned char buffer[sizeof(DataType)];
+                    m_entropy->GetBytes(buffer, sizeof(DataType));
+
+                    assert(*entropy);
+                    if(*entropy)
+                    {
+                        for (size_t i = 0; i < sizeof(DataType); ++i)
+                        {
+                            value <<= 8;
+                            value |= buffer[i];
+                        }
+                    }
+
+                    return value;
+                }
+
+                operator bool() const { return *m_entropy; }
+
+            private:
+                std::shared_ptr<SecureRandomBytes> m_entropy;
+            };           
+
             class SecureRandomFactory
             {
             public:
                 /**
                  * Factory method. Returns SecureRandom implementation.
                  */
-                virtual std::shared_ptr<SecureRandom<DataType>> CreateImplementation() const = 0;
+                virtual std::shared_ptr<SecureRandomBytes> CreateImplementation() const = 0;
 
                 /**
                  * Opportunity to make any static initialization calls you need to make.

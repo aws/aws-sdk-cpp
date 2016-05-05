@@ -31,9 +31,7 @@ namespace Aws
             class HashFactory;
             class HMACFactory;
             class SymmetricCipherFactory;
-            template <typename DataType>
-            class SecureRandom;
-            template<typename DataType>
+            class SecureRandomBytes;
             class SecureRandomFactory;
 
             /**
@@ -103,15 +101,10 @@ namespace Aws
                                                                                       CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
 
             /**
-             * Create SecureRandom instance for 64 bit unsigned integer
+             * Create SecureRandomBytes instance
              */
-            AWS_CORE_API std::shared_ptr<SecureRandom<uint64_t>> Create64BitSecureRandomImplementation();
-
-            /**
-            * Create SecureRandom instance for 32 bit unsigned integer
-            */
-            AWS_CORE_API std::shared_ptr<SecureRandom<uint32_t>> Create32BitSecureRandomImplementation();
-
+            AWS_CORE_API std::shared_ptr<SecureRandomBytes> CreateSecureRandomBytesImplementation();
+          
             /**
              * Set the global factory for MD5 Hash providers
              */
@@ -137,14 +130,9 @@ namespace Aws
              */
             AWS_CORE_API void SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
             /**
-             * Set the global factory for 64 bit unsigned integer
+             * Set the global factory for secure random bytes
              */
-            AWS_CORE_API void Set64BitSecureRandomFactory();
-
-            /**
-             * Set the global factory for 32 bit unsigned integer
-             */
-            AWS_CORE_API void Set32BitSecureRandomFactory();
+            AWS_CORE_API void SetSecureRandomFactory(const std::shared_ptr<SecureRandomFactory>& factory);
 
         } // namespace Crypto
     } // namespace Utils

@@ -35,6 +35,48 @@ namespace Aws
     {
         namespace Crypto
         {
+            SecureRandomBytes_BCrypt::SecureRandomBytes_BCrypt()
+            {
+                NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_RNG_ALGORITHM, nullptr, 0);
+                if (!NT_SUCCESS(status))
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to initialize decryptor chaining mode with status code " << status);
+                }
+            }
+
+            SecureRandomBytes_BCrypt::~SecureRandomBytes_BCrypt()
+            {
+                if (m_algHandle)
+                {
+                    BCryptCloseAlgorithmProvider(m_algHandle, 0);
+                }
+            }
+
+            void SecureRandomBytes_BCrypt::GetBytes(unsigned char* buffer, size_t bufferSize)
+            {               
+                assert(m_algHandle);
+                assert(buffer);
+                assert(bufferSize > 0);
+
+                if (m_algHandle)
+                {   
+                    NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
+
+                    if (!NT_SUCCESS(status))
+                    {
+                        m_failure = true;
+                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);                        
+                    }                   
+                }
+                else
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");                    
+                }
+            }
+           
+
             static const char* logTag = "CryptoHash";
 
             // RAII class for one-use-per-hash-call data used in Windows cryptographic hash implementations
