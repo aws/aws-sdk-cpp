@@ -12,7 +12,6 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-
 #pragma once
 
 #include <aws/core/utils/crypto/Hash.h>
@@ -45,39 +44,24 @@ namespace Aws
                 unsigned long id_fn();
             }
 
-            template<typename DataType = uint64_t>
-            class SecureRandomOpenSSLImpl : public SecureRandom<DataType>
+            /**
+             * OpenSSL implementation for SecureRandomBytes.
+             * Incidently, this implementation is thread safe, though it is not
+             * on other platforms. You should treat an instance of SecureRandomBytes
+             * as needed to be memory fenced if you will be using accross multiple threads
+             */
+            class SecureRandomBytes_OpenSSLImpl : public SecureRandomBytes
             {
             public:
-                SecureRandomOpenSSLImpl()
+                SecureRandomBytes_OpenSSLImpl()
                 { }
 
-                ~SecureRandomOpenSSLImpl() = default;
+                ~SecureRandomBytes_OpenSSLImpl() = default;
 
-                void Reset() override
-                { }
-
-                DataType operator()() override
-                {
-                    unsigned char buffer[sizeof(DataType)];
-
-                    int success = RAND_bytes(buffer, sizeof(DataType));
-                    DataType value(0);
-
-                    if (success != 1)
-                    {
-                        SecureRandom<DataType>::m_failure = true;
-                        return value;
-                    }
-
-                    for (size_t i = 0; i < sizeof(DataType); ++i)
-                    {
-                        value <<= 8;
-                        value |= buffer[i];
-                    }
-
-                    return value;
-                }
+                /**
+                 * Reads bufferSize bytes from RAND_bytes into buffer.
+                 */
+                void GetBytes(unsigned char* buffer, size_t bufferSize) override;
             };
 
             class MD5OpenSSLImpl : public Hash

@@ -94,6 +94,17 @@ namespace Aws
                 }
             }
 
+            void SecureRandomBytes_OpenSSLImpl::GetBytes(unsigned char* buffer, size_t bufferSize)
+            {
+                assert(buffer);
+
+                int success = RAND_bytes(buffer, bufferSize);
+                if (success != 1)
+                {
+                    m_failure = true;
+                }
+            }
+
             HashResult MD5OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 MD5_CTX md5;

@@ -22,6 +22,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <memory>
 #include <atomic>
+#include <aws/core/utils/crypto/Hash.h>
 
 namespace Aws
 {
@@ -178,7 +179,6 @@ namespace Aws
             void InitializeGlobalStatics();
             void CleanupGlobalStatics();
 
-            std::shared_ptr<Aws::Http::HttpClientFactory const> m_clientFactory;
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
             std::shared_ptr<Aws::Client::AWSAuthSigner> m_signer;
             std::shared_ptr<AWSErrorMarshaller> m_errorMarshaller;
@@ -187,7 +187,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
             const char* m_hostHeaderOverride;
-            Aws::UniquePtr<Aws::Utils::Crypto::MD5> m_hash;
+            std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             static std::atomic<int> s_refCount;
         };
 

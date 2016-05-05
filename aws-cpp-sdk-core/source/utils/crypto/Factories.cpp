@@ -344,7 +344,7 @@ public:
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, std::move(key), std::move(iv), std::move(tag));
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move((iv), std::move(tag));
+        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move(iv), std::move(tag));
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         AWS_UNREFERENCED_PARAM(key);
         AWS_UNREFERENCED_PARAM(iv);
@@ -390,7 +390,7 @@ class DefaultSecureRandFactory : public SecureRandomFactory
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<SecureRandomBytes_BCrypt>(s_allocationTag);
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<SecureRandomOpenSSLImpl<uint64_t>>(s_allocationTag);
+        return Aws::MakeShared<SecureRandomBytes_OpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<SecureRandomBytes_CommonCrypto>(s_allocationTag);
 #else
@@ -567,6 +567,11 @@ void Aws::Utils::Crypto::SetAES_CTRFactory(const std::shared_ptr<SymmetricCipher
 void Aws::Utils::Crypto::SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory)
 {
     s_AES_GCMFactory = factory;
+}
+
+void Aws::Utils::Crypto::SetSecureRandomFactory(const std::shared_ptr<SecureRandomFactory>& factory)
+{
+    s_SecureRandomFactory = factory;
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()

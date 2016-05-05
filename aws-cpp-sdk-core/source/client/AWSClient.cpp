@@ -36,6 +36,7 @@
 #include <aws/core/utils/crypto/MD5.h>
 #include <thread>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/crypto/Factories.h>
 
 
 using namespace Aws;
@@ -100,7 +101,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
     m_hostHeaderOverride(hostHeaderOverride),
-    m_hash(Aws::MakeUnique<Aws::Utils::Crypto::MD5>(LOG_TAG))
+    m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
 {
     InitializeGlobalStatics();
 }
@@ -177,7 +178,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method) const
 {
-    std::shared_ptr<HttpRequest> httpRequest(m_clientFactory->CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
 
     if (!m_signer->SignRequest(*httpRequest))
@@ -203,7 +204,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMethod method) const
 {
-    std::shared_ptr<HttpRequest> httpRequest(m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     AddCommonHeaders(*httpRequest);
 
     if (!m_signer->SignRequest(*httpRequest))
@@ -325,7 +326,7 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     if (m_signer->PresignRequest(*request, expirationInSeconds))
     {
         return request->GetURIString();
