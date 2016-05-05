@@ -82,7 +82,7 @@ Aws::String EC2MetadataClient::GetResource(const char* resource) const
     ss << m_endpoint << resource;
     AWS_LOG_TRACE(logTag, "Calling Ec2MetadataService at %s", ss.str().c_str());
 
-    std::shared_ptr<HttpRequest> request(m_httpClientFactory->CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
 
     if (response == nullptr)

@@ -31,9 +31,9 @@ namespace Aws
 
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
-            if(options.loggingOptions.logger)
+            if(options.loggingOptions.logger_create_fn)
             {
-                Aws::Utils::Logging::InitializeAWSLogging(options.loggingOptions.logger);
+                Aws::Utils::Logging::InitializeAWSLogging(options.loggingOptions.logger_create_fn());
             }
             else
             {
@@ -42,46 +42,46 @@ namespace Aws
             }
         }
 
-        if(options.cryptoOptions.aes_CBCFactory)
+        if(options.cryptoOptions.aes_CBCFactory_create_fn)
         {
-            Aws::Utils::Crypto::SetAES_CBCFactory(options.cryptoOptions.aes_CBCFactory);
+            Aws::Utils::Crypto::SetAES_CBCFactory(options.cryptoOptions.aes_CBCFactory_create_fn());
         }
 
-        if(options.cryptoOptions.aes_CTRFactory)
+        if(options.cryptoOptions.aes_CTRFactory_create_fn)
         {
-            Aws::Utils::Crypto::SetAES_CTRFactory(options.cryptoOptions.aes_CTRFactory);
+            Aws::Utils::Crypto::SetAES_CTRFactory(options.cryptoOptions.aes_CTRFactory_create_fn());
         }
 
-        if(options.cryptoOptions.aes_GCMFactory)
+        if(options.cryptoOptions.aes_GCMFactory_create_fn)
         {
-            Aws::Utils::Crypto::SetAES_GCMFactory(options.cryptoOptions.aes_GCMFactory);
+            Aws::Utils::Crypto::SetAES_GCMFactory(options.cryptoOptions.aes_GCMFactory_create_fn());
         }
 
-        if(options.cryptoOptions.md5Factory)
+        if(options.cryptoOptions.md5Factory_create_fn)
         {
-            Aws::Utils::Crypto::SetMD5Factory(options.cryptoOptions.md5Factory);
+            Aws::Utils::Crypto::SetMD5Factory(options.cryptoOptions.md5Factory_create_fn());
         }
 
-        if(options.cryptoOptions.sha256Factory)
+        if(options.cryptoOptions.sha256Factory_create_fn)
         {
-            Aws::Utils::Crypto::SetSha256Factory(options.cryptoOptions.sha256Factory);
+            Aws::Utils::Crypto::SetSha256Factory(options.cryptoOptions.sha256Factory_create_fn());
         }
 
-        if(options.cryptoOptions.sha256HMACFactory)
+        if(options.cryptoOptions.sha256HMACFactory_create_fn)
         {
-            Aws::Utils::Crypto::SetSha256HMACFactory(options.cryptoOptions.sha256HMACFactory);
+            Aws::Utils::Crypto::SetSha256HMACFactory(options.cryptoOptions.sha256HMACFactory_create_fn());
         }
 
-        if(options.cryptoOptions.secureRandomFactory)
+        if(options.cryptoOptions.secureRandomFactory_create_fn)
         {
-            Aws::Utils::Crypto::SetSecureRandomFactory(options.cryptoOptions.secureRandomFactory);
+            Aws::Utils::Crypto::SetSecureRandomFactory(options.cryptoOptions.secureRandomFactory_create_fn());
         }
 
         Aws::Utils::Crypto::InitCrypto();
 
-        if(options.httpOptions.httpClientFactory)
+        if(options.httpOptions.httpClientFactory_create_fn)
         {
-            Aws::Http::SetHttpClientFactory(options.httpOptions.httpClientFactory);
+            Aws::Http::SetHttpClientFactory(options.httpOptions.httpClientFactory_create_fn());
         }
 
         Aws::Http::InitHttp();

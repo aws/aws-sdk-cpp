@@ -28,7 +28,7 @@ namespace Aws
      */
     struct LoggingOptions
     {
-        LoggingOptions() : logLevel(Aws::Utils::Logging::LogLevel::Off), defaultLogPrefix("aws_sdk_"), logger(nullptr)
+        LoggingOptions() : logLevel(Aws::Utils::Logging::LogLevel::Off), defaultLogPrefix("aws_sdk_")
         { }
 
         /**
@@ -42,9 +42,10 @@ namespace Aws
         const char *defaultLogPrefix;
 
         /**
-         * Defaults to nullptr, if logLevel has been set and this field is empty, then the default log interface will be used.
+         * Defaults to empty, if logLevel has been set and this field is empty, then the default log interface will be used.
+         * otherwise, we will call this closure to create a logger
          */
-        std::shared_ptr<Aws::Utils::Logging::LogSystemInterface> logger;
+         std::function<std::shared_ptr<Aws::Utils::Logging::LogSystemInterface>()> logger_create_fn;
     };
 
     /**
@@ -68,13 +69,13 @@ namespace Aws
      */
     struct HttpOptions
     {
-        HttpOptions() : httpClientFactory(nullptr)
+        HttpOptions()
         { }
 
         /**
-         * Defaults to nullptr, if this is set, then it will be installed and used instead of the system defaults
+         * Defaults to empty, if this is set, then the result of your closure will be installed and used instead of the system defaults
          */
-        std::shared_ptr<Aws::Http::HttpClientFactory> httpClientFactory;
+        std::function<std::shared_ptr<Aws::Http::HttpClientFactory>()> httpClientFactory_create_fn;
     };
 
     /**
@@ -82,30 +83,143 @@ namespace Aws
      */
     struct CryptoOptions
     {
-        CryptoOptions() :
-                md5Factory(nullptr), sha256Factory(nullptr), sha256HMACFactory(nullptr),
-                aes_CBCFactory(nullptr), aes_CTRFactory(nullptr), aes_GCMFactory(nullptr),
-                secureRandomFactory(nullptr)
+        CryptoOptions()
         { }
 
-        std::shared_ptr<Aws::Utils::Crypto::HashFactory> md5Factory;
-        std::shared_ptr<Aws::Utils::Crypto::HashFactory> sha256Factory;
-        std::shared_ptr<Aws::Utils::Crypto::HMACFactory> sha256HMACFactory;
-        std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory> aes_CBCFactory;
-        std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory> aes_CTRFactory;
-        std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory> aes_GCMFactory;
-        std::shared_ptr<Aws::Utils::Crypto::SecureRandomFactory> secureRandomFactory;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::HashFactory>()> md5Factory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::HashFactory>()> sha256Factory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::HMACFactory>()> sha256HMACFactory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_CBCFactory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_CTRFactory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_GCMFactory_create_fn;
+        /**
+         * If set, this closure will be used to create and install the factory.
+         */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::SecureRandomFactory>()> secureRandomFactory_create_fn;
     };
 
+    /**
+     * You may notice that instead of taking pointers directly to your factories, we take a closure. This is because
+     * if you have installed custom memory management, the allocation for your factories needs to happen after
+     * the memory system has been initialized and shutdown needs to happen prior to the memory management being shutdown.
+     *
+     * Common Recipes:
+     *
+     * Just use defaults:
+     *
+     * SDKOptions options;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Turn logging on using the default logger:
+     *
+     * SDKOptions options;
+     * options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Install custom memory manager:
+     *
+     * MyMemoryManager memoryManager;
+     *
+     * SDKOptions options;
+     * options.memoryManagementOptions.memoryManager = &memoryManager;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Override default http client factory
+     *
+     * SDKOptions options;
+     * options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     */
     struct SDKOptions
     {
+        /**
+         * SDK wide options for logging
+         */
         LoggingOptions loggingOptions;
+        /**
+         * SDK wide options for memory management
+         */
         MemoryManagementOptions memoryManagementOptions;
+        /**
+         * SDK wide options for http
+         */
         HttpOptions httpOptions;
+        /**
+         * SDK wide options for crypto
+         */
         CryptoOptions cryptoOptions;
     };
 
+    /*
+     * Initialize SDK wide state for the SDK. This method must be called before doing anything else with this library.
+     *
+     * Common Recipes:
+     *
+     * Just use defaults:
+     *
+     * SDKOptions options;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Turn logging on using the default logger:
+     *
+     * SDKOptions options;
+     * options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Install custom memory manager:
+     *
+     * MyMemoryManager memoryManager;
+     *
+     * SDKOptions options;
+     * options.memoryManagementOptions.memoryManager = &memoryManager;
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     *
+     * Override default http client factory
+     *
+     * SDKOptions options;
+     * options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
+     * Aws::InitAPI(options);
+     * .....
+     * Aws::ShutdownAPI(options);
+     */
     AWS_CORE_API void InitAPI(const SDKOptions& options);
+
+    /**
+     * Shutdown SDK wide state for the SDK. This method must be called when you are finished using the SDK.
+     * Do not call any other SDK methods after calling ShutdownAPI.
+     */
     AWS_CORE_API void ShutdownAPI(const SDKOptions& options);
 }
 
