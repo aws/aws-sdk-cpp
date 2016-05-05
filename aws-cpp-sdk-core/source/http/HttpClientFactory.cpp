@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ namespace Aws
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
                 switch (clientConfiguration.httpLibOverride)
-                {
+                { 
                     case TransferLibType::WIN_INET_CLIENT:
                         return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
 
@@ -57,6 +57,10 @@ namespace Aws
 #elif ENABLE_CURL_CLIENT
                 return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
 #else
+                // When neither of these clients is enabled, gcc gives a warning (converted
+                // to error by -Werror) about the unused clientConfiguration parameter. We
+                // prevent that warning with AWS_UNREFERENCED_PARAM.
+                AWS_UNREFERENCED_PARAM(clientConfiguration);
                 return nullptr;
 #endif
             }
