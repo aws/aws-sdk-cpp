@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 SSHPublicKeyMetadata::SSHPublicKeyMetadata() : 
     m_userNameHasBeenSet(false),
@@ -114,3 +120,7 @@ void SSHPublicKeyMetadata::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

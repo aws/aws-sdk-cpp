@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Monitoring::Monitoring() : 
     m_stateHasBeenSet(false)
@@ -66,3 +72,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

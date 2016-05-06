@@ -18,9 +18,15 @@
 
 #include <utility>
 
-using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Kinesis
+{
+namespace Model
+{
 
 Record::Record() : 
     m_sequenceNumberHasBeenSet(false),
@@ -99,3 +105,7 @@ JsonValue Record::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Kinesis
+} // namespace Aws

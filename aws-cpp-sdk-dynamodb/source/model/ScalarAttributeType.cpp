@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int S_HASH = HashingUtils::HashString("S");
-static const int N_HASH = HashingUtils::HashString("N");
-static const int B_HASH = HashingUtils::HashString("B");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ScalarAttributeTypeMapper
       {
+
+        static const int S_HASH = HashingUtils::HashString("S");
+        static const int N_HASH = HashingUtils::HashString("N");
+        static const int B_HASH = HashingUtils::HashString("B");
 
 
         ScalarAttributeType GetScalarAttributeTypeForName(const Aws::String& name)

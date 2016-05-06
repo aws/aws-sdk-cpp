@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 ServiceEndpoint::ServiceEndpoint() : 
     m_endpointHasBeenSet(false)
@@ -66,3 +72,7 @@ void ServiceEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

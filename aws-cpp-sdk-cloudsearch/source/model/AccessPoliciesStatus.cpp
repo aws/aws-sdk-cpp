@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 AccessPoliciesStatus::AccessPoliciesStatus() : 
     m_optionsHasBeenSet(false),
@@ -86,3 +92,7 @@ void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* loc
       m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int cluster_HASH = HashingUtils::HashString("cluster");
-static const int cluster_parameter_group_HASH = HashingUtils::HashString("cluster-parameter-group");
-static const int cluster_security_group_HASH = HashingUtils::HashString("cluster-security-group");
-static const int cluster_snapshot_HASH = HashingUtils::HashString("cluster-snapshot");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace SourceTypeMapper
       {
+
+        static const int cluster_HASH = HashingUtils::HashString("cluster");
+        static const int cluster_parameter_group_HASH = HashingUtils::HashString("cluster-parameter-group");
+        static const int cluster_security_group_HASH = HashingUtils::HashString("cluster-security-group");
+        static const int cluster_snapshot_HASH = HashingUtils::HashString("cluster-snapshot");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)

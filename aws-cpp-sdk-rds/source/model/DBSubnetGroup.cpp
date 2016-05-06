@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBSubnetGroup::DBSubnetGroup() : 
     m_dBSubnetGroupNameHasBeenSet(false),
@@ -148,3 +154,7 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

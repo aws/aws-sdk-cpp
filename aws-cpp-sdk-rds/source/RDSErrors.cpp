@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::RDS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace RDS
+{
+namespace RDSErrorMapper
+{
+
 static const int INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSnapshotState");
 static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotFoundFault");
 static const int D_B_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterNotFoundFault");
@@ -93,12 +100,6 @@ static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::Hash
 static const int RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceAlreadyExists");
 static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotNotFound");
 
-namespace Aws
-{
-namespace RDS
-{
-namespace RDSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -25,7 +25,7 @@ namespace Model
   enum class DevicePlatform
   {
     NOT_SET,
-    ANDROID,
+    ANDROID_,
     IOS
   };
 

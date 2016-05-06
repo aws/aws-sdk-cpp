@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchEvents
+{
+namespace Model
+{
 
 Target::Target() : 
     m_idHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue Target::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchEvents
+} // namespace Aws

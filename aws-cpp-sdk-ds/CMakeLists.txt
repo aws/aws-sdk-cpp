@@ -17,11 +17,23 @@ project(aws-cpp-sdk-ds)
     "source/model/*.cpp"
   )
 
-  file(GLOB DS_SRC
+  file(GLOB DS_UNIFIED_HEADERS
     ${AWS_DS_HEADERS}
     ${AWS_DS_MODEL_HEADERS}
+  )
+
+  file(GLOB DS_UNITY_SRC
     ${AWS_DS_SOURCE}
     ${AWS_DS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("DS" DS_UNITY_SRC)
+  endif()
+
+  file(GLOB DS_SRC
+    ${DS_UNIFIED_HEADERS}
+    ${DS_UNITY_SRC}
   )
 
   if(WIN32)

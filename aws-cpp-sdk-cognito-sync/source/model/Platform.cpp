@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int APNS_HASH = HashingUtils::HashString("APNS");
-static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
-static const int GCM_HASH = HashingUtils::HashString("GCM");
-static const int ADM_HASH = HashingUtils::HashString("ADM");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace PlatformMapper
       {
+
+        static const int APNS_HASH = HashingUtils::HashString("APNS");
+        static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
+        static const int GCM_HASH = HashingUtils::HashString("GCM");
+        static const int ADM_HASH = HashingUtils::HashString("ADM");
 
 
         Platform GetPlatformForName(const Aws::String& name)

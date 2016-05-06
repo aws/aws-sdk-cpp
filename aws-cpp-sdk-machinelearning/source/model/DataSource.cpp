@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MachineLearning
+{
+namespace Model
+{
 
 DataSource::DataSource() : 
     m_dataSourceIdHasBeenSet(false),
@@ -269,3 +275,7 @@ JsonValue DataSource::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

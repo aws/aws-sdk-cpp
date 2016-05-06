@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 LoadBalancerAttributes::LoadBalancerAttributes() : 
     m_crossZoneLoadBalancingHasBeenSet(false),
@@ -164,3 +170,7 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

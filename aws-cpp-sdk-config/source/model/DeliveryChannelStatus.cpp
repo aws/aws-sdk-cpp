@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConfigService
+{
+namespace Model
+{
 
 DeliveryChannelStatus::DeliveryChannelStatus() : 
     m_nameHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue DeliveryChannelStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ConfigService
+} // namespace Aws

@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ASSUME_ROLE_FAILED_HASH = HashingUtils::HashString("ASSUME_ROLE_FAILED");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace StartLambdaFunctionFailedCauseMapper
       {
+
+        static const int ASSUME_ROLE_FAILED_HASH = HashingUtils::HashString("ASSUME_ROLE_FAILED");
 
 
         StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 JobParameters::JobParameters() : 
     m_formatHasBeenSet(false),
@@ -146,3 +152,7 @@ JsonValue JobParameters::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

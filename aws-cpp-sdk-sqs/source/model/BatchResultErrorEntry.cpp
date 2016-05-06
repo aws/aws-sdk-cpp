@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 BatchResultErrorEntry::BatchResultErrorEntry() : 
     m_idHasBeenSet(false),
@@ -116,3 +122,7 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

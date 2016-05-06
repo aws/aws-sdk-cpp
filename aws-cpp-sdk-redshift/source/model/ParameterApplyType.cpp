@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int static__HASH = HashingUtils::HashString("static");
-static const int dynamic_HASH = HashingUtils::HashString("dynamic");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ParameterApplyTypeMapper
       {
+
+        static const int static__HASH = HashingUtils::HashString("static");
+        static const int dynamic_HASH = HashingUtils::HashString("dynamic");
 
 
         ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name)

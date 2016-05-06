@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 StackResource::StackResource() : 
     m_stackNameHasBeenSet(false),
@@ -194,3 +200,7 @@ void StackResource::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

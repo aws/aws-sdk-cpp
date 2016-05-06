@@ -17,11 +17,23 @@ project(aws-cpp-sdk-codecommit)
     "source/model/*.cpp"
   )
 
-  file(GLOB CODECOMMIT_SRC
+  file(GLOB CODECOMMIT_UNIFIED_HEADERS
     ${AWS_CODECOMMIT_HEADERS}
     ${AWS_CODECOMMIT_MODEL_HEADERS}
+  )
+
+  file(GLOB CODECOMMIT_UNITY_SRC
     ${AWS_CODECOMMIT_SOURCE}
     ${AWS_CODECOMMIT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CODECOMMIT" CODECOMMIT_UNITY_SRC)
+  endif()
+
+  file(GLOB CODECOMMIT_SRC
+    ${CODECOMMIT_UNIFIED_HEADERS}
+    ${CODECOMMIT_UNITY_SRC}
   )
 
   if(WIN32)

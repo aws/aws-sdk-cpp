@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ok_HASH = HashingUtils::HashString("ok");
-static const int impaired_HASH = HashingUtils::HashString("impaired");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ReportStatusTypeMapper
       {
+
+        static const int ok_HASH = HashingUtils::HashString("ok");
+        static const int impaired_HASH = HashingUtils::HashString("impaired");
 
 
         ReportStatusType GetReportStatusTypeForName(const Aws::String& name)

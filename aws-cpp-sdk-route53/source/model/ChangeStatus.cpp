@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ChangeStatusMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 
         ChangeStatus GetChangeStatusForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheSubnetGroup::CacheSubnetGroup() : 
     m_cacheSubnetGroupNameHasBeenSet(false),
@@ -132,3 +138,7 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int reachability_HASH = HashingUtils::HashString("reachability");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace StatusNameMapper
       {
+
+        static const int reachability_HASH = HashingUtils::HashString("reachability");
 
 
         StatusName GetStatusNameForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PHONE_HASH = HashingUtils::HashString("PHONE");
-static const int TABLET_HASH = HashingUtils::HashString("TABLET");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DeviceFormFactorMapper
       {
+
+        static const int PHONE_HASH = HashingUtils::HashString("PHONE");
+        static const int TABLET_HASH = HashingUtils::HashString("TABLET");
 
 
         DeviceFormFactor GetDeviceFormFactorForName(const Aws::String& name)

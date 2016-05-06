@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 StatusCodes::StatusCodes() : 
     m_status2xx(0),
@@ -122,3 +128,7 @@ void StatusCodes::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".Status5xx=" << m_status5xx << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

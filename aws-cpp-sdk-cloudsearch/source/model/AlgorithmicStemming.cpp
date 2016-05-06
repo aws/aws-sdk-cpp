@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int none_HASH = HashingUtils::HashString("none");
-static const int minimal_HASH = HashingUtils::HashString("minimal");
-static const int light_HASH = HashingUtils::HashString("light");
-static const int full_HASH = HashingUtils::HashString("full");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace AlgorithmicStemmingMapper
       {
+
+        static const int none_HASH = HashingUtils::HashString("none");
+        static const int minimal_HASH = HashingUtils::HashString("minimal");
+        static const int light_HASH = HashingUtils::HashString("light");
+        static const int full_HASH = HashingUtils::HashString("full");
 
 
         AlgorithmicStemming GetAlgorithmicStemmingForName(const Aws::String& name)

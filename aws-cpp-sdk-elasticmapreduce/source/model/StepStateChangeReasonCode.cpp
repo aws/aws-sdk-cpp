@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace StepStateChangeReasonCodeMapper
       {
+
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECR
+{
+namespace Model
+{
 
 LayerFailure::LayerFailure() : 
     m_layerDigestHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue LayerFailure::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECR
+} // namespace Aws

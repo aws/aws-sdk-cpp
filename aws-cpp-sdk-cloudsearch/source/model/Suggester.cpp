@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 Suggester::Suggester() : 
     m_suggesterNameHasBeenSet(false),
@@ -86,3 +92,7 @@ void Suggester::OutputToStream(Aws::OStream& oStream, const char* location) cons
       m_documentSuggesterOptions.OutputToStream(oStream, documentSuggesterOptionsLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

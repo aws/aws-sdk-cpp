@@ -19,41 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ar_HASH = HashingUtils::HashString("ar");
-static const int bg_HASH = HashingUtils::HashString("bg");
-static const int ca_HASH = HashingUtils::HashString("ca");
-static const int cs_HASH = HashingUtils::HashString("cs");
-static const int da_HASH = HashingUtils::HashString("da");
-static const int de_HASH = HashingUtils::HashString("de");
-static const int el_HASH = HashingUtils::HashString("el");
-static const int en_HASH = HashingUtils::HashString("en");
-static const int es_HASH = HashingUtils::HashString("es");
-static const int eu_HASH = HashingUtils::HashString("eu");
-static const int fa_HASH = HashingUtils::HashString("fa");
-static const int fi_HASH = HashingUtils::HashString("fi");
-static const int fr_HASH = HashingUtils::HashString("fr");
-static const int ga_HASH = HashingUtils::HashString("ga");
-static const int gl_HASH = HashingUtils::HashString("gl");
-static const int he_HASH = HashingUtils::HashString("he");
-static const int hi_HASH = HashingUtils::HashString("hi");
-static const int hu_HASH = HashingUtils::HashString("hu");
-static const int hy_HASH = HashingUtils::HashString("hy");
-static const int id_HASH = HashingUtils::HashString("id");
-static const int it_HASH = HashingUtils::HashString("it");
-static const int ja_HASH = HashingUtils::HashString("ja");
-static const int ko_HASH = HashingUtils::HashString("ko");
-static const int lv_HASH = HashingUtils::HashString("lv");
-static const int mul_HASH = HashingUtils::HashString("mul");
-static const int nl_HASH = HashingUtils::HashString("nl");
-static const int no_HASH = HashingUtils::HashString("no");
-static const int pt_HASH = HashingUtils::HashString("pt");
-static const int ro_HASH = HashingUtils::HashString("ro");
-static const int ru_HASH = HashingUtils::HashString("ru");
-static const int sv_HASH = HashingUtils::HashString("sv");
-static const int th_HASH = HashingUtils::HashString("th");
-static const int tr_HASH = HashingUtils::HashString("tr");
-static const int zh_Hans_HASH = HashingUtils::HashString("zh-Hans");
-static const int zh_Hant_HASH = HashingUtils::HashString("zh-Hant");
 
 namespace Aws
 {
@@ -63,6 +28,42 @@ namespace Aws
     {
       namespace AnalysisSchemeLanguageMapper
       {
+
+        static const int ar_HASH = HashingUtils::HashString("ar");
+        static const int bg_HASH = HashingUtils::HashString("bg");
+        static const int ca_HASH = HashingUtils::HashString("ca");
+        static const int cs_HASH = HashingUtils::HashString("cs");
+        static const int da_HASH = HashingUtils::HashString("da");
+        static const int de_HASH = HashingUtils::HashString("de");
+        static const int el_HASH = HashingUtils::HashString("el");
+        static const int en_HASH = HashingUtils::HashString("en");
+        static const int es_HASH = HashingUtils::HashString("es");
+        static const int eu_HASH = HashingUtils::HashString("eu");
+        static const int fa_HASH = HashingUtils::HashString("fa");
+        static const int fi_HASH = HashingUtils::HashString("fi");
+        static const int fr_HASH = HashingUtils::HashString("fr");
+        static const int ga_HASH = HashingUtils::HashString("ga");
+        static const int gl_HASH = HashingUtils::HashString("gl");
+        static const int he_HASH = HashingUtils::HashString("he");
+        static const int hi_HASH = HashingUtils::HashString("hi");
+        static const int hu_HASH = HashingUtils::HashString("hu");
+        static const int hy_HASH = HashingUtils::HashString("hy");
+        static const int id_HASH = HashingUtils::HashString("id");
+        static const int it_HASH = HashingUtils::HashString("it");
+        static const int ja_HASH = HashingUtils::HashString("ja");
+        static const int ko_HASH = HashingUtils::HashString("ko");
+        static const int lv_HASH = HashingUtils::HashString("lv");
+        static const int mul_HASH = HashingUtils::HashString("mul");
+        static const int nl_HASH = HashingUtils::HashString("nl");
+        static const int no_HASH = HashingUtils::HashString("no");
+        static const int pt_HASH = HashingUtils::HashString("pt");
+        static const int ro_HASH = HashingUtils::HashString("ro");
+        static const int ru_HASH = HashingUtils::HashString("ru");
+        static const int sv_HASH = HashingUtils::HashString("sv");
+        static const int th_HASH = HashingUtils::HashString("th");
+        static const int tr_HASH = HashingUtils::HashString("tr");
+        static const int zh_Hans_HASH = HashingUtils::HashString("zh-Hans");
+        static const int zh_Hant_HASH = HashingUtils::HashString("zh-Hant");
 
 
         AnalysisSchemeLanguage GetAnalysisSchemeLanguageForName(const Aws::String& name)

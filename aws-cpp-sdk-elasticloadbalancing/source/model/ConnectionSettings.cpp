@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 ConnectionSettings::ConnectionSettings() : 
     m_idleTimeout(0),
@@ -68,3 +74,7 @@ void ConnectionSettings::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".IdleTimeout=" << m_idleTimeout << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::DataPipeline;
 using namespace Aws::Utils;
 
-static const int PIPELINE_DELETED_HASH = HashingUtils::HashString("PipelineDeletedException");
-static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
-static const int TASK_NOT_FOUND_HASH = HashingUtils::HashString("TaskNotFoundException");
-
 namespace Aws
 {
 namespace DataPipeline
 {
 namespace DataPipelineErrorMapper
 {
+
+static const int PIPELINE_DELETED_HASH = HashingUtils::HashString("PipelineDeletedException");
+static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
+static const int TASK_NOT_FOUND_HASH = HashingUtils::HashString("TaskNotFoundException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

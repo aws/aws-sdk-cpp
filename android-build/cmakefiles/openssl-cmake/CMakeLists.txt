@@ -54,18 +54,12 @@ endif()
 
 install( FILES e_os2.h DESTINATION include/openssl )
 
-install( FILES tools/c_hash tools/c_info tools/c_issuer tools/c_name tools/c_rehash
-    FAQ LICENSE PROBLEMS README README.ASN1 README.ENGINE
-    DESTINATION share/openssl )
-
-install( DIRECTORY doc DESTINATION ./ )
-
 # Generate the package target
 set( CPACK_GENERATOR ZIP TGZ )
 set( CPACK_PACKAGE_NAME "openssl-cmake" )
 set( CPACK_PACKAGE_VERSION_MAJOR 1  )
 set( CPACK_PACKAGE_VERSION_MINOR 0  )
-set( CPACK_PACKAGE_VERSION_PATCH 2a )
+set( CPACK_PACKAGE_VERSION_PATCH 2g )
 
 include( CPack )
 

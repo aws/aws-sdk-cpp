@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::IAM;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IAM
+{
+namespace IAMErrorMapper
+{
+
 static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
 static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
 static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
@@ -43,12 +50,6 @@ static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("Duplicat
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
 static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
 
-namespace Aws
-{
-namespace IAM
-{
-namespace IAMErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

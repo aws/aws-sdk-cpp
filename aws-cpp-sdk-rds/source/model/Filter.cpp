@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 Filter::Filter() : 
     m_nameHasBeenSet(false),
@@ -96,3 +102,7 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

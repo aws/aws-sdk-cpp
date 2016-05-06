@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
-static const int SCHEDULE_TO_START_HASH = HashingUtils::HashString("SCHEDULE_TO_START");
-static const int SCHEDULE_TO_CLOSE_HASH = HashingUtils::HashString("SCHEDULE_TO_CLOSE");
-static const int HEARTBEAT_HASH = HashingUtils::HashString("HEARTBEAT");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ActivityTaskTimeoutTypeMapper
       {
+
+        static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
+        static const int SCHEDULE_TO_START_HASH = HashingUtils::HashString("SCHEDULE_TO_START");
+        static const int SCHEDULE_TO_CLOSE_HASH = HashingUtils::HashString("SCHEDULE_TO_CLOSE");
+        static const int HEARTBEAT_HASH = HashingUtils::HashString("HEARTBEAT");
 
 
         ActivityTaskTimeoutType GetActivityTaskTimeoutTypeForName(const Aws::String& name)

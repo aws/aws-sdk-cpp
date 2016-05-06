@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int add_HASH = HashingUtils::HashString("add");
-static const int remove_HASH = HashingUtils::HashString("remove");
-static const int replace_HASH = HashingUtils::HashString("replace");
-static const int move_HASH = HashingUtils::HashString("move");
-static const int copy_HASH = HashingUtils::HashString("copy");
-static const int test_HASH = HashingUtils::HashString("test");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace OpMapper
       {
+
+        static const int add_HASH = HashingUtils::HashString("add");
+        static const int remove_HASH = HashingUtils::HashString("remove");
+        static const int replace_HASH = HashingUtils::HashString("replace");
+        static const int move_HASH = HashingUtils::HashString("move");
+        static const int copy_HASH = HashingUtils::HashString("copy");
+        static const int test_HASH = HashingUtils::HashString("test");
 
 
         Op GetOpForName(const Aws::String& name)

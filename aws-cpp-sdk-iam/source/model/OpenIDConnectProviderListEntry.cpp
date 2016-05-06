@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry() : 
     m_arnHasBeenSet(false)
@@ -66,3 +72,7 @@ void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

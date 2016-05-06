@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int allow_HASH = HashingUtils::HashString("allow");
-static const int deny_HASH = HashingUtils::HashString("deny");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace RuleActionMapper
       {
+
+        static const int allow_HASH = HashingUtils::HashString("allow");
+        static const int deny_HASH = HashingUtils::HashString("deny");
 
 
         RuleAction GetRuleActionForName(const Aws::String& name)

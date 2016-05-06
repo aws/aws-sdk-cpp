@@ -19,67 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ActivationKeyExpired_HASH = HashingUtils::HashString("ActivationKeyExpired");
-static const int ActivationKeyInvalid_HASH = HashingUtils::HashString("ActivationKeyInvalid");
-static const int ActivationKeyNotFound_HASH = HashingUtils::HashString("ActivationKeyNotFound");
-static const int GatewayInternalError_HASH = HashingUtils::HashString("GatewayInternalError");
-static const int GatewayNotConnected_HASH = HashingUtils::HashString("GatewayNotConnected");
-static const int GatewayNotFound_HASH = HashingUtils::HashString("GatewayNotFound");
-static const int GatewayProxyNetworkConnectionBusy_HASH = HashingUtils::HashString("GatewayProxyNetworkConnectionBusy");
-static const int AuthenticationFailure_HASH = HashingUtils::HashString("AuthenticationFailure");
-static const int BandwidthThrottleScheduleNotFound_HASH = HashingUtils::HashString("BandwidthThrottleScheduleNotFound");
-static const int Blocked_HASH = HashingUtils::HashString("Blocked");
-static const int CannotExportSnapshot_HASH = HashingUtils::HashString("CannotExportSnapshot");
-static const int ChapCredentialNotFound_HASH = HashingUtils::HashString("ChapCredentialNotFound");
-static const int DiskAlreadyAllocated_HASH = HashingUtils::HashString("DiskAlreadyAllocated");
-static const int DiskDoesNotExist_HASH = HashingUtils::HashString("DiskDoesNotExist");
-static const int DiskSizeGreaterThanVolumeMaxSize_HASH = HashingUtils::HashString("DiskSizeGreaterThanVolumeMaxSize");
-static const int DiskSizeLessThanVolumeSize_HASH = HashingUtils::HashString("DiskSizeLessThanVolumeSize");
-static const int DiskSizeNotGigAligned_HASH = HashingUtils::HashString("DiskSizeNotGigAligned");
-static const int DuplicateCertificateInfo_HASH = HashingUtils::HashString("DuplicateCertificateInfo");
-static const int DuplicateSchedule_HASH = HashingUtils::HashString("DuplicateSchedule");
-static const int EndpointNotFound_HASH = HashingUtils::HashString("EndpointNotFound");
-static const int IAMNotSupported_HASH = HashingUtils::HashString("IAMNotSupported");
-static const int InitiatorInvalid_HASH = HashingUtils::HashString("InitiatorInvalid");
-static const int InitiatorNotFound_HASH = HashingUtils::HashString("InitiatorNotFound");
-static const int InternalError_HASH = HashingUtils::HashString("InternalError");
-static const int InvalidGateway_HASH = HashingUtils::HashString("InvalidGateway");
-static const int InvalidEndpoint_HASH = HashingUtils::HashString("InvalidEndpoint");
-static const int InvalidParameters_HASH = HashingUtils::HashString("InvalidParameters");
-static const int InvalidSchedule_HASH = HashingUtils::HashString("InvalidSchedule");
-static const int LocalStorageLimitExceeded_HASH = HashingUtils::HashString("LocalStorageLimitExceeded");
-static const int LunAlreadyAllocated_HASH = HashingUtils::HashString("LunAlreadyAllocated ");
-static const int LunInvalid_HASH = HashingUtils::HashString("LunInvalid");
-static const int MaximumContentLengthExceeded_HASH = HashingUtils::HashString("MaximumContentLengthExceeded");
-static const int MaximumTapeCartridgeCountExceeded_HASH = HashingUtils::HashString("MaximumTapeCartridgeCountExceeded");
-static const int MaximumVolumeCountExceeded_HASH = HashingUtils::HashString("MaximumVolumeCountExceeded");
-static const int NetworkConfigurationChanged_HASH = HashingUtils::HashString("NetworkConfigurationChanged");
-static const int NoDisksAvailable_HASH = HashingUtils::HashString("NoDisksAvailable");
-static const int NotImplemented_HASH = HashingUtils::HashString("NotImplemented");
-static const int NotSupported_HASH = HashingUtils::HashString("NotSupported");
-static const int OperationAborted_HASH = HashingUtils::HashString("OperationAborted");
-static const int OutdatedGateway_HASH = HashingUtils::HashString("OutdatedGateway");
-static const int ParametersNotImplemented_HASH = HashingUtils::HashString("ParametersNotImplemented");
-static const int RegionInvalid_HASH = HashingUtils::HashString("RegionInvalid");
-static const int RequestTimeout_HASH = HashingUtils::HashString("RequestTimeout");
-static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
-static const int SnapshotDeleted_HASH = HashingUtils::HashString("SnapshotDeleted");
-static const int SnapshotIdInvalid_HASH = HashingUtils::HashString("SnapshotIdInvalid");
-static const int SnapshotInProgress_HASH = HashingUtils::HashString("SnapshotInProgress");
-static const int SnapshotNotFound_HASH = HashingUtils::HashString("SnapshotNotFound");
-static const int SnapshotScheduleNotFound_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
-static const int StagingAreaFull_HASH = HashingUtils::HashString("StagingAreaFull");
-static const int StorageFailure_HASH = HashingUtils::HashString("StorageFailure");
-static const int TapeCartridgeNotFound_HASH = HashingUtils::HashString("TapeCartridgeNotFound");
-static const int TargetAlreadyExists_HASH = HashingUtils::HashString("TargetAlreadyExists");
-static const int TargetInvalid_HASH = HashingUtils::HashString("TargetInvalid");
-static const int TargetNotFound_HASH = HashingUtils::HashString("TargetNotFound");
-static const int UnauthorizedOperation_HASH = HashingUtils::HashString("UnauthorizedOperation");
-static const int VolumeAlreadyExists_HASH = HashingUtils::HashString("VolumeAlreadyExists");
-static const int VolumeIdInvalid_HASH = HashingUtils::HashString("VolumeIdInvalid");
-static const int VolumeInUse_HASH = HashingUtils::HashString("VolumeInUse");
-static const int VolumeNotFound_HASH = HashingUtils::HashString("VolumeNotFound");
-static const int VolumeNotReady_HASH = HashingUtils::HashString("VolumeNotReady");
 
 namespace Aws
 {
@@ -89,6 +28,68 @@ namespace Aws
     {
       namespace ErrorCodeMapper
       {
+
+        static const int ActivationKeyExpired_HASH = HashingUtils::HashString("ActivationKeyExpired");
+        static const int ActivationKeyInvalid_HASH = HashingUtils::HashString("ActivationKeyInvalid");
+        static const int ActivationKeyNotFound_HASH = HashingUtils::HashString("ActivationKeyNotFound");
+        static const int GatewayInternalError_HASH = HashingUtils::HashString("GatewayInternalError");
+        static const int GatewayNotConnected_HASH = HashingUtils::HashString("GatewayNotConnected");
+        static const int GatewayNotFound_HASH = HashingUtils::HashString("GatewayNotFound");
+        static const int GatewayProxyNetworkConnectionBusy_HASH = HashingUtils::HashString("GatewayProxyNetworkConnectionBusy");
+        static const int AuthenticationFailure_HASH = HashingUtils::HashString("AuthenticationFailure");
+        static const int BandwidthThrottleScheduleNotFound_HASH = HashingUtils::HashString("BandwidthThrottleScheduleNotFound");
+        static const int Blocked_HASH = HashingUtils::HashString("Blocked");
+        static const int CannotExportSnapshot_HASH = HashingUtils::HashString("CannotExportSnapshot");
+        static const int ChapCredentialNotFound_HASH = HashingUtils::HashString("ChapCredentialNotFound");
+        static const int DiskAlreadyAllocated_HASH = HashingUtils::HashString("DiskAlreadyAllocated");
+        static const int DiskDoesNotExist_HASH = HashingUtils::HashString("DiskDoesNotExist");
+        static const int DiskSizeGreaterThanVolumeMaxSize_HASH = HashingUtils::HashString("DiskSizeGreaterThanVolumeMaxSize");
+        static const int DiskSizeLessThanVolumeSize_HASH = HashingUtils::HashString("DiskSizeLessThanVolumeSize");
+        static const int DiskSizeNotGigAligned_HASH = HashingUtils::HashString("DiskSizeNotGigAligned");
+        static const int DuplicateCertificateInfo_HASH = HashingUtils::HashString("DuplicateCertificateInfo");
+        static const int DuplicateSchedule_HASH = HashingUtils::HashString("DuplicateSchedule");
+        static const int EndpointNotFound_HASH = HashingUtils::HashString("EndpointNotFound");
+        static const int IAMNotSupported_HASH = HashingUtils::HashString("IAMNotSupported");
+        static const int InitiatorInvalid_HASH = HashingUtils::HashString("InitiatorInvalid");
+        static const int InitiatorNotFound_HASH = HashingUtils::HashString("InitiatorNotFound");
+        static const int InternalError_HASH = HashingUtils::HashString("InternalError");
+        static const int InvalidGateway_HASH = HashingUtils::HashString("InvalidGateway");
+        static const int InvalidEndpoint_HASH = HashingUtils::HashString("InvalidEndpoint");
+        static const int InvalidParameters_HASH = HashingUtils::HashString("InvalidParameters");
+        static const int InvalidSchedule_HASH = HashingUtils::HashString("InvalidSchedule");
+        static const int LocalStorageLimitExceeded_HASH = HashingUtils::HashString("LocalStorageLimitExceeded");
+        static const int LunAlreadyAllocated_HASH = HashingUtils::HashString("LunAlreadyAllocated ");
+        static const int LunInvalid_HASH = HashingUtils::HashString("LunInvalid");
+        static const int MaximumContentLengthExceeded_HASH = HashingUtils::HashString("MaximumContentLengthExceeded");
+        static const int MaximumTapeCartridgeCountExceeded_HASH = HashingUtils::HashString("MaximumTapeCartridgeCountExceeded");
+        static const int MaximumVolumeCountExceeded_HASH = HashingUtils::HashString("MaximumVolumeCountExceeded");
+        static const int NetworkConfigurationChanged_HASH = HashingUtils::HashString("NetworkConfigurationChanged");
+        static const int NoDisksAvailable_HASH = HashingUtils::HashString("NoDisksAvailable");
+        static const int NotImplemented_HASH = HashingUtils::HashString("NotImplemented");
+        static const int NotSupported_HASH = HashingUtils::HashString("NotSupported");
+        static const int OperationAborted_HASH = HashingUtils::HashString("OperationAborted");
+        static const int OutdatedGateway_HASH = HashingUtils::HashString("OutdatedGateway");
+        static const int ParametersNotImplemented_HASH = HashingUtils::HashString("ParametersNotImplemented");
+        static const int RegionInvalid_HASH = HashingUtils::HashString("RegionInvalid");
+        static const int RequestTimeout_HASH = HashingUtils::HashString("RequestTimeout");
+        static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
+        static const int SnapshotDeleted_HASH = HashingUtils::HashString("SnapshotDeleted");
+        static const int SnapshotIdInvalid_HASH = HashingUtils::HashString("SnapshotIdInvalid");
+        static const int SnapshotInProgress_HASH = HashingUtils::HashString("SnapshotInProgress");
+        static const int SnapshotNotFound_HASH = HashingUtils::HashString("SnapshotNotFound");
+        static const int SnapshotScheduleNotFound_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
+        static const int StagingAreaFull_HASH = HashingUtils::HashString("StagingAreaFull");
+        static const int StorageFailure_HASH = HashingUtils::HashString("StorageFailure");
+        static const int TapeCartridgeNotFound_HASH = HashingUtils::HashString("TapeCartridgeNotFound");
+        static const int TargetAlreadyExists_HASH = HashingUtils::HashString("TargetAlreadyExists");
+        static const int TargetInvalid_HASH = HashingUtils::HashString("TargetInvalid");
+        static const int TargetNotFound_HASH = HashingUtils::HashString("TargetNotFound");
+        static const int UnauthorizedOperation_HASH = HashingUtils::HashString("UnauthorizedOperation");
+        static const int VolumeAlreadyExists_HASH = HashingUtils::HashString("VolumeAlreadyExists");
+        static const int VolumeIdInvalid_HASH = HashingUtils::HashString("VolumeIdInvalid");
+        static const int VolumeInUse_HASH = HashingUtils::HashString("VolumeInUse");
+        static const int VolumeNotFound_HASH = HashingUtils::HashString("VolumeNotFound");
+        static const int VolumeNotReady_HASH = HashingUtils::HashString("VolumeNotReady");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)

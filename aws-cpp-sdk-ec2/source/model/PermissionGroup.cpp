@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int all_HASH = HashingUtils::HashString("all");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace PermissionGroupMapper
       {
+
+        static const int all_HASH = HashingUtils::HashString("all");
 
 
         PermissionGroup GetPermissionGroupForName(const Aws::String& name)

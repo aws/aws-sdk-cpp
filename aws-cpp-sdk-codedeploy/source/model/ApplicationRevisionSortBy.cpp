@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int registerTime_HASH = HashingUtils::HashString("registerTime");
-static const int firstUsedTime_HASH = HashingUtils::HashString("firstUsedTime");
-static const int lastUsedTime_HASH = HashingUtils::HashString("lastUsedTime");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ApplicationRevisionSortByMapper
       {
+
+        static const int registerTime_HASH = HashingUtils::HashString("registerTime");
+        static const int firstUsedTime_HASH = HashingUtils::HashString("firstUsedTime");
+        static const int lastUsedTime_HASH = HashingUtils::HashString("lastUsedTime");
 
 
         ApplicationRevisionSortBy GetApplicationRevisionSortByForName(const Aws::String& name)

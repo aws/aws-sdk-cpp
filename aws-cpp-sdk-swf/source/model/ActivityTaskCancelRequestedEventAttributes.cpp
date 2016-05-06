@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 ActivityTaskCancelRequestedEventAttributes::ActivityTaskCancelRequestedEventAttributes() : 
     m_decisionTaskCompletedEventId(0),
@@ -73,3 +79,7 @@ JsonValue ActivityTaskCancelRequestedEventAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

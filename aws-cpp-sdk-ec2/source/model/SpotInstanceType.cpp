@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int one_time_HASH = HashingUtils::HashString("one-time");
-static const int persistent_HASH = HashingUtils::HashString("persistent");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SpotInstanceTypeMapper
       {
+
+        static const int one_time_HASH = HashingUtils::HashString("one-time");
+        static const int persistent_HASH = HashingUtils::HashString("persistent");
 
 
         SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name)

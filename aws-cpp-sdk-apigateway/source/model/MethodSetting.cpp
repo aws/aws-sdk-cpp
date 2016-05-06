@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace APIGateway
+{
+namespace Model
+{
 
 MethodSetting::MethodSetting() : 
     m_metricsEnabled(false),
@@ -206,3 +212,7 @@ JsonValue MethodSetting::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace APIGateway
+} // namespace Aws

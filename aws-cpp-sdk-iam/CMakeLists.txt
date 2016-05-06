@@ -17,11 +17,23 @@ project(aws-cpp-sdk-iam)
     "source/model/*.cpp"
   )
 
-  file(GLOB IAM_SRC
+  file(GLOB IAM_UNIFIED_HEADERS
     ${AWS_IAM_HEADERS}
     ${AWS_IAM_MODEL_HEADERS}
+  )
+
+  file(GLOB IAM_UNITY_SRC
     ${AWS_IAM_SOURCE}
     ${AWS_IAM_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("IAM" IAM_UNITY_SRC)
+  endif()
+
+  file(GLOB IAM_SRC
+    ${IAM_UNIFIED_HEADERS}
+    ${IAM_UNITY_SRC}
   )
 
   if(WIN32)

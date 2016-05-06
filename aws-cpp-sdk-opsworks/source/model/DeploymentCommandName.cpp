@@ -19,18 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int install_dependencies_HASH = HashingUtils::HashString("install_dependencies");
-static const int update_dependencies_HASH = HashingUtils::HashString("update_dependencies");
-static const int update_custom_cookbooks_HASH = HashingUtils::HashString("update_custom_cookbooks");
-static const int execute_recipes_HASH = HashingUtils::HashString("execute_recipes");
-static const int configure_HASH = HashingUtils::HashString("configure");
-static const int setup_HASH = HashingUtils::HashString("setup");
-static const int deploy_HASH = HashingUtils::HashString("deploy");
-static const int rollback_HASH = HashingUtils::HashString("rollback");
-static const int start_HASH = HashingUtils::HashString("start");
-static const int stop_HASH = HashingUtils::HashString("stop");
-static const int restart_HASH = HashingUtils::HashString("restart");
-static const int undeploy_HASH = HashingUtils::HashString("undeploy");
 
 namespace Aws
 {
@@ -40,6 +28,19 @@ namespace Aws
     {
       namespace DeploymentCommandNameMapper
       {
+
+        static const int install_dependencies_HASH = HashingUtils::HashString("install_dependencies");
+        static const int update_dependencies_HASH = HashingUtils::HashString("update_dependencies");
+        static const int update_custom_cookbooks_HASH = HashingUtils::HashString("update_custom_cookbooks");
+        static const int execute_recipes_HASH = HashingUtils::HashString("execute_recipes");
+        static const int configure_HASH = HashingUtils::HashString("configure");
+        static const int setup_HASH = HashingUtils::HashString("setup");
+        static const int deploy_HASH = HashingUtils::HashString("deploy");
+        static const int rollback_HASH = HashingUtils::HashString("rollback");
+        static const int start_HASH = HashingUtils::HashString("start");
+        static const int stop_HASH = HashingUtils::HashString("stop");
+        static const int restart_HASH = HashingUtils::HashString("restart");
+        static const int undeploy_HASH = HashingUtils::HashString("undeploy");
 
 
         DeploymentCommandName GetDeploymentCommandNameForName(const Aws::String& name)

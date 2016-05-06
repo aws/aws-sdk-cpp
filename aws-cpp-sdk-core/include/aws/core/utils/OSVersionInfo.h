@@ -14,25 +14,25 @@
   */
 
 #pragma once
+
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <mutex>
 
 namespace Aws
 {
     namespace Utils
     {
         /**
-         * Class for computing the version string for the current running operating system.
+         * computing the version string for the current running operating system.
          */
-        class AWS_CORE_API OSVersionInfo
-        {
-        public:
-            /**
-             * computing the version string for the current running operating system.
-             */
-            Aws::String ComputeOSVersionString() const;
-        };
+        AWS_CORE_API Aws::String ComputeOSVersionString();
+
+	/**
+	 * runs a (shell) command string and returns the output; not needed on windows currently
+	 */
+#ifndef _WIN32
+        AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);
+#endif // _WIN32
 
     } //namespace Utils
 } //namespace Aws

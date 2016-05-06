@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int application_json_HASH = HashingUtils::HashString("application/json");
-static const int application_xml_HASH = HashingUtils::HashString("application/xml");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ContentTypeMapper
       {
+
+        static const int application_json_HASH = HashingUtils::HashString("application/json");
+        static const int application_xml_HASH = HashingUtils::HashString("application/xml");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)

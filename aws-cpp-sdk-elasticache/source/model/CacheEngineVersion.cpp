@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheEngineVersion::CacheEngineVersion() : 
     m_engineHasBeenSet(false),
@@ -130,3 +136,7 @@ void CacheEngineVersion::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".CacheEngineVersionDescription=" << StringUtils::URLEncode(m_cacheEngineVersionDescription.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

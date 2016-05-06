@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int S3_HASH = HashingUtils::HashString("S3");
-static const int GitHub_HASH = HashingUtils::HashString("GitHub");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace RevisionLocationTypeMapper
       {
+
+        static const int S3_HASH = HashingUtils::HashString("S3");
+        static const int GitHub_HASH = HashingUtils::HashString("GitHub");
 
 
         RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 Disk::Disk() : 
     m_diskIdHasBeenSet(false),
@@ -148,3 +154,7 @@ JsonValue Disk::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

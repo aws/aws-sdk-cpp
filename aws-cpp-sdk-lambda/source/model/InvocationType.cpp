@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Event_HASH = HashingUtils::HashString("Event");
-static const int RequestResponse_HASH = HashingUtils::HashString("RequestResponse");
-static const int DryRun_HASH = HashingUtils::HashString("DryRun");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace InvocationTypeMapper
       {
+
+        static const int Event_HASH = HashingUtils::HashString("Event");
+        static const int RequestResponse_HASH = HashingUtils::HashString("RequestResponse");
+        static const int DryRun_HASH = HashingUtils::HashString("DryRun");
 
 
         InvocationType GetInvocationTypeForName(const Aws::String& name)

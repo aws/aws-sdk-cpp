@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheParameterGroup::CacheParameterGroup() : 
     m_cacheParameterGroupNameHasBeenSet(false),
@@ -98,3 +104,7 @@ void CacheParameterGroup::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

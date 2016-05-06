@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ANDROID_HASH = HashingUtils::HashString("ANDROID");
-static const int IOS_HASH = HashingUtils::HashString("IOS");
 
 namespace Aws
 {
@@ -31,13 +29,16 @@ namespace Aws
       namespace DevicePlatformMapper
       {
 
+        static const int ANDROID_HASH = HashingUtils::HashString("ANDROID");
+        static const int IOS_HASH = HashingUtils::HashString("IOS");
+
 
         DevicePlatform GetDevicePlatformForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ANDROID_HASH)
+          if (hashCode == ANDROID__HASH)
           {
-            return DevicePlatform::ANDROID;
+            return DevicePlatform::ANDROID_;
           }
           else if (hashCode == IOS_HASH)
           {
@@ -57,7 +58,7 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case DevicePlatform::ANDROID:
+          case DevicePlatform::ANDROID_:
             return "ANDROID";
           case DevicePlatform::IOS:
             return "IOS";

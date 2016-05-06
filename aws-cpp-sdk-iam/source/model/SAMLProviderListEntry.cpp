@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 SAMLProviderListEntry::SAMLProviderListEntry() : 
     m_arnHasBeenSet(false),
@@ -98,3 +104,7 @@ void SAMLProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

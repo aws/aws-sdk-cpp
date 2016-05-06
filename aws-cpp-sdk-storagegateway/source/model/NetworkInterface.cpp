@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 NetworkInterface::NetworkInterface() : 
     m_ipv4AddressHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue NetworkInterface::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

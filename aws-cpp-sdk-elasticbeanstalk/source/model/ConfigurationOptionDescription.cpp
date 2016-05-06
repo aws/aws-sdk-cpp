@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ConfigurationOptionDescription::ConfigurationOptionDescription() : 
     m_namespaceHasBeenSet(false),
@@ -252,3 +258,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
       m_regex.OutputToStream(oStream, regexLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

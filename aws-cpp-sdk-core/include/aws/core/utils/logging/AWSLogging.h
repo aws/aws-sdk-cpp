@@ -26,6 +26,8 @@ namespace Aws
         {
             class LogSystemInterface;
 
+            // Standard interface
+
             /**
              * Call this at the beginning of your program, prior to any AWS calls.
              */
@@ -40,6 +42,18 @@ namespace Aws
              * Get currently configured log system instance.
              */
             AWS_CORE_API LogSystemInterface* GetLogSystem();
+
+            // Testing interface
+
+            /**
+             * Replaces the current logger with a new one, while pushing the old one onto a stack; primarily for testing
+             */
+            AWS_CORE_API void PushLogger(const std::shared_ptr<LogSystemInterface> &logSystem);
+
+            /**
+             * Pops the top logger off the logger stack and replaces the current logger with it.  Disables logging if the top logger is actually a nullptr
+             */
+            AWS_CORE_API void PopLogger();
 
         } // namespace Logging
     } // namespace Utils

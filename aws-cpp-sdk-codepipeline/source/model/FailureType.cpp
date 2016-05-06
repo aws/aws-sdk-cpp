@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int JobFailed_HASH = HashingUtils::HashString("JobFailed");
-static const int ConfigurationError_HASH = HashingUtils::HashString("ConfigurationError");
-static const int PermissionError_HASH = HashingUtils::HashString("PermissionError");
-static const int RevisionOutOfSync_HASH = HashingUtils::HashString("RevisionOutOfSync");
-static const int RevisionUnavailable_HASH = HashingUtils::HashString("RevisionUnavailable");
-static const int SystemUnavailable_HASH = HashingUtils::HashString("SystemUnavailable");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace FailureTypeMapper
       {
+
+        static const int JobFailed_HASH = HashingUtils::HashString("JobFailed");
+        static const int ConfigurationError_HASH = HashingUtils::HashString("ConfigurationError");
+        static const int PermissionError_HASH = HashingUtils::HashString("PermissionError");
+        static const int RevisionOutOfSync_HASH = HashingUtils::HashString("RevisionOutOfSync");
+        static const int RevisionUnavailable_HASH = HashingUtils::HashString("RevisionUnavailable");
+        static const int SystemUnavailable_HASH = HashingUtils::HashString("SystemUnavailable");
 
 
         FailureType GetFailureTypeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectConnect
+{
+namespace Model
+{
 
 VirtualInterface::VirtualInterface() : 
     m_ownerAccountHasBeenSet(false),
@@ -277,3 +283,7 @@ JsonValue VirtualInterface::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectConnect
+} // namespace Aws

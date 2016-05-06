@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int noTermination_HASH = HashingUtils::HashString("noTermination");
-static const int default__HASH = HashingUtils::HashString("default");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ExcessCapacityTerminationPolicyMapper
       {
+
+        static const int noTermination_HASH = HashingUtils::HashString("noTermination");
+        static const int default__HASH = HashingUtils::HashString("default");
 
 
         ExcessCapacityTerminationPolicy GetExcessCapacityTerminationPolicyForName(const Aws::String& name)

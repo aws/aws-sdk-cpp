@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int user_HASH = HashingUtils::HashString("user");
-static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DeploymentCreatorMapper
       {
+
+        static const int user_HASH = HashingUtils::HashString("user");
+        static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
 
 
         DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)

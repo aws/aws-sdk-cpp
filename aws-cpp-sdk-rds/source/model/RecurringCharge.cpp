@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 RecurringCharge::RecurringCharge() : 
     m_recurringChargeAmount(0.0),
@@ -84,3 +90,7 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".RecurringChargeFrequency=" << StringUtils::URLEncode(m_recurringChargeFrequency.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

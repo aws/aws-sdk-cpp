@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConfigService
+{
+namespace Model
+{
 
 ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() : 
     m_lastStatusHasBeenSet(false),
@@ -127,3 +133,7 @@ JsonValue ConfigExportDeliveryInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ConfigService
+} // namespace Aws

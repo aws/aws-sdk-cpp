@@ -9,9 +9,15 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+namespace Model
+{
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
@@ -39,3 +45,7 @@ JsonValue ${typeInfo.className}::Jsonize() const
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
   return payload;
 }
+
+} // namespace Model
+} // namespace ${metadata.namespace}
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
 
 ServiceEvent::ServiceEvent() : 
     m_idHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue ServiceEvent::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

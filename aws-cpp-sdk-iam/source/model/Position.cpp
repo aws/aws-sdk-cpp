@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 Position::Position() : 
     m_line(0),
@@ -86,3 +92,7 @@ void Position::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Column=" << m_column << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

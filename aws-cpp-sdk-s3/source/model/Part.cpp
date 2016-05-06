@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 Part::Part() : 
     m_partNumber(0),
@@ -111,3 +117,7 @@ void Part::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

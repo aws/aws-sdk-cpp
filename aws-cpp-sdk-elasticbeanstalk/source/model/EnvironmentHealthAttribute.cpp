@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Status_HASH = HashingUtils::HashString("Status");
-static const int Color_HASH = HashingUtils::HashString("Color");
-static const int Causes_HASH = HashingUtils::HashString("Causes");
-static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
-static const int InstancesHealth_HASH = HashingUtils::HashString("InstancesHealth");
-static const int All_HASH = HashingUtils::HashString("All");
-static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
-static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace EnvironmentHealthAttributeMapper
       {
+
+        static const int Status_HASH = HashingUtils::HashString("Status");
+        static const int Color_HASH = HashingUtils::HashString("Color");
+        static const int Causes_HASH = HashingUtils::HashString("Causes");
+        static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
+        static const int InstancesHealth_HASH = HashingUtils::HashString("InstancesHealth");
+        static const int All_HASH = HashingUtils::HashString("All");
+        static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
+        static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
 
 
         EnvironmentHealthAttribute GetEnvironmentHealthAttributeForName(const Aws::String& name)

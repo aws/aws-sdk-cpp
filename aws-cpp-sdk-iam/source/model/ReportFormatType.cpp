@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int text_csv_HASH = HashingUtils::HashString("text/csv");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ReportFormatTypeMapper
       {
+
+        static const int text_csv_HASH = HashingUtils::HashString("text/csv");
 
 
         ReportFormatType GetReportFormatTypeForName(const Aws::String& name)

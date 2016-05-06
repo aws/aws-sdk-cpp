@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int available_HASH = HashingUtils::HashString("available");
-static const int under_assessment_HASH = HashingUtils::HashString("under-assessment");
-static const int permanent_failure_HASH = HashingUtils::HashString("permanent-failure");
-static const int released_HASH = HashingUtils::HashString("released");
-static const int released_permanent_failure_HASH = HashingUtils::HashString("released-permanent-failure");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace AllocationStateMapper
       {
+
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int under_assessment_HASH = HashingUtils::HashString("under-assessment");
+        static const int permanent_failure_HASH = HashingUtils::HashString("permanent-failure");
+        static const int released_HASH = HashingUtils::HashString("released");
+        static const int released_permanent_failure_HASH = HashingUtils::HashString("released-permanent-failure");
 
 
         AllocationState GetAllocationStateForName(const Aws::String& name)

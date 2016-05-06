@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 CharacterSet::CharacterSet() : 
     m_characterSetNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

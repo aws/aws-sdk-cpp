@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Name_HASH = HashingUtils::HashString("Name");
-static const int Owner_HASH = HashingUtils::HashString("Owner");
-static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace DocumentFilterKeyMapper
       {
+
+        static const int Name_HASH = HashingUtils::HashString("Name");
+        static const int Owner_HASH = HashingUtils::HashString("Owner");
+        static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 
         DocumentFilterKey GetDocumentFilterKeyForName(const Aws::String& name)

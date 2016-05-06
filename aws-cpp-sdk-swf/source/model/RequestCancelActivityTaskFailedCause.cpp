@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ACTIVITY_ID_UNKNOWN_HASH = HashingUtils::HashString("ACTIVITY_ID_UNKNOWN");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace RequestCancelActivityTaskFailedCauseMapper
       {
+
+        static const int ACTIVITY_ID_UNKNOWN_HASH = HashingUtils::HashString("ACTIVITY_ID_UNKNOWN");
+        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         RequestCancelActivityTaskFailedCause GetRequestCancelActivityTaskFailedCauseForName(const Aws::String& name)

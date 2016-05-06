@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 IPRange::IPRange() : 
     m_statusHasBeenSet(false),
@@ -82,3 +88,7 @@ void IPRange::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

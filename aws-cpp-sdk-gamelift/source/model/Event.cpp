@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace GameLift
+{
+namespace Model
+{
 
 Event::Event() : 
     m_eventIdHasBeenSet(false),
@@ -114,3 +120,7 @@ JsonValue Event::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

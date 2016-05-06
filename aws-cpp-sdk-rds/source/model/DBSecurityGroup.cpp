@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBSecurityGroup::DBSecurityGroup() : 
     m_ownerIdHasBeenSet(false),
@@ -182,3 +188,7 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

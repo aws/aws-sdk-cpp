@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 KMSEncryptionConfig::KMSEncryptionConfig() : 
     m_aWSKMSKeyARNHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue KMSEncryptionConfig::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int default__HASH = HashingUtils::HashString("default");
-static const int host_HASH = HashingUtils::HashString("host");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AffinityMapper
       {
+
+        static const int default__HASH = HashingUtils::HashString("default");
+        static const int host_HASH = HashingUtils::HashString("host");
 
 
         Affinity GetAffinityForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 UpdateCondition::UpdateCondition() : 
     m_nameHasBeenSet(false),
@@ -100,3 +106,7 @@ void UpdateCondition::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".Exists=" << m_exists << "&";
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

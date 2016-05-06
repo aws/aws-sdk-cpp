@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int PENDING_CANCEL_HASH = HashingUtils::HashString("PENDING_CANCEL");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace ExportTaskStatusCodeMapper
       {
+
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int PENDING_CANCEL_HASH = HashingUtils::HashString("PENDING_CANCEL");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
 
 
         ExportTaskStatusCode GetExportTaskStatusCodeForName(const Aws::String& name)

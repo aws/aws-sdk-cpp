@@ -20,16 +20,17 @@ using namespace Aws::Client;
 using namespace Aws::WorkSpaces;
 using namespace Aws::Utils;
 
-static const int INVALID_PARAMETER_VALUES_HASH = HashingUtils::HashString("InvalidParameterValuesException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-
 namespace Aws
 {
 namespace WorkSpaces
 {
 namespace WorkSpacesErrorMapper
 {
+
+static const int INVALID_PARAMETER_VALUES_HASH = HashingUtils::HashString("InvalidParameterValuesException");
+static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
+static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

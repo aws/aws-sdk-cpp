@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace DeliveryStreamStatusMapper
       {
+
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 
         DeliveryStreamStatus GetDeliveryStreamStatusForName(const Aws::String& name)

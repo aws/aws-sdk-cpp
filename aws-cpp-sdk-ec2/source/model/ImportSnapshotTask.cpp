@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportSnapshotTask::ImportSnapshotTask() : 
     m_importTaskIdHasBeenSet(false),
@@ -102,3 +108,7 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

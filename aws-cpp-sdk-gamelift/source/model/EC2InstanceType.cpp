@@ -19,34 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int t2_micro_HASH = HashingUtils::HashString("t2.micro");
-static const int t2_small_HASH = HashingUtils::HashString("t2.small");
-static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
-static const int t2_large_HASH = HashingUtils::HashString("t2.large");
-static const int c3_large_HASH = HashingUtils::HashString("c3.large");
-static const int c3_xlarge_HASH = HashingUtils::HashString("c3.xlarge");
-static const int c3_2xlarge_HASH = HashingUtils::HashString("c3.2xlarge");
-static const int c3_4xlarge_HASH = HashingUtils::HashString("c3.4xlarge");
-static const int c3_8xlarge_HASH = HashingUtils::HashString("c3.8xlarge");
-static const int c4_large_HASH = HashingUtils::HashString("c4.large");
-static const int c4_xlarge_HASH = HashingUtils::HashString("c4.xlarge");
-static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
-static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
-static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
-static const int r3_large_HASH = HashingUtils::HashString("r3.large");
-static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
-static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
-static const int r3_4xlarge_HASH = HashingUtils::HashString("r3.4xlarge");
-static const int r3_8xlarge_HASH = HashingUtils::HashString("r3.8xlarge");
-static const int m3_medium_HASH = HashingUtils::HashString("m3.medium");
-static const int m3_large_HASH = HashingUtils::HashString("m3.large");
-static const int m3_xlarge_HASH = HashingUtils::HashString("m3.xlarge");
-static const int m3_2xlarge_HASH = HashingUtils::HashString("m3.2xlarge");
-static const int m4_large_HASH = HashingUtils::HashString("m4.large");
-static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
-static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
-static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
-static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
 
 namespace Aws
 {
@@ -56,6 +28,35 @@ namespace Aws
     {
       namespace EC2InstanceTypeMapper
       {
+
+        static const int t2_micro_HASH = HashingUtils::HashString("t2.micro");
+        static const int t2_small_HASH = HashingUtils::HashString("t2.small");
+        static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
+        static const int t2_large_HASH = HashingUtils::HashString("t2.large");
+        static const int c3_large_HASH = HashingUtils::HashString("c3.large");
+        static const int c3_xlarge_HASH = HashingUtils::HashString("c3.xlarge");
+        static const int c3_2xlarge_HASH = HashingUtils::HashString("c3.2xlarge");
+        static const int c3_4xlarge_HASH = HashingUtils::HashString("c3.4xlarge");
+        static const int c3_8xlarge_HASH = HashingUtils::HashString("c3.8xlarge");
+        static const int c4_large_HASH = HashingUtils::HashString("c4.large");
+        static const int c4_xlarge_HASH = HashingUtils::HashString("c4.xlarge");
+        static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
+        static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
+        static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
+        static const int r3_large_HASH = HashingUtils::HashString("r3.large");
+        static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
+        static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
+        static const int r3_4xlarge_HASH = HashingUtils::HashString("r3.4xlarge");
+        static const int r3_8xlarge_HASH = HashingUtils::HashString("r3.8xlarge");
+        static const int m3_medium_HASH = HashingUtils::HashString("m3.medium");
+        static const int m3_large_HASH = HashingUtils::HashString("m3.large");
+        static const int m3_xlarge_HASH = HashingUtils::HashString("m3.xlarge");
+        static const int m3_2xlarge_HASH = HashingUtils::HashString("m3.2xlarge");
+        static const int m4_large_HASH = HashingUtils::HashString("m4.large");
+        static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
+        static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
+        static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
+        static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
 
 
         EC2InstanceType GetEC2InstanceTypeForName(const Aws::String& name)

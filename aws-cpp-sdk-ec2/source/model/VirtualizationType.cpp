@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int hvm_HASH = HashingUtils::HashString("hvm");
-static const int paravirtual_HASH = HashingUtils::HashString("paravirtual");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace VirtualizationTypeMapper
       {
+
+        static const int hvm_HASH = HashingUtils::HashString("hvm");
+        static const int paravirtual_HASH = HashingUtils::HashString("paravirtual");
 
 
         VirtualizationType GetVirtualizationTypeForName(const Aws::String& name)

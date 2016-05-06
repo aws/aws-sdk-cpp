@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 KinesisAction::KinesisAction() : 
     m_roleArnHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue KinesisAction::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

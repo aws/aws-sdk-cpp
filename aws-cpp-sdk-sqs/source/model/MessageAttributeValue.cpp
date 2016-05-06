@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 MessageAttributeValue::MessageAttributeValue() : 
     m_stringValueHasBeenSet(false),
@@ -158,3 +164,7 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 Limits::Limits() : 
     m_maximumReplicationCount(0),
@@ -86,3 +92,7 @@ void Limits::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".MaximumPartitionCount=" << m_maximumPartitionCount << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

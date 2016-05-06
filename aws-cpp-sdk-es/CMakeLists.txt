@@ -17,11 +17,23 @@ project(aws-cpp-sdk-es)
     "source/model/*.cpp"
   )
 
-  file(GLOB ES_SRC
+  file(GLOB ES_UNIFIED_HEADERS
     ${AWS_ES_HEADERS}
     ${AWS_ES_MODEL_HEADERS}
+  )
+
+  file(GLOB ES_UNITY_SRC
     ${AWS_ES_SOURCE}
     ${AWS_ES_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ES" ES_UNITY_SRC)
+  endif()
+
+  file(GLOB ES_SRC
+    ${ES_UNIFIED_HEADERS}
+    ${ES_UNITY_SRC}
   )
 
   if(WIN32)

@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int sgd_HASH = HashingUtils::HashString("sgd");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace AlgorithmMapper
       {
+
+        static const int sgd_HASH = HashingUtils::HashString("sgd");
 
 
         Algorithm GetAlgorithmForName(const Aws::String& name)

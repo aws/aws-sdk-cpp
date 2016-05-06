@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PriceSchedule::PriceSchedule() : 
     m_term(0),
@@ -120,3 +126,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Active=" << m_active << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

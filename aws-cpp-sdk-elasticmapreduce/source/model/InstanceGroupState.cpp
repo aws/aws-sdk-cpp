@@ -19,16 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
-static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int RESIZING_HASH = HashingUtils::HashString("RESIZING");
-static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int ARRESTED_HASH = HashingUtils::HashString("ARRESTED");
-static const int SHUTTING_DOWN_HASH = HashingUtils::HashString("SHUTTING_DOWN");
-static const int ENDED_HASH = HashingUtils::HashString("ENDED");
 
 namespace Aws
 {
@@ -38,6 +28,17 @@ namespace Aws
     {
       namespace InstanceGroupStateMapper
       {
+
+        static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
+        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int RESIZING_HASH = HashingUtils::HashString("RESIZING");
+        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int ARRESTED_HASH = HashingUtils::HashString("ARRESTED");
+        static const int SHUTTING_DOWN_HASH = HashingUtils::HashString("SHUTTING_DOWN");
+        static const int ENDED_HASH = HashingUtils::HashString("ENDED");
 
 
         InstanceGroupState GetInstanceGroupStateForName(const Aws::String& name)

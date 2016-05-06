@@ -15,33 +15,9 @@
 #include <aws/devicefarm/model/ArtifactType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
-#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
-static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
-static const int DEVICE_LOG_HASH = HashingUtils::HashString("DEVICE_LOG");
-static const int MESSAGE_LOG_HASH = HashingUtils::HashString("MESSAGE_LOG");
-static const int RESULT_LOG_HASH = HashingUtils::HashString("RESULT_LOG");
-static const int SERVICE_LOG_HASH = HashingUtils::HashString("SERVICE_LOG");
-static const int WEBKIT_LOG_HASH = HashingUtils::HashString("WEBKIT_LOG");
-static const int INSTRUMENTATION_OUTPUT_HASH = HashingUtils::HashString("INSTRUMENTATION_OUTPUT");
-static const int EXERCISER_MONKEY_OUTPUT_HASH = HashingUtils::HashString("EXERCISER_MONKEY_OUTPUT");
-static const int CALABASH_JSON_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JSON_OUTPUT");
-static const int CALABASH_PRETTY_OUTPUT_HASH = HashingUtils::HashString("CALABASH_PRETTY_OUTPUT");
-static const int CALABASH_STANDARD_OUTPUT_HASH = HashingUtils::HashString("CALABASH_STANDARD_OUTPUT");
-static const int CALABASH_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JAVA_XML_OUTPUT");
-static const int AUTOMATION_OUTPUT_HASH = HashingUtils::HashString("AUTOMATION_OUTPUT");
-static const int APPIUM_SERVER_OUTPUT_HASH = HashingUtils::HashString("APPIUM_SERVER_OUTPUT");
-static const int APPIUM_JAVA_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_OUTPUT");
-static const int APPIUM_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_XML_OUTPUT");
-static const int APPIUM_PYTHON_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_OUTPUT");
-static const int APPIUM_PYTHON_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_XML_OUTPUT");
-static const int EXPLORER_EVENT_LOG_HASH = HashingUtils::HashString("EXPLORER_EVENT_LOG");
-static const int EXPLORER_SUMMARY_LOG_HASH = HashingUtils::HashString("EXPLORER_SUMMARY_LOG");
-static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLICATION_CRASH_REPORT");
-static const int XCTEST_LOG_HASH = HashingUtils::HashString("XCTEST_LOG");
 
 namespace Aws
 {
@@ -51,6 +27,29 @@ namespace Aws
     {
       namespace ArtifactTypeMapper
       {
+
+        static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
+        static const int DEVICE_LOG_HASH = HashingUtils::HashString("DEVICE_LOG");
+        static const int MESSAGE_LOG_HASH = HashingUtils::HashString("MESSAGE_LOG");
+        static const int RESULT_LOG_HASH = HashingUtils::HashString("RESULT_LOG");
+        static const int SERVICE_LOG_HASH = HashingUtils::HashString("SERVICE_LOG");
+        static const int WEBKIT_LOG_HASH = HashingUtils::HashString("WEBKIT_LOG");
+        static const int INSTRUMENTATION_OUTPUT_HASH = HashingUtils::HashString("INSTRUMENTATION_OUTPUT");
+        static const int EXERCISER_MONKEY_OUTPUT_HASH = HashingUtils::HashString("EXERCISER_MONKEY_OUTPUT");
+        static const int CALABASH_JSON_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JSON_OUTPUT");
+        static const int CALABASH_PRETTY_OUTPUT_HASH = HashingUtils::HashString("CALABASH_PRETTY_OUTPUT");
+        static const int CALABASH_STANDARD_OUTPUT_HASH = HashingUtils::HashString("CALABASH_STANDARD_OUTPUT");
+        static const int CALABASH_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("CALABASH_JAVA_XML_OUTPUT");
+        static const int AUTOMATION_OUTPUT_HASH = HashingUtils::HashString("AUTOMATION_OUTPUT");
+        static const int APPIUM_SERVER_OUTPUT_HASH = HashingUtils::HashString("APPIUM_SERVER_OUTPUT");
+        static const int APPIUM_JAVA_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_OUTPUT");
+        static const int APPIUM_JAVA_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_JAVA_XML_OUTPUT");
+        static const int APPIUM_PYTHON_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_OUTPUT");
+        static const int APPIUM_PYTHON_XML_OUTPUT_HASH = HashingUtils::HashString("APPIUM_PYTHON_XML_OUTPUT");
+        static const int EXPLORER_EVENT_LOG_HASH = HashingUtils::HashString("EXPLORER_EVENT_LOG");
+        static const int EXPLORER_SUMMARY_LOG_HASH = HashingUtils::HashString("EXPLORER_SUMMARY_LOG");
+        static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLICATION_CRASH_REPORT");
 
 
         ArtifactType GetArtifactTypeForName(const Aws::String& name)
@@ -144,11 +143,7 @@ namespace Aws
           {
             return ArtifactType::APPLICATION_CRASH_REPORT;
           }
-          else if (hashCode == XCTEST_LOG_HASH)
-          {
-            return ArtifactType::XCTEST_LOG;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -206,10 +201,8 @@ namespace Aws
             return "EXPLORER_SUMMARY_LOG";
           case ArtifactType::APPLICATION_CRASH_REPORT:
             return "APPLICATION_CRASH_REPORT";
-          case ArtifactType::XCTEST_LOG:
-            return "XCTEST_LOG";
           default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

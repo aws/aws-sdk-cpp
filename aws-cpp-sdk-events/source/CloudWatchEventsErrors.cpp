@@ -20,17 +20,18 @@ using namespace Aws::Client;
 using namespace Aws::CloudWatchEvents;
 using namespace Aws::Utils;
 
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-
 namespace Aws
 {
 namespace CloudWatchEvents
 {
 namespace CloudWatchEventsErrorMapper
 {
+
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

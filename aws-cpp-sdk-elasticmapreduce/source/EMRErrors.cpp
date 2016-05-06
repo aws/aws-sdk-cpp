@@ -20,15 +20,16 @@ using namespace Aws::Client;
 using namespace Aws::EMR;
 using namespace Aws::Utils;
 
-static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
-static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
-
 namespace Aws
 {
 namespace EMR
 {
 namespace EMRErrorMapper
 {
+
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

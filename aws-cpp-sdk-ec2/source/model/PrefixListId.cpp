@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PrefixListId::PrefixListId() : 
     m_prefixListIdHasBeenSet(false)
@@ -66,3 +72,7 @@ void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

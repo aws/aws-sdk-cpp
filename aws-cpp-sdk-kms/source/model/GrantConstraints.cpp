@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace KMS
+{
+namespace Model
+{
 
 GrantConstraints::GrantConstraints() : 
     m_encryptionContextSubsetHasBeenSet(false),
@@ -87,3 +93,7 @@ JsonValue GrantConstraints::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace KMS
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 ListenerDescription::ListenerDescription() : 
     m_listenerHasBeenSet(false),
@@ -100,3 +106,7 @@ void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
-static const int READY_HASH = HashingUtils::HashString("READY");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace BuildStatusMapper
       {
+
+        static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
+        static const int READY_HASH = HashingUtils::HashString("READY");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         BuildStatus GetBuildStatusForName(const Aws::String& name)

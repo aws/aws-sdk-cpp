@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticTranscoder
+{
+namespace Model
+{
 
 Artwork::Artwork() : 
     m_inputKeyHasBeenSet(false),
@@ -146,3 +152,7 @@ JsonValue Artwork::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticTranscoder
+} // namespace Aws

@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int RuleSet_HASH = HashingUtils::HashString("RuleSet");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace StopScopeMapper
       {
+
+        static const int RuleSet_HASH = HashingUtils::HashString("RuleSet");
 
 
         StopScope GetStopScopeForName(const Aws::String& name)

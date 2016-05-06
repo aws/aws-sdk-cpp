@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheNode::CacheNode() : 
     m_cacheNodeIdHasBeenSet(false),
@@ -166,3 +172,7 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

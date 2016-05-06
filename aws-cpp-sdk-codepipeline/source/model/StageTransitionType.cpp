@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Inbound_HASH = HashingUtils::HashString("Inbound");
-static const int Outbound_HASH = HashingUtils::HashString("Outbound");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace StageTransitionTypeMapper
       {
+
+        static const int Inbound_HASH = HashingUtils::HashString("Inbound");
+        static const int Outbound_HASH = HashingUtils::HashString("Outbound");
 
 
         StageTransitionType GetStageTransitionTypeForName(const Aws::String& name)

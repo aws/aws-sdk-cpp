@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ActionExecutionStatusMapper
       {
+
+        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 
         ActionExecutionStatus GetActionExecutionStatusForName(const Aws::String& name)

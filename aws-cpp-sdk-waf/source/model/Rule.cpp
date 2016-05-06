@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WAF
+{
+namespace Model
+{
 
 Rule::Rule() : 
     m_ruleIdHasBeenSet(false),
@@ -109,3 +115,7 @@ JsonValue Rule::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WAF
+} // namespace Aws

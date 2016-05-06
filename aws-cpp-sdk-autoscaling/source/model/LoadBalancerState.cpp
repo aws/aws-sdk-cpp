@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 LoadBalancerState::LoadBalancerState() : 
     m_loadBalancerNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

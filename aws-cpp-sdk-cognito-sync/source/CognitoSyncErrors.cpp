@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CognitoSync;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace CognitoSyncErrorMapper
+{
+
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequests");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
 static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfiguration");
@@ -33,12 +40,6 @@ static const int ALREADY_STREAMED_HASH = HashingUtils::HashString("AlreadyStream
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 
-namespace Aws
-{
-namespace CognitoSync
-{
-namespace CognitoSyncErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

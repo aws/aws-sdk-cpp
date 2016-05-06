@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBClusterSnapshot::DBClusterSnapshot() : 
     m_availabilityZonesHasBeenSet(false),
@@ -344,3 +350,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

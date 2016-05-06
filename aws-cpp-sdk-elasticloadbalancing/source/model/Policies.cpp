@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 Policies::Policies() : 
     m_appCookieStickinessPoliciesHasBeenSet(false),
@@ -148,3 +154,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location) const
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

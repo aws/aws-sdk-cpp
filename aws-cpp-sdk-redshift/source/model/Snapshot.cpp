@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 Snapshot::Snapshot() : 
     m_snapshotIdentifierHasBeenSet(false),
@@ -568,3 +574,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

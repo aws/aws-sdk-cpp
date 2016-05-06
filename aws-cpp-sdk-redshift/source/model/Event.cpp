@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 Event::Event() : 
     m_sourceIdentifierHasBeenSet(false),
@@ -176,3 +182,7 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

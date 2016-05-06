@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 NodeGroup::NodeGroup() : 
     m_nodeGroupIdHasBeenSet(false),
@@ -136,3 +142,7 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) cons
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

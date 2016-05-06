@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Kinesis
+{
+namespace Model
+{
 
 StreamDescription::StreamDescription() : 
     m_streamNameHasBeenSet(false),
@@ -165,3 +171,7 @@ JsonValue StreamDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Kinesis
+} // namespace Aws

@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NONE_HASH = HashingUtils::HashString("NONE");
-static const int READY_HASH = HashingUtils::HashString("READY");
-static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace RealtimeEndpointStatusMapper
       {
+
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int READY_HASH = HashingUtils::HashString("READY");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         RealtimeEndpointStatus GetRealtimeEndpointStatusForName(const Aws::String& name)

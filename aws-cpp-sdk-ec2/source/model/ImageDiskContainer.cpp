@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImageDiskContainer::ImageDiskContainer() : 
     m_descriptionHasBeenSet(false),
@@ -150,3 +156,7 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

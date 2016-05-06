@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CloudWatchLogs;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CloudWatchLogs
+{
+namespace CloudWatchLogsErrorMapper
+{
+
 static const int OPERATION_ABORTED_HASH = HashingUtils::HashString("OperationAbortedException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
@@ -28,12 +35,6 @@ static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("Invalid
 static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace CloudWatchLogsErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

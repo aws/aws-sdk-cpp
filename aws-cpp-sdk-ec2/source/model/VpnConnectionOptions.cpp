@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 VpnConnectionOptions::VpnConnectionOptions() : 
     m_staticRoutesOnly(false),
@@ -68,3 +74,7 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".StaticRoutesOnly=" << m_staticRoutesOnly << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

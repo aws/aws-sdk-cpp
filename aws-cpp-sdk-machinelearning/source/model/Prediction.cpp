@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MachineLearning
+{
+namespace Model
+{
 
 Prediction::Prediction() : 
     m_predictedLabelHasBeenSet(false),
@@ -119,3 +125,7 @@ JsonValue Prediction::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

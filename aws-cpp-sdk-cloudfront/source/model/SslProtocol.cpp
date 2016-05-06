@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
-static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
-static const int TLSv1_1_HASH = HashingUtils::HashString("TLSv1.1");
-static const int TLSv1_2_HASH = HashingUtils::HashString("TLSv1.2");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace SslProtocolMapper
       {
+
+        static const int SSLv3_HASH = HashingUtils::HashString("SSLv3");
+        static const int TLSv1_HASH = HashingUtils::HashString("TLSv1");
+        static const int TLSv1_1_HASH = HashingUtils::HashString("TLSv1.1");
+        static const int TLSv1_2_HASH = HashingUtils::HashString("TLSv1.2");
 
 
         SslProtocol GetSslProtocolForName(const Aws::String& name)

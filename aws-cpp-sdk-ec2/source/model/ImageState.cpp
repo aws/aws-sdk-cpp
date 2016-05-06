@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int invalid_HASH = HashingUtils::HashString("invalid");
-static const int deregistered_HASH = HashingUtils::HashString("deregistered");
-static const int transient_HASH = HashingUtils::HashString("transient");
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int error_HASH = HashingUtils::HashString("error");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace ImageStateMapper
       {
+
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int invalid_HASH = HashingUtils::HashString("invalid");
+        static const int deregistered_HASH = HashingUtils::HashString("deregistered");
+        static const int transient_HASH = HashingUtils::HashString("transient");
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int error_HASH = HashingUtils::HashString("error");
 
 
         ImageState GetImageStateForName(const Aws::String& name)

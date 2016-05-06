@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceCount::InstanceCount() : 
     m_stateHasBeenSet(false),
@@ -84,3 +90,7 @@ void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".InstanceCount=" << m_instanceCount << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

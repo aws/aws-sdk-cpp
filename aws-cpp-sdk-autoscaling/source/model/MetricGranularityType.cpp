@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 MetricGranularityType::MetricGranularityType() : 
     m_granularityHasBeenSet(false)
@@ -66,3 +72,7 @@ void MetricGranularityType::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Granularity=" << StringUtils::URLEncode(m_granularity.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

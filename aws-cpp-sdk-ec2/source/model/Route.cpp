@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Route::Route() : 
     m_destinationCidrBlockHasBeenSet(false),
@@ -210,3 +216,7 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Origin=" << RouteOriginMapper::GetNameForRouteOrigin(m_origin) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

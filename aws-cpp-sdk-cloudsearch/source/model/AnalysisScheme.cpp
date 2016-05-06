@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 AnalysisScheme::AnalysisScheme() : 
     m_analysisSchemeNameHasBeenSet(false),
@@ -102,3 +108,7 @@ void AnalysisScheme::OutputToStream(Aws::OStream& oStream, const char* location)
       m_analysisOptions.OutputToStream(oStream, analysisOptionsLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

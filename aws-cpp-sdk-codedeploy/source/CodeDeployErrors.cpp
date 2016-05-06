@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CodeDeploy;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace CodeDeployErrorMapper
+{
+
 static const int BUCKET_NAME_FILTER_REQUIRED_HASH = HashingUtils::HashString("BucketNameFilterRequiredException");
 static const int INSTANCE_NAME_REQUIRED_HASH = HashingUtils::HashString("InstanceNameRequiredException");
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
@@ -82,12 +89,6 @@ static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagExceptio
 static const int TAG_REQUIRED_HASH = HashingUtils::HashString("TagRequiredException");
 static const int DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("DeploymentConfigAlreadyExistsException");
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace CodeDeployErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

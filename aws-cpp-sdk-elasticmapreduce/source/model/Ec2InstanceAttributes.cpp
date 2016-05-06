@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 Ec2InstanceAttributes::Ec2InstanceAttributes() : 
     m_ec2KeyNameHasBeenSet(false),
@@ -192,3 +198,7 @@ JsonValue Ec2InstanceAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

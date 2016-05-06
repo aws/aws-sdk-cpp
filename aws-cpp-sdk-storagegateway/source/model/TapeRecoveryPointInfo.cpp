@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 TapeRecoveryPointInfo::TapeRecoveryPointInfo() : 
     m_tapeARNHasBeenSet(false),
@@ -102,3 +108,7 @@ JsonValue TapeRecoveryPointInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

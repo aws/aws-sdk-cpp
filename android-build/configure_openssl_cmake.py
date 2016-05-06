@@ -88,7 +88,6 @@ def BuildIncludeFileList():
         "../../crypto/objects/obj_mac.h",
         "../../crypto/objects/objects.h",
         "../../crypto/ocsp/ocsp.h",
-        "../../crypto/opensslconf.h",
         "../../crypto/opensslv.h",
         "../../crypto/ossl_typ.h",
         "../../crypto/pem/pem.h",
@@ -128,7 +127,7 @@ def BuildIncludeFileList():
 def CopyIncludeDirectory():
     path = os.path.join( "openssl", "include", "openssl" )
     if os.path.exists( path ) == False:
-        os.mkdir( path )
+        os.makedirs( path )
 
     os.chdir( path )
     for includeFile in BuildIncludeFileList():
@@ -138,12 +137,14 @@ def CopyIncludeDirectory():
 
 
 def Main():
+    print ("Copying CMakeLists.txt files")
     if not CopyCMakeFiles(os.path.join("openssl")):
         print( "Failed to copy required CMake files" )
         return 1
 
-    if platform.system() == "Windows":  # symbolic links aren't extracted properly by cmake in windows, so copy the include file set manually
-        CopyIncludeDirectory()
+    print("Making unified include directory")
+    # normally these would be symlinks created by configure, but since we're not running configure, copy them manually
+    CopyIncludeDirectory()
 
     return 0
 

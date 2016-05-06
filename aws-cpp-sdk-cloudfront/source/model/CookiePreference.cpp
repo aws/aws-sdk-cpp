@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 CookiePreference::CookiePreference() : 
     m_forwardHasBeenSet(false),
@@ -75,3 +81,7 @@ void CookiePreference::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

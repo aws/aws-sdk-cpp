@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
 
 RunsFilter::RunsFilter() : 
     m_runNamePatternsHasBeenSet(false),
@@ -140,3 +146,7 @@ JsonValue RunsFilter::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

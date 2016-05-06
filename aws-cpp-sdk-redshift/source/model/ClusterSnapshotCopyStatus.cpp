@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus() : 
     m_destinationRegionHasBeenSet(false),
@@ -100,3 +106,7 @@ void ClusterSnapshotCopyStatus::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

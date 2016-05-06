@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int sni_only_HASH = HashingUtils::HashString("sni-only");
-static const int vip_HASH = HashingUtils::HashString("vip");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SSLSupportMethodMapper
       {
+
+        static const int sni_only_HASH = HashingUtils::HashString("sni-only");
+        static const int vip_HASH = HashingUtils::HashString("vip");
 
 
         SSLSupportMethod GetSSLSupportMethodForName(const Aws::String& name)

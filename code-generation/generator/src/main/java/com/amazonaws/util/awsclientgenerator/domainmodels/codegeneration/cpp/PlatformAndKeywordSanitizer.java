@@ -69,6 +69,8 @@ public class PlatformAndKeywordSanitizer {
         words.add("STATIC");
         words.add("double");
         words.add("Double");
+        words.add("ANDROID");
+        words.add("DEBUG");
         words.add("*");
         //ok you get the idea... add them as you encounter them.
         FORBIDDEN_WORDS = Collections.unmodifiableSet(words);

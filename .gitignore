@@ -66,6 +66,10 @@ external
 openssl
 zlib
 credentials
+toolchains/android/
 
-#maven
+# codegen
 code-generation/generator/target/
+
+#config output
+aws-cpp-sdk-core/include/aws/core/SDKConfig.h

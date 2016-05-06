@@ -15,16 +15,9 @@
 #include <aws/devicefarm/model/ExecutionStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
-#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 
 namespace Aws
 {
@@ -34,6 +27,12 @@ namespace Aws
     {
       namespace ExecutionStatusMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
+        static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
@@ -59,11 +58,7 @@ namespace Aws
           {
             return ExecutionStatus::COMPLETED;
           }
-          else if (hashCode == STOPPING_HASH)
-          {
-            return ExecutionStatus::STOPPING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -87,10 +82,8 @@ namespace Aws
             return "RUNNING";
           case ExecutionStatus::COMPLETED:
             return "COMPLETED";
-          case ExecutionStatus::STOPPING:
-            return "STOPPING";
           default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 IamInstanceProfileSpecification::IamInstanceProfileSpecification() : 
     m_arnHasBeenSet(false),
@@ -82,3 +88,7 @@ void IamInstanceProfileSpecification::OutputToStream(Aws::OStream& oStream, cons
       oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

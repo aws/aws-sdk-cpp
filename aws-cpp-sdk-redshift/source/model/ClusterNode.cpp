@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterNode::ClusterNode() : 
     m_nodeRoleHasBeenSet(false),
@@ -98,3 +104,7 @@ void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".PublicIPAddress=" << StringUtils::URLEncode(m_publicIPAddress.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

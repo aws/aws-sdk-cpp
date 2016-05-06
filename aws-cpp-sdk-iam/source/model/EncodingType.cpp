@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SSH_HASH = HashingUtils::HashString("SSH");
-static const int PEM_HASH = HashingUtils::HashString("PEM");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace EncodingTypeMapper
       {
+
+        static const int SSH_HASH = HashingUtils::HashString("SSH");
+        static const int PEM_HASH = HashingUtils::HashString("PEM");
 
 
         EncodingType GetEncodingTypeForName(const Aws::String& name)

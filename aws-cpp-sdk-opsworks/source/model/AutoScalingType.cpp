@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int load_HASH = HashingUtils::HashString("load");
-static const int timer_HASH = HashingUtils::HashString("timer");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AutoScalingTypeMapper
       {
+
+        static const int load_HASH = HashingUtils::HashString("load");
+        static const int timer_HASH = HashingUtils::HashString("timer");
 
 
         AutoScalingType GetAutoScalingTypeForName(const Aws::String& name)

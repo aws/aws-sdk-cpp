@@ -15,65 +15,9 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
-#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int t1_micro_HASH = HashingUtils::HashString("t1.micro");
-static const int m1_small_HASH = HashingUtils::HashString("m1.small");
-static const int m1_medium_HASH = HashingUtils::HashString("m1.medium");
-static const int m1_large_HASH = HashingUtils::HashString("m1.large");
-static const int m1_xlarge_HASH = HashingUtils::HashString("m1.xlarge");
-static const int m3_medium_HASH = HashingUtils::HashString("m3.medium");
-static const int m3_large_HASH = HashingUtils::HashString("m3.large");
-static const int m3_xlarge_HASH = HashingUtils::HashString("m3.xlarge");
-static const int m3_2xlarge_HASH = HashingUtils::HashString("m3.2xlarge");
-static const int m4_large_HASH = HashingUtils::HashString("m4.large");
-static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
-static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
-static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
-static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
-static const int t2_nano_HASH = HashingUtils::HashString("t2.nano");
-static const int t2_micro_HASH = HashingUtils::HashString("t2.micro");
-static const int t2_small_HASH = HashingUtils::HashString("t2.small");
-static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
-static const int t2_large_HASH = HashingUtils::HashString("t2.large");
-static const int m2_xlarge_HASH = HashingUtils::HashString("m2.xlarge");
-static const int m2_2xlarge_HASH = HashingUtils::HashString("m2.2xlarge");
-static const int m2_4xlarge_HASH = HashingUtils::HashString("m2.4xlarge");
-static const int cr1_8xlarge_HASH = HashingUtils::HashString("cr1.8xlarge");
-static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
-static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
-static const int i2_4xlarge_HASH = HashingUtils::HashString("i2.4xlarge");
-static const int i2_8xlarge_HASH = HashingUtils::HashString("i2.8xlarge");
-static const int hi1_4xlarge_HASH = HashingUtils::HashString("hi1.4xlarge");
-static const int hs1_8xlarge_HASH = HashingUtils::HashString("hs1.8xlarge");
-static const int c1_medium_HASH = HashingUtils::HashString("c1.medium");
-static const int c1_xlarge_HASH = HashingUtils::HashString("c1.xlarge");
-static const int c3_large_HASH = HashingUtils::HashString("c3.large");
-static const int c3_xlarge_HASH = HashingUtils::HashString("c3.xlarge");
-static const int c3_2xlarge_HASH = HashingUtils::HashString("c3.2xlarge");
-static const int c3_4xlarge_HASH = HashingUtils::HashString("c3.4xlarge");
-static const int c3_8xlarge_HASH = HashingUtils::HashString("c3.8xlarge");
-static const int c4_large_HASH = HashingUtils::HashString("c4.large");
-static const int c4_xlarge_HASH = HashingUtils::HashString("c4.xlarge");
-static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
-static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
-static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
-static const int cc1_4xlarge_HASH = HashingUtils::HashString("cc1.4xlarge");
-static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
-static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
-static const int g2_8xlarge_HASH = HashingUtils::HashString("g2.8xlarge");
-static const int cg1_4xlarge_HASH = HashingUtils::HashString("cg1.4xlarge");
-static const int r3_large_HASH = HashingUtils::HashString("r3.large");
-static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
-static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
-static const int r3_4xlarge_HASH = HashingUtils::HashString("r3.4xlarge");
-static const int r3_8xlarge_HASH = HashingUtils::HashString("r3.8xlarge");
-static const int d2_xlarge_HASH = HashingUtils::HashString("d2.xlarge");
-static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
-static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
-static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
 
 namespace Aws
 {
@@ -83,6 +27,61 @@ namespace Aws
     {
       namespace InstanceTypeMapper
       {
+
+        static const int t1_micro_HASH = HashingUtils::HashString("t1.micro");
+        static const int m1_small_HASH = HashingUtils::HashString("m1.small");
+        static const int m1_medium_HASH = HashingUtils::HashString("m1.medium");
+        static const int m1_large_HASH = HashingUtils::HashString("m1.large");
+        static const int m1_xlarge_HASH = HashingUtils::HashString("m1.xlarge");
+        static const int m3_medium_HASH = HashingUtils::HashString("m3.medium");
+        static const int m3_large_HASH = HashingUtils::HashString("m3.large");
+        static const int m3_xlarge_HASH = HashingUtils::HashString("m3.xlarge");
+        static const int m3_2xlarge_HASH = HashingUtils::HashString("m3.2xlarge");
+        static const int m4_large_HASH = HashingUtils::HashString("m4.large");
+        static const int m4_xlarge_HASH = HashingUtils::HashString("m4.xlarge");
+        static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
+        static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
+        static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
+        static const int t2_nano_HASH = HashingUtils::HashString("t2.nano");
+        static const int t2_micro_HASH = HashingUtils::HashString("t2.micro");
+        static const int t2_small_HASH = HashingUtils::HashString("t2.small");
+        static const int t2_medium_HASH = HashingUtils::HashString("t2.medium");
+        static const int t2_large_HASH = HashingUtils::HashString("t2.large");
+        static const int m2_xlarge_HASH = HashingUtils::HashString("m2.xlarge");
+        static const int m2_2xlarge_HASH = HashingUtils::HashString("m2.2xlarge");
+        static const int m2_4xlarge_HASH = HashingUtils::HashString("m2.4xlarge");
+        static const int cr1_8xlarge_HASH = HashingUtils::HashString("cr1.8xlarge");
+        static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
+        static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
+        static const int i2_4xlarge_HASH = HashingUtils::HashString("i2.4xlarge");
+        static const int i2_8xlarge_HASH = HashingUtils::HashString("i2.8xlarge");
+        static const int hi1_4xlarge_HASH = HashingUtils::HashString("hi1.4xlarge");
+        static const int hs1_8xlarge_HASH = HashingUtils::HashString("hs1.8xlarge");
+        static const int c1_medium_HASH = HashingUtils::HashString("c1.medium");
+        static const int c1_xlarge_HASH = HashingUtils::HashString("c1.xlarge");
+        static const int c3_large_HASH = HashingUtils::HashString("c3.large");
+        static const int c3_xlarge_HASH = HashingUtils::HashString("c3.xlarge");
+        static const int c3_2xlarge_HASH = HashingUtils::HashString("c3.2xlarge");
+        static const int c3_4xlarge_HASH = HashingUtils::HashString("c3.4xlarge");
+        static const int c3_8xlarge_HASH = HashingUtils::HashString("c3.8xlarge");
+        static const int c4_large_HASH = HashingUtils::HashString("c4.large");
+        static const int c4_xlarge_HASH = HashingUtils::HashString("c4.xlarge");
+        static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
+        static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
+        static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
+        static const int cc1_4xlarge_HASH = HashingUtils::HashString("cc1.4xlarge");
+        static const int cc2_8xlarge_HASH = HashingUtils::HashString("cc2.8xlarge");
+        static const int g2_2xlarge_HASH = HashingUtils::HashString("g2.2xlarge");
+        static const int cg1_4xlarge_HASH = HashingUtils::HashString("cg1.4xlarge");
+        static const int r3_large_HASH = HashingUtils::HashString("r3.large");
+        static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
+        static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
+        static const int r3_4xlarge_HASH = HashingUtils::HashString("r3.4xlarge");
+        static const int r3_8xlarge_HASH = HashingUtils::HashString("r3.8xlarge");
+        static const int d2_xlarge_HASH = HashingUtils::HashString("d2.xlarge");
+        static const int d2_2xlarge_HASH = HashingUtils::HashString("d2.2xlarge");
+        static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
+        static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
@@ -264,10 +263,6 @@ namespace Aws
           {
             return InstanceType::g2_2xlarge;
           }
-          else if (hashCode == g2_8xlarge_HASH)
-          {
-            return InstanceType::g2_8xlarge;
-          }
           else if (hashCode == cg1_4xlarge_HASH)
           {
             return InstanceType::cg1_4xlarge;
@@ -308,7 +303,7 @@ namespace Aws
           {
             return InstanceType::d2_8xlarge;
           }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -410,8 +405,6 @@ namespace Aws
             return "cc2.8xlarge";
           case InstanceType::g2_2xlarge:
             return "g2.2xlarge";
-          case InstanceType::g2_8xlarge:
-            return "g2.8xlarge";
           case InstanceType::cg1_4xlarge:
             return "cg1.4xlarge";
           case InstanceType::r3_large:
@@ -433,7 +426,7 @@ namespace Aws
           case InstanceType::d2_8xlarge:
             return "d2.8xlarge";
           default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

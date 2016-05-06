@@ -19,20 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int m3_medium_elasticsearch_HASH = HashingUtils::HashString("m3.medium.elasticsearch");
-static const int m3_large_elasticsearch_HASH = HashingUtils::HashString("m3.large.elasticsearch");
-static const int m3_xlarge_elasticsearch_HASH = HashingUtils::HashString("m3.xlarge.elasticsearch");
-static const int m3_2xlarge_elasticsearch_HASH = HashingUtils::HashString("m3.2xlarge.elasticsearch");
-static const int t2_micro_elasticsearch_HASH = HashingUtils::HashString("t2.micro.elasticsearch");
-static const int t2_small_elasticsearch_HASH = HashingUtils::HashString("t2.small.elasticsearch");
-static const int t2_medium_elasticsearch_HASH = HashingUtils::HashString("t2.medium.elasticsearch");
-static const int r3_large_elasticsearch_HASH = HashingUtils::HashString("r3.large.elasticsearch");
-static const int r3_xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.xlarge.elasticsearch");
-static const int r3_2xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.2xlarge.elasticsearch");
-static const int r3_4xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.4xlarge.elasticsearch");
-static const int r3_8xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.8xlarge.elasticsearch");
-static const int i2_xlarge_elasticsearch_HASH = HashingUtils::HashString("i2.xlarge.elasticsearch");
-static const int i2_2xlarge_elasticsearch_HASH = HashingUtils::HashString("i2.2xlarge.elasticsearch");
 
 namespace Aws
 {
@@ -42,6 +28,21 @@ namespace Aws
     {
       namespace ESPartitionInstanceTypeMapper
       {
+
+        static const int m3_medium_elasticsearch_HASH = HashingUtils::HashString("m3.medium.elasticsearch");
+        static const int m3_large_elasticsearch_HASH = HashingUtils::HashString("m3.large.elasticsearch");
+        static const int m3_xlarge_elasticsearch_HASH = HashingUtils::HashString("m3.xlarge.elasticsearch");
+        static const int m3_2xlarge_elasticsearch_HASH = HashingUtils::HashString("m3.2xlarge.elasticsearch");
+        static const int t2_micro_elasticsearch_HASH = HashingUtils::HashString("t2.micro.elasticsearch");
+        static const int t2_small_elasticsearch_HASH = HashingUtils::HashString("t2.small.elasticsearch");
+        static const int t2_medium_elasticsearch_HASH = HashingUtils::HashString("t2.medium.elasticsearch");
+        static const int r3_large_elasticsearch_HASH = HashingUtils::HashString("r3.large.elasticsearch");
+        static const int r3_xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.xlarge.elasticsearch");
+        static const int r3_2xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.2xlarge.elasticsearch");
+        static const int r3_4xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.4xlarge.elasticsearch");
+        static const int r3_8xlarge_elasticsearch_HASH = HashingUtils::HashString("r3.8xlarge.elasticsearch");
+        static const int i2_xlarge_elasticsearch_HASH = HashingUtils::HashString("i2.xlarge.elasticsearch");
+        static const int i2_2xlarge_elasticsearch_HASH = HashingUtils::HashString("i2.2xlarge.elasticsearch");
 
 
         ESPartitionInstanceType GetESPartitionInstanceTypeForName(const Aws::String& name)

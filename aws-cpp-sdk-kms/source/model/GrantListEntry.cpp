@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace KMS
+{
+namespace Model
+{
 
 GrantListEntry::GrantListEntry() : 
     m_keyIdHasBeenSet(false),
@@ -183,3 +189,7 @@ JsonValue GrantListEntry::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace KMS
+} // namespace Aws

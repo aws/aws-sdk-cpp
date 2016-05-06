@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 RecentCaseCommunications::RecentCaseCommunications() : 
     m_communicationsHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue RecentCaseCommunications::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

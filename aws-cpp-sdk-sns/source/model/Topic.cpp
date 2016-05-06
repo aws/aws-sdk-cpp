@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SNS
+{
+namespace Model
+{
 
 Topic::Topic() : 
     m_topicArnHasBeenSet(false)
@@ -66,3 +72,7 @@ void Topic::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SNS
+} // namespace Aws

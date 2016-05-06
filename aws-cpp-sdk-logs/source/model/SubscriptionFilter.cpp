@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchLogs
+{
+namespace Model
+{
 
 SubscriptionFilter::SubscriptionFilter() : 
     m_filterNameHasBeenSet(false),
@@ -133,3 +139,7 @@ JsonValue SubscriptionFilter::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchLogs
+} // namespace Aws

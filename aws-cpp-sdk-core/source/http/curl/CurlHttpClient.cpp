@@ -61,7 +61,7 @@ struct CurlReadCallbackContext
     HttpRequest* m_request;
 };
 
-static const char* CurlTag = "CurlHttpClient";
+static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
 
 void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
 {
@@ -100,7 +100,7 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             break;
         case HttpMethod::HTTP_DELETE:
             curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "DELETE");
-            curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
+            //curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
             break;
         default:
             assert(0);
@@ -108,6 +108,55 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             break;
     }
 }
+
+Aws::String CurlInfoTypeToString(curl_infotype type)
+{
+    switch(type)
+    {
+        case CURLINFO_TEXT:
+            return "Text";
+
+        case CURLINFO_HEADER_IN:
+            return "HeaderIn";
+
+        case CURLINFO_HEADER_OUT:
+            return "HeaderOut";
+
+        case CURLINFO_DATA_IN:
+            return "DataIn";
+
+        case CURLINFO_DATA_OUT:
+            return "DataOut";
+
+        case CURLINFO_SSL_DATA_IN:
+            return "SSLDataIn";
+
+        case CURLINFO_SSL_DATA_OUT:
+            return "SSLDataOut";
+
+        default:
+            return "Unknown";
+    }
+}
+
+int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size, void *userptr)
+{
+    AWS_UNREFERENCED_PARAM(handle);
+    AWS_UNREFERENCED_PARAM(userptr);
+
+    if(type == CURLINFO_SSL_DATA_IN || type == CURLINFO_SSL_DATA_OUT)
+    {
+        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << "bytes");
+    }
+    else
+    {
+        Aws::String debugString(data, size);
+        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
+    }
+
+    return 0;
+}
+
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),   
@@ -127,7 +176,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     uri.SetPath(URI::URLEncodePath(uri.GetPath()));
     Aws::String url = uri.GetURIString();
 
-    AWS_LOGSTREAM_TRACE(CurlTag, "Making request to " << url);
+    AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Making request to " << url);
     struct curl_slist* headers = NULL;
 
     if (writeLimiter != nullptr)
@@ -138,13 +187,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
     Aws::StringStream headerStream;
     HeaderValueCollection requestHeaders = request.GetHeaders();
 
-    AWS_LOG_TRACE(CurlTag, "Including headers:");
+    AWS_LOG_TRACE(CURL_HTTP_CLIENT_TAG, "Including headers:");
     for (auto& requestHeader : requestHeaders)
     {
         headerStream.str("");
         headerStream << requestHeader.first << ": " << requestHeader.second;
         Aws::String headerString = headerStream.str();
-        AWS_LOGSTREAM_TRACE(CurlTag, headerString);
+        AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, headerString);
         headers = curl_slist_append(headers, headerString.c_str());
     }
     headers = curl_slist_append(headers, "transfer-encoding:");
@@ -164,14 +213,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
 
     if (connectionHandle)
     {
-        AWS_LOGSTREAM_DEBUG(CurlTag, "Obtained connection handle " << connectionHandle);
+        AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Obtained connection handle " << connectionHandle);
 
         if (headers)
         {
             curl_easy_setopt(connectionHandle, CURLOPT_HTTPHEADER, headers);
         }
 
-        response = Aws::MakeShared<StandardHttpResponse>(CurlTag, request);
+        response = Aws::MakeShared<StandardHttpResponse>(CURL_HTTP_CLIENT_TAG, request);
         CurlWriteCallbackContext writeContext(this, &request, response.get(), readLimiter);
         CurlReadCallbackContext readContext(this, &request);
 
@@ -220,6 +269,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
             curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
         //curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
+        //curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
 
         if (m_isUsingProxy)
         {
@@ -239,24 +289,24 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         if (curlResponseCode != CURLE_OK)
         {
             response = nullptr;
-            AWS_LOGSTREAM_ERROR(CurlTag, "Curl returned error code " << curlResponseCode);
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode);
         }
         else
         {
             long responseCode;
             curl_easy_getinfo(connectionHandle, CURLINFO_RESPONSE_CODE, &responseCode);
             response->SetResponseCode(static_cast<HttpResponseCode>(responseCode));
-            AWS_LOGSTREAM_DEBUG(CurlTag, "Returned http response code " << responseCode);
+            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned http response code " << responseCode);
 
             char* contentType = nullptr;
             curl_easy_getinfo(connectionHandle, CURLINFO_CONTENT_TYPE, &contentType);
             if (contentType)
             {
                 response->SetContentType(contentType);
-                AWS_LOGSTREAM_DEBUG(CurlTag, "Returned content type " << contentType);
+                AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned content type " << contentType);
             }
 
-            AWS_LOGSTREAM_DEBUG(CurlTag, "Releasing curl handle " << connectionHandle);
+            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Releasing curl handle " << connectionHandle);
         }
 
         m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
@@ -302,7 +352,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
             receivedHandler(context->m_request, context->m_response, static_cast<long long>(sizeToWrite));
         }
 
-        AWS_LOGSTREAM_TRACE(CurlTag, sizeToWrite << " bytes written to response.");
+        AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, sizeToWrite << " bytes written to response.");
         return sizeToWrite;
     }
     return 0;
@@ -312,7 +362,7 @@ size_t CurlHttpClient::WriteHeader(char* ptr, size_t size, size_t nmemb, void* u
 {
     if (ptr)
     {
-        AWS_LOGSTREAM_TRACE(CurlTag, ptr);
+        AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, ptr);
         HttpResponse* response = (HttpResponse*) userdata;
         Aws::String headerLine(ptr);
         Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(headerLine, ':');
@@ -373,5 +423,4 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
 
     return 0;
 }
-
 

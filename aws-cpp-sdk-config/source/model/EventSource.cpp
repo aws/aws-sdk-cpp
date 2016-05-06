@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int aws_config_HASH = HashingUtils::HashString("aws.config");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace EventSourceMapper
       {
+
+        static const int aws_config_HASH = HashingUtils::HashString("aws.config");
 
 
         EventSource GetEventSourceForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 Message::Message() : 
     m_messageIdHasBeenSet(false),
@@ -176,3 +182,7 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

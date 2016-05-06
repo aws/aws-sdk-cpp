@@ -17,11 +17,23 @@ project(aws-cpp-sdk-s3)
     "source/model/*.cpp"
   )
 
-  file(GLOB S3_SRC
+  file(GLOB S3_UNIFIED_HEADERS
     ${AWS_S3_HEADERS}
     ${AWS_S3_MODEL_HEADERS}
+  )
+
+  file(GLOB S3_UNITY_SRC
     ${AWS_S3_SOURCE}
     ${AWS_S3_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("S3" S3_UNITY_SRC)
+  endif()
+
+  file(GLOB S3_SRC
+    ${S3_UNIFIED_HEADERS}
+    ${S3_UNITY_SRC}
   )
 
   if(WIN32)

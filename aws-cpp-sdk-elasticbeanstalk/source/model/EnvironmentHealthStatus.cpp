@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NoData_HASH = HashingUtils::HashString("NoData");
-static const int Unknown_HASH = HashingUtils::HashString("Unknown");
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Ok_HASH = HashingUtils::HashString("Ok");
-static const int Info_HASH = HashingUtils::HashString("Info");
-static const int Warning_HASH = HashingUtils::HashString("Warning");
-static const int Degraded_HASH = HashingUtils::HashString("Degraded");
-static const int Severe_HASH = HashingUtils::HashString("Severe");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace EnvironmentHealthStatusMapper
       {
+
+        static const int NoData_HASH = HashingUtils::HashString("NoData");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Ok_HASH = HashingUtils::HashString("Ok");
+        static const int Info_HASH = HashingUtils::HashString("Info");
+        static const int Warning_HASH = HashingUtils::HashString("Warning");
+        static const int Degraded_HASH = HashingUtils::HashString("Degraded");
+        static const int Severe_HASH = HashingUtils::HashString("Severe");
 
 
         EnvironmentHealthStatus GetEnvironmentHealthStatusForName(const Aws::String& name)

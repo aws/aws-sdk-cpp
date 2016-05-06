@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ConfigService;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ConfigService
+{
+namespace ConfigServiceErrorMapper
+{
+
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_RECORDING_GROUP_HASH = HashingUtils::HashString("InvalidRecordingGroupException");
 static const int MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConfigRulesExceededException");
@@ -46,12 +53,6 @@ static const int INVALID_DELIVERY_CHANNEL_NAME_HASH = HashingUtils::HashString("
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int INVALID_S_N_S_TOPIC_A_R_N_HASH = HashingUtils::HashString("InvalidSNSTopicARNException");
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace ConfigServiceErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

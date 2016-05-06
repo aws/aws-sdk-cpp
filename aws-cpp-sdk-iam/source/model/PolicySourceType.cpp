@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int user_HASH = HashingUtils::HashString("user");
-static const int group_HASH = HashingUtils::HashString("group");
-static const int role_HASH = HashingUtils::HashString("role");
-static const int aws_managed_HASH = HashingUtils::HashString("aws-managed");
-static const int user_managed_HASH = HashingUtils::HashString("user-managed");
-static const int resource_HASH = HashingUtils::HashString("resource");
-static const int none_HASH = HashingUtils::HashString("none");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace PolicySourceTypeMapper
       {
+
+        static const int user_HASH = HashingUtils::HashString("user");
+        static const int group_HASH = HashingUtils::HashString("group");
+        static const int role_HASH = HashingUtils::HashString("role");
+        static const int aws_managed_HASH = HashingUtils::HashString("aws-managed");
+        static const int user_managed_HASH = HashingUtils::HashString("user-managed");
+        static const int resource_HASH = HashingUtils::HashString("resource");
+        static const int none_HASH = HashingUtils::HashString("none");
 
 
         PolicySourceType GetPolicySourceTypeForName(const Aws::String& name)

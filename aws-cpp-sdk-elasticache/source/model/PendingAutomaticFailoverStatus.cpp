@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int enabled_HASH = HashingUtils::HashString("enabled");
-static const int disabled_HASH = HashingUtils::HashString("disabled");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace PendingAutomaticFailoverStatusMapper
       {
+
+        static const int enabled_HASH = HashingUtils::HashString("enabled");
+        static const int disabled_HASH = HashingUtils::HashString("disabled");
 
 
         PendingAutomaticFailoverStatus GetPendingAutomaticFailoverStatusForName(const Aws::String& name)

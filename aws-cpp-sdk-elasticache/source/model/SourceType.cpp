@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int cache_cluster_HASH = HashingUtils::HashString("cache-cluster");
-static const int cache_parameter_group_HASH = HashingUtils::HashString("cache-parameter-group");
-static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
-static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace SourceTypeMapper
       {
+
+        static const int cache_cluster_HASH = HashingUtils::HashString("cache-cluster");
+        static const int cache_parameter_group_HASH = HashingUtils::HashString("cache-parameter-group");
+        static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
+        static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)

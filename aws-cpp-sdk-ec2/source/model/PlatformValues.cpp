@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Windows_HASH = HashingUtils::HashString("Windows");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace PlatformValuesMapper
       {
+
+        static const int Windows_HASH = HashingUtils::HashString("Windows");
 
 
         PlatformValues GetPlatformValuesForName(const Aws::String& name)

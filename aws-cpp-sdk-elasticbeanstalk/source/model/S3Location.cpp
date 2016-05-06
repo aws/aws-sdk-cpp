@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 S3Location::S3Location() : 
     m_s3BucketHasBeenSet(false),
@@ -82,3 +88,7 @@ void S3Location::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

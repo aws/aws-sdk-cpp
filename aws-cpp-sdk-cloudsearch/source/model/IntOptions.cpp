@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 IntOptions::IntOptions() : 
     m_defaultValue(0),
@@ -156,3 +162,7 @@ void IntOptions::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".SortEnabled=" << m_sortEnabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

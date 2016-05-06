@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int add_HASH = HashingUtils::HashString("add");
-static const int remove_HASH = HashingUtils::HashString("remove");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace OperationTypeMapper
       {
+
+        static const int add_HASH = HashingUtils::HashString("add");
+        static const int remove_HASH = HashingUtils::HashString("remove");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)

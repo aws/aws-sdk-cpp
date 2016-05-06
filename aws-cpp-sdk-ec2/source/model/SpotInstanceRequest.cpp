@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotInstanceRequest::SpotInstanceRequest() : 
     m_spotInstanceRequestIdHasBeenSet(false),
@@ -370,3 +376,7 @@ void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

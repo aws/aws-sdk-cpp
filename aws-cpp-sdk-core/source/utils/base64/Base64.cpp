@@ -21,6 +21,13 @@ using namespace Aws::Utils::Base64;
 static const uint8_t SENTINEL_VALUE = 255;
 static const char BASE64_ENCODING_TABLE_MIME[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
+namespace Aws
+{
+namespace Utils
+{
+namespace Base64
+{
+
 Base64::Base64(const char *encodingTable)
 {
     if(encodingTable == nullptr)
@@ -145,3 +152,7 @@ size_t Base64::CalculateBase64EncodedLength(const Aws::Utils::ByteBuffer& buffer
 {
     return 4 * ((buffer.GetLength() + 2) / 3);
 }
+
+} // namespace Base64
+} // namespace Utils
+} // namespace Aws

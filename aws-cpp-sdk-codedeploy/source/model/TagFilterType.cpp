@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int KEY_ONLY_HASH = HashingUtils::HashString("KEY_ONLY");
-static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
-static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace TagFilterTypeMapper
       {
+
+        static const int KEY_ONLY_HASH = HashingUtils::HashString("KEY_ONLY");
+        static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
+        static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
 
 
         TagFilterType GetTagFilterTypeForName(const Aws::String& name)

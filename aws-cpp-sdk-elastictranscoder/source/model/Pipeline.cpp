@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticTranscoder
+{
+namespace Model
+{
 
 Pipeline::Pipeline() : 
     m_idHasBeenSet(false),
@@ -206,3 +212,7 @@ JsonValue Pipeline::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticTranscoder
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 Activity::Activity() : 
     m_activityIdHasBeenSet(false),
@@ -212,3 +218,7 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Details=" << StringUtils::URLEncode(m_details.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

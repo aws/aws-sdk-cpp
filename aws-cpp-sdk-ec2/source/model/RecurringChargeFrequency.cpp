@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Hourly_HASH = HashingUtils::HashString("Hourly");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace RecurringChargeFrequencyMapper
       {
+
+        static const int Hourly_HASH = HashingUtils::HashString("Hourly");
 
 
         RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& name)

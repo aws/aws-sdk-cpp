@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
 
 TimestampRange::TimestampRange() : 
     m_minimumHasBeenSet(false),
@@ -69,3 +75,7 @@ JsonValue TimestampRange::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

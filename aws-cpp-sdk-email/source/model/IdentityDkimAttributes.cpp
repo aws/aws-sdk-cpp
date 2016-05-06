@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 IdentityDkimAttributes::IdentityDkimAttributes() : 
     m_dkimEnabled(false),
@@ -114,3 +120,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

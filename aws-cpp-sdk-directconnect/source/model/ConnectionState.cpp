@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ordering_HASH = HashingUtils::HashString("ordering");
-static const int requested_HASH = HashingUtils::HashString("requested");
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int down_HASH = HashingUtils::HashString("down");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
-static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace ConnectionStateMapper
       {
+
+        static const int ordering_HASH = HashingUtils::HashString("ordering");
+        static const int requested_HASH = HashingUtils::HashString("requested");
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int down_HASH = HashingUtils::HashString("down");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 
         ConnectionState GetConnectionStateForName(const Aws::String& name)

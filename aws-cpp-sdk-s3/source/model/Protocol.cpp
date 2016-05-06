@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int http_HASH = HashingUtils::HashString("http");
-static const int https_HASH = HashingUtils::HashString("https");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ProtocolMapper
       {
+
+        static const int http_HASH = HashingUtils::HashString("http");
+        static const int https_HASH = HashingUtils::HashString("https");
 
 
         Protocol GetProtocolForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InstanceId_HASH = HashingUtils::HashString("InstanceId");
-static const int Name_HASH = HashingUtils::HashString("Name");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AssociationFilterKeyMapper
       {
+
+        static const int InstanceId_HASH = HashingUtils::HashString("InstanceId");
+        static const int Name_HASH = HashingUtils::HashString("Name");
 
 
         AssociationFilterKey GetAssociationFilterKeyForName(const Aws::String& name)

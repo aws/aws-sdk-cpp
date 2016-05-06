@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 RouteTableAssociation::RouteTableAssociation() : 
     m_routeTableAssociationIdHasBeenSet(false),
@@ -116,3 +122,7 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Main=" << m_main << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

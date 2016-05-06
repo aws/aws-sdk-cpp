@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PricingDetail::PricingDetail() : 
     m_price(0.0),
@@ -86,3 +92,7 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Count=" << m_count << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

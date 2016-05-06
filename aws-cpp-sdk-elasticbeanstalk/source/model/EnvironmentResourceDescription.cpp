@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentResourceDescription::EnvironmentResourceDescription() : 
     m_environmentNameHasBeenSet(false),
@@ -270,3 +276,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

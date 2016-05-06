@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ScheduledInstanceRecurrence::ScheduledInstanceRecurrence() : 
     m_frequencyHasBeenSet(false),
@@ -148,3 +154,7 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << ".OccurrenceUnit=" << StringUtils::URLEncode(m_occurrenceUnit.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

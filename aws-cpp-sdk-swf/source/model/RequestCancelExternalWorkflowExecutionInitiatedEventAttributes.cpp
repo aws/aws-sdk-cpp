@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes() : 
     m_workflowIdHasBeenSet(false),
@@ -103,3 +109,7 @@ JsonValue RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::Jsoniz
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

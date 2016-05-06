@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Green_HASH = HashingUtils::HashString("Green");
-static const int Yellow_HASH = HashingUtils::HashString("Yellow");
-static const int Red_HASH = HashingUtils::HashString("Red");
-static const int Grey_HASH = HashingUtils::HashString("Grey");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace EnvironmentHealthMapper
       {
+
+        static const int Green_HASH = HashingUtils::HashString("Green");
+        static const int Yellow_HASH = HashingUtils::HashString("Yellow");
+        static const int Red_HASH = HashingUtils::HashString("Red");
+        static const int Grey_HASH = HashingUtils::HashString("Grey");
 
 
         EnvironmentHealth GetEnvironmentHealthForName(const Aws::String& name)

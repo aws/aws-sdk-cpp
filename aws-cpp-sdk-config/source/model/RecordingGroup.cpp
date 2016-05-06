@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConfigService
+{
+namespace Model
+{
 
 RecordingGroup::RecordingGroup() : 
     m_allSupported(false),
@@ -98,3 +104,7 @@ JsonValue RecordingGroup::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ConfigService
+} // namespace Aws

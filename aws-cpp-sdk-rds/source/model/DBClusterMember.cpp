@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBClusterMember::DBClusterMember() : 
     m_dBInstanceIdentifierHasBeenSet(false),
@@ -118,3 +124,7 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".PromotionTier=" << m_promotionTier << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 ServerCertificateMetadata::ServerCertificateMetadata() : 
     m_pathHasBeenSet(false),
@@ -146,3 +152,7 @@ void ServerCertificateMetadata::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

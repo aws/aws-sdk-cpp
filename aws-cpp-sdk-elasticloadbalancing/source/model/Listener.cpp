@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 Listener::Listener() : 
     m_protocolHasBeenSet(false),
@@ -134,3 +140,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".SSLCertificateId=" << StringUtils::URLEncode(m_sSLCertificateId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

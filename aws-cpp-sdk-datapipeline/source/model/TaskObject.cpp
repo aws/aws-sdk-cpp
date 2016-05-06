@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DataPipeline
+{
+namespace Model
+{
 
 TaskObject::TaskObject() : 
     m_taskIdHasBeenSet(false),
@@ -109,3 +115,7 @@ JsonValue TaskObject::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DataPipeline
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 RecipientDsnFields::RecipientDsnFields() : 
     m_finalRecipientHasBeenSet(false),
@@ -180,3 +186,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

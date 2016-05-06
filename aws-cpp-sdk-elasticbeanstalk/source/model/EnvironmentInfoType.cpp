@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int tail_HASH = HashingUtils::HashString("tail");
-static const int bundle_HASH = HashingUtils::HashString("bundle");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace EnvironmentInfoTypeMapper
       {
+
+        static const int tail_HASH = HashingUtils::HashString("tail");
+        static const int bundle_HASH = HashingUtils::HashString("bundle");
 
 
         EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name)

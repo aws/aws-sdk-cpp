@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
 
 Finding::Finding() : 
     m_findingArnHasBeenSet(false),
@@ -237,3 +243,7 @@ JsonValue Finding::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

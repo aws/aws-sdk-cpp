@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Creating_HASH = HashingUtils::HashString("Creating");
-static const int Active_HASH = HashingUtils::HashString("Active");
-static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace DocumentStatusMapper
       {
+
+        static const int Creating_HASH = HashingUtils::HashString("Creating");
+        static const int Active_HASH = HashingUtils::HashString("Active");
+        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 
         DocumentStatus GetDocumentStatusForName(const Aws::String& name)

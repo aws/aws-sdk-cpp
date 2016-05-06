@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 ConsumedCapacity::ConsumedCapacity() : 
     m_tableNameHasBeenSet(false),
@@ -134,3 +140,7 @@ JsonValue ConsumedCapacity::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

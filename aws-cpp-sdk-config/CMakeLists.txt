@@ -17,11 +17,23 @@ project(aws-cpp-sdk-config)
     "source/model/*.cpp"
   )
 
-  file(GLOB CONFIG_SRC
+  file(GLOB CONFIG_UNIFIED_HEADERS
     ${AWS_CONFIG_HEADERS}
     ${AWS_CONFIG_MODEL_HEADERS}
+  )
+
+  file(GLOB CONFIG_UNITY_SRC
     ${AWS_CONFIG_SOURCE}
     ${AWS_CONFIG_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CONFIG" CONFIG_UNITY_SRC)
+  endif()
+
+  file(GLOB CONFIG_SRC
+    ${CONFIG_UNIFIED_HEADERS}
+    ${CONFIG_UNITY_SRC}
   )
 
   if(WIN32)

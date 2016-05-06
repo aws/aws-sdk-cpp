@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int search_m1_small_HASH = HashingUtils::HashString("search.m1.small");
-static const int search_m1_large_HASH = HashingUtils::HashString("search.m1.large");
-static const int search_m2_xlarge_HASH = HashingUtils::HashString("search.m2.xlarge");
-static const int search_m2_2xlarge_HASH = HashingUtils::HashString("search.m2.2xlarge");
-static const int search_m3_medium_HASH = HashingUtils::HashString("search.m3.medium");
-static const int search_m3_large_HASH = HashingUtils::HashString("search.m3.large");
-static const int search_m3_xlarge_HASH = HashingUtils::HashString("search.m3.xlarge");
-static const int search_m3_2xlarge_HASH = HashingUtils::HashString("search.m3.2xlarge");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace PartitionInstanceTypeMapper
       {
+
+        static const int search_m1_small_HASH = HashingUtils::HashString("search.m1.small");
+        static const int search_m1_large_HASH = HashingUtils::HashString("search.m1.large");
+        static const int search_m2_xlarge_HASH = HashingUtils::HashString("search.m2.xlarge");
+        static const int search_m2_2xlarge_HASH = HashingUtils::HashString("search.m2.2xlarge");
+        static const int search_m3_medium_HASH = HashingUtils::HashString("search.m3.medium");
+        static const int search_m3_large_HASH = HashingUtils::HashString("search.m3.large");
+        static const int search_m3_xlarge_HASH = HashingUtils::HashString("search.m3.xlarge");
+        static const int search_m3_2xlarge_HASH = HashingUtils::HashString("search.m3.2xlarge");
 
 
         PartitionInstanceType GetPartitionInstanceTypeForName(const Aws::String& name)

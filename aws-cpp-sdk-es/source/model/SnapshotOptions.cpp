@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace Model
+{
 
 SnapshotOptions::SnapshotOptions() : 
     m_automatedSnapshotStartHour(0),
@@ -58,3 +64,7 @@ JsonValue SnapshotOptions::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int io_enabled_HASH = HashingUtils::HashString("io-enabled");
-static const int io_performance_HASH = HashingUtils::HashString("io-performance");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace VolumeStatusNameMapper
       {
+
+        static const int io_enabled_HASH = HashingUtils::HashString("io-enabled");
+        static const int io_performance_HASH = HashingUtils::HashString("io-performance");
 
 
         VolumeStatusName GetVolumeStatusNameForName(const Aws::String& name)

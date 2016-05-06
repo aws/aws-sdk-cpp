@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int lowestPrice_HASH = HashingUtils::HashString("lowestPrice");
-static const int diversified_HASH = HashingUtils::HashString("diversified");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AllocationStrategyMapper
       {
+
+        static const int lowestPrice_HASH = HashingUtils::HashString("lowestPrice");
+        static const int diversified_HASH = HashingUtils::HashString("diversified");
 
 
         AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)

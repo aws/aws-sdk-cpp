@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CloudTrail;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CloudTrail
+{
+namespace CloudTrailErrorMapper
+{
+
 static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsLogGroupArnException");
 static const int INVALID_S3_BUCKET_NAME_HASH = HashingUtils::HashString("InvalidS3BucketNameException");
 static const int INVALID_KMS_KEY_ID_HASH = HashingUtils::HashString("InvalidKmsKeyIdException");
@@ -52,12 +59,6 @@ static const int INSUFFICIENT_S3_BUCKET_POLICY_HASH = HashingUtils::HashString("
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace CloudTrailErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

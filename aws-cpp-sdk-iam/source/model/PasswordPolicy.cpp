@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 PasswordPolicy::PasswordPolicy() : 
     m_minimumPasswordLength(0),
@@ -230,3 +236,7 @@ void PasswordPolicy::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".HardExpiry=" << m_hardExpiry << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

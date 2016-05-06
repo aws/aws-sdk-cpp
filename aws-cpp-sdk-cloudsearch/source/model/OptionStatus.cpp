@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 OptionStatus::OptionStatus() : 
     m_creationDateHasBeenSet(false),
@@ -134,3 +140,7 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".PendingDeletion=" << m_pendingDeletion << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

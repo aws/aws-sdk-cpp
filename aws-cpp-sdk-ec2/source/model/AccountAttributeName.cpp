@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int supported_platforms_HASH = HashingUtils::HashString("supported-platforms");
-static const int default_vpc_HASH = HashingUtils::HashString("default-vpc");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AccountAttributeNameMapper
       {
+
+        static const int supported_platforms_HASH = HashingUtils::HashString("supported-platforms");
+        static const int default_vpc_HASH = HashingUtils::HashString("default-vpc");
 
 
         AccountAttributeName GetAccountAttributeNameForName(const Aws::String& name)

@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int s3_ReducedRedundancyLostObject_HASH = HashingUtils::HashString("s3:ReducedRedundancyLostObject");
-static const int s3_ObjectCreated_HASH = HashingUtils::HashString("s3:ObjectCreated:*");
-static const int s3_ObjectCreated_Put_HASH = HashingUtils::HashString("s3:ObjectCreated:Put");
-static const int s3_ObjectCreated_Post_HASH = HashingUtils::HashString("s3:ObjectCreated:Post");
-static const int s3_ObjectCreated_Copy_HASH = HashingUtils::HashString("s3:ObjectCreated:Copy");
-static const int s3_ObjectCreated_CompleteMultipartUpload_HASH = HashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
-static const int s3_ObjectRemoved_HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
-static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
-static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace EventMapper
       {
+
+        static const int s3_ReducedRedundancyLostObject_HASH = HashingUtils::HashString("s3:ReducedRedundancyLostObject");
+        static const int s3_ObjectCreated_HASH = HashingUtils::HashString("s3:ObjectCreated:*");
+        static const int s3_ObjectCreated_Put_HASH = HashingUtils::HashString("s3:ObjectCreated:Put");
+        static const int s3_ObjectCreated_Post_HASH = HashingUtils::HashString("s3:ObjectCreated:Post");
+        static const int s3_ObjectCreated_Copy_HASH = HashingUtils::HashString("s3:ObjectCreated:Copy");
+        static const int s3_ObjectCreated_CompleteMultipartUpload_HASH = HashingUtils::HashString("s3:ObjectCreated:CompleteMultipartUpload");
+        static const int s3_ObjectRemoved_HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
+        static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
+        static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
 
 
         Event GetEventForName(const Aws::String& name)

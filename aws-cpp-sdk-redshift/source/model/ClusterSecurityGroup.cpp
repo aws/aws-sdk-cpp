@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterSecurityGroup::ClusterSecurityGroup() : 
     m_clusterSecurityGroupNameHasBeenSet(false),
@@ -184,3 +190,7 @@ void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

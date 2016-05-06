@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 DimensionFilter::DimensionFilter() : 
     m_nameHasBeenSet(false),
@@ -82,3 +88,7 @@ void DimensionFilter::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

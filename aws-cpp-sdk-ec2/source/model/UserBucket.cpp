@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 UserBucket::UserBucket() : 
     m_s3BucketHasBeenSet(false),
@@ -82,3 +88,7 @@ void UserBucket::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

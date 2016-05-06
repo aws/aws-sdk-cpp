@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 ParameterConstraints::ParameterConstraints() : 
     m_allowedValuesHasBeenSet(false)
@@ -80,3 +86,7 @@ void ParameterConstraints::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

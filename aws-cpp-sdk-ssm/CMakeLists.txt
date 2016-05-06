@@ -17,11 +17,23 @@ project(aws-cpp-sdk-ssm)
     "source/model/*.cpp"
   )
 
-  file(GLOB SSM_SRC
+  file(GLOB SSM_UNIFIED_HEADERS
     ${AWS_SSM_HEADERS}
     ${AWS_SSM_MODEL_HEADERS}
+  )
+
+  file(GLOB SSM_UNITY_SRC
     ${AWS_SSM_SOURCE}
     ${AWS_SSM_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SSM" SSM_UNITY_SRC)
+  endif()
+
+  file(GLOB SSM_SRC
+    ${SSM_UNIFIED_HEADERS}
+    ${SSM_UNITY_SRC}
   )
 
   if(WIN32)

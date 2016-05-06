@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::Lambda;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace Lambda
+{
+namespace LambdaErrorMapper
+{
+
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
@@ -36,12 +43,6 @@ static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDe
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace LambdaErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

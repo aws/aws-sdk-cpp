@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 TagDescription::TagDescription() : 
     m_loadBalancerNameHasBeenSet(false),
@@ -100,3 +106,7 @@ void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location)
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

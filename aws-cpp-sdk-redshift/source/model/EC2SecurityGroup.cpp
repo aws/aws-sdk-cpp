@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 EC2SecurityGroup::EC2SecurityGroup() : 
     m_statusHasBeenSet(false),
@@ -132,3 +138,7 @@ void EC2SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

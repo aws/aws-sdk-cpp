@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 CreateVolumePermission::CreateVolumePermission() : 
     m_userIdHasBeenSet(false),
@@ -82,3 +88,7 @@ void CreateVolumePermission::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

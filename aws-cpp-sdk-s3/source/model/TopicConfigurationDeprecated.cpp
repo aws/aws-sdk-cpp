@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 TopicConfigurationDeprecated::TopicConfigurationDeprecated() : 
     m_idHasBeenSet(false),
@@ -98,3 +104,7 @@ void TopicConfigurationDeprecated::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

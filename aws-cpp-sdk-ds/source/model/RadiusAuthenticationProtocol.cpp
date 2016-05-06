@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PAP_HASH = HashingUtils::HashString("PAP");
-static const int CHAP_HASH = HashingUtils::HashString("CHAP");
-static const int MS_CHAPv1_HASH = HashingUtils::HashString("MS-CHAPv1");
-static const int MS_CHAPv2_HASH = HashingUtils::HashString("MS-CHAPv2");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace RadiusAuthenticationProtocolMapper
       {
+
+        static const int PAP_HASH = HashingUtils::HashString("PAP");
+        static const int CHAP_HASH = HashingUtils::HashString("CHAP");
+        static const int MS_CHAPv1_HASH = HashingUtils::HashString("MS-CHAPv1");
+        static const int MS_CHAPv2_HASH = HashingUtils::HashString("MS-CHAPv2");
 
 
         RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::String& name)

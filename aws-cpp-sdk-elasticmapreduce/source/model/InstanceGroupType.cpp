@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int MASTER_HASH = HashingUtils::HashString("MASTER");
-static const int CORE_HASH = HashingUtils::HashString("CORE");
-static const int TASK_HASH = HashingUtils::HashString("TASK");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace InstanceGroupTypeMapper
       {
+
+        static const int MASTER_HASH = HashingUtils::HashString("MASTER");
+        static const int CORE_HASH = HashingUtils::HashString("CORE");
+        static const int TASK_HASH = HashingUtils::HashString("TASK");
 
 
         InstanceGroupType GetInstanceGroupTypeForName(const Aws::String& name)

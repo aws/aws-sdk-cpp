@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 RevisionLocation::RevisionLocation() : 
     m_revisionTypeHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue RevisionLocation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

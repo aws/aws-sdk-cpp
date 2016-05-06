@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int DO_NOTHING_HASH = HashingUtils::HashString("DO_NOTHING");
-static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
-static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace OnFailureMapper
       {
+
+        static const int DO_NOTHING_HASH = HashingUtils::HashString("DO_NOTHING");
+        static const int ROLLBACK_HASH = HashingUtils::HashString("ROLLBACK");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 
         OnFailure GetOnFailureForName(const Aws::String& name)

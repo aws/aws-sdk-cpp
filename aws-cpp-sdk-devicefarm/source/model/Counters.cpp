@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace Model
+{
 
 Counters::Counters() : 
     m_total(0),
@@ -160,3 +166,7 @@ JsonValue Counters::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

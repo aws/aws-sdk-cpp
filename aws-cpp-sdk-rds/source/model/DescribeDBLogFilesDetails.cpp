@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DescribeDBLogFilesDetails::DescribeDBLogFilesDetails() : 
     m_logFileNameHasBeenSet(false),
@@ -102,3 +108,7 @@ void DescribeDBLogFilesDetails::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".Size=" << m_size << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

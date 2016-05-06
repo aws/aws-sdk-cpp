@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ReservedInstancesConfiguration::ReservedInstancesConfiguration() : 
     m_availabilityZoneHasBeenSet(false),
@@ -116,3 +122,7 @@ void ReservedInstancesConfiguration::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

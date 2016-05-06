@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int HASH_HASH = HashingUtils::HashString("HASH");
-static const int RANGE_HASH = HashingUtils::HashString("RANGE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace KeyTypeMapper
       {
+
+        static const int HASH_HASH = HashingUtils::HashString("HASH");
+        static const int RANGE_HASH = HashingUtils::HashString("RANGE");
 
 
         KeyType GetKeyTypeForName(const Aws::String& name)

@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int One_Hour_HASH = HashingUtils::HashString("One_Hour");
-static const int Three_Hours_HASH = HashingUtils::HashString("Three_Hours");
-static const int Six_Hours_HASH = HashingUtils::HashString("Six_Hours");
-static const int Twelve_Hours_HASH = HashingUtils::HashString("Twelve_Hours");
-static const int TwentyFour_Hours_HASH = HashingUtils::HashString("TwentyFour_Hours");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace MaximumExecutionFrequencyMapper
       {
+
+        static const int One_Hour_HASH = HashingUtils::HashString("One_Hour");
+        static const int Three_Hours_HASH = HashingUtils::HashString("Three_Hours");
+        static const int Six_Hours_HASH = HashingUtils::HashString("Six_Hours");
+        static const int Twelve_Hours_HASH = HashingUtils::HashString("Twelve_Hours");
+        static const int TwentyFour_Hours_HASH = HashingUtils::HashString("TwentyFour_Hours");
 
 
         MaximumExecutionFrequency GetMaximumExecutionFrequencyForName(const Aws::String& name)

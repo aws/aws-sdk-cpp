@@ -31,7 +31,7 @@ using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils::Logging;
 
-static const char* allocationTag = "HttpClientFactory";
+static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
 std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConfiguration& clientConfiguration) const
 {
@@ -42,13 +42,13 @@ std::shared_ptr<HttpClient> HttpClientFactory::CreateHttpClient(const ClientConf
     switch (clientConfiguration.httpLibOverride)
     { 
         case TransferLibType::WIN_INET_CLIENT:
-            return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
+            return Aws::MakeShared<WinINetSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 
         default:
-            return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+            return Aws::MakeShared<WinHttpSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
     }
 #elif ENABLE_CURL_CLIENT
-    return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
+    return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 #else
     // When neither of these clients is enabled, gcc gives a warning (converted
     // to error by -Werror) about the unused clientConfiguration parameter. We
@@ -66,7 +66,7 @@ std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const Aws::Str
 
 std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const
 {
-    auto request = Aws::MakeShared<Standard::StandardHttpRequest>(allocationTag, uri, method);
+    auto request = Aws::MakeShared<Standard::StandardHttpRequest>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, uri, method);
     request->SetResponseStreamFactory(streamFactory);
 
     return request;

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-waf)
     "source/model/*.cpp"
   )
 
-  file(GLOB WAF_SRC
+  file(GLOB WAF_UNIFIED_HEADERS
     ${AWS_WAF_HEADERS}
     ${AWS_WAF_MODEL_HEADERS}
+  )
+
+  file(GLOB WAF_UNITY_SRC
     ${AWS_WAF_SOURCE}
     ${AWS_WAF_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("WAF" WAF_UNITY_SRC)
+  endif()
+
+  file(GLOB WAF_SRC
+    ${WAF_UNIFIED_HEADERS}
+    ${WAF_UNITY_SRC}
   )
 
   if(WIN32)

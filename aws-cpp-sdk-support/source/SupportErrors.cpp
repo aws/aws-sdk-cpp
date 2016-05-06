@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::Support;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace Support
+{
+namespace SupportErrorMapper
+{
+
 static const int DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DescribeAttachmentLimitExceeded");
 static const int ATTACHMENT_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentIdNotFound");
 static const int ATTACHMENT_SET_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentSetSizeLimitExceeded");
@@ -29,12 +36,6 @@ static const int ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("Atta
 static const int ATTACHMENT_SET_ID_NOT_FOUND_HASH = HashingUtils::HashString("AttachmentSetIdNotFound");
 static const int ATTACHMENT_SET_EXPIRED_HASH = HashingUtils::HashString("AttachmentSetExpired");
 
-namespace Aws
-{
-namespace Support
-{
-namespace SupportErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

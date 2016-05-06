@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ApplicationMetrics::ApplicationMetrics() : 
     m_duration(0),
@@ -126,3 +132,7 @@ void ApplicationMetrics::OutputToStream(Aws::OStream& oStream, const char* locat
       m_latency.OutputToStream(oStream, latencyLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-apigateway)
     "source/model/*.cpp"
   )
 
-  file(GLOB APIGATEWAY_SRC
+  file(GLOB APIGATEWAY_UNIFIED_HEADERS
     ${AWS_APIGATEWAY_HEADERS}
     ${AWS_APIGATEWAY_MODEL_HEADERS}
+  )
+
+  file(GLOB APIGATEWAY_UNITY_SRC
     ${AWS_APIGATEWAY_SOURCE}
     ${AWS_APIGATEWAY_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("APIGATEWAY" APIGATEWAY_UNITY_SRC)
+  endif()
+
+  file(GLOB APIGATEWAY_SRC
+    ${APIGATEWAY_UNIFIED_HEADERS}
+    ${APIGATEWAY_UNITY_SRC}
   )
 
   if(WIN32)

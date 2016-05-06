@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchEvents
+{
+namespace Model
+{
 
 RemoveTargetsResultEntry::RemoveTargetsResultEntry() : 
     m_targetIdHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue RemoveTargetsResultEntry::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchEvents
+} // namespace Aws

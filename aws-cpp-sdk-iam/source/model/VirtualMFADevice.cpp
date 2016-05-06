@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 VirtualMFADevice::VirtualMFADevice() : 
     m_serialNumberHasBeenSet(false),
@@ -135,3 +141,7 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

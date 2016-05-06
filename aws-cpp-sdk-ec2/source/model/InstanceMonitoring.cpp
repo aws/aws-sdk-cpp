@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceMonitoring::InstanceMonitoring() : 
     m_instanceIdHasBeenSet(false),
@@ -86,3 +92,7 @@ void InstanceMonitoring::OutputToStream(Aws::OStream& oStream, const char* locat
       m_monitoring.OutputToStream(oStream, monitoringLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

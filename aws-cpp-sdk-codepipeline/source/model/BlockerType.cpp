@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Schedule_HASH = HashingUtils::HashString("Schedule");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace BlockerTypeMapper
       {
+
+        static const int Schedule_HASH = HashingUtils::HashString("Schedule");
 
 
         BlockerType GetBlockerTypeForName(const Aws::String& name)

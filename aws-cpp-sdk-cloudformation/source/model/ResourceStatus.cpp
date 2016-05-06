@@ -19,16 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
-static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
-static const int DELETE_SKIPPED_HASH = HashingUtils::HashString("DELETE_SKIPPED");
-static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
 
 namespace Aws
 {
@@ -38,6 +28,17 @@ namespace Aws
     {
       namespace ResourceStatusMapper
       {
+
+        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+        static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
+        static const int DELETE_SKIPPED_HASH = HashingUtils::HashString("DELETE_SKIPPED");
+        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
+        static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)

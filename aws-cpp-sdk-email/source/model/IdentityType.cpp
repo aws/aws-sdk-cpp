@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int EmailAddress_HASH = HashingUtils::HashString("EmailAddress");
-static const int Domain_HASH = HashingUtils::HashString("Domain");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace IdentityTypeMapper
       {
+
+        static const int EmailAddress_HASH = HashingUtils::HashString("EmailAddress");
+        static const int Domain_HASH = HashingUtils::HashString("Domain");
 
 
         IdentityType GetIdentityTypeForName(const Aws::String& name)

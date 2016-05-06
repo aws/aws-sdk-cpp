@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 MetricCollectionType::MetricCollectionType() : 
     m_metricHasBeenSet(false)
@@ -66,3 +72,7 @@ void MetricCollectionType::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Metric=" << StringUtils::URLEncode(m_metric.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

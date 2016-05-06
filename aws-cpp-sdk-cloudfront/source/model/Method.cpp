@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int GET__HASH = HashingUtils::HashString("GET");
-static const int HEAD_HASH = HashingUtils::HashString("HEAD");
-static const int POST_HASH = HashingUtils::HashString("POST");
-static const int PUT_HASH = HashingUtils::HashString("PUT");
-static const int PATCH_HASH = HashingUtils::HashString("PATCH");
-static const int OPTIONS_HASH = HashingUtils::HashString("OPTIONS");
-static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace MethodMapper
       {
+
+        static const int GET__HASH = HashingUtils::HashString("GET");
+        static const int HEAD_HASH = HashingUtils::HashString("HEAD");
+        static const int POST_HASH = HashingUtils::HashString("POST");
+        static const int PUT_HASH = HashingUtils::HashString("PUT");
+        static const int PATCH_HASH = HashingUtils::HashString("PATCH");
+        static const int OPTIONS_HASH = HashingUtils::HashString("OPTIONS");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 
         Method GetMethodForName(const Aws::String& name)

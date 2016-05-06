@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ReservedInstancesModificationResponse::ReservedInstancesModificationResponse() : 
     m_reservedInstancesIdHasBeenSet(false),
@@ -86,3 +92,7 @@ void ReservedInstancesModificationResponse::OutputToStream(Aws::OStream& oStream
       m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

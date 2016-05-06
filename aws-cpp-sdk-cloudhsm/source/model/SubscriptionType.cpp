@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace SubscriptionTypeMapper
       {
+
+        static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
 
 
         SubscriptionType GetSubscriptionTypeForName(const Aws::String& name)

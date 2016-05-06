@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int git_HASH = HashingUtils::HashString("git");
-static const int svn_HASH = HashingUtils::HashString("svn");
-static const int archive_HASH = HashingUtils::HashString("archive");
-static const int s3_HASH = HashingUtils::HashString("s3");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace SourceTypeMapper
       {
+
+        static const int git_HASH = HashingUtils::HashString("git");
+        static const int svn_HASH = HashingUtils::HashString("svn");
+        static const int archive_HASH = HashingUtils::HashString("archive");
+        static const int s3_HASH = HashingUtils::HashString("s3");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)

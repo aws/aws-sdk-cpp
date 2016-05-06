@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 SNSAction::SNSAction() : 
     m_topicArnHasBeenSet(false),
@@ -82,3 +88,7 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

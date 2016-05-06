@@ -17,11 +17,23 @@ project(aws-cpp-sdk-logs)
     "source/model/*.cpp"
   )
 
-  file(GLOB LOGS_SRC
+  file(GLOB LOGS_UNIFIED_HEADERS
     ${AWS_LOGS_HEADERS}
     ${AWS_LOGS_MODEL_HEADERS}
+  )
+
+  file(GLOB LOGS_UNITY_SRC
     ${AWS_LOGS_SOURCE}
     ${AWS_LOGS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("LOGS" LOGS_UNITY_SRC)
+  endif()
+
+  file(GLOB LOGS_SRC
+    ${LOGS_UNIFIED_HEADERS}
+    ${LOGS_UNITY_SRC}
   )
 
   if(WIN32)

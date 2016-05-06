@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 AutoScalingInstanceDetails::AutoScalingInstanceDetails() : 
     m_instanceIdHasBeenSet(false),
@@ -164,3 +170,7 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

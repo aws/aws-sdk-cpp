@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotPlacement::SpotPlacement() : 
     m_availabilityZoneHasBeenSet(false),
@@ -82,3 +88,7 @@ void SpotPlacement::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

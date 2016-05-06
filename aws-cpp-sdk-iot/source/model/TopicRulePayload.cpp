@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 TopicRulePayload::TopicRulePayload() : 
     m_sqlHasBeenSet(false),
@@ -126,3 +132,7 @@ JsonValue TopicRulePayload::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

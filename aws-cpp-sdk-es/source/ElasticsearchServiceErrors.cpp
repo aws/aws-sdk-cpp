@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ElasticsearchService;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace ElasticsearchServiceErrorMapper
+{
+
 static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
 static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
@@ -27,12 +34,6 @@ static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Resour
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace ElasticsearchServiceErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 CancelTimerDecisionAttributes::CancelTimerDecisionAttributes() : 
     m_timerIdHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue CancelTimerDecisionAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

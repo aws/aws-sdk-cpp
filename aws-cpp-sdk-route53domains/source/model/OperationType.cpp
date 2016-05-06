@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int REGISTER_DOMAIN_HASH = HashingUtils::HashString("REGISTER_DOMAIN");
-static const int DELETE_DOMAIN_HASH = HashingUtils::HashString("DELETE_DOMAIN");
-static const int TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("TRANSFER_IN_DOMAIN");
-static const int UPDATE_DOMAIN_CONTACT_HASH = HashingUtils::HashString("UPDATE_DOMAIN_CONTACT");
-static const int UPDATE_NAMESERVER_HASH = HashingUtils::HashString("UPDATE_NAMESERVER");
-static const int CHANGE_PRIVACY_PROTECTION_HASH = HashingUtils::HashString("CHANGE_PRIVACY_PROTECTION");
-static const int DOMAIN_LOCK_HASH = HashingUtils::HashString("DOMAIN_LOCK");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace OperationTypeMapper
       {
+
+        static const int REGISTER_DOMAIN_HASH = HashingUtils::HashString("REGISTER_DOMAIN");
+        static const int DELETE_DOMAIN_HASH = HashingUtils::HashString("DELETE_DOMAIN");
+        static const int TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("TRANSFER_IN_DOMAIN");
+        static const int UPDATE_DOMAIN_CONTACT_HASH = HashingUtils::HashString("UPDATE_DOMAIN_CONTACT");
+        static const int UPDATE_NAMESERVER_HASH = HashingUtils::HashString("UPDATE_NAMESERVER");
+        static const int CHANGE_PRIVACY_PROTECTION_HASH = HashingUtils::HashString("CHANGE_PRIVACY_PROTECTION");
+        static const int DOMAIN_LOCK_HASH = HashingUtils::HashString("DOMAIN_LOCK");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)

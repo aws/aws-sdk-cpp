@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ARN_HASH = HashingUtils::HashString("ARN");
-static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
-static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
-static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace DeviceAttributeMapper
       {
+
+        static const int ARN_HASH = HashingUtils::HashString("ARN");
+        static const int PLATFORM_HASH = HashingUtils::HashString("PLATFORM");
+        static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
+        static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
 
 
         DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)

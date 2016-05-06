@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Import_HASH = HashingUtils::HashString("Import");
-static const int Export_HASH = HashingUtils::HashString("Export");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace JobTypeMapper
       {
+
+        static const int Import_HASH = HashingUtils::HashString("Import");
+        static const int Export_HASH = HashingUtils::HashString("Export");
 
 
         JobType GetJobTypeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 SnsAction::SnsAction() : 
     m_targetArnHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue SnsAction::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBInstanceStatusInfo::DBInstanceStatusInfo() : 
     m_statusTypeHasBeenSet(false),
@@ -116,3 +122,7 @@ void DBInstanceStatusInfo::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

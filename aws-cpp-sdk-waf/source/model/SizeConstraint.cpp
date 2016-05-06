@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WAF
+{
+namespace Model
+{
 
 SizeConstraint::SizeConstraint() : 
     m_fieldToMatchHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue SizeConstraint::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WAF
+} // namespace Aws

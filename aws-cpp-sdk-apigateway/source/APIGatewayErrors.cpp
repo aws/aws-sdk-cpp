@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::APIGateway;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace APIGateway
+{
+namespace APIGatewayErrorMapper
+{
+
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
@@ -27,12 +34,6 @@ static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestExceptio
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace APIGatewayErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

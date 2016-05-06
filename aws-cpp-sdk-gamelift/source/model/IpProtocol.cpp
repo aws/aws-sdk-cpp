@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int TCP_HASH = HashingUtils::HashString("TCP");
-static const int UDP_HASH = HashingUtils::HashString("UDP");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace IpProtocolMapper
       {
+
+        static const int TCP_HASH = HashingUtils::HashString("TCP");
+        static const int UDP_HASH = HashingUtils::HashString("UDP");
 
 
         IpProtocol GetIpProtocolForName(const Aws::String& name)

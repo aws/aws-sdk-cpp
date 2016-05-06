@@ -17,11 +17,23 @@ project(aws-cpp-sdk-support)
     "source/model/*.cpp"
   )
 
-  file(GLOB SUPPORT_SRC
+  file(GLOB SUPPORT_UNIFIED_HEADERS
     ${AWS_SUPPORT_HEADERS}
     ${AWS_SUPPORT_MODEL_HEADERS}
+  )
+
+  file(GLOB SUPPORT_UNITY_SRC
     ${AWS_SUPPORT_SOURCE}
     ${AWS_SUPPORT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SUPPORT" SUPPORT_UNITY_SRC)
+  endif()
+
+  file(GLOB SUPPORT_SRC
+    ${SUPPORT_UNIFIED_HEADERS}
+    ${SUPPORT_UNITY_SRC}
   )
 
   if(WIN32)

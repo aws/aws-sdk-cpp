@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticTranscoder
+{
+namespace Model
+{
 
 CreateJobPlaylist::CreateJobPlaylist() : 
     m_nameHasBeenSet(false),
@@ -124,3 +130,7 @@ JsonValue CreateJobPlaylist::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticTranscoder
+} // namespace Aws

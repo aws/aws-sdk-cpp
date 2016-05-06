@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WorkSpaces
+{
+namespace Model
+{
 
 FailedCreateWorkspaceRequest::FailedCreateWorkspaceRequest() : 
     m_workspaceRequestHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue FailedCreateWorkspaceRequest::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WorkSpaces
+} // namespace Aws

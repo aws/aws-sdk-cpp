@@ -8,9 +8,6 @@
 
 using namespace Aws::Utils;
 
-#foreach($enumMember in $enumModel.members)
-static const int ${enumMember.memberName}_HASH = HashingUtils::HashString("${enumMember.memberStringValue}");
-#end
 
 namespace Aws
 {
@@ -20,6 +17,10 @@ namespace Aws
     {
       namespace ${enumModel.name}Mapper
       {
+
+#foreach($enumMember in $enumModel.members)
+        static const int ${enumMember.memberName}_HASH = HashingUtils::HashString("${enumMember.memberStringValue}");
+#end
 
 #if ($enumModel.members.size() > 121)
         /*

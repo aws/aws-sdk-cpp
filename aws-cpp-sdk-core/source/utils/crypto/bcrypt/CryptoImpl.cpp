@@ -35,7 +35,7 @@ namespace Utils
 namespace Crypto
 {
 
-static const char* logTag = "CryptoHash";
+static const char* BCRYPT_LOG_TAG = "CryptoHash";
 
 // RAII class for one-use-per-hash-call data used in Windows cryptographic hash implementations
 // Useful so we don't have to call a Cleanup function for every failure point
@@ -84,7 +84,7 @@ BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algorithmHandle, algorithmName, MS_PRIMITIVE_PROVIDER, isHMAC ? BCRYPT_ALG_HANDLE_HMAC_FLAG : 0);
     if (!NT_SUCCESS(status))
     {
-        AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << algorithmName);
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Failed initializing BCryptOpenAlgorithmProvider for ", algorithmName);
         return;
     }
 
@@ -92,14 +92,14 @@ BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     status = BCryptGetProperty(m_algorithmHandle, BCRYPT_HASH_LENGTH, (PBYTE)&m_hashBufferLength, sizeof(m_hashBufferLength), &resultLength, 0);
     if (!NT_SUCCESS(status) || m_hashBufferLength <= 0)
     {
-        AWS_LOG_ERROR(logTag, "Error computing hash buffer length.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error computing hash buffer length.");
         return;
     }
 
-    m_hashBuffer = Aws::NewArray<BYTE>(m_hashBufferLength, logTag);
+    m_hashBuffer = Aws::NewArray<BYTE>(m_hashBufferLength, BCRYPT_LOG_TAG);
     if (!m_hashBuffer)
     {
-        AWS_LOG_ERROR(logTag, "Error allocating hash buffer.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error allocating hash buffer.");
         return;
     }
 
@@ -107,14 +107,14 @@ BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
     status = BCryptGetProperty(m_algorithmHandle, BCRYPT_OBJECT_LENGTH, (PBYTE)&m_hashObjectLength, sizeof(m_hashObjectLength), &resultLength, 0);
     if (!NT_SUCCESS(status) || m_hashObjectLength <= 0)
     {
-        AWS_LOG_ERROR(logTag, "Error computing hash object length.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error computing hash object length.");
         return;
     }
 
-    m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, logTag);
+    m_hashObject = Aws::NewArray<BYTE>(m_hashObjectLength, BCRYPT_LOG_TAG);
     if (!m_hashObject)
     {
-        AWS_LOG_ERROR(logTag, "Error allocating hash object.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error allocating hash object.");
         return;
     }
 }
@@ -135,14 +135,14 @@ HashResult BCryptHashImpl::HashData(const BCryptHashContext& context, PBYTE data
     NTSTATUS status = BCryptHashData(context.m_hashHandle, data, dataLength, 0);
     if (!NT_SUCCESS(status))
     {
-        AWS_LOG_ERROR(logTag, "Error computing hash.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error computing hash.");
         return HashResult();
     }
 
     status = BCryptFinishHash(context.m_hashHandle, m_hashBuffer, m_hashBufferLength, 0); 
     if (!NT_SUCCESS(status))
     {
-        AWS_LOG_ERROR(logTag, "Error obtaining computed hash");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error obtaining computed hash");
         return HashResult();
     }
 
@@ -161,7 +161,7 @@ HashResult BCryptHashImpl::Calculate(const Aws::String& str)
     BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
     if (!context.IsValid())
     {
-        AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error creating hash handle.");
         return HashResult();
     }
 
@@ -180,7 +180,7 @@ HashResult BCryptHashImpl::Calculate(const ByteBuffer& toHash, const ByteBuffer&
     BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength, secret);
     if (!context.IsValid())
     {
-        AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error creating hash handle.");
         return HashResult();
     }
 
@@ -197,7 +197,7 @@ bool BCryptHashImpl::HashStream(Aws::IStream& stream)
     BCryptHashContext context(m_algorithmHandle, m_hashObject, m_hashObjectLength);
     if (!context.IsValid())
     {
-        AWS_LOG_ERROR(logTag, "Error creating hash handle.");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error creating hash handle.");
         return false;
     }
 
@@ -213,7 +213,7 @@ bool BCryptHashImpl::HashStream(Aws::IStream& stream)
             status = BCryptHashData(context.m_hashHandle, (PBYTE)streamBuffer, (ULONG) bytesRead, 0);
             if (!NT_SUCCESS(status))
             {
-                AWS_LOG_ERROR(logTag, "Error computing hash.");
+                AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error computing hash.");
                 return false;
             }
         }
@@ -227,7 +227,7 @@ bool BCryptHashImpl::HashStream(Aws::IStream& stream)
     status = BCryptFinishHash(context.m_hashHandle, m_hashBuffer, m_hashBufferLength, 0); 
     if (!NT_SUCCESS(status))
     {
-        AWS_LOG_ERROR(logTag, "Error obtaining computed hash");
+        AWS_LOG_ERROR(BCRYPT_LOG_TAG, "Error obtaining computed hash");
         return false;
     }
 

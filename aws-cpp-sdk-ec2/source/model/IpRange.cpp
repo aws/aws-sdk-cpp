@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 IpRange::IpRange() : 
     m_cidrIpHasBeenSet(false)
@@ -66,3 +72,7 @@ void IpRange::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Source_HASH = HashingUtils::HashString("Source");
-static const int Build_HASH = HashingUtils::HashString("Build");
-static const int Deploy_HASH = HashingUtils::HashString("Deploy");
-static const int Test_HASH = HashingUtils::HashString("Test");
-static const int Invoke_HASH = HashingUtils::HashString("Invoke");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace ActionCategoryMapper
       {
+
+        static const int Source_HASH = HashingUtils::HashString("Source");
+        static const int Build_HASH = HashingUtils::HashString("Build");
+        static const int Deploy_HASH = HashingUtils::HashString("Deploy");
+        static const int Test_HASH = HashingUtils::HashString("Test");
+        static const int Invoke_HASH = HashingUtils::HashString("Invoke");
 
 
         ActionCategory GetActionCategoryForName(const Aws::String& name)

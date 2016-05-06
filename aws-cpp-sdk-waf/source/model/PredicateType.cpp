@@ -15,15 +15,9 @@
 #include <aws/waf/model/PredicateType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
-#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
-static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
-static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
-static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
-static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
 
 namespace Aws
 {
@@ -33,6 +27,11 @@ namespace Aws
     {
       namespace PredicateTypeMapper
       {
+
+        static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
+        static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
+        static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
+        static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
 
 
         PredicateType GetPredicateTypeForName(const Aws::String& name)
@@ -54,11 +53,7 @@ namespace Aws
           {
             return PredicateType::SizeConstraint;
           }
-          else if (hashCode == XssMatch_HASH)
-          {
-            return PredicateType::XssMatch;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -80,10 +75,8 @@ namespace Aws
             return "SqlInjectionMatch";
           case PredicateType::SizeConstraint:
             return "SizeConstraint";
-          case PredicateType::XssMatch:
-            return "XssMatch";
           default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

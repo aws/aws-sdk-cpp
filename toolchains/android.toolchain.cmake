@@ -216,7 +216,7 @@ set( CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG "" )
 set( CMAKE_SKIP_RPATH TRUE CACHE BOOL "If set, runtime paths are not added when using shared libraries." )
 
 # NDK search paths
-set( ANDROID_SUPPORTED_NDK_VERSIONS ${ANDROID_EXTRA_NDK_VERSIONS} -r10d -r10c -r10b -r10 -r9d -r9c -r9b -r9 -r8e -r8d -r8c -r8b -r8 -r7c -r7b -r7 -r6b -r6 -r5c -r5b -r5 "" )
+set( ANDROID_SUPPORTED_NDK_VERSIONS ${ANDROID_EXTRA_NDK_VERSIONS} -r11c -r11b -r11 -r10e -r10d -r10c -r10b -r10 -r9d -r9c -r9b -r9 -r8e -r8d -r8c -r8b -r8 -r7c -r7b -r7 -r6b -r6 -r5c -r5b -r5 "" )
 if( NOT DEFINED ANDROID_NDK_SEARCH_PATHS )
  if( CMAKE_HOST_WIN32 )
   file( TO_CMAKE_PATH "$ENV{PROGRAMFILES}" ANDROID_NDK_SEARCH_PATHS )
@@ -815,7 +815,6 @@ else()
 endif()
 unset( __levelIdx )
 
-
 # remember target ABI
 set( ANDROID_ABI "${ANDROID_ABI}" CACHE STRING "The target ABI for Android. If arm, then armeabi-v7a is recommended for hardware floating point." FORCE )
 if( CMAKE_VERSION VERSION_GREATER "2.8" )
@@ -833,7 +832,7 @@ set( ANDROID_STL_FORCE_FEATURES ON CACHE BOOL "automatically configure rtti and 
 mark_as_advanced( ANDROID_STL ANDROID_STL_FORCE_FEATURES )
 
 if( BUILD_WITH_ANDROID_NDK )
- if( NOT "${ANDROID_STL}" MATCHES "^(none|system|system_re|gabi\\+\\+_static|gabi\\+\\+_shared|stlport_static|stlport_shared|gnustl_static|gnustl_shared)$")
+ if( NOT "${ANDROID_STL}" MATCHES "^(none|system|system_re|gabi\\+\\+_static|gabi\\+\\+_shared|stlport_static|stlport_shared|gnustl_static|gnustl_shared|libc\\+\\+_static|libc\\+\\+_shared)$")
   message( FATAL_ERROR "ANDROID_STL is set to invalid value \"${ANDROID_STL}\".
 The possible values are:
   none           -> Do not configure the runtime.
@@ -845,15 +844,19 @@ The possible values are:
   stlport_shared -> Use the STLport runtime as a shared library.
   gnustl_static  -> (default) Use the GNU STL as a static library.
   gnustl_shared  -> Use the GNU STL as a shared library.
+  libc++_static  -> Use clang's runtime as a static library
+  libc++_shared  -> Use clang's runtime as a shared library
 " )
  endif()
 elseif( BUILD_WITH_STANDALONE_TOOLCHAIN )
- if( NOT "${ANDROID_STL}" MATCHES "^(none|gnustl_static|gnustl_shared)$")
+ if( NOT "${ANDROID_STL}" MATCHES "^(none|gnustl_static|gnustl_shared|libc\\+\\+_static|libc\\+\\+_shared)$")
   message( FATAL_ERROR "ANDROID_STL is set to invalid value \"${ANDROID_STL}\".
 The possible values are:
   none           -> Do not configure the runtime.
   gnustl_static  -> (default) Use the GNU STL as a static library.
   gnustl_shared  -> Use the GNU STL as a shared library.
+  libc++_static  -> Use clang's runtime as a static library
+  libc++_shared  -> Use clang's runtime as a shared library
 " )
  endif()
 endif()
@@ -891,7 +894,6 @@ See https://android.googlesource.com/platform/development.git f907f4f9d4e56ccc80
 " )
 endif()
 
-
 # setup paths and STL for standalone toolchain
 if( BUILD_WITH_STANDALONE_TOOLCHAIN )
  set( ANDROID_TOOLCHAIN_ROOT "${ANDROID_STANDALONE_TOOLCHAIN}" )
@@ -911,6 +913,11 @@ if( BUILD_WITH_STANDALONE_TOOLCHAIN )
   else()
    list( APPEND ANDROID_STL_INCLUDE_DIRS "${ANDROID_STL_INCLUDE_DIRS}/${ANDROID_TOOLCHAIN_MACHINE_NAME}" )
   endif()
+
+  if( ANDROID_STL MATCHES "libc\\+\\+")
+    list( APPEND ANDROID_STL_INCLUDE_DIRS "" )
+  endif()
+
   # always search static GNU STL to get the location of libsupc++.a
   if( ARMEABI_V7A AND NOT ANDROID_FORCE_ARM_BUILD AND EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/thumb/libstdc++.a" )
    set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/thumb" )
@@ -922,10 +929,12 @@ if( BUILD_WITH_STANDALONE_TOOLCHAIN )
    set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib" )
   endif()
   if( __libstl )
-   set( __libsupcxx "${__libstl}/libsupc++.a" )
+   if( ANDROID_STL MATCHES "gnustl" )
+    set( __libsupcxx "${__libstl}/libsupc++.a" )
+   endif()
    set( __libstl    "${__libstl}/libstdc++.a" )
   endif()
-  if( NOT EXISTS "${__libsupcxx}" )
+  if( ANDROID_STL MATCHES "gnustl" AND NOT EXISTS "${__libsupcxx}" )
    message( FATAL_ERROR "The required libstdsupc++.a is missing in your standalone toolchain.
  Usually it happens because of bug in make-standalone-toolchain.sh script from NDK r7, r7b and r7c.
  You need to either upgrade to newer NDK or manually copy
@@ -934,6 +943,8 @@ if( BUILD_WITH_STANDALONE_TOOLCHAIN )
      ${__libsupcxx}
    " )
   endif()
+
+  #TODO: use string manip to collapse this
   if( ANDROID_STL STREQUAL "gnustl_shared" )
    if( ARMEABI_V7A AND EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/libgnustl_shared.so" )
     set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/libgnustl_shared.so" )
@@ -942,6 +953,15 @@ if( BUILD_WITH_STANDALONE_TOOLCHAIN )
    elseif( EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/libgnustl_shared.so" )
     set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/libgnustl_shared.so" )
    endif()
+  elseif( ANDROID_STL STREQUAL "libc++_shared")
+   if( ARMEABI_V7A AND EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/libc++_shared.so" )
+    set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/${CMAKE_SYSTEM_PROCESSOR}/libc++_shared.so" )
+   elseif( ARMEABI AND NOT ANDROID_FORCE_ARM_BUILD AND EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/thumb/libc++_shared.so" )
+    set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/thumb/libc++_shared.so" )
+   elseif( EXISTS "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/libc++_shared.so" )
+    set( __libstl "${ANDROID_STANDALONE_TOOLCHAIN}/${ANDROID_TOOLCHAIN_MACHINE_NAME}/lib/libc++_shared.so" )
+   endif()
+
   endif()
  endif()
 endif()

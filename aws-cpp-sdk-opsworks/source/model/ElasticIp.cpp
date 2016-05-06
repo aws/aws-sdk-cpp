@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 ElasticIp::ElasticIp() : 
     m_ipHasBeenSet(false),
@@ -116,3 +122,7 @@ JsonValue ElasticIp::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

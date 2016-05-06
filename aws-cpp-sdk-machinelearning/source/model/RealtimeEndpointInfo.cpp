@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MachineLearning
+{
+namespace Model
+{
 
 RealtimeEndpointInfo::RealtimeEndpointInfo() : 
     m_peakRequestsPerSecond(0),
@@ -101,3 +107,7 @@ JsonValue RealtimeEndpointInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

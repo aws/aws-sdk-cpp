@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() : 
     m_imageIdHasBeenSet(false),
@@ -392,3 +398,7 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

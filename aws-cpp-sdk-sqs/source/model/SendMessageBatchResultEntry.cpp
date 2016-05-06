@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 SendMessageBatchResultEntry::SendMessageBatchResultEntry() : 
     m_idHasBeenSet(false),
@@ -114,3 +120,7 @@ void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes() : 
     m_scheduledEventId(0),
@@ -58,3 +64,7 @@ JsonValue LambdaFunctionStartedEventAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

@@ -15,26 +15,9 @@
 #include <aws/devicefarm/model/UploadType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
-#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
-static const int ANDROID_APP_HASH = HashingUtils::HashString("ANDROID_APP");
-static const int IOS_APP_HASH = HashingUtils::HashString("IOS_APP");
-static const int WEB_APP_HASH = HashingUtils::HashString("WEB_APP");
-static const int EXTERNAL_DATA_HASH = HashingUtils::HashString("EXTERNAL_DATA");
-static const int APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
-static const int APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
-static const int APPIUM_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_PACKAGE");
-static const int APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
-static const int APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
-static const int APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_PACKAGE");
-static const int CALABASH_TEST_PACKAGE_HASH = HashingUtils::HashString("CALABASH_TEST_PACKAGE");
-static const int INSTRUMENTATION_TEST_PACKAGE_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_PACKAGE");
-static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
-static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
-static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
-static const int XCTEST_UI_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
 
 namespace Aws
 {
@@ -44,6 +27,22 @@ namespace Aws
     {
       namespace UploadTypeMapper
       {
+
+        static const int ANDROID_APP_HASH = HashingUtils::HashString("ANDROID_APP");
+        static const int IOS_APP_HASH = HashingUtils::HashString("IOS_APP");
+        static const int WEB_APP_HASH = HashingUtils::HashString("WEB_APP");
+        static const int EXTERNAL_DATA_HASH = HashingUtils::HashString("EXTERNAL_DATA");
+        static const int APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
+        static const int APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
+        static const int APPIUM_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_PACKAGE");
+        static const int APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
+        static const int APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
+        static const int APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_PACKAGE");
+        static const int CALABASH_TEST_PACKAGE_HASH = HashingUtils::HashString("CALABASH_TEST_PACKAGE");
+        static const int INSTRUMENTATION_TEST_PACKAGE_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_PACKAGE");
+        static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
+        static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
+        static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
 
 
         UploadType GetUploadTypeForName(const Aws::String& name)
@@ -109,11 +108,7 @@ namespace Aws
           {
             return UploadType::XCTEST_TEST_PACKAGE;
           }
-          else if (hashCode == XCTEST_UI_TEST_PACKAGE_HASH)
-          {
-            return UploadType::XCTEST_UI_TEST_PACKAGE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -157,10 +152,8 @@ namespace Aws
             return "UIAUTOMATOR_TEST_PACKAGE";
           case UploadType::XCTEST_TEST_PACKAGE:
             return "XCTEST_TEST_PACKAGE";
-          case UploadType::XCTEST_UI_TEST_PACKAGE:
-            return "XCTEST_UI_TEST_PACKAGE";
           default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

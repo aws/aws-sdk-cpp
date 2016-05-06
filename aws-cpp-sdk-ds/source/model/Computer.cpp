@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectoryService
+{
+namespace Model
+{
 
 Computer::Computer() : 
     m_computerIdHasBeenSet(false),
@@ -94,3 +100,7 @@ JsonValue Computer::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectoryService
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkAclAssociation::NetworkAclAssociation() : 
     m_networkAclAssociationIdHasBeenSet(false),
@@ -98,3 +104,7 @@ void NetworkAclAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

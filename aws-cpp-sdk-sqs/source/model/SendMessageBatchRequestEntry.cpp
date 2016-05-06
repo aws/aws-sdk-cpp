@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() : 
     m_idHasBeenSet(false),
@@ -123,3 +129,7 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
   {
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

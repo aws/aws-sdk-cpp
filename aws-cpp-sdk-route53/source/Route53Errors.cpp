@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::Route53;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace Route53
+{
+namespace Route53ErrorMapper
+{
+
 static const int NO_SUCH_TRAFFIC_POLICY_INSTANCE_HASH = HashingUtils::HashString("NoSuchTrafficPolicyInstance");
 static const int HEALTH_CHECK_VERSION_MISMATCH_HASH = HashingUtils::HashString("HealthCheckVersionMismatch");
 static const int HEALTH_CHECK_ALREADY_EXISTS_HASH = HashingUtils::HashString("HealthCheckAlreadyExists");
@@ -61,12 +68,6 @@ static const int V_P_C_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("VP
 static const int NO_SUCH_GEO_LOCATION_HASH = HashingUtils::HashString("NoSuchGeoLocation");
 static const int PUBLIC_ZONE_V_P_C_ASSOCIATION_HASH = HashingUtils::HashString("PublicZoneVPCAssociation");
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Route53ErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SNS
+{
+namespace Model
+{
 
 PlatformApplication::PlatformApplication() : 
     m_platformApplicationArnHasBeenSet(false),
@@ -90,3 +96,7 @@ void PlatformApplication::OutputToStream(Aws::OStream& oStream, const char* loca
   {
   }
 }
+
+} // namespace Model
+} // namespace SNS
+} // namespace Aws

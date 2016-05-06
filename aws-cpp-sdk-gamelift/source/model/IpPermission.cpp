@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace GameLift
+{
+namespace Model
+{
 
 IpPermission::IpPermission() : 
     m_fromPort(0),
@@ -104,3 +110,7 @@ JsonValue IpPermission::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 OrderableDBInstanceOption::OrderableDBInstanceOption() : 
     m_engineHasBeenSet(false),
@@ -272,3 +278,7 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

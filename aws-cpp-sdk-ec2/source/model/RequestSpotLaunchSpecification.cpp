@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 RequestSpotLaunchSpecification::RequestSpotLaunchSpecification() : 
     m_imageIdHasBeenSet(false),
@@ -384,3 +390,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

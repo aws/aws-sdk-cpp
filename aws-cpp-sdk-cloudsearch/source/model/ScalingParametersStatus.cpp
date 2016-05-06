@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 ScalingParametersStatus::ScalingParametersStatus() : 
     m_optionsHasBeenSet(false),
@@ -90,3 +96,7 @@ void ScalingParametersStatus::OutputToStream(Aws::OStream& oStream, const char* 
       m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

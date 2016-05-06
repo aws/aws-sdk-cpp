@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::AutoScaling;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace AutoScalingErrorMapper
+{
+
 static const int RESOURCE_IN_USE_FAULT_HASH = HashingUtils::HashString("ResourceInUse");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
 static const int ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AlreadyExists");
@@ -27,12 +34,6 @@ static const int SCALING_ACTIVITY_IN_PROGRESS_FAULT_HASH = HashingUtils::HashStr
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
 static const int RESOURCE_CONTENTION_FAULT_HASH = HashingUtils::HashString("ResourceContention");
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace AutoScalingErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

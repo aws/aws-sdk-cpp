@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 TextArrayOptions::TextArrayOptions() : 
     m_defaultValueHasBeenSet(false),
@@ -134,3 +140,7 @@ void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".AnalysisScheme=" << StringUtils::URLEncode(m_analysisScheme.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

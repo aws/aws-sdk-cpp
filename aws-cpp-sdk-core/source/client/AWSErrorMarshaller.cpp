@@ -21,7 +21,7 @@
 using namespace Aws::Utils::Logging;
 using namespace Aws::Client;
 
-static const char* logTag = "AWSErrorMarshaller";
+static const char* AWS_ERROR_MARSHALLER_LOG_TAG = "AWSErrorMarshaller";
 
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
 {
@@ -45,13 +45,13 @@ AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionNa
     AWSError<CoreErrors> error = FindErrorByName(formalExceptionName.c_str());
     if (error.GetErrorType() != CoreErrors::UNKNOWN)
     {
-        AWS_LOG_WARN(logTag, "Encountered AWSError\n%s\n%s:", formalExceptionName.c_str(), message.c_str());
+        AWS_LOG_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered AWSError\n%s\n%s:", formalExceptionName.c_str(), message.c_str());
         error.SetExceptionName(formalExceptionName);
         error.SetMessage(message);
         return error;
     }    
 
-    AWS_LOG_WARN(logTag, "Encountered Unknown AWSError\n%s\n%s:", exceptionName.c_str(), message.c_str());
+    AWS_LOG_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered Unknown AWSError\n%s\n%s:", exceptionName.c_str(), message.c_str());
 
     return AWSError<CoreErrors>(CoreErrors::UNKNOWN, exceptionName, "Unable to parse ExceptionName: " + exceptionName + " Message: " + message, false);
 }

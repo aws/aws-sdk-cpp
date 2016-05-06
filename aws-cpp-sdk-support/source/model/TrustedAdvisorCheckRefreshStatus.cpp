@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus() : 
     m_checkIdHasBeenSet(false),
@@ -88,3 +94,7 @@ JsonValue TrustedAdvisorCheckRefreshStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 Statement::Statement() : 
     m_sourcePolicyIdHasBeenSet(false),
@@ -122,3 +128,7 @@ void Statement::OutputToStream(Aws::OStream& oStream, const char* location) cons
       m_endPosition.OutputToStream(oStream, endPositionLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

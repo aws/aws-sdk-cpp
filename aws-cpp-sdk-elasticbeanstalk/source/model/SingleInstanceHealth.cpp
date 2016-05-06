@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 SingleInstanceHealth::SingleInstanceHealth() : 
     m_instanceIdHasBeenSet(false),
@@ -236,3 +242,7 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

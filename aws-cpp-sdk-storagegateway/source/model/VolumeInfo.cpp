@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 VolumeInfo::VolumeInfo() : 
     m_volumeARNHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue VolumeInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

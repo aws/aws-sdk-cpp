@@ -19,22 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
-static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
-static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
-static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
-static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
-static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
-static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
-static const int UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
-static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
-static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
-static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
-static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
-static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
 
 namespace Aws
 {
@@ -44,6 +28,23 @@ namespace Aws
     {
       namespace StackStatusMapper
       {
+
+        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
+        static const int CREATE_COMPLETE_HASH = HashingUtils::HashString("CREATE_COMPLETE");
+        static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
+        static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
+        static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
+        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static const int UPDATE_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS");
+        static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+        static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
+        static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
+        static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
+        static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
 
 
         StackStatus GetStackStatusForName(const Aws::String& name)

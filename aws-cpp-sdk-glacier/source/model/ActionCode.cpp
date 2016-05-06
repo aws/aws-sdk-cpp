@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
-static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ActionCodeMapper
       {
+
+        static const int ArchiveRetrieval_HASH = HashingUtils::HashString("ArchiveRetrieval");
+        static const int InventoryRetrieval_HASH = HashingUtils::HashString("InventoryRetrieval");
 
 
         ActionCode GetActionCodeForName(const Aws::String& name)

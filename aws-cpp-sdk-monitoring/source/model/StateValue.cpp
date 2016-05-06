@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int OK_HASH = HashingUtils::HashString("OK");
-static const int ALARM_HASH = HashingUtils::HashString("ALARM");
-static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace StateValueMapper
       {
+
+        static const int OK_HASH = HashingUtils::HashString("OK");
+        static const int ALARM_HASH = HashingUtils::HashString("ALARM");
+        static const int INSUFFICIENT_DATA_HASH = HashingUtils::HashString("INSUFFICIENT_DATA");
 
 
         StateValue GetStateValueForName(const Aws::String& name)

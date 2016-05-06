@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ConfigurationSettingsDescription::ConfigurationSettingsDescription() : 
     m_solutionStackNameHasBeenSet(false),
@@ -226,3 +232,7 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

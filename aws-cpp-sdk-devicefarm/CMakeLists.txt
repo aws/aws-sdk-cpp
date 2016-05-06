@@ -17,11 +17,23 @@ project(aws-cpp-sdk-devicefarm)
     "source/model/*.cpp"
   )
 
-  file(GLOB DEVICEFARM_SRC
+  file(GLOB DEVICEFARM_UNIFIED_HEADERS
     ${AWS_DEVICEFARM_HEADERS}
     ${AWS_DEVICEFARM_MODEL_HEADERS}
+  )
+
+  file(GLOB DEVICEFARM_UNITY_SRC
     ${AWS_DEVICEFARM_SOURCE}
     ${AWS_DEVICEFARM_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("DEVICEFARM" DEVICEFARM_UNITY_SRC)
+  endif()
+
+  file(GLOB DEVICEFARM_SRC
+    ${DEVICEFARM_UNIFIED_HEADERS}
+    ${DEVICEFARM_UNITY_SRC}
   )
 
   if(WIN32)

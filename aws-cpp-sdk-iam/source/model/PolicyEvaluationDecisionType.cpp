@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int allowed_HASH = HashingUtils::HashString("allowed");
-static const int explicitDeny_HASH = HashingUtils::HashString("explicitDeny");
-static const int implicitDeny_HASH = HashingUtils::HashString("implicitDeny");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace PolicyEvaluationDecisionTypeMapper
       {
+
+        static const int allowed_HASH = HashingUtils::HashString("allowed");
+        static const int explicitDeny_HASH = HashingUtils::HashString("explicitDeny");
+        static const int implicitDeny_HASH = HashingUtils::HashString("implicitDeny");
 
 
         PolicyEvaluationDecisionType GetPolicyEvaluationDecisionTypeForName(const Aws::String& name)

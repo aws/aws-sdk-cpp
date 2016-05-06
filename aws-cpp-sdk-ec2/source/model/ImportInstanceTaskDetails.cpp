@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
     m_volumesHasBeenSet(false),
@@ -132,3 +138,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

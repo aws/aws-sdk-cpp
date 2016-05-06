@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 Latency::Latency() : 
     m_p999(0.0),
@@ -194,3 +200,7 @@ void Latency::OutputToStream(Aws::OStream& oStream, const char* location) const
         oStream << location << ".P10=" << StringUtils::URLEncode(m_p10) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

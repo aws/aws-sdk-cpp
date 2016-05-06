@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int IPV4_HASH = HashingUtils::HashString("IPV4");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace IPSetDescriptorTypeMapper
       {
+
+        static const int IPV4_HASH = HashingUtils::HashString("IPV4");
 
 
         IPSetDescriptorType GetIPSetDescriptorTypeForName(const Aws::String& name)

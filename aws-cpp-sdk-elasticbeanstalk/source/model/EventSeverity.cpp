@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int TRACE_HASH = HashingUtils::HashString("TRACE");
-static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
-static const int INFO_HASH = HashingUtils::HashString("INFO");
-static const int WARN_HASH = HashingUtils::HashString("WARN");
-static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-static const int FATAL_HASH = HashingUtils::HashString("FATAL");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace EventSeverityMapper
       {
+
+        static const int TRACE_HASH = HashingUtils::HashString("TRACE");
+        static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
+        static const int INFO_HASH = HashingUtils::HashString("INFO");
+        static const int WARN_HASH = HashingUtils::HashString("WARN");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int FATAL_HASH = HashingUtils::HashString("FATAL");
 
 
         EventSeverity GetEventSeverityForName(const Aws::String& name)
@@ -45,7 +46,7 @@ namespace Aws
           }
           else if (hashCode == DEBUG_HASH)
           {
-            return EventSeverity::DEBUG;
+            return EventSeverity::DEBUG_;
           }
           else if (hashCode == INFO_HASH)
           {
@@ -79,7 +80,7 @@ namespace Aws
           {
           case EventSeverity::TRACE:
             return "TRACE";
-          case EventSeverity::DEBUG:
+          case EventSeverity::DEBUG_:
             return "DEBUG";
           case EventSeverity::INFO:
             return "INFO";

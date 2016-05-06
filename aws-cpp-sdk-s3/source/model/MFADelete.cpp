@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace MFADeleteMapper
       {
+
+        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
 
 
         MFADelete GetMFADeleteForName(const Aws::String& name)

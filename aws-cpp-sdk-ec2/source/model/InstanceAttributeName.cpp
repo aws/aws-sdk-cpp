@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int instanceType_HASH = HashingUtils::HashString("instanceType");
-static const int kernel_HASH = HashingUtils::HashString("kernel");
-static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
-static const int userData_HASH = HashingUtils::HashString("userData");
-static const int disableApiTermination_HASH = HashingUtils::HashString("disableApiTermination");
-static const int instanceInitiatedShutdownBehavior_HASH = HashingUtils::HashString("instanceInitiatedShutdownBehavior");
-static const int rootDeviceName_HASH = HashingUtils::HashString("rootDeviceName");
-static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
-static const int productCodes_HASH = HashingUtils::HashString("productCodes");
-static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
-static const int groupSet_HASH = HashingUtils::HashString("groupSet");
-static const int ebsOptimized_HASH = HashingUtils::HashString("ebsOptimized");
-static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace InstanceAttributeNameMapper
       {
+
+        static const int instanceType_HASH = HashingUtils::HashString("instanceType");
+        static const int kernel_HASH = HashingUtils::HashString("kernel");
+        static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
+        static const int userData_HASH = HashingUtils::HashString("userData");
+        static const int disableApiTermination_HASH = HashingUtils::HashString("disableApiTermination");
+        static const int instanceInitiatedShutdownBehavior_HASH = HashingUtils::HashString("instanceInitiatedShutdownBehavior");
+        static const int rootDeviceName_HASH = HashingUtils::HashString("rootDeviceName");
+        static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
+        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
+        static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
+        static const int groupSet_HASH = HashingUtils::HashString("groupSet");
+        static const int ebsOptimized_HASH = HashingUtils::HashString("ebsOptimized");
+        static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
 
 
         InstanceAttributeName GetInstanceAttributeNameForName(const Aws::String& name)

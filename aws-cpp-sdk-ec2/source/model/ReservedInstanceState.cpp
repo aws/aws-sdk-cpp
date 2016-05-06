@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int payment_pending_HASH = HashingUtils::HashString("payment-pending");
-static const int active_HASH = HashingUtils::HashString("active");
-static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
-static const int retired_HASH = HashingUtils::HashString("retired");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ReservedInstanceStateMapper
       {
+
+        static const int payment_pending_HASH = HashingUtils::HashString("payment-pending");
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int payment_failed_HASH = HashingUtils::HashString("payment-failed");
+        static const int retired_HASH = HashingUtils::HashString("retired");
 
 
         ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name)

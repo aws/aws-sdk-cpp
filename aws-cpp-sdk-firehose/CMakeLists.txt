@@ -17,11 +17,23 @@ project(aws-cpp-sdk-firehose)
     "source/model/*.cpp"
   )
 
-  file(GLOB FIREHOSE_SRC
+  file(GLOB FIREHOSE_UNIFIED_HEADERS
     ${AWS_FIREHOSE_HEADERS}
     ${AWS_FIREHOSE_MODEL_HEADERS}
+  )
+
+  file(GLOB FIREHOSE_UNITY_SRC
     ${AWS_FIREHOSE_SOURCE}
     ${AWS_FIREHOSE_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("FIREHOSE" FIREHOSE_UNITY_SRC)
+  endif()
+
+  file(GLOB FIREHOSE_SRC
+    ${FIREHOSE_UNIFIED_HEADERS}
+    ${FIREHOSE_UNITY_SRC}
   )
 
   if(WIN32)

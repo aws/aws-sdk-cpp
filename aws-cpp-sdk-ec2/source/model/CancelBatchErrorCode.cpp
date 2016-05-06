@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int fleetRequestIdDoesNotExist_HASH = HashingUtils::HashString("fleetRequestIdDoesNotExist");
-static const int fleetRequestIdMalformed_HASH = HashingUtils::HashString("fleetRequestIdMalformed");
-static const int fleetRequestNotInCancellableState_HASH = HashingUtils::HashString("fleetRequestNotInCancellableState");
-static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedError");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace CancelBatchErrorCodeMapper
       {
+
+        static const int fleetRequestIdDoesNotExist_HASH = HashingUtils::HashString("fleetRequestIdDoesNotExist");
+        static const int fleetRequestIdMalformed_HASH = HashingUtils::HashString("fleetRequestIdMalformed");
+        static const int fleetRequestNotInCancellableState_HASH = HashingUtils::HashString("fleetRequestNotInCancellableState");
+        static const int unexpectedError_HASH = HashingUtils::HashString("unexpectedError");
 
 
         CancelBatchErrorCode GetCancelBatchErrorCodeForName(const Aws::String& name)

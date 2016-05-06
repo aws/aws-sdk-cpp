@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 KeyPair::KeyPair() : 
     m_publicKeyHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue KeyPair::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

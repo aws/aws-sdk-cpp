@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 AvailabilityZoneMessage::AvailabilityZoneMessage() : 
     m_messageHasBeenSet(false)
@@ -66,3 +72,7 @@ void AvailabilityZoneMessage::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

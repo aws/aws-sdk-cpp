@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 RawMessage::RawMessage() : 
     m_dataHasBeenSet(false)
@@ -67,3 +73,7 @@ void RawMessage::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

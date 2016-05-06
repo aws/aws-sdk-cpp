@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace StopStatusMapper
       {
+
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 
         StopStatus GetStopStatusForName(const Aws::String& name)

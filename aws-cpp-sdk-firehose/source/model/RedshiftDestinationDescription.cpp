@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 RedshiftDestinationDescription::RedshiftDestinationDescription() : 
     m_roleARNHasBeenSet(false),
@@ -131,3 +137,7 @@ JsonValue RedshiftDestinationDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

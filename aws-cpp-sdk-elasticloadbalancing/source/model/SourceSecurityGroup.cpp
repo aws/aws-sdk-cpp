@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 SourceSecurityGroup::SourceSecurityGroup() : 
     m_ownerAliasHasBeenSet(false),
@@ -82,3 +88,7 @@ void SourceSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

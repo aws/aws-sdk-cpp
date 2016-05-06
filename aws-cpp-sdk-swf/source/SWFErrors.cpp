@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SWF;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SWF
+{
+namespace SWFErrorMapper
+{
+
 static const int DOMAIN_DEPRECATED_FAULT_HASH = HashingUtils::HashString("DomainDeprecatedFault");
 static const int UNKNOWN_RESOURCE_FAULT_HASH = HashingUtils::HashString("UnknownResourceFault");
 static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
@@ -30,12 +37,6 @@ static const int DOMAIN_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("Do
 static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDeprecatedFault");
 static const int TYPE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TypeAlreadyExistsFault");
 
-namespace Aws
-{
-namespace SWF
-{
-namespace SWFErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

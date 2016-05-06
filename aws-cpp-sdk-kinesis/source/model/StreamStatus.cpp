@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace StreamStatusMapper
       {
+
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         StreamStatus GetStreamStatusForName(const Aws::String& name)

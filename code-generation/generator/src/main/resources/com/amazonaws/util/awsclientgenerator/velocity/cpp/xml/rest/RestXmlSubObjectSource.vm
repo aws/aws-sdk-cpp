@@ -11,9 +11,15 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+namespace Model
+{
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
@@ -44,3 +50,7 @@ void ${typeInfo.className}::AddToNode(XmlNode& parentNode) const
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
 }
+
+} // namespace Model
+} // namespace ${metadata.namespace}
+} // namespace Aws

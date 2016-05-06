@@ -17,11 +17,23 @@ project(aws-cpp-sdk-codedeploy)
     "source/model/*.cpp"
   )
 
-  file(GLOB CODEDEPLOY_SRC
+  file(GLOB CODEDEPLOY_UNIFIED_HEADERS
     ${AWS_CODEDEPLOY_HEADERS}
     ${AWS_CODEDEPLOY_MODEL_HEADERS}
+  )
+
+  file(GLOB CODEDEPLOY_UNITY_SRC
     ${AWS_CODEDEPLOY_SOURCE}
     ${AWS_CODEDEPLOY_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CODEDEPLOY" CODEDEPLOY_UNITY_SRC)
+  endif()
+
+  file(GLOB CODEDEPLOY_SRC
+    ${CODEDEPLOY_UNIFIED_HEADERS}
+    ${CODEDEPLOY_UNITY_SRC}
   )
 
   if(WIN32)

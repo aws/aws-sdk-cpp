@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Lambda
+{
+namespace Model
+{
 
 VpcConfigResponse::VpcConfigResponse() : 
     m_subnetIdsHasBeenSet(false),
@@ -102,3 +108,7 @@ JsonValue VpcConfigResponse::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Lambda
+} // namespace Aws

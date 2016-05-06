@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 PolicyAttributeTypeDescription::PolicyAttributeTypeDescription() : 
     m_attributeNameHasBeenSet(false),
@@ -130,3 +136,7 @@ void PolicyAttributeTypeDescription::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".Cardinality=" << StringUtils::URLEncode(m_cardinality.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

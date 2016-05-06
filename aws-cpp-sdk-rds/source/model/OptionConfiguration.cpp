@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 OptionConfiguration::OptionConfiguration() : 
     m_optionNameHasBeenSet(false),
@@ -178,3 +184,7 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

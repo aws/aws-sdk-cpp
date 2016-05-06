@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace GatewayTypeMapper
       {
+
+        static const int ipsec_1_HASH = HashingUtils::HashString("ipsec.1");
 
 
         GatewayType GetGatewayTypeForName(const Aws::String& name)

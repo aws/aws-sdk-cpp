@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Decrypt_HASH = HashingUtils::HashString("Decrypt");
-static const int Encrypt_HASH = HashingUtils::HashString("Encrypt");
-static const int GenerateDataKey_HASH = HashingUtils::HashString("GenerateDataKey");
-static const int GenerateDataKeyWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyWithoutPlaintext");
-static const int ReEncryptFrom_HASH = HashingUtils::HashString("ReEncryptFrom");
-static const int ReEncryptTo_HASH = HashingUtils::HashString("ReEncryptTo");
-static const int CreateGrant_HASH = HashingUtils::HashString("CreateGrant");
-static const int RetireGrant_HASH = HashingUtils::HashString("RetireGrant");
-static const int DescribeKey_HASH = HashingUtils::HashString("DescribeKey");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace GrantOperationMapper
       {
+
+        static const int Decrypt_HASH = HashingUtils::HashString("Decrypt");
+        static const int Encrypt_HASH = HashingUtils::HashString("Encrypt");
+        static const int GenerateDataKey_HASH = HashingUtils::HashString("GenerateDataKey");
+        static const int GenerateDataKeyWithoutPlaintext_HASH = HashingUtils::HashString("GenerateDataKeyWithoutPlaintext");
+        static const int ReEncryptFrom_HASH = HashingUtils::HashString("ReEncryptFrom");
+        static const int ReEncryptTo_HASH = HashingUtils::HashString("ReEncryptTo");
+        static const int CreateGrant_HASH = HashingUtils::HashString("CreateGrant");
+        static const int RetireGrant_HASH = HashingUtils::HashString("RetireGrant");
+        static const int DescribeKey_HASH = HashingUtils::HashString("DescribeKey");
 
 
         GrantOperation GetGrantOperationForName(const Aws::String& name)

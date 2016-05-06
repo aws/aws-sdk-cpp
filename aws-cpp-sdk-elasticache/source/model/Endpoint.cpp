@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 Endpoint::Endpoint() : 
     m_addressHasBeenSet(false),
@@ -84,3 +90,7 @@ void Endpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Port=" << m_port << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

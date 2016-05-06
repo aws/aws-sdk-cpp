@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PrivateIpAddressSpecification::PrivateIpAddressSpecification() : 
     m_privateIpAddressHasBeenSet(false),
@@ -84,3 +90,7 @@ void PrivateIpAddressSpecification::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << ".Primary=" << m_primary << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 ParameterNameValue::ParameterNameValue() : 
     m_parameterNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void ParameterNameValue::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

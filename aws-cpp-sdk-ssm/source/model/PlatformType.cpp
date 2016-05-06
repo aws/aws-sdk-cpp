@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Windows_HASH = HashingUtils::HashString("Windows");
-static const int Linux_HASH = HashingUtils::HashString("Linux");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace PlatformTypeMapper
       {
+
+        static const int Windows_HASH = HashingUtils::HashString("Windows");
+        static const int Linux_HASH = HashingUtils::HashString("Linux");
 
 
         PlatformType GetPlatformTypeForName(const Aws::String& name)

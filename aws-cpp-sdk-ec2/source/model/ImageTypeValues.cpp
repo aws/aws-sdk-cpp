@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int machine_HASH = HashingUtils::HashString("machine");
-static const int kernel_HASH = HashingUtils::HashString("kernel");
-static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ImageTypeValuesMapper
       {
+
+        static const int machine_HASH = HashingUtils::HashString("machine");
+        static const int kernel_HASH = HashingUtils::HashString("kernel");
+        static const int ramdisk_HASH = HashingUtils::HashString("ramdisk");
 
 
         ImageTypeValues GetImageTypeValuesForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 InstanceGroup::InstanceGroup() : 
     m_idHasBeenSet(false),
@@ -256,3 +262,7 @@ JsonValue InstanceGroup::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

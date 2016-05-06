@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 LaunchConfiguration::LaunchConfiguration() : 
     m_launchConfigurationNameHasBeenSet(false),
@@ -408,3 +414,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

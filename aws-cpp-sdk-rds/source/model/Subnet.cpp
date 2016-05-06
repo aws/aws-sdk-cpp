@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 Subnet::Subnet() : 
     m_subnetIdentifierHasBeenSet(false),
@@ -102,3 +108,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".SubnetStatus=" << StringUtils::URLEncode(m_subnetStatus.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

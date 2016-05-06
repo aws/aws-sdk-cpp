@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace Model
+{
 
 ElasticsearchClusterConfig::ElasticsearchClusterConfig() : 
     m_instanceTypeHasBeenSet(false),
@@ -137,3 +143,7 @@ JsonValue ElasticsearchClusterConfig::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

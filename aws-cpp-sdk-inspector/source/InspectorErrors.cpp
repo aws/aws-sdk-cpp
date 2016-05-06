@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::Inspector;
 using namespace Aws::Utils;
 
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
-static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
-static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
-
 namespace Aws
 {
 namespace Inspector
 {
 namespace InspectorErrorMapper
 {
+
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
+static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

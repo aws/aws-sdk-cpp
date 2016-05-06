@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
-static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace StreamingStatusMapper
       {
+
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         StreamingStatus GetStreamingStatusForName(const Aws::String& name)

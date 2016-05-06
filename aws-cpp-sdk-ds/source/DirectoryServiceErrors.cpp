@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::DirectoryService;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace DirectoryService
+{
+namespace DirectoryServiceErrorMapper
+{
+
 static const int ENTITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EntityDoesNotExistException");
 static const int SNAPSHOT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SnapshotLimitExceededException");
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
@@ -33,12 +40,6 @@ static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("Insuf
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace DirectoryServiceErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

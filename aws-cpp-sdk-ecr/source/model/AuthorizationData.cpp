@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECR
+{
+namespace Model
+{
 
 AuthorizationData::AuthorizationData() : 
     m_authorizationTokenHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue AuthorizationData::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECR
+} // namespace Aws

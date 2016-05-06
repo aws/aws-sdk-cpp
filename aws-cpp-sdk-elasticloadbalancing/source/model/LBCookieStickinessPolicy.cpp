@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 LBCookieStickinessPolicy::LBCookieStickinessPolicy() : 
     m_policyNameHasBeenSet(false),
@@ -84,3 +90,7 @@ void LBCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".CookieExpirationPeriod=" << m_cookieExpirationPeriod << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

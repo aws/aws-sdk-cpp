@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 StreamingDistributionConfig::StreamingDistributionConfig() : 
     m_callerReferenceHasBeenSet(false),
@@ -163,3 +169,7 @@ void StreamingDistributionConfig::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

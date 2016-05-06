@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 ReceiptAction::ReceiptAction() : 
     m_s3ActionHasBeenSet(false),
@@ -190,3 +196,7 @@ void ReceiptAction::OutputToStream(Aws::OStream& oStream, const char* location) 
       m_sNSAction.OutputToStream(oStream, sNSActionLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

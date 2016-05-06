@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 InvalidationBatch::InvalidationBatch() : 
     m_pathsHasBeenSet(false),
@@ -75,3 +81,7 @@ void InvalidationBatch::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

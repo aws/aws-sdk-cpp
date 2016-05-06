@@ -19,23 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
-static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
-static const int image_HASH = HashingUtils::HashString("image");
-static const int instance_HASH = HashingUtils::HashString("instance");
-static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
-static const int network_acl_HASH = HashingUtils::HashString("network-acl");
-static const int network_interface_HASH = HashingUtils::HashString("network-interface");
-static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
-static const int route_table_HASH = HashingUtils::HashString("route-table");
-static const int snapshot_HASH = HashingUtils::HashString("snapshot");
-static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
-static const int subnet_HASH = HashingUtils::HashString("subnet");
-static const int security_group_HASH = HashingUtils::HashString("security-group");
-static const int volume_HASH = HashingUtils::HashString("volume");
-static const int vpc_HASH = HashingUtils::HashString("vpc");
-static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
-static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
 
 namespace Aws
 {
@@ -45,6 +28,24 @@ namespace Aws
     {
       namespace ResourceTypeMapper
       {
+
+        static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
+        static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
+        static const int image_HASH = HashingUtils::HashString("image");
+        static const int instance_HASH = HashingUtils::HashString("instance");
+        static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
+        static const int network_acl_HASH = HashingUtils::HashString("network-acl");
+        static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
+        static const int route_table_HASH = HashingUtils::HashString("route-table");
+        static const int snapshot_HASH = HashingUtils::HashString("snapshot");
+        static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
+        static const int subnet_HASH = HashingUtils::HashString("subnet");
+        static const int security_group_HASH = HashingUtils::HashString("security-group");
+        static const int volume_HASH = HashingUtils::HashString("volume");
+        static const int vpc_HASH = HashingUtils::HashString("vpc");
+        static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
+        static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)

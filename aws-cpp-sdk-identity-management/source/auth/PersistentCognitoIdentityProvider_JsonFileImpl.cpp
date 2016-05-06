@@ -33,8 +33,10 @@ static const char* FILENAME = ".identities";
 static const char* DIR = ".aws";
 static const char* LOG_TAG = "PersistentCognitoIdentityProvider_JsonFileImpl";
 
-PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId)
-        : m_identityPoolId(identityPoolId), m_accountId(accountId)
+PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId, const Aws::String& accountId, bool disableCaching) : 
+    m_identityPoolId(identityPoolId), 
+    m_accountId(accountId),
+    m_disableCaching(disableCaching)
 {
     Aws::String identitiesDir = FileSystemUtils::GetHomeDirectory() + DIR;
 
@@ -43,14 +45,25 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
         m_identityFilePath = identitiesDir + PATH_DELIM + FILENAME;
     }
 
-    LoadAndParseDoc();
+    if(!m_disableCaching)
+    {
+        LoadAndParseDoc();
+    }
 }
 
 PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvider_JsonFileImpl(const Aws::String& identityPoolId,
-                                                                                               const Aws::String& accountId, const char* identitiesFilePath)
-        : m_identityPoolId(identityPoolId), m_accountId(accountId), m_identityFilePath(identitiesFilePath)
+                                                                                               const Aws::String& accountId, 
+                                                                                               const char* identitiesFilePath,
+                                                                                               bool disableCaching) : 
+    m_identityPoolId(identityPoolId), 
+    m_accountId(accountId), 
+    m_identityFilePath(identitiesFilePath),
+    m_disableCaching(disableCaching)
 {
-    LoadAndParseDoc();
+    if(!m_disableCaching)
+    {
+        LoadAndParseDoc();
+    }
 }
 
 void PersistentCognitoIdentityProvider_JsonFileImpl::PersistIdentityId(const Aws::String& identityId)
@@ -156,38 +169,129 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::LoadAndParseDoc()
         if (identityNode.ValueExists(LOGINS))
         {
             auto logins = identityNode.GetObject(LOGINS).GetAllObjects();
-            for (auto& login : logins)
-            {
-                auto& loginTokens = login.second;
-                LoginAccessTokens loginAccessTokens;
-
-                /*this block is for backwards compatibility with the previous implementation.
-                  This used to be a string: string mapping, if access token is not a member,
-                  then fallback and assign the value to the accessToken field. Now, next time
-                  it will save it in the new format.*/
-                if(loginTokens.IsString())
-                {
-                    loginAccessTokens.accessToken = loginTokens.AsString();
-                }
-                else
-                {
-                    if (loginTokens.ValueExists(ACCESS_TOKEN))
-                    {
-                        loginAccessTokens.accessToken = loginTokens.GetString(ACCESS_TOKEN);
-                    }
-
-                    if (loginTokens.ValueExists(LONG_TERM_TOKEN))
-                    {
-                        loginAccessTokens.longTermToken = loginTokens.GetString(LONG_TERM_TOKEN);
-                    }
-                    if (loginTokens.ValueExists(EXPIRY))
-                    {
-                        loginAccessTokens.longTermTokenExpiry = loginTokens.GetInt64(EXPIRY);
-                    }
-                }
-
-                m_logins[login.first] = loginAccessTokens;
-            }
+            BuildLoginsMap(logins, m_logins);
         }
     }    
+}
+
+bool PersistentCognitoIdentityProvider_JsonFileImpl::HasIdentityId() const 
+{
+    if(m_disableCaching)
+    {
+        auto jsonDoc = LoadJsonDocFromFile();
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            return !identityNode.GetString(IDENTITY_ID).empty();
+        }
+
+        return false;
+    }
+    else
+    { 
+        return !m_identityId.empty(); 
+    }
+}
+
+bool PersistentCognitoIdentityProvider_JsonFileImpl::HasLogins() const 
+{ 
+    if(m_disableCaching)
+    {
+        auto jsonDoc = LoadJsonDocFromFile();
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            if (identityNode.ValueExists(LOGINS))
+            {
+                auto logins = identityNode.GetObject(LOGINS).GetAllObjects();
+                return logins.size() > 0;
+            }
+        }
+
+        return false;
+    }
+    else
+    { 
+        return !m_logins.empty(); 
+    }
+}
+
+Aws::String PersistentCognitoIdentityProvider_JsonFileImpl::GetIdentityId() const 
+{
+    if(m_disableCaching)
+    {
+        auto jsonDoc = LoadJsonDocFromFile();
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            return identityNode.GetString(IDENTITY_ID);
+        }
+
+        return "";
+    }
+    else
+    {   
+        return m_identityId; 
+    }
+}
+
+Aws::Map<Aws::String, LoginAccessTokens> PersistentCognitoIdentityProvider_JsonFileImpl::GetLogins() 
+{ 
+    if(m_disableCaching)
+    {
+        Aws::Map<Aws::String, LoginAccessTokens> logins;
+
+        auto jsonDoc = LoadJsonDocFromFile();
+        if (jsonDoc.ValueExists(m_identityPoolId))
+        {
+            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            if (identityNode.ValueExists(LOGINS))
+            {
+                auto loginsJsonMap = identityNode.GetObject(LOGINS).GetAllObjects();
+                BuildLoginsMap(loginsJsonMap, logins);
+            }
+        }
+
+        return logins;
+    }
+    else
+    { 
+        return m_logins; 
+    }
+}
+
+void PersistentCognitoIdentityProvider_JsonFileImpl::BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonValue> loginJsonMap, Aws::Map<Aws::String, LoginAccessTokens>& logins)
+{
+    for (auto& login : loginJsonMap)
+    {
+        auto& loginTokens = login.second;
+        LoginAccessTokens loginAccessTokens;
+
+        /*this block is for backwards compatibility with the previous implementation.
+            This used to be a string: string mapping, if access token is not a member,
+            then fallback and assign the value to the accessToken field. Now, next time
+            it will save it in the new format.*/
+        if(loginTokens.IsString())
+        {
+            loginAccessTokens.accessToken = loginTokens.AsString();
+        }
+        else
+        {
+            if (loginTokens.ValueExists(ACCESS_TOKEN))
+            {
+                loginAccessTokens.accessToken = loginTokens.GetString(ACCESS_TOKEN);
+            }
+
+            if (loginTokens.ValueExists(LONG_TERM_TOKEN))
+            {
+                loginAccessTokens.longTermToken = loginTokens.GetString(LONG_TERM_TOKEN);
+            }
+            if (loginTokens.ValueExists(EXPIRY))
+            {
+                loginAccessTokens.longTermTokenExpiry = loginTokens.GetInt64(EXPIRY);
+            }
+        }
+
+        logins[login.first] = loginAccessTokens;
+    }
 }

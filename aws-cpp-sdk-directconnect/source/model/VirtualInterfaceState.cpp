@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int confirming_HASH = HashingUtils::HashString("confirming");
-static const int verifying_HASH = HashingUtils::HashString("verifying");
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
-static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace VirtualInterfaceStateMapper
       {
+
+        static const int confirming_HASH = HashingUtils::HashString("confirming");
+        static const int verifying_HASH = HashingUtils::HashString("verifying");
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static const int rejected_HASH = HashingUtils::HashString("rejected");
 
 
         VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name)

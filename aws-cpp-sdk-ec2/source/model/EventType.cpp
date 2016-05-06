@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
-static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
-static const int error_HASH = HashingUtils::HashString("error");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace EventTypeMapper
       {
+
+        static const int instanceChange_HASH = HashingUtils::HashString("instanceChange");
+        static const int fleetRequestChange_HASH = HashingUtils::HashString("fleetRequestChange");
+        static const int error_HASH = HashingUtils::HashString("error");
 
 
         EventType GetEventTypeForName(const Aws::String& name)

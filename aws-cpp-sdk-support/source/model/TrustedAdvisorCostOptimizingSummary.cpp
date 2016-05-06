@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 TrustedAdvisorCostOptimizingSummary::TrustedAdvisorCostOptimizingSummary() : 
     m_estimatedMonthlySavings(0.0),
@@ -75,3 +81,7 @@ JsonValue TrustedAdvisorCostOptimizingSummary::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

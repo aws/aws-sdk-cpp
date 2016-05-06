@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 AttachmentDetails::AttachmentDetails() : 
     m_attachmentIdHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue AttachmentDetails::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

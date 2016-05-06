@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 AccountWithRestoreAccess::AccountWithRestoreAccess() : 
     m_accountIdHasBeenSet(false)
@@ -66,3 +72,7 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

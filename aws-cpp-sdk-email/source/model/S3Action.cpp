@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 S3Action::S3Action() : 
     m_topicArnHasBeenSet(false),
@@ -114,3 +120,7 @@ void S3Action::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".KmsKeyArn=" << StringUtils::URLEncode(m_kmsKeyArn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

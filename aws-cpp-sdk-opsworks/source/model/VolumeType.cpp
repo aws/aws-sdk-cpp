@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int gp2_HASH = HashingUtils::HashString("gp2");
-static const int io1_HASH = HashingUtils::HashString("io1");
-static const int standard_HASH = HashingUtils::HashString("standard");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace VolumeTypeMapper
       {
+
+        static const int gp2_HASH = HashingUtils::HashString("gp2");
+        static const int io1_HASH = HashingUtils::HashString("io1");
+        static const int standard_HASH = HashingUtils::HashString("standard");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)

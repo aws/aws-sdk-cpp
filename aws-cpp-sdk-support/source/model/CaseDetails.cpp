@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 CaseDetails::CaseDetails() : 
     m_caseIdHasBeenSet(false),
@@ -229,3 +235,7 @@ JsonValue CaseDetails::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

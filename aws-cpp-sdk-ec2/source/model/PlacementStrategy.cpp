@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int cluster_HASH = HashingUtils::HashString("cluster");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace PlacementStrategyMapper
       {
+
+        static const int cluster_HASH = HashingUtils::HashString("cluster");
 
 
         PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)

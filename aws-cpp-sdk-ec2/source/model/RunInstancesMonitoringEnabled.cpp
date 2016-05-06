@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 RunInstancesMonitoringEnabled::RunInstancesMonitoringEnabled() : 
     m_enabled(false),
@@ -68,3 +74,7 @@ void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << ".Enabled=" << m_enabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

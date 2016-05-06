@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int tar_HASH = HashingUtils::HashString("tar");
-static const int tgz_HASH = HashingUtils::HashString("tgz");
-static const int zip_HASH = HashingUtils::HashString("zip");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace BundleTypeMapper
       {
+
+        static const int tar_HASH = HashingUtils::HashString("tar");
+        static const int tgz_HASH = HashingUtils::HashString("tgz");
+        static const int zip_HASH = HashingUtils::HashString("zip");
 
 
         BundleType GetBundleTypeForName(const Aws::String& name)

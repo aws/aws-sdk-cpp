@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 DescribeVaultOutput::DescribeVaultOutput() : 
     m_vaultARNHasBeenSet(false),
@@ -135,3 +141,7 @@ JsonValue DescribeVaultOutput::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

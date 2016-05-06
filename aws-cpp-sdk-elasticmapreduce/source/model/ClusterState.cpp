@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int WAITING_HASH = HashingUtils::HashString("WAITING");
-static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int TERMINATED_WITH_ERRORS_HASH = HashingUtils::HashString("TERMINATED_WITH_ERRORS");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace ClusterStateMapper
       {
+
+        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
+        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
+        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int TERMINATED_WITH_ERRORS_HASH = HashingUtils::HashString("TERMINATED_WITH_ERRORS");
 
 
         ClusterState GetClusterStateForName(const Aws::String& name)

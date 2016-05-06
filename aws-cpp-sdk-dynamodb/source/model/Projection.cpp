@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 Projection::Projection() : 
     m_projectionTypeHasBeenSet(false),
@@ -78,3 +84,7 @@ JsonValue Projection::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

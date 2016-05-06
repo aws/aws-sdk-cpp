@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 AvailableCapacity::AvailableCapacity() : 
     m_availableInstanceCapacityHasBeenSet(false),
@@ -102,3 +108,7 @@ void AvailableCapacity::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".AvailableVCpus=" << m_availableVCpus << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

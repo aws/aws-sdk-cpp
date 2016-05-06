@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace Model
+{
 
 ElasticsearchDomainStatus::ElasticsearchDomainStatus() : 
     m_domainIdHasBeenSet(false),
@@ -235,3 +241,7 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

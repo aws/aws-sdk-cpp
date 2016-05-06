@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 Item::Item() : 
     m_nameHasBeenSet(false),
@@ -116,3 +122,7 @@ void Item::OutputToStream(Aws::OStream& oStream, const char* location) const
       }
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

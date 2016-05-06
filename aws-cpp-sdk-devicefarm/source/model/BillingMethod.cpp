@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int METERED_HASH = HashingUtils::HashString("METERED");
-static const int UNMETERED_HASH = HashingUtils::HashString("UNMETERED");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace BillingMethodMapper
       {
+
+        static const int METERED_HASH = HashingUtils::HashString("METERED");
+        static const int UNMETERED_HASH = HashingUtils::HashString("UNMETERED");
 
 
         BillingMethod GetBillingMethodForName(const Aws::String& name)

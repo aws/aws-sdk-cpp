@@ -17,11 +17,23 @@ project(aws-cpp-sdk-rds)
     "source/model/*.cpp"
   )
 
-  file(GLOB RDS_SRC
+  file(GLOB RDS_UNIFIED_HEADERS
     ${AWS_RDS_HEADERS}
     ${AWS_RDS_MODEL_HEADERS}
+  )
+
+  file(GLOB RDS_UNITY_SRC
     ${AWS_RDS_SOURCE}
     ${AWS_RDS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("RDS" RDS_UNITY_SRC)
+  endif()
+
+  file(GLOB RDS_SRC
+    ${RDS_UNIFIED_HEADERS}
+    ${RDS_UNITY_SRC}
   )
 
   if(WIN32)

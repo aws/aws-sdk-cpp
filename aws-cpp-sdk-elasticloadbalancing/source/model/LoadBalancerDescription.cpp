@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 LoadBalancerDescription::LoadBalancerDescription() : 
     m_loadBalancerNameHasBeenSet(false),
@@ -414,3 +420,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << ".Scheme=" << StringUtils::URLEncode(m_scheme.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

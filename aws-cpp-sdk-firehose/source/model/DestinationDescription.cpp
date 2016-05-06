@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 DestinationDescription::DestinationDescription() : 
     m_destinationIdHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue DestinationDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

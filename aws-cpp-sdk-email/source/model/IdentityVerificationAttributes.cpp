@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 IdentityVerificationAttributes::IdentityVerificationAttributes() : 
     m_verificationStatusHasBeenSet(false),
@@ -82,3 +88,7 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CreatedAt_HASH = HashingUtils::HashString("CreatedAt");
-static const int LastUpdatedAt_HASH = HashingUtils::HashString("LastUpdatedAt");
-static const int Status_HASH = HashingUtils::HashString("Status");
-static const int Name_HASH = HashingUtils::HashString("Name");
-static const int IAMUser_HASH = HashingUtils::HashString("IAMUser");
-static const int MLModelId_HASH = HashingUtils::HashString("MLModelId");
-static const int DataSourceId_HASH = HashingUtils::HashString("DataSourceId");
-static const int DataURI_HASH = HashingUtils::HashString("DataURI");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace BatchPredictionFilterVariableMapper
       {
+
+        static const int CreatedAt_HASH = HashingUtils::HashString("CreatedAt");
+        static const int LastUpdatedAt_HASH = HashingUtils::HashString("LastUpdatedAt");
+        static const int Status_HASH = HashingUtils::HashString("Status");
+        static const int Name_HASH = HashingUtils::HashString("Name");
+        static const int IAMUser_HASH = HashingUtils::HashString("IAMUser");
+        static const int MLModelId_HASH = HashingUtils::HashString("MLModelId");
+        static const int DataSourceId_HASH = HashingUtils::HashString("DataSourceId");
+        static const int DataURI_HASH = HashingUtils::HashString("DataURI");
 
 
         BatchPredictionFilterVariable GetBatchPredictionFilterVariableForName(const Aws::String& name)

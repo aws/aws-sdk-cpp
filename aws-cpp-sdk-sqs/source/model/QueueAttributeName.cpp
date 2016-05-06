@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Policy_HASH = HashingUtils::HashString("Policy");
-static const int VisibilityTimeout_HASH = HashingUtils::HashString("VisibilityTimeout");
-static const int MaximumMessageSize_HASH = HashingUtils::HashString("MaximumMessageSize");
-static const int MessageRetentionPeriod_HASH = HashingUtils::HashString("MessageRetentionPeriod");
-static const int ApproximateNumberOfMessages_HASH = HashingUtils::HashString("ApproximateNumberOfMessages");
-static const int ApproximateNumberOfMessagesNotVisible_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesNotVisible");
-static const int CreatedTimestamp_HASH = HashingUtils::HashString("CreatedTimestamp");
-static const int LastModifiedTimestamp_HASH = HashingUtils::HashString("LastModifiedTimestamp");
-static const int QueueArn_HASH = HashingUtils::HashString("QueueArn");
-static const int ApproximateNumberOfMessagesDelayed_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesDelayed");
-static const int DelaySeconds_HASH = HashingUtils::HashString("DelaySeconds");
-static const int ReceiveMessageWaitTimeSeconds_HASH = HashingUtils::HashString("ReceiveMessageWaitTimeSeconds");
-static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace QueueAttributeNameMapper
       {
+
+        static const int Policy_HASH = HashingUtils::HashString("Policy");
+        static const int VisibilityTimeout_HASH = HashingUtils::HashString("VisibilityTimeout");
+        static const int MaximumMessageSize_HASH = HashingUtils::HashString("MaximumMessageSize");
+        static const int MessageRetentionPeriod_HASH = HashingUtils::HashString("MessageRetentionPeriod");
+        static const int ApproximateNumberOfMessages_HASH = HashingUtils::HashString("ApproximateNumberOfMessages");
+        static const int ApproximateNumberOfMessagesNotVisible_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesNotVisible");
+        static const int CreatedTimestamp_HASH = HashingUtils::HashString("CreatedTimestamp");
+        static const int LastModifiedTimestamp_HASH = HashingUtils::HashString("LastModifiedTimestamp");
+        static const int QueueArn_HASH = HashingUtils::HashString("QueueArn");
+        static const int ApproximateNumberOfMessagesDelayed_HASH = HashingUtils::HashString("ApproximateNumberOfMessagesDelayed");
+        static const int DelaySeconds_HASH = HashingUtils::HashString("DelaySeconds");
+        static const int ReceiveMessageWaitTimeSeconds_HASH = HashingUtils::HashString("ReceiveMessageWaitTimeSeconds");
+        static const int RedrivePolicy_HASH = HashingUtils::HashString("RedrivePolicy");
 
 
         QueueAttributeName GetQueueAttributeNameForName(const Aws::String& name)

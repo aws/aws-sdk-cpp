@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SIMPLE_HASH = HashingUtils::HashString("SIMPLE");
-static const int TERMINAL_HASH = HashingUtils::HashString("TERMINAL");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace RoutingStrategyTypeMapper
       {
+
+        static const int SIMPLE_HASH = HashingUtils::HashString("SIMPLE");
+        static const int TERMINAL_HASH = HashingUtils::HashString("TERMINAL");
 
 
         RoutingStrategyType GetRoutingStrategyTypeForName(const Aws::String& name)

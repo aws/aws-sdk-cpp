@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectConnect
+{
+namespace Model
+{
 
 Location::Location() : 
     m_locationCodeHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue Location::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectConnect
+} // namespace Aws

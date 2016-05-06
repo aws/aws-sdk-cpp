@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearchDomain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearchDomain
+{
+namespace Model
+{
 
 BucketInfo::BucketInfo() : 
     m_bucketsHasBeenSet(false)
@@ -64,3 +70,7 @@ JsonValue BucketInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudSearchDomain
+} // namespace Aws

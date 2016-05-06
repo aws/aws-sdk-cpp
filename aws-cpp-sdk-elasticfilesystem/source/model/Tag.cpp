@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 Tag::Tag() : 
     m_keyHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue Tag::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

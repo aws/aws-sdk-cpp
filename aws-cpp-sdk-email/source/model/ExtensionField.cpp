@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 ExtensionField::ExtensionField() : 
     m_nameHasBeenSet(false),
@@ -82,3 +88,7 @@ void ExtensionField::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

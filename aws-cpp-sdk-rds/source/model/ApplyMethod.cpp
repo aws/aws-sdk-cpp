@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int immediate_HASH = HashingUtils::HashString("immediate");
-static const int pending_reboot_HASH = HashingUtils::HashString("pending-reboot");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ApplyMethodMapper
       {
+
+        static const int immediate_HASH = HashingUtils::HashString("immediate");
+        static const int pending_reboot_HASH = HashingUtils::HashString("pending-reboot");
 
 
         ApplyMethod GetApplyMethodForName(const Aws::String& name)

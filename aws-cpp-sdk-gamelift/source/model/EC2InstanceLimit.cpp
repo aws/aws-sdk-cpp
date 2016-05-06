@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace GameLift
+{
+namespace Model
+{
 
 EC2InstanceLimit::EC2InstanceLimit() : 
     m_eC2InstanceTypeHasBeenSet(false),
@@ -89,3 +95,7 @@ JsonValue EC2InstanceLimit::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace GameLift
+} // namespace Aws

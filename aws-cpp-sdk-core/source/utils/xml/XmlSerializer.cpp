@@ -163,11 +163,11 @@ bool XmlNode::IsNull()
     return m_node == nullptr;
 }
 
-static const char* allocationTag = "XmlDocument";
+static const char* XML_SERIALIZER_ALLOCATION_TAG = "XmlDocument";
 
 XmlDocument::XmlDocument()
 {
-    m_doc = Aws::New<Aws::External::tinyxml2::XMLDocument>(allocationTag, true, Aws::External::tinyxml2::Whitespace::PRESERVE_WHITESPACE);
+    m_doc = Aws::New<Aws::External::tinyxml2::XMLDocument>(XML_SERIALIZER_ALLOCATION_TAG, true, Aws::External::tinyxml2::Whitespace::PRESERVE_WHITESPACE);
 }
 
 XmlDocument::XmlDocument(XmlDocument&& doc) : m_doc{ std::move(doc.m_doc) } // take the innards

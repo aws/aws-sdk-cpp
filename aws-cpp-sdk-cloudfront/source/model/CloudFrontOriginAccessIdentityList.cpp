@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFront
+{
+namespace Model
+{
 
 CloudFrontOriginAccessIdentityList::CloudFrontOriginAccessIdentityList() : 
     m_markerHasBeenSet(false),
@@ -153,3 +159,7 @@ void CloudFrontOriginAccessIdentityList::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace CloudFront
+} // namespace Aws

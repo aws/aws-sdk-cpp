@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 Dataset::Dataset() : 
     m_identityIdHasBeenSet(false),
@@ -148,3 +154,7 @@ JsonValue Dataset::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

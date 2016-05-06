@@ -41,4 +41,3 @@ target_link_libraries ( openssl z crypto ssl )
 
 install( TARGETS openssl RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} )
 
-install( FILES CA.sh CA.pl tsget DESTINATION share/openssl )

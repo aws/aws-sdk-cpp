@@ -17,11 +17,23 @@ project(aws-cpp-sdk-route53)
     "source/model/*.cpp"
   )
 
-  file(GLOB ROUTE53_SRC
+  file(GLOB ROUTE53_UNIFIED_HEADERS
     ${AWS_ROUTE53_HEADERS}
     ${AWS_ROUTE53_MODEL_HEADERS}
+  )
+
+  file(GLOB ROUTE53_UNITY_SRC
     ${AWS_ROUTE53_SOURCE}
     ${AWS_ROUTE53_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ROUTE53" ROUTE53_UNITY_SRC)
+  endif()
+
+  file(GLOB ROUTE53_SRC
+    ${ROUTE53_UNIFIED_HEADERS}
+    ${ROUTE53_UNITY_SRC}
   )
 
   if(WIN32)

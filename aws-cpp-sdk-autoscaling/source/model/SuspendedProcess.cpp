@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 SuspendedProcess::SuspendedProcess() : 
     m_processNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".SuspensionReason=" << StringUtils::URLEncode(m_suspensionReason.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

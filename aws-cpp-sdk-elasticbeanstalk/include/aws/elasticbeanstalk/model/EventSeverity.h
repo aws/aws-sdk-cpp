@@ -26,7 +26,7 @@ namespace Model
   {
     NOT_SET,
     TRACE,
-    DEBUG,
+    DEBUG_,
     INFO,
     WARN,
     ERROR_,

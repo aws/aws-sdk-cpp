@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int String_HASH = HashingUtils::HashString("String");
-static const int StringList_HASH = HashingUtils::HashString("StringList");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DocumentParameterTypeMapper
       {
+
+        static const int String_HASH = HashingUtils::HashString("String");
+        static const int StringList_HASH = HashingUtils::HashString("StringList");
 
 
         DocumentParameterType GetDocumentParameterTypeForName(const Aws::String& name)

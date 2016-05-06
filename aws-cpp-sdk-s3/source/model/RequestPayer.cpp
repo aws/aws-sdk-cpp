@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int requester_HASH = HashingUtils::HashString("requester");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace RequestPayerMapper
       {
+
+        static const int requester_HASH = HashingUtils::HashString("requester");
 
 
         RequestPayer GetRequestPayerForName(const Aws::String& name)

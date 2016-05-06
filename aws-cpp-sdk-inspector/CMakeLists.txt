@@ -17,11 +17,23 @@ project(aws-cpp-sdk-inspector)
     "source/model/*.cpp"
   )
 
-  file(GLOB INSPECTOR_SRC
+  file(GLOB INSPECTOR_UNIFIED_HEADERS
     ${AWS_INSPECTOR_HEADERS}
     ${AWS_INSPECTOR_MODEL_HEADERS}
+  )
+
+  file(GLOB INSPECTOR_UNITY_SRC
     ${AWS_INSPECTOR_SOURCE}
     ${AWS_INSPECTOR_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("INSPECTOR" INSPECTOR_UNITY_SRC)
+  endif()
+
+  file(GLOB INSPECTOR_SRC
+    ${INSPECTOR_UNIFIED_HEADERS}
+    ${INSPECTOR_UNITY_SRC}
   )
 
   if(WIN32)

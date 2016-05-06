@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 OptionRestrictionRegex::OptionRestrictionRegex() : 
     m_patternHasBeenSet(false),
@@ -82,3 +88,7 @@ void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

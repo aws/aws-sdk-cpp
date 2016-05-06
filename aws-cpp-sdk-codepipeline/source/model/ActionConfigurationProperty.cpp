@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace Model
+{
 
 ActionConfigurationProperty::ActionConfigurationProperty() : 
     m_nameHasBeenSet(false),
@@ -153,3 +159,7 @@ JsonValue ActionConfigurationProperty::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodePipeline
+} // namespace Aws

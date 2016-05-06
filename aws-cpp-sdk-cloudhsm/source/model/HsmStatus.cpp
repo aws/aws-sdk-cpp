@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace HsmStatusMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
 
 
         HsmStatus GetHsmStatusForName(const Aws::String& name)

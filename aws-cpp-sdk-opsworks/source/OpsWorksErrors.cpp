@@ -21,13 +21,14 @@ using namespace Aws::Client;
 using namespace Aws::OpsWorks;
 using namespace Aws::Utils;
 
-
 namespace Aws
 {
 namespace OpsWorks
 {
 namespace OpsWorksErrorMapper
 {
+
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

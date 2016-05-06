@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
-static const int INFO_HASH = HashingUtils::HashString("INFO");
-static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-static const int WARN_HASH = HashingUtils::HashString("WARN");
-static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 namespace Aws
 {
@@ -34,13 +29,19 @@ namespace Aws
       namespace LogLevelMapper
       {
 
+        static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
+        static const int INFO_HASH = HashingUtils::HashString("INFO");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int WARN_HASH = HashingUtils::HashString("WARN");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+
 
         LogLevel GetLogLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == DEBUG_HASH)
           {
-            return LogLevel::DEBUG;
+            return LogLevel::DEBUG_;
           }
           else if (hashCode == INFO_HASH)
           {
@@ -72,7 +73,7 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case LogLevel::DEBUG:
+          case LogLevel::DEBUG_:
             return "DEBUG";
           case LogLevel::INFO:
             return "INFO";

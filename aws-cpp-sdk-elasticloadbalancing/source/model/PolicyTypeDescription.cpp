@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 PolicyTypeDescription::PolicyTypeDescription() : 
     m_policyTypeNameHasBeenSet(false),
@@ -116,3 +122,7 @@ void PolicyTypeDescription::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

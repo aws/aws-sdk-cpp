@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int url_HASH = HashingUtils::HashString("url");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace EncodingTypeMapper
       {
+
+        static const int url_HASH = HashingUtils::HashString("url");
 
 
         EncodingType GetEncodingTypeForName(const Aws::String& name)

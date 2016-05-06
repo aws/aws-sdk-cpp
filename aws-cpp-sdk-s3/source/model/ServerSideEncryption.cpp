@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AES256_HASH = HashingUtils::HashString("AES256");
-static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ServerSideEncryptionMapper
       {
+
+        static const int AES256_HASH = HashingUtils::HashString("AES256");
+        static const int aws_kms_HASH = HashingUtils::HashString("aws:kms");
 
 
         ServerSideEncryption GetServerSideEncryptionForName(const Aws::String& name)

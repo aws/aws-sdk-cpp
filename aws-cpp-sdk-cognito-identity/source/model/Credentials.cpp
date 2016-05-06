@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoIdentity
+{
+namespace Model
+{
 
 Credentials::Credentials() : 
     m_accessKeyIdHasBeenSet(false),
@@ -100,3 +106,7 @@ JsonValue Credentials::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CognitoIdentity
+} // namespace Aws

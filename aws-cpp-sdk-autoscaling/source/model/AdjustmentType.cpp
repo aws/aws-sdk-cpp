@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 AdjustmentType::AdjustmentType() : 
     m_adjustmentTypeHasBeenSet(false)
@@ -66,3 +72,7 @@ void AdjustmentType::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

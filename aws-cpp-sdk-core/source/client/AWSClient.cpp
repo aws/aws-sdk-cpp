@@ -47,7 +47,8 @@ using namespace Aws::Utils::Xml;
 
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
-static const char* LOG_TAG = "AWSClient";
+
+static const char* AWS_CLIENT_LOG_TAG = "AWSClient";
 
 std::atomic<int> AWSClient::s_refCount(0);
 
@@ -58,7 +59,7 @@ void AWSClient::InitializeGlobalStatics()
     {      
         int expectedRefCount = 0;    
         Utils::EnumParseOverflowContainer* expectedPtrValue = nullptr;
-        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(LOG_TAG);        
+        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);        
         if (!s_refCount.compare_exchange_strong(expectedRefCount, 1) ||
              !Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, container))
         {
@@ -131,18 +132,18 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
         HttpResponseOutcome outcome = AttemptOneRequest(uri, request, method);
         if (outcome.IsSuccess() || !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
-            AWS_LOG_TRACE(LOG_TAG, "Request was either successful, or we are now out of retries.");
+            AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "Request was either successful, or we are now out of retries.");
             return outcome;
         }
         else if(!m_httpClient->IsRequestProcessingEnabled())
         {
-            AWS_LOG_TRACE(LOG_TAG, "Request was cancelled externally.");
+            AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "Request was cancelled externally.");
             return outcome;
         }
         else
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
-            AWS_LOG_WARN(LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
+            AWS_LOG_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
@@ -179,26 +180,28 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method) const
 {
+    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Starting single request")
+
     std::shared_ptr<HttpRequest> httpRequest(m_clientFactory->CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
 
     if (!m_signer->SignRequest(*httpRequest))
     {
-        AWS_LOG_ERROR(LOG_TAG, "Request signing failed. Returning error.");
+        AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
     }
 
-    AWS_LOG_DEBUG(LOG_TAG, "Request Successfully signed");
+    AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
 
     if (DoesResponseGenerateError(httpResponse))
     {
-        AWS_LOG_DEBUG(LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+        AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         return HttpResponseOutcome(BuildAWSError(httpResponse));
     }
 
-    AWS_LOG_DEBUG(LOG_TAG, "Request returned successful response.");
+    AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
 
     return HttpResponseOutcome(httpResponse);
 }
@@ -210,21 +213,21 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMet
 
     if (!m_signer->SignRequest(*httpRequest))
     {
-        AWS_LOG_ERROR(LOG_TAG, "Request signing failed. Returning error.");
+        AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(); // TODO: make a real error when error revamp reaches branch (SIGNING_ERROR)
     }
 
-    AWS_LOG_DEBUG(LOG_TAG, "Request Successfully signed");
+    AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(*httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
 
     if (DoesResponseGenerateError(httpResponse))
     {
-        AWS_LOG_DEBUG(LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+        AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         return HttpResponseOutcome(BuildAWSError(httpResponse));
     }
 
-    AWS_LOG_DEBUG(LOG_TAG, "Request returned successful response.");
+    AWS_LOG_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
 
     return HttpResponseOutcome(httpResponse);
 }
@@ -264,7 +267,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     //If there is no body, we have a content length of 0
     if (!body)
     {
-        AWS_LOG_TRACE(LOG_TAG, "No content body, removing content-type and content-length headers");
+        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
         httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         httpRequest->DeleteHeader(Http::CONTENT_TYPE_HEADER);
     }
@@ -272,7 +275,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     //has a content-length header set and we don't want to seek the stream just to find this information.
     if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
-        AWS_LOG_TRACE(LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
+        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
         body->seekg(0, body->beg);
@@ -409,7 +412,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
-        AWS_LOG_ERROR(LOG_TAG, ss.str().c_str());
+        AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
 
@@ -417,7 +420,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
     //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
     JsonValue exceptionPayload(httpResponse->GetResponseBody());
-    AWS_LOGSTREAM_TRACE(LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
+    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
 
     Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
         exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
@@ -461,7 +464,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
 
         if (!xmlDoc.WasParseSuccessful())
         {
-            AWS_LOG_ERROR(LOG_TAG, "Xml parsing for error failed with message %s", xmlDoc.GetErrorMessage().c_str());
+            AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, "Xml parsing for error failed with message %s", xmlDoc.GetErrorMessage().c_str());
             return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false);
         }
 
@@ -502,7 +505,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
-        AWS_LOG_ERROR(LOG_TAG, ss.str().c_str());
+        AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
 
@@ -517,7 +520,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     }
 
     XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
-    AWS_LOGSTREAM_TRACE(LOG_TAG, "Error response is " << doc.ConvertToString());
+    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << doc.ConvertToString());
     if (doc.WasParseSuccessful())
     {
         XmlNode errorNode = doc.GetRootElement();

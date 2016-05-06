@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 ProvisionedThroughput::ProvisionedThroughput() : 
     m_readCapacityUnits(0),
@@ -75,3 +81,7 @@ JsonValue ProvisionedThroughput::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

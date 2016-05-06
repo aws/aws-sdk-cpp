@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchLogs
+{
+namespace Model
+{
 
 MetricFilterMatchRecord::MetricFilterMatchRecord() : 
     m_eventNumber(0),
@@ -96,3 +102,7 @@ JsonValue MetricFilterMatchRecord::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchLogs
+} // namespace Aws

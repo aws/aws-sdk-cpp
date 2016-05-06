@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SSM
+{
+namespace Model
+{
 
 CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() : 
     m_nameHasBeenSet(false),
@@ -105,3 +111,7 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SSM
+} // namespace Aws

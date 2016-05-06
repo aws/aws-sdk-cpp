@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DataPipeline
+{
+namespace Model
+{
 
 Operator::Operator() : 
     m_typeHasBeenSet(false),
@@ -78,3 +84,7 @@ JsonValue Operator::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DataPipeline
+} // namespace Aws

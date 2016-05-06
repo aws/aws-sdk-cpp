@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECS
+{
+namespace Model
+{
 
 Volume::Volume() : 
     m_nameHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue Volume::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

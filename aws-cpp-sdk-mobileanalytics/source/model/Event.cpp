@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MobileAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MobileAnalytics
+{
+namespace Model
+{
 
 Event::Event() : 
     m_eventTypeHasBeenSet(false),
@@ -147,3 +153,7 @@ JsonValue Event::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MobileAnalytics
+} // namespace Aws

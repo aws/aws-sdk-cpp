@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 FileSystemSize::FileSystemSize() : 
     m_value(0),
@@ -72,3 +78,7 @@ JsonValue FileSystemSize::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

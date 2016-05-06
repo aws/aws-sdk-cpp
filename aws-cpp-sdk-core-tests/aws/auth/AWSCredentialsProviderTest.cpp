@@ -88,12 +88,12 @@ static const char *AllocationTag = "AWSCredentialsProviderTest";
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 
-#ifndef __ANDROID__
-
 TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
-    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+    auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+ 
+    FileSystemUtils::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
@@ -136,12 +136,54 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     AWS_END_MEMORY_TEST
 }
 
+class EnvironmentModifyingTest : public ::testing::Test
+{
+public:
 
-TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
+    static void SetUpTestCase()
+    {
+        FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+    }
+
+    static void TearDownTestCase()
+    {
+    }
+
+    void SetUp()
+    {
+        SaveVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveVariable("AWS_DEFAULT_PROFILE");
+        SaveVariable("AWS_ACCESS_KEY_ID");
+        SaveVariable("AWS_SECRET_ACCESS_KEY");
+    }
+
+    void TearDown()
+    {
+        for(const auto& iter : m_environment)
+	{
+	    if(iter.second.empty())
+            {
+                unsetenv(iter.first.c_str());
+            }
+	    else
+            {
+                setenv(iter.first.c_str(), iter.second.c_str(), 1);
+            }
+	}
+    }
+
+    void SaveVariable(const char* variableName)
+    {
+	auto variableValue = GetEnv(variableName);
+        m_environment[ Aws::String( variableName ) ] = GetEnv(variableName);
+    }	
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
+};
+
+TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
-
-    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
   
@@ -162,33 +204,21 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVars)
     configFile.close();
 
     ProfileConfigFileAWSCredentialsProvider provider(10);
-    if (!oldValue.empty())
-        setenv("AWS_SHARED_CREDENTIALS_FILE", oldValue.c_str(), 1);
-    else
-        unsetenv("AWS_SHARED_CREDENTIALS_FILE");
+    EXPECT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    if (!oldProfileValue.empty())
-        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
-    else
-        unsetenv("AWS_DEFAULT_PROFILE");
-
-    ASSERT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
 
-TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedProfile)
+TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    FileSystemUtils::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
-
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
 
-    Aws::String oldValue = GetEnv("AWS_SHARED_CREDENTIALS_FILE");
     setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
     setenv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -208,53 +238,38 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestWithEnvVarsButSpecifiedPro
     configFile.close();
 
     ProfileConfigFileAWSCredentialsProvider provider("customProfile", 10);
+    EXPECT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    if (!oldValue.empty())
-        setenv("AWS_SHARED_CREDENTIALS_FILE", oldValue.c_str(), 1);
-
-    if (!oldProfileValue.empty())
-        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
-
-    ASSERT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
 
 
-TEST(ProfileConfigFileAWSCredentialsProviderTest, TestNotSetup)
+TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String oldProfileFile = GetEnv("AWS_SHARED_CREDENTIALS_FILE");  
-    Aws::String oldProfileValue = GetEnv("AWS_DEFAULT_PROFILE");
-    Aws::String oldAWSAccessKeyValue = GetEnv("AWS_ACCESS_KEY_ID");
-    Aws::String oldSecretKeyValue = GetEnv("AWS_SECRET_ACCESS_KEY");
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
+    Aws::String tempFileName = configFileName + "_tempNotSetup";
+
+    FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
     unsetenv("AWS_ACCESS_KEY_ID");
     unsetenv("AWS_SECRET_ACCESS_KEY");
     unsetenv("AWS_SHARED_CREDENTIALS_FILE");
 
     ProfileConfigFileAWSCredentialsProvider provider;
-    if (!oldProfileFile.empty())
-        setenv("AWS_SHARED_CREDENTIALS_FILE", oldProfileFile.c_str(), 1);
-    if (!oldProfileValue.empty())
-        setenv("AWS_DEFAULT_PROFILE", oldProfileValue.c_str(), 1);
-    if (!oldAWSAccessKeyValue.empty())
-        setenv("AWS_ACCESS_KEY_ID", oldAWSAccessKeyValue.c_str(), 1);
-    if (!oldSecretKeyValue.empty())
-        setenv("AWS_SECRET_ACCESS_KEY", oldSecretKeyValue.c_str(), 1);
+    EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
-    ASSERT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+    FileSystemUtils::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
 
-#endif // __ANDROID__
-
-
-TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesExist)
+TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
@@ -271,7 +286,7 @@ TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesExist)
 }
 
 
-TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesDoNotExist)
+TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
@@ -284,6 +299,7 @@ TEST(EnvironmentAWSCredentialsProviderTest, TestEnvironmentVariablesDoNotExist)
 
     AWS_END_MEMORY_TEST
 }
+
 
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)
@@ -318,8 +334,6 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 
     const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
-    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());

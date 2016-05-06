@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ok_HASH = HashingUtils::HashString("ok");
-static const int impaired_HASH = HashingUtils::HashString("impaired");
-static const int insufficient_data_HASH = HashingUtils::HashString("insufficient-data");
-static const int not_applicable_HASH = HashingUtils::HashString("not-applicable");
-static const int initializing_HASH = HashingUtils::HashString("initializing");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace SummaryStatusMapper
       {
+
+        static const int ok_HASH = HashingUtils::HashString("ok");
+        static const int impaired_HASH = HashingUtils::HashString("impaired");
+        static const int insufficient_data_HASH = HashingUtils::HashString("insufficient-data");
+        static const int not_applicable_HASH = HashingUtils::HashString("not-applicable");
+        static const int initializing_HASH = HashingUtils::HashString("initializing");
 
 
         SummaryStatus GetSummaryStatusForName(const Aws::String& name)

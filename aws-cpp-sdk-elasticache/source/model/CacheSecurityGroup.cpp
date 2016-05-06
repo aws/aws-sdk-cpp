@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheSecurityGroup::CacheSecurityGroup() : 
     m_ownerIdHasBeenSet(false),
@@ -132,3 +138,7 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

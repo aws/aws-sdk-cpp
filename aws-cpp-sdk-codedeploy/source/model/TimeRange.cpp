@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 TimeRange::TimeRange() : 
     m_startHasBeenSet(false),
@@ -69,3 +75,7 @@ JsonValue TimeRange::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

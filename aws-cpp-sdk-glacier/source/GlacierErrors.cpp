@@ -20,17 +20,18 @@ using namespace Aws::Client;
 using namespace Aws::Glacier;
 using namespace Aws::Utils;
 
-static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
-
 namespace Aws
 {
 namespace Glacier
 {
 namespace GlacierErrorMapper
 {
+
+static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
+static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

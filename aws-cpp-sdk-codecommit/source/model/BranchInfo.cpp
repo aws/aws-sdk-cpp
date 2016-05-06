@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeCommit
+{
+namespace Model
+{
 
 BranchInfo::BranchInfo() : 
     m_branchNameHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue BranchInfo::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeCommit
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Auto_HASH = HashingUtils::HashString("Auto");
-static const int Manual_HASH = HashingUtils::HashString("Manual");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SnapshotTypeMapper
       {
+
+        static const int Auto_HASH = HashingUtils::HashString("Auto");
+        static const int Manual_HASH = HashingUtils::HashString("Manual");
 
 
         SnapshotType GetSnapshotTypeForName(const Aws::String& name)

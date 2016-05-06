@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 HealthCheck::HealthCheck() : 
     m_targetHasBeenSet(false),
@@ -138,3 +144,7 @@ void HealthCheck::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".HealthyThreshold=" << m_healthyThreshold << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

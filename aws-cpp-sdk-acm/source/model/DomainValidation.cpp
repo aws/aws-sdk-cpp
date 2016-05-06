@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ACM
+{
+namespace Model
+{
 
 DomainValidation::DomainValidation() : 
     m_domainNameHasBeenSet(false),
@@ -94,3 +100,7 @@ JsonValue DomainValidation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ACM
+} // namespace Aws

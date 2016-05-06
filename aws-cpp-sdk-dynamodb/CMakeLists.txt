@@ -17,11 +17,23 @@ project(aws-cpp-sdk-dynamodb)
     "source/model/*.cpp"
   )
 
-  file(GLOB DYNAMODB_SRC
+  file(GLOB DYNAMODB_UNIFIED_HEADERS
     ${AWS_DYNAMODB_HEADERS}
     ${AWS_DYNAMODB_MODEL_HEADERS}
+  )
+
+  file(GLOB DYNAMODB_UNITY_SRC
     ${AWS_DYNAMODB_SOURCE}
     ${AWS_DYNAMODB_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("DYNAMODB" DYNAMODB_UNITY_SRC)
+  endif()
+
+  file(GLOB DYNAMODB_SRC
+    ${DYNAMODB_UNIFIED_HEADERS}
+    ${DYNAMODB_UNITY_SRC}
   )
 
   if(WIN32)

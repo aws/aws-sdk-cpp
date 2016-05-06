@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterParameterGroup::ClusterParameterGroup() : 
     m_parameterGroupNameHasBeenSet(false),
@@ -132,3 +138,7 @@ void ClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

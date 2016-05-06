@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int none_HASH = HashingUtils::HashString("none");
-static const int low_HASH = HashingUtils::HashString("low");
-static const int high_HASH = HashingUtils::HashString("high");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace SuggesterFuzzyMatchingMapper
       {
+
+        static const int none_HASH = HashingUtils::HashString("none");
+        static const int low_HASH = HashingUtils::HashString("low");
+        static const int high_HASH = HashingUtils::HashString("high");
 
 
         SuggesterFuzzyMatching GetSuggesterFuzzyMatchingForName(const Aws::String& name)

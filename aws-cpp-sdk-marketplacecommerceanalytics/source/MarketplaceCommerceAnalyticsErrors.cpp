@@ -20,14 +20,15 @@ using namespace Aws::Client;
 using namespace Aws::MarketplaceCommerceAnalytics;
 using namespace Aws::Utils;
 
-static const int MARKETPLACE_COMMERCE_ANALYTICS_HASH = HashingUtils::HashString("MarketplaceCommerceAnalyticsException");
-
 namespace Aws
 {
 namespace MarketplaceCommerceAnalytics
 {
 namespace MarketplaceCommerceAnalyticsErrorMapper
 {
+
+static const int MARKETPLACE_COMMERCE_ANALYTICS_HASH = HashingUtils::HashString("MarketplaceCommerceAnalyticsException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

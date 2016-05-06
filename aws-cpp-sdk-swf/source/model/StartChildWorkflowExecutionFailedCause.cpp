@@ -19,17 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int WORKFLOW_TYPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DOES_NOT_EXIST");
-static const int WORKFLOW_TYPE_DEPRECATED_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DEPRECATED");
-static const int OPEN_CHILDREN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_CHILDREN_LIMIT_EXCEEDED");
-static const int OPEN_WORKFLOWS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_WORKFLOWS_LIMIT_EXCEEDED");
-static const int CHILD_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("CHILD_CREATION_RATE_EXCEEDED");
-static const int WORKFLOW_ALREADY_RUNNING_HASH = HashingUtils::HashString("WORKFLOW_ALREADY_RUNNING");
-static const int DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED");
-static const int DEFAULT_TASK_LIST_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
-static const int DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED");
-static const int DEFAULT_CHILD_POLICY_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_CHILD_POLICY_UNDEFINED");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 namespace Aws
 {
@@ -39,6 +28,18 @@ namespace Aws
     {
       namespace StartChildWorkflowExecutionFailedCauseMapper
       {
+
+        static const int WORKFLOW_TYPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DOES_NOT_EXIST");
+        static const int WORKFLOW_TYPE_DEPRECATED_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DEPRECATED");
+        static const int OPEN_CHILDREN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_CHILDREN_LIMIT_EXCEEDED");
+        static const int OPEN_WORKFLOWS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_WORKFLOWS_LIMIT_EXCEEDED");
+        static const int CHILD_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("CHILD_CREATION_RATE_EXCEEDED");
+        static const int WORKFLOW_ALREADY_RUNNING_HASH = HashingUtils::HashString("WORKFLOW_ALREADY_RUNNING");
+        static const int DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static const int DEFAULT_TASK_LIST_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
+        static const int DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static const int DEFAULT_CHILD_POLICY_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_CHILD_POLICY_UNDEFINED");
+        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         StartChildWorkflowExecutionFailedCause GetStartChildWorkflowExecutionFailedCauseForName(const Aws::String& name)

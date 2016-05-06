@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBEngineVersion::DBEngineVersion() : 
     m_engineHasBeenSet(false),
@@ -218,3 +224,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

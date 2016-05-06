@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticTranscoder
+{
+namespace Model
+{
 
 PlayReadyDrm::PlayReadyDrm() : 
     m_formatHasBeenSet(false),
@@ -131,3 +137,7 @@ JsonValue PlayReadyDrm::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticTranscoder
+} // namespace Aws

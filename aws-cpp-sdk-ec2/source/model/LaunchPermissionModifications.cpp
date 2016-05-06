@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 LaunchPermissionModifications::LaunchPermissionModifications() : 
     m_addHasBeenSet(false),
@@ -118,3 +124,7 @@ void LaunchPermissionModifications::OutputToStream(Aws::OStream& oStream, const 
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

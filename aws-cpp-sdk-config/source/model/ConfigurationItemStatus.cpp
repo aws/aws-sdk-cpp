@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Ok_HASH = HashingUtils::HashString("Ok");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Discovered_HASH = HashingUtils::HashString("Discovered");
-static const int Deleted_HASH = HashingUtils::HashString("Deleted");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ConfigurationItemStatusMapper
       {
+
+        static const int Ok_HASH = HashingUtils::HashString("Ok");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Discovered_HASH = HashingUtils::HashString("Discovered");
+        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
 
 
         ConfigurationItemStatus GetConfigurationItemStatusForName(const Aws::String& name)

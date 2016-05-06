@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 IpPermission::IpPermission() : 
     m_ipProtocolHasBeenSet(false),
@@ -204,3 +210,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotFleetRequestConfigData::SpotFleetRequestConfigData() : 
     m_clientTokenHasBeenSet(false),
@@ -232,3 +238,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

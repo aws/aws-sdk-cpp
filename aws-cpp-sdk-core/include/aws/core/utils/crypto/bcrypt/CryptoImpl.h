@@ -20,11 +20,13 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <mutex>
 
-#ifdef AWS_SDK_PLATFORM_WINDOWS
+#if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
+
 #define WIN32_NO_STATUS 
 #include <windows.h> 
-#undef WIN32_NO_STATUS 
-#endif // AWS_SDK_PLATFORM_WINDOWS
+#undef WIN32_NO_STATUS
+ 
+#endif // WIN32
 
 namespace Aws
 {

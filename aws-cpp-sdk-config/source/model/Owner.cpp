@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CUSTOM_LAMBDA_HASH = HashingUtils::HashString("CUSTOM_LAMBDA");
-static const int AWS_HASH = HashingUtils::HashString("AWS");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace OwnerMapper
       {
+
+        static const int CUSTOM_LAMBDA_HASH = HashingUtils::HashString("CUSTOM_LAMBDA");
+        static const int AWS_HASH = HashingUtils::HashString("AWS");
 
 
         Owner GetOwnerForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 PolicyGroup::PolicyGroup() : 
     m_groupNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void PolicyGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

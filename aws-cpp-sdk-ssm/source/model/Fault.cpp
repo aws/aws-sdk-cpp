@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Client_HASH = HashingUtils::HashString("Client");
-static const int Server_HASH = HashingUtils::HashString("Server");
-static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace FaultMapper
       {
+
+        static const int Client_HASH = HashingUtils::HashString("Client");
+        static const int Server_HASH = HashingUtils::HashString("Server");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 
         Fault GetFaultForName(const Aws::String& name)

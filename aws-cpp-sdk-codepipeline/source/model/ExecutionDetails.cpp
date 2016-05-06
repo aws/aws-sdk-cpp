@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace Model
+{
 
 ExecutionDetails::ExecutionDetails() : 
     m_summaryHasBeenSet(false),
@@ -88,3 +94,7 @@ JsonValue ExecutionDetails::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodePipeline
+} // namespace Aws

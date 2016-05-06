@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 IdFormat::IdFormat() : 
     m_resourceHasBeenSet(false),
@@ -100,3 +106,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

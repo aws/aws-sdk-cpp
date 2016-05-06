@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PlacementGroup::PlacementGroup() : 
     m_groupNameHasBeenSet(false),
@@ -98,3 +104,7 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".State=" << PlacementGroupStateMapper::GetNameForPlacementGroupState(m_state) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

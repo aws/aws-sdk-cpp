@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int attaching_HASH = HashingUtils::HashString("attaching");
-static const int attached_HASH = HashingUtils::HashString("attached");
-static const int detaching_HASH = HashingUtils::HashString("detaching");
-static const int detached_HASH = HashingUtils::HashString("detached");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace AttachmentStatusMapper
       {
+
+        static const int attaching_HASH = HashingUtils::HashString("attaching");
+        static const int attached_HASH = HashingUtils::HashString("attached");
+        static const int detaching_HASH = HashingUtils::HashString("detaching");
+        static const int detached_HASH = HashingUtils::HashString("detached");
 
 
         AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)

@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int simple_HASH = HashingUtils::HashString("simple");
-static const int structured_HASH = HashingUtils::HashString("structured");
-static const int lucene_HASH = HashingUtils::HashString("lucene");
-static const int dismax_HASH = HashingUtils::HashString("dismax");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace QueryParserMapper
       {
+
+        static const int simple_HASH = HashingUtils::HashString("simple");
+        static const int structured_HASH = HashingUtils::HashString("structured");
+        static const int lucene_HASH = HashingUtils::HashString("lucene");
+        static const int dismax_HASH = HashingUtils::HashString("dismax");
 
 
         QueryParser GetQueryParserForName(const Aws::String& name)

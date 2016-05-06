@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
-static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace TransitionStorageClassMapper
       {
+
+        static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
+        static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
 
 
         TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Small_HASH = HashingUtils::HashString("Small");
-static const int Large_HASH = HashingUtils::HashString("Large");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DirectorySizeMapper
       {
+
+        static const int Small_HASH = HashingUtils::HashString("Small");
+        static const int Large_HASH = HashingUtils::HashString("Large");
 
 
         DirectorySize GetDirectorySizeForName(const Aws::String& name)

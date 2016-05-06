@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 SourceConfiguration::SourceConfiguration() : 
     m_applicationNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void SourceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 GlacierJobDescription::GlacierJobDescription() : 
     m_jobIdHasBeenSet(false),
@@ -300,3 +306,7 @@ JsonValue GlacierJobDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

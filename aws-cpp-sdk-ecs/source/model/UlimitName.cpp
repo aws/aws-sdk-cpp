@@ -19,21 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int core_HASH = HashingUtils::HashString("core");
-static const int cpu_HASH = HashingUtils::HashString("cpu");
-static const int data_HASH = HashingUtils::HashString("data");
-static const int fsize_HASH = HashingUtils::HashString("fsize");
-static const int locks_HASH = HashingUtils::HashString("locks");
-static const int memlock_HASH = HashingUtils::HashString("memlock");
-static const int msgqueue_HASH = HashingUtils::HashString("msgqueue");
-static const int nice_HASH = HashingUtils::HashString("nice");
-static const int nofile_HASH = HashingUtils::HashString("nofile");
-static const int nproc_HASH = HashingUtils::HashString("nproc");
-static const int rss_HASH = HashingUtils::HashString("rss");
-static const int rtprio_HASH = HashingUtils::HashString("rtprio");
-static const int rttime_HASH = HashingUtils::HashString("rttime");
-static const int sigpending_HASH = HashingUtils::HashString("sigpending");
-static const int stack_HASH = HashingUtils::HashString("stack");
 
 namespace Aws
 {
@@ -43,6 +28,22 @@ namespace Aws
     {
       namespace UlimitNameMapper
       {
+
+        static const int core_HASH = HashingUtils::HashString("core");
+        static const int cpu_HASH = HashingUtils::HashString("cpu");
+        static const int data_HASH = HashingUtils::HashString("data");
+        static const int fsize_HASH = HashingUtils::HashString("fsize");
+        static const int locks_HASH = HashingUtils::HashString("locks");
+        static const int memlock_HASH = HashingUtils::HashString("memlock");
+        static const int msgqueue_HASH = HashingUtils::HashString("msgqueue");
+        static const int nice_HASH = HashingUtils::HashString("nice");
+        static const int nofile_HASH = HashingUtils::HashString("nofile");
+        static const int nproc_HASH = HashingUtils::HashString("nproc");
+        static const int rss_HASH = HashingUtils::HashString("rss");
+        static const int rtprio_HASH = HashingUtils::HashString("rtprio");
+        static const int rttime_HASH = HashingUtils::HashString("rttime");
+        static const int sigpending_HASH = HashingUtils::HashString("sigpending");
+        static const int stack_HASH = HashingUtils::HashString("stack");
 
 
         UlimitName GetUlimitNameForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 ScalingPolicy::ScalingPolicy() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -304,3 +310,7 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
       }
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

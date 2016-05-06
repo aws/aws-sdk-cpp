@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
-static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
-static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
-static const int FLUSH_IN_PROGRESS_HASH = HashingUtils::HashString("FLUSH_IN_PROGRESS");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace CacheClusterStatusMapper
       {
+
+        static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
+        static const int FLUSH_IN_PROGRESS_HASH = HashingUtils::HashString("FLUSH_IN_PROGRESS");
 
 
         CacheClusterStatus GetCacheClusterStatusForName(const Aws::String& name)

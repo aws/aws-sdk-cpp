@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Snapshot::Snapshot() : 
     m_snapshotIdHasBeenSet(false),
@@ -310,3 +316,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

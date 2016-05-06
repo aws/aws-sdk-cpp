@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheNodeTypeSpecificValue::CacheNodeTypeSpecificValue() : 
     m_cacheNodeTypeHasBeenSet(false),
@@ -82,3 +88,7 @@ void CacheNodeTypeSpecificValue::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

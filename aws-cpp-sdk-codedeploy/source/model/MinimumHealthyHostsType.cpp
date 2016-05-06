@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int HOST_COUNT_HASH = HashingUtils::HashString("HOST_COUNT");
-static const int FLEET_PERCENT_HASH = HashingUtils::HashString("FLEET_PERCENT");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace MinimumHealthyHostsTypeMapper
       {
+
+        static const int HOST_COUNT_HASH = HashingUtils::HashString("HOST_COUNT");
+        static const int FLEET_PERCENT_HASH = HashingUtils::HashString("FLEET_PERCENT");
 
 
         MinimumHealthyHostsType GetMinimumHealthyHostsTypeForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int vpc_HASH = HashingUtils::HashString("vpc");
-static const int standard_HASH = HashingUtils::HashString("standard");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DomainTypeMapper
       {
+
+        static const int vpc_HASH = HashingUtils::HashString("vpc");
+        static const int standard_HASH = HashingUtils::HashString("standard");
 
 
         DomainType GetDomainTypeForName(const Aws::String& name)

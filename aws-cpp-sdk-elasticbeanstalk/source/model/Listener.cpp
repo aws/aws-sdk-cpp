@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 Listener::Listener() : 
     m_protocolHasBeenSet(false),
@@ -84,3 +90,7 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Port=" << m_port << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

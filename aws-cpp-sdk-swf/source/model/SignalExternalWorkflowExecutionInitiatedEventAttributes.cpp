@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 SignalExternalWorkflowExecutionInitiatedEventAttributes::SignalExternalWorkflowExecutionInitiatedEventAttributes() : 
     m_workflowIdHasBeenSet(false),
@@ -133,3 +139,7 @@ JsonValue SignalExternalWorkflowExecutionInitiatedEventAttributes::Jsonize() con
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

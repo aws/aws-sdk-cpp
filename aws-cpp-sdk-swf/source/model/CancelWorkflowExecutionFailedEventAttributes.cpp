@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes() : 
     m_causeHasBeenSet(false),
@@ -72,3 +78,7 @@ JsonValue CancelWorkflowExecutionFailedEventAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

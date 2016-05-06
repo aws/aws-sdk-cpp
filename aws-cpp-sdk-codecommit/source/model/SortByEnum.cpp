@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int repositoryName_HASH = HashingUtils::HashString("repositoryName");
-static const int lastModifiedDate_HASH = HashingUtils::HashString("lastModifiedDate");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SortByEnumMapper
       {
+
+        static const int repositoryName_HASH = HashingUtils::HashString("repositoryName");
+        static const int lastModifiedDate_HASH = HashingUtils::HashString("lastModifiedDate");
 
 
         SortByEnum GetSortByEnumForName(const Aws::String& name)

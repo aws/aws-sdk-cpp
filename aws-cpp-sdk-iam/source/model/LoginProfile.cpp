@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 LoginProfile::LoginProfile() : 
     m_userNameHasBeenSet(false),
@@ -100,3 +106,7 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry() : 
     m_idHasBeenSet(false),
@@ -82,3 +88,7 @@ void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

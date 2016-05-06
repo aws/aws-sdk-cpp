@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace APIGateway
+{
+namespace Model
+{
 
 PatchOperation::PatchOperation() : 
     m_opHasBeenSet(false),
@@ -100,3 +106,7 @@ JsonValue PatchOperation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace APIGateway
+} // namespace Aws

@@ -18,6 +18,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/platform/Platform.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/s3/S3Client.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
@@ -62,16 +63,16 @@ namespace
     static const char* CREATE_BUCKET_TEST_NAME = "awsnativesdkcreatebuckettestbucket";
     static const char* LOCATION_BUCKET_TEST_NAME = "loc";
     static const char* PUT_OBJECTS_BUCKET_NAME = "awsnativesdkputobjectstestbucket";
-	static const char* PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucket";
+    static const char* PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "awsnativesdkcharsetstestbucket";
     static const char* PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "awsnativesdkpresignedtestbucket";
     static const char* PUT_MULTIPART_BUCKET_NAME = "awsnativesdkputobjectmultipartbucket";
     static const char* ERRORS_TESTING_BUCKET = "awsnativesdkerrorsbucket";
     static const char* INTERRUPT_TESTING_BUCKET = "awsnativesdkinterruptbucket";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
-	//windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
-	//to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
-	static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
-	static const char* URIESCAPE_KEY = "Escape+Me";
+    //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
+    //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
+    static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
+    static const char* URIESCAPE_KEY = "Escape+Me";
 
     static const int TIMEOUT_MAX = 10;
 
@@ -134,14 +135,26 @@ namespace
 
         static std::shared_ptr<Aws::StringStream> Create5MbStreamForUploadPart(const char* partTag)
         {
-            std::shared_ptr<Aws::StringStream> streamPtr = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
-            unsigned fiveMbSize = 5 * 1024 * 1024;
-            for (unsigned i = 0; i < fiveMbSize; i += 30)
+            uint32_t fiveMbSize = 5 * 1024 * 1024;
+
+            Aws::StringStream patternStream;
+            patternStream << "Multi-Part upload Test Part " << partTag << ":" << std::endl;
+            Aws::String pattern = patternStream.str();
+
+            Aws::String scratchString;
+            scratchString.reserve(fiveMbSize);
+
+            // 5MB is a hard minimum for multi part uploads; make sure the final string is at least that long
+            uint32_t patternCopyCount = static_cast< uint32_t >( fiveMbSize / pattern.size() + 1 );
+            for(uint32_t i = 0; i < patternCopyCount; ++i)
             {
-                *streamPtr << "Multi-Part upload Test Part " << partTag << ":" << std::endl;
+                scratchString.append( pattern );
             }
 
+            std::shared_ptr<Aws::StringStream> streamPtr = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, scratchString);
+
             streamPtr->seekg(0);
+            streamPtr->seekp(0, std::ios_base::end);
 
             return streamPtr;
         }
@@ -513,99 +526,99 @@ namespace
         ASSERT_FALSE(headObjectOutcome.IsSuccess());
     }
 
-	TEST_F(BucketAndObjectOperationTest, TestKeysWithCrazyCharacterSets)
-	{
-		Aws::String fullBucketName = CalculateBucketName(PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
+    TEST_F(BucketAndObjectOperationTest, TestKeysWithCrazyCharacterSets)
+    {
+        Aws::String fullBucketName = CalculateBucketName(PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
 
-		CreateBucketRequest createBucketRequest;
-		createBucketRequest.SetBucket(fullBucketName);
-		createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
 
-		CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
-		ASSERT_TRUE(createBucketOutcome.IsSuccess());
-		const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
-		ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-		WaitForBucketToPropagate(fullBucketName);
+        WaitForBucketToPropagate(fullBucketName);
 
-		//test unicode
-		{
-			//we already have verification that this is a legit unicode string via the StringUtils test.
-			Aws::String unicodekey = StringUtils::URLDecode(URLENCODED_UNICODE_KEY);
-			PutObjectRequest putObjectRequest;
-			putObjectRequest.SetBucket(fullBucketName);
+        //test unicode
+        {
+            //we already have verification that this is a legit unicode string via the StringUtils test.
+            Aws::String unicodekey = StringUtils::URLDecode(URLENCODED_UNICODE_KEY);
+            PutObjectRequest putObjectRequest;
+            putObjectRequest.SetBucket(fullBucketName);
 
-			std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
-			*objectStream << "Test Object";
-			objectStream->flush();
-			putObjectRequest.SetBody(objectStream);			
-			putObjectRequest.SetKey(unicodekey);
+            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
+            *objectStream << "Test Object";
+            objectStream->flush();
+            putObjectRequest.SetBody(objectStream);			
+            putObjectRequest.SetKey(unicodekey);
 
-			PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-			ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+            ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
-			WaitForObjectToPropagate(fullBucketName, unicodekey.c_str());
+            WaitForObjectToPropagate(fullBucketName, unicodekey.c_str());
 
-			ListObjectsRequest listObjectsRequest;
-			listObjectsRequest.SetBucket(fullBucketName);
+            ListObjectsRequest listObjectsRequest;
+            listObjectsRequest.SetBucket(fullBucketName);
 
-			ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-			ASSERT_TRUE(listObjectsOutcome.IsSuccess());
-			ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
+            ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+            ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+            ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, unicodekey.c_str()));
 
-			HeadObjectRequest headObjectRequest;
-			headObjectRequest.SetBucket(fullBucketName);
-			headObjectRequest.SetKey(unicodekey);
+            HeadObjectRequest headObjectRequest;
+            headObjectRequest.SetBucket(fullBucketName);
+            headObjectRequest.SetKey(unicodekey);
 
-			HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-			ASSERT_TRUE(headObjectOutcome.IsSuccess());
+            HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+            ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
-			DeleteObjectRequest deleteObjectRequest;
-			deleteObjectRequest.SetBucket(fullBucketName);
-			deleteObjectRequest.SetKey(unicodekey);
-			DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-			ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
-		}
+            DeleteObjectRequest deleteObjectRequest;
+            deleteObjectRequest.SetBucket(fullBucketName);
+            deleteObjectRequest.SetKey(unicodekey);
+            DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        }
 
-		//test uri encoding edge case.
-		{
-			PutObjectRequest putObjectRequest;
-			putObjectRequest.SetBucket(fullBucketName);
+        //test uri encoding edge case.
+        {
+            PutObjectRequest putObjectRequest;
+            putObjectRequest.SetBucket(fullBucketName);
 
-			std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
-			*objectStream << "Test Object";
-			objectStream->flush();
-			putObjectRequest.SetBody(objectStream);			
-			putObjectRequest.SetKey(URIESCAPE_KEY);
+            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("TestKeysWithCrazyCharacterSets");
+            *objectStream << "Test Object";
+            objectStream->flush();
+            putObjectRequest.SetBody(objectStream);			
+            putObjectRequest.SetKey(URIESCAPE_KEY);
 
-			PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
-			ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+            ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
-			WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY);
+            WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY);
 
-			ListObjectsRequest listObjectsRequest;
-			listObjectsRequest.SetBucket(fullBucketName);
+            ListObjectsRequest listObjectsRequest;
+            listObjectsRequest.SetBucket(fullBucketName);
 
-			ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
-			ASSERT_TRUE(listObjectsOutcome.IsSuccess());
-			ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
+            ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+            ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+            ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, URIESCAPE_KEY));
 
-			HeadObjectRequest headObjectRequest;
-			headObjectRequest.SetBucket(fullBucketName);
-			headObjectRequest.SetKey(URIESCAPE_KEY);
+            HeadObjectRequest headObjectRequest;
+            headObjectRequest.SetBucket(fullBucketName);
+            headObjectRequest.SetKey(URIESCAPE_KEY);
 
-			HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-			ASSERT_TRUE(headObjectOutcome.IsSuccess());
+            HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
+            ASSERT_TRUE(headObjectOutcome.IsSuccess());
 
-			DeleteObjectRequest deleteObjectRequest;
-			deleteObjectRequest.SetBucket(fullBucketName);
-			deleteObjectRequest.SetKey(URIESCAPE_KEY);
-			DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
-			ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
-		}
+            DeleteObjectRequest deleteObjectRequest;
+            deleteObjectRequest.SetBucket(fullBucketName);
+            deleteObjectRequest.SetKey(URIESCAPE_KEY);
+            DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        }
 
-		WaitForBucketToEmpty(fullBucketName);		
-	}
+        WaitForBucketToEmpty(fullBucketName);	
+    }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperationsWithPresignedUrls)
     {
@@ -634,7 +647,7 @@ namespace
         putRequest->SetContentLength(intConverter.str());
         putRequest->SetContentType("text/plain");
         std::shared_ptr<HttpResponse> putResponse = m_HttpClient->MakeRequest(*putRequest);
-        std::cout << putResponse->GetResponseBody().rdbuf();
+
         ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
         WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
@@ -758,15 +771,18 @@ namespace
 
         // repeat the get, but channel it directly to a file; tests the ability to override the output stream
 #ifndef __ANDROID__
-        static const char* DOWNLOADED_FILENAME = "DownloadTestFile";
+    Aws::String TestFileName = "DownloadTestFile";
+#else
+    Aws::String TestFileName = Aws::Platform::GetCacheDirectory() + Aws::String("DownloadTestFile");
+#endif
 
-        std::remove(DOWNLOADED_FILENAME);
+        std::remove(TestFileName.c_str());
 
         GetObjectRequest getObjectRequest2;
         getObjectRequest2.SetBucket(fullBucketName);
         getObjectRequest2.SetKey(multipartKeyName);
         getObjectRequest2.SetResponseStreamFactory(
-            [](){ 
+            [=](){ 
                 // NOTE: If using an FStream in order to download a file from S3 to a physical file, then we need to specify
                 // the filemode "std::ios_base::out | std::ios_base::in | std::ios_base::trunc" --
                 // If the file transfer fails, then the error stream from the httpRequest is written to the file instead of the
@@ -777,7 +793,7 @@ namespace
                 // The 'truncate' is required to ensure that if the file download IS successful, then it can be written to the
                 // FStream (if ::trunc is not specified, then the FStream.write fails for some unknown reason)
 
-                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out | std::ios_base::in | std::ios_base::trunc); 
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, TestFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::trunc); 
             }
         );
 
@@ -792,8 +808,8 @@ namespace
         getObjectRequest3.SetBucket("FAIL");
         getObjectRequest3.SetKey("FAIL");
         getObjectRequest3.SetResponseStreamFactory(
-            [](){
-                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out | std::ios_base::in | std::ios_base::trunc);
+            [=](){
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, TestFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::trunc);
             }
         );
 
@@ -801,7 +817,7 @@ namespace
             // Enclose scope just to make sure the download file is properly closed before we reread it
             GetObjectOutcome getObjectOutcome3 = Client->GetObject(getObjectRequest3);
 
-            std::remove(DOWNLOADED_FILENAME);
+            std::remove(TestFileName.c_str());
 
             ASSERT_FALSE(getObjectOutcome3.IsSuccess());
         }
@@ -813,8 +829,8 @@ namespace
         getObjectRequest4.SetBucket("FAIL");
         getObjectRequest4.SetKey("FAIL");
         getObjectRequest4.SetResponseStreamFactory(
-            [](){
-                return Aws::New<Aws::FStream>(ALLOCATION_TAG, DOWNLOADED_FILENAME, std::ios_base::out);
+            [=](){
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, TestFileName.c_str(), std::ios_base::out);
             }
         );
 
@@ -822,11 +838,10 @@ namespace
             // Enclose scope just to make sure the download file is properly closed before we reread it
             GetObjectOutcome getObjectOutcome4 = Client->GetObject(getObjectRequest4);
 
-            std::remove(DOWNLOADED_FILENAME);
+            std::remove(TestFileName.c_str());
 
             ASSERT_FALSE(getObjectOutcome4.IsSuccess());
         }
-
 
         {
             // Enclose scope just to make sure the download file is properly closed before we reread it
@@ -835,7 +850,7 @@ namespace
         }
 
         Aws::String fileContents;
-        Aws::IFStream downloadedFile(DOWNLOADED_FILENAME);
+        Aws::IFStream downloadedFile(TestFileName.c_str());
         ASSERT_TRUE(downloadedFile.good());
 
         if (downloadedFile.good())
@@ -846,11 +861,9 @@ namespace
             fileContents.assign((std::istreambuf_iterator<char>(downloadedFile)), std::istreambuf_iterator<char>());
         }
 
-        std::remove(DOWNLOADED_FILENAME);
+        std::remove(TestFileName.c_str());
 
         ASSERT_EQ(expectedStreamValue.str(), fileContents);
-
-#endif // __ANDROID__
 
         // Remove the file
         DeleteObjectRequest deleteObjectRequest;
@@ -860,6 +873,7 @@ namespace
         DeleteObjectOutcome deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
         ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
     }
+
 
     TEST_F(BucketAndObjectOperationTest, TestThatErrorsParse)
     {

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECR
+{
+namespace Model
+{
 
 Image::Image() : 
     m_registryIdHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue Image::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECR
+} // namespace Aws

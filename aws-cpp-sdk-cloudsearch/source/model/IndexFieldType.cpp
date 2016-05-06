@@ -19,17 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int int__HASH = HashingUtils::HashString("int");
-static const int double__HASH = HashingUtils::HashString("double");
-static const int literal_HASH = HashingUtils::HashString("literal");
-static const int text_HASH = HashingUtils::HashString("text");
-static const int date_HASH = HashingUtils::HashString("date");
-static const int latlon_HASH = HashingUtils::HashString("latlon");
-static const int int_array_HASH = HashingUtils::HashString("int-array");
-static const int double_array_HASH = HashingUtils::HashString("double-array");
-static const int literal_array_HASH = HashingUtils::HashString("literal-array");
-static const int text_array_HASH = HashingUtils::HashString("text-array");
-static const int date_array_HASH = HashingUtils::HashString("date-array");
 
 namespace Aws
 {
@@ -39,6 +28,18 @@ namespace Aws
     {
       namespace IndexFieldTypeMapper
       {
+
+        static const int int__HASH = HashingUtils::HashString("int");
+        static const int double__HASH = HashingUtils::HashString("double");
+        static const int literal_HASH = HashingUtils::HashString("literal");
+        static const int text_HASH = HashingUtils::HashString("text");
+        static const int date_HASH = HashingUtils::HashString("date");
+        static const int latlon_HASH = HashingUtils::HashString("latlon");
+        static const int int_array_HASH = HashingUtils::HashString("int-array");
+        static const int double_array_HASH = HashingUtils::HashString("double-array");
+        static const int literal_array_HASH = HashingUtils::HashString("literal-array");
+        static const int text_array_HASH = HashingUtils::HashString("text-array");
+        static const int date_array_HASH = HashingUtils::HashString("date-array");
 
 
         IndexFieldType GetIndexFieldTypeForName(const Aws::String& name)

@@ -19,33 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Seconds_HASH = HashingUtils::HashString("Seconds");
-static const int Microseconds_HASH = HashingUtils::HashString("Microseconds");
-static const int Milliseconds_HASH = HashingUtils::HashString("Milliseconds");
-static const int Bytes_HASH = HashingUtils::HashString("Bytes");
-static const int Kilobytes_HASH = HashingUtils::HashString("Kilobytes");
-static const int Megabytes_HASH = HashingUtils::HashString("Megabytes");
-static const int Gigabytes_HASH = HashingUtils::HashString("Gigabytes");
-static const int Terabytes_HASH = HashingUtils::HashString("Terabytes");
-static const int Bits_HASH = HashingUtils::HashString("Bits");
-static const int Kilobits_HASH = HashingUtils::HashString("Kilobits");
-static const int Megabits_HASH = HashingUtils::HashString("Megabits");
-static const int Gigabits_HASH = HashingUtils::HashString("Gigabits");
-static const int Terabits_HASH = HashingUtils::HashString("Terabits");
-static const int Percent_HASH = HashingUtils::HashString("Percent");
-static const int Count_HASH = HashingUtils::HashString("Count");
-static const int Bytes_Second_HASH = HashingUtils::HashString("Bytes/Second");
-static const int Kilobytes_Second_HASH = HashingUtils::HashString("Kilobytes/Second");
-static const int Megabytes_Second_HASH = HashingUtils::HashString("Megabytes/Second");
-static const int Gigabytes_Second_HASH = HashingUtils::HashString("Gigabytes/Second");
-static const int Terabytes_Second_HASH = HashingUtils::HashString("Terabytes/Second");
-static const int Bits_Second_HASH = HashingUtils::HashString("Bits/Second");
-static const int Kilobits_Second_HASH = HashingUtils::HashString("Kilobits/Second");
-static const int Megabits_Second_HASH = HashingUtils::HashString("Megabits/Second");
-static const int Gigabits_Second_HASH = HashingUtils::HashString("Gigabits/Second");
-static const int Terabits_Second_HASH = HashingUtils::HashString("Terabits/Second");
-static const int Count_Second_HASH = HashingUtils::HashString("Count/Second");
-static const int None_HASH = HashingUtils::HashString("None");
 
 namespace Aws
 {
@@ -55,6 +28,34 @@ namespace Aws
     {
       namespace StandardUnitMapper
       {
+
+        static const int Seconds_HASH = HashingUtils::HashString("Seconds");
+        static const int Microseconds_HASH = HashingUtils::HashString("Microseconds");
+        static const int Milliseconds_HASH = HashingUtils::HashString("Milliseconds");
+        static const int Bytes_HASH = HashingUtils::HashString("Bytes");
+        static const int Kilobytes_HASH = HashingUtils::HashString("Kilobytes");
+        static const int Megabytes_HASH = HashingUtils::HashString("Megabytes");
+        static const int Gigabytes_HASH = HashingUtils::HashString("Gigabytes");
+        static const int Terabytes_HASH = HashingUtils::HashString("Terabytes");
+        static const int Bits_HASH = HashingUtils::HashString("Bits");
+        static const int Kilobits_HASH = HashingUtils::HashString("Kilobits");
+        static const int Megabits_HASH = HashingUtils::HashString("Megabits");
+        static const int Gigabits_HASH = HashingUtils::HashString("Gigabits");
+        static const int Terabits_HASH = HashingUtils::HashString("Terabits");
+        static const int Percent_HASH = HashingUtils::HashString("Percent");
+        static const int Count_HASH = HashingUtils::HashString("Count");
+        static const int Bytes_Second_HASH = HashingUtils::HashString("Bytes/Second");
+        static const int Kilobytes_Second_HASH = HashingUtils::HashString("Kilobytes/Second");
+        static const int Megabytes_Second_HASH = HashingUtils::HashString("Megabytes/Second");
+        static const int Gigabytes_Second_HASH = HashingUtils::HashString("Gigabytes/Second");
+        static const int Terabytes_Second_HASH = HashingUtils::HashString("Terabytes/Second");
+        static const int Bits_Second_HASH = HashingUtils::HashString("Bits/Second");
+        static const int Kilobits_Second_HASH = HashingUtils::HashString("Kilobits/Second");
+        static const int Megabits_Second_HASH = HashingUtils::HashString("Megabits/Second");
+        static const int Gigabits_Second_HASH = HashingUtils::HashString("Gigabits/Second");
+        static const int Terabits_Second_HASH = HashingUtils::HashString("Terabits/Second");
+        static const int Count_Second_HASH = HashingUtils::HashString("Count/Second");
+        static const int None_HASH = HashingUtils::HashString("None");
 
 
         StandardUnit GetStandardUnitForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace STS
+{
+namespace Model
+{
 
 Credentials::Credentials() : 
     m_accessKeyIdHasBeenSet(false),
@@ -114,3 +120,7 @@ void Credentials::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".Expiration=" << StringUtils::URLEncode(m_expiration.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace STS
+} // namespace Aws

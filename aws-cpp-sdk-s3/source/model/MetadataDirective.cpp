@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int COPY_HASH = HashingUtils::HashString("COPY");
-static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace MetadataDirectiveMapper
       {
+
+        static const int COPY_HASH = HashingUtils::HashString("COPY");
+        static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
 
 
         MetadataDirective GetMetadataDirectiveForName(const Aws::String& name)

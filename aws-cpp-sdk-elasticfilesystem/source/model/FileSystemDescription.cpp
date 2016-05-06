@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EFS
+{
+namespace Model
+{
 
 FileSystemDescription::FileSystemDescription() : 
     m_ownerIdHasBeenSet(false),
@@ -161,3 +167,7 @@ JsonValue FileSystemDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EFS
+} // namespace Aws

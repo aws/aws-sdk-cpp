@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 Destination::Destination() : 
     m_toAddressesHasBeenSet(false),
@@ -140,3 +146,7 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location) co
       }
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

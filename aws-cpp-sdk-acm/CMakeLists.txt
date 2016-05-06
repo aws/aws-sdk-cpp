@@ -17,11 +17,23 @@ project(aws-cpp-sdk-acm)
     "source/model/*.cpp"
   )
 
-  file(GLOB ACM_SRC
+  file(GLOB ACM_UNIFIED_HEADERS
     ${AWS_ACM_HEADERS}
     ${AWS_ACM_MODEL_HEADERS}
+  )
+
+  file(GLOB ACM_UNITY_SRC
     ${AWS_ACM_SOURCE}
     ${AWS_ACM_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ACM" ACM_UNITY_SRC)
+  endif()
+
+  file(GLOB ACM_SRC
+    ${ACM_UNIFIED_HEADERS}
+    ${ACM_UNITY_SRC}
   )
 
   if(WIN32)

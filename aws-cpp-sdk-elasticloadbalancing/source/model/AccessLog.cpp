@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 AccessLog::AccessLog() : 
     m_enabled(false),
@@ -118,3 +124,7 @@ void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".S3BucketPrefix=" << StringUtils::URLEncode(m_s3BucketPrefix.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ECS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ECS
+{
+namespace ECSErrorMapper
+{
+
 static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UpdateInProgressException");
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 static const int CLUSTER_CONTAINS_CONTAINER_INSTANCES_HASH = HashingUtils::HashString("ClusterContainsContainerInstancesException");
@@ -32,12 +39,6 @@ static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParam
 static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFoundException");
 static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
 
-namespace Aws
-{
-namespace ECS
-{
-namespace ECSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

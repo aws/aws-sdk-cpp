@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::EFS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace EFS
+{
+namespace EFSErrorMapper
+{
+
 static const int IP_ADDRESS_IN_USE_HASH = HashingUtils::HashString("IpAddressInUse");
 static const int FILE_SYSTEM_IN_USE_HASH = HashingUtils::HashString("FileSystemInUse");
 static const int NO_FREE_ADDRESSES_IN_SUBNET_HASH = HashingUtils::HashString("NoFreeAddressesInSubnet");
@@ -38,12 +45,6 @@ static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFoun
 static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeout");
 static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NetworkInterfaceLimitExceeded");
 
-namespace Aws
-{
-namespace EFS
-{
-namespace EFSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

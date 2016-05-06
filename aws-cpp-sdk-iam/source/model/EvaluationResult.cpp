@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 EvaluationResult::EvaluationResult() : 
     m_evalActionNameHasBeenSet(false),
@@ -220,3 +226,7 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ReservedInstancesListing::ReservedInstancesListing() : 
     m_reservedInstancesListingIdHasBeenSet(false),
@@ -264,3 +270,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

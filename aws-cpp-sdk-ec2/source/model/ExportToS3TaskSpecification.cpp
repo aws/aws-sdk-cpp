@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ExportToS3TaskSpecification::ExportToS3TaskSpecification() : 
     m_diskImageFormatHasBeenSet(false),
@@ -114,3 +120,7 @@ void ExportToS3TaskSpecification::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << ".S3Prefix=" << StringUtils::URLEncode(m_s3Prefix.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

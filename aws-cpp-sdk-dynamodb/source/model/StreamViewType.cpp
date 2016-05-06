@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NEW_IMAGE_HASH = HashingUtils::HashString("NEW_IMAGE");
-static const int OLD_IMAGE_HASH = HashingUtils::HashString("OLD_IMAGE");
-static const int NEW_AND_OLD_IMAGES_HASH = HashingUtils::HashString("NEW_AND_OLD_IMAGES");
-static const int KEYS_ONLY_HASH = HashingUtils::HashString("KEYS_ONLY");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace StreamViewTypeMapper
       {
+
+        static const int NEW_IMAGE_HASH = HashingUtils::HashString("NEW_IMAGE");
+        static const int OLD_IMAGE_HASH = HashingUtils::HashString("OLD_IMAGE");
+        static const int NEW_AND_OLD_IMAGES_HASH = HashingUtils::HashString("NEW_AND_OLD_IMAGES");
+        static const int KEYS_ONLY_HASH = HashingUtils::HashString("KEYS_ONLY");
 
 
         StreamViewType GetStreamViewTypeForName(const Aws::String& name)

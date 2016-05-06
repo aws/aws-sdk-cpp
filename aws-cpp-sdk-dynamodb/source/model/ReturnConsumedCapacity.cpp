@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int INDEXES_HASH = HashingUtils::HashString("INDEXES");
-static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ReturnConsumedCapacityMapper
       {
+
+        static const int INDEXES_HASH = HashingUtils::HashString("INDEXES");
+        static const int TOTAL_HASH = HashingUtils::HashString("TOTAL");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         ReturnConsumedCapacity GetReturnConsumedCapacityForName(const Aws::String& name)

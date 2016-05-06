@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
 
 AgentsFilter::AgentsFilter() : 
     m_agentHealthListHasBeenSet(false)
@@ -64,3 +70,7 @@ JsonValue AgentsFilter::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

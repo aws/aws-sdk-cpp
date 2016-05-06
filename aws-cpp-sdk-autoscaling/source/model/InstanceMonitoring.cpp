@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 InstanceMonitoring::InstanceMonitoring() : 
     m_enabled(false),
@@ -68,3 +74,7 @@ void InstanceMonitoring::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Enabled=" << m_enabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

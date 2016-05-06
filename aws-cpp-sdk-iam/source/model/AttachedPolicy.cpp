@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 AttachedPolicy::AttachedPolicy() : 
     m_policyNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void AttachedPolicy::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

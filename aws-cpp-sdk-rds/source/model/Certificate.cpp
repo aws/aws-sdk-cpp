@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 Certificate::Certificate() : 
     m_certificateIdentifierHasBeenSet(false),
@@ -130,3 +136,7 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

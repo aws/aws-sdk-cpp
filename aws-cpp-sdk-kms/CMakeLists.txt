@@ -17,11 +17,23 @@ project(aws-cpp-sdk-kms)
     "source/model/*.cpp"
   )
 
-  file(GLOB KMS_SRC
+  file(GLOB KMS_UNIFIED_HEADERS
     ${AWS_KMS_HEADERS}
     ${AWS_KMS_MODEL_HEADERS}
+  )
+
+  file(GLOB KMS_UNITY_SRC
     ${AWS_KMS_SOURCE}
     ${AWS_KMS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("KMS" KMS_UNITY_SRC)
+  endif()
+
+  file(GLOB KMS_SRC
+    ${KMS_UNIFIED_HEADERS}
+    ${KMS_UNITY_SRC}
   )
 
   if(WIN32)

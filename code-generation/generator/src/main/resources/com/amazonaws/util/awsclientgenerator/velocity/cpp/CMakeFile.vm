@@ -20,11 +20,23 @@ project(aws-cpp-sdk-${metadata.projectName})
   )
 
 #set($cmakeVarStart = "${")
-  file(GLOB ${projectNameCaps}_SRC
+  file(GLOB ${projectNameCaps}_UNIFIED_HEADERS
     ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS}
     ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS}
+  )
+
+  file(GLOB ${projectNameCaps}_UNITY_SRC
     ${cmakeVarStart}AWS_${projectNameCaps}_SOURCE}
     ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("${projectNameCaps}" ${projectNameCaps}_UNITY_SRC)
+  endif()
+
+  file(GLOB ${projectNameCaps}_SRC
+    ${cmakeVarStart}${projectNameCaps}_UNIFIED_HEADERS}
+    ${cmakeVarStart}${projectNameCaps}_UNITY_SRC}
   )
 
 #set($dirDelim = "\\")

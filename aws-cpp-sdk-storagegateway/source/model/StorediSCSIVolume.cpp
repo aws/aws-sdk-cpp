@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 StorediSCSIVolume::StorediSCSIVolume() : 
     m_volumeARNHasBeenSet(false),
@@ -197,3 +203,7 @@ JsonValue StorediSCSIVolume::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

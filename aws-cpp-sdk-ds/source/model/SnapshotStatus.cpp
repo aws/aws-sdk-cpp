@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Creating_HASH = HashingUtils::HashString("Creating");
-static const int Completed_HASH = HashingUtils::HashString("Completed");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace SnapshotStatusMapper
       {
+
+        static const int Creating_HASH = HashingUtils::HashString("Creating");
+        static const int Completed_HASH = HashingUtils::HashString("Completed");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 
         SnapshotStatus GetSnapshotStatusForName(const Aws::String& name)

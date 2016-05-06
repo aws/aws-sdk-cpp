@@ -17,11 +17,23 @@ project(aws-cpp-sdk-sdb)
     "source/model/*.cpp"
   )
 
-  file(GLOB SDB_SRC
+  file(GLOB SDB_UNIFIED_HEADERS
     ${AWS_SDB_HEADERS}
     ${AWS_SDB_MODEL_HEADERS}
+  )
+
+  file(GLOB SDB_UNITY_SRC
     ${AWS_SDB_SOURCE}
     ${AWS_SDB_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SDB" SDB_UNITY_SRC)
+  endif()
+
+  file(GLOB SDB_SRC
+    ${SDB_UNIFIED_HEADERS}
+    ${SDB_UNITY_SRC}
   )
 
   if(WIN32)

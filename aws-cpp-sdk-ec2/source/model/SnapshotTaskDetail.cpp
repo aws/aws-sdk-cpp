@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SnapshotTaskDetail::SnapshotTaskDetail() : 
     m_diskImageSize(0.0),
@@ -200,3 +206,7 @@ void SnapshotTaskDetail::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws
