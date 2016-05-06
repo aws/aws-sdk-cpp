@@ -15,6 +15,7 @@
 #include <aws/devicefarm/model/TestType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -41,6 +42,7 @@ namespace Aws
         static const int UIAUTOMATION_HASH = HashingUtils::HashString("UIAUTOMATION");
         static const int UIAUTOMATOR_HASH = HashingUtils::HashString("UIAUTOMATOR");
         static const int XCTEST_HASH = HashingUtils::HashString("XCTEST");
+        static const int XCTEST_UI_HASH = HashingUtils::HashString("XCTEST_UI");
 
 
         TestType GetTestTypeForName(const Aws::String& name)
@@ -98,7 +100,11 @@ namespace Aws
           {
             return TestType::XCTEST;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == XCTEST_UI_HASH)
+          {
+            return TestType::XCTEST_UI;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -138,8 +144,10 @@ namespace Aws
             return "UIAUTOMATOR";
           case TestType::XCTEST:
             return "XCTEST";
+          case TestType::XCTEST_UI:
+            return "XCTEST_UI";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

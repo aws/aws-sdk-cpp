@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace Model
+{
 
 OrderableReplicationInstance::OrderableReplicationInstance() : 
     m_engineVersionHasBeenSet(false),
@@ -154,3 +160,7 @@ JsonValue OrderableReplicationInstance::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DatabaseMigrationService
+} // namespace Aws

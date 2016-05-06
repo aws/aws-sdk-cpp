@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace CACertificateStatusMapper
       {
+
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 
 
         CACertificateStatus GetCACertificateStatusForName(const Aws::String& name)

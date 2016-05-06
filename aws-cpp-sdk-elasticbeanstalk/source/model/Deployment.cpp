@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 Deployment::Deployment() : 
     m_versionLabelHasBeenSet(false),
@@ -116,3 +122,7 @@ void Deployment::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

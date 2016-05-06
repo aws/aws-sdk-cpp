@@ -29,7 +29,7 @@ namespace Aws
       namespace LogLevelMapper
       {
 
-        static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
+        static const int DEBUG__HASH = HashingUtils::HashString("DEBUG");
         static const int INFO_HASH = HashingUtils::HashString("INFO");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int WARN_HASH = HashingUtils::HashString("WARN");
@@ -39,7 +39,7 @@ namespace Aws
         LogLevel GetLogLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DEBUG_HASH)
+          if (hashCode == DEBUG__HASH)
           {
             return LogLevel::DEBUG_;
           }

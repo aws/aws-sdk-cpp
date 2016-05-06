@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UpdateCancelled_HASH = HashingUtils::HashString("UpdateCancelled");
-static const int CancellationFailed_HASH = HashingUtils::HashString("CancellationFailed");
-static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
-static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
-static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
-static const int InvalidEnvironmentState_HASH = HashingUtils::HashString("InvalidEnvironmentState");
-static const int PermissionsError_HASH = HashingUtils::HashString("PermissionsError");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace FailureTypeMapper
       {
+
+        static const int UpdateCancelled_HASH = HashingUtils::HashString("UpdateCancelled");
+        static const int CancellationFailed_HASH = HashingUtils::HashString("CancellationFailed");
+        static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
+        static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
+        static const int InternalFailure_HASH = HashingUtils::HashString("InternalFailure");
+        static const int InvalidEnvironmentState_HASH = HashingUtils::HashString("InvalidEnvironmentState");
+        static const int PermissionsError_HASH = HashingUtils::HashString("PermissionsError");
 
 
         FailureType GetFailureTypeForName(const Aws::String& name)

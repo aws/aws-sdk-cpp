@@ -29,7 +29,7 @@ namespace Aws
       namespace DevicePlatformMapper
       {
 
-        static const int ANDROID_HASH = HashingUtils::HashString("ANDROID");
+        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
         static const int IOS_HASH = HashingUtils::HashString("IOS");
 
 

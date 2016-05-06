@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PURCHASE_HASH = HashingUtils::HashString("PURCHASE");
-static const int RENEW_HASH = HashingUtils::HashString("RENEW");
-static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace OfferingTransactionTypeMapper
       {
+
+        static const int PURCHASE_HASH = HashingUtils::HashString("PURCHASE");
+        static const int RENEW_HASH = HashingUtils::HashString("RENEW");
+        static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
 
 
         OfferingTransactionType GetOfferingTransactionTypeForName(const Aws::String& name)

@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
-static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace TableRestoreStatusTypeMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
 
 
         TableRestoreStatusType GetTableRestoreStatusTypeForName(const Aws::String& name)

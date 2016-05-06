@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UseDefaultValue_HASH = HashingUtils::HashString("UseDefaultValue");
-static const int RejectMessage_HASH = HashingUtils::HashString("RejectMessage");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace BehaviorOnMXFailureMapper
       {
+
+        static const int UseDefaultValue_HASH = HashingUtils::HashString("UseDefaultValue");
+        static const int RejectMessage_HASH = HashingUtils::HashString("RejectMessage");
 
 
         BehaviorOnMXFailure GetBehaviorOnMXFailureForName(const Aws::String& name)

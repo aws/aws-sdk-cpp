@@ -15,6 +15,7 @@
 #include <aws/devicefarm/model/UploadType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -43,6 +44,7 @@ namespace Aws
         static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
         static const int UIAUTOMATOR_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATOR_TEST_PACKAGE");
         static const int XCTEST_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_TEST_PACKAGE");
+        static const int XCTEST_UI_TEST_PACKAGE_HASH = HashingUtils::HashString("XCTEST_UI_TEST_PACKAGE");
 
 
         UploadType GetUploadTypeForName(const Aws::String& name)
@@ -108,7 +110,11 @@ namespace Aws
           {
             return UploadType::XCTEST_TEST_PACKAGE;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == XCTEST_UI_TEST_PACKAGE_HASH)
+          {
+            return UploadType::XCTEST_UI_TEST_PACKAGE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -152,8 +158,10 @@ namespace Aws
             return "UIAUTOMATOR_TEST_PACKAGE";
           case UploadType::XCTEST_TEST_PACKAGE:
             return "XCTEST_TEST_PACKAGE";
+          case UploadType::XCTEST_UI_TEST_PACKAGE:
+            return "XCTEST_UI_TEST_PACKAGE";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

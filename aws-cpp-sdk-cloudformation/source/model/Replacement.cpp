@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int True_HASH = HashingUtils::HashString("True");
-static const int False_HASH = HashingUtils::HashString("False");
-static const int Conditional_HASH = HashingUtils::HashString("Conditional");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ReplacementMapper
       {
+
+        static const int True_HASH = HashingUtils::HashString("True");
+        static const int False_HASH = HashingUtils::HashString("False");
+        static const int Conditional_HASH = HashingUtils::HashString("Conditional");
 
 
         Replacement GetReplacementForName(const Aws::String& name)

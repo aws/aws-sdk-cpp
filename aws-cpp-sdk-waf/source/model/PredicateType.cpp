@@ -15,6 +15,7 @@
 #include <aws/waf/model/PredicateType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -32,6 +33,7 @@ namespace Aws
         static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
         static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
         static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
+        static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
 
 
         PredicateType GetPredicateTypeForName(const Aws::String& name)
@@ -53,7 +55,11 @@ namespace Aws
           {
             return PredicateType::SizeConstraint;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == XssMatch_HASH)
+          {
+            return PredicateType::XssMatch;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -75,8 +81,10 @@ namespace Aws
             return "SqlInjectionMatch";
           case PredicateType::SizeConstraint:
             return "SizeConstraint";
+          case PredicateType::XssMatch:
+            return "XssMatch";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

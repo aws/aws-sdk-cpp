@@ -15,6 +15,7 @@
 #include <aws/elasticbeanstalk/model/InstancesHealthAttribute.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -35,6 +36,9 @@ namespace Aws
         static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
         static const int LaunchedAt_HASH = HashingUtils::HashString("LaunchedAt");
         static const int System_HASH = HashingUtils::HashString("System");
+        static const int Deployment_HASH = HashingUtils::HashString("Deployment");
+        static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
+        static const int InstanceType_HASH = HashingUtils::HashString("InstanceType");
         static const int All_HASH = HashingUtils::HashString("All");
 
 
@@ -69,11 +73,23 @@ namespace Aws
           {
             return InstancesHealthAttribute::System;
           }
+          else if (hashCode == Deployment_HASH)
+          {
+            return InstancesHealthAttribute::Deployment;
+          }
+          else if (hashCode == AvailabilityZone_HASH)
+          {
+            return InstancesHealthAttribute::AvailabilityZone;
+          }
+          else if (hashCode == InstanceType_HASH)
+          {
+            return InstancesHealthAttribute::InstanceType;
+          }
           else if (hashCode == All_HASH)
           {
             return InstancesHealthAttribute::All;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -101,10 +117,16 @@ namespace Aws
             return "LaunchedAt";
           case InstancesHealthAttribute::System:
             return "System";
+          case InstancesHealthAttribute::Deployment:
+            return "Deployment";
+          case InstancesHealthAttribute::AvailabilityZone:
+            return "AvailabilityZone";
+          case InstancesHealthAttribute::InstanceType:
+            return "InstanceType";
           case InstancesHealthAttribute::All:
             return "All";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

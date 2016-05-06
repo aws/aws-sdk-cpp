@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 TableRestoreStatus::TableRestoreStatus() : 
     m_tableRestoreRequestIdHasBeenSet(false),
@@ -278,3 +284,7 @@ void TableRestoreStatus::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".NewTableName=" << StringUtils::URLEncode(m_newTableName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

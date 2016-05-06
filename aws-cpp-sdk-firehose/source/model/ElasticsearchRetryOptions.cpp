@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 ElasticsearchRetryOptions::ElasticsearchRetryOptions() : 
     m_durationInSeconds(0),
@@ -58,3 +64,7 @@ JsonValue ElasticsearchRetryOptions::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

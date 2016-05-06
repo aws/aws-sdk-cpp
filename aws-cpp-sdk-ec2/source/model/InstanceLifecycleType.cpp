@@ -15,6 +15,7 @@
 #include <aws/ec2/model/InstanceLifecycleType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -29,6 +30,7 @@ namespace Aws
       {
 
         static const int spot_HASH = HashingUtils::HashString("spot");
+        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
 
 
         InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)
@@ -38,7 +40,11 @@ namespace Aws
           {
             return InstanceLifecycleType::spot;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == scheduled_HASH)
+          {
+            return InstanceLifecycleType::scheduled;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -54,8 +60,10 @@ namespace Aws
           {
           case InstanceLifecycleType::spot:
             return "spot";
+          case InstanceLifecycleType::scheduled:
+            return "scheduled";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

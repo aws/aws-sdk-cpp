@@ -15,6 +15,7 @@
 #include <aws/route53domains/model/ExtraParamName.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -38,6 +39,7 @@ namespace Aws
         static const int AU_ID_NUMBER_HASH = HashingUtils::HashString("AU_ID_NUMBER");
         static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
         static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
+        static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
         static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
         static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
         static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
@@ -93,6 +95,10 @@ namespace Aws
           {
             return ExtraParamName::CA_LEGAL_TYPE;
           }
+          else if (hashCode == CA_BUSINESS_ENTITY_TYPE_HASH)
+          {
+            return ExtraParamName::CA_BUSINESS_ENTITY_TYPE;
+          }
           else if (hashCode == ES_IDENTIFICATION_HASH)
           {
             return ExtraParamName::ES_IDENTIFICATION;
@@ -133,7 +139,7 @@ namespace Aws
           {
             return ExtraParamName::VAT_NUMBER;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -167,6 +173,8 @@ namespace Aws
             return "AU_ID_TYPE";
           case ExtraParamName::CA_LEGAL_TYPE:
             return "CA_LEGAL_TYPE";
+          case ExtraParamName::CA_BUSINESS_ENTITY_TYPE:
+            return "CA_BUSINESS_ENTITY_TYPE";
           case ExtraParamName::ES_IDENTIFICATION:
             return "ES_IDENTIFICATION";
           case ExtraParamName::ES_IDENTIFICATION_TYPE:
@@ -188,7 +196,7 @@ namespace Aws
           case ExtraParamName::VAT_NUMBER:
             return "VAT_NUMBER";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

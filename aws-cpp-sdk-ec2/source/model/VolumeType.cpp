@@ -15,6 +15,7 @@
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -31,6 +32,8 @@ namespace Aws
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int io1_HASH = HashingUtils::HashString("io1");
         static const int gp2_HASH = HashingUtils::HashString("gp2");
+        static const int sc1_HASH = HashingUtils::HashString("sc1");
+        static const int st1_HASH = HashingUtils::HashString("st1");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
@@ -48,7 +51,15 @@ namespace Aws
           {
             return VolumeType::gp2;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == sc1_HASH)
+          {
+            return VolumeType::sc1;
+          }
+          else if (hashCode == st1_HASH)
+          {
+            return VolumeType::st1;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -68,8 +79,12 @@ namespace Aws
             return "io1";
           case VolumeType::gp2:
             return "gp2";
+          case VolumeType::sc1:
+            return "sc1";
+          case VolumeType::st1:
+            return "st1";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

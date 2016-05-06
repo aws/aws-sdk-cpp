@@ -663,7 +663,5 @@ TEST_F(FunctionTest, TestEventSources)
     EXPECT_TRUE(deleteOutcome.IsSuccess());
 }
 
-#endif // NEVER
-
 } // anonymous namespace
 

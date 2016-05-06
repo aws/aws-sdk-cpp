@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PeeringConnectionOptionsRequest::PeeringConnectionOptionsRequest() : 
     m_allowEgressFromLocalClassicLinkToRemoteVpc(false),
@@ -86,3 +92,7 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
       oStream << location << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

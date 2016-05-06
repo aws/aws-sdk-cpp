@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Registered_HASH = HashingUtils::HashString("Registered");
-static const int Topic_not_found_HASH = HashingUtils::HashString("Topic not found");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Deleted_HASH = HashingUtils::HashString("Deleted");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace TopicStatusMapper
       {
+
+        static const int Registered_HASH = HashingUtils::HashString("Registered");
+        static const int Topic_not_found_HASH = HashingUtils::HashString("Topic not found");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Deleted_HASH = HashingUtils::HashString("Deleted");
 
 
         TopicStatus GetTopicStatusForName(const Aws::String& name)

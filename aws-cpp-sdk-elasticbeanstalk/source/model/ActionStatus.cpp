@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Running_HASH = HashingUtils::HashString("Running");
-static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ActionStatusMapper
       {
+
+        static const int Scheduled_HASH = HashingUtils::HashString("Scheduled");
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Running_HASH = HashingUtils::HashString("Running");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 
         ActionStatus GetActionStatusForName(const Aws::String& name)

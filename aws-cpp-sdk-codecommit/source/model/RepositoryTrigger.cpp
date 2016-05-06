@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeCommit
+{
+namespace Model
+{
 
 RepositoryTrigger::RepositoryTrigger() : 
     m_nameHasBeenSet(false),
@@ -132,3 +138,7 @@ JsonValue RepositoryTrigger::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeCommit
+} // namespace Aws

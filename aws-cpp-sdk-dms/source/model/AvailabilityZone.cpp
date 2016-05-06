@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace Model
+{
 
 AvailabilityZone::AvailabilityZone() : 
     m_nameHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue AvailabilityZone::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DatabaseMigrationService
+} // namespace Aws

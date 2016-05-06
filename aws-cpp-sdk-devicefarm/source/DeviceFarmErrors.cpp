@@ -28,6 +28,7 @@ namespace DeviceFarmErrorMapper
 {
 
 static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
+static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
@@ -41,6 +42,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == ARGUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
+  }
+  else if (hashCode == NOT_ELIGIBLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

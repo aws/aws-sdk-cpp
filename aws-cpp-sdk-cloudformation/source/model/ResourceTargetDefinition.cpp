@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 ResourceTargetDefinition::ResourceTargetDefinition() : 
     m_attributeHasBeenSet(false),
@@ -98,3 +104,7 @@ void ResourceTargetDefinition::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".RequiresRecreation=" << RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-dms)
     "source/model/*.cpp"
   )
 
-  file(GLOB DMS_SRC
+  file(GLOB DMS_UNIFIED_HEADERS
     ${AWS_DMS_HEADERS}
     ${AWS_DMS_MODEL_HEADERS}
+  )
+
+  file(GLOB DMS_UNITY_SRC
     ${AWS_DMS_SOURCE}
     ${AWS_DMS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("DMS" DMS_UNITY_SRC)
+  endif()
+
+  file(GLOB DMS_SRC
+    ${DMS_UNIFIED_HEADERS}
+    ${DMS_UNITY_SRC}
   )
 
   if(WIN32)

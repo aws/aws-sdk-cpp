@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Resource_HASH = HashingUtils::HashString("Resource");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ChangeTypeMapper
       {
+
+        static const int Resource_HASH = HashingUtils::HashString("Resource");
 
 
         ChangeType GetChangeTypeForName(const Aws::String& name)

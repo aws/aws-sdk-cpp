@@ -30,7 +30,7 @@ namespace Aws
       {
 
         static const int TRACE_HASH = HashingUtils::HashString("TRACE");
-        static const int DEBUG_HASH = HashingUtils::HashString("DEBUG");
+        static const int DEBUG__HASH = HashingUtils::HashString("DEBUG");
         static const int INFO_HASH = HashingUtils::HashString("INFO");
         static const int WARN_HASH = HashingUtils::HashString("WARN");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
@@ -44,7 +44,7 @@ namespace Aws
           {
             return EventSeverity::TRACE;
           }
-          else if (hashCode == DEBUG_HASH)
+          else if (hashCode == DEBUG__HASH)
           {
             return EventSeverity::DEBUG_;
           }

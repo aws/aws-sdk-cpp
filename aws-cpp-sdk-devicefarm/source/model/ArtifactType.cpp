@@ -15,6 +15,7 @@
 #include <aws/devicefarm/model/ArtifactType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -50,6 +51,7 @@ namespace Aws
         static const int EXPLORER_EVENT_LOG_HASH = HashingUtils::HashString("EXPLORER_EVENT_LOG");
         static const int EXPLORER_SUMMARY_LOG_HASH = HashingUtils::HashString("EXPLORER_SUMMARY_LOG");
         static const int APPLICATION_CRASH_REPORT_HASH = HashingUtils::HashString("APPLICATION_CRASH_REPORT");
+        static const int XCTEST_LOG_HASH = HashingUtils::HashString("XCTEST_LOG");
 
 
         ArtifactType GetArtifactTypeForName(const Aws::String& name)
@@ -143,7 +145,11 @@ namespace Aws
           {
             return ArtifactType::APPLICATION_CRASH_REPORT;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == XCTEST_LOG_HASH)
+          {
+            return ArtifactType::XCTEST_LOG;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -201,8 +207,10 @@ namespace Aws
             return "EXPLORER_SUMMARY_LOG";
           case ArtifactType::APPLICATION_CRASH_REPORT:
             return "APPLICATION_CRASH_REPORT";
+          case ArtifactType::XCTEST_LOG:
+            return "XCTEST_LOG";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

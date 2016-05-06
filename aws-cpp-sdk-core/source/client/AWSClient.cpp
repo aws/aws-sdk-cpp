@@ -103,7 +103,7 @@ AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& 
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
     m_hostHeaderOverride(hostHeaderOverride),
-    m_hash(Aws::MakeUnique<Aws::Utils::Crypto::MD5>(LOG_TAG))
+    m_hash(Aws::MakeUnique<Aws::Utils::Crypto::MD5>(AWS_CLIENT_LOG_TAG))
 {
     InitializeGlobalStatics();
 }
@@ -289,7 +289,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
 
     if (needsContentMd5 && body && !httpRequest->HasHeader(Http::CONTENT_MD5_HEADER))
     {
-        AWS_LOGSTREAM_TRACE(LOG_TAG, "Found body, and content-md5 needs to be set" <<
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, and content-md5 needs to be set" <<
            ", attempting to compute content-md5");
 
         //changing the internal state of the hash computation is not a logical state

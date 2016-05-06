@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace OfferingTypeMapper
       {
+
+        static const int RECURRING_HASH = HashingUtils::HashString("RECURRING");
 
 
         OfferingType GetOfferingTypeForName(const Aws::String& name)

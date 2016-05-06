@@ -15,6 +15,7 @@
 #include <aws/iot/model/CertificateStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
 
 using namespace Aws::Utils;
 
@@ -32,6 +33,7 @@ namespace Aws
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
         static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
         static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
+        static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
 
 
         CertificateStatus GetCertificateStatusForName(const Aws::String& name)
@@ -53,7 +55,11 @@ namespace Aws
           {
             return CertificateStatus::PENDING_TRANSFER;
           }
-          EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+          else if (hashCode == REGISTER_INACTIVE_HASH)
+          {
+            return CertificateStatus::REGISTER_INACTIVE;
+          }
+          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
@@ -75,8 +81,10 @@ namespace Aws
             return "REVOKED";
           case CertificateStatus::PENDING_TRANSFER:
             return "PENDING_TRANSFER";
+          case CertificateStatus::REGISTER_INACTIVE:
+            return "REGISTER_INACTIVE";
           default:
-            EnumParseOverflowContainer* overflowContainer = g_enumOverflow.load();
+            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
             {
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));

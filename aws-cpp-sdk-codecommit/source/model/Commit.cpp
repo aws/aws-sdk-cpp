@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeCommit
+{
+namespace Model
+{
 
 Commit::Commit() : 
     m_treeIdHasBeenSet(false),
@@ -139,3 +145,7 @@ JsonValue Commit::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeCommit
+} // namespace Aws

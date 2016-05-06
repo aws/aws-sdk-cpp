@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WAF
+{
+namespace Model
+{
 
 XssMatchTuple::XssMatchTuple() : 
     m_fieldToMatchHasBeenSet(false),
@@ -70,3 +76,7 @@ JsonValue XssMatchTuple::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WAF
+} // namespace Aws

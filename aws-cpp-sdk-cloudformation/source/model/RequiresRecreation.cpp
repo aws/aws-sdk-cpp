@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Never_HASH = HashingUtils::HashString("Never");
-static const int Conditionally_HASH = HashingUtils::HashString("Conditionally");
-static const int Always_HASH = HashingUtils::HashString("Always");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace RequiresRecreationMapper
       {
+
+        static const int Never_HASH = HashingUtils::HashString("Never");
+        static const int Conditionally_HASH = HashingUtils::HashString("Conditionally");
+        static const int Always_HASH = HashingUtils::HashString("Always");
 
 
         RequiresRecreation GetRequiresRecreationForName(const Aws::String& name)

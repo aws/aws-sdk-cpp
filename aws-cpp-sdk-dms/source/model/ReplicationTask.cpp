@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace Model
+{
 
 ReplicationTask::ReplicationTask() : 
     m_replicationTaskIdentifierHasBeenSet(false),
@@ -233,3 +239,7 @@ JsonValue ReplicationTask::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DatabaseMigrationService
+} // namespace Aws

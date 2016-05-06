@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int USD_HASH = HashingUtils::HashString("USD");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace CurrencyCodeMapper
       {
+
+        static const int USD_HASH = HashingUtils::HashString("USD");
 
 
         CurrencyCode GetCurrencyCodeForName(const Aws::String& name)

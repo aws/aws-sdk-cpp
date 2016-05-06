@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace Model
+{
 
 RefreshSchemasStatus::RefreshSchemasStatus() : 
     m_endpointArnHasBeenSet(false),
@@ -114,3 +120,7 @@ JsonValue RefreshSchemasStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DatabaseMigrationService
+} // namespace Aws

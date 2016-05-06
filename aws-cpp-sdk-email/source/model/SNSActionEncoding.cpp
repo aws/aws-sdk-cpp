@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UTF_8_HASH = HashingUtils::HashString("UTF-8");
-static const int Base64_HASH = HashingUtils::HashString("Base64");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SNSActionEncodingMapper
       {
+
+        static const int UTF_8_HASH = HashingUtils::HashString("UTF-8");
+        static const int Base64_HASH = HashingUtils::HashString("Base64");
 
 
         SNSActionEncoding GetSNSActionEncodingForName(const Aws::String& name)

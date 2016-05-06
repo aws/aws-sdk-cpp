@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes() : 
     m_mailFromDomainHasBeenSet(false),
@@ -98,3 +104,7 @@ void IdentityMailFromDomainAttributes::OutputToStream(Aws::OStream& oStream, con
       oStream << location << ".BehaviorOnMXFailure=" << BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws
