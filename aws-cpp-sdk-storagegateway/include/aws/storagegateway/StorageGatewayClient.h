@@ -400,8 +400,7 @@ namespace Model
         * the default http client factory will be used
         */
         StorageGatewayClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~StorageGatewayClient();
 
@@ -994,8 +993,8 @@ namespace Model
          * gateway, your next step is to remove it from your environment.</p> <important>
          * <p>You no longer pay software charges after the gateway is deleted; however,
          * your existing Amazon EBS snapshots persist and you will continue to be billed
-         * for these snapshots. You can choose to remove all remaining Amazon EBS snapshots
-         * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
+         * for these snapshots.?You can choose to remove all remaining Amazon EBS snapshots
+         * by canceling your Amazon EC2 subscription.? If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
@@ -1013,8 +1012,8 @@ namespace Model
          * gateway, your next step is to remove it from your environment.</p> <important>
          * <p>You no longer pay software charges after the gateway is deleted; however,
          * your existing Amazon EBS snapshots persist and you will continue to be billed
-         * for these snapshots. You can choose to remove all remaining Amazon EBS snapshots
-         * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
+         * for these snapshots.?You can choose to remove all remaining Amazon EBS snapshots
+         * by canceling your Amazon EC2 subscription.? If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
@@ -1034,8 +1033,8 @@ namespace Model
          * gateway, your next step is to remove it from your environment.</p> <important>
          * <p>You no longer pay software charges after the gateway is deleted; however,
          * your existing Amazon EBS snapshots persist and you will continue to be billed
-         * for these snapshots. You can choose to remove all remaining Amazon EBS snapshots
-         * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
+         * for these snapshots.?You can choose to remove all remaining Amazon EBS snapshots
+         * by canceling your Amazon EC2 subscription.? If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
          * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail

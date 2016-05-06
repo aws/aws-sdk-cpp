@@ -16,8 +16,6 @@
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
 
-static const char* ALLOCATION_TAG = "CognitoIdentityIntegrationTests";
-
 int main(int argc, char** argv)
 {
     Aws::SDKOptions options;

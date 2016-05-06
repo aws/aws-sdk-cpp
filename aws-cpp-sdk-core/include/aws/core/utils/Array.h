@@ -265,45 +265,8 @@ namespace Aws
 
             ~CryptoBuffer() { Zero(); }
 
-            Array<CryptoBuffer> Slice(size_t sizeOfSlice) const
-            {
-                assert(sizeOfSlice <= GetLength());
-
-                size_t numberOfSlices = (GetLength() + sizeOfSlice - 1) / sizeOfSlice;
-                size_t currentSliceIndex = 0;
-                Array<CryptoBuffer> slices(numberOfSlices);
-
-                for (size_t i = 0; i < numberOfSlices - 1; ++i)
-                {
-                    CryptoBuffer newArray(sizeOfSlice);
-                    for (size_t cpyIdx = 0; cpyIdx < newArray.GetLength(); ++cpyIdx)
-                    {
-                        newArray[cpyIdx] = GetItem(cpyIdx + currentSliceIndex);
-                    }
-                    currentSliceIndex += sizeOfSlice;
-                    slices[i] = std::move(newArray);
-                }
-
-                CryptoBuffer lastArray(GetLength() % sizeOfSlice == 0 ? sizeOfSlice : GetLength() % sizeOfSlice );
-                for (size_t cpyIdx = 0; cpyIdx < lastArray.GetLength(); ++cpyIdx)
-                {
-                    lastArray[cpyIdx] = GetItem(cpyIdx + currentSliceIndex);
-                }
-                slices[slices.GetLength() - 1] = std::move(lastArray);
-
-                return slices;
-            }
-
-            CryptoBuffer& operator^(const CryptoBuffer& operand)
-            {              
-                size_t smallestSize = std::min<size_t>(GetLength(), operand.GetLength());
-                for (size_t i = 0; i < smallestSize; ++i)
-                {
-                    (*this)[i] ^= operand[i];
-                }               
-
-                return *this;
-            }
+            Array<CryptoBuffer> Slice(size_t sizeOfSlice) const;
+            CryptoBuffer& operator^(const CryptoBuffer& operand);
         };
 
     } // namespace Utils
