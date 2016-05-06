@@ -39,7 +39,7 @@ namespace Aws
         /**
          * Defaults to aws_sdk_. This will only be used if the default logger is used.
          */
-        const char *defaultLogPrefix;
+        const char* defaultLogPrefix;
 
         /**
          * Defaults to empty, if logLevel has been set and this field is empty, then the default log interface will be used.
