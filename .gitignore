@@ -7,6 +7,7 @@ Debug
 Release
 *~
 *#
+*.iml
 
 #compiled python files
 *.pyc
