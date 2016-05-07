@@ -199,9 +199,16 @@ namespace Aws
                 if(m_data)
                 {
                     memset(m_data.get(), 0, GetLength());
+
                     //If someone is calling this they don't want the compiler optimizing out the zero operation.
-                    //force the compiler to not attempt a "dead store removal" operation.
-                    *(volatile unsigned char *)m_data.get() = *(volatile unsigned char *)m_data.get();
+                    //force the compiler to not attempt a "dead store removal" operation. This is done separately from the 
+                    //memset largely for the same reason. The compiler needs to see the data being read after the set happens.
+                    size_t i = 0;
+                    while (i < m_size)
+                    {
+                        *(volatile unsigned char *)(m_data.get() + i) = *(volatile unsigned char *)(m_data.get() + i);
+                        i++;
+                    }                   
                 }
             }            
 
@@ -249,7 +256,7 @@ namespace Aws
          * Buffer for cryptographic operations. It zeroes itself back out upon deletion. Everything else is identical
          * to byte buffer.
          */
-        class CryptoBuffer : public ByteBuffer
+        class AWS_CORE_API CryptoBuffer : public ByteBuffer
         {
         public:
             CryptoBuffer(size_t arraySize = 0) : ByteBuffer(arraySize) {}

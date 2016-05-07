@@ -37,9 +37,10 @@ namespace Aws
             public:
                 /**
                  * Initialize with key and an auto-generated initializationVector. Copies key.
+                 *  ivGenerationInCtrMode, if true, initializes the iv with a 4 byte counter at the end.
                  */
-                SymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ctrMode = false) :
-                        m_key(key), m_initializationVector(GenerateIV(ivSize, ctrMode)), m_failure(false) { Validate(); }
+                SymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ivGenerationInCtrMode = false) :
+                        m_key(key), m_initializationVector(GenerateIV(ivSize, ivGenerationInCtrMode)), m_failure(false) { Validate(); }
 
                 /**
                  * Initialize with key and initializationVector, set tag for decryption of authenticated modes (makes copies of the buffers)

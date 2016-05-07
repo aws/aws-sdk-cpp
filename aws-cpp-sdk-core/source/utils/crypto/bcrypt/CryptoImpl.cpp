@@ -751,10 +751,23 @@ namespace Aws
                     if (paddingBlock != CryptoBuffer(CBC_FINAL_BLOCK, BlockSizeBytes))
                     {
                         //pkcs#7. look at the last character in the buffer. It will be the number of bytes of padding.
-                        unsigned char lastChar = paddingBlock[BlockSizeBytes - 1];
+                        unsigned char lastChar = paddingBlock[BlockSizeBytes - 1];                       
+
                         if(static_cast<size_t>(lastChar) <= BlockSizeBytes)
                         {
-                            return CryptoBuffer(paddingBlock.GetUnderlyingData(), BlockSizeBytes - static_cast<size_t>(lastChar));
+                            //validate that the detected last character is actually padding.
+                            bool finalCharIsPaddingChar(false);
+                            for (size_t i = BlockSizeBytes - static_cast<size_t>(lastChar); i < paddingBlock.GetLength(); ++i)
+                            {
+                                finalCharIsPaddingChar = lastChar == paddingBlock[i];
+                            }
+
+                            if(finalCharIsPaddingChar)
+                            {
+                                return CryptoBuffer(paddingBlock.GetUnderlyingData(), BlockSizeBytes - static_cast<size_t>(lastChar));
+                            }
+                            m_failure = true;
+                            AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Last block of data was not properly padded");
                         }
                     }
                 }
@@ -786,12 +799,7 @@ namespace Aws
             AES_CTR_Cipher_BCrypt::AES_CTR_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector) : BCryptSymmetricCipher(key, initializationVector)
             {
             }
-
-            /**
-             * Windows doesn't expose CTR mode. We can however, build it manually from ECB. Here, split each
-             * buffer into 16 byte chunks, for each complete buffer encrypt the counter and xor it against the unencrypted
-             * text. Save anything left over for the next run.
-             */
+                       
             CryptoBuffer AES_CTR_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
             {
                 CheckInitEncryptor();
@@ -802,72 +810,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                size_t bytesWritten = 0;
-                Aws::Vector<ByteBuffer*> finalBufferSet(0);
-
-                CryptoBuffer bufferToEncrypt;
-
-                if (m_blockOverflow.GetLength() > 0 && &m_blockOverflow != &unEncryptedData)
-                {
-                    bufferToEncrypt = CryptoBuffer({ (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&unEncryptedData });
-                    m_blockOverflow = CryptoBuffer();
-                }
-                else
-                {
-                    bufferToEncrypt = unEncryptedData;
-                }
-
-                Aws::Utils::Array<CryptoBuffer> slicedBuffers;
-
-                if (bufferToEncrypt.GetLength() > BlockSizeBytes)
-                {
-                    slicedBuffers = bufferToEncrypt.Slice(BlockSizeBytes);
-                }
-                else
-                {
-                    slicedBuffers = Aws::Utils::Array<CryptoBuffer>(1u);
-                    slicedBuffers[0] = bufferToEncrypt;
-                }
-
-                finalBufferSet = Aws::Vector<ByteBuffer*>(slicedBuffers.GetLength());
-                InitBuffersToNull(finalBufferSet);
-
-                for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
-                {
-                    if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
-                    {
-                        ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
-                        CryptoBuffer encryptedText(BlockSizeBytes);
-
-                        NTSTATUS status = BCryptEncrypt(m_keyHandle, m_workingIv.GetUnderlyingData(), (ULONG)m_workingIv.GetLength(),
-                            nullptr, nullptr, 0, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
-
-                        if (!NT_SUCCESS(status))
-                        {
-                            m_failure = true;
-                            AWS_LOGSTREAM_ERROR(CTR_LOG_TAG, "Failed to compute encrypted output with error code " << status);
-                            CleanupBuffers(finalBufferSet);
-                            return CryptoBuffer();
-                        }
-
-                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, BlockSizeBytes);
-                        *newBuffer = slicedBuffers[i] ^ encryptedText;
-                        finalBufferSet[i] = newBuffer;
-                        IncrementCounter(m_workingIv);                        
-                        bytesWritten += static_cast<size_t>(lengthWritten);
-                    }
-                    else
-                    {
-                        m_blockOverflow = slicedBuffers[i];
-                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, 0);
-                        finalBufferSet[i] = newBuffer;
-                    }
-                }
-
-                CryptoBuffer returnBuffer(std::move(finalBufferSet));
-                CleanupBuffers(finalBufferSet);
-
-                return returnBuffer;
+                return EncryptWithCtr(unEncryptedData);
             }
 
             /**
@@ -885,12 +828,7 @@ namespace Aws
 
                 return CryptoBuffer();
             }
-
-            /**
-            * Windows doesn't expose CTR mode. We can however, build it manually from ECB. Here, split each
-            * buffer into 16 byte chunks, for each complete buffer encrypt the counter and xor it against the encrypted
-            * text. Save anything left over for the next run.
-            */
+            
             CryptoBuffer AES_CTR_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
                 CheckInitDecryptor();
@@ -901,72 +839,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                size_t bytesWritten = 0;
-                Aws::Vector<ByteBuffer*> finalBufferSet(0);
-
-                CryptoBuffer bufferToDecrypt;
-
-                if (m_blockOverflow.GetLength() > 0 && &m_blockOverflow != &encryptedData)
-                {
-                    bufferToDecrypt = CryptoBuffer({ (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&encryptedData });
-                    m_blockOverflow = CryptoBuffer();
-                }
-                else
-                {
-                    bufferToDecrypt = encryptedData;
-                }
-
-                Aws::Utils::Array<CryptoBuffer> slicedBuffers;
-
-                if (bufferToDecrypt.GetLength() > BlockSizeBytes)
-                {
-                    slicedBuffers = bufferToDecrypt.Slice(BlockSizeBytes);
-                }
-                else
-                {
-                    slicedBuffers = Aws::Utils::Array<CryptoBuffer>(1u);
-                    slicedBuffers[0] = bufferToDecrypt;
-                }
-
-                finalBufferSet = Aws::Vector<ByteBuffer*>(slicedBuffers.GetLength());
-                InitBuffersToNull(finalBufferSet);
-
-                for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
-                {
-                    if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
-                    {
-                        ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
-                        CryptoBuffer encryptedText(static_cast<size_t>(lengthWritten));
-
-                        NTSTATUS status = BCryptEncrypt(m_keyHandle, m_workingIv.GetUnderlyingData(), (ULONG)m_workingIv.GetLength(),
-                            nullptr, nullptr, 0, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
-
-                        if (!NT_SUCCESS(status))
-                        {
-                            m_failure = true;
-                            AWS_LOGSTREAM_ERROR(CTR_LOG_TAG, "Failed to compute encrypted output with error code " << status);
-                            CleanupBuffers(finalBufferSet);
-                            return CryptoBuffer();
-                        }
-
-                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, BlockSizeBytes);
-                        *newBuffer = slicedBuffers[i] ^ encryptedText;
-                        finalBufferSet[i] = newBuffer;
-                        IncrementCounter(m_workingIv);
-                        bytesWritten += static_cast<size_t>(lengthWritten);
-                    }
-                    else
-                    {
-                        m_blockOverflow = slicedBuffers[i];
-                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, 0);
-                        finalBufferSet[i] = newBuffer;
-                    }
-                }
-
-                CryptoBuffer returnBuffer(std::move(finalBufferSet));
-                CleanupBuffers(finalBufferSet);
-
-                return returnBuffer;
+                return EncryptWithCtr(encryptedData);
             }
 
             /**
@@ -1023,6 +896,81 @@ namespace Aws
                 }
             }
 
+            /**
+            * Windows doesn't expose CTR mode. We can however, build it manually from ECB. Here, split each
+            * buffer into 16 byte chunks, for each complete buffer encrypt the counter and xor it against the unencrypted
+            * text. Save anything left over for the next run.
+            */
+            CryptoBuffer AES_CTR_Cipher_BCrypt::EncryptWithCtr(const CryptoBuffer& buffer)
+            {
+                size_t bytesWritten = 0;
+                Aws::Vector<ByteBuffer*> finalBufferSet(0);
+
+                CryptoBuffer bufferToEncrypt;
+
+                if (m_blockOverflow.GetLength() > 0 && &m_blockOverflow != &buffer)
+                {
+                    bufferToEncrypt = CryptoBuffer({ (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&buffer });
+                    m_blockOverflow = CryptoBuffer();
+                }
+                else
+                {
+                    bufferToEncrypt = buffer;
+                }
+
+                Aws::Utils::Array<CryptoBuffer> slicedBuffers;
+
+                if (bufferToEncrypt.GetLength() > BlockSizeBytes)
+                {
+                    slicedBuffers = bufferToEncrypt.Slice(BlockSizeBytes);
+                }
+                else
+                {
+                    slicedBuffers = Aws::Utils::Array<CryptoBuffer>(1u);
+                    slicedBuffers[0] = bufferToEncrypt;
+                }
+
+                finalBufferSet = Aws::Vector<ByteBuffer*>(slicedBuffers.GetLength());
+                InitBuffersToNull(finalBufferSet);
+
+                for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
+                {
+                    if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
+                    {
+                        ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
+                        CryptoBuffer encryptedText(BlockSizeBytes);
+
+                        NTSTATUS status = BCryptEncrypt(m_keyHandle, m_workingIv.GetUnderlyingData(), (ULONG)m_workingIv.GetLength(),
+                            nullptr, nullptr, 0, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
+
+                        if (!NT_SUCCESS(status))
+                        {
+                            m_failure = true;
+                            AWS_LOGSTREAM_ERROR(CTR_LOG_TAG, "Failed to compute encrypted output with error code " << status);
+                            CleanupBuffers(finalBufferSet);
+                            return CryptoBuffer();
+                        }
+
+                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, BlockSizeBytes);
+                        *newBuffer = slicedBuffers[i] ^ encryptedText;
+                        finalBufferSet[i] = newBuffer;
+                        IncrementCounter(m_workingIv);
+                        bytesWritten += static_cast<size_t>(lengthWritten);
+                    }
+                    else
+                    {
+                        m_blockOverflow = slicedBuffers[i];
+                        CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, 0);
+                        finalBufferSet[i] = newBuffer;
+                    }
+                }
+
+                CryptoBuffer returnBuffer(std::move(finalBufferSet));
+                CleanupBuffers(finalBufferSet);
+
+                return returnBuffer;
+            }
+
             size_t AES_CTR_Cipher_BCrypt::GetBlockSizeBytes() const
             {
                 return BlockSizeBytes;
@@ -1073,12 +1021,13 @@ namespace Aws
             }
 
             static const char* GCM_LOG_TAG = "BCrypt_AES_GCM_Cipher";
-            size_t AES_GCM_Cipher_BCrypt::BlockSizeBytes = 12;
+            size_t AES_GCM_Cipher_BCrypt::BlockSizeBytes = 16;
+            size_t AES_GCM_Cipher_BCrypt::NonceSizeBytes = 12;
             size_t AES_GCM_Cipher_BCrypt::KeyLengthBits = 256;
             size_t AES_GCM_Cipher_BCrypt::TagLengthBytes = 16;
 
             AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key) : 
-                    BCryptSymmetricCipher(key, BlockSizeBytes), m_macBuffer(TagLengthBytes)
+                    BCryptSymmetricCipher(key, NonceSizeBytes), m_macBuffer(TagLengthBytes)
             {
                 m_tag = CryptoBuffer(TagLengthBytes);
             }

@@ -349,6 +349,8 @@ namespace Aws
                 static void InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers);
                 static void CleanupBuffers(Aws::Vector<ByteBuffer*>& cleanupBuffers);
 
+                CryptoBuffer EncryptWithCtr(const CryptoBuffer& buffer);
+
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
 
@@ -399,6 +401,7 @@ namespace Aws
                 void InitCipher();
 
                 static size_t BlockSizeBytes;
+                static size_t NonceSizeBytes;
                 static size_t KeyLengthBits;
                 static size_t TagLengthBytes;
 

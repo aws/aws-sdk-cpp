@@ -23,12 +23,14 @@
 
 namespace Aws
 {
+    static const char* DEFAULT_LOG_PREFIX = "aws_sdk";
+
     /**
      * SDK wide options for logging
      */
     struct LoggingOptions
     {
-        LoggingOptions() : logLevel(Aws::Utils::Logging::LogLevel::Off), defaultLogPrefix("aws_sdk_")
+        LoggingOptions() : logLevel(Aws::Utils::Logging::LogLevel::Off), defaultLogPrefix(DEFAULT_LOG_PREFIX)
         { }
 
         /**
