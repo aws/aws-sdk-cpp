@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int blacklist_HASH = HashingUtils::HashString("blacklist");
-static const int whitelist_HASH = HashingUtils::HashString("whitelist");
-static const int none_HASH = HashingUtils::HashString("none");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace GeoRestrictionTypeMapper
       {
+
+        static const int blacklist_HASH = HashingUtils::HashString("blacklist");
+        static const int whitelist_HASH = HashingUtils::HashString("whitelist");
+        static const int none_HASH = HashingUtils::HashString("none");
 
 
         GeoRestrictionType GetGeoRestrictionTypeForName(const Aws::String& name)

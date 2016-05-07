@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 IdentityNotificationAttributes::IdentityNotificationAttributes() : 
     m_bounceTopicHasBeenSet(false),
@@ -116,3 +122,7 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 EC2SecurityGroup::EC2SecurityGroup() : 
     m_statusHasBeenSet(false),
@@ -98,3 +104,7 @@ void EC2SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

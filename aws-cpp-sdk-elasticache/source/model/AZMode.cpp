@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int single_az_HASH = HashingUtils::HashString("single-az");
-static const int cross_az_HASH = HashingUtils::HashString("cross-az");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace AZModeMapper
       {
+
+        static const int single_az_HASH = HashingUtils::HashString("single-az");
+        static const int cross_az_HASH = HashingUtils::HashString("cross-az");
 
 
         AZMode GetAZModeForName(const Aws::String& name)

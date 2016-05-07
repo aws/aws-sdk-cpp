@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int spot_HASH = HashingUtils::HashString("spot");
-static const int scheduled_HASH = HashingUtils::HashString("scheduled");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace InstanceLifecycleTypeMapper
       {
+
+        static const int spot_HASH = HashingUtils::HashString("spot");
+        static const int scheduled_HASH = HashingUtils::HashString("scheduled");
 
 
         InstanceLifecycleType GetInstanceLifecycleTypeForName(const Aws::String& name)

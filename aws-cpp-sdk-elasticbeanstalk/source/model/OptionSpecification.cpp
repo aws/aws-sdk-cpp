@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 OptionSpecification::OptionSpecification() : 
     m_resourceNameHasBeenSet(false),
@@ -98,3 +104,7 @@ void OptionSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

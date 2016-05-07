@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ElasticBeanstalk;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace ElasticBeanstalkErrorMapper
+{
+
 static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
 static const int TOO_MANY_APPLICATIONS_HASH = HashingUtils::HashString("TooManyApplicationsException");
 static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucketsException");
@@ -34,12 +41,6 @@ static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("Operatio
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int S3_SUBSCRIPTION_REQUIRED_HASH = HashingUtils::HashString("S3SubscriptionRequiredException");
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace ElasticBeanstalkErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

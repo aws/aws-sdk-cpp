@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticTranscoder
+{
+namespace Model
+{
 
 JobInput::JobInput() : 
     m_keyHasBeenSet(false),
@@ -161,3 +167,7 @@ JsonValue JobInput::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticTranscoder
+} // namespace Aws

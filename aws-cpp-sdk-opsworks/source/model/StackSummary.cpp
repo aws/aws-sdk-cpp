@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 StackSummary::StackSummary() : 
     m_stackIdHasBeenSet(false),
@@ -135,3 +141,7 @@ JsonValue StackSummary::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

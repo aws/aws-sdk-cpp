@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration() : 
     m_roleARNHasBeenSet(false),
@@ -189,3 +195,7 @@ JsonValue ElasticsearchDestinationConfiguration::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

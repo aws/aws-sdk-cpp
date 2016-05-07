@@ -17,11 +17,23 @@ project(aws-cpp-sdk-sts)
     "source/model/*.cpp"
   )
 
-  file(GLOB STS_SRC
+  file(GLOB STS_UNIFIED_HEADERS
     ${AWS_STS_HEADERS}
     ${AWS_STS_MODEL_HEADERS}
+  )
+
+  file(GLOB STS_UNITY_SRC
     ${AWS_STS_SOURCE}
     ${AWS_STS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("STS" STS_UNITY_SRC)
+  endif()
+
+  file(GLOB STS_SRC
+    ${STS_UNIFIED_HEADERS}
+    ${STS_UNITY_SRC}
   )
 
   if(WIN32)

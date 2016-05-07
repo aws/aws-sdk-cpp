@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Color_HASH = HashingUtils::HashString("Color");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace StackAttributesKeysMapper
       {
+
+        static const int Color_HASH = HashingUtils::HashString("Color");
 
 
         StackAttributesKeys GetStackAttributesKeysForName(const Aws::String& name)

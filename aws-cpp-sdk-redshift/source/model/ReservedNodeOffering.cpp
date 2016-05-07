@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ReservedNodeOffering::ReservedNodeOffering() : 
     m_reservedNodeOfferingIdHasBeenSet(false),
@@ -202,3 +208,7 @@ void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

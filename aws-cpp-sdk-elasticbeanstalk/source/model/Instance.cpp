@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 Instance::Instance() : 
     m_idHasBeenSet(false)
@@ -66,3 +72,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

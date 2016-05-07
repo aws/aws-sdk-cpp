@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SIMPLE_AD_HASH = HashingUtils::HashString("SIMPLE_AD");
-static const int AD_CONNECTOR_HASH = HashingUtils::HashString("AD_CONNECTOR");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace WorkspaceDirectoryTypeMapper
       {
+
+        static const int SIMPLE_AD_HASH = HashingUtils::HashString("SIMPLE_AD");
+        static const int AD_CONNECTOR_HASH = HashingUtils::HashString("AD_CONNECTOR");
 
 
         WorkspaceDirectoryType GetWorkspaceDirectoryTypeForName(const Aws::String& name)

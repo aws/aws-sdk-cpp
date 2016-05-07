@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int FULL_CONTROL_HASH = HashingUtils::HashString("FULL_CONTROL");
-static const int READ_HASH = HashingUtils::HashString("READ");
-static const int WRITE_HASH = HashingUtils::HashString("WRITE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace BucketLogsPermissionMapper
       {
+
+        static const int FULL_CONTROL_HASH = HashingUtils::HashString("FULL_CONTROL");
+        static const int READ_HASH = HashingUtils::HashString("READ");
+        static const int WRITE_HASH = HashingUtils::HashString("WRITE");
 
 
         BucketLogsPermission GetBucketLogsPermissionForName(const Aws::String& name)

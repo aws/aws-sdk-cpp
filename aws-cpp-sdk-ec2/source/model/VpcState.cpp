@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int available_HASH = HashingUtils::HashString("available");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace VpcStateMapper
       {
+
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int available_HASH = HashingUtils::HashString("available");
 
 
         VpcState GetVpcStateForName(const Aws::String& name)

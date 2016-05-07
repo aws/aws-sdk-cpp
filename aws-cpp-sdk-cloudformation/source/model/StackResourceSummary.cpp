@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 StackResourceSummary::StackResourceSummary() : 
     m_logicalResourceIdHasBeenSet(false),
@@ -146,3 +152,7 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

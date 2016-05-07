@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AND_HASH = HashingUtils::HashString("AND");
-static const int OR_HASH = HashingUtils::HashString("OR");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ConditionalOperatorMapper
       {
+
+        static const int AND_HASH = HashingUtils::HashString("AND");
+        static const int OR_HASH = HashingUtils::HashString("OR");
 
 
         ConditionalOperator GetConditionalOperatorForName(const Aws::String& name)

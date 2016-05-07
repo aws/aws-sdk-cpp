@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
-static const int FILE_HASH = HashingUtils::HashString("FILE");
-static const int LOG_HASH = HashingUtils::HashString("LOG");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ArtifactCategoryMapper
       {
+
+        static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
+        static const int FILE_HASH = HashingUtils::HashString("FILE");
+        static const int LOG_HASH = HashingUtils::HashString("LOG");
 
 
         ArtifactCategory GetArtifactCategoryForName(const Aws::String& name)

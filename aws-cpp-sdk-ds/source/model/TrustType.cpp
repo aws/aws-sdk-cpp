@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Forest_HASH = HashingUtils::HashString("Forest");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace TrustTypeMapper
       {
+
+        static const int Forest_HASH = HashingUtils::HashString("Forest");
 
 
         TrustType GetTrustTypeForName(const Aws::String& name)

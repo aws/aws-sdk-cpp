@@ -54,28 +54,28 @@ namespace Aws
             }
 
             void SecureRandomBytes_BCrypt::GetBytes(unsigned char* buffer, size_t bufferSize)
-            {               
+            {
                 assert(m_algHandle);
                 assert(buffer);
                 assert(bufferSize > 0);
 
                 if (m_algHandle)
-                {   
+                {
                     NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
 
                     if (!NT_SUCCESS(status))
                     {
                         m_failure = true;
-                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);                        
-                    }                   
+                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
+                    }
                 }
                 else
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");                    
+                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
                 }
             }
-           
+
 
             static const char* logTag = "CryptoHash";
 
@@ -483,7 +483,7 @@ namespace Aws
                 {
                     return CryptoBuffer();
                 }
-                             
+
                 ULONG lengthWritten = static_cast<ULONG>(unEncryptedData.GetLength() + GetBlockSizeBytes());
                 CryptoBuffer encryptedText(static_cast<size_t>(lengthWritten));
 
@@ -588,7 +588,7 @@ namespace Aws
 
             static const char* CBC_LOG_TAG = "BCrypt_AES_CBC_Cipher";
             static const unsigned char CBC_FINAL_BLOCK[16] = { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
-            
+
             void AES_CBC_Cipher_BCrypt::InitEncryptor_Internal()
             {
                 //due to odd BCrypt api behavior, we have to manually handle the padding, however we are producing padded output.
@@ -687,9 +687,9 @@ namespace Aws
 
             /**
              * We have a similar compilication on decryption, but we can be certain that anything encrypted
-             * with AES CBC is already block aligned. We'll check at the end if our left over buffer has any 
+             * with AES CBC is already block aligned. We'll check at the end if our left over buffer has any
              * non-padded data in it and return it. We turn padding off and then handle the padding manually
-             * at the end.           
+             * at the end.
              */
             CryptoBuffer AES_CBC_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
@@ -701,23 +701,23 @@ namespace Aws
                 //[ padding candidate ] [ overflow ] [ new encrypted data ]
                 if (m_fullBlockPaddingCandidate.GetLength() > 0 || m_blockOverflow.GetLength() > 0)
                 {
-                    toDecrypt = CryptoBuffer({ (ByteBuffer*)&m_fullBlockPaddingCandidate, (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&encryptedData });                    
+                    toDecrypt = CryptoBuffer({ (ByteBuffer*)&m_fullBlockPaddingCandidate, (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&encryptedData });
                     m_fullBlockPaddingCandidate = CryptoBuffer();
                     m_blockOverflow = CryptoBuffer();
-                }               
+                }
                 else
                 {
                     toDecrypt = encryptedData;
-                }               
+                }
 
                 auto overflow = toDecrypt.GetLength() % BlockSizeBytes;
                 //we need to trim to multiple of 16 bytes
                 if (overflow != 0)
-                {    
+                {
                     m_blockOverflow = CryptoBuffer(toDecrypt.GetUnderlyingData() + toDecrypt.GetLength() - overflow, overflow);
                     toDecrypt = CryptoBuffer(toDecrypt.GetUnderlyingData(), toDecrypt.GetLength() - overflow);
-                }                           
-                
+                }
+
                 //we don't know if this is the last block or not, so treat it as if it is and come back to it in next run
                 //or in the finalize call.
                 if(toDecrypt.GetLength() == BlockSizeBytes)
@@ -738,20 +738,20 @@ namespace Aws
                     return BCryptSymmetricCipher::DecryptBuffer(toDecrypt);
                 }
 
-                return CryptoBuffer();               
+                return CryptoBuffer();
             }
 
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeDecryption()
             {
                 if (m_fullBlockPaddingCandidate.GetLength() > 0 )
-                {                    
+                {
                     CryptoBuffer paddingBlock = BCryptSymmetricCipher::DecryptBuffer(m_fullBlockPaddingCandidate);
                     //on a pure padded block, the value will be CBC_FINAL_BLOCK, we can actually just throw that completely away.
                     //otherwise unpack the data.
                     if (paddingBlock != CryptoBuffer(CBC_FINAL_BLOCK, BlockSizeBytes))
                     {
                         //pkcs#7. look at the last character in the buffer. It will be the number of bytes of padding.
-                        unsigned char lastChar = paddingBlock[BlockSizeBytes - 1];                       
+                        unsigned char lastChar = paddingBlock[BlockSizeBytes - 1];
 
                         if(static_cast<size_t>(lastChar) <= BlockSizeBytes)
                         {
@@ -799,7 +799,7 @@ namespace Aws
             AES_CTR_Cipher_BCrypt::AES_CTR_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector) : BCryptSymmetricCipher(key, initializationVector)
             {
             }
-                       
+
             CryptoBuffer AES_CTR_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
             {
                 CheckInitEncryptor();
@@ -814,7 +814,7 @@ namespace Aws
             }
 
             /**
-             * In case we didn't have an even 16 byte multiple for the message, send the last 
+             * In case we didn't have an even 16 byte multiple for the message, send the last
              * remaining data.
              */
             CryptoBuffer AES_CTR_Cipher_BCrypt::FinalizeEncryption()
@@ -828,7 +828,7 @@ namespace Aws
 
                 return CryptoBuffer();
             }
-            
+
             CryptoBuffer AES_CTR_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
                 CheckInitDecryptor();
@@ -1026,13 +1026,13 @@ namespace Aws
             size_t AES_GCM_Cipher_BCrypt::KeyLengthBits = 256;
             size_t AES_GCM_Cipher_BCrypt::TagLengthBytes = 16;
 
-            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key) : 
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key) :
                     BCryptSymmetricCipher(key, NonceSizeBytes), m_macBuffer(TagLengthBytes)
             {
                 m_tag = CryptoBuffer(TagLengthBytes);
             }
 
-            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) : 
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) :
                     BCryptSymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)), m_macBuffer(TagLengthBytes)
             {
                 if (m_tag.GetLength() == 0)
@@ -1041,18 +1041,18 @@ namespace Aws
                 }
             }
 
-            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag) : 
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag) :
                     BCryptSymmetricCipher(key, initializationVector, tag), m_macBuffer(TagLengthBytes)
             {
                 if (m_tag.GetLength() == 0)
                 {
                     m_tag = CryptoBuffer(TagLengthBytes);
                 }
-            }           
+            }
 
             /**
              * This will always return a buffer due to the way the windows api is written.
-             * The chain flag has to be explicitly turned off and a buffer has to be passed in 
+             * The chain flag has to be explicitly turned off and a buffer has to be passed in
              * in order for the tag to compute properly. As a result, we have to hold a buffer until
              * the end to make sure the cipher computes the auth tag correctly.
              */
@@ -1060,9 +1060,9 @@ namespace Aws
             {
                 CheckInitEncryptor();
                 m_authInfo.dwFlags &= ~BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
-                return BCryptSymmetricCipher::EncryptBuffer(m_finalBuffer);                
-            }   
-            
+                return BCryptSymmetricCipher::EncryptBuffer(m_finalBuffer);
+            }
+
             /**
              * Since we have to assume these calls are being chained, and due to the way the windows
              * api works, we have to make sure we hold a final buffer until the end so we can tell
@@ -1133,7 +1133,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
             }
-           
+
             /**
              * This will always return a buffer due to the way the windows api is written.
              * The chain flag has to be explicitly turned off and a buffer has to be passed in
@@ -1141,10 +1141,10 @@ namespace Aws
              * the end to make sure the cipher computes the auth tag correctly.
              */
             CryptoBuffer AES_GCM_Cipher_BCrypt::FinalizeDecryption()
-            { 
+            {
                 CheckInitDecryptor();
                 m_authInfo.dwFlags &= ~BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
-               
+
                 return BCryptSymmetricCipher::DecryptBuffer(m_finalBuffer);
             }
 
@@ -1211,7 +1211,7 @@ namespace Aws
             size_t AES_GCM_Cipher_BCrypt::GetTagLengthBytes() const
             {
                 return TagLengthBytes;
-            }            
+            }
 
         } // namespace Crypto
     } // namespace Utils

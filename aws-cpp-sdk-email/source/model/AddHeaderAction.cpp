@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 AddHeaderAction::AddHeaderAction() : 
     m_headerNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void AddHeaderAction::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".HeaderValue=" << StringUtils::URLEncode(m_headerValue.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

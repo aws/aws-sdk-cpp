@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 HsmStatus::HsmStatus() : 
     m_hsmClientCertificateIdentifierHasBeenSet(false),
@@ -98,3 +104,7 @@ void HsmStatus::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

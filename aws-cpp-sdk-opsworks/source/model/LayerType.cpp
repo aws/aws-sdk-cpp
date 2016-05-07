@@ -19,18 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
-static const int ecs_cluster_HASH = HashingUtils::HashString("ecs-cluster");
-static const int java_app_HASH = HashingUtils::HashString("java-app");
-static const int lb_HASH = HashingUtils::HashString("lb");
-static const int web_HASH = HashingUtils::HashString("web");
-static const int php_app_HASH = HashingUtils::HashString("php-app");
-static const int rails_app_HASH = HashingUtils::HashString("rails-app");
-static const int nodejs_app_HASH = HashingUtils::HashString("nodejs-app");
-static const int memcached_HASH = HashingUtils::HashString("memcached");
-static const int db_master_HASH = HashingUtils::HashString("db-master");
-static const int monitoring_master_HASH = HashingUtils::HashString("monitoring-master");
-static const int custom_HASH = HashingUtils::HashString("custom");
 
 namespace Aws
 {
@@ -40,6 +28,19 @@ namespace Aws
     {
       namespace LayerTypeMapper
       {
+
+        static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
+        static const int ecs_cluster_HASH = HashingUtils::HashString("ecs-cluster");
+        static const int java_app_HASH = HashingUtils::HashString("java-app");
+        static const int lb_HASH = HashingUtils::HashString("lb");
+        static const int web_HASH = HashingUtils::HashString("web");
+        static const int php_app_HASH = HashingUtils::HashString("php-app");
+        static const int rails_app_HASH = HashingUtils::HashString("rails-app");
+        static const int nodejs_app_HASH = HashingUtils::HashString("nodejs-app");
+        static const int memcached_HASH = HashingUtils::HashString("memcached");
+        static const int db_master_HASH = HashingUtils::HashString("db-master");
+        static const int monitoring_master_HASH = HashingUtils::HashString("monitoring-master");
+        static const int custom_HASH = HashingUtils::HashString("custom");
 
 
         LayerType GetLayerTypeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 VolumeSpecification::VolumeSpecification() : 
     m_volumeTypeHasBeenSet(false),
@@ -90,3 +96,7 @@ JsonValue VolumeSpecification::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SIZE_HASH = HashingUtils::HashString("SIZE");
-static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ReturnItemCollectionMetricsMapper
       {
+
+        static const int SIZE_HASH = HashingUtils::HashString("SIZE");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name)

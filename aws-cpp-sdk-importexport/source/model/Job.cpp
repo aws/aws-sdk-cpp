@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ImportExport
+{
+namespace Model
+{
 
 Job::Job() : 
     m_jobIdHasBeenSet(false),
@@ -116,3 +122,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ImportExport
+} // namespace Aws

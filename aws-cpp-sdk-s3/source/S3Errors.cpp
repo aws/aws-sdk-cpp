@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::S3;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace S3
+{
+namespace S3ErrorMapper
+{
+
 static const int NO_SUCH_KEY_HASH = HashingUtils::HashString("NoSuchKey");
 static const int BUCKET_ALREADY_OWNED_BY_YOU_HASH = HashingUtils::HashString("BucketAlreadyOwnedByYou");
 static const int OBJECT_ALREADY_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectAlreadyInActiveTierError");
@@ -28,12 +35,6 @@ static const int NO_SUCH_UPLOAD_HASH = HashingUtils::HashString("NoSuchUpload");
 static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
 static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucket");
 
-namespace Aws
-{
-namespace S3
-{
-namespace S3ErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

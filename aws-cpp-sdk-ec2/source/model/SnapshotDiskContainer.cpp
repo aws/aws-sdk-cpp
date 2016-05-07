@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SnapshotDiskContainer::SnapshotDiskContainer() : 
     m_descriptionHasBeenSet(false),
@@ -118,3 +124,7 @@ void SnapshotDiskContainer::OutputToStream(Aws::OStream& oStream, const char* lo
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

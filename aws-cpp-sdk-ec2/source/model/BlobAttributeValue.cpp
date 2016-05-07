@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 BlobAttributeValue::BlobAttributeValue() : 
     m_valueHasBeenSet(false)
@@ -67,3 +73,7 @@ void BlobAttributeValue::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Value=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_value).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int DONE_HASH = HashingUtils::HashString("DONE");
-static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ReachabilityStatusMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int DONE_HASH = HashingUtils::HashString("DONE");
+        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 
         ReachabilityStatus GetReachabilityStatusForName(const Aws::String& name)

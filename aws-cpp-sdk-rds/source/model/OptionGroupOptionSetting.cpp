@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 OptionGroupOptionSetting::OptionGroupOptionSetting() : 
     m_settingNameHasBeenSet(false),
@@ -148,3 +154,7 @@ void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".IsModifiable=" << m_isModifiable << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

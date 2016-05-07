@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ApplicationVersionDescription::ApplicationVersionDescription() : 
     m_applicationNameHasBeenSet(false),
@@ -166,3 +172,7 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 AccountAttributeValue::AccountAttributeValue() : 
     m_attributeValueHasBeenSet(false)
@@ -66,3 +72,7 @@ void AccountAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

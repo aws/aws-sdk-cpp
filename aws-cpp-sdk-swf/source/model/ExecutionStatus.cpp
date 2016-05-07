@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ExecutionStatusMapper
       {
+
+        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
+        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)

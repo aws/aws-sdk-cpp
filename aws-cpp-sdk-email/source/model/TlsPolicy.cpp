@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Require_HASH = HashingUtils::HashString("Require");
-static const int Optional_HASH = HashingUtils::HashString("Optional");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace TlsPolicyMapper
       {
+
+        static const int Require_HASH = HashingUtils::HashString("Require");
+        static const int Optional_HASH = HashingUtils::HashString("Optional");
 
 
         TlsPolicy GetTlsPolicyForName(const Aws::String& name)

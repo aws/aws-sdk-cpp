@@ -21,9 +21,14 @@
 #include <android/log.h>
 #include <chrono>
 #include <thread>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #include <aws/external/gtest.h>
 
+#include <aws/core/platform/Platform.h>
+#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/android/LogcatLogSystem.h>
@@ -104,6 +109,74 @@ void RedirectStdoutToLogcat()
   std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
+/*
+
+Based on http://stackoverflow.com/questions/2180079/how-can-i-copy-a-file-on-unix-using-c
+
+ */
+static int CopyFile(const char *from, const char *to)
+{
+    int fd_to, fd_from;
+    char buf[4096];
+    ssize_t nread;
+    int saved_errno;
+
+    fd_from = open(from, O_RDONLY);
+    if (fd_from < 0)
+    {
+        return -1;
+    }
+
+    fd_to = open(to, O_WRONLY | O_CREAT | O_EXCL, 0666);
+    if (fd_to < 0)
+    {
+        goto out_error;
+    }
+
+    while (nread = read(fd_from, buf, sizeof buf), nread > 0)
+    {
+        char *out_ptr = buf;
+        ssize_t nwritten;
+
+        do {
+            nwritten = write(fd_to, out_ptr, nread);
+
+            if (nwritten >= 0)
+            {
+                nread -= nwritten;
+                out_ptr += nwritten;
+            }
+            else if (errno != EINTR)
+            {
+                goto out_error;
+            }
+        } while (nread > 0);
+    }
+
+    if (nread == 0)
+    {
+        if (close(fd_to) < 0)
+        {
+            fd_to = -1;
+            goto out_error;
+        }
+        close(fd_from);
+
+        /* Success! */
+        return 0;
+    }
+
+  out_error:
+    saved_errno = errno;
+
+    close(fd_from);
+    if (fd_to >= 0)
+        close(fd_to);
+
+    errno = saved_errno;
+    return -1;
+}
+
 #ifdef __ANDROID__
 
 static const char* ALLOCATION_TAG = "AndroidTests";
@@ -130,15 +203,41 @@ static jint RunAndroidTestsInternal()
   return (jint) result;
 }
 
+// Copes a file that's been uploaded to the activity's directory into the activity's cache, preserving the directory structure
+void CacheFile(const Aws::String &fileName, const Aws::String& directory)
+{
+    Aws::String destDirectory = Aws::Platform::GetCacheDirectory() + directory;
+    Aws::Utils::FileSystemUtils::CreateDirectoryIfNotExists(destDirectory.c_str());
+
+    Aws::String sourceFileName = "/data/data/aws.coretests/" + directory + Aws::String( "/" ) + fileName;
+    Aws::String destFileName = destDirectory + Aws::String( "/" ) + fileName;
+
+    CopyFile(sourceFileName.c_str(), destFileName.c_str());
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
 
 JNIEXPORT jint JNICALL
-Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject thisRef )
+Java_aws_coretests_TestActivity_runTests( JNIEnv* env, jobject classRef, jobject context )
 {
-  jint result = 0;
+  Aws::Platform::InitAndroid(env, context);
 
+  // If we upload files to where we expect them to be (cache) then we lose write access to the cache
+  // directory since it gets created by the root user before the application has an opportunity to create it.  
+  // So when running tests, wait until the application
+  // is running before copying data from their upload location to their expected location.
+  //
+  // Real development should be done via the Cognito/PersistentIdentity credentials providers, where this is not as much
+  // a problem
+  CacheFile("credentials", ".aws");
+  CacheFile("handled.zip", "resources");
+  CacheFile("succeed.zip", "resources");
+  CacheFile("unhandled.zip", "resources");
+
+  jint result = 0;
+  AWS_UNREFERENCED_PARAM(classRef);
   AWS_BEGIN_MEMORY_TEST(1024, 128)
 
   result = RunAndroidTestsInternal();

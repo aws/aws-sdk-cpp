@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 KeyPairInfo::KeyPairInfo() : 
     m_keyNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".KeyFingerprint=" << StringUtils::URLEncode(m_keyFingerprint.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

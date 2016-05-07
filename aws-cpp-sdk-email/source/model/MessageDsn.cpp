@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 MessageDsn::MessageDsn() : 
     m_reportingMtaHasBeenSet(false),
@@ -116,3 +122,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) con
       }
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

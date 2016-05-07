@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NONE_HASH = HashingUtils::HashString("NONE");
-static const int COMPRESS_WHITE_SPACE_HASH = HashingUtils::HashString("COMPRESS_WHITE_SPACE");
-static const int HTML_ENTITY_DECODE_HASH = HashingUtils::HashString("HTML_ENTITY_DECODE");
-static const int LOWERCASE_HASH = HashingUtils::HashString("LOWERCASE");
-static const int CMD_LINE_HASH = HashingUtils::HashString("CMD_LINE");
-static const int URL_DECODE_HASH = HashingUtils::HashString("URL_DECODE");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace TextTransformationMapper
       {
+
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int COMPRESS_WHITE_SPACE_HASH = HashingUtils::HashString("COMPRESS_WHITE_SPACE");
+        static const int HTML_ENTITY_DECODE_HASH = HashingUtils::HashString("HTML_ENTITY_DECODE");
+        static const int LOWERCASE_HASH = HashingUtils::HashString("LOWERCASE");
+        static const int CMD_LINE_HASH = HashingUtils::HashString("CMD_LINE");
+        static const int URL_DECODE_HASH = HashingUtils::HashString("URL_DECODE");
 
 
         TextTransformation GetTextTransformationForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() : 
     m_resourceIdentifierHasBeenSet(false),
@@ -100,3 +106,7 @@ void ResourcePendingMaintenanceActions::OutputToStream(Aws::OStream& oStream, co
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

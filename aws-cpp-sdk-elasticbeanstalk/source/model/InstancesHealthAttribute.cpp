@@ -19,17 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
-static const int Color_HASH = HashingUtils::HashString("Color");
-static const int Causes_HASH = HashingUtils::HashString("Causes");
-static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
-static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
-static const int LaunchedAt_HASH = HashingUtils::HashString("LaunchedAt");
-static const int System_HASH = HashingUtils::HashString("System");
-static const int Deployment_HASH = HashingUtils::HashString("Deployment");
-static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
-static const int InstanceType_HASH = HashingUtils::HashString("InstanceType");
-static const int All_HASH = HashingUtils::HashString("All");
 
 namespace Aws
 {
@@ -39,6 +28,18 @@ namespace Aws
     {
       namespace InstancesHealthAttributeMapper
       {
+
+        static const int HealthStatus_HASH = HashingUtils::HashString("HealthStatus");
+        static const int Color_HASH = HashingUtils::HashString("Color");
+        static const int Causes_HASH = HashingUtils::HashString("Causes");
+        static const int ApplicationMetrics_HASH = HashingUtils::HashString("ApplicationMetrics");
+        static const int RefreshedAt_HASH = HashingUtils::HashString("RefreshedAt");
+        static const int LaunchedAt_HASH = HashingUtils::HashString("LaunchedAt");
+        static const int System_HASH = HashingUtils::HashString("System");
+        static const int Deployment_HASH = HashingUtils::HashString("Deployment");
+        static const int AvailabilityZone_HASH = HashingUtils::HashString("AvailabilityZone");
+        static const int InstanceType_HASH = HashingUtils::HashString("InstanceType");
+        static const int All_HASH = HashingUtils::HashString("All");
 
 
         InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name)

@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::WAF;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace WAF
+{
+namespace WAFErrorMapper
+{
+
 static const int W_A_F_DISALLOWED_NAME_HASH = HashingUtils::HashString("WAFDisallowedNameException");
 static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInvalidOperationException");
 static const int W_A_F_NON_EMPTY_ENTITY_HASH = HashingUtils::HashString("WAFNonEmptyEntityException");
@@ -32,12 +39,6 @@ static const int W_A_F_STALE_DATA_HASH = HashingUtils::HashString("WAFStaleDataE
 static const int W_A_F_INVALID_ACCOUNT_HASH = HashingUtils::HashString("WAFInvalidAccountException");
 static const int W_A_F_INVALID_PARAMETER_HASH = HashingUtils::HashString("WAFInvalidParameterException");
 
-namespace Aws
-{
-namespace WAF
-{
-namespace WAFErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

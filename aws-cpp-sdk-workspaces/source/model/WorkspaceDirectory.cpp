@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WorkSpaces
+{
+namespace Model
+{
 
 WorkspaceDirectory::WorkspaceDirectory() : 
     m_directoryIdHasBeenSet(false),
@@ -235,3 +241,7 @@ JsonValue WorkspaceDirectory::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WorkSpaces
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ASC_HASH = HashingUtils::HashString("ASC");
-static const int DESC_HASH = HashingUtils::HashString("DESC");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SortOrderMapper
       {
+
+        static const int ASC_HASH = HashingUtils::HashString("ASC");
+        static const int DESC_HASH = HashingUtils::HashString("DESC");
 
 
         SortOrder GetSortOrderForName(const Aws::String& name)

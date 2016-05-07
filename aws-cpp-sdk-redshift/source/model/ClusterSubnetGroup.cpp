@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterSubnetGroup::ClusterSubnetGroup() : 
     m_clusterSubnetGroupNameHasBeenSet(false),
@@ -182,3 +188,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

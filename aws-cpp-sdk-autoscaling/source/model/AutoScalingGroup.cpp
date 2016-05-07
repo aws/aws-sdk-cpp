@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 AutoScalingGroup::AutoScalingGroup() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -512,3 +518,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

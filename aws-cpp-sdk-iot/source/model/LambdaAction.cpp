@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 LambdaAction::LambdaAction() : 
     m_functionArnHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue LambdaAction::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int EQ_HASH = HashingUtils::HashString("EQ");
-static const int NE_HASH = HashingUtils::HashString("NE");
-static const int IN_HASH = HashingUtils::HashString("IN");
-static const int LE_HASH = HashingUtils::HashString("LE");
-static const int LT_HASH = HashingUtils::HashString("LT");
-static const int GE_HASH = HashingUtils::HashString("GE");
-static const int GT_HASH = HashingUtils::HashString("GT");
-static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
-static const int NOT_NULL_HASH = HashingUtils::HashString("NOT_NULL");
-static const int NULL__HASH = HashingUtils::HashString("NULL");
-static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
-static const int NOT_CONTAINS_HASH = HashingUtils::HashString("NOT_CONTAINS");
-static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace ComparisonOperatorMapper
       {
+
+        static const int EQ_HASH = HashingUtils::HashString("EQ");
+        static const int NE_HASH = HashingUtils::HashString("NE");
+        static const int IN_HASH = HashingUtils::HashString("IN");
+        static const int LE_HASH = HashingUtils::HashString("LE");
+        static const int LT_HASH = HashingUtils::HashString("LT");
+        static const int GE_HASH = HashingUtils::HashString("GE");
+        static const int GT_HASH = HashingUtils::HashString("GT");
+        static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static const int NOT_NULL_HASH = HashingUtils::HashString("NOT_NULL");
+        static const int NULL__HASH = HashingUtils::HashString("NULL");
+        static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
+        static const int NOT_CONTAINS_HASH = HashingUtils::HashString("NOT_CONTAINS");
+        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)

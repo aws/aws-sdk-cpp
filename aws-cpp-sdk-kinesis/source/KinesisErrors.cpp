@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::Kinesis;
 using namespace Aws::Utils;
 
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int EXPIRED_ITERATOR_HASH = HashingUtils::HashString("ExpiredIteratorException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-
 namespace Aws
 {
 namespace Kinesis
 {
 namespace KinesisErrorMapper
 {
+
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int EXPIRED_ITERATOR_HASH = HashingUtils::HashString("ExpiredIteratorException");
+static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

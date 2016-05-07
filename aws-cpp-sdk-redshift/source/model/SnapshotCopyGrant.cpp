@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 SnapshotCopyGrant::SnapshotCopyGrant() : 
     m_snapshotCopyGrantNameHasBeenSet(false),
@@ -116,3 +122,7 @@ void SnapshotCopyGrant::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

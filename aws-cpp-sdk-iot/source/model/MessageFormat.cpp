@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int RAW_HASH = HashingUtils::HashString("RAW");
-static const int JSON_HASH = HashingUtils::HashString("JSON");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace MessageFormatMapper
       {
+
+        static const int RAW_HASH = HashingUtils::HashString("RAW");
+        static const int JSON_HASH = HashingUtils::HashString("JSON");
 
 
         MessageFormat GetMessageFormatForName(const Aws::String& name)

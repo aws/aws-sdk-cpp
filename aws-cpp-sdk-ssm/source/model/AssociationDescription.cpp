@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SSM
+{
+namespace Model
+{
 
 AssociationDescription::AssociationDescription() : 
     m_nameHasBeenSet(false),
@@ -134,3 +140,7 @@ JsonValue AssociationDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SSM
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 Tag::Tag() : 
     m_resourceIdHasBeenSet(false),
@@ -132,3 +138,7 @@ void Tag::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".PropagateAtLaunch=" << m_propagateAtLaunch << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 ScalingParameters::ScalingParameters() : 
     m_desiredInstanceTypeHasBeenSet(false),
@@ -102,3 +108,7 @@ void ScalingParameters::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".DesiredPartitionCount=" << m_desiredPartitionCount << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

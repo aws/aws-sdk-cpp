@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DynamoDB
+{
+namespace Model
+{
 
 GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate() : 
     m_updateHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue GlobalSecondaryIndexUpdate::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DynamoDB
+} // namespace Aws

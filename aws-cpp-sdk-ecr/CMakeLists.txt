@@ -17,11 +17,23 @@ project(aws-cpp-sdk-ecr)
     "source/model/*.cpp"
   )
 
-  file(GLOB ECR_SRC
+  file(GLOB ECR_UNIFIED_HEADERS
     ${AWS_ECR_HEADERS}
     ${AWS_ECR_MODEL_HEADERS}
+  )
+
+  file(GLOB ECR_UNITY_SRC
     ${AWS_ECR_SOURCE}
     ${AWS_ECR_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ECR" ECR_UNITY_SRC)
+  endif()
+
+  file(GLOB ECR_SRC
+    ${ECR_UNIFIED_HEADERS}
+    ${ECR_UNITY_SRC}
   )
 
   if(WIN32)

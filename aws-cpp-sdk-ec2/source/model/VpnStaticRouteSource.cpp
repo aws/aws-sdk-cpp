@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Static_HASH = HashingUtils::HashString("Static");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace VpnStaticRouteSourceMapper
       {
+
+        static const int Static_HASH = HashingUtils::HashString("Static");
 
 
         VpnStaticRouteSource GetVpnStaticRouteSourceForName(const Aws::String& name)

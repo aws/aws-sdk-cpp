@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 IdentityPoolUsage::IdentityPoolUsage() : 
     m_identityPoolIdHasBeenSet(false),
@@ -104,3 +110,7 @@ JsonValue IdentityPoolUsage::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

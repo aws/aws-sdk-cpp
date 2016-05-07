@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InstanceIds_HASH = HashingUtils::HashString("InstanceIds");
-static const int AgentVersion_HASH = HashingUtils::HashString("AgentVersion");
-static const int PingStatus_HASH = HashingUtils::HashString("PingStatus");
-static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace InstanceInformationFilterKeyMapper
       {
+
+        static const int InstanceIds_HASH = HashingUtils::HashString("InstanceIds");
+        static const int AgentVersion_HASH = HashingUtils::HashString("AgentVersion");
+        static const int PingStatus_HASH = HashingUtils::HashString("PingStatus");
+        static const int PlatformTypes_HASH = HashingUtils::HashString("PlatformTypes");
 
 
         InstanceInformationFilterKey GetInstanceInformationFilterKeyForName(const Aws::String& name)

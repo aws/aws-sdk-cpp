@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 ConnectionDraining::ConnectionDraining() : 
     m_enabled(false),
@@ -86,3 +92,7 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".Timeout=" << m_timeout << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-workspaces)
     "source/model/*.cpp"
   )
 
-  file(GLOB WORKSPACES_SRC
+  file(GLOB WORKSPACES_UNIFIED_HEADERS
     ${AWS_WORKSPACES_HEADERS}
     ${AWS_WORKSPACES_MODEL_HEADERS}
+  )
+
+  file(GLOB WORKSPACES_UNITY_SRC
     ${AWS_WORKSPACES_SOURCE}
     ${AWS_WORKSPACES_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("WORKSPACES" WORKSPACES_UNITY_SRC)
+  endif()
+
+  file(GLOB WORKSPACES_SRC
+    ${WORKSPACES_UNIFIED_HEADERS}
+    ${WORKSPACES_UNITY_SRC}
   )
 
   if(WIN32)

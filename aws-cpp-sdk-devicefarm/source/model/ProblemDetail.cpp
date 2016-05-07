@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace Model
+{
 
 ProblemDetail::ProblemDetail() : 
     m_arnHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue ProblemDetail::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

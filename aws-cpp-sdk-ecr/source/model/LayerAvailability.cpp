@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace LayerAvailabilityMapper
       {
+
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
 
 
         LayerAvailability GetLayerAvailabilityForName(const Aws::String& name)

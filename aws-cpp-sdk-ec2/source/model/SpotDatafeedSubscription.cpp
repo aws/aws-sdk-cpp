@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotDatafeedSubscription::SpotDatafeedSubscription() : 
     m_ownerIdHasBeenSet(false),
@@ -134,3 +140,7 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
       m_fault.OutputToStream(oStream, faultLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

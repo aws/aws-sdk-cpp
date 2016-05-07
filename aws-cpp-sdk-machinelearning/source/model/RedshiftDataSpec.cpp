@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MachineLearning
+{
+namespace Model
+{
 
 RedshiftDataSpec::RedshiftDataSpec() : 
     m_databaseInformationHasBeenSet(false),
@@ -146,3 +152,7 @@ JsonValue RedshiftDataSpec::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

@@ -114,11 +114,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 
 static Aws::String GetBaseDirectory()
 {
-#ifdef __ANDROID__
-        return "/data/data/aws.coretests";
-    #else
     return FileSystemUtils::GetHomeDirectory();
-#endif // __ANDROID__
 }
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetProfileFilename()

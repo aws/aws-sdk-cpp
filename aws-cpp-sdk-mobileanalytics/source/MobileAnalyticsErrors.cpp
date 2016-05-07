@@ -20,14 +20,15 @@ using namespace Aws::Client;
 using namespace Aws::MobileAnalytics;
 using namespace Aws::Utils;
 
-static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
-
 namespace Aws
 {
 namespace MobileAnalytics
 {
 namespace MobileAnalyticsErrorMapper
 {
+
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

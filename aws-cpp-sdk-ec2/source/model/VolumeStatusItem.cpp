@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 VolumeStatusItem::VolumeStatusItem() : 
     m_volumeIdHasBeenSet(false),
@@ -170,3 +176,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

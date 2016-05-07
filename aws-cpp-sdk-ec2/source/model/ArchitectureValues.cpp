@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int i386_HASH = HashingUtils::HashString("i386");
-static const int x86_64_HASH = HashingUtils::HashString("x86_64");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ArchitectureValuesMapper
       {
+
+        static const int i386_HASH = HashingUtils::HashString("i386");
+        static const int x86_64_HASH = HashingUtils::HashString("x86_64");
 
 
         ArchitectureValues GetArchitectureValuesForName(const Aws::String& name)

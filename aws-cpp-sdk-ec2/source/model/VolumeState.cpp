@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int creating_HASH = HashingUtils::HashString("creating");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int in_use_HASH = HashingUtils::HashString("in-use");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
-static const int error_HASH = HashingUtils::HashString("error");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace VolumeStateMapper
       {
+
+        static const int creating_HASH = HashingUtils::HashString("creating");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int in_use_HASH = HashingUtils::HashString("in-use");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static const int error_HASH = HashingUtils::HashString("error");
 
 
         VolumeState GetVolumeStateForName(const Aws::String& name)

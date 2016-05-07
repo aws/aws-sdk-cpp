@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 TagKeyOnly::TagKeyOnly() : 
     m_keyHasBeenSet(false)
@@ -66,3 +72,7 @@ void TagKeyOnly::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

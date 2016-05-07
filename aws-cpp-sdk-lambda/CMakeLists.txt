@@ -17,11 +17,23 @@ project(aws-cpp-sdk-lambda)
     "source/model/*.cpp"
   )
 
-  file(GLOB LAMBDA_SRC
+  file(GLOB LAMBDA_UNIFIED_HEADERS
     ${AWS_LAMBDA_HEADERS}
     ${AWS_LAMBDA_MODEL_HEADERS}
+  )
+
+  file(GLOB LAMBDA_UNITY_SRC
     ${AWS_LAMBDA_SOURCE}
     ${AWS_LAMBDA_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("LAMBDA" LAMBDA_UNITY_SRC)
+  endif()
+
+  file(GLOB LAMBDA_SRC
+    ${LAMBDA_UNIFIED_HEADERS}
+    ${LAMBDA_UNITY_SRC}
   )
 
   if(WIN32)

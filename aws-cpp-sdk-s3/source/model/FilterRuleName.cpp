@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int prefix_HASH = HashingUtils::HashString("prefix");
-static const int suffix_HASH = HashingUtils::HashString("suffix");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace FilterRuleNameMapper
       {
+
+        static const int prefix_HASH = HashingUtils::HashString("prefix");
+        static const int suffix_HASH = HashingUtils::HashString("suffix");
 
 
         FilterRuleName GetFilterRuleNameForName(const Aws::String& name)

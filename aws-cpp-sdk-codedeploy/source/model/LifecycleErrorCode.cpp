@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Success_HASH = HashingUtils::HashString("Success");
-static const int ScriptMissing_HASH = HashingUtils::HashString("ScriptMissing");
-static const int ScriptNotExecutable_HASH = HashingUtils::HashString("ScriptNotExecutable");
-static const int ScriptTimedOut_HASH = HashingUtils::HashString("ScriptTimedOut");
-static const int ScriptFailed_HASH = HashingUtils::HashString("ScriptFailed");
-static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace LifecycleErrorCodeMapper
       {
+
+        static const int Success_HASH = HashingUtils::HashString("Success");
+        static const int ScriptMissing_HASH = HashingUtils::HashString("ScriptMissing");
+        static const int ScriptNotExecutable_HASH = HashingUtils::HashString("ScriptNotExecutable");
+        static const int ScriptTimedOut_HASH = HashingUtils::HashString("ScriptTimedOut");
+        static const int ScriptFailed_HASH = HashingUtils::HashString("ScriptFailed");
+        static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
 
 
         LifecycleErrorCode GetLifecycleErrorCodeForName(const Aws::String& name)

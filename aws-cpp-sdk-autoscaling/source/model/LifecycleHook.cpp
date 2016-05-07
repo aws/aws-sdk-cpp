@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 LifecycleHook::LifecycleHook() : 
     m_lifecycleHookNameHasBeenSet(false),
@@ -198,3 +204,7 @@ void LifecycleHook::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".DefaultResult=" << StringUtils::URLEncode(m_defaultResult.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

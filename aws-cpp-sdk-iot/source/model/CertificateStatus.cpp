@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
-static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace CertificateStatusMapper
       {
+
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
+        static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
+        static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
 
 
         CertificateStatus GetCertificateStatusForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 VaultNotificationConfig::VaultNotificationConfig() : 
     m_sNSTopicHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue VaultNotificationConfig::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 GroupDetail::GroupDetail() : 
     m_pathHasBeenSet(false),
@@ -198,3 +204,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) co
       }
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

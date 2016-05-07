@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace PlacementGroupStateMapper
       {
+
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 
         PlacementGroupState GetPlacementGroupStateForName(const Aws::String& name)

@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int running_HASH = HashingUtils::HashString("running");
-static const int shutting_down_HASH = HashingUtils::HashString("shutting-down");
-static const int terminated_HASH = HashingUtils::HashString("terminated");
-static const int stopping_HASH = HashingUtils::HashString("stopping");
-static const int stopped_HASH = HashingUtils::HashString("stopped");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace InstanceStateNameMapper
       {
+
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int running_HASH = HashingUtils::HashString("running");
+        static const int shutting_down_HASH = HashingUtils::HashString("shutting-down");
+        static const int terminated_HASH = HashingUtils::HashString("terminated");
+        static const int stopping_HASH = HashingUtils::HashString("stopping");
+        static const int stopped_HASH = HashingUtils::HashString("stopped");
 
 
         InstanceStateName GetInstanceStateNameForName(const Aws::String& name)

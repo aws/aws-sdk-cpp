@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 AccessKeyLastUsed::AccessKeyLastUsed() : 
     m_lastUsedDateHasBeenSet(false),
@@ -98,3 +104,7 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

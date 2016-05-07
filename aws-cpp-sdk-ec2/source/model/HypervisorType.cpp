@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ovm_HASH = HashingUtils::HashString("ovm");
-static const int xen_HASH = HashingUtils::HashString("xen");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace HypervisorTypeMapper
       {
+
+        static const int ovm_HASH = HashingUtils::HashString("ovm");
+        static const int xen_HASH = HashingUtils::HashString("xen");
 
 
         HypervisorType GetHypervisorTypeForName(const Aws::String& name)

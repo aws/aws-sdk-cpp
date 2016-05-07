@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 CPUUtilization::CPUUtilization() : 
     m_user(0.0),
@@ -176,3 +182,7 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location)
         oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

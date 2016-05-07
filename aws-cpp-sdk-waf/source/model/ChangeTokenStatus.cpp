@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ChangeTokenStatusMapper
       {
+
+        static const int PROVISIONED_HASH = HashingUtils::HashString("PROVISIONED");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int INSYNC_HASH = HashingUtils::HashString("INSYNC");
 
 
         ChangeTokenStatus GetChangeTokenStatusForName(const Aws::String& name)

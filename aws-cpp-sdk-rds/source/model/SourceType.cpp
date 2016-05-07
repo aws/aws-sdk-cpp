@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int db_instance_HASH = HashingUtils::HashString("db-instance");
-static const int db_parameter_group_HASH = HashingUtils::HashString("db-parameter-group");
-static const int db_security_group_HASH = HashingUtils::HashString("db-security-group");
-static const int db_snapshot_HASH = HashingUtils::HashString("db-snapshot");
-static const int db_cluster_HASH = HashingUtils::HashString("db-cluster");
-static const int db_cluster_snapshot_HASH = HashingUtils::HashString("db-cluster-snapshot");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace SourceTypeMapper
       {
+
+        static const int db_instance_HASH = HashingUtils::HashString("db-instance");
+        static const int db_parameter_group_HASH = HashingUtils::HashString("db-parameter-group");
+        static const int db_security_group_HASH = HashingUtils::HashString("db-security-group");
+        static const int db_snapshot_HASH = HashingUtils::HashString("db-snapshot");
+        static const int db_cluster_HASH = HashingUtils::HashString("db-cluster");
+        static const int db_cluster_snapshot_HASH = HashingUtils::HashString("db-cluster-snapshot");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)

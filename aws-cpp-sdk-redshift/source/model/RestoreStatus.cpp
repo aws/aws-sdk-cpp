@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 RestoreStatus::RestoreStatus() : 
     m_statusHasBeenSet(false),
@@ -156,3 +162,7 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".EstimatedTimeToCompletionInSeconds=" << m_estimatedTimeToCompletionInSeconds << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

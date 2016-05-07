@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
-static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace RegistrationStatusMapper
       {
+
+        static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
+        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 
         RegistrationStatus GetRegistrationStatusForName(const Aws::String& name)

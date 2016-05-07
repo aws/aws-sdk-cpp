@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CanonicalUser_HASH = HashingUtils::HashString("CanonicalUser");
-static const int AmazonCustomerByEmail_HASH = HashingUtils::HashString("AmazonCustomerByEmail");
-static const int Group_HASH = HashingUtils::HashString("Group");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace TypeMapper
       {
+
+        static const int CanonicalUser_HASH = HashingUtils::HashString("CanonicalUser");
+        static const int AmazonCustomerByEmail_HASH = HashingUtils::HashString("AmazonCustomerByEmail");
+        static const int Group_HASH = HashingUtils::HashString("Group");
 
 
         Type GetTypeForName(const Aws::String& name)

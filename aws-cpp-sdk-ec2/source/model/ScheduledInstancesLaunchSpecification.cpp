@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ScheduledInstancesLaunchSpecification::ScheduledInstancesLaunchSpecification() : 
     m_imageIdHasBeenSet(false),
@@ -338,3 +344,7 @@ void ScheduledInstancesLaunchSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

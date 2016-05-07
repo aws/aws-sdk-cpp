@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_VALIDATION_HASH = HashingUtils::HashString("PENDING_VALIDATION");
-static const int ISSUED_HASH = HashingUtils::HashString("ISSUED");
-static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
-static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
-static const int VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("VALIDATION_TIMED_OUT");
-static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace CertificateStatusMapper
       {
+
+        static const int PENDING_VALIDATION_HASH = HashingUtils::HashString("PENDING_VALIDATION");
+        static const int ISSUED_HASH = HashingUtils::HashString("ISSUED");
+        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static const int VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("VALIDATION_TIMED_OUT");
+        static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         CertificateStatus GetCertificateStatusForName(const Aws::String& name)

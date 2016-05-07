@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AES_256_HASH = HashingUtils::HashString("AES_256");
-static const int AES_128_HASH = HashingUtils::HashString("AES_128");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DataKeySpecMapper
       {
+
+        static const int AES_256_HASH = HashingUtils::HashString("AES_256");
+        static const int AES_128_HASH = HashingUtils::HashString("AES_128");
 
 
         DataKeySpec GetDataKeySpecForName(const Aws::String& name)

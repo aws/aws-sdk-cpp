@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int default__HASH = HashingUtils::HashString("default");
-static const int dedicated_HASH = HashingUtils::HashString("dedicated");
-static const int host_HASH = HashingUtils::HashString("host");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace TenancyMapper
       {
+
+        static const int default__HASH = HashingUtils::HashString("default");
+        static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+        static const int host_HASH = HashingUtils::HashString("host");
 
 
         Tenancy GetTenancyForName(const Aws::String& name)

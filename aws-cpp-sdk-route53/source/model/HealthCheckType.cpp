@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int HTTP_HASH = HashingUtils::HashString("HTTP");
-static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
-static const int HTTP_STR_MATCH_HASH = HashingUtils::HashString("HTTP_STR_MATCH");
-static const int HTTPS_STR_MATCH_HASH = HashingUtils::HashString("HTTPS_STR_MATCH");
-static const int TCP_HASH = HashingUtils::HashString("TCP");
-static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
-static const int CLOUDWATCH_METRIC_HASH = HashingUtils::HashString("CLOUDWATCH_METRIC");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace HealthCheckTypeMapper
       {
+
+        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static const int HTTP_STR_MATCH_HASH = HashingUtils::HashString("HTTP_STR_MATCH");
+        static const int HTTPS_STR_MATCH_HASH = HashingUtils::HashString("HTTPS_STR_MATCH");
+        static const int TCP_HASH = HashingUtils::HashString("TCP");
+        static const int CALCULATED_HASH = HashingUtils::HashString("CALCULATED");
+        static const int CLOUDWATCH_METRIC_HASH = HashingUtils::HashString("CLOUDWATCH_METRIC");
 
 
         HealthCheckType GetHealthCheckTypeForName(const Aws::String& name)

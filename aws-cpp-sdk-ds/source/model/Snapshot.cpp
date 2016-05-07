@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectoryService
+{
+namespace Model
+{
 
 Snapshot::Snapshot() : 
     m_directoryIdHasBeenSet(false),
@@ -128,3 +134,7 @@ JsonValue Snapshot::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectoryService
+} // namespace Aws

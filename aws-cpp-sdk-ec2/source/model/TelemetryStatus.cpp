@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UP_HASH = HashingUtils::HashString("UP");
-static const int DOWN_HASH = HashingUtils::HashString("DOWN");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace TelemetryStatusMapper
       {
+
+        static const int UP_HASH = HashingUtils::HashString("UP");
+        static const int DOWN_HASH = HashingUtils::HashString("DOWN");
 
 
         TelemetryStatus GetTelemetryStatusForName(const Aws::String& name)

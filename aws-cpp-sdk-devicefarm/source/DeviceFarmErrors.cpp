@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::DeviceFarm;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace DeviceFarmErrorMapper
+{
+
 static const int ARGUMENT_HASH = HashingUtils::HashString("ArgumentException");
 static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -27,12 +34,6 @@ static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccount
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace DeviceFarmErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

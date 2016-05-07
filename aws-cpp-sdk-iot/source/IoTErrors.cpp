@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::IoT;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace IoT
+{
+namespace IoTErrorMapper
+{
+
 static const int CERTIFICATE_VALIDATION_HASH = HashingUtils::HashString("CertificateValidationException");
 static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -36,12 +43,6 @@ static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPoli
 static const int DELETE_CONFLICT_HASH = HashingUtils::HashString("DeleteConflictException");
 static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
 
-namespace Aws
-{
-namespace IoT
-{
-namespace IoTErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

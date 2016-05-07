@@ -19,16 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SOA_HASH = HashingUtils::HashString("SOA");
-static const int A_HASH = HashingUtils::HashString("A");
-static const int TXT_HASH = HashingUtils::HashString("TXT");
-static const int NS_HASH = HashingUtils::HashString("NS");
-static const int CNAME_HASH = HashingUtils::HashString("CNAME");
-static const int MX_HASH = HashingUtils::HashString("MX");
-static const int PTR_HASH = HashingUtils::HashString("PTR");
-static const int SRV_HASH = HashingUtils::HashString("SRV");
-static const int SPF_HASH = HashingUtils::HashString("SPF");
-static const int AAAA_HASH = HashingUtils::HashString("AAAA");
 
 namespace Aws
 {
@@ -38,6 +28,17 @@ namespace Aws
     {
       namespace RRTypeMapper
       {
+
+        static const int SOA_HASH = HashingUtils::HashString("SOA");
+        static const int A_HASH = HashingUtils::HashString("A");
+        static const int TXT_HASH = HashingUtils::HashString("TXT");
+        static const int NS_HASH = HashingUtils::HashString("NS");
+        static const int CNAME_HASH = HashingUtils::HashString("CNAME");
+        static const int MX_HASH = HashingUtils::HashString("MX");
+        static const int PTR_HASH = HashingUtils::HashString("PTR");
+        static const int SRV_HASH = HashingUtils::HashString("SRV");
+        static const int SPF_HASH = HashingUtils::HashString("SPF");
+        static const int AAAA_HASH = HashingUtils::HashString("AAAA");
 
 
         RRType GetRRTypeForName(const Aws::String& name)

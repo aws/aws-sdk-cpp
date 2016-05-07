@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-static const int Suspended_HASH = HashingUtils::HashString("Suspended");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace BucketAccelerateStatusMapper
       {
+
+        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static const int Suspended_HASH = HashingUtils::HashString("Suspended");
 
 
         BucketAccelerateStatus GetBucketAccelerateStatusForName(const Aws::String& name)

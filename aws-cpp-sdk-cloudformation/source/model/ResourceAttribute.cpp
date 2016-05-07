@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Properties_HASH = HashingUtils::HashString("Properties");
-static const int Metadata_HASH = HashingUtils::HashString("Metadata");
-static const int CreationPolicy_HASH = HashingUtils::HashString("CreationPolicy");
-static const int UpdatePolicy_HASH = HashingUtils::HashString("UpdatePolicy");
-static const int DeletionPolicy_HASH = HashingUtils::HashString("DeletionPolicy");
-static const int Tags_HASH = HashingUtils::HashString("Tags");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace ResourceAttributeMapper
       {
+
+        static const int Properties_HASH = HashingUtils::HashString("Properties");
+        static const int Metadata_HASH = HashingUtils::HashString("Metadata");
+        static const int CreationPolicy_HASH = HashingUtils::HashString("CreationPolicy");
+        static const int UpdatePolicy_HASH = HashingUtils::HashString("UpdatePolicy");
+        static const int DeletionPolicy_HASH = HashingUtils::HashString("DeletionPolicy");
+        static const int Tags_HASH = HashingUtils::HashString("Tags");
 
 
         ResourceAttribute GetResourceAttributeForName(const Aws::String& name)

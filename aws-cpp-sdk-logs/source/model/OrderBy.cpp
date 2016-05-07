@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int LogStreamName_HASH = HashingUtils::HashString("LogStreamName");
-static const int LastEventTime_HASH = HashingUtils::HashString("LastEventTime");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace OrderByMapper
       {
+
+        static const int LogStreamName_HASH = HashingUtils::HashString("LogStreamName");
+        static const int LastEventTime_HASH = HashingUtils::HashString("LastEventTime");
 
 
         OrderBy GetOrderByForName(const Aws::String& name)

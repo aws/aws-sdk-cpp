@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 PortRange::PortRange() : 
     m_from(0),
@@ -86,3 +92,7 @@ void PortRange::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".To=" << m_to << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

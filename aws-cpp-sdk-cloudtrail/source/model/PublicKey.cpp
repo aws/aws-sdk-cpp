@@ -18,9 +18,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudTrail
+{
+namespace Model
+{
 
 PublicKey::PublicKey() : 
     m_valueHasBeenSet(false),
@@ -98,3 +104,7 @@ JsonValue PublicKey::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudTrail
+} // namespace Aws

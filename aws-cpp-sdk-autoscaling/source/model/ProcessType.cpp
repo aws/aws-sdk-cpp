@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 ProcessType::ProcessType() : 
     m_processNameHasBeenSet(false)
@@ -66,3 +72,7 @@ void ProcessType::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::CloudFormation;
 using namespace Aws::Utils;
 
-static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
-static const int CHANGE_SET_NOT_FOUND_HASH = HashingUtils::HashString("ChangeSetNotFound");
-static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
-
 namespace Aws
 {
 namespace CloudFormation
 {
 namespace CloudFormationErrorMapper
 {
+
+static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
+static const int CHANGE_SET_NOT_FOUND_HASH = HashingUtils::HashString("ChangeSetNotFound");
+static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

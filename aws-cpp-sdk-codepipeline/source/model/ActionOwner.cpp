@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AWS_HASH = HashingUtils::HashString("AWS");
-static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
-static const int Custom_HASH = HashingUtils::HashString("Custom");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ActionOwnerMapper
       {
+
+        static const int AWS_HASH = HashingUtils::HashString("AWS");
+        static const int ThirdParty_HASH = HashingUtils::HashString("ThirdParty");
+        static const int Custom_HASH = HashingUtils::HashString("Custom");
 
 
         ActionOwner GetActionOwnerForName(const Aws::String& name)

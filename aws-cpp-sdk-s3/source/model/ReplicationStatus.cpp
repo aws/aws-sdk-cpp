@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ReplicationStatusMapper
       {
+
+        static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int REPLICA_HASH = HashingUtils::HashString("REPLICA");
 
 
         ReplicationStatus GetReplicationStatusForName(const Aws::String& name)

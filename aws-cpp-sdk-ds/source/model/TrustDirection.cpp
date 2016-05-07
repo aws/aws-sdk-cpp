@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int One_Way_Outgoing_HASH = HashingUtils::HashString("One-Way: Outgoing");
-static const int One_Way_Incoming_HASH = HashingUtils::HashString("One-Way: Incoming");
-static const int Two_Way_HASH = HashingUtils::HashString("Two-Way");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace TrustDirectionMapper
       {
+
+        static const int One_Way_Outgoing_HASH = HashingUtils::HashString("One-Way: Outgoing");
+        static const int One_Way_Incoming_HASH = HashingUtils::HashString("One-Way: Incoming");
+        static const int Two_Way_HASH = HashingUtils::HashString("Two-Way");
 
 
         TrustDirection GetTrustDirectionForName(const Aws::String& name)

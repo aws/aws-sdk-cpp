@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InvokedAfter_HASH = HashingUtils::HashString("InvokedAfter");
-static const int InvokedBefore_HASH = HashingUtils::HashString("InvokedBefore");
-static const int Status_HASH = HashingUtils::HashString("Status");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace CommandFilterKeyMapper
       {
+
+        static const int InvokedAfter_HASH = HashingUtils::HashString("InvokedAfter");
+        static const int InvokedBefore_HASH = HashingUtils::HashString("InvokedBefore");
+        static const int Status_HASH = HashingUtils::HashString("Status");
 
 
         CommandFilterKey GetCommandFilterKeyForName(const Aws::String& name)

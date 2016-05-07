@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectConnect
+{
+namespace Model
+{
 
 NewPublicVirtualInterface::NewPublicVirtualInterface() : 
     m_virtualInterfaceNameHasBeenSet(false),
@@ -158,3 +164,7 @@ JsonValue NewPublicVirtualInterface::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectConnect
+} // namespace Aws

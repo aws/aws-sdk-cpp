@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 UpgradeTarget::UpgradeTarget() : 
     m_engineHasBeenSet(false),
@@ -134,3 +140,7 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".IsMajorVersionUpgrade=" << m_isMajorVersionUpgrade << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

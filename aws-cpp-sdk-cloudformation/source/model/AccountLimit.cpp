@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 AccountLimit::AccountLimit() : 
     m_nameHasBeenSet(false),
@@ -84,3 +90,7 @@ void AccountLimit::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Value=" << m_value << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

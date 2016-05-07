@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int stop_HASH = HashingUtils::HashString("stop");
-static const int terminate_HASH = HashingUtils::HashString("terminate");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ShutdownBehaviorMapper
       {
+
+        static const int stop_HASH = HashingUtils::HashString("stop");
+        static const int terminate_HASH = HashingUtils::HashString("terminate");
 
 
         ShutdownBehavior GetShutdownBehaviorForName(const Aws::String& name)

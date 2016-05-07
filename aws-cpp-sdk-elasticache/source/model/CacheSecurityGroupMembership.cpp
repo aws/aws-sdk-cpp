@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 CacheSecurityGroupMembership::CacheSecurityGroupMembership() : 
     m_cacheSecurityGroupNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void CacheSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

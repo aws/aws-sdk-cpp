@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MachineLearning
+{
+namespace Model
+{
 
 RedshiftDatabaseCredentials::RedshiftDatabaseCredentials() : 
     m_usernameHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue RedshiftDatabaseCredentials::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MachineLearning
+} // namespace Aws

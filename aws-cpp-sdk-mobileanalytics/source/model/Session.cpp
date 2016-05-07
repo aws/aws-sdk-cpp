@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::MobileAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace MobileAnalytics
+{
+namespace Model
+{
 
 Session::Session() : 
     m_idHasBeenSet(false),
@@ -103,3 +109,7 @@ JsonValue Session::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace MobileAnalytics
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 WorkflowExecutionConfiguration::WorkflowExecutionConfiguration() : 
     m_taskStartToCloseTimeoutHasBeenSet(false),
@@ -130,3 +136,7 @@ JsonValue WorkflowExecutionConfiguration::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

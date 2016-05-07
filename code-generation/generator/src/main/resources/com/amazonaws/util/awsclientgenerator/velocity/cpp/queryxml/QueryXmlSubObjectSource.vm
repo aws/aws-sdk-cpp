@@ -11,9 +11,15 @@
 
 \#include <utility>
 
-using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ${metadata.namespace}
+{
+namespace Model
+{
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
@@ -174,3 +180,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #end
 #end
 }
+
+} // namespace Model
+} // namespace ${metadata.namespace}
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectConnect
+{
+namespace Model
+{
 
 RouteFilterPrefix::RouteFilterPrefix() : 
     m_cidrHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue RouteFilterPrefix::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectConnect
+} // namespace Aws

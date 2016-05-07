@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 DateArrayOptions::DateArrayOptions() : 
     m_defaultValueHasBeenSet(false),
@@ -136,3 +142,7 @@ void DateArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

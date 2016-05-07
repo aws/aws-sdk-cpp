@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 Expression::Expression() : 
     m_expressionNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void Expression::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".ExpressionValue=" << StringUtils::URLEncode(m_expressionValue.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

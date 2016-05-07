@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int replace_HASH = HashingUtils::HashString("replace");
-static const int remove_HASH = HashingUtils::HashString("remove");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace OperationMapper
       {
+
+        static const int replace_HASH = HashingUtils::HashString("replace");
+        static const int remove_HASH = HashingUtils::HashString("remove");
 
 
         Operation GetOperationForName(const Aws::String& name)

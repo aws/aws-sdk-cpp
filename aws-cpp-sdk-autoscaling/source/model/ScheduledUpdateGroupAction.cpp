@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 ScheduledUpdateGroupAction::ScheduledUpdateGroupAction() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -216,3 +222,7 @@ void ScheduledUpdateGroupAction::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

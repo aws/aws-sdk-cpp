@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBInstance::DBInstance() : 
     m_dBInstanceIdentifierHasBeenSet(false),
@@ -926,3 +932,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".PromotionTier=" << m_promotionTier << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

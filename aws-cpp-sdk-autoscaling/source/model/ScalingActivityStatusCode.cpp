@@ -19,18 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PendingSpotBidPlacement_HASH = HashingUtils::HashString("PendingSpotBidPlacement");
-static const int WaitingForSpotInstanceRequestId_HASH = HashingUtils::HashString("WaitingForSpotInstanceRequestId");
-static const int WaitingForSpotInstanceId_HASH = HashingUtils::HashString("WaitingForSpotInstanceId");
-static const int WaitingForInstanceId_HASH = HashingUtils::HashString("WaitingForInstanceId");
-static const int PreInService_HASH = HashingUtils::HashString("PreInService");
-static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-static const int WaitingForELBConnectionDraining_HASH = HashingUtils::HashString("WaitingForELBConnectionDraining");
-static const int MidLifecycleAction_HASH = HashingUtils::HashString("MidLifecycleAction");
-static const int WaitingForInstanceWarmup_HASH = HashingUtils::HashString("WaitingForInstanceWarmup");
-static const int Successful_HASH = HashingUtils::HashString("Successful");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
 
 namespace Aws
 {
@@ -40,6 +28,19 @@ namespace Aws
     {
       namespace ScalingActivityStatusCodeMapper
       {
+
+        static const int PendingSpotBidPlacement_HASH = HashingUtils::HashString("PendingSpotBidPlacement");
+        static const int WaitingForSpotInstanceRequestId_HASH = HashingUtils::HashString("WaitingForSpotInstanceRequestId");
+        static const int WaitingForSpotInstanceId_HASH = HashingUtils::HashString("WaitingForSpotInstanceId");
+        static const int WaitingForInstanceId_HASH = HashingUtils::HashString("WaitingForInstanceId");
+        static const int PreInService_HASH = HashingUtils::HashString("PreInService");
+        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static const int WaitingForELBConnectionDraining_HASH = HashingUtils::HashString("WaitingForELBConnectionDraining");
+        static const int MidLifecycleAction_HASH = HashingUtils::HashString("MidLifecycleAction");
+        static const int WaitingForInstanceWarmup_HASH = HashingUtils::HashString("WaitingForInstanceWarmup");
+        static const int Successful_HASH = HashingUtils::HashString("Successful");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
 
 
         ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)

@@ -19,27 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int DUNS_NUMBER_HASH = HashingUtils::HashString("DUNS_NUMBER");
-static const int BRAND_NUMBER_HASH = HashingUtils::HashString("BRAND_NUMBER");
-static const int BIRTH_DEPARTMENT_HASH = HashingUtils::HashString("BIRTH_DEPARTMENT");
-static const int BIRTH_DATE_IN_YYYY_MM_DD_HASH = HashingUtils::HashString("BIRTH_DATE_IN_YYYY_MM_DD");
-static const int BIRTH_COUNTRY_HASH = HashingUtils::HashString("BIRTH_COUNTRY");
-static const int BIRTH_CITY_HASH = HashingUtils::HashString("BIRTH_CITY");
-static const int DOCUMENT_NUMBER_HASH = HashingUtils::HashString("DOCUMENT_NUMBER");
-static const int AU_ID_NUMBER_HASH = HashingUtils::HashString("AU_ID_NUMBER");
-static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
-static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
-static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
-static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
-static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
-static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
-static const int FI_BUSINESS_NUMBER_HASH = HashingUtils::HashString("FI_BUSINESS_NUMBER");
-static const int FI_ID_NUMBER_HASH = HashingUtils::HashString("FI_ID_NUMBER");
-static const int IT_PIN_HASH = HashingUtils::HashString("IT_PIN");
-static const int RU_PASSPORT_DATA_HASH = HashingUtils::HashString("RU_PASSPORT_DATA");
-static const int SE_ID_NUMBER_HASH = HashingUtils::HashString("SE_ID_NUMBER");
-static const int SG_ID_NUMBER_HASH = HashingUtils::HashString("SG_ID_NUMBER");
-static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
 
 namespace Aws
 {
@@ -49,6 +28,28 @@ namespace Aws
     {
       namespace ExtraParamNameMapper
       {
+
+        static const int DUNS_NUMBER_HASH = HashingUtils::HashString("DUNS_NUMBER");
+        static const int BRAND_NUMBER_HASH = HashingUtils::HashString("BRAND_NUMBER");
+        static const int BIRTH_DEPARTMENT_HASH = HashingUtils::HashString("BIRTH_DEPARTMENT");
+        static const int BIRTH_DATE_IN_YYYY_MM_DD_HASH = HashingUtils::HashString("BIRTH_DATE_IN_YYYY_MM_DD");
+        static const int BIRTH_COUNTRY_HASH = HashingUtils::HashString("BIRTH_COUNTRY");
+        static const int BIRTH_CITY_HASH = HashingUtils::HashString("BIRTH_CITY");
+        static const int DOCUMENT_NUMBER_HASH = HashingUtils::HashString("DOCUMENT_NUMBER");
+        static const int AU_ID_NUMBER_HASH = HashingUtils::HashString("AU_ID_NUMBER");
+        static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
+        static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
+        static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
+        static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
+        static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
+        static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
+        static const int FI_BUSINESS_NUMBER_HASH = HashingUtils::HashString("FI_BUSINESS_NUMBER");
+        static const int FI_ID_NUMBER_HASH = HashingUtils::HashString("FI_ID_NUMBER");
+        static const int IT_PIN_HASH = HashingUtils::HashString("IT_PIN");
+        static const int RU_PASSPORT_DATA_HASH = HashingUtils::HashString("RU_PASSPORT_DATA");
+        static const int SE_ID_NUMBER_HASH = HashingUtils::HashString("SE_ID_NUMBER");
+        static const int SG_ID_NUMBER_HASH = HashingUtils::HashString("SG_ID_NUMBER");
+        static const int VAT_NUMBER_HASH = HashingUtils::HashString("VAT_NUMBER");
 
 
         ExtraParamName GetExtraParamNameForName(const Aws::String& name)

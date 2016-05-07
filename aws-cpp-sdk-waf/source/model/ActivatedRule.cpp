@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace WAF
+{
+namespace Model
+{
 
 ActivatedRule::ActivatedRule() : 
     m_priority(0),
@@ -88,3 +94,7 @@ JsonValue ActivatedRule::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace WAF
+} // namespace Aws

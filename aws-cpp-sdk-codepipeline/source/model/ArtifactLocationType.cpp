@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int S3_HASH = HashingUtils::HashString("S3");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ArtifactLocationTypeMapper
       {
+
+        static const int S3_HASH = HashingUtils::HashString("S3");
 
 
         ArtifactLocationType GetArtifactLocationTypeForName(const Aws::String& name)

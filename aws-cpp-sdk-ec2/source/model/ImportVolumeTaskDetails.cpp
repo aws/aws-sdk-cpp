@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportVolumeTaskDetails::ImportVolumeTaskDetails() : 
     m_bytesConverted(0),
@@ -140,3 +146,7 @@ void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* 
       m_volume.OutputToStream(oStream, volumeLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

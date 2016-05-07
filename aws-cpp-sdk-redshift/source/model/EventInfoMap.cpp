@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 EventInfoMap::EventInfoMap() : 
     m_eventIdHasBeenSet(false),
@@ -128,3 +134,7 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

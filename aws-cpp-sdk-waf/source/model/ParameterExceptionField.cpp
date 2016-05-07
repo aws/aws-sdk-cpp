@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CHANGE_ACTION_HASH = HashingUtils::HashString("CHANGE_ACTION");
-static const int WAF_ACTION_HASH = HashingUtils::HashString("WAF_ACTION");
-static const int PREDICATE_TYPE_HASH = HashingUtils::HashString("PREDICATE_TYPE");
-static const int IPSET_TYPE_HASH = HashingUtils::HashString("IPSET_TYPE");
-static const int BYTE_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("BYTE_MATCH_FIELD_TYPE");
-static const int SQL_INJECTION_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("SQL_INJECTION_MATCH_FIELD_TYPE");
-static const int BYTE_MATCH_TEXT_TRANSFORMATION_HASH = HashingUtils::HashString("BYTE_MATCH_TEXT_TRANSFORMATION");
-static const int BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH = HashingUtils::HashString("BYTE_MATCH_POSITIONAL_CONSTRAINT");
-static const int SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH = HashingUtils::HashString("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace ParameterExceptionFieldMapper
       {
+
+        static const int CHANGE_ACTION_HASH = HashingUtils::HashString("CHANGE_ACTION");
+        static const int WAF_ACTION_HASH = HashingUtils::HashString("WAF_ACTION");
+        static const int PREDICATE_TYPE_HASH = HashingUtils::HashString("PREDICATE_TYPE");
+        static const int IPSET_TYPE_HASH = HashingUtils::HashString("IPSET_TYPE");
+        static const int BYTE_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("BYTE_MATCH_FIELD_TYPE");
+        static const int SQL_INJECTION_MATCH_FIELD_TYPE_HASH = HashingUtils::HashString("SQL_INJECTION_MATCH_FIELD_TYPE");
+        static const int BYTE_MATCH_TEXT_TRANSFORMATION_HASH = HashingUtils::HashString("BYTE_MATCH_TEXT_TRANSFORMATION");
+        static const int BYTE_MATCH_POSITIONAL_CONSTRAINT_HASH = HashingUtils::HashString("BYTE_MATCH_POSITIONAL_CONSTRAINT");
+        static const int SIZE_CONSTRAINT_COMPARISON_OPERATOR_HASH = HashingUtils::HashString("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)

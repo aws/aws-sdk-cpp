@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace Model
+{
 
 AdvancedOptionsStatus::AdvancedOptionsStatus() : 
     m_optionsHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue AdvancedOptionsStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

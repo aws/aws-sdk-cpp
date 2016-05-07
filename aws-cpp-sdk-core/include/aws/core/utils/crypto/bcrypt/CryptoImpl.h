@@ -23,13 +23,14 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <mutex>
 
-#ifdef AWS_SDK_PLATFORM_WINDOWS
+#if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
+
 #define WIN32_NO_STATUS 
 #include <windows.h> 
 #include <bcrypt.h>
-#include <winternl.h> 
+#include <winternl.h>
 #include <winerror.h>
-#undef WIN32_NO_STATUS 
+#undef WIN32_NO_STATUS
 #endif // AWS_SDK_PLATFORM_WINDOWS
 
 namespace Aws
@@ -48,7 +49,7 @@ namespace Aws
                 void GetBytes(unsigned char* buffer, size_t bufferSize) override;
             private:
                 BCRYPT_ALG_HANDLE m_algHandle;
-            };           
+            };
 
             class BCryptHashContext;
 
@@ -169,13 +170,13 @@ namespace Aws
             private:
                 BCryptHashImpl m_impl;
             };
-           
+
             /**
              * Encryptor/Decrypto for AES.
              */
             class BCryptSymmetricCipher : public SymmetricCipher
             {
-            public:      
+            public:
                 BCryptSymmetricCipher(const CryptoBuffer& key, size_t ivSize, bool ctrMode = false);
 
                 /**
@@ -242,19 +243,19 @@ namespace Aws
 
                 BCRYPT_ALG_HANDLE m_algHandle;
                 BCRYPT_KEY_HANDLE m_keyHandle;
-                DWORD m_flags;   
+                DWORD m_flags;
                 CryptoBuffer m_workingIv;
                 PBCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfoPtr;
-            
+
             private:
                 void Init();
-                void InitKey();                
+                void InitKey();
 
                 bool m_encDecInitialized;
                 bool m_encryptionMode;
                 bool m_decryptionMode;
-            }; 
-            
+            };
+
             /**
             * BCrypt implementation for AES in CBC mode
             */
@@ -303,7 +304,7 @@ namespace Aws
 
 
             };
-           
+
             /**
             * BCrypt implementation for AES in CTR mode
             */
@@ -383,7 +384,7 @@ namespace Aws
                 AES_GCM_Cipher_BCrypt& operator=(const AES_GCM_Cipher_BCrypt& other) = delete;
 
                 AES_GCM_Cipher_BCrypt(AES_GCM_Cipher_BCrypt&& toMove) = default;
-                
+
                 CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
                 CryptoBuffer FinalizeEncryption() override;
                 CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;

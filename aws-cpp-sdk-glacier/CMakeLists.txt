@@ -17,11 +17,23 @@ project(aws-cpp-sdk-glacier)
     "source/model/*.cpp"
   )
 
-  file(GLOB GLACIER_SRC
+  file(GLOB GLACIER_UNIFIED_HEADERS
     ${AWS_GLACIER_HEADERS}
     ${AWS_GLACIER_MODEL_HEADERS}
+  )
+
+  file(GLOB GLACIER_UNITY_SRC
     ${AWS_GLACIER_SOURCE}
     ${AWS_GLACIER_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("GLACIER" GLACIER_UNITY_SRC)
+  endif()
+
+  file(GLOB GLACIER_SRC
+    ${GLACIER_UNIFIED_HEADERS}
+    ${GLACIER_UNITY_SRC}
   )
 
   if(WIN32)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace StorageGateway
+{
+namespace Model
+{
 
 DeviceiSCSIAttributes::DeviceiSCSIAttributes() : 
     m_targetARNHasBeenSet(false),
@@ -105,3 +111,7 @@ JsonValue DeviceiSCSIAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

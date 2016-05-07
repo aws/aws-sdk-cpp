@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int INVALID_OPTION_HASH = HashingUtils::HashString("INVALID_OPTION");
-static const int ILLEGAL_COMBINATION_HASH = HashingUtils::HashString("ILLEGAL_COMBINATION");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ParameterExceptionReasonMapper
       {
+
+        static const int INVALID_OPTION_HASH = HashingUtils::HashString("INVALID_OPTION");
+        static const int ILLEGAL_COMBINATION_HASH = HashingUtils::HashString("ILLEGAL_COMBINATION");
 
 
         ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)

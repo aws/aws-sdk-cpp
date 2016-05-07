@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBParameterGroup::DBParameterGroup() : 
     m_dBParameterGroupNameHasBeenSet(false),
@@ -98,3 +104,7 @@ void DBParameterGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

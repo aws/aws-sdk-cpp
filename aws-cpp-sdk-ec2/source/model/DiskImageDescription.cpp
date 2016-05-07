@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 DiskImageDescription::DiskImageDescription() : 
     m_formatHasBeenSet(false),
@@ -116,3 +122,7 @@ void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Checksum=" << StringUtils::URLEncode(m_checksum.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

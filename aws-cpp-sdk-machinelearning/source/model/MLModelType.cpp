@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int REGRESSION_HASH = HashingUtils::HashString("REGRESSION");
-static const int BINARY_HASH = HashingUtils::HashString("BINARY");
-static const int MULTICLASS_HASH = HashingUtils::HashString("MULTICLASS");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace MLModelTypeMapper
       {
+
+        static const int REGRESSION_HASH = HashingUtils::HashString("REGRESSION");
+        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
+        static const int MULTICLASS_HASH = HashingUtils::HashString("MULTICLASS");
 
 
         MLModelType GetMLModelTypeForName(const Aws::String& name)

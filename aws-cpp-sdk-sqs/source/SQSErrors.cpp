@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SQS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SQS
+{
+namespace SQSErrorMapper
+{
+
 static const int OVER_LIMIT_HASH = HashingUtils::HashString("OverLimit");
 static const int RECEIPT_HANDLE_IS_INVALID_HASH = HashingUtils::HashString("ReceiptHandleIsInvalid");
 static const int INVALID_BATCH_ENTRY_ID_HASH = HashingUtils::HashString("AWS.SimpleQueueService.InvalidBatchEntryId");
@@ -37,12 +44,6 @@ static const int PURGE_QUEUE_IN_PROGRESS_HASH = HashingUtils::HashString("AWS.Si
 static const int MESSAGE_NOT_INFLIGHT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.MessageNotInflight");
 static const int QUEUE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AWS.SimpleQueueService.NonExistentQueue");
 
-namespace Aws
-{
-namespace SQS
-{
-namespace SQSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

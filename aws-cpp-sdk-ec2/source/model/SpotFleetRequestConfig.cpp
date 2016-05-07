@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 SpotFleetRequestConfig::SpotFleetRequestConfig() : 
     m_spotFleetRequestIdHasBeenSet(false),
@@ -118,3 +124,7 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 AlarmHistoryItem::AlarmHistoryItem() : 
     m_alarmNameHasBeenSet(false),
@@ -130,3 +136,7 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".HistoryData=" << StringUtils::URLEncode(m_historyData.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

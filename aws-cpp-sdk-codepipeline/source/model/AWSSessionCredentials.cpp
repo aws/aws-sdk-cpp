@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace Model
+{
 
 AWSSessionCredentials::AWSSessionCredentials() : 
     m_accessKeyIdHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue AWSSessionCredentials::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodePipeline
+} // namespace Aws

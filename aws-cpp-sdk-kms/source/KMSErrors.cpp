@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::KMS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace KMS
+{
+namespace KMSErrorMapper
+{
+
 static const int INVALID_ALIAS_NAME_HASH = HashingUtils::HashString("InvalidAliasNameException");
 static const int K_M_S_INTERNAL_HASH = HashingUtils::HashString("KMSInternalException");
 static const int INVALID_KEY_USAGE_HASH = HashingUtils::HashString("InvalidKeyUsageException");
@@ -38,12 +45,6 @@ static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsEx
 static const int KEY_UNAVAILABLE_HASH = HashingUtils::HashString("KeyUnavailableException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
 
-namespace Aws
-{
-namespace KMS
-{
-namespace KMSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

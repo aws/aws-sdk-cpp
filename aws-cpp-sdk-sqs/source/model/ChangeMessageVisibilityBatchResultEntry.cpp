@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry() : 
     m_idHasBeenSet(false)
@@ -66,3 +72,7 @@ void ChangeMessageVisibilityBatchResultEntry::OutputToStream(Aws::OStream& oStre
       oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

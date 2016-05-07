@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes() : 
     m_activityTypeHasBeenSet(false),
@@ -208,3 +214,7 @@ JsonValue ActivityTaskScheduledEventAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

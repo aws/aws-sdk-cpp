@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::MarketplaceMetering;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace MarketplaceMetering
+{
+namespace MarketplaceMeteringErrorMapper
+{
+
 static const int INVALID_PRODUCT_CODE_HASH = HashingUtils::HashString("InvalidProductCodeException");
 static const int INVALID_ENDPOINT_REGION_HASH = HashingUtils::HashString("InvalidEndpointRegionException");
 static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
@@ -27,12 +34,6 @@ static const int INVALID_USAGE_DIMENSION_HASH = HashingUtils::HashString("Invali
 static const int TIMESTAMP_OUT_OF_BOUNDS_HASH = HashingUtils::HashString("TimestampOutOfBoundsException");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequestException");
 
-namespace Aws
-{
-namespace MarketplaceMetering
-{
-namespace MarketplaceMeteringErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

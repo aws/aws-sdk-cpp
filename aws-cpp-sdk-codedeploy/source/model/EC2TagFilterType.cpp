@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int KEY_ONLY_HASH = HashingUtils::HashString("KEY_ONLY");
-static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
-static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace EC2TagFilterTypeMapper
       {
+
+        static const int KEY_ONLY_HASH = HashingUtils::HashString("KEY_ONLY");
+        static const int VALUE_ONLY_HASH = HashingUtils::HashString("VALUE_ONLY");
+        static const int KEY_AND_VALUE_HASH = HashingUtils::HashString("KEY_AND_VALUE");
 
 
         EC2TagFilterType GetEC2TagFilterTypeForName(const Aws::String& name)

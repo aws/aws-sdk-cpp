@@ -19,31 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Users_HASH = HashingUtils::HashString("Users");
-static const int UsersQuota_HASH = HashingUtils::HashString("UsersQuota");
-static const int Groups_HASH = HashingUtils::HashString("Groups");
-static const int GroupsQuota_HASH = HashingUtils::HashString("GroupsQuota");
-static const int ServerCertificates_HASH = HashingUtils::HashString("ServerCertificates");
-static const int ServerCertificatesQuota_HASH = HashingUtils::HashString("ServerCertificatesQuota");
-static const int UserPolicySizeQuota_HASH = HashingUtils::HashString("UserPolicySizeQuota");
-static const int GroupPolicySizeQuota_HASH = HashingUtils::HashString("GroupPolicySizeQuota");
-static const int GroupsPerUserQuota_HASH = HashingUtils::HashString("GroupsPerUserQuota");
-static const int SigningCertificatesPerUserQuota_HASH = HashingUtils::HashString("SigningCertificatesPerUserQuota");
-static const int AccessKeysPerUserQuota_HASH = HashingUtils::HashString("AccessKeysPerUserQuota");
-static const int MFADevices_HASH = HashingUtils::HashString("MFADevices");
-static const int MFADevicesInUse_HASH = HashingUtils::HashString("MFADevicesInUse");
-static const int AccountMFAEnabled_HASH = HashingUtils::HashString("AccountMFAEnabled");
-static const int AccountAccessKeysPresent_HASH = HashingUtils::HashString("AccountAccessKeysPresent");
-static const int AccountSigningCertificatesPresent_HASH = HashingUtils::HashString("AccountSigningCertificatesPresent");
-static const int AttachedPoliciesPerGroupQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerGroupQuota");
-static const int AttachedPoliciesPerRoleQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerRoleQuota");
-static const int AttachedPoliciesPerUserQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerUserQuota");
-static const int Policies_HASH = HashingUtils::HashString("Policies");
-static const int PoliciesQuota_HASH = HashingUtils::HashString("PoliciesQuota");
-static const int PolicySizeQuota_HASH = HashingUtils::HashString("PolicySizeQuota");
-static const int PolicyVersionsInUse_HASH = HashingUtils::HashString("PolicyVersionsInUse");
-static const int PolicyVersionsInUseQuota_HASH = HashingUtils::HashString("PolicyVersionsInUseQuota");
-static const int VersionsPerPolicyQuota_HASH = HashingUtils::HashString("VersionsPerPolicyQuota");
 
 namespace Aws
 {
@@ -53,6 +28,32 @@ namespace Aws
     {
       namespace SummaryKeyTypeMapper
       {
+
+        static const int Users_HASH = HashingUtils::HashString("Users");
+        static const int UsersQuota_HASH = HashingUtils::HashString("UsersQuota");
+        static const int Groups_HASH = HashingUtils::HashString("Groups");
+        static const int GroupsQuota_HASH = HashingUtils::HashString("GroupsQuota");
+        static const int ServerCertificates_HASH = HashingUtils::HashString("ServerCertificates");
+        static const int ServerCertificatesQuota_HASH = HashingUtils::HashString("ServerCertificatesQuota");
+        static const int UserPolicySizeQuota_HASH = HashingUtils::HashString("UserPolicySizeQuota");
+        static const int GroupPolicySizeQuota_HASH = HashingUtils::HashString("GroupPolicySizeQuota");
+        static const int GroupsPerUserQuota_HASH = HashingUtils::HashString("GroupsPerUserQuota");
+        static const int SigningCertificatesPerUserQuota_HASH = HashingUtils::HashString("SigningCertificatesPerUserQuota");
+        static const int AccessKeysPerUserQuota_HASH = HashingUtils::HashString("AccessKeysPerUserQuota");
+        static const int MFADevices_HASH = HashingUtils::HashString("MFADevices");
+        static const int MFADevicesInUse_HASH = HashingUtils::HashString("MFADevicesInUse");
+        static const int AccountMFAEnabled_HASH = HashingUtils::HashString("AccountMFAEnabled");
+        static const int AccountAccessKeysPresent_HASH = HashingUtils::HashString("AccountAccessKeysPresent");
+        static const int AccountSigningCertificatesPresent_HASH = HashingUtils::HashString("AccountSigningCertificatesPresent");
+        static const int AttachedPoliciesPerGroupQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerGroupQuota");
+        static const int AttachedPoliciesPerRoleQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerRoleQuota");
+        static const int AttachedPoliciesPerUserQuota_HASH = HashingUtils::HashString("AttachedPoliciesPerUserQuota");
+        static const int Policies_HASH = HashingUtils::HashString("Policies");
+        static const int PoliciesQuota_HASH = HashingUtils::HashString("PoliciesQuota");
+        static const int PolicySizeQuota_HASH = HashingUtils::HashString("PolicySizeQuota");
+        static const int PolicyVersionsInUse_HASH = HashingUtils::HashString("PolicyVersionsInUse");
+        static const int PolicyVersionsInUseQuota_HASH = HashingUtils::HashString("PolicyVersionsInUseQuota");
+        static const int VersionsPerPolicyQuota_HASH = HashingUtils::HashString("VersionsPerPolicyQuota");
 
 
         SummaryKeyType GetSummaryKeyTypeForName(const Aws::String& name)

@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ScheduleActivityTask_HASH = HashingUtils::HashString("ScheduleActivityTask");
-static const int RequestCancelActivityTask_HASH = HashingUtils::HashString("RequestCancelActivityTask");
-static const int CompleteWorkflowExecution_HASH = HashingUtils::HashString("CompleteWorkflowExecution");
-static const int FailWorkflowExecution_HASH = HashingUtils::HashString("FailWorkflowExecution");
-static const int CancelWorkflowExecution_HASH = HashingUtils::HashString("CancelWorkflowExecution");
-static const int ContinueAsNewWorkflowExecution_HASH = HashingUtils::HashString("ContinueAsNewWorkflowExecution");
-static const int RecordMarker_HASH = HashingUtils::HashString("RecordMarker");
-static const int StartTimer_HASH = HashingUtils::HashString("StartTimer");
-static const int CancelTimer_HASH = HashingUtils::HashString("CancelTimer");
-static const int SignalExternalWorkflowExecution_HASH = HashingUtils::HashString("SignalExternalWorkflowExecution");
-static const int RequestCancelExternalWorkflowExecution_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecution");
-static const int StartChildWorkflowExecution_HASH = HashingUtils::HashString("StartChildWorkflowExecution");
-static const int ScheduleLambdaFunction_HASH = HashingUtils::HashString("ScheduleLambdaFunction");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace DecisionTypeMapper
       {
+
+        static const int ScheduleActivityTask_HASH = HashingUtils::HashString("ScheduleActivityTask");
+        static const int RequestCancelActivityTask_HASH = HashingUtils::HashString("RequestCancelActivityTask");
+        static const int CompleteWorkflowExecution_HASH = HashingUtils::HashString("CompleteWorkflowExecution");
+        static const int FailWorkflowExecution_HASH = HashingUtils::HashString("FailWorkflowExecution");
+        static const int CancelWorkflowExecution_HASH = HashingUtils::HashString("CancelWorkflowExecution");
+        static const int ContinueAsNewWorkflowExecution_HASH = HashingUtils::HashString("ContinueAsNewWorkflowExecution");
+        static const int RecordMarker_HASH = HashingUtils::HashString("RecordMarker");
+        static const int StartTimer_HASH = HashingUtils::HashString("StartTimer");
+        static const int CancelTimer_HASH = HashingUtils::HashString("CancelTimer");
+        static const int SignalExternalWorkflowExecution_HASH = HashingUtils::HashString("SignalExternalWorkflowExecution");
+        static const int RequestCancelExternalWorkflowExecution_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecution");
+        static const int StartChildWorkflowExecution_HASH = HashingUtils::HashString("StartChildWorkflowExecution");
+        static const int ScheduleLambdaFunction_HASH = HashingUtils::HashString("ScheduleLambdaFunction");
 
 
         DecisionType GetDecisionTypeForName(const Aws::String& name)

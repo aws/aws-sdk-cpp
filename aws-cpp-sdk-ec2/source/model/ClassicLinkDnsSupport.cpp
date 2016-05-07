@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ClassicLinkDnsSupport::ClassicLinkDnsSupport() : 
     m_vpcIdHasBeenSet(false),
@@ -84,3 +90,7 @@ void ClassicLinkDnsSupport::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".ClassicLinkDnsSupported=" << m_classicLinkDnsSupported << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -14,6 +14,7 @@
   */
 
 #include <jni.h>
+
 #include <aws/testing/android/AndroidTesting.h>
 
 
@@ -22,9 +23,9 @@ extern "C" {
 #endif // __cplusplus
 
 JNIEXPORT jint JNICALL
-Java_aws_coretests_TestActivity_linkTest( JNIEnv* env, jobject thisRef )
+Java_aws_coretests_TestActivity_linkTest( JNIEnv* env, jobject classRef, jobject context )
 {
-    return Java_aws_coretests_TestActivity_runTests(env, thisRef);
+    return Java_aws_coretests_TestActivity_runTests(env, classRef, context);
 }
 
 #ifdef __cplusplus

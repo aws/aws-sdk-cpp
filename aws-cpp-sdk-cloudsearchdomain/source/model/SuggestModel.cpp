@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearchDomain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearchDomain
+{
+namespace Model
+{
 
 SuggestModel::SuggestModel() : 
     m_queryHasBeenSet(false),
@@ -96,3 +102,7 @@ JsonValue SuggestModel::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudSearchDomain
+} // namespace Aws

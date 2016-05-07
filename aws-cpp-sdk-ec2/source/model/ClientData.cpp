@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ClientData::ClientData() : 
     m_uploadStartHasBeenSet(false),
@@ -116,3 +122,7 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".Comment=" << StringUtils::URLEncode(m_comment.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

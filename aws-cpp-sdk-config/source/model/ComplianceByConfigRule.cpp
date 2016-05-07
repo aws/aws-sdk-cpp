@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ConfigService
+{
+namespace Model
+{
 
 ComplianceByConfigRule::ComplianceByConfigRule() : 
     m_configRuleNameHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue ComplianceByConfigRule::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ConfigService
+} // namespace Aws

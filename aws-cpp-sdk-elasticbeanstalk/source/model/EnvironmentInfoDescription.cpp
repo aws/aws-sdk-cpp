@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentInfoDescription::EnvironmentInfoDescription() : 
     m_infoTypeHasBeenSet(false),
@@ -114,3 +120,7 @@ void EnvironmentInfoDescription::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

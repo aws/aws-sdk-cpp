@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ACCEPT_HASH = HashingUtils::HashString("ACCEPT");
-static const int REJECT_HASH = HashingUtils::HashString("REJECT");
-static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace TrafficTypeMapper
       {
+
+        static const int ACCEPT_HASH = HashingUtils::HashString("ACCEPT");
+        static const int REJECT_HASH = HashingUtils::HashString("REJECT");
+        static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
         TrafficType GetTrafficTypeForName(const Aws::String& name)

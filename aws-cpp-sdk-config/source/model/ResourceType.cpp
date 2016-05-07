@@ -19,25 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AWS_EC2_CustomerGateway_HASH = HashingUtils::HashString("AWS::EC2::CustomerGateway");
-static const int AWS_EC2_EIP_HASH = HashingUtils::HashString("AWS::EC2::EIP");
-static const int AWS_EC2_Host_HASH = HashingUtils::HashString("AWS::EC2::Host");
-static const int AWS_EC2_Instance_HASH = HashingUtils::HashString("AWS::EC2::Instance");
-static const int AWS_EC2_InternetGateway_HASH = HashingUtils::HashString("AWS::EC2::InternetGateway");
-static const int AWS_EC2_NetworkAcl_HASH = HashingUtils::HashString("AWS::EC2::NetworkAcl");
-static const int AWS_EC2_NetworkInterface_HASH = HashingUtils::HashString("AWS::EC2::NetworkInterface");
-static const int AWS_EC2_RouteTable_HASH = HashingUtils::HashString("AWS::EC2::RouteTable");
-static const int AWS_EC2_SecurityGroup_HASH = HashingUtils::HashString("AWS::EC2::SecurityGroup");
-static const int AWS_EC2_Subnet_HASH = HashingUtils::HashString("AWS::EC2::Subnet");
-static const int AWS_CloudTrail_Trail_HASH = HashingUtils::HashString("AWS::CloudTrail::Trail");
-static const int AWS_EC2_Volume_HASH = HashingUtils::HashString("AWS::EC2::Volume");
-static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
-static const int AWS_EC2_VPNConnection_HASH = HashingUtils::HashString("AWS::EC2::VPNConnection");
-static const int AWS_EC2_VPNGateway_HASH = HashingUtils::HashString("AWS::EC2::VPNGateway");
-static const int AWS_IAM_Group_HASH = HashingUtils::HashString("AWS::IAM::Group");
-static const int AWS_IAM_Policy_HASH = HashingUtils::HashString("AWS::IAM::Policy");
-static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
-static const int AWS_IAM_User_HASH = HashingUtils::HashString("AWS::IAM::User");
 
 namespace Aws
 {
@@ -47,6 +28,26 @@ namespace Aws
     {
       namespace ResourceTypeMapper
       {
+
+        static const int AWS_EC2_CustomerGateway_HASH = HashingUtils::HashString("AWS::EC2::CustomerGateway");
+        static const int AWS_EC2_EIP_HASH = HashingUtils::HashString("AWS::EC2::EIP");
+        static const int AWS_EC2_Host_HASH = HashingUtils::HashString("AWS::EC2::Host");
+        static const int AWS_EC2_Instance_HASH = HashingUtils::HashString("AWS::EC2::Instance");
+        static const int AWS_EC2_InternetGateway_HASH = HashingUtils::HashString("AWS::EC2::InternetGateway");
+        static const int AWS_EC2_NetworkAcl_HASH = HashingUtils::HashString("AWS::EC2::NetworkAcl");
+        static const int AWS_EC2_NetworkInterface_HASH = HashingUtils::HashString("AWS::EC2::NetworkInterface");
+        static const int AWS_EC2_RouteTable_HASH = HashingUtils::HashString("AWS::EC2::RouteTable");
+        static const int AWS_EC2_SecurityGroup_HASH = HashingUtils::HashString("AWS::EC2::SecurityGroup");
+        static const int AWS_EC2_Subnet_HASH = HashingUtils::HashString("AWS::EC2::Subnet");
+        static const int AWS_CloudTrail_Trail_HASH = HashingUtils::HashString("AWS::CloudTrail::Trail");
+        static const int AWS_EC2_Volume_HASH = HashingUtils::HashString("AWS::EC2::Volume");
+        static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
+        static const int AWS_EC2_VPNConnection_HASH = HashingUtils::HashString("AWS::EC2::VPNConnection");
+        static const int AWS_EC2_VPNGateway_HASH = HashingUtils::HashString("AWS::EC2::VPNGateway");
+        static const int AWS_IAM_Group_HASH = HashingUtils::HashString("AWS::IAM::Group");
+        static const int AWS_IAM_Policy_HASH = HashingUtils::HashString("AWS::IAM::Policy");
+        static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
+        static const int AWS_IAM_User_HASH = HashingUtils::HashString("AWS::IAM::User");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int merge_HASH = HashingUtils::HashString("merge");
-static const int overwrite_HASH = HashingUtils::HashString("overwrite");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace PutModeMapper
       {
+
+        static const int merge_HASH = HashingUtils::HashString("merge");
+        static const int overwrite_HASH = HashingUtils::HashString("overwrite");
 
 
         PutMode GetPutModeForName(const Aws::String& name)

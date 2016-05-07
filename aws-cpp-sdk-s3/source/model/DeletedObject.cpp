@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace S3
+{
+namespace Model
+{
 
 DeletedObject::DeletedObject() : 
     m_keyHasBeenSet(false),
@@ -107,3 +113,7 @@ void DeletedObject::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace S3
+} // namespace Aws

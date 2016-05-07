@@ -25,7 +25,7 @@ namespace Model
   enum class LogLevel
   {
     NOT_SET,
-    DEBUG,
+    DEBUG_,
     INFO,
     ERROR_,
     WARN,

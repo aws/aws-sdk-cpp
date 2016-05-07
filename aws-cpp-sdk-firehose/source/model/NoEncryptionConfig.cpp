@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NoEncryption_HASH = HashingUtils::HashString("NoEncryption");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace NoEncryptionConfigMapper
       {
+
+        static const int NoEncryption_HASH = HashingUtils::HashString("NoEncryption");
 
 
         NoEncryptionConfig GetNoEncryptionConfigForName(const Aws::String& name)

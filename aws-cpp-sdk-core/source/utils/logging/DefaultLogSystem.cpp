@@ -41,7 +41,10 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, const 
     while(!done)
     {
         std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
-        syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
+        if(syncData->m_stopLogging.load() == false && syncData->m_queuedLogMessages.size() == 0)
+        {
+            syncData->m_queueSignal.wait(locker, [&](){ return syncData->m_stopLogging.load() == true || syncData->m_queuedLogMessages.size() > 0; } );
+        }
 
         Aws::Vector<Aws::String> messages;
         while(!syncData->m_queuedLogMessages.empty())
@@ -92,7 +95,11 @@ DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const Aws::String& filenam
 
 DefaultLogSystem::~DefaultLogSystem()
 {
-    m_syncData.m_stopLogging.store(true);
+    {
+        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
+        m_syncData.m_stopLogging.store(true);
+    }
+
     m_syncData.m_queueSignal.notify_one();
 
     m_loggingThread.join();

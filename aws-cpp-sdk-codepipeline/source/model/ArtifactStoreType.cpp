@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int S3_HASH = HashingUtils::HashString("S3");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ArtifactStoreTypeMapper
       {
+
+        static const int S3_HASH = HashingUtils::HashString("S3");
 
 
         ArtifactStoreType GetArtifactStoreTypeForName(const Aws::String& name)

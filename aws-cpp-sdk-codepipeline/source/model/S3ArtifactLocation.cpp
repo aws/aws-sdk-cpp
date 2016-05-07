@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace Model
+{
 
 S3ArtifactLocation::S3ArtifactLocation() : 
     m_bucketNameHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue S3ArtifactLocation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodePipeline
+} // namespace Aws

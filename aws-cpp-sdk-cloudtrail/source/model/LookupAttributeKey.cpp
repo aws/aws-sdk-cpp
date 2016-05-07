@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int EventId_HASH = HashingUtils::HashString("EventId");
-static const int EventName_HASH = HashingUtils::HashString("EventName");
-static const int Username_HASH = HashingUtils::HashString("Username");
-static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
-static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace LookupAttributeKeyMapper
       {
+
+        static const int EventId_HASH = HashingUtils::HashString("EventId");
+        static const int EventName_HASH = HashingUtils::HashString("EventName");
+        static const int Username_HASH = HashingUtils::HashString("Username");
+        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+        static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
 
 
         LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)

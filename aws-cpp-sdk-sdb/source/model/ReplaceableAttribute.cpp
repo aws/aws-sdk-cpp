@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 ReplaceableAttribute::ReplaceableAttribute() : 
     m_nameHasBeenSet(false),
@@ -100,3 +106,7 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << ".Replace=" << m_replace << "&";
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

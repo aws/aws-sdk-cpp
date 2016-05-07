@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace KeyUsageTypeMapper
       {
+
+        static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
 
 
         KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)

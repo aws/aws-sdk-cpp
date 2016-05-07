@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpsWorks
+{
+namespace Model
+{
 
 Source::Source() : 
     m_typeHasBeenSet(false),
@@ -130,3 +136,7 @@ JsonValue Source::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace OpsWorks
+} // namespace Aws

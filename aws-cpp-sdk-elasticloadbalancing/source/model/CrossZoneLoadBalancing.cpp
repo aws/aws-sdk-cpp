@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace Model
+{
 
 CrossZoneLoadBalancing::CrossZoneLoadBalancing() : 
     m_enabled(false),
@@ -68,3 +74,7 @@ void CrossZoneLoadBalancing::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << ".Enabled=" << m_enabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticLoadBalancing
+} // namespace Aws

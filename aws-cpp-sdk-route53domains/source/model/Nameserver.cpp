@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Route53Domains
+{
+namespace Model
+{
 
 Nameserver::Nameserver() : 
     m_nameHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue Nameserver::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Route53Domains
+} // namespace Aws

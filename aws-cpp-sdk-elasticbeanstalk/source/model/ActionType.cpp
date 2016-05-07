@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InstanceRefresh_HASH = HashingUtils::HashString("InstanceRefresh");
-static const int PlatformUpdate_HASH = HashingUtils::HashString("PlatformUpdate");
-static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ActionTypeMapper
       {
+
+        static const int InstanceRefresh_HASH = HashingUtils::HashString("InstanceRefresh");
+        static const int PlatformUpdate_HASH = HashingUtils::HashString("PlatformUpdate");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)

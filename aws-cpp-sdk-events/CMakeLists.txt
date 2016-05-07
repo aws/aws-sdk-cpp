@@ -17,11 +17,23 @@ project(aws-cpp-sdk-events)
     "source/model/*.cpp"
   )
 
-  file(GLOB EVENTS_SRC
+  file(GLOB EVENTS_UNIFIED_HEADERS
     ${AWS_EVENTS_HEADERS}
     ${AWS_EVENTS_MODEL_HEADERS}
+  )
+
+  file(GLOB EVENTS_UNITY_SRC
     ${AWS_EVENTS_SOURCE}
     ${AWS_EVENTS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("EVENTS" EVENTS_UNITY_SRC)
+  endif()
+
+  file(GLOB EVENTS_SRC
+    ${EVENTS_UNIFIED_HEADERS}
+    ${EVENTS_UNITY_SRC}
   )
 
   if(WIN32)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearchDomain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearchDomain
+{
+namespace Model
+{
 
 Hit::Hit() : 
     m_idHasBeenSet(false),
@@ -136,3 +142,7 @@ JsonValue Hit::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudSearchDomain
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 AttributeBooleanValue::AttributeBooleanValue() : 
     m_value(false),
@@ -68,3 +74,7 @@ void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Value=" << m_value << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

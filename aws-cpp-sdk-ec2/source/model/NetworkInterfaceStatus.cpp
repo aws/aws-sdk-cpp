@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int available_HASH = HashingUtils::HashString("available");
-static const int attaching_HASH = HashingUtils::HashString("attaching");
-static const int in_use_HASH = HashingUtils::HashString("in-use");
-static const int detaching_HASH = HashingUtils::HashString("detaching");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace NetworkInterfaceStatusMapper
       {
+
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int attaching_HASH = HashingUtils::HashString("attaching");
+        static const int in_use_HASH = HashingUtils::HashString("in-use");
+        static const int detaching_HASH = HashingUtils::HashString("detaching");
 
 
         NetworkInterfaceStatus GetNetworkInterfaceStatusForName(const Aws::String& name)

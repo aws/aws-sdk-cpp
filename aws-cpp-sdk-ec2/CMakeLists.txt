@@ -17,11 +17,23 @@ project(aws-cpp-sdk-ec2)
     "source/model/*.cpp"
   )
 
-  file(GLOB EC2_SRC
+  file(GLOB EC2_UNIFIED_HEADERS
     ${AWS_EC2_HEADERS}
     ${AWS_EC2_MODEL_HEADERS}
+  )
+
+  file(GLOB EC2_UNITY_SRC
     ${AWS_EC2_SOURCE}
     ${AWS_EC2_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("EC2" EC2_UNITY_SRC)
+  endif()
+
+  file(GLOB EC2_SRC
+    ${EC2_UNIFIED_HEADERS}
+    ${EC2_UNITY_SRC}
   )
 
   if(WIN32)

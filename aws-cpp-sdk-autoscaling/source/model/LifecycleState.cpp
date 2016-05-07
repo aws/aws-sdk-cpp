@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Pending_Wait_HASH = HashingUtils::HashString("Pending:Wait");
-static const int Pending_Proceed_HASH = HashingUtils::HashString("Pending:Proceed");
-static const int Quarantined_HASH = HashingUtils::HashString("Quarantined");
-static const int InService_HASH = HashingUtils::HashString("InService");
-static const int Terminating_HASH = HashingUtils::HashString("Terminating");
-static const int Terminating_Wait_HASH = HashingUtils::HashString("Terminating:Wait");
-static const int Terminating_Proceed_HASH = HashingUtils::HashString("Terminating:Proceed");
-static const int Terminated_HASH = HashingUtils::HashString("Terminated");
-static const int Detaching_HASH = HashingUtils::HashString("Detaching");
-static const int Detached_HASH = HashingUtils::HashString("Detached");
-static const int EnteringStandby_HASH = HashingUtils::HashString("EnteringStandby");
-static const int Standby_HASH = HashingUtils::HashString("Standby");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace LifecycleStateMapper
       {
+
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Pending_Wait_HASH = HashingUtils::HashString("Pending:Wait");
+        static const int Pending_Proceed_HASH = HashingUtils::HashString("Pending:Proceed");
+        static const int Quarantined_HASH = HashingUtils::HashString("Quarantined");
+        static const int InService_HASH = HashingUtils::HashString("InService");
+        static const int Terminating_HASH = HashingUtils::HashString("Terminating");
+        static const int Terminating_Wait_HASH = HashingUtils::HashString("Terminating:Wait");
+        static const int Terminating_Proceed_HASH = HashingUtils::HashString("Terminating:Proceed");
+        static const int Terminated_HASH = HashingUtils::HashString("Terminated");
+        static const int Detaching_HASH = HashingUtils::HashString("Detaching");
+        static const int Detached_HASH = HashingUtils::HashString("Detached");
+        static const int EnteringStandby_HASH = HashingUtils::HashString("EnteringStandby");
+        static const int Standby_HASH = HashingUtils::HashString("Standby");
 
 
         LifecycleState GetLifecycleStateForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Route53
+{
+namespace Model
+{
 
 ChangeBatchRecord::ChangeBatchRecord() : 
     m_idHasBeenSet(false),
@@ -141,3 +147,7 @@ void ChangeBatchRecord::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace Route53
+} // namespace Aws

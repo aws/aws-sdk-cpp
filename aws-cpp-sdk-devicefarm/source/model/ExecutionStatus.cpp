@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
-static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace ExecutionStatusMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
+        static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)

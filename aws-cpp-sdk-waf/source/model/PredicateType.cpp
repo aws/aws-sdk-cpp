@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
-static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
-static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
-static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
-static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace PredicateTypeMapper
       {
+
+        static const int IPMatch_HASH = HashingUtils::HashString("IPMatch");
+        static const int ByteMatch_HASH = HashingUtils::HashString("ByteMatch");
+        static const int SqlInjectionMatch_HASH = HashingUtils::HashString("SqlInjectionMatch");
+        static const int SizeConstraint_HASH = HashingUtils::HashString("SizeConstraint");
+        static const int XssMatch_HASH = HashingUtils::HashString("XssMatch");
 
 
         PredicateType GetPredicateTypeForName(const Aws::String& name)

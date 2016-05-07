@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 IndexField::IndexField() : 
     m_indexFieldNameHasBeenSet(false),
@@ -302,3 +308,7 @@ void IndexField::OutputToStream(Aws::OStream& oStream, const char* location) con
       m_dateArrayOptions.OutputToStream(oStream, dateArrayOptionsLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

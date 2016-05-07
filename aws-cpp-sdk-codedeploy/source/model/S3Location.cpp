@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 S3Location::S3Location() : 
     m_bucketHasBeenSet(false),
@@ -115,3 +121,7 @@ JsonValue S3Location::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

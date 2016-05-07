@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ResourceReference_HASH = HashingUtils::HashString("ResourceReference");
-static const int ParameterReference_HASH = HashingUtils::HashString("ParameterReference");
-static const int ResourceAttribute_HASH = HashingUtils::HashString("ResourceAttribute");
-static const int DirectModification_HASH = HashingUtils::HashString("DirectModification");
-static const int Automatic_HASH = HashingUtils::HashString("Automatic");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace ChangeSourceMapper
       {
+
+        static const int ResourceReference_HASH = HashingUtils::HashString("ResourceReference");
+        static const int ParameterReference_HASH = HashingUtils::HashString("ParameterReference");
+        static const int ResourceAttribute_HASH = HashingUtils::HashString("ResourceAttribute");
+        static const int DirectModification_HASH = HashingUtils::HashString("DirectModification");
+        static const int Automatic_HASH = HashingUtils::HashString("Automatic");
 
 
         ChangeSource GetChangeSourceForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 StepAdjustment::StepAdjustment() : 
     m_metricIntervalLowerBound(0.0),
@@ -104,3 +110,7 @@ void StepAdjustment::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".ScalingAdjustment=" << m_scalingAdjustment << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

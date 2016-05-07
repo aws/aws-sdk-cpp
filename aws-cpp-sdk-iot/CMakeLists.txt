@@ -17,11 +17,23 @@ project(aws-cpp-sdk-iot)
     "source/model/*.cpp"
   )
 
-  file(GLOB IOT_SRC
+  file(GLOB IOT_UNIFIED_HEADERS
     ${AWS_IOT_HEADERS}
     ${AWS_IOT_MODEL_HEADERS}
+  )
+
+  file(GLOB IOT_UNITY_SRC
     ${AWS_IOT_SOURCE}
     ${AWS_IOT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("IOT" IOT_UNITY_SRC)
+  endif()
+
+  file(GLOB IOT_SRC
+    ${IOT_UNIFIED_HEADERS}
+    ${IOT_UNITY_SRC}
   )
 
   if(WIN32)

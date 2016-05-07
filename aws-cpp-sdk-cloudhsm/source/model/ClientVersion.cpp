@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int _5_1_HASH = HashingUtils::HashString("5.1");
-static const int _5_3_HASH = HashingUtils::HashString("5.3");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ClientVersionMapper
       {
+
+        static const int _5_1_HASH = HashingUtils::HashString("5.1");
+        static const int _5_3_HASH = HashingUtils::HashString("5.3");
 
 
         ClientVersion GetClientVersionForName(const Aws::String& name)

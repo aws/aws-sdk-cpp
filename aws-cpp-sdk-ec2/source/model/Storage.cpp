@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Storage::Storage() : 
     m_s3HasBeenSet(false)
@@ -70,3 +76,7 @@ void Storage::OutputToStream(Aws::OStream& oStream, const char* location) const
       m_s3.OutputToStream(oStream, s3LocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

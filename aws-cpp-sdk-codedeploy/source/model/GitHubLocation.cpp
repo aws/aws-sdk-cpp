@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CodeDeploy
+{
+namespace Model
+{
 
 GitHubLocation::GitHubLocation() : 
     m_repositoryHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue GitHubLocation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CodeDeploy
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int source_HASH = HashingUtils::HashString("source");
-static const int target_HASH = HashingUtils::HashString("target");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ReplicationEndpointTypeValueMapper
       {
+
+        static const int source_HASH = HashingUtils::HashString("source");
+        static const int target_HASH = HashingUtils::HashString("target");
 
 
         ReplicationEndpointTypeValue GetReplicationEndpointTypeValueForName(const Aws::String& name)

@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::DatabaseMigrationService;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace DatabaseMigrationService
+{
+namespace DatabaseMigrationServiceErrorMapper
+{
+
 static const int ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("AccessDeniedFault");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int RESOURCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ResourceAlreadyExistsFault");
@@ -33,12 +40,6 @@ static const int UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = HashingUtils::HashStrin
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
 static const int RESOURCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ResourceQuotaExceededFault");
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace DatabaseMigrationServiceErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

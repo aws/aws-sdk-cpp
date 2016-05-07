@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 JobFlowExecutionStatusDetail::JobFlowExecutionStatusDetail() : 
     m_stateHasBeenSet(false),
@@ -126,3 +132,7 @@ JsonValue JobFlowExecutionStatusDetail::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

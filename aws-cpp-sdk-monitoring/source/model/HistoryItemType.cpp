@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ConfigurationUpdate_HASH = HashingUtils::HashString("ConfigurationUpdate");
-static const int StateUpdate_HASH = HashingUtils::HashString("StateUpdate");
-static const int Action_HASH = HashingUtils::HashString("Action");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace HistoryItemTypeMapper
       {
+
+        static const int ConfigurationUpdate_HASH = HashingUtils::HashString("ConfigurationUpdate");
+        static const int StateUpdate_HASH = HashingUtils::HashString("StateUpdate");
+        static const int Action_HASH = HashingUtils::HashString("Action");
 
 
         HistoryItemType GetHistoryItemTypeForName(const Aws::String& name)

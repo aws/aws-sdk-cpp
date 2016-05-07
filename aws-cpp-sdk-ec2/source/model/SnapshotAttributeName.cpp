@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int productCodes_HASH = HashingUtils::HashString("productCodes");
-static const int createVolumePermission_HASH = HashingUtils::HashString("createVolumePermission");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace SnapshotAttributeNameMapper
       {
+
+        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
+        static const int createVolumePermission_HASH = HashingUtils::HashString("createVolumePermission");
 
 
         SnapshotAttributeName GetSnapshotAttributeNameForName(const Aws::String& name)

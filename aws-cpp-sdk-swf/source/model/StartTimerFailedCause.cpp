@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int TIMER_ID_ALREADY_IN_USE_HASH = HashingUtils::HashString("TIMER_ID_ALREADY_IN_USE");
-static const int OPEN_TIMERS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_TIMERS_LIMIT_EXCEEDED");
-static const int TIMER_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("TIMER_CREATION_RATE_EXCEEDED");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace StartTimerFailedCauseMapper
       {
+
+        static const int TIMER_ID_ALREADY_IN_USE_HASH = HashingUtils::HashString("TIMER_ID_ALREADY_IN_USE");
+        static const int OPEN_TIMERS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OPEN_TIMERS_LIMIT_EXCEEDED");
+        static const int TIMER_CREATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("TIMER_CREATION_RATE_EXCEEDED");
+        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         StartTimerFailedCause GetStartTimerFailedCauseForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ECR
+{
+namespace Model
+{
 
 ImageIdentifier::ImageIdentifier() : 
     m_imageDigestHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue ImageIdentifier::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ECR
+} // namespace Aws

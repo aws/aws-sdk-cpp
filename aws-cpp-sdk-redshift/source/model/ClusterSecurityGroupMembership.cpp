@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterSecurityGroupMembership::ClusterSecurityGroupMembership() : 
     m_clusterSecurityGroupNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void ClusterSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

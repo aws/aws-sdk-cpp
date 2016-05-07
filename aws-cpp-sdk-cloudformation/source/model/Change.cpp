@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudFormation
+{
+namespace Model
+{
 
 Change::Change() : 
     m_typeHasBeenSet(false),
@@ -86,3 +92,7 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location) const
       m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws

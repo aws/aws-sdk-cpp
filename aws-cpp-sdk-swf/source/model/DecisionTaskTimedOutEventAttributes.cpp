@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SWF
+{
+namespace Model
+{
 
 DecisionTaskTimedOutEventAttributes::DecisionTaskTimedOutEventAttributes() : 
     m_timeoutTypeHasBeenSet(false),
@@ -89,3 +95,7 @@ JsonValue DecisionTaskTimedOutEventAttributes::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SWF
+} // namespace Aws

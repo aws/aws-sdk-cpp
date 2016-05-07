@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Processed_HASH = HashingUtils::HashString("Processed");
-static const int Unprocessed_HASH = HashingUtils::HashString("Unprocessed");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Processing_HASH = HashingUtils::HashString("Processing");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ApplicationVersionStatusMapper
       {
+
+        static const int Processed_HASH = HashingUtils::HashString("Processed");
+        static const int Unprocessed_HASH = HashingUtils::HashString("Unprocessed");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Processing_HASH = HashingUtils::HashString("Processing");
 
 
         ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Support
+{
+namespace Model
+{
 
 TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary() : 
     m_costOptimizingHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue TrustedAdvisorCategorySpecificSummary::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Support
+} // namespace Aws

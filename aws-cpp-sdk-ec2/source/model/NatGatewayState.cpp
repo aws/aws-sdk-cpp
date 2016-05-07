@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int available_HASH = HashingUtils::HashString("available");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace NatGatewayStateMapper
       {
+
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
 
 
         NatGatewayState GetNatGatewayStateForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 IntArrayOptions::IntArrayOptions() : 
     m_defaultValue(0),
@@ -138,3 +144,7 @@ void IntArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

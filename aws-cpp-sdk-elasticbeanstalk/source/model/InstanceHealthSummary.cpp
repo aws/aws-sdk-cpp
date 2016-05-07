@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 InstanceHealthSummary::InstanceHealthSummary() : 
     m_noData(0),
@@ -194,3 +200,7 @@ void InstanceHealthSummary::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".Severe=" << m_severe << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int initiating_request_HASH = HashingUtils::HashString("initiating-request");
-static const int pending_acceptance_HASH = HashingUtils::HashString("pending-acceptance");
-static const int active_HASH = HashingUtils::HashString("active");
-static const int deleted_HASH = HashingUtils::HashString("deleted");
-static const int rejected_HASH = HashingUtils::HashString("rejected");
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int expired_HASH = HashingUtils::HashString("expired");
-static const int provisioning_HASH = HashingUtils::HashString("provisioning");
-static const int deleting_HASH = HashingUtils::HashString("deleting");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace VpcPeeringConnectionStateReasonCodeMapper
       {
+
+        static const int initiating_request_HASH = HashingUtils::HashString("initiating-request");
+        static const int pending_acceptance_HASH = HashingUtils::HashString("pending-acceptance");
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static const int rejected_HASH = HashingUtils::HashString("rejected");
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int expired_HASH = HashingUtils::HashString("expired");
+        static const int provisioning_HASH = HashingUtils::HashString("provisioning");
+        static const int deleting_HASH = HashingUtils::HashString("deleting");
 
 
         VpcPeeringConnectionStateReasonCode GetVpcPeeringConnectionStateReasonCodeForName(const Aws::String& name)

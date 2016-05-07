@@ -17,11 +17,23 @@ project(aws-cpp-sdk-sns)
     "source/model/*.cpp"
   )
 
-  file(GLOB SNS_SRC
+  file(GLOB SNS_UNIFIED_HEADERS
     ${AWS_SNS_HEADERS}
     ${AWS_SNS_MODEL_HEADERS}
+  )
+
+  file(GLOB SNS_UNITY_SRC
     ${AWS_SNS_SOURCE}
     ${AWS_SNS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SNS" SNS_UNITY_SRC)
+  endif()
+
+  file(GLOB SNS_SRC
+    ${SNS_UNIFIED_HEADERS}
+    ${SNS_UNITY_SRC}
   )
 
   if(WIN32)

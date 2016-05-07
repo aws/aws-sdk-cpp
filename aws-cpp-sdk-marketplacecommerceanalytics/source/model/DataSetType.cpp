@@ -19,24 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int customer_subscriber_hourly_monthly_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_hourly_monthly_subscriptions");
-static const int customer_subscriber_annual_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_annual_subscriptions");
-static const int daily_business_usage_by_instance_type_HASH = HashingUtils::HashString("daily_business_usage_by_instance_type");
-static const int daily_business_fees_HASH = HashingUtils::HashString("daily_business_fees");
-static const int daily_business_free_trial_conversions_HASH = HashingUtils::HashString("daily_business_free_trial_conversions");
-static const int daily_business_new_instances_HASH = HashingUtils::HashString("daily_business_new_instances");
-static const int daily_business_new_product_subscribers_HASH = HashingUtils::HashString("daily_business_new_product_subscribers");
-static const int daily_business_canceled_product_subscribers_HASH = HashingUtils::HashString("daily_business_canceled_product_subscribers");
-static const int monthly_revenue_billing_and_revenue_data_HASH = HashingUtils::HashString("monthly_revenue_billing_and_revenue_data");
-static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
-static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
-static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
-static const int disbursed_amount_by_customer_geo_HASH = HashingUtils::HashString("disbursed_amount_by_customer_geo");
-static const int disbursed_amount_by_age_of_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
-static const int disbursed_amount_by_age_of_disbursed_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
-static const int customer_profile_by_industry_HASH = HashingUtils::HashString("customer_profile_by_industry");
-static const int customer_profile_by_revenue_HASH = HashingUtils::HashString("customer_profile_by_revenue");
-static const int customer_profile_by_geography_HASH = HashingUtils::HashString("customer_profile_by_geography");
 
 namespace Aws
 {
@@ -46,6 +28,25 @@ namespace Aws
     {
       namespace DataSetTypeMapper
       {
+
+        static const int customer_subscriber_hourly_monthly_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_hourly_monthly_subscriptions");
+        static const int customer_subscriber_annual_subscriptions_HASH = HashingUtils::HashString("customer_subscriber_annual_subscriptions");
+        static const int daily_business_usage_by_instance_type_HASH = HashingUtils::HashString("daily_business_usage_by_instance_type");
+        static const int daily_business_fees_HASH = HashingUtils::HashString("daily_business_fees");
+        static const int daily_business_free_trial_conversions_HASH = HashingUtils::HashString("daily_business_free_trial_conversions");
+        static const int daily_business_new_instances_HASH = HashingUtils::HashString("daily_business_new_instances");
+        static const int daily_business_new_product_subscribers_HASH = HashingUtils::HashString("daily_business_new_product_subscribers");
+        static const int daily_business_canceled_product_subscribers_HASH = HashingUtils::HashString("daily_business_canceled_product_subscribers");
+        static const int monthly_revenue_billing_and_revenue_data_HASH = HashingUtils::HashString("monthly_revenue_billing_and_revenue_data");
+        static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
+        static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
+        static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
+        static const int disbursed_amount_by_customer_geo_HASH = HashingUtils::HashString("disbursed_amount_by_customer_geo");
+        static const int disbursed_amount_by_age_of_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
+        static const int disbursed_amount_by_age_of_disbursed_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
+        static const int customer_profile_by_industry_HASH = HashingUtils::HashString("customer_profile_by_industry");
+        static const int customer_profile_by_revenue_HASH = HashingUtils::HashString("customer_profile_by_revenue");
+        static const int customer_profile_by_geography_HASH = HashingUtils::HashString("customer_profile_by_geography");
 
 
         DataSetType GetDataSetTypeForName(const Aws::String& name)

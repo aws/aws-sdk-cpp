@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
-static const int FAILURE_HASH = HashingUtils::HashString("FAILURE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ResourceSignalStatusMapper
       {
+
+        static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
+        static const int FAILURE_HASH = HashingUtils::HashString("FAILURE");
 
 
         ResourceSignalStatus GetResourceSignalStatusForName(const Aws::String& name)

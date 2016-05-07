@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
-static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
-static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
-static const int IN_HASH = HashingUtils::HashString("IN");
-static const int NOT_IN_HASH = HashingUtils::HashString("NOT_IN");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace RuleOperatorMapper
       {
+
+        static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
+        static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
+        static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
+        static const int IN_HASH = HashingUtils::HashString("IN");
+        static const int NOT_IN_HASH = HashingUtils::HashString("NOT_IN");
 
 
         RuleOperator GetRuleOperatorForName(const Aws::String& name)

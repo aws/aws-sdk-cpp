@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 SendDataPoint::SendDataPoint() : 
     m_timestampHasBeenSet(false),
@@ -138,3 +144,7 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Rejects=" << m_rejects << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 BundleTask::BundleTask() : 
     m_instanceIdHasBeenSet(false),
@@ -186,3 +192,7 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) con
       m_bundleTaskError.OutputToStream(oStream, bundleTaskErrorLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

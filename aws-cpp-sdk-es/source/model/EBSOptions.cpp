@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticsearchService
+{
+namespace Model
+{
 
 EBSOptions::EBSOptions() : 
     m_eBSEnabled(false),
@@ -106,3 +112,7 @@ JsonValue EBSOptions::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ElasticsearchService
+} // namespace Aws

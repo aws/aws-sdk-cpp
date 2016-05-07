@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudTrail
+{
+namespace Model
+{
 
 Event::Event() : 
     m_eventIdHasBeenSet(false),
@@ -138,3 +144,7 @@ JsonValue Event::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudTrail
+} // namespace Aws

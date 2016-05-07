@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoIdentity
+{
+namespace Model
+{
 
 IdentityPoolShortDescription::IdentityPoolShortDescription() : 
     m_identityPoolIdHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue IdentityPoolShortDescription::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CognitoIdentity
+} // namespace Aws

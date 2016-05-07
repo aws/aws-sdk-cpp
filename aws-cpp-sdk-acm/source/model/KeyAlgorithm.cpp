@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
-static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace KeyAlgorithmMapper
       {
+
+        static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
+        static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
 
 
         KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name)

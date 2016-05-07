@@ -18,6 +18,7 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/Outcome.h>
@@ -291,6 +292,8 @@ std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> TableOperationTest
 
 TEST_F(TableOperationTest, TestListTable)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestListTable")
+
     DeleteAllTables();
     CreateTable(SIMPLE_TABLE, 10, 10);
 
@@ -324,6 +327,8 @@ TEST_F(TableOperationTest, TestListTable)
 
 TEST_F(TableOperationTest, TestUpdateThroughput)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestUpdateThroughput")
+
     CreateTable(SIMPLE_TABLE, 10, 10);
 
     // Update the table and make sure it works.
@@ -345,6 +350,8 @@ TEST_F(TableOperationTest, TestUpdateThroughput)
 
 TEST_F(TableOperationTest, TestConditionalCheckFailure)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestConditionalCheckFailure")
+
     CreateTable(SIMPLE_TABLE, 10, 10);
 
     AttributeValue homer;
@@ -381,6 +388,8 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
 
 TEST_F(TableOperationTest, TestValidationError)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestValidationError")
+
     CreateTable(SIMPLE_TABLE, 10, 10);
 
     AttributeValue hashKeyAttribute;
@@ -398,6 +407,8 @@ TEST_F(TableOperationTest, TestValidationError)
 
 TEST_F(TableOperationTest, TestThrottling)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestThrottling")
+
     CreateTable(THROTTLED_TEST_TABLE, 1, 1);
 
     // Blast the table until it throttles
@@ -450,6 +461,8 @@ TEST_F(TableOperationTest, TestThrottling)
 
 TEST_F(TableOperationTest, TestCrudOperations)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestCrudOperations")
+
     CreateTable(CRUD_TEST_TABLE, 50, 50);
 
     //now put 50 items in the table asynchronously
@@ -617,6 +630,8 @@ TEST_F(TableOperationTest, TestCrudOperations)
 
 TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestCrudOperationsWithCallbacks")
+
     CreateTable(CRUD_CALLBACKS_TEST_TABLE, 50, 50);
 
     //registering a member function is ugly business even in modern c++
@@ -847,6 +862,8 @@ void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
 
 TEST_F(TableOperationTest, TestLimiter)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestLimiter")
+
     using CLOCK = std::chrono::high_resolution_clock;
 
     CreateTable(LIMITER_TEST_TABLE, 100, 100);
@@ -883,6 +900,8 @@ TEST_F(TableOperationTest, TestLimiter)
 
 TEST_F(TableOperationTest, TestAttributeValues)
 {
+    AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestAttributeValues")
+
     CreateTable(ATTRIBUTEVALUE_TEST_TABLE, 50, 50);
 
     unsigned char buffer1[6] = { 20, 34, 54, 67, 10, 5 };

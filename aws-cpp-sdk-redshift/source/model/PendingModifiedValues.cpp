@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 PendingModifiedValues::PendingModifiedValues() : 
     m_masterUserPasswordHasBeenSet(false),
@@ -184,3 +190,7 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

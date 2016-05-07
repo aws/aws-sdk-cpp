@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int dedicated_HASH = HashingUtils::HashString("dedicated");
-static const int host_HASH = HashingUtils::HashString("host");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace HostTenancyMapper
       {
+
+        static const int dedicated_HASH = HashingUtils::HashString("dedicated");
+        static const int host_HASH = HashingUtils::HashString("host");
 
 
         HostTenancy GetHostTenancyForName(const Aws::String& name)

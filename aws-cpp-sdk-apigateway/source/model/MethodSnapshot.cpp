@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace APIGateway
+{
+namespace Model
+{
 
 MethodSnapshot::MethodSnapshot() : 
     m_authorizationTypeHasBeenSet(false),
@@ -73,3 +79,7 @@ JsonValue MethodSnapshot::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace APIGateway
+} // namespace Aws

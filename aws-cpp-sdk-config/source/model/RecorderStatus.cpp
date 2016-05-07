@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int Success_HASH = HashingUtils::HashString("Success");
-static const int Failure_HASH = HashingUtils::HashString("Failure");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace RecorderStatusMapper
       {
+
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Success_HASH = HashingUtils::HashString("Success");
+        static const int Failure_HASH = HashingUtils::HashString("Failure");
 
 
         RecorderStatus GetRecorderStatusForName(const Aws::String& name)

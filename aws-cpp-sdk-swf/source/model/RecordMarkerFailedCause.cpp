@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace RecordMarkerFailedCauseMapper
       {
+
+        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         RecordMarkerFailedCause GetRecordMarkerFailedCauseForName(const Aws::String& name)

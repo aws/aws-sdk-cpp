@@ -19,19 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int DEPLOYMENT_GROUP_MISSING_HASH = HashingUtils::HashString("DEPLOYMENT_GROUP_MISSING");
-static const int APPLICATION_MISSING_HASH = HashingUtils::HashString("APPLICATION_MISSING");
-static const int REVISION_MISSING_HASH = HashingUtils::HashString("REVISION_MISSING");
-static const int IAM_ROLE_MISSING_HASH = HashingUtils::HashString("IAM_ROLE_MISSING");
-static const int IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("IAM_ROLE_PERMISSIONS");
-static const int NO_EC2_SUBSCRIPTION_HASH = HashingUtils::HashString("NO_EC2_SUBSCRIPTION");
-static const int OVER_MAX_INSTANCES_HASH = HashingUtils::HashString("OVER_MAX_INSTANCES");
-static const int NO_INSTANCES_HASH = HashingUtils::HashString("NO_INSTANCES");
-static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-static const int HEALTH_CONSTRAINTS_INVALID_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS_INVALID");
-static const int HEALTH_CONSTRAINTS_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS");
-static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
-static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
 
 namespace Aws
 {
@@ -41,6 +28,20 @@ namespace Aws
     {
       namespace ErrorCodeMapper
       {
+
+        static const int DEPLOYMENT_GROUP_MISSING_HASH = HashingUtils::HashString("DEPLOYMENT_GROUP_MISSING");
+        static const int APPLICATION_MISSING_HASH = HashingUtils::HashString("APPLICATION_MISSING");
+        static const int REVISION_MISSING_HASH = HashingUtils::HashString("REVISION_MISSING");
+        static const int IAM_ROLE_MISSING_HASH = HashingUtils::HashString("IAM_ROLE_MISSING");
+        static const int IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("IAM_ROLE_PERMISSIONS");
+        static const int NO_EC2_SUBSCRIPTION_HASH = HashingUtils::HashString("NO_EC2_SUBSCRIPTION");
+        static const int OVER_MAX_INSTANCES_HASH = HashingUtils::HashString("OVER_MAX_INSTANCES");
+        static const int NO_INSTANCES_HASH = HashingUtils::HashString("NO_INSTANCES");
+        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
+        static const int HEALTH_CONSTRAINTS_INVALID_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS_INVALID");
+        static const int HEALTH_CONSTRAINTS_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS");
+        static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
+        static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)

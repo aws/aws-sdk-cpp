@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ACM;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ACM
+{
+namespace ACMErrorMapper
+{
+
 static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
@@ -29,12 +36,6 @@ static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnExceptio
 static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 
-namespace Aws
-{
-namespace ACM
-{
-namespace ACMErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-redshift)
     "source/model/*.cpp"
   )
 
-  file(GLOB REDSHIFT_SRC
+  file(GLOB REDSHIFT_UNIFIED_HEADERS
     ${AWS_REDSHIFT_HEADERS}
     ${AWS_REDSHIFT_MODEL_HEADERS}
+  )
+
+  file(GLOB REDSHIFT_UNITY_SRC
     ${AWS_REDSHIFT_SOURCE}
     ${AWS_REDSHIFT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("REDSHIFT" REDSHIFT_UNITY_SRC)
+  endif()
+
+  file(GLOB REDSHIFT_SRC
+    ${REDSHIFT_UNIFIED_HEADERS}
+    ${REDSHIFT_UNITY_SRC}
   )
 
   if(WIN32)

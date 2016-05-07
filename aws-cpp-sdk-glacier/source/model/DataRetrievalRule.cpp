@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 DataRetrievalRule::DataRetrievalRule() : 
     m_strategyHasBeenSet(false),
@@ -73,3 +79,7 @@ JsonValue DataRetrievalRule::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

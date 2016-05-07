@@ -23,8 +23,7 @@ TEST(OSVersionInfoTest, TestComputeVersionString)
 {
   AWS_BEGIN_MEMORY_TEST(16, 10)
 
-  OSVersionInfo osVersionInfo;
-  Aws::String versionString = osVersionInfo.ComputeOSVersionString();
+  Aws::String versionString = Aws::Utils::ComputeOSVersionString();
   ASSERT_TRUE(versionString.length() > 0);
 
   AWS_END_MEMORY_TEST

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 StatisticSet::StatisticSet() : 
     m_sampleCount(0.0),
@@ -122,3 +128,7 @@ void StatisticSet::OutputToStream(Aws::OStream& oStream, const char* location) c
         oStream << location << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

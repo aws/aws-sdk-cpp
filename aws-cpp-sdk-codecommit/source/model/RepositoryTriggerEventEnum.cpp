@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int all_HASH = HashingUtils::HashString("all");
-static const int updateReference_HASH = HashingUtils::HashString("updateReference");
-static const int createReference_HASH = HashingUtils::HashString("createReference");
-static const int deleteReference_HASH = HashingUtils::HashString("deleteReference");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace RepositoryTriggerEventEnumMapper
       {
+
+        static const int all_HASH = HashingUtils::HashString("all");
+        static const int updateReference_HASH = HashingUtils::HashString("updateReference");
+        static const int createReference_HASH = HashingUtils::HashString("createReference");
+        static const int deleteReference_HASH = HashingUtils::HashString("deleteReference");
 
 
         RepositoryTriggerEventEnum GetRepositoryTriggerEventEnumForName(const Aws::String& name)

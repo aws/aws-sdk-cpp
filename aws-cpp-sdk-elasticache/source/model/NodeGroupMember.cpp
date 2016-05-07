@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 NodeGroupMember::NodeGroupMember() : 
     m_cacheClusterIdHasBeenSet(false),
@@ -134,3 +140,7 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".CurrentRole=" << StringUtils::URLEncode(m_currentRole.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

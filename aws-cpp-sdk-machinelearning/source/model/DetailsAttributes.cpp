@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PredictiveModelType_HASH = HashingUtils::HashString("PredictiveModelType");
-static const int Algorithm_HASH = HashingUtils::HashString("Algorithm");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DetailsAttributesMapper
       {
+
+        static const int PredictiveModelType_HASH = HashingUtils::HashString("PredictiveModelType");
+        static const int Algorithm_HASH = HashingUtils::HashString("Algorithm");
 
 
         DetailsAttributes GetDetailsAttributesForName(const Aws::String& name)

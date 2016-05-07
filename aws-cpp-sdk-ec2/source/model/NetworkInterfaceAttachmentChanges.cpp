@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges() : 
     m_attachmentIdHasBeenSet(false),
@@ -84,3 +90,7 @@ void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, co
       oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

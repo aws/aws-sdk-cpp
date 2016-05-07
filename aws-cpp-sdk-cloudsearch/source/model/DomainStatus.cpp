@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 DomainStatus::DomainStatus() : 
     m_domainIdHasBeenSet(false),
@@ -282,3 +288,7 @@ void DomainStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
       m_limits.OutputToStream(oStream, limitsLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

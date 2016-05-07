@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int KMS_HASH = HashingUtils::HashString("KMS");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace EncryptionKeyTypeMapper
       {
+
+        static const int KMS_HASH = HashingUtils::HashString("KMS");
 
 
         EncryptionKeyType GetEncryptionKeyTypeForName(const Aws::String& name)

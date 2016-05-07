@@ -19,23 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int GENERIC_EVENT_HASH = HashingUtils::HashString("GENERIC_EVENT");
-static const int FLEET_CREATED_HASH = HashingUtils::HashString("FLEET_CREATED");
-static const int FLEET_DELETED_HASH = HashingUtils::HashString("FLEET_DELETED");
-static const int FLEET_SCALING_EVENT_HASH = HashingUtils::HashString("FLEET_SCALING_EVENT");
-static const int FLEET_STATE_DOWNLOADING_HASH = HashingUtils::HashString("FLEET_STATE_DOWNLOADING");
-static const int FLEET_STATE_VALIDATING_HASH = HashingUtils::HashString("FLEET_STATE_VALIDATING");
-static const int FLEET_STATE_BUILDING_HASH = HashingUtils::HashString("FLEET_STATE_BUILDING");
-static const int FLEET_STATE_ACTIVATING_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVATING");
-static const int FLEET_STATE_ACTIVE_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVE");
-static const int FLEET_STATE_ERROR_HASH = HashingUtils::HashString("FLEET_STATE_ERROR");
-static const int FLEET_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("FLEET_INITIALIZATION_FAILED");
-static const int FLEET_BINARY_DOWNLOAD_FAILED_HASH = HashingUtils::HashString("FLEET_BINARY_DOWNLOAD_FAILED");
-static const int FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH = HashingUtils::HashString("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND");
-static const int FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH = HashingUtils::HashString("FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE");
-static const int FLEET_VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("FLEET_VALIDATION_TIMED_OUT");
-static const int FLEET_ACTIVATION_FAILED_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED");
-static const int FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
 
 namespace Aws
 {
@@ -45,6 +28,24 @@ namespace Aws
     {
       namespace EventCodeMapper
       {
+
+        static const int GENERIC_EVENT_HASH = HashingUtils::HashString("GENERIC_EVENT");
+        static const int FLEET_CREATED_HASH = HashingUtils::HashString("FLEET_CREATED");
+        static const int FLEET_DELETED_HASH = HashingUtils::HashString("FLEET_DELETED");
+        static const int FLEET_SCALING_EVENT_HASH = HashingUtils::HashString("FLEET_SCALING_EVENT");
+        static const int FLEET_STATE_DOWNLOADING_HASH = HashingUtils::HashString("FLEET_STATE_DOWNLOADING");
+        static const int FLEET_STATE_VALIDATING_HASH = HashingUtils::HashString("FLEET_STATE_VALIDATING");
+        static const int FLEET_STATE_BUILDING_HASH = HashingUtils::HashString("FLEET_STATE_BUILDING");
+        static const int FLEET_STATE_ACTIVATING_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVATING");
+        static const int FLEET_STATE_ACTIVE_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVE");
+        static const int FLEET_STATE_ERROR_HASH = HashingUtils::HashString("FLEET_STATE_ERROR");
+        static const int FLEET_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("FLEET_INITIALIZATION_FAILED");
+        static const int FLEET_BINARY_DOWNLOAD_FAILED_HASH = HashingUtils::HashString("FLEET_BINARY_DOWNLOAD_FAILED");
+        static const int FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH = HashingUtils::HashString("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND");
+        static const int FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE_HASH = HashingUtils::HashString("FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE");
+        static const int FLEET_VALIDATION_TIMED_OUT_HASH = HashingUtils::HashString("FLEET_VALIDATION_TIMED_OUT");
+        static const int FLEET_ACTIVATION_FAILED_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED");
+        static const int FLEET_ACTIVATION_FAILED_NO_INSTANCES_HASH = HashingUtils::HashString("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)

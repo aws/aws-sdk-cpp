@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 GroupIdentifier::GroupIdentifier() : 
     m_groupNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void GroupIdentifier::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

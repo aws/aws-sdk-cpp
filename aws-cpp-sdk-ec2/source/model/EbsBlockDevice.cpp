@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 EbsBlockDevice::EbsBlockDevice() : 
     m_snapshotIdHasBeenSet(false),
@@ -154,3 +160,7 @@ void EbsBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".Encrypted=" << m_encrypted << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

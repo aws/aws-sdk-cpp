@@ -18,7 +18,9 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/platform/Platform.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
@@ -86,7 +88,17 @@ public:
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
     static std::shared_ptr<Aws::IAM::Model::Role> m_role;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
+
 protected:
+
+    static Aws::String MakeFilePath(const Aws::String& localFile)
+    {
+        #ifdef __ANDROID__
+            return Aws::Platform::GetCacheDirectory() + localFile;
+        #else
+            return localFile;
+        #endif
+    }
 
     static void SetUpTestCase()
     {
@@ -235,6 +247,8 @@ protected:
         //Get the ARN off the IAM role.  We'll need this for creating the functions.
         auto & roleARN = m_role->GetArn();
 
+	std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
+
         //Now attempt to create the function.
         CreateFunctionRequest createFunctionRequest;
         createFunctionRequest.SetHandler("test.handler");
@@ -242,9 +256,12 @@ protected:
         createFunctionRequest.SetRole(roleARN);
         FunctionCode functionCode;
 
-        std::ifstream fc(zipLocation.c_str(), std::ios_base::in | std::ios_base::binary);
+        auto filePath = MakeFilePath(zipLocation);
+        std::ifstream fc(filePath.c_str(), std::ios_base::in | std::ios_base::binary);
         Aws::StringStream buffer;
         buffer << fc.rdbuf();
+
+	std::cout << "read zip file " << filePath << " of length " << buffer.str().length() << std::endl;
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
@@ -647,5 +664,4 @@ TEST_F(FunctionTest, TestEventSources)
 }
 
 } // anonymous namespace
-
 

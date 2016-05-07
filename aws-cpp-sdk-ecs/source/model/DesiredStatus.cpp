@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace DesiredStatusMapper
       {
+
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 
         DesiredStatus GetDesiredStatusForName(const Aws::String& name)

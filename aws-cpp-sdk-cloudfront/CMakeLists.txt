@@ -17,11 +17,23 @@ project(aws-cpp-sdk-cloudfront)
     "source/model/*.cpp"
   )
 
-  file(GLOB CLOUDFRONT_SRC
+  file(GLOB CLOUDFRONT_UNIFIED_HEADERS
     ${AWS_CLOUDFRONT_HEADERS}
     ${AWS_CLOUDFRONT_MODEL_HEADERS}
+  )
+
+  file(GLOB CLOUDFRONT_UNITY_SRC
     ${AWS_CLOUDFRONT_SOURCE}
     ${AWS_CLOUDFRONT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CLOUDFRONT" CLOUDFRONT_UNITY_SRC)
+  endif()
+
+  file(GLOB CLOUDFRONT_SRC
+    ${CLOUDFRONT_UNIFIED_HEADERS}
+    ${CLOUDFRONT_UNITY_SRC}
   )
 
   if(WIN32)

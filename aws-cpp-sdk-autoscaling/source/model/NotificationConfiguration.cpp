@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 NotificationConfiguration::NotificationConfiguration() : 
     m_autoScalingGroupNameHasBeenSet(false),
@@ -98,3 +104,7 @@ void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".NotificationType=" << StringUtils::URLEncode(m_notificationType.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

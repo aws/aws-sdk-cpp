@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Reverse_HASH = HashingUtils::HashString("Reverse");
-static const int Forward_HASH = HashingUtils::HashString("Forward");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ChronologicalOrderMapper
       {
+
+        static const int Reverse_HASH = HashingUtils::HashString("Reverse");
+        static const int Forward_HASH = HashingUtils::HashString("Forward");
 
 
         ChronologicalOrder GetChronologicalOrderForName(const Aws::String& name)

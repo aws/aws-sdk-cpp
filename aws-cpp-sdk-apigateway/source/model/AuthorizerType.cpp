@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace AuthorizerTypeMapper
       {
+
+        static const int TOKEN_HASH = HashingUtils::HashString("TOKEN");
 
 
         AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)

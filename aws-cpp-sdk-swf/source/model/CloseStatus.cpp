@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int CONTINUED_AS_NEW_HASH = HashingUtils::HashString("CONTINUED_AS_NEW");
-static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace CloseStatusMapper
       {
+
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int CONTINUED_AS_NEW_HASH = HashingUtils::HashString("CONTINUED_AS_NEW");
+        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
 
 
         CloseStatus GetCloseStatusForName(const Aws::String& name)

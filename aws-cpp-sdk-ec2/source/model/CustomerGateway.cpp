@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 CustomerGateway::CustomerGateway() : 
     m_customerGatewayIdHasBeenSet(false),
@@ -164,3 +170,7 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

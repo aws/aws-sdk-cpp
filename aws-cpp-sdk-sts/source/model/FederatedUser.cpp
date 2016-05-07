@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::STS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace STS
+{
+namespace Model
+{
 
 FederatedUser::FederatedUser() : 
     m_federatedUserIdHasBeenSet(false),
@@ -82,3 +88,7 @@ void FederatedUser::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace STS
+} // namespace Aws

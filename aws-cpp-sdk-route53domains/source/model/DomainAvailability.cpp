@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-static const int AVAILABLE_RESERVED_HASH = HashingUtils::HashString("AVAILABLE_RESERVED");
-static const int AVAILABLE_PREORDER_HASH = HashingUtils::HashString("AVAILABLE_PREORDER");
-static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
-static const int UNAVAILABLE_PREMIUM_HASH = HashingUtils::HashString("UNAVAILABLE_PREMIUM");
-static const int UNAVAILABLE_RESTRICTED_HASH = HashingUtils::HashString("UNAVAILABLE_RESTRICTED");
-static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
-static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace DomainAvailabilityMapper
       {
+
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int AVAILABLE_RESERVED_HASH = HashingUtils::HashString("AVAILABLE_RESERVED");
+        static const int AVAILABLE_PREORDER_HASH = HashingUtils::HashString("AVAILABLE_PREORDER");
+        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static const int UNAVAILABLE_PREMIUM_HASH = HashingUtils::HashString("UNAVAILABLE_PREMIUM");
+        static const int UNAVAILABLE_RESTRICTED_HASH = HashingUtils::HashString("UNAVAILABLE_RESTRICTED");
+        static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
+        static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
 
 
         DomainAvailability GetDomainAvailabilityForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Glacier
+{
+namespace Model
+{
 
 InventoryRetrievalJobInput::InventoryRetrievalJobInput() : 
     m_startDateHasBeenSet(false),
@@ -101,3 +107,7 @@ JsonValue InventoryRetrievalJobInput::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

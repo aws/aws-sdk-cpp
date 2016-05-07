@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 Parameter::Parameter() : 
     m_parameterNameHasBeenSet(false),
@@ -212,3 +218,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

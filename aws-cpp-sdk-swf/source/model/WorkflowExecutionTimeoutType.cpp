@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace WorkflowExecutionTimeoutTypeMapper
       {
+
+        static const int START_TO_CLOSE_HASH = HashingUtils::HashString("START_TO_CLOSE");
 
 
         WorkflowExecutionTimeoutType GetWorkflowExecutionTimeoutTypeForName(const Aws::String& name)

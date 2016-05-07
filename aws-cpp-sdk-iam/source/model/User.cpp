@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 User::User() : 
     m_pathHasBeenSet(false),
@@ -146,3 +152,7 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

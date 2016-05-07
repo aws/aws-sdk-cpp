@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int available_HASH = HashingUtils::HashString("available");
-static const int information_HASH = HashingUtils::HashString("information");
-static const int impaired_HASH = HashingUtils::HashString("impaired");
-static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace AvailabilityZoneStateMapper
       {
+
+        static const int available_HASH = HashingUtils::HashString("available");
+        static const int information_HASH = HashingUtils::HashString("information");
+        static const int impaired_HASH = HashingUtils::HashString("impaired");
+        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 
         AvailabilityZoneState GetAvailabilityZoneStateForName(const Aws::String& name)

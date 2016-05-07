@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 ResourceSpecificResult::ResourceSpecificResult() : 
     m_evalResourceNameHasBeenSet(false),
@@ -170,3 +176,7 @@ void ResourceSpecificResult::OutputToStream(Aws::OStream& oStream, const char* l
   {
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

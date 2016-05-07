@@ -1,4 +1,4 @@
-#
+﻿#
 # Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License").
@@ -51,7 +51,7 @@ def GetPlatformBuildTargets():
                                                              'cmake_params' : "-DSTATIC_LINKING=1",
                                                              'build_params' : [ "-p:Configuration=Release" ],
                                                              'config' : 'Release' } }, 
-                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DMINIMIZE_SIZE=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Android' : { 'buildPlatforms' : [ 'Linux' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DANDROID_STL=gnustl_shared -DCMAKE_BUILD_TYPE=Debug",
@@ -74,7 +74,8 @@ def GetPlatformBuildTargets():
                                                    "-DANDROID_STL_FORCE_FEATURES=OFF " \
                                                    "-DTARGET_ARCH=ANDROID " \
                                                    "-DANDROID_ABI=armeabi-v7a " \
-                                                   "-DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9 " },
+                                                   "-DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.9 " \
+                                                   "-DMINIMIZE_SIZE=ON" },
              'Linux' : { 'buildPlatforms' : [ 'Linux' ],
                          'configs' : { 'DebugDynamic' : { 'directory' : '_build_linux_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -92,7 +93,7 @@ def GetPlatformBuildTargets():
                                                            'cmake_params' : "-DSTATIC_LINKING=1 -DCMAKE_BUILD_TYPE=Release",
                                                            'build_params' : [],
                                                            'config' : 'Release' } },
-                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0" },
+                         'global_cmake_params' : "-DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DMINIMIZE_SIZE=ON" },
              'Darwin' : { 'buildPlatforms' : [ 'Darwin' ],
                                       'configs' : { 'DebugDynamic' : { 'directory' : '_build_darwin_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -132,7 +133,7 @@ def ParseArguments(platformEnvironments):
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
     argMap[ "cmakeParams" ] = re.sub(r'^"|"$', '', args[ "cmake_params" ] or "")
     argMap[ "architecture" ] = re.sub(r'^"|"$', '', args[ "architecture" ] or platformName)
-    argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugDynamic ReleaseDynamic ReleaseStatic").split()
+    argMap[ "configs" ] = re.sub(r'^"\"$', '', args[ "configs" ] or "DebugStatic DebugDynamic ReleaseDynamic ReleaseStatic").split()
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
     argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."

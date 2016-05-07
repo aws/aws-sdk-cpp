@@ -20,17 +20,18 @@ using namespace Aws::Client;
 using namespace Aws::ElasticTranscoder;
 using namespace Aws::Utils;
 
-static const int INCOMPATIBLE_VERSION_HASH = HashingUtils::HashString("IncompatibleVersionException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
-
 namespace Aws
 {
 namespace ElasticTranscoder
 {
 namespace ElasticTranscoderErrorMapper
 {
+
+static const int INCOMPATIBLE_VERSION_HASH = HashingUtils::HashString("IncompatibleVersionException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

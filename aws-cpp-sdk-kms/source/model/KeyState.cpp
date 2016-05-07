@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-static const int Disabled_HASH = HashingUtils::HashString("Disabled");
-static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletion");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace KeyStateMapper
       {
+
+        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletion");
 
 
         KeyState GetKeyStateForName(const Aws::String& name)

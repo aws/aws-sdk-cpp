@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int successful_HASH = HashingUtils::HashString("successful");
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int refreshing_HASH = HashingUtils::HashString("refreshing");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace RefreshSchemasStatusTypeValueMapper
       {
+
+        static const int successful_HASH = HashingUtils::HashString("successful");
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int refreshing_HASH = HashingUtils::HashString("refreshing");
 
 
         RefreshSchemasStatusTypeValue GetRefreshSchemasStatusTypeValueForName(const Aws::String& name)

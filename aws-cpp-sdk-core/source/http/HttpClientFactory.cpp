@@ -35,8 +35,8 @@ namespace Aws
 {
     namespace Http
     {
-        static const char* allocationTag = "HttpClientFactory";
         static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
+        static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
         class DefaultHttpClientFactory : public HttpClientFactory
         {
@@ -49,13 +49,13 @@ namespace Aws
                 switch (clientConfiguration.httpLibOverride)
                 {
                     case TransferLibType::WIN_INET_CLIENT:
-                        return Aws::MakeShared<WinINetSyncHttpClient>(allocationTag, clientConfiguration);
+                        return Aws::MakeShared<WinINetSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 
                     default:
-                        return Aws::MakeShared<WinHttpSyncHttpClient>(allocationTag, clientConfiguration);
+                        return Aws::MakeShared<WinHttpSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
                 }
 #elif ENABLE_CURL_CLIENT
-                return Aws::MakeShared<CurlHttpClient>(allocationTag, clientConfiguration);
+    return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 #else
                 // When neither of these clients is enabled, gcc gives a warning (converted
                 // to error by -Werror) about the unused clientConfiguration parameter. We
@@ -71,10 +71,9 @@ namespace Aws
                 return CreateHttpRequest(URI(uri), method, streamFactory);
             }
 
-            std::shared_ptr<HttpRequest> CreateHttpRequest(const URI &uri, HttpMethod method,
-                                                           const Aws::IOStreamFactory &streamFactory) const override
+            std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const
             {
-                auto request = Aws::MakeShared<Standard::StandardHttpRequest>(allocationTag, uri, method);
+                auto request = Aws::MakeShared<Standard::StandardHttpRequest>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, uri, method);
                 request->SetResponseStreamFactory(streamFactory);
 
                 return request;

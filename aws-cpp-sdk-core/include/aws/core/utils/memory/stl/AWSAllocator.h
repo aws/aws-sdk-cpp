@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
+#include <aws/core/SDKConfig.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 
@@ -25,7 +26,7 @@
 
 namespace Aws
 {
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
     /**
      * Std allocator interface that is used for all STL types in the event that Custom Memory Management is being used.
      */  
@@ -76,19 +77,23 @@ namespace Aws
     };
 
 #ifdef __ANDROID__
-
+#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0
     template< typename T >
     bool operator ==(const Allocator< T >& lhs, const Allocator< T >& rhs)
     {
+        AWS_UNREFERENCED_PARAM(lhs);
+        AWS_UNREFERENCED_PARAM(rhs);
+
         return false;
     }
+#endif // _GLIBCXX_FULLY_DYNAMIC_STRING == 0
 #endif // __ANDROID__
 
 #else
     
     template< typename T > using Allocator = std::allocator<T>;
 
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // USE_AWS_MEMORY_MANAGEMENT
     /**
      * Creates a shared_ptr using AWS Allocator hooks.
      * allocationTag is for memory tracking purposes.

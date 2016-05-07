@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ImportExport
+{
+namespace Model
+{
 
 Artifact::Artifact() : 
     m_descriptionHasBeenSet(false),
@@ -82,3 +88,7 @@ void Artifact::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".URL=" << StringUtils::URLEncode(m_uRL.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ImportExport
+} // namespace Aws

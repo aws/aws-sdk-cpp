@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 VpcSecurityGroupMembership::VpcSecurityGroupMembership() : 
     m_vpcSecurityGroupIdHasBeenSet(false),
@@ -82,3 +88,7 @@ void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

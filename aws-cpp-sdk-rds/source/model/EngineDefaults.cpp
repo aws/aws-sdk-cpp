@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 EngineDefaults::EngineDefaults() : 
     m_dBParameterGroupFamilyHasBeenSet(false),
@@ -116,3 +122,7 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
       }
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

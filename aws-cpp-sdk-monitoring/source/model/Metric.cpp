@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 Metric::Metric() : 
     m_namespaceHasBeenSet(false),
@@ -116,3 +122,7 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location) const
       }
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

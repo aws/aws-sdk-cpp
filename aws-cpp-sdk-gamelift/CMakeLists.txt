@@ -17,11 +17,23 @@ project(aws-cpp-sdk-gamelift)
     "source/model/*.cpp"
   )
 
-  file(GLOB GAMELIFT_SRC
+  file(GLOB GAMELIFT_UNIFIED_HEADERS
     ${AWS_GAMELIFT_HEADERS}
     ${AWS_GAMELIFT_MODEL_HEADERS}
+  )
+
+  file(GLOB GAMELIFT_UNITY_SRC
     ${AWS_GAMELIFT_SOURCE}
     ${AWS_GAMELIFT_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("GAMELIFT" GAMELIFT_UNITY_SRC)
+  endif()
+
+  file(GLOB GAMELIFT_SRC
+    ${GAMELIFT_UNIFIED_HEADERS}
+    ${GAMELIFT_UNITY_SRC}
   )
 
   if(WIN32)

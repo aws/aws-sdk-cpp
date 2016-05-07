@@ -57,6 +57,18 @@ You may also find the following link helpful for including the build in your pro
 
 https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
 
+####Building for Android
+To build for Android, add -DTARGET_ARCH=ANDROID to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
+
+#####Android on Windows
+Building for Android on Windows requires some additional setup.  In particular, you will need to run cmake from a Visual Studio developer command prompt (2013 or higher).  Additionally, you will need 'git' and 'patch' in your path.  If you have git installed on a Windows system, then patch is likely found in a sibling directory (.../Git/usr/bin/).  Once you've verified these requirements, your cmake command line will change slightly to use nmake:
+
+cmake -G "NMake Makefiles" -DTARGET_ARCH=ANDROID <other options> ..
+
+Nmake builds targets in a serial fashion.  To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the cmake invocation to:
+
+cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
+
 ####CMake Variables
 
 #####BUILD_ONLY

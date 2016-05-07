@@ -17,11 +17,23 @@ project(aws-cpp-sdk-swf)
     "source/model/*.cpp"
   )
 
-  file(GLOB SWF_SRC
+  file(GLOB SWF_UNIFIED_HEADERS
     ${AWS_SWF_HEADERS}
     ${AWS_SWF_MODEL_HEADERS}
+  )
+
+  file(GLOB SWF_UNITY_SRC
     ${AWS_SWF_SOURCE}
     ${AWS_SWF_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SWF" SWF_UNITY_SRC)
+  endif()
+
+  file(GLOB SWF_SRC
+    ${SWF_UNIFIED_HEADERS}
+    ${SWF_UNITY_SRC}
   )
 
   if(WIN32)

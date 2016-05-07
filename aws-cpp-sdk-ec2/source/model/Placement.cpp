@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Placement::Placement() : 
     m_availabilityZoneHasBeenSet(false),
@@ -130,3 +136,7 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".Affinity=" << StringUtils::URLEncode(m_affinity.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

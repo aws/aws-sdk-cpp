@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Pending_HASH = HashingUtils::HashString("Pending");
-static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Skipped_HASH = HashingUtils::HashString("Skipped");
-static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace InstanceStatusMapper
       {
+
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Skipped_HASH = HashingUtils::HashString("Skipped");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 
         InstanceStatus GetInstanceStatusForName(const Aws::String& name)

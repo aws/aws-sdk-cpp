@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 MovingAddressStatus::MovingAddressStatus() : 
     m_publicIpHasBeenSet(false),
@@ -82,3 +88,7 @@ void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

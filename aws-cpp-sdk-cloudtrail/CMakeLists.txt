@@ -17,11 +17,23 @@ project(aws-cpp-sdk-cloudtrail)
     "source/model/*.cpp"
   )
 
-  file(GLOB CLOUDTRAIL_SRC
+  file(GLOB CLOUDTRAIL_UNIFIED_HEADERS
     ${AWS_CLOUDTRAIL_HEADERS}
     ${AWS_CLOUDTRAIL_MODEL_HEADERS}
+  )
+
+  file(GLOB CLOUDTRAIL_UNITY_SRC
     ${AWS_CLOUDTRAIL_SOURCE}
     ${AWS_CLOUDTRAIL_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CLOUDTRAIL" CLOUDTRAIL_UNITY_SRC)
+  endif()
+
+  file(GLOB CLOUDTRAIL_SRC
+    ${CLOUDTRAIL_UNIFIED_HEADERS}
+    ${CLOUDTRAIL_UNITY_SRC}
   )
 
   if(WIN32)

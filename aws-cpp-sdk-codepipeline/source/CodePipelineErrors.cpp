@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CodePipeline;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CodePipeline
+{
+namespace CodePipelineErrorMapper
+{
+
 static const int ACTION_NOT_FOUND_HASH = HashingUtils::HashString("ActionNotFoundException");
 static const int INVALID_NONCE_HASH = HashingUtils::HashString("InvalidNonceException");
 static const int INVALID_STRUCTURE_HASH = HashingUtils::HashString("InvalidStructureException");
@@ -38,12 +45,6 @@ static const int STAGE_NOT_FOUND_HASH = HashingUtils::HashString("StageNotFoundE
 static const int PIPELINE_NAME_IN_USE_HASH = HashingUtils::HashString("PipelineNameInUseException");
 static const int INVALID_JOB_HASH = HashingUtils::HashString("InvalidJobException");
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace CodePipelineErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

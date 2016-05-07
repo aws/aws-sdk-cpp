@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 Image::Image() : 
     m_imageIdHasBeenSet(false),
@@ -478,3 +484,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

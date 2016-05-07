@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SQS
+{
+namespace Model
+{
 
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry() : 
     m_idHasBeenSet(false),
@@ -100,3 +106,7 @@ void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStr
       oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 }
+
+} // namespace Model
+} // namespace SQS
+} // namespace Aws

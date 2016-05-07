@@ -19,16 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
-static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
-static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
-static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
-static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
-static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 namespace Aws
 {
@@ -38,6 +28,17 @@ namespace Aws
     {
       namespace WorkspaceStateMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
+        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
+        static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
+        static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         WorkspaceState GetWorkspaceStateForName(const Aws::String& name)

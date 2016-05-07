@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CognitoSync
+{
+namespace Model
+{
 
 CognitoStreams::CognitoStreams() : 
     m_streamNameHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue CognitoStreams::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CognitoSync
+} // namespace Aws

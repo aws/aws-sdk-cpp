@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
-static const int LATEST_HASH = HashingUtils::HashString("LATEST");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace EventSourcePositionMapper
       {
+
+        static const int TRIM_HORIZON_HASH = HashingUtils::HashString("TRIM_HORIZON");
+        static const int LATEST_HASH = HashingUtils::HashString("LATEST");
 
 
         EventSourcePosition GetEventSourcePositionForName(const Aws::String& name)

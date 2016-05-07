@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceStatus::InstanceStatus() : 
     m_instanceIdHasBeenSet(false),
@@ -176,3 +182,7 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
       m_instanceStatus.OutputToStream(oStream, instanceStatusLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

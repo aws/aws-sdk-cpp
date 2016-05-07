@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
-static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ErrorCodeMapper
       {
+
+        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
+        static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)

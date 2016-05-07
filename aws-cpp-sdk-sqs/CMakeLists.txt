@@ -17,11 +17,23 @@ project(aws-cpp-sdk-sqs)
     "source/model/*.cpp"
   )
 
-  file(GLOB SQS_SRC
+  file(GLOB SQS_UNIFIED_HEADERS
     ${AWS_SQS_HEADERS}
     ${AWS_SQS_MODEL_HEADERS}
+  )
+
+  file(GLOB SQS_UNITY_SRC
     ${AWS_SQS_SOURCE}
     ${AWS_SQS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("SQS" SQS_UNITY_SRC)
+  endif()
+
+  file(GLOB SQS_SRC
+    ${SQS_UNIFIED_HEADERS}
+    ${SQS_UNITY_SRC}
   )
 
   if(WIN32)

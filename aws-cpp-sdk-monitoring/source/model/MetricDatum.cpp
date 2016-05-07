@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatch
+{
+namespace Model
+{
 
 MetricDatum::MetricDatum() : 
     m_metricNameHasBeenSet(false),
@@ -170,3 +176,7 @@ void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

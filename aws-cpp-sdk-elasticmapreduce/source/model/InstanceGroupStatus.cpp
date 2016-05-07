@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 InstanceGroupStatus::InstanceGroupStatus() : 
     m_stateHasBeenSet(false),
@@ -85,3 +91,7 @@ JsonValue InstanceGroupStatus::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

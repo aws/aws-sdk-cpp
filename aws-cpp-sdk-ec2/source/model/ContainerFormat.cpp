@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ova_HASH = HashingUtils::HashString("ova");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ContainerFormatMapper
       {
+
+        static const int ova_HASH = HashingUtils::HashString("ova");
 
 
         ContainerFormat GetContainerFormatForName(const Aws::String& name)

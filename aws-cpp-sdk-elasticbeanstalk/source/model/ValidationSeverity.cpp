@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int error_HASH = HashingUtils::HashString("error");
-static const int warning_HASH = HashingUtils::HashString("warning");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ValidationSeverityMapper
       {
+
+        static const int error_HASH = HashingUtils::HashString("error");
+        static const int warning_HASH = HashingUtils::HashString("warning");
 
 
         ValidationSeverity GetValidationSeverityForName(const Aws::String& name)

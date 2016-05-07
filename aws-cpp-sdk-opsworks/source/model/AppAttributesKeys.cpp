@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int DocumentRoot_HASH = HashingUtils::HashString("DocumentRoot");
-static const int RailsEnv_HASH = HashingUtils::HashString("RailsEnv");
-static const int AutoBundleOnDeploy_HASH = HashingUtils::HashString("AutoBundleOnDeploy");
-static const int AwsFlowRubySettings_HASH = HashingUtils::HashString("AwsFlowRubySettings");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace AppAttributesKeysMapper
       {
+
+        static const int DocumentRoot_HASH = HashingUtils::HashString("DocumentRoot");
+        static const int RailsEnv_HASH = HashingUtils::HashString("RailsEnv");
+        static const int AutoBundleOnDeploy_HASH = HashingUtils::HashString("AutoBundleOnDeploy");
+        static const int AwsFlowRubySettings_HASH = HashingUtils::HashString("AwsFlowRubySettings");
 
 
         AppAttributesKeys GetAppAttributesKeysForName(const Aws::String& name)

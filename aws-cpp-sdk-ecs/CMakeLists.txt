@@ -17,11 +17,23 @@ project(aws-cpp-sdk-ecs)
     "source/model/*.cpp"
   )
 
-  file(GLOB ECS_SRC
+  file(GLOB ECS_UNIFIED_HEADERS
     ${AWS_ECS_HEADERS}
     ${AWS_ECS_MODEL_HEADERS}
+  )
+
+  file(GLOB ECS_UNITY_SRC
     ${AWS_ECS_SOURCE}
     ${AWS_ECS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("ECS" ECS_UNITY_SRC)
+  endif()
+
+  file(GLOB ECS_SRC
+    ${ECS_UNIFIED_HEADERS}
+    ${ECS_UNITY_SRC}
   )
 
   if(WIN32)

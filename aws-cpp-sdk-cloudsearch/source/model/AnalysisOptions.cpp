@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearch
+{
+namespace Model
+{
 
 AnalysisOptions::AnalysisOptions() : 
     m_synonymsHasBeenSet(false),
@@ -130,3 +136,7 @@ void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".AlgorithmicStemming=" << AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming) << "&";
   }
 }
+
+} // namespace Model
+} // namespace CloudSearch
+} // namespace Aws

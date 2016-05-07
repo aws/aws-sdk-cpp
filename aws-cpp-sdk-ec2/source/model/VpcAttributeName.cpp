@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int enableDnsSupport_HASH = HashingUtils::HashString("enableDnsSupport");
-static const int enableDnsHostnames_HASH = HashingUtils::HashString("enableDnsHostnames");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace VpcAttributeNameMapper
       {
+
+        static const int enableDnsSupport_HASH = HashingUtils::HashString("enableDnsSupport");
+        static const int enableDnsHostnames_HASH = HashingUtils::HashString("enableDnsHostnames");
 
 
         VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)

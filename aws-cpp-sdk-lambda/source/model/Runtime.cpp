@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int nodejs_HASH = HashingUtils::HashString("nodejs");
-static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
-static const int java8_HASH = HashingUtils::HashString("java8");
-static const int python2_7_HASH = HashingUtils::HashString("python2.7");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace RuntimeMapper
       {
+
+        static const int nodejs_HASH = HashingUtils::HashString("nodejs");
+        static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
+        static const int java8_HASH = HashingUtils::HashString("java8");
+        static const int python2_7_HASH = HashingUtils::HashString("python2.7");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)

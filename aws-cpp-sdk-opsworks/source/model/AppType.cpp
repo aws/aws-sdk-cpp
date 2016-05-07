@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
-static const int java_HASH = HashingUtils::HashString("java");
-static const int rails_HASH = HashingUtils::HashString("rails");
-static const int php_HASH = HashingUtils::HashString("php");
-static const int nodejs_HASH = HashingUtils::HashString("nodejs");
-static const int static__HASH = HashingUtils::HashString("static");
-static const int other_HASH = HashingUtils::HashString("other");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace AppTypeMapper
       {
+
+        static const int aws_flow_ruby_HASH = HashingUtils::HashString("aws-flow-ruby");
+        static const int java_HASH = HashingUtils::HashString("java");
+        static const int rails_HASH = HashingUtils::HashString("rails");
+        static const int php_HASH = HashingUtils::HashString("php");
+        static const int nodejs_HASH = HashingUtils::HashString("nodejs");
+        static const int static__HASH = HashingUtils::HashString("static");
+        static const int other_HASH = HashingUtils::HashString("other");
 
 
         AppType GetAppTypeForName(const Aws::String& name)

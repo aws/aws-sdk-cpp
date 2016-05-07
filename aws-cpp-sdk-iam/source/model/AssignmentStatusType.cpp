@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Assigned_HASH = HashingUtils::HashString("Assigned");
-static const int Unassigned_HASH = HashingUtils::HashString("Unassigned");
-static const int Any_HASH = HashingUtils::HashString("Any");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace AssignmentStatusTypeMapper
       {
+
+        static const int Assigned_HASH = HashingUtils::HashString("Assigned");
+        static const int Unassigned_HASH = HashingUtils::HashString("Unassigned");
+        static const int Any_HASH = HashingUtils::HashString("Any");
 
 
         AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name)

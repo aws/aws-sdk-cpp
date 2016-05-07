@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
-static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ResourceRecordSetFailoverMapper
       {
+
+        static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
+        static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
 
 
         ResourceRecordSetFailover GetResourceRecordSetFailoverForName(const Aws::String& name)

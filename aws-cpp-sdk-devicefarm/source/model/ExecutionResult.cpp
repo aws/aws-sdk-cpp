@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int PASSED_HASH = HashingUtils::HashString("PASSED");
-static const int WARNED_HASH = HashingUtils::HashString("WARNED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
-static const int ERRORED_HASH = HashingUtils::HashString("ERRORED");
-static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace ExecutionResultMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int PASSED_HASH = HashingUtils::HashString("PASSED");
+        static const int WARNED_HASH = HashingUtils::HashString("WARNED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
+        static const int ERRORED_HASH = HashingUtils::HashString("ERRORED");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 
         ExecutionResult GetExecutionResultForName(const Aws::String& name)

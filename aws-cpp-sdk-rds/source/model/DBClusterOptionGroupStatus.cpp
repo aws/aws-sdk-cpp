@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::RDS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RDS
+{
+namespace Model
+{
 
 DBClusterOptionGroupStatus::DBClusterOptionGroupStatus() : 
     m_dBClusterOptionGroupNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void DBClusterOptionGroupStatus::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace RDS
+} // namespace Aws

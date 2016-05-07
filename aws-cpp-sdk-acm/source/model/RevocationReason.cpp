@@ -19,16 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UNSPECIFIED_HASH = HashingUtils::HashString("UNSPECIFIED");
-static const int KEY_COMPROMISE_HASH = HashingUtils::HashString("KEY_COMPROMISE");
-static const int CA_COMPROMISE_HASH = HashingUtils::HashString("CA_COMPROMISE");
-static const int AFFILIATION_CHANGED_HASH = HashingUtils::HashString("AFFILIATION_CHANGED");
-static const int SUPERCEDED_HASH = HashingUtils::HashString("SUPERCEDED");
-static const int CESSATION_OF_OPERATION_HASH = HashingUtils::HashString("CESSATION_OF_OPERATION");
-static const int CERTIFICATE_HOLD_HASH = HashingUtils::HashString("CERTIFICATE_HOLD");
-static const int REMOVE_FROM_CRL_HASH = HashingUtils::HashString("REMOVE_FROM_CRL");
-static const int PRIVILEGE_WITHDRAWN_HASH = HashingUtils::HashString("PRIVILEGE_WITHDRAWN");
-static const int A_A_COMPROMISE_HASH = HashingUtils::HashString("A_A_COMPROMISE");
 
 namespace Aws
 {
@@ -38,6 +28,17 @@ namespace Aws
     {
       namespace RevocationReasonMapper
       {
+
+        static const int UNSPECIFIED_HASH = HashingUtils::HashString("UNSPECIFIED");
+        static const int KEY_COMPROMISE_HASH = HashingUtils::HashString("KEY_COMPROMISE");
+        static const int CA_COMPROMISE_HASH = HashingUtils::HashString("CA_COMPROMISE");
+        static const int AFFILIATION_CHANGED_HASH = HashingUtils::HashString("AFFILIATION_CHANGED");
+        static const int SUPERCEDED_HASH = HashingUtils::HashString("SUPERCEDED");
+        static const int CESSATION_OF_OPERATION_HASH = HashingUtils::HashString("CESSATION_OF_OPERATION");
+        static const int CERTIFICATE_HOLD_HASH = HashingUtils::HashString("CERTIFICATE_HOLD");
+        static const int REMOVE_FROM_CRL_HASH = HashingUtils::HashString("REMOVE_FROM_CRL");
+        static const int PRIVILEGE_WITHDRAWN_HASH = HashingUtils::HashString("PRIVILEGE_WITHDRAWN");
+        static const int A_A_COMPROMISE_HASH = HashingUtils::HashString("A_A_COMPROMISE");
 
 
         RevocationReason GetRevocationReasonForName(const Aws::String& name)

@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace ObjectVersionStorageClassMapper
       {
+
+        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 
 
         ObjectVersionStorageClass GetObjectVersionStorageClassForName(const Aws::String& name)

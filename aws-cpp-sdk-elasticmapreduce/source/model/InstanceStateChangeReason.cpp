@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 InstanceStateChangeReason::InstanceStateChangeReason() : 
     m_codeHasBeenSet(false),
@@ -70,3 +76,7 @@ JsonValue InstanceStateChangeReason::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

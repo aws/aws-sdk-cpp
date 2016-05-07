@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int UNHANDLED_DECISION_HASH = HashingUtils::HashString("UNHANDLED_DECISION");
-static const int WORKFLOW_TYPE_DEPRECATED_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DEPRECATED");
-static const int WORKFLOW_TYPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DOES_NOT_EXIST");
-static const int DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED");
-static const int DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED");
-static const int DEFAULT_TASK_LIST_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
-static const int DEFAULT_CHILD_POLICY_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_CHILD_POLICY_UNDEFINED");
-static const int CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH = HashingUtils::HashString("CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED");
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace ContinueAsNewWorkflowExecutionFailedCauseMapper
       {
+
+        static const int UNHANDLED_DECISION_HASH = HashingUtils::HashString("UNHANDLED_DECISION");
+        static const int WORKFLOW_TYPE_DEPRECATED_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DEPRECATED");
+        static const int WORKFLOW_TYPE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("WORKFLOW_TYPE_DOES_NOT_EXIST");
+        static const int DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static const int DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED");
+        static const int DEFAULT_TASK_LIST_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_TASK_LIST_UNDEFINED");
+        static const int DEFAULT_CHILD_POLICY_UNDEFINED_HASH = HashingUtils::HashString("DEFAULT_CHILD_POLICY_UNDEFINED");
+        static const int CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED_HASH = HashingUtils::HashString("CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED");
+        static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OPERATION_NOT_PERMITTED");
 
 
         ContinueAsNewWorkflowExecutionFailedCause GetContinueAsNewWorkflowExecutionFailedCauseForName(const Aws::String& name)

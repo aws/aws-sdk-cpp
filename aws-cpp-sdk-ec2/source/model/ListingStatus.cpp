@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int active_HASH = HashingUtils::HashString("active");
-static const int pending_HASH = HashingUtils::HashString("pending");
-static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-static const int closed_HASH = HashingUtils::HashString("closed");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ListingStatusMapper
       {
+
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int pending_HASH = HashingUtils::HashString("pending");
+        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
+        static const int closed_HASH = HashingUtils::HashString("closed");
 
 
         ListingStatus GetListingStatusForName(const Aws::String& name)

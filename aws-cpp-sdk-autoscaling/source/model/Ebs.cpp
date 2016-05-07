@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 Ebs::Ebs() : 
     m_snapshotIdHasBeenSet(false),
@@ -154,3 +160,7 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Encrypted=" << m_encrypted << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

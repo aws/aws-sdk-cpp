@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::STS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace STS
+{
+namespace STSErrorMapper
+{
+
 static const int I_D_P_COMMUNICATION_ERROR_HASH = HashingUtils::HashString("IDPCommunicationError");
 static const int EXPIRED_TOKEN_HASH = HashingUtils::HashString("ExpiredTokenException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocument");
@@ -29,12 +36,6 @@ static const int INVALID_IDENTITY_TOKEN_HASH = HashingUtils::HashString("Invalid
 static const int REGION_DISABLED_HASH = HashingUtils::HashString("RegionDisabledException");
 static const int INVALID_AUTHORIZATION_MESSAGE_HASH = HashingUtils::HashString("InvalidAuthorizationMessageException");
 
-namespace Aws
-{
-namespace STS
-{
-namespace STSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

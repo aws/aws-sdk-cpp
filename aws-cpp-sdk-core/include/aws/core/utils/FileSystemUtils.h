@@ -57,6 +57,12 @@ namespace Aws
              * Gets path delimiter for the current platform
              */
             static char GetPathDelimiter() { return PATH_DELIM; }
+
+            /**
+             * Computes a unique tmp file path
+             */
+            static Aws::String CreateTempFilePath();
+
         };
     }
 }

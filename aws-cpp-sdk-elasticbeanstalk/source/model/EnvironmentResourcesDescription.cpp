@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 EnvironmentResourcesDescription::EnvironmentResourcesDescription() : 
     m_loadBalancerHasBeenSet(false)
@@ -70,3 +76,7 @@ void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, cons
       m_loadBalancer.OutputToStream(oStream, loadBalancerLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

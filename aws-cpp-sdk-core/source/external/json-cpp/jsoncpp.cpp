@@ -224,7 +224,7 @@ namespace Aws {
 namespace External {
 namespace Json {
 
-static const char* allocationTag = "JsonCpp";
+static const char* JSON_CPP_ALLOCATION_TAG = "JsonCpp";
 
 // Implementation of class Features
 // ////////////////////////////////
@@ -1216,7 +1216,7 @@ private:
     const unsigned int mallocSize =
         sizeof(BatchInfo) - sizeof(AllocatedType) * objectPerAllocation +
         sizeof(AllocatedType) * objectPerAllocation * objectsPerPage;
-    BatchInfo* batch = static_cast<BatchInfo*>(Aws::Malloc(allocationTag, mallocSize));
+    BatchInfo* batch = static_cast<BatchInfo*>(Aws::Malloc(JSON_CPP_ALLOCATION_TAG, mallocSize));
     batch->next_ = 0;
     batch->used_ = batch->buffer_;
     batch->end_ = batch->buffer_ + objectsPerPage;
@@ -1607,7 +1607,7 @@ static inline char* duplicateStringValue(const char* value,
   if (length >= (unsigned)Value::maxInt)
     length = Value::maxInt - 1;
 
-  char* newString = static_cast<char*>(Aws::Malloc(allocationTag, length + 1));
+  char* newString = static_cast<char*>(Aws::Malloc(JSON_CPP_ALLOCATION_TAG, length + 1));
   JSON_ASSERT_MESSAGE(newString != 0,
                       "in Json::Value::duplicateStringValue(): "
                       "Failed to allocate string value buffer");
@@ -1764,7 +1764,7 @@ Value::Value(ValueType type) {
 #ifndef JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
-    value_.map_ = Aws::New<ObjectValues>(allocationTag);
+    value_.map_ = Aws::New<ObjectValues>(JSON_CPP_ALLOCATION_TAG);
     break;
 #else
   case arrayValue:
@@ -1869,7 +1869,7 @@ Value::Value(const Value& other)
 #ifndef JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
-    value_.map_ = Aws::New<ObjectValues>(allocationTag, *other.value_.map_);
+    value_.map_ = Aws::New<ObjectValues>(JSON_CPP_ALLOCATION_TAG, *other.value_.map_);
     break;
 #else
   case arrayValue:
@@ -1883,7 +1883,7 @@ Value::Value(const Value& other)
     JSON_ASSERT_UNREACHABLE;
   }
   if (other.comments_) {
-    comments_ = Aws::NewArray<CommentInfo>(numberOfCommentPlacement, allocationTag);
+    comments_ = Aws::NewArray<CommentInfo>(numberOfCommentPlacement, JSON_CPP_ALLOCATION_TAG);
     for (int comment = 0; comment < numberOfCommentPlacement; ++comment) {
       const CommentInfo& otherComment = other.comments_[comment];
       if (otherComment.comment_)
@@ -2748,7 +2748,7 @@ bool Value::isObject() const { return type_ == objectValue; }
 
 void Value::setComment(const char* comment, size_t len, CommentPlacement placement) {
   if (!comments_)
-    comments_ = Aws::NewArray<CommentInfo>(numberOfCommentPlacement, allocationTag);
+    comments_ = Aws::NewArray<CommentInfo>(numberOfCommentPlacement, JSON_CPP_ALLOCATION_TAG);
   if ((len > 0) && (comment[len-1] == '\n')) {
     // Always discard trailing newline, to aid indentation.
     len -= 1;
@@ -4042,7 +4042,7 @@ StreamWriter* StreamWriterBuilder::newStreamWriter(Aws::OStream* stream) const
   }
   Aws::String nullSymbol = "null";
   Aws::String endingLineFeedSymbol = "";
-  return Aws::New<BuiltStyledStreamWriter>(allocationTag, stream,
+  return Aws::New<BuiltStyledStreamWriter>(JSON_CPP_ALLOCATION_TAG, stream,
       indentation_, cs_,
       colonSymbol, nullSymbol, endingLineFeedSymbol);
 }
@@ -4079,7 +4079,7 @@ StreamWriter* OldCompressingStreamWriterBuilder::newStreamWriter(
   if (omitEndingLineFeed_) {
     endingLineFeedSymbol = "";
   }
-  return Aws::New<BuiltStyledStreamWriter>(allocationTag, stream,
+  return Aws::New<BuiltStyledStreamWriter>(JSON_CPP_ALLOCATION_TAG, stream,
       "", StreamWriter::CommentStyle::None,
       colonSymbol, nullSymbol, endingLineFeedSymbol);
 }

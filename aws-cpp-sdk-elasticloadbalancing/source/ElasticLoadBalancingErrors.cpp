@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ElasticLoadBalancing;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ElasticLoadBalancing
+{
+namespace ElasticLoadBalancingErrorMapper
+{
+
 static const int INVALID_SECURITY_GROUP_HASH = HashingUtils::HashString("InvalidSecurityGroup");
 static const int DUPLICATE_ACCESS_POINT_NAME_HASH = HashingUtils::HashString("DuplicateLoadBalancerName");
 static const int DUPLICATE_TAG_KEYS_HASH = HashingUtils::HashString("DuplicateTagKeys");
@@ -40,12 +47,6 @@ static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFoun
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFound");
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-namespace ElasticLoadBalancingErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

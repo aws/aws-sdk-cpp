@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ebs_HASH = HashingUtils::HashString("ebs");
-static const int instance_store_HASH = HashingUtils::HashString("instance-store");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DeviceTypeMapper
       {
+
+        static const int ebs_HASH = HashingUtils::HashString("ebs");
+        static const int instance_store_HASH = HashingUtils::HashString("instance-store");
 
 
         DeviceType GetDeviceTypeForName(const Aws::String& name)

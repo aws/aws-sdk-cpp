@@ -20,17 +20,18 @@ using namespace Aws::Client;
 using namespace Aws::Firehose;
 using namespace Aws::Utils;
 
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
-
 namespace Aws
 {
 namespace Firehose
 {
 namespace FirehoseErrorMapper
 {
+
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

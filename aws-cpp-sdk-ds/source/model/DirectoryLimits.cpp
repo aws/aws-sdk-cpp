@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectoryService
+{
+namespace Model
+{
 
 DirectoryLimits::DirectoryLimits() : 
     m_cloudOnlyDirectoriesLimit(0),
@@ -194,3 +200,7 @@ JsonValue DirectoryLimits::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DirectoryService
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace Model
+{
 
 Rule::Rule() : 
     m_attributeHasBeenSet(false),
@@ -84,3 +90,7 @@ JsonValue Rule::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Created_HASH = HashingUtils::HashString("Created");
-static const int Queued_HASH = HashingUtils::HashString("Queued");
-static const int InProgress_HASH = HashingUtils::HashString("InProgress");
-static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
-static const int Failed_HASH = HashingUtils::HashString("Failed");
-static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace DeploymentStatusMapper
       {
+
+        static const int Created_HASH = HashingUtils::HashString("Created");
+        static const int Queued_HASH = HashingUtils::HashString("Queued");
+        static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+        static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 
         DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int movingToVpc_HASH = HashingUtils::HashString("movingToVpc");
-static const int restoringToClassic_HASH = HashingUtils::HashString("restoringToClassic");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace MoveStatusMapper
       {
+
+        static const int movingToVpc_HASH = HashingUtils::HashString("movingToVpc");
+        static const int restoringToClassic_HASH = HashingUtils::HashString("restoringToClassic");
 
 
         MoveStatus GetMoveStatusForName(const Aws::String& name)

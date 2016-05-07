@@ -19,60 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int WorkflowExecutionStarted_HASH = HashingUtils::HashString("WorkflowExecutionStarted");
-static const int WorkflowExecutionCancelRequested_HASH = HashingUtils::HashString("WorkflowExecutionCancelRequested");
-static const int WorkflowExecutionCompleted_HASH = HashingUtils::HashString("WorkflowExecutionCompleted");
-static const int CompleteWorkflowExecutionFailed_HASH = HashingUtils::HashString("CompleteWorkflowExecutionFailed");
-static const int WorkflowExecutionFailed_HASH = HashingUtils::HashString("WorkflowExecutionFailed");
-static const int FailWorkflowExecutionFailed_HASH = HashingUtils::HashString("FailWorkflowExecutionFailed");
-static const int WorkflowExecutionTimedOut_HASH = HashingUtils::HashString("WorkflowExecutionTimedOut");
-static const int WorkflowExecutionCanceled_HASH = HashingUtils::HashString("WorkflowExecutionCanceled");
-static const int CancelWorkflowExecutionFailed_HASH = HashingUtils::HashString("CancelWorkflowExecutionFailed");
-static const int WorkflowExecutionContinuedAsNew_HASH = HashingUtils::HashString("WorkflowExecutionContinuedAsNew");
-static const int ContinueAsNewWorkflowExecutionFailed_HASH = HashingUtils::HashString("ContinueAsNewWorkflowExecutionFailed");
-static const int WorkflowExecutionTerminated_HASH = HashingUtils::HashString("WorkflowExecutionTerminated");
-static const int DecisionTaskScheduled_HASH = HashingUtils::HashString("DecisionTaskScheduled");
-static const int DecisionTaskStarted_HASH = HashingUtils::HashString("DecisionTaskStarted");
-static const int DecisionTaskCompleted_HASH = HashingUtils::HashString("DecisionTaskCompleted");
-static const int DecisionTaskTimedOut_HASH = HashingUtils::HashString("DecisionTaskTimedOut");
-static const int ActivityTaskScheduled_HASH = HashingUtils::HashString("ActivityTaskScheduled");
-static const int ScheduleActivityTaskFailed_HASH = HashingUtils::HashString("ScheduleActivityTaskFailed");
-static const int ActivityTaskStarted_HASH = HashingUtils::HashString("ActivityTaskStarted");
-static const int ActivityTaskCompleted_HASH = HashingUtils::HashString("ActivityTaskCompleted");
-static const int ActivityTaskFailed_HASH = HashingUtils::HashString("ActivityTaskFailed");
-static const int ActivityTaskTimedOut_HASH = HashingUtils::HashString("ActivityTaskTimedOut");
-static const int ActivityTaskCanceled_HASH = HashingUtils::HashString("ActivityTaskCanceled");
-static const int ActivityTaskCancelRequested_HASH = HashingUtils::HashString("ActivityTaskCancelRequested");
-static const int RequestCancelActivityTaskFailed_HASH = HashingUtils::HashString("RequestCancelActivityTaskFailed");
-static const int WorkflowExecutionSignaled_HASH = HashingUtils::HashString("WorkflowExecutionSignaled");
-static const int MarkerRecorded_HASH = HashingUtils::HashString("MarkerRecorded");
-static const int RecordMarkerFailed_HASH = HashingUtils::HashString("RecordMarkerFailed");
-static const int TimerStarted_HASH = HashingUtils::HashString("TimerStarted");
-static const int StartTimerFailed_HASH = HashingUtils::HashString("StartTimerFailed");
-static const int TimerFired_HASH = HashingUtils::HashString("TimerFired");
-static const int TimerCanceled_HASH = HashingUtils::HashString("TimerCanceled");
-static const int CancelTimerFailed_HASH = HashingUtils::HashString("CancelTimerFailed");
-static const int StartChildWorkflowExecutionInitiated_HASH = HashingUtils::HashString("StartChildWorkflowExecutionInitiated");
-static const int StartChildWorkflowExecutionFailed_HASH = HashingUtils::HashString("StartChildWorkflowExecutionFailed");
-static const int ChildWorkflowExecutionStarted_HASH = HashingUtils::HashString("ChildWorkflowExecutionStarted");
-static const int ChildWorkflowExecutionCompleted_HASH = HashingUtils::HashString("ChildWorkflowExecutionCompleted");
-static const int ChildWorkflowExecutionFailed_HASH = HashingUtils::HashString("ChildWorkflowExecutionFailed");
-static const int ChildWorkflowExecutionTimedOut_HASH = HashingUtils::HashString("ChildWorkflowExecutionTimedOut");
-static const int ChildWorkflowExecutionCanceled_HASH = HashingUtils::HashString("ChildWorkflowExecutionCanceled");
-static const int ChildWorkflowExecutionTerminated_HASH = HashingUtils::HashString("ChildWorkflowExecutionTerminated");
-static const int SignalExternalWorkflowExecutionInitiated_HASH = HashingUtils::HashString("SignalExternalWorkflowExecutionInitiated");
-static const int SignalExternalWorkflowExecutionFailed_HASH = HashingUtils::HashString("SignalExternalWorkflowExecutionFailed");
-static const int ExternalWorkflowExecutionSignaled_HASH = HashingUtils::HashString("ExternalWorkflowExecutionSignaled");
-static const int RequestCancelExternalWorkflowExecutionInitiated_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecutionInitiated");
-static const int RequestCancelExternalWorkflowExecutionFailed_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecutionFailed");
-static const int ExternalWorkflowExecutionCancelRequested_HASH = HashingUtils::HashString("ExternalWorkflowExecutionCancelRequested");
-static const int LambdaFunctionScheduled_HASH = HashingUtils::HashString("LambdaFunctionScheduled");
-static const int LambdaFunctionStarted_HASH = HashingUtils::HashString("LambdaFunctionStarted");
-static const int LambdaFunctionCompleted_HASH = HashingUtils::HashString("LambdaFunctionCompleted");
-static const int LambdaFunctionFailed_HASH = HashingUtils::HashString("LambdaFunctionFailed");
-static const int LambdaFunctionTimedOut_HASH = HashingUtils::HashString("LambdaFunctionTimedOut");
-static const int ScheduleLambdaFunctionFailed_HASH = HashingUtils::HashString("ScheduleLambdaFunctionFailed");
-static const int StartLambdaFunctionFailed_HASH = HashingUtils::HashString("StartLambdaFunctionFailed");
 
 namespace Aws
 {
@@ -82,6 +28,61 @@ namespace Aws
     {
       namespace EventTypeMapper
       {
+
+        static const int WorkflowExecutionStarted_HASH = HashingUtils::HashString("WorkflowExecutionStarted");
+        static const int WorkflowExecutionCancelRequested_HASH = HashingUtils::HashString("WorkflowExecutionCancelRequested");
+        static const int WorkflowExecutionCompleted_HASH = HashingUtils::HashString("WorkflowExecutionCompleted");
+        static const int CompleteWorkflowExecutionFailed_HASH = HashingUtils::HashString("CompleteWorkflowExecutionFailed");
+        static const int WorkflowExecutionFailed_HASH = HashingUtils::HashString("WorkflowExecutionFailed");
+        static const int FailWorkflowExecutionFailed_HASH = HashingUtils::HashString("FailWorkflowExecutionFailed");
+        static const int WorkflowExecutionTimedOut_HASH = HashingUtils::HashString("WorkflowExecutionTimedOut");
+        static const int WorkflowExecutionCanceled_HASH = HashingUtils::HashString("WorkflowExecutionCanceled");
+        static const int CancelWorkflowExecutionFailed_HASH = HashingUtils::HashString("CancelWorkflowExecutionFailed");
+        static const int WorkflowExecutionContinuedAsNew_HASH = HashingUtils::HashString("WorkflowExecutionContinuedAsNew");
+        static const int ContinueAsNewWorkflowExecutionFailed_HASH = HashingUtils::HashString("ContinueAsNewWorkflowExecutionFailed");
+        static const int WorkflowExecutionTerminated_HASH = HashingUtils::HashString("WorkflowExecutionTerminated");
+        static const int DecisionTaskScheduled_HASH = HashingUtils::HashString("DecisionTaskScheduled");
+        static const int DecisionTaskStarted_HASH = HashingUtils::HashString("DecisionTaskStarted");
+        static const int DecisionTaskCompleted_HASH = HashingUtils::HashString("DecisionTaskCompleted");
+        static const int DecisionTaskTimedOut_HASH = HashingUtils::HashString("DecisionTaskTimedOut");
+        static const int ActivityTaskScheduled_HASH = HashingUtils::HashString("ActivityTaskScheduled");
+        static const int ScheduleActivityTaskFailed_HASH = HashingUtils::HashString("ScheduleActivityTaskFailed");
+        static const int ActivityTaskStarted_HASH = HashingUtils::HashString("ActivityTaskStarted");
+        static const int ActivityTaskCompleted_HASH = HashingUtils::HashString("ActivityTaskCompleted");
+        static const int ActivityTaskFailed_HASH = HashingUtils::HashString("ActivityTaskFailed");
+        static const int ActivityTaskTimedOut_HASH = HashingUtils::HashString("ActivityTaskTimedOut");
+        static const int ActivityTaskCanceled_HASH = HashingUtils::HashString("ActivityTaskCanceled");
+        static const int ActivityTaskCancelRequested_HASH = HashingUtils::HashString("ActivityTaskCancelRequested");
+        static const int RequestCancelActivityTaskFailed_HASH = HashingUtils::HashString("RequestCancelActivityTaskFailed");
+        static const int WorkflowExecutionSignaled_HASH = HashingUtils::HashString("WorkflowExecutionSignaled");
+        static const int MarkerRecorded_HASH = HashingUtils::HashString("MarkerRecorded");
+        static const int RecordMarkerFailed_HASH = HashingUtils::HashString("RecordMarkerFailed");
+        static const int TimerStarted_HASH = HashingUtils::HashString("TimerStarted");
+        static const int StartTimerFailed_HASH = HashingUtils::HashString("StartTimerFailed");
+        static const int TimerFired_HASH = HashingUtils::HashString("TimerFired");
+        static const int TimerCanceled_HASH = HashingUtils::HashString("TimerCanceled");
+        static const int CancelTimerFailed_HASH = HashingUtils::HashString("CancelTimerFailed");
+        static const int StartChildWorkflowExecutionInitiated_HASH = HashingUtils::HashString("StartChildWorkflowExecutionInitiated");
+        static const int StartChildWorkflowExecutionFailed_HASH = HashingUtils::HashString("StartChildWorkflowExecutionFailed");
+        static const int ChildWorkflowExecutionStarted_HASH = HashingUtils::HashString("ChildWorkflowExecutionStarted");
+        static const int ChildWorkflowExecutionCompleted_HASH = HashingUtils::HashString("ChildWorkflowExecutionCompleted");
+        static const int ChildWorkflowExecutionFailed_HASH = HashingUtils::HashString("ChildWorkflowExecutionFailed");
+        static const int ChildWorkflowExecutionTimedOut_HASH = HashingUtils::HashString("ChildWorkflowExecutionTimedOut");
+        static const int ChildWorkflowExecutionCanceled_HASH = HashingUtils::HashString("ChildWorkflowExecutionCanceled");
+        static const int ChildWorkflowExecutionTerminated_HASH = HashingUtils::HashString("ChildWorkflowExecutionTerminated");
+        static const int SignalExternalWorkflowExecutionInitiated_HASH = HashingUtils::HashString("SignalExternalWorkflowExecutionInitiated");
+        static const int SignalExternalWorkflowExecutionFailed_HASH = HashingUtils::HashString("SignalExternalWorkflowExecutionFailed");
+        static const int ExternalWorkflowExecutionSignaled_HASH = HashingUtils::HashString("ExternalWorkflowExecutionSignaled");
+        static const int RequestCancelExternalWorkflowExecutionInitiated_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecutionInitiated");
+        static const int RequestCancelExternalWorkflowExecutionFailed_HASH = HashingUtils::HashString("RequestCancelExternalWorkflowExecutionFailed");
+        static const int ExternalWorkflowExecutionCancelRequested_HASH = HashingUtils::HashString("ExternalWorkflowExecutionCancelRequested");
+        static const int LambdaFunctionScheduled_HASH = HashingUtils::HashString("LambdaFunctionScheduled");
+        static const int LambdaFunctionStarted_HASH = HashingUtils::HashString("LambdaFunctionStarted");
+        static const int LambdaFunctionCompleted_HASH = HashingUtils::HashString("LambdaFunctionCompleted");
+        static const int LambdaFunctionFailed_HASH = HashingUtils::HashString("LambdaFunctionFailed");
+        static const int LambdaFunctionTimedOut_HASH = HashingUtils::HashString("LambdaFunctionTimedOut");
+        static const int ScheduleLambdaFunctionFailed_HASH = HashingUtils::HashString("ScheduleLambdaFunctionFailed");
+        static const int StartLambdaFunctionFailed_HASH = HashingUtils::HashString("StartLambdaFunctionFailed");
 
 
         EventType GetEventTypeForName(const Aws::String& name)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 S3DestinationUpdate::S3DestinationUpdate() : 
     m_roleARNHasBeenSet(false),
@@ -145,3 +151,7 @@ JsonValue S3DestinationUpdate::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

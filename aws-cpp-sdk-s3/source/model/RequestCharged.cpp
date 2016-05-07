@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int requester_HASH = HashingUtils::HashString("requester");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace RequestChargedMapper
       {
+
+        static const int requester_HASH = HashingUtils::HashString("requester");
 
 
         RequestCharged GetRequestChargedForName(const Aws::String& name)

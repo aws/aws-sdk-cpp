@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 EngineDefaults::EngineDefaults() : 
     m_cacheParameterGroupFamilyHasBeenSet(false),
@@ -150,3 +156,7 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location)
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

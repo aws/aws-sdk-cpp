@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ACM
+{
+namespace Model
+{
 
 CertificateDetail::CertificateDetail() : 
     m_certificateArnHasBeenSet(false),
@@ -312,3 +318,7 @@ JsonValue CertificateDetail::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace ACM
+} // namespace Aws

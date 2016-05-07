@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::CloudSearch;
 using namespace Aws::Utils;
 
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
-static const int BASE_HASH = HashingUtils::HashString("BaseException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
-static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidType");
-static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledAction");
-
 namespace Aws
 {
 namespace CloudSearch
 {
 namespace CloudSearchErrorMapper
 {
+
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
+static const int BASE_HASH = HashingUtils::HashString("BaseException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidType");
+static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledAction");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

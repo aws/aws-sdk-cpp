@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() : 
     m_primaryClusterIdHasBeenSet(false),
@@ -82,3 +88,7 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       oStream << location << ".AutomaticFailoverStatus=" << PendingAutomaticFailoverStatusMapper::GetNameForPendingAutomaticFailoverStatus(m_automaticFailoverStatus) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

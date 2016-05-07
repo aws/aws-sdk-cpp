@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace Model
+{
 
 Attribute::Attribute() : 
     m_nameHasBeenSet(false),
@@ -114,3 +120,7 @@ void Attribute::OutputToStream(Aws::OStream& oStream, const char* location) cons
       oStream << location << ".AlternateValueEncoding=" << StringUtils::URLEncode(m_alternateValueEncoding.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SimpleDB
+} // namespace Aws

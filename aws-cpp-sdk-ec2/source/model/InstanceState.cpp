@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceState::InstanceState() : 
     m_code(0),
@@ -84,3 +90,7 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

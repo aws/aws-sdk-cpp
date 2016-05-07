@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 PolicyUser::PolicyUser() : 
     m_userNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void PolicyUser::OutputToStream(Aws::OStream& oStream, const char* location) con
       oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

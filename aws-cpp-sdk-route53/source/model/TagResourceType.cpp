@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int healthcheck_HASH = HashingUtils::HashString("healthcheck");
-static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace TagResourceTypeMapper
       {
+
+        static const int healthcheck_HASH = HashingUtils::HashString("healthcheck");
+        static const int hostedzone_HASH = HashingUtils::HashString("hostedzone");
 
 
         TagResourceType GetTagResourceTypeForName(const Aws::String& name)

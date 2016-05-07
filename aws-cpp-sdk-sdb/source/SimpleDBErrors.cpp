@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SimpleDB;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SimpleDB
+{
+namespace SimpleDBErrorMapper
+{
+
 static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 static const int NO_SUCH_DOMAIN_HASH = HashingUtils::HashString("NoSuchDomain");
 static const int NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainAttributesExceeded");
@@ -36,12 +43,6 @@ static const int NUMBER_DOMAINS_EXCEEDED_HASH = HashingUtils::HashString("Number
 static const int INVALID_QUERY_EXPRESSION_HASH = HashingUtils::HashString("InvalidQueryExpression");
 static const int TOO_MANY_REQUESTED_ATTRIBUTES_HASH = HashingUtils::HashString("TooManyRequestedAttributes");
 
-namespace Aws
-{
-namespace SimpleDB
-{
-namespace SimpleDBErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SSM
+{
+namespace Model
+{
 
 InstanceInformationFilter::InstanceInformationFilter() : 
     m_keyHasBeenSet(false),
@@ -78,3 +84,7 @@ JsonValue InstanceInformationFilter::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace SSM
+} // namespace Aws

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudWatchEvents
+{
+namespace Model
+{
 
 PutEventsRequestEntry::PutEventsRequestEntry() : 
     m_timeHasBeenSet(false),
@@ -123,3 +129,7 @@ JsonValue PutEventsRequestEntry::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudWatchEvents
+} // namespace Aws

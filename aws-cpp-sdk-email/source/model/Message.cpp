@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 Message::Message() : 
     m_subjectHasBeenSet(false),
@@ -90,3 +96,7 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
       m_body.OutputToStream(oStream, bodyLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

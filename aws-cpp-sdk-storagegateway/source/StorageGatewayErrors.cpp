@@ -20,14 +20,15 @@ using namespace Aws::Client;
 using namespace Aws::StorageGateway;
 using namespace Aws::Utils;
 
-static const int INVALID_GATEWAY_REQUEST_HASH = HashingUtils::HashString("InvalidGatewayRequestException");
-
 namespace Aws
 {
 namespace StorageGateway
 {
 namespace StorageGatewayErrorMapper
 {
+
+static const int INVALID_GATEWAY_REQUEST_HASH = HashingUtils::HashString("InvalidGatewayRequestException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

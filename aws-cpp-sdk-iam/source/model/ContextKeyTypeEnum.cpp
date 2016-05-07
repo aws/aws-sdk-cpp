@@ -19,18 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int string_HASH = HashingUtils::HashString("string");
-static const int stringList_HASH = HashingUtils::HashString("stringList");
-static const int numeric_HASH = HashingUtils::HashString("numeric");
-static const int numericList_HASH = HashingUtils::HashString("numericList");
-static const int boolean_HASH = HashingUtils::HashString("boolean");
-static const int booleanList_HASH = HashingUtils::HashString("booleanList");
-static const int ip_HASH = HashingUtils::HashString("ip");
-static const int ipList_HASH = HashingUtils::HashString("ipList");
-static const int binary_HASH = HashingUtils::HashString("binary");
-static const int binaryList_HASH = HashingUtils::HashString("binaryList");
-static const int date_HASH = HashingUtils::HashString("date");
-static const int dateList_HASH = HashingUtils::HashString("dateList");
 
 namespace Aws
 {
@@ -40,6 +28,19 @@ namespace Aws
     {
       namespace ContextKeyTypeEnumMapper
       {
+
+        static const int string_HASH = HashingUtils::HashString("string");
+        static const int stringList_HASH = HashingUtils::HashString("stringList");
+        static const int numeric_HASH = HashingUtils::HashString("numeric");
+        static const int numericList_HASH = HashingUtils::HashString("numericList");
+        static const int boolean_HASH = HashingUtils::HashString("boolean");
+        static const int booleanList_HASH = HashingUtils::HashString("booleanList");
+        static const int ip_HASH = HashingUtils::HashString("ip");
+        static const int ipList_HASH = HashingUtils::HashString("ipList");
+        static const int binary_HASH = HashingUtils::HashString("binary");
+        static const int binaryList_HASH = HashingUtils::HashString("binaryList");
+        static const int date_HASH = HashingUtils::HashString("date");
+        static const int dateList_HASH = HashingUtils::HashString("dateList");
 
 
         ContextKeyTypeEnum GetContextKeyTypeEnumForName(const Aws::String& name)

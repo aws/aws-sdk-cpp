@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 BounceAction::BounceAction() : 
     m_topicArnHasBeenSet(false),
@@ -130,3 +136,7 @@ void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Sender=" << StringUtils::URLEncode(m_sender.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

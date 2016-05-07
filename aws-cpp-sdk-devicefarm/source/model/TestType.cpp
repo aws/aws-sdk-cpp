@@ -19,20 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int BUILTIN_FUZZ_HASH = HashingUtils::HashString("BUILTIN_FUZZ");
-static const int BUILTIN_EXPLORER_HASH = HashingUtils::HashString("BUILTIN_EXPLORER");
-static const int APPIUM_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT");
-static const int APPIUM_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG");
-static const int APPIUM_PYTHON_HASH = HashingUtils::HashString("APPIUM_PYTHON");
-static const int APPIUM_WEB_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT");
-static const int APPIUM_WEB_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG");
-static const int APPIUM_WEB_PYTHON_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON");
-static const int CALABASH_HASH = HashingUtils::HashString("CALABASH");
-static const int INSTRUMENTATION_HASH = HashingUtils::HashString("INSTRUMENTATION");
-static const int UIAUTOMATION_HASH = HashingUtils::HashString("UIAUTOMATION");
-static const int UIAUTOMATOR_HASH = HashingUtils::HashString("UIAUTOMATOR");
-static const int XCTEST_HASH = HashingUtils::HashString("XCTEST");
-static const int XCTEST_UI_HASH = HashingUtils::HashString("XCTEST_UI");
 
 namespace Aws
 {
@@ -42,6 +28,21 @@ namespace Aws
     {
       namespace TestTypeMapper
       {
+
+        static const int BUILTIN_FUZZ_HASH = HashingUtils::HashString("BUILTIN_FUZZ");
+        static const int BUILTIN_EXPLORER_HASH = HashingUtils::HashString("BUILTIN_EXPLORER");
+        static const int APPIUM_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT");
+        static const int APPIUM_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG");
+        static const int APPIUM_PYTHON_HASH = HashingUtils::HashString("APPIUM_PYTHON");
+        static const int APPIUM_WEB_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT");
+        static const int APPIUM_WEB_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG");
+        static const int APPIUM_WEB_PYTHON_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON");
+        static const int CALABASH_HASH = HashingUtils::HashString("CALABASH");
+        static const int INSTRUMENTATION_HASH = HashingUtils::HashString("INSTRUMENTATION");
+        static const int UIAUTOMATION_HASH = HashingUtils::HashString("UIAUTOMATION");
+        static const int UIAUTOMATOR_HASH = HashingUtils::HashString("UIAUTOMATOR");
+        static const int XCTEST_HASH = HashingUtils::HashString("XCTEST");
+        static const int XCTEST_UI_HASH = HashingUtils::HashString("XCTEST_UI");
 
 
         TestType GetTestTypeForName(const Aws::String& name)

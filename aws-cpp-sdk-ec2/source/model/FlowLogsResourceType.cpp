@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int VPC_HASH = HashingUtils::HashString("VPC");
-static const int Subnet_HASH = HashingUtils::HashString("Subnet");
-static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace FlowLogsResourceTypeMapper
       {
+
+        static const int VPC_HASH = HashingUtils::HashString("VPC");
+        static const int Subnet_HASH = HashingUtils::HashString("Subnet");
+        static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterface");
 
 
         FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name)

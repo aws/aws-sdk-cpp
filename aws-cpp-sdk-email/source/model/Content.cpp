@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::SES::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SES
+{
+namespace Model
+{
 
 Content::Content() : 
     m_dataHasBeenSet(false),
@@ -82,3 +88,7 @@ void Content::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".Charset=" << StringUtils::URLEncode(m_charset.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SES
+} // namespace Aws

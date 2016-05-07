@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() : 
     m_pathHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue ScriptBootstrapActionConfig::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

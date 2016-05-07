@@ -20,15 +20,16 @@ using namespace Aws::Client;
 using namespace Aws::DirectConnect;
 using namespace Aws::Utils;
 
-static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
-static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
-
 namespace Aws
 {
 namespace DirectConnect
 {
 namespace DirectConnectErrorMapper
 {
+
+static const int DIRECT_CONNECT_CLIENT_HASH = HashingUtils::HashString("DirectConnectClientException");
+static const int DIRECT_CONNECT_SERVER_HASH = HashingUtils::HashString("DirectConnectServerException");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

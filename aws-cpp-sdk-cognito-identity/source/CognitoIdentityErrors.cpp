@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CognitoIdentity;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CognitoIdentity
+{
+namespace CognitoIdentityErrorMapper
+{
+
 static const int INVALID_IDENTITY_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidIdentityPoolConfigurationException");
 static const int EXTERNAL_SERVICE_HASH = HashingUtils::HashString("ExternalServiceException");
 static const int DEVELOPER_USER_ALREADY_REGISTERED_HASH = HashingUtils::HashString("DeveloperUserAlreadyRegisteredException");
@@ -31,12 +38,6 @@ static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyReque
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 
-namespace Aws
-{
-namespace CognitoIdentity
-{
-namespace CognitoIdentityErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

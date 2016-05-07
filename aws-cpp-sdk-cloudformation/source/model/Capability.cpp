@@ -19,7 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CAPABILITY_IAM_HASH = HashingUtils::HashString("CAPABILITY_IAM");
 
 namespace Aws
 {
@@ -29,6 +28,8 @@ namespace Aws
     {
       namespace CapabilityMapper
       {
+
+        static const int CAPABILITY_IAM_HASH = HashingUtils::HashString("CAPABILITY_IAM");
 
 
         Capability GetCapabilityForName(const Aws::String& name)

@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Heavy_Utilization_HASH = HashingUtils::HashString("Heavy Utilization");
-static const int Medium_Utilization_HASH = HashingUtils::HashString("Medium Utilization");
-static const int Light_Utilization_HASH = HashingUtils::HashString("Light Utilization");
-static const int No_Upfront_HASH = HashingUtils::HashString("No Upfront");
-static const int Partial_Upfront_HASH = HashingUtils::HashString("Partial Upfront");
-static const int All_Upfront_HASH = HashingUtils::HashString("All Upfront");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace OfferingTypeValuesMapper
       {
+
+        static const int Heavy_Utilization_HASH = HashingUtils::HashString("Heavy Utilization");
+        static const int Medium_Utilization_HASH = HashingUtils::HashString("Medium Utilization");
+        static const int Light_Utilization_HASH = HashingUtils::HashString("Light Utilization");
+        static const int No_Upfront_HASH = HashingUtils::HashString("No Upfront");
+        static const int Partial_Upfront_HASH = HashingUtils::HashString("Partial Upfront");
+        static const int All_Upfront_HASH = HashingUtils::HashString("All Upfront");
 
 
         OfferingTypeValues GetOfferingTypeValuesForName(const Aws::String& name)

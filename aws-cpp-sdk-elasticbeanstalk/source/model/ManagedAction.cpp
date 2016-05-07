@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ManagedAction::ManagedAction() : 
     m_actionIdHasBeenSet(false),
@@ -130,3 +136,7 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location) 
       oStream << location << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

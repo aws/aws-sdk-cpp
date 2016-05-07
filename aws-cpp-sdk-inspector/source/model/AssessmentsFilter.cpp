@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Inspector
+{
+namespace Model
+{
 
 AssessmentsFilter::AssessmentsFilter() : 
     m_assessmentNamePatternsHasBeenSet(false),
@@ -149,3 +155,7 @@ JsonValue AssessmentsFilter::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Inspector
+} // namespace Aws

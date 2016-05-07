@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceStatusDetails::InstanceStatusDetails() : 
     m_nameHasBeenSet(false),
@@ -98,3 +104,7 @@ void InstanceStatusDetails::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".ImpairedSince=" << StringUtils::URLEncode(m_impairedSince.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

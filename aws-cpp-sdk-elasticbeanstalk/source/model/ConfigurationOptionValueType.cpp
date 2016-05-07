@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Scalar_HASH = HashingUtils::HashString("Scalar");
-static const int List_HASH = HashingUtils::HashString("List");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ConfigurationOptionValueTypeMapper
       {
+
+        static const int Scalar_HASH = HashingUtils::HashString("Scalar");
+        static const int List_HASH = HashingUtils::HashString("List");
 
 
         ConfigurationOptionValueType GetConfigurationOptionValueTypeForName(const Aws::String& name)

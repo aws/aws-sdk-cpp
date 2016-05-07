@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 Alarm::Alarm() : 
     m_alarmNameHasBeenSet(false),
@@ -82,3 +88,7 @@ void Alarm::OutputToStream(Aws::OStream& oStream, const char* location) const
       oStream << location << ".AlarmARN=" << StringUtils::URLEncode(m_alarmARN.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

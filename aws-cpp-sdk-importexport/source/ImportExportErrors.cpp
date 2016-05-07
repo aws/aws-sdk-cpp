@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ImportExport;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ImportExport
+{
+namespace ImportExportErrorMapper
+{
+
 static const int UNABLE_TO_CANCEL_JOB_ID_HASH = HashingUtils::HashString("UnableToCancelJobIdException");
 static const int MULTIPLE_REGIONS_HASH = HashingUtils::HashString("MultipleRegionsException");
 static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
@@ -40,12 +47,6 @@ static const int MISSING_CUSTOMS_HASH = HashingUtils::HashString("MissingCustoms
 static const int MISSING_MANIFEST_FIELD_HASH = HashingUtils::HashString("MissingManifestFieldException");
 static const int CANCELED_JOB_ID_HASH = HashingUtils::HashString("CanceledJobIdException");
 
-namespace Aws
-{
-namespace ImportExport
-{
-namespace ImportExportErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

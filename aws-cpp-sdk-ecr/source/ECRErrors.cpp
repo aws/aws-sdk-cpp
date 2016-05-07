@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::ECR;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace ECR
+{
+namespace ECRErrorMapper
+{
+
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
@@ -37,12 +44,6 @@ static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("Repo
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 
-namespace Aws
-{
-namespace ECR
-{
-namespace ECRErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

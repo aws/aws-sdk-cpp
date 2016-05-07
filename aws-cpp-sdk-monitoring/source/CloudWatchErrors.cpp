@@ -20,18 +20,19 @@ using namespace Aws::Client;
 using namespace Aws::CloudWatch;
 using namespace Aws::Utils;
 
-static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
-static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
-static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
-
 namespace Aws
 {
 namespace CloudWatch
 {
 namespace CloudWatchErrorMapper
 {
+
+static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
+static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
+static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
+static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
+
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

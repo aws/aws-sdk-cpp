@@ -17,11 +17,23 @@ project(aws-cpp-sdk-opsworks)
     "source/model/*.cpp"
   )
 
-  file(GLOB OPSWORKS_SRC
+  file(GLOB OPSWORKS_UNIFIED_HEADERS
     ${AWS_OPSWORKS_HEADERS}
     ${AWS_OPSWORKS_MODEL_HEADERS}
+  )
+
+  file(GLOB OPSWORKS_UNITY_SRC
     ${AWS_OPSWORKS_SOURCE}
     ${AWS_OPSWORKS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("OPSWORKS" OPSWORKS_UNITY_SRC)
+  endif()
+
+  file(GLOB OPSWORKS_SRC
+    ${OPSWORKS_UNIFIED_HEADERS}
+    ${OPSWORKS_UNITY_SRC}
   )
 
   if(WIN32)

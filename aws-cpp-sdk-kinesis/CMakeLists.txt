@@ -17,11 +17,23 @@ project(aws-cpp-sdk-kinesis)
     "source/model/*.cpp"
   )
 
-  file(GLOB KINESIS_SRC
+  file(GLOB KINESIS_UNIFIED_HEADERS
     ${AWS_KINESIS_HEADERS}
     ${AWS_KINESIS_MODEL_HEADERS}
+  )
+
+  file(GLOB KINESIS_UNITY_SRC
     ${AWS_KINESIS_SOURCE}
     ${AWS_KINESIS_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("KINESIS" KINESIS_UNITY_SRC)
+  endif()
+
+  file(GLOB KINESIS_SRC
+    ${KINESIS_UNIFIED_HEADERS}
+    ${KINESIS_UNITY_SRC}
   )
 
   if(WIN32)

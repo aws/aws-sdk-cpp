@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElasticBeanstalk
+{
+namespace Model
+{
 
 ManagedActionHistoryItem::ManagedActionHistoryItem() : 
     m_actionIdHasBeenSet(false),
@@ -178,3 +184,7 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElasticBeanstalk
+} // namespace Aws

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 DiskImageDetail::DiskImageDetail() : 
     m_formatHasBeenSet(false),
@@ -100,3 +106,7 @@ void DiskImageDetail::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << ".ImportManifestUrl=" << StringUtils::URLEncode(m_importManifestUrl.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

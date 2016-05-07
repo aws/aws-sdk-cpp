@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SNS;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SNS
+{
+namespace SNSErrorMapper
+{
+
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
 static const int TOPIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TopicLimitExceeded");
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
@@ -29,12 +36,6 @@ static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("Authorizat
 static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
 
-namespace Aws
-{
-namespace SNS
-{
-namespace SNSErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ConfigRuleStateMapper
       {
+
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 
 
         ConfigRuleState GetConfigRuleStateForName(const Aws::String& name)

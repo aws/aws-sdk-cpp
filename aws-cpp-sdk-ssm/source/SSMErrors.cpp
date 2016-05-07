@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SSM;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SSM
+{
+namespace SSMErrorMapper
+{
+
 static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
 static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
@@ -41,12 +48,6 @@ static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("Inval
 static const int ASSOCIATED_INSTANCES_HASH = HashingUtils::HashString("AssociatedInstances");
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 
-namespace Aws
-{
-namespace SSM
-{
-namespace SSMErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

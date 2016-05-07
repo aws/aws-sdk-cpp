@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::Route53Domains;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace Route53Domains
+{
+namespace Route53DomainsErrorMapper
+{
+
 static const int DOMAIN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DomainLimitExceeded");
 static const int OPERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OperationLimitExceeded");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
@@ -27,12 +34,6 @@ static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateReq
 static const int T_L_D_RULES_VIOLATION_HASH = HashingUtils::HashString("TLDRulesViolation");
 static const int UNSUPPORTED_T_L_D_HASH = HashingUtils::HashString("UnsupportedTLD");
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Route53DomainsErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

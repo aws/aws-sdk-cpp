@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 ClusterIamRole::ClusterIamRole() : 
     m_iamRoleArnHasBeenSet(false),
@@ -82,3 +88,7 @@ void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location)
       oStream << location << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

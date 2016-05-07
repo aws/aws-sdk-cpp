@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Lambda
+{
+namespace Model
+{
 
 FunctionCodeLocation::FunctionCodeLocation() : 
     m_repositoryTypeHasBeenSet(false),
@@ -71,3 +77,7 @@ JsonValue FunctionCodeLocation::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Lambda
+} // namespace Aws

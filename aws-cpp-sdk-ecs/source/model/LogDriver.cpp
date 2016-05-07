@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int json_file_HASH = HashingUtils::HashString("json-file");
-static const int syslog_HASH = HashingUtils::HashString("syslog");
-static const int journald_HASH = HashingUtils::HashString("journald");
-static const int gelf_HASH = HashingUtils::HashString("gelf");
-static const int fluentd_HASH = HashingUtils::HashString("fluentd");
-static const int awslogs_HASH = HashingUtils::HashString("awslogs");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace LogDriverMapper
       {
+
+        static const int json_file_HASH = HashingUtils::HashString("json-file");
+        static const int syslog_HASH = HashingUtils::HashString("syslog");
+        static const int journald_HASH = HashingUtils::HashString("journald");
+        static const int gelf_HASH = HashingUtils::HashString("gelf");
+        static const int fluentd_HASH = HashingUtils::HashString("fluentd");
+        static const int awslogs_HASH = HashingUtils::HashString("awslogs");
 
 
         LogDriver GetLogDriverForName(const Aws::String& name)

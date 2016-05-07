@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int VALUE_HASH = HashingUtils::HashString("VALUE");
-static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ComputeMapper
       {
+
+        static const int VALUE_HASH = HashingUtils::HashString("VALUE");
+        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+        static const int PERFORMANCE_HASH = HashingUtils::HashString("PERFORMANCE");
 
 
         Compute GetComputeForName(const Aws::String& name)

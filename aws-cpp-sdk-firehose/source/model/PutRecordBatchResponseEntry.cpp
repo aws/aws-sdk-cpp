@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Firehose
+{
+namespace Model
+{
 
 PutRecordBatchResponseEntry::PutRecordBatchResponseEntry() : 
     m_recordIdHasBeenSet(false),
@@ -86,3 +92,7 @@ JsonValue PutRecordBatchResponseEntry::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace Firehose
+} // namespace Aws

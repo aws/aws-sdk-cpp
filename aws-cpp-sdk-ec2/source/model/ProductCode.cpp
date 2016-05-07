@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ProductCode::ProductCode() : 
     m_productCodeIdHasBeenSet(false),
@@ -82,3 +88,7 @@ void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location) co
       oStream << location << ".ProductCodeType=" << ProductCodeValuesMapper::GetNameForProductCodeValues(m_productCodeType) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

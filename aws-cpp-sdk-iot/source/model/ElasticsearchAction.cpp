@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IoT
+{
+namespace Model
+{
 
 ElasticsearchAction::ElasticsearchAction() : 
     m_roleArnHasBeenSet(false),
@@ -116,3 +122,7 @@ JsonValue ElasticsearchAction::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

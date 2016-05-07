@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int MoveInProgress_HASH = HashingUtils::HashString("MoveInProgress");
-static const int InVpc_HASH = HashingUtils::HashString("InVpc");
-static const int InClassic_HASH = HashingUtils::HashString("InClassic");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace StatusMapper
       {
+
+        static const int MoveInProgress_HASH = HashingUtils::HashString("MoveInProgress");
+        static const int InVpc_HASH = HashingUtils::HashString("InVpc");
+        static const int InClassic_HASH = HashingUtils::HashString("InClassic");
 
 
         Status GetStatusForName(const Aws::String& name)

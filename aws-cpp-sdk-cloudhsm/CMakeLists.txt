@@ -17,11 +17,23 @@ project(aws-cpp-sdk-cloudhsm)
     "source/model/*.cpp"
   )
 
-  file(GLOB CLOUDHSM_SRC
+  file(GLOB CLOUDHSM_UNIFIED_HEADERS
     ${AWS_CLOUDHSM_HEADERS}
     ${AWS_CLOUDHSM_MODEL_HEADERS}
+  )
+
+  file(GLOB CLOUDHSM_UNITY_SRC
     ${AWS_CLOUDHSM_SOURCE}
     ${AWS_CLOUDHSM_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("CLOUDHSM" CLOUDHSM_UNITY_SRC)
+  endif()
+
+  file(GLOB CLOUDHSM_SRC
+    ${CLOUDHSM_UNIFIED_HEADERS}
+    ${CLOUDHSM_UNITY_SRC}
   )
 
   if(WIN32)

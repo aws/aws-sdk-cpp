@@ -19,13 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int submitted_HASH = HashingUtils::HashString("submitted");
-static const int active_HASH = HashingUtils::HashString("active");
-static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int cancelled_running_HASH = HashingUtils::HashString("cancelled_running");
-static const int cancelled_terminating_HASH = HashingUtils::HashString("cancelled_terminating");
-static const int modifying_HASH = HashingUtils::HashString("modifying");
 
 namespace Aws
 {
@@ -35,6 +28,14 @@ namespace Aws
     {
       namespace BatchStateMapper
       {
+
+        static const int submitted_HASH = HashingUtils::HashString("submitted");
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int cancelled_running_HASH = HashingUtils::HashString("cancelled_running");
+        static const int cancelled_terminating_HASH = HashingUtils::HashString("cancelled_terminating");
+        static const int modifying_HASH = HashingUtils::HashString("modifying");
 
 
         BatchState GetBatchStateForName(const Aws::String& name)

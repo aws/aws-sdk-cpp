@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkInterfacePrivateIpAddress::NetworkInterfacePrivateIpAddress() : 
     m_privateIpAddressHasBeenSet(false),
@@ -120,3 +126,7 @@ void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, con
       m_association.OutputToStream(oStream, associationLocationAndMember.c_str());
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

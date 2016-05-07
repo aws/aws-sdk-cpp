@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Active_HASH = HashingUtils::HashString("Active");
-static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace StatusTypeMapper
       {
+
+        static const int Active_HASH = HashingUtils::HashString("Active");
+        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 
         StatusType GetStatusTypeForName(const Aws::String& name)

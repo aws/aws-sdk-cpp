@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::CloudSearchDomain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CloudSearchDomain
+{
+namespace Model
+{
 
 DocumentServiceWarning::DocumentServiceWarning() : 
     m_messageHasBeenSet(false)
@@ -56,3 +62,7 @@ JsonValue DocumentServiceWarning::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace CloudSearchDomain
+} // namespace Aws

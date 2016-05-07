@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::SES;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace SES
+{
+namespace SESErrorMapper
+{
+
 static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("InvalidLambdaFunction");
 static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDelete");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicy");
@@ -32,12 +39,6 @@ static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExists")
 static const int MAIL_FROM_DOMAIN_NOT_VERIFIED_HASH = HashingUtils::HashString("MailFromDomainNotVerifiedException");
 static const int INVALID_S3_CONFIGURATION_HASH = HashingUtils::HashString("InvalidS3Configuration");
 
-namespace Aws
-{
-namespace SES
-{
-namespace SESErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

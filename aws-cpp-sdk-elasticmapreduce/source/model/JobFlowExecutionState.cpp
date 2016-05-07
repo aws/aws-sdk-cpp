@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int WAITING_HASH = HashingUtils::HashString("WAITING");
-static const int SHUTTING_DOWN_HASH = HashingUtils::HashString("SHUTTING_DOWN");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace JobFlowExecutionStateMapper
       {
+
+        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
+        static const int BOOTSTRAPPING_HASH = HashingUtils::HashString("BOOTSTRAPPING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int WAITING_HASH = HashingUtils::HashString("WAITING");
+        static const int SHUTTING_DOWN_HASH = HashingUtils::HashString("SHUTTING_DOWN");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         JobFlowExecutionState GetJobFlowExecutionStateForName(const Aws::String& name)

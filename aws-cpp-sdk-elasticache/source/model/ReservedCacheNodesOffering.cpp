@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 ReservedCacheNodesOffering::ReservedCacheNodesOffering() : 
     m_reservedCacheNodesOfferingIdHasBeenSet(false),
@@ -202,3 +208,7 @@ void ReservedCacheNodesOffering::OutputToStream(Aws::OStream& oStream, const cha
       }
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

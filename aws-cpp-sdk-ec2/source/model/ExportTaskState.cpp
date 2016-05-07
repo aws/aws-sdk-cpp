@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int active_HASH = HashingUtils::HashString("active");
-static const int cancelling_HASH = HashingUtils::HashString("cancelling");
-static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-static const int completed_HASH = HashingUtils::HashString("completed");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace ExportTaskStateMapper
       {
+
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int cancelling_HASH = HashingUtils::HashString("cancelling");
+        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
+        static const int completed_HASH = HashingUtils::HashString("completed");
 
 
         ExportTaskState GetExportTaskStateForName(const Aws::String& name)

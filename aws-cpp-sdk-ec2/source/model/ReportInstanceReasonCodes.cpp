@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int instance_stuck_in_state_HASH = HashingUtils::HashString("instance-stuck-in-state");
-static const int unresponsive_HASH = HashingUtils::HashString("unresponsive");
-static const int not_accepting_credentials_HASH = HashingUtils::HashString("not-accepting-credentials");
-static const int password_not_available_HASH = HashingUtils::HashString("password-not-available");
-static const int performance_network_HASH = HashingUtils::HashString("performance-network");
-static const int performance_instance_store_HASH = HashingUtils::HashString("performance-instance-store");
-static const int performance_ebs_volume_HASH = HashingUtils::HashString("performance-ebs-volume");
-static const int performance_other_HASH = HashingUtils::HashString("performance-other");
-static const int other_HASH = HashingUtils::HashString("other");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace ReportInstanceReasonCodesMapper
       {
+
+        static const int instance_stuck_in_state_HASH = HashingUtils::HashString("instance-stuck-in-state");
+        static const int unresponsive_HASH = HashingUtils::HashString("unresponsive");
+        static const int not_accepting_credentials_HASH = HashingUtils::HashString("not-accepting-credentials");
+        static const int password_not_available_HASH = HashingUtils::HashString("password-not-available");
+        static const int performance_network_HASH = HashingUtils::HashString("performance-network");
+        static const int performance_instance_store_HASH = HashingUtils::HashString("performance-instance-store");
+        static const int performance_ebs_volume_HASH = HashingUtils::HashString("performance-ebs-volume");
+        static const int performance_other_HASH = HashingUtils::HashString("performance-other");
+        static const int other_HASH = HashingUtils::HashString("other");
 
 
         ReportInstanceReasonCodes GetReportInstanceReasonCodesForName(const Aws::String& name)

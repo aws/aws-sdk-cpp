@@ -17,11 +17,23 @@ project(aws-cpp-sdk-monitoring)
     "source/model/*.cpp"
   )
 
-  file(GLOB MONITORING_SRC
+  file(GLOB MONITORING_UNIFIED_HEADERS
     ${AWS_MONITORING_HEADERS}
     ${AWS_MONITORING_MODEL_HEADERS}
+  )
+
+  file(GLOB MONITORING_UNITY_SRC
     ${AWS_MONITORING_SOURCE}
     ${AWS_MONITORING_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("MONITORING" MONITORING_UNITY_SRC)
+  endif()
+
+  file(GLOB MONITORING_SRC
+    ${MONITORING_UNIFIED_HEADERS}
+    ${MONITORING_UNITY_SRC}
   )
 
   if(WIN32)

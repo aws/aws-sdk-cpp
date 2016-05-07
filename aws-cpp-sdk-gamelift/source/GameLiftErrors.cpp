@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::GameLift;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace GameLift
+{
+namespace GameLiftErrorMapper
+{
+
 static const int INVALID_FLEET_STATUS_HASH = HashingUtils::HashString("InvalidFleetStatusException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -32,12 +39,6 @@ static const int GAME_SESSION_FULL_HASH = HashingUtils::HashString("GameSessionF
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int FLEET_CAPACITY_EXCEEDED_HASH = HashingUtils::HashString("FleetCapacityExceededException");
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace GameLiftErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

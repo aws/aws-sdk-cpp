@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace AutoScaling
+{
+namespace Model
+{
 
 BlockDeviceMapping::BlockDeviceMapping() : 
     m_virtualNameHasBeenSet(false),
@@ -120,3 +126,7 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << ".NoDevice=" << m_noDevice << "&";
   }
 }
+
+} // namespace Model
+} // namespace AutoScaling
+} // namespace Aws

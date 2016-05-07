@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 InstanceCapacity::InstanceCapacity() : 
     m_instanceTypeHasBeenSet(false),
@@ -102,3 +108,7 @@ void InstanceCapacity::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << ".TotalCapacity=" << m_totalCapacity << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

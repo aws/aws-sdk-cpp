@@ -17,11 +17,23 @@ project(aws-cpp-sdk-cognito-sync)
     "source/model/*.cpp"
   )
 
-  file(GLOB COGNITO-SYNC_SRC
+  file(GLOB COGNITO-SYNC_UNIFIED_HEADERS
     ${AWS_COGNITO-SYNC_HEADERS}
     ${AWS_COGNITO-SYNC_MODEL_HEADERS}
+  )
+
+  file(GLOB COGNITO-SYNC_UNITY_SRC
     ${AWS_COGNITO-SYNC_SOURCE}
     ${AWS_COGNITO-SYNC_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("COGNITO-SYNC" COGNITO-SYNC_UNITY_SRC)
+  endif()
+
+  file(GLOB COGNITO-SYNC_SRC
+    ${COGNITO-SYNC_UNIFIED_HEADERS}
+    ${COGNITO-SYNC_UNITY_SRC}
   )
 
   if(WIN32)

@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EMR
+{
+namespace Model
+{
 
 EbsBlockDeviceConfig::EbsBlockDeviceConfig() : 
     m_volumeSpecificationHasBeenSet(false),
@@ -73,3 +79,7 @@ JsonValue EbsBlockDeviceConfig::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

@@ -17,11 +17,23 @@ project(aws-cpp-sdk-email)
     "source/model/*.cpp"
   )
 
-  file(GLOB EMAIL_SRC
+  file(GLOB EMAIL_UNIFIED_HEADERS
     ${AWS_EMAIL_HEADERS}
     ${AWS_EMAIL_MODEL_HEADERS}
+  )
+
+  file(GLOB EMAIL_UNITY_SRC
     ${AWS_EMAIL_SOURCE}
     ${AWS_EMAIL_MODEL_SOURCE}
+  )
+
+  if(ENABLE_UNITY_BUILD)
+    enable_unity_build("EMAIL" EMAIL_UNITY_SRC)
+  endif()
+
+  file(GLOB EMAIL_SRC
+    ${EMAIL_UNIFIED_HEADERS}
+    ${EMAIL_UNITY_SRC}
   )
 
   if(WIN32)

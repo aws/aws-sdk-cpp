@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 IcmpTypeCode::IcmpTypeCode() : 
     m_type(0),
@@ -86,3 +92,7 @@ void IcmpTypeCode::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".Code=" << m_code << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

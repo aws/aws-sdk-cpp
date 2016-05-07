@@ -19,12 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
-static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
-static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
 
 namespace Aws
 {
@@ -34,6 +28,13 @@ namespace Aws
     {
       namespace StepStateMapper
       {
+
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
 
 
         StepState GetStepStateForName(const Aws::String& name)

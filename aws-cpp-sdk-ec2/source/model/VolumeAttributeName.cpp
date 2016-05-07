@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int autoEnableIO_HASH = HashingUtils::HashString("autoEnableIO");
-static const int productCodes_HASH = HashingUtils::HashString("productCodes");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace VolumeAttributeNameMapper
       {
+
+        static const int autoEnableIO_HASH = HashingUtils::HashString("autoEnableIO");
+        static const int productCodes_HASH = HashingUtils::HashString("productCodes");
 
 
         VolumeAttributeName GetVolumeAttributeNameForName(const Aws::String& name)

@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::IAM::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace IAM
+{
+namespace Model
+{
 
 ContextEntry::ContextEntry() : 
     m_contextKeyNameHasBeenSet(false),
@@ -112,3 +118,7 @@ void ContextEntry::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".ContextKeyType=" << ContextKeyTypeEnumMapper::GetNameForContextKeyTypeEnum(m_contextKeyType) << "&";
   }
 }
+
+} // namespace Model
+} // namespace IAM
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int CURATED_HASH = HashingUtils::HashString("CURATED");
-static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace DevicePoolTypeMapper
       {
+
+        static const int CURATED_HASH = HashingUtils::HashString("CURATED");
+        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 
         DevicePoolType GetDevicePoolTypeForName(const Aws::String& name)

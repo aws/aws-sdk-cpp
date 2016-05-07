@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int Online_HASH = HashingUtils::HashString("Online");
-static const int ConnectionLost_HASH = HashingUtils::HashString("ConnectionLost");
-static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace PingStatusMapper
       {
+
+        static const int Online_HASH = HashingUtils::HashString("Online");
+        static const int ConnectionLost_HASH = HashingUtils::HashString("ConnectionLost");
+        static const int Inactive_HASH = HashingUtils::HashString("Inactive");
 
 
         PingStatus GetPingStatusForName(const Aws::String& name)

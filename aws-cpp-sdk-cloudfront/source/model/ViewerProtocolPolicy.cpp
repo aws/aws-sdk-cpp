@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int allow_all_HASH = HashingUtils::HashString("allow-all");
-static const int https_only_HASH = HashingUtils::HashString("https-only");
-static const int redirect_to_https_HASH = HashingUtils::HashString("redirect-to-https");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace ViewerProtocolPolicyMapper
       {
+
+        static const int allow_all_HASH = HashingUtils::HashString("allow-all");
+        static const int https_only_HASH = HashingUtils::HashString("https-only");
+        static const int redirect_to_https_HASH = HashingUtils::HashString("redirect-to-https");
 
 
         ViewerProtocolPolicy GetViewerProtocolPolicyForName(const Aws::String& name)

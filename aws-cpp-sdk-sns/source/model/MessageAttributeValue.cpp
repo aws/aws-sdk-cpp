@@ -20,9 +20,15 @@
 
 #include <utility>
 
-using namespace Aws::SNS::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace SNS
+{
+namespace Model
+{
 
 MessageAttributeValue::MessageAttributeValue() : 
     m_dataTypeHasBeenSet(false),
@@ -99,3 +105,7 @@ void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace SNS
+} // namespace Aws

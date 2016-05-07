@@ -17,9 +17,15 @@
 
 #include <utility>
 
-using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DeviceFarm
+{
+namespace Model
+{
 
 UniqueProblem::UniqueProblem() : 
     m_messageHasBeenSet(false),
@@ -79,3 +85,7 @@ JsonValue UniqueProblem::Jsonize() const
 
   return payload;
 }
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

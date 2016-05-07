@@ -19,14 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int _0_5_HASH = HashingUtils::HashString("0.5");
-static const int _1_6_HASH = HashingUtils::HashString("1.6");
-static const int _6_1_HASH = HashingUtils::HashString("6.1");
-static const int _13_5_HASH = HashingUtils::HashString("13.5");
-static const int _28_4_HASH = HashingUtils::HashString("28.4");
-static const int _58_2_HASH = HashingUtils::HashString("58.2");
-static const int _118_HASH = HashingUtils::HashString("118");
-static const int _237_HASH = HashingUtils::HashString("237");
 
 namespace Aws
 {
@@ -36,6 +28,15 @@ namespace Aws
     {
       namespace CacheClusterSizeMapper
       {
+
+        static const int _0_5_HASH = HashingUtils::HashString("0.5");
+        static const int _1_6_HASH = HashingUtils::HashString("1.6");
+        static const int _6_1_HASH = HashingUtils::HashString("6.1");
+        static const int _13_5_HASH = HashingUtils::HashString("13.5");
+        static const int _28_4_HASH = HashingUtils::HashString("28.4");
+        static const int _58_2_HASH = HashingUtils::HashString("58.2");
+        static const int _118_HASH = HashingUtils::HashString("118");
+        static const int _237_HASH = HashingUtils::HashString("237");
 
 
         CacheClusterSize GetCacheClusterSizeForName(const Aws::String& name)

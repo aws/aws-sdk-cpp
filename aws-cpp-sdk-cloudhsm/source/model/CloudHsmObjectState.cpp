@@ -19,9 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int READY_HASH = HashingUtils::HashString("READY");
-static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
 
 namespace Aws
 {
@@ -31,6 +28,10 @@ namespace Aws
     {
       namespace CloudHsmObjectStateMapper
       {
+
+        static const int READY_HASH = HashingUtils::HashString("READY");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int DEGRADED_HASH = HashingUtils::HashString("DEGRADED");
 
 
         CloudHsmObjectState GetCloudHsmObjectStateForName(const Aws::String& name)

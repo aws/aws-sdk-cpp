@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 ImportInstanceLaunchSpecification::ImportInstanceLaunchSpecification() : 
     m_architectureHasBeenSet(false),
@@ -264,3 +270,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int InvalidLayerDigest_HASH = HashingUtils::HashString("InvalidLayerDigest");
-static const int MissingLayerDigest_HASH = HashingUtils::HashString("MissingLayerDigest");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace LayerFailureCodeMapper
       {
+
+        static const int InvalidLayerDigest_HASH = HashingUtils::HashString("InvalidLayerDigest");
+        static const int MissingLayerDigest_HASH = HashingUtils::HashString("MissingLayerDigest");
 
 
         LayerFailureCode GetLayerFailureCodeForName(const Aws::String& name)

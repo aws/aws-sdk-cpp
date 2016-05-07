@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int description_HASH = HashingUtils::HashString("description");
-static const int groupSet_HASH = HashingUtils::HashString("groupSet");
-static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
-static const int attachment_HASH = HashingUtils::HashString("attachment");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace NetworkInterfaceAttributeMapper
       {
+
+        static const int description_HASH = HashingUtils::HashString("description");
+        static const int groupSet_HASH = HashingUtils::HashString("groupSet");
+        static const int sourceDestCheck_HASH = HashingUtils::HashString("sourceDestCheck");
+        static const int attachment_HASH = HashingUtils::HashString("attachment");
 
 
         NetworkInterfaceAttribute GetNetworkInterfaceAttributeForName(const Aws::String& name)

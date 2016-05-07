@@ -20,6 +20,13 @@ using namespace Aws::Client;
 using namespace Aws::CodeCommit;
 using namespace Aws::Utils;
 
+namespace Aws
+{
+namespace CodeCommit
+{
+namespace CodeCommitErrorMapper
+{
+
 static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("EncryptionKeyAccessDeniedException");
 static const int INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN_HASH = HashingUtils::HashString("InvalidRepositoryTriggerDestinationArnException");
 static const int REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerEventsListRequiredException");
@@ -58,12 +65,6 @@ static const int INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA_HASH = HashingUtils::Has
 static const int REPOSITORY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("RepositoryDoesNotExistException");
 static const int MAXIMUM_REPOSITORY_NAMES_EXCEEDED_HASH = HashingUtils::HashString("MaximumRepositoryNamesExceededException");
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace CodeCommitErrorMapper
-{
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {

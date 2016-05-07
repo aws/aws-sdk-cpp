@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Redshift::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
 
 HsmConfiguration::HsmConfiguration() : 
     m_hsmConfigurationIdentifierHasBeenSet(false),
@@ -148,3 +154,7 @@ void HsmConfiguration::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 }
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

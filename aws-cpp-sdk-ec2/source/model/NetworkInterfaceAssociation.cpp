@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 NetworkInterfaceAssociation::NetworkInterfaceAssociation() : 
     m_publicIpHasBeenSet(false),
@@ -130,3 +136,7 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

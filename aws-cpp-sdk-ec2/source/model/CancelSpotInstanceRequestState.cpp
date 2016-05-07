@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int active_HASH = HashingUtils::HashString("active");
-static const int open_HASH = HashingUtils::HashString("open");
-static const int closed_HASH = HashingUtils::HashString("closed");
-static const int cancelled_HASH = HashingUtils::HashString("cancelled");
-static const int completed_HASH = HashingUtils::HashString("completed");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace CancelSpotInstanceRequestStateMapper
       {
+
+        static const int active_HASH = HashingUtils::HashString("active");
+        static const int open_HASH = HashingUtils::HashString("open");
+        static const int closed_HASH = HashingUtils::HashString("closed");
+        static const int cancelled_HASH = HashingUtils::HashString("cancelled");
+        static const int completed_HASH = HashingUtils::HashString("completed");
 
 
         CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aws::String& name)

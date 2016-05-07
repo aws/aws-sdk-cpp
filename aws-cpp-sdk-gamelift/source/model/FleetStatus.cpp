@@ -19,15 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int NEW__HASH = HashingUtils::HashString("NEW");
-static const int DOWNLOADING_HASH = HashingUtils::HashString("DOWNLOADING");
-static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
-static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
-static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
-static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-static const int ERROR__HASH = HashingUtils::HashString("ERROR");
-static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
 
 namespace Aws
 {
@@ -37,6 +28,16 @@ namespace Aws
     {
       namespace FleetStatusMapper
       {
+
+        static const int NEW__HASH = HashingUtils::HashString("NEW");
+        static const int DOWNLOADING_HASH = HashingUtils::HashString("DOWNLOADING");
+        static const int VALIDATING_HASH = HashingUtils::HashString("VALIDATING");
+        static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
+        static const int ACTIVATING_HASH = HashingUtils::HashString("ACTIVATING");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
 
 
         FleetStatus GetFleetStatusForName(const Aws::String& name)

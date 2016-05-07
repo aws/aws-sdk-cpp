@@ -12,17 +12,18 @@ using namespace Aws::Client;
 using namespace Aws::${metadata.namespace};
 using namespace Aws::Utils;
 
-#foreach($error in $serviceModel.serviceErrors)
-#set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
-static const int ${constName}_HASH = HashingUtils::HashString("${error.text}");
-#end
-
 namespace Aws
 {
 namespace ${metadata.namespace}
 {
 namespace ${metadata.classNamePrefix}ErrorMapper
 {
+
+#foreach($error in $serviceModel.serviceErrors)
+#set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
+static const int ${constName}_HASH = HashingUtils::HashString("${error.text}");
+#end
+
 #if ($serviceModel.serviceErrors.size() > 121)
 
 /*

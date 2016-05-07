@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace ElastiCache
+{
+namespace Model
+{
 
 NotificationConfiguration::NotificationConfiguration() : 
     m_topicArnHasBeenSet(false),
@@ -82,3 +88,7 @@ void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << ".TopicStatus=" << StringUtils::URLEncode(m_topicStatus.c_str()) << "&";
   }
 }
+
+} // namespace Model
+} // namespace ElastiCache
+} // namespace Aws

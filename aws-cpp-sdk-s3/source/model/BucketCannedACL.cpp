@@ -19,10 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int private__HASH = HashingUtils::HashString("private");
-static const int public_read_HASH = HashingUtils::HashString("public-read");
-static const int public_read_write_HASH = HashingUtils::HashString("public-read-write");
-static const int authenticated_read_HASH = HashingUtils::HashString("authenticated-read");
 
 namespace Aws
 {
@@ -32,6 +28,11 @@ namespace Aws
     {
       namespace BucketCannedACLMapper
       {
+
+        static const int private__HASH = HashingUtils::HashString("private");
+        static const int public_read_HASH = HashingUtils::HashString("public-read");
+        static const int public_read_write_HASH = HashingUtils::HashString("public-read-write");
+        static const int authenticated_read_HASH = HashingUtils::HashString("authenticated-read");
 
 
         BucketCannedACL GetBucketCannedACLForName(const Aws::String& name)

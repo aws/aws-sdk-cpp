@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Route53
+{
+namespace Model
+{
 
 VPC::VPC() : 
     m_vPCRegionHasBeenSet(false),
@@ -75,3 +81,7 @@ void VPC::AddToNode(XmlNode& parentNode) const
   }
 
 }
+
+} // namespace Model
+} // namespace Route53
+} // namespace Aws

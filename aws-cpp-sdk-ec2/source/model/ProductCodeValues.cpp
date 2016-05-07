@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int devpay_HASH = HashingUtils::HashString("devpay");
-static const int marketplace_HASH = HashingUtils::HashString("marketplace");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ProductCodeValuesMapper
       {
+
+        static const int devpay_HASH = HashingUtils::HashString("devpay");
+        static const int marketplace_HASH = HashingUtils::HashString("marketplace");
 
 
         ProductCodeValues GetProductCodeValuesForName(const Aws::String& name)

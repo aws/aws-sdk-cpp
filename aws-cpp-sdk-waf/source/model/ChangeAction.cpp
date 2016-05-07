@@ -19,8 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int INSERT_HASH = HashingUtils::HashString("INSERT");
-static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 namespace Aws
 {
@@ -30,6 +28,9 @@ namespace Aws
     {
       namespace ChangeActionMapper
       {
+
+        static const int INSERT_HASH = HashingUtils::HashString("INSERT");
+        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
 
 
         ChangeAction GetChangeActionForName(const Aws::String& name)

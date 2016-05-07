@@ -19,9 +19,15 @@
 
 #include <utility>
 
-using namespace Aws::EC2::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
 
 VgwTelemetry::VgwTelemetry() : 
     m_outsideIpAddressHasBeenSet(false),
@@ -132,3 +138,7 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
       oStream << location << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
 }
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

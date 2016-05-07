@@ -19,11 +19,6 @@
 
 using namespace Aws::Utils;
 
-static const int failed_HASH = HashingUtils::HashString("failed");
-static const int delayed_HASH = HashingUtils::HashString("delayed");
-static const int delivered_HASH = HashingUtils::HashString("delivered");
-static const int relayed_HASH = HashingUtils::HashString("relayed");
-static const int expanded_HASH = HashingUtils::HashString("expanded");
 
 namespace Aws
 {
@@ -33,6 +28,12 @@ namespace Aws
     {
       namespace DsnActionMapper
       {
+
+        static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int delayed_HASH = HashingUtils::HashString("delayed");
+        static const int delivered_HASH = HashingUtils::HashString("delivered");
+        static const int relayed_HASH = HashingUtils::HashString("relayed");
+        static const int expanded_HASH = HashingUtils::HashString("expanded");
 
 
         DsnAction GetDsnActionForName(const Aws::String& name)
