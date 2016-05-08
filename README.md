@@ -86,6 +86,9 @@ Windows example:
 
 For more information, see the CMake documentation for your platform.
 
+#####ENABLE_TESTING
+To enable the tests, set the value to 1. If the value is set to 0, the tests will not build and run. If the variable is not defined, the default value is 1. Example: -DENABLE_TESTING=0
+
 ###Running integration tests:
 Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
 
