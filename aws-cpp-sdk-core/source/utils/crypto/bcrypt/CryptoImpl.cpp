@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -484,8 +484,11 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                ULONG lengthWritten = static_cast<ULONG>(unEncryptedData.GetLength() + GetBlockSizeBytes());
-                CryptoBuffer encryptedText(static_cast<size_t>(lengthWritten));
+                size_t predictedWriteLengths = m_flags & BCRYPT_BLOCK_PADDING ? unEncryptedData.GetLength() + (GetBlockSizeBytes() - unEncryptedData.GetLength() % GetBlockSizeBytes())
+                                                             : unEncryptedData.GetLength();
+
+                ULONG lengthWritten = static_cast<ULONG>(predictedWriteLengths);
+                CryptoBuffer encryptedText(static_cast<size_t>(predictedWriteLengths));
 
                 PUCHAR iv = nullptr;
                 ULONG ivSize = 0;
@@ -544,8 +547,9 @@ namespace Aws
                     ivSize = static_cast<ULONG>(m_workingIv.GetLength());
                 }
 
-                ULONG lengthWritten = static_cast<ULONG>(encryptedData.GetLength() + GetBlockSizeBytes());
-                CryptoBuffer decryptedText(static_cast<size_t>(lengthWritten));
+                size_t predictedWriteLengths = encryptedData.GetLength();
+                ULONG lengthWritten = static_cast<ULONG>(predictedWriteLengths);
+                CryptoBuffer decryptedText(static_cast<size_t>(predictedWriteLengths));
 
                 //iv was set on the key itself, so we don't need to pass it here.
                 NTSTATUS status = BCryptDecrypt(m_keyHandle, encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(),
@@ -587,7 +591,6 @@ namespace Aws
             }
 
             static const char* CBC_LOG_TAG = "BCrypt_AES_CBC_Cipher";
-            static const unsigned char CBC_FINAL_BLOCK[16] = { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 };
 
             void AES_CBC_Cipher_BCrypt::InitEncryptor_Internal()
             {
@@ -630,38 +633,46 @@ namespace Aws
 
             /**
              * This is needlessly complicated due to the way BCrypt handles CBC mode. It assumes that you will only make one call to BCryptEncrypt and as a result
-             * appends the padding to the output of every call. The simplest way around this is to have an extra 16 byte block sitting around. During EncryptBuffer calls
-             * we don't use padding at all, we enforce that we only pass multiples of 16 bytes to BCryptEncrypt. Anything extra goes into either the next EncryptBuffer call
+             * appends the padding to the output of every call. The simplest way around this is to have an extra 32 byte block sitting around. During EncryptBuffer calls
+             * we don't use padding at all, we enforce that we only pass multiples of 32 bytes to BCryptEncrypt. Anything extra goes into either the next EncryptBuffer call
              * or is handled in the Finalize call.  On the very last call, we add the padding back. This is what the other Crypto APIs such as OpenSSL and CommonCrypto do under the hood anyways.
              */
-            CryptoBuffer AES_CBC_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
+            CryptoBuffer AES_CBC_Cipher_BCrypt::FillInOverflow(const CryptoBuffer& buffer)
             {
+                static const size_t RESERVE_SIZE = BlockSizeBytes * 2;
                 m_flags = 0;
 
-                CryptoBuffer toEncrypt;
+                CryptoBuffer finalBuffer;
 
                 if (m_blockOverflow.GetLength() > 0)
                 {
-                    toEncrypt = CryptoBuffer({ (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&unEncryptedData });
+                    finalBuffer = CryptoBuffer({ (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&buffer });
                     m_blockOverflow = CryptoBuffer();
                 }
                 else
                 {
-                    toEncrypt = unEncryptedData;
+                    finalBuffer = buffer;
                 }
 
-                auto overflow = toEncrypt.GetLength() % BlockSizeBytes;
-                if (overflow == 0)
+                auto overflow = finalBuffer.GetLength() % RESERVE_SIZE;
+
+                if (finalBuffer.GetLength() > RESERVE_SIZE)
                 {
-                    m_lastBlockNeedsPadding = true;
-                    return BCryptSymmetricCipher::EncryptBuffer(toEncrypt);
+                    auto offset = overflow == 0 ? RESERVE_SIZE : overflow;
+                    m_blockOverflow = CryptoBuffer(finalBuffer.GetUnderlyingData() + finalBuffer.GetLength() - offset, offset);
+                    finalBuffer = CryptoBuffer(finalBuffer.GetUnderlyingData(), finalBuffer.GetLength() - offset);
+                    return finalBuffer;
                 }
                 else
                 {
-                    m_lastBlockNeedsPadding = false;
-                    m_blockOverflow = CryptoBuffer(toEncrypt.GetUnderlyingData() + toEncrypt.GetLength() - overflow, overflow);
-                    return BCryptSymmetricCipher::EncryptBuffer(CryptoBuffer(toEncrypt.GetUnderlyingData(), toEncrypt.GetLength() - overflow));
+                    m_blockOverflow = finalBuffer;
+                    return CryptoBuffer();
                 }
+            }
+            
+            CryptoBuffer AES_CBC_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
+            {                    
+                return BCryptSymmetricCipher::EncryptBuffer(FillInOverflow(unEncryptedData));              
             }
 
             /**
@@ -670,106 +681,30 @@ namespace Aws
              */
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeEncryption()
             {
+                CheckInitEncryptor();
+
                 if (m_blockOverflow.GetLength() > 0)
                 {
                     m_flags = BCRYPT_BLOCK_PADDING;
                     return BCryptSymmetricCipher::EncryptBuffer(m_blockOverflow);
-                }
-
-                if (m_lastBlockNeedsPadding)
-                {
-                    m_flags = 0;
-                    return BCryptSymmetricCipher::EncryptBuffer(CryptoBuffer(CBC_FINAL_BLOCK, BlockSizeBytes));
-                }
+                }               
 
                 return CryptoBuffer();
             }
-
-            /**
-             * We have a similar compilication on decryption, but we can be certain that anything encrypted
-             * with AES CBC is already block aligned. We'll check at the end if our left over buffer has any
-             * non-padded data in it and return it. We turn padding off and then handle the padding manually
-             * at the end.
-             */
+            
             CryptoBuffer AES_CBC_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
-                m_flags = 0;
-                CryptoBuffer toDecrypt;
-
-                //if we've been called again, then the candidate for the final padding block is actually part of the message-- add it back
-                //Also, add the overflow back
-                //[ padding candidate ] [ overflow ] [ new encrypted data ]
-                if (m_fullBlockPaddingCandidate.GetLength() > 0 || m_blockOverflow.GetLength() > 0)
-                {
-                    toDecrypt = CryptoBuffer({ (ByteBuffer*)&m_fullBlockPaddingCandidate, (ByteBuffer*)&m_blockOverflow, (ByteBuffer*)&encryptedData });
-                    m_fullBlockPaddingCandidate = CryptoBuffer();
-                    m_blockOverflow = CryptoBuffer();
-                }
-                else
-                {
-                    toDecrypt = encryptedData;
-                }
-
-                auto overflow = toDecrypt.GetLength() % BlockSizeBytes;
-                //we need to trim to multiple of 16 bytes
-                if (overflow != 0)
-                {
-                    m_blockOverflow = CryptoBuffer(toDecrypt.GetUnderlyingData() + toDecrypt.GetLength() - overflow, overflow);
-                    toDecrypt = CryptoBuffer(toDecrypt.GetUnderlyingData(), toDecrypt.GetLength() - overflow);
-                }
-
-                //we don't know if this is the last block or not, so treat it as if it is and come back to it in next run
-                //or in the finalize call.
-                if(toDecrypt.GetLength() == BlockSizeBytes)
-                {
-                    m_fullBlockPaddingCandidate = toDecrypt;
-                    toDecrypt = CryptoBuffer();
-                }
-                //We have some data that we can be certain isn't the final padded block, trim the last 16 bytes off and set it aside
-                //as potential padding. Decrypt the rest and return it.
-                else if(toDecrypt.GetLength() > BlockSizeBytes)
-                {
-                    m_fullBlockPaddingCandidate = CryptoBuffer(toDecrypt.GetUnderlyingData() + (toDecrypt.GetLength() - BlockSizeBytes), BlockSizeBytes);
-                    toDecrypt = CryptoBuffer(toDecrypt.GetUnderlyingData(), toDecrypt.GetLength() - BlockSizeBytes);
-                }
-
-                if(toDecrypt.GetLength() >= BlockSizeBytes)
-                {
-                    return BCryptSymmetricCipher::DecryptBuffer(toDecrypt);
-                }
-
-                return CryptoBuffer();
+                return BCryptSymmetricCipher::DecryptBuffer(FillInOverflow(encryptedData));
             }
 
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeDecryption()
             {
-                if (m_fullBlockPaddingCandidate.GetLength() > 0 )
-                {
-                    CryptoBuffer paddingBlock = BCryptSymmetricCipher::DecryptBuffer(m_fullBlockPaddingCandidate);
-                    //on a pure padded block, the value will be CBC_FINAL_BLOCK, we can actually just throw that completely away.
-                    //otherwise unpack the data.
-                    if (paddingBlock != CryptoBuffer(CBC_FINAL_BLOCK, BlockSizeBytes))
-                    {
-                        //pkcs#7. look at the last character in the buffer. It will be the number of bytes of padding.
-                        unsigned char lastChar = paddingBlock[BlockSizeBytes - 1];
-
-                        if(static_cast<size_t>(lastChar) <= BlockSizeBytes)
-                        {
-                            //validate that the detected last character is actually padding.
-                            bool finalCharIsPaddingChar(false);
-                            for (size_t i = BlockSizeBytes - static_cast<size_t>(lastChar); i < paddingBlock.GetLength(); ++i)
-                            {
-                                finalCharIsPaddingChar = lastChar == paddingBlock[i];
-                            }
-
-                            if(finalCharIsPaddingChar)
-                            {
-                                return CryptoBuffer(paddingBlock.GetUnderlyingData(), BlockSizeBytes - static_cast<size_t>(lastChar));
-                            }
-                            m_failure = true;
-                            AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Last block of data was not properly padded");
-                        }
-                    }
+                CheckInitDecryptor();
+                
+                if ( m_blockOverflow.GetLength() > 0)
+                {                   
+                    m_flags = BCRYPT_BLOCK_PADDING;
+                    return BCryptSymmetricCipher::DecryptBuffer(m_blockOverflow);
                 }
                 return CryptoBuffer();
             }

@@ -257,14 +257,14 @@ namespace Aws
             };
 
             /**
-            * BCrypt implementation for AES in CBC mode
-            */
+             * BCrypt implementation for AES in CBC mode
+             */
             class AES_CBC_Cipher_BCrypt : public BCryptSymmetricCipher
             {
             public:
                 /**
-                * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
-                */
+                 * Create AES in CBC mode off of a 256 bit key. Auto Generates a 16 byte secure random IV
+                 */
                 AES_CBC_Cipher_BCrypt(const CryptoBuffer& key);
 
                 /**
@@ -295,19 +295,17 @@ namespace Aws
                 size_t GetKeyLengthBits() const override;
 
             private:
+                CryptoBuffer FillInOverflow(const CryptoBuffer& buffer);
+
                 CryptoBuffer m_blockOverflow;
-                bool m_lastBlockNeedsPadding;
-                CryptoBuffer m_fullBlockPaddingCandidate;
 
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
-
-
             };
 
             /**
-            * BCrypt implementation for AES in CTR mode
-            */
+             * BCrypt implementation for AES in CTR mode
+             */
             class AES_CTR_Cipher_BCrypt : public BCryptSymmetricCipher
             {
             public:

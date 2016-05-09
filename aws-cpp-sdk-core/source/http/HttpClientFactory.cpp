@@ -98,7 +98,7 @@ namespace Aws
         {
             if(!s_HttpClientFactory)
             {
-                s_HttpClientFactory = Aws::MakeShared<DefaultHttpClientFactory>(allocationTag);
+                s_HttpClientFactory = Aws::MakeShared<DefaultHttpClientFactory>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG);
             }
             s_HttpClientFactory->InitStaticState();
         }

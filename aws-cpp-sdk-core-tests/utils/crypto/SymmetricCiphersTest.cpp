@@ -282,25 +282,28 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
-    auto encryptResult = cipher->EncryptBuffer(data);
-    ASSERT_EQ(expected, encryptResult);
+    auto encryptResult = cipher->EncryptBuffer(data);    
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    //this should just be block text.
-    ASSERT_EQ(16u, finalEncryptedBuffer.GetLength());
     ASSERT_TRUE(*cipher);
 
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
+    //the test vectors don't include padding, we need to strip it out of the encrypted text
+    size_t paddingLengthForTest = 16;
+    ASSERT_EQ(0, encryptedResult.GetLength() % paddingLengthForTest);
+    //since this test is for even 16 bytes, the padding is always 16 bytes and also safe to remove.
+    CryptoBuffer encryptionMinusPadding(encryptedResult.GetUnderlyingData(), encryptedResult.GetLength() - paddingLengthForTest);
+    ASSERT_EQ(expected, encryptionMinusPadding);
 
     cipher = CreateAES_CBCImplementation(key, iv);
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
 
-    ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
     ASSERT_TRUE(*cipher);
+    CryptoBuffer fullDecryptResult({&decryptResult, &finalDecryptBuffer});
 
     CryptoBuffer plainText(data.GetLength());
     plainText.Zero();
-    memcpy(plainText.GetUnderlyingData(), decryptResult.GetUnderlyingData(), decryptResult.GetLength());
+    memcpy(plainText.GetUnderlyingData(), fullDecryptResult.GetUnderlyingData(), fullDecryptResult.GetLength());
 
     ASSERT_EQ(data, plainText);
 }
@@ -457,15 +460,16 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
         encryptedStreams.push_back(buffer);
     }
 
-    CryptoBuffer* buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);
-    Aws::Vector<ByteBuffer*> tempStreams = encryptedStreams;
-    CryptoBuffer encryptedResultPrePadding(std::move(tempStreams));
-    ASSERT_EQ(expected, encryptedResultPrePadding);
+    CryptoBuffer* buffer = Aws::New<CryptoBuffer>(ALLOC_TAG);    
     *buffer = cipher->FinalizeEncryption();
     encryptedStreams.push_back(buffer);
     CryptoBuffer encryptedResultWithPadding(std::move(encryptedStreams));   
-    ASSERT_EQ(16u, buffer->GetLength());
     ASSERT_TRUE(*cipher); 
+    size_t blockSize = 16;
+    ASSERT_EQ(0, encryptedResultWithPadding.GetLength() % blockSize);
+    size_t trimLength = encryptedResultWithPadding.GetLength() - blockSize;
+
+    ASSERT_EQ(expected, CryptoBuffer(encryptedResultWithPadding.GetUnderlyingData(), trimLength));
     
     for (ByteBuffer* toDelete : encryptedStreams)
     {
