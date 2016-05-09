@@ -532,49 +532,49 @@ namespace Model
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline const Aws::String& GetRecipe() const{ return m_recipe; }
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline void SetRecipe(const Aws::String& value) { m_recipeHasBeenSet = true; m_recipe = value; }
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline void SetRecipe(Aws::String&& value) { m_recipeHasBeenSet = true; m_recipe = value; }
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline void SetRecipe(const char* value) { m_recipeHasBeenSet = true; m_recipe.assign(value); }
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline CreateMLModelRequest& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline CreateMLModelRequest& WithRecipe(Aws::String&& value) { SetRecipe(value); return *this;}
 
     /**
      * <p>The data recipe for creating <code>MLModel</code>. You must specify either
-     * the recipe or its URI. If you donâ€™t specify a recipe or its URI, Amazon ML
+     * the recipe or its URI. If you don’t specify a recipe or its URI, Amazon ML
      * creates a default.</p>
      */
     inline CreateMLModelRequest& WithRecipe(const char* value) { SetRecipe(value); return *this;}
@@ -582,7 +582,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline const Aws::String& GetRecipeUri() const{ return m_recipeUri; }
@@ -590,7 +590,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline void SetRecipeUri(const Aws::String& value) { m_recipeUriHasBeenSet = true; m_recipeUri = value; }
@@ -598,7 +598,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline void SetRecipeUri(Aws::String&& value) { m_recipeUriHasBeenSet = true; m_recipeUri = value; }
@@ -606,7 +606,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline void SetRecipeUri(const char* value) { m_recipeUriHasBeenSet = true; m_recipeUri.assign(value); }
@@ -614,7 +614,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline CreateMLModelRequest& WithRecipeUri(const Aws::String& value) { SetRecipeUri(value); return *this;}
@@ -622,7 +622,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline CreateMLModelRequest& WithRecipeUri(Aws::String&& value) { SetRecipeUri(value); return *this;}
@@ -630,7 +630,7 @@ namespace Model
     /**
      * <p>The Amazon Simple Storage Service (Amazon S3) location and file name that
      * contains the <code>MLModel</code> recipe. You must specify either the recipe or
-     * its URI. If you donâ€™t specify a recipe or its URI, Amazon ML creates a
+     * its URI. If you don’t specify a recipe or its URI, Amazon ML creates a
      * default.</p>
      */
     inline CreateMLModelRequest& WithRecipeUri(const char* value) { SetRecipeUri(value); return *this;}

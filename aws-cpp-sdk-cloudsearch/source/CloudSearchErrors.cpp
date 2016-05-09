@@ -27,9 +27,9 @@ namespace CloudSearch
 namespace CloudSearchErrorMapper
 {
 
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidType");
 static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledAction");
 
@@ -38,17 +38,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
+  if (hashCode == INTERNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INTERNAL), true);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::LIMIT_EXCEEDED), false);
   }
   else if (hashCode == BASE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::BASE), false);
-  }
-  else if (hashCode == INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudSearchErrors::INTERNAL), true);
   }
   else if (hashCode == INVALID_TYPE_HASH)
   {

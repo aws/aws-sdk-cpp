@@ -32,12 +32,14 @@ find_package(Git)
 #                          to use these arguments, you should add the api definition .normal.json file for your service to the api-description folder in the generator.
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 # TODO: convert boolean invocation variables to options
 option(MINIMIZE_SIZE "If enabled, the SDK will be built via a unity aggregation process that results in smaller static libraries; additionally, release binaries will favor size optimizations over speed" OFF)
 option(ENABLE_UNITY_BUILD "If enabled, the SDK will be built using a single unified .cpp file for each service library.  Reduces the size of static library binaries on Windows and Linux" OFF)
 option(BUILD_SHARED_LIBS "If enabled, all aws sdk libraries will be build as shared objects; otherwise all Aws libraries will be built as static objects" ON)
 option(FORCE_SHARED_CRT "If enabled, will unconditionally link the standard libraries in dynamically, otherwise the standard library will be linked in based on the BUILD_SHARED_LIBS setting" ON)
 option(DISABLE_ANDROID_STANDALONE_BUILD "If enabled, the android build will not attempt to generate a standalone toolchain and instead rely on externally passed cmake parameters to specify the complete build environment.  The included toolchain file is still used." OFF)
+option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -155,7 +157,7 @@ elseif(PLATFORM_ANDROID)
                 set(__TOOLCHAIN "mips64el-linux-android-clang")
             elseif(ANDROID_ABI MATCHES "mips")
                 set(__TOOLCHAIN "mipsel-linux-android-clang")
-            else()
+else()
                 message(FATAL, "Unable to map ANDROID_ABI value ${ANDROID_ABI} to a valid architecture for make-standalone-toolchain")
             endif()
 
@@ -361,7 +363,7 @@ list(APPEND C2J_LIST "ds:2015-04-16")
 list(APPEND C2J_LIST "dynamodb:2012-08-10")
 if(NOT PLATFORM_ANDROID OR NOT CMAKE_HOST_WIN32)  # ec2 isn't building for android on windows atm due to an internal compiler error, TODO: investigate further
     list(APPEND C2J_LIST "ec2:2015-10-01")
-endif()
+    endif()
 list(APPEND C2J_LIST "ecr:2015-09-21")
 list(APPEND C2J_LIST "ecs:2014-11-13")
 list(APPEND C2J_LIST "elasticache:2015-02-02")
@@ -443,7 +445,7 @@ function(get_map_element KEY VALUE_VAR)
             STRING(REGEX REPLACE "[^:]+:(.*)" "\\1" VALUE_RESULT ${ELEMENT_PAIR})
             set(${VALUE_VAR} "${VALUE_RESULT}" PARENT_SCOPE)
             return()
-        endif()
+    endif()
     endforeach()
     set(${VALUE_VAR} "" PARENT_SCOPE)
 endfunction(get_map_element)
@@ -479,7 +481,7 @@ function(get_sdks_depending_on SDK_NAME DEPENDING_SDKS_VAR)
         list(FIND LIST_RESULT ${SDK_NAME} FIND_INDEX)
         if(FIND_INDEX GREATER -1)
             list(APPEND TEMP_SDK_LIST ${KEY_RESULT})
-        endif()
+    endif()
     endforeach()
 
     SET(${DEPENDING_SDKS_VAR} "${TEMP_SDK_LIST}" PARENT_SCOPE)
@@ -498,7 +500,7 @@ if(BUILD_ONLY)
             foreach(DEPENDENCY IN LISTS LIST_RESULT)
                 list(APPEND SDK_BUILD_LIST ${DEPENDENCY})
             endforeach()
-        endif()
+    endif()
 
         get_dependencies_for_test(${TARGET} DEPENDENCY_LIST)
         if(DEPENDENCY_LIST)
@@ -506,7 +508,7 @@ if(BUILD_ONLY)
             foreach(DEPENDENCY IN LISTS LIST_RESULT)
                 list(APPEND SDK_BUILD_LIST ${DEPENDENCY})
             endforeach()
-        endif()
+    endif()
     endforeach()
 
     LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
@@ -516,13 +518,13 @@ if(BUILD_ONLY)
         SET(SDK_DIR "aws-cpp-sdk-${SDK}")
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-        endif()
+    endif()
 
         get_c2j_date_for_service(${SDK} SDK_C2J_DATE)
         SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${SDK_C2J_DATE}.normal.json")
         if(REGENERATE_CLIENTS AND SDK_C2J_DATE AND NOT (EXISTS ${SDK_C2J_FILE}))
             message(FATAL "${SDK} is required for build, but C2J file '${SDK_C2J_FILE}' is missing!")
-        endif()
+    endif()
     endforeach()
 else()
     set(TEMP_SDK_BUILD_LIST ${GENERATED_SERVICE_LIST})
@@ -541,32 +543,32 @@ else()
         SET(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${SDK}-${SDK_C2J_DATE}.normal.json")
         if(REGENERATE_CLIENTS AND SDK_C2J_DATE AND NOT (EXISTS ${SDK_C2J_FILE}))
             SET(REMOVE_SDK 1)
-        endif()
+    endif()
 
         SET(SDK_DIR "aws-cpp-sdk-${SDK}")
         if(NOT REGENERATE_CLIENTS OR NOT SDK_C2J_DATE)
             if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 SET(REMOVE_SDK 1)
-            endif()
-        endif()
+    endif()
+    endif()
 
         if(REMOVE_SDK)
             get_sdks_depending_on(${SDK} REMOVE_LIST)
             foreach(REMOVE_SDK IN LISTS REMOVE_LIST)
                 list(REMOVE_ITEM SDK_BUILD_LIST ${REMOVE_SDK})
             endforeach()
-        endif()
+    endif()
     endforeach()
-endif()
+    endif()
 
 # SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
 
 if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
-    execute_process(
+        execute_process(
             COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-endif()
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
 
 if(REGENERATE_CLIENTS)
     message(STATUS "Regenerating clients that have been selected for build.")
@@ -576,11 +578,11 @@ if(REGENERATE_CLIENTS)
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         get_c2j_date_for_service(${SDK} C2J_DATE)
         if(C2J_DATE)
-            execute_process(
+        execute_process(
                         COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} --outputLocation ./
-                        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-        endif()
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+    endif()
     endforeach()
 endif()
 
@@ -666,25 +668,25 @@ if(PLATFORM_WINDOWS)
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
         endif()
 
-        #remove bogus errors at generation time if these variables haven't been manually set
-        if(NOT CMAKE_CONFIGURATION_TYPES)
-            set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
-        endif()
+		#remove bogus errors at generation time if these variables haven't been manually set
+		if(NOT CMAKE_CONFIGURATION_TYPES)
+			set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
+		endif()
+	
+		if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
+			set(CMAKE_CXX_FLAGS_DEBUGOPT "")
+		endif()
 
-        if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
-            set(CMAKE_CXX_FLAGS_DEBUGOPT "")
-        endif()
+		if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
+			set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
+		endif()
 
-        if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
-            set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
-        endif()
-
-        if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
-            set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
-        endif()
+		if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
+			set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
+		endif()
     endif()
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
-    # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
+    # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -Wextra")
 
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -718,16 +720,16 @@ if(PLATFORM_ANDROID)
     #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
     #likely, some of the things here are unnecessary
     if(ENABLE_OPENSSL_ENCRYPTION OR ENABLE_CURL_CLIENT)
-        set(ZLIB_SOURCE_DIR ${CMAKE_SOURCE_DIR}/zlib CACHE INTERNAL "zlib source dir")
-        set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
-        set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
-        set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
+    set(ZLIB_SOURCE_DIR ${CMAKE_SOURCE_DIR}/zlib CACHE INTERNAL "zlib source dir")
+    set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
+    set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
+    set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
         #set(ZLIB_DEFINES "-msse2 -mfpmath=sse" CACHE INTERNAL "zlib defines")
 
-        set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
-        set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
+    set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
+    set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
 
-        ExternalProject_Add(ZLIB
+    ExternalProject_Add(ZLIB
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
             URL http://zlib.net/zlib-1.2.8.tar.gz
             URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
@@ -747,36 +749,36 @@ if(PLATFORM_ANDROID)
             -DBUILD_SHARED_LIBS=0
             )
 
-        if(UNIX)
-            set(ZLIB_NAME libz)
-        else()
-            set(ZLIB_NAME zlib)
-        endif()
+    if(UNIX)
+        set(ZLIB_NAME libz)
+    else()
+        set(ZLIB_NAME zlib)
+    endif()
 
-        add_library(zlib UNKNOWN IMPORTED)
+    add_library(zlib UNKNOWN IMPORTED)
         set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a)
     endif()
 
     #OpenSSL
     if(ENABLE_OPENSSL_ENCRYPTION)
-        set(OPENSSL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/openssl CACHE INTERNAL "openssl source dir")
-        set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
-        set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
-        set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "openssl library dir")
+    set(OPENSSL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/openssl CACHE INTERNAL "openssl source dir")
+    set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
+    set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
+    set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "openssl library dir")
         set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
         set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
-        set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
+    set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
 
         set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
         set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
 
-        ExternalProject_Add(OPENSSL
+    ExternalProject_Add(OPENSSL
             DEPENDS ZLIB
             SOURCE_DIR ${OPENSSL_SOURCE_DIR}
             GIT_REPOSITORY https://github.com/openssl/openssl.git
             GIT_TAG 902f3f50d051dfd6ebf009d352aaf581195caabf # 1.0.2g
-            UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py 
-            CMAKE_ARGS 
+            UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py
+            CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
@@ -790,11 +792,11 @@ if(PLATFORM_ANDROID)
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
             -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
             -DBUILD_SHARED_LIBS=0
-        )
+            )
 
-        add_library(ssl UNKNOWN IMPORTED)
+    add_library(ssl UNKNOWN IMPORTED)
         set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
-        add_library(crypto UNKNOWN IMPORTED)
+    add_library(crypto UNKNOWN IMPORTED)
         set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
     endif()
 
@@ -852,8 +854,8 @@ endif()
 #   release optimisations to purely focus on size, override debug info settings as necessary
 if(PLATFORM_WINDOWS)
     if(BUILD_SHARED_LIBS)
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
-        set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
+    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
     else()
         if(CMAKE_CXX_FLAGS MATCHES "/Zi")
             string(REGEX REPLACE "/Zi" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -964,14 +966,14 @@ else()
                     list(FIND SDK_BUILD_LIST ${DEPENDENCY} DEPENDENCY_INDEX)
                     if(DEPENDENCY_INDEX LESS 0)
                 set(ADD_TEST 0)
-                    endif()
+    endif()
                 endforeach()
-            endif()
+    endif()
 
             if(ADD_TEST)
                 add_subdirectory(${TEST_PROJECT})
-            endif()
-        endif()
+    endif()
+    endif()
      endforeach()
 endif()
 
