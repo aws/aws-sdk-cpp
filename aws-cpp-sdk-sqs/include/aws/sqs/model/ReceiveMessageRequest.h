@@ -17,7 +17,7 @@
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sqs/model/QueueAttributeName.h>
+#include <aws/sqs/model/AttributeName.h>
 
 namespace Aws
 {
@@ -82,7 +82,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
+    inline const Aws::Vector<AttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -97,7 +97,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(const Aws::Vector<AttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -112,7 +112,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
+    inline void SetAttributeNames(Aws::Vector<AttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -127,7 +127,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
+    inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<AttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -142,7 +142,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(value); return *this;}
+    inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<AttributeName>&& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -157,7 +157,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline ReceiveMessageRequest& AddAttributeNames(const AttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. </p>
@@ -172,7 +172,7 @@ namespace Model
      * - returns the time when the message was sent to the queue (epoch time in
      * milliseconds).</li> </ul>
      */
-    inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    inline ReceiveMessageRequest& AddAttributeNames(AttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
      * <p>The name of the message attribute, where <i>N</i> is the index. The message
@@ -360,7 +360,7 @@ namespace Model
   private:
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
-    Aws::Vector<QueueAttributeName> m_attributeNames;
+    Aws::Vector<AttributeName> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
     Aws::Vector<Aws::String> m_messageAttributeNames;
     bool m_messageAttributeNamesHasBeenSet;
