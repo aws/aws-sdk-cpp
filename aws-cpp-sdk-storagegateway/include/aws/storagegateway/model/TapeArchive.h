@@ -165,85 +165,85 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline const Aws::String& GetRetrievedTo() const{ return m_retrievedTo; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(const Aws::String& value) { m_retrievedToHasBeenSet = true; m_retrievedTo = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(Aws::String&& value) { m_retrievedToHasBeenSet = true; m_retrievedTo = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(const char* value) { m_retrievedToHasBeenSet = true; m_retrievedTo.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline TapeArchive& WithRetrievedTo(const Aws::String& value) { SetRetrievedTo(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline TapeArchive& WithRetrievedTo(Aws::String&& value) { SetRetrievedTo(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
-     * being retrieved to. </p> <p>The virtual tape is retrieved from the virtual tape
+     * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline TapeArchive& WithRetrievedTo(const char* value) { SetRetrievedTo(value); return *this;}
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline void SetTapeStatus(const Aws::String& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline void SetTapeStatus(Aws::String&& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline void SetTapeStatus(const char* value) { m_tapeStatusHasBeenSet = true; m_tapeStatus.assign(value); }
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeStatus(const Aws::String& value) { SetTapeStatus(value); return *this;}
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeStatus(Aws::String&& value) { SetTapeStatus(value); return *this;}
 
     /**
-     * <p>The current state of the archived virtual tape. </p>
+     * <p>The current state of the archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
 

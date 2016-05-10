@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SQS_API ReceiveMessageRequest : public SQSRequest
   {
@@ -35,142 +36,205 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. </p>
-     * <p> The following lists the names and descriptions of the attributes that can be
-     * returned: </p> <ul> <li> <code>All</code> - returns all values.</li> <li>
-     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
-     * message was first received from the queue (epoch time in milliseconds).</li>
-     * <li> <code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li> <li>
-     * <code>SenderId</code> - returns the AWS account number (or the IP address, if
-     * anonymous access is allowed) of the sender.</li> <li> <code>SentTimestamp</code>
-     * - returns the time when the message was sent to the queue (epoch time in
-     * milliseconds).</li> </ul>
+     * <p>A list of attributes that need to be returned along with each message. These
+     * attributes include:</p> <ul> <li><p><code>All</code> - returns all
+     * values.</p></li> <li><p><code>ApproximateFirstReceiveTimestamp</code> - returns
+     * the time when the message was first received from the queue (epoch time in
+     * milliseconds).</p></li> <li><p><code>ApproximateReceiveCount</code> - returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p></li> <li><p><code>SenderId</code> - returns the AWS account number
+     * (or the IP address, if anonymous access is allowed) of the sender.</p></li>
+     * <li><p><code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).</p></li> </ul> <p>Any other valid
+     * special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>, <code>QueueArn</code>,
+     * <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and
+     * <code>VisibilityTimeout</code>) will be ignored.</p>
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
@@ -184,8 +248,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMessageAttributeNames() const{ return m_messageAttributeNames; }
 
@@ -199,8 +263,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline void SetMessageAttributeNames(const Aws::Vector<Aws::String>& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
 
@@ -214,8 +278,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline void SetMessageAttributeNames(Aws::Vector<Aws::String>&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
 
@@ -229,8 +293,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline ReceiveMessageRequest& WithMessageAttributeNames(const Aws::Vector<Aws::String>& value) { SetMessageAttributeNames(value); return *this;}
 
@@ -244,8 +308,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline ReceiveMessageRequest& WithMessageAttributeNames(Aws::Vector<Aws::String>&& value) { SetMessageAttributeNames(value); return *this;}
 
@@ -259,8 +323,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(const Aws::String& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
@@ -274,8 +338,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(Aws::String&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
@@ -289,8 +353,8 @@ namespace Model
      * variations in casing), because these prefixes are reserved for use by Amazon Web
      * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
      * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.</p>
+     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(const char* value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 

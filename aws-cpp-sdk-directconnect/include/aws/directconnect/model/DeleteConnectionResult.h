@@ -44,25 +44,39 @@ namespace Model
     DeleteConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(const char* value) { m_ownerAccount.assign(value); }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline DeleteConnectionResult& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline DeleteConnectionResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline DeleteConnectionResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
     
@@ -215,25 +229,46 @@ namespace Model
     
     inline DeleteConnectionResult& WithVlan(long value) { SetVlan(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(const Aws::String& value) { m_partnerName = value; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(Aws::String&& value) { m_partnerName = value; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(const char* value) { m_partnerName.assign(value); }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline DeleteConnectionResult& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline DeleteConnectionResult& WithPartnerName(Aws::String&& value) { SetPartnerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline DeleteConnectionResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
   private:

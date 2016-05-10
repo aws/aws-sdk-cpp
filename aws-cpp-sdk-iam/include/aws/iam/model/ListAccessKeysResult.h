@@ -46,37 +46,37 @@ namespace Model
     ListAccessKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline const Aws::Vector<AccessKeyMetadata>& GetAccessKeyMetadata() const{ return m_accessKeyMetadata; }
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline void SetAccessKeyMetadata(const Aws::Vector<AccessKeyMetadata>& value) { m_accessKeyMetadata = value; }
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline void SetAccessKeyMetadata(Aws::Vector<AccessKeyMetadata>&& value) { m_accessKeyMetadata = value; }
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline ListAccessKeysResult& WithAccessKeyMetadata(const Aws::Vector<AccessKeyMetadata>& value) { SetAccessKeyMetadata(value); return *this;}
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline ListAccessKeysResult& WithAccessKeyMetadata(Aws::Vector<AccessKeyMetadata>&& value) { SetAccessKeyMetadata(value); return *this;}
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline ListAccessKeysResult& AddAccessKeyMetadata(const AccessKeyMetadata& value) { m_accessKeyMetadata.push_back(value); return *this; }
 
     /**
-     * <p>A list of access key metadata.</p>
+     * <p>A list of objects containing metadata about the access keys.</p>
      */
     inline ListAccessKeysResult& AddAccessKeyMetadata(AccessKeyMetadata&& value) { m_accessKeyMetadata.push_back(value); return *this; }
 

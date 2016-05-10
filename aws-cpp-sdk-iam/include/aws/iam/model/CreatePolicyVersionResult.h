@@ -45,27 +45,27 @@ namespace Model
     CreatePolicyVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the policy version.</p>
+     * <p>A structure containing details about the new policy version.</p>
      */
     inline const PolicyVersion& GetPolicyVersion() const{ return m_policyVersion; }
 
     /**
-     * <p>Information about the policy version.</p>
+     * <p>A structure containing details about the new policy version.</p>
      */
     inline void SetPolicyVersion(const PolicyVersion& value) { m_policyVersion = value; }
 
     /**
-     * <p>Information about the policy version.</p>
+     * <p>A structure containing details about the new policy version.</p>
      */
     inline void SetPolicyVersion(PolicyVersion&& value) { m_policyVersion = value; }
 
     /**
-     * <p>Information about the policy version.</p>
+     * <p>A structure containing details about the new policy version.</p>
      */
     inline CreatePolicyVersionResult& WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
 
     /**
-     * <p>Information about the policy version.</p>
+     * <p>A structure containing details about the new policy version.</p>
      */
     inline CreatePolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(value); return *this;}
 

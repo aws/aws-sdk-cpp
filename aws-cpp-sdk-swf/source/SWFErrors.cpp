@@ -28,14 +28,14 @@ namespace SWFErrorMapper
 {
 
 static const int DOMAIN_DEPRECATED_FAULT_HASH = HashingUtils::HashString("DomainDeprecatedFault");
-static const int WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH = HashingUtils::HashString("WorkflowExecutionAlreadyStartedFault");
-static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
-static const int OPERATION_NOT_PERMITTED_FAULT_HASH = HashingUtils::HashString("OperationNotPermittedFault");
-static const int TYPE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TypeAlreadyExistsFault");
 static const int UNKNOWN_RESOURCE_FAULT_HASH = HashingUtils::HashString("UnknownResourceFault");
-static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDeprecatedFault");
-static const int DOMAIN_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DomainAlreadyExistsFault");
+static const int DEFAULT_UNDEFINED_FAULT_HASH = HashingUtils::HashString("DefaultUndefinedFault");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceededFault");
+static const int WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH = HashingUtils::HashString("WorkflowExecutionAlreadyStartedFault");
+static const int OPERATION_NOT_PERMITTED_FAULT_HASH = HashingUtils::HashString("OperationNotPermittedFault");
+static const int DOMAIN_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DomainAlreadyExistsFault");
+static const int TYPE_DEPRECATED_FAULT_HASH = HashingUtils::HashString("TypeDeprecatedFault");
+static const int TYPE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("TypeAlreadyExistsFault");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -46,37 +46,37 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_DEPRECATED_FAULT), false);
   }
-  else if (hashCode == WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH)
+  else if (hashCode == UNKNOWN_RESOURCE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::UNKNOWN_RESOURCE_FAULT), false);
   }
   else if (hashCode == DEFAULT_UNDEFINED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DEFAULT_UNDEFINED_FAULT), false);
   }
+  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::LIMIT_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT), false);
+  }
   else if (hashCode == OPERATION_NOT_PERMITTED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::OPERATION_NOT_PERMITTED_FAULT), false);
-  }
-  else if (hashCode == TYPE_ALREADY_EXISTS_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_ALREADY_EXISTS_FAULT), false);
-  }
-  else if (hashCode == UNKNOWN_RESOURCE_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::UNKNOWN_RESOURCE_FAULT), false);
-  }
-  else if (hashCode == TYPE_DEPRECATED_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_DEPRECATED_FAULT), false);
   }
   else if (hashCode == DOMAIN_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_ALREADY_EXISTS_FAULT), false);
   }
-  else if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
+  else if (hashCode == TYPE_DEPRECATED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::LIMIT_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_DEPRECATED_FAULT), false);
+  }
+  else if (hashCode == TYPE_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_ALREADY_EXISTS_FAULT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

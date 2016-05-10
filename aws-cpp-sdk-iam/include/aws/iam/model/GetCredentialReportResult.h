@@ -98,31 +98,31 @@ namespace Model
 
     /**
      * <p> The date and time when the credential report was created, in <a
-     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetGeneratedTime() const{ return m_generatedTime; }
 
     /**
      * <p> The date and time when the credential report was created, in <a
-     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
     inline void SetGeneratedTime(const Aws::Utils::DateTime& value) { m_generatedTime = value; }
 
     /**
      * <p> The date and time when the credential report was created, in <a
-     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
     inline void SetGeneratedTime(Aws::Utils::DateTime&& value) { m_generatedTime = value; }
 
     /**
      * <p> The date and time when the credential report was created, in <a
-     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
     inline GetCredentialReportResult& WithGeneratedTime(const Aws::Utils::DateTime& value) { SetGeneratedTime(value); return *this;}
 
     /**
      * <p> The date and time when the credential report was created, in <a
-     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>. </p>
+     * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
     inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(value); return *this;}
 

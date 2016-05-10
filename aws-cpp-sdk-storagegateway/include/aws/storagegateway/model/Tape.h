@@ -127,37 +127,37 @@ namespace Model
     inline Tape& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline void SetTapeStatus(const Aws::String& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline void SetTapeStatus(Aws::String&& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline void SetTapeStatus(const char* value) { m_tapeStatusHasBeenSet = true; m_tapeStatus.assign(value); }
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline Tape& WithTapeStatus(const Aws::String& value) { SetTapeStatus(value); return *this;}
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline Tape& WithTapeStatus(Aws::String&& value) { SetTapeStatus(value); return *this;}
 
     /**
-     * <p>The current state of the virtual tape. </p>
+     * <p>The current state of the virtual tape.</p>
      */
     inline Tape& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
 

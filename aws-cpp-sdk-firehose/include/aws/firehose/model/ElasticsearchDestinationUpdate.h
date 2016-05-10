@@ -104,50 +104,50 @@ namespace Model
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permission
-     * for DescribeElasticsearchDomain, DescribeElasticsearchDomains , and
-     * DescribeElasticsearchDomainConfig after assuming <b>RoleARN</b>.</p>
+     * forÂ DescribeElasticsearchDomain, DescribeElasticsearchDomainsÂ , and
+     * DescribeElasticsearchDomainConfigÂ after assuming <b>RoleARN</b>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
@@ -227,7 +227,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
-     * is <code>OneDay</code>.</p>
+     * isÂ <code>OneDay</code>.</p>
      */
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
 
@@ -237,7 +237,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
-     * is <code>OneDay</code>.</p>
+     * isÂ <code>OneDay</code>.</p>
      */
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
@@ -247,7 +247,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
-     * is <code>OneDay</code>.</p>
+     * isÂ <code>OneDay</code>.</p>
      */
     inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
@@ -257,7 +257,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
-     * is <code>OneDay</code>.</p>
+     * isÂ <code>OneDay</code>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
 
@@ -267,7 +267,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
-     * is <code>OneDay</code>.</p>
+     * isÂ <code>OneDay</code>.</p>
      */
     inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(value); return *this;}
 

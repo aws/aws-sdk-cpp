@@ -26,13 +26,13 @@ namespace Model
 
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
-   * <a>ActivateGatewayInput$ActivationKey</a> </li> <li>
-   * <a>ActivateGatewayInput$GatewayName</a> </li> <li>
-   * <a>ActivateGatewayInput$GatewayRegion</a> </li> <li>
-   * <a>ActivateGatewayInput$GatewayTimezone</a> </li> <li>
-   * <a>ActivateGatewayInput$GatewayType</a> </li> <li>
-   * <a>ActivateGatewayInput$TapeDriveType</a> </li> <li>
-   * <a>ActivateGatewayInput$MediumChangerType</a> </li> </ul>
+   * <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p>
+   * <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API ActivateGatewayRequest : public StorageGatewayRequest
   {
@@ -209,9 +209,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
@@ -221,9 +222,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
@@ -233,9 +235,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
@@ -245,9 +248,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
@@ -257,9 +261,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
@@ -269,9 +274,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(value); return *this;}
 
@@ -281,9 +287,10 @@ namespace Model
      * your <code>Host</code> header in the request. For more information about
      * available regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
-     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p><i>Valid
-     * Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-     * "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "sa-east-1"</p>
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
+     * "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
+     * "sa-east-1"</p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
 
@@ -338,92 +345,85 @@ namespace Model
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline const Aws::String& GetTapeDriveType() const{ return m_tapeDriveType; }
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline void SetTapeDriveType(const Aws::String& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = value; }
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline void SetTapeDriveType(Aws::String&& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = value; }
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline void SetTapeDriveType(const char* value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType.assign(value); }
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline ActivateGatewayRequest& WithTapeDriveType(const Aws::String& value) { SetTapeDriveType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline ActivateGatewayRequest& WithTapeDriveType(Aws::String&& value) { SetTapeDriveType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of tape drive to use for gateway-VTL. This
-     * field is optional. </p> <p><i>Valid Values</i>: "IBM-ULT3580-TD5" </p>
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
     inline ActivateGatewayRequest& WithTapeDriveType(const char* value) { SetTapeDriveType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline const Aws::String& GetMediumChangerType() const{ return m_mediumChangerType; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetMediumChangerType(const Aws::String& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = value; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetMediumChangerType(Aws::String&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = value; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetMediumChangerType(const char* value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType.assign(value); }
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(const Aws::String& value) { SetMediumChangerType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(Aws::String&& value) { SetMediumChangerType(value); return *this;}
 
     /**
      * <p>The value that indicates the type of medium changer to use for gateway-VTL.
-     * This field is optional.</p> <p><i>Valid Values</i>: "STK-L700",
-     * "AWS-Gateway-VTL"</p>
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline ActivateGatewayRequest& WithMediumChangerType(const char* value) { SetMediumChangerType(value); return *this;}
 

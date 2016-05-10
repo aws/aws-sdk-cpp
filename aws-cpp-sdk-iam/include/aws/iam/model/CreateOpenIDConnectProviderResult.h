@@ -45,43 +45,43 @@ namespace Model
     CreateOpenIDConnectProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline const Aws::String& GetOpenIDConnectProviderArn() const{ return m_openIDConnectProviderArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline void SetOpenIDConnectProviderArn(Aws::String&& value) { m_openIDConnectProviderArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline void SetOpenIDConnectProviderArn(const char* value) { m_openIDConnectProviderArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(const Aws::String& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(Aws::String&& value) { SetOpenIDConnectProviderArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that was
+     * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
      * created. For more information, see <a>OpenIDConnectProviderListEntry</a>. </p>
      */
     inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}

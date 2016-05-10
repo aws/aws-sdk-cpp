@@ -35,7 +35,7 @@ namespace SQS
 namespace Model
 {
   /**
-   * A list of your queues.
+   * <p>A list of your queues.</p>
    */
   class AWS_SQS_API ListQueuesResult
   {

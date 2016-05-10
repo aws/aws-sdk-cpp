@@ -45,27 +45,27 @@ namespace Model
     CreateVirtualMFADeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A newly created virtual MFA device.</p>
+     * <p>A structure containing details about the new virtual MFA device.</p>
      */
     inline const VirtualMFADevice& GetVirtualMFADevice() const{ return m_virtualMFADevice; }
 
     /**
-     * <p>A newly created virtual MFA device.</p>
+     * <p>A structure containing details about the new virtual MFA device.</p>
      */
     inline void SetVirtualMFADevice(const VirtualMFADevice& value) { m_virtualMFADevice = value; }
 
     /**
-     * <p>A newly created virtual MFA device.</p>
+     * <p>A structure containing details about the new virtual MFA device.</p>
      */
     inline void SetVirtualMFADevice(VirtualMFADevice&& value) { m_virtualMFADevice = value; }
 
     /**
-     * <p>A newly created virtual MFA device.</p>
+     * <p>A structure containing details about the new virtual MFA device.</p>
      */
     inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(const VirtualMFADevice& value) { SetVirtualMFADevice(value); return *this;}
 
     /**
-     * <p>A newly created virtual MFA device.</p>
+     * <p>A structure containing details about the new virtual MFA device.</p>
      */
     inline CreateVirtualMFADeviceResult& WithVirtualMFADevice(VirtualMFADevice&& value) { SetVirtualMFADevice(value); return *this;}
 

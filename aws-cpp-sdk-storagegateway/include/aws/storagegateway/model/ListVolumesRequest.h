@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>A JSON object that contains one or more of the following fields:</p> <ul>
-   * <li> <a>ListVolumesInput$Limit</a> </li> <li> <a>ListVolumesInput$Marker</a>
-   * </li> </ul>
+   * <li> <p> <a>ListVolumesInput$Limit</a> </p> </li> <li> <p>
+   * <a>ListVolumesInput$Marker</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API ListVolumesRequest : public StorageGatewayRequest
   {

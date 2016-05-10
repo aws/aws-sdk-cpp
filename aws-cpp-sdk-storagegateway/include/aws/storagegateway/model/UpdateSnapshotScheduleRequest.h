@@ -26,10 +26,10 @@ namespace Model
 
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
-   * <a>UpdateSnapshotScheduleInput$Description</a> </li> <li>
-   * <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </li> <li>
-   * <a>UpdateSnapshotScheduleInput$StartAt</a> </li> <li>
-   * <a>UpdateSnapshotScheduleInput$VolumeARN</a> </li> </ul>
+   * <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p>
+   * <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p>
+   * <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p>
+   * <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleRequest : public StorageGatewayRequest
   {

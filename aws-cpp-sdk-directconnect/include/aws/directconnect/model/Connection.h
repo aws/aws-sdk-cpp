@@ -43,25 +43,39 @@ namespace Model
     Connection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline Connection& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline Connection& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new connection.</p>
+     */
     inline Connection& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
     
@@ -214,25 +228,46 @@ namespace Model
     
     inline Connection& WithVlan(long value) { SetVlan(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(const Aws::String& value) { m_partnerNameHasBeenSet = true; m_partnerName = value; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(Aws::String&& value) { m_partnerNameHasBeenSet = true; m_partnerName = value; }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline void SetPartnerName(const char* value) { m_partnerNameHasBeenSet = true; m_partnerName.assign(value); }
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline Connection& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline Connection& WithPartnerName(Aws::String&& value) { SetPartnerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
     inline Connection& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
   private:

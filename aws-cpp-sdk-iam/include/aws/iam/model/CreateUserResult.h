@@ -44,27 +44,27 @@ namespace Model
     CreateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the user.</p>
+     * <p>A structure with details about the new IAM user.</p>
      */
     inline const User& GetUser() const{ return m_user; }
 
     /**
-     * <p>Information about the user.</p>
+     * <p>A structure with details about the new IAM user.</p>
      */
     inline void SetUser(const User& value) { m_user = value; }
 
     /**
-     * <p>Information about the user.</p>
+     * <p>A structure with details about the new IAM user.</p>
      */
     inline void SetUser(User&& value) { m_user = value; }
 
     /**
-     * <p>Information about the user.</p>
+     * <p>A structure with details about the new IAM user.</p>
      */
     inline CreateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
     /**
-     * <p>Information about the user.</p>
+     * <p>A structure with details about the new IAM user.</p>
      */
     inline CreateUserResult& WithUser(User&& value) { SetUser(value); return *this;}
 

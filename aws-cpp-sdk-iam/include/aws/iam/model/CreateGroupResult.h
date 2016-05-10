@@ -44,27 +44,27 @@ namespace Model
     CreateGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the group.</p>
+     * <p>A structure containing details about the new group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
 
     /**
-     * <p>Information about the group.</p>
+     * <p>A structure containing details about the new group.</p>
      */
     inline void SetGroup(const Group& value) { m_group = value; }
 
     /**
-     * <p>Information about the group.</p>
+     * <p>A structure containing details about the new group.</p>
      */
     inline void SetGroup(Group&& value) { m_group = value; }
 
     /**
-     * <p>Information about the group.</p>
+     * <p>A structure containing details about the new group.</p>
      */
     inline CreateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>Information about the group.</p>
+     * <p>A structure containing details about the new group.</p>
      */
     inline CreateGroupResult& WithGroup(Group&& value) { SetGroup(value); return *this;}
 

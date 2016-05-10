@@ -45,6 +45,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
@@ -59,6 +64,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -73,6 +83,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -87,6 +102,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
@@ -101,6 +121,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
 
@@ -115,6 +140,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -129,6 +159,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -143,6 +178,11 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -213,7 +253,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
@@ -228,7 +271,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
@@ -243,7 +289,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
@@ -258,7 +307,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline SimulateCustomPolicyRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
@@ -273,7 +325,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline SimulateCustomPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(value); return *this;}
 
@@ -288,7 +343,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -303,7 +361,10 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
@@ -318,56 +379,94 @@ namespace Model
      * include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
-     * error.</p>
+     * error.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(value); return *this;}
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p>
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 
@@ -470,128 +569,121 @@ namespace Model
     inline SimulateCustomPolicyRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline const Aws::String& GetCallerArn() const{ return m_callerArn; }
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline void SetCallerArn(const Aws::String& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline void SetCallerArn(const char* value) { m_callerArnHasBeenSet = true; m_callerArn.assign(value); }
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline SimulateCustomPolicyRequest& WithCallerArn(const Aws::String& value) { SetCallerArn(value); return *this;}
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline SimulateCustomPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(value); return *this;}
 
     /**
-     * <p>The ARN of the user that you want to use as the simulated caller of the APIs.
-     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
-     * so that the policy's <code>Principal</code> element has a value to use in
-     * evaluating the policy.</p> <p>You can specify only the ARN of an IAM user. You
-     * cannot specify the ARN of an assumed role, federated user, or a service
-     * principal.</p>
+     * <p>The ARN of the IAM user that you want to use as the simulated caller of the
+     * APIs. <code>CallerArn</code> is required if you include a
+     * <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element
+     * has a value to use in evaluating the policy.</p> <p>You can specify only the ARN
+     * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
+     * or a service principal.</p>
      */
     inline SimulateCustomPolicyRequest& WithCallerArn(const char* value) { SetCallerArn(value); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline const Aws::Vector<ContextEntry>& GetContextEntries() const{ return m_contextEntries; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(const Aws::Vector<ContextEntry>& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& WithContextEntries(const Aws::Vector<ContextEntry>& value) { SetContextEntries(value); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(value); return *this;}
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& AddContextEntries(const ContextEntry& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
 
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
-     * Whenever a context key is evaluated by a <code>Condition</code> element in one
-     * of the simulated IAM permission policies, the corresponding value is
-     * supplied.</p>
+     * Whenever a context key is evaluated in one of the simulated IAM permission
+     * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
 
@@ -610,17 +702,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline const Aws::String& GetResourceHandlingOption() const{ return m_resourceHandlingOption; }
 
@@ -639,17 +730,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const Aws::String& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
 
@@ -668,17 +758,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
 
@@ -697,17 +786,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const char* value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption.assign(value); }
 
@@ -726,17 +814,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline SimulateCustomPolicyRequest& WithResourceHandlingOption(const Aws::String& value) { SetResourceHandlingOption(value); return *this;}
 
@@ -755,17 +842,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline SimulateCustomPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(value); return *this;}
 
@@ -784,17 +870,16 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul>
-     * <li><p><b>EC2-Classic-InstanceStore</b></p> <p>instance, image,
-     * security-group</p> </li> <li><p><b>EC2-Classic-EBS</b></p> <p>instance, image,
-     * security-group, volume</p> </li> <li><p><b>EC2-VPC-InstanceStore</b></p>
-     * <p>instance, image, security-group, network-interface</p> </li>
-     * <li><p><b>EC2-VPC-InstanceStore-Subnet</b></p> <p>instance, image,
-     * security-group, network-interface, subnet</p> </li>
-     * <li><p><b>EC2-VPC-EBS</b></p> <p>instance, image, security-group,
-     * network-interface, volume</p> </li> <li><p><b>EC2-VPC-EBS-Subnet</b></p>
-     * <p>instance, image, security-group, network-interface, subnet, volume</p> </li>
-     * </ul>
+     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
+     * security-group, network-interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
+     * network-interface, subnet, volume</p> </li> </ul>
      */
     inline SimulateCustomPolicyRequest& WithResourceHandlingOption(const char* value) { SetResourceHandlingOption(value); return *this;}
 
@@ -806,7 +891,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -818,7 +903,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -830,7 +915,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline SimulateCustomPolicyRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

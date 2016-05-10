@@ -28,6 +28,7 @@ namespace Model
 {
 
 GatewayInfo::GatewayInfo() : 
+    m_gatewayIdHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_gatewayOperationalStateHasBeenSet(false),
@@ -36,6 +37,7 @@ GatewayInfo::GatewayInfo() :
 }
 
 GatewayInfo::GatewayInfo(const JsonValue& jsonValue) : 
+    m_gatewayIdHasBeenSet(false),
     m_gatewayARNHasBeenSet(false),
     m_gatewayTypeHasBeenSet(false),
     m_gatewayOperationalStateHasBeenSet(false),
@@ -46,6 +48,13 @@ GatewayInfo::GatewayInfo(const JsonValue& jsonValue) :
 
 GatewayInfo& GatewayInfo::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("GatewayId"))
+  {
+    m_gatewayId = jsonValue.GetString("GatewayId");
+
+    m_gatewayIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -80,6 +89,12 @@ GatewayInfo& GatewayInfo::operator =(const JsonValue& jsonValue)
 JsonValue GatewayInfo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_gatewayIdHasBeenSet)
+  {
+   payload.WithString("GatewayId", m_gatewayId);
+
+  }
 
   if(m_gatewayARNHasBeenSet)
   {

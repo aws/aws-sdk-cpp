@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
-   * <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a> </li>
-   * <li> <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a>
+   * <p> <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a>
+   * </p> </li> <li> <p>
+   * <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a> </p>
    * </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitRequest : public StorageGatewayRequest

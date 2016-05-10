@@ -35,91 +35,147 @@ namespace Model
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p> <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/).</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user to create.</p>
+     * <p>The name of the user to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -44,27 +44,27 @@ namespace Model
     GetSSHPublicKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the SSH public key.</p>
+     * <p>A structure containing details about the SSH public key.</p>
      */
     inline const SSHPublicKey& GetSSHPublicKey() const{ return m_sSHPublicKey; }
 
     /**
-     * <p>Information about the SSH public key.</p>
+     * <p>A structure containing details about the SSH public key.</p>
      */
     inline void SetSSHPublicKey(const SSHPublicKey& value) { m_sSHPublicKey = value; }
 
     /**
-     * <p>Information about the SSH public key.</p>
+     * <p>A structure containing details about the SSH public key.</p>
      */
     inline void SetSSHPublicKey(SSHPublicKey&& value) { m_sSHPublicKey = value; }
 
     /**
-     * <p>Information about the SSH public key.</p>
+     * <p>A structure containing details about the SSH public key.</p>
      */
     inline GetSSHPublicKeyResult& WithSSHPublicKey(const SSHPublicKey& value) { SetSSHPublicKey(value); return *this;}
 
     /**
-     * <p>Information about the SSH public key.</p>
+     * <p>A structure containing details about the SSH public key.</p>
      */
     inline GetSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(value); return *this;}
 

@@ -32,25 +32,67 @@ namespace Model
     ListPolicyVersionsRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListPolicyVersionsRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListPolicyVersionsRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListPolicyVersionsRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
     /**
@@ -117,7 +159,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -129,7 +171,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -141,7 +183,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListPolicyVersionsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

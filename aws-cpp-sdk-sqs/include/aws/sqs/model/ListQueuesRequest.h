@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SQS_API ListQueuesRequest : public SQSRequest
   {
@@ -34,43 +35,50 @@ namespace Model
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueNamePrefix() const{ return m_queueNamePrefix; }
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline void SetQueueNamePrefix(const Aws::String& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline void SetQueueNamePrefix(Aws::String&& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline void SetQueueNamePrefix(const char* value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix.assign(value); }
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline ListQueuesRequest& WithQueueNamePrefix(const Aws::String& value) { SetQueueNamePrefix(value); return *this;}
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline ListQueuesRequest& WithQueueNamePrefix(Aws::String&& value) { SetQueueNamePrefix(value); return *this;}
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
-     * begins with the specified string are returned.</p>
+     * begins with the specified string are returned.</p> <p>Queue names are
+     * case-sensitive.</p>
      */
     inline ListQueuesRequest& WithQueueNamePrefix(const char* value) { SetQueueNamePrefix(value); return *this;}
 

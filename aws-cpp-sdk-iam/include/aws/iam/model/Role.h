@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an IAM role.</p> <p> This data type is used as a
+   * <p>Contains information about an IAM role.</p> <p>This data type is used as a
    * response element in the following actions:</p> <ul> <li> <p> <a>CreateRole</a>
    * </p> </li> <li> <p> <a>GetRole</a> </p> </li> <li> <p> <a>ListRoles</a> </p>
    * </li> </ul>

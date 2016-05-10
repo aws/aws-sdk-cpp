@@ -33,72 +33,114 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline DeleteSigningCertificateRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline DeleteSigningCertificateRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user the signing certificate belongs to.</p>
+     * <p>The name of the user the signing certificate belongs to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline DeleteSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline DeleteSigningCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline DeleteSigningCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the signing certificate to delete.</p>
+     * <p>The ID of the signing certificate to delete.</p> <p>The format of this
+     * parameter, as described by its <a
+     * href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
+     * characters that can be upper- or lower-cased letters or digits.</p>
      */
     inline DeleteSigningCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 

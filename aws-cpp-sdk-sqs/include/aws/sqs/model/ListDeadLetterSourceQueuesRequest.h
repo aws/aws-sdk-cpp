@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SQS_API ListDeadLetterSourceQueuesRequest : public SQSRequest
   {
@@ -33,37 +34,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * The queue URL of a dead letter queue.
+     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

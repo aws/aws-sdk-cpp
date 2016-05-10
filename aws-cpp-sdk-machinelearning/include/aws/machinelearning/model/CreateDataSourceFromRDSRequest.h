@@ -296,49 +296,49 @@ namespace Model
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline CreateDataSourceFromRDSRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline CreateDataSourceFromRDSRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The role that Amazon ML assumes on behalf of the user to create and activate
-     * a data pipeline in the user’s account and copy data (using the
+     * a data pipeline in the userâ€™s account and copy data (using the
      * <code>SelectSqlQuery</code>) query from Amazon RDS to Amazon S3.</p> <p> </p>
      */
     inline CreateDataSourceFromRDSRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}

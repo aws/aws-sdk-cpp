@@ -49,107 +49,107 @@ namespace Model
     ListEntitiesForPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline const Aws::Vector<PolicyGroup>& GetPolicyGroups() const{ return m_policyGroups; }
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline void SetPolicyGroups(const Aws::Vector<PolicyGroup>& value) { m_policyGroups = value; }
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline void SetPolicyGroups(Aws::Vector<PolicyGroup>&& value) { m_policyGroups = value; }
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyGroups(const Aws::Vector<PolicyGroup>& value) { SetPolicyGroups(value); return *this;}
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyGroups(Aws::Vector<PolicyGroup>&& value) { SetPolicyGroups(value); return *this;}
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyGroups(const PolicyGroup& value) { m_policyGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of groups that the policy is attached to.</p>
+     * <p>A list of IAM groups that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyGroups(PolicyGroup&& value) { m_policyGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline const Aws::Vector<PolicyUser>& GetPolicyUsers() const{ return m_policyUsers; }
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline void SetPolicyUsers(const Aws::Vector<PolicyUser>& value) { m_policyUsers = value; }
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline void SetPolicyUsers(Aws::Vector<PolicyUser>&& value) { m_policyUsers = value; }
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyUsers(const Aws::Vector<PolicyUser>& value) { SetPolicyUsers(value); return *this;}
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyUsers(Aws::Vector<PolicyUser>&& value) { SetPolicyUsers(value); return *this;}
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyUsers(const PolicyUser& value) { m_policyUsers.push_back(value); return *this; }
 
     /**
-     * <p>A list of users that the policy is attached to.</p>
+     * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyUsers(PolicyUser&& value) { m_policyUsers.push_back(value); return *this; }
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline const Aws::Vector<PolicyRole>& GetPolicyRoles() const{ return m_policyRoles; }
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline void SetPolicyRoles(const Aws::Vector<PolicyRole>& value) { m_policyRoles = value; }
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline void SetPolicyRoles(Aws::Vector<PolicyRole>&& value) { m_policyRoles = value; }
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyRoles(const Aws::Vector<PolicyRole>& value) { SetPolicyRoles(value); return *this;}
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& WithPolicyRoles(Aws::Vector<PolicyRole>&& value) { SetPolicyRoles(value); return *this;}
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyRoles(const PolicyRole& value) { m_policyRoles.push_back(value); return *this; }
 
     /**
-     * <p>A list of roles that the policy is attached to.</p>
+     * <p>A list of IAM roles that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyRoles(PolicyRole&& value) { m_policyRoles.push_back(value); return *this; }
 

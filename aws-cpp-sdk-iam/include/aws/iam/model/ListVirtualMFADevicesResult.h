@@ -48,43 +48,43 @@ namespace Model
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline const Aws::Vector<VirtualMFADevice>& GetVirtualMFADevices() const{ return m_virtualMFADevices; }
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline void SetVirtualMFADevices(const Aws::Vector<VirtualMFADevice>& value) { m_virtualMFADevices = value; }
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline void SetVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { m_virtualMFADevices = value; }
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline ListVirtualMFADevicesResult& WithVirtualMFADevices(const Aws::Vector<VirtualMFADevice>& value) { SetVirtualMFADevices(value); return *this;}
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline ListVirtualMFADevicesResult& WithVirtualMFADevices(Aws::Vector<VirtualMFADevice>&& value) { SetVirtualMFADevices(value); return *this;}
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline ListVirtualMFADevicesResult& AddVirtualMFADevices(const VirtualMFADevice& value) { m_virtualMFADevices.push_back(value); return *this; }
 
     /**
      * <p> The list of virtual MFA devices in the current account that match the
-     * <code>AssignmentStatus</code> value that was passed in the request. </p>
+     * <code>AssignmentStatus</code> value that was passed in the request.</p>
      */
     inline ListVirtualMFADevicesResult& AddVirtualMFADevices(VirtualMFADevice&& value) { m_virtualMFADevices.push_back(value); return *this; }
 

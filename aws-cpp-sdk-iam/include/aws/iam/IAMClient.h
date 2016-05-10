@@ -596,16 +596,17 @@ namespace Model
    * see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management
    * (IAM)</a>. For the user guide for IAM, see <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>. </p>
-   * <note>AWS provides SDKs that consist of libraries and sample code for various
-   * programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The
-   * SDKs provide a convenient way to create programmatic access to IAM and AWS. For
-   * example, the SDKs take care of tasks such as cryptographically signing requests
-   * (see below), managing errors, and retrying requests automatically. For
-   * information about the AWS SDKs, including how to download and install them, see
-   * the <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>
-   * page. </note> <p>We recommend that you use the AWS SDKs to make programmatic API
-   * calls to IAM. However, you can also use the IAM Query API to make direct calls
-   * to the IAM web service. To learn more about the IAM Query API, see <a
+   * <note> <p>AWS provides SDKs that consist of libraries and sample code for
+   * various programming languages and platforms (Java, Ruby, .NET, iOS, Android,
+   * etc.). The SDKs provide a convenient way to create programmatic access to IAM
+   * and AWS. For example, the SDKs take care of tasks such as cryptographically
+   * signing requests (see below), managing errors, and retrying requests
+   * automatically. For information about the AWS SDKs, including how to download and
+   * install them, see the <a href="http://aws.amazon.com/tools/">Tools for Amazon
+   * Web Services</a> page. </p> </note> <p>We recommend that you use the AWS SDKs to
+   * make programmatic API calls to IAM. However, you can also use the IAM Query API
+   * to make direct calls to the IAM web service. To learn more about the IAM Query
+   * API, see <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
    * Query Requests</a> in the <i>Using IAM</i> guide. IAM supports GET and POST
    * requests for all actions. That is, the API does not require you to use GET for
@@ -616,23 +617,24 @@ namespace Model
    * that you do not use your AWS account access key ID and secret access key for
    * everyday work with IAM. You can use the access key ID and secret access key for
    * an IAM user or you can use the AWS Security Token Service to generate temporary
-   * security credentials and use those to sign requests. </p> <p>To sign requests,
-   * we recommend that you use <a
+   * security credentials and use those to sign requests.</p> <p>To sign requests, we
+   * recommend that you use <a
    * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4</a>. If you have an existing application that uses Signature Version
    * 2, you do not have to update it to use Signature Version 4. However, some
    * operations now require Signature Version 4. The documentation for operations
    * that require version 4 indicate this requirement. </p> <p> <b>Additional
-   * Resources</b> </p> <p>For more information, see the following:</p> <ul> <li> <a
+   * Resources</b> </p> <p>For more information, see the following:</p> <ul> <li> <p>
+   * <a
    * href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
    * Security Credentials</a>. This topic provides general information about the
-   * types of credentials used for accessing AWS. </li> <li> <a
+   * types of credentials used for accessing AWS. </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
    * Best Practices</a>. This topic presents a list of suggestions for using the IAM
-   * service to help secure your AWS resources. </li> <li> <a
+   * service to help secure your AWS resources. </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
    * AWS API Requests</a>. This set of topics walk you through the process of signing
-   * a request using an access key ID and secret access key. </li> </ul>
+   * a request using an access key ID and secret access key. </p> </li> </ul>
    */
   class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient
   {
@@ -663,17 +665,17 @@ namespace Model
 
         /**
          * <p>Adds a new client ID (also known as audience) to the list of client IDs
-         * already registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you add an existing
-         * client ID to the provider.</p>
+         * already registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource.</p> <p>This action is idempotent; it does not fail or return an error
+         * if you add an existing client ID to the provider.</p>
          */
         virtual Model::AddClientIDToOpenIDConnectProviderOutcome AddClientIDToOpenIDConnectProvider(const Model::AddClientIDToOpenIDConnectProviderRequest& request) const;
 
         /**
          * <p>Adds a new client ID (also known as audience) to the list of client IDs
-         * already registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you add an existing
-         * client ID to the provider.</p>
+         * already registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource.</p> <p>This action is idempotent; it does not fail or return an error
+         * if you add an existing client ID to the provider.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -681,43 +683,49 @@ namespace Model
 
         /**
          * <p>Adds a new client ID (also known as audience) to the list of client IDs
-         * already registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you add an existing
-         * client ID to the provider.</p>
+         * already registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource.</p> <p>This action is idempotent; it does not fail or return an error
+         * if you add an existing client ID to the provider.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddClientIDToOpenIDConnectProviderAsync(const Model::AddClientIDToOpenIDConnectProviderRequest& request, const AddClientIDToOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified role to the specified instance profile. For more
-         * information about roles, go to <a
+         * <p>Adds the specified IAM role to the specified instance profile.</p> <note>
+         * <p>The caller of this API must be granted the <code>PassRole</code> permission
+         * on the IAM role by a permission policy.</p> </note> <p>For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          */
         virtual Model::AddRoleToInstanceProfileOutcome AddRoleToInstanceProfile(const Model::AddRoleToInstanceProfileRequest& request) const;
 
         /**
-         * <p>Adds the specified role to the specified instance profile. For more
-         * information about roles, go to <a
+         * <p>Adds the specified IAM role to the specified instance profile.</p> <note>
+         * <p>The caller of this API must be granted the <code>PassRole</code> permission
+         * on the IAM role by a permission policy.</p> </note> <p>For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddRoleToInstanceProfileOutcomeCallable AddRoleToInstanceProfileCallable(const Model::AddRoleToInstanceProfileRequest& request) const;
 
         /**
-         * <p>Adds the specified role to the specified instance profile. For more
-         * information about roles, go to <a
+         * <p>Adds the specified IAM role to the specified instance profile.</p> <note>
+         * <p>The caller of this API must be granted the <code>PassRole</code> permission
+         * on the IAM role by a permission policy.</p> </note> <p>For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -743,62 +751,62 @@ namespace Model
         virtual void AddUserToGroupAsync(const Model::AddUserToGroupRequest& request, const AddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified group.</p> <p>You use
-         * this API to attach a managed policy to a group. To embed an inline policy in a
-         * group, use <a>PutGroupPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM group.</p> <p>You
+         * use this API to attach a managed policy to a group. To embed an inline policy in
+         * a group, use <a>PutGroupPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::AttachGroupPolicyOutcome AttachGroupPolicy(const Model::AttachGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified group.</p> <p>You use
-         * this API to attach a managed policy to a group. To embed an inline policy in a
-         * group, use <a>PutGroupPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM group.</p> <p>You
+         * use this API to attach a managed policy to a group. To embed an inline policy in
+         * a group, use <a>PutGroupPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AttachGroupPolicyOutcomeCallable AttachGroupPolicyCallable(const Model::AttachGroupPolicyRequest& request) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified group.</p> <p>You use
-         * this API to attach a managed policy to a group. To embed an inline policy in a
-         * group, use <a>PutGroupPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM group.</p> <p>You
+         * use this API to attach a managed policy to a group. To embed an inline policy in
+         * a group, use <a>PutGroupPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AttachGroupPolicyAsync(const Model::AttachGroupPolicyRequest& request, const AttachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified role.</p> <p>When you
-         * attach a managed policy to a role, the managed policy is used as the role's
-         * access (permissions) policy. You cannot use a managed policy as the role's trust
-         * policy. The role's trust policy is created at the same time as the role, using
-         * <a>CreateRole</a>. You can update a role's trust policy using
-         * <a>UpdateAssumeRolePolicy</a>. </p> <p>Use this API to attach a managed policy
-         * to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>. For
-         * more information about policies, refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM role.</p> <p>When
+         * you attach a managed policy to a role, the managed policy becomes part of the
+         * role's permission (access) policy. You cannot use a managed policy as the role's
+         * trust policy. The role's trust policy is created at the same time as the role,
+         * using <a>CreateRole</a>. You can update a role's trust policy using
+         * <a>UpdateAssumeRolePolicy</a>.</p> <p>Use this API to attach a <i>managed</i>
+         * policy to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>.
+         * For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::AttachRolePolicyOutcome AttachRolePolicy(const Model::AttachRolePolicyRequest& request) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified role.</p> <p>When you
-         * attach a managed policy to a role, the managed policy is used as the role's
-         * access (permissions) policy. You cannot use a managed policy as the role's trust
-         * policy. The role's trust policy is created at the same time as the role, using
-         * <a>CreateRole</a>. You can update a role's trust policy using
-         * <a>UpdateAssumeRolePolicy</a>. </p> <p>Use this API to attach a managed policy
-         * to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>. For
-         * more information about policies, refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM role.</p> <p>When
+         * you attach a managed policy to a role, the managed policy becomes part of the
+         * role's permission (access) policy. You cannot use a managed policy as the role's
+         * trust policy. The role's trust policy is created at the same time as the role,
+         * using <a>CreateRole</a>. You can update a role's trust policy using
+         * <a>UpdateAssumeRolePolicy</a>.</p> <p>Use this API to attach a <i>managed</i>
+         * policy to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>.
+         * For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -807,14 +815,14 @@ namespace Model
         virtual Model::AttachRolePolicyOutcomeCallable AttachRolePolicyCallable(const Model::AttachRolePolicyRequest& request) const;
 
         /**
-         * <p>Attaches the specified managed policy to the specified role.</p> <p>When you
-         * attach a managed policy to a role, the managed policy is used as the role's
-         * access (permissions) policy. You cannot use a managed policy as the role's trust
-         * policy. The role's trust policy is created at the same time as the role, using
-         * <a>CreateRole</a>. You can update a role's trust policy using
-         * <a>UpdateAssumeRolePolicy</a>. </p> <p>Use this API to attach a managed policy
-         * to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>. For
-         * more information about policies, refer to <a
+         * <p>Attaches the specified managed policy to the specified IAM role.</p> <p>When
+         * you attach a managed policy to a role, the managed policy becomes part of the
+         * role's permission (access) policy. You cannot use a managed policy as the role's
+         * trust policy. The role's trust policy is created at the same time as the role,
+         * using <a>CreateRole</a>. You can update a role's trust policy using
+         * <a>UpdateAssumeRolePolicy</a>.</p> <p>Use this API to attach a <i>managed</i>
+         * policy to a role. To embed an inline policy in a role, use <a>PutRolePolicy</a>.
+         * For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -824,21 +832,21 @@ namespace Model
 
         /**
          * <p>Attaches the specified managed policy to the specified user.</p> <p>You use
-         * this API to attach a managed policy to a user. To embed an inline policy in a
-         * user, use <a>PutUserPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * this API to attach a <i>managed</i> policy to a user. To embed an inline policy
+         * in a user, use <a>PutUserPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::AttachUserPolicyOutcome AttachUserPolicy(const Model::AttachUserPolicyRequest& request) const;
 
         /**
          * <p>Attaches the specified managed policy to the specified user.</p> <p>You use
-         * this API to attach a managed policy to a user. To embed an inline policy in a
-         * user, use <a>PutUserPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * this API to attach a <i>managed</i> policy to a user. To embed an inline policy
+         * in a user, use <a>PutUserPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -846,11 +854,11 @@ namespace Model
 
         /**
          * <p>Attaches the specified managed policy to the specified user.</p> <p>You use
-         * this API to attach a managed policy to a user. To embed an inline policy in a
-         * user, use <a>PutUserPolicy</a>. </p> <p>For more information about policies,
-         * refer to <a
+         * this API to attach a <i>managed</i> policy to a user. To embed an inline policy
+         * in a user, use <a>PutUserPolicy</a>.</p> <p>For more information about policies,
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -858,21 +866,21 @@ namespace Model
 
         /**
          * <p>Changes the password of the IAM user who is calling this action. The root
-         * account password is not affected by this action. </p> <p>To change the password
+         * account password is not affected by this action.</p> <p>To change the password
          * for a different user, see <a>UpdateLoginProfile</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ChangePasswordOutcome ChangePassword(const Model::ChangePasswordRequest& request) const;
 
         /**
          * <p>Changes the password of the IAM user who is calling this action. The root
-         * account password is not affected by this action. </p> <p>To change the password
+         * account password is not affected by this action.</p> <p>To change the password
          * for a different user, see <a>UpdateLoginProfile</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -880,11 +888,11 @@ namespace Model
 
         /**
          * <p>Changes the password of the IAM user who is calling this action. The root
-         * account password is not affected by this action. </p> <p>To change the password
+         * account password is not affected by this action.</p> <p>To change the password
          * for a different user, see <a>UpdateLoginProfile</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -892,35 +900,37 @@ namespace Model
 
         /**
          * <p> Creates a new AWS secret access key and corresponding AWS access key ID for
-         * the specified user. The default status for new keys is <code>Active</code>. </p>
-         * <p> If you do not specify a user name, IAM determines the user name implicitly
+         * the specified user. The default status for new keys is <code>Active</code>.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the AWS access key ID signing the request. Because this action works
          * for access keys under the AWS account, you can use this action to manage root
-         * credentials even if the AWS account has no associated users. </p> <p> For
+         * credentials even if the AWS account has no associated users.</p> <p> For
          * information about limits on the number of keys you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <important> To ensure the
-         * security of your AWS account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys. </important>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * the security of your AWS account, the secret access key is accessible only
+         * during key and user creation. You must save the key (for example, in a text
+         * file) if you want to be able to access it again. If a secret key is lost, you
+         * can delete the access keys for the associated user and then create new keys.</p>
+         * </important>
          */
         virtual Model::CreateAccessKeyOutcome CreateAccessKey(const Model::CreateAccessKeyRequest& request) const;
 
         /**
          * <p> Creates a new AWS secret access key and corresponding AWS access key ID for
-         * the specified user. The default status for new keys is <code>Active</code>. </p>
-         * <p> If you do not specify a user name, IAM determines the user name implicitly
+         * the specified user. The default status for new keys is <code>Active</code>.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the AWS access key ID signing the request. Because this action works
          * for access keys under the AWS account, you can use this action to manage root
-         * credentials even if the AWS account has no associated users. </p> <p> For
+         * credentials even if the AWS account has no associated users.</p> <p> For
          * information about limits on the number of keys you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <important> To ensure the
-         * security of your AWS account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys. </important>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * the security of your AWS account, the secret access key is accessible only
+         * during key and user creation. You must save the key (for example, in a text
+         * file) if you want to be able to access it again. If a secret key is lost, you
+         * can delete the access keys for the associated user and then create new keys.</p>
+         * </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -928,18 +938,19 @@ namespace Model
 
         /**
          * <p> Creates a new AWS secret access key and corresponding AWS access key ID for
-         * the specified user. The default status for new keys is <code>Active</code>. </p>
-         * <p> If you do not specify a user name, IAM determines the user name implicitly
+         * the specified user. The default status for new keys is <code>Active</code>.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
          * based on the AWS access key ID signing the request. Because this action works
          * for access keys under the AWS account, you can use this action to manage root
-         * credentials even if the AWS account has no associated users. </p> <p> For
+         * credentials even if the AWS account has no associated users.</p> <p> For
          * information about limits on the number of keys you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <important> To ensure the
-         * security of your AWS account, the secret access key is accessible only during
-         * key and user creation. You must save the key (for example, in a text file) if
-         * you want to be able to access it again. If a secret key is lost, you can delete
-         * the access keys for the associated user and then create new keys. </important>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * the security of your AWS account, the secret access key is accessible only
+         * during key and user creation. You must save the key (for example, in a text
+         * file) if you want to be able to access it again. If a secret key is lost, you
+         * can delete the access keys for the associated user and then create new keys.</p>
+         * </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -949,7 +960,7 @@ namespace Model
          * <p>Creates an alias for your AWS account. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateAccountAliasOutcome CreateAccountAlias(const Model::CreateAccountAliasRequest& request) const;
 
@@ -957,7 +968,7 @@ namespace Model
          * <p>Creates an alias for your AWS account. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -967,7 +978,7 @@ namespace Model
          * <p>Creates an alias for your AWS account. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -977,7 +988,7 @@ namespace Model
          * <p>Creates a new group.</p> <p> For information about the number of groups you
          * can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
@@ -985,7 +996,7 @@ namespace Model
          * <p>Creates a new group.</p> <p> For information about the number of groups you
          * can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -995,7 +1006,7 @@ namespace Model
          * <p>Creates a new group.</p> <p> For information about the number of groups you
          * can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1005,10 +1016,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p> For information about the number of instance
+         * Instance Profiles</a>.</p> <p> For information about the number of instance
          * profiles you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateInstanceProfileOutcome CreateInstanceProfile(const Model::CreateInstanceProfileRequest& request) const;
 
@@ -1016,10 +1027,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p> For information about the number of instance
+         * Instance Profiles</a>.</p> <p> For information about the number of instance
          * profiles you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1029,10 +1040,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p> For information about the number of instance
+         * Instance Profiles</a>.</p> <p> For information about the number of instance
          * profiles you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1043,7 +1054,7 @@ namespace Model
          * access AWS services through the AWS Management Console. For more information
          * about managing passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>Using IAM</i> guide. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateLoginProfileOutcome CreateLoginProfile(const Model::CreateLoginProfileRequest& request) const;
 
@@ -1052,7 +1063,7 @@ namespace Model
          * access AWS services through the AWS Management Console. For more information
          * about managing passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>Using IAM</i> guide. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1063,7 +1074,7 @@ namespace Model
          * access AWS services through the AWS Management Console. For more information
          * about managing passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>Using IAM</i> guide. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1071,35 +1082,37 @@ namespace Model
 
         /**
          * <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a
-         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>. </p> <p>The OIDC
+         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy to establish a trust relationship between AWS and the OIDC
-         * provider. </p> <p>When you create the IAM OIDC provider, you specify the URL of
+         * provider.</p> <p>When you create the IAM OIDC provider, you specify the URL of
          * the OIDC identity provider (IdP) to trust, a list of client IDs (also known as
          * audiences) that identify the application or applications that are allowed to
          * authenticate using the OIDC provider, and a list of thumbprints of the server
          * certificate(s) that the IdP uses. You get all of this information from the OIDC
-         * IdP that you want to use for access to AWS. </p> <note>Because trust for the
+         * IdP that you want to use for access to AWS.</p> <note> <p>Because trust for the
          * OIDC provider is ultimately derived from the IAM provider that this action
          * creates, it is a best practice to limit access to the
-         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users. </note>
+         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users.</p>
+         * </note>
          */
         virtual Model::CreateOpenIDConnectProviderOutcome CreateOpenIDConnectProvider(const Model::CreateOpenIDConnectProviderRequest& request) const;
 
         /**
          * <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a
-         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>. </p> <p>The OIDC
+         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy to establish a trust relationship between AWS and the OIDC
-         * provider. </p> <p>When you create the IAM OIDC provider, you specify the URL of
+         * provider.</p> <p>When you create the IAM OIDC provider, you specify the URL of
          * the OIDC identity provider (IdP) to trust, a list of client IDs (also known as
          * audiences) that identify the application or applications that are allowed to
          * authenticate using the OIDC provider, and a list of thumbprints of the server
          * certificate(s) that the IdP uses. You get all of this information from the OIDC
-         * IdP that you want to use for access to AWS. </p> <note>Because trust for the
+         * IdP that you want to use for access to AWS.</p> <note> <p>Because trust for the
          * OIDC provider is ultimately derived from the IAM provider that this action
          * creates, it is a best practice to limit access to the
-         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users. </note>
+         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1107,61 +1120,62 @@ namespace Model
 
         /**
          * <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a
-         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>. </p> <p>The OIDC
+         * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy to establish a trust relationship between AWS and the OIDC
-         * provider. </p> <p>When you create the IAM OIDC provider, you specify the URL of
+         * provider.</p> <p>When you create the IAM OIDC provider, you specify the URL of
          * the OIDC identity provider (IdP) to trust, a list of client IDs (also known as
          * audiences) that identify the application or applications that are allowed to
          * authenticate using the OIDC provider, and a list of thumbprints of the server
          * certificate(s) that the IdP uses. You get all of this information from the OIDC
-         * IdP that you want to use for access to AWS. </p> <note>Because trust for the
+         * IdP that you want to use for access to AWS.</p> <note> <p>Because trust for the
          * OIDC provider is ultimately derived from the IAM provider that this action
          * creates, it is a best practice to limit access to the
-         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users. </note>
+         * <a>CreateOpenIDConnectProvider</a> action to highly-privileged users.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateOpenIDConnectProviderAsync(const Model::CreateOpenIDConnectProviderRequest& request, const CreateOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new managed policy for your AWS account. </p> <p>This operation
+         * <p>Creates a new managed policy for your AWS account.</p> <p>This operation
          * creates a policy version with a version identifier of <code>v1</code> and sets
          * v1 as the policy's default version. For more information about policy versions,
          * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about managed policies in general, refer to <a
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policies in general, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates a new managed policy for your AWS account. </p> <p>This operation
+         * <p>Creates a new managed policy for your AWS account.</p> <p>This operation
          * creates a policy version with a version identifier of <code>v1</code> and sets
          * v1 as the policy's default version. For more information about policy versions,
          * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about managed policies in general, refer to <a
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policies in general, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request) const;
 
         /**
-         * <p>Creates a new managed policy for your AWS account. </p> <p>This operation
+         * <p>Creates a new managed policy for your AWS account.</p> <p>This operation
          * creates a policy version with a version identifier of <code>v1</code> and sets
          * v1 as the policy's default version. For more information about policy versions,
          * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about managed policies in general, refer to <a
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policies in general, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1171,13 +1185,13 @@ namespace Model
          * <p>Creates a new version of the specified managed policy. To update a managed
          * policy, you create a new policy version. A managed policy can have up to five
          * versions. If the policy has five versions, you must delete an existing version
-         * using <a>DeletePolicyVersion</a> before you create a new version. </p>
+         * using <a>DeletePolicyVersion</a> before you create a new version.</p>
          * <p>Optionally, you can set the new version as the policy's default version. The
-         * default version is the operative version; that is, the version that is in effect
-         * for the IAM users, groups, and roles that the policy is attached to. </p> <p>For
-         * more information about managed policy versions, see <a
+         * default version is the version that is in effect for the IAM users, groups, and
+         * roles to which the policy is attached.</p> <p>For more information about managed
+         * policy versions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreatePolicyVersionOutcome CreatePolicyVersion(const Model::CreatePolicyVersionRequest& request) const;
 
@@ -1185,13 +1199,13 @@ namespace Model
          * <p>Creates a new version of the specified managed policy. To update a managed
          * policy, you create a new policy version. A managed policy can have up to five
          * versions. If the policy has five versions, you must delete an existing version
-         * using <a>DeletePolicyVersion</a> before you create a new version. </p>
+         * using <a>DeletePolicyVersion</a> before you create a new version.</p>
          * <p>Optionally, you can set the new version as the policy's default version. The
-         * default version is the operative version; that is, the version that is in effect
-         * for the IAM users, groups, and roles that the policy is attached to. </p> <p>For
-         * more information about managed policy versions, see <a
+         * default version is the version that is in effect for the IAM users, groups, and
+         * roles to which the policy is attached.</p> <p>For more information about managed
+         * policy versions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1201,13 +1215,13 @@ namespace Model
          * <p>Creates a new version of the specified managed policy. To update a managed
          * policy, you create a new policy version. A managed policy can have up to five
          * versions. If the policy has five versions, you must delete an existing version
-         * using <a>DeletePolicyVersion</a> before you create a new version. </p>
+         * using <a>DeletePolicyVersion</a> before you create a new version.</p>
          * <p>Optionally, you can set the new version as the policy's default version. The
-         * default version is the operative version; that is, the version that is in effect
-         * for the IAM users, groups, and roles that the policy is attached to. </p> <p>For
-         * more information about managed policy versions, see <a
+         * default version is the version that is in effect for the IAM users, groups, and
+         * roles to which the policy is attached.</p> <p>For more information about managed
+         * policy versions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1220,7 +1234,7 @@ namespace Model
          * with Roles</a>. For information about limitations on role names and the number
          * of roles you can create, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateRoleOutcome CreateRole(const Model::CreateRoleRequest& request) const;
 
@@ -1231,7 +1245,7 @@ namespace Model
          * with Roles</a>. For information about limitations on role names and the number
          * of roles you can create, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1244,102 +1258,105 @@ namespace Model
          * with Roles</a>. For information about limitations on role names and the number
          * of roles you can create, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoleAsync(const Model::CreateRoleRequest& request, const CreateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an IAM entity to describe an identity provider (IdP) that supports
-         * SAML 2.0.</p> <p> The SAML provider that you create with this operation can be
-         * used as a principal in a role's trust policy to establish a trust relationship
-         * between AWS and a SAML identity provider. You can create an IAM role that
-         * supports Web-based single sign-on (SSO) to the AWS Management Console or one
-         * that supports API access to AWS. </p> <p> When you create the SAML provider, you
-         * upload an a SAML metadata document that you get from your IdP and that includes
-         * the issuer's name, expiration information, and keys that can be used to validate
-         * the SAML authentication response (assertions) that are received from the IdP.
-         * You must generate the metadata document using the identity management software
-         * that is used as your organization's IdP. </p> <note> This operation requires <a
+         * <p>Creates an IAM resource that describes an identity provider (IdP) that
+         * supports SAML 2.0.</p> <p>The SAML provider resource that you create with this
+         * operation can be used as a principal in an IAM role's trust policy to enable
+         * federated users who sign-in using the SAML IdP to assume the role. You can
+         * create an IAM role that supports Web-based single sign-on (SSO) to the AWS
+         * Management Console or one that supports API access to AWS.</p> <p>When you
+         * create the SAML provider resource, you upload an a SAML metadata document that
+         * you get from your IdP and that includes the issuer's name, expiration
+         * information, and keys that can be used to validate the SAML authentication
+         * response (assertions) that the IdP sends. You must generate the metadata
+         * document using the identity management software that is used as your
+         * organization's IdP.</p> <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note> <p> For more information, see <a
+         * Version 4</a>.</p> </note> <p> For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
          * SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. </p>
+         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateSAMLProviderOutcome CreateSAMLProvider(const Model::CreateSAMLProviderRequest& request) const;
 
         /**
-         * <p>Creates an IAM entity to describe an identity provider (IdP) that supports
-         * SAML 2.0.</p> <p> The SAML provider that you create with this operation can be
-         * used as a principal in a role's trust policy to establish a trust relationship
-         * between AWS and a SAML identity provider. You can create an IAM role that
-         * supports Web-based single sign-on (SSO) to the AWS Management Console or one
-         * that supports API access to AWS. </p> <p> When you create the SAML provider, you
-         * upload an a SAML metadata document that you get from your IdP and that includes
-         * the issuer's name, expiration information, and keys that can be used to validate
-         * the SAML authentication response (assertions) that are received from the IdP.
-         * You must generate the metadata document using the identity management software
-         * that is used as your organization's IdP. </p> <note> This operation requires <a
+         * <p>Creates an IAM resource that describes an identity provider (IdP) that
+         * supports SAML 2.0.</p> <p>The SAML provider resource that you create with this
+         * operation can be used as a principal in an IAM role's trust policy to enable
+         * federated users who sign-in using the SAML IdP to assume the role. You can
+         * create an IAM role that supports Web-based single sign-on (SSO) to the AWS
+         * Management Console or one that supports API access to AWS.</p> <p>When you
+         * create the SAML provider resource, you upload an a SAML metadata document that
+         * you get from your IdP and that includes the issuer's name, expiration
+         * information, and keys that can be used to validate the SAML authentication
+         * response (assertions) that the IdP sends. You must generate the metadata
+         * document using the identity management software that is used as your
+         * organization's IdP.</p> <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note> <p> For more information, see <a
+         * Version 4</a>.</p> </note> <p> For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
          * SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. </p>
+         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateSAMLProviderOutcomeCallable CreateSAMLProviderCallable(const Model::CreateSAMLProviderRequest& request) const;
 
         /**
-         * <p>Creates an IAM entity to describe an identity provider (IdP) that supports
-         * SAML 2.0.</p> <p> The SAML provider that you create with this operation can be
-         * used as a principal in a role's trust policy to establish a trust relationship
-         * between AWS and a SAML identity provider. You can create an IAM role that
-         * supports Web-based single sign-on (SSO) to the AWS Management Console or one
-         * that supports API access to AWS. </p> <p> When you create the SAML provider, you
-         * upload an a SAML metadata document that you get from your IdP and that includes
-         * the issuer's name, expiration information, and keys that can be used to validate
-         * the SAML authentication response (assertions) that are received from the IdP.
-         * You must generate the metadata document using the identity management software
-         * that is used as your organization's IdP. </p> <note> This operation requires <a
+         * <p>Creates an IAM resource that describes an identity provider (IdP) that
+         * supports SAML 2.0.</p> <p>The SAML provider resource that you create with this
+         * operation can be used as a principal in an IAM role's trust policy to enable
+         * federated users who sign-in using the SAML IdP to assume the role. You can
+         * create an IAM role that supports Web-based single sign-on (SSO) to the AWS
+         * Management Console or one that supports API access to AWS.</p> <p>When you
+         * create the SAML provider resource, you upload an a SAML metadata document that
+         * you get from your IdP and that includes the issuer's name, expiration
+         * information, and keys that can be used to validate the SAML authentication
+         * response (assertions) that the IdP sends. You must generate the metadata
+         * document using the identity management software that is used as your
+         * organization's IdP.</p> <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note> <p> For more information, see <a
+         * Version 4</a>.</p> </note> <p> For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
          * SAML 2.0 Federated Users to Access the AWS Management Console</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>. </p>
+         * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSAMLProviderAsync(const Model::CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new user for your AWS account.</p> <p> For information about
-         * limitations on the number of users you can create, see <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
+         * limitations on the number of IAM users you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user for your AWS account.</p> <p> For information about
-         * limitations on the number of users you can create, see <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
+         * limitations on the number of IAM users you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new user for your AWS account.</p> <p> For information about
-         * limitations on the number of users you can create, see <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
+         * limitations on the number of IAM users you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1351,14 +1368,14 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p> <p>For information
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about limits on the number of MFA devices you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>Using IAM</i> guide. </p> <important>The seed
+         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information, such as your AWS access keys or your
          * passwords. After you provision your virtual device, you should ensure that the
-         * information is destroyed following secure procedures. </important>
+         * information is destroyed following secure procedures.</p> </important>
          */
         virtual Model::CreateVirtualMFADeviceOutcome CreateVirtualMFADevice(const Model::CreateVirtualMFADeviceRequest& request) const;
 
@@ -1368,14 +1385,14 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p> <p>For information
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about limits on the number of MFA devices you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>Using IAM</i> guide. </p> <important>The seed
+         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information, such as your AWS access keys or your
          * passwords. After you provision your virtual device, you should ensure that the
-         * information is destroyed following secure procedures. </important>
+         * information is destroyed following secure procedures.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1387,14 +1404,14 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p> <p>For information
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
          * about limits on the number of MFA devices you can create, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>Using IAM</i> guide. </p> <important>The seed
+         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information, such as your AWS access keys or your
          * passwords. After you provision your virtual device, you should ensure that the
-         * information is destroyed following secure procedures. </important>
+         * information is destroyed following secure procedures.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1402,19 +1419,19 @@ namespace Model
 
         /**
          * <p>Deactivates the specified MFA device and removes it from association with the
-         * user name for which it was originally enabled. </p> <p>For more information
-         * about creating and working with virtual MFA devices, go to <a
+         * user name for which it was originally enabled.</p> <p>For more information about
+         * creating and working with virtual MFA devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeactivateMFADeviceOutcome DeactivateMFADevice(const Model::DeactivateMFADeviceRequest& request) const;
 
         /**
          * <p>Deactivates the specified MFA device and removes it from association with the
-         * user name for which it was originally enabled. </p> <p>For more information
-         * about creating and working with virtual MFA devices, go to <a
+         * user name for which it was originally enabled.</p> <p>For more information about
+         * creating and working with virtual MFA devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1422,41 +1439,41 @@ namespace Model
 
         /**
          * <p>Deactivates the specified MFA device and removes it from association with the
-         * user name for which it was originally enabled. </p> <p>For more information
-         * about creating and working with virtual MFA devices, go to <a
+         * user name for which it was originally enabled.</p> <p>For more information about
+         * creating and working with virtual MFA devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeactivateMFADeviceAsync(const Model::DeactivateMFADeviceRequest& request, const DeactivateMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the access key associated with the specified user.</p> <p> If you do
-         * not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. Because this action works for access keys
-         * under the AWS account, you can use this action to manage root credentials even
-         * if the AWS account has no associated users. </p>
+         * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
+         * you do not specify a user name, IAM determines the user name implicitly based on
+         * the AWS access key ID signing the request. Because this action works for access
+         * keys under the AWS account, you can use this action to manage root credentials
+         * even if the AWS account has no associated users.</p>
          */
         virtual Model::DeleteAccessKeyOutcome DeleteAccessKey(const Model::DeleteAccessKeyRequest& request) const;
 
         /**
-         * <p>Deletes the access key associated with the specified user.</p> <p> If you do
-         * not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. Because this action works for access keys
-         * under the AWS account, you can use this action to manage root credentials even
-         * if the AWS account has no associated users. </p>
+         * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
+         * you do not specify a user name, IAM determines the user name implicitly based on
+         * the AWS access key ID signing the request. Because this action works for access
+         * keys under the AWS account, you can use this action to manage root credentials
+         * even if the AWS account has no associated users.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAccessKeyOutcomeCallable DeleteAccessKeyCallable(const Model::DeleteAccessKeyRequest& request) const;
 
         /**
-         * <p>Deletes the access key associated with the specified user.</p> <p> If you do
-         * not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. Because this action works for access keys
-         * under the AWS account, you can use this action to manage root credentials even
-         * if the AWS account has no associated users. </p>
+         * <p>Deletes the access key pair associated with the specified IAM user.</p> <p>If
+         * you do not specify a user name, IAM determines the user name implicitly based on
+         * the AWS access key ID signing the request. Because this action works for access
+         * keys under the AWS account, you can use this action to manage root credentials
+         * even if the AWS account has no associated users.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1466,7 +1483,7 @@ namespace Model
          * <p> Deletes the specified AWS account alias. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeleteAccountAliasOutcome DeleteAccountAlias(const Model::DeleteAccountAliasRequest& request) const;
 
@@ -1474,7 +1491,7 @@ namespace Model
          * <p> Deletes the specified AWS account alias. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1484,82 +1501,82 @@ namespace Model
          * <p> Deletes the specified AWS account alias. For information about using an AWS
          * account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAccountAliasAsync(const Model::DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the password policy for the AWS account.</p>
+         * <p>Deletes the password policy for the AWS account. There are no parameters.</p>
          */
         virtual Model::DeleteAccountPasswordPolicyOutcome DeleteAccountPasswordPolicy(const Model::DeleteAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the password policy for the AWS account.</p>
+         * <p>Deletes the password policy for the AWS account. There are no parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAccountPasswordPolicyOutcomeCallable DeleteAccountPasswordPolicyCallable(const Model::DeleteAccountPasswordPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the password policy for the AWS account.</p>
+         * <p>Deletes the password policy for the AWS account. There are no parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAccountPasswordPolicyAsync(const Model::DeleteAccountPasswordPolicyRequest& request, const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified group. The group must not contain any users or have
-         * any attached policies. </p>
+         * <p>Deletes the specified IAM group. The group must not contain any users or have
+         * any attached policies.</p>
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p> Deletes the specified group. The group must not contain any users or have
-         * any attached policies. </p>
+         * <p>Deletes the specified IAM group. The group must not contain any users or have
+         * any attached policies.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p> Deletes the specified group. The group must not contain any users or have
-         * any attached policies. </p>
+         * <p>Deletes the specified IAM group. The group must not contain any users or have
+         * any attached policies.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * group.</p> <p>A group can also have managed policies attached to it. To detach a
          * managed policy from a group, use <a>DetachGroupPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeleteGroupPolicyOutcome DeleteGroupPolicy(const Model::DeleteGroupPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * group.</p> <p>A group can also have managed policies attached to it. To detach a
          * managed policy from a group, use <a>DetachGroupPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteGroupPolicyOutcomeCallable DeleteGroupPolicyCallable(const Model::DeleteGroupPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * group.</p> <p>A group can also have managed policies attached to it. To detach a
          * managed policy from a group, use <a>DetachGroupPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1567,25 +1584,25 @@ namespace Model
 
         /**
          * <p>Deletes the specified instance profile. The instance profile must not have an
-         * associated role. </p> <important> Make sure you do not have any Amazon EC2
+         * associated role.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the instance profile you are about to delete. Deleting a
          * role or instance profile that is associated with a running instance will break
-         * any applications running on the instance. </important> <p>For more information
-         * about instance profiles, go to <a
+         * any applications running on the instance.</p> </important> <p>For more
+         * information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          */
         virtual Model::DeleteInstanceProfileOutcome DeleteInstanceProfile(const Model::DeleteInstanceProfileRequest& request) const;
 
         /**
          * <p>Deletes the specified instance profile. The instance profile must not have an
-         * associated role. </p> <important> Make sure you do not have any Amazon EC2
+         * associated role.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the instance profile you are about to delete. Deleting a
          * role or instance profile that is associated with a running instance will break
-         * any applications running on the instance. </important> <p>For more information
-         * about instance profiles, go to <a
+         * any applications running on the instance.</p> </important> <p>For more
+         * information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1593,84 +1610,84 @@ namespace Model
 
         /**
          * <p>Deletes the specified instance profile. The instance profile must not have an
-         * associated role. </p> <important> Make sure you do not have any Amazon EC2
+         * associated role.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the instance profile you are about to delete. Deleting a
          * role or instance profile that is associated with a running instance will break
-         * any applications running on the instance. </important> <p>For more information
-         * about instance profiles, go to <a
+         * any applications running on the instance.</p> </important> <p>For more
+         * information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInstanceProfileAsync(const Model::DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the password for the specified user, which terminates the user's
-         * ability to access AWS services through the AWS Management Console. </p>
-         * <important> Deleting a user's password does not prevent a user from accessing
-         * IAM through the command line interface or the API. To prevent all user access
-         * you must also either make the access key inactive or delete it. For more
-         * information about making keys inactive or deleting them, see
-         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>
+         * <p>Deletes the password for the specified IAM user, which terminates the user's
+         * ability to access AWS services through the AWS Management Console.</p>
+         * <important> <p> Deleting a user's password does not prevent a user from
+         * accessing AWS through the command line interface or the API. To prevent all user
+         * access you must also either make any access keys inactive or delete them. For
+         * more information about making keys inactive or deleting them, see
+         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p> </important>
          */
         virtual Model::DeleteLoginProfileOutcome DeleteLoginProfile(const Model::DeleteLoginProfileRequest& request) const;
 
         /**
-         * <p> Deletes the password for the specified user, which terminates the user's
-         * ability to access AWS services through the AWS Management Console. </p>
-         * <important> Deleting a user's password does not prevent a user from accessing
-         * IAM through the command line interface or the API. To prevent all user access
-         * you must also either make the access key inactive or delete it. For more
-         * information about making keys inactive or deleting them, see
-         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>
+         * <p>Deletes the password for the specified IAM user, which terminates the user's
+         * ability to access AWS services through the AWS Management Console.</p>
+         * <important> <p> Deleting a user's password does not prevent a user from
+         * accessing AWS through the command line interface or the API. To prevent all user
+         * access you must also either make any access keys inactive or delete them. For
+         * more information about making keys inactive or deleting them, see
+         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteLoginProfileOutcomeCallable DeleteLoginProfileCallable(const Model::DeleteLoginProfileRequest& request) const;
 
         /**
-         * <p> Deletes the password for the specified user, which terminates the user's
-         * ability to access AWS services through the AWS Management Console. </p>
-         * <important> Deleting a user's password does not prevent a user from accessing
-         * IAM through the command line interface or the API. To prevent all user access
-         * you must also either make the access key inactive or delete it. For more
-         * information about making keys inactive or deleting them, see
-         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </important>
+         * <p>Deletes the password for the specified IAM user, which terminates the user's
+         * ability to access AWS services through the AWS Management Console.</p>
+         * <important> <p> Deleting a user's password does not prevent a user from
+         * accessing AWS through the command line interface or the API. To prevent all user
+         * access you must also either make any access keys inactive or delete them. For
+         * more information about making keys inactive or deleting them, see
+         * <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>. </p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLoginProfileAsync(const Model::DeleteLoginProfileRequest& request, const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an IAM OpenID Connect identity provider.</p> <p>Deleting an OIDC
-         * provider does not update any roles that reference the provider as a principal in
-         * their trust policies. Any attempt to assume a role that references a provider
-         * that has been deleted will fail. </p> <p>This action is idempotent; it does not
-         * fail or return an error if you call the action for a provider that was already
-         * deleted.</p>
+         * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
+         * <p>Deleting an IAM OIDC provider resource does not update any roles that
+         * reference the provider as a principal in their trust policies. Any attempt to
+         * assume a role that references a deleted provider fails.</p> <p>This action is
+         * idempotent; it does not fail or return an error if you call the action for a
+         * provider that does not exist.</p>
          */
         virtual Model::DeleteOpenIDConnectProviderOutcome DeleteOpenIDConnectProvider(const Model::DeleteOpenIDConnectProviderRequest& request) const;
 
         /**
-         * <p>Deletes an IAM OpenID Connect identity provider.</p> <p>Deleting an OIDC
-         * provider does not update any roles that reference the provider as a principal in
-         * their trust policies. Any attempt to assume a role that references a provider
-         * that has been deleted will fail. </p> <p>This action is idempotent; it does not
-         * fail or return an error if you call the action for a provider that was already
-         * deleted.</p>
+         * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
+         * <p>Deleting an IAM OIDC provider resource does not update any roles that
+         * reference the provider as a principal in their trust policies. Any attempt to
+         * assume a role that references a deleted provider fails.</p> <p>This action is
+         * idempotent; it does not fail or return an error if you call the action for a
+         * provider that does not exist.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteOpenIDConnectProviderOutcomeCallable DeleteOpenIDConnectProviderCallable(const Model::DeleteOpenIDConnectProviderRequest& request) const;
 
         /**
-         * <p>Deletes an IAM OpenID Connect identity provider.</p> <p>Deleting an OIDC
-         * provider does not update any roles that reference the provider as a principal in
-         * their trust policies. Any attempt to assume a role that references a provider
-         * that has been deleted will fail. </p> <p>This action is idempotent; it does not
-         * fail or return an error if you call the action for a provider that was already
-         * deleted.</p>
+         * <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
+         * <p>Deleting an IAM OIDC provider resource does not update any roles that
+         * reference the provider as a principal in their trust policies. Any attempt to
+         * assume a role that references a deleted provider fails.</p> <p>This action is
+         * idempotent; it does not fail or return an error if you call the action for a
+         * provider that does not exist.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1678,43 +1695,43 @@ namespace Model
 
         /**
          * <p>Deletes the specified managed policy.</p> <p>Before you can delete a managed
-         * policy, you must detach the policy from all users, groups, and roles that it is
-         * attached to, and you must delete all of the policy's versions. The following
-         * steps describe the process for deleting a managed policy: <ol> <li>Detach the
-         * policy from all users, groups, and roles that the policy is attached to, using
-         * the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
+         * policy, you must first detach the policy from all users, groups, and roles that
+         * it is attached to, and you must delete all of the policy's versions. The
+         * following steps describe the process for deleting a managed policy:</p> <ul>
+         * <li> <p>Detach the policy from all users, groups, and roles that the policy is
+         * attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
          * <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a
-         * policy is attached to, use <a>ListEntitiesForPolicy</a>. </li> <li>Delete all
-         * versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's
-         * versions, use <a>ListPolicyVersions</a>. You cannot use
+         * policy is attached to, use <a>ListEntitiesForPolicy</a>.</p> </li> <li>
+         * <p>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list
+         * the policy's versions, use <a>ListPolicyVersions</a>. You cannot use
          * <a>DeletePolicyVersion</a> to delete the version that is marked as the default
          * version. You delete the policy's default version in the next step of the
-         * process. </li> <li>Delete the policy (this automatically deletes the policy's
-         * default version) using this API. </li> </ol> </p> <p>For information about
-         * managed policies, refer to <a
+         * process.</p> </li> <li> <p>Delete the policy (this automatically deletes the
+         * policy's default version) using this API.</p> </li> </ul> <p>For information
+         * about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
         /**
          * <p>Deletes the specified managed policy.</p> <p>Before you can delete a managed
-         * policy, you must detach the policy from all users, groups, and roles that it is
-         * attached to, and you must delete all of the policy's versions. The following
-         * steps describe the process for deleting a managed policy: <ol> <li>Detach the
-         * policy from all users, groups, and roles that the policy is attached to, using
-         * the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
+         * policy, you must first detach the policy from all users, groups, and roles that
+         * it is attached to, and you must delete all of the policy's versions. The
+         * following steps describe the process for deleting a managed policy:</p> <ul>
+         * <li> <p>Detach the policy from all users, groups, and roles that the policy is
+         * attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
          * <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a
-         * policy is attached to, use <a>ListEntitiesForPolicy</a>. </li> <li>Delete all
-         * versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's
-         * versions, use <a>ListPolicyVersions</a>. You cannot use
+         * policy is attached to, use <a>ListEntitiesForPolicy</a>.</p> </li> <li>
+         * <p>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list
+         * the policy's versions, use <a>ListPolicyVersions</a>. You cannot use
          * <a>DeletePolicyVersion</a> to delete the version that is marked as the default
          * version. You delete the policy's default version in the next step of the
-         * process. </li> <li>Delete the policy (this automatically deletes the policy's
-         * default version) using this API. </li> </ol> </p> <p>For information about
-         * managed policies, refer to <a
+         * process.</p> </li> <li> <p>Delete the policy (this automatically deletes the
+         * policy's default version) using this API.</p> </li> </ul> <p>For information
+         * about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1722,59 +1739,62 @@ namespace Model
 
         /**
          * <p>Deletes the specified managed policy.</p> <p>Before you can delete a managed
-         * policy, you must detach the policy from all users, groups, and roles that it is
-         * attached to, and you must delete all of the policy's versions. The following
-         * steps describe the process for deleting a managed policy: <ol> <li>Detach the
-         * policy from all users, groups, and roles that the policy is attached to, using
-         * the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
+         * policy, you must first detach the policy from all users, groups, and roles that
+         * it is attached to, and you must delete all of the policy's versions. The
+         * following steps describe the process for deleting a managed policy:</p> <ul>
+         * <li> <p>Detach the policy from all users, groups, and roles that the policy is
+         * attached to, using the <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or
          * <a>DetachRolePolicy</a> APIs. To list all the users, groups, and roles that a
-         * policy is attached to, use <a>ListEntitiesForPolicy</a>. </li> <li>Delete all
-         * versions of the policy using <a>DeletePolicyVersion</a>. To list the policy's
-         * versions, use <a>ListPolicyVersions</a>. You cannot use
+         * policy is attached to, use <a>ListEntitiesForPolicy</a>.</p> </li> <li>
+         * <p>Delete all versions of the policy using <a>DeletePolicyVersion</a>. To list
+         * the policy's versions, use <a>ListPolicyVersions</a>. You cannot use
          * <a>DeletePolicyVersion</a> to delete the version that is marked as the default
          * version. You delete the policy's default version in the next step of the
-         * process. </li> <li>Delete the policy (this automatically deletes the policy's
-         * default version) using this API. </li> </ol> </p> <p>For information about
-         * managed policies, refer to <a
+         * process.</p> </li> <li> <p>Delete the policy (this automatically deletes the
+         * policy's default version) using this API.</p> </li> </ul> <p>For information
+         * about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified version of the specified managed policy.</p> <p>You
-         * cannot delete the default version of a policy using this API. To delete the
-         * default version of a policy, use <a>DeletePolicy</a>. To find out which version
-         * of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
-         * </p> <p>For information about versions for managed policies, refer to <a
+         * <p>Deletes the specified version from the specified managed policy.</p> <p>You
+         * cannot delete the default version from a policy using this API. To delete the
+         * default version from a policy, use <a>DeletePolicy</a>. To find out which
+         * version of a policy is marked as the default version, use
+         * <a>ListPolicyVersions</a>.</p> <p>For information about versions for managed
+         * policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeletePolicyVersionOutcome DeletePolicyVersion(const Model::DeletePolicyVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version of the specified managed policy.</p> <p>You
-         * cannot delete the default version of a policy using this API. To delete the
-         * default version of a policy, use <a>DeletePolicy</a>. To find out which version
-         * of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
-         * </p> <p>For information about versions for managed policies, refer to <a
+         * <p>Deletes the specified version from the specified managed policy.</p> <p>You
+         * cannot delete the default version from a policy using this API. To delete the
+         * default version from a policy, use <a>DeletePolicy</a>. To find out which
+         * version of a policy is marked as the default version, use
+         * <a>ListPolicyVersions</a>.</p> <p>For information about versions for managed
+         * policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePolicyVersionOutcomeCallable DeletePolicyVersionCallable(const Model::DeletePolicyVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version of the specified managed policy.</p> <p>You
-         * cannot delete the default version of a policy using this API. To delete the
-         * default version of a policy, use <a>DeletePolicy</a>. To find out which version
-         * of a policy is marked as the default version, use <a>ListPolicyVersions</a>.
-         * </p> <p>For information about versions for managed policies, refer to <a
+         * <p>Deletes the specified version from the specified managed policy.</p> <p>You
+         * cannot delete the default version from a policy using this API. To delete the
+         * default version from a policy, use <a>DeletePolicy</a>. To find out which
+         * version of a policy is marked as the default version, use
+         * <a>ListPolicyVersions</a>.</p> <p>For information about versions for managed
+         * policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-         * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1784,10 +1804,10 @@ namespace Model
          * <p>Deletes the specified role. The role must not have any policies attached. For
          * more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <important>Make sure you do not have any Amazon EC2
+         * with Roles</a>.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the role you are about to delete. Deleting a role or
          * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important>
+         * applications running on the instance.</p> </important>
          */
         virtual Model::DeleteRoleOutcome DeleteRole(const Model::DeleteRoleRequest& request) const;
 
@@ -1795,10 +1815,10 @@ namespace Model
          * <p>Deletes the specified role. The role must not have any policies attached. For
          * more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <important>Make sure you do not have any Amazon EC2
+         * with Roles</a>.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the role you are about to delete. Deleting a role or
          * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important>
+         * applications running on the instance.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1808,78 +1828,81 @@ namespace Model
          * <p>Deletes the specified role. The role must not have any policies attached. For
          * more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <important>Make sure you do not have any Amazon EC2
+         * with Roles</a>.</p> <important> <p>Make sure you do not have any Amazon EC2
          * instances running with the role you are about to delete. Deleting a role or
          * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important>
+         * applications running on the instance.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * role.</p> <p>A role can also have managed policies attached to it. To detach a
          * managed policy from a role, use <a>DetachRolePolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeleteRolePolicyOutcome DeleteRolePolicy(const Model::DeleteRolePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * role.</p> <p>A role can also have managed policies attached to it. To detach a
          * managed policy from a role, use <a>DetachRolePolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRolePolicyOutcomeCallable DeleteRolePolicyCallable(const Model::DeleteRolePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * role.</p> <p>A role can also have managed policies attached to it. To detach a
          * managed policy from a role, use <a>DetachRolePolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRolePolicyAsync(const Model::DeleteRolePolicyRequest& request, const DeleteRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a SAML provider.</p> <p> Deleting the provider does not update any
-         * roles that reference the SAML provider as a principal in their trust policies.
-         * Any attempt to assume a role that references a SAML provider that has been
-         * deleted will fail. </p> <note> This operation requires <a
+         * <p>Deletes a SAML provider resource in IAM.</p> <p>Deleting the provider
+         * resource from IAM does not update any roles that reference the SAML provider
+         * resource's ARN as a principal in their trust policies. Any attempt to assume a
+         * role that references a non-existent provider resource ARN fails.</p> <note> <p>
+         * This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          */
         virtual Model::DeleteSAMLProviderOutcome DeleteSAMLProvider(const Model::DeleteSAMLProviderRequest& request) const;
 
         /**
-         * <p>Deletes a SAML provider.</p> <p> Deleting the provider does not update any
-         * roles that reference the SAML provider as a principal in their trust policies.
-         * Any attempt to assume a role that references a SAML provider that has been
-         * deleted will fail. </p> <note> This operation requires <a
+         * <p>Deletes a SAML provider resource in IAM.</p> <p>Deleting the provider
+         * resource from IAM does not update any roles that reference the SAML provider
+         * resource's ARN as a principal in their trust policies. Any attempt to assume a
+         * role that references a non-existent provider resource ARN fails.</p> <note> <p>
+         * This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSAMLProviderOutcomeCallable DeleteSAMLProviderCallable(const Model::DeleteSAMLProviderRequest& request) const;
 
         /**
-         * <p>Deletes a SAML provider.</p> <p> Deleting the provider does not update any
-         * roles that reference the SAML provider as a principal in their trust policies.
-         * Any attempt to assume a role that references a SAML provider that has been
-         * deleted will fail. </p> <note> This operation requires <a
+         * <p>Deletes a SAML provider resource in IAM.</p> <p>Deleting the provider
+         * resource from IAM does not update any roles that reference the SAML provider
+         * resource's ARN as a principal in their trust policies. Any attempt to assume a
+         * role that references a non-existent provider resource ARN fails.</p> <note> <p>
+         * This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1927,8 +1950,8 @@ namespace Model
          * working with server certificates, including a list of AWS services that can use
          * the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> If
-         * you are using a server certificate with Elastic Load Balancing, deleting the
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> <p>
+         * If you are using a server certificate with Elastic Load Balancing, deleting the
          * certificate could have implications for your application. If Elastic Load
          * Balancing doesn't detect the deletion of bound certificates, it may continue to
          * use the certificates. This could cause Elastic Load Balancing to stop accepting
@@ -1936,7 +1959,7 @@ namespace Model
          * Elastic Load Balancing before using this command to delete the certificate. For
          * more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
-         * in the <i>Elastic Load Balancing API Reference</i>. </important>
+         * in the <i>Elastic Load Balancing API Reference</i>.</p> </important>
          */
         virtual Model::DeleteServerCertificateOutcome DeleteServerCertificate(const Model::DeleteServerCertificateRequest& request) const;
 
@@ -1945,8 +1968,8 @@ namespace Model
          * working with server certificates, including a list of AWS services that can use
          * the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> If
-         * you are using a server certificate with Elastic Load Balancing, deleting the
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> <p>
+         * If you are using a server certificate with Elastic Load Balancing, deleting the
          * certificate could have implications for your application. If Elastic Load
          * Balancing doesn't detect the deletion of bound certificates, it may continue to
          * use the certificates. This could cause Elastic Load Balancing to stop accepting
@@ -1954,7 +1977,7 @@ namespace Model
          * Elastic Load Balancing before using this command to delete the certificate. For
          * more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
-         * in the <i>Elastic Load Balancing API Reference</i>. </important>
+         * in the <i>Elastic Load Balancing API Reference</i>.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1965,8 +1988,8 @@ namespace Model
          * working with server certificates, including a list of AWS services that can use
          * the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> If
-         * you are using a server certificate with Elastic Load Balancing, deleting the
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important> <p>
+         * If you are using a server certificate with Elastic Load Balancing, deleting the
          * certificate could have implications for your application. If Elastic Load
          * Balancing doesn't detect the deletion of bound certificates, it may continue to
          * use the certificates. This could cause Elastic Load Balancing to stop accepting
@@ -1974,240 +1997,240 @@ namespace Model
          * Elastic Load Balancing before using this command to delete the certificate. For
          * more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html">DeleteLoadBalancerListeners</a>
-         * in the <i>Elastic Load Balancing API Reference</i>. </important>
+         * in the <i>Elastic Load Balancing API Reference</i>.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteServerCertificateAsync(const Model::DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified signing certificate associated with the specified
-         * user.</p> <p>If you do not specify a user name, IAM determines the user name
-         * implicitly based on the AWS access key ID signing the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * <p>Deletes a signing certificate associated with the specified IAM user.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request. Because this action works
+         * for access keys under the AWS account, you can use this action to manage root
+         * credentials even if the AWS account has no associated IAM users.</p>
          */
         virtual Model::DeleteSigningCertificateOutcome DeleteSigningCertificate(const Model::DeleteSigningCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified signing certificate associated with the specified
-         * user.</p> <p>If you do not specify a user name, IAM determines the user name
-         * implicitly based on the AWS access key ID signing the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * <p>Deletes a signing certificate associated with the specified IAM user.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request. Because this action works
+         * for access keys under the AWS account, you can use this action to manage root
+         * credentials even if the AWS account has no associated IAM users.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteSigningCertificateOutcomeCallable DeleteSigningCertificateCallable(const Model::DeleteSigningCertificateRequest& request) const;
 
         /**
-         * <p>Deletes the specified signing certificate associated with the specified
-         * user.</p> <p>If you do not specify a user name, IAM determines the user name
-         * implicitly based on the AWS access key ID signing the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * <p>Deletes a signing certificate associated with the specified IAM user.</p>
+         * <p>If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request. Because this action works
+         * for access keys under the AWS account, you can use this action to manage root
+         * credentials even if the AWS account has no associated IAM users.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSigningCertificateAsync(const Model::DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified user. The user must not belong to any groups, have any
-         * keys or signing certificates, or have any attached policies. </p>
+         * <p>Deletes the specified IAM user. The user must not belong to any groups or
+         * have any access keys, signing certificates, or attached policies.</p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p> Deletes the specified user. The user must not belong to any groups, have any
-         * keys or signing certificates, or have any attached policies. </p>
+         * <p>Deletes the specified IAM user. The user must not belong to any groups or
+         * have any access keys, signing certificates, or attached policies.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p> Deletes the specified user. The user must not belong to any groups, have any
-         * keys or signing certificates, or have any attached policies. </p>
+         * <p>Deletes the specified IAM user. The user must not belong to any groups or
+         * have any access keys, signing certificates, or attached policies.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * user.</p> <p>A user can also have managed policies attached to it. To detach a
          * managed policy from a user, use <a>DetachUserPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DeleteUserPolicyOutcome DeleteUserPolicy(const Model::DeleteUserPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * user.</p> <p>A user can also have managed policies attached to it. To detach a
          * managed policy from a user, use <a>DetachUserPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUserPolicyOutcomeCallable DeleteUserPolicyCallable(const Model::DeleteUserPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified inline policy that is embedded in the specified
+         * <p>Deletes the specified inline policy that is embedded in the specified IAM
          * user.</p> <p>A user can also have managed policies attached to it. To detach a
          * managed policy from a user, use <a>DetachUserPolicy</a>. For more information
          * about policies, refer to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserPolicyAsync(const Model::DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a virtual MFA device.</p> <note> You must deactivate a user's virtual
-         * MFA device before you can delete it. For information about deactivating MFA
-         * devices, see <a>DeactivateMFADevice</a>. </note>
+         * <p>Deletes a virtual MFA device.</p> <note> <p> You must deactivate a user's
+         * virtual MFA device before you can delete it. For information about deactivating
+         * MFA devices, see <a>DeactivateMFADevice</a>. </p> </note>
          */
         virtual Model::DeleteVirtualMFADeviceOutcome DeleteVirtualMFADevice(const Model::DeleteVirtualMFADeviceRequest& request) const;
 
         /**
-         * <p>Deletes a virtual MFA device.</p> <note> You must deactivate a user's virtual
-         * MFA device before you can delete it. For information about deactivating MFA
-         * devices, see <a>DeactivateMFADevice</a>. </note>
+         * <p>Deletes a virtual MFA device.</p> <note> <p> You must deactivate a user's
+         * virtual MFA device before you can delete it. For information about deactivating
+         * MFA devices, see <a>DeactivateMFADevice</a>. </p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVirtualMFADeviceOutcomeCallable DeleteVirtualMFADeviceCallable(const Model::DeleteVirtualMFADeviceRequest& request) const;
 
         /**
-         * <p>Deletes a virtual MFA device.</p> <note> You must deactivate a user's virtual
-         * MFA device before you can delete it. For information about deactivating MFA
-         * devices, see <a>DeactivateMFADevice</a>. </note>
+         * <p>Deletes a virtual MFA device.</p> <note> <p> You must deactivate a user's
+         * virtual MFA device before you can delete it. For information about deactivating
+         * MFA devices, see <a>DeactivateMFADevice</a>. </p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVirtualMFADeviceAsync(const Model::DeleteVirtualMFADeviceRequest& request, const DeleteVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified group. </p> <p>A
+         * <p>Removes the specified managed policy from the specified IAM group.</p> <p>A
          * group can also have inline policies embedded with it. To delete an inline
          * policy, use the <a>DeleteGroupPolicy</a> API. For information about policies,
-         * refer to <a
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DetachGroupPolicyOutcome DetachGroupPolicy(const Model::DetachGroupPolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified group. </p> <p>A
+         * <p>Removes the specified managed policy from the specified IAM group.</p> <p>A
          * group can also have inline policies embedded with it. To delete an inline
          * policy, use the <a>DeleteGroupPolicy</a> API. For information about policies,
-         * refer to <a
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DetachGroupPolicyOutcomeCallable DetachGroupPolicyCallable(const Model::DetachGroupPolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified group. </p> <p>A
+         * <p>Removes the specified managed policy from the specified IAM group.</p> <p>A
          * group can also have inline policies embedded with it. To delete an inline
          * policy, use the <a>DeleteGroupPolicy</a> API. For information about policies,
-         * refer to <a
+         * see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachGroupPolicyAsync(const Model::DetachGroupPolicyRequest& request, const DetachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified role. </p> <p>A role
+         * <p>Removes the specified managed policy from the specified role.</p> <p>A role
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteRolePolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DetachRolePolicyOutcome DetachRolePolicy(const Model::DetachRolePolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified role. </p> <p>A role
+         * <p>Removes the specified managed policy from the specified role.</p> <p>A role
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteRolePolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DetachRolePolicyOutcomeCallable DetachRolePolicyCallable(const Model::DetachRolePolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified role. </p> <p>A role
+         * <p>Removes the specified managed policy from the specified role.</p> <p>A role
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteRolePolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteRolePolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachRolePolicyAsync(const Model::DetachRolePolicyRequest& request, const DetachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified user. </p> <p>A user
+         * <p>Removes the specified managed policy from the specified user.</p> <p>A user
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteUserPolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::DetachUserPolicyOutcome DetachUserPolicy(const Model::DetachUserPolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified user. </p> <p>A user
+         * <p>Removes the specified managed policy from the specified user.</p> <p>A user
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteUserPolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DetachUserPolicyOutcomeCallable DetachUserPolicyCallable(const Model::DetachUserPolicyRequest& request) const;
 
         /**
-         * <p>Removes the specified managed policy from the specified user. </p> <p>A user
+         * <p>Removes the specified managed policy from the specified user.</p> <p>A user
          * can also have inline policies embedded with it. To delete an inline policy, use
-         * the <a>DeleteUserPolicy</a> API. For information about policies, refer to <a
+         * the <a>DeleteUserPolicy</a> API. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachUserPolicyAsync(const Model::DetachUserPolicyRequest& request, const DetachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Enables the specified MFA device and associates it with the specified user
-         * name. When enabled, the MFA device is required for every subsequent login by the
-         * user name associated with the device. </p>
+         * <p>Enables the specified MFA device and associates it with the specified IAM
+         * user. When enabled, the MFA device is required for every subsequent login by the
+         * IAM user associated with the device.</p>
          */
         virtual Model::EnableMFADeviceOutcome EnableMFADevice(const Model::EnableMFADeviceRequest& request) const;
 
         /**
-         * <p> Enables the specified MFA device and associates it with the specified user
-         * name. When enabled, the MFA device is required for every subsequent login by the
-         * user name associated with the device. </p>
+         * <p>Enables the specified MFA device and associates it with the specified IAM
+         * user. When enabled, the MFA device is required for every subsequent login by the
+         * IAM user associated with the device.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableMFADeviceOutcomeCallable EnableMFADeviceCallable(const Model::EnableMFADeviceRequest& request) const;
 
         /**
-         * <p> Enables the specified MFA device and associates it with the specified user
-         * name. When enabled, the MFA device is required for every subsequent login by the
-         * user name associated with the device. </p>
+         * <p>Enables the specified MFA device and associates it with the specified IAM
+         * user. When enabled, the MFA device is required for every subsequent login by the
+         * IAM user associated with the device.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2217,7 +2240,7 @@ namespace Model
          * <p> Generates a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GenerateCredentialReportOutcome GenerateCredentialReport(const Model::GenerateCredentialReportRequest& request) const;
 
@@ -2225,7 +2248,7 @@ namespace Model
          * <p> Generates a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2235,7 +2258,7 @@ namespace Model
          * <p> Generates a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2268,21 +2291,21 @@ namespace Model
 
         /**
          * <p>Retrieves information about all IAM users, groups, roles, and policies in
-         * your account, including their relationships to one another. Use this API to
+         * your AWS account, including their relationships to one another. Use this API to
          * obtain a snapshot of the configuration of IAM permissions (users, groups, roles,
          * and policies) in your account.</p> <p>You can optionally filter the results
          * using the <code>Filter</code> parameter. You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::GetAccountAuthorizationDetailsOutcome GetAccountAuthorizationDetails(const Model::GetAccountAuthorizationDetailsRequest& request) const;
 
         /**
          * <p>Retrieves information about all IAM users, groups, roles, and policies in
-         * your account, including their relationships to one another. Use this API to
+         * your AWS account, including their relationships to one another. Use this API to
          * obtain a snapshot of the configuration of IAM permissions (users, groups, roles,
          * and policies) in your account.</p> <p>You can optionally filter the results
          * using the <code>Filter</code> parameter. You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2290,11 +2313,11 @@ namespace Model
 
         /**
          * <p>Retrieves information about all IAM users, groups, roles, and policies in
-         * your account, including their relationships to one another. Use this API to
+         * your AWS account, including their relationships to one another. Use this API to
          * obtain a snapshot of the configuration of IAM permissions (users, groups, roles,
          * and policies) in your account.</p> <p>You can optionally filter the results
          * using the <code>Filter</code> parameter. You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2304,7 +2327,7 @@ namespace Model
          * <p>Retrieves the password policy for the AWS account. For more information about
          * using a password policy, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a>. </p>
+         * an IAM Password Policy</a>.</p>
          */
         virtual Model::GetAccountPasswordPolicyOutcome GetAccountPasswordPolicy(const Model::GetAccountPasswordPolicyRequest& request) const;
 
@@ -2312,7 +2335,7 @@ namespace Model
          * <p>Retrieves the password policy for the AWS account. For more information about
          * using a password policy, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a>. </p>
+         * an IAM Password Policy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2322,7 +2345,7 @@ namespace Model
          * <p>Retrieves the password policy for the AWS account. For more information about
          * using a password policy, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a>. </p>
+         * an IAM Password Policy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2332,7 +2355,7 @@ namespace Model
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
          * account.</p> <p> For information about limitations on IAM entities, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetAccountSummaryOutcome GetAccountSummary(const Model::GetAccountSummaryRequest& request) const;
 
@@ -2340,7 +2363,7 @@ namespace Model
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
          * account.</p> <p> For information about limitations on IAM entities, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2350,117 +2373,114 @@ namespace Model
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
          * account.</p> <p> For information about limitations on IAM entities, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p>
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAccountSummaryAsync(const Model::GetAccountSummaryRequest& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in the input policies. The policies are supplied as a list of one or
-         * more strings. To get the context keys from policies associated with an IAM user,
-         * group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForCustomPolicy to understand what key names and values you must
-         * supply when you call <a>SimulateCustomPolicy</a>. Note that all parameters are
-         * shown in unencoded form here for clarity, but must be URL encoded to be included
-         * as a part of a real HTML request.</p>
+         * <p>Gets a list of all of the context keys referenced in the input policies. The
+         * policies are supplied as a list of one or more strings. To get the context keys
+         * from policies associated with an IAM user, group, or role, use
+         * <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys are variables
+         * maintained by AWS and its services that provide details about the context of an
+         * API query request, and can be evaluated by testing against a value specified in
+         * an IAM policy. Use GetContextKeysForCustomPolicy to understand what key names
+         * and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+         * all parameters are shown in unencoded form here for clarity, but must be URL
+         * encoded to be included as a part of a real HTML request.</p>
          */
         virtual Model::GetContextKeysForCustomPolicyOutcome GetContextKeysForCustomPolicy(const Model::GetContextKeysForCustomPolicyRequest& request) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in the input policies. The policies are supplied as a list of one or
-         * more strings. To get the context keys from policies associated with an IAM user,
-         * group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForCustomPolicy to understand what key names and values you must
-         * supply when you call <a>SimulateCustomPolicy</a>. Note that all parameters are
-         * shown in unencoded form here for clarity, but must be URL encoded to be included
-         * as a part of a real HTML request.</p>
+         * <p>Gets a list of all of the context keys referenced in the input policies. The
+         * policies are supplied as a list of one or more strings. To get the context keys
+         * from policies associated with an IAM user, group, or role, use
+         * <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys are variables
+         * maintained by AWS and its services that provide details about the context of an
+         * API query request, and can be evaluated by testing against a value specified in
+         * an IAM policy. Use GetContextKeysForCustomPolicy to understand what key names
+         * and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+         * all parameters are shown in unencoded form here for clarity, but must be URL
+         * encoded to be included as a part of a real HTML request.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetContextKeysForCustomPolicyOutcomeCallable GetContextKeysForCustomPolicyCallable(const Model::GetContextKeysForCustomPolicyRequest& request) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in the input policies. The policies are supplied as a list of one or
-         * more strings. To get the context keys from policies associated with an IAM user,
-         * group, or role, use <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForCustomPolicy to understand what key names and values you must
-         * supply when you call <a>SimulateCustomPolicy</a>. Note that all parameters are
-         * shown in unencoded form here for clarity, but must be URL encoded to be included
-         * as a part of a real HTML request.</p>
+         * <p>Gets a list of all of the context keys referenced in the input policies. The
+         * policies are supplied as a list of one or more strings. To get the context keys
+         * from policies associated with an IAM user, group, or role, use
+         * <a>GetContextKeysForPrincipalPolicy</a>.</p> <p>Context keys are variables
+         * maintained by AWS and its services that provide details about the context of an
+         * API query request, and can be evaluated by testing against a value specified in
+         * an IAM policy. Use GetContextKeysForCustomPolicy to understand what key names
+         * and values you must supply when you call <a>SimulateCustomPolicy</a>. Note that
+         * all parameters are shown in unencoded form here for clarity, but must be URL
+         * encoded to be included as a part of a real HTML request.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetContextKeysForCustomPolicyAsync(const Model::GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in all of the IAM policies attached to the specified IAM entity. The
-         * entity can be an IAM user, group, or role. If you specify a user, then the
-         * request also includes all of the policies attached to groups that the user is a
-         * member of.</p> <p>You can optionally include a list of one or more additional
-         * policies, specified as strings. If you want to include only a list of policies
-         * by string, use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p><b>Note:</b>
-         * This API discloses information about the permissions granted to other users. If
-         * you do not want users to see other user's permissions, then consider allowing
-         * them to use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForPrincipalPolicy to understand what key names and values you
-         * must supply when you call <a>SimulatePrincipalPolicy</a>.</p>
+         * <p>Gets a list of all of the context keys referenced in all of the IAM policies
+         * attached to the specified IAM entity. The entity can be an IAM user, group, or
+         * role. If you specify a user, then the request also includes all of the policies
+         * attached to groups that the user is a member of.</p> <p>You can optionally
+         * include a list of one or more additional policies, specified as strings. If you
+         * want to include <i>only</i> a list of policies by string, use
+         * <a>GetContextKeysForCustomPolicy</a> instead.</p> <p> <b>Note:</b> This API
+         * discloses information about the permissions granted to other users. If you do
+         * not want users to see other user's permissions, then consider allowing them to
+         * use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys are
+         * variables maintained by AWS and its services that provide details about the
+         * context of an API query request, and can be evaluated by testing against a value
+         * in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand what
+         * key names and values you must supply when you call
+         * <a>SimulatePrincipalPolicy</a>.</p>
          */
         virtual Model::GetContextKeysForPrincipalPolicyOutcome GetContextKeysForPrincipalPolicy(const Model::GetContextKeysForPrincipalPolicyRequest& request) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in all of the IAM policies attached to the specified IAM entity. The
-         * entity can be an IAM user, group, or role. If you specify a user, then the
-         * request also includes all of the policies attached to groups that the user is a
-         * member of.</p> <p>You can optionally include a list of one or more additional
-         * policies, specified as strings. If you want to include only a list of policies
-         * by string, use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p><b>Note:</b>
-         * This API discloses information about the permissions granted to other users. If
-         * you do not want users to see other user's permissions, then consider allowing
-         * them to use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForPrincipalPolicy to understand what key names and values you
-         * must supply when you call <a>SimulatePrincipalPolicy</a>.</p>
+         * <p>Gets a list of all of the context keys referenced in all of the IAM policies
+         * attached to the specified IAM entity. The entity can be an IAM user, group, or
+         * role. If you specify a user, then the request also includes all of the policies
+         * attached to groups that the user is a member of.</p> <p>You can optionally
+         * include a list of one or more additional policies, specified as strings. If you
+         * want to include <i>only</i> a list of policies by string, use
+         * <a>GetContextKeysForCustomPolicy</a> instead.</p> <p> <b>Note:</b> This API
+         * discloses information about the permissions granted to other users. If you do
+         * not want users to see other user's permissions, then consider allowing them to
+         * use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys are
+         * variables maintained by AWS and its services that provide details about the
+         * context of an API query request, and can be evaluated by testing against a value
+         * in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand what
+         * key names and values you must supply when you call
+         * <a>SimulatePrincipalPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetContextKeysForPrincipalPolicyOutcomeCallable GetContextKeysForPrincipalPolicyCallable(const Model::GetContextKeysForPrincipalPolicyRequest& request) const;
 
         /**
-         * <p>Gets a list of all of the context keys referenced in <code>Condition</code>
-         * elements in all of the IAM policies attached to the specified IAM entity. The
-         * entity can be an IAM user, group, or role. If you specify a user, then the
-         * request also includes all of the policies attached to groups that the user is a
-         * member of.</p> <p>You can optionally include a list of one or more additional
-         * policies, specified as strings. If you want to include only a list of policies
-         * by string, use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p><b>Note:</b>
-         * This API discloses information about the permissions granted to other users. If
-         * you do not want users to see other user's permissions, then consider allowing
-         * them to use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys
-         * are variables maintained by AWS and its services that provide details about the
-         * context of an API query request, and can be evaluated by using the
-         * <code>Condition</code> element of an IAM policy. Use
-         * GetContextKeysForPrincipalPolicy to understand what key names and values you
-         * must supply when you call <a>SimulatePrincipalPolicy</a>.</p>
+         * <p>Gets a list of all of the context keys referenced in all of the IAM policies
+         * attached to the specified IAM entity. The entity can be an IAM user, group, or
+         * role. If you specify a user, then the request also includes all of the policies
+         * attached to groups that the user is a member of.</p> <p>You can optionally
+         * include a list of one or more additional policies, specified as strings. If you
+         * want to include <i>only</i> a list of policies by string, use
+         * <a>GetContextKeysForCustomPolicy</a> instead.</p> <p> <b>Note:</b> This API
+         * discloses information about the permissions granted to other users. If you do
+         * not want users to see other user's permissions, then consider allowing them to
+         * use <a>GetContextKeysForCustomPolicy</a> instead.</p> <p>Context keys are
+         * variables maintained by AWS and its services that provide details about the
+         * context of an API query request, and can be evaluated by testing against a value
+         * in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand what
+         * key names and values you must supply when you call
+         * <a>SimulatePrincipalPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2470,7 +2490,7 @@ namespace Model
          * <p> Retrieves a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetCredentialReportOutcome GetCredentialReport(const Model::GetCredentialReportRequest& request) const;
 
@@ -2478,7 +2498,7 @@ namespace Model
          * <p> Retrieves a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2488,32 +2508,32 @@ namespace Model
          * <p> Retrieves a credential report for the AWS account. For more information
          * about the credential report, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-         * Credential Reports</a> in the <i>IAM User Guide</i>. </p>
+         * Credential Reports</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCredentialReportAsync(const Model::GetCredentialReportRequest& request, const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of users that are in the specified group. You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p>
+         * <p> Returns a list of IAM users that are in the specified IAM group. You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p> Returns a list of users that are in the specified group. You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p>
+         * <p> Returns a list of IAM users that are in the specified IAM group. You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p> Returns a list of users that are in the specified group. You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p>
+         * <p> Returns a list of IAM users that are in the specified IAM group. You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2521,25 +2541,25 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified group. </p> <p>A group can also have managed policies attached to it.
-         * To retrieve a managed policy document that is attached to a group, use
+         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a group, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetGroupPolicyOutcome GetGroupPolicy(const Model::GetGroupPolicyRequest& request) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified group. </p> <p>A group can also have managed policies attached to it.
-         * To retrieve a managed policy document that is attached to a group, use
+         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a group, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2547,13 +2567,13 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified group. </p> <p>A group can also have managed policies attached to it.
-         * To retrieve a managed policy document that is attached to a group, use
+         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a group, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2562,22 +2582,18 @@ namespace Model
         /**
          * <p> Retrieves information about the specified instance profile, including the
          * instance profile's path, GUID, ARN, and role. For more information about
-         * instance profiles, go to <a
+         * instance profiles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. For more information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * </p>
+         * Instance Profiles</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetInstanceProfileOutcome GetInstanceProfile(const Model::GetInstanceProfileRequest& request) const;
 
         /**
          * <p> Retrieves information about the specified instance profile, including the
          * instance profile's path, GUID, ARN, and role. For more information about
-         * instance profiles, go to <a
+         * instance profiles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. For more information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * </p>
+         * Instance Profiles</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2586,55 +2602,56 @@ namespace Model
         /**
          * <p> Retrieves information about the specified instance profile, including the
          * instance profile's path, GUID, ARN, and role. For more information about
-         * instance profiles, go to <a
+         * instance profiles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. For more information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * </p>
+         * Instance Profiles</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInstanceProfileAsync(const Model::GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the user name and password-creation date for the specified user. If
-         * the user has not been assigned a password, the action returns a 404
-         * (<code>NoSuchEntity</code>) error. </p>
+         * <p>Retrieves the user name and password-creation date for the specified IAM
+         * user. If the user has not been assigned a password, the action returns a 404
+         * (<code>NoSuchEntity</code>) error.</p>
          */
         virtual Model::GetLoginProfileOutcome GetLoginProfile(const Model::GetLoginProfileRequest& request) const;
 
         /**
-         * <p>Retrieves the user name and password-creation date for the specified user. If
-         * the user has not been assigned a password, the action returns a 404
-         * (<code>NoSuchEntity</code>) error. </p>
+         * <p>Retrieves the user name and password-creation date for the specified IAM
+         * user. If the user has not been assigned a password, the action returns a 404
+         * (<code>NoSuchEntity</code>) error.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetLoginProfileOutcomeCallable GetLoginProfileCallable(const Model::GetLoginProfileRequest& request) const;
 
         /**
-         * <p>Retrieves the user name and password-creation date for the specified user. If
-         * the user has not been assigned a password, the action returns a 404
-         * (<code>NoSuchEntity</code>) error. </p>
+         * <p>Retrieves the user name and password-creation date for the specified IAM
+         * user. If the user has not been assigned a password, the action returns a 404
+         * (<code>NoSuchEntity</code>) error.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLoginProfileAsync(const Model::GetLoginProfileRequest& request, const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified OpenID Connect provider.</p>
+         * <p>Returns information about the specified OpenID Connect (OIDC) provider
+         * resource object in IAM.</p>
          */
         virtual Model::GetOpenIDConnectProviderOutcome GetOpenIDConnectProvider(const Model::GetOpenIDConnectProviderRequest& request) const;
 
         /**
-         * <p>Returns information about the specified OpenID Connect provider.</p>
+         * <p>Returns information about the specified OpenID Connect (OIDC) provider
+         * resource object in IAM.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetOpenIDConnectProviderOutcomeCallable GetOpenIDConnectProviderCallable(const Model::GetOpenIDConnectProviderRequest& request) const;
 
         /**
-         * <p>Returns information about the specified OpenID Connect provider.</p>
+         * <p>Returns information about the specified OpenID Connect (OIDC) provider
+         * resource object in IAM.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2642,33 +2659,35 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified managed policy, including the
-         * policy's default version and the total number of users, groups, and roles that
-         * the policy is attached to. For a list of the specific users, groups, and roles
-         * that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This
-         * API returns metadata about the policy. To retrieve the policy document for a
-         * specific version of the policy, use <a>GetPolicyVersion</a>. </p> <p>This API
-         * retrieves information about managed policies. To retrieve information about an
-         * inline policy that is embedded with a user, group, or role, use the
-         * <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p>
-         * <p>For more information about policies, refer to <a
+         * policy's default version and the total number of IAM users, groups, and roles to
+         * which the policy is attached. To retrieve the list of the specific users,
+         * groups, and roles that the policy is attached to, use the
+         * <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To
+         * retrieve the actual policy document for a specific version of the policy, use
+         * <a>GetPolicyVersion</a>.</p> <p>This API retrieves information about managed
+         * policies. To retrieve information about an inline policy that is embedded with
+         * an IAM user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
         /**
          * <p>Retrieves information about the specified managed policy, including the
-         * policy's default version and the total number of users, groups, and roles that
-         * the policy is attached to. For a list of the specific users, groups, and roles
-         * that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This
-         * API returns metadata about the policy. To retrieve the policy document for a
-         * specific version of the policy, use <a>GetPolicyVersion</a>. </p> <p>This API
-         * retrieves information about managed policies. To retrieve information about an
-         * inline policy that is embedded with a user, group, or role, use the
-         * <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p>
-         * <p>For more information about policies, refer to <a
+         * policy's default version and the total number of IAM users, groups, and roles to
+         * which the policy is attached. To retrieve the list of the specific users,
+         * groups, and roles that the policy is attached to, use the
+         * <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To
+         * retrieve the actual policy document for a specific version of the policy, use
+         * <a>GetPolicyVersion</a>.</p> <p>This API retrieves information about managed
+         * policies. To retrieve information about an inline policy that is embedded with
+         * an IAM user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2676,17 +2695,18 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified managed policy, including the
-         * policy's default version and the total number of users, groups, and roles that
-         * the policy is attached to. For a list of the specific users, groups, and roles
-         * that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API. This
-         * API returns metadata about the policy. To retrieve the policy document for a
-         * specific version of the policy, use <a>GetPolicyVersion</a>. </p> <p>This API
-         * retrieves information about managed policies. To retrieve information about an
-         * inline policy that is embedded with a user, group, or role, use the
-         * <a>GetUserPolicy</a>, <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p>
-         * <p>For more information about policies, refer to <a
+         * policy's default version and the total number of IAM users, groups, and roles to
+         * which the policy is attached. To retrieve the list of the specific users,
+         * groups, and roles that the policy is attached to, use the
+         * <a>ListEntitiesForPolicy</a> API. This API returns metadata about the policy. To
+         * retrieve the actual policy document for a specific version of the policy, use
+         * <a>GetPolicyVersion</a>.</p> <p>This API retrieves information about managed
+         * policies. To retrieve information about an inline policy that is embedded with
+         * an IAM user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2694,27 +2714,33 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document. </p> <p>To list the available versions
-         * for a policy, use <a>ListPolicyVersions</a>. </p> <p>This API retrieves
-         * information about managed policies. To retrieve information about an inline
-         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
-         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information
-         * about the types of policies, refer to <a
+         * policy, including the policy document.</p> <p>To list the available versions for
+         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
+         * about managed policies. To retrieve information about an inline policy that is
+         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policy versions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetPolicyVersionOutcome GetPolicyVersion(const Model::GetPolicyVersionRequest& request) const;
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document. </p> <p>To list the available versions
-         * for a policy, use <a>ListPolicyVersions</a>. </p> <p>This API retrieves
-         * information about managed policies. To retrieve information about an inline
-         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
-         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information
-         * about the types of policies, refer to <a
+         * policy, including the policy document.</p> <p>To list the available versions for
+         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
+         * about managed policies. To retrieve information about an inline policy that is
+         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policy versions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2722,14 +2748,17 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document. </p> <p>To list the available versions
-         * for a policy, use <a>ListPolicyVersions</a>. </p> <p>This API retrieves
-         * information about managed policies. To retrieve information about an inline
-         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
-         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API. </p> <p>For more information
-         * about the types of policies, refer to <a
+         * policy, including the policy document.</p> <p>To list the available versions for
+         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
+         * about managed policies. To retrieve information about an inline policy that is
+         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
+         * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about managed policy versions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+         * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2737,23 +2766,19 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified role, including the role's path,
-         * GUID, ARN, and the policy granting permission to assume the role. For more
-         * information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * For more information about roles, go to <a
+         * GUID, ARN, and the role's trust policy that grants permission to assume the
+         * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p>
+         * with Roles</a>.</p>
          */
         virtual Model::GetRoleOutcome GetRole(const Model::GetRoleRequest& request) const;
 
         /**
          * <p>Retrieves information about the specified role, including the role's path,
-         * GUID, ARN, and the policy granting permission to assume the role. For more
-         * information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * For more information about roles, go to <a
+         * GUID, ARN, and the role's trust policy that grants permission to assume the
+         * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p>
+         * with Roles</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2761,12 +2786,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified role, including the role's path,
-         * GUID, ARN, and the policy granting permission to assume the role. For more
-         * information about ARNs, go to <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a>.
-         * For more information about roles, go to <a
+         * GUID, ARN, and the role's trust policy that grants permission to assume the
+         * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p>
+         * with Roles</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2774,31 +2797,31 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified role. </p> <p>A role can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a role, use
+         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a role, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about roles, go to <a
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          */
         virtual Model::GetRolePolicyOutcome GetRolePolicy(const Model::GetRolePolicyRequest& request) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified role. </p> <p>A role can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a role, use
+         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a role, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about roles, go to <a
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2806,44 +2829,47 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified role. </p> <p>A role can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a role, use
+         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a role, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For more
-         * information about roles, go to <a
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRolePolicyAsync(const Model::GetRolePolicyRequest& request, const GetRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the SAML provider metadocument that was uploaded when the provider
-         * was created or updated. </p> <note>This operation requires <a
+         * <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML
+         * provider resource object was created or updated.</p> <note> <p>This operation
+         * requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          */
         virtual Model::GetSAMLProviderOutcome GetSAMLProvider(const Model::GetSAMLProviderRequest& request) const;
 
         /**
-         * <p>Returns the SAML provider metadocument that was uploaded when the provider
-         * was created or updated. </p> <note>This operation requires <a
+         * <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML
+         * provider resource object was created or updated.</p> <note> <p>This operation
+         * requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSAMLProviderOutcomeCallable GetSAMLProviderCallable(const Model::GetSAMLProviderRequest& request) const;
 
         /**
-         * <p>Returns the SAML provider metadocument that was uploaded when the provider
-         * was created or updated. </p> <note>This operation requires <a
+         * <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML
+         * provider resource object was created or updated.</p> <note> <p>This operation
+         * requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2887,18 +2913,20 @@ namespace Model
         virtual void GetSSHPublicKeyAsync(const Model::GetSSHPublicKeyRequest& request, const GetSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the specified server certificate.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Retrieves information about the specified server certificate stored in
+         * IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetServerCertificateOutcome GetServerCertificate(const Model::GetServerCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves information about the specified server certificate.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Retrieves information about the specified server certificate stored in
+         * IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -2907,9 +2935,10 @@ namespace Model
         virtual Model::GetServerCertificateOutcomeCallable GetServerCertificateCallable(const Model::GetServerCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves information about the specified server certificate.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Retrieves information about the specified server certificate stored in
+         * IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -2918,28 +2947,28 @@ namespace Model
         virtual void GetServerCertificateAsync(const Model::GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the specified user, including the user's creation
-         * date, path, unique ID, and ARN. </p> <p>If you do not specify a user name, IAM
-         * determines the user name implicitly based on the AWS access key ID used to sign
-         * the request. </p>
+         * <p>Retrieves information about the specified IAM user, including the user's
+         * creation date, path, unique ID, and ARN.</p> <p>If you do not specify a user
+         * name, IAM determines the user name implicitly based on the AWS access key ID
+         * used to sign the request to this API.</p>
          */
         virtual Model::GetUserOutcome GetUser(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Retrieves information about the specified user, including the user's creation
-         * date, path, unique ID, and ARN. </p> <p>If you do not specify a user name, IAM
-         * determines the user name implicitly based on the AWS access key ID used to sign
-         * the request. </p>
+         * <p>Retrieves information about the specified IAM user, including the user's
+         * creation date, path, unique ID, and ARN.</p> <p>If you do not specify a user
+         * name, IAM determines the user name implicitly based on the AWS access key ID
+         * used to sign the request to this API.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUserOutcomeCallable GetUserCallable(const Model::GetUserRequest& request) const;
 
         /**
-         * <p>Retrieves information about the specified user, including the user's creation
-         * date, path, unique ID, and ARN. </p> <p>If you do not specify a user name, IAM
-         * determines the user name implicitly based on the AWS access key ID used to sign
-         * the request. </p>
+         * <p>Retrieves information about the specified IAM user, including the user's
+         * creation date, path, unique ID, and ARN.</p> <p>If you do not specify a user
+         * name, IAM determines the user name implicitly based on the AWS access key ID
+         * used to sign the request to this API.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2947,25 +2976,25 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified user. </p> <p>A user can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a user, use
+         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a user, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::GetUserPolicyOutcome GetUserPolicy(const Model::GetUserPolicyRequest& request) const;
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified user. </p> <p>A user can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a user, use
+         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a user, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2973,13 +3002,13 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified user. </p> <p>A user can also have managed policies attached to it. To
-         * retrieve a managed policy document that is attached to a user, use
+         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
+         * to it. To retrieve a managed policy document that is attached to a user, use
          * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document. </p> <p>For more
-         * information about policies, refer to <a
+         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2987,29 +3016,29 @@ namespace Model
 
         /**
          * <p>Returns information about the access key IDs associated with the specified
-         * user. If there are none, the action returns an empty list. </p> <p>Although each
-         * user is limited to a small number of keys, you can still paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If
-         * the <code>UserName</code> field is not specified, the UserName is determined
-         * implicitly based on the AWS access key ID used to sign the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
-         * <note>To ensure the security of your AWS account, the secret access key is
-         * accessible only during key and user creation. </note>
+         * IAM user. If there are none, the action returns an empty list.</p> <p>Although
+         * each user is limited to a small number of keys, you can still paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
+         * <p>If the <code>UserName</code> field is not specified, the UserName is
+         * determined implicitly based on the AWS access key ID used to sign the request.
+         * Because this action works for access keys under the AWS account, you can use
+         * this action to manage root credentials even if the AWS account has no associated
+         * users.</p> <note> <p>To ensure the security of your AWS account, the secret
+         * access key is accessible only during key and user creation.</p> </note>
          */
         virtual Model::ListAccessKeysOutcome ListAccessKeys(const Model::ListAccessKeysRequest& request) const;
 
         /**
          * <p>Returns information about the access key IDs associated with the specified
-         * user. If there are none, the action returns an empty list. </p> <p>Although each
-         * user is limited to a small number of keys, you can still paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If
-         * the <code>UserName</code> field is not specified, the UserName is determined
-         * implicitly based on the AWS access key ID used to sign the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
-         * <note>To ensure the security of your AWS account, the secret access key is
-         * accessible only during key and user creation. </note>
+         * IAM user. If there are none, the action returns an empty list.</p> <p>Although
+         * each user is limited to a small number of keys, you can still paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
+         * <p>If the <code>UserName</code> field is not specified, the UserName is
+         * determined implicitly based on the AWS access key ID used to sign the request.
+         * Because this action works for access keys under the AWS account, you can use
+         * this action to manage root credentials even if the AWS account has no associated
+         * users.</p> <note> <p>To ensure the security of your AWS account, the secret
+         * access key is accessible only during key and user creation.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3017,320 +3046,317 @@ namespace Model
 
         /**
          * <p>Returns information about the access key IDs associated with the specified
-         * user. If there are none, the action returns an empty list. </p> <p>Although each
-         * user is limited to a small number of keys, you can still paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>If
-         * the <code>UserName</code> field is not specified, the UserName is determined
-         * implicitly based on the AWS access key ID used to sign the request. Because this
-         * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
-         * <note>To ensure the security of your AWS account, the secret access key is
-         * accessible only during key and user creation. </note>
+         * IAM user. If there are none, the action returns an empty list.</p> <p>Although
+         * each user is limited to a small number of keys, you can still paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
+         * <p>If the <code>UserName</code> field is not specified, the UserName is
+         * determined implicitly based on the AWS access key ID used to sign the request.
+         * Because this action works for access keys under the AWS account, you can use
+         * this action to manage root credentials even if the AWS account has no associated
+         * users.</p> <note> <p>To ensure the security of your AWS account, the secret
+         * access key is accessible only during key and user creation.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccessKeysAsync(const Model::ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an AWS account alias, see <a
+         * <p>Lists the account alias associated with the AWS account (Note: you can have
+         * only one). For information about using an AWS account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ListAccountAliasesOutcome ListAccountAliases(const Model::ListAccountAliasesRequest& request) const;
 
         /**
-         * <p> Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an AWS account alias, see <a
+         * <p>Lists the account alias associated with the AWS account (Note: you can have
+         * only one). For information about using an AWS account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAccountAliasesOutcomeCallable ListAccountAliasesCallable(const Model::ListAccountAliasesRequest& request) const;
 
         /**
-         * <p> Lists the account alias associated with the account (Note: you can have only
-         * one). For information about using an AWS account alias, see <a
+         * <p>Lists the account alias associated with the AWS account (Note: you can have
+         * only one). For information about using an AWS account alias, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>. </p>
+         * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccountAliasesAsync(const Model::ListAccountAliasesRequest& request, const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified group.</p> <p>A
-         * group can also have inline policies embedded with it. To list the inline
-         * policies for a group, use the <a>ListGroupPolicies</a> API. For information
-         * about policies, refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM group.</p>
+         * <p>An IAM group can also have inline policies embedded with it. To list the
+         * inline policies for a group, use the <a>ListGroupPolicies</a> API. For
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          */
         virtual Model::ListAttachedGroupPoliciesOutcome ListAttachedGroupPolicies(const Model::ListAttachedGroupPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified group.</p> <p>A
-         * group can also have inline policies embedded with it. To list the inline
-         * policies for a group, use the <a>ListGroupPolicies</a> API. For information
-         * about policies, refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM group.</p>
+         * <p>An IAM group can also have inline policies embedded with it. To list the
+         * inline policies for a group, use the <a>ListGroupPolicies</a> API. For
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAttachedGroupPoliciesOutcomeCallable ListAttachedGroupPoliciesCallable(const Model::ListAttachedGroupPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified group.</p> <p>A
-         * group can also have inline policies embedded with it. To list the inline
-         * policies for a group, use the <a>ListGroupPolicies</a> API. For information
-         * about policies, refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM group.</p>
+         * <p>An IAM group can also have inline policies embedded with it. To list the
+         * inline policies for a group, use the <a>ListGroupPolicies</a> API. For
+         * information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttachedGroupPoliciesAsync(const Model::ListAttachedGroupPoliciesRequest& request, const ListAttachedGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified role. </p> <p>A
-         * role can also have inline policies embedded with it. To list the inline policies
-         * for a role, use the <a>ListRolePolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM role.</p>
+         * <p>An IAM role can also have inline policies embedded with it. To list the
+         * inline policies for a role, use the <a>ListRolePolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified role (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          */
         virtual Model::ListAttachedRolePoliciesOutcome ListAttachedRolePolicies(const Model::ListAttachedRolePoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified role. </p> <p>A
-         * role can also have inline policies embedded with it. To list the inline policies
-         * for a role, use the <a>ListRolePolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM role.</p>
+         * <p>An IAM role can also have inline policies embedded with it. To list the
+         * inline policies for a role, use the <a>ListRolePolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified role (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAttachedRolePoliciesOutcomeCallable ListAttachedRolePoliciesCallable(const Model::ListAttachedRolePoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified role. </p> <p>A
-         * role can also have inline policies embedded with it. To list the inline policies
-         * for a role, use the <a>ListRolePolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM role.</p>
+         * <p>An IAM role can also have inline policies embedded with it. To list the
+         * inline policies for a role, use the <a>ListRolePolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified role (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttachedRolePoliciesAsync(const Model::ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified user. </p> <p>A
-         * user can also have inline policies embedded with it. To list the inline policies
-         * for a user, use the <a>ListUserPolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM user.</p>
+         * <p>An IAM user can also have inline policies embedded with it. To list the
+         * inline policies for a user, use the <a>ListUserPolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          */
         virtual Model::ListAttachedUserPoliciesOutcome ListAttachedUserPolicies(const Model::ListAttachedUserPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified user. </p> <p>A
-         * user can also have inline policies embedded with it. To list the inline policies
-         * for a user, use the <a>ListUserPolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM user.</p>
+         * <p>An IAM user can also have inline policies embedded with it. To list the
+         * inline policies for a user, use the <a>ListUserPolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAttachedUserPoliciesOutcomeCallable ListAttachedUserPoliciesCallable(const Model::ListAttachedUserPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all managed policies that are attached to the specified user. </p> <p>A
-         * user can also have inline policies embedded with it. To list the inline policies
-         * for a user, use the <a>ListUserPolicies</a> API. For information about policies,
-         * refer to <a
+         * <p>Lists all managed policies that are attached to the specified IAM user.</p>
+         * <p>An IAM user can also have inline policies embedded with it. To list the
+         * inline policies for a user, use the <a>ListUserPolicies</a> API. For information
+         * about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. You can use the <code>PathPrefix</code> parameter to limit the list
          * of policies to only those matching the specified path prefix. If there are no
          * policies attached to the specified group (or none that match the specified path
-         * prefix), the action returns an empty list. </p>
+         * prefix), the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttachedUserPoliciesAsync(const Model::ListAttachedUserPoliciesRequest& request, const ListAttachedUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all users, groups, and roles that the specified managed policy is
-         * attached to. </p> <p>You can use the optional <code>EntityFilter</code>
-         * parameter to limit the results to a particular type of entity (users, groups, or
-         * roles). For example, to list only the roles that are attached to the specified
-         * policy, set <code>EntityFilter</code> to <code>Role</code>. </p> <p>You can
-         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * <p>Lists all IAM users, groups, and roles that the specified managed policy is
+         * attached to.</p> <p>You can use the optional <code>EntityFilter</code> parameter
+         * to limit the results to a particular type of entity (users, groups, or roles).
+         * For example, to list only the roles that are attached to the specified policy,
+         * set <code>EntityFilter</code> to <code>Role</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListEntitiesForPolicyOutcome ListEntitiesForPolicy(const Model::ListEntitiesForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all users, groups, and roles that the specified managed policy is
-         * attached to. </p> <p>You can use the optional <code>EntityFilter</code>
-         * parameter to limit the results to a particular type of entity (users, groups, or
-         * roles). For example, to list only the roles that are attached to the specified
-         * policy, set <code>EntityFilter</code> to <code>Role</code>. </p> <p>You can
-         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * <p>Lists all IAM users, groups, and roles that the specified managed policy is
+         * attached to.</p> <p>You can use the optional <code>EntityFilter</code> parameter
+         * to limit the results to a particular type of entity (users, groups, or roles).
+         * For example, to list only the roles that are attached to the specified policy,
+         * set <code>EntityFilter</code> to <code>Role</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListEntitiesForPolicyOutcomeCallable ListEntitiesForPolicyCallable(const Model::ListEntitiesForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all users, groups, and roles that the specified managed policy is
-         * attached to. </p> <p>You can use the optional <code>EntityFilter</code>
-         * parameter to limit the results to a particular type of entity (users, groups, or
-         * roles). For example, to list only the roles that are attached to the specified
-         * policy, set <code>EntityFilter</code> to <code>Role</code>. </p> <p>You can
-         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * <p>Lists all IAM users, groups, and roles that the specified managed policy is
+         * attached to.</p> <p>You can use the optional <code>EntityFilter</code> parameter
+         * to limit the results to a particular type of entity (users, groups, or roles).
+         * For example, to list only the roles that are attached to the specified policy,
+         * set <code>EntityFilter</code> to <code>Role</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEntitiesForPolicyAsync(const Model::ListEntitiesForPolicyRequest& request, const ListEntitiesForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * group. </p> <p>A group can also have managed policies attached to it. To list
-         * the managed policies that are attached to a group, use
-         * <a>ListAttachedGroupPolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * group.</p> <p>An IAM group can also have managed policies attached to it. To
+         * list the managed policies that are attached to a group, use
+         * <a>ListAttachedGroupPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified group,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          */
         virtual Model::ListGroupPoliciesOutcome ListGroupPolicies(const Model::ListGroupPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * group. </p> <p>A group can also have managed policies attached to it. To list
-         * the managed policies that are attached to a group, use
-         * <a>ListAttachedGroupPolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * group.</p> <p>An IAM group can also have managed policies attached to it. To
+         * list the managed policies that are attached to a group, use
+         * <a>ListAttachedGroupPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified group,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGroupPoliciesOutcomeCallable ListGroupPoliciesCallable(const Model::ListGroupPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * group. </p> <p>A group can also have managed policies attached to it. To list
-         * the managed policies that are attached to a group, use
-         * <a>ListAttachedGroupPolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * group.</p> <p>An IAM group can also have managed policies attached to it. To
+         * list the managed policies that are attached to a group, use
+         * <a>ListAttachedGroupPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified group,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGroupPoliciesAsync(const Model::ListGroupPoliciesRequest& request, const ListGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the groups that have the specified path prefix.</p> <p> You can
+         * <p>Lists the IAM groups that have the specified path prefix.</p> <p> You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * parameters.</p>
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the groups that have the specified path prefix.</p> <p> You can
+         * <p>Lists the IAM groups that have the specified path prefix.</p> <p> You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the groups that have the specified path prefix.</p> <p> You can
+         * <p>Lists the IAM groups that have the specified path prefix.</p> <p> You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters. </p>
+         * parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the groups the specified user belongs to.</p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the IAM groups that the specified IAM user belongs to.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          */
         virtual Model::ListGroupsForUserOutcome ListGroupsForUser(const Model::ListGroupsForUserRequest& request) const;
 
         /**
-         * <p>Lists the groups the specified user belongs to.</p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the IAM groups that the specified IAM user belongs to.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListGroupsForUserOutcomeCallable ListGroupsForUserCallable(const Model::ListGroupsForUserRequest& request) const;
 
         /**
-         * <p>Lists the groups the specified user belongs to.</p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the IAM groups that the specified IAM user belongs to.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3341,8 +3367,8 @@ namespace Model
          * none, the action returns an empty list. For more information about instance
          * profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListInstanceProfilesOutcome ListInstanceProfiles(const Model::ListInstanceProfilesRequest& request) const;
 
@@ -3351,8 +3377,8 @@ namespace Model
          * none, the action returns an empty list. For more information about instance
          * profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3363,141 +3389,150 @@ namespace Model
          * none, the action returns an empty list. For more information about instance
          * profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInstanceProfilesAsync(const Model::ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the instance profiles that have the specified associated role. If there
-         * are none, the action returns an empty list. For more information about instance
-         * profiles, go to <a
+         * <p>Lists the instance profiles that have the specified associated IAM role. If
+         * there are none, the action returns an empty list. For more information about
+         * instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListInstanceProfilesForRoleOutcome ListInstanceProfilesForRole(const Model::ListInstanceProfilesForRoleRequest& request) const;
 
         /**
-         * <p>Lists the instance profiles that have the specified associated role. If there
-         * are none, the action returns an empty list. For more information about instance
-         * profiles, go to <a
+         * <p>Lists the instance profiles that have the specified associated IAM role. If
+         * there are none, the action returns an empty list. For more information about
+         * instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListInstanceProfilesForRoleOutcomeCallable ListInstanceProfilesForRoleCallable(const Model::ListInstanceProfilesForRoleRequest& request) const;
 
         /**
-         * <p>Lists the instance profiles that have the specified associated role. If there
-         * are none, the action returns an empty list. For more information about instance
-         * profiles, go to <a
+         * <p>Lists the instance profiles that have the specified associated IAM role. If
+         * there are none, the action returns an empty list. For more information about
+         * instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * Instance Profiles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInstanceProfilesForRoleAsync(const Model::ListInstanceProfilesForRoleRequest& request, const ListInstanceProfilesForRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the MFA devices. If the request includes the user name, then this
-         * action lists all the MFA devices associated with the specified user name. If you
-         * do not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. </p> <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the MFA devices for an IAM user. If the request includes a IAM user
+         * name, then this action lists all the MFA devices associated with the specified
+         * user. If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request for this API.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          */
         virtual Model::ListMFADevicesOutcome ListMFADevices(const Model::ListMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the MFA devices. If the request includes the user name, then this
-         * action lists all the MFA devices associated with the specified user name. If you
-         * do not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. </p> <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the MFA devices for an IAM user. If the request includes a IAM user
+         * name, then this action lists all the MFA devices associated with the specified
+         * user. If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request for this API.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListMFADevicesOutcomeCallable ListMFADevicesCallable(const Model::ListMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the MFA devices. If the request includes the user name, then this
-         * action lists all the MFA devices associated with the specified user name. If you
-         * do not specify a user name, IAM determines the user name implicitly based on the
-         * AWS access key ID signing the request. </p> <p>You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the MFA devices for an IAM user. If the request includes a IAM user
+         * name, then this action lists all the MFA devices associated with the specified
+         * user. If you do not specify a user name, IAM determines the user name implicitly
+         * based on the AWS access key ID signing the request for this API.</p> <p>You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMFADevicesAsync(const Model::ListMFADevicesRequest& request, const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about the OpenID Connect providers in the AWS account. </p>
+         * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
+         * objects defined in the AWS account.</p>
          */
         virtual Model::ListOpenIDConnectProvidersOutcome ListOpenIDConnectProviders(const Model::ListOpenIDConnectProvidersRequest& request) const;
 
         /**
-         * <p>Lists information about the OpenID Connect providers in the AWS account. </p>
+         * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
+         * objects defined in the AWS account.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListOpenIDConnectProvidersOutcomeCallable ListOpenIDConnectProvidersCallable(const Model::ListOpenIDConnectProvidersRequest& request) const;
 
         /**
-         * <p>Lists information about the OpenID Connect providers in the AWS account. </p>
+         * <p>Lists information about the IAM OpenID Connect (OIDC) provider resource
+         * objects defined in the AWS account.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOpenIDConnectProvidersAsync(const Model::ListOpenIDConnectProvidersRequest& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the managed policies that are available to your account, including
-         * your own customer managed policies and all AWS managed policies. </p> <p>You can
-         * filter the list of policies that is returned using the optional
-         * <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code>
-         * parameters. For example, to list only the customer managed policies in your AWS
-         * account, set <code>Scope</code> to <code>Local</code>. To list only AWS managed
-         * policies, set <code>Scope</code> to <code>AWS</code>. </p> <p>You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p> <p>For more information about managed policies, refer to <a
+         * <p>Lists all the managed policies that are available in your AWS account,
+         * including your own customer-defined managed policies and all AWS managed
+         * policies.</p> <p>You can filter the list of policies that is returned using the
+         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <code>PathPrefix</code> parameters. For example, to list only the customer
+         * managed policies in your AWS account, set <code>Scope</code> to
+         * <code>Local</code>. To list only AWS managed policies, set <code>Scope</code> to
+         * <code>AWS</code>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p> <p>For more
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all the managed policies that are available to your account, including
-         * your own customer managed policies and all AWS managed policies. </p> <p>You can
-         * filter the list of policies that is returned using the optional
-         * <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code>
-         * parameters. For example, to list only the customer managed policies in your AWS
-         * account, set <code>Scope</code> to <code>Local</code>. To list only AWS managed
-         * policies, set <code>Scope</code> to <code>AWS</code>. </p> <p>You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p> <p>For more information about managed policies, refer to <a
+         * <p>Lists all the managed policies that are available in your AWS account,
+         * including your own customer-defined managed policies and all AWS managed
+         * policies.</p> <p>You can filter the list of policies that is returned using the
+         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <code>PathPrefix</code> parameters. For example, to list only the customer
+         * managed policies in your AWS account, set <code>Scope</code> to
+         * <code>Local</code>. To list only AWS managed policies, set <code>Scope</code> to
+         * <code>AWS</code>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p> <p>For more
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request) const;
 
         /**
-         * <p>Lists all the managed policies that are available to your account, including
-         * your own customer managed policies and all AWS managed policies. </p> <p>You can
-         * filter the list of policies that is returned using the optional
-         * <code>OnlyAttached</code>, <code>Scope</code>, and <code>PathPrefix</code>
-         * parameters. For example, to list only the customer managed policies in your AWS
-         * account, set <code>Scope</code> to <code>Local</code>. To list only AWS managed
-         * policies, set <code>Scope</code> to <code>AWS</code>. </p> <p>You can paginate
-         * the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
-         * </p> <p>For more information about managed policies, refer to <a
+         * <p>Lists all the managed policies that are available in your AWS account,
+         * including your own customer-defined managed policies and all AWS managed
+         * policies.</p> <p>You can filter the list of policies that is returned using the
+         * optional <code>OnlyAttached</code>, <code>Scope</code>, and
+         * <code>PathPrefix</code> parameters. For example, to list only the customer
+         * managed policies in your AWS account, set <code>Scope</code> to
+         * <code>Local</code>. To list only AWS managed policies, set <code>Scope</code> to
+         * <code>AWS</code>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p> <p>For more
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3505,19 +3540,19 @@ namespace Model
 
         /**
          * <p>Lists information about the versions of the specified managed policy,
-         * including the version that is set as the policy's default version. </p> <p>For
-         * more information about managed policies, refer to <a
+         * including the version that is currently set as the policy's default version.</p>
+         * <p>For more information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ListPolicyVersionsOutcome ListPolicyVersions(const Model::ListPolicyVersionsRequest& request) const;
 
         /**
          * <p>Lists information about the versions of the specified managed policy,
-         * including the version that is set as the policy's default version. </p> <p>For
-         * more information about managed policies, refer to <a
+         * including the version that is currently set as the policy's default version.</p>
+         * <p>For more information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3525,115 +3560,112 @@ namespace Model
 
         /**
          * <p>Lists information about the versions of the specified managed policy,
-         * including the version that is set as the policy's default version. </p> <p>For
-         * more information about managed policies, refer to <a
+         * including the version that is currently set as the policy's default version.</p>
+         * <p>For more information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPolicyVersionsAsync(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * role. </p> <p>A role can also have managed policies attached to it. To list the
-         * managed policies that are attached to a role, use
-         * <a>ListAttachedRolePolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * role.</p> <p>An IAM role can also have managed policies attached to it. To list
+         * the managed policies that are attached to a role, use
+         * <a>ListAttachedRolePolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified role,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          */
         virtual Model::ListRolePoliciesOutcome ListRolePolicies(const Model::ListRolePoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * role. </p> <p>A role can also have managed policies attached to it. To list the
-         * managed policies that are attached to a role, use
-         * <a>ListAttachedRolePolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * role.</p> <p>An IAM role can also have managed policies attached to it. To list
+         * the managed policies that are attached to a role, use
+         * <a>ListAttachedRolePolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified role,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRolePoliciesOutcomeCallable ListRolePoliciesCallable(const Model::ListRolePoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies that are embedded in the specified
-         * role. </p> <p>A role can also have managed policies attached to it. To list the
-         * managed policies that are attached to a role, use
-         * <a>ListAttachedRolePolicies</a>. For more information about policies, refer to
-         * <a
+         * <p>Lists the names of the inline policies that are embedded in the specified IAM
+         * role.</p> <p>An IAM role can also have managed policies attached to it. To list
+         * the managed policies that are attached to a role, use
+         * <a>ListAttachedRolePolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified role,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRolePoliciesAsync(const Model::ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the roles that have the specified path prefix. If there are none, the
-         * action returns an empty list. For more information about roles, go to <a
+         * <p>Lists the IAM roles that have the specified path prefix. If there are none,
+         * the action returns an empty list. For more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * with Roles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListRolesOutcome ListRoles(const Model::ListRolesRequest& request) const;
 
         /**
-         * <p>Lists the roles that have the specified path prefix. If there are none, the
-         * action returns an empty list. For more information about roles, go to <a
+         * <p>Lists the IAM roles that have the specified path prefix. If there are none,
+         * the action returns an empty list. For more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * with Roles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRolesOutcomeCallable ListRolesCallable(const Model::ListRolesRequest& request) const;
 
         /**
-         * <p>Lists the roles that have the specified path prefix. If there are none, the
-         * action returns an empty list. For more information about roles, go to <a
+         * <p>Lists the IAM roles that have the specified path prefix. If there are none,
+         * the action returns an empty list. For more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * with Roles</a>.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRolesAsync(const Model::ListRolesRequest& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the SAML providers in the account.</p> <note> This operation requires
-         * <a
+         * <p>Lists the SAML provider resource objects defined in IAM in the account.</p>
+         * <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          */
         virtual Model::ListSAMLProvidersOutcome ListSAMLProviders(const Model::ListSAMLProvidersRequest& request) const;
 
         /**
-         * <p>Lists the SAML providers in the account.</p> <note> This operation requires
-         * <a
+         * <p>Lists the SAML provider resource objects defined in IAM in the account.</p>
+         * <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSAMLProvidersOutcomeCallable ListSAMLProvidersCallable(const Model::ListSAMLProvidersRequest& request) const;
 
         /**
-         * <p>Lists the SAML providers in the account.</p> <note> This operation requires
-         * <a
+         * <p>Lists the SAML provider resource objects defined in IAM in the account.</p>
+         * <note> <p> This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3686,22 +3718,24 @@ namespace Model
         virtual void ListSSHPublicKeysAsync(const Model::ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists the server certificates that have the specified path prefix. If none
-         * exist, the action returns an empty list. </p> <p> You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>For
-         * more information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Lists the server certificates stored in IAM that have the specified path
+         * prefix. If none exist, the action returns an empty list.</p> <p> You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ListServerCertificatesOutcome ListServerCertificates(const Model::ListServerCertificatesRequest& request) const;
 
         /**
-         * <p> Lists the server certificates that have the specified path prefix. If none
-         * exist, the action returns an empty list. </p> <p> You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>For
-         * more information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Lists the server certificates stored in IAM that have the specified path
+         * prefix. If none exist, the action returns an empty list.</p> <p> You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -3710,11 +3744,12 @@ namespace Model
         virtual Model::ListServerCertificatesOutcomeCallable ListServerCertificatesCallable(const Model::ListServerCertificatesRequest& request) const;
 
         /**
-         * <p> Lists the server certificates that have the specified path prefix. If none
-         * exist, the action returns an empty list. </p> <p> You can paginate the results
-         * using the <code>MaxItems</code> and <code>Marker</code> parameters. </p> <p>For
-         * more information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * <p>Lists the server certificates stored in IAM that have the specified path
+         * prefix. If none exist, the action returns an empty list.</p> <p> You can
+         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -3724,27 +3759,27 @@ namespace Model
 
         /**
          * <p>Returns information about the signing certificates associated with the
-         * specified user. If there are none, the action returns an empty list. </p>
+         * specified IAM user. If there are none, the action returns an empty list.</p>
          * <p>Although each user is limited to a small number of signing certificates, you
          * can still paginate the results using the <code>MaxItems</code> and
-         * <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is
-         * not specified, the user name is determined implicitly based on the AWS access
-         * key ID used to sign the request. Because this action works for access keys under
-         * the AWS account, you can use this action to manage root credentials even if the
-         * AWS account has no associated users. </p>
+         * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
+         * specified, the user name is determined implicitly based on the AWS access key ID
+         * used to sign the request for this API. Because this action works for access keys
+         * under the AWS account, you can use this action to manage root credentials even
+         * if the AWS account has no associated users.</p>
          */
         virtual Model::ListSigningCertificatesOutcome ListSigningCertificates(const Model::ListSigningCertificatesRequest& request) const;
 
         /**
          * <p>Returns information about the signing certificates associated with the
-         * specified user. If there are none, the action returns an empty list. </p>
+         * specified IAM user. If there are none, the action returns an empty list.</p>
          * <p>Although each user is limited to a small number of signing certificates, you
          * can still paginate the results using the <code>MaxItems</code> and
-         * <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is
-         * not specified, the user name is determined implicitly based on the AWS access
-         * key ID used to sign the request. Because this action works for access keys under
-         * the AWS account, you can use this action to manage root credentials even if the
-         * AWS account has no associated users. </p>
+         * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
+         * specified, the user name is determined implicitly based on the AWS access key ID
+         * used to sign the request for this API. Because this action works for access keys
+         * under the AWS account, you can use this action to manage root credentials even
+         * if the AWS account has no associated users.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3752,57 +3787,57 @@ namespace Model
 
         /**
          * <p>Returns information about the signing certificates associated with the
-         * specified user. If there are none, the action returns an empty list. </p>
+         * specified IAM user. If there are none, the action returns an empty list.</p>
          * <p>Although each user is limited to a small number of signing certificates, you
          * can still paginate the results using the <code>MaxItems</code> and
-         * <code>Marker</code> parameters. </p> <p>If the <code>UserName</code> field is
-         * not specified, the user name is determined implicitly based on the AWS access
-         * key ID used to sign the request. Because this action works for access keys under
-         * the AWS account, you can use this action to manage root credentials even if the
-         * AWS account has no associated users. </p>
+         * <code>Marker</code> parameters.</p> <p>If the <code>UserName</code> field is not
+         * specified, the user name is determined implicitly based on the AWS access key ID
+         * used to sign the request for this API. Because this action works for access keys
+         * under the AWS account, you can use this action to manage root credentials even
+         * if the AWS account has no associated users.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSigningCertificatesAsync(const Model::ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the names of the inline policies embedded in the specified user. </p>
-         * <p>A user can also have managed policies attached to it. To list the managed
-         * policies that are attached to a user, use <a>ListAttachedUserPolicies</a>. For
-         * more information about policies, refer to <a
+         * <p>Lists the names of the inline policies embedded in the specified IAM
+         * user.</p> <p>An IAM user can also have managed policies attached to it. To list
+         * the managed policies that are attached to a user, use
+         * <a>ListAttachedUserPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified user,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          */
         virtual Model::ListUserPoliciesOutcome ListUserPolicies(const Model::ListUserPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies embedded in the specified user. </p>
-         * <p>A user can also have managed policies attached to it. To list the managed
-         * policies that are attached to a user, use <a>ListAttachedUserPolicies</a>. For
-         * more information about policies, refer to <a
+         * <p>Lists the names of the inline policies embedded in the specified IAM
+         * user.</p> <p>An IAM user can also have managed policies attached to it. To list
+         * the managed policies that are attached to a user, use
+         * <a>ListAttachedUserPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified user,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUserPoliciesOutcomeCallable ListUserPoliciesCallable(const Model::ListUserPoliciesRequest& request) const;
 
         /**
-         * <p>Lists the names of the inline policies embedded in the specified user. </p>
-         * <p>A user can also have managed policies attached to it. To list the managed
-         * policies that are attached to a user, use <a>ListAttachedUserPolicies</a>. For
-         * more information about policies, refer to <a
+         * <p>Lists the names of the inline policies embedded in the specified IAM
+         * user.</p> <p>An IAM user can also have managed policies attached to it. To list
+         * the managed policies that are attached to a user, use
+         * <a>ListAttachedUserPolicies</a>. For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>You can
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can
          * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
          * parameters. If there are no inline policies embedded with the specified user,
-         * the action returns an empty list. </p>
+         * the action returns an empty list.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3811,16 +3846,16 @@ namespace Model
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
          * specified, the action returns all users in the AWS account. If there are none,
-         * the action returns an empty list. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * the action returns an empty list.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
          * specified, the action returns all users in the AWS account. If there are none,
-         * the action returns an empty list. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * the action returns an empty list.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3829,243 +3864,246 @@ namespace Model
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
          * specified, the action returns all users in the AWS account. If there are none,
-         * the action returns an empty list. </p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * the action returns an empty list.</p> <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the virtual MFA devices under the AWS account by assignment status. If
-         * you do not specify an assignment status, the action returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>. </p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the virtual MFA devices defined in the AWS account by assignment
+         * status. If you do not specify an assignment status, the action returns a list of
+         * all virtual MFA devices. Assignment status can be <code>Assigned</code>,
+         * <code>Unassigned</code>, or <code>Any</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          */
         virtual Model::ListVirtualMFADevicesOutcome ListVirtualMFADevices(const Model::ListVirtualMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the virtual MFA devices under the AWS account by assignment status. If
-         * you do not specify an assignment status, the action returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>. </p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the virtual MFA devices defined in the AWS account by assignment
+         * status. If you do not specify an assignment status, the action returns a list of
+         * all virtual MFA devices. Assignment status can be <code>Assigned</code>,
+         * <code>Unassigned</code>, or <code>Any</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListVirtualMFADevicesOutcomeCallable ListVirtualMFADevicesCallable(const Model::ListVirtualMFADevicesRequest& request) const;
 
         /**
-         * <p>Lists the virtual MFA devices under the AWS account by assignment status. If
-         * you do not specify an assignment status, the action returns a list of all
-         * virtual MFA devices. Assignment status can be <code>Assigned</code>,
-         * <code>Unassigned</code>, or <code>Any</code>. </p> <p>You can paginate the
-         * results using the <code>MaxItems</code> and <code>Marker</code> parameters. </p>
+         * <p>Lists the virtual MFA devices defined in the AWS account by assignment
+         * status. If you do not specify an assignment status, the action returns a list of
+         * all virtual MFA devices. Assignment status can be <code>Assigned</code>,
+         * <code>Unassigned</code>, or <code>Any</code>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVirtualMFADevicesAsync(const Model::ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * group. </p> <p>A user can also have managed policies attached to it. To attach a
-         * managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM group.</p> <p>A user can also have managed policies attached to it. To
+         * attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a
+         * new managed policy, use <a>CreatePolicy</a>. For information about policies, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a group, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutGroupPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          */
         virtual Model::PutGroupPolicyOutcome PutGroupPolicy(const Model::PutGroupPolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * group. </p> <p>A user can also have managed policies attached to it. To attach a
-         * managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM group.</p> <p>A user can also have managed policies attached to it. To
+         * attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a
+         * new managed policy, use <a>CreatePolicy</a>. For information about policies, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a group, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutGroupPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutGroupPolicyOutcomeCallable PutGroupPolicyCallable(const Model::PutGroupPolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * group. </p> <p>A user can also have managed policies attached to it. To attach a
-         * managed policy to a group, use <a>AttachGroupPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM group.</p> <p>A user can also have managed policies attached to it. To
+         * attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a
+         * new managed policy, use <a>CreatePolicy</a>. For information about policies, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a group, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutGroupPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutGroupPolicyAsync(const Model::PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * role. </p> <p>When you embed an inline policy in a role, the inline policy is
-         * used as the role's access (permissions) policy. The role's trust policy is
-         * created at the same time as the role, using <a>CreateRole</a>. You can update a
-         * role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
-         * about roles, go to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is
+         * used as part of the role's access (permissions) policy. The role's trust policy
+         * is created at the same time as the role, using <a>CreateRole</a>. You can update
+         * a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p> <p>A role can
+         * Roles to Delegate Permissions and Federate Identities</a>.</p> <p>A role can
          * also have a managed policy attached to it. To attach a managed policy to a role,
          * use <a>AttachRolePolicy</a>. To create a new managed policy, use
-         * <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed
          * with a role, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutRolePolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          */
         virtual Model::PutRolePolicyOutcome PutRolePolicy(const Model::PutRolePolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * role. </p> <p>When you embed an inline policy in a role, the inline policy is
-         * used as the role's access (permissions) policy. The role's trust policy is
-         * created at the same time as the role, using <a>CreateRole</a>. You can update a
-         * role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
-         * about roles, go to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is
+         * used as part of the role's access (permissions) policy. The role's trust policy
+         * is created at the same time as the role, using <a>CreateRole</a>. You can update
+         * a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p> <p>A role can
+         * Roles to Delegate Permissions and Federate Identities</a>.</p> <p>A role can
          * also have a managed policy attached to it. To attach a managed policy to a role,
          * use <a>AttachRolePolicy</a>. To create a new managed policy, use
-         * <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed
          * with a role, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutRolePolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutRolePolicyOutcomeCallable PutRolePolicyCallable(const Model::PutRolePolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * role. </p> <p>When you embed an inline policy in a role, the inline policy is
-         * used as the role's access (permissions) policy. The role's trust policy is
-         * created at the same time as the role, using <a>CreateRole</a>. You can update a
-         * role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
-         * about roles, go to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is
+         * used as part of the role's access (permissions) policy. The role's trust policy
+         * is created at the same time as the role, using <a>CreateRole</a>. You can update
+         * a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p> <p>A role can
+         * Roles to Delegate Permissions and Federate Identities</a>.</p> <p>A role can
          * also have a managed policy attached to it. To attach a managed policy to a role,
          * use <a>AttachRolePolicy</a>. To create a new managed policy, use
-         * <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed
          * with a role, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutRolePolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRolePolicyAsync(const Model::PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * user. </p> <p>A user can also have a managed policy attached to it. To attach a
-         * managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM user.</p> <p>An IAM user can also have a managed policy attached to it. To
+         * attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new
+         * managed policy, use <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a user, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutUserPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          */
         virtual Model::PutUserPolicyOutcome PutUserPolicy(const Model::PutUserPolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * user. </p> <p>A user can also have a managed policy attached to it. To attach a
-         * managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM user.</p> <p>An IAM user can also have a managed policy attached to it. To
+         * attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new
+         * managed policy, use <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a user, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutUserPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutUserPolicyOutcomeCallable PutUserPolicyCallable(const Model::PutUserPolicyRequest& request) const;
 
         /**
-         * <p>Adds (or updates) an inline policy document that is embedded in the specified
-         * user. </p> <p>A user can also have a managed policy attached to it. To attach a
-         * managed policy to a user, use <a>AttachUserPolicy</a>. To create a new managed
-         * policy, use <a>CreatePolicy</a>. For information about policies, refer to <a
+         * <p>Adds or updates an inline policy document that is embedded in the specified
+         * IAM user.</p> <p>An IAM user can also have a managed policy attached to it. To
+         * attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new
+         * managed policy, use <a>CreatePolicy</a>. For information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> <p>For
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about limits on the number of inline policies that you can embed in
          * a user, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>. </p> <note>Because policy
+         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <note> <p>Because policy
          * documents can be large, you should use POST rather than GET when calling
          * <code>PutUserPolicy</code>. For general information about using the Query API
          * with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i> guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4073,17 +4111,17 @@ namespace Model
 
         /**
          * <p>Removes the specified client ID (also known as audience) from the list of
-         * client IDs registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you try to remove a
-         * client ID that was removed previously.</p>
+         * client IDs registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource object.</p> <p>This action is idempotent; it does not fail or return an
+         * error if you try to remove a client ID that does not exist.</p>
          */
         virtual Model::RemoveClientIDFromOpenIDConnectProviderOutcome RemoveClientIDFromOpenIDConnectProvider(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request) const;
 
         /**
          * <p>Removes the specified client ID (also known as audience) from the list of
-         * client IDs registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you try to remove a
-         * client ID that was removed previously.</p>
+         * client IDs registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource object.</p> <p>This action is idempotent; it does not fail or return an
+         * error if you try to remove a client ID that does not exist.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4091,55 +4129,55 @@ namespace Model
 
         /**
          * <p>Removes the specified client ID (also known as audience) from the list of
-         * client IDs registered for the specified IAM OpenID Connect provider.</p> <p>This
-         * action is idempotent; it does not fail or return an error if you try to remove a
-         * client ID that was removed previously.</p>
+         * client IDs registered for the specified IAM OpenID Connect (OIDC) provider
+         * resource object.</p> <p>This action is idempotent; it does not fail or return an
+         * error if you try to remove a client ID that does not exist.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveClientIDFromOpenIDConnectProviderAsync(const Model::RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified role from the specified instance profile.</p>
-         * <important> Make sure you do not have any Amazon EC2 instances running with the
-         * role you are about to remove from the instance profile. Removing a role from an
-         * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important> <p> For more information
-         * about roles, go to <a
+         * <p>Removes the specified IAM role from the specified EC2 instance profile.</p>
+         * <important> <p>Make sure you do not have any Amazon EC2 instances running with
+         * the role you are about to remove from the instance profile. Removing a role from
+         * an instance profile that is associated with a running instance break any
+         * applications running on the instance.</p> </important> <p> For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          */
         virtual Model::RemoveRoleFromInstanceProfileOutcome RemoveRoleFromInstanceProfile(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
 
         /**
-         * <p>Removes the specified role from the specified instance profile.</p>
-         * <important> Make sure you do not have any Amazon EC2 instances running with the
-         * role you are about to remove from the instance profile. Removing a role from an
-         * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important> <p> For more information
-         * about roles, go to <a
+         * <p>Removes the specified IAM role from the specified EC2 instance profile.</p>
+         * <important> <p>Make sure you do not have any Amazon EC2 instances running with
+         * the role you are about to remove from the instance profile. Removing a role from
+         * an instance profile that is associated with a running instance break any
+         * applications running on the instance.</p> </important> <p> For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveRoleFromInstanceProfileOutcomeCallable RemoveRoleFromInstanceProfileCallable(const Model::RemoveRoleFromInstanceProfileRequest& request) const;
 
         /**
-         * <p>Removes the specified role from the specified instance profile.</p>
-         * <important> Make sure you do not have any Amazon EC2 instances running with the
-         * role you are about to remove from the instance profile. Removing a role from an
-         * instance profile that is associated with a running instance will break any
-         * applications running on the instance. </important> <p> For more information
-         * about roles, go to <a
+         * <p>Removes the specified IAM role from the specified EC2 instance profile.</p>
+         * <important> <p>Make sure you do not have any Amazon EC2 instances running with
+         * the role you are about to remove from the instance profile. Removing a role from
+         * an instance profile that is associated with a running instance break any
+         * applications running on the instance.</p> </important> <p> For more information
+         * about IAM roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with Roles</a>. For more information about instance profiles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>. </p>
+         * Instance Profiles</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4165,28 +4203,31 @@ namespace Model
         virtual void RemoveUserFromGroupAsync(const Model::RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Synchronizes the specified MFA device with AWS servers.</p> <p>For more
-         * information about creating and working with virtual MFA devices, go to <a
+         * <p>Synchronizes the specified MFA device with its IAM resource object on the AWS
+         * servers.</p> <p>For more information about creating and working with virtual MFA
+         * devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::ResyncMFADeviceOutcome ResyncMFADevice(const Model::ResyncMFADeviceRequest& request) const;
 
         /**
-         * <p>Synchronizes the specified MFA device with AWS servers.</p> <p>For more
-         * information about creating and working with virtual MFA devices, go to <a
+         * <p>Synchronizes the specified MFA device with its IAM resource object on the AWS
+         * servers.</p> <p>For more information about creating and working with virtual MFA
+         * devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResyncMFADeviceOutcomeCallable ResyncMFADeviceCallable(const Model::ResyncMFADeviceRequest& request) const;
 
         /**
-         * <p>Synchronizes the specified MFA device with AWS servers.</p> <p>For more
-         * information about creating and working with virtual MFA devices, go to <a
+         * <p>Synchronizes the specified MFA device with its IAM resource object on the AWS
+         * servers.</p> <p>For more information about creating and working with virtual MFA
+         * devices, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>Using IAM</i> guide. </p>
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4194,23 +4235,23 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. </p> <p>This action affects all users, groups, and roles
+         * (operative) version.</p> <p>This action affects all users, groups, and roles
          * that the policy is attached to. To list the users, groups, and roles that the
-         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For
-         * information about managed policies, refer to <a
+         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API.</p> <p>For
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::SetDefaultPolicyVersionOutcome SetDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest& request) const;
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. </p> <p>This action affects all users, groups, and roles
+         * (operative) version.</p> <p>This action affects all users, groups, and roles
          * that the policy is attached to. To list the users, groups, and roles that the
-         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For
-         * information about managed policies, refer to <a
+         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API.</p> <p>For
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4218,12 +4259,12 @@ namespace Model
 
         /**
          * <p>Sets the specified version of the specified policy as the policy's default
-         * (operative) version. </p> <p>This action affects all users, groups, and roles
+         * (operative) version.</p> <p>This action affects all users, groups, and roles
          * that the policy is attached to. To list the users, groups, and roles that the
-         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API. </p> <p>For
-         * information about managed policies, refer to <a
+         * policy is attached to, use the <a>ListEntitiesForPolicy</a> API.</p> <p>For
+         * information about managed policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p>
+         * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4299,7 +4340,7 @@ namespace Model
          * resource-based policy to be evaluated with each of the resources included in the
          * simulation.</p> <p>The simulation does not perform the API actions, it only
          * checks the authorization to determine if the simulated policies allow or deny
-         * the actions.</p> <p><b>Note:</b> This API discloses information about the
+         * the actions.</p> <p> <b>Note:</b> This API discloses information about the
          * permissions granted to other users. If you do not want users to see other user's
          * permissions, then consider allowing them to use <a>SimulateCustomPolicy</a>
          * instead.</p> <p>Context keys are variables maintained by AWS and its services
@@ -4324,7 +4365,7 @@ namespace Model
          * resource-based policy to be evaluated with each of the resources included in the
          * simulation.</p> <p>The simulation does not perform the API actions, it only
          * checks the authorization to determine if the simulated policies allow or deny
-         * the actions.</p> <p><b>Note:</b> This API discloses information about the
+         * the actions.</p> <p> <b>Note:</b> This API discloses information about the
          * permissions granted to other users. If you do not want users to see other user's
          * permissions, then consider allowing them to use <a>SimulateCustomPolicy</a>
          * instead.</p> <p>Context keys are variables maintained by AWS and its services
@@ -4351,7 +4392,7 @@ namespace Model
          * resource-based policy to be evaluated with each of the resources included in the
          * simulation.</p> <p>The simulation does not perform the API actions, it only
          * checks the authorization to determine if the simulated policies allow or deny
-         * the actions.</p> <p><b>Note:</b> This API discloses information about the
+         * the actions.</p> <p> <b>Note:</b> This API discloses information about the
          * permissions granted to other users. If you do not want users to see other user's
          * permissions, then consider allowing them to use <a>SimulateCustomPolicy</a>
          * instead.</p> <p>Context keys are variables maintained by AWS and its services
@@ -4369,28 +4410,28 @@ namespace Model
         /**
          * <p>Changes the status of the specified access key from Active to Inactive, or
          * vice versa. This action can be used to disable a user's key as part of a key
-         * rotation work flow. </p> <p>If the <code>UserName</code> field is not specified,
+         * rotation work flow.</p> <p>If the <code>UserName</code> field is not specified,
          * the UserName is determined implicitly based on the AWS access key ID used to
          * sign the request. Because this action works for access keys under the AWS
          * account, you can use this action to manage root credentials even if the AWS
-         * account has no associated users. </p> <p>For information about rotating keys,
-         * see <a
+         * account has no associated users.</p> <p>For information about rotating keys, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-         * Keys and Certificates</a> in the <i>IAM User Guide</i>. </p>
+         * Keys and Certificates</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::UpdateAccessKeyOutcome UpdateAccessKey(const Model::UpdateAccessKeyRequest& request) const;
 
         /**
          * <p>Changes the status of the specified access key from Active to Inactive, or
          * vice versa. This action can be used to disable a user's key as part of a key
-         * rotation work flow. </p> <p>If the <code>UserName</code> field is not specified,
+         * rotation work flow.</p> <p>If the <code>UserName</code> field is not specified,
          * the UserName is determined implicitly based on the AWS access key ID used to
          * sign the request. Because this action works for access keys under the AWS
          * account, you can use this action to manage root credentials even if the AWS
-         * account has no associated users. </p> <p>For information about rotating keys,
-         * see <a
+         * account has no associated users.</p> <p>For information about rotating keys, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-         * Keys and Certificates</a> in the <i>IAM User Guide</i>. </p>
+         * Keys and Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4399,14 +4440,14 @@ namespace Model
         /**
          * <p>Changes the status of the specified access key from Active to Inactive, or
          * vice versa. This action can be used to disable a user's key as part of a key
-         * rotation work flow. </p> <p>If the <code>UserName</code> field is not specified,
+         * rotation work flow.</p> <p>If the <code>UserName</code> field is not specified,
          * the UserName is determined implicitly based on the AWS access key ID used to
          * sign the request. Because this action works for access keys under the AWS
          * account, you can use this action to manage root credentials even if the AWS
-         * account has no associated users. </p> <p>For information about rotating keys,
-         * see <a
+         * account has no associated users.</p> <p>For information about rotating keys, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing
-         * Keys and Certificates</a> in the <i>IAM User Guide</i>. </p>
+         * Keys and Certificates</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4416,10 +4457,11 @@ namespace Model
          * <p>Updates the password policy settings for the AWS account.</p> <note> <p>This
          * action does not support partial updates. No parameters are required, but if you
          * do not specify a parameter, that parameter's value reverts to its default value.
-         * See the <b>Request Parameters</b> section for each parameter's default value.
-         * </p> </note> <p> For more information about using a password policy, see <a
+         * See the <b>Request Parameters</b> section for each parameter's default
+         * value.</p> </note> <p> For more information about using a password policy, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a> in the <i>IAM User Guide</i>. </p>
+         * an IAM Password Policy</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::UpdateAccountPasswordPolicyOutcome UpdateAccountPasswordPolicy(const Model::UpdateAccountPasswordPolicyRequest& request) const;
 
@@ -4427,10 +4469,11 @@ namespace Model
          * <p>Updates the password policy settings for the AWS account.</p> <note> <p>This
          * action does not support partial updates. No parameters are required, but if you
          * do not specify a parameter, that parameter's value reverts to its default value.
-         * See the <b>Request Parameters</b> section for each parameter's default value.
-         * </p> </note> <p> For more information about using a password policy, see <a
+         * See the <b>Request Parameters</b> section for each parameter's default
+         * value.</p> </note> <p> For more information about using a password policy, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a> in the <i>IAM User Guide</i>. </p>
+         * an IAM Password Policy</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4440,205 +4483,215 @@ namespace Model
          * <p>Updates the password policy settings for the AWS account.</p> <note> <p>This
          * action does not support partial updates. No parameters are required, but if you
          * do not specify a parameter, that parameter's value reverts to its default value.
-         * See the <b>Request Parameters</b> section for each parameter's default value.
-         * </p> </note> <p> For more information about using a password policy, see <a
+         * See the <b>Request Parameters</b> section for each parameter's default
+         * value.</p> </note> <p> For more information about using a password policy, see
+         * <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
-         * an IAM Password Policy</a> in the <i>IAM User Guide</i>. </p>
+         * an IAM Password Policy</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAccountPasswordPolicyAsync(const Model::UpdateAccountPasswordPolicyRequest& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the policy that grants an entity permission to assume a role. For
-         * more information about roles, go to <a
+         * <p>Updates the policy that grants an IAM entity permission to assume a role.
+         * This is typically referred to as the "role trust policy". For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          */
         virtual Model::UpdateAssumeRolePolicyOutcome UpdateAssumeRolePolicy(const Model::UpdateAssumeRolePolicyRequest& request) const;
 
         /**
-         * <p> Updates the policy that grants an entity permission to assume a role. For
-         * more information about roles, go to <a
+         * <p>Updates the policy that grants an IAM entity permission to assume a role.
+         * This is typically referred to as the "role trust policy". For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAssumeRolePolicyOutcomeCallable UpdateAssumeRolePolicyCallable(const Model::UpdateAssumeRolePolicyRequest& request) const;
 
         /**
-         * <p> Updates the policy that grants an entity permission to assume a role. For
-         * more information about roles, go to <a
+         * <p>Updates the policy that grants an IAM entity permission to assume a role.
+         * This is typically referred to as the "role trust policy". For more information
+         * about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * Roles to Delegate Permissions and Federate Identities</a>. </p>
+         * Roles to Delegate Permissions and Federate Identities</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAssumeRolePolicyAsync(const Model::UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified group.</p> <important> You
-         * should understand the implications of changing a group's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM group.</p> <important>
+         * <p> You should understand the implications of changing a group's path or name.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note>To change
-         * a group name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Managers to MGRs, the
-         * entity making the request must have permission on Managers and MGRs, or must
-         * have permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * Users and Groups</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p>To
+         * change an IAM group name the requester must have appropriate permissions on both
+         * the source object and the target object. For example, to change "Managers" to
+         * "MGRs", the entity making the request must have permission on both "Managers"
+         * and "MGRs", or must have permission on all (*). For more information about
+         * permissions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified group.</p> <important> You
-         * should understand the implications of changing a group's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM group.</p> <important>
+         * <p> You should understand the implications of changing a group's path or name.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note>To change
-         * a group name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Managers to MGRs, the
-         * entity making the request must have permission on Managers and MGRs, or must
-         * have permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * Users and Groups</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p>To
+         * change an IAM group name the requester must have appropriate permissions on both
+         * the source object and the target object. For example, to change "Managers" to
+         * "MGRs", the entity making the request must have permission on both "Managers"
+         * and "MGRs", or must have permission on all (*). For more information about
+         * permissions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified group.</p> <important> You
-         * should understand the implications of changing a group's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM group.</p> <important>
+         * <p> You should understand the implications of changing a group's path or name.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming
-         * Users and Groups</a> in the <i>IAM User Guide</i>. </important> <note>To change
-         * a group name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Managers to MGRs, the
-         * entity making the request must have permission on Managers and MGRs, or must
-         * have permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * Users and Groups</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p>To
+         * change an IAM group name the requester must have appropriate permissions on both
+         * the source object and the target object. For example, to change "Managers" to
+         * "MGRs", the entity making the request must have permission on both "Managers"
+         * and "MGRs", or must have permission on all (*). For more information about
+         * permissions, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the password for the specified user.</p> <p>Users can change their
-         * own passwords by calling <a>ChangePassword</a>. For more information about
+         * <p>Changes the password for the specified IAM user.</p> <p>IAM users can change
+         * their own passwords by calling <a>ChangePassword</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          */
         virtual Model::UpdateLoginProfileOutcome UpdateLoginProfile(const Model::UpdateLoginProfileRequest& request) const;
 
         /**
-         * <p>Changes the password for the specified user.</p> <p>Users can change their
-         * own passwords by calling <a>ChangePassword</a>. For more information about
+         * <p>Changes the password for the specified IAM user.</p> <p>IAM users can change
+         * their own passwords by calling <a>ChangePassword</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateLoginProfileOutcomeCallable UpdateLoginProfileCallable(const Model::UpdateLoginProfileRequest& request) const;
 
         /**
-         * <p>Changes the password for the specified user.</p> <p>Users can change their
-         * own passwords by calling <a>ChangePassword</a>. For more information about
+         * <p>Changes the password for the specified IAM user.</p> <p>IAM users can change
+         * their own passwords by calling <a>ChangePassword</a>. For more information about
          * modifying passwords, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
-         * Passwords</a> in the <i>IAM User Guide</i>. </p>
+         * Passwords</a> in the <i>IAM User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateLoginProfileAsync(const Model::UpdateLoginProfileRequest& request, const UpdateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Replaces the existing list of server certificate thumbprints with a new list.
-         * </p> <p>The list that you pass with this action completely replaces the existing
-         * list of thumbprints. (The lists are not merged.)</p> <p>Typically, you need to
-         * update a thumbprint only when the identity provider's certificate changes, which
-         * occurs rarely. However, if the provider's certificate <i>does</i> change, any
-         * attempt to assume an IAM role that specifies the OIDC provider as a principal
-         * will fail until the certificate thumbprint is updated.</p> <note>Because trust
-         * for the OpenID Connect provider is ultimately derived from the provider's
+         * <p>Replaces the existing list of server certificate thumbprints associated with
+         * an OpenID Connect (OIDC) provider resource object with a new list of
+         * thumbprints.</p> <p>The list that you pass with this action completely replaces
+         * the existing list of thumbprints. (The lists are not merged.)</p> <p>Typically,
+         * you need to update a thumbprint only when the identity provider's certificate
+         * changes, which occurs rarely. However, if the provider's certificate <i>does</i>
+         * change, any attempt to assume an IAM role that specifies the OIDC provider as a
+         * principal fails until the certificate thumbprint is updated.</p> <note>
+         * <p>Because trust for the OIDC provider is ultimately derived from the provider's
          * certificate and is validated by the thumbprint, it is a best practice to limit
          * access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to
-         * highly-privileged users. </note>
+         * highly-privileged users.</p> </note>
          */
         virtual Model::UpdateOpenIDConnectProviderThumbprintOutcome UpdateOpenIDConnectProviderThumbprint(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
 
         /**
-         * <p>Replaces the existing list of server certificate thumbprints with a new list.
-         * </p> <p>The list that you pass with this action completely replaces the existing
-         * list of thumbprints. (The lists are not merged.)</p> <p>Typically, you need to
-         * update a thumbprint only when the identity provider's certificate changes, which
-         * occurs rarely. However, if the provider's certificate <i>does</i> change, any
-         * attempt to assume an IAM role that specifies the OIDC provider as a principal
-         * will fail until the certificate thumbprint is updated.</p> <note>Because trust
-         * for the OpenID Connect provider is ultimately derived from the provider's
+         * <p>Replaces the existing list of server certificate thumbprints associated with
+         * an OpenID Connect (OIDC) provider resource object with a new list of
+         * thumbprints.</p> <p>The list that you pass with this action completely replaces
+         * the existing list of thumbprints. (The lists are not merged.)</p> <p>Typically,
+         * you need to update a thumbprint only when the identity provider's certificate
+         * changes, which occurs rarely. However, if the provider's certificate <i>does</i>
+         * change, any attempt to assume an IAM role that specifies the OIDC provider as a
+         * principal fails until the certificate thumbprint is updated.</p> <note>
+         * <p>Because trust for the OIDC provider is ultimately derived from the provider's
          * certificate and is validated by the thumbprint, it is a best practice to limit
          * access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to
-         * highly-privileged users. </note>
+         * highly-privileged users.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateOpenIDConnectProviderThumbprintOutcomeCallable UpdateOpenIDConnectProviderThumbprintCallable(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request) const;
 
         /**
-         * <p>Replaces the existing list of server certificate thumbprints with a new list.
-         * </p> <p>The list that you pass with this action completely replaces the existing
-         * list of thumbprints. (The lists are not merged.)</p> <p>Typically, you need to
-         * update a thumbprint only when the identity provider's certificate changes, which
-         * occurs rarely. However, if the provider's certificate <i>does</i> change, any
-         * attempt to assume an IAM role that specifies the OIDC provider as a principal
-         * will fail until the certificate thumbprint is updated.</p> <note>Because trust
-         * for the OpenID Connect provider is ultimately derived from the provider's
+         * <p>Replaces the existing list of server certificate thumbprints associated with
+         * an OpenID Connect (OIDC) provider resource object with a new list of
+         * thumbprints.</p> <p>The list that you pass with this action completely replaces
+         * the existing list of thumbprints. (The lists are not merged.)</p> <p>Typically,
+         * you need to update a thumbprint only when the identity provider's certificate
+         * changes, which occurs rarely. However, if the provider's certificate <i>does</i>
+         * change, any attempt to assume an IAM role that specifies the OIDC provider as a
+         * principal fails until the certificate thumbprint is updated.</p> <note>
+         * <p>Because trust for the OIDC provider is ultimately derived from the provider's
          * certificate and is validated by the thumbprint, it is a best practice to limit
          * access to the <code>UpdateOpenIDConnectProviderThumbprint</code> action to
-         * highly-privileged users. </note>
+         * highly-privileged users.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateOpenIDConnectProviderThumbprintAsync(const Model::UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the metadata document for an existing SAML provider.</p> <note>This
-         * operation requires <a
+         * <p>Updates the metadata document for an existing SAML provider resource
+         * object.</p> <note> <p>This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          */
         virtual Model::UpdateSAMLProviderOutcome UpdateSAMLProvider(const Model::UpdateSAMLProviderRequest& request) const;
 
         /**
-         * <p>Updates the metadata document for an existing SAML provider.</p> <note>This
-         * operation requires <a
+         * <p>Updates the metadata document for an existing SAML provider resource
+         * object.</p> <note> <p>This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSAMLProviderOutcomeCallable UpdateSAMLProviderCallable(const Model::UpdateSAMLProviderRequest& request) const;
 
         /**
-         * <p>Updates the metadata document for an existing SAML provider.</p> <note>This
-         * operation requires <a
+         * <p>Updates the metadata document for an existing SAML provider resource
+         * object.</p> <note> <p>This operation requires <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-         * Version 4</a>. </note>
+         * Version 4</a>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSAMLProviderAsync(const Model::UpdateSAMLProviderRequest& request, const UpdateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the status of the specified SSH public key to active or inactive. SSH
+         * <p>Sets the status of an IAM user's SSH public key to active or inactive. SSH
          * public keys that are inactive cannot be used for authentication. This action can
-         * be used to disable a user's SSH public key as part of a key rotation work flow.
-         * </p> <p>The SSH public key affected by this action is used only for
+         * be used to disable a user's SSH public key as part of a key rotation work
+         * flow.</p> <p>The SSH public key affected by this action is used only for
          * authenticating the associated IAM user to an AWS CodeCommit repository. For more
          * information about using SSH keys to authenticate to an AWS CodeCommit
          * repository, see <a
@@ -4649,10 +4702,10 @@ namespace Model
         virtual Model::UpdateSSHPublicKeyOutcome UpdateSSHPublicKey(const Model::UpdateSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Sets the status of the specified SSH public key to active or inactive. SSH
+         * <p>Sets the status of an IAM user's SSH public key to active or inactive. SSH
          * public keys that are inactive cannot be used for authentication. This action can
-         * be used to disable a user's SSH public key as part of a key rotation work flow.
-         * </p> <p>The SSH public key affected by this action is used only for
+         * be used to disable a user's SSH public key as part of a key rotation work
+         * flow.</p> <p>The SSH public key affected by this action is used only for
          * authenticating the associated IAM user to an AWS CodeCommit repository. For more
          * information about using SSH keys to authenticate to an AWS CodeCommit
          * repository, see <a
@@ -4665,10 +4718,10 @@ namespace Model
         virtual Model::UpdateSSHPublicKeyOutcomeCallable UpdateSSHPublicKeyCallable(const Model::UpdateSSHPublicKeyRequest& request) const;
 
         /**
-         * <p>Sets the status of the specified SSH public key to active or inactive. SSH
+         * <p>Sets the status of an IAM user's SSH public key to active or inactive. SSH
          * public keys that are inactive cannot be used for authentication. This action can
-         * be used to disable a user's SSH public key as part of a key rotation work flow.
-         * </p> <p>The SSH public key affected by this action is used only for
+         * be used to disable a user's SSH public key as part of a key rotation work
+         * flow.</p> <p>The SSH public key affected by this action is used only for
          * authenticating the associated IAM user to an AWS CodeCommit repository. For more
          * information about using SSH keys to authenticate to an AWS CodeCommit
          * repository, see <a
@@ -4681,159 +4734,159 @@ namespace Model
         virtual void UpdateSSHPublicKeyAsync(const Model::UpdateSSHPublicKeyRequest& request, const UpdateSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified server certificate.</p>
-         * <p>For more information about working with server certificates, including a list
-         * of AWS services that can use the server certificates that you manage with IAM,
-         * go to <a
+         * <p>Updates the name and/or the path of the specified server certificate stored
+         * in IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>You
-         * should understand the implications of changing a server certificate's path or
-         * name. For more information, see <a
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>
+         * <p>You should understand the implications of changing a server certificate's
+         * path or name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
-         * a Server Certificate</a> in the <i>IAM User Guide</i>.</important> <note>To
-         * change a server certificate name the requester must have appropriate permissions
-         * on both the source object and the target object. For example, to change the name
-         * from ProductionCert to ProdCert, the entity making the request must have
-         * permission on ProductionCert and ProdCert, or must have permission on all (*).
-         * For more information about permissions, see <a
+         * a Server Certificate</a> in the <i>IAM User Guide</i>.</p> </important> <note>
+         * <p>To change a server certificate name the requester must have appropriate
+         * permissions on both the source object and the target object. For example, to
+         * change the name from "ProductionCert" to "ProdCert", the entity making the
+         * request must have permission on "ProductionCert" and "ProdCert", or must have
+         * permission on all (*). For more information about permissions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-         * Management</a> in the <i>IAM User Guide</i>. </note>
+         * Management</a> in the <i>IAM User Guide</i>.</p> </note>
          */
         virtual Model::UpdateServerCertificateOutcome UpdateServerCertificate(const Model::UpdateServerCertificateRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified server certificate.</p>
-         * <p>For more information about working with server certificates, including a list
-         * of AWS services that can use the server certificates that you manage with IAM,
-         * go to <a
+         * <p>Updates the name and/or the path of the specified server certificate stored
+         * in IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>You
-         * should understand the implications of changing a server certificate's path or
-         * name. For more information, see <a
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>
+         * <p>You should understand the implications of changing a server certificate's
+         * path or name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
-         * a Server Certificate</a> in the <i>IAM User Guide</i>.</important> <note>To
-         * change a server certificate name the requester must have appropriate permissions
-         * on both the source object and the target object. For example, to change the name
-         * from ProductionCert to ProdCert, the entity making the request must have
-         * permission on ProductionCert and ProdCert, or must have permission on all (*).
-         * For more information about permissions, see <a
+         * a Server Certificate</a> in the <i>IAM User Guide</i>.</p> </important> <note>
+         * <p>To change a server certificate name the requester must have appropriate
+         * permissions on both the source object and the target object. For example, to
+         * change the name from "ProductionCert" to "ProdCert", the entity making the
+         * request must have permission on "ProductionCert" and "ProdCert", or must have
+         * permission on all (*). For more information about permissions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-         * Management</a> in the <i>IAM User Guide</i>. </note>
+         * Management</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateServerCertificateOutcomeCallable UpdateServerCertificateCallable(const Model::UpdateServerCertificateRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified server certificate.</p>
-         * <p>For more information about working with server certificates, including a list
-         * of AWS services that can use the server certificates that you manage with IAM,
-         * go to <a
+         * <p>Updates the name and/or the path of the specified server certificate stored
+         * in IAM.</p> <p>For more information about working with server certificates,
+         * including a list of AWS services that can use the server certificates that you
+         * manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>You
-         * should understand the implications of changing a server certificate's path or
-         * name. For more information, see <a
+         * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <important>
+         * <p>You should understand the implications of changing a server certificate's
+         * path or name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts">Renaming
-         * a Server Certificate</a> in the <i>IAM User Guide</i>.</important> <note>To
-         * change a server certificate name the requester must have appropriate permissions
-         * on both the source object and the target object. For example, to change the name
-         * from ProductionCert to ProdCert, the entity making the request must have
-         * permission on ProductionCert and ProdCert, or must have permission on all (*).
-         * For more information about permissions, see <a
+         * a Server Certificate</a> in the <i>IAM User Guide</i>.</p> </important> <note>
+         * <p>To change a server certificate name the requester must have appropriate
+         * permissions on both the source object and the target object. For example, to
+         * change the name from "ProductionCert" to "ProdCert", the entity making the
+         * request must have permission on "ProductionCert" and "ProdCert", or must have
+         * permission on all (*). For more information about permissions, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-         * Management</a> in the <i>IAM User Guide</i>. </note>
+         * Management</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServerCertificateAsync(const Model::UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the status of the specified signing certificate from active to
-         * disabled, or vice versa. This action can be used to disable a user's signing
-         * certificate as part of a certificate rotation work flow. </p> <p>If the
+         * <p>Changes the status of the specified user signing certificate from active to
+         * disabled, or vice versa. This action can be used to disable an IAM user's
+         * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the UserName is determined
          * implicitly based on the AWS access key ID used to sign the request. Because this
          * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * manage root credentials even if the AWS account has no associated users.</p>
          */
         virtual Model::UpdateSigningCertificateOutcome UpdateSigningCertificate(const Model::UpdateSigningCertificateRequest& request) const;
 
         /**
-         * <p>Changes the status of the specified signing certificate from active to
-         * disabled, or vice versa. This action can be used to disable a user's signing
-         * certificate as part of a certificate rotation work flow. </p> <p>If the
+         * <p>Changes the status of the specified user signing certificate from active to
+         * disabled, or vice versa. This action can be used to disable an IAM user's
+         * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the UserName is determined
          * implicitly based on the AWS access key ID used to sign the request. Because this
          * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * manage root credentials even if the AWS account has no associated users.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateSigningCertificateOutcomeCallable UpdateSigningCertificateCallable(const Model::UpdateSigningCertificateRequest& request) const;
 
         /**
-         * <p>Changes the status of the specified signing certificate from active to
-         * disabled, or vice versa. This action can be used to disable a user's signing
-         * certificate as part of a certificate rotation work flow. </p> <p>If the
+         * <p>Changes the status of the specified user signing certificate from active to
+         * disabled, or vice versa. This action can be used to disable an IAM user's
+         * signing certificate as part of a certificate rotation work flow.</p> <p>If the
          * <code>UserName</code> field is not specified, the UserName is determined
          * implicitly based on the AWS access key ID used to sign the request. Because this
          * action works for access keys under the AWS account, you can use this action to
-         * manage root credentials even if the AWS account has no associated users. </p>
+         * manage root credentials even if the AWS account has no associated users.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSigningCertificateAsync(const Model::UpdateSigningCertificateRequest& request, const UpdateSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified user.</p> <important> You
-         * should understand the implications of changing a user's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM user.</p> <important>
+         * <p> You should understand the implications of changing an IAM user's path or
+         * name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
          * an IAM User</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Bob to Robert, the entity
-         * making the request must have permission on Bob and Robert, or must have
+         * an IAM Group</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p> To
+         * change a user name the requester must have appropriate permissions on both the
+         * source object and the target object. For example, to change Bob to Robert, the
+         * entity making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified user.</p> <important> You
-         * should understand the implications of changing a user's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM user.</p> <important>
+         * <p> You should understand the implications of changing an IAM user's path or
+         * name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
          * an IAM User</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Bob to Robert, the entity
-         * making the request must have permission on Bob and Robert, or must have
+         * an IAM Group</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p> To
+         * change a user name the requester must have appropriate permissions on both the
+         * source object and the target object. For example, to change Bob to Robert, the
+         * entity making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates the name and/or the path of the specified user.</p> <important> You
-         * should understand the implications of changing a user's path or name. For more
-         * information, see <a
+         * <p>Updates the name and/or the path of the specified IAM user.</p> <important>
+         * <p> You should understand the implications of changing an IAM user's path or
+         * name. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming
          * an IAM User</a> and <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming
-         * an IAM Group</a> in the <i>IAM User Guide</i>. </important> <note> To change a
-         * user name the requester must have appropriate permissions on both the source
-         * object and the target object. For example, to change Bob to Robert, the entity
-         * making the request must have permission on Bob and Robert, or must have
+         * an IAM Group</a> in the <i>IAM User Guide</i>.</p> </important> <note> <p> To
+         * change a user name the requester must have appropriate permissions on both the
+         * source object and the target object. For example, to change Bob to Robert, the
+         * entity making the request must have permission on Bob and Robert, or must have
          * permission on all (*). For more information about permissions, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
-         * target="blank">Permissions and Policies</a>. </note>
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
+         * and Policies</a>. </p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -4882,46 +4935,48 @@ namespace Model
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded. </p> <p>For more
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
          * information about working with server certificates, including a list of AWS
          * services that can use the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
-         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>. </p> <note>Because
-         * the body of the public key certificate, private key, and the certificate chain
-         * can be large, you should use POST rather than GET when calling
+         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>.</p> <note>
+         * <p>Because the body of the public key certificate, private key, and the
+         * certificate chain can be large, you should use POST rather than GET when calling
          * <code>UploadServerCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
-         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>. </note>
+         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>.</p>
+         * </note>
          */
         virtual Model::UploadServerCertificateOutcome UploadServerCertificate(const Model::UploadServerCertificateRequest& request) const;
 
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded. </p> <p>For more
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
          * information about working with server certificates, including a list of AWS
          * services that can use the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
-         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>. </p> <note>Because
-         * the body of the public key certificate, private key, and the certificate chain
-         * can be large, you should use POST rather than GET when calling
+         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>.</p> <note>
+         * <p>Because the body of the public key certificate, private key, and the
+         * certificate chain can be large, you should use POST rather than GET when calling
          * <code>UploadServerCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
-         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>. </note>
+         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -4930,87 +4985,88 @@ namespace Model
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded. </p> <p>For more
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
          * information about working with server certificates, including a list of AWS
          * services that can use the server certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations
-         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>. </p> <note>Because
-         * the body of the public key certificate, private key, and the certificate chain
-         * can be large, you should use POST rather than GET when calling
+         * on IAM Entities and Objects</a> in the <i>IAM User Guide</i>.</p> <note>
+         * <p>Because the body of the public key certificate, private key, and the
+         * certificate chain can be large, you should use POST rather than GET when calling
          * <code>UploadServerCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling
-         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>. </note>
+         * the API by Making HTTP Query Requests</a> in the <i>IAM User Guide</i>.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UploadServerCertificateAsync(const Model::UploadServerCertificateRequest& request, const UploadServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads an X.509 signing certificate and associates it with the specified
+         * <p>Uploads an X.509 signing certificate and associates it with the specified IAM
          * user. Some AWS services use X.509 signing certificates to validate requests that
          * are signed with a corresponding private key. When you upload the certificate,
-         * its default status is <code>Active</code>. </p> <p>If the <code>UserName</code>
-         * field is not specified, the user name is determined implicitly based on the AWS
-         * access key ID used to sign the request. Because this action works for access
+         * its default status is <code>Active</code>.</p> <p>If the <code>UserName</code>
+         * field is not specified, the IAM user name is determined implicitly based on the
+         * AWS access key ID used to sign the request. Because this action works for access
          * keys under the AWS account, you can use this action to manage root credentials
-         * even if the AWS account has no associated users. </p> <note>Because the body of
-         * a X.509 certificate can be large, you should use POST rather than GET when
+         * even if the AWS account has no associated users.</p> <note> <p>Because the body
+         * of a X.509 certificate can be large, you should use POST rather than GET when
          * calling <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i>guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          */
         virtual Model::UploadSigningCertificateOutcome UploadSigningCertificate(const Model::UploadSigningCertificateRequest& request) const;
 
         /**
-         * <p>Uploads an X.509 signing certificate and associates it with the specified
+         * <p>Uploads an X.509 signing certificate and associates it with the specified IAM
          * user. Some AWS services use X.509 signing certificates to validate requests that
          * are signed with a corresponding private key. When you upload the certificate,
-         * its default status is <code>Active</code>. </p> <p>If the <code>UserName</code>
-         * field is not specified, the user name is determined implicitly based on the AWS
-         * access key ID used to sign the request. Because this action works for access
+         * its default status is <code>Active</code>.</p> <p>If the <code>UserName</code>
+         * field is not specified, the IAM user name is determined implicitly based on the
+         * AWS access key ID used to sign the request. Because this action works for access
          * keys under the AWS account, you can use this action to manage root credentials
-         * even if the AWS account has no associated users. </p> <note>Because the body of
-         * a X.509 certificate can be large, you should use POST rather than GET when
+         * even if the AWS account has no associated users.</p> <note> <p>Because the body
+         * of a X.509 certificate can be large, you should use POST rather than GET when
          * calling <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i>guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UploadSigningCertificateOutcomeCallable UploadSigningCertificateCallable(const Model::UploadSigningCertificateRequest& request) const;
 
         /**
-         * <p>Uploads an X.509 signing certificate and associates it with the specified
+         * <p>Uploads an X.509 signing certificate and associates it with the specified IAM
          * user. Some AWS services use X.509 signing certificates to validate requests that
          * are signed with a corresponding private key. When you upload the certificate,
-         * its default status is <code>Active</code>. </p> <p>If the <code>UserName</code>
-         * field is not specified, the user name is determined implicitly based on the AWS
-         * access key ID used to sign the request. Because this action works for access
+         * its default status is <code>Active</code>.</p> <p>If the <code>UserName</code>
+         * field is not specified, the IAM user name is determined implicitly based on the
+         * AWS access key ID used to sign the request. Because this action works for access
          * keys under the AWS account, you can use this action to manage root credentials
-         * even if the AWS account has no associated users. </p> <note>Because the body of
-         * a X.509 certificate can be large, you should use POST rather than GET when
+         * even if the AWS account has no associated users.</p> <note> <p>Because the body
+         * of a X.509 certificate can be large, you should use POST rather than GET when
          * calling <code>UploadSigningCertificate</code>. For information about setting up
          * signatures and authorization through the API, go to <a
          * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
          * AWS API Requests</a> in the <i>AWS General Reference</i>. For general
          * information about using the Query API with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
-         * Query Requests</a> in the <i>Using IAM</i>guide. </note>
+         * Query Requests</a> in the <i>IAM User Guide</i>.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

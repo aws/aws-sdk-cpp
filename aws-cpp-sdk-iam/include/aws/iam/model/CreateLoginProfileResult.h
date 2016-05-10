@@ -44,27 +44,27 @@ namespace Model
     CreateLoginProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The user name and password create date.</p>
+     * <p>A structure containing the user name and password create date.</p>
      */
     inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
 
     /**
-     * <p>The user name and password create date.</p>
+     * <p>A structure containing the user name and password create date.</p>
      */
     inline void SetLoginProfile(const LoginProfile& value) { m_loginProfile = value; }
 
     /**
-     * <p>The user name and password create date.</p>
+     * <p>A structure containing the user name and password create date.</p>
      */
     inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = value; }
 
     /**
-     * <p>The user name and password create date.</p>
+     * <p>A structure containing the user name and password create date.</p>
      */
     inline CreateLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
 
     /**
-     * <p>The user name and password create date.</p>
+     * <p>A structure containing the user name and password create date.</p>
      */
     inline CreateLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(value); return *this;}
 

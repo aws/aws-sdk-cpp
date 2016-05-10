@@ -112,7 +112,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -121,7 +121,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
@@ -130,7 +130,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
@@ -139,7 +139,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
@@ -148,7 +148,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline DescribeTapeArchivesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -157,7 +157,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline DescribeTapeArchivesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * were fetched for description ended. Use this marker in your next request to
      * fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there
      * are no more virtual tapes to describe, this field does not appear in the
-     * response. </p>
+     * response.</p>
      */
     inline DescribeTapeArchivesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

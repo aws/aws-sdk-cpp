@@ -35,63 +35,91 @@ namespace Model
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListRolesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListRolesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts
-     * with <code>/application_abc/component_xyz/</code>. </p> <p> This parameter is
+     * with <code>/application_abc/component_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all roles.
-     * </p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash (/) by
+     * itself or a string that must begin and end with forward slashes, containing any
+     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
+     * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListRolesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
@@ -159,7 +187,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -171,7 +199,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -183,7 +211,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListRolesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

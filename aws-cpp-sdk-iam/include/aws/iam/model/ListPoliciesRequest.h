@@ -34,72 +34,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The scope to use for filtering the results. </p> <p>To list only AWS managed
+     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
      * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>. </p> <p>This parameter is optional. If it is not included,
-     * or if it is set to <code>All</code>, all policies are returned.</p>
+     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
+     * if it is set to <code>All</code>, all policies are returned.</p>
      */
     inline const PolicyScopeType& GetScope() const{ return m_scope; }
 
     /**
-     * <p>The scope to use for filtering the results. </p> <p>To list only AWS managed
+     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
      * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>. </p> <p>This parameter is optional. If it is not included,
-     * or if it is set to <code>All</code>, all policies are returned.</p>
+     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
+     * if it is set to <code>All</code>, all policies are returned.</p>
      */
     inline void SetScope(const PolicyScopeType& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The scope to use for filtering the results. </p> <p>To list only AWS managed
+     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
      * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>. </p> <p>This parameter is optional. If it is not included,
-     * or if it is set to <code>All</code>, all policies are returned.</p>
+     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
+     * if it is set to <code>All</code>, all policies are returned.</p>
      */
     inline void SetScope(PolicyScopeType&& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The scope to use for filtering the results. </p> <p>To list only AWS managed
+     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
      * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>. </p> <p>This parameter is optional. If it is not included,
-     * or if it is set to <code>All</code>, all policies are returned.</p>
+     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
+     * if it is set to <code>All</code>, all policies are returned.</p>
      */
     inline ListPoliciesRequest& WithScope(const PolicyScopeType& value) { SetScope(value); return *this;}
 
     /**
-     * <p>The scope to use for filtering the results. </p> <p>To list only AWS managed
+     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
      * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>. </p> <p>This parameter is optional. If it is not included,
-     * or if it is set to <code>All</code>, all policies are returned.</p>
+     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
+     * if it is set to <code>All</code>, all policies are returned.</p>
      */
     inline ListPoliciesRequest& WithScope(PolicyScopeType&& value) { SetScope(value); return *this;}
 
     /**
-     * <p>A flag to filter the results to only the attached policies. </p> <p>When
+     * <p>A flag to filter the results to only the attached policies.</p> <p>When
      * <code>OnlyAttached</code> is <code>true</code>, the returned list contains only
-     * the policies that are attached to a user, group, or role. When
+     * the policies that are attached to an IAM user, group, or role. When
      * <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
      * included, all policies are returned.</p>
      */
     inline bool GetOnlyAttached() const{ return m_onlyAttached; }
 
     /**
-     * <p>A flag to filter the results to only the attached policies. </p> <p>When
+     * <p>A flag to filter the results to only the attached policies.</p> <p>When
      * <code>OnlyAttached</code> is <code>true</code>, the returned list contains only
-     * the policies that are attached to a user, group, or role. When
+     * the policies that are attached to an IAM user, group, or role. When
      * <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
      * included, all policies are returned.</p>
      */
     inline void SetOnlyAttached(bool value) { m_onlyAttachedHasBeenSet = true; m_onlyAttached = value; }
 
     /**
-     * <p>A flag to filter the results to only the attached policies. </p> <p>When
+     * <p>A flag to filter the results to only the attached policies.</p> <p>When
      * <code>OnlyAttached</code> is <code>true</code>, the returned list contains only
-     * the policies that are attached to a user, group, or role. When
+     * the policies that are attached to an IAM user, group, or role. When
      * <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
      * included, all policies are returned.</p>
      */
@@ -107,43 +107,78 @@ namespace Model
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all policies.</p>
+     * is not included, it defaults to a slash (/), listing all policies. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
@@ -211,7 +246,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -223,7 +258,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -235,7 +270,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListPoliciesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

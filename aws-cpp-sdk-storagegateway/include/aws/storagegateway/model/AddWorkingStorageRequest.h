@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
-   * <a>AddWorkingStorageInput$DiskIds</a> </li> </ul>
+   * <p> <a>AddWorkingStorageInput$DiskIds</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API AddWorkingStorageRequest : public StorageGatewayRequest
   {

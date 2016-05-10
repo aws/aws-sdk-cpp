@@ -75,27 +75,27 @@ namespace Model
     inline DocumentParameter& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either â€œStringâ€ or â€œStringListâ€.</p>
      */
     inline const DocumentParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either â€œStringâ€ or â€œStringListâ€.</p>
      */
     inline void SetType(const DocumentParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either â€œStringâ€ or â€œStringListâ€.</p>
      */
     inline void SetType(DocumentParameterType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either â€œStringâ€ or â€œStringListâ€.</p>
      */
     inline DocumentParameter& WithType(const DocumentParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
+     * <p>The type of parameter. The type can be either â€œStringâ€ or â€œStringListâ€.</p>
      */
     inline DocumentParameter& WithType(DocumentParameterType&& value) { SetType(value); return *this;}
 

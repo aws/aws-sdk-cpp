@@ -38,7 +38,8 @@ namespace Model
 
   /**
    * <p>Contains the results of a simulation.</p> <p>This data type is used by the
-   * return parameter of <code><a>SimulatePolicy</a></code>.</p>
+   * return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code>
+   * <a>SimulatePrincipalPolicy</a> </code>.</p>
    */
   class AWS_IAM_API EvaluationResult
   {
@@ -216,11 +217,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
 
@@ -232,11 +229,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline void SetMissingContextValues(const Aws::Vector<Aws::String>& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
 
@@ -248,11 +241,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline void SetMissingContextValues(Aws::Vector<Aws::String>&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
 
@@ -264,11 +253,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline EvaluationResult& WithMissingContextValues(const Aws::Vector<Aws::String>& value) { SetMissingContextValues(value); return *this;}
 
@@ -280,11 +265,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline EvaluationResult& WithMissingContextValues(Aws::Vector<Aws::String>&& value) { SetMissingContextValues(value); return *this;}
 
@@ -296,11 +277,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline EvaluationResult& AddMissingContextValues(const Aws::String& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
@@ -312,11 +289,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline EvaluationResult& AddMissingContextValues(Aws::String&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
@@ -328,11 +301,7 @@ namespace Model
      * then any missing context values are instead included under the
      * <code>ResourceSpecificResults</code> section. To discover the context keys used
      * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     * <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution> <p>If the response
-     * includes any keys in this list, then the reported results might be untrustworthy
-     * because the simulation could not completely evaluate all of the conditions
-     * specified in the policies that would occur in a real world request.</p>
-     * </caution>
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline EvaluationResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
@@ -343,7 +312,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
 
@@ -354,7 +323,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
 
@@ -365,7 +334,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
 
@@ -376,7 +345,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { SetEvalDecisionDetails(value); return *this;}
 
@@ -387,7 +356,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { SetEvalDecisionDetails(value); return *this;}
 
@@ -398,7 +367,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 
@@ -409,7 +378,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 
@@ -420,7 +389,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 
@@ -431,7 +400,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 
@@ -442,7 +411,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 
@@ -453,7 +422,7 @@ namespace Model
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
-     * IAM Roles Differ from Resource-based Policies</a></p>
+     * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails[key] = value; return *this; }
 

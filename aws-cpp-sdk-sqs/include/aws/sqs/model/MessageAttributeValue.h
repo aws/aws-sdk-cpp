@@ -209,8 +209,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -218,8 +218,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -227,8 +227,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -236,8 +236,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -245,8 +245,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -254,8 +254,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */
@@ -263,8 +263,8 @@ namespace Model
 
     /**
      * <p>Amazon SQS supports the following logical data types: String, Number, and
-     * Binary. In addition, you can append your own custom labels. For more
-     * information, see <a
+     * Binary. For the Number data type, you must use StringValue.</p> <p>You can also
+     * append custom labels. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.</p>
      */

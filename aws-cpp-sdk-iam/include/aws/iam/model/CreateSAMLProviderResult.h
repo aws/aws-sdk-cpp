@@ -44,37 +44,37 @@ namespace Model
     CreateSAMLProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
