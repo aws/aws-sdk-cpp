@@ -31,10 +31,12 @@ find_package(Git)
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
 
 # Settings to pull in an external, non-system install of Curl
+# On platforms that by default build these libraries (Android), you must define these for both Curl and Openssl; partial building isn't supported
 # CURL_INCLUDE_DIR "Location of curl header files" "")
 # CURL_LIB_DIR "Location of curl library files" "")
 
 # Settings to pull in an external, non-system install of Openssl
+# On platforms that by default build these libraries (Android), you must define these for both Curl and Openssl; partial building isn't supported
 # OPENSSL_INCLUDE_DIR "Location of openssl header files" "")
 # OPENSSL_LIB_DIR "Location of openssl library files" "")
 
@@ -130,6 +132,14 @@ elseif(PLATFORM_ANDROID)
 
     if(NOT ANDROID_TOOLCHAIN_NAME)
         set(ANDROID_TOOLCHAIN_NAME "standalone-clang")
+    endif()
+
+    if(NOT ANDROID_STL)
+        if(FORCE_SHARED_CRT OR BUILD_SHARED_LIBS)
+            SET(ANDROID_STL "libc++_shared")
+        else()
+            SET(ANDROID_STL "libc++_static")
+        endif()
     endif()
 
     # minimum API level the native SDK will work against
@@ -242,19 +252,11 @@ endmacro()
 
 set_msvc_crt_settings()
 
-if(PLATFORM_ANDROID)
-    if(FORCE_SHARED_CRT OR BUILD_SHARED_LIBS)
-        SET(ANDROID_STL "libc++_shared")
-    else()
-        SET(ANDROID_STL "libc++_static")
-    endif()
-endif()
-
 
 
 # Http client control
 # After this section runs, client availability is technically platform-independent (ie we use the client #defines rather than a mess of platform #defines)
-# on Windows, set CURL_DIR to a valid curl install directory in order to enable the curl client
+# On Windows, set CURL_INCLUDE_DIR and CURL_LIB_DIR appropriately in order to enable the curl client
 set(ENABLE_CURL_CLIENT 0)
 set(ENABLE_WINDOWS_CLIENT 0)
 if(NOT NO_HTTP_CLIENT)
@@ -275,12 +277,14 @@ if(NOT NO_HTTP_CLIENT)
             endif()
 
             if(NOT EXISTS "${CURL_INCLUDE_DIR}/curl/curl.h")
-                message(FATAL_ERROR "Curl header location (${CURL_INCLUDE_DIR}) is invalid")
+                message(FATAL_ERROR "Curl header location (${CURL_INCLUDE_DIR}) is an invalid curl installation")
             endif()
 
             if(NOT IS_DIRECTORY "${CURL_LIB_DIR}")
                 message(FATAL_ERROR "Curl library location (${CURL_LIB_DIR}) is not a valid directory")
             endif()
+
+            #TODO: platform-specific lib check
 
         elseif(PLATFORM_ANDROID)
             set(BUILD_CURL 1)
@@ -327,12 +331,14 @@ if(NOT NO_ENCRYPTION)
             endif()
 
             if(NOT EXISTS "${OPENSSL_INCLUDE_DIR}/openssl/opensslconf.h")
-                message(FATAL_ERROR "Openssl header location (${OPENSSL_INCLUDE_DIR}) is invalid")
+                message(FATAL_ERROR "Openssl header location (${OPENSSL_INCLUDE_DIR}) is an invalid openssl installation")
             endif()
 
             if(NOT IS_DIRECTORY "${OPENSSL_LIB_DIR}")
                 message(FATAL_ERROR "Openssl library location (${OPENSSL_LIB_DIR}) is not a valid directory")
             endif()
+
+            #TODO: platform-specific lib existence check
 
         elseif(PLATFORM_ANDROID)
             set(BUILD_OPENSSL 1)
@@ -378,6 +384,11 @@ elseif(PLATFORM_ANDROID)
 endif()
 
 message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
+
+if((BUILD_CURL AND NOT BUILD_OPENSSL) OR (NOT BUILD_CURL AND BUILD_OPENSSL))
+    message(FATAL_ERROR "Inconsistent external library import settings for a platform that requires both curl and openssl. \
+                         Curl and Openssl must both either be external imports or internally built as part of the SDK.")
+endif()
 
 if(ENABLE_OPENSSL_ENCRYPTION AND OPENSSL_INCLUDE_DIR AND OPENSSL_LIB_DIR)
     include_directories(${OPENSSL_INCLUDE_DIR})
@@ -767,138 +778,131 @@ if(BUILD_CURL OR BUILD_OPENSSL)
     # we patch the install process for each dependency to match what we need for 3rd party installation
     set(EXTERNAL_INSTALL_DIR ${CMAKE_SOURCE_DIR}/external)
 
-    if(BUILD_ZLIB)
-        set(ZLIB_SOURCE_DIR ${CMAKE_SOURCE_DIR}/zlib CACHE INTERNAL "zlib source dir")
-        set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
-        set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
-        set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
-        #set(ZLIB_DEFINES "-msse2 -mfpmath=sse" CACHE INTERNAL "zlib defines")
+    set(ZLIB_SOURCE_DIR ${CMAKE_SOURCE_DIR}/zlib CACHE INTERNAL "zlib source dir")
+    set(ZLIB_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/zlib CACHE INTERNAL "zlib install dir")
+    set(ZLIB_INCLUDE_DIR ${ZLIB_INSTALL_DIR}/include/zlib CACHE INTERNAL "zlib include dir")
+    set(ZLIB_LIBRARY_DIR ${ZLIB_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "zlib library dir")
+    #set(ZLIB_DEFINES "-msse2 -mfpmath=sse" CACHE INTERNAL "zlib defines")
 
-        set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
-        set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
+    set( ZLIB_INCLUDE_FLAGS "-isystem ${ZLIB_INCLUDE_DIR}" CACHE INTERNAL "compiler flags to find zlib includes")
+    set( ZLIB_LINKER_FLAGS "-L${ZLIB_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find zlib")
 
-        #zlib
-        #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
-        #likely, some of the things here are unnecessary
-        ExternalProject_Add(ZLIB
-            SOURCE_DIR ${ZLIB_SOURCE_DIR}
-            URL http://zlib.net/zlib-1.2.8.tar.gz
-            URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
-            PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
+    #zlib
+    #based on http://stackoverflow.com/questions/16842218/how-to-use-cmake-externalproject-add-or-alternatives-in-a-cross-platform-way
+    #likely, some of the things here are unnecessary
+    ExternalProject_Add(ZLIB
+        SOURCE_DIR ${ZLIB_SOURCE_DIR}
+        URL http://zlib.net/zlib-1.2.8.tar.gz
+        URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+        PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
+        CMAKE_ARGS
+        -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+        -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
+        -DANDROID_ABI=${ANDROID_ABI}
+        -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
+        -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
+        -DANDROID_STL=${ANDROID_STL}
+        -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
+        -DCMAKE_CXX_FLAGS=${EXTERNAL_CXX_FLAGS}
+        -DCMAKE_C_FLAGS=${EXTERNAL_C_FLAGS}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+        -DBUILD_SHARED_LIBS=0
+        )
+
+    if(UNIX)
+        set(ZLIB_NAME libz)
+    else()
+        set(ZLIB_NAME zlib)
+    endif()
+
+    add_library(zlib UNKNOWN IMPORTED)
+    set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a)
+
+    #OpenSSL
+    set(OPENSSL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/openssl CACHE INTERNAL "openssl source dir")
+    set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
+    set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
+    set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "openssl library dir")
+    set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+    set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+    set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
+
+    set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
+    set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
+
+    ExternalProject_Add(OPENSSL
+        DEPENDS ZLIB
+        SOURCE_DIR ${OPENSSL_SOURCE_DIR}
+        GIT_REPOSITORY https://github.com/openssl/openssl.git
+        GIT_TAG 902f3f50d051dfd6ebf009d352aaf581195caabf # 1.0.2g
+        UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py
+        CMAKE_ARGS
+        -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+        -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
+        -DANDROID_ABI=${ANDROID_ABI}
+        -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
+        -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
+        -DANDROID_STL=${ANDROID_STL}
+        -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
+        -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS}
+        -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS}
+        -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
+        -DBUILD_SHARED_LIBS=0
+        )
+
+    add_library(ssl UNKNOWN IMPORTED)
+    set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
+    add_library(crypto UNKNOWN IMPORTED)
+    set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
+
+    #curl
+    set(CURL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/curl CACHE INTERNAL "libcurl source dir")
+    set(CURL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/curl CACHE INTERNAL "libcurl install dir")
+    set(CURL_INCLUDE_DIR ${CURL_INSTALL_DIR}/include CACHE INTERNAL "libcurl include dir")
+    set(CURL_LIBRARY_DIR ${CURL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "libcurl library dir")
+
+    set( CURL_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS}" CACHE INTERNAL "" )
+    set( CURL_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}" CACHE INTERNAL "" )
+
+    set( CURL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
+    set( CURL_C_FLAGS "${EXTERNAL_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
+    set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
+
+    ExternalProject_Add(CURL
+            DEPENDS ZLIB OPENSSL
+            SOURCE_DIR ${CURL_SOURCE_DIR}
+            GIT_REPOSITORY https://github.com/bagder/curl.git
+            GIT_TAG 9819cec61b00cc872136ea5faf469627b3b87e69  # 7.48.0
+            UPDATE_COMMAND ""
+            PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
             CMAKE_ARGS
+            -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
             -DANDROID_ABI=${ANDROID_ABI}
             -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
             -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
             -DANDROID_STL=${ANDROID_STL}
-            -DCMAKE_INSTALL_PREFIX=${ZLIB_INSTALL_DIR}
-            -DCMAKE_CXX_FLAGS=${EXTERNAL_CXX_FLAGS}
-            -DCMAKE_C_FLAGS=${EXTERNAL_C_FLAGS}
+            -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
+            -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
+            -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
+            -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
+            -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
+            -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
+            -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
+            -DCURL_STATICLIB=ON
+            -DBUILD_CURL_EXE=ON
+            -DBUILD_CURL_TESTS=OFF
             -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-            -DBUILD_SHARED_LIBS=0
             )
 
-        if(UNIX)
-            set(ZLIB_NAME libz)
-        else()
-            set(ZLIB_NAME zlib)
-        endif()
-
-        add_library(zlib UNKNOWN IMPORTED)
-        set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a)
-    endif()
-
-    if(BUILD_OPENSSL)
-        #OpenSSL
-        set(OPENSSL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/openssl CACHE INTERNAL "openssl source dir")
-        set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
-        set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
-        set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "openssl library dir")
-        set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
-        set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
-        set(OPENSSL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie" CACHE INTERNAL "openssl")
-
-        set(OPENSSL_INCLUDE_FLAGS "-isystem ${OPENSSL_INCLUDE_DIR} -isystem ${OPENSSL_INCLUDE_DIR}/openssl" CACHE INTERNAL "compiler flags to find openssl includes")
-        set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
-
-        ExternalProject_Add(OPENSSL
-            DEPENDS ZLIB
-            SOURCE_DIR ${OPENSSL_SOURCE_DIR}
-            GIT_REPOSITORY https://github.com/openssl/openssl.git
-            GIT_TAG 902f3f50d051dfd6ebf009d352aaf581195caabf # 1.0.2g
-            UPDATE_COMMAND cd ${CMAKE_SOURCE_DIR} && python android-build/configure_openssl_cmake.py
-            CMAKE_ARGS
-            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-            -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-            -DANDROID_ABI=${ANDROID_ABI}
-            -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
-            -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
-            -DANDROID_STL=${ANDROID_STL}
-            -DCMAKE_INSTALL_PREFIX=${OPENSSL_INSTALL_DIR}
-            -DCMAKE_CXX_FLAGS=${OPENSSL_CXX_FLAGS}
-            -DCMAKE_C_FLAGS=${OPENSSL_C_FLAGS}
-            -DCMAKE_EXE_LINKER_FLAGS=${OPENSSL_EXE_LINKER_FLAGS}
-            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-            -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-            -DBUILD_SHARED_LIBS=0
-            )
-
-        add_library(ssl UNKNOWN IMPORTED)
-        set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
-        add_library(crypto UNKNOWN IMPORTED)
-        set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
- #       set(CURL_DEPENDS "ZLIB OPENSSL")
-    endif()
-
-    if(BUILD_CURL)
-        #curl
-        set(CURL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/curl CACHE INTERNAL "libcurl source dir")
-        set(CURL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/curl CACHE INTERNAL "libcurl install dir")
-        set(CURL_INCLUDE_DIR ${CURL_INSTALL_DIR}/include CACHE INTERNAL "libcurl include dir")
-        set(CURL_LIBRARY_DIR ${CURL_INSTALL_DIR}/lib/${SDK_INSTALL_BINARY_PREFIX}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "libcurl library dir")
-
-        set( CURL_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS}" CACHE INTERNAL "" )
-        set( CURL_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS}" CACHE INTERNAL "" )
-
-        set( CURL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
-        set( CURL_C_FLAGS "${EXTERNAL_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
-        set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
-
-        ExternalProject_Add(CURL
- #               DEPENDS ${CURL_DEPENDS}
-                SOURCE_DIR ${CURL_SOURCE_DIR}
-                GIT_REPOSITORY https://github.com/bagder/curl.git
-                GIT_TAG 9819cec61b00cc872136ea5faf469627b3b87e69  # 7.48.0
-                UPDATE_COMMAND ""
-                PATCH_COMMAND patch lib/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/lib/CMakeLists.patch && patch src/CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/curl/src/CMakeLists.patch
-                CMAKE_ARGS
-                -C ${CMAKE_SOURCE_DIR}/android-build/CurlAndroidCrossCompile.cmake
-                -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-                -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
-                -DANDROID_ABI=${ANDROID_ABI}
-                -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
-                -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
-                -DANDROID_STL=${ANDROID_STL}
-                -DCMAKE_INSTALL_PREFIX=${CURL_INSTALL_DIR}
-                -DCMAKE_CXX_FLAGS=${CURL_CXX_FLAGS}
-                -DCMAKE_C_FLAGS=${CURL_C_FLAGS}
-                -DCMAKE_STATIC_LINKER_FLAGS=${CURL_STATIC_LINKER_FLAGS}
-                -DCMAKE_SHARED_LINKER_FLAGS=${CURL_SHARED_LINKER_FLAGS}
-                -DCMAKE_EXE_LINKER_FLAGS=${CURL_EXE_LINKER_FLAGS}
-                -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-                -DOPENSSL_ROOT_DIR=${OPENSSL_SOURCE_DIR}
-                -DOPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR}
-                -DCURL_STATICLIB=ON
-                -DBUILD_CURL_EXE=ON
-                -DBUILD_CURL_TESTS=OFF
-                -DSDK_INSTALL_BINARY_PREFIX=${SDK_INSTALL_BINARY_PREFIX}
-                )
-
-        add_library(curl UNKNOWN IMPORTED)
-        set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.a)
-    endif()
+    add_library(curl UNKNOWN IMPORTED)
+    set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.a)
 endif()
 
 # special windows build options:
