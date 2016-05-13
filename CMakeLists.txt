@@ -203,35 +203,6 @@ else()
 endif()
 
 
-# Compiler recognition
-SET(COMPILER_MSVC 0)
-SET(COMPILER_GCC 0)
-
-# ToDo: extend as necessary and remove common assumptions
-if(MSVC)
-    SET(COMPILER_MSVC 1)
-else()
-    SET(COMPILER_GCC 1)
-endif()
-
-# Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
-# modified from gtest's version; while only the else clause is actually necessary, do both for completeness/future-proofing
-macro(set_msvc_crt_settings)
-    if(COMPILER_MSVC)
-        foreach (var
-                 CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-                 CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-            if(BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
-                string(REPLACE "/MT" "/MD" ${var} "${${var}}")
-            else()
-            string(REPLACE "/MD" "/MT" ${var} "${${var}}")
-            endif()
-        endforeach()
-    endif()
-endmacro()
-
-set_msvc_crt_settings()
-
 if(PLATFORM_ANDROID)
     if(FORCE_SHARED_CRT OR BUILD_SHARED_LIBS)
         SET(ANDROID_STL "libc++_shared")
@@ -337,6 +308,35 @@ elseif(PLATFORM_ANDROID)
 endif()
 
 message(STATUS "Install binary prefix: ${SDK_INSTALL_BINARY_PREFIX}")
+
+# Compiler recognition
+SET(COMPILER_MSVC 0)
+SET(COMPILER_GCC 0)
+
+# ToDo: extend as necessary and remove common assumptions
+if(MSVC)
+    SET(COMPILER_MSVC 1)
+else()
+    SET(COMPILER_GCC 1)
+endif()
+
+# Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
+# modified from gtest's version; while only the else clause is actually necessary, do both for completeness/future-proofing
+macro(set_msvc_crt_settings)
+    if(COMPILER_MSVC)
+        foreach (var
+                 CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+                 CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+            if(BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
+                string(REPLACE "/MT" "/MD" ${var} "${${var}}")
+            else()
+                string(REPLACE "/MD" "/MT" ${var} "${${var}}")
+            endif()
+        endforeach()
+    endif()
+endmacro()
+
+set_msvc_crt_settings()
 
 # cmake doesn't support maps, so we use list elements as key-value pairs; the ':' becomes a separator between key and value
 set(C2J_LIST "")
