@@ -31,6 +31,10 @@ namespace SSM
 namespace Model
 {
 
+  /**
+   * <p>Parameters specified in the SSM document that execute on the server when the
+   * command is run. </p>
+   */
   class AWS_SSM_API DocumentParameter
   {
   public:

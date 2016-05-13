@@ -37,42 +37,50 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more subnet, network interface, or VPC IDs.</p>
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
      */
     inline CreateFlowLogsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 

@@ -37,177 +37,177 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline const Aws::String& GetCommandId() const{ return m_commandId; }
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline void SetCommandId(const char* value) { m_commandIdHasBeenSet = true; m_commandId.assign(value); }
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline ListCommandsRequest& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline ListCommandsRequest& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
 
     /**
-     * (Optional) If provided, lists only the specified command.
+     * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline ListCommandsRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline ListCommandsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline ListCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * (Optional) Lists commands issued against this instance ID.
+     * <p>(Optional) Lists commands issued against this instance ID.</p>
      */
     inline ListCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * (Optional) The maximum number of items to return for this call. The call also
+     * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
-     * results.
+     * results.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * (Optional) The maximum number of items to return for this call. The call also
+     * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
-     * results.
+     * results.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * (Optional) The maximum number of items to return for this call. The call also
+     * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
-     * results.
+     * results.</p>
      */
     inline ListCommandsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline const Aws::Vector<CommandFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline void SetFilters(const Aws::Vector<CommandFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline void SetFilters(Aws::Vector<CommandFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline ListCommandsRequest& WithFilters(const Aws::Vector<CommandFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline ListCommandsRequest& WithFilters(Aws::Vector<CommandFilter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline ListCommandsRequest& AddFilters(const CommandFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * (Optional) One or more filters. Use a filter to return a more specific list of
-     * results.
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results. </p>
      */
     inline ListCommandsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

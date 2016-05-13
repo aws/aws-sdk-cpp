@@ -35,64 +35,64 @@ namespace Model
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline GetTemplateRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline GetTemplateRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
-     * not always interchangeable:</p> <ul> <li>Running stacks: You can specify either
-     * the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must
-     * specify the unique stack ID.</li> </ul> <p>Default: There is no default
-     * value.</p>
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
      */
     inline GetTemplateRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

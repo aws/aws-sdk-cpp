@@ -166,57 +166,57 @@ namespace Model
     inline AssociationDescription& WithStatus(AssociationStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * A description of the parameters for a document.
+     * <p>A description of the parameters for a document. </p>
      */
     inline AssociationDescription& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 

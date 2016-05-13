@@ -246,27 +246,77 @@ namespace Model
     inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The state of the NAT gateway.</p>
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li>
+     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * process traffic. This status remains until you delete the NAT gateway, and does
+     * not indicate the health of the NAT gateway.</p> </li> <li>
+     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
+     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+     * </ul>
      */
     inline const NatGatewayState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the NAT gateway.</p>
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li>
+     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * process traffic. This status remains until you delete the NAT gateway, and does
+     * not indicate the health of the NAT gateway.</p> </li> <li>
+     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
+     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+     * </ul>
      */
     inline void SetState(const NatGatewayState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the NAT gateway.</p>
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li>
+     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * process traffic. This status remains until you delete the NAT gateway, and does
+     * not indicate the health of the NAT gateway.</p> </li> <li>
+     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
+     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+     * </ul>
      */
     inline void SetState(NatGatewayState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the NAT gateway.</p>
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li>
+     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * process traffic. This status remains until you delete the NAT gateway, and does
+     * not indicate the health of the NAT gateway.</p> </li> <li>
+     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
+     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+     * </ul>
      */
     inline NatGateway& WithState(const NatGatewayState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the NAT gateway.</p>
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li>
+     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <code>failureCode</code> and <code>failureMessage</code> fields for the
+     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * process traffic. This status remains until you delete the NAT gateway, and does
+     * not indicate the health of the NAT gateway.</p> </li> <li>
+     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
+     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
+     * </ul>
      */
     inline NatGateway& WithState(NatGatewayState&& value) { SetState(value); return *this;}
 

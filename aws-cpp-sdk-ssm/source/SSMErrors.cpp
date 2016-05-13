@@ -36,9 +36,12 @@ static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNext
 static const int TOO_MANY_UPDATES_HASH = HashingUtils::HashString("TooManyUpdates");
 static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
+static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
 static const int UNSUPPORTED_PLATFORM_TYPE_HASH = HashingUtils::HashString("UnsupportedPlatformType");
 static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
+static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
 static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidCommandId");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
@@ -89,6 +92,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
   }
+  else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+  }
+  else if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_PERMISSION_LIMIT), false);
+  }
   else if (hashCode == ASSOCIATION_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_ALREADY_EXISTS), false);
@@ -100,6 +111,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_FILTER_KEY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
+  }
+  else if (hashCode == INVALID_PERMISSION_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), false);
   }
   else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
   {

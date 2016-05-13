@@ -34,6 +34,7 @@ ChangeSetSummary::ChangeSetSummary() :
     m_stackNameHasBeenSet(false),
     m_changeSetIdHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
+    m_executionStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -46,6 +47,7 @@ ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode) :
     m_stackNameHasBeenSet(false),
     m_changeSetIdHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
+    m_executionStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -83,6 +85,12 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     {
       m_changeSetName = StringUtils::Trim(changeSetNameNode.GetText().c_str());
       m_changeSetNameHasBeenSet = true;
+    }
+    XmlNode executionStatusNode = resultNode.FirstChild("ExecutionStatus");
+    if(!executionStatusNode.IsNull())
+    {
+      m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(StringUtils::Trim(executionStatusNode.GetText().c_str()).c_str());
+      m_executionStatusHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -131,6 +139,10 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
+  if(m_executionStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExecutionStatus=" << ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus) << "&";
+  }
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status) << "&";
@@ -166,6 +178,10 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_changeSetNameHasBeenSet)
   {
       oStream << location << ".ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
+  }
+  if(m_executionStatusHasBeenSet)
+  {
+      oStream << location << ".ExecutionStatus=" << ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus) << "&";
   }
   if(m_statusHasBeenSet)
   {

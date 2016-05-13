@@ -42,79 +42,79 @@ namespace Model
     ListCommandInvocationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline const Aws::Vector<CommandInvocation>& GetCommandInvocations() const{ return m_commandInvocations; }
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline void SetCommandInvocations(const Aws::Vector<CommandInvocation>& value) { m_commandInvocations = value; }
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline void SetCommandInvocations(Aws::Vector<CommandInvocation>&& value) { m_commandInvocations = value; }
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline ListCommandInvocationsResult& WithCommandInvocations(const Aws::Vector<CommandInvocation>& value) { SetCommandInvocations(value); return *this;}
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline ListCommandInvocationsResult& WithCommandInvocations(Aws::Vector<CommandInvocation>&& value) { SetCommandInvocations(value); return *this;}
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline ListCommandInvocationsResult& AddCommandInvocations(const CommandInvocation& value) { m_commandInvocations.push_back(value); return *this; }
 
     /**
-     * (Optional) A list of all invocations.
+     * <p>(Optional) A list of all invocations. </p>
      */
     inline ListCommandInvocationsResult& AddCommandInvocations(CommandInvocation&& value) { m_commandInvocations.push_back(value); return *this; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandInvocationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandInvocationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * (Optional) The token for the next set of items to return. (You received this
-     * token from a previous call.)
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListCommandInvocationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

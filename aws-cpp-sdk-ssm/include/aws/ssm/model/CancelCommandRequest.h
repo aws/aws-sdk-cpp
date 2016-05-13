@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SSM_API CancelCommandRequest : public SSMRequest
   {
@@ -36,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline const Aws::String& GetCommandId() const{ return m_commandId; }
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline void SetCommandId(const char* value) { m_commandIdHasBeenSet = true; m_commandId.assign(value); }
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline CancelCommandRequest& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline CancelCommandRequest& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
 
     /**
-     * The ID of the command you want to cancel.
+     * <p>The ID of the command you want to cancel.</p>
      */
     inline CancelCommandRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
 

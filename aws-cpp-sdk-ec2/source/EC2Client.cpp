@@ -139,6 +139,7 @@
 #include <aws/ec2/model/DescribeRouteTablesRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstanceAvailabilityRequest.h>
 #include <aws/ec2/model/DescribeScheduledInstancesRequest.h>
+#include <aws/ec2/model/DescribeSecurityGroupReferencesRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeRequest.h>
 #include <aws/ec2/model/DescribeSnapshotsRequest.h>
@@ -148,6 +149,7 @@
 #include <aws/ec2/model/DescribeSpotFleetRequestsRequest.h>
 #include <aws/ec2/model/DescribeSpotInstanceRequestsRequest.h>
 #include <aws/ec2/model/DescribeSpotPriceHistoryRequest.h>
+#include <aws/ec2/model/DescribeStaleSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeSubnetsRequest.h>
 #include <aws/ec2/model/DescribeTagsRequest.h>
 #include <aws/ec2/model/DescribeVolumeAttributeRequest.h>
@@ -3681,6 +3683,36 @@ void EC2Client::DescribeScheduledInstancesAsyncHelper(const DescribeScheduledIns
   handler(this, request, DescribeScheduledInstances(request), context);
 }
 
+DescribeSecurityGroupReferencesOutcome EC2Client::DescribeSecurityGroupReferences(const DescribeSecurityGroupReferencesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSecurityGroupReferencesOutcome(DescribeSecurityGroupReferencesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSecurityGroupReferencesOutcome(outcome.GetError());
+  }
+}
+
+DescribeSecurityGroupReferencesOutcomeCallable EC2Client::DescribeSecurityGroupReferencesCallable(const DescribeSecurityGroupReferencesRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeSecurityGroupReferences, this, request);
+}
+
+void EC2Client::DescribeSecurityGroupReferencesAsync(const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeSecurityGroupReferencesAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeSecurityGroupReferencesAsyncHelper(const DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSecurityGroupReferences(request), context);
+}
+
 DescribeSecurityGroupsOutcome EC2Client::DescribeSecurityGroups(const DescribeSecurityGroupsRequest& request) const
 {
   Aws::StringStream ss;
@@ -3949,6 +3981,36 @@ void EC2Client::DescribeSpotPriceHistoryAsync(const DescribeSpotPriceHistoryRequ
 void EC2Client::DescribeSpotPriceHistoryAsyncHelper(const DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeSpotPriceHistory(request), context);
+}
+
+DescribeStaleSecurityGroupsOutcome EC2Client::DescribeStaleSecurityGroups(const DescribeStaleSecurityGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStaleSecurityGroupsOutcome(DescribeStaleSecurityGroupsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStaleSecurityGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeStaleSecurityGroupsOutcomeCallable EC2Client::DescribeStaleSecurityGroupsCallable(const DescribeStaleSecurityGroupsRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::DescribeStaleSecurityGroups, this, request);
+}
+
+void EC2Client::DescribeStaleSecurityGroupsAsync(const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::DescribeStaleSecurityGroupsAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::DescribeStaleSecurityGroupsAsyncHelper(const DescribeStaleSecurityGroupsRequest& request, const DescribeStaleSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStaleSecurityGroups(request), context);
 }
 
 DescribeSubnetsOutcome EC2Client::DescribeSubnets(const DescribeSubnetsRequest& request) const

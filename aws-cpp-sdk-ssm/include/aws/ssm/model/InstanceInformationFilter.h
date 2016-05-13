@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Describes a filter for a specific list of instances.
+   * <p>Describes a filter for a specific list of instances. </p>
    */
   class AWS_SSM_API InstanceInformationFilter
   {
@@ -44,67 +44,67 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter. </p>
      */
     inline const InstanceInformationFilterKey& GetKey() const{ return m_key; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter. </p>
      */
     inline void SetKey(const InstanceInformationFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter. </p>
      */
     inline void SetKey(InstanceInformationFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter. </p>
      */
     inline InstanceInformationFilter& WithKey(const InstanceInformationFilterKey& value) { SetKey(value); return *this;}
 
     /**
-     * The name of the filter.
+     * <p>The name of the filter. </p>
      */
     inline InstanceInformationFilter& WithKey(InstanceInformationFilterKey&& value) { SetKey(value); return *this;}
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValueSet() const{ return m_valueSet; }
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline void SetValueSet(const Aws::Vector<Aws::String>& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline void SetValueSet(Aws::Vector<Aws::String>&& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline InstanceInformationFilter& WithValueSet(const Aws::Vector<Aws::String>& value) { SetValueSet(value); return *this;}
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline InstanceInformationFilter& WithValueSet(Aws::Vector<Aws::String>&& value) { SetValueSet(value); return *this;}
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline InstanceInformationFilter& AddValueSet(const Aws::String& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline InstanceInformationFilter& AddValueSet(Aws::String&& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 
     /**
-     * The filter values.
+     * <p>The filter values. </p>
      */
     inline InstanceInformationFilter& AddValueSet(const char* value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 

@@ -35,58 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline CreateDocumentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
 
     /**
-     * <p>A valid JSON string. For more information about the contents of this string,
-     * see <a
-     * href="http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html">SSM
-     * Document</a>.</p>
+     * <p>A valid JSON string.</p>
      */
     inline CreateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
