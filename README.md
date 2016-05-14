@@ -492,7 +492,7 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 * Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly accross builds so please be explicit.
 * Namespace names should be UpperCammelCase. Never put a using namespace statement in a header file unless it is scoped by a class. It is fine to use a using namespace statement in a cpp file.
 * Use enum class, not enum
-* prefer `#pragma once for include guards.
+* Prefer `#pragma once` for include guards.
 * Forward declare whenever possible.
 * Use nullptr instead of NULL.
 
