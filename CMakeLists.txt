@@ -41,8 +41,6 @@ option(FORCE_SHARED_CRT "If enabled, will unconditionally link the standard libr
 option(DISABLE_ANDROID_STANDALONE_BUILD "If enabled, the android build will not attempt to generate a standalone toolchain and instead rely on externally passed cmake parameters to specify the complete build environment.  The included toolchain file is still used." OFF)
 option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build.")
-set(STATIC_LINKING "0" CACHE STRING "To use static linking, set the value to 1.")
-set(CUSTOM_MEMORY_MANAGEMENT "0" CACHE STRING "To use a custom memory manager, set the value to 1.")
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")

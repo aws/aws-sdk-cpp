@@ -83,8 +83,8 @@ If static linking is enabled, custom memory management defaults to off. If dynam
 
 Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
 
-#####STATIC_LINKING 
-To use static linking, set the value to 1. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
+#####BUILD_SHARED_LIBS
+To use static linking, set the value to 0. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
 
 #####TARGET_ARCH
 To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system. 
