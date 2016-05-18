@@ -45,7 +45,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -99,7 +99,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The names of the tables associated with the current account at the current
-     * endpoint. The maximum size of this array is 100. </p> <p>If
+     * endpoint. The maximum size of this array is 100.</p> <p>If
      * <i>LastEvaluatedTableName</i> also appears in the output, you can use this value
      * as the <i>ExclusiveStartTableName</i> parameter in a subsequent
      * <i>ListTables</i> request and obtain the next page of results.</p>

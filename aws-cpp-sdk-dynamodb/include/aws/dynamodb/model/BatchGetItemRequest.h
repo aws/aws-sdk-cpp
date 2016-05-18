@@ -42,7 +42,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -53,32 +53,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -87,7 +87,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -101,7 +101,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -112,32 +112,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -146,7 +146,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -160,7 +160,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -171,32 +171,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -205,7 +205,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -219,7 +219,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -230,32 +230,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -264,7 +264,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -278,7 +278,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -289,32 +289,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -323,7 +323,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -337,7 +337,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -348,32 +348,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -382,7 +382,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -396,7 +396,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -407,32 +407,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -441,7 +441,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -455,7 +455,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -466,32 +466,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -500,7 +500,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -514,7 +514,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -525,32 +525,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -559,7 +559,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -573,7 +573,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -584,32 +584,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -618,7 +618,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect
@@ -632,7 +632,7 @@ namespace Model
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
      * once per <i>BatchGetItem</i> request.</p> <p>Each element in the map of items to
-     * retrieve consists of the following:</p> <ul> <li> <p><i>ConsistentRead</i> - If
+     * retrieve consists of the following:</p> <ul> <li> <p> <i>ConsistentRead</i> - If
      * <code>true</code>, a strongly consistent read is used; if <code>false</code>
      * (the default), an eventually consistent read is used.</p> </li> <li> <p>
      * <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute
@@ -643,32 +643,32 @@ namespace Model
      * expression.</p> </li> <li> <p>To prevent special characters in an attribute name
      * from being misinterpreted in an expression.</p> </li> </ul> <p>Use the <b>#</b>
      * character in an expression to dereference an attribute name. For example,
-     * consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * consider the following attribute name:</p> <ul> <li> <p> <code>Percentile</code>
+     * </p> </li> </ul> <p>The name of this attribute conflicts with a reserved word,
+     * so it cannot be used directly in an expression. (For the complete list of
+     * reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li> <p><i>Keys</i> - An array of primary key attribute values that define
+     * <li> <p> <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide <i>all</i>
      * of the key attributes. For example, with a simple primary key, you only need to
      * provide the partition key value. For a composite key, you must provide
-     * <i>both</i> the partition key value and the sort key value.</p> </li> <li>
-     * <p><i>ProjectionExpression</i> - A string that identifies one or more attributes
-     * to retrieve from the table. These attributes can include scalars, sets, or
-     * elements of a JSON document. The attributes in the expression must be separated
-     * by commas.</p> <p>If no attribute names are specified, then all attributes will
-     * be returned. If any of the requested attributes are not found, they will not
-     * appear in the result.</p> <p>For more information, see <a
+     * <i>both</i> the partition key value and the sort key value.</p> </li> <li> <p>
+     * <i>ProjectionExpression</i> - A string that identifies one or more attributes to
+     * retrieve from the table. These attributes can include scalars, sets, or elements
+     * of a JSON document. The attributes in the expression must be separated by
+     * commas.</p> <p>If no attribute names are specified, then all attributes will be
+     * returned. If any of the requested attributes are not found, they will not appear
+     * in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
      * <li> <p> <i>AttributesToGet</i> - </p> <important> <p>This is a legacy
@@ -677,7 +677,7 @@ namespace Model
      * expression parameters in a single API call; otherwise, DynamoDB will return a
      * <i>ValidationException</i> exception.</p> <p>This parameter allows you to
      * retrieve attributes of type List or Map; however, it cannot retrieve individual
-     * elements within a List or a Map.</p></important> <p>The names of one or more
+     * elements within a List or a Map.</p> </important> <p>The names of one or more
      * attributes to retrieve. If no attribute names are provided, then all attributes
      * will be returned. If any of the requested attributes are not found, they will
      * not appear in the result.</p> <p>Note that <i>AttributesToGet</i> has no effect

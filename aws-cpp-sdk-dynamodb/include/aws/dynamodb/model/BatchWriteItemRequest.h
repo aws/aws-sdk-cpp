@@ -43,18 +43,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -68,18 +68,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -93,18 +93,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -118,18 +118,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -143,18 +143,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -168,18 +168,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -193,18 +193,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -218,18 +218,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -243,18 +243,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -268,18 +268,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
@@ -293,18 +293,18 @@ namespace Model
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
      * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p><i>DeleteRequest</i> - Perform a
-     * <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p><i>Key</i> - A map of
+     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
+     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
+     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
      * primary key attribute values that uniquely identify the ! item. Each entry in
      * this map consists of an attribute name and an attribute value. For each primary
      * key, you must provide <i>all</i> of the key attributes. For example, with a
      * simple primary key, you only need to provide a value for the partition key. For
      * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p><i>PutRequest</i> - Perform
+     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
      * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p><i>Item</i> - A map of
-     * attributes and their values. Each entry in this map consists of an attribute
+     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
+     * of attributes and their values. Each entry in this map consists of an attribute
      * name and an attribute value. Attribute values must not be null; string and
      * binary type attributes must have lengths greater than zero; and set type
      * attributes must not be empty. Requests that contain empty values will be
